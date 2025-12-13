@@ -1,0 +1,21 @@
+# .gitignore for core-assets
+
+# Temporary files
+*.tmp
+*~
+.DS_Store
+Thumbs.db
+
+# Generated PNG files (regenerated from scripts)
+# Keep ICO in git as it's production-ready
+*.png
+!aic-icon-preview.png
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build artifacts
+*.log
