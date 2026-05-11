@@ -4,7 +4,7 @@ This directory contains the branding and icon assets for all Analog Information 
 
 ## Brand Identity
 
-**Logo**: "AIC" (Analog Information Corporation)
+**Logo**: "AIC" (Analog Informatics Corporation)
 **Colors**: 
 - Primary: #1a2332 (Dark Blue)
 - Secondary: #2d3e50 (Medium Blue)
