@@ -1,10 +1,25 @@
 # AIC Core Assets
 
-Centralized branding and icon assets for all Analog Information Systems PIM applications.
+Centralized branding, icon, and legal assets for all Analog Informatics
+Corporation (AIC) PIM applications.
+
+> **Single source of truth.** This repository is the **only** authoritative
+> location for AIC branding (icons, logos, splash art) and shared legal text
+> (EULAs, license files) used by any product in the workspace. Other
+> in-tree copies are build outputs, kept in sync by
+> [`scripts/sync-to-projects.ps1`](scripts/sync-to-projects.ps1). The
+> workspace-wide agent rule
+> (`c:\analog-pim\.cursor\rules\branding-assets.mdc`) forbids editing
+> branding files outside this repo.
+>
+> Adding a new branded artefact to a product? See the **Adding new branding
+> to a project** section in
+> `c:\analog-pim\.cursor\rules\branding-assets.mdc`.
 
 ## Overview
 
-This repository contains the official branding assets, logos, icons, and generation scripts used across all AIC PIM projects:
+This repository contains the official branding assets, logos, icons, legal
+text, and generation/sync scripts used across all AIC PIM projects:
 
 - **pim-offline-client** - Desktop application icons
 - **pim-offline-server** - Web application favicons and PWA assets
@@ -18,10 +33,14 @@ This repository contains the official branding assets, logos, icons, and generat
 core-assets/
 ├── icons/
 │   ├── desktop/          # Windows ICO, Linux/Mac icons
-│   ├── web/              # SVG favicons, PNG icons for web
+│   ├── web/              # SVG favicons, PNG icons for web, manifest.json
 │   └── source/           # Source SVG files (editable)
+├── legal/                # Shared legal text shipped with installers (EULAs)
 ├── logos/                # Full logos and variations
-├── scripts/              # Icon generation and conversion scripts
+├── scripts/
+│   ├── generate-icons.ps1     # Render derivative formats from source SVG
+│   ├── sync-to-projects.ps1   # Push canonical assets to consumer projects
+│   └── create-desktop-icon.ps1
 └── docs/                 # Branding guidelines and usage docs
 ```
 

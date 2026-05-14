@@ -1,5 +1,19 @@
 # Using Core Assets in Your Project
 
+> **Workspace policy.** Across the AIC PIM workspace this repo is the
+> **single source of truth** for icons, logos, splash art, and EULAs. The
+> rule lives at `c:\analog-pim\.cursor\rules\branding-assets.mdc`
+> (`alwaysApply: true`); agents should not edit branding files outside
+> `core-assets`. To refresh every consumer in one shot, run:
+>
+> ```powershell
+> .\scripts\sync-to-projects.ps1
+> ```
+>
+> See `scripts/sync-to-projects.ps1` for the authoritative
+> "who-consumes-what" map. Add a destination there before checking a
+> branded file into a new project.
+
 ## Quick Reference
 
 ### Clone as Submodule (Recommended)

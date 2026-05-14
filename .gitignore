@@ -7,9 +7,15 @@
 Thumbs.db
 
 # Generated PNG files (regenerated from scripts)
-# Keep ICO in git as it's production-ready
+# Keep ICO in git as it's production-ready.
+# In-app branding bitmaps under branding/ are SOURCE (not generated)
+# and the tauri/ tree is a generated platform-icon set that we
+# intentionally commit so consumer Tauri projects don't have to
+# regenerate. Both are exceptions to the blanket *.png ignore.
 *.png
 !aic-icon-preview.png
+!branding/*.png
+!icons/tauri/**/*.png
 
 # Editor files
 .vscode/
