@@ -31,6 +31,10 @@ text, and generation/sync scripts used across all AIC PIM projects:
 
 ```
 core-assets/
+├── certs/
+│   └── localhost-dev/    # Dev / lab TLS bundle (root CA + server + client
+│                         # leaves) shipped with every MSI. See
+│                         # certs/localhost-dev/README.md.
 ├── icons/
 │   ├── desktop/          # Windows ICO, Linux/Mac icons
 │   ├── web/              # SVG favicons, PNG icons for web, manifest.json
@@ -43,6 +47,17 @@ core-assets/
 │   └── create-desktop-icon.ps1
 └── docs/                 # Branding guidelines and usage docs
 ```
+
+### Localhost-dev certificates (new in May 2026)
+
+`certs/localhost-dev/` is the canonical bundle of self-signed TLS certs
+that `pim-offline-server` and `pim-offline-agent` use for localhost /
+lab testing. Every MSI ships these exact bytes, every dev `cargo run`
+picks them up via `pim-offline-server/scripts/Sync-DevCerts.ps1`, and
+every CI smoke test can rely on a stable fingerprint. See
+[`certs/localhost-dev/README.md`](certs/localhost-dev/README.md) for
+the regeneration recipe, the `NeverOverwriteFile` install contract,
+and the public-key safety guarantees.
 
 ## Brand Identity
 

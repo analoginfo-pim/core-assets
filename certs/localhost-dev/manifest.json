@@ -1,0 +1,58 @@
+﻿{
+    "schema":  "analoginfo.localhost-dev-certs.v1",
+    "generator":  "core-assets/certs/localhost-dev/Regenerate-DevCerts.ps1",
+    "generator_version":  "1.0.0",
+    "generated_at_utc":  "2026-05-16T10:03:24.7007045Z",
+    "validity_years":  10,
+    "server_sans":  [
+                        "DNS:localhost",
+                        "DNS:host.docker.internal",
+                        "IP:127.0.0.1",
+                        "IP:::1"
+                    ],
+    "purpose":  "Localhost / lab development \u0026 CI smoke tests. Not for production.",
+    "files":  [
+                  {
+                      "name":  "dev-ca.crt",
+                      "role":  "root-ca-cert",
+                      "sha256":  "966b4f32d9a4d175d01fd2900ef2370dcda7a9e408f2eb165b042a969f4ebbda",
+                      "size":  2234,
+                      "not_before":  "2026-05-16T10:03:25.0000000Z",
+                      "not_after":  "2036-05-13T10:03:25.0000000Z"
+                  },
+                  {
+                      "name":  "dev-ca.key",
+                      "role":  "root-ca-key",
+                      "sha256":  "59302610bfeaf8d1e68de338b264cc02a253286ac36625f1f1d8a59951511242",
+                      "size":  3324
+                  },
+                  {
+                      "name":  "server.crt",
+                      "role":  "server-leaf-cert",
+                      "sha256":  "649cc94954c1c23bbec70d34acec6750b7b029443631b9e3efe1d89ee1299e97",
+                      "size":  1976,
+                      "not_before":  "2026-05-16T10:03:25.0000000Z",
+                      "not_after":  "2036-05-13T10:03:25.0000000Z"
+                  },
+                  {
+                      "name":  "server.key",
+                      "role":  "server-leaf-key",
+                      "sha256":  "15882c608e836436f07fc9935df77811411c63859e329d965d28185c82a39f0b",
+                      "size":  1732
+                  },
+                  {
+                      "name":  "client.crt",
+                      "role":  "client-leaf-cert",
+                      "sha256":  "1985f8fda65153e8d9db0c8bd11d9ce6a1d0f09cbef952b6440f9b471a4bc55d",
+                      "size":  1868,
+                      "not_before":  "2026-05-16T10:03:25.0000000Z",
+                      "not_after":  "2036-05-13T10:03:25.0000000Z"
+                  },
+                  {
+                      "name":  "client.key",
+                      "role":  "client-leaf-key",
+                      "sha256":  "26eadee743bdab091aae3bdae0d8537700c6420003025064d45d7fb6e8a45a95",
+                      "size":  1732
+                  }
+              ]
+}
