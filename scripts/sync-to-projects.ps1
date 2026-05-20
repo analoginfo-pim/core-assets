@@ -73,7 +73,6 @@ $assetMap = [ordered]@{
         "pim-offline-client-configurator-win32/assets/aic-icon.ico",
         "pim-offline-client-elevate-win32/assets/aic-icon.ico",
         "pim-offline-server-configurator-win32/assets/aic-icon.ico",
-        "pim-offline-server/assets/aic-icon.ico",
         "pim-offline-server/ui/public/favicon.ico",
         "pim-product-launcher-win32/assets/aic-icon.ico",
         "pim-app-config/crates/pim-app-config-cli/assets/aic-icon.ico",
@@ -83,6 +82,34 @@ $assetMap = [ordered]@{
         "pim-offline-server-configurator-tauri/src/assets/aic-favicon.ico",
         "pim-ui-kit/packages/demo/public/favicon.ico",
         "pim-ui-kit/templates/app-template/public/favicon.ico"
+    )
+
+    # Server MSI / dev uses the navy/orange product mark (not the client teal ICO).
+    "icons/desktop/installer-shortcuts/aic-server-product.ico" = @(
+        "pim-offline-server/assets/aic-icon.ico"
+    )
+
+    # Agent MSI shortcut artwork (also staged at MSI build time from core-assets).
+    "icons/desktop/installer-shortcuts/aic-client-product.ico" = @(
+        "pim-offline-client/assets/icon.ico"
+    )
+    "icons/desktop/installer-shortcuts/aic-client-admin-win32.ico" = @(
+        "pim-offline-client-configurator-win32/assets/aic-icon.ico"
+    )
+    "icons/desktop/installer-shortcuts/aic-client-admin-tauri.ico" = @(
+        "pim-offline-client-configurator-tauri/src/assets/aic-favicon.ico"
+    )
+    "icons/desktop/installer-shortcuts/aic-client-elevate-win32.ico" = @(
+        "pim-offline-client-elevate-win32/assets/aic-icon.ico"
+    )
+    "icons/desktop/installer-shortcuts/aic-client-elevate-tauri.ico" = @(
+        "pim-offline-client-elevate-tauri/src/assets/aic-favicon.ico"
+    )
+    "icons/desktop/installer-shortcuts/aic-server-admin-win32.ico" = @(
+        "pim-offline-server-configurator-win32/assets/aic-icon.ico"
+    )
+    "icons/desktop/installer-shortcuts/aic-server-admin-tauri.ico" = @(
+        "pim-offline-server-configurator-tauri/src/assets/aic-favicon.ico"
     )
 
     # Static preview render of the icon (used in About/help screens).
