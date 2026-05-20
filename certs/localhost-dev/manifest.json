@@ -2,56 +2,57 @@
     "schema":  "analoginfo.localhost-dev-certs.v1",
     "generator":  "core-assets/certs/localhost-dev/Regenerate-DevCerts.ps1",
     "generator_version":  "1.0.0",
-    "generated_at_utc":  "2026-05-16T10:03:24.7007045Z",
+    "generated_at_utc":  "2026-05-19T23:39:52.9731749Z",
     "validity_years":  10,
     "server_sans":  [
                         "DNS:localhost",
                         "DNS:host.docker.internal",
                         "IP:127.0.0.1",
-                        "IP:::1"
+                        "IP:::1",
+                        "IP:192.168.55.197,DNS:localhost,DNS:host.docker.internal,IP:127.0.0.1,IP:::1"
                     ],
     "purpose":  "Localhost / lab development \u0026 CI smoke tests. Not for production.",
     "files":  [
                   {
                       "name":  "dev-ca.crt",
                       "role":  "root-ca-cert",
-                      "sha256":  "966b4f32d9a4d175d01fd2900ef2370dcda7a9e408f2eb165b042a969f4ebbda",
+                      "sha256":  "405c41428848ab1a84da240116c34480927fedafaceaf2b4aa42b853e7cfca87",
                       "size":  2234,
-                      "not_before":  "2026-05-16T10:03:25.0000000Z",
-                      "not_after":  "2036-05-13T10:03:25.0000000Z"
+                      "not_before":  "2026-05-19T23:39:53.0000000Z",
+                      "not_after":  "2036-05-16T23:39:53.0000000Z"
                   },
                   {
                       "name":  "dev-ca.key",
                       "role":  "root-ca-key",
-                      "sha256":  "59302610bfeaf8d1e68de338b264cc02a253286ac36625f1f1d8a59951511242",
+                      "sha256":  "c9e7c99de0d252d8c31fc0db8b36945549d26f6b9e2b9dc5f53100e6cae4b3da",
                       "size":  3324
                   },
                   {
                       "name":  "server.crt",
                       "role":  "server-leaf-cert",
-                      "sha256":  "649cc94954c1c23bbec70d34acec6750b7b029443631b9e3efe1d89ee1299e97",
-                      "size":  1976,
-                      "not_before":  "2026-05-16T10:03:25.0000000Z",
-                      "not_after":  "2036-05-13T10:03:25.0000000Z"
+                      "sha256":  "49adbdb983352f31b7e51abadda3aeb5c2a5a6112bf34efb247b381abbf1c37a",
+                      "size":  2066,
+                      "not_before":  "2026-05-19T23:39:53.0000000Z",
+                      "not_after":  "2036-05-16T23:39:53.0000000Z"
                   },
                   {
                       "name":  "server.key",
                       "role":  "server-leaf-key",
-                      "sha256":  "15882c608e836436f07fc9935df77811411c63859e329d965d28185c82a39f0b",
+                      "sha256":  "8e7590ee7128b39767b81423851f675d43f0bbb8ffb895c706f502992eb71104",
                       "size":  1732
                   },
                   {
                       "name":  "client.crt",
                       "role":  "client-leaf-cert",
-                      "sha256":  "1985f8fda65153e8d9db0c8bd11d9ce6a1d0f09cbef952b6440f9b471a4bc55d",
+                      "sha256":  "fce04375446c679eda9a5e82947435bab4433bc5cbe726e273a9b8ca7b6801d1",
                       "size":  1868,
-                      "not_before":  "2026-05-16T10:03:25.0000000Z",
-                      "not_after":  "2036-05-13T10:03:25.0000000Z"
+                      "not_before":  "2026-05-19T23:39:53.0000000Z",
+                      "not_after":  "2036-05-16T23:39:53.0000000Z"
                   },
                   {
                       "name":  "client.key",
                       "role":  "client-leaf-key",
-                      "sha256":  "26eadee743bdab091aae3bdae0d8537700c6420003025064d45d7fb6e8a45a95",
+                      "sha256":  "e718bb551b726aaba0400d722e0114c66a508980ee5068b3156cc13a3535cda1",
                       "size":  1732
                   }
               ]
