@@ -1,0 +1,104 @@
+---
+description: After any ship-worthy desktop GUI, daemon, or offline-server web UI change, rebuild, deploy to the installed Program Files path, and verify — git push alone is never enough. Deploy is mandatory in the same session; do not wait for a separate user request.
+alwaysApply: true
+---
+
+# Deploy and verify after desktop / web fixes
+
+Git commit + push updates source only. Operators run **installed binaries**
+under `C:\Program Files\AIC\…` and **browser URLs** served by a running daemon.
+A change is **incomplete** until the rebuilt artifact is on that path and confirmed.
+
+> **Mandatory deploy.** When an agent finishes work on a shipping binary or GUI
+> surface listed below, it **must** rebuild, copy into the installed Program
+> Files tree (or restart the dev server the operator uses), and verify timestamps
+> **in the same turn** — before telling the user to retest. Per-product plan
+> docs must **not** say "do not auto-deploy" or "wait for explicit go-ahead";
+> that contradicts this rule.
+
+## Desktop GUIs (elevation, configurators, launchers)
+
+Applies to every Win32 / Tauri surface launched from Desktop or Start Menu:
+
+- `pim-offline-client-elevate-{win32,tauri}`
+- `pim-offline-client-configurator-{win32,tauri}`
+- `pim-offline-server-configurator-{win32,tauri}`
+- `pim-product-launcher-win32`
+
+### Required loop (do not skip steps)
+
+1. **Rebuild** the changed crate (`cargo build --release` in `src-tauri` for Tauri;
+   crate root for Win32). Stage FIPS DLLs per `fips-dll-staging.mdc` when the
+   binary links `aws-lc-rs/fips`.
+2. **Deploy** the release `.exe` (and sidecar DLLs) into Program Files:
+   - Agent: `C:\Program Files\AIC\OfflinePimAgent\`
+   - Server configurators: `C:\Program Files\AIC\OfflinePimServer\`
+   Copy **both** MSI canonical names and cargo aliases when they differ (example:
+   `pim-offline-elevate-tauri.exe` **and**
+   `pim-offline-client-elevate-tauri.exe`). Prefer
+   `pim-installers/scripts/Install-StagedAgentBinaries.ps1` for full agent sets;
+   single-binary hotfix may copy directly from `target\release\`.
+3. **Verify shortcut target** — resolve the operator's `.lnk` (Desktop, Start
+   Menu, taskbar pin) and confirm `Target` points at the deployed path you just
+   overwrote. Report canonical name vs alias if they differ.
+4. **Verify installed timestamp** — `Get-Item` on the deployed exe must be
+   **newer than** the pre-fix copy; include `LastWriteTime` and size in the
+   status reply.
+5. **Tell the operator** to close any already-open window before retesting (old
+   process keeps the old build loaded).
+
+### Forbidden
+
+- Declaring a desktop bug "fixed" or a redesign "done" after push only.
+- Skipping Program Files deploy because the user did not say "install" in the
+  same message — deploy is the default completion step for GUI work.
+- Assuming `target\release\…` is what the shortcut runs without copying to
+  Program Files.
+- Deploying only the cargo alias when the MSI canonical name also exists (or
+  vice versa).
+- Plan docs or agent prompts that forbid auto-deploy to Program Files.
+
+## Offline server web admin (`pim-offline-server/ui`)
+
+The React admin UI is embedded at **server build time** (`build.rs` runs
+`npm run build --prefix ui` unless `AUTO_BUILD_UI=false`).
+
+### Required loop
+
+1. **Rebuild UI + server** — set `AUTO_BUILD_UI=true` (or unset) when `ui/`
+   changed; then `cargo build --release` in `pim-offline-server`.
+2. **Deploy** — copy `pim-offline-server.exe` (and FIPS DLL) to
+   `C:\Program Files\AIC\OfflinePimServer\`, or restart a `cargo run` dev
+   instance if that is the operator's test target.
+3. **Restart** the Windows service (`aic-offline-server-service`) or the dev
+   process so the new static bundle is loaded.
+4. **Confirm site availability** — HTTP GET the operator URL (typically
+   `https://localhost:8443/` or the configured `SERVER_PUBLIC_URL`); confirm
+   `200` / redirect to the admin shell and that the changed screen or asset is
+   present. For API-only changes, hit the affected admin route with auth.
+5. **Push** source after deploy verification when the user asked for commit/push;
+   push does not replace steps 1–4.
+
+### Forbidden
+
+- Editing only `ui/src` and expecting the running server to pick it up without a
+  rebuild + restart.
+- Leaving `AUTO_BUILD_UI=false` during a UI-fix session.
+
+## Status reply shape
+
+End every desktop/web fix turn with:
+
+| Artifact | Deploy path | Shortcut target (if known) | LastWriteTime | Verified |
+| -------- | ----------- | -------------------------- | ------------- | -------- |
+
+If deploy failed (file lock, elevation denied), say so and stop — do not claim
+the operator can retest yet.
+
+## Cross-references
+
+- `pim-installers/scripts/Install-StagedAgentBinaries.ps1` — full agent deploy
+- `pim-installers/scripts/Build-PimOfflineAgentMsi.ps1` — MSI canonical names
+- `cargo-build-loop-fast-path.mdc` — `AUTO_BUILD_UI` for Rust-only vs UI edits
+- Origin: 2026-06-13 elevation Submit fix — push without Program Files deploy
+  left the desktop shortcut on a stale binary.
