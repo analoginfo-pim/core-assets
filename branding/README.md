@@ -10,7 +10,7 @@ here.
 | File | Used by | Purpose |
 | ---- | ------- | ------- |
 | `aic-about.png` | `pim-offline-client/assets/aic-about.png` | "About" dialog hero image (Win32 admin GUI / agent). |
-| `aic-header.png` | All Tauri configurators / elevation UIs (`pim-offline-client-configurator-tauri`, `pim-offline-client-elevate-tauri`, `pim-offline-server-configurator-tauri`). | Top-of-window header banner. |
+| `aic-header.png` | All Tauri configurators / elevation UIs (`pim-offline-client-configurator-tauri`, `pim-offline-client-elevate-tauri`, `pim-offline-server-configurator-tauri`); also `pim-offline-server/ui/public/aic-header.png` for the web login page and app chrome. | Top-of-window / login header banner. |
 
 ## Adding new in-app art
 

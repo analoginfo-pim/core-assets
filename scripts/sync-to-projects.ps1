@@ -150,11 +150,12 @@ $assetMap = [ordered]@{
     )
 
     # Top-of-window header banner used by every Tauri configurator and
-    # elevation UI.
+    # elevation UI, plus the offline-server web UI (login + chrome).
     "branding/aic-header.png" = @(
         "pim-offline-client-configurator-tauri/src/assets/aic-header.png",
         "pim-offline-client-elevate-tauri/src/assets/aic-header.png",
-        "pim-offline-server-configurator-tauri/src/assets/aic-header.png"
+        "pim-offline-server-configurator-tauri/src/assets/aic-header.png",
+        "pim-offline-server/ui/public/aic-header.png"
     )
 
     # ----- Legal documents (shipped by every MSI installer) --------------
