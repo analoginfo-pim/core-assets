@@ -19,8 +19,8 @@
 # product's release pipeline -- the committed bitmaps are the deliverable.
 set -euo pipefail
 
-self_dir="$(CDPATH= cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
-repo_root="$(CDPATH= cd -- "${self_dir}/.." && pwd)"
+self_dir="$(CDPATH='' cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+repo_root="$(CDPATH='' cd -- "${self_dir}/.." && pwd)"
 out_dir="${repo_root}/branding/installer"
 mkdir -p "${out_dir}"
 
