@@ -25,3 +25,14 @@ Thumbs.db
 
 # Build artifacts
 *.log
+
+# MaxMind GeoLite2: MSI/lab ship GeoLite2-Country.mmdb from the local build
+# host (Update-MaxMindGeoLite.ps1 → sync → WiX stage). Do not commit .mmdb
+# to git (MaxMind redistribution terms + large binary). Scratch:
+geoip/*.mmdb.tmp
+geoip/*.tar.gz
+*.mmdb
+geoip/*.mmdb.sha256
+
+# MaxMind license key (GitHub secret scanning). Tracked constants omit the key.
+geoip/maxmind-constants.local.toml

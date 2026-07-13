@@ -1,0 +1,21 @@
+# AIC product-default MaxMind GeoLite2 constants (shared across offline server,
+# Mix, firewall/IDS, and other AIC products that consume GeoLite2).
+#
+# LICENSE KEY: Do NOT put the MaxMind license key in this tracked file — GitHub
+# push protection blocks it. Put the key in the gitignored sibling:
+#   geoip/maxmind-constants.local.toml
+# (copy from maxmind-constants.local.toml.example). Scripts and Stage-MaxMind
+# merge the local overlay. License key is never echoed in operator UIs.
+#
+# Operator override (offline server): IAM_GEOIP_MAXMIND_ACCOUNT_ID +
+# IAM_GEOIP_MAXMIND_LICENSE_KEY in pim-app-config — empty restores product default
+# when embedded via build.rs local file or MSI staging.
+#
+# MaxMind GeoLite2 redistribution: do NOT commit GeoLite2-Country.mmdb to git.
+# Populate via scripts/Update-MaxMindGeoLite.ps1 before MSI / lab deploy.
+# See geoip/README.md.
+
+account_id = "1377294"
+license_key = ""
+edition = "GeoLite2-Country"
+download_url = "https://download.maxmind.com/geoip/databases/GeoLite2-Country/download?suffix=tar.gz"

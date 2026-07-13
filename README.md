@@ -32,9 +32,9 @@ text, and generation/sync scripts used across all AIC PIM projects:
 ```
 core-assets/
 ├── certs/
-│   └── localhost-dev/    # Dev / lab TLS bundle (root CA + server + client
-│                         # leaves) shipped with every MSI. See
-│                         # certs/localhost-dev/README.md.
+│   └── localhost-dev/    # Dev / lab TLS bundle
+├── geoip/                # MaxMind GeoLite2-Country.mmdb + product credentials
+├── threat-intel/         # FireHOL / ET Open / AbuseIPDB offline lists
 ├── icons/
 │   ├── desktop/          # Windows ICO, Linux/Mac icons
 │   ├── web/              # SVG favicons, PNG icons for web, manifest.json
@@ -42,11 +42,31 @@ core-assets/
 ├── legal/                # Shared legal text shipped with installers (EULAs)
 ├── logos/                # Full logos and variations
 ├── scripts/
-│   ├── generate-icons.ps1     # Render derivative formats from source SVG
-│   ├── sync-to-projects.ps1   # Push canonical assets to consumer projects
+│   ├── generate-icons.ps1
+│   ├── sync-to-projects.ps1
+│   ├── Update-MaxMindGeoLite.ps1
+│   ├── Update-ThreatIntelLists.ps1
 │   └── create-desktop-icon.ps1
 └── docs/                 # Branding guidelines and usage docs
 ```
+
+### GeoIP + threat intel (shared product seed)
+
+`geoip/` and `threat-intel/` hold MaxMind GeoLite2-Country.mmdb (~9 MB),
+product-default MaxMind credentials (`maxmind-constants.toml`), and offline
+FireHOL / ET Open / AbuseIPDB blocklists for **firewall / IDS / access-control**
+across AIC products (offline server first; Mix later).
+
+- **Refresh:** `scripts/Update-MaxMindGeoLite.ps1` and
+  `scripts/Update-ThreatIntelLists.ps1 -ConfirmDownload …`, then
+  `scripts/sync-to-projects.ps1`.
+- **MSI:** `Build-PimOfflineServerMsi.ps1` stages these into
+  `%ProgramFiles%\AIC\OfflinePimServer\geoip\` and `\threat-intel\`.
+- **First boot / reset:** the offline server copies missing files into
+  ProgramData; on-demand Download/Update remains available.
+- **License:** MaxMind GeoLite2 — ship only inside AIC product channels;
+  rotate credentials if exposed. FireHOL / ET / AbuseIPDB — respect upstream
+  ToS. See `geoip/README.md` and `threat-intel/README.md`.
 
 ### Localhost-dev certificates (new in May 2026)
 

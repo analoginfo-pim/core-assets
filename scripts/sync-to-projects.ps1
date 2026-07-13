@@ -163,6 +163,44 @@ $assetMap = [ordered]@{
     "legal/EULA_AIC_Commercial.rtf" = @(
         "pim-installers/legal/EULA_AIC_Commercial.rtf"
     )
+
+    # ----- GeoIP + threat intel (MSI seed / first-boot ProgramData copy) -----
+    # Ship the real GeoLite2-Country.mmdb (~9 MB) for air-gapped first start.
+    # MaxMind EULA: AIC private assets + product MSI only; do not redistribute
+    # the .mmdb outside AIC product channels without a MaxMind license.
+
+    "geoip/maxmind-constants.toml" = @(
+        "pim-offline-server/assets/geoip/maxmind-constants.toml",
+        "pim-installers/assets/geoip/maxmind-constants.toml"
+    )
+    "geoip/GeoLite2-Country.mmdb" = @(
+        "pim-offline-server/assets/geoip/GeoLite2-Country.mmdb",
+        "pim-installers/assets/geoip/GeoLite2-Country.mmdb"
+    )
+    "geoip/GeoLite2-Country.mmdb.sha256" = @(
+        "pim-offline-server/assets/geoip/GeoLite2-Country.mmdb.sha256",
+        "pim-installers/assets/geoip/GeoLite2-Country.mmdb.sha256"
+    )
+    "threat-intel/firehol/firehol.list" = @(
+        "pim-offline-server/assets/threat-intel/firehol.list",
+        "pim-installers/assets/threat-intel/firehol.list"
+    )
+    "threat-intel/et-open/et-open.list" = @(
+        "pim-offline-server/assets/threat-intel/et-open.list",
+        "pim-installers/assets/threat-intel/et-open.list"
+    )
+    "threat-intel/abuseipdb/abuseipdb.list" = @(
+        "pim-offline-server/assets/threat-intel/abuseipdb.list",
+        "pim-installers/assets/threat-intel/abuseipdb.list"
+    )
+    "threat-intel/manifest.toml" = @(
+        "pim-offline-server/assets/threat-intel/manifest.toml",
+        "pim-installers/assets/threat-intel/manifest.toml"
+    )
+    "threat-intel/overrides.toml" = @(
+        "pim-offline-server/assets/threat-intel/overrides.toml",
+        "pim-installers/assets/threat-intel/overrides.toml"
+    )
 }
 
 # Tree-style sync targets: copy an entire core-assets directory recursively
@@ -184,14 +222,28 @@ $treeMap = [ordered]@{
 
 # ---------------------------------------------------------------------------
 # Drift detection: ensure $assetMap keys exist in core-assets first.
-# ---------------------------------------------------------------------------
+# Optional keys (populated by Update-MaxMindGeoLite.ps1 on the build host):
+$optionalAssetKeys = @(
+    'geoip/GeoLite2-Country.mmdb',
+    'geoip/GeoLite2-Country.mmdb.sha256'
+)
 $missingSources = @()
+$skippedOptional = @()
 foreach ($rel in $assetMap.Keys) {
     $src = Join-Path $repoRoot $rel
-    if (-not (Test-Path -LiteralPath $src)) { $missingSources += $rel }
+    if (-not (Test-Path -LiteralPath $src)) {
+        if ($optionalAssetKeys -contains $rel) {
+            $skippedOptional += $rel
+        } else {
+            $missingSources += $rel
+        }
+    }
 }
 if ($missingSources.Count -gt 0) {
     throw "Sources missing from core-assets: $([string]::Join('; ', $missingSources))"
+}
+if ($skippedOptional.Count -gt 0) {
+    Write-Warning ("Optional GeoIP sources missing (run Update-MaxMindGeoLite.ps1 before MSI): {0}" -f ($skippedOptional -join '; '))
 }
 
 # ---------------------------------------------------------------------------
@@ -200,6 +252,7 @@ if ($missingSources.Count -gt 0) {
 $copied = 0; $skipped = 0; $missingDestRoots = @()
 foreach ($rel in $assetMap.Keys) {
     $src = Join-Path $repoRoot $rel
+    if (-not (Test-Path -LiteralPath $src)) { continue }
     $srcHash = (Get-FileHash $src -Algorithm SHA1).Hash
     foreach ($destRel in $assetMap[$rel]) {
         $dest = Join-Path $WorkspaceRoot $destRel
