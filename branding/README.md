@@ -11,6 +11,18 @@ here.
 | ---- | ------- | ------- |
 | `aic-about.png` | `pim-offline-client/assets/aic-about.png` | "About" dialog hero image (Win32 admin GUI / agent). |
 | `aic-header.png` | All Tauri configurators / elevation UIs (`pim-offline-client-configurator-tauri`, `pim-offline-client-elevate-tauri`, `pim-offline-server-configurator-tauri`); also `pim-offline-server/ui/public/aic-header.png` for the web login page and app chrome. | Top-of-window / login header banner. |
+| `installer/aic-installer-banner.bmp` | `mix-server/wix/assets/` (WiX `WixUIBannerBmp`) | 493x58 24-bit top banner on interior MSI wizard pages. |
+| `installer/aic-installer-dialog.bmp` | `mix-server/wix/assets/` (WiX `WixUIDialogBmp`) | 493x312 24-bit Welcome/Exit dialog background. |
+
+## Installer wizard bitmaps (`installer/`)
+
+WiX (WixUI dialog sets) requires 24-bit BMP artwork at fixed pixel sizes. These
+are generated from the AIC brand by
+[`../scripts/generate-installer-banners.sh`](../scripts/generate-installer-banners.sh)
+(ImageMagick) and distributed via `../scripts/sync-to-projects.ps1`. The banner
+keeps its left side blank for the theme's title text; the dialog keeps a navy
+branding strip on the left and a white field on the right for the welcome text.
+Regenerate with `bash ../scripts/generate-installer-banners.sh`, then re-sync.
 
 ## Adding new in-app art
 
