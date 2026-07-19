@@ -16,7 +16,14 @@ intel, and later Mix / firewall / IDS consumers.
 - **FireHOL** aggregates third-party lists — respect each upstream license.
 - **ET Open** — Proofpoint Emerging Threats redistribution terms.
 - **AbuseIPDB** — account + Terms of Service; API updates need an operator key
-  (never commit AbuseIPDB API keys here). Snapshots may be fixture/subset only.
+  (never commit AbuseIPDB API keys here). Without a key, `abuseipdb.list` stays
+  a small RFC 5737 fixture; with `-DownloadAbuseIpdb` the blacklist snapshot
+  (up to the API limit) is the distribution seed.
+
+**FireHOL level1** and **ET Open** full public lists are the default seed for
+every AIC Offline Server install (via MSI / Program Files → ProgramData).
+Tiny fixtures under product `tools/threat-intel-fixtures/` are for unit tests
+only — never for ProgramData.
 
 These lists are intended for **firewall / IDS / access-control** use across
 AIC products, not for redistribution outside AIC deployments.
