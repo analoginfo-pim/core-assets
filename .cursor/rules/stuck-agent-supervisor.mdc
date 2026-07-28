@@ -1,0 +1,168 @@
+---
+description: Parent supervisors must unstick stalled subagents (planning loops) without explore fan-out
+alwaysApply: true
+---
+
+# Stuck-agent supervisor (parent duty)
+
+Parents that spawn `Task` / subagents are responsible for detecting
+**stuck children** and unsticking or abandoning them. A stuck child burns
+credits and blocks the slice while the UI shows "planning next moves"
+with no tool calls and no deliverable.
+
+This rule complements
+[`agent-slice-discipline.mdc`](agent-slice-discipline.mdc) (one slice,
+stop read-loops),
+[`stop-before-retry.mdc`](stop-before-retry.mdc) (do not retry structural
+stalls), and
+[`auto-model-only.mdc`](auto-model-only.mdc) (no Opus fan-out / retry
+loops). Prefer **AUTO**. Never pin Opus/Max to "supervise" or unstick.
+
+## The rule
+
+> **When a child is stuck, the parent interrupts once with a stop-planning
+> prompt. If the child still fails to deliver, abandon that child and
+> finish the slice in the parent (or at most one AUTO replacement worker).
+> Never spawn explore fan-out while a sibling is already stuck.**
+
+## Stuck symptoms (any one is enough)
+
+Treat a child as stuck when **any** of the following holds for a long
+stretch with no user-visible progress:
+
+1. **Planning stall** — UI / transcript shows "planning next moves" (or
+   equivalent) with **no tool calls** and **no final deliverable**.
+2. **Read/Grep loop** — two or more consecutive turns of only
+   `Read` / `Grep` / `SemanticSearch` / plan re-discovery with **no**
+   `Write` / `StrReplace` / `Shell` edit (or equivalent mutation) and no
+   checklist-style answer. Matches the stop rules in
+   [`agent-slice-discipline.mdc`](agent-slice-discipline.mdc) §3.
+3. **Lingering with empty transcript growth** — child remains "running"
+   while the transcript gains only thinking / status updates, not tool
+   results or a DONE checklist.
+4. **Repeated same-file Reads** without an intervening edit (unless
+   continuing a prior `offset`/`limit` read of one file).
+
+Wall-clock heuristic for parents that can see timestamps: idle **> ~3–5
+minutes** with no tool result is stuck. Exact minutes matter less than
+"no tools + no deliverable while still claimed running."
+
+## Required parent actions
+
+### Step 1 — Interrupt once (unstick prompt)
+
+Use `Task` with `interrupt: true` (or the product's interrupt affordance)
+and a **short** stop-planning prompt. Do **not** restate the full plan.
+
+Example interrupt prompt:
+
+```text
+STOP PLANNING. Deliver NOW from what you already know.
+Return a short DONE checklist (done / deferred / blocked) for THIS slice only.
+No more exploration, no more Read/Grep loops, no more planning.
+If you lack facts, mark blocked with the one smallest missing path — then stop.
+```
+
+Omit `model` (AUTO only). Do not pin Opus.
+
+### Step 2 — After one failed unstick, abandon
+
+If the child still does not deliver after that single interrupt (still
+planning, still Read-only, still no checklist):
+
+1. **Abandon** the child — do not interrupt again; do not resume the same
+   stuck agent ID in a retry loop.
+2. **Finish the slice in the parent** with direct tools, **or** spawn
+   **at most one** replacement worker on AUTO with a narrower prompt and
+   an explicit "no planning — edit or answer immediately" instruction.
+3. Report status to the user in one line:
+   `Child <id> stuck → interrupted → abandoned; finishing in parent.`
+
+Per [`auto-model-only.mdc`](auto-model-only.mdc): never reopen failed
+workers in a retry loop; never switch to an expensive model to "save"
+them.
+
+### Step 3 — No fan-out while stuck
+
+While any sibling is stuck (or mid-unstick):
+
+- **Forbidden:** spawning additional `explore` / `generalPurpose` workers
+  "to help" or to re-map the plan.
+- **Forbidden:** parallel plan-discovery Tasks.
+- Allowed: the single interrupt, then parent-owned finish or one
+  replacement worker after abandon.
+
+## Multitask / wake-from-sleep status check
+
+There is **no always-on supervisor daemon** by default. The always-apply
+rule above is parent duty only. An optional Cursor Automation named
+"Stuck agent supervisor" exists only if Phil created and **enabled** it
+in Automations — never assume it is running.
+
+When the user says the machine slept, agents are stuck, or asks whether
+a supervisor is running, a **parent coordinator in Multitask Mode MUST**:
+
+1. **Status-check every active child** (idle wall-clock, planning stall,
+   empty transcript growth, cold resume after sleep).
+2. **Interrupt once** per stuck child (Step 1), then **abandon cold IDs**
+   that do not deliver after that interrupt — do not resume abandoned
+   agent IDs in a retry loop (same pattern as abandoning `18e6f253`).
+3. Finish the slice in the parent or with at most one AUTO replacement.
+   Do **not** wait for a background supervisor process that may not exist.
+4. Answer plainly: rule exists; no supervisor process unless the
+   Automation is enabled; what was interrupted / abandoned.
+
+## Forbidden constructs
+
+- Leaving a child in "planning next moves" while the parent waits
+  indefinitely or only polls the transcript.
+- Second interrupt / third resume of the same stuck ID after Step 1
+  failed.
+- Explore fan-out when a sibling is already stuck.
+- Pinning Opus / Max / thinking-high to supervise, unstick, or replace
+  a stuck child (unless the user named that model in the same message).
+- Replacing a stuck explore worker with a fleet of new explore workers.
+
+## Optional local watcher (secondary complement that actually works)
+
+The **project always-apply rule** (this file) is the primary, reliable
+enforcement surface in chat. Parents MUST keep doing Steps 1–3 and the
+wake-from-sleep status check even when a watcher exists.
+
+### Why the Cursor Cloud Automation fails
+
+Cursor Automations cron runs as a **Cloud Agent on a remote VM**. That
+host does **not** have
+`C:\Users\phil\.cursor\projects\c-analog-pim\agent-transcripts`, so it
+cannot scan local Multitask transcripts or `Task`-interrupt local
+parents. Treat the Cloud Automation draft named **"Stuck agent
+supervisor"** as **non-functional for unsticking** unless Cursor later
+ships a true local Automations runtime. Prefer disabling it.
+
+### Working backup — local Windows Scheduled Task
+
+Install once on the workstation (Phil Enable path):
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File `
+  C:\analog-pim\.cursor\automations\Install-StuckAgentLocalWatcher.ps1 `
+  -IntervalMinutes 5 -RunOnceNow
+```
+
+Task name: `AIC-StuckAgentLocalWatcher`. It runs
+`Scan-StuckAgents.ps1`, writes
+`C:\analog-pim\.cursor\automations\local-watcher-state\latest-report.md`,
+and queues one interrupt-request markdown per newly stuck ID under
+`...\interrupt-queue\`. The **owning Multitask parent** still performs
+the actual `Task` interrupt (AUTO only). Details:
+[`README-local-watcher.md`](../automations/README-local-watcher.md).
+
+Do not treat any supervisor as a substitute for parent duty in the
+active chat.
+
+## Origin
+
+2026-07-26 — binder parent `f27ddfcc` child `68e611d9` lingered in
+planning with no deliverable; interrupt + stop-planning recovered a
+minimal DONE checklist. Codified so parents act without waiting for
+operator notice.
