@@ -1,0 +1,125 @@
+---
+description: Shared git working trees are multi-agent; never revert or sweep-stage sibling work
+alwaysApply: true
+---
+
+# Shared working tree is not yours
+
+This workspace (`c:\analog-pim`) is worked on by many concurrent agents
+sharing **one git working tree** per repo. An agent that treats the tree
+as private — reverting to "get a clean base", or staging everything in
+sight — silently destroys or misattributes a sibling's unfinished work.
+There is no warning, no conflict marker, and often no recovery path.
+
+This rule complements
+[`auto-commit-push.mdc`](auto-commit-push.mdc) (commit workflow and
+hard push guardrails),
+[`agent-slice-discipline.mdc`](agent-slice-discipline.mdc) (one slice,
+file-path ownership), and
+[`enterprise-compliance.mdc`](enterprise-compliance.mdc) §6 (FedRAMP
+commit hygiene — a reviewer reading `git log -p` on a security-relevant
+file must understand why each line changed).
+
+## The rule
+
+> **An agent may only create, modify, stage, or commit files inside its
+> own slice. The working tree is shared with concurrent agents who have
+> uncommitted work in it at any moment. Commit early with explicit
+> per-path staging — never by `git add -A`, and never by holding a large
+> batch of finished work uncommitted for a long time.**
+
+These two observed failures pull in opposite directions. The fix for
+silent destruction is "commit early". The fix for sweeping a sibling's
+files into your commit is "never stage what you do not own". Both are
+satisfied by the same practice: **commit early, by explicit path only**.
+
+## Forbidden outright
+
+These destroy sibling work with no recovery, or poison the audit trail:
+
+- `git checkout -- .` / `git checkout -- <path you do not own>` /
+  `git restore` across the tree (any form that discards uncommitted
+  changes you did not author)
+- `git reset --hard` in any form
+- `git stash` (it removes sibling changes from the tree just as
+  effectively as a revert, and the sibling has no idea where they went)
+- `git clean -fd`
+- `git revert` of a commit you do not own
+- `git add -A` / `git add .` / `git commit -a`
+- Force-push in any form, and any history rewrite (see also
+  [`auto-commit-push.mdc`](auto-commit-push.mdc))
+- Deleting or reverting a file to "get a clean base" for your own
+  build or test run
+
+## Required practice
+
+- **Stage by explicit path, every time.** `git add path/to/file` only
+  for paths that belong to your slice. Never let `status` decide the
+  commit set.
+- **Commit early and in small coherent units.** Do not hold a large
+  body of finished work uncommitted — in this tree, uncommitted work is
+  at risk, and observed silent loss is the reason. Prefer several small
+  commits over one long-lived dirty tree.
+- **Keep genuinely unfinished work unstaged** so a sibling's
+  explicit-path commit cannot pick it up.
+- **If you find a file staged that is not yours**, unstage that path
+  (`git restore --staged <path>`) rather than committing it or deleting
+  its contents. Unstaging is non-destructive; the sibling's working-tree
+  changes survive.
+- **If your build fails because of an error in a file you do not own**,
+  report it to the parent with the exact path and error and keep working
+  on what you can. Do not fix it and do not revert it.
+- **If you believe the tree genuinely must be reverted**, stop and ask
+  the parent first. State what you want to revert and why.
+
+## Why the obvious workaround is wrong
+
+Reverting to get a clean build base feels harmless because your own work
+is safe and the tree looks tidy afterward. It is not harmless. Uncommitted
+sibling work is invisible to you — `git status` after the revert shows a
+clean tree, which looks like success and is actually the evidence of the
+loss. Compile errors in files you do not own are a **routing problem**
+(escalate the path and error to the parent), not a tree-state problem.
+
+## Worked violation → fix
+
+**Violation** (observed 2026-07-28): an agent hits 13 compile errors in
+files owned by other concurrent agents, runs `git checkout -- .` to get
+a clean base for its own build, and silently wipes a sibling's finished
+but uncommitted edits. The sibling's next `git status` is clean; the
+work is gone with no conflict and no recovery. Separately, sweeping
+`git add -A` / committing whatever was already staged pulled
+`agentless_common.rs`, `agentless_winrm.rs`, and later
+`agentless_remote_ops` / `privilege_jobs` remote SSH/WinRM work into
+unrelated documentation commits — history that still attributes
+security-relevant rotation and elevation code to a docs subject line.
+
+**Fix**:
+
+1. Report the foreign compile errors to the parent with exact paths and
+   messages; do not touch those files.
+2. Stage and commit only your own completed paths by explicit
+   `git add <path>` (see the temp-file commit pattern in
+   [`auto-commit-push.mdc`](auto-commit-push.mdc)).
+3. Leave unfinished work unstaged; continue the slice.
+4. If a foreign path is already staged, `git restore --staged <path>`
+   before committing — never include it, never delete its contents.
+
+## Cross-references
+
+- [`auto-commit-push.mdc`](auto-commit-push.mdc) — commit/push workflow,
+  never force-push, never `--no-verify`, never blind `git add -A`
+- [`agent-slice-discipline.mdc`](agent-slice-discipline.mdc) — one
+  slice per agent; file-path ownership
+- [`stuck-agent-supervisor.mdc`](stuck-agent-supervisor.mdc) — parent
+  duty when a child is blocked on foreign-tree damage
+- [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §6 — commit
+  hygiene as a FedRAMP audit-trail requirement
+
+## Origin
+
+2026-07-28 — (1) a sibling's `git checkout -- .` silently destroyed
+another agent's finished uncommitted work; (2) twice, staged foreign
+paths (`agentless_*`, `privilege_jobs` remote ops) rode into unrelated
+docs commits. Codified so agents commit early by explicit path and never
+treat the shared tree as private.
