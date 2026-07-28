@@ -136,16 +136,48 @@ propagate by inheritance.
 ### Budget-pressure behavior
 
 When the operator signals that expensive-model budget is constrained
-(credit burn, "use AUTO", usage percentage, or equivalent), the permitted
-set above **narrows further to acceptance review only**. Diagnosis of a
-failed UI fix waits until either budget recovers or the operator asks for
-it.
+(credit burn, "use AUTO", usage percentage, or equivalent), Opus use
+**narrows in breadth, not in the ability to fix a known-broken page**.
 
-As of **2026-07-28** the operator reported **90% Opus usage** and asked for
-AUTO wherever possible. Until that pressure is lifted or the operator asks
-otherwise, treat diagnosis (item 2 in the permitted set) as deferred; Opus
-remains available for rendered-acceptance review and for cases the operator
-names in the same message.
+Under budget pressure, Opus remains **permitted** for:
+
+1. **Acceptance review of a rendered proof artifact** (one focused pass).
+2. **Diagnosis of a UI layout defect that a cheaper model has already
+   attempted and failed to fix** — this is exactly the "no other model
+   works" case. Bound it: **one focused pass** on the specific defect,
+   scoped to diagnosis and the fix direction, not a general re-review of
+   the page or a rewrite of the feature. Cite the failed cheap attempt.
+3. **Cases the operator names explicitly in the same message.**
+
+What budget pressure **removes** is breadth and waste: speculative Opus
+review, second opinions, Opus owning implementation end to end, fleet
+fan-out, and retry loops on expensive models. It does **not** remove the
+ability to unblock a defect that is actually broken after a cheap pass
+failed.
+
+As of **2026-07-28** the operator reported **90% Opus usage**, asked for
+AUTO wherever possible, and added: **"Do not sacrifice quality
+completion."** The throttle eliminates waste; it does not license
+incomplete or unverified work.
+
+### Do not sacrifice quality completion (anti-corner-cutting)
+
+Model throttling never justifies:
+
+- Reducing the scope of a slice, dropping acceptance criteria, or leaving
+  a feature partly wired in order to finish sooner.
+- Skipping or weakening the visual-proof artifact required by
+  [`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc).
+- Reporting work as done when verification is pending — pending must be
+  reported as pending, with the reason and the blocker named.
+- Choosing a cheaper model for work it will predictably get wrong, then
+  shipping the result unreviewed. If a cheap pass produces something
+  unusable, that is the escalation case (item 2 above), not an acceptable
+  outcome.
+
+**Ordering:** correctness and completeness first, then cost. Cost
+discipline decides *which model* does a piece of work and *how many
+passes* it gets — never *whether* the work is finished or verified.
 
 This override does **not**:
 
@@ -166,7 +198,8 @@ This override does **not**:
 2026-07-15 Opus overspend on CMMC enclave / SBOM / KMS background Task fleet
 under parent chat `072a9d53-3dd4-4a90-9749-4e2ac1d5de47`.
 Visual-design precedence added 2026-07-27 per operator directive.
-2026-07-28 throttle: operator reported 90% Opus usage; carve-out narrowed to
-rendered acceptance review, failed-fix diagnosis (deferred under budget
-pressure), and operator-named cases; inheritance amplifier and
-cheap-implement / expensive-accept sequencing added.
+2026-07-28 throttle: operator reported 90% Opus usage and asked for AUTO
+wherever possible without sacrificing quality completion; carve-out
+narrowed to rendered acceptance review, bounded failed-fix diagnosis, and
+operator-named cases; inheritance amplifier, cheap-implement /
+expensive-accept sequencing, and anti-corner-cutting clause added.

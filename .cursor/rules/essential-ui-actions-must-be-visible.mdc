@@ -290,6 +290,19 @@ become an excuse to skip visual proof — an affirmative claim that an
 element is present or correct without a named artifact is still treated
 as "not done".
 
+**Do not sacrifice quality completion.** Model throttling never justifies
+reducing slice scope, dropping acceptance criteria, leaving a feature
+partly wired, skipping or weakening the visual-proof artifact, or
+reporting work as done when verification is pending (pending must be
+reported as pending, with reason and blocker named). Choosing a cheaper
+model for work it will predictably get wrong, then shipping the result
+unreviewed, is forbidden — an unusable cheap pass is the Opus escalation
+case, not an acceptable outcome. **Ordering:** correctness and
+completeness first, then cost. Cost discipline decides *which model* and
+*how many passes* — never *whether* the work is finished or verified.
+See the matching anti-corner-cutting clause in
+[`auto-model-only.mdc`](auto-model-only.mdc).
+
 Resolved policy both rules agree on:
 
 | Work | Model |
@@ -309,8 +322,11 @@ Binding consequences:
    wiring an export — uses `cursor-grok-4.5-high-fast` or AUTO. Opus
    is for **acceptance of the rendered artifact** and for **diagnosis
    after a cheaper attempt failed** (cite the failed attempt). Under
-   budget pressure, diagnosis waits per
-   [`auto-model-only.mdc`](auto-model-only.mdc).
+   budget pressure that diagnosis case remains **permitted but
+   bounded** — one focused pass on the specific defect (diagnosis and
+   fix direction), not a general page re-review or feature rewrite —
+   per [`auto-model-only.mdc`](auto-model-only.mdc). Budget pressure
+   removes breadth and waste, not the ability to fix a known-broken page.
 3. Any reply claiming a UI element or feature is available, visible,
    fixed, or working must name its evidence artifact — the Playwright
    spec and assertion, or the screenshot path — inline. Affirmative
