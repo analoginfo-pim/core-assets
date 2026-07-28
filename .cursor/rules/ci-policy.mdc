@@ -1,0 +1,84 @@
+---
+description: No CI runs on git push in this workspace. Do not add ci.yml / build / fmt / clippy / test workflows triggered by push or pull_request unless the user explicitly asks.
+alwaysApply: true
+---
+
+# CI policy: no push-triggered CI in this workspace
+
+The owner of the AIC PIM workspace has explicitly removed every push-triggered
+CI workflow (`cargo fmt --check`, `cargo build`, `cargo clippy`, `cargo test`,
+JS test runners, etc.) from every repository under `c:\analog-pim\`. Push CI
+is **not** part of the commit process and **must not** be re-introduced
+without an explicit, in-conversation request from the user.
+
+## What is forbidden
+
+Do not, on your own initiative or as a side effect of "scaffolding" /
+"cleanup" / "best practice":
+
+1. Add or restore any GitHub Actions workflow file with a `push:` trigger
+   that runs build / fmt / clippy / test / lint / typecheck / coverage on a
+   project repo. (`name: ci`, `name: build`, `name: lint`, etc.)
+2. Add or restore any workflow with a `pull_request:` trigger that runs the
+   same gates — even if it doesn't trigger on push.
+3. Add a `.git/hooks/pre-commit`, `.git/hooks/pre-push`, `.husky/`,
+   `.cargo-husky` or `.pre-commit-config.yaml` that runs fmt / clippy /
+   test / lint locally before commit or push. The whole purpose of the
+   policy is that commits must be friction-free.
+4. Re-add a `cargo fmt --check` / `prettier --check` / `eslint --max-warnings 0`
+   gate anywhere that runs automatically on push or commit.
+
+## What IS allowed
+
+The policy is about *push-triggered gating*, not about the existence of
+automation in general. The following continue to be fine:
+
+1. **Release / publish workflows** triggered by tags or by
+   `workflow_dispatch` only. Examples we keep:
+   - `pim-orm/.github/workflows/publish.yml`
+   - `pim-ui-kit/.github/workflows/publish.yml`
+   - `pim-orm-offline/.github/workflows/publish.yml`
+   - `pim-offline-server/.github/workflows/publish.yml`
+   - `pim-offline-client/.github/workflows/release-windows-signed.yml`
+   - `pim-offline-server/.github/workflows/release-windows-signed-binaries.yml`
+   - `pim-offline-server/.github/workflows/ui-e2e.yml` (currently scheduled / manual; do not switch it back to `push`).
+2. **Manual / `workflow_dispatch`-only** maintenance jobs (regenerate
+   icons, sync core-assets, run a perf benchmark on demand). The
+   triggering surface must be a button on the GitHub Actions tab — never
+   `push` or `pull_request`.
+3. **Local commands** the user runs explicitly (`cargo fmt`, `cargo
+   clippy`, `cargo test`, `npm test`). Those are tools, not policy.
+
+## When a CI gate would actually help
+
+If during a session you notice a real reason a push-CI gate would be
+useful — e.g. recurring regressions in one specific area — **stop and
+ask the user**. Phrase it as a question, not a recommendation:
+
+> "I notice we keep breaking X on commit. Would you like me to add a
+>  `workflow_dispatch`-only check the team can run on demand, or are
+>  you fine continuing without?"
+
+Never volunteer "I added a CI check for this" after the fact.
+
+## Default for new projects in the workspace
+
+When the user (or you, on their behalf) creates a NEW Cargo / Tauri / Node
+crate inside `c:\analog-pim\`, the default scaffold has:
+
+- No `.github/workflows/ci.yml`.
+- No pre-commit / pre-push hooks.
+- A README that does NOT promise CI badges or "tests run on every push".
+
+Release-only workflows (tag-triggered) may be added when the project
+ships its first artefact, on the user's request.
+
+## Rationale (so future agents understand the why)
+
+The user wants a friction-free commit flow on a multi-repo workspace they
+own end-to-end. CI failures on `cargo fmt --check`, transient flakes in
+`cargo test`, and runner-image deprecations were creating a steady drip
+of red badges that did not improve code quality but did interrupt
+forward progress. They explicitly removed push CI to eliminate that
+class of interruption. Re-adding it without permission would undo that
+deliberate decision.

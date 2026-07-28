@@ -1,0 +1,264 @@
+---
+description: Every reachable Err(_) arm in production code in this workspace must log through tracing (warn for transient, error for definitive) with op-name, inputs (privacy-appropriate), error chain (anyhow::Context), and recovery action. An early return Err(e); without a paired tracing::warn / tracing::error is a clippy-style deny — silent failures are anti-flake bugs, not "the caller will log".
+alwaysApply: true
+---
+
+# Silent failure is a bug (anti-flake clause 1)
+
+The AIC PIM workspace ships long-running daemons and elevated
+configurators. The
+[`no-panic.mdc`](no-panic.mdc) rule covers the panic case: every
+recoverable failure must propagate via `Result`, not abort. But
+"propagate" is not "log" — and the post-2026-05-19 win32
+configurator audit caught several call sites where a daemon's
+inner task returned `Err(_)` to its caller, the caller forwarded
+the error up another level, and three levels later the error
+landed in a top-level `select!` arm that just dropped it with a
+`Err(_) => {}`. The daemon kept running. The sync silently
+stopped working. The configurator showed "last sync: 6 hours
+ago" but no failure indication. This is the flake class this
+rule targets.
+
+## The rule
+
+> **Every reachable `Err(_)` arm in production code in this
+> workspace logs through `tracing` (`warn!` for transient,
+> `error!` for definitive) with the operation name, the
+> relevant inputs (privacy-appropriate — secrets masked per
+> [`enterprise-compliance.mdc`](enterprise-compliance.mdc)
+> §5), the error chain (wrapped via `anyhow::Context` or a
+> typed `thiserror` enum), and the recovery action taken.
+> An early `return Err(e);` without a paired
+> `tracing::warn!` / `tracing::error!` at or above the
+> originating site is a bug.**
+
+"Caller will log it" is not acceptable. Errors lose context at
+each `?` boundary; by the time the error reaches the top of
+the call stack, the original op name and inputs are usually
+gone. Log at the **originating site** (the place that knows
+the op name and inputs) AND let the error propagate. The
+top-level handler logs the propagated chain again for
+correlation; the two records are not redundant — they answer
+different questions ("what failed" vs "how did it unwind").
+
+## Required call-site pattern
+
+```rust
+async fn sync_one_cycle(
+    http: &HttpClient,
+    state: &ServiceState,
+) -> Result<SyncOutcome, SyncError> {
+    let req = build_sync_request(state)
+        .context("build sync request")?;  // logs at site below if it fails
+    let resp = match http.execute_with_budget(req, PER_ATTEMPT).await {
+        Ok(r) => r,
+        Err(HttpError::Timeout { url, elapsed, budget }) => {
+            tracing::warn!(
+                op = "sync_one_cycle",
+                %url,
+                ?elapsed,
+                ?budget,
+                attempt = state.consecutive_failures + 1,
+                recovery = "retry next cycle; will pause after MAX_FAILURES",
+                "sync HTTP request exceeded per-attempt budget",
+            );
+            return Err(SyncError::Transport(format!("timeout after {:?}", elapsed)));
+        }
+        Err(HttpError::Transport { url, source, elapsed }) => {
+            tracing::warn!(
+                op = "sync_one_cycle",
+                %url,
+                ?elapsed,
+                error = format!("{:#}", anyhow::Error::new(source)),
+                attempt = state.consecutive_failures + 1,
+                recovery = "retry next cycle",
+                "sync HTTP transport error",
+            );
+            return Err(SyncError::Transport("transport failure".into()));
+        }
+        Err(other) => {
+            tracing::error!(
+                op = "sync_one_cycle",
+                error = ?other,
+                recovery = "abort cycle; mark unhealthy in runtime_status.json",
+                "sync HTTP request failed with unhandled error variant",
+            );
+            return Err(SyncError::Unhandled(other.to_string()));
+        }
+    };
+    handle_response(resp).await
+}
+```
+
+Note the recovery action is named in every log record. The
+operator reading the rolling log can answer "is the daemon
+trying again?" without source access.
+
+## Forbidden constructs
+
+- `Err(_) => {}` / `let _ = future.await;` on a non-trivial
+ future. The wildcard / discard is the silent-failure shape
+ the rule targets. Match on the specific error variant and
+ log.
+- `return Err(e);` without a `tracing::warn!` / `tracing::error!`
+ at the same site (and outside `#[cfg(test)]`). The single
+ exception is when the function name itself is the op name
+ and the immediate caller has its own log site that knows
+ the inputs.
+- `Result<_, _>` returned from a top-level `tokio::spawn` task
+ body without an outer wrapper that catches the result and
+ logs on `Err`. A spawned task whose `JoinHandle` is dropped
+ swallows panics AND `Err` returns silently.
+- `tracing::debug!` / `tracing::trace!` as the only log on a
+ reachable error path. Errors are not debug noise; they are
+ either `warn!` (transient — retry will likely succeed) or
+ `error!` (definitive — manual intervention needed).
+- A `tracing::error!` followed by `Ok(())` "to avoid breaking
+ the loop". If the error was definitive enough to log at
+ `error!`, the loop must reflect the failure in its return
+ type, its state machine, or its `runtime_status.json`
+ fingerprint (R7) — not silently continue.
+- `.map_err(|_| MyError::Something)` discarding the source
+ error. Always preserve the source: `.map_err(|e|
+ MyError::Something { source: e.into() })` or
+ `.context("doing X")?`.
+
+## Required log shape
+
+Every error log record uses structured fields, not message
+interpolation:
+
+```rust
+tracing::warn!(
+    op = "snake_case_op_name",
+    target_kind = "tenant" /* or "agent", "endpoint", "settings_file" */,
+    target = %target_name_or_id_or_url_redacted,
+    error = format!("{:#}", err),     // full anyhow chain
+    recovery = "retry|skip|pause|abort_and_unhealth",
+    "human-readable summary in US English",
+);
+```
+
+This shape is searchable in Loki / Splunk / Datadog and
+correlates with the Windows Event Log entries (which use the
+same field names per
+[`enterprise-compliance.mdc`](enterprise-compliance.mdc) §5).
+
+## Worked violation → fix — the scheduler's HTTP loop
+
+**Violation** (today, conceptual, in
+`pim-offline-client/src/service_scheduler/`):
+
+```rust
+loop {
+    tokio::select! {
+        _ = shutdown.changed() => break,
+        _ = ticker.tick() => {
+            if let Err(_) = sync_one_cycle(&http, &state).await {
+                state.consecutive_failures += 1;
+            }
+        }
+    }
+}
+```
+
+`sync_one_cycle` returns a rich error variant; the loop discards
+it. The configurator shows `consecutive_failures = 47` six
+hours later and the operator has no idea why. The Windows Event
+Log has nothing. Loki shows nothing. The log file shows nothing
+above `debug` level.
+
+**Fix**:
+
+```rust
+loop {
+    tokio::select! {
+        biased;
+        _ = shutdown.changed() => {
+            tracing::info!(op = "sync_loop", "yielding to shutdown");
+            break;
+        }
+        _ = ticker.tick() => {
+            match sync_one_cycle(&http, &state).await {
+                Ok(outcome) => {
+                    tracing::info!(
+                        op = "sync_loop",
+                        records = outcome.records,
+                        elapsed_ms = outcome.elapsed.as_millis() as u64,
+                        "sync cycle complete",
+                    );
+                    state.consecutive_failures = 0;
+                    state.last_success = Some(OffsetDateTime::now_utc());
+                }
+                Err(SyncError::Transport(msg)) => {
+                    state.consecutive_failures += 1;
+                    tracing::warn!(
+                        op = "sync_loop",
+                        consecutive_failures = state.consecutive_failures,
+                        error = %msg,
+                        recovery = if state.consecutive_failures < MAX_FAILURES {
+                            "retry on next tick"
+                        } else {
+                            "pausing scheduler; mark unhealthy"
+                        },
+                        "sync cycle failed (transport)",
+                    );
+                    if state.consecutive_failures >= MAX_FAILURES {
+                        runtime_status::mark_unhealthy("sync", &msg);
+                        scheduler::pause(&shutdown).await;
+                    }
+                }
+                Err(SyncError::Unhandled(msg)) => {
+                    state.consecutive_failures += 1;
+                    tracing::error!(
+                        op = "sync_loop",
+                        error = %msg,
+                        recovery = "pause scheduler; require operator intervention",
+                        "sync cycle failed with unhandled error",
+                    );
+                    runtime_status::mark_unhealthy("sync", &msg);
+                    scheduler::pause(&shutdown).await;
+                }
+            }
+        }
+    }
+}
+```
+
+Every error path logs. The operator's "last sync 6 hours ago"
+question is now answerable from the rolling log alone, no
+debugger required. The configurator's runtime_status badge
+(R7) AND the Windows Event Log (R9) reflect the unhealthy
+state.
+
+## Where this is currently enforced
+
+| Surface | Status |
+| --- | --- |
+| `pim-offline-client` service scheduler | Wave 1 Track D adds the structured error-log shape |
+| `pim-offline-client` HTTP client error handling | Wave 1 Track D |
+| `pim-offline-server` admin API handlers | partial — already structured at the route handler level; audit ongoing for inner helpers |
+| `pim-offline-server` background jobs (audit log writer, OTLP exporter) | audit ongoing |
+| All four configurator GUIs | inherits library logging shape via `pim-app-config-cli::dialog_helpers` |
+| `pim-app-config` CLI (`set` / `unset` / `get` / `orphans`) | inherits via R2 exit codes |
+
+## Cross-references
+
+- [`no-panic.mdc`](no-panic.mdc) — the panic policy this rule
+ complements; both rules together cover "fail loudly enough
+ to notice, never by aborting".
+- [`bounded-network-io-in-drains.mdc`](bounded-network-io-in-drains.mdc)
+ (R4) — the scheduler example above is the canonical
+ worked example for R4 too; the rules are designed to be
+ read together.
+- [`runtime-status-flags-test-fixtures.mdc`](runtime-status-flags-test-fixtures.mdc)
+ (R7) — `runtime_status::mark_unhealthy` is the surface this
+ rule references for "make the failure visible in the
+ configurator".
+- [`service-lifecycle-logs.mdc`](service-lifecycle-logs.mdc) —
+ the start/stopping/stopped log records consume the same
+ structured fields as this rule's per-cycle records.
+- [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §5 —
+ the masking contract every error-log site must honor for
+ password / token / activation-code / DB-URL inputs.
+- Origin: post-2026-05-19 win32 configurator audit (Wave 1).

@@ -1,0 +1,62 @@
+---
+description: Zero process environment variables for configuration, secrets, dev gates, or test setup — use pim-app-config (registry/keyring) and CLI flags only.
+alwaysApply: true
+---
+
+# No environment variables (product-wide)
+
+`pim-app-config` exists so **every** operator-facing setting, secret, dev
+gate, and test parameter resolves through **platform storage** (Windows
+HKLM + Secrets / Credential Manager; Linux/macOS `/etc` + keyring) or
+through **explicit CLI flags and fixture paths** — never through process
+environment variables.
+
+## The rule
+
+> **Do not read, write, or document `std::env::var`, `$env:…`,
+> `export …`, or runtime `process.env` for product configuration,
+> authentication, IPC path overrides, dev safety gates, or Playwright /
+> PowerShell test filters.** Agents must not instruct operators to set
+> environment variables. Tests must not call `std::env::set_var`.**
+
+Allowed exceptions (narrow):
+
+1. **Compile-time only** — `env!("CARGO_PKG_VERSION")`, `option_env!` in
+   `build.rs`, and `CARGO_FEATURE_*` detected in `build.rs` for Cargo
+   features (not operator-controlled at runtime).
+2. **OS identity APIs** — resolve hostname, ProgramData, and username through
+   platform APIs (`SHGetKnownFolderPath`, `gethostname`, `GetUserNameW`),
+   not `COMPUTERNAME` / `PROGRAMDATA` / `USERNAME` env vars.
+3. **Vite build-time** `import.meta.env` for bundler modes only (not runtime
+   admin tokens or API URLs).
+
+Forbidden:
+
+- `$env:OFFLINE_*`, `$env:E2E_*`, `$env:PIM_*`, `$env:AUTO_BUILD_UI`,
+  `OFFLINE_DEV_FIXTURES=true`, `DATABASE_URL=…` for live tests.
+- `env_compat::resolve_with_env_warning` and any legacy env fallback for
+  manifest keys.
+- `pim-app-config` **`dev-fallback`** / `.env` file reads in shipping
+  binaries (use `--config-dir` for local dev sandboxes).
+- IPC path overrides via `PIM_OFFLINE_IPC_*` env vars — use default pipe
+  paths in production; tests use `*_at(path)` explicit bind APIs.
+
+## Required patterns
+
+| Need | Use |
+| ---- | --- |
+| Any manifest key | `AppConfig::resolve` / configurator `get` / `set` |
+| Admin token (scripts) | `Get-PimOfflineAdminToken` / configurator `get OFFLINE_ADMIN_TOKEN --reveal` |
+| `seed-dev` safety gate | `--confirm` **and** `--dev-fixtures` CLI flags |
+| Skip UI npm during `cargo build` | `cargo build --features skip-ui-build` |
+| Live DB integration tests | `app_config::try_init()` + `app_config::database_url()` |
+| Playwright lab host / token | `ui/e2e/constants.ts` (committed constants) |
+| Per-test config / pipes | `tempfile::TempDir` + `*_at(&path)` fixture APIs (R1) |
+
+## Cross-references
+
+- [`single-source-of-truth-for-settings.mdc`](single-source-of-truth-for-settings.mdc) (R3)
+- [`tests-must-not-touch-machine-state.mdc`](tests-must-not-touch-machine-state.mdc) (R1)
+- `pim-app-config/README.md` — no `std::env` for manifest keys
+- `pim-app-config/docs/CONFIGURATION_STORAGE.md`
+- Origin: operator policy 2026-06 — agent diverged using `$env:` shortcuts; restore pim-app-config as sole config surface.

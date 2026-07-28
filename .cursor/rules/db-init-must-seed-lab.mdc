@@ -1,0 +1,21 @@
+---
+description: Hard rule — lab DB seed is part of db-init / startup, not orphan PowerShell
+alwaysApply: true
+---
+
+# Lab database seed is part of common init (hard rule)
+
+Agents that run `db-init --confirm` (or any destructive offline-schema
+reset) **must not** leave demo logon broken. Lab fixtures live in
+`pim-offline-server` `src/lab_dev_seed/` and run from:
+
+1. `db-init` after migrations (default when `COMPLIANCE_PROFILE=lab-dev`)
+2. Daemon startup `ensure_on_startup` on the same profile
+
+Do **not** invent a new PowerShell-only seed step. Document switches in
+`pim-offline-server/docs/dev/db-init-and-lab-seed.md`. Production
+profiles (`cmmc-l2` / `commercial`) never auto-seed demo passwords.
+
+Lab seed must also keep `/login` operable: merge private-network
+threat-intel suppress overrides, and force `IAM_RADIUS_ENABLED=false`
+unless the operator is deliberately testing RADIUS (re-enable after).

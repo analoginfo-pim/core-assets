@@ -1,0 +1,267 @@
+---
+description: Production code in this workspace must never panic. Generate fail-graceful paths with logged explanations and reasonable recovery for every recoverable failure, in every project.
+alwaysApply: true
+---
+
+# No-panic policy: every project, every language
+
+The AIC PIM workspace ships **long-running services**, **elevated installers**,
+**operator-facing GUIs**, and **headless background daemons**. A single
+panic in any of those processes is a customer-visible incident — not a
+"developer bug". This rule binds the agent's code-generation behaviour AND
+the resulting source code in every workspace repository, including future
+ones.
+
+## The rule
+
+> **Every recoverable failure must fail gracefully — log a clear
+> explanation, attempt reasonable recovery, and let the program keep
+> running.** Code that aborts the process on a runtime error is a bug.
+
+Concretely:
+
+1. **No new code may be generated that crashes on a recoverable failure.**
+   When the agent writes / edits code in this workspace, the default
+   shape of every fallible call site is *propagate an error* — not
+   *unwrap and abort*.
+2. **Every error path must log enough to diagnose the failure** without a
+   debugger (operation, inputs at the level appropriate for privacy,
+   the underlying error text, the recovery action taken).
+3. **Every error path must specify recovery**, even if "recovery" means
+   skip-and-continue, retry-with-backoff, fall-back-to-default, or
+   surface-error-to-user-and-stay-running. "Crash and let the OS restart
+   us" is **not** an acceptable recovery strategy.
+4. **Tests are not exempt from the design**, but `unwrap` / `expect` are
+   acceptable inside `#[cfg(test)]`, `tests/`, `**/*_tests.rs`,
+   `*.spec.ts`, `test_*.py`, `*.Tests.ps1`. Prefer `assert!` /
+   `expect.toBe(...)` when readability is unaffected.
+
+The agent must not "make it compile" by adding `.unwrap()`, `.expect(...)`,
+`!` (TypeScript non-null assertion), bare `try { ... } catch (e) {}`, or
+the equivalent in any other language. If a failure is genuinely
+impossible by construction, the agent must say so explicitly with a
+per-site allow + comment (see "Documented infallibility" below).
+
+## Forbidden constructs by language
+
+### Rust (the primary language)
+
+In every file under `**/src/**/*.rs` (and `build.rs`, `examples/**/*.rs`),
+outside `#[cfg(test)]` / `tests/` / `**/*_tests.rs` / `**/tests.rs`:
+
+- `.unwrap()` / `.expect("...")` on `Result` or `Option` when the error is
+  reachable at runtime (I/O, network, parsing, deserialization, env-var
+  lookup, lock acquisition, regex compile of a non-`'static` string,
+  conversion of user-supplied data, time math).
+- `panic!(...)`, `unreachable!()`, `todo!()`, `unimplemented!()` on a
+  reachable code path.
+- `assert!` / `debug_assert!` / `assert_eq!` for **runtime** validation of
+  external input. Validation that fails must return a typed error, not
+  abort.
+- `unwrap_or_else(|_| panic!(...))` and other "wrap in a closure that
+  still panics" tricks.
+- `Box::leak` / `mem::forget` of resources that would otherwise propagate
+  a Drop error.
+
+Instead use:
+
+- Propagate with `?` plus `anyhow::Context::with_context` /
+  `anyhow::Context::context` so the error chain says **what** was being
+  attempted.
+- A typed error enum (`thiserror::Error`) at module / crate boundaries.
+  `anyhow` for binaries and the very top of the call stack only.
+- For locks: match on `lock()` and on poison, log at `tracing::error`,
+  release the lock data structure (or replace it with a fresh value), and
+  return a typed error to the caller.
+- For retries: bounded retry with exponential backoff using
+  `tokio::time::sleep` or `std::thread::sleep`; cap at a documented
+  attempt count; log every retry; surface a final error.
+- For `main`: catch the error from `try_main()`, log the chain with
+  `tracing::error`, and exit with `std::process::exit(<code>)` — never
+  let a panic propagate out of `main`.
+
+Required Cargo lints (every crate, in either the workspace root
+`Cargo.toml` `[workspace.lints.clippy]` or each crate's `[lints.clippy]`):
+
+```toml
+[lints.clippy]
+unwrap_used     = "deny"
+expect_used     = "deny"
+panic           = "deny"
+todo            = "deny"
+unimplemented   = "deny"
+unreachable     = "deny"
+indexing_slicing = "warn"   # surface bounds-check panics for review
+```
+
+Test exemption goes at the top of `lib.rs` / `main.rs`:
+
+```rust
+#![cfg_attr(test, allow(
+    clippy::unwrap_used,
+    clippy::expect_used,
+    clippy::panic,
+))]
+```
+
+…and at the top of each integration test file under `tests/`:
+
+```rust
+#![allow(clippy::unwrap_used, clippy::expect_used, clippy::panic)]
+```
+
+### TypeScript / JavaScript (Tauri front-ends, web UI, ui-kit)
+
+In every file under `**/src/**/*.{ts,tsx,js,jsx}`:
+
+- The `!` non-null assertion operator on values that come from runtime
+  (DOM queries, JSON parses, fetch responses, IPC payloads).
+- `as` casts that bypass `unknown` → concrete-type narrowing without a
+  validator.
+- `JSON.parse(...)` without a `try`/`catch` and a fallback.
+- `throw new Error(...)` from a top-level effect (event handler, IPC
+  callback, React render path) without a higher-level boundary that
+  catches and logs.
+- `Promise` chains that drop rejections (`.then(...)` with no `.catch`
+  on the outermost handler).
+
+Instead use:
+
+- A schema validator (`zod`, `valibot`, `io-ts`) for any JSON crossing a
+  trust boundary.
+- React error boundaries on every screen root; toast-and-log on
+  caught errors; never silently re-render with stale data.
+- For Tauri commands: wrap every `invoke(...)` in a
+  `try/catch`, log via the front-end logger, surface a user-facing
+  message, leave the UI usable.
+
+### Python (legacy client, build scripts under `pim-installers`)
+
+- Never `assert <runtime condition>` (Python strips `assert` in `-O`).
+- Never `raise` from a top-level event/callback path without a
+  surrounding logged-and-recovered handler.
+- `dict[key]` on user input without a `.get()` fallback, `int(...)`
+  without a `try` / `ValueError` handler, etc.
+
+### PowerShell (build / install scripts under `pim-installers`,
+`scripts/`)
+
+- `$ErrorActionPreference = "Stop"` is fine, but every long script
+  should `try { ... } catch { Write-Error / Write-Warning; exit N }` so
+  the operator gets a clear message — not a stack trace.
+- Never `throw` from a deeply nested helper without a higher-level
+  catch.
+- Always `Test-Path` before `Get-Item` / `Copy-Item -LiteralPath` on
+  paths derived from user input.
+
+### Slint (`pim-product-launcher-slint`) and any future C++ / Win32
+
+- C++ runtime checks must use error returns or `std::expected` /
+  `std::optional`, not exceptions that escape the message loop.
+- Win32 callbacks may not panic from Rust into the OS; wrap any Rust
+  callback body in `std::panic::catch_unwind` and log + return a safe
+  default on catch.
+
+## Behavioural requirements at runtime
+
+A panic-free codebase is **necessary but not sufficient**. The runtime
+behaviour around an error must satisfy all four:
+
+1. **Logged.** Use `tracing` (Rust), `console.error` plus the
+   front-end logger (TS), `logging` (Python), or `Write-Error` / event
+   log (PowerShell). Include enough context that an operator reading
+   the log without source access can diagnose.
+2. **Bounded.** Retries have an attempt cap. Polling has a backoff.
+   Reconnects have a maximum interval. No code path is allowed to spin
+   silently.
+3. **Recovered.** State a recovery action explicitly: skip-and-continue,
+   fall-back-to-default, restart-this-task-not-the-process, prompt-user,
+   degrade-feature. Document it in the source as a comment if
+   non-obvious.
+4. **Visible.** Long-running daemons must report degraded health (see
+   `runtime_status.json` in `pim-offline-client`) so operators see
+   recovery is happening; transient failures are not invisible.
+
+## Documented infallibility (when `expect` is genuinely OK)
+
+Some calls really cannot fail. Examples:
+
+- `Mutex::lock()` immediately after creating the mutex inside the same
+  function;
+- `NonZeroUsize::new(CONST_NONZERO)`;
+- `regex::Regex::new(STATIC_STR)` where the string is a `&'static str`
+  that the test suite verifies compiles;
+- `OnceCell::get()` after a verified `set()` earlier in the same scope;
+- `HmacSha256::new_from_slice(secret)` on a known-correct secret length.
+
+For these, an `expect("...")` is acceptable IF:
+
+- It is **annotated** with `#[allow(clippy::expect_used)]` or
+  `#[allow(clippy::unwrap_used)]` at the call site, and
+- It carries a comment naming the **panic-policy category**:
+  - **B** = infallible by construction
+  - **C** = documented domain invariant
+  - **D** = guard-then-use (we just checked, then used)
+
+Example:
+
+```rust
+// B: regex is a &'static str; compiled at module-load by the static initializer
+#[allow(clippy::expect_used)]
+static EMAIL: Lazy<Regex> = Lazy::new(|| {
+    Regex::new(r"^[^@\s]+@[^@\s]+\.[^@\s]+$").expect("hard-coded regex is valid")
+});
+```
+
+The agent should default to **NOT** using these escape hatches. Only
+reach for them when the call genuinely cannot fail and a runtime check
+would be redundant.
+
+## What the agent must do, every time it generates code
+
+1. **Identify each fallible call** and write its error path in the
+   same edit, before moving on. Do not commit a `.unwrap()` "to be
+   handled later".
+2. **Wire the error to a log site** with enough context (operation
+   name + inputs + underlying error). Default level: `tracing::warn`
+   for transient, `tracing::error` for definitive.
+3. **Specify the recovery** in code or in a comment that names the
+   chosen strategy ("retry up to 3×", "skip-and-continue", "report
+   degraded health and keep daemon alive", "prompt user with toast").
+4. **If editing existing code that already panics**, treat that as
+   technical debt to fix opportunistically — surface it in your reply
+   and either fix it inline or note it for follow-up. Never copy a
+   bad pattern forward.
+5. **If the user explicitly asks for a panic** (e.g. "let it crash
+   here, this is genuinely unrecoverable"), accept it once they have
+   said so — but still log the reason via `tracing::error!(...)` and,
+   in a daemon, prefer `std::process::exit(N)` after logging instead
+   of `panic!`, so the OS / SCM sees a clean exit code.
+
+## Where this is currently enforced
+
+| Repo | Per-crate clippy lint | This rule applies? |
+| ---- | --------------------- | ------------------ |
+| `pim-offline-client` | yes | yes |
+| `pim-offline-server` | yes | yes |
+| `pim-app-config` | workspace-wide | yes |
+| `pim-orm-offline` | partial (per the AGENTS.md no-panic line) | yes |
+| `pim-orm` | not yet — add when next touching | yes |
+| `pim-ui-kit` (TS) | not yet — add `eslint` rules when next touching | yes |
+| `pim-offline-legacy-client` (Python) | not yet — add `ruff` rules when next touching | yes |
+| All `pim-offline-{client,server}-{configurator,elevate}-{tauri,win32}` | none | yes |
+| `pim-product-launcher-{slint,win32}` | none | yes |
+| `pim-installers` (PowerShell + WiX) | n/a | yes (PowerShell guidance applies) |
+
+When you touch code in a repo whose Cargo / package config is missing
+the lint table, add it as part of the change set rather than leaving
+the gap.
+
+## Why this rule has `alwaysApply: true`
+
+Push-triggered CI was deliberately removed from this workspace (see
+`ci-policy.mdc`). With CI gone, the agent and the per-crate clippy
+lint table are the only two enforcement surfaces. The rule must be
+loaded into every conversation so the agent's first instinct is to
+write the recovery path — not to be "rescued" by a CI check that no
+longer runs.

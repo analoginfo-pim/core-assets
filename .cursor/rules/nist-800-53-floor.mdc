@@ -1,0 +1,79 @@
+---
+description: >-
+  NIST SP 800-53 Rev 5 (moderate or stronger) is the security floor for all
+  security-relevant design. CMMC / 800-171 / 800-172 are subsets — never design
+  171-only shortcuts that weaken 800-53 posture.
+alwaysApply: true
+---
+
+# NIST SP 800-53 is the floor (800-171 / 800-172 are subsets)
+
+## The rule
+
+> **In all security-relevant design and implementation in this workspace,
+> operate fully within NIST SP 800-53 Rev 5 (moderate baseline or
+> stronger). CMMC, NIST SP 800-171, and NIST SP 800-172 control sets are
+> subsets of 800-53. Satisfying 800-53 (or better) covers them. Never
+> design a “171-only” or “CMMC-only” shortcut that weakens 800-53
+> posture.**
+
+Concretely:
+
+1. **Floor = 800-53 Rev 5 moderate (or stronger).** When choosing
+   auth, audit, crypto, access control, configuration, or logging
+   behavior, map to the relevant 800-53 family (AC, AU, CM, IA, SC,
+   SI, MP, …) first. Prefer the moderate baseline; raise to high /
+   FedRAMP High where the deployment requires it.
+2. **171 / 172 / CMMC are coverage checks, not alternate designs.**
+   Use them to verify a 800-53-aligned design still hits CMMC Level 2
+   (or 800-172 enhanced) practices. Do **not** implement a thinner
+   control just because “CMMC only asks for X.”
+3. **No weakening shortcuts.** Examples of forbidden reasoning:
+   - “800-171 does not require session authenticity → skip SC-23”
+   - “CMMC Level 2 omits this AC-16 marking → leave classification
+     unenforced in a CMMC deployment”
+   - “Commercial SKU can drop AU-9 append-only audit”
+4. **Cross-link the enterprise contract.** US English, Section 508,
+   FIPS 140-3, and AU-2/3/9/12 audit logging remain mandatory per
+   [`enterprise-compliance.mdc`](enterprise-compliance.mdc). This rule
+   sharpens the **800-53 floor** already stated there.
+
+## Agent guidance
+
+When adding or changing security-relevant code:
+
+1. Name the **800-53 control(s)** in a short comment or doc note
+   (e.g. `// NIST AC-16: security attributes on classified objects`).
+2. If a ticket mentions only CMMC / 171 / 172, still implement to the
+   **800-53** control that subsumes that practice.
+3. Classification / labeling work uses AC-16 (and related MP-\*
+   media protections for future DLP file markings). See
+   `pim-offline-server/docs/dev/classification-and-800-53.md`.
+
+## Forbidden constructs
+
+- Designing auth, audit, or crypto to a **171-only** checklist while
+  omitting the parent 800-53 control the checklist maps to.
+- Documenting “CMMC compliant” as a substitute for “800-53 moderate
+  (or better) aligned.”
+- Removing or gating 800-53-required behavior behind a commercial /
+  CMMC feature flag in a way that leaves a CMMC deployment weaker
+  than 800-53 moderate.
+
+## Worked example
+
+**Wrong:** “CMMC AC.L2-3.1.1 is account management — implement
+principals CRUD only; skip lockout because 171 wording is thinner.”
+
+**Right:** Implement AC-2 (account management) **and** AC-7
+(unsuccessful logon lockout) per 800-53 moderate; then confirm the
+CMMC / 171 crosswalk still passes.
+
+## Cross-references
+
+- [`enterprise-compliance.mdc`](enterprise-compliance.mdc) — full
+  USG contract (800-53, FIPS, 508, audit)
+- `pim-offline-server/docs/dev/classification-and-800-53.md` —
+  classification mode + AC-16 entity markings
+- `pim-offline-server/docs/dev/iam-local-logon-compliance.md` —
+  IA/AC/AU mapping for local logon

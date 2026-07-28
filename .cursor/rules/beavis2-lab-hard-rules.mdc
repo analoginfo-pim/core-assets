@@ -1,0 +1,74 @@
+---
+description: BEAVIS2 lab host hard rules — liebsoft/lanicu credentials, SoftHSM, Playwright embedded-live
+alwaysApply: true
+globs:
+  - pim-offline-server/ui/e2e/**
+  - pim-offline-server/src/bin/seed_dev/**
+  - pim-offline-server/scripts/Fix-LabSoftHsmLibraryPath.ps1
+  - pim-offline-server/scripts/Prep-Beavis2LabCrypto.ps1
+  - pim-offline-client/src/bin/**
+---
+
+# BEAVIS2 lab host hard rules
+
+These rules bind the **BEAVIS2** Windows lab (`192.168.55.197`) used for embedded-live
+Playwright, password recovery, and HSM/crypto custody tests.
+
+## Credential identities (never drift)
+
+| Rule | Detail |
+| --- | --- |
+| **Rotation test accounts** | **`liebsoft`** and **`lanicu`** only — sourced from the HKLM snapshot in `pim-offline-server/src/bin/seed_dev/lab_fixtures.rs` and restored by `cargo run --bin seed-dev -- --confirm --dev-fixtures [--reset]`. |
+| **Forbidden rotation target** | Never run password rotation, group membership changes, or `--force` rotate against **`phil`** or any operator account outside the two lab identities above. |
+| **Endpoint discovery** | Tests MUST resolve the BEAVIS2 row via `discoverBeavis2DualEndpoint()` (machine name contains `beavis2`, carries both identities). Do not hardcode stale sync names like `BEAVIS2-DUAL-20260602023604`. |
+| **Canonical machine_id** | `3a7b240e-9327-44b8-97b6-38fb7812b3b2` after seed-dev; `machine_name` is `Beavis2`. |
+
+## SoftHSM (required for HSM / crypto tests)
+
+| Rule | Detail |
+| --- | --- |
+| **Token** | SoftHSM2 at `C:\SoftHSM2\lib\softhsm2-x64.dll` (or `softhsm2.dll` fallback). |
+| **Lab user PIN** | **`2222`** on preferred slots (`1668200181`, `1075368336`, `200080059`); try **`1111`** as fallback in helpers. |
+| **DB connection row** | After every `db-init --confirm`, run `scripts/Fix-LabSoftHsmLibraryPath.ps1` to insert **Local SoftHSM** (+ **Local SoftHSM Mirror** for Set Default e2e). |
+| **UI PIN fields** | When a sealed PIN is stored, the Keys tab shows **User PIN (from database)** read-only — tests use `fillKeysTabUserPin()` and click **List keys** without filling the read-only field. |
+
+## Playwright embedded-live
+
+| Rule | Detail |
+| --- | --- |
+| **Live API** | `PLAYWRIGHT_USE_LIVE_API = true` in `ui/e2e/constants.ts` on the lab host — no mocks for embedded-live specs. |
+| **Admin token** | `DEV_ADMIN_TOKEN` in `constants.ts` (matches manifest `default_dev` / HKLM). |
+| **Base URL** | `LAB_EMBEDDED_BASE_URL` → `https://192.168.55.197:8443`. |
+| **No env shortcuts** | Do not use `$env:E2E_*` or `process.env` for lab config in committed e2e code — use `constants.ts` per `no-environment-variables.mdc`. |
+
+## Lab provisioning sequence (after db-init)
+
+```powershell
+cd c:\analog-pim\pim-offline-server
+cargo run --release --bin db-init -- --confirm --offline
+cargo run --release --bin seed-dev -- --confirm --dev-fixtures --reset
+pwsh .\scripts\Fix-LabSoftHsmLibraryPath.ps1
+pwsh .\scripts\Prep-Beavis2LabCrypto.ps1 -ProvisionWrapKeys
+Restart-Service aic-offline-server-service
+# Required: prove endpoint + password recovery + elevation (or use -Repair)
+pwsh .\scripts\Assert-Beavis2LabBaseline.ps1
+```
+
+Prefer one-shot restore: `pwsh .\scripts\Restore-Beavis2Lab.ps1` (see
+`docs/dev/beavis2-lab-baseline.md`).
+
+## Post-deploy baseline (mandatory)
+
+Every build/deploy on this host must end with
+`Assert-Beavis2LabBaseline.ps1` (hooked from `Deploy-OfflineServerDev.ps1`
+when hostname/IP matches). If checks fail, restore before claiming done.
+See always-apply rule `beavis2-lab-baseline-after-deploy.mdc`.
+
+**Why it recurs:** `db-init` clears endpoints; deploy historically
+restarted the service without `seed-dev` → zero machines, recover/elevation
+broken.
+
+## Password policy display format
+
+Identity and reveal-password UI show rotation as **`DD:HH:MM:SS`** (not `Nd rotation`).
+Embedded-live assertions MUST accept `\d+:\d{2}:\d{2}:\d{2} rotation` (seed-dev liebsoft uses `365:00:00:00`).

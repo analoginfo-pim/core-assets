@@ -1,0 +1,162 @@
+---
+description: Use core-assets as the single source for branding (icons, logos, EULAs, in-app art); new resolutions and formats are produced in core-assets, never in projects
+alwaysApply: true
+---
+
+# Branding & legal assets: one canonical source for every project
+
+All Analog Informatics Corporation (AIC) PIM products in this workspace share
+one asset repository:
+
+- **Local path:** `c:\analog-pim\core-assets`
+- **Remote:** `https://github.com/analoginfo-pim/core-assets`
+
+This is the **only** authoritative source for product branding (icons,
+logos, splash images, header art, in-app bitmaps) and shared legal text
+(EULAs, license files). Treat every other copy in the workspace as a
+*build output* of `core-assets` — even when those copies are committed
+alongside source code so a `cargo build` or `tauri build` can find them at
+compile time.
+
+## Scope: every project in the workspace
+
+The rule applies, with no exceptions, to **every** workspace root, including
+but not limited to:
+
+- `pim-orm`, `pim-orm-offline`
+- `pim-app-config`
+- `pim-ui-kit`
+- `pim-offline-server`, `pim-offline-server-configurator-tauri`,
+  `pim-offline-server-configurator-win32`
+- `pim-offline-client`, `pim-offline-legacy-client`,
+  `pim-offline-client-configurator-tauri`, `pim-offline-client-configurator-win32`,
+  `pim-offline-client-elevate-tauri`, `pim-offline-client-elevate-win32`
+- `pim-product-launcher-slint`, `pim-product-launcher-win32`
+- `pim-installers`
+
+If a future project enters the workspace, add its branded destinations to
+[`core-assets/scripts/sync-to-projects.ps1`](../../core-assets/scripts/sync-to-projects.ps1)
+*before* committing branded files into it.
+
+## Hard rules
+
+### R1. Never edit a branding file outside `core-assets`
+
+This includes:
+
+- `*.ico`, `*.icns`, `*.svg`, `*.png` (logo / launcher / favicon variants)
+- `EULA*.rtf`, `License*.rtf`, `LICENSE*` files used by installers
+- Splash / header / about-screen art that ships with products
+- PWA `manifest.json` icon entries, Apple Touch icons, and any other
+  branded resource referenced by HTML / Tauri / WiX
+
+If you find drift between an in-tree copy and `core-assets`, treat it as a
+bug in the sync, not as a legitimate per-project variant.
+
+### R2. New resolutions or formats live in `core-assets` only
+
+If a project needs a new size, format, or platform variant of an existing
+brand asset (for example, a 192×192 PWA icon, a 64×64 toolbar bitmap, an
+`.icns` for macOS, a Tauri Android launcher set), the artefact MUST be
+produced in `core-assets`:
+
+1. Add the source (or extend an existing source) under
+   `core-assets/icons/source/` or `core-assets/branding/`.
+2. Run / extend `core-assets/scripts/generate-icons.ps1` (raster from SVG)
+   or `tauri icon core-assets/icons/source/aic-icon-1024.png --output core-assets/icons/tauri`
+   (Tauri platform icons) so the derivative is built **inside `core-assets`**.
+3. Commit and push **the source plus every generated artefact** to
+   `core-assets`. The repository is the single physical home for the
+   binary outputs — projects do not regenerate them locally.
+4. Add the consumer's destination to
+   [`core-assets/scripts/sync-to-projects.ps1`](../../core-assets/scripts/sync-to-projects.ps1)
+   and run the sync. The project then consumes the artefact as an
+   external asset, not as a thing it derived for itself.
+
+It is **forbidden** to:
+
+- Run `magick convert` / `inkscape` / `tauri icon` / `iconutil` /
+  any other rasterizer or icon generator inside a project repo and check
+  in the output as an "in-tree" asset.
+- Add a build script in a project that converts an asset on the fly into
+  a different size or format, even if it reads from a synced
+  `core-assets` source — derivatives must already exist in `core-assets`
+  by the time the project's build runs.
+- Hand-edit a synced asset in a project to "tweak" it (colour, padding,
+  margin) — make the tweak in `core-assets` and resync.
+
+### R3. Add new shared assets to `core-assets` first
+
+When a new product or a new SKU needs a logo or document, place the
+canonical file under `core-assets/icons/...`, `core-assets/branding/...`,
+`core-assets/logos/...`, or `core-assets/legal/...` and *only then* sync
+it into the consumer project. The
+[`scripts/sync-to-projects.ps1`](../../core-assets/scripts/sync-to-projects.ps1)
+script enumerates the official targets — extend it when you add a new
+consumer.
+
+### R4. Never re-introduce a "local" branding fallback
+
+If a build script needs to source an icon or EULA, point it at
+`core-assets` directly (or at the per-project copy that the sync script
+populated from `core-assets`). Do **not** add a fallback chain that
+searches a loose `deployment/windows/`, `assets/branding/`, or similar
+drop directory: those are exactly the uncontrolled paths that produce the
+wrong logo on a customer's desktop.
+
+### R5. Never commit a placeholder logo or stub license
+
+Generic "W"-shape Word document icons, blank `License.rtf` stubs, etc. are
+forbidden — even temporarily — because they get picked up by build scripts
+and shipped. If you genuinely need a non-AIC asset for a test, store it
+in `core-assets/icons/test/` and document why.
+
+## Adding a new branded artefact (full procedure)
+
+1. **Identify or add the source** in `core-assets`:
+   - SVG vector → `icons/source/<name>.svg`
+   - High-res master raster → `icons/source/<name>-<dim>.png`
+   - In-app bitmap (about / header / splash) → `branding/<name>.png`
+   - Legal text → `legal/<name>.rtf`
+2. **Generate every derivative the consumers need** *inside `core-assets`*:
+   - Multi-resolution `.ico` via `scripts/generate-icons.ps1`
+   - Tauri platform tree via `tauri icon icons/source/aic-icon-1024.png --output icons/tauri`
+   - `.icns` for macOS via `iconutil` or `magick` (script TBD)
+3. **Commit & push** the source + generated artefacts to `core-assets`.
+4. **Extend** `scripts/sync-to-projects.ps1` with the consumer's
+   destination path(s).
+5. **Run** `scripts/sync-to-projects.ps1` and commit the resulting copies
+   in each consumer repo with a message like
+   `chore(branding): sync from core-assets@<short-sha>`.
+
+## Where consumers look today
+
+`core-assets/scripts/sync-to-projects.ps1` is the source of truth for the
+"who-consumes-what" map. As of the last sync the destinations include:
+
+| Asset (in `core-assets`) | Consumer paths |
+| ------------------------ | -------------- |
+| `icons/source/aic-icon.svg` | `pim-offline-client/assets/icon.svg` |
+| `icons/source/aic-icon-1024.png` | All three Tauri projects' `src-tauri/icons/icon.png` |
+| `icons/desktop/aic-icon.ico` | All Win32 / Tauri-favicon / web-favicon consumers (15+ destinations — see the script). |
+| `icons/desktop/aic-icon-preview.png` | `pim-offline-client/assets/icon-preview.png` |
+| `icons/web/{favicon,apple-touch-icon,logo}.svg`, `manifest.json` | `pim-offline-server/ui/public/`, `pim-ui-kit/packages/demo/public/`, `pim-ui-kit/templates/app-template/public/` |
+| `branding/aic-about.png` | `pim-offline-client/assets/aic-about.png` |
+| `branding/aic-header.png` | All three Tauri projects' `src/assets/aic-header.png` |
+| `legal/EULA_AIC_Commercial.rtf` | `pim-installers/legal/EULA_AIC_Commercial.rtf` (restaged into MSIs as `assets/EULA.rtf` by the build scripts) |
+
+When in doubt, search the consumer-paths column for the file you are about
+to touch. If it is listed, edit `core-assets` instead and run the sync.
+
+## When agents must NOT do branding work
+
+- If the user asks you to change a logo, asset, or EULA but the request
+  would require editing a file *outside* `core-assets`, push back: explain
+  that the edit belongs in `core-assets` and then sync, and ask for
+  confirmation before bypassing the rule.
+- If you encounter a stale copy that disagrees with `core-assets`, the
+  default action is to **resync from `core-assets`**, not to "promote" the
+  stale copy.
+- If a project asks for a new icon size or format that does not yet exist
+  in `core-assets`, **do not** generate it locally — generate it in
+  `core-assets`, commit there, then sync.

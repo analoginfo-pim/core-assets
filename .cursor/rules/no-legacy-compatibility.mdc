@@ -1,0 +1,53 @@
+# No legacy compatibility (pre-GA greenfield)
+
+AIC Offline PIM has **no production customers** at `1.0.0-rc.x`. There is
+no obligation to keep duplicate routes, wire fields, confirm phrases, or UI
+redirects for older naming.
+
+## The rule
+
+> **Ship one canonical name per concept on every wire surface (HTTP JSON,
+> IPC, settings import/export, OpenAPI, admin UI). Do not add "legacy
+> alias", "deprecated redirect", or dual-field responses (`dek_*` beside
+> `master_key_*`) for backward compatibility. Version history belongs in
+> git, CHANGELOG, and regression tests — not in runtime shims.**
+
+Concretely:
+
+1. **One route per operation.** No parallel paths (e.g. drop
+   `export-dek` when `export-master-key` exists).
+2. **One JSON field per value.** Clients read `master_key_fingerprint`,
+   not `dek_fingerprint` with a fallback.
+3. **One confirm phrase per destructive action.** Super-admin master key
+   export uses `EXPORT_MASTER_KEY` only.
+4. **No bookmark redirects** unless an external standard mandates them
+   (none today). Remove `/settings/crypto/dek-export` style paths.
+5. **Regression testing** may assert old behavior in **tests only** (e.g.
+   a test named `regression_issue_1234_pre_fix`) with a comment linking
+   the commit that introduced the canonical shape. Do not expose old
+   shapes in production handlers for "safety".
+
+## Allowed exceptions
+
+| Case | Allowed? |
+| --- | --- |
+| Manifest / HKLM keys frozen by `app-config.toml` (e.g. `CRYPTO_DEK_MAX_AGE_DAYS`) | yes — storage keys are not wire aliases |
+| Custody profile enum strings (`software-dek`, `hsm-dek-custody`) until a manifest bump | yes — document in CHANGELOG when renamed |
+| Git tags / archived migrations under `migrations/_archive/` | yes — archaeology, not runtime |
+| Test fixtures that pin a **broken** old response for RCA | yes — under `tests/` only |
+
+## Forbidden constructs
+
+- `if phrase == NEW || phrase == LEGACY` on operator confirm phrases.
+- `#[serde(alias = "dek_fingerprint")]` or duplicate struct fields for
+  the same value.
+- OpenAPI entries for deprecated paths that still exist in `router.rs`.
+- Type aliases `FooLegacy = Foo` in shipping crates (admin-client, UI).
+- Client `pickStr(wire, 'modern', 'legacy')` normalizers in production
+  UI code.
+
+## Cross-references
+
+- [`placeholder-guids-are-empty.mdc`](placeholder-guids-are-empty.mdc) (R6)
+- [`single-source-of-truth-for-settings.mdc`](single-source-of-truth-for-settings.mdc) (R3)
+- Origin: pre-GA policy, July 2026 — remove DEK/master-key alias sprawl.

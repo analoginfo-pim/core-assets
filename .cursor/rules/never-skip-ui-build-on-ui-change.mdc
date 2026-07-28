@@ -1,0 +1,62 @@
+---
+description: Never use -SkipUiBuild or skip-ui-build when the change set includes admin UI files; the server embeds ui-dist and SkipUi leaves operators on a stale SPA.
+alwaysApply: true
+---
+
+# Never skip UI build on UI change
+
+## The rule
+
+> **When any change in the change set touches `pim-offline-server/ui/**`
+> (or other assets that feed the embedded admin SPA), deploy/build MUST
+> run `Deploy-OfflineServerDev.ps1` without `-SkipUiBuild`, and MUST NOT
+> pass `--features skip-ui-build` for that deploy. `-SkipUiBuild` /
+> `skip-ui-build` is allowed only for pure Rust/backend changes with
+> zero UI file changes in that same change set.**
+
+## Why
+
+The offline server binary embeds the Vite-built SPA (`ui-dist` / `ui/dist`)
+at compile time. `-SkipUiBuild` (and Cargo `--features skip-ui-build`)
+rebuilds or restages the Rust binary while leaving the previous embedded
+bundle in place. Operators then hit a stale SPA — e.g. Current State
+Compliance looked “never built” / wrong sidebar labels even though the
+source and docs had already shipped.
+
+## Required agent behavior
+
+1. **UI touched this change set** (`pim-offline-server/ui/**`, embedded
+   UI asset paths, or any edit that must appear in the admin browser):
+   - Run
+     `pwsh c:\analog-pim\pim-offline-server\scripts\Deploy-OfflineServerDev.ps1`
+     with **no** `-SkipUiBuild`.
+   - Do **not** pass `--features skip-ui-build` on the deploy’s
+     `cargo build` / equivalent.
+2. **Pure Rust / backend only** (no UI paths in the same change set):
+   `-SkipUiBuild` / `skip-ui-build` remains allowed to avoid a needless
+   npm/Vite cycle.
+3. **Do not claim UI is live** after a SkipUi deploy. If you skipped the
+   UI build, say so; do not treat the running service as proof of the
+   new SPA.
+
+## Forbidden
+
+- `Deploy-OfflineServerDev.ps1 -SkipUiBuild` when `ui/**` (or embedded
+  UI assets) changed in the same work.
+- `cargo build --features skip-ui-build` (or equivalent) as the deploy
+  build for a UI change set.
+- Assuming “service RUNNING” means the new React pages are served.
+
+## Cross-references
+
+- Deploy script:
+  [`pim-offline-server/scripts/Deploy-OfflineServerDev.ps1`](../../pim-offline-server/scripts/Deploy-OfflineServerDev.ps1)
+- Agent deploy sibling (no admin SPA embed; still do not invent SkipUi
+  for client UI surfaces):
+  [`pim-offline-client/scripts/Deploy-OfflineAgentDev.ps1`](../../pim-offline-client/scripts/Deploy-OfflineAgentDev.ps1)
+- Current State Compliance deploy note:
+  [`pim-offline-server/docs/dev/current-state-compliance.md`](../../pim-offline-server/docs/dev/current-state-compliance.md)
+- Dev deploy overview:
+  [`pim-offline-server/docs/dev/offline-server-dev.md`](../../pim-offline-server/docs/dev/offline-server-dev.md)
+- Origin: 2026-07-25 — SkipUi deploys left Current State Compliance /
+  nav on a stale embedded SPA after UI source had already landed.

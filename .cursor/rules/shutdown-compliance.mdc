@@ -1,0 +1,205 @@
+---
+description: Every shipping binary in this workspace must declare and honour a bounded shutdown contract for its application class. Generate platform-correct signal/event handlers, drain channels, and per-component drain timeouts; never wait indefinitely on shutdown.
+alwaysApply: true
+---
+
+# Shutdown-compliance policy: every binary, every platform
+
+The AIC PIM workspace ships **long-running services**, **GUI
+applications**, **elevated installers**, and **operator-facing CLIs**.
+Each runs on Windows, Linux, and macOS. Customers — including
+government and large enterprise on-prem deployments — certify these
+binaries against vendor or in-house standards (Windows App
+Certification Kit / WACK; Windows Hardware Lab Kit; "Certified for
+Windows Server"; NIST SP 800-53 SI-6; Common Criteria; customer
+acceptance tests). Every one of those programs requires that an
+application **responds to its platform's shutdown signal within a
+bounded time** and drains cleanly. A binary that hangs at OS
+shutdown is a certification failure and a customer-visible defect.
+
+This rule binds the agent's code-generation behaviour AND the
+resulting source code in every workspace repository, including
+future ones.
+
+## The rule
+
+> **Every shipping binary must declare and honour a bounded shutdown
+> contract for its application class. The handler returns
+> immediately; the drain runs to completion or aborts with a logged
+> reason inside a documented budget; status is reported to the
+> platform throughout.**
+
+Concretely:
+
+1. **Every binary registers a platform-appropriate signal/event
+ handler at process startup, before doing any work.**
+2. **The handler is non-blocking.** It flips a single shutdown
+ channel (`tokio::sync::watch::Sender<bool>` or
+ `tokio_util::sync::CancellationToken`) and returns. It does no
+ I/O, allocates nothing meaningful, and never blocks.
+3. **Every long-lived task observes the shutdown channel** and
+ drains within its own documented per-task budget.
+4. **The orchestrating code enforces a hard local timeout** that
+ matches the platform's budget for the signal in question (see
+ the table below). The drain runs *inside* that timeout. Drains
+ that exceed it are *logged* and *abandoned*, never *waited for*.
+5. **Platform status is reported throughout the drain.** Windows
+ services issue `STOP_PENDING` with monotonically-increasing
+ `checkpoint` and shrinking `wait_hint` until `STOPPED`. systemd
+ units (`Type=notify`) call `sd_notify(STOPPING=1)`. GUIs return
+ `TRUE` from `WM_QUERYENDSESSION` / `applicationShouldTerminate:
+ NSTerminateNow` synchronously. Console CLIs print "interrupted,
+ cleaning up..." to stderr.
+
+## Hard platform budgets
+
+| Application class | Platform | Signal / event | Default budget | Adjustable? |
+| ----------------- | -------- | -------------- | --------------:| ----------- |
+| Long-running service | Windows SCM | `SERVICE_CONTROL_PRESHUTDOWN` | **180 000 ms** | yes, via `SERVICE_CONFIG_PRESHUTDOWN_INFO`; Microsoft strongly recommends not raising it |
+| Long-running service | Windows SCM | `SERVICE_CONTROL_STOP` / `SERVICE_CONTROL_SHUTDOWN` | **5 000 ms** (Win10/11 / Server 2019+ default) | system-wide only (`HKLM\System\CurrentControlSet\Control\WaitToKillServiceTimeout`); compliant services must hit the default |
+| Long-running service | systemd | `SIGTERM` then `SIGKILL` | `TimeoutStopSec` (default **90 000 ms**) | per-unit |
+| Long-running service | launchd | `SIGTERM` then `SIGKILL` | `ExitTimeOut` (default **20 000 ms**) | per-plist |
+| GUI | Windows | `WM_QUERYENDSESSION` | **5 000 ms** | system-wide |
+| GUI | Windows | `WM_ENDSESSION` (commit) | **5 000 ms** | system-wide |
+| GUI | macOS | `applicationShouldTerminate:` | **5 000 ms** typical | per-app |
+| GUI (Tauri) | All | `WindowEvent::CloseRequested` / `RunEvent::ExitRequested` | platform-host's budget (above) | per-window |
+| Console CLI | Windows | `CTRL_C_EVENT` / `CTRL_BREAK_EVENT` | (operator-driven, no fixed budget) | n/a |
+| Console CLI | Windows | `CTRL_CLOSE_EVENT` (window closed) | **~5 000 ms** | system-wide |
+| Console CLI | Windows | `CTRL_LOGOFF_EVENT` / `CTRL_SHUTDOWN_EVENT` | **5 000 ms** | system-wide |
+| Console CLI | Unix | `SIGINT` / `SIGTERM` / `SIGHUP` | (operator-driven for INT; system for TERM ≈ 90 s under systemd-user-session) | n/a |
+
+Per-component drain timeouts inside any binary MUST sum to less
+than the platform budget, with at least 500 ms of slack reserved
+for the final status update / process-exit handshake.
+
+## Forbidden constructs
+
+In every shipping binary in this workspace:
+
+- **No `loop { recv().await? }` or equivalent without a
+ `select! { _ = shutdown.changed() => break, ... }` arm.** Every
+ long-running loop has a shutdown observer.
+- **No `await` on a future that cannot be cancelled** when running
+ inside a drain that has a budget. Wrap with `tokio::time::timeout`
+ or use a `CancellationToken`.
+- **No `std::thread::sleep` longer than 100 ms inside a daemon-side
+ task** unless paired with a check of the shutdown flag at each
+ wake. Prefer `tokio::time::sleep` so cancellation propagates.
+- **No `tokio::time::sleep(Duration::from_secs(...)).await` inside
+ the drain path.** Drains poll briefly and bail out fast; they do
+ not throttle.
+- **No `set_service_status(Stopped)` without an immediately-prior
+ `set_service_status(StopPending { checkpoint > 0, wait_hint > 0 })`**
+ (Windows services). Going straight Running → Stopped is a WACK
+ failure.
+- **No `Window::close()` from a GUI without honouring the result of
+ the `close-requested` handler.** Save state synchronously, *then*
+ close.
+- **No `std::process::exit(N)` from inside the drain path.** Exit
+ is the very last act of `main()`; the drain itself returns a
+ `Result` and lets `main()` exit cleanly with a documented code.
+
+## Required Cargo dependency
+
+Every shipping binary (every `[[bin]]` and every `cdylib` /
+`[lib] crate-type = ["staticlib"]` that hosts a `main`-like entry
+point — e.g. Tauri's `mobile_entry_point`) depends on the shared
+crate at `c:\analog-pim\pim-shutdown`:
+
+```toml
+[dependencies]
+pim-shutdown = { path = "../pim-shutdown" }
+# OR (when consumed from a non-sibling path)
+# pim-shutdown = { path = "../../pim-shutdown" }
+```
+
+`pim-shutdown` exposes:
+
+- `pim_shutdown::install_unix_signal_handler(tx)` — SIGTERM /
+ SIGINT / SIGHUP on POSIX.
+- `pim_shutdown::install_console_ctrl_handler(tx)` — Windows
+ `SetConsoleCtrlHandler` for CLIs.
+- `pim_shutdown::scm::LifecycleReporter` — Windows service state
+ machine (Running heartbeat / StopPending progress loop / Stopped
+ finalisation) with monotonically-increasing checkpoint and
+ shrinking wait_hint.
+- `pim_shutdown::tauri::register_close_handler(app, tx)` — Tauri
+ `WindowEvent::CloseRequested` + `RunEvent::ExitRequested` wired
+ into the same shutdown channel.
+- `pim_shutdown::win32::register_session_handler(hwnd, tx)` —
+ Win32 `WM_QUERYENDSESSION` / `WM_ENDSESSION` / `WM_CLOSE` glue.
+- `pim_shutdown::drain::bounded(future, budget, name)` — wraps any
+ drain future in `tokio::time::timeout` with structured logging
+ of both success and timeout-with-elapsed.
+
+The agent must not hand-roll any of the above when adding a new
+binary; consume the shared crate. Bugs found in the shared crate
+are fixed once and propagate to every binary.
+
+## What the agent must do, every time it adds or edits a binary
+
+1. **Identify the application class.** Service (Windows SCM /
+ systemd / launchd), GUI (Win32 / Tauri / Slint / Cocoa), or
+ console CLI. The class determines which handler to install.
+2. **Wire the handler at the top of `main()` or the platform
+ entry point** (`tauri::Builder::run`, `wWinMain`,
+ `service_dispatcher::start`). Before any other work begins.
+3. **Identify every long-lived task** in the binary and confirm
+ each observes the shutdown channel. New tasks must take a
+ `watch::Receiver` (or `CancellationToken::clone()`).
+4. **Identify every drain step** (HTTP graceful shutdown, sqlx
+ pool close, OTLP flush, rolling-log writer drop, scheduler stop)
+ and wrap each in `pim_shutdown::drain::bounded` with a documented
+ per-step budget.
+5. **Compute and assert the total drain budget** in a comment and,
+ where possible, with a `const_assert!`-style check that the sum
+ of per-step budgets is ≤ platform budget − 500 ms slack.
+6. **Emit Event Log / journald / unified-log entries** for both
+ the initial signal receipt and the drain completion (or
+ timeout-abort) with elapsed time and outcome.
+7. **Update the compliance doc.** Every binary touched gets a row
+ in `docs/ops/shutdown-compliance.md` (workspace root) noting:
+ application class, handler file:line, per-component budgets,
+ manual verification steps. Auditors read this first.
+8. **Add a self-test subcommand or `cargo test`** that exercises
+ the drain path against a mock platform handle (mock SCM status
+ sink for services, mock close-requested event for GUIs, mock
+ signal for CLIs) and asserts the expected state machine sequence
+ plus the elapsed-time bounds. This is the smoke test
+ certification packets reference.
+
+## Where this is currently enforced
+
+| Repo | Class | Compliant today? |
+| ---- | ----- | ---------------- |
+| `pim-offline-server` (Windows SCM) | service | partial; SCM state-machine fix in flight |
+| `pim-offline-server` (Linux/macOS daemon) | service | audit ongoing |
+| `pim-offline-client` (Windows SCM) | service | partial; same fix |
+| `pim-offline-client` (Linux/macOS daemon) | service | audit ongoing |
+| `pim-offline-server-configurator-tauri` | GUI | audit ongoing |
+| `pim-offline-client-configurator-tauri` | GUI | audit ongoing |
+| `pim-offline-client-elevate-tauri` | GUI (modal) | audit ongoing |
+| `pim-offline-server-configurator-win32` | GUI | audit ongoing |
+| `pim-offline-client-configurator-win32` | GUI | audit ongoing |
+| `pim-offline-client-elevate-win32` | GUI (modal) | audit ongoing |
+| `pim-product-launcher-slint` | GUI | audit ongoing |
+| `pim-product-launcher-win32` | GUI | audit ongoing |
+| `pim-app-config-cli` | CLI | audit ongoing |
+| `pim-offline-agent-configurator-cli` | CLI | audit ongoing |
+| `pim-offline-server-configurator` (CLI) | CLI | audit ongoing |
+| `db-init` (in `pim-offline-server`) | CLI (destructive) | audit ongoing — highest priority for Ctrl+C handling |
+
+The "audit ongoing" rows are not necessarily defective; they are
+unverified. For certification purposes "unverified" is equivalent
+to "defective" until a row in `docs/ops/shutdown-compliance.md`
+records the verification.
+
+## Why this rule has `alwaysApply: true`
+
+Push-triggered CI was deliberately removed (see `ci-policy.mdc`).
+The agent, the per-crate clippy lints, and the shared
+`pim-shutdown` crate are the three enforcement surfaces. This
+rule must be loaded into every conversation so the agent's first
+instinct on adding any new binary — or editing the shutdown path
+of an existing one — is to install the handler, wire the drain,
+and update the compliance doc, not to "wire it up later".

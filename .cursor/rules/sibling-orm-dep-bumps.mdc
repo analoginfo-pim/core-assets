@@ -1,0 +1,160 @@
+# Sibling ORM crates: use path deps in tracked Cargo.toml
+
+The AIC PIM workspace lives under `c:\analog-pim\*` with each crate in
+its own repo, and every contributor checks out the whole tree. The
+`crates.pim.analoginfo.com` sparse registry is decommissioned (see
+`pim-offline-server/AGENTS.md` "Release flow"). In that world, pinning
+sibling-owned crates by git tag is the wrong tool: tag bumps require
+coordinated changes across three repos (the producer, the forked
+`mi3guyc/pim-orm` consumer, and the final consumer), lockfile drift
+splits the graph into two versions of the same crate, and `cargo
+update` hits the dead registry with 403 errors.
+
+This rule pins the durable pattern.
+
+## The rule
+
+> **Cross-repo deps on team-owned sibling crates in `c:\analog-pim\*`
+> use tracked `path = "../<crate>"` in the consumer's `Cargo.toml`,
+> plus matching `[patch]` entries that redirect every transitive
+> reference to the same path. Tag-pinned git deps are reserved for
+> third-party / outside-of-workspace consumers.**
+
+Concretely for `pim-offline-server` consuming `pim-orm-offline`:
+
+```toml
+# Cargo.toml — direct dep
+[dependencies]
+pim-orm-offline = { path = "../pim-orm-offline" }
+
+# Cargo.toml — patch the URLs every transitive reference uses
+[patch."sparse+https://crates.pim.analoginfo.com/"]
+pim-orm-offline = { path = "../pim-orm-offline" }
+# ... plus the other pim-orm-* tag pins for crates the team doesn't own
+
+[patch."https://github.com/analoginfo-pim/pim-orm-offline"]
+pim-orm-offline = { path = "../pim-orm-offline" }
+
+[patch."https://github.com/analoginfo-pim/pim-orm"]
+pim-orm = { git = "https://github.com/mi3guyc/pim-orm", branch = "fix/jsonb-bind-and-jobs-gate" }
+```
+
+The forked `mi3guyc/pim-orm` (which transitively depends on
+`pim-orm-offline` by tag) is also patched, but its OWN `Cargo.toml`
+keeps its tag pin so the fork builds standalone for its own CI. The
+patches collapse the consumer's view to a single `path+...` source.
+
+## Why this works
+
+1. **One source URL for `pim-orm-offline`.** Both the direct dep and
+ every transitive edge resolve to the same `path+` source. Cargo
+ can't end up with two versions in the graph because there's only
+ one identity.
+2. **No `cargo update` against the dead registry.** Path deps are
+ resolved locally on every `cargo check`. The lockfile records
+ `path+...` entries with no version + no source-hash fields.
+3. **No coordinated tag bumps.** Edit `pim-orm-offline` in place
+ (the AGENTS.md "schema baseline policy" already permits this
+ pre-release), and `cargo check` in `pim-offline-server` picks the
+ change up immediately.
+4. **Build reproducibility on fresh checkouts.** As long as
+ `c:\analog-pim\pim-orm-offline` exists at HEAD, every contributor
+ gets the same code. CI / build-server scripts that need a frozen
+ snapshot can git-pin the producer repo at a SHA in their own
+ setup script.
+
+## Trade-off: third-party clones
+
+A third party who clones only `pim-offline-server` without the
+sibling tree gets `failed to read manifest at ../pim-orm-offline`.
+That's the right failure for this team's distribution model: the
+shipping artifact is the MSI / installer, not the source tarball.
+If outside contributors ever need source-only builds, switch to a
+git-tag dep at release-cut time (one-line manifest change) and
+revert after.
+
+## Forbidden constructs
+
+- **Editing tracked `Cargo.toml` to `pim-orm-offline = { git = ...,
+ tag = "vX.Y.Z" }`** as a way to "release" a change. Without a
+ coordinated bump in the fork too, this re-introduces the
+ dual-version trap. The path-dep pattern obsoletes the tag-bump
+ dance entirely for this workspace.
+- **Adding a path patch in gitignored `.cargo/config.toml` when the
+ same patch belongs in tracked `Cargo.toml`.** The gitignored file
+ is for *personal* overrides (a developer swapping a sibling crate
+ to their own fork). Team-wide overrides go in `Cargo.toml` so
+ every contributor gets them.
+- **Dumping the whole `[patch."sparse+..."]` registry block** when
+ the workspace still uses some non-team-owned crates by tag
+ (`pim-orm`, `pim-orm-core`, etc., which the team doesn't own per
+ `do-not-modify-upstream-orm.mdc`). Keep tag pins for those; only
+ swap to path for team-owned crates (`pim-orm-offline` is the only
+ one today).
+- **Adding `Cargo.lock` to git just because path deps stabilize the
+ lockfile.** The workspace `.gitignore` excludes `Cargo.lock` for a
+ reason — letting contributors regenerate locally avoids merge
+ conflicts on lockfile churn. Path deps don't change the calculus.
+
+## When the dual-version graph DID appear (historical context)
+
+Prior to this rule's enactment, the workspace used git-tag deps and
+the dual-version trap fired twice in two days (2026-05-25 and
+2026-05-26). Symptoms:
+
+- `cargo check` emits `multiple different versions of crate
+ pim_orm_offline` followed by ~7 `E0308 mismatched types` errors
+ in handlers that pass commands across the version boundary.
+- `cargo tree -i pim-orm-offline` shows two entries: a `0.3.14
+ (https://...?tag=v0.3.14)` AND a `0.3.13
+ (https://...?tag=v0.3.13)` (or whatever pair).
+- `cargo update -p pim-orm` to refresh the fork's pin to a tag the
+ fork has already bumped to fails with HTTP 403 from the dead
+ sparse registry.
+- Adding `[patch."https://github.com/analoginfo-pim/pim-orm-offline"]
+ = { git = "...", tag = "v0.3.14" }` to side-step gives Cargo
+ "patch points to the same source, but patches must point to
+ different sources".
+
+The path-dep pattern in this rule eliminates every one of these
+failure modes by removing the version variable entirely.
+
+## Recovery procedure if you find yourself in the trap
+
+You're in the trap if `cargo tree -i pim-orm-offline` shows two
+entries. To recover without resurrecting the registry:
+
+1. Edit `pim-offline-server/Cargo.toml`: replace the direct
+ `pim-orm-offline = { git = ..., tag = ... }` with `pim-orm-offline
+ = { path = "../pim-orm-offline" }`.
+2. Edit the `[patch."sparse+..."]` block: replace the
+ `pim-orm-offline = { git = ..., tag = ... }` line with `pim-orm-offline
+ = { path = "../pim-orm-offline" }`.
+3. Add `[patch."https://github.com/analoginfo-pim/pim-orm-offline"]
+ pim-orm-offline = { path = "../pim-orm-offline" }`.
+4. Delete `Cargo.lock` (it's gitignored).
+5. `cargo check --offline`. The lockfile regenerates with one
+ `path+` entry and the build succeeds.
+
+## Cross-references
+
+- [`local-dev-overrides-are-gitignored.mdc`](local-dev-overrides-are-gitignored.mdc)
+ — historical rule that argued for path patches in gitignored
+ `.cargo/config.toml`. Superseded for team-owned sibling crates by
+ the path-dep pattern above; the older rule still applies for
+ **personal** overrides (developer swapping a crate to their own
+ fork).
+- [`do-not-modify-upstream-orm.mdc`](do-not-modify-upstream-orm.mdc)
+ — only `pim-orm-offline` is team-owned. The other
+ `pim-orm-*` crates stay on tag pins because they belong to the
+ upstream `pim-orm` team and the team can't push fixes there.
+- [`stop-before-retry.mdc`](stop-before-retry.mdc) — the "patch
+ points to same source" and "HTTP 403 from sparse registry" are
+ both structural failures; this rule is the durable fix that
+ obsoletes the retry loop.
+- `pim-offline-server/AGENTS.md` — "Release flow" section pins the
+ GitHub-tagged distribution channel; this rule layers the
+ path-dep refinement for team-owned crates within that channel.
+- Origin: 2026-05-25 and 2026-05-26 sessions that burned multi-hour
+ cargo iteration loops on the dual-version trap before the
+ path-dep solution was adopted.

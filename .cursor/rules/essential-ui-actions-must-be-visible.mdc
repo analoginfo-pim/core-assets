@@ -1,0 +1,421 @@
+---
+description: Essential operator actions must be visible without horizontal scroll, row content must never overlap, and no UI change may be called done without visual proof (screenshot or Playwright bounding-box asserts); layout RCA requires an Opus-class review pass.
+alwaysApply: true
+---
+
+# Essential UI actions must be visible (no clipped, no overlapping)
+
+The AIC PIM admin SPA (`pim-offline-server/ui`) is the surface a
+**C3PAO auditor**, an **MSP operator**, and a **government reviewer**
+sit in front of. When a primary control — Rescan, Fix-It, Open,
+Approve, Retest — is pushed off the right edge of a DataGrid, or when
+a chip stack spills out of a fixed-height row and paints over the row
+below, the page is not "slightly dense". It is **unusable** and it
+fails Section 508 (WCAG 2.0 AA 1.4.10 Reflow, 2.4.7 Focus Visible,
+1.4.11 Non-text Contrast) at the same time.
+
+This happened on **Current State Compliance** (`/enclave/compliance`),
+2026-07-26: per-row **Rescan** sat roughly **388 px** beyond the
+viewport at 1280 px wide, Evidence and Top-categories chip stacks
+overlapped neighboring rows because the grid ran at the DataGrid
+default `rowHeight` of 52 px with multi-chip `Stack` cells, the page
+carried a duplicate DataGrid search box, and posture / machine text
+truncated with no tooltip. Nobody caught it before the operator did,
+because **no screenshot and no bounding-box assertion existed** for
+that page.
+
+This rule binds the agent's UI-generation behavior AND the acceptance
+evidence required before any UI change is reported as done.
+
+## The rule
+
+> **Every primary operator action must be visible and clickable
+> without horizontal scrolling at 1280x800 and at 1024x768. Row
+> content must never overlap adjacent rows or columns. No claim that
+> a UI element or feature is present, available, visible, fixed, or
+> working may be treated as done without **visual proof** — a
+> screenshot the agent actually looked at, or a Playwright
+> bounding-box assertion — captured after a full (non-`SkipUiBuild`)
+> deploy. This covers **any** such claim on **any** operator surface,
+> not only per-row grid actions and not only one incident page. When
+> the task is visual design, operator GUI layout, DataGrid density,
+> overlapping controls, or "is this page usable?", a non-vision coding
+> pass is **not** sufficient; escalate the design, layout RCA, and
+> acceptance to an Opus-class model.**
+
+Concretely:
+
+1. **Primary actions are visible at 1280 and 1024.** A "primary
+   action" is any control that performs the page's main verb:
+   Rescan, Retest, Fix-It, Open, Approve, Deny, Reveal, Export,
+   Delete. Secondary/tertiary controls may live behind an overflow
+   menu; primary actions may not. The same visibility bar applies to
+   any control an agent claims is present or usable — not only these
+   verbs, and not only DataGrid action columns.
+2. **No overlapping content.** The axis-aligned bounding box of any
+   rendered row must not intersect the bounding box of any other
+   row, and cell content must not paint outside its own cell.
+3. **Visual proof before "done".** See the acceptance-evidence
+   section below. "The build succeeded" and "the service is
+   RUNNING" are **not** UI proof.
+4. **Model escalation for layout work.** See the operator-record
+   section below.
+
+## Required layout patterns
+
+### Actions column
+
+Use exactly one of these; never neither:
+
+| Pattern | When | How |
+| --- | --- | --- |
+| **Pin right** | Grid has more columns than fit at 1024 | `pinnedColumns={{ right: ['actions'] }}` and a fixed `width` on the actions column |
+| **Fit the grid** | Column set can be trimmed to fit | Sum of fixed widths + `minWidth` of `flex` columns <= 1024 minus checkbox/scrollbar chrome (~80 px) |
+| **Overflow menu** | More than two per-row verbs | One pinned icon button opening a `Menu`; the button itself is the primary action and must be visible |
+
+The identity column (`display_name` or equivalent) is pinned left
+together with `__check__` so the operator never loses row context
+while scrolling.
+
+### Row height and cell content
+
+Pick one and be explicit — never rely on the DataGrid default
+`rowHeight` of 52 px with variable-height cell content:
+
+```tsx
+// A. Content-sized rows (multi-chip / wrapping cells are OK here)
+<ReportDataGrid
+  autoHeight
+  getRowHeight={() => 'auto'}
+  ...
+/>
+
+// B. Fixed-height rows (cells MUST be single-line and clamped)
+<ReportDataGrid
+  sx={{
+    '& .MuiDataGrid-cell': {
+      overflow: 'hidden',
+      display: 'flex',
+      alignItems: 'center',
+    },
+  }}
+  ...
+/>
+```
+
+Under pattern **B**, every cell renderer clamps:
+
+```tsx
+renderCell: (params) => {
+  const full = summarize(params.row)
+  return (
+    <Tooltip title={full}>
+      <Typography
+        variant="body2"
+        noWrap
+        component="span"
+        aria-label={full}
+        sx={{ maxWidth: '100%', display: 'block' }}
+      >
+        {full}
+      </Typography>
+    </Tooltip>
+  )
+}
+```
+
+Truncated text **always** carries the full value in a `Tooltip` and
+in `aria-label`, so a screen-reader user and a mouse user both reach
+the same information (Section 508 / WCAG 1.4.13).
+
+## Forbidden constructs
+
+In every file under `pim-offline-server/ui/src/**` and any other
+operator GUI in this workspace (Win32 dialogs, Tauri shells,
+`pim-ui-kit` components):
+
+- A per-row **primary** action reachable only after horizontal
+  scrolling. This is the defect this rule exists to prevent.
+- A multi-chip `Stack` inside a DataGrid cell when the grid uses the
+  default fixed `rowHeight` and neither `autoHeight` nor
+  `getRowHeight={() => 'auto'}` is set. Chips wrap, the row does
+  not grow, and the second line paints over the next row.
+- A `Box sx={{ height: <fixed> }}` grid wrapper whose column widths
+  sum past the wrapper width, with no pinned actions column.
+- Truncated (`noWrap`, `text-overflow: ellipsis`) cell text with no
+  `Tooltip` and no `aria-label` carrying the full value.
+- Two search / quick-filter affordances on the same grid (page-level
+  filter plus `GridToolbarQuickFilter` plus the toolbar's built-in
+  search). One search per grid.
+- Multi-sentence `Alert` banners stacked above a data grid on the
+  page's primary working surface. Move the prose to the page intro /
+  help drawer; keep the banner to one line.
+- Reporting a UI change as done on the strength of `cargo build`
+  output, an HTTP 200, or a `Service RUNNING` line. Those prove the
+  binary shipped, not that the page is usable.
+- `-SkipUiBuild` / `--features skip-ui-build` on a change set that
+  touches `ui/**`, which produces "proof" screenshots of the
+  **previous** bundle. See
+  [`never-skip-ui-build-on-ui-change.mdc`](never-skip-ui-build-on-ui-change.mdc).
+
+## Required acceptance evidence
+
+A UI change is done when **at least one** of these exists and the
+agent has actually inspected it:
+
+### Option 1 — Playwright bounding-box assertions (preferred, durable)
+
+```ts
+const VIEWPORTS = [
+  { width: 1280, height: 800 },
+  { width: 1024, height: 768 },
+]
+
+for (const viewport of VIEWPORTS) {
+  test(`primary actions visible at ${viewport.width}`, async ({ page }) => {
+    await page.setViewportSize(viewport)
+    await gotoCompliance(page)
+
+    // 1. Primary action inside the viewport at scrollLeft 0.
+    const action = page.locator('button[aria-label^="Rescan "]').first()
+    const box = await action.boundingBox()
+    expect(box, 'per-row Rescan must render').not.toBeNull()
+    expect(box!.x).toBeGreaterThanOrEqual(0)
+    expect(box!.x + box!.width).toBeLessThanOrEqual(viewport.width)
+
+    // 2. No horizontal scrolling needed for the grid body.
+    const overflow = await page
+      .locator('.MuiDataGrid-virtualScroller')
+      .first()
+      .evaluate((el) => el.scrollWidth - el.clientWidth)
+    expect(overflow, 'grid must not require horizontal scroll').toBeLessThanOrEqual(1)
+
+    // 3. No row bounding boxes intersect.
+    const boxes = await page.locator('.MuiDataGrid-row').evaluateAll((rows) =>
+      rows.map((r) => r.getBoundingClientRect()).map((b) => ({
+        top: b.top,
+        bottom: b.bottom,
+      })),
+    )
+    boxes.sort((a, b) => a.top - b.top)
+    for (let i = 1; i < boxes.length; i += 1) {
+      expect(
+        boxes[i].top,
+        `row ${i} overlaps row ${i - 1}`,
+      ).toBeGreaterThanOrEqual(boxes[i - 1].bottom - 1)
+    }
+  })
+}
+```
+
+### Option 2 — screenshot the agent inspected
+
+A full-page screenshot at 1280x800 (and 1024x768 when the change
+affects column count or row height), taken against the deployed
+embedded SPA, **read back by the agent** and described in the reply:
+which primary action is visible, at what x-offset, and whether any
+row content crosses a row boundary. A screenshot that is captured
+and never looked at is not evidence.
+
+## Operator record — model selection for visual design and GUI layout
+
+For the record, from the workspace owner (Phil), 2026-07-26:
+
+> **Grok 4.5 created web interfaces that were not usable** — the
+> Current State Compliance DataGrid shipped with actions off-screen,
+> chips overlapping neighboring rows, and dense unusable chrome —
+> **and required a more expensive model (Opus) to diagnose and plan
+> the fixes.**
+
+The failure mode is not "a model wrote bad CSS". It is that a coding
+pass which never renders the page **cannot know** the page is broken,
+and reported the work as complete anyway. The cost lands on the
+operator, who finds the defect in production and then pays for a
+stronger model to do the diagnosis that should have been part of the
+original acceptance step.
+
+Operator record (Phil, 2026-07-27) — broader than acceptance alone:
+
+> **Use Opus for visual design.** The other models have consistently
+> gotten this area of design wrong just about every time.
+>
+> **Preference for implementation work is Grok 4.5 Fast High
+> (`cursor-grok-4.5-high-fast`) or AUTO.** Use less expensive models
+> for implementation where possible.
+
+Operator record (Phil, 2026-07-27) — why visual proof is hard:
+
+> Visual proof requirements are a hard requirement based on previous
+> experience of models saying features are available and visible, yet
+> this was not true consistently — tons of missing and misaligned or
+> offscreen elements.
+
+That experience is a **general and repeated pattern**, not a one-page
+DataGrid incident. The Current State Compliance Rescan / chip-stack
+failure (2026-07-26) is the worked example; the requirement covers
+**any** claim that a UI element is present or visible on any surface.
+**A claim that a feature is available, visible, or working is not
+acceptable without the visual artifact** — including affirmative claims
+("I added the button and it renders"), not only layout-regression
+claims ("the button is no longer clipped"). An unverified claim is
+treated as not done.
+
+### Precedence — this rule overrides `auto-model-only` for visual design
+
+> **Override the hard rule for Visual design.** For **visual design and
+> UI layout work, and its acceptance**, the Opus-class requirement in
+> **this** file **overrides** the "never pin Opus" prohibition in
+> [`auto-model-only.mdc`](auto-model-only.mdc).
+
+This is an **operator-directed precedence rule** (2026-07-27), not an
+agent's discretionary judgment call. An agent doing that work uses an
+Opus-class model **without** the operator naming it again in the same
+message — no permission-seeking, no re-confirmation each time. A cheaper
+model may apply mechanical edits only under a design an Opus-class model
+produced or accepted; the design and the acceptance themselves remain
+Opus-class.
+
+Resolved policy both rules agree on:
+
+| Work | Model |
+| --- | --- |
+| Visual design, UI layout, layout RCA, layout acceptance | Opus-class (this override) |
+| Backend, API, ORM, lab, infrastructure, compliance, documentation, and other non-visual implementation | `cursor-grok-4.5-high-fast` or AUTO |
+
+Binding consequences:
+
+1. When the task is **visual design, operator GUI layout, DataGrid
+   density, overlapping controls, spacing, or "is this page usable?"**,
+   a Grok-class or otherwise non-vision coding pass is **not**
+   sufficient for the design or for acceptance evidence, no matter how
+   confident the summary sounds.
+2. **Visual design, layout RCA, and final layout acceptance** use an
+   Opus-class model (or an equivalent model that actually inspects
+   rendered output). Mechanical implementation edits may use
+   `cursor-grok-4.5-high-fast` or AUTO only under a design Opus already
+   produced or accepted.
+3. Any reply claiming a UI element or feature is available, visible,
+   fixed, or working must name its evidence artifact — the Playwright
+   spec and assertion, or the screenshot path — inline. Affirmative
+   claims need the same proof as regression fixes. A reply with no
+   named artifact is treated as "not done".
+4. **This override does not weaken acceptance evidence.** Every
+   requirement in this file stands unchanged: primary actions visible
+   without horizontal scroll at 1280x800 and 1024x768, no overlapping
+   row or cell content, bounding-box assertions or screenshots the
+   agent actually read back, a named evidence artifact, and a full
+   deploy with **no** `-SkipUiBuild` before any screenshot is treated
+   as proof. The override is about **which model** does visual design —
+   it does not lower the bar the work must clear.
+5. **This override does not license Opus fan-out or spend escalation
+   anywhere else.** [`auto-model-only.mdc`](auto-model-only.mdc) still
+   forbids Opus across a fleet of background workers, Opus retry loops
+   after a usage or credit error, and pinning Opus to supervise or
+   unstick a stuck child. Non-visual work stays on
+   `cursor-grok-4.5-high-fast` or AUTO. The escalation authorized here
+   is focused visual-design / layout work — not a parallel Opus swarm.
+
+## Worked violation to fix
+
+**Violation** (Current State Compliance, as shipped 2026-07-26):
+
+```tsx
+// Fixed-height wrapper, default rowHeight 52, no pinned actions.
+<Box sx={{ height: 600, width: '100%' }}>
+  <ReportDataGrid
+    columns={[
+      { field: 'display_name', flex: 1.4, minWidth: 200 },
+      { field: 'role', width: 200 },
+      { field: 'evidence_kind', width: 170, renderCell: () => (
+        <Stack direction="row" spacing={0.5} flexWrap="wrap">
+          <Chip label={`physical_host ${phys}`} />
+          <Chip label={`log_derived ${log}`} />
+        </Stack>
+      ) },
+      { field: 'top_finding_categories', flex: 1.4, minWidth: 220, renderCell: () => (
+        <Stack direction="row" spacing={0.5} flexWrap="wrap">
+          {cats.slice(0, 3).map((c) => <Chip key={c.category} label={c.category} />)}
+        </Stack>
+      ) },
+      { field: 'actions', width: 120 },
+    ]}
+    checkboxSelection
+  />
+</Box>
+```
+
+Two chips at 170 px and three chips at 220 px both wrap to a second
+line inside a 52 px row, so they paint over the row below. The
+column widths sum past 1280 px, so `actions` — the only per-row verb
+on the page — lands roughly 388 px off-screen.
+
+**Fix**:
+
+```tsx
+<Box sx={{ height: 600, width: '100%' }}>
+  <ReportDataGrid
+    columns={[
+      { field: 'display_name', flex: 1.2, minWidth: 160 },
+      { field: 'role', width: 168, renderCell: clampedChipWithTooltip },
+      { field: 'evidence_kind', width: 132, renderCell: clampedTextWithTooltip },
+      { field: 'top_finding_categories', flex: 1, minWidth: 140, renderCell: clampedTextWithTooltip },
+      { field: 'actions', width: 118, disableColumnMenu: true, disableReorder: true },
+    ]}
+    checkboxSelection
+    pinnedColumns={{ left: ['__check__', 'display_name'], right: ['actions'] }}
+    sx={{
+      '& .MuiDataGrid-cell': {
+        overflow: 'hidden',
+        display: 'flex',
+        alignItems: 'center',
+      },
+    }}
+  />
+</Box>
+```
+
+Chips become single-line clamped text with `Tooltip` + `aria-label`,
+so nothing wraps inside a 52 px row. `actions` is pinned right, so
+Rescan is visible at scrollLeft 0 at both 1280 and 1024. The change
+is then proved by the bounding-box spec above — not by the build log.
+
+## Where this is currently enforced
+
+| Surface | Status |
+| --- | --- |
+| `ui/src/pages/CurrentStateCompliancePage.tsx` | remediation in flight — clamped cells + pinned actions landed; bounding-box spec pending |
+| `ui/e2e/current-state-compliance-embedded-live.spec.ts` | partial — asserts behavior (D1-D9), not geometry; layout asserts pending |
+| `ui/src/components/dataGrid/ReportDataGrid.tsx` | shared wrapper; the right place for a future default `getRowHeight` guard |
+| Other admin grids (`UserGroupsPage`, `PamEntitlementsPage`, `SessionRecordingsPage`, `RolesCatalogPanel`, ...) | already on `autoHeight` + `getRowHeight={() => 'auto'}` — compliant by pattern A, unverified by assertion |
+| Remaining admin pages | audit ongoing — every page needs one viewport assertion |
+| Win32 / Tauri configurator dialogs | inherit the "primary action visible" clause; verified by `scripts/audit-section-508.ps1` plus screenshots |
+
+The "audit ongoing" and "unverified" rows are not necessarily
+defective. For acceptance purposes "unverified" is equivalent to
+"defective" until a bounding-box assertion or an inspected
+screenshot records the verification.
+
+## Cross-references
+
+- [`never-skip-ui-build-on-ui-change.mdc`](never-skip-ui-build-on-ui-change.mdc)
+  — a `SkipUiBuild` deploy makes every screenshot a photograph of
+  the previous bundle. Visual proof is only valid after a full UI
+  build.
+- [`readable-read-only-controls.mdc`](readable-read-only-controls.mdc)
+  — the sibling readability rule; faded read-only text and clipped
+  primary actions are the same class of defect (important content
+  the operator cannot use).
+- [`enterprise-compliance.mdc`](enterprise-compliance.mdc) section 2
+  — Section 508 / WCAG 2.0 AA is the legal floor; 1.4.10 Reflow is
+  the criterion a horizontally-scrolling primary action violates.
+- [`auto-model-only.mdc`](auto-model-only.mdc) — spend guard for
+  non-visual work; this file's Opus-class visual-design requirement
+  overrides that rule's "never pin Opus" prohibition (operator
+  precedence, 2026-07-27).
+- [`agent-slice-discipline.mdc`](agent-slice-discipline.mdc) — one
+  slice per run; a layout fix plus its proof spec is one slice.
+- `pim-offline-server/docs/dev/current-state-compliance-layout-rca.md`
+  — the RCA and phased fix plan this rule was written from.
+- Origin: 2026-07-26 — Current State Compliance shipped with per-row
+  Rescan roughly 388 px off-screen and chip stacks overlapping rows;
+  found by the operator, not by any test.

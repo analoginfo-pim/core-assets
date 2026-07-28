@@ -1,0 +1,18 @@
+---
+description: Keep read-only and disabled reference content readable and accessible
+alwaysApply: true
+---
+
+# Read-only content uses normal contrast
+
+Read-only data must use normal foreground/background colors and normal typography. Never communicate read-only state by fading content.
+
+- Show a visible banner or status message such as “Read-only — clone to edit.” Use appropriate `role="status"` or equivalent accessibility semantics.
+- Keep reference content selectable, copyable, and readable. Prefer non-disabled controls with `readOnly` / `aria-readonly="true"` and block or reject every mutation in event handlers and state logic.
+- If a displayed reference control must remain disabled, explicitly override disabled text, label, icon, border, and opacity styles with readable theme colors.
+- Never render light gray text on white or dark gray text on black. Meet WCAG 2.0 AA / Section 508 contrast: at least 4.5:1 for normal text and 3:1 for large text and applicable UI component boundaries.
+- Do not use reduced `opacity`, muted palette colors, or disabled MUI defaults for important read-only content.
+- Truly unavailable action buttons may remain disabled, but disabled actions must not be the only presentation of important values or instructions.
+- When this pattern is found, audit sibling dialogs, pages, and shared components for the same read-only/disabled presentation.
+
+Example: render a MUI `TextField` with `slotProps={{ htmlInput: { readOnly: true, 'aria-readonly': true } }}`, keep normal theme colors, and reject changes in the handler instead of setting `disabled`.

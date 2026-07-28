@@ -1,0 +1,97 @@
+---
+description: Git-first scope, one slice per run, stop read-loops, no redundant plan subagents
+alwaysApply: true
+---
+
+# Agent slice discipline (hard requirements)
+
+These requirements apply to **every implementation or resume** task in
+`c:\analog-pim\*`, especially multi-phase plans already written to
+`docs/dev/*.md`. They complement
+[`agent-bounded-ops.mdc`](agent-bounded-ops.mdc) and
+[`stop-before-retry.mdc`](stop-before-retry.mdc).
+
+## 1. Git first — before reading the plan
+
+Before opening a plan markdown file or spawning a subagent:
+
+1. Run `git status -sb` and `git log -5 --oneline` in **each repo**
+   the task might touch.
+2. Post **one line** to the user, e.g.:
+   `Phases 1–4 on main (cea1cd8..d987312); remaining: 4.0, 5–8.`
+3. Do **not** read the full plan file if the slice is already named in
+   the user message or inferable from commit messages + `git log`.
+
+Allowed: `grep` / targeted `Read` with `offset`+`limit` on **one**
+plan section referenced by the slice (e.g. "## Phase 4.0" only).
+
+## 2. One slice per run
+
+- Default: **one phase or one vertical slice** per conversation turn
+  or background subagent (e.g. "Phase 4.0 + IPC tests only").
+- Forbidden: "implement `<plan>.md` end-to-end" in a single subagent
+  unless the user explicitly names **only** the remaining slice and
+  it fits one crate.
+- Exit with a **checklist**: done / deferred / blocked — not a promise
+  to finish the whole plan.
+
+When delegating via `Task`, the prompt must state the **single slice**,
+the **git baseline line**, and **forbidden** actions (no full plan
+re-read, no explore-the-plan subagent).
+
+## 3. Stop rules (read / grep loops)
+
+Stop, narrow scope, and report to the user when **any** of:
+
+- **Two consecutive turns** are only `Read` / `Grep` / `SemanticSearch`
+  with no `Write` / `StrReplace` / `Shell` edit or test run.
+- The **same file path** is read twice without an edit in between
+  (unless the first read used `limit` and the second continues with
+  `offset`).
+- A subagent transcript shows re-discovery of work already on
+  `main` (e.g. re-planning rate limiter wiring after
+  `feat(ipc): Phase 4` commits).
+
+Recovery: state what is already shipped, name the **smallest** next
+edit, ask if the user wants to continue that slice only.
+
+## 4. No duplicate planning in chat
+
+- The plan file in the repo is the plan. Do **not** paste a multi-paragraph
+  or 40-line implementation outline in chat.
+- Allowed in chat: slice name, git baseline line, checklist, blockers,
+  test command + pass/fail.
+- Forbidden: restating the whole phased plan before the first edit.
+
+## 5. No redundant subagents
+
+- If `docs/dev/<topic>-plan.md` exists and the user asks to
+  **implement**, do **not** spawn `explore` / `generalPurpose` workers
+  whose job is to re-read or re-summarize the plan.
+- Do **not** chain plan-only subagents before an implementation slice
+  unless the user asked for **plan changes** only.
+- One implementation subagent per slice; optional **second** only for
+  a clearly independent repo (e.g. server HTTP vs client IPC) named in
+  the slice.
+
+## Worked violation → fix
+
+**Violation:** User says "implement elevation-rate-limiting-plan.md";
+agent reads 700-line plan, spawns explore subagent, reads `server.rs`
+three times, pastes a full Phase 4–8 outline, no commits.
+
+**Fix:**
+
+```text
+git log -5 --oneline   # pim-offline-client
+→ "Remaining: Phase 4.0 + IPC tests; 1–4 on main."
+Task prompt: "Phase 4.0 only: reject_remote_clients, accept forensics,
+4412 emit. Do not read elevation-rate-limiting-plan.md (use Phase 4.0
+section grep only). Start from f44ea09."
+```
+
+## Cross-references
+
+- [`agent-bounded-ops.mdc`](agent-bounded-ops.mdc) — tool scope and retries
+- [`stop-before-retry.mdc`](stop-before-retry.mdc) — structural failures
+- Origin: 2026-06-04 elevation rate-limit session (token burn / abort)

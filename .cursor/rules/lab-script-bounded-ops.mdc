@@ -1,0 +1,34 @@
+# Lab script bounded operations (agent + PowerShell)
+
+Lab verification for offline PIM must **fail fast** with a clear message — never sit in a
+background shell with no output until the operator kills the session.
+
+## Agent rules (Cursor shell)
+
+1. **One foreground command at a time** for verification. Do not launch parallel background
+   shells for `git push`, `curl`, `cargo test`, and Win32 E2E in the same turn.
+2. **Every HTTP probe** uses `Invoke-LabHttpGet` from
+   `pim-installers/test/LabStackHelpers.ps1` or `Invoke-WebRequest -TimeoutSec N` /
+   `curl.exe --connect-timeout N --max-time N`. Never bare `curl -s` without a max time.
+3. **`cargo test` exit 0 with 0 passed and N ignored/skipped is not a pass.** Report skipped
+   live_db tests explicitly; use Playwright against a running server for DELETE/register paths.
+4. **Win32 GUI E2E** runs in **elevated foreground PowerShell**, not a background agent shell.
+   Read the script log file for `SIGNATURE INVALID BADGE OK` or the thrown error — do not infer
+   success from partial stdout.
+5. **Read terminal `exit_code`** (and last log lines) before reporting task status. A session
+   marked "aborted" may already have `exit_code: 0` in its terminal file.
+
+## PowerShell lab scripts
+
+Dot-source `pim-installers/test/LabStackHelpers.ps1` and call:
+
+- `Initialize-LabScriptBudget -MaxSeconds <N>`
+- `Assert-LabScriptWithinBudget -Phase '…'` at phase boundaries
+- `Assert-LabAgentStackReady` / `Assert-LabServerReachable` before work
+- `Stop-LabConfiguratorProcesses` in `finally` blocks
+
+Win32 reads in time-sensitive loops: `Get-RuntimeWarningsBadgeText -Win32Only` and
+`Get-StatusBarText -Win32Only` (avoids unbounded UIA tree walks).
+
+Origin: 2026-06 lab session — eight stuck Cursor shells from unbounded curl, UIA menu walks,
+and parallel background verification.

@@ -1,0 +1,40 @@
+---
+description: Reuse Robert's mix-server and massman core before offline implementation
+alwaysApply: true
+---
+
+# Reuse Robert's core first
+
+Before implementing managed-password / credential-lifecycle operations,
+endpoint/device discovery, credential propagation, remote device operations,
+vault lifecycle, or session proxy features:
+
+1. Search `c:\analog-pim\mix-server` and its `crates/massman` workspace crate
+   for existing core logic, traits, managers, models, and transports.
+2. Treat Robert's repositories as read-only from AIC Offline work. Do not edit,
+   copy, or fork their business rules into an offline crate.
+3. Reuse through a pinned dependency, an agreed upstream extraction, or a thin
+   adapter. Record the source repository, path, API/type, and commit/tag pin in
+   the consuming code or architecture documentation.
+4. Keep offline-specific AuthN, AuthZ, NIST 800-53 audit, classification,
+   FIPS-provider integration, persistence, UI, and tests in the offline
+   integration layer around the reused core.
+5. If the core is incomplete, extend it through an agreed upstream boundary or
+   add a thin offline adapter. Do not duplicate domain decisions, discovery
+   sequencing, rotation/rollback rules, or protocol behavior.
+6. Never call a stub or partial implementation parity. Document the missing
+   wrapper controls and tests explicitly.
+
+Current source map:
+
+- `mix-server/crates/disc` and `mix-server/crates/massman`: discovery,
+  inventory, credential usage, and remote operations.
+- `mix-server/crates/jobs`, `crates/password`, and the managed-password
+  compatibility shim under `crates/shim/` (upstream path retained only in
+  mix-server): managed passwords, checkout/history, jobs, and credential
+  lifecycle.
+- `mix-server/crates/vault`, `crates/sessions`, `crates/rdp`: vault and session
+  primitives that require offline compliance review before reuse.
+- Extracted offline-safe boundaries include `pim-credential-propagation`,
+  `pim-offline-session-proxy`, `pim-offline-rdp-proxy`, `pim-iam-*`, and
+  `pam-*`; prefer these when they already carry the needed provenance.

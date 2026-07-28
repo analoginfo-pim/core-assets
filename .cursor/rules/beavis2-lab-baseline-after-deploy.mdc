@@ -1,0 +1,61 @@
+---
+description: After every BEAVIS2 lab build/deploy, assert and restore password recovery + elevation baseline
+alwaysApply: true
+---
+
+# BEAVIS2 lab baseline after every build/deploy
+
+On the **BEAVIS2** lab host (`hostname` Beavis2 / `192.168.55.197`),
+password recovery and elevation **recur as broken** because agents run
+`db-init --confirm` (or otherwise wipe `offline_*` rows) and then
+deploy/restart the server **without** re-running `seed-dev`. The admin
+UI shows zero endpoints; recover and elevation mint fail. This is a
+**fixture gap**, not a product regression.
+
+## Hard rule
+
+> **After every server or agent build/deploy on BEAVIS2, before claiming
+> done:** verify Beavis2 endpoint + password recovery + elevation
+> channel. If any fail → restore immediately. Never leave the lab
+> broken. Never run destructive `db-init --confirm` without immediate
+> re-seed + SoftHSM fix + assert.
+
+Concretely, before ending the turn:
+
+1. **Verify Beavis2 endpoint** exists and is healthy
+   (`GET /api/offline/endpoints` includes
+   `machine_id` `3a7b240e-9327-44b8-97b6-38fb7812b3b2` or name match).
+2. **Verify password recovery** succeeds for **`liebsoft`** or
+   **`lanicu`** (never rotate/`phil`).
+3. **Verify elevation channel**: `aic-offline-agent-service` RUNNING,
+   pipe `aic-offline-agent-service\elevation` present,
+   `elevation_configured` in agent `runtime-status.json`, and
+   `POST /api/admin/elevation/platform/mint-v3` succeeds.
+4. **If any fail** → restore:
+   ```powershell
+   cd c:\analog-pim\pim-offline-server
+   powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\Assert-Beavis2LabBaseline.ps1 -Repair
+   # or: Restore-Beavis2Lab.ps1 -SkipDeploy -SkipDbInit -SkipCryptoPrep
+   ```
+5. **Never** run `db-init --confirm` without immediately following with
+   `Restore-Beavis2Lab.ps1` (or seed-dev + SoftHSM + assert).
+
+Prefer the assert script (also hooked at the end of
+`Deploy-OfflineServerDev.ps1` when hostname/IP matches the lab):
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\Assert-Beavis2LabBaseline.ps1 -Repair
+```
+
+## Causal chain (document in status replies when restoring)
+
+`db-init` wipe → zero endpoints → deploy without `seed-dev` → UI empty /
+recover fail / elevation mint fail. Secondary: unimported agent
+settings; HSM custody blocking seed. Full write-up:
+`pim-offline-server/docs/dev/beavis2-lab-baseline.md`.
+
+## Companion rules
+
+- `beavis2-lab-hard-rules.mdc` — identities, SoftHSM, Playwright constants
+- `deploy-after-server-ui-change.mdc` — deploy binary; **this rule adds
+  the post-deploy lab baseline assert**

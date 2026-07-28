@@ -1,0 +1,36 @@
+---
+description: Bounded waits, scoped tools, and retries so agent work does not stall
+alwaysApply: true
+---
+
+# Agent operations: progress, timers, and retries
+
+Cursor does not expose per-subagent timers from chat; **you** keep work moving with bounded operations and explicit retries.
+
+## Prefer small, fast tools first
+
+- **Do not** run workspace-wide `Glob` patterns like `**/*` on large trees (e.g. entire `c:\analog-pim`, or anything under `target/`). Prefer a **known subdirectory** + shallow pattern, or use **`Grep`** / **`SemanticSearch`** with a tight path.
+- **`Read`**: use `limit` / `offset` on large files; avoid reading multi‑MB logs unless necessary.
+- **`Grep`**: set `head_limit` and a concrete `path` instead of searching the whole drive.
+
+## Shell commands
+
+- Prefer a **single bounded** invocation; if the default wait is too short, set **`block_until_ms`** high enough once (with buffer), not endless re-polls.
+- For **flaky steps** (network, registry, file locks): **retry** up to **3** times with short backoff (e.g. 2s, 5s), then report failure and switch approach (smaller scope, different command, or ask the user).
+- Use **PowerShell** syntax on Windows: **`;`** instead of **`&&`** unless `cmd /c` is intentional.
+
+## Delegation (Task / background work)
+
+- Split large exploration into **narrow prompts** (one directory or one question per call).
+- Before any implementation `Task`, follow
+  [`agent-slice-discipline.mdc`](agent-slice-discipline.mdc): `git log` first,
+  one slice per subagent, no plan-explore workers.
+- If a delegated run **fails or is interrupted**, **do not** block the user: continue with **direct** `Read` / `Grep` on the smallest path that unblocks the next step.
+- Do not chain multiple long explorations serially without producing a **partial** answer or commit in between when the user asked for delivery.
+
+## When stuck
+
+1. Reduce scope (one crate, one file).
+2. Retry the same tool once with a **smaller** query.
+3. Switch tool type (`Glob` → `Grep`, or vice versa).
+4. Summarize what failed and what you need from the user (path, permission, or binary missing).

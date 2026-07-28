@@ -1,0 +1,307 @@
+---
+description: Every shipping daemon in this workspace writes a `runtime-status.json` file to a documented per-product path under `%PROGRAMDATA%\AIC\OfflinePim<Agent|Server>\` (Windows) / `/var/lib/aic/<program-id>/` (Linux) / `/Library/Application Support/AIC/OfflinePim<Agent|Server>/` (macOS). The writer flushes on every state transition AND on a 30 s heartbeat. The document carries a versioned schema (currently 2) that new readers tolerate forward-compatibly and old readers tolerate via serde's default ignore-unknown-fields. Writes are atomic (same-directory tempfile + rename), bounded in wall-clock (< 100 ms), and non-blocking (a failed flush logs at warn and the daemon keeps running).
+alwaysApply: true
+---
+
+# runtime-status.json: every daemon's heartbeat file
+
+The AIC PIM workspace ships **long-running services** (the offline
+agent, the offline server) and **operator-facing daemons** whose
+operators need to answer:
+
+> "Is this daemon actually running, configured, and healthy --- and
+> how do I know?"
+
+A reasonable answer is "shell out to `sc.exe query`, then
+`Get-WinEvent`, then read the rolling log, then poll the HTTP
+admin endpoint, then ask the operator to compare hashes". A
+*correct* answer is "open one file". That file is
+`runtime-status.json`, written by every shipping daemon, parsed
+by every configurator GUI, and assertable by every soak / SIEM /
+audit pipeline.
+
+This rule pins the cross-product contract for `runtime-status.json`.
+Schema details and per-product field references live in the
+per-product docs cited at the bottom; this rule pins the
+**process** parts that must hold for every present and future
+daemon in the workspace.
+
+## The rule
+
+> **Every shipping daemon writes a `runtime-status.json` file to
+> its documented per-product path. The writer flushes on every
+> state transition AND on a 30-second heartbeat. The document
+> carries a versioned schema; new readers tolerate older schemas
+> by reading the subset they know about, older readers tolerate
+> newer schemas via serde's default ignore-unknown-fields. Writes
+> are atomic (same-directory tempfile + rename), bounded in
+> wall-clock time (< 100 ms), and non-blocking: a failed flush
+> logs at `tracing::warn` and the daemon keeps running ---
+> `runtime-status.json` is a diagnostic artifact, never a
+> correctness gate.**
+
+Concretely:
+
+1. **Path-prefix discipline.** Each product has exactly one
+ canonical path. The Windows directory name is
+ `OfflinePim<Agent|Server>` (parallel naming, NO `PimOfflinePim*`
+ typo --- that wormed into a pre-Wave-1 build and is forbidden
+ by the workspace branding contract). The Linux path is
+ `/var/lib/aic/<program-id>/`. The macOS path is
+ `/Library/Application Support/AIC/OfflinePim<Agent|Server>/`.
+ The file basename is **`runtime-status.json`** on every
+ platform.
+2. **Versioned schema.** The top-level `schema` field is a
+ monotonically-increasing `u32`. Schema bumps are additive AND
+ backwards-compatible by default: every prior-schema field name
+ + shape is preserved verbatim, every new field is additive,
+ every reader (present and future) defaults to ignoring unknown
+ fields. A reader built against schema N must keep working when
+ fed a schema N+M document.
+3. **Atomic writes.** Every flush writes to a same-directory
+ tempfile (`runtime-status.json.tmp.<pid>`) and `rename`s it
+ over the destination. A polling reader either sees the prior
+ document or the new one, never a half-flushed mix.
+4. **Refresh cadence.** The writer flushes on every
+ `service_state` transition AND on a 30 s heartbeat. The
+ heartbeat keeps `produced_at_utc` fresh enough that an
+ operator polling at any cadence >= 60 s sees a recent
+ snapshot.
+5. **Bounded I/O.** The writer's blocking time MUST be < 100 ms.
+ On a slow underlying filesystem (network drive, encrypted
+ volume), the writer logs a `tracing::warn` and skips that
+ cycle. A skipped flush is not an error; the next 30 s
+ heartbeat retries.
+6. **Non-blocking on failure.** A failed flush is logged at
+ `tracing::warn` and swallowed; the daemon keeps running.
+ `runtime-status.json` is a diagnostic artifact, never a
+ correctness gate. Returning an error from a higher-level
+ function because a runtime-status flush failed is a bug
+ (`silent-failure-is-a-bug.mdc` does not apply --- the failure
+ IS logged; the rule that DOES apply is: never crash the
+ daemon over a diagnostic-file write).
+
+## Canonical per-product paths
+
+| Product | Windows | macOS | Linux |
+| --- | --- | --- | --- |
+| `pim-offline-agent` | `%PROGRAMDATA%\AIC\OfflinePimAgent\runtime-status.json` | `/Library/Application Support/AIC/OfflinePimAgent/runtime-status.json` | `/var/lib/aic/pim-offline-agent/runtime-status.json` |
+| `pim-offline-server` | `%PROGRAMDATA%\AIC\OfflinePimServer\runtime-status.json` | `/Library/Application Support/AIC/OfflinePimServer/runtime-status.json` | `/var/lib/aic/pim-offline-server/runtime-status.json` |
+| (future products) | `%PROGRAMDATA%\AIC\OfflinePim<Name>\runtime-status.json` | `/Library/Application Support/AIC/OfflinePim<Name>/runtime-status.json` | `/var/lib/aic/pim-offline-<name>/runtime-status.json` |
+
+Adding a new product means adding a new row to this table AND
+updating both per-product docs (`runtime-status.md` in the
+agent's and server's `docs/dev/`).
+
+## Reader-tolerance contract
+
+Every reader of `runtime-status.json` --- the four configurator
+GUIs, the Pester soak suite, the SIEM ingester, every future
+diagnostic tool --- must:
+
+1. **Parse the document without erroring on unknown fields.**
+ Rust: `serde` defaults to ignoring unknown fields; do not flip
+ to `deny_unknown_fields` on the reader side. Other languages:
+ use the equivalent permissive parser mode.
+2. **Treat `schema > <reader's compile-time max>` as
+ forward-compatible.** Read the fields the reader knows about,
+ ignore the rest, never crash.
+3. **Treat `schema < <reader's compile-time min>` as
+ backward-compatible.** Fall back to a downgraded view (fewer
+ fields in the UI is acceptable; refusing to display the
+ document is not).
+
+The contract is exercised at every layer in this workspace:
+
+* Unit test: `runtime_status::tests::schema1_reader_tolerates_schema2_document`
+ in `pim-offline-client/src/runtime_status.rs` and the
+ server's mirror.
+* Integration test: `schema_one_reader_tolerates_schema_two_document`
+ in `pim-offline-client/tests/runtime_status.rs` and
+ `pim-offline-server/tests/runtime_status.rs`.
+* Pester self-check: `Schema-2 shape detector reports every
+ missing field on a schema-1 sample` in
+ `pim-installers/test/soak.Tests.ps1`.
+
+A future PR that adds `deny_unknown_fields` to any
+runtime-status reader path fails this rule and must be rejected
+at review.
+
+## Atomic-write contract
+
+Required pattern (illustrative; the workspace's helper is the
+`RuntimeStatusReporter::flush` method in each product's
+`runtime_status.rs`):
+
+```rust
+let snapshot = self.snapshot_locked()?;
+let json = serde_json::to_string_pretty(&snapshot)?;
+let tmp = self.output_path
+    .with_extension(format!("json.tmp.{}", std::process::id()));
+std::fs::write(&tmp, json.as_bytes())?;
+if let Err(e) = std::fs::rename(&tmp, &self.output_path) {
+    let _ = std::fs::remove_file(&tmp);
+    return Err(e);
+}
+Ok(())
+```
+
+The `.tmp.<pid>` suffix avoids contention if two daemons
+(incorrectly) share the directory. The `let _ = remove_file(&tmp)`
+on the rename-failure path keeps the directory tidy without
+masking the rename error to the caller.
+
+Forbidden:
+
+- Writing to the final path directly (`std::fs::write(&self.output_path, ...)`).
+ A polling reader can see a half-flushed document.
+- Cross-directory tempfiles (writing to `%TEMP%` then renaming
+ across drives). `rename` is not atomic across filesystems on
+ Windows.
+- A `flush()` that returns early without removing a partially-
+ written tempfile.
+- A `flush()` that holds the snapshot-Mutex across the
+ filesystem call. The bounded-I/O contract requires the lock
+ to drop before the (potentially-slow) `write` / `rename`.
+
+## Refresh-cadence contract
+
+The writer flushes when:
+
+1. **A `service_state` transition occurs.** Examples:
+ `Starting -> Running`, `ConfigurationRequired -> Running`,
+ `Running -> Stopping`, `Stopping -> Stopped`. Every state
+ transition publishes a fresh snapshot so a configurator
+ polling at a granular cadence sees the change immediately.
+2. **A 30 s heartbeat fires.** Independently of transitions, the
+ daemon's periodic-writer task wakes every 30 s and flushes.
+ The heartbeat keeps `produced_at_utc` fresh enough that an
+ operator polling at any cadence >= 60 s sees a recent snapshot.
+
+Forbidden:
+
+- A daemon that only flushes on transitions. After
+ `Starting -> Running` the document's `produced_at_utc` is the
+ boot timestamp; a configurator that opens the file an hour
+ later cannot tell whether the daemon is still alive.
+- A daemon that only flushes on the heartbeat. A configurator
+ polling more frequently than the heartbeat misses transient
+ states (`Stopping` between SCM stop and process exit, for
+ example).
+- A daemon whose heartbeat interval is configurable to "off" or
+ a value > 60 s. The 30 s cadence is fixed; future minor
+ versions may tighten it (e.g. to 10 s) but never loosen it.
+
+## Non-blocking-on-failure contract
+
+```rust
+pub fn flush_best_effort(&self) {
+    if let Err(e) = self.flush() {
+        tracing::warn!(
+            error = %e,
+            path = %self.output_path.display(),
+            "runtime-status.json flush failed; continuing"
+        );
+    }
+}
+```
+
+Every transition site calls `flush_best_effort` (or the
+equivalent). A failed flush is logged at `tracing::warn` and
+swallowed; the daemon's main loop continues. The daemon's
+**health** is not coupled to the flush succeeding, because:
+
+* The disk could be full, the directory could be read-only, the
+ antivirus could be holding the file --- none of these mean the
+ daemon should stop serving traffic.
+* The diagnostic file is for the operator; if it fails to update
+ the operator notices on the next poll (the file is stale or
+ missing) and investigates. The daemon does not need to crash
+ to make that visible.
+
+Forbidden:
+
+- `self.flush().expect("must flush")` on a transition site (no-
+ panic policy + this rule both bite).
+- `if let Err(e) = self.flush() { return Err(...); }` from a
+ caller whose own contract has nothing to do with diagnostic
+ files (a sync loop, an HTTP handler, etc.).
+
+## What goes IN `runtime-status.json` vs OUT
+
+`runtime-status.json` is for **the operator's question**. It is
+NOT a replacement for any of:
+
+* **The Windows Event Log / `journald` / `unified log`.** Those
+ are auditor-facing artifacts: every security-relevant operator
+ action lands there per `enterprise-compliance.mdc` §5. They
+ are append-only and time-ordered; `runtime-status.json` is
+ mutated in place.
+* **The rolling `tracing` log.** That is a chronological
+ record of every operation the daemon performed;
+ `runtime-status.json` is a single snapshot of "right now".
+* **The HTTP admin API.** That is an authenticated, queryable
+ surface for tooling and dashboards; `runtime-status.json` is
+ an unauthenticated, single-shot read for an operator on the
+ console.
+
+What goes IN: the operator's at-a-glance picture --- is it
+running? configured? what FIPS module? what schema?
+which signal arrived last? did the last drain complete inside
+budget? --- plus enough provenance (product, version, git_sha,
+build_profile) that an operator filing a support ticket can
+paste the file and the support engineer has every fact they
+need to start.
+
+What stays OUT: customer data, request payloads, secret
+plaintext (use the SHA-256 fingerprint helper instead), and
+anything per-request that is not the literal "most recent
+request" snapshot (route the rest through the tracing log /
+admin API).
+
+## Where this is currently enforced
+
+| Surface | Status |
+| --- | --- |
+| `pim-offline-client/src/runtime_status.rs` (writer) | enacted; schema 2; tests at three layers |
+| `pim-offline-server/src/runtime_status.rs` (writer) | enacted in Wave 4 Track I; schema 2; tests at three layers; R7 violation closed |
+| `pim-offline-client/tests/runtime_status.rs` (integration) | 9/9 passing |
+| `pim-offline-server/tests/runtime_status.rs` (integration) | 12/12 passing |
+| `pim-installers/test/soak.Tests.ps1` (Pester) | 7/7 SelfCheck passing; live-soak asserts schema-2 fields |
+| `pim-offline-client/src/win_scm_dispatch.rs` (SCM hooks) | publishes `record_signal_received` / `record_drain_outcome` |
+| `pim-offline-server/src/bin/server/win_scm_dispatch.rs` (SCM hooks) | publishes `record_signal_received` / `record_drain_outcome` via process-singleton |
+| `pim-offline-client/docs/dev/runtime-status.md` (doc) | schema 2 field reference |
+| `pim-offline-server/docs/dev/runtime-status.md` (doc) | schema 2 field reference + R7-fix history |
+
+A future product / daemon in this workspace that does not write a
+`runtime-status.json` file fails this rule and must be rejected
+at review.
+
+## Cross-references
+
+* [`shutdown-compliance.mdc`](shutdown-compliance.mdc) ---
+ `pim-shutdown` populates `lifecycle.last_signal_kind` and
+ `lifecycle.last_drain_outcome` in the runtime-status document;
+ a schema or path change here is a shutdown-contract change
+ there.
+* [`service-lifecycle-logs.mdc`](service-lifecycle-logs.mdc) ---
+ the Windows Event Log triplet (`service started`, `service
+ stopping`, `service stopped`) is the auditor-facing companion
+ to `runtime-status.json`; together they cover both "right now"
+ (this file) and "the whole story" (the event log).
+* [`silent-failure-is-a-bug.mdc`](silent-failure-is-a-bug.mdc)
+ --- every `Err(_)` arm on a flush failure logs at `warn` (op,
+ path, error). The non-blocking-on-failure clause above is the
+ specific instance of the broader rule.
+* [`no-panic.mdc`](no-panic.mdc) --- `flush_best_effort` is the
+ canonical wrapper that satisfies both the no-panic policy and
+ this rule's non-blocking contract.
+* [`tests-must-not-touch-machine-state.mdc`](tests-must-not-touch-machine-state.mdc)
+ --- integration tests for runtime-status use the explicit-path
+ `with_path(...)` API; they never touch `%PROGRAMDATA%`,
+ `/etc/aic/`, or the OS keyring.
+* `pim-offline-client/docs/dev/runtime-status.md` --- agent
+ schema 2 reference (canonical for the shared fields).
+* `pim-offline-server/docs/dev/runtime-status.md` --- server
+ schema 2 reference (canonical for the server-only fields:
+ `last_request`, `ConfigurationRequired` semantics).

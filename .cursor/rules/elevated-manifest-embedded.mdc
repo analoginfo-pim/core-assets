@@ -1,0 +1,115 @@
+---
+description: Admin configurators must embed requireAdministrator in the PE manifest (not runtime-only checks)
+globs: "**/{pim-offline-*-configurator-{win32,tauri},pim-offline-*-elevate-win32}/**/*.{rs,manifest,rc,json,toml,md}"
+alwaysApply: false
+---
+
+# Elevated manifest must be embedded (Windows admin configurators)
+
+Every **Windows GUI** in this workspace that writes the canonical machine
+configuration store (HKLM / platform keyring), drives SCM install/start/stop,
+or registers the Windows Event Log provider **must ship with an embedded
+application manifest** declaring:
+
+```xml
+<requestedExecutionLevel level="requireAdministrator" uiAccess="false"/>
+```
+
+A runtime `IsUserAnAdmin()` gate (`pim_app_config_cli::ensure_machine_config_privilege`)
+is **defense in depth only**. It is not a substitute for the embedded
+manifest: without `requireAdministrator`, double-click / Start-menu /
+MSI shortcut launches run as the interactive user, fail HKLM writes, and
+produce confusing partial UI state.
+
+## Required pattern — Win32 (`embed-resource`)
+
+1. Keep the full manifest in `app.manifest` at the crate root (trustInfo +
+   Common Controls v6 + DPI + supportedOS).
+2. Reference it from `resources.rc`:
+
+   ```rc
+   1 RT_MANIFEST "app.manifest"
+   ```
+
+3. In `build.rs`, compile with `manifest_required()` and **list the manifest
+   as an input**:
+
+   ```rust
+   println!("cargo:rerun-if-changed=app.manifest");
+   embed_resource::compile("resources.rc", embed_resource::NONE)
+       .manifest_required()
+       .expect("manifest embed failed");
+   ```
+
+   Omitting `rerun-if-changed=app.manifest` leaves a stale `.res` in
+   `target/` that silently drops `trustInfo` after manifest edits.
+
+## Required pattern — Tauri 2 (`tauri-build` winres)
+
+Do **not** call `embed-resource` after `tauri_build::build()` — Tauri's
+default `windows-app-manifest.xml` (Common Controls only) wins the link and
+the admin elevation level is lost.
+
+Pass the shipping manifest through `tauri_build::try_build`:
+
+```rust
+let mut windows = tauri_build::WindowsAttributes::new();
+windows = windows.app_manifest(include_str!("app.manifest"));
+let attrs = tauri_build::Attributes::new().windows_attributes(windows);
+tauri_build::try_build(attrs).expect("tauri build failed");
+```
+
+Keep `app.manifest` as the single source of truth; `manifest.rc` is not
+used on the Tauri path.
+
+## Binaries that require `requireAdministrator`
+
+| Binary | Repo |
+| --- | --- |
+| `pim-offline-server-configurator-win32.exe` | `pim-offline-server-configurator-win32` |
+| `pim-offline-server-configurator-tauri.exe` | `pim-offline-server-configurator-tauri` |
+| `pim-offline-client-configurator-win32.exe` | `pim-offline-client-configurator-win32` |
+| `pim-offline-client-configurator-tauri.exe` | `pim-offline-client-configurator-tauri` |
+
+## Binaries that must stay `asInvoker`
+
+| Binary | Why |
+| --- | --- |
+| `pim-offline-server.exe` / `pim-offline-agent.exe` | SCM grants the service token; auto-UAC from SCM is a defect |
+| `pim-offline-*-configurator.exe` (headless CLI) | Invoked from an already-elevated shell; second UAC is hostile |
+| `pim-offline-client-elevate-{win32,tauri}.exe` | End-user elevation UI; must **not** require admin at launch |
+
+## Verification
+
+After every manifest or `build.rs` change:
+
+1. Rebuild release (`cargo build --release` / `cargo tauri build`).
+2. Extract RT_MANIFEST id=1 from the `.exe` and confirm
+   `level="requireAdministrator"`.
+3. Run `pim-installers/test/wack-compliance.Tests.ps1` (admin GUI test).
+
+Manual one-liner (PowerShell, uses the helpers in the WACK suite):
+
+```powershell
+# Expect: requireAdministrator
+Get-AicPeManifestExecutionLevel -Path '...\pim-offline-server-configurator-win32.exe'
+```
+
+## Forbidden constructs
+
+- Shipping an admin configurator whose embedded manifest lacks `trustInfo`.
+- Relying on `ensure_machine_config_privilege` alone without an embedded
+  `requireAdministrator` manifest on Windows GUI binaries.
+- Tauri: `embed_resource::compile("manifest.rc", …)` **after**
+  `tauri_build::build()` as the elevation mechanism.
+- Win32: `embed-resource` without `cargo:rerun-if-changed=app.manifest`.
+
+## Cross-references
+
+- `pim-app-config/crates/pim-app-config-cli/src/operator_privilege.rs` —
+  runtime gate (supplement, not replacement).
+- `pim-installers/test/wack-compliance.Tests.ps1` —
+  `Test-AicPeManifestRequiresAdministrator`.
+- Origin: May 2026 — MSI-shipped server configurators launched without UAC
+  because stale Win32 `.res` and Tauri default manifest overwrote
+  `requireAdministrator`.

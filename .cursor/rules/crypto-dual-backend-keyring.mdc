@@ -1,0 +1,74 @@
+---
+description: Dual-backend (HSM + AWS-LC) keyring + universal envelope contract for all at-rest secrets
+alwaysApply: true
+---
+
+# Dual-backend crypto: keyring + universal envelope (hard requirement)
+
+Operator directive (non-negotiable): **HSM and AWS-LC software must BOTH
+always be available for every encrypt/decrypt.** Keys and engines migrate
+between platforms with no interruption. Every secret carries metadata
+identifying which key it needs, so rotation (decrypt-with-old,
+re-wrap-with-new) works on **every** platform including HSM.
+
+The canonical contract lives in **`pim-crypto-adapter`**
+(`src/key_manager.rs`): `Keyring`, `KeyEntry`, `KeyState`, `KekCustody`,
+`UniversalEnvelope`, `DualLiveKekProvider`, `SoftwareKekStore`, and
+`KeyManager`. Do not fork or re-invent these shapes per crate — depend on the
+adapter and map its `UniversalEnvelope` onto your storage columns/files.
+
+## The only way to produce ciphertext
+
+- Produce every at-rest secret through `KeyManager::encode(keyring_id, aad,
+  plaintext) -> UniversalEnvelope`. It refuses to emit without full
+  key-lookup metadata (`keyring_id`, `key_id`, `adapter_id`, alg, nonces,
+  tag, `aad_context`).
+- Decrypt only through `KeyManager::decode(&UniversalEnvelope) ->
+  Zeroizing<Vec<u8>>` (or `decode_with_ciphertext` when content streams from
+  a file). Decode **resolves the key from the envelope's `key_id` /
+  `adapter_id`** — NEVER a global "current default" KEK.
+- **Forbidden outside `pim-crypto-adapter`:** raw `aws_lc_rs::aead::*`,
+  bespoke `aes_256_gcm_*` calls, the legacy `encrypt_envelope` /
+  `decrypt_envelope`, and any `v{n}:aes256gcm:` string construction. An
+  enforcement integration test (modelled on `forbid_env_set_var.rs`) fails
+  the build if these appear in server/client/config-storage source.
+- `ring` is **never** an active provider. Both backends are FIPS/CMVP:
+  software = AWS-LC #4759; HSM records its own `cmvp_cert`. New writes refuse
+  `cmvp_cert == "pending"` unless an explicit lab override is set.
+
+## Keyring model
+
+- Exactly one `KeyState::Active` key per keyring for new writes.
+- `Retired` (and `Compromised`) keys stay loadable so old ciphertext decrypts
+  until a re-wrap sweep leaves zero references; only then remove them.
+- Software KEKs are stored **wrapped at rest** via `SoftwareKekStore`
+  (DPAPI/keyring in `pim-config-storage`) and loaded transiently into a
+  zeroized buffer — never plaintext `REG_SZ`, never raw bytes in a persisted
+  keyring row (`KekCustody::SoftwareWrapped { custody_id }`). HSM keys are
+  on-token handles (`KekCustody::Hsm { label, id_hex }`).
+
+## Dual-live selection, rotation, migration
+
+- Construct BOTH the PKCS#11 HSM adapter and the AWS-LC software adapter at
+  startup and keep them live simultaneously in one `DualLiveKekProvider`.
+- New writes use the Active key's engine; if that engine is unreachable and a
+  `software_fallback_key_id` is set, write under the fallback and stamp ITS
+  `key_id` (still self-describing).
+- **Rotation** and **engine migration** share one primitive:
+  `KeyManager::rewrap(&env)` decrypts the DEK with the envelope's *named* key
+  and re-wraps it under the keyring's current Active key. The content
+  ciphertext, nonce, and tag stay **byte-for-byte identical** — only the DEK
+  wrap changes. Migration = stage `PendingActivation` on the new engine →
+  `activate_key` → re-wrap sweep (both engines live so reads never fail) →
+  remove the old key when unreferenced.
+
+## No-panic / fail-closed
+
+Propagate `KeyManagerError` and `tracing`; never `unwrap`/`expect`/`panic` on
+a crypto path. A crypto failure is a hard failure — audit-log it and fail the
+request closed. US English in all messages and identifiers.
+
+## FIPS DLL staging
+
+If a binary relinks against the FIPS module, stage DLLs per
+`fips-dll-staging.mdc`.

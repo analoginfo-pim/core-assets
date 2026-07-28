@@ -1,0 +1,101 @@
+---
+description: Default workflow — auto commit and push completed work without asking
+alwaysApply: true
+---
+
+# Auto commit + push (default workflow)
+
+The owner of this workspace (Phil) has set the default to **auto commit
+and push** when a task is complete. Do not stop and ask "should I push?"
+before each completed task.
+
+## Defaults
+
+When you finish a coherent piece of work in a repo under `c:\analog-pim\*`:
+
+1. Run `git status` to confirm the working tree is in a sensible state.
+2. Stage **only** the files that belong to the task you just completed
+   (use `git add <paths>`; do NOT use `git add -A` blindly).
+3. **`pim-offline-server` / `pim-offline-client` runtime changes:** run the dev
+   deploy script and confirm the service is **RUNNING** before commit+push
+   (see `pim-offline-server/.cursor/rules/deploy-after-server-ui-change.mdc`):
+   ```powershell
+   pwsh c:\analog-pim\pim-offline-server\scripts\Deploy-OfflineServerDev.ps1
+   # agent sibling: pim-offline-client\scripts\Deploy-OfflineAgentDev.ps1
+   ```
+4. Write a clear commit message via the temp-file pattern (PowerShell
+   here-docs misbehave with some pre-commit hooks in this workspace):
+
+   ```powershell
+   $msg = @"
+   <subject>
+
+   <body>
+   "@
+   $tmp = Join-Path $env:TEMP "commit-msg-$([guid]::NewGuid()).txt"
+   [System.IO.File]::WriteAllText($tmp, $msg, [System.Text.UTF8Encoding]::new($false))
+   git commit -F $tmp
+   Remove-Item $tmp -ErrorAction SilentlyContinue
+   ```
+
+5. `git push` (plain push to the tracking branch, normally `origin/main`).
+6. Verify with `git status` and a one-line summary of what was pushed.
+
+When delegating to subagents, instruct them to also commit + push their
+own work unless the task explicitly says otherwise.
+
+## Hard guardrails (never bypass)
+
+These are stricter than the system "git safety protocol" — they survive
+the auto-push default:
+
+- **NEVER** `git push --force` or `--force-with-lease` to `main` /
+  `master` / any protected branch. If a force push is genuinely needed,
+  STOP and ask first.
+- **NEVER** push with `--no-verify` / hook-skipping flags. Let
+  pre-commit and pre-push hooks run; if they fail, fix the issue and
+  push again. Do not work around the hook.
+- **NEVER** commit files that look like they contain secrets (`.env`,
+  `*.pem`, `*.key`, `credentials.json`, `app-config*.toml` with live
+  PINs/tokens, etc.). If the user explicitly asks you to commit such a
+  file, warn first and require explicit confirmation.
+- **NEVER** `git config` changes. The author/email + signing config
+  belongs to the user.
+- **NEVER** push to a remote other than `origin` without explicit
+  instruction.
+- **NEVER** push from a branch that isn't tracking an upstream — set up
+  the upstream first (`git push -u origin <branch>`) and surface that in
+  your response.
+
+## When NOT to auto-push
+
+Skip the push (commit locally, surface a short note) when any of these
+hold:
+
+- The commit is on a branch other than `main` / `develop` / a
+  conventional integration branch, AND there's no upstream set yet —
+  ask whether to `push -u origin <branch>` or to keep it local.
+- The CI policy in `c:\analog-pim\.cursor\rules\ci-policy.mdc` or the
+  per-crate `AGENTS.md` says a particular kind of change needs a PR
+  rather than a direct push to `main`. (As of May 2026 this workspace
+  pushes directly to `main`; revisit if that changes.)
+- You're mid-refactor and the commit you just made is genuinely
+  intermediate. Squash or amend before pushing if it would leave `main`
+  red.
+- A required check failed locally (`cargo check` returns errors, or
+  `cargo test --no-run` fails). Commit-and-push of a known-broken state
+  defeats the purpose. Fix first.
+
+## After-push report
+
+Each turn that includes pushes should end with a tight summary table
+like:
+
+```
+Pushed:
+  pim-offline-server   145f28d7  fix(scm): stop killing the server …
+  pim-app-config       b86a732   fix(connectivity): install native-tls …
+```
+
+This makes it easy for the user to audit the surface area without
+re-reading the whole turn.

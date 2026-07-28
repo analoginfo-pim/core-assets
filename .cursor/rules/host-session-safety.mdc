@@ -1,0 +1,42 @@
+---
+description: Never disable host startups, clear browser sessions, or reboot without explicit consent
+alwaysApply: true
+---
+
+# Host session safety (operator workstation)
+
+## The rule
+
+Agents must not damage the operator's interactive Windows/macOS/Linux desktop
+session. Lab and Hyper-V work must not cost open browser tabs, startup apps, or
+user session state.
+
+## Forbidden without explicit same-message consent
+
+- Writing/deleting `StartupApproved\Run` or `StartupApproved\StartupFolder`
+  (HKCU/HKLM) to disable startups
+- Mass-disabling Task Manager "Startup apps"
+- Stopping/disabling user tray apps (iCUE, Logitech, Snagit, etc.) as a side
+  effect of "cleanup"
+- `shutdown` / `Restart-Computer` / `Stop-Computer` / forced logoff
+- Clearing browser profile data, session restore files, or killing browser
+  processes "to free RAM"
+- DISM/optional-feature changes that require reboot UNLESS the user explicitly
+  asked to install that feature or fix that payload; even then, prefer
+  `-NoRestart` and tell the user to reboot when ready — never surprise reboot
+- "Optimize" or "cleanup" scripts that touch HKCU Run keys broadly
+
+## Required
+
+- Before any host reboot is recommended, warn that open browser tabs and unsaved
+  UI state may be lost; offer to wait
+- Hyper-V / lab disk work stays on D:/E:; do not "fix" the user profile to make
+  lab work succeed
+- If startups are found disabled, restore them; do not leave them disabled
+- Origin: 2026-07-16 BEAVIS2 Hyper-V lab session — StartupApproved mass-disable
+  + lost browser tabs
+
+## Allowed
+
+- Explicit user request: "reboot now", "disable startup X", "kill chrome"
+- Per-test sandboxes / TempDir (not the interactive user session)

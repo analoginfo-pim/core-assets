@@ -1,0 +1,86 @@
+---
+description: Cost control — default AUTO or Grok 4.5 Fast High; never pin Opus except where visual-design precedence overrides
+alwaysApply: true
+---
+
+# AUTO-only model policy (credit burn guard)
+
+Agents in this workspace burned through paid credits by pinning
+`claude-opus-4-8-thinking-high` on dozens of background `Task` workers and
+retrying after API limits. That pattern is forbidden.
+
+## The rule
+
+> **Default to Grok 4.5 Fast High (`cursor-grok-4.5-high-fast`) or AUTO.
+> Never pass an explicit Opus / Max / thinking-high model on `Task` (or any
+> subagent / cloud agent) unless the user names that exact model in the same
+> message — except where the visual-design override below applies. Never
+> reopen failed workers in a retry loop.**
+
+Concretely:
+
+1. **Omit the `model` field** on `Task` / subagent launches so the runtime
+   uses AUTO (or the parent's model), **or** pin
+   `cursor-grok-4.5-high-fast` for non-visual implementation work. Do not set
+   `claude-opus-4-8-thinking-high`, `claude-opus-4-8`, or equivalent pins
+   except under the override in the next section.
+2. **On API / usage / credit errors:** stop. Report once. Do **not** spawn
+   a replacement Task on another expensive model.
+3. **Concurrency:** at most two background `generalPurpose` / `explore`
+   workers per turn; prefer one slice. No "resume remaining tasks" that
+   fans out into N Opus workers.
+4. **No unsupervised loops:** do not start `/loop`, `AGENT_LOOP_*` tickers,
+   or babysit–retry watchers unless the user asked for a loop.
+5. **If the user reports credit burn or says "use AUTO":** do not resume
+   Opus-pinned agent IDs; interrupt only from the owning parent chat; continue
+   only on AUTO or `cursor-grok-4.5-high-fast`.
+6. **Do not pin Opus to supervise or unstick a stuck child** (see
+   [`stuck-agent-supervisor.mdc`](stuck-agent-supervisor.mdc)).
+
+## Override — visual design takes precedence (operator, 2026-07-27)
+
+> **Override the hard rule for Visual design.** For **visual design and UI
+> layout work, and its acceptance**, the Opus-class requirement in
+> [`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc)
+> **overrides** the "never pin Opus" prohibition in this file.
+
+This is an **operator-directed precedence rule** (Phil, 2026-07-27), not an
+agent's discretionary judgment call. An agent doing that work uses an
+Opus-class model **without** the operator naming it again in the same
+message — no permission-seeking, no re-confirmation each time.
+
+Operator record (Phil, 2026-07-27):
+
+> **Use Opus for visual design.** The other models have consistently gotten
+> this area of design wrong just about every time.
+>
+> **Preference for implementation work is Grok 4.5 Fast High
+> (`cursor-grok-4.5-high-fast`) or AUTO.** Use less expensive models for
+> implementation where possible.
+
+Resolved policy both rules agree on:
+
+| Work | Model |
+| --- | --- |
+| Visual design, UI layout, layout RCA, layout acceptance | Opus-class (this override) |
+| Backend, API, ORM, lab, infrastructure, compliance, documentation, and other non-visual implementation | `cursor-grok-4.5-high-fast` or AUTO |
+
+This override does **not**:
+
+1. **Weaken acceptance evidence** in
+   [`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc).
+   Primary actions visible at 1280x800 and 1024x768, no overlapping rows/cells,
+   bounding-box asserts or screenshots the agent read back, a named evidence
+   artifact, and a full deploy with **no** `-SkipUiBuild` before any screenshot
+   counts as proof — all stand unchanged. The override is **which model** does
+   visual design; it does not lower the bar the work must clear.
+2. **License Opus fan-out or spend escalation anywhere else.** No Opus across
+   a fleet of background workers, no Opus retry loops after a usage or credit
+   error, no Opus to supervise or unstick a stuck child. Items 1–6 above remain
+   binding for all non-visual work.
+
+## Origin
+
+2026-07-15 Opus overspend on CMMC enclave / SBOM / KMS background Task fleet
+under parent chat `072a9d53-3dd4-4a90-9749-4e2ac1d5de47`.
+Visual-design precedence added 2026-07-27 per operator directive.

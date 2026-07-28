@@ -1,0 +1,210 @@
+---
+description: Tests in this workspace must never poke shared machine state (process env vars, %PROGRAMDATA%, HKLM, /etc, the OS keyring, named pipes). Production code that reads such state must expose an explicit-path fixture API that tests use instead of `env::set_var`.
+alwaysApply: true
+---
+
+# Tests must not touch machine state (R1)
+
+The AIC PIM workspace ships **long-running services**, **elevated
+configurators**, **operator GUIs**, and **headless installers** that
+all read from the same machine-global stores: `%PROGRAMDATA%\AIC\…` /
+`/etc/aic/…`, Windows `HKLM`, Windows Credential Manager / macOS
+Keychain / Linux Secret Service, named pipes under `\\.\pipe\…`,
+process environment variables. A test that mutates any of those
+stores is a **test-isolation bug**, not a "quirky test": parallel
+tests in the same process see each other's mutations, the developer's
+real installation gets corrupted, and the test passes on Tuesday and
+fails on Wednesday because a sibling test ran first.
+
+This rule binds the agent's test-authoring behavior AND the
+production code shape that makes test-fixturing possible.
+
+## The rule
+
+> **Tests must drive the system under test through explicit
+> per-test paths, handles, and channels — never through
+> `std::env::set_var`, never through writes to shared machine
+> stores. Production code that reads from machine-global state
+> must expose a fixture API (`fn save_to_file_at(&Path)`,
+> `fn open_at(channel: &str)`, `fn load_from_dir(&Path)`) so
+> tests can bind their own sandbox without mutating the
+> process.**
+
+Concretely:
+
+1. **No `std::env::set_var(` in test bodies.** `#[test]`,
+ `#[tokio::test]`, `#[test_log::test]`, `rstest::*`, `criterion`
+ benchmarks, `proptest!` blocks. The process environment is a
+ single global; concurrent tests racing on it is undefined
+ behavior in Rust 1.74+ (`set_var` is `unsafe` for exactly this
+ reason).
+2. **Production code that today reads an env var to locate a
+ directory / pipe / file MUST also expose an explicit-path
+ variant** that takes the resolved path / handle as an argument.
+ Tests bind their own `tempfile::TempDir` and call the explicit
+ variant; the env-var path remains as the production fallback
+ (operator-controlled debug knob), but the test path does not
+ traverse it.
+3. **No test may write to a shared machine store** unless it lives
+ under a per-test sandbox the test created and deletes on drop:
+ - `%PROGRAMDATA%\AIC\…` / `/etc/aic/…` → write under a
+ `tempfile::TempDir`; pass the path explicitly via the fixture
+ API.
+ - Windows `HKLM` / `HKCU` → use the `pim-config-storage`
+ in-memory test backend (gated by `cfg(test)`), or a
+ throwaway `HKCU\Software\AIC\test-<uuid>` subtree the test
+ deletes in its `Drop`.
+ - OS keyring → use the `pim-config-storage` in-memory backend
+ with a **throwaway program id** (`pim-e2e-<uuid>`); never
+ the production program id (`pim-offline-agent`,
+ `pim-offline-server`, …).
+ - Named pipes / Unix sockets → bind a per-test pipe name with
+ a UUID suffix (e.g.
+ `\\.\pipe\aic-test-{uuid}-elevation`) and pass it to the
+ server / client constructors explicitly.
+
+## Production env vars currently read in this workspace
+
+The corrective contract requires that **every** entry in this table
+either (a) keeps its env-var read for the production debug-knob
+path AND grows an explicit-path sibling that tests use, or (b) loses
+the env-var read entirely when the new fixture API lands. Today's
+inventory (run `rg "env::var(_os)?\(\s*\"(OFFLINE_|AIC_|PIM_|LOCAL_UPDATE_|ENABLE_LEGACY_|OFFLINE_DEV_|OFFLINE_ADMIN_)" --type rust` to refresh):
+
+| Env var | Read by (file:line) | Fixture replacement |
+| --- | --- | --- |
+| `OFFLINE_DEBUG_LOG_DIR` | `pim-offline-client/src/config/settings.rs:326` | `Settings::log_dir_for_tests(&Path)` |
+| `OFFLINE_DEBUG_CONFIG_DIR` | `pim-offline-client/src/config/settings.rs:401` | `Settings::save_to_file_at(&Path)` / `Settings::load_from_dir(&Path)` |
+| `OFFLINE_DEBUG_RUNTIME_STATUS_DIR` | `pim-offline-client/src/runtime_status.rs:197` | `RuntimeStatus::write_to_dir(&Path)` |
+| `PIM_OFFLINE_IPC_ELEVATION_PATH` | `pim-offline-client/src/ipc/paths.rs:38, 45` | `IpcServer::bind_at(&str)` + `IpcClient::connect_at(&str)` |
+| `OFFLINE_DEV_FIXTURES` | `pim-offline-server/src/bin/seed_dev/main.rs:106` | seed-dev is a binary; tests must not import it |
+| `OFFLINE_ADMIN_TOKEN` | `pim-offline-server/src/auth/admin.rs` | `AdminAuth::with_token(&str)` |
+| `ENABLE_LEGACY_COMPAT` | `pim-offline-server/src/api/legacy/…` | `LegacyTranslator::enabled(bool)` |
+| `LOCALE_ENV_VAR` constant | `pim-app-config/crates/pim-app-config-i18n/src/locale.rs` | `Locale::override_for_tests(&str)` |
+
+Any new env-var read that doesn't appear in this table must arrive
+with the matching fixture API in the same change set, and the table
+above must be updated.
+
+## Test fixtures that already exist (use these, don't invent new ones)
+
+| Need | Use |
+| --- | --- |
+| Throwaway program id for keyring / HKLM tests | `pim_offline_client::secret_storage::elevated_local_storage_tests::test_program_id()` produces a unique `pim-e2e-<uuid>` per test |
+| Sandboxed config + log dir | `tempfile::TempDir::new()?` + the explicit-path variant on the type under test |
+| In-memory `pim-config-storage` backend | `pim_config_storage::InMemoryBackend::new()` under `cfg(test)` |
+| Sandboxed pipe / socket name | `let pipe = format!("{}aic-test-{}-elev", PIPE_PREFIX, uuid::Uuid::new_v4())` then pass to `IpcServer::bind_at` / `IpcClient::connect_at` |
+| Mock SCM status sink | `pim_shutdown::scm::MockStatusSink` (see `pim-shutdown/docs/INTEGRATION.md`) |
+
+## Forbidden constructs
+
+In every file under `tests/`, `**/*_tests.rs`, `**/tests.rs`,
+`**/integration_tests.rs`, `#[cfg(test)] mod tests { … }` blocks,
+and any `examples/` that asserts behavior:
+
+- `std::env::set_var(…)` / `env::set_var(…)` — banned outright.
+- `std::env::remove_var(…)` — same reason.
+- `std::fs::create_dir_all("/etc/aic/…")` / `…
+ "C:\\ProgramData\\AIC\\…")` — banned outright.
+- `winreg::enums::HKEY_LOCAL_MACHINE` opens — banned in tests;
+ use HKCU under a `test-<uuid>` subkey or the in-memory backend.
+- `keyring::Entry::new("pim-offline-agent", …)` / any production
+ service-name string — banned in tests; use
+ `test_program_id()`.
+- Hard-coded pipe paths (`r"\\.\pipe\aic-offline-agent-service\elevation"`
+ etc.) — banned in tests; bind a unique per-test pipe name.
+- `tokio::net::TcpListener::bind("0.0.0.0:8443")` / any
+ deterministic port — use `bind("127.0.0.1:0")` and read the
+ actual port back via `local_addr()`.
+
+## Required production-code pattern
+
+Every type that reads a path / channel / handle from a machine-global
+store today must expose two surfaces:
+
+```rust
+impl Settings {
+    /// Production path: resolves OFFLINE_DEBUG_CONFIG_DIR if set,
+    /// else the platform default under %PROGRAMDATA% / /etc.
+    pub fn save_to_default_location(&self) -> Result<()> {
+        let dir = Self::default_config_dir()?;
+        self.save_to_file_at(&dir.join("settings.json"))
+    }
+
+    /// Fixture path: explicit, no env-var read, no platform lookup.
+    /// Tests call this with a `TempDir` they own.
+    pub fn save_to_file_at(&self, path: &Path) -> Result<()> {
+        let bytes = serde_json::to_vec_pretty(self)
+            .context("serialize Settings")?;
+        std::fs::write(path, bytes)
+            .with_context(|| format!("write {}", path.display()))?;
+        Ok(())
+    }
+}
+```
+
+Tests then look like:
+
+```rust
+#[tokio::test]
+async fn settings_round_trip() -> anyhow::Result<()> {
+    let dir = tempfile::TempDir::new()?;
+    let path = dir.path().join("settings.json");
+    let s = Settings::default();
+    s.save_to_file_at(&path)?;
+    let loaded = Settings::load_from_file_at(&path)?;
+    assert_eq!(s, loaded);
+    Ok(())
+}
+```
+
+No `set_var`. No write outside the `TempDir`. The test cleans up on
+drop. Parallel runs do not race.
+
+## Worked violation → fix
+
+**Violation** (today, `pim-offline-client/tests/integration_tests.rs:125`):
+
+```rust
+let temp_dir = tempfile::TempDir::new()?;
+std::env::set_var("OFFLINE_DEBUG_CONFIG_DIR", temp_dir.path());
+let settings = Settings::load_from_default_location()?;
+```
+
+**Fix** (after the fixture-API change lands in
+`pim-offline-client/src/config/settings.rs`):
+
+```rust
+let temp_dir = tempfile::TempDir::new()?;
+let settings = Settings::load_from_dir(temp_dir.path())?;
+```
+
+The env-var production path stays intact for operators who set
+`OFFLINE_DEBUG_CONFIG_DIR` for debugging; tests stop racing on it.
+
+## Where this is currently enforced
+
+| Repo | Status |
+| --- | --- |
+| `pim-offline-client` (`Settings`, `RuntimeStatus`, IPC paths) | partial — fixture APIs in flight under Wave 1 Track C |
+| `pim-offline-server` (`AdminAuth`, legacy compat, seed-dev) | partial — `AdminAuth::with_token` exists; `ENABLE_LEGACY_COMPAT` tests still mutate env |
+| `pim-app-config` / `pim-app-config-i18n` | audit ongoing — `Locale::override_for_tests` planned |
+| `pim-config-storage` | compliant — in-memory backend exists; tests must select it explicitly |
+| Sibling configurator / elevation crates | inherit fixture APIs from the libraries above |
+
+The "audit ongoing" / "partial" rows are not necessarily defective;
+they are unverified. A future PR that grows a new `env::set_var` in
+a test body is rejected at review.
+
+## Cross-references
+
+- [`no-panic.mdc`](no-panic.mdc) — tests still need clear failure
+ messages; this rule does not relax the no-panic policy inside
+ production code.
+- [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §3 — the
+ NIST 800-53 SI-10 (input validation) requirement applies to the
+ fixture API surface too.
+- [`agent-bounded-ops.mdc`](agent-bounded-ops.mdc) — when an agent
+ needs to enumerate test fixtures, prefer narrow `rg` queries
+ over workspace-wide globs.
+- Origin: post-2026-05-19 win32 configurator audit (Wave 1).

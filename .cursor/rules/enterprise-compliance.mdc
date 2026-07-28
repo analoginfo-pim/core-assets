@@ -1,0 +1,488 @@
+---
+description: Non-negotiable enterprise compliance contract for every crate in this workspace. Sold to US Government; all rules below are hard requirements, not preferences.
+globs: ["**/*.rs", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.html", "**/*.css", "**/*.wxs", "**/Cargo.toml", "**/AGENTS.md", "**/*.md"]
+alwaysApply: true
+---
+
+# Enterprise compliance contract (US Government deployments)
+
+These products are sold to United States Federal customers. The five
+requirements below are **non-negotiable**. Failing any one of them is a
+release blocker, not a backlog item.
+
+| Requirement | Scope | Authority |
+| ----------- | ----- | --------- |
+| **US English** in all source, comments, log messages, error strings, doc comments, UI strings, OpenAPI text, CLI help text, and Cargo metadata | All crates in `c:\analog-pim\*` | Project standard. Localization is layered *on top* of US English via a future i18n system — the in-source language is and stays American English |
+| **Section 508 / WCAG 2.0 AA** | Every GUI surface (Win32, Tauri, web UI) | 29 U.S.C. § 794d, 36 CFR Part 1194 |
+| **NIST SP 800-53 Rev 5** moderate baseline | All security-relevant code paths (auth, IPC, key management, audit logging, logging itself, configuration storage, network) | FedRAMP / agency ATO |
+| **FIPS 140-3** validated cryptography | Every cryptographic operation that protects sensitive data at rest, in transit, or in process memory | NIST FIPS 140-3 |
+| **Audit logging of every security-relevant operator action** | Every CLI subcommand and every GUI action that mutates state, authorizes access, or surfaces secrets | NIST 800-53 AU-2, AU-3, AU-9, AU-12 |
+
+## 1. US English (development language)
+
+**In source:** every identifier, comment, doc comment, log message,
+panic / `expect` message, error string, OpenAPI description, CLI help
+text, and `Cargo.toml` description uses American English spelling.
+
+Forbidden in source (replace on sight):
+
+```text
+behaviour      → behavior
+colour         → color
+honoured       → honored
+initialise(d)  → initialize(d)
+recognise(d)   → recognize(d)
+customise(d)   → customize(d)
+synchronise(d) → synchronize(d)
+analyse(d)     → analyze(d)
+organise(d)    → organize(d)
+optimise(d)    → optimize(d)
+minimise(d)    → minimize(d)
+maximise(d)    → maximize(d)
+normalise(d)   → normalize(d)
+finalise(d)    → finalize(d)
+authorise(d)   → authorize(d)
+defence        → defense
+offence        → offense
+licence (verb) → license
+centre         → center
+catalogue      → catalog
+dialogue       → dialog (UI only; "dialogue" is fine in legal text)
+programme      → program
+whilst         → while
+grey           → gray
+```
+
+**For end-user text:** the source strings remain US English. Translation
+happens through the i18n layer (Fluent / `rust-i18n` / similar — TBD).
+Never hand-translate a string in source.
+
+## 2. Section 508 / WCAG 2.0 AA
+
+Every GUI surface — Win32 dialogs, Tauri shells, the web UI in
+`pim-offline-server/ui` — must conform to **Section 508** (29 U.S.C.
+§ 794d / 36 CFR Part 1194) and the underlying WCAG 2.0 AA criteria.
+
+Detailed Win32 + Tauri contracts live in
+[`pim-offline-client/AGENTS.md`](../../pim-offline-client/AGENTS.md#section-508--accessibility-contract-win32--tauri-operator-uis).
+Run `pim-offline-client/scripts/audit-section-508.ps1` on every `.rc`
+change and read the **brand image must be the real AIC mark, not the
+noise placeholder** rule before swapping `aic-header.png` anywhere.
+
+## 3. NIST SP 800-53 Rev 5 (moderate baseline)
+
+Treat the moderate baseline as the floor. The control families that
+this code most directly satisfies:
+
+| Family | Examples | Where enforced |
+| ------ | -------- | -------------- |
+| **AC** Access Control | AC-2 (account management), AC-6 (least privilege), AC-17 (remote access) | `pim-offline-server/src/api/*`, `pim-offline-client/src/elevation/*` |
+| **AU** Audit and Accountability | AU-2, AU-3, AU-6, AU-9, AU-12 | **§ 5 below** — non-negotiable |
+| **CM** Configuration Management | CM-3, CM-6 | `pim-app-config`, `pim-config-storage` |
+| **IA** Identification and Authentication | IA-2, IA-5 | `pim-offline-server/src/api/identity.rs`, agent IPC `requesting_sid` |
+| **SC** System and Communications Protection | SC-8, SC-12, SC-13, SC-17, SC-28 | TLS stack, key wrapping, FIPS provider — **§ 4 below** |
+| **SI** System and Information Integrity | SI-7 (signed binaries), SI-10 (input validation) | Authenticode (`Sign-WithSslComCodeSignTool.ps1`), `pim-offline-client/src/validation/` |
+
+Concrete rules contributors hit most often:
+
+* No new HTTP route may be merged without the matching OpenAPI entry
+  (see `pim-offline-server/AGENTS.md` "HTTP API and OpenAPI" — enforced
+  by `tests/openapi_coverage.rs`).
+* No new admin route may omit a `security:` block in the OpenAPI spec.
+* No code path may construct a TLS client/server without going through
+  the project's central TLS factory (`pim-offline-client/src/http_client/client.rs::HttpClient`
+  / the server's equivalent) so the FIPS provider stays in force.
+* Anything that touches a secret at rest goes through
+  `pim-config-storage` (registry / keyring / `/etc/aic`) — never
+  environment variables, never `tempfile`-derived paths.
+
+## 4. FIPS 140-3 cryptography
+
+**Target (policy):** all hashing, HMAC, AEAD, key agreement, and
+random-byte generation flows through a **FIPS 140-3-validated
+cryptographic module**. The workspace uses a **two-track posture**
+matched to the deployment profile of each binary:
+
+| Track | Binaries | Module | CMVP cert |
+| ----- | -------- | ------ | --------- |
+| **A (server-class)** rustls + aws-lc-rs (FIPS build) | `pim-offline-server`, `pim-offline-{client,server}-configurator-{win32,tauri}` | AWS-LC Cryptographic Module (aws-lc-rs ≥ 1.5, FIPS build) | **#4759 — pending verification of build profile** ([CMVP](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4759)) |
+| **B (endpoint)** OS-native TLS | `pim-offline-client` (the agent), `pim-offline-client-elevate-{win32,tauri}` | Windows: SChannel / Microsoft Cryptographic Primitives Library (`BCryptPrimitives.dll`); macOS: Apple corecrypto; Linux: distro OpenSSL (only when distro ships FIPS-OpenSSL, e.g. RHEL 8/9) | Windows BCryptPrimitives **#4515 / #4694** (Win 11), Apple corecrypto **#4748 / #4751** (macOS 14), RHEL 9 OpenSSL **#4746** — pending pin of exact target SKUs |
+
+Rationale for two tracks: agents run on heterogeneous endpoint
+hardware and use OS-certified crypto so the FIPS validation rides
+on the platform vendor's CMVP cert (Microsoft / Apple / RHEL). The
+server and configurators are deployment-controlled hosts where we
+ship a uniform aws-lc-rs FIPS module ourselves.
+
+**Provider installation:** every shipping `main()` calls
+`pim_crypto_rustls_bridge::install_default_provider()` as its
+first statement to install aws-lc-rs as the process-wide rustls
+`CryptoProvider`. Bridge crate lives at
+`pim-app-config/crates/pim-crypto-rustls-bridge/`; its
+`fips_status()` API surfaces the module + cert for the
+configurator's "About crypto" panel and the per-binary smoke
+tests.
+
+`ring` is forbidden as a primary crypto provider in shipping
+crates; it is permitted only in test code that the binary never
+links against.
+
+### Measured state (2026-05-17, after the ring-removal commit series)
+
+`cargo tree -i ring --target all` per binary, captured in this commit series:
+
+| Binary | TLS provider (track) | aws-lc-rs linked | ring linked |
+| ------ | -------------------- | ---------------- | ----------- |
+| `pim-offline-server` | rustls + aws-lc-rs (A) | **yes** | **yes — residual upstream** ¹ |
+| `pim-offline-client` (the agent) | native-tls (B) | no | **NO — clean** |
+| `pim-offline-client-configurator-win32` | rustls + aws-lc-rs (A) | yes | **NO — clean** |
+| `pim-offline-client-configurator-tauri` | rustls + aws-lc-rs (A) | yes | **NO — clean** |
+| `pim-offline-client-elevate-win32` | none (IPC only) | no | **NO — clean** |
+| `pim-offline-client-elevate-tauri` | none (IPC only) | no | **NO — clean** |
+| `pim-offline-server-configurator-win32` | rustls + aws-lc-rs (A) | yes | **NO — clean** |
+| `pim-offline-server-configurator-tauri` | rustls + aws-lc-rs (A) | yes | **NO — clean** |
+
+¹ The residual `ring` linkage in `pim-offline-server` comes from
+the **upstream `pim-orm` family** (`pim-orm-core`, `pim-orm`,
+`pim-orm-offline`, `pim-orm-events`, `pim-orm-hsm`,
+`pim-orm-jobs`), which is not under this team's control per
+`pim-offline-server/AGENTS.md`. Each of those crates declares
+`sqlx = { features = ["runtime-tokio-rustls"] }`, which is sqlx
+0.8's legacy alias for `tls-rustls-ring`. Cargo's feature
+unification merges that with our own `tls-rustls-aws-lc-rs`
+selection so the server links BOTH providers. This is a release
+blocker that must be resolved by **one** of:
+
+1. Upstream change in the pim-orm family to switch its sqlx
+   selection to `runtime-tokio` + `tls-rustls-aws-lc-rs` (we
+   already use that pattern; preferred path).
+2. A workspace-level `[patch."https://github.com/analoginfo-pim/..."]`
+   override in `pim-offline-server/Cargo.toml` pointing at a
+   local fork that strips the ring activation. Acceptable
+   short-term while the upstream change is in flight.
+
+`pim-offline-server-admin-client` was the second activator; that
+one was fixed in this commit series (it lives in our repo).
+
+### Customer-facing FIPS posture (what we can claim today)
+
+A literal-truth, audit-defensible statement for product docs:
+
+> **AIC Offline PIM TLS posture (2026-05-17, this build)**
+>
+> * **Endpoint agent and elevation utilities** rely on the host
+>   operating system's FIPS 140-3 validated TLS stack — SChannel
+>   on Windows (Microsoft CMVP cert #4515 / #4694), Secure
+>   Transport / corecrypto on macOS, distro OpenSSL on Linux
+>   (FIPS only when the distro provides a validated build, e.g.
+>   RHEL 8/9 with `crypto-policies` set to `FIPS`). This is the
+>   recommended posture for endpoint hardware because the FIPS
+>   validation tracks the OS vendor's CMVP certification.
+>
+> * **Server, server configurator, and client configurator**
+>   install AWS-LC (aws-lc-rs) as the rustls `CryptoProvider` at
+>   process startup. AWS-LC FIPS Module CMVP cert **#4759** is
+>   the targeted validation; the shipped build's exact module
+>   version and validation status are surfaced at runtime by
+>   `pim_crypto_rustls_bridge::fips_status()` and reproduced in
+>   the configurator GUI's "About crypto" panel.
+>
+> * **One residual gap:** the `pim-offline-server` binary
+>   currently links both `aws-lc-rs` and `ring` because of an
+>   upstream sqlx-feature selection in the `pim-orm` ORM
+>   library. At runtime only the AWS-LC provider is active (it is
+>   the one installed by the bridge crate), but the dead-code
+>   `ring` linkage means we cannot yet make an unqualified FIPS
+>   140-3 claim for the server binary. This is being tracked
+>   with the upstream `pim-orm` team and is a release blocker
+>   for the FIPS-required SKU.
+
+Do not use stronger wording than the above in customer-facing
+documentation until the upstream pim-orm fix lands AND
+`cargo tree -i ring --target all` returns clean for **every**
+binary.
+
+**FIPS posture is HARD-CODED, not a Cargo feature (May 2026).**
+The `fips` Cargo feature that gated this was removed from
+`pim-crypto-rustls-bridge`, `pim-windows-oplog`,
+`pim-offline-server`, `pim-offline-client`, and the six sibling
+configurator / elevation crates. The FIPS provider is now wired
+unconditionally:
+
+- `pim-crypto-rustls-bridge` declares `rustls = { features =
+  [..., "fips", ...] }` directly in its `[dependencies]` block;
+  there is no `[features]` table.
+- `pim-windows-oplog`, `pim-offline-server`, and
+  `pim-offline-client` declare `aws-lc-rs = { default-features =
+  false, features = ["fips"] }` directly; the upstream default
+  `aws-lc-sys` backend is suppressed at the dep-line level.
+- `FipsStatus::NonFips` was removed from the
+  `pim_crypto_rustls_bridge::FipsStatus` enum (was unreachable
+  after the feature deletion).
+- `pim_crypto_rustls_bridge::fips_status()` returns
+  `Validated { cert_number: "4759", ... }` with no `#[cfg]`
+  branching.
+
+There is no Cargo feature, environment variable, runtime switch,
+or `--no-default-features` invocation that can produce a non-FIPS
+build of any shipping AIC Offline binary. A future PR that
+reintroduces a non-FIPS code path - whether as a Cargo feature, a
+`cfg` gate, or an alternate backend selector on aws-lc-rs - is a
+release blocker.
+
+**Upstream caveat.** `pim-orm` and other upstream crates may still
+appear in `cargo tree -i aws-lc-sys` because they declare
+`aws-lc-rs` without `default-features = false`. Cargo's feature
+unification means the `aws-lc-sys` C library is still compiled
+into the dep graph, but it is dead-coded out at runtime: aws-lc-rs's
+internal `cfg_if! { feature = "fips" => use aws_lc_fips_sys; ... }`
+gate routes every API call through the FIPS module. The CMVP
+boundary is defined by the symbols that the FIPS module exports,
+so dead code in the surrounding binary does not affect validation.
+The redundant `aws-lc-sys` compilation is being tracked alongside
+the `ring` upstream-blocker (same root cause, same fix: a `pim-orm`
+release that sets `default-features = false`).
+
+### Remaining FIPS-completion checklist
+
+1. **Drive the pim-orm upstream change** (or land a temporary
+   `[patch]` override) until `cargo tree -i ring --target all`
+   returns *no matches* for `pim-offline-server`.
+2. ~~**Enable `aws-lc-rs/fips` feature**~~ **DONE (May 2026,
+   superseded).** The `fips` Cargo feature was first flipped to
+   `default = ["fips"]` and then removed entirely a few days later.
+   FIPS is now wired straight into the `rustls` and `aws-lc-rs`
+   dep declarations across all 10 crates with no feature gate at
+   all; see the "FIPS posture is HARD-CODED" paragraph above for
+   the full enumeration. The only remaining work item in this row
+   is to wire CI so a future PR that reintroduces a non-FIPS code
+   path (a `[features]` table containing `fips`, an `aws-lc-sys`
+   backend selector, etc.) is rejected at PR time.
+3. **Pin exact module versions** in the table above (replace
+   "pending" with concrete `aws-lc-sys` version, CMVP cert
+   number, and validation date for each track).
+4. **Add a CI gate**: workspace-level `cargo deny` rule plus a
+   per-binary `forbid_ring` integration test so a future dep
+   upgrade cannot silently re-introduce `ring` linkage.
+5. **Introduce the application-crypto provider seam** (Workstream
+   B, tracked separately). AWS-LC FIPS (CMVP #4759, in-process)
+   is one approved track among several; the architecture must
+   also support HSMs (Thales Luna, Entrust nShield, YubiHSM,
+   CloudHSM, Utimaco), cloud KMS (AWS KMS, GCP KMS, Azure Key
+   Vault Managed HSM), and PKCS#11 v2.40 modules - each of which
+   carries its own CMVP cert. The seam is a `CryptoAdapter`-style
+   trait (mirroring `mix-server`'s `pim-crypto-core` design) with
+   the in-process AWS-LC adapter as the default implementation;
+   server deployments select alternate adapters per operation
+   class through the `/api/admin/crypto/providers` endpoints
+   (planned Workstream C). The non-negotiable rule is that **every
+   adapter in the catalog must itself carry a CMVP cert** (or be
+   on the CMVP Implementation Under Test / Modules In Process
+   list and reported as such by `FipsStatus::PendingValidation`);
+   adapters with no FIPS validation cannot be offered, even as a
+   dev-only option.
+
+   **Operation classes and their delegation policy.** Application
+   crypto splits cleanly into two groups, only one of which is
+   ever delegated to a non-default provider:
+
+   * **Provider-routable** - operations whose key material has
+     high commercial value and whose execution can legitimately
+     live behind a hardware boundary. Server-side AES-GCM at
+     rest (database column encryption, settings.json wrapping,
+     audit-log signing), enrollment-token MAC verification when
+     the MAC key lives in an HSM, server token signing keys,
+     KEK custody, randomness for new master keys. These call
+     sites MUST go through the `CryptoAdapter` trait so the
+     provider can be swapped at runtime. The default in-process
+     implementation calls `aws_lc_rs::*` so an out-of-the-box
+     deployment with no HSM still produces a CMVP-validated
+     result.
+
+   * **Always-local** - operations where delegation adds no
+     security value and would hurt throughput or break the
+     request-response shape. Wire-protocol HMAC-SHA256 over
+     canonical request bytes (per-request, agent-side), body
+     SHA-256 for canonical-bytes hashing, `redact_blob`
+     audit-fingerprint SHA-256, in-flight PBKDF2 of a
+     user-supplied password (the plaintext is already in process
+     - delegating only the PBKDF2 buys nothing). These remain
+     on direct `aws_lc_rs::*` calls indefinitely. They share the
+     same FIPS module boundary as the TLS path and never need
+     to leave it.
+
+   **Agent posture is unchanged.** Agents run on low-RAM endpoints
+   and never see HSMs; their entire application-crypto surface
+   stays on the in-process AWS-LC FIPS module (with the wire on
+   OS-certified `native-tls`). The provider seam is server-only.
+
+   - **Argon2id retired (May 2026).** The previous Argon2id-based
+     password hashing in `pim-offline-server` (tenant bootstrap
+     secrets, enrollment tokens, dev seed fixtures) was replaced
+     wholesale with **PBKDF2-HMAC-SHA-256 (NIST SP 800-132 §5.2)**
+     at the OWASP 2023 floor of 600_000 iterations, a 16-byte salt
+     drawn from `aws_lc_rs::rand::SystemRandom`, and a 32-byte
+     output, implemented by `aws_lc_rs::pbkdf2`. Argon2id was
+     dropped because it is not on the NIST CMVP approved-algorithm
+     list and has no implementation inside any FIPS-validated
+     cryptographic module; routing the password-hashing path
+     through it would force a qualified FIPS claim ("FIPS for
+     everything except password hashing") that US Federal
+     procurement reviewers categorically reject. Storage format is
+     `pbkdf2-sha256$<iterations>$<base64url-no-pad salt>$<base64url-no-pad hash>`;
+     the `pim-orm-offline` schema CHECK constraints
+     (`chk_enrollment_tokens_hash_phc`,
+     `chk_offline_tenants_secret_hash_phc`) enforce the
+     `pbkdf2-sha256$` prefix at the DB layer. The legacy
+     `$argon2id$` rows are explicitly rejected as
+     `InvalidStoredHash` so any pre-migration dev DB surfaces as a
+     loud "rotate this secret" audit event rather than a generic
+     401. **No backward-compatibility verify path is provided** —
+     the product is at `1.0.0-rc.1` with no production customers,
+     so a clean break is acceptable; post-GA any algorithm change
+     must follow a documented rotation window. PBKDF2 of a
+     user-supplied password is classified as **always-local** by
+     the operation-class split above and stays on direct
+     `aws_lc_rs::pbkdf2` calls; HSM-issued KDFs over high-value
+     secrets (e.g. master-key derivation) will go through the
+     provider trait instead.
+6. **Update this section** with the post-completion measurement
+   table and remove the "residual" + "pending verification"
+   qualifiers.
+
+**Until the checklist completes:** key material lives in
+`pim_offline_client::secret_storage::SecureString` (zeroized on
+drop) or in the OS keyring. Never in environment variables, never
+in plain `String` past the constructor. Cipher suites accepted
+by any server-side TLS listener must come from a FIPS-approved
+suite list, not "modern default". Crypto must be
+**deterministic to compile-time configuration** — no runtime
+feature flag may downgrade to a non-FIPS provider on production
+builds.
+
+If an upstream crate cannot be steered onto a FIPS provider, raise
+the dependency upgrade as a release blocker, not a workaround.
+
+## 5. Audit logging — hard requirement
+
+> Every security-relevant operator action must produce a Windows
+> Event Log entry (and on Linux/macOS, a `tracing`-based audit log to
+> `/var/log/aic/<product>/audit.log` with the same payload shape).
+> "Security-relevant" includes:
+>
+> * any elevation request submission (success **and** failure **and**
+>   format rejection — including the cases where the agent is
+>   unreachable),
+> * any configurator action that installs, uninstalls, starts, or
+>   stops the agent / server service,
+> * any operation that sets, rotates, or clears a secret in the
+>   configuration store,
+> * any operation that imports / exports settings,
+> * any connectivity / diagnostics probe an operator triggers,
+> * any administrator action surfaced through the web UI's admin
+>   API (these are additionally recorded in the SQL `audit_*` tables
+>   per the server's audit pipeline).
+
+### Event payload contract
+
+Each audit event must record:
+
+| Field | Source |
+| ----- | ------ |
+| **Actor** | Windows token name + SID of the OS user invoking the utility (resolved via `GetTokenInformation` / `Win32::LookupAccountSidW`) |
+| **Action** | A stable verb (e.g. `service_install`, `elevation_submit`, `secret_set`) |
+| **Target** | The object acted on by **name**, never by value (e.g. service name, secret key name) |
+| **Outcome** | `success` or `failure: <reason>` (US English reason) |
+| **Request id** | UUID v4 generated by the utility; on elevation flows this UUID is also sent in the IPC request so the agent's GRANT / DENY event correlates to the UI's SUBMIT event |
+| **Source surface** | The utility name + version (e.g. `pim-offline-elevate-tauri v1.0.4`) |
+| **Timestamp** | UTC (the Windows Event Log adds its own; we additionally embed UTC ISO-8601 in the message for cross-host correlation) |
+
+### Masking contract (NEVER log these in event messages)
+
+| Value | Masking rule |
+| ----- | ------------ |
+| Password | `[password len=N]` — never the value, not even the first character |
+| Activation code | `[code:Xy*** len=8]` — at most first 2 chars + length |
+| Bearer / API token | `[token:abc1***wxyz len=N]` — first 4 + last 4 + length |
+| Database URL | URL with password component stripped (`redact_database_url`) |
+| Private key bytes | Always `[redacted-pem len=N type=<RSA|EC|...>]` |
+| Settings.json contents | Hash + length only; never the raw bytes |
+| PII (email, phone, hostname for `requesting_caller`) | Pass-through allowed; HOSTNAME is *not* a secret |
+
+Masking lives in `pim_app_config::windows_oplog::redact::*` (see
+Phase 2 of the May 2026 implementation). Every call site MUST use
+the shared helpers — never inline `.replace()` masking.
+
+### Event ID allocation (stable; SIEM filters key on these)
+
+| Range | Owner | Documented in |
+| ----- | ----- | ------------- |
+| `41001 – 41099` | Generic process / lifecycle (`pim-windows-oplog::ids`) | `pim-windows-oplog/docs/WINDOWS_OPERATIONAL_EVENT_LOG.md` |
+| `4400 – 4499` | Agent IPC elevation (GRANT / DENY / MISSING_IDENTITY) | `pim-offline-client/src/ipc/server.rs` (existing) |
+| `4500 – 4599` | Elevate UI submit events (Win32 + Tauri) | `pim-offline-client-elevate-{win32,tauri}` |
+| `4600 – 4699` | Client configurator actions (Win32 + Tauri + CLI) | `pim-offline-client-configurator-*` |
+| `4700 – 4799` | Server configurator actions (Win32 + Tauri + CLI) | `pim-offline-server-configurator-*` |
+| `4800 – 4899` | Server admin API actions echoed to the OS event log | `pim-offline-server` admin handlers |
+
+Adding a new ID requires bumping the message catalog
+(`pim-windows-oplog-messages/oplog_messages.mc`) **and** registering
+it in `declared_event_ids()` so the runtime self-test round-trips it.
+
+### Audit failure handling
+
+Audit writes must never block the user-visible operation. If
+`ReportEventW` (or the Unix-side audit file) fails, the utility
+records the failure to its own diagnostic log and proceeds. **A
+silent audit failure is still an AU-9 violation**; the diagnostic
+log entry is the recovery trail.
+
+## 6. Commit hygiene (FedRAMP audit trail)
+
+Every commit is part of a long-lived audit trail for a system that
+must support a FedRAMP / ATO review. The reviewer reading
+`git log -p -- src/api/admin_server_identity.rs` must be able to
+understand *why* each line changed without spelunking through
+unrelated history.
+
+**Rules**
+
+1. **One concern per commit.** Refactors, documentation sweeps,
+   spelling fixes, lint suppressions, and logging-level adjustments
+   are each a separate commit, even when they are individually
+   trivial. Do not bundle a US-English spelling sweep into a
+   feature commit just because the diffs are small.
+2. **Imperative, scoped subject lines.** `module: short summary`
+   (e.g. `windows_oplog: self-heal 0-byte canonical message DLL`).
+   The body explains *why* and references the requirement above
+   (`AU-3`, `Section 508 §1194.21(b)`, etc.) when the change is
+   compliance-relevant.
+3. **No `git add -A` after multi-area work.** Stage explicitly
+   (`git add path/to/file`) when other unrelated edits exist in the
+   tree. If you find yourself committing 15 files in one commit
+   because that's "what `status` showed", split before pushing.
+4. **Drift cleanup is its own commit.** When a build accidentally
+   sweeps in generated files (staged certs, settings.demo.json,
+   target/ output), extend `.gitignore` AND remove the tracked
+   copies from the index in a **separate** commit, after the
+   feature commit. Reference the earlier commit by short hash so
+   the cleanup is traceable.
+5. **PR-level squash is not a substitute.** Even if the team
+   squash-merges, the per-commit titles become the squash-commit
+   summary; an unreviewable squash on a multi-concern branch is
+   not auditable.
+
+The exception is a *strict revert* (`git revert <sha>`), which is
+always one commit by definition. Everything else: split.
+
+## 7. Cross-references
+
+* `pim-offline-client/AGENTS.md` — Section 508 contract, no-panic
+  policy, IPC protocol.
+* `pim-offline-server/AGENTS.md` — OpenAPI workflow, ORM standards,
+  service lifecycle.
+* `pim-windows-oplog/docs/WINDOWS_OPERATIONAL_EVENT_LOG.md` — event log
+  registration mechanics.
+* `pim-app-config/docs/CONFIGURATION_STORAGE.md` — secret-at-rest
+  layout.
+* `c:\analog-pim\.cursor\rules\no-panic.mdc` — no-panic policy
+  (which is also an SI control).

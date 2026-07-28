@@ -1,0 +1,258 @@
+---
+description: Long-running daemons in this workspace emit a runtime_status.warnings[] row whenever any resolved setting matches a placeholder fingerprint (*.example, *.test, do-not-ship, test-secret, magic GUIDs, short hex-only secrets). Each row carries kind, field, and value-fingerprint (SHA-256, never plaintext). Configurator UIs surface the warnings count on the main screen.
+alwaysApply: true
+---
+
+# Runtime status flags test fixtures (R7)
+
+The AIC PIM workspace's long-running daemons emit
+`runtime_status.json` (read by the configurator GUIs and the
+`pim-offline-agent settings` subcommand) describing the daemon's
+current effective configuration, last-sync time, in-flight HTTP
+requests, and a `warnings[]` array. The post-2026-05-19 win32
+configurator audit found that even when manifests had clean
+defaults (R5) and the legacy migration ran (R3) and the GUID
+normalizer collapsed magic sentinels (R6), an operator could
+**still** end up running production with a fingerprint of a test
+fixture if any link in the chain failed silently. This rule adds
+the defense-in-depth check: at runtime, the daemon flags
+fingerprints in its resolved configuration and surfaces them in
+the configurator GUI so the operator sees them on the main
+screen.
+
+## The rule
+
+> **Long-running daemons in this workspace emit a
+> `warnings[]` row in `runtime_status.json` whenever any
+> resolved setting matches one of the fingerprint patterns
+> below. The row carries `kind` (the fingerprint pattern that
+> matched), `field` (the manifest key name), and
+> `value_fingerprint` (a SHA-256 hex digest, NEVER plaintext —
+> see [`enterprise-compliance.mdc`](enterprise-compliance.mdc)
+> §5 masking contract). Configurator UIs (Win32 and Tauri) read
+> the warnings count from `runtime_status.json` and surface it
+> on the main screen as a non-dismissible badge until the
+> warnings drop to zero.**
+
+The check runs at daemon startup AND on every settings reload
+(SIGHUP / `pim-offline-agent settings refresh`). It never blocks
+the daemon's main loop; warnings are advisory data for the
+operator.
+
+## Fingerprint patterns
+
+A resolved setting value (the string the daemon would actually
+use, post-resolution) fires a warning if it matches any of:
+
+| Pattern | Example match | `kind` field value |
+| --- | --- | --- |
+| Hostname suffix `.example` / `.example.com` / `.example.org` / `.example.net` | `server.example.com`, `db.example` | `placeholder_example_domain` |
+| Hostname suffix `.test` / `.invalid` / `.localhost.test` | `tenant.test`, `agent.invalid` | `placeholder_test_domain` |
+| Substring `do-not-ship` (case-insensitive) | `do-not-ship-token`, `DoNotShipKey` | `placeholder_do_not_ship` |
+| Substring `test-secret` / `test_secret` / `testsecret` (case-insensitive) | `my-test-secret`, `TestSecret123` | `placeholder_test_secret` |
+| Substring `changeme` / `change-me` / `change_me` (case-insensitive) | `password=changeme` | `placeholder_changeme` |
+| Substring `XXXX` (4 or more consecutive Xs in a value that the manifest declares as a token / secret) | `bearer=XXXXabcdXXXX` | `placeholder_xxxx_token` |
+| Exact `00000000-0000-0000-0000-000000000000` | the zero GUID | `placeholder_zero_guid` |
+| Exact `00000000-0000-0000-0000-000000000001` | the zero-plus-one GUID | `placeholder_zero_plus_one_guid` |
+| Exact `12345678-1234-1234-1234-123456789012` | the sequence GUID | `placeholder_sequence_guid` |
+| Hex-only value (regex `^[0-9a-fA-F]+$`) shorter than 32 chars in a manifest field declared `kind = "secret"` | `bearer=deadbeef` (8 chars) | `weak_hex_secret` |
+| Substring `localhost` in a `default_prod` resolution context (where the manifest's `prod_must_be_remote = true`) | `https://localhost:8443` resolved in a `default_prod` install | `placeholder_localhost_in_prod` |
+
+Patterns can be extended in future minor releases. The list above
+is the floor.
+
+## Required emitted shape
+
+`runtime_status.json` (the field exists; this rule pins the
+`warnings[]` row schema):
+
+```json
+{
+  "service": "pim-offline-agent",
+  "version": "1.0.0-rc.1",
+  "pid": 4812,
+  "started_at": "2026-05-19T10:30:00Z",
+  "last_sync_age_seconds": 142,
+  "consecutive_failures": 0,
+  "in_flight_requests": [],
+  "warnings": [
+    {
+      "kind": "placeholder_example_domain",
+      "field": "SERVER_PUBLIC_URL",
+      "value_fingerprint": "0a4d55a8d778e5022fab701977c5d840bbc486d0f9e6b1ddc04b14ff5cef34d5",
+      "first_observed_at": "2026-05-19T10:30:00Z"
+    },
+    {
+      "kind": "placeholder_sequence_guid",
+      "field": "DEFAULT_TENANT_GUID",
+      "value_fingerprint": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8",
+      "first_observed_at": "2026-05-19T10:30:00Z"
+    }
+  ]
+}
+```
+
+`value_fingerprint` is `SHA-256(value_bytes_utf8)` hex-encoded
+lowercase. The plaintext value is NEVER written to
+`runtime_status.json`. This matches the
+[`enterprise-compliance.mdc`](enterprise-compliance.mdc) §5
+masking contract and lets two operators / SIEM agents correlate
+"same value across hosts" without leaking the value.
+
+## Required emit-site pattern
+
+```rust
+// pim-offline-client/src/runtime_status.rs (illustrative)
+fn fingerprint_warnings(resolved: &ResolvedSettings) -> Vec<Warning> {
+    let mut warnings = Vec::new();
+    for (key, value) in resolved.iter_all() {
+        if let Some(kind) = match_fingerprint(key, value) {
+            warnings.push(Warning {
+                kind,
+                field: key.to_string(),
+                value_fingerprint: sha256_hex(value.as_bytes()),
+                first_observed_at: OffsetDateTime::now_utc(),
+            });
+        }
+    }
+    warnings
+}
+```
+
+`match_fingerprint` consults the table above. The function is
+pure and side-effect-free; it must NOT log the plaintext value
+even at `trace` level (a future SIEM operator running the daemon
+at `RUST_LOG=trace` must not see the value either).
+
+## Required configurator-UI surface
+
+Every configurator GUI in the workspace (Win32 admin × client +
+server, Tauri admin × client + server) renders the warnings
+count on the main screen:
+
+- **Win32**: a status line on the main dialog `LTEXT` named
+ `IDC_LBL_RUNTIME_WARNINGS_COUNT` reading `"⚠ 2 placeholder
+ settings detected"` (or `""` when zero, control hidden).
+- **Tauri**: a `<div role="status">` rendering the same text
+ with `aria-live="polite"` so screen readers announce the
+ count on first paint.
+
+Both surfaces have a "Details" affordance that opens a
+read-only dialog listing each warning by `field` and `kind`
+(never the fingerprint hex — that's for SIEM, not the operator
+UI). The dialog has a "Open settings" button that focuses the
+first offending field in the settings tab.
+
+The warnings count is non-dismissible: the operator clears it
+only by fixing the underlying setting. This is intentional —
+WACK and Section 508 testing both penalize "dismissible
+warnings that hide critical state".
+
+## Forbidden constructs
+
+- A daemon that resolves settings without calling
+ `fingerprint_warnings(&resolved)` before publishing
+ `runtime_status.json`.
+- A `warnings[]` row that carries the plaintext value in any
+ field. Always fingerprint.
+- A configurator GUI that suppresses the warnings count
+ ("disable in test mode", "hide if user dismissed once") —
+ the count is always rendered when non-zero.
+- A `tracing::info!(value = %value, "starting with config")`
+ line at startup that logs the resolved configuration map
+ verbatim — secrets must be masked per the
+ [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §5
+ masking helpers (`pim_app_config::windows_oplog::redact::*`)
+ BEFORE logging.
+- An extension to the fingerprint list that adds a pattern
+ matching customer-supplied data shapes (e.g. `john@acme.com`
+ as `placeholder_email`). The list is for **placeholder /
+ test** fingerprints only; matching real user data would
+ produce noise.
+
+## Worked violation → fix
+
+**Violation** (today, conceptual):
+
+```rust
+// runtime_status.rs
+fn emit(resolved: &ResolvedSettings) {
+    let snapshot = RuntimeStatusSnapshot {
+        service: "pim-offline-agent".into(),
+        version: env!("CARGO_PKG_VERSION").into(),
+        // ... other fields ...
+        warnings: vec![], // never populated
+    };
+    write_json("runtime_status.json", &snapshot);
+}
+```
+
+The operator's `SERVER_PUBLIC_URL` resolved to
+`https://server.example.com:8443` because the manifest default
+leaked into prod (R5). The daemon happily starts. The
+configurator shows zero warnings. The first agent sync fails
+with `dns lookup`, and the operator spends 40 minutes diagnosing
+a DNS / firewall issue when the actual cause is a leaked
+placeholder.
+
+**Fix**:
+
+```rust
+fn emit(resolved: &ResolvedSettings) {
+    let warnings = fingerprint_warnings(resolved);
+    if !warnings.is_empty() {
+        tracing::warn!(
+            count = warnings.len(),
+            fields = ?warnings.iter().map(|w| &w.field).collect::<Vec<_>>(),
+            "runtime placeholder warnings present; operator should review"
+        );
+    }
+    let snapshot = RuntimeStatusSnapshot {
+        service: "pim-offline-agent".into(),
+        version: env!("CARGO_PKG_VERSION").into(),
+        // ... other fields ...
+        warnings,
+    };
+    write_json("runtime_status.json", &snapshot);
+}
+```
+
+The configurator main screen now shows
+`⚠ 1 placeholder setting detected` immediately after the
+daemon starts. The operator opens "Details", sees
+`SERVER_PUBLIC_URL: placeholder_example_domain`, fixes the
+value, restarts the service, and the badge clears.
+
+## Where this is currently enforced
+
+| Surface | Status |
+| --- | --- |
+| `pim-offline-client/src/runtime_status.rs` (`RuntimeStatusSnapshot`, file writer) | exists — Wave 1 Track C adds `fingerprint_warnings` |
+| `pim-offline-server` analogue (`runtime_status.json`) | audit ongoing — Wave 1 Track C |
+| `pim-offline-client-configurator-win32` warnings badge | audit ongoing — Wave 2 Track E |
+| `pim-offline-client-configurator-tauri` warnings badge | audit ongoing — Wave 2 Track E |
+| `pim-offline-server-configurator-win32` warnings badge | audit ongoing — Wave 2 Track E |
+| `pim-offline-server-configurator-tauri` warnings badge | audit ongoing — Wave 2 Track E |
+
+## Cross-references
+
+- [`manifest-defaults-must-be-realistic.mdc`](manifest-defaults-must-be-realistic.mdc)
+ (R5) — clean defaults are the first line of defense; this rule
+ is the runtime check that catches the case where a default
+ leaked anyway.
+- [`placeholder-guids-are-empty.mdc`](placeholder-guids-are-empty.mdc)
+ (R6) — the magic-GUID fingerprints in the table above mirror
+ the sentinels R6 forbids; this rule surfaces them at runtime
+ even if the migration helper missed a row.
+- [`single-source-of-truth-for-settings.mdc`](single-source-of-truth-for-settings.mdc)
+ (R3) — `runtime_status.json` reflects the resolved
+ configuration from the canonical store; it never re-reads
+ the legacy file.
+- [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §5 —
+ the masking contract `value_fingerprint` honors; the redact
+ helpers in `pim_app_config::windows_oplog::redact::*` are the
+ right place for the SHA-256 helper if not already there.
+- [`service-lifecycle-logs.mdc`](service-lifecycle-logs.mdc) —
+ the "service started" record includes the warnings count so
+ the start log itself flags the placeholder presence.
+- Origin: post-2026-05-19 win32 configurator audit (Wave 1).

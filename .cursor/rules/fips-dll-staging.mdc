@@ -1,0 +1,109 @@
+---
+description: FIPS DLL must be staged next to every cargo-built binary so `cargo build` / `cargo run` / `cargo test` work without the MSI installer
+alwaysApply: true
+---
+
+# FIPS DLL staging in `build.rs` (workspace-wide rule)
+
+Every binary crate in the offline workspace that depends on
+`aws-lc-rs = { features = ["fips"] }` (transitively or directly) imports
+`aws_lc_fips_<version>_crypto.dll` (currently
+`aws_lc_fips_0_13_14_crypto.dll`) at runtime. Cargo builds this DLL via
+the `aws-lc-fips-sys` build script and emits a
+`cargo:rustc-link-search` pointing at the build directory so the import
+library is found at link time -- but Cargo does **NOT** copy the DLL
+next to the produced binary.
+
+The MSI installer scripts under `pim-installers/` copy the DLL into
+`%ProgramFiles%\AIC\OfflinePimServer\` / `OfflinePimAgent\` for shipped
+artifacts, so installed copies work. But `cargo run`,
+`cargo test`, `playwright`-driven E2E tests, and a developer launching
+`target\release\<bin>.exe` directly all fail on Windows with:
+
+```
+The code execution cannot proceed because aws_lc_fips_0_13_14_crypto.dll
+was not found. Reinstalling the program may fix this problem.
+```
+
+## Required pattern
+
+Every binary crate (and every cdylib that ships as an executable
+component) under `c:\analog-pim\*` that links `aws-lc-rs/fips` MUST have
+a `build.rs` containing the **`stage_aws_lc_fips_dll`** helper. The
+canonical copy lives in
+`pim-offline-server-configurator-win32/build.rs`; the same helper is
+duplicated byte-for-byte across every consumer because we don't
+currently have a shared `[build-dependencies]` crate reachable from each
+repo. Keep the copies in sync if you change one.
+
+The helper:
+
+1. Finds the most recently modified
+   `target/<profile>/build/aws-lc-fips-sys-*/out/build/artifacts/aws_lc_fips_*_crypto.dll`
+   (scans every hash-suffixed sibling, because an incremental build may
+   leave the "live" hash dir empty while the DLL still exists in an
+   older sibling).
+2. Copies it to `target/<profile>/<dll>` for direct execution +
+   `cargo run`.
+3. Copies it to `target/<profile>/deps/<dll>` for `cargo test` test
+   binaries.
+4. Is idempotent (size + mtime check before copying), gated on
+   `#[cfg(target_os = "windows")]`, and a no-op on non-Windows.
+5. Emits `cargo:warning=...` lines on every recoverable failure --
+   never panics (matches `.cursor/rules/no-panic-enterprise.mdc`).
+
+## Affected binary crates (as of May 2026)
+
+| Repo | Binary |
+| ---- | ------ |
+| `pim-offline-server` | `pim-offline-server.exe`, `pim-offline-server-configurator.exe`, `db-init.exe`, etc. |
+| `pim-offline-client` | `pim-offline-agent.exe`, `pim-offline-agent-configurator-cli.exe` |
+| `pim-offline-server-configurator-win32` | `pim-offline-server-configurator-win32.exe` |
+| `pim-offline-server-configurator-tauri` | `pim-offline-server-configurator-tauri.exe` |
+| `pim-offline-client-configurator-win32` | `pim-offline-client-configurator-win32.exe` |
+| `pim-offline-client-configurator-tauri` | `pim-offline-client-configurator-tauri.exe` |
+| `pim-offline-client-elevate-win32` | `pim-offline-client-elevate-win32.exe` |
+| `pim-offline-client-elevate-tauri` | `pim-offline-client-elevate-tauri.exe` |
+
+Any new binary crate in this workspace that pulls in `aws-lc-rs/fips`
+must add the same helper.
+
+## How to verify
+
+Before merging a change that adds a new FIPS-linked binary, or after
+touching the helper:
+
+```powershell
+# Clean the staged DLL to force the build.rs path
+Remove-Item target\release\aws_lc_fips_*_crypto.dll -Force -ErrorAction SilentlyContinue
+Remove-Item target\release\deps\aws_lc_fips_*_crypto.dll -Force -ErrorAction SilentlyContinue
+(Get-Item build.rs).LastWriteTime = Get-Date  # force re-run
+
+cargo build --release
+Test-Path target\release\aws_lc_fips_0_13_14_crypto.dll
+Test-Path target\release\deps\aws_lc_fips_0_13_14_crypto.dll
+
+# Optional: confirm cargo test still works
+cargo test --release --lib
+```
+
+Both `Test-Path` calls should return `True`. Crypto tests should pass.
+
+## Why not a shared helper crate
+
+A `[build-dependencies]` crate would deduplicate the ~80 lines of
+helper, but every consumer repo would then need a path-patch to find it
+(the workspace is multi-repo, not a single Cargo workspace). The
+maintenance cost of cross-repo path patches has been higher than the
+cost of keeping eight near-identical `build.rs` blocks in sync. Revisit
+this trade-off if a third copy needs to change for a different reason.
+
+## Related rules
+
+- `.cursor/rules/enterprise-compliance.mdc` §4 -- NIST 800-53 SC-13;
+  the FIPS DLL is the validated cryptographic module boundary.
+- `.cursor/rules/no-panic-enterprise.mdc` -- the helper warns and
+  returns; it never panics.
+- Per-product MSI scripts under `pim-installers/scripts/` -- those
+  remain the source of truth for the **installed** copy of the DLL;
+  this rule covers the **developer / CI / test** workflow.
