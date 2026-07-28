@@ -1,5 +1,5 @@
 ---
-description: Essential operator actions must be visible without horizontal scroll, row content must never overlap, and no UI change may be called done without visual proof (screenshot or Playwright bounding-box asserts); layout RCA requires an Opus-class review pass.
+description: Essential operator actions must be visible without horizontal scroll, row content must never overlap, and no UI change may be called done without visual proof; Opus for rendered acceptance review or failed-fix diagnosis only — implementation stays on Grok or AUTO.
 alwaysApply: true
 ---
 
@@ -39,9 +39,13 @@ evidence required before any UI change is reported as done.
 > deploy. This covers **any** such claim on **any** operator surface,
 > not only per-row grid actions and not only one incident page. When
 > the task is visual design, operator GUI layout, DataGrid density,
-> overlapping controls, or "is this page usable?", a non-vision coding
-> pass is **not** sufficient; escalate the design, layout RCA, and
-> acceptance to an Opus-class model.**
+> overlapping controls, or "is this page usable?", a coding pass that
+> never inspects rendered output is **not** sufficient for acceptance;
+> escalate **acceptance of the rendered artifact** (and **diagnosis
+> after a cheaper attempt failed**) to an Opus-class model per the
+> narrowed override in
+> [`auto-model-only.mdc`](auto-model-only.mdc). Implementation of UI
+> edits stays on Grok or AUTO.**
 
 Concretely:
 
@@ -260,60 +264,73 @@ acceptable without the visual artifact** — including affirmative claims
 claims ("the button is no longer clipped"). An unverified claim is
 treated as not done.
 
-### Precedence — this rule overrides `auto-model-only` for visual design
+### Precedence — narrow Opus carve-out for rendered acceptance (agrees with `auto-model-only`)
 
-> **Override the hard rule for Visual design.** For **visual design and
-> UI layout work, and its acceptance**, the Opus-class requirement in
-> **this** file **overrides** the "never pin Opus" prohibition in
-> [`auto-model-only.mdc`](auto-model-only.mdc).
+> **Opus survives but is narrow.** For **acceptance of rendered
+> operator-GUI output** and for **diagnosis of a UI layout defect after
+> a cheaper model already failed to fix it**, the Opus-class requirement
+> in **this** file **overrides** the "never pin Opus" prohibition in
+> [`auto-model-only.mdc`](auto-model-only.mdc). Implementation of UI
+> edits — including renames, navigation restructuring, adding a column,
+> and wiring an export — belongs on `cursor-grok-4.5-high-fast` or AUTO.
 
-This is an **operator-directed precedence rule** (2026-07-27), not an
-agent's discretionary judgment call. An agent doing that work uses an
+This is an **operator-directed precedence rule** (2026-07-27; narrowed
+2026-07-28), not an agent's discretionary judgment call. When a case
+falls inside the permitted set in
+[`auto-model-only.mdc`](auto-model-only.mdc), an agent may use an
 Opus-class model **without** the operator naming it again in the same
-message — no permission-seeking, no re-confirmation each time. A cheaper
-model may apply mechanical edits only under a design an Opus-class model
-produced or accepted; the design and the acceptance themselves remain
-Opus-class.
+message — no permission-seeking, no re-confirmation each time. The two
+files must agree; if they appear to conflict, follow the narrower
+permitted / not-permitted lists in `auto-model-only.mdc`.
+
+The cheaper implementer is still **fully responsible** for capturing the
+proof artifact (screenshot and/or Playwright bounding-box assertion after
+a full non-`SkipUiBuild` deploy). Throttling the Opus reviewer must not
+become an excuse to skip visual proof — an affirmative claim that an
+element is present or correct without a named artifact is still treated
+as "not done".
 
 Resolved policy both rules agree on:
 
 | Work | Model |
 | --- | --- |
-| Visual design, UI layout, layout RCA, layout acceptance | Opus-class (this override) |
-| Backend, API, ORM, lab, infrastructure, compliance, documentation, and other non-visual implementation | `cursor-grok-4.5-high-fast` or AUTO |
+| Acceptance review of rendered GUI proof; diagnosis after a cheaper UI fix failed; operator-named Opus cases | Opus-class (this override) |
+| UI implementation (including mechanical edits), backend, API, ORM, lab, infrastructure, compliance, documentation, planning, exploration | `cursor-grok-4.5-high-fast` or AUTO |
 
 Binding consequences:
 
-1. When the task is **visual design, operator GUI layout, DataGrid
-   density, overlapping controls, spacing, or "is this page usable?"**,
-   a Grok-class or otherwise non-vision coding pass is **not**
-   sufficient for the design or for acceptance evidence, no matter how
-   confident the summary sounds.
-2. **Visual design, layout RCA, and final layout acceptance** use an
-   Opus-class model (or an equivalent model that actually inspects
-   rendered output). Mechanical implementation edits may use
-   `cursor-grok-4.5-high-fast` or AUTO only under a design Opus already
-   produced or accepted.
+1. When the task asks **"is this page usable?"** or claims a layout
+   fix is done, a coding pass that never inspects rendered output is
+   **not** sufficient for acceptance, no matter how confident the
+   summary sounds. Opus reviews the **rendered artifact**; it is not
+   the default implementer.
+2. **Implementation of UI edits** — including label/terminology
+   renames, moving items between navigation menus, adding a column,
+   wiring an export — uses `cursor-grok-4.5-high-fast` or AUTO. Opus
+   is for **acceptance of the rendered artifact** and for **diagnosis
+   after a cheaper attempt failed** (cite the failed attempt). Under
+   budget pressure, diagnosis waits per
+   [`auto-model-only.mdc`](auto-model-only.mdc).
 3. Any reply claiming a UI element or feature is available, visible,
    fixed, or working must name its evidence artifact — the Playwright
    spec and assertion, or the screenshot path — inline. Affirmative
    claims need the same proof as regression fixes. A reply with no
-   named artifact is treated as "not done".
+   named artifact is treated as "not done". The Grok/AUTO implementer
+   captures that artifact; Opus (when used) reviews it.
 4. **This override does not weaken acceptance evidence.** Every
    requirement in this file stands unchanged: primary actions visible
    without horizontal scroll at 1280x800 and 1024x768, no overlapping
    row or cell content, bounding-box assertions or screenshots the
    agent actually read back, a named evidence artifact, and a full
    deploy with **no** `-SkipUiBuild` before any screenshot is treated
-   as proof. The override is about **which model** does visual design —
-   it does not lower the bar the work must clear.
+   as proof. The model throttle does not relax visual proof.
 5. **This override does not license Opus fan-out or spend escalation
    anywhere else.** [`auto-model-only.mdc`](auto-model-only.mdc) still
    forbids Opus across a fleet of background workers, Opus retry loops
-   after a usage or credit error, and pinning Opus to supervise or
-   unstick a stuck child. Non-visual work stays on
-   `cursor-grok-4.5-high-fast` or AUTO. The escalation authorized here
-   is focused visual-design / layout work — not a parallel Opus swarm.
+   after a usage or credit error, pinning Opus to supervise or unstick
+   a stuck child, and expensive-model inheritance onto children.
+   Prefer one Opus acceptance pass over Opus owning implementation
+   end to end.
 
 ## Worked violation to fix
 
@@ -408,10 +425,10 @@ screenshot records the verification.
 - [`enterprise-compliance.mdc`](enterprise-compliance.mdc) section 2
   — Section 508 / WCAG 2.0 AA is the legal floor; 1.4.10 Reflow is
   the criterion a horizontally-scrolling primary action violates.
-- [`auto-model-only.mdc`](auto-model-only.mdc) — spend guard for
-  non-visual work; this file's Opus-class visual-design requirement
-  overrides that rule's "never pin Opus" prohibition (operator
-  precedence, 2026-07-27).
+- [`auto-model-only.mdc`](auto-model-only.mdc) — spend guard; this
+  file's Opus carve-out for rendered acceptance review and failed-fix
+  diagnosis agrees with that rule's narrowed override (operator
+  precedence 2026-07-27; throttle 2026-07-28).
 - [`agent-slice-discipline.mdc`](agent-slice-discipline.mdc) — one
   slice per run; a layout fix plus its proof spec is one slice.
 - `pim-offline-server/docs/dev/current-state-compliance-layout-rca.md`
