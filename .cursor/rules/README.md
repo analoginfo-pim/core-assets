@@ -1,14 +1,8 @@
-# Workspace always-apply Cursor rules (tracked mirror)
+# Live workspace rules (not a git repo)
 
-**Live location** (what agents load): `c:\analog-pim\.cursor\rules`
+Agents load these `.mdc` files from here. `c:\analog-pim` has no `.git`.
 
-**This directory** is the **tracked mirror** in `core-assets` for versioning
-and recovery. `c:\analog-pim` itself is not a git repository (multi-repo
-container), so the live rules tree is not versioned unless mirrored here.
-
-**Sync direction:** workspace → `core-assets` only. Never copy the other way
-without deliberate intent (for example a recovery restore).
-
-If you edit a rule under the live workspace path, mirror the same file into
-this directory in the same change set. An edit that stays only on one disk
-is not recoverable from git.
+**After any edit:** copy the changed file(s) to
+`c:\analog-pim\core-assets\.cursor\rules\` and commit+push in
+`core-assets` in the same change set (see `auto-commit-push.mdc`).
+Sync: workspace → `core-assets` only. Mirror established by `2ee98b0`.

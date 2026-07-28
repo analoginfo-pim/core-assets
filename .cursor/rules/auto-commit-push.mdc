@@ -67,6 +67,17 @@ the auto-push default:
   the upstream first (`git push -u origin <branch>`) and surface that in
   your response.
 
+## Workspace `.cursor` rules — mirror to `core-assets`
+
+`c:\analog-pim` is **not** a git repository (multi-repo container). Edits
+under `c:\analog-pim\.cursor\rules\*.mdc` (and other workspace-level
+`.cursor` content) **cannot** be committed from where they live. Mirror
+them to `c:\analog-pim\core-assets\.cursor\rules\` and commit **in
+`core-assets` in the same change set**, or they exist on one disk only
+and are lost on reimage. Sync direction: **workspace → `core-assets`**
+(established by `2ee98b0`). An agent that edits a rule and reports done
+**without** that mirror commit has not finished the task.
+
 ## When NOT to auto-push
 
 Skip the push (commit locally, surface a short note) when any of these
