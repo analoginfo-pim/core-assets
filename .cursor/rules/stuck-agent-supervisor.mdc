@@ -94,10 +94,14 @@ While any sibling is stuck (or mid-unstick):
 
 ## Multitask / wake-from-sleep status check
 
-There is **no always-on supervisor daemon** by default. The always-apply
-rule above is parent duty only. An optional Cursor Automation named
-"Stuck agent supervisor" exists only if Phil created and **enabled** it
-in Automations — never assume it is running.
+There is **no always-on Cloud supervisor** that can see local transcripts.
+The always-apply rule above is parent duty. Optional complement: the
+**local** Windows Scheduled Task `AIC-StuckAgentLocalWatcher` (see
+[`README-local-watcher.md`](../automations/README-local-watcher.md)).
+A Cursor Automation named "Stuck agent supervisor" only helps if it is a
+true **local** runtime; Cloud Agents cannot read
+`C:\Users\phil\.cursor\projects\...` — never assume Cloud Enable fixed
+planning stalls.
 
 When the user says the machine slept, agents are stuck, or asks whether
 a supervisor is running, a **parent coordinator in Multitask Mode MUST**:
