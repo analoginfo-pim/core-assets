@@ -116,6 +116,8 @@ The web application uses a progressive enhancement strategy:
 
 ## License & Usage
 
-These assets are proprietary to Analog Information Systems and should only be used in official AIC PIM applications.
+These assets are proprietary to Analog Informatics Corporation and should only be used in official AIC PIM applications.
 
-**Copyright © 2025 Analog Information Systems. All rights reserved.**
+**Copyright 2026 Analog Informatics Corporation.**
+
+The one-line product copyright notice lives in [`legal/COPYRIGHT.txt`](../legal/COPYRIGHT.txt).

@@ -6,6 +6,7 @@ Canonical legal-text assets shipped with AIC products.
 
 | File | Purpose | Used by |
 | ---- | ------- | ------- |
+| `COPYRIGHT.txt` | Canonical product copyright line for UI footers, About dialogs, and Windows `LegalCopyright` resources. | Offline server admin SPA, configurator About dialogs, agent/server VERSIONINFO (keep in sync when editing). |
 | `EULA_AIC_Commercial.rtf` | End-User License Agreement displayed by every Windows MSI installer (WiX `WixUI_Mondo` license dialog). | `pim-installers/scripts/Build-PimOfflineAgentMsi.ps1`, `pim-installers/scripts/Build-PimOfflineServerMsi.ps1`, and any future Windows installer. |
 
 ## Update procedure

@@ -147,7 +147,7 @@ Use the provided scripts to generate icons from source SVGs:
 ## License
 
 These assets are proprietary to Analog Information Systems.  
-© 2025 Analog Information Systems. All rights reserved.
+Copyright 2026 Analog Informatics Corporation.
 
 ---
 

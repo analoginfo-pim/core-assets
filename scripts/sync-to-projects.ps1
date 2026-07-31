@@ -178,6 +178,13 @@ $assetMap = [ordered]@{
         "mix-server/wix/assets/EULA_AIC_Commercial.rtf"
     )
 
+    # One-line product copyright (UI footers / About / VERSIONINFO keep the
+    # same wording; consumers also embed the string in source constants).
+    "legal/COPYRIGHT.txt" = @(
+        "pim-offline-server/ui/public/COPYRIGHT.txt",
+        "pim-installers/legal/COPYRIGHT.txt"
+    )
+
     # ----- GeoIP + threat intel (MSI seed / first-boot ProgramData copy) -----
     # Ship the real GeoLite2-Country.mmdb (~9 MB) for air-gapped first start.
     # MaxMind EULA: AIC private assets + product MSI only; do not redistribute
