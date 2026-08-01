@@ -1,0 +1,73 @@
+---
+description: Hard rule — "offline" is only Agent offline mode; new product naming uses AIC Server, enclave, agent, etc.
+alwaysApply: true
+---
+
+# No “Offline” product naming (hard rule)
+
+“Offline” is a **deprecated product term**. It remains valid only when it
+literally means the Agent’s **offline mode** (disconnected / not talking to
+the control plane). It must not appear in new repository names, crate names
+intended as product surface, documentation titles, UI strings, partner copy,
+or forward-looking architecture as a product brand.
+
+## The rule
+
+> **Do not create new repos, crates, docs titles, UI strings, or partner
+> language that brand the product as “Offline PIM”, “AIC Offline”, or
+> “Offline Server”. Use AIC Server, enclave, agent, recording proxy / jump
+> host capacity, and related plain US English. Reserve “offline” for Agent
+> offline mode only.**
+
+## Allowed uses of “offline”
+
+| Allowed | Example |
+| --- | --- |
+| Agent offline **mode** | “Agent is offline; queued elevation retries when connectivity returns” |
+| Historical git / path names that already exist | `pim-offline-server` repo (do not rename); `pim-orm-offline` crate |
+| Legacy SQL table prefix | `offline_*` columns/tables in `pim-orm-offline` — **schema namespace only**, not product branding |
+| Existing binary / program ids already shipped | `pim-offline-agent`, `pim-offline-server` program ids until a deliberate rename program |
+
+## Forbidden in new work
+
+- New GitHub repos named `*-offline-*` for product features (bad example already
+  shipped: `analoginfo-pim/orm-offline-local-patches` — prefer rename guidance
+  when touching; do not create more).
+- New crate names like `pim-offline-vm-*` for greenfield work — prefer
+  `pim-vm-hypervisor`, `vm_scheduler`, etc.
+- Doc / UI titles: “AIC Offline”, “Offline PIM Server”, “Offline Workstations”.
+- Partner or assessor prose that calls the control plane “the Offline product”.
+
+## Preferred vocabulary
+
+| Concept | Prefer |
+| --- | --- |
+| Control plane binary / product | **AIC Server** |
+| CMMC / MSP boundary | **enclave** |
+| Endpoint client | **Agent** (offline **mode** only when disconnected) |
+| Heavy session capture host | **recording proxy** / **jump host capacity** |
+| Seat VM power control | **VM scheduler**, **My Workstations** power state |
+| Hypervisor adapter crate | `pim-vm-hypervisor` |
+
+## SQL namespace note
+
+Tables may keep the historical `offline_*` prefix when matching
+`pim-orm-offline` convention (for example `offline_vm_pool`). Document in the
+migration and feature doc that this prefix is a **legacy schema namespace**,
+not the product name. Prefer `enclave_*` for greenfield inventory-adjacent
+tables when that matches nearby tables; do not invent new *product* names
+containing Offline.
+
+## Agent duty
+
+1. When writing new docs or UI copy for VM management, proxy/jump capacity, or
+   AIC Server features — strip “Offline” product branding before commit.
+2. Mirror this rule to `core-assets/.cursor/rules/no-offline-product-naming.mdc`
+   in the same change set (workspace `.cursor` is not a git root).
+3. Do not rename the historical `pim-offline-server` git repository in this
+   rule’s scope; that is a separate migration program.
+
+## Origin
+
+2026-07-31 — operator hard rule: stop using “offline” in creation of repos and
+forward-looking work; Offline refers only to Agent offline mode.
