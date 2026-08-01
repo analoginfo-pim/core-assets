@@ -1,0 +1,96 @@
+---
+description: Hard rule — every publicly shared demo/dev/release build must be signed (Authenticode/GPG) and published with a per-version all-components SHA-256 manifest; plain US English for partners.
+alwaysApply: true
+---
+
+# Public builds: signed, hashed, transparent (hard rule)
+
+AIC is a cybersecurity company. We are meticulously transparent in our
+processes and products. **Secure by design.** When agents **build,
+package, release, or publicly share** any demo, lab, dev, or GA
+artifact (including drops to partners such as Robert, customers, or
+auditors), they must package the **right way** — best practices and
+regulatory requirements, not shortcuts.
+
+> **Interrupt for packaging agents:** Handing a partner an unsigned
+> or unhashed build (no Authenticode/GPG path + no
+> `release-manifests/<ver>/SHA256SUMS.txt`) **violates this hard
+> rule**, even for a "quick demo," unless the operator gives an
+> **explicit override in the same message**.
+
+## The rule
+
+> **Every publicly shared build is signed where the platform allows
+> and always accompanied by a complete per-version SHA-256 manifest
+> of all shipping components. Never share bits without both
+> (signing + hashes) unless the operator overrides in the same
+> message. Speak to customers and partners in simple US English —
+> overcommunicate; minimize vernacular and IT jargon.**
+
+## Required packaging path
+
+| Step | Windows | Linux |
+| ---- | ------- | ----- |
+| Code / package signature | SSL.com eSigner Authenticode via `pim-build-tools/signing/Sign-WithSslComCodeSignTool.ps1` (and sibling `.sh` hosts) on every PE/MSI that ships | GPG package signing via `pim-build-tools/signing/sign-linux-packages-with-gpg.sh` (Authenticode does **not** apply to ELF/`.deb`/`.rpm`) |
+| Orchestration | Prefer `Publish-SignedReleaseArtifacts.ps1` (`-SignSslCom`; GA: also `-SignLinuxPackages -RequireAllPresent`) | Same entrypoint / `publish-signed-release-artifacts.sh` |
+| Component list | `pim-installers/scripts/ShippingComponentMatrix.ps1` | Same matrix |
+| Hash manifest (required) | `pim-installers/release-manifests/<version>/SHA256SUMS.txt` + `COMPONENTS.md` (and `hashes.sha256` alias) | Same folder — Linux rows **must** appear |
+
+MSI build scripts call `Write-ReleaseSha256Sums.ps1` after build; a
+complete share still needs the full matrix (all products/platforms
+in the drop) via the publish entrypoint.
+
+## Forbidden
+
+- Sharing unsigned Windows PE/MSI with partners or customers.
+- Sharing Linux packages without the documented GPG path **and**
+  hash-manifest rows when those packages are in the share set.
+- Omitting `SHA256SUMS.txt` / `COMPONENTS.md` for "quick demos,"
+  internal partner previews, or "we'll hash later."
+- Signing only the outer MSI while leaving inner EXE/DLL unsigned.
+- Inventing ad-hoc hash lists that skip
+  `ShippingComponentMatrix.ps1` coverage.
+- Partner-facing notes full of unexplained jargon; use plain words
+  auditors and non-engineers can follow (US English).
+
+## Override
+
+Only the **operator**, in the **same message** as the share request,
+may waive signing or the hash manifest (e.g. "share unsigned to
+Robert, skip hashes"). Agents must not invent a waiver. Log the
+override plainly when reporting what was shared.
+
+## Communication (customers / partners)
+
+- **Overcommunicate** process: what was signed, how to verify
+  (`Get-FileHash` / `sha256sum -c`), which version folder holds
+  `SHA256SUMS.txt` and `COMPONENTS.md`.
+- **Simple US English** — short sentences; spell out terms once
+  ("digital signature" before "Authenticode") when useful.
+- Minimal vernacular / IT speak in partner-facing text. Source
+  identifiers stay US English per
+  [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §1.
+
+## Rationale (regulatory)
+
+Maps to **NIST SP 800-53 SI-7** (software, firmware, and information
+integrity) and CMMC expectations for signed code **or** documented
+acceptable hashes per version — this product line does **both**. See
+[`enterprise-compliance.mdc`](enterprise-compliance.mdc) §3 (SI family)
+and §6 (commit / audit hygiene). Branding and legal payloads in
+packages still come only from
+[`branding-assets.mdc`](branding-assets.mdc) / `core-assets`.
+
+## Canonical docs (do not fork process into chat)
+
+| Location | Commit / path |
+| -------- | ------------- |
+| `pim-build-tools` signing handbook | `signing/README.md` (landed `05d68d3`) — `Sign-WithSslCom*`, `Publish-SignedReleaseArtifacts.ps1`, GPG, SHA-256 writers |
+| `pim-installers` policy | [`SIGNING.md`](../../pim-installers/SIGNING.md) (landed `a3f70a2`) — matrix, Authenticode order, manifest layout |
+| Manifests | `pim-installers/release-manifests/<version>/` |
+
+## Origin
+
+2026-07-31 — operator hard rule: do things the right way for every
+publicly shared demo, dev, and release build; cybersecurity company
+transparency; secure by design; overcommunicate in plain US English.
