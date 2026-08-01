@@ -27,12 +27,24 @@ regulatory requirements, not shortcuts.
 > message. Speak to customers and partners in simple US English —
 > overcommunicate; minimize vernacular and IT jargon.**
 
+## TEMPORARY — SSL.com Authenticode disabled (operator 2026-08-01)
+
+> **Operator kill-switch:** SSL.com eSigner signing is **off** for all
+> packaging paths via
+> `pim-build-tools/signing/SslComSigningPolicy.ps1`
+> (`$PimSslComSigningEnabled = $false`). Agents must **not** invoke
+> CodeSignTool / claim Authenticode on PE/MSI until that policy is
+> flipped back. **SHA-256 manifests remain required** on public shares
+> when feasible (`Write-ReleaseSha256Sums.ps1` /
+> `Publish-SignedReleaseArtifacts.ps1` without relying on `-SignSslCom`).
+> Linux GPG package signing is **not** covered by this disable.
+
 ## Required packaging path
 
 | Step | Windows | Linux |
 | ---- | ------- | ----- |
-| Code / package signature | SSL.com eSigner Authenticode via `pim-build-tools/signing/Sign-WithSslComCodeSignTool.ps1` (and sibling `.sh` hosts) on every PE/MSI that ships | GPG package signing via `pim-build-tools/signing/sign-linux-packages-with-gpg.sh` (Authenticode does **not** apply to ELF/`.deb`/`.rpm`) |
-| Orchestration | Prefer `Publish-SignedReleaseArtifacts.ps1` (`-SignSslCom`; GA: also `-SignLinuxPackages -RequireAllPresent`) | Same entrypoint / `publish-signed-release-artifacts.sh` |
+| Code / package signature | SSL.com eSigner Authenticode via `pim-build-tools/signing/Sign-WithSslComCodeSignTool.ps1` (and sibling `.sh` hosts) on every PE/MSI that ships — **temporarily disabled** (see kill-switch above) | GPG package signing via `pim-build-tools/signing/sign-linux-packages-with-gpg.sh` (Authenticode does **not** apply to ELF/`.deb`/`.rpm`) |
+| Orchestration | Prefer `Publish-SignedReleaseArtifacts.ps1` (hash always; `-SignSslCom` no-op until re-enable; GA: also `-SignLinuxPackages -RequireAllPresent`) | Same entrypoint / `publish-signed-release-artifacts.sh` |
 | Component list | `pim-installers/scripts/ShippingComponentMatrix.ps1` | Same matrix |
 | Hash manifest (required) | `pim-installers/release-manifests/<version>/SHA256SUMS.txt` + `COMPONENTS.md` (and `hashes.sha256` alias) | Same folder — Linux rows **must** appear |
 
