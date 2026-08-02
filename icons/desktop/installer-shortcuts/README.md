@@ -31,7 +31,12 @@ winget install --id ImageMagick.ImageMagick -e
 Inkscape alone can render the base mark from `icons/source/aic-icon.svg`, but
 cannot produce valid multi-resolution ICO files without ImageMagick.
 
-Each output ICO embeds at least these sizes: **16, 32, 48, 256** pixels.
+Each output ICO embeds at least these sizes: **16, 32, 48, 256** pixels
+as **PNG-compressed** frames (not BMP/DIB). ImageMagick 7.1’s default
+`.ico` writer emits BMP frames that Windows Explorer paints as
+multi-colored noise/static — the generator writes PNG payloads into the
+ICO container on purpose. `Stage-InstallerShortcutIcons.ps1` refuses
+BMP-only files.
 
 ## Variants
 

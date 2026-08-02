@@ -119,6 +119,80 @@ function New-VariantPng {
     }
 }
 
+function Get-PngPixelSize {
+    param([string] $PngPath)
+    # PNG IHDR: bytes 16..23 are width/height big-endian uint32 (RFC 2083).
+    $bytes = [System.IO.File]::ReadAllBytes($PngPath)
+    if ($bytes.Length -lt 24 -or $bytes[0] -ne 0x89 -or $bytes[1] -ne 0x50) {
+        throw "Not a PNG file: $PngPath"
+    }
+    $w = ([uint32]$bytes[16] -shl 24) -bor ([uint32]$bytes[17] -shl 16) -bor ([uint32]$bytes[18] -shl 8) -bor [uint32]$bytes[19]
+    $h = ([uint32]$bytes[20] -shl 24) -bor ([uint32]$bytes[21] -shl 16) -bor ([uint32]$bytes[22] -shl 8) -bor [uint32]$bytes[23]
+    return @{ Width = [int]$w; Height = [int]$h }
+}
+
+function New-PngCompressedIco {
+    param(
+        [Parameter(Mandatory = $true)][string[]] $PngPaths,
+        [Parameter(Mandatory = $true)][string] $OutIco
+    )
+    # ImageMagick 7.1+ writes BMP/DIB frames into .ico by default. Windows
+    # Explorer often paints those as multi-colored static. Store PNG payloads
+    # in the ICO container instead (same shape as icons/desktop/aic-icon.ico).
+    $frames = @()
+    foreach ($p in $PngPaths) {
+        $dim = Get-PngPixelSize -PngPath $p
+        $frames += [pscustomobject]@{
+            Path   = $p
+            Width  = $dim.Width
+            Height = $dim.Height
+            Bytes  = [System.IO.File]::ReadAllBytes($p)
+        }
+    }
+    $count = $frames.Count
+    $ms = New-Object System.IO.MemoryStream
+    $bw = New-Object System.IO.BinaryWriter $ms
+    try {
+        $bw.Write([uint16]0)       # reserved
+        $bw.Write([uint16]1)       # type = icon
+        $bw.Write([uint16]$count)
+        $offset = 6 + (16 * $count)
+        foreach ($f in $frames) {
+            $wb = if ($f.Width -ge 256) { [byte]0 } else { [byte]$f.Width }
+            $hb = if ($f.Height -ge 256) { [byte]0 } else { [byte]$f.Height }
+            $bw.Write($wb)
+            $bw.Write($hb)
+            $bw.Write([byte]0)     # color palette
+            $bw.Write([byte]0)     # reserved
+            $bw.Write([uint16]1)   # color planes
+            $bw.Write([uint16]32)  # bits per pixel (advisory for PNG frames)
+            $bw.Write([uint32]$f.Bytes.Length)
+            $bw.Write([uint32]$offset)
+            $offset += $f.Bytes.Length
+        }
+        foreach ($f in $frames) {
+            $bw.Write($f.Bytes)
+        }
+        $bw.Flush()
+        [System.IO.File]::WriteAllBytes($OutIco, $ms.ToArray())
+    }
+    finally {
+        $bw.Dispose()
+        $ms.Dispose()
+    }
+    $written = [System.IO.File]::ReadAllBytes($OutIco)
+    $pngSigs = 0
+    for ($i = 0; $i -lt $written.Length - 3; $i++) {
+        if ($written[$i] -eq 0x89 -and $written[$i + 1] -eq 0x50 -and
+            $written[$i + 2] -eq 0x4E -and $written[$i + 3] -eq 0x47) {
+            $pngSigs++
+        }
+    }
+    if ($pngSigs -lt $count) {
+        throw "PNG-compressed ICO validation failed for $OutIco (pngSigs=$pngSigs expected=$count)"
+    }
+}
+
 function New-MultiResIco {
     param(
         [string] $VariantPng256,
@@ -132,15 +206,16 @@ function New-MultiResIco {
         foreach ($sz in @(16, 32, 48, 256)) {
             $p = Join-Path $tempDir "frame-$sz.png"
             if ($sz -eq 256) {
-                Copy-Item -LiteralPath $VariantPng256 -Destination $p -Force
+                # Force RGBA so every frame is TrueColorAlpha PNG (color-type 6).
+                Invoke-Magick $VariantPng256 -alpha set -type TrueColorAlpha -define png:color-type=6 $p
             }
             else {
-                Invoke-Magick $VariantPng256 -resize "${sz}x${sz}" $p
+                Invoke-Magick $VariantPng256 -resize "${sz}x${sz}" -alpha set -type TrueColorAlpha -define png:color-type=6 $p
             }
             $pngs += $p
         }
-        Invoke-Magick @pngs $IcoPath
-        Write-Host "  [ok] $IcoPath" -ForegroundColor Green
+        New-PngCompressedIco -PngPaths $pngs -OutIco $IcoPath
+        Write-Host "  [ok] $IcoPath (PNG-compressed ICO)" -ForegroundColor Green
     }
     finally {
         Remove-Item -LiteralPath $tempDir -Recurse -Force -ErrorAction SilentlyContinue

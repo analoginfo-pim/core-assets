@@ -100,9 +100,33 @@ try {
     }
     if ($tool -eq "ImageMagick") {
         $icoOut = Join-Path $desktopDir "aic-icon.ico"
-        & magick convert @pngs $icoOut 2>&1 | Out-Null
-        if ($LASTEXITCODE -ne 0) { throw "ICO assembly failed." }
-        Write-Host "  [ok] $icoOut" -ForegroundColor Green
+        # Do NOT use `magick … out.ico` — ImageMagick 7.1 writes BMP/DIB
+        # frames that Windows Explorer paints as multi-colored static.
+        # Assemble a PNG-compressed ICO (Vista+), matching installer-shortcuts.
+        $frames = @()
+        foreach ($p in $pngs) {
+            $bytes = [System.IO.File]::ReadAllBytes($p)
+            $w = ([uint32]$bytes[16] -shl 24) -bor ([uint32]$bytes[17] -shl 16) -bor ([uint32]$bytes[18] -shl 8) -bor [uint32]$bytes[19]
+            $h = ([uint32]$bytes[20] -shl 24) -bor ([uint32]$bytes[21] -shl 16) -bor ([uint32]$bytes[22] -shl 8) -bor [uint32]$bytes[23]
+            $frames += [pscustomobject]@{ W = [int]$w; H = [int]$h; Bytes = $bytes }
+        }
+        $ms = New-Object System.IO.MemoryStream
+        $bw = New-Object System.IO.BinaryWriter $ms
+        $bw.Write([uint16]0); $bw.Write([uint16]1); $bw.Write([uint16]$frames.Count)
+        $offset = 6 + (16 * $frames.Count)
+        foreach ($f in $frames) {
+            $wb = if ($f.W -ge 256) { [byte]0 } else { [byte]$f.W }
+            $hb = if ($f.H -ge 256) { [byte]0 } else { [byte]$f.H }
+            $bw.Write($wb); $bw.Write($hb); $bw.Write([byte]0); $bw.Write([byte]0)
+            $bw.Write([uint16]1); $bw.Write([uint16]32)
+            $bw.Write([uint32]$f.Bytes.Length); $bw.Write([uint32]$offset)
+            $offset += $f.Bytes.Length
+        }
+        foreach ($f in $frames) { $bw.Write($f.Bytes) }
+        $bw.Flush()
+        [System.IO.File]::WriteAllBytes($icoOut, $ms.ToArray())
+        $bw.Dispose(); $ms.Dispose()
+        Write-Host "  [ok] $icoOut (PNG-compressed ICO)" -ForegroundColor Green
     } else {
         Write-Warning "ICO assembly requires ImageMagick. Skipping aic-icon.ico."
     }
