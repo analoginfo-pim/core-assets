@@ -383,6 +383,13 @@ the dependency upgrade as a release blocker, not a workaround.
 >   API (these are additionally recorded in the SQL `audit_*` tables
 >   per the server's audit pipeline).
 
+**Suite-wide channel requirement (AU-2 / AU-3 / AU-9 / AU-12):** every
+shipping binary emits via `pim-windows-oplog` on Windows **and**
+implements RFC 5424 syslog when configured (`SYSLOG_*` /
+`syslog_*` app-config keys; default may be off). Tracing-only event-id
+stubs and unused syslog keys are forbidden. Full contract:
+[`suite-observability-wel-syslog.mdc`](suite-observability-wel-syslog.mdc).
+
 ### Event payload contract
 
 Each audit event must record:
@@ -476,6 +483,9 @@ always one commit by definition. Everything else: split.
 
 ## 7. Cross-references
 
+* [`suite-observability-wel-syslog.mdc`](suite-observability-wel-syslog.mdc)
+  — hard requirement: every shipping suite binary → Windows Event Log
+  (`pim-windows-oplog`) + RFC 5424 syslog sink (default may be off).
 * `pim-offline-client/AGENTS.md` — Section 508 contract, no-panic
   policy, IPC protocol.
 * `pim-offline-server/AGENTS.md` — OpenAPI workflow, ORM standards,
