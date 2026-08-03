@@ -1,0 +1,122 @@
+---
+description: Operator UI quality is a credibility issue — treat fonts, spacing, color, icons, layout, and broken controls as high-priority defects
+alwaysApply: true
+---
+
+# Operator UI credibility (hard rule)
+
+Operator directive (Phil, 2026-08): **UI quality is a credibility
+issue and high priority.** Operators and auditors judge AIC on fonts,
+spacing, judicious color and icons, and whether interfaces look and
+work professionally. Poor layouts, clipping, overlaps, non-working
+controls, crashes, hangs, and weak menu/dialog design **cost
+credibility**. Treat these as **high-priority defects**, not polish
+backlog.
+
+## The rule
+
+> **Operators and auditors judge AIC on fonts, spacing, judicious
+> color and icons, and whether interfaces look and work
+> professionally. Poor layouts, clipping, overlaps, non-working
+> controls, crashes, hangs, and weak menu/dialog design cost
+> credibility. Treat these as high-priority defects, not polish
+> backlog.**
+
+Applies to **every** operator GUI in the workspace: Win32 dialogs,
+Tauri shells, product launchers, elevate helpers, and the admin SPA
+where visual/behavioral quality is customer-visible.
+
+## Concrete requirements — agents MUST
+
+1. **Priority** — When both are in scope, fix UI credibility defects
+   before optional feature chrome. Credibility defects are **P0**.
+2. **Fonts** — Readable professional sizes; no micro-type; consistent
+   type hierarchy (headers vs body vs captions). Match sibling AIC
+   dialogs in the same binary / design system.
+3. **Spacing / margins** — Obey
+   [`gui-margins-and-spacing.mdc`](gui-margins-and-spacing.mdc): no
+   dead top whitespace; headers close to their controls; consistent
+   outer inset.
+4. **Color** — Judicious use; accessible contrast (Section 508 /
+   WCAG 2.0 AA); never convey meaning by color alone; no garish
+   default AI purple-on-white / purple-to-indigo gradients on
+   operator tools.
+5. **Icons** — Real AIC brand assets from `core-assets` per
+   [`branding-assets.mdc`](branding-assets.mdc). Never ship broken,
+   missing, or placeholder icons on customer-facing dialogs.
+6. **Layout** — No clipping; no overlaps; primary actions visible
+   without horizontal scroll per
+   [`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc).
+7. **Behavior** — No crashes, hangs, or unresponsive UI. Controls
+   must accept input and do what their labels say. Menus and dialogs
+   must be coherent (clear titles, expected dismiss paths, no orphan
+   or dead menu items).
+8. **Acceptance** — A claim that a GUI element or feature is fixed,
+   available, visible, or working requires screenshot or
+   bounding-box proof the agent actually inspected (same bar as
+   [`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc)).
+9. **Read-only content** — Normal contrast; never fade important
+   read-only values per
+   [`readable-read-only-controls.mdc`](readable-read-only-controls.mdc).
+10. **Windows shell output** — Do not emit ANSI / VT100 escape
+    sequences into classic Windows Command Prompt or PowerShell
+    panes per
+    [`no-ansi-vt100-windows-shells.mdc`](no-ansi-vt100-windows-shells.mdc).
+
+## Forbidden constructs
+
+- Shipping a configurator / operator dialog with micro-type labels,
+  uneven random gaps, or a large empty top dead zone.
+- Broken image controls, missing `.ico` / header bitmaps, or
+  generic placeholder icons on shipping surfaces.
+- Primary actions clipped off-screen; overlapping rows/cells;
+  controls that do not respond or that lie about their effect.
+- Reporting a UI fix as done on build success alone, without a named
+  screenshot or Playwright bounding-box artifact.
+- Treating layout / typography / broken-control bugs as “polish
+  later” when the same slice is already touching that surface.
+
+## Worked violation → fix
+
+**Violation** (configurator Settings dialog, conceptual):
+
+```text
+- 72 px empty spacer above the first field (dead top zone)
+- Section title "Server connection" then 48 px gap before the URL edit
+- 8 pt gray labels (micro-type); purple gradient banner chrome
+- Header bitmap path points at a missing file → blank icon strip
+- "Test connectivity" button painted past the right edge at 1024 px
+- Clicking Save shows "ok" toast but the field handler is a no-op
+```
+
+An auditor opens the tool once and concludes the product is unfinished.
+That is a **credibility** failure, not a backlog item.
+
+**Fix** (same change set):
+
+```text
+- Outer inset ≥ 12–16 px; no empty hero spacer
+- Title with ~8 px to first control; larger gap only between sections
+- Body ≥ readable dialog font (match sibling AIC dialogs); clear H1/body
+- Neutral professional chrome; WCAG AA contrast; status text not color-only
+- Sync real `aic-header.png` / `.ico` from core-assets (branding-assets)
+- Pin or fit so Test connectivity is visible at 1280 and 1024
+- Wire Save to the real AppConfig write; prove with screenshot after deploy
+```
+
+## Cross-references
+
+| Rule | Overlap |
+| --- | --- |
+| [`gui-margins-and-spacing.mdc`](gui-margins-and-spacing.mdc) | Margins, dead zones, header proximity |
+| [`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc) | Clipping, overlaps, visual proof |
+| [`readable-read-only-controls.mdc`](readable-read-only-controls.mdc) | Read-only contrast |
+| [`no-ansi-vt100-windows-shells.mdc`](no-ansi-vt100-windows-shells.mdc) | No ANSI garbage in Windows operator shells |
+| [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §2 | Section 508 / WCAG 2.0 AA floor |
+| [`branding-assets.mdc`](branding-assets.mdc) | Icons / headers from `core-assets` only |
+
+## Origin
+
+2026-08-03 — operator hard rule: UI quality is credibility; fonts,
+spacing, color, icons, layout, and working controls are high-priority
+defects for every operator surface.
