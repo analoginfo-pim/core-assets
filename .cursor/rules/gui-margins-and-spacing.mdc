@@ -1,0 +1,132 @@
+---
+description: Professional consistent margins and control spacing for all operator GUIs
+alwaysApply: true
+---
+
+# GUI margins and spacing (hard rule)
+
+Operator directive (Phil, 2026-08): **margins and spacing keep getting
+violated by default.** Empty top dead zones and cramped header-to-control
+gaps ship in configurators and operator shells. This rule binds agent
+UI-generation behavior for **every** operator GUI in the workspace.
+
+## The rule
+
+> **Professional, consistent margins and control spacing. Never ship
+> large empty non-functional whitespace (especially large top dead
+> zones). Never ship cramped controls against headers or window edges.**
+
+Applies to **all** operator GUIs:
+
+| Surface | Scope |
+| --- | --- |
+| Win32 dialogs | Client / server configurators, elevate helpers, product launchers |
+| Tauri shells | Same product family — CSS / theme spacing, not ad-hoc spacer stacks |
+| Admin SPA | Layout chrome (page padding, section headers vs fields) where this rule applies; DataGrid density remains under [`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc) |
+
+## Concrete requirements
+
+1. **Outer margins** — consistent inset from the window or dialog edge.
+   Floor: **≥ 12–16 px** (CSS / Tauri), or the matching AIC Win32 dialog
+   unit inset already used by sibling dialogs in the same binary. Prefer
+   theme spacing tokens (`theme.spacing(…)`, shared dialog constants).
+   Forbidden: ad-hoc huge stacks of empty `Box` / `mt: 8` / `mb: 8`
+   spacers used only to “push content down.”
+
+2. **No dead hero whitespace** — large empty top blocks with no content
+   and no function are forbidden. A real brand header image (from
+   [`branding-assets.mdc`](branding-assets.mdc) / `core-assets`) is OK
+   when it is actual content. Empty spacer stacks above the first
+   interactive control are not.
+
+3. **Header proximity** — section headers and subheads sit **close** to
+   the controls they label (small gap, typically ~8 px / one spacing
+   unit). Put the **larger** gap **between** sections, not between a
+   header and its first control.
+
+4. **Side-by-side labels** — label-to-control horizontal gap must be
+   adequate; no overlap; no label clipped at the outer margin.
+
+5. **Control rhythm** — even vertical spacing within a group. Do not
+   pack tighter than readable text or Section 508 hit-target guidance
+   allows (WCAG 2.0 AA target size / spacing expectations for operator
+   controls).
+
+6. **Cross-references**
+   - [`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc)
+     — primary actions visible; no clipped chrome.
+   - [`readable-read-only-controls.mdc`](readable-read-only-controls.mdc)
+     — read-only state is not “faded / cramped.”
+   - [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §2 —
+     Section 508 / WCAG 2.0 AA.
+
+## Forbidden constructs
+
+In Win32 `.rc` / dialog layout, Tauri / React operator shells, and admin
+SPA layout chrome:
+
+- Tall empty `Box` / `div` / static control whose only job is top padding
+  beyond the outer-margin floor (e.g. 48–120 px of nothing above the
+  first field).
+- Section title with a large gap (e.g. 32–48 px) then its first control
+  — invert that: tight under the header, roomy between sections.
+- Controls flush against the dialog/window edge or overlapping a header
+  bitmap.
+- Labels truncated or painted under the left/right margin.
+- Uneven “random” vertical gaps inside one field group.
+
+## Worked violation → fix
+
+**Violation** (Tauri / React shape — same defect appears as oversized
+`cy=` / top statics in Win32 `.rc`):
+
+```tsx
+<Box sx={{ height: 72 }} /> {/* dead top zone — no content */}
+<Typography variant="h6">Server connection</Typography>
+<Box sx={{ height: 48 }} /> {/* huge gap under header */}
+<TextField label="Server URL" … />
+```
+
+**Fix**:
+
+```tsx
+<Box sx={{ p: 2 }}> {/* outer margin ≥ 12–16 px via theme token */}
+  <Typography variant="h6" sx={{ mb: 1 }}>
+    Server connection
+  </Typography>
+  {/* ~8 px under header, then fields; larger gap only before next section */}
+  <Stack spacing={1.5}>
+    <TextField label="Server URL" … />
+    <TextField label="Port" … />
+  </Stack>
+  <Box sx={{ mt: 3 }}>
+    <Typography variant="h6" sx={{ mb: 1 }}>
+      Diagnostics
+    </Typography>
+    <Stack spacing={1.5}>{/* … */}</Stack>
+  </Box>
+</Box>
+```
+
+Win32 parallel: collapse oversized top blank statics; place the first
+`LTEXT` / group header a dialog-unit or two above its first edit /
+combo; keep left/right margins aligned with sibling AIC dialogs.
+
+## Required agent behavior
+
+1. When generating or editing any operator GUI, apply this rule in the
+   same change set — do not “fix spacing later.”
+2. Prefer shared spacing constants / theme tokens over one-off pixel
+   stacks.
+3. Before claiming a layout fix is done, capture visual proof per
+   [`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc)
+   when the change is visual.
+4. New always-apply rules under `c:\analog-pim\.cursor\rules\` must be
+   mirrored to `core-assets/.cursor/rules/` in the same change set
+   ([`auto-commit-push.mdc`](auto-commit-push.mdc)).
+
+## Origin
+
+2026-08-03 — operator hard rule: margins/spacing keep getting violated
+by default; codify floors, forbid top dead zones, keep headers close to
+their controls.
