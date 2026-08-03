@@ -62,7 +62,10 @@ $assetMap = [ordered]@{
         "pim-offline-client-configurator-tauri/src-tauri/icons/icon.png",
         "pim-offline-client-elevate-tauri/src-tauri/icons/icon.png",
         "pim-offline-server-configurator-tauri/src-tauri/icons/icon.png",
-        "pim-db-mgmt-agent/configurator-tauri/src-tauri/icons/icon.png"
+        "pim-db-mgmt-agent/configurator-tauri/src-tauri/icons/icon.png",
+        "pim-workstation-assurance-agent/configurator-tauri/src-tauri/icons/icon.png",
+        "pim-offline-client/recording-agent-configurator-tauri/src-tauri/icons/icon.png",
+        "pim-jump-server/configurator-tauri/src-tauri/icons/icon.png"
     )
 
     # ----- Desktop / OS icons --------------------------------------------
@@ -82,6 +85,9 @@ $assetMap = [ordered]@{
         "pim-offline-client-elevate-tauri/src/assets/aic-favicon.ico",
         "pim-offline-server-configurator-tauri/src/assets/aic-favicon.ico",
         "pim-db-mgmt-agent/configurator-tauri/src/assets/aic-favicon.ico",
+        "pim-workstation-assurance-agent/configurator-tauri/src/assets/aic-favicon.ico",
+        "pim-offline-client/recording-agent-configurator-tauri/src/assets/aic-favicon.ico",
+        "pim-jump-server/configurator-tauri/src/assets/aic-favicon.ico",
         "pim-ui-kit/packages/demo/public/favicon.ico",
         "pim-ui-kit/templates/app-template/public/favicon.ico",
         "pim-ui-offline-kit/packages/demo/public/favicon.ico",
@@ -160,6 +166,9 @@ $assetMap = [ordered]@{
         "pim-offline-client-elevate-tauri/src/assets/aic-header.png",
         "pim-offline-server-configurator-tauri/src/assets/aic-header.png",
         "pim-db-mgmt-agent/configurator-tauri/src/assets/aic-header.png",
+        "pim-workstation-assurance-agent/configurator-tauri/src/assets/aic-header.png",
+        "pim-offline-client/recording-agent-configurator-tauri/src/assets/aic-header.png",
+        "pim-jump-server/configurator-tauri/src/assets/aic-header.png",
         "pim-offline-server/ui/public/aic-header.png"
     )
 
@@ -241,7 +250,10 @@ $treeMap = [ordered]@{
         "pim-offline-client-configurator-tauri/src-tauri/icons",
         "pim-offline-client-elevate-tauri/src-tauri/icons",
         "pim-offline-server-configurator-tauri/src-tauri/icons",
-        "pim-db-mgmt-agent/configurator-tauri/src-tauri/icons"
+        "pim-db-mgmt-agent/configurator-tauri/src-tauri/icons",
+        "pim-workstation-assurance-agent/configurator-tauri/src-tauri/icons",
+        "pim-offline-client/recording-agent-configurator-tauri/src-tauri/icons",
+        "pim-jump-server/configurator-tauri/src-tauri/icons"
     )
 }
 
