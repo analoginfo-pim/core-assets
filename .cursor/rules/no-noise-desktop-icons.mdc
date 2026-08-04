@@ -1,0 +1,92 @@
+---
+description: Hard forbid noise/placeholder Desktop and Start Menu icons; shortcuts and PE resources must use PNG-compressed AIC .ico from core-assets
+alwaysApply: true
+---
+
+# No noise / placeholder Desktop icons (hard rule)
+
+Operator defect (2026-08): Desktop **Jump Config** showed a
+**multi-colored noise/static** icon (plus the UAC shield). That pattern
+is a known suite failure mode — not a Windows quirk to ignore.
+
+## The rule
+
+> **Never ship Desktop, Start Menu, or Add/Remove Programs icons that
+> render as random-bit / noise / static pixels. Every advertised
+> shortcut and every shipping PE icon resource must use a
+> PNG-compressed AIC `.ico` from `core-assets` (or a validated
+> installer-shortcuts derivative). Empty shortcut `IconLocation`,
+> EXE resource index 0 when that EXE embeds a noise ICO, BMP/DIB-only
+> ICO frames, and `aic-header.PLACEHOLDER-do-not-use.png` (or any
+> same-family noise bitmap) are forbidden on operator-facing chrome.**
+
+## Why shortcuts become noise (RCA contract)
+
+Any one of these produces the static tile operators report:
+
+| Cause | What happens |
+| --- | --- |
+| **Shortcut `IconLocation` empty / `,0`** | Explorer extracts the target EXE’s icon resource. If that PE embeds a bad Tauri `icon.ico`, the Desktop tile is noise (+ UAC shield when elevated). |
+| **Stale `src-tauri/icons/icon.ico`** | Historical `tauri icon` / unsynced tree left a 207 KB noise ICO in Jump / DB Mgmt / WA / Recording / sibling Tauri apps. `core-assets/icons/tauri` empty → `sync-to-projects.ps1` tree-sync is a no-op and leaves the noise in place. |
+| **BMP/DIB-only `.ico` (ImageMagick 7.1 default)** | Windows Explorer paints BMP frames as multi-colored static. Canonical generators assemble **PNG-compressed** ICO only (`generate-icons.ps1`, `generate-installer-shortcut-icons.ps1`). |
+| **Missing staged `aic-icon.ico`** | Side-load / incomplete MSI under `%ProgramFiles%\AIC\…` has the Tauri EXE but no sidecar `aic-icon.ico`; sync scripts that omit `IconLocation` fall back to the EXE. |
+| **Header / in-app placeholder** | `core-assets/branding/aic-header.PLACEHOLDER-do-not-use.png` (64×64 colored noise) must never re-enter `src/assets/` or be used as an icon source. See `pim-offline-client/AGENTS.md` brand-image rule and [`branding-assets.mdc`](branding-assets.mdc). |
+
+## Required patterns
+
+1. **Canonical mark** — `core-assets/icons/desktop/aic-icon.ico` (or
+   `icons/desktop/installer-shortcuts/*.ico` for MSI product / per-shortcut
+   variants). Produce derivatives only inside `core-assets`, then sync
+   ([`branding-assets.mdc`](branding-assets.mdc)).
+2. **PNG-compressed ICO** — at least one PNG payload per file. Refuse
+   BMP/DIB-only at stage time (`Stage-InstallerShortcutIcons.ps1`,
+   Jump/DB/Recording/WA MSI builders).
+3. **Shortcut `IconLocation`** — every Desktop / Start Menu `.lnk` for a
+   configurator MUST set
+   `IconLocation = "<installDir>\aic-icon.ico,0"` (or the WiX-advertised
+   `Icon=` resource). Never rely on bare EXE `,0` for suite products.
+4. **Tauri PE resources** — `src-tauri/icons/` comes from
+   `core-assets/icons/tauri` via `sync-to-projects.ps1`. If that tree is
+   empty, regenerate with
+   `cargo tauri icon icons/source/aic-icon-1024.png --output icons/tauri`
+   **in core-assets**, commit, sync — do not invent local noise ICOs.
+5. **Section 508 / credibility** — brand image must be the real AIC mark,
+   not the noise placeholder ([`enterprise-compliance.mdc`](enterprise-compliance.mdc)
+   §2 pointer; [`operator-ui-credibility.mdc`](operator-ui-credibility.mdc)).
+
+## Forbidden constructs
+
+- `New-Object WScript.Shell` / WiX `<Shortcut>` without an explicit AIC
+  icon path or `Icon="ProductIcon"` backed by staged `aic-icon.ico`.
+- Committing or syncing `aic-header.PLACEHOLDER-do-not-use.png` (or any
+  random-bit bitmap) as `icon.ico`, `aic-icon.ico`, or header art.
+- `magick … out.ico` without the PNG-compressed assembly path documented
+  in `core-assets/icons/desktop/installer-shortcuts/README.md`.
+- Claiming a Desktop icon fix without a screenshot of the live shortcut
+  tile (or an extracted PNG from the shortcut’s `IconLocation` target).
+
+## Jump Config worked example (2026-08)
+
+**Broken:** `Jump Config.lnk` →
+`…\pim-jump-server-configurator-tauri.exe` with `IconLocation = ,0`;
+install dir missing `aic-icon.ico`; EXE embeds noise `icon.ico`.
+
+**Fixed:** stage `core-assets/icons/desktop/aic-icon.ico` as
+`%ProgramFiles%\AIC\PimJumpServer\aic-icon.ico` (or MSI `JumpServer`);
+set shortcut `IconLocation` to that file; keep Tauri `src-tauri/icons`
+synced from `core-assets/icons/tauri`.
+
+## Cross-references
+
+| Rule / doc | Role |
+| --- | --- |
+| [`branding-assets.mdc`](branding-assets.mdc) | Single source; sync map; no local branding edits |
+| [`operator-ui-credibility.mdc`](operator-ui-credibility.mdc) | Broken / placeholder icons are P0 credibility defects |
+| `core-assets/icons/desktop/installer-shortcuts/README.md` | BMP→noise; PNG-compressed ICO contract |
+| `pim-installers/scripts/Sync-AicConfiguratorDesktopShortcuts.ps1` | Lab Desktop/Start Menu sync must set `IconLocation` |
+| `pim-offline-client/AGENTS.md` | Brand image = real AIC mark, not noise placeholder |
+
+## Origin
+
+2026-08-04 — Desktop Jump Config noise/static icon + UAC shield; suite
+audit of Tauri `icon.ico` and shortcut `IconLocation` omissions.

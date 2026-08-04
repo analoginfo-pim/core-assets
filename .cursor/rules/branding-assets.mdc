@@ -111,6 +111,11 @@ forbidden — even temporarily — because they get picked up by build scripts
 and shipped. If you genuinely need a non-AIC asset for a test, store it
 in `core-assets/icons/test/` and document why.
 
+Desktop / Start Menu shortcuts and PE icon resources must never ship the
+noise/static placeholder family (`aic-header.PLACEHOLDER-do-not-use.png`,
+stale Tauri `icon.ico` noise). See
+[`no-noise-desktop-icons.mdc`](no-noise-desktop-icons.mdc).
+
 ## Adding a new branded artefact (full procedure)
 
 1. **Identify or add the source** in `core-assets`:
