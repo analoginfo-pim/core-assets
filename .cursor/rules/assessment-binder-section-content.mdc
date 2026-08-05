@@ -1,0 +1,120 @@
+---
+description: >-
+  Hard rule — Assessment Binder / auditor-binder comprehensive tests MUST prove
+  per-section auditor-usable content (non-empty narrative/findings), not list/
+  tabs/export chrome. Requires live IAM session.
+alwaysApply: true
+---
+
+# Assessment Binder section content proof (hard rule)
+
+Operator defect (2026-08): comprehensive / enclave Playwright matrices reported
+Assessment Binder / auditor-binder **PASS** from instance list, section-tree
+clicks, export toolbar, honesty banner, and tab chrome — while section bodies
+stayed empty, placeholder, or never sampled. Chrome and IAM-gated page load
+are not auditor package proof.
+
+## The rule
+
+> **Never claim Assessment Binder, auditor-binder, auditor package, living
+> binder, or comprehensive enclave binder coverage “works,” “fixed,” or
+> “PASS” from list / tabs / export chrome alone. For each binder instance
+> in scope (or every lab binder when claiming full coverage), sample every
+> section (or a documented full section set) and assert non-empty
+> auditor-usable narrative and/or findings — minimum length, not
+> placeholder. A live IAM session is required (not Admin-Token-only).**
+
+Layout visibility remains required per
+[`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc);
+it is **not** binder content acceptance.
+
+## When this rule applies
+
+Trigger phrases (non-exhaustive): comprehensive test, full product / enclave
+test, Assessment Binder tested, auditor-binder PASS, auditor package works,
+living-doc binder complete, C3PAO binder QA, `/enclave/auditor-binder`
+coverage.
+
+Does **not** force full section sampling for a narrowly scoped chrome /
+layout fix that explicitly scopes out binder content (still must not claim
+binder or auditor package works).
+
+## Required preflight
+
+1. **IAM session** — `seedIamSessionFromLogon` / real `/login` password
+   logon with a documented lab identity (**liebsoft** / **lanicu** /
+   seed superadmin — **never `phil`**). Admin-Token-only SPA init that hits
+   AuthBound / 401 on binder APIs is **FAIL** for binder claims.
+2. **Binder route** — open `/enclave/auditor-binder` under that session;
+   instance list loads.
+3. **Scope** — name every binder instance under test, or state “all lab
+   binders” and enumerate them from the list API / UI.
+
+Keep lab services alone unless restore is required. No `cargo clean`.
+
+## Required content proof (minimum set)
+
+Before claiming binder / auditor package / comprehensive enclave binder PASS,
+complete **all** of:
+
+| # | Exercise | Evidence |
+| --- | --- | --- |
+| 1 | **IAM session** | Live logon seed; binder APIs succeed without token-only bypass |
+| 2 | **Instance scope** | Named binder id(s) or full lab inventory |
+| 3 | **Section sample** | Every section in scope (or documented full outline set) opened once |
+| 4 | **Auditor-usable body** | Per section: narrative and/or findings text with length **≥ 40** characters after trim; not placeholder (below) |
+| 5 | **Export honesty (optional add-on)** | If export is claimed: format control usable + honesty banner — still **does not** replace §4 |
+
+Placeholder / empty patterns that **fail** content proof (case-insensitive
+substrings or exact empty):
+
+- Empty / whitespace-only HTML or text
+- `TODO`, `TBD`, `placeholder`, `lorem ipsum`, `coming soon`, `do-not-ship`
+- Raw template tokens only (e.g. `{section_title}` with no prose)
+- Status chip `draft` / `gap` with **no** operator or auto-fill body of ≥ 40 chars
+
+Honest **BLOCKED** is required when a section is intentionally out-of-scope
+or the lab has no findings seed — label the section and reason; do not
+promote chrome PASS over empty body.
+
+## Forbidden “false green”
+
+Do **not** treat any of these alone as Assessment Binder / auditor package
+success:
+
+- Instance list / New / Rename / Delete chrome
+- Section tree select without body assert
+- Tab switches (Section / Params / History / Export) heading-only
+- Export toolbar visible / honesty banner visible without §4 content
+- Nav crawl or enclave menu green that never opens section bodies
+- Admin-Token-only binder open (AuthBound papered over)
+- Living-doc wizard click without saved narrative/findings length check
+- Citing Connect / messaging / Jump chrome matrices as binder content proof
+
+## Canonical specs (content path — extend, do not chrome-only)
+
+Prefer IAM-seeded embedded-live specs under `pim-offline-server/ui/e2e/`:
+
+- `auditor-binder-living-doc-embedded-live.spec.ts`
+- `auditor-binder-export-persona-embedded-live.spec.ts` (export claims)
+- `auditor-binder-layout-embedded-live.spec.ts` (layout only — **not** content PASS)
+
+New comprehensive claims MUST add or run asserts that walk sections and
+check body length / non-placeholder — not only wizard button visibility.
+
+## Cross-references
+
+| Rule / doc | Overlap |
+| --- | --- |
+| [`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc) | Chrome/layout proof ≠ section content proof |
+| [`session-connect-protocol-surface.mdc`](session-connect-protocol-surface.mdc) | Sibling false-green class (Connect chrome ≠ protocol surface) |
+| [`mailpit-messaging-comprehensive-test.mdc`](mailpit-messaging-comprehensive-test.mdc) | Sibling false-green class (messaging chrome ≠ inbox) |
+| [`workstation-protocols-and-command-restrictions.mdc`](workstation-protocols-and-command-restrictions.mdc) | Comprehensive PAM claims still need protocol × type matrix |
+| `pim-offline-server/docs/dev/comprehensive-test-preflight-checklist-20260805.md` | **Gate 6** — IAM + section content |
+| `pim-offline-server/docs/dev/c3pao-audit-binder-plan.md` | Product binder contract |
+
+## Origin
+
+2026-08-05 — operator hard rule: Assessment Binder / auditor-binder
+comprehensive testing must prove section content, not chrome; IAM session
+required.
