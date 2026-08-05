@@ -1,0 +1,89 @@
+---
+description: Hard rule — never claim Connect/Open/Launch/VDI/session works without protocol-surface proof (live canvas/xterm, non-zero session id, named lab seat). Stricter than essential-ui chrome visibility for PAM paths.
+alwaysApply: true
+---
+
+# Session Connect requires protocol-surface proof (hard rule)
+
+Operator defect (2026-08-05): Playwright reported large PASS matrices
+(nav, PAM crawl, live-session binder 22/22, admin) while **My Workstations
+/ Connect never opened a real VDI or interactive session**. Chrome-only
+asserts, options HTTP 200, Jump fleet page load, and mocked workstation
+lists were treated as “Connect works.” RCA:
+`pim-offline-server/docs/dev/connect-qa-failure-rca-20260805.md`.
+
+## The rule
+
+> **Never claim Connect, Open, Launch, VDI, live session, or interactive
+> desktop/SSH “works,” “fixed,” or “PASS” unless Playwright (or an
+> inspected screenshot) proves the protocol surface: canvas, iframe, or
+> xterm showing status `connecting` or `connected`, with a non-zero,
+> non-nil session id — against at least one named live lab seat (Lab
+> Docker Linux PAM PAW / `pimadmin` or an equivalent documented seat).**
+
+This rule is **stricter** than
+[`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc)
+for PAM / session paths. Layout visibility and bounding-box proof remain
+required; they are **not** Connect acceptance.
+
+## What counts as protocol-surface proof
+
+All of the following must hold in one evidence artifact (e2e assert and/or
+inspected screenshot + network notes):
+
+| Requirement | Pass condition |
+| --- | --- |
+| Session id | From Open/Connect URL or JSON; UUID; **not** empty, **not** `00000000-0000-0000-0000-000000000000` |
+| Protocol surface | Visible `.xterm` / `canvas` / session iframe (e.g. `live-ssh-terminal`, `live-vnc-canvas`) |
+| Status | Chip/text matches `/connecting|connected/i` (not merely “page loaded”) |
+| Lab seat | Named live target — prefer **Lab Docker Linux PAM PAW**; document equivalent if another seat is used |
+| Auth path | Real Open path (WA token when mandatory); HTTP 200 + `decision=denied` / empty `session_id` is **FAIL** |
+
+Canonical e2e pattern:
+`pim-offline-server/ui/e2e/my-workstations-connect-paw-embedded-live.spec.ts`.
+
+## Forbidden “false green” acceptance
+
+Do **not** treat any of these alone as Connect / session success:
+
+- Connect / Open / Launch **button visible** or geometry PASS
+- Jump fleet / Session Control / Connection points **chrome** or page load
+- `GET …/live-sessions/{id}/options` HTTP 200
+- Zero-GUID `/options` gate alone (necessary, not sufficient)
+- Wake-before-connect / power / drained-Jump infra fixes without a follow-on protocol-surface row
+- Mocked `GET /api/enclave/me/workstations` chrome specs (e.g.
+  `my-workstations-connect-chrome-embedded-live.spec.ts`)
+- Direct navigation to a live route **without** proving the operator
+  Connect/Open control path when the claim is about that control
+- API Open success for a different seat than the one named in the claim
+
+Label chrome-only specs explicitly as chrome-only in titles and matrix
+rows. Never cite them in DONE checklists as “Connect works.”
+
+## Required agent behavior
+
+1. When claiming Connect/Open/Launch/VDI/session fixed: name the e2e file
+   (or screenshot path) that proved protocol surface + session id + seat.
+2. After reboot/stall or Jump capacity changes: re-run a protocol-surface
+   spec before declaring lab Connect healthy.
+3. Keep `aic-server-service` Running unless the operator asked for a
+   recycle; never use `phil` as a rotation/Connect identity; no `cargo clean`.
+4. Cross-link this rule when updating
+   [`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc)
+   or PAM e2e matrices.
+
+## Worked violation → fix
+
+**Violation:** Matrix “Live session 22/22 PASS” from binder tabs + Jump
+chrome + TightVNC options toolbar, while My Workstations Connect to Docker
+PAM PAW never minted WA, never got a real `session_id`, and never showed xterm.
+
+**Fix:** Assert Connect → acknowledge → `/pam/live/ssh/{uuid}` (non-zero),
+`live-ssh-terminal` + xterm visible, status `connecting|connected`, evidence
+under `docs/dev/evidence/my-workstations-connect-*`. Chrome specs stay
+chrome-only.
+
+## Origin
+
+2026-08-05 — post reboot/stall campaign: chrome PASS matrices vs 100%
+operator Connect failure; codified so agents cannot repeat the false green.
