@@ -1,0 +1,94 @@
+---
+description: >-
+  Hard rule — every navigation menu item, sidebar label, and top-level menu
+  title in operator GUIs uses US English Title Case (first letter of each word).
+alwaysApply: true
+---
+
+# Menu titles use Title Case (hard rule)
+
+Operator directive (Phil, 2026-08-05): **all menu titles** must use
+**Title Case** — capitalize the first letter of each word. Admin SPA
+menus were inconsistent (sentence case mixed with Title Case among
+siblings).
+
+## The rule
+
+> **Every navigation menu item, sidebar label, and top-level menu title
+> in operator GUIs — especially `pim-offline-server/ui` — uses US English
+> Title Case: capitalize the first letter of each word. Default is
+> capitalize every word (as Phil stated). Keep short conjunctions or
+> prepositions lowercase only when an existing design-system token
+> already does so for that exact string; otherwise capitalize each
+> word.**
+
+Applies to:
+
+| Surface | Examples |
+| --- | --- |
+| Admin SPA sidebar | `ui/src/config/menuItems.tsx` and any shared nav that feeds the drawer |
+| Section hub / quick-access labels | When they reuse or mirror the same menu title strings |
+| Win32 / Tauri configurator menus | Menu bar and tree labels that act as navigation |
+| Future operator GUIs | Same Title Case bar for new nav config |
+
+Does **not** require rewriting page H1 / body copy unless that string is
+the **same source** as the menu label (shared constant or identical
+config field). Form field labels, chip statuses, and dialog titles are
+out of scope unless they are navigation menu titles.
+
+## Required pattern
+
+```tsx
+// Good — Title Case
+{ path: '/pam/connection-points', label: 'Connection Points' }
+{ label: 'Proxied Access', children: [/* … */] }
+{ path: '/settings/platform', label: 'Server Configuration' }
+
+// Bad — sentence case
+{ path: '/pam/connection-points', label: 'Connection points' }
+{ label: 'Proxied access', children: [/* … */] }
+
+// Bad — ALL CAPS
+{ label: 'PROXIED ACCESS', children: [/* … */] }
+```
+
+Acronyms already in product vocabulary stay as acronyms inside Title
+Case (`IAM`, `SSH`, `RDP`, `OCR`, `HSM`, `VM`, `IR`). Em dashes and
+ampersands do not change the Title Case duty on the surrounding words
+(`Recording Agents — Health`, `Jump Fleet & Load Balancing`).
+
+## Forbidden constructs
+
+In nav / sidebar / top-level menu config (new menus and edits to
+existing nav):
+
+- **ALL CAPS** menu titles
+- **Sentence case** for multi-word menu items (`Report templates`,
+  `Proxied access`, `Server configuration`)
+- **Inconsistent casing** across sibling items in the same menu level
+  (one Title Case, one sentence case)
+
+## Required agent behavior
+
+1. When adding or editing a nav item, write the `label` (or equivalent
+   i18n string used as the menu title) in Title Case in the same change
+   set.
+2. Prefer one canonical nav config (`menuItems.tsx` or shared kit) so
+   section landings / quick access that mirror menu titles stay in sync.
+3. Do not “fix casing later” — nav Title Case lands with the menu
+   change.
+4. Mirror this rule to `core-assets/.cursor/rules/` when editing the
+   workspace copy ([`auto-commit-push.mdc`](auto-commit-push.mdc)).
+
+## Cross-references
+
+| Rule | Overlap |
+| --- | --- |
+| [`operator-ui-credibility.mdc`](operator-ui-credibility.mdc) | Inconsistent menu casing is a credibility defect |
+| [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §1 | US English in UI strings |
+| [`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc) | Nav usability; Title Case does not replace visibility proof |
+
+## Origin
+
+2026-08-05 — Phil hard rule: all menu titles Title Case (first letter of
+each word); admin SPA menus were inconsistent.
