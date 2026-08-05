@@ -449,6 +449,11 @@ screenshot records the verification.
   slice per run; a layout fix plus its proof spec is one slice.
 - `pim-offline-server/docs/dev/current-state-compliance-layout-rca.md`
   — the RCA and phased fix plan this rule was written from.
+- [`assessment-binder-section-content.mdc`](assessment-binder-section-content.mdc)
+  — Assessment Binder comprehensive claims need per-section content
+  proof; layout/chrome visibility alone is not auditor-package PASS.
+- [`session-connect-protocol-surface.mdc`](session-connect-protocol-surface.mdc)
+  — Connect claims need protocol-surface proof beyond chrome visibility.
 - Origin: 2026-07-26 — Current State Compliance shipped with per-row
   Rescan roughly 388 px off-screen and chip stacks overlapping rows;
   found by the operator, not by any test.
