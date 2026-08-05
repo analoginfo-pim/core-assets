@@ -1,0 +1,99 @@
+---
+description: Comprehensive AIC Server / messaging / approvals tests require Mailpit (or SMTP catcher) Running and real send/inbox proof — never claim email coverage from nav crawl chrome alone.
+alwaysApply: true
+---
+
+# Mailpit preflight for comprehensive messaging tests (hard rule)
+
+Operator defect (2026-08-05): during “comprehensive” Playwright testing,
+agents **never started Mailpit**, did not notice it was down, and still
+reported messaging pages as PASS. They never exercised email send,
+template replaceable arguments, event→notification mail, or
+approver-pending-request email. RCA:
+`pim-offline-server/docs/dev/mailpit-comprehensive-test-gap-rca-20260805.md`.
+
+## The rule
+
+> **When the operator asks for a comprehensive / full / all-pages
+> product test of AIC Server (or any messaging, email, event-
+> notification, or approval-email coverage), Mailpit (or the
+> configured lab SMTP catcher) MUST be Running and reachable before
+> that coverage is claimed. Agents MUST exercise a real send path,
+> template + placeholder/replaceable arguments, and at least one
+> event-driven notification OR approver-pending-request email with
+> the message visible in the catcher inbox. Page-load / nav-crawl /
+> heading-only evidence is forbidden as “messaging tested.”**
+
+## When this rule applies
+
+Trigger phrases (non-exhaustive): comprehensive test, full product
+test, all-pages / admin crawl “complete,” messaging tested, email
+tested, templates tested, event notifications tested, approver /
+pending-request email tested, AIC Server e2e suite covering Settings
+→ Messaging.
+
+Does **not** force Mailpit for pure layout chrome work that
+explicitly scopes out send/notify (still must not claim messaging
+workflows tested).
+
+## Required preflight (before claiming coverage)
+
+1. **Start** (if not already Running):
+   `pwsh c:\analog-pim\pim-offline-server\scripts\Start-LabSmtpSink.ps1`
+2. **Point Messaging → Email** at the sink when needed:
+   `pwsh c:\analog-pim\pim-offline-server\scripts\Configure-LabSmtpMessaging.ps1`
+3. **Prove reachability:**
+   `GET http://127.0.0.1:8025/api/v1/info` succeeds (SMTP
+   `127.0.0.1:1025`, UI/API `:8025` — see
+   `pim-offline-server/docs/dev/lab-smtp-sink.md`).
+4. If the catcher is down: **start it or mark messaging/email/
+   approval-notification coverage blocked** — do not PASS the
+   surface on chrome alone.
+
+Keep lab services alone unless the task needs this preflight or a
+documented restore. Never rotate `phil`. No `cargo clean`.
+
+## Required exercises (minimum set)
+
+Before claiming messaging / email / approvals coverage, complete
+**all** of:
+
+| # | Exercise | Evidence |
+| --- | --- | --- |
+| 1 | **Send path** | Messaging test send and/or API `/api/offline/messaging/email/test` (or equivalent) succeeds |
+| 2 | **Template + replaceable args** | Template (or snippet) with placeholders rendered; body/subject shows substituted values (not raw `{placeholder}` only) |
+| 3 | **Event notify OR approver mail** | At least one: anomalous/event-driven notification **or** approver-pending-request / approval deep-link email |
+| 4 | **Inbox observation** | Message visible in Mailpit UI or `GET http://127.0.0.1:8025/api/v1/messages` (subject / To / body fragment) |
+
+Soft-pass patterns that still green when SMTP is unconfigured (e.g.
+TOD four-eyes accepting `smtp_unconfigured`) are **not** comprehensive
+messaging coverage.
+
+## Forbidden constructs
+
+- Claiming messaging / email / templates / event notifications /
+  approver mail “tested” from nav crawl, menu crawl, or heading
+  asserts on `/messaging`, `/messaging/templates`,
+  `/messaging/snippets`, `/messaging/email`, `/messaging/sms`,
+  `/events/*`, or `/pam/approver-profile` alone.
+- Skipping Mailpit preflight, then reporting comprehensive PASS.
+- Treating connectivity-probe step logs alone as inbox delivery
+  proof without a catcher message.
+- Inventing docker-compose Mailpit when the lab contract is
+  `Start-LabSmtpSink.ps1` (winget process on loopback).
+
+## Cross-references
+
+| Rule / doc | Overlap |
+| --- | --- |
+| [`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc) | Chrome/layout visual proof ≠ workflow/sink proof; both bars required for their claims |
+| [`session-connect-protocol-surface.mdc`](session-connect-protocol-surface.mdc) | Sibling process class: Connect chrome PASS ≠ protocol-surface proof (same class as Mailpit chrome ≠ inbox) |
+| [`beavis2-lab-hard-rules.mdc`](beavis2-lab-hard-rules.mdc) | Lab identities; never `phil` |
+| [`beavis2-lab-baseline-after-deploy.mdc`](beavis2-lab-baseline-after-deploy.mdc) | Post-deploy endpoint/elevation baseline — Mailpit is an **additional** preflight for messaging claims |
+| `pim-offline-server/docs/dev/lab-smtp-sink.md` | Start / configure / verify |
+| `pim-offline-server/docs/dev/mailpit-comprehensive-test-gap-rca-20260805.md` | This incident’s RCA |
+
+## Origin
+
+2026-08-05 — Phil: comprehensive Playwright never started Mailpit;
+messaging/email/events/approver mail never tested despite nav PASS.
