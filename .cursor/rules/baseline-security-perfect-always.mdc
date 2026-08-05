@@ -1,0 +1,79 @@
+---
+description: >-
+  Hard rule — baseline auth/session/crypto/authz cyber resilience must stay
+  PERFECT ALWAYS. Known-attack classes listed; regressions are release
+  blockers; no temporary weakenings.
+alwaysApply: true
+---
+
+# Baseline security perfect always (hard rule)
+
+Operator directive (Phil, 2026-08): **own baseline security and cyber
+resilience from known attacks must be PERFECT ALWAYS.** Feature expansion
+and compliance packaging must never regress the security floor.
+
+## The rule
+
+> **Baseline authentication, session lifecycle, authorization, crypto
+> posture honesty, audit of security-relevant actions, and resilience
+> against known attack classes on our surfaces are non-negotiable. A
+> regression is a release blocker. Agents must not ship “temporary”
+> weakenings (silent Admin-Token, disabled timeouts, skipped authz,
+> false FIPS claims, soft-pass security alerts).**
+
+## Known-attack classes (must remain defended)
+
+| Class | Required posture | Primary anchors |
+| --- | --- | --- |
+| **Session hijack** | Idle + absolute timeout; HttpOnly cookie; reject expired | `pim-offline-server/src/iam/auth/session.rs`, `session_cookie.rs`; Crit1 `4f7210825` / UI `1981b67e8` |
+| **Replay / reuse** | Revoked and rotated tokens rejected; refresh rotation | Same session module; revoke paths |
+| **Privilege escalation** | No silent SPA Admin-Token; RBAC on mutators; reporter own-only (404) | `ui/packages/offline-core/src/clients/axios.ts`; IAM permissions; IR enclave routes |
+| **IDOR** | Scoped queries; foreign resource → 404/403 per contract | Enclave + admin APIs |
+| **Injection** | Parameterized SQL; validated inputs; manifest-gated config (R2) | API handlers; `pim-app-config` |
+| **Crypto downgrade / false assurance** | FIPS wording honest; dual-live keyring via `KeyManager`; no ad-hoc AEAD | [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §4; [`crypto-dual-backend-keyring.mdc`](crypto-dual-backend-keyring.mdc) |
+| **Silent security alert failure** | When IR/approval alerts are claimed, real sink proof (Mailpit etc.) | [`mailpit-messaging-comprehensive-test.mdc`](mailpit-messaging-comprehensive-test.mdc) |
+| **False remote-access green** | Connect claims need protocol-surface proof | [`session-connect-protocol-surface.mdc`](session-connect-protocol-surface.mdc) |
+| **Cover-up / missing audit** | WEL + SQL audit on security actions; syslog when configured | [`suite-observability-wel-syslog.mdc`](suite-observability-wel-syslog.mdc); AU-2/3/9/12 |
+
+## Non-negotiable checklist (every change set that touches auth/session/crypto/authz)
+
+1. **Session lifetime** — Do not disable, infinite-extend, or bypass idle/absolute timeouts in shipping builds or “just for e2e” without an explicit fixture API that cannot leak to production defaults.
+2. **Revoke / reuse** — Revoked sessions must fail closed; do not reintroduce accept-on-missing-revoke.
+3. **Admin-Token** — Break-glass only (explicit CLI/lab headers). Never restore automatic Admin-Token attachment for routine SPA axios calls.
+4. **AuthZ** — New admin/enclave routes require OpenAPI `security:` and permission checks; no anonymous mutators.
+5. **FIPS honesty** — Do not claim unqualified server FIPS while residual `ring` (or documented gaps) remain; do not feature-gate FIPS off.
+6. **Alerts** — Do not claim IR/approval email/SMS without sink observation; `smtp_unconfigured` is not proof.
+7. **No temporary weakenings** — Comments like “TODO: re-enable auth later” on shipping paths are forbidden; fix or do not ship.
+
+## Required regression proof (when touching the floor)
+
+Before claiming done on IAM / session / admin-auth / crypto / IR alert work:
+
+| Proof | Spec / script |
+| --- | --- |
+| Session + no silent Admin-Token | `ui/e2e/session-timeout-auth-embedded-live.spec.ts` |
+| Lab elevation / recover channel (BEAVIS2) | `Assert-Beavis2LabBaseline.ps1` when on lab host |
+| AuthZ smoke for touched routes | API tests or Playwright under live IAM |
+| FIPS / ring honesty | Status API + tree note if server crypto deps change |
+
+## Sequencing with compliance packaging
+
+Compliance waves in
+`pim-offline-server/docs/dev/cmmc-800-53-closeable-dev-plan.md` MUST keep
+this floor green **before** feature expansion (IR detectors, DLP, L3
+controls). Packaging that weakens AC-12 / SC-23 / IA-5 / AC-6 is rejected.
+
+## Relationship to other rules
+
+| Rule | Overlap |
+| --- | --- |
+| [`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc) | Claims vs evidence |
+| [`enterprise-compliance.mdc`](enterprise-compliance.mdc) | USG contract, FIPS, AU |
+| [`nist-800-53-floor.mdc`](nist-800-53-floor.mdc) | Moderate floor |
+| [`no-panic.mdc`](no-panic.mdc) / [`silent-failure-is-a-bug.mdc`](silent-failure-is-a-bug.mdc) | Fail closed, log loudly |
+| [`crypto-dual-backend-keyring.mdc`](crypto-dual-backend-keyring.mdc) | Envelope / keyring |
+
+## Origin
+
+2026-08-05 — Phil: baseline security and cyber resilience from known
+attacks must be PERFECT ALWAYS; companion to CMMC closeable-dev plan.

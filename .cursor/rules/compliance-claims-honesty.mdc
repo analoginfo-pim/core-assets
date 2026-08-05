@@ -1,0 +1,74 @@
+---
+description: >-
+  Hard rule — never claim Met / certified / compliant beyond proven evidence.
+  Agents must mark BLOCKED/Partial honestly; no skip of test/proof when
+  claiming done. Integrity immutable.
+alwaysApply: true
+---
+
+# Compliance claims honesty (hard rule)
+
+Operator directive (Phil, 2026-08): **honesty and integrity are immutable.**
+Agents must never claim compliance outcomes the product or lab evidence does
+not support. Coding closes *technical* gaps only; it does not certify the
+Organization Seeking Assessment (OSA).
+
+## The rule
+
+> **Never claim Met, certified, compliant, assessment-ready, or equivalent
+> beyond proven evidence. Prefer Live / Partial / Absent / BLOCKED. Do not
+> skip implementation or testing to green-wash a deliverable. Quality and
+> completeness are paramount.**
+
+## Forbidden claims
+
+| Forbidden | Why |
+| --- | --- |
+| “CMMC certified product” / “CMMC Level 2/3 certified” | CMMC assesses the **OSA**, not a software SKU |
+| **Met** for **PE**, **PS**, facility, visitor escort, personnel screening | Customer / RE — not productizable here |
+| **Met** for org **AT** training records / LMS completion | Product is not an LMS |
+| **L3 / 800-172 Met** from binder templates or profile toggles | **L3 is not L2 + toggles** |
+| **800-53 High Met** from Moderate-oriented enclave alone | High deltas must be proven per control |
+| **Unqualified FIPS** while residual `ring` (or other documented gaps) remain | Honesty per [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §4 |
+| **Met** from playbook apply, chrome-only Playwright, Admin-Token-only binder, nav crawl, or heading asserts | See sibling proof rules below |
+| “IR fully implemented / tested” before Phase 1A–1D acceptance evidence | See IR gap plan honesty gate |
+| Soft-pass `smtp_unconfigured` as messaging / IR alert proof | See [`mailpit-messaging-comprehensive-test.mdc`](mailpit-messaging-comprehensive-test.mdc) |
+
+## Required agent behavior
+
+1. **Status vocabulary** — Use **Live**, **Partial**, **Absent**, **BLOCKED**
+   for product contribution. Reserve **Met** only when a specific technical
+   control is Live **and** the named acceptance proof for that control passed
+   in the same change set (and still never for OSA certification).
+2. **Proof before done** — When claiming a compliance-relevant feature works,
+   name the evidence artifact (Playwright spec + assertion, Mailpit message,
+   API status, SHA, screenshot inspected). No artifact → not done.
+3. **No skip** — Do not omit acceptance tests listed on the work item / plan
+   to finish faster. If blocked (lab down, seat missing), mark **BLOCKED**
+   with reason — do not invent PASS.
+4. **Binder / CSC honesty** — Refuse or reject Met stamps without
+   auditor-usable content / verified rescan. See
+   [`assessment-binder-section-content.mdc`](assessment-binder-section-content.mdc).
+5. **Plan source** — Coding-closeable sequencing lives in
+   `pim-offline-server/docs/dev/cmmc-800-53-closeable-dev-plan.md`. Out-of-scope
+   PE/PS/AT/facility rows stay customer forever.
+6. **Amend inventories** — When a gap flips status, update
+   `cmmc-800-53-full-gap-analysis.md` (or the owning gap doc) in the same
+   change set — do not leave stale Partial when Live (or vice versa).
+
+## Sibling proof rules (do not weaken)
+
+| Rule | Claim class |
+| --- | --- |
+| [`assessment-binder-section-content.mdc`](assessment-binder-section-content.mdc) | Binder / auditor package |
+| [`session-connect-protocol-surface.mdc`](session-connect-protocol-surface.mdc) | Connect / session |
+| [`workstation-protocols-and-command-restrictions.mdc`](workstation-protocols-and-command-restrictions.mdc) | Multi-protocol + command gov |
+| [`mailpit-messaging-comprehensive-test.mdc`](mailpit-messaging-comprehensive-test.mdc) | Messaging / IR email |
+| [`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc) | UI visibility |
+| [`baseline-security-perfect-always.mdc`](baseline-security-perfect-always.mdc) | Auth/session/crypto floor |
+| [`nist-800-53-floor.mdc`](nist-800-53-floor.mdc) | 800-53 moderate floor |
+
+## Origin
+
+2026-08-05 — Phil: prioritized CMMC closeable-dev plan; honesty/integrity
+immutable; never claim what coding cannot prove.
