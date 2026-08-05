@@ -1,0 +1,137 @@
+---
+description: Hard rule — comprehensive PAM/session/Connect QA must prove SSH, RDP, and VNC protocol surfaces per lab seat inventory, plus live command-restriction allow/deny — never single-protocol or chrome-only false green.
+alwaysApply: true
+---
+
+# Workstation protocols and command restrictions (hard rule)
+
+Operator directive (Phil, 2026-08): **Must test all types of workstations
+and protocols such as SSH, RDP, VNC. Must also test command
+restrictions.** Chrome matrices and SSH-only PAW proofs are not
+comprehensive Connect / PAM QA.
+
+This rule extends
+[`session-connect-protocol-surface.mdc`](session-connect-protocol-surface.mdc):
+that rule defines *what* protocol-surface proof is; this rule requires
+that proof **across every protocol and workstation type the lab offers**,
+plus **live command governance**.
+
+## The rule
+
+> **Claims that Connect / Open / Launch / workstation access “works,” or
+> that comprehensive PAM / session QA is done, MUST include
+> protocol-surface proof (per
+> [`session-connect-protocol-surface.mdc`](session-connect-protocol-surface.mdc))
+> for each protocol the lab seats offer among SSH, RDP, and VNC — not
+> SSH-only. Agents MUST inventory lab workstation types present
+> (Docker / Hyper-V / physical / Windows / Linux / macOS) and prove or
+> honest-BLOCK each type. Command restrictions (SSH command filtering /
+> command governance) MUST be exercised live: an allowlisted command
+> succeeds and a restricted command is denied — not chrome-only on
+> `/pam/command-governance`. Single-protocol or single-seat PASS
+> matrices are forbidden as “all protocols / all workstations” green.**
+
+## When this rule applies
+
+Trigger phrases (non-exhaustive): comprehensive test, full product /
+PAM / session QA, Connect works, Open / Launch works, all workstations
+tested, SSH/RDP/VNC coverage, command governance / command restrictions
+tested, My Workstations matrix complete.
+
+Does **not** force multi-protocol fan-out for a narrowly scoped chrome
+layout fix that explicitly scopes out session workflows (still must not
+claim Connect or multi-protocol coverage).
+
+## Required protocol matrix
+
+Before claiming Connect / PAM session coverage is complete:
+
+| Protocol | Proof bar (each offered by lab) |
+| --- | --- |
+| **SSH** | Protocol-surface: non-zero session id + `.xterm` / `live-ssh-terminal` + status `connecting\|connected` on a named SSH seat |
+| **RDP** | Protocol-surface: non-zero session id + `live-rdp-canvas` / canvas + status `connecting\|connected` on a named RDP seat (e.g. Lab Hyper-V Windows CUI) |
+| **VNC** | Protocol-surface: non-zero session id + `live-vnc-canvas` / canvas + status `connecting\|connected` on a named VNC seat |
+
+- If the lab **offers** a protocol (seeded seat / connection point with
+  that protocol chip), that row is **required** PASS or honest
+  **BLOCKED** with reason — never silently omitted.
+- If a protocol has **no** lab seat this run, record **N/A — no seat**
+  with inventory evidence; do not invent PASS from another protocol.
+- SSH-only Docker PAW proof **never** green-lights RDP or VNC.
+
+Canonical patterns (examples, not exclusive):
+
+- SSH: `ui/e2e/my-workstations-connect-paw-embedded-live.spec.ts`
+- RDP: `ui/e2e/my-workstations-connect-rdp-embedded-live.spec.ts`
+- Multi-entry: `ui/e2e/connect-all-entrypoints-embedded-live.spec.ts`
+
+## Required workstation-type inventory
+
+Before claiming “all workstations” or comprehensive My Workstations QA:
+
+1. **Inventory** seats present in the lab (API list and/or UI cards):
+   Docker Linux PAM PAW, Hyper-V Windows / Linux, physical hosts,
+   Windows / Linux / macOS — whichever exist this run.
+2. For **each type present**, either:
+   - **PASS** with protocol-surface proof on a named seat of that type, or
+   - **BLOCKED** with a one-line reason (seat down, no Jump capacity,
+     WA missing, etc.).
+3. **Forbidden:** claiming all types from one Linux SSH PAW row.
+
+## Required command-restriction exercise
+
+Before claiming command governance / command restrictions tested:
+
+| # | Exercise | Evidence |
+| --- | --- | --- |
+| 1 | **Allowlisted command** | In a live governed SSH session (or documented governance path), an allowed command runs successfully |
+| 2 | **Restricted command** | A denied / filtered command is rejected with a clear deny (UI and/or session feedback) — not merely HTTP 200 on a settings page |
+| 3 | **Not chrome-only** | Nav to `/pam/command-governance` or heading asserts alone is **FAIL** for this claim |
+
+If governance cannot be exercised (no policy bound, session broker
+down): mark **BLOCKED** — do not PASS from page load.
+
+## Forbidden “false green”
+
+Do **not** treat any of these as multi-protocol / multi-type / command-
+restriction success:
+
+- SSH-only protocol-surface PASS cited as “Connect works” for RDP/VNC
+- Single-seat matrix generalized to all workstation types
+- Jump / Session Control / Connection points chrome without per-protocol
+  protocol-surface rows
+- `/pam/command-governance` crawl without allow + deny live exercise
+- Mocked workstation lists or chrome-only Connect specs
+- Binder / nav crawl PASS matrices without the protocol × type table
+
+## Required agent behavior
+
+1. When claiming comprehensive Connect / PAM session QA: publish a short
+   matrix — protocol (SSH/RDP/VNC) × workstation type — each cell
+   PASS / BLOCKED / N/A with evidence path or e2e name.
+2. Cross-link
+   [`session-connect-protocol-surface.mdc`](session-connect-protocol-surface.mdc)
+   for the per-cell proof bar.
+3. Prefer leaving `aic-server-service` Running; never rotate **`phil`**;
+   no `cargo clean`.
+4. Preflight checklist:
+   `pim-offline-server/docs/dev/comprehensive-test-preflight-checklist-20260805.md`
+   (Gate 4+ multi-protocol / command-restriction rows).
+
+## Worked violation → fix
+
+**Violation:** “Connect / PAM session 22/22 PASS” from Docker Linux SSH
+PAW xterm + Jump chrome + `/pam/command-governance` heading visible.
+No RDP/VNC surface, no Hyper-V Windows seat, no allow/deny command
+proof.
+
+**Fix:** Inventory seats → protocol-surface PASS (or BLOCKED) for SSH
+**and** every offered RDP/VNC seat type → live allowlisted command OK +
+restricted command denied → matrix in evidence README. Chrome-only and
+SSH-only rows stay labeled chrome-only / SSH-only.
+
+## Origin
+
+2026-08-05 — operator hard rule: test all workstation types and
+protocols (SSH, RDP, VNC) and command restrictions; ban
+single-protocol / single-seat false green.
