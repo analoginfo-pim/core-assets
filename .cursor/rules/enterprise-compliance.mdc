@@ -127,13 +127,13 @@ tests.
 crates; it is permitted only in test code that the binary never
 links against.
 
-### Measured state (2026-05-17, after the ring-removal commit series)
+### Measured state (2026-08-05, G-FIPS-RING tree-clean)
 
-`cargo tree -i ring --target all` per binary, captured in this commit series:
+`cargo tree -i ring --target all` per binary:
 
 | Binary | TLS provider (track) | aws-lc-rs linked | ring linked |
 | ------ | -------------------- | ---------------- | ----------- |
-| `pim-offline-server` | rustls + aws-lc-rs (A) | **yes** | **yes — residual upstream** ¹ |
+| `pim-offline-server` | rustls + aws-lc-rs (A) | **yes** | **NO — clean** (2026-08-05) |
 | `pim-offline-client` (the agent) | native-tls (B) | no | **NO — clean** |
 | `pim-offline-client-configurator-win32` | rustls + aws-lc-rs (A) | yes | **NO — clean** |
 | `pim-offline-client-configurator-tauri` | rustls + aws-lc-rs (A) | yes | **NO — clean** |
@@ -142,33 +142,23 @@ links against.
 | `pim-offline-server-configurator-win32` | rustls + aws-lc-rs (A) | yes | **NO — clean** |
 | `pim-offline-server-configurator-tauri` | rustls + aws-lc-rs (A) | yes | **NO — clean** |
 
-¹ The residual `ring` linkage in `pim-offline-server` comes from
-the **upstream `pim-orm` family** (`pim-orm-core`, `pim-orm`,
-`pim-orm-offline`, `pim-orm-events`, `pim-orm-hsm`,
-`pim-orm-jobs`), which is not under this team's control per
-`pim-offline-server/AGENTS.md`. Each of those crates declares
-`sqlx = { features = ["runtime-tokio-rustls"] }`, which is sqlx
-0.8's legacy alias for `tls-rustls-ring`. Cargo's feature
-unification merges that with our own `tls-rustls-aws-lc-rs`
-selection so the server links BOTH providers. This is a release
-blocker that must be resolved by **one** of:
+Server tree-clean path (2026-08-05): russh → `aws-lc-rs` (not `ring`);
+`pim-events-destinations` / reqwest → `rustls-tls-*-no-provider`;
+`pim-app-config` ureq without `tls` (custom PEM via reqwest);
+`pim-orm*` / `pim-orm-jobs` path-patched to `tls-rustls-aws-lc-rs`.
+Evidence: `pim-offline-server/docs/dev/fips-ring-posture.md`.
 
-1. Upstream change in the pim-orm family to switch its sqlx
-   selection to `runtime-tokio` + `tls-rustls-aws-lc-rs` (we
-   already use that pattern; preferred path).
-2. A workspace-level `[patch."https://github.com/analoginfo-pim/..."]`
-   override in `pim-offline-server/Cargo.toml` pointing at a
-   local fork that strips the ring activation. Acceptable
-   short-term while the upstream change is in flight.
-
-`pim-offline-server-admin-client` was the second activator; that
-one was fixed in this commit series (it lives in our repo).
+**Remaining honesty caveats (not `ring`):** (1) residual non-FIPS
+`aws-lc-sys` may still compile via upstream feature unification —
+runtime calls use the FIPS module; (2) `pim-orm-jobs` tag `v0.1.9`
+still ships `tls-native-tls` until Robert retags
+`fix/sqlx-aws-lc-fips`.
 
 ### Customer-facing FIPS posture (what we can claim today)
 
 A literal-truth, audit-defensible statement for product docs:
 
-> **AIC Offline PIM TLS posture (2026-05-17, this build)**
+> **AIC PIM TLS posture (2026-08-05, this build)**
 >
 > * **Endpoint agent and elevation utilities** rely on the host
 >   operating system's FIPS 140-3 validated TLS stack — SChannel
@@ -187,20 +177,15 @@ A literal-truth, audit-defensible statement for product docs:
 >   `pim_crypto_rustls_bridge::fips_status()` and reproduced in
 >   the configurator GUI's "About crypto" panel.
 >
-> * **One residual gap:** the `pim-offline-server` binary
->   currently links both `aws-lc-rs` and `ring` because of an
->   upstream sqlx-feature selection in the `pim-orm` ORM
->   library. At runtime only the AWS-LC provider is active (it is
->   the one installed by the bridge crate), but the dead-code
->   `ring` linkage means we cannot yet make an unqualified FIPS
->   140-3 claim for the server binary. This is being tracked
->   with the upstream `pim-orm` team and is a release blocker
->   for the FIPS-required SKU.
+> * **`pim-offline-server` dependency graph:** `cargo tree -i ring
+>   --target all` is clean (no `ring` crate). Re-measure after
+>   dependency bumps; see `docs/dev/fips-ring-posture.md`. Do not
+>   claim “entire binary is CMVP-certified” — only the crypto
+>   module boundary is #4759; residual non-FIPS `aws-lc-sys`
+>   objects may still appear as dead code from upstream crates.
 
-Do not use stronger wording than the above in customer-facing
-documentation until the upstream pim-orm fix lands AND
-`cargo tree -i ring --target all` returns clean for **every**
-binary.
+Re-run `cargo tree -i ring --target all` after any dep / feature
+change that might reintroduce `ring`.
 
 **FIPS posture is HARD-CODED, not a Cargo feature (May 2026).**
 The `fips` Cargo feature that gated this was removed from
@@ -239,15 +224,17 @@ internal `cfg_if! { feature = "fips" => use aws_lc_fips_sys; ... }`
 gate routes every API call through the FIPS module. The CMVP
 boundary is defined by the symbols that the FIPS module exports,
 so dead code in the surrounding binary does not affect validation.
-The redundant `aws-lc-sys` compilation is being tracked alongside
-the `ring` upstream-blocker (same root cause, same fix: a `pim-orm`
-release that sets `default-features = false`).
+The redundant `aws-lc-sys` compilation is being tracked (upstream
+crates that declare `aws-lc-rs` without `default-features = false`).
+`ring` tree-clean for `pim-offline-server` landed 2026-08-05
+(G-FIPS-RING); re-measure after dep bumps.
 
 ### Remaining FIPS-completion checklist
 
-1. **Drive the pim-orm upstream change** (or land a temporary
-   `[patch]` override) until `cargo tree -i ring --target all`
-   returns *no matches* for `pim-offline-server`.
+1. ~~**Drive ring out of `pim-offline-server`**~~ **DONE (2026-08-05).**
+   `cargo tree -i ring --target all` → nothing to print. Remaining:
+   Robert retag of `pim-orm-jobs` (`fix/sqlx-aws-lc-fips`) so Offline
+   can drop the path patch; keep re-measuring after feature churn.
 2. ~~**Enable `aws-lc-rs/fips` feature**~~ **DONE (May 2026,
    superseded).** The `fips` Cargo feature was first flipped to
    `default = ["fips"]` and then removed entirely a few days later.
