@@ -1,8 +1,8 @@
 ---
 description: >-
   Hard rule — never put internal lab configuration in SPA/configurator UI
-  visible to users or administrators. Lab runbooks stay in docs/dev and
-  agent prompts only.
+  chrome. Lab runbooks stay in docs/dev and agent prompts. Exception:
+  use-case comments on seeded system/asset records (data, not chrome).
 alwaysApply: true
 ---
 
@@ -17,19 +17,37 @@ Operator directive (Phil, 2026-08-08), verbatim:
 > Path 2 Live lab CLI recipes, SoftHSM PINs, Mailpit lab wiring, "lab
 > default", etc.). Lab runbooks stay in docs/dev and agent prompts.**
 
+**Exception** (Phil, 2026-08-08):
+
+> **When building seed systems for developers, demo, or production, agents
+> or the configurator MAY attach appropriate per-system comments that alert
+> the operator for that asset's use case. Those comments are data on the
+> system/asset record (a comment/notes field), shown in inventory lists —
+> NOT hardcoded product Alert banners, helperText, or menu copy that embeds
+> lab runbooks, CLI recipes, "never rotate phil", BEAVIS2, etc.**
+
 ## The rule
 
-> **Product UI (admin SPA, Win32/Tauri configurators, elevate helpers,
-> product launchers, in-app help, Admin Manual pages shipped to
-> customers) carries only generic product instructions. Internal lab
-> host names, lab identities, seed recipes, SoftHSM PINs, Mailpit wiring,
-> Path 2 Live CLI one-liners, phil rotation bans, and "lab default"
-> labels belong in `docs/dev`, Cursor rules, and agent prompts — never
-> in strings an administrator or end user can read in the product.**
+> **Product UI chrome (admin SPA, Win32/Tauri configurators, elevate
+> helpers, product launchers, in-app help, Admin Manual pages shipped to
+> customers) carries only generic product instructions. Internal lab host
+> names, lab identities, seed recipes, SoftHSM PINs, Mailpit wiring, Path
+> 2 Live CLI one-liners, phil rotation bans, and "lab default" labels
+> belong in `docs/dev`, Cursor rules, and agent prompts — never in static
+> Alert banners, helperText, tooltips, empty states, or menu copy.**
 
 Agent/operator dialogs in Cursor (chat, rules, skill prompts) are **not**
 product UI. That surface may name BEAVIS2, liebsoft, seed-dev, and the
-rest. The SPA and shipping configurators may not.
+rest. The SPA and shipping configurators may not hardcode those into
+chrome.
+
+## Forbidden vs allowed (chrome vs data)
+
+| Kind | Status | Detail |
+| --- | --- | --- |
+| **Static UI chrome** with lab configuration / internal runbooks | **Forbidden** | Hardcoded `Alert`, `helperText`, page banners, menu labels, Admin Manual prose, empty-state copy, `aria-label` strings that embed lab SOP |
+| **Operator- or seed-authored `comment`** (or equivalent notes field) on inventory / system / asset rows | **Allowed** | Persisted **data** on the record; visible in MUI DataGrid (or sibling) inventory lists; editable via configurator/admin where the product supports it |
+| Seed comments for **dev / demo / prod** profiles | **Allowed with care** | Must stay **use-case appropriate** for that deployment profile — alert the operator about *this asset's role* (e.g. "Modbus PLC used for OT discovery drills"). Do **not** paste agent dialog text, private lab SOP, phil bans, SoftHSM PINs, Mailpit wiring, or Path 2 Live CLI recipes into **customer production** seeds |
 
 ## Where lab detail is allowed
 
@@ -39,15 +57,16 @@ rest. The SPA and shipping configurators may not.
 | `.cursor/rules/**`, agent skills, Task prompts | **Yes** — agent duty |
 | Playwright / e2e helpers, `ui/e2e/constants.ts` | **Yes** — test fixtures, not customer chrome |
 | PowerShell lab scripts under `scripts/` | **Yes** — operator/agent tooling |
-| Admin SPA pages, help drawers, banners, empty states | **No** |
-| Win32 / Tauri configurator dialogs and About text | **No** |
-| In-product Admin Manual / docs pages served to admins | **No** |
+| Per-row `comment` / notes on seeded or operator-edited systems | **Yes** — data, profile-appropriate (see exception) |
+| Admin SPA Alert / helperText / banners / empty states / menus | **No** — static chrome |
+| Win32 / Tauri configurator dialog chrome and About text | **No** — static chrome |
+| In-product Admin Manual / docs pages served to admins | **No** — static chrome |
 | API error messages and OpenAPI descriptions shown in UI | **No** (keep generic) |
 
-## Forbidden in product UI strings
+## Forbidden in product UI chrome
 
-Do not render, toast, banner, helper text, `aria-label`, tooltip, or
-Admin Manual copy that discloses any of:
+Do not hardcode into toast, banner, helper text, `aria-label`, tooltip,
+menu label, or Admin Manual copy any of:
 
 | Class | Examples (non-exhaustive) |
 | --- | --- |
@@ -59,27 +78,51 @@ Admin Manual copy that discloses any of:
 | Messaging lab | Mailpit, `127.0.0.1:1025` / `:8025` as product instructions |
 | Lab defaults | "(lab default)", "lab only", "on lab hosts" |
 
-Generic product wording that stays allowed: "Run Discovery", "Rotate
-credentials", "Use a non-personal service account for drills", "Configure
-SMTP under Messaging → Email", "Select a target asset".
+Generic product wording that stays allowed in chrome: "Run Discovery",
+"Rotate credentials", "Use a non-personal service account for drills",
+"Configure SMTP under Messaging → Email", "Select a target asset".
+
+## Seed / inventory comments (exception detail)
+
+1. **Shape** — Store on the system/asset (or equivalent) as `comment`,
+   `notes`, or the product's existing notes column — not as a page-level
+   string constant in React/Win32 resources.
+2. **Display** — Inventory lists may show that field (DataGrid column,
+   detail pane). That is rendering **record data**, not shipping a lab
+   runbook in chrome.
+3. **Authoring** — Agents building seed systems, and operators using the
+   configurator/admin UI, may set comments that alert for the asset's
+   use case (purpose, caution, environment role).
+4. **Profile fit** — Dev/demo seeds may be more explicit about drill
+   purpose. Production customer seeds must stay professional and
+   non-lab: no private lab SOP, no agent chat paste, no BEAVIS2 /
+   SoftHSM / Mailpit / phil-ban content.
+5. **Still forbidden** — Moving a lab runbook into a comment on every
+   row as a workaround for the chrome ban, or hardcoding the same lab
+   paragraph into both a banner *and* a seed comment.
 
 ## Required agent behavior
 
-1. When adding or editing SPA / configurator copy, ask: would a customer
-   admin on a non-lab host find this string confusing or disclosing our
-   internal lab? If yes, move it to `docs/dev` or an agent rule.
+1. When adding or editing SPA / configurator **chrome** copy, ask: would
+   a customer admin on a non-lab host find this string confusing or
+   disclosing our internal lab? If yes, move it to `docs/dev` or an
+   agent rule — or, if it is truly about one asset's use case, put it
+   in that asset's `comment` field instead of an Alert.
 2. Keep lab identity and host rules in
    [`beavis2-lab-hard-rules.mdc`](beavis2-lab-hard-rules.mdc) and lab
    scripts — do not "help" operators by pasting those into UI banners.
-3. Product honesty still binds
+3. When seeding systems, write short, profile-appropriate comments that
+   help the operator understand that asset — not a dump of agent or lab
+   SOP text into prod seeds.
+4. Product honesty still binds
    ([`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc)):
    generic UI may say Live / Partial; it must not green-wash by citing
    lab CLI recipes as customer procedure.
-4. Credibility still binds
+5. Credibility still binds
    ([`operator-ui-credibility.mdc`](operator-ui-credibility.mdc)):
-   internal slogans and lab jargon in the SPA look unfinished and cost
-   trust — treat them as P0 copy defects.
-5. Mirror this rule to `core-assets/.cursor/rules/` in the same change
+   internal slogans and lab jargon in SPA chrome look unfinished and
+   cost trust — treat them as P0 copy defects.
+6. Mirror this rule to `core-assets/.cursor/rules/` in the same change
    set ([`auto-commit-push.mdc`](auto-commit-push.mdc)).
 
 ## Worked violation → fix
@@ -95,9 +138,10 @@ Selected asset: (lab default)
 ```
 
 A customer administrator sees internal wave labels, lab CLI recipes, the
-phil ban, and "(lab default)". That is lab configuration in product UI.
+phil ban, and "(lab default)". That is lab configuration in product UI
+**chrome**.
 
-**Fix** (generic Rotate / Discovery help — product-safe):
+**Fix** (generic Rotate / Discovery help — product-safe chrome):
 
 ```text
 Start a discovery scan with Run Discovery. Jobs appear in the list with
@@ -109,22 +153,39 @@ account — do not use personal administrator accounts for rotation drills.
 Select a target asset before running Rotate.
 ```
 
+**Also allowed** — a seed or operator comment on a specific OT asset row,
+shown in the inventory grid, e.g. for a demo seed:
+
+```text
+Demo Modbus target for OT discovery and rotate drills. Prefer the
+service account on this asset; do not use personal admin accounts.
+```
+
+That comment is **data** on the row. It is not a page Alert, and a
+production seed would omit lab-only naming and stay use-case clean.
+
 Lab CLI recipes, Path 2 Live labels, phil / liebsoft / BEAVIS2, and
 seed-dev steps stay in `docs/dev` and agent prompts. Sibling agents
-own the SPA string cleanup; this rule forbids reintroducing them.
+own SPA chrome cleanup; this rule forbids reintroducing lab runbooks
+into static UI strings.
 
 ## Cross-references
 
 | Rule | Relationship |
 | --- | --- |
-| [`beavis2-lab-hard-rules.mdc`](beavis2-lab-hard-rules.mdc) | Canonical lab identities and SoftHSM — for agents/scripts, not SPA |
+| [`beavis2-lab-hard-rules.mdc`](beavis2-lab-hard-rules.mdc) | Canonical lab identities and SoftHSM — for agents/scripts, not SPA chrome |
 | [`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc) | Lab recipes in UI are not customer proof; keep claims honest |
 | [`operator-ui-credibility.mdc`](operator-ui-credibility.mdc) | Lab jargon in admin chrome is a credibility defect |
 | [`mailpit-messaging-comprehensive-test.mdc`](mailpit-messaging-comprehensive-test.mdc) | Mailpit is lab preflight — not Messaging page copy |
-| [`no-environment-variables.mdc`](no-environment-variables.mdc) | Lab constants stay in e2e `constants.ts` / docs, not UI strings |
+| [`no-environment-variables.mdc`](no-environment-variables.mdc) | Lab constants stay in e2e `constants.ts` / docs, not UI chrome |
+| [`db-init-must-seed-lab.mdc`](db-init-must-seed-lab.mdc) | Seed paths may attach profile-appropriate per-system comments |
 
 ## Origin
 
 2026-08-08 — Phil hard rule: never put internal lab configuration rules
 in UI visible to users or administrators; agent/operator dialogs are not
-product UI; only generic product instructions in SPA/configurator UI.
+product UI; only generic product instructions in SPA/configurator chrome.
+Same day exception: seed/operator per-system comments are data on the
+asset record (inventory lists), not a license to hardcode lab runbooks
+into Alert / helperText / menu copy; comments must fit the deployment
+profile.
