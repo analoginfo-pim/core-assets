@@ -1,0 +1,130 @@
+---
+description: >-
+  Hard rule — never put internal lab configuration in SPA/configurator UI
+  visible to users or administrators. Lab runbooks stay in docs/dev and
+  agent prompts only.
+alwaysApply: true
+---
+
+# No lab configuration in operator UI (hard rule)
+
+Operator directive (Phil, 2026-08-08), verbatim:
+
+> **NEVER put internal lab configuration rules in UI visible to users or
+> administrators. Agent/operator dialogs are not part of the product UI.
+> Only generic product instructions in SPA/configurator UI — never disclose
+> lab configuration (phil rotation bans, BEAVIS2, liebsoft/lanicu, seed-dev,
+> Path 2 Live lab CLI recipes, SoftHSM PINs, Mailpit lab wiring, "lab
+> default", etc.). Lab runbooks stay in docs/dev and agent prompts.**
+
+## The rule
+
+> **Product UI (admin SPA, Win32/Tauri configurators, elevate helpers,
+> product launchers, in-app help, Admin Manual pages shipped to
+> customers) carries only generic product instructions. Internal lab
+> host names, lab identities, seed recipes, SoftHSM PINs, Mailpit wiring,
+> Path 2 Live CLI one-liners, phil rotation bans, and "lab default"
+> labels belong in `docs/dev`, Cursor rules, and agent prompts — never
+> in strings an administrator or end user can read in the product.**
+
+Agent/operator dialogs in Cursor (chat, rules, skill prompts) are **not**
+product UI. That surface may name BEAVIS2, liebsoft, seed-dev, and the
+rest. The SPA and shipping configurators may not.
+
+## Where lab detail is allowed
+
+| Surface | Lab configuration OK? |
+| --- | --- |
+| `pim-offline-server/docs/dev/**`, sibling `docs/dev` | **Yes** — runbooks, RCA, preflight |
+| `.cursor/rules/**`, agent skills, Task prompts | **Yes** — agent duty |
+| Playwright / e2e helpers, `ui/e2e/constants.ts` | **Yes** — test fixtures, not customer chrome |
+| PowerShell lab scripts under `scripts/` | **Yes** — operator/agent tooling |
+| Admin SPA pages, help drawers, banners, empty states | **No** |
+| Win32 / Tauri configurator dialogs and About text | **No** |
+| In-product Admin Manual / docs pages served to admins | **No** |
+| API error messages and OpenAPI descriptions shown in UI | **No** (keep generic) |
+
+## Forbidden in product UI strings
+
+Do not render, toast, banner, helper text, `aria-label`, tooltip, or
+Admin Manual copy that discloses any of:
+
+| Class | Examples (non-exhaustive) |
+| --- | --- |
+| Lab host / seat | BEAVIS2, Beavis2, `192.168.55.197`, Docker PAM PAW lab nicknames as if product defaults |
+| Lab identities | liebsoft, lanicu, "never rotate phil", phil rotation bans |
+| Lab seed / restore | seed-dev, `db-init --confirm`, Restore-Beavis2Lab, Assert-Beavis2LabBaseline |
+| Path / wave labels | "Path 2 Live (lab)", lab-only CLI recipes (`ot-credentials rotate-job …`) |
+| SoftHSM / crypto lab | SoftHSM PINs (`2222`, `1111`), slot ids, Fix-LabSoftHsmLibraryPath |
+| Messaging lab | Mailpit, `127.0.0.1:1025` / `:8025` as product instructions |
+| Lab defaults | "(lab default)", "lab only", "on lab hosts" |
+
+Generic product wording that stays allowed: "Run Discovery", "Rotate
+credentials", "Use a non-personal service account for drills", "Configure
+SMTP under Messaging → Email", "Select a target asset".
+
+## Required agent behavior
+
+1. When adding or editing SPA / configurator copy, ask: would a customer
+   admin on a non-lab host find this string confusing or disclosing our
+   internal lab? If yes, move it to `docs/dev` or an agent rule.
+2. Keep lab identity and host rules in
+   [`beavis2-lab-hard-rules.mdc`](beavis2-lab-hard-rules.mdc) and lab
+   scripts — do not "help" operators by pasting those into UI banners.
+3. Product honesty still binds
+   ([`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc)):
+   generic UI may say Live / Partial; it must not green-wash by citing
+   lab CLI recipes as customer procedure.
+4. Credibility still binds
+   ([`operator-ui-credibility.mdc`](operator-ui-credibility.mdc)):
+   internal slogans and lab jargon in the SPA look unfinished and cost
+   trust — treat them as P0 copy defects.
+5. Mirror this rule to `core-assets/.cursor/rules/` in the same change
+   set ([`auto-commit-push.mdc`](auto-commit-push.mdc)).
+
+## Worked violation → fix
+
+**Violation** (OT Inventory / discovery Rotate panel, conceptual — as
+shipped in `OtInventoryPage`):
+
+```text
+Path 2 Live (lab): POST /api/admin/ot/discovery/run → ot-discovery job…
+Path 2 Live (lab): ot-credentials rotate-job --custody key-manager --propagate,
+then AIC Server vault_bound dual-sync. … Lab only — never rotate phil.
+Selected asset: (lab default)
+```
+
+A customer administrator sees internal wave labels, lab CLI recipes, the
+phil ban, and "(lab default)". That is lab configuration in product UI.
+
+**Fix** (generic Rotate / Discovery help — product-safe):
+
+```text
+Start a discovery scan with Run Discovery. Jobs appear in the list with
+status updates when the scan finishes.
+
+Rotate credentials for the selected asset. Leave the old password empty
+to rotate the password currently in effect. Prefer a dedicated service
+account — do not use personal administrator accounts for rotation drills.
+Select a target asset before running Rotate.
+```
+
+Lab CLI recipes, Path 2 Live labels, phil / liebsoft / BEAVIS2, and
+seed-dev steps stay in `docs/dev` and agent prompts. Sibling agents
+own the SPA string cleanup; this rule forbids reintroducing them.
+
+## Cross-references
+
+| Rule | Relationship |
+| --- | --- |
+| [`beavis2-lab-hard-rules.mdc`](beavis2-lab-hard-rules.mdc) | Canonical lab identities and SoftHSM — for agents/scripts, not SPA |
+| [`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc) | Lab recipes in UI are not customer proof; keep claims honest |
+| [`operator-ui-credibility.mdc`](operator-ui-credibility.mdc) | Lab jargon in admin chrome is a credibility defect |
+| [`mailpit-messaging-comprehensive-test.mdc`](mailpit-messaging-comprehensive-test.mdc) | Mailpit is lab preflight — not Messaging page copy |
+| [`no-environment-variables.mdc`](no-environment-variables.mdc) | Lab constants stay in e2e `constants.ts` / docs, not UI strings |
+
+## Origin
+
+2026-08-08 — Phil hard rule: never put internal lab configuration rules
+in UI visible to users or administrators; agent/operator dialogs are not
+product UI; only generic product instructions in SPA/configurator UI.
