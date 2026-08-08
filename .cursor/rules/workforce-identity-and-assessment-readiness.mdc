@@ -1,0 +1,304 @@
+---
+description: >-
+  Hard rule - assessment-readiness tooling lives online in the product, the
+  Auditor Binder reflects live program state, every person covered by a
+  regulatory requirement has a durable identity in the system with a recorded
+  scope basis, and welcome letters, grading, testing, and reminders are part of
+  the workforce program. Identity is IdP-agnostic: local accounts today,
+  external identity providers later, without rewriting attestation history.
+alwaysApply: true
+---
+
+# Workforce identity and assessment readiness (hard rule)
+
+Operator directive (Phil, 2026-08-08), verbatim:
+
+> **Hard Rule: provide all the tools and systems on line for organizational
+> assessment readiness. Auditor Binder provides current state of the programs we
+> provide. Provide employee and contractor welcome letters explaining training
+> and attestation, providing grading, required (if any) testing, reminders for
+> uncompleted tasks, etc. Each employee and contractor has an identity in the
+> system if they are covered by the regulatory requirements. Not every employee
+> and contractor is required to be in the system as some are not performing
+> regulated activities.**
+>
+> **Currently we are using only local accounts. We will also be using outside
+> identity management systems already available but not used in the current
+> enclaves.**
+
+This is the workforce half of
+[`complete-coverage-and-online-evidence.mdc`](complete-coverage-and-online-evidence.mdc).
+That rule says every obligation needs a resource, a workflow, and a record. This
+one says who the record is about, how that person is identified, and what the
+program owes them before it starts asking them to sign things.
+
+## The rule
+
+> **Assessment-readiness tooling is online in the product, not a document the
+> customer maintains beside it. Every person covered by a regulatory requirement
+> has a durable identity row in the system, carrying a recorded scope basis that
+> says which regulated activity puts them in scope, who decided, and when.
+> People who perform no regulated activity are deliberately out of scope, and
+> that exclusion is itself a recorded decision. The roster row — not a login —
+> is the identity that evidence binds to, so moving from local accounts to an
+> external identity provider never rewrites attestation history. Programs open
+> with a welcome letter that explains what is being asked, and where a program
+> declares grading or testing, the score and the pass decision are part of the
+> evidence record.**
+
+## 1. Online, not alongside
+
+Everything an organization needs to walk into an assessment is reachable in the
+product: the roster and its scope basis, the program schedule, the documents,
+the completion state, the attestation records, the reminder history, and the
+binder that assembles them. If readiness requires a spreadsheet, a shared drive,
+or an email thread, the product has not delivered readiness — see §2 of the
+coverage rule for the evidence properties every record must carry.
+
+## 2. The Auditor Binder shows live program state
+
+> **Binder sections about programs this product runs are derived from live state
+> at render time, never from an operator-typed snapshot.**
+
+A completion percentage an operator typed into a text box is a claim. A
+completion percentage computed from the assignment ledger at render time, with
+the denominator explained, is evidence. Concretely, a binder section covering a
+program we run must derive:
+
+- the program, its cycle, and its due-date policy,
+- the in-scope population and how the denominator was determined,
+- completion, outstanding, and overdue counts as of the render timestamp,
+- the attestation records backing those counts, addressable by person and
+ document version,
+- the reminder history for anyone still outstanding.
+
+Honesty carries over unchanged: live numbers describe **delivery**, never
+control satisfaction. A binder section may state that a program ran and that
+records exist. It may not conclude that a control is Met — see
+[`assessment-binder-section-content.mdc`](assessment-binder-section-content.mdc)
+and [`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc).
+
+## 3. Scope is a recorded determination, not an implied one
+
+The directive is explicit that the roster is **not** the whole company. Only
+people performing regulated activities belong in it. That makes roster
+membership a scoping decision, and the first question any assessor asks about a
+roster is *how do you know this list is complete?*
+
+Every in-scope person carries:
+
+| Field | Why |
+| --- | --- |
+| **Scope basis** | Which regulated activity puts them in scope — handles CUI, handles FCI, administers an in-scope system, has physical access to an in-scope area, approves access, and so on |
+| **Determined by** | The identity of the person who made the call, resolved from a real principal |
+| **Determined at** | UTC server timestamp |
+| **Review cycle** | When the determination is next re-examined, because job duties change |
+
+Exclusions are decisions too. When an organization states that a population
+performs no regulated activity, that statement is recorded with its basis and
+its author. An absent row must be distinguishable from a considered exclusion,
+because "we never thought about them" and "we determined they never touch it"
+are very different answers in an interview.
+
+Scope basis is a **defensible boundary, not a loophole**. Narrowing scope to
+shrink a completion denominator is exactly the misuse this field must make
+visible, which is why the decision is attributed and timestamped.
+
+## 4. Identity is IdP-agnostic by construction
+
+The operator has stated the trajectory plainly: local accounts today, external
+identity management later. That makes one design decision load-bearing.
+
+> **The durable person record is the roster row. Authentication is a separate,
+> replaceable binding. Evidence binds to the person record and denormalizes the
+> signer's identity at signing time.**
+
+Consequences that are not negotiable:
+
+1. **Attestations reference the person record**, and additionally capture the
+ signer's name, address, kind, and organization **as they were at signing**.
+ A later email change, a rename, or a move to a federated subject cannot
+ alter what an existing record says.
+2. **A roster row is not an operator account.** Someone who only reads a
+ document and attests never needs a console seat, a password, or a role. The
+ low-friction path stays low-friction.
+3. **Authentication bindings are additive and plural.** A person may be
+ reachable by a single-use emailed link today, by a local account, and by an
+ external provider subject later — including all three at once during a
+ migration. The identity source is recorded per binding.
+4. **External provider bindings are identified by issuer and subject**, not by
+ email. Email is a delivery address and it changes; the issuer/subject pair
+ is the durable claim.
+5. **Federating an existing workforce is a linking operation**, never a
+ re-import that creates new person rows. A migration that orphans prior
+ attestations has destroyed the audit trail the program exists to produce.
+6. **Federation never lowers the security floor** —
+ [`baseline-security-perfect-always.mdc`](baseline-security-perfect-always.mdc)
+ still binds, and an identity provider that does not return the claims we
+ rely on is reported as a gap rather than papered over.
+
+## 5. A program opens with a welcome letter
+
+Before a program asks a person to sign anything, it tells them what is
+happening. Employee and contractor variants both exist, because a contractor
+needs to know whose rules apply and who to contact at their own employer.
+
+A welcome letter states, in plain words:
+
+- what this is and why they received it,
+- what they are being asked to read and attest to,
+- what attesting means — a legal statement about their own conduct,
+- whether there is a knowledge check, how it is scored, and what passing is,
+- how many attempts they get, and what happens if they do not pass,
+- when it is due and what happens if it is late,
+- who to ask for help, by name and contact,
+- that their completion is recorded and retained.
+
+Welcome letters are training materials, so they inherit the plain-language and
+image rules in
+[`training-materials-plain-language-and-images.mdc`](training-materials-plain-language-and-images.mdc):
+sixth-grade reading level, no unexplained jargon, image rich, original or
+open-source content only. A welcome letter written in compliance vocabulary
+defeats its own purpose.
+
+## 6. Grading and testing produce evidence, not vibes
+
+Testing is optional per program. Where a program declares one, the result is
+part of the record:
+
+| Requirement | Detail |
+| --- | --- |
+| **Recorded score** | The numeric result, stored — not just a pass flag |
+| **Declared threshold** | The passing score, captured as of the attempt, so later policy changes do not retroactively pass or fail anyone |
+| **Attempt history** | Every attempt, with its own timestamp and score, append-only |
+| **Attempt policy** | Maximum attempts and what happens on exhaustion, decided by the program and recorded on the assignment |
+| **Question versioning** | The question set version the person actually saw, bound like a document hash |
+| **Pass decision** | Derived from score and threshold at attempt time, stored, and never mutated |
+
+"I have read and understood" with no check is an attestation, and it is
+legitimate evidence of attestation. It is **not** a grade, and a completion
+report must not present it as one.
+
+## 7. Reminders are a logged obligation
+
+Uncompleted tasks generate reminders on the program's ladder — welcome, then
+reminders before due, then due, then overdue. Every send attempt writes an
+append-only log row with recipient, kind, outcome, and failure reason.
+
+**A reminder that is not logged did not happen.** When an assessor asks why
+someone was six weeks late, "the system reminded them four times, here are the
+timestamps" is the answer that holds up. A silent send failure that leaves no
+row is a
+[`silent-failure-is-a-bug.mdc`](silent-failure-is-a-bug.mdc) violation, and
+claiming reminder coverage without observing a real send violates
+[`mailpit-messaging-comprehensive-test.mdc`](mailpit-messaging-comprehensive-test.mdc).
+
+## 8. Forbidden constructs
+
+- Readiness that depends on a customer-maintained spreadsheet, shared drive, or
+ email thread.
+- A binder section about a program we run whose numbers were typed by an
+ operator rather than derived at render time.
+- A live completion percentage presented as, or adjacent to, a claim that a
+ control is Met.
+- A roster row with no recorded scope basis, or an exclusion with no recorded
+ reason — including bulk imports that skip the determination.
+- Narrowing scope to improve a completion statistic.
+- Binding an attestation to a login, an email address, or an external provider
+ subject instead of to the durable person record.
+- Requiring an operator account, role, or console seat for a person whose only
+ task is to read and attest.
+- Identifying a federated person by email rather than by issuer and subject.
+- A federation migration that re-imports the workforce and creates new person
+ rows, orphaning prior attestations.
+- Presenting an unscored acknowledgement as a grade or a test result.
+- A pass decision recomputed from current policy rather than read from the
+ stored attempt.
+- Mutating a score, an attempt, an attestation, or a notification log row in
+ place.
+- Reminder sends that leave no log row, or a claim that reminders work without
+ an observed message in a real sink.
+- Describing any of the above as complete because the schema exists. Schema is
+ not delivery — see §9.
+
+## 9. Where this stands today (verified 2026-08-08)
+
+Honest status, so a future agent does not mistake a table for a feature. Detail
+lives in `pim-offline-server/docs/dev/training-awareness-packs.md`.
+
+| Capability | Status |
+| --- | --- |
+| Roster of employees and contractors, with vendor organization and archive semantics | **Schema only** (`003000047`) |
+| Append-only attestation ledger bound to the person record, denormalizing signer identity and document hash at signing | **Schema only** (`003000048`) — the IdP-agnostic requirement in §4 is already satisfied by this shape |
+| Single-use emailed access tokens, so a trainee needs no console seat | **Schema only** (`003000048`) |
+| Notification ladder with welcome / reminder / due / overdue kinds and an append-only send log | **Schema only** (`003000048`) |
+| Access gate that can block on incomplete training with a recorded override reason | **Schema only** (`003000049`) |
+| Document library, plain-language rewrite in progress | **Live** (authoring layer) |
+| **Scope basis, determined-by, determined-at, review cycle, recorded exclusions** | **Absent** — §3 is unimplemented |
+| **External identity provider binding by issuer and subject; plural identity bindings per person** | **Absent** — `external_ref` is free text only; §4 items 3 and 4 unimplemented |
+| **Welcome letter documents for employees and contractors** | **Absent** — the notification slot exists, the content does not |
+| **Grading, testing, scores, thresholds, attempt history** | **Absent** — no such tables |
+| Domain layer, HTTP API, scheduler, and UI for any of the above | **Absent** |
+| Binder section derived from live program state | **Absent** |
+
+## 10. Required agent behavior
+
+1. When adding a workforce capability, state which of §1 through §7 it serves and
+ what evidence row it produces.
+2. Never add a person-shaped table without the scope-basis fields in §3.
+3. Treat §4 as an architectural invariant. Before changing anything about
+ identity, ask whether an existing attestation could end up pointing at a
+ different person or at nothing.
+4. Land grading with its threshold and attempt history in the same change set.
+ A score with no recorded threshold cannot be re-derived later.
+5. Report schema separately from delivery, and keep §9 current in the same
+ change set that moves a row.
+6. Mirror this rule to `core-assets/.cursor/rules/` when editing the workspace
+ copy — the workspace `.cursor` directory is not a git root
+ ([`auto-commit-push.mdc`](auto-commit-push.mdc)).
+
+## Worked violation to fix
+
+**Violation.** A release adds workforce import from CSV, assigns a document to
+everyone in the file, and emails a link. The binder gains a training section
+where an operator types the completion percentage. Attestations store the
+signer's email as the key. Later the customer connects an identity provider, the
+workforce is re-imported from it, and every person gets a new row.
+
+Four failures. Roster rows carry no scope basis, so the completeness question
+has no answer. The binder number is a typed claim, not evidence. Email as the
+attestation key breaks the moment somebody marries or changes employer. And the
+re-import orphaned every prior attestation, destroying exactly the audit trail
+the program existed to create.
+
+**Fix.** Capture scope basis, decider, and timestamp at import, and record
+considered exclusions. Derive the binder section from the assignment ledger at
+render time with the denominator explained. Bind attestations to the person
+record while denormalizing signer identity at signing. Make federation a linking
+operation against existing person rows, keyed on issuer and subject, so history
+stays intact and a person can hold a local and a federated binding at once.
+
+## Cross-references
+
+| Rule | Relationship |
+| --- | --- |
+| [`complete-coverage-and-online-evidence.mdc`](complete-coverage-and-online-evidence.mdc) | The parent objective; this rule is its workforce half |
+| [`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc) | Live completion numbers are delivery evidence, never a control verdict |
+| [`assessment-binder-section-content.mdc`](assessment-binder-section-content.mdc) | Binder sections need real derived content, not chrome or typed claims |
+| [`training-materials-plain-language-and-images.mdc`](training-materials-plain-language-and-images.mdc) | Welcome letters and course material must be readable by their audience |
+| [`baseline-security-perfect-always.mdc`](baseline-security-perfect-always.mdc) | Federation and low-friction trainee access never weaken the auth floor |
+| [`enterprise-compliance.mdc`](enterprise-compliance.mdc) | AU-2/3/9/12 payload shape for every evidence row; Section 508 for the trainee surface |
+| [`silent-failure-is-a-bug.mdc`](silent-failure-is-a-bug.mdc) | An unlogged reminder failure is the canonical silent failure |
+| [`mailpit-messaging-comprehensive-test.mdc`](mailpit-messaging-comprehensive-test.mdc) | Reminder and welcome-letter claims need an observed message in a real sink |
+| [`nist-800-53-floor.mdc`](nist-800-53-floor.mdc) | AT-2/3/4, PS-family, and IA-family are the controls this surface speaks to |
+
+## Origin
+
+2026-08-08 — operator hard rule. Assessment-readiness tooling belongs online;
+the binder reflects live program state; welcome letters, grading, testing, and
+reminders are part of the workforce program; and everyone covered by a
+regulatory requirement has an identity in the system while people performing no
+regulated activity deliberately do not. Recorded alongside the operator's stated
+identity trajectory — local accounts now, external identity management later —
+because that trajectory is what makes person-record-bound evidence an
+architectural invariant rather than a preference.
