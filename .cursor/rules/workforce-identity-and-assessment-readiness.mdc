@@ -241,13 +241,20 @@ lives in `pim-offline-server/docs/dev/training-awareness-packs.md`.
 | Domain layer, HTTP API, scheduler, and UI for any of the above | **Absent** |
 | Binder section derived from live program state | **Absent** |
 
-> **Not applied to the lab database.** Verified 2026-08-08: the BEAVIS2 database
-> is at migration `3000046`, so `003000047` through `003000050` exist as files
-> and have never run there. Migrations 47–50 were proved by applying them to a
-> scratch database and running
+> **Applied to the lab database; still undelivered.** Verified 2026-08-08, then
+> re-verified later the same day: the lab database now reports `003000047`
+> through `003000050` in `_sqlx_migrations`, so these tables exist against live
+> data. An earlier revision of this note claimed the database was at `3000046`
+> and that migrations 47–50 had never run there — a deploy has since applied
+> them, and that claim is withdrawn. Migrations 47–50 were additionally proved by
+> applying them to a scratch database and running
 > `pim-offline-server/scripts/sql/prove-training-scope-identity.sql` (31/31 PASS,
-> idempotent, rolls back). Treat every row above marked *schema only* as unproved
-> against live data until a deploy applies them and the lab baseline re-asserts.
+> idempotent, rolls back).
+>
+> Tables existing is **not** delivery. Every row above marked *schema only* still
+> has no domain layer, no API, no scheduler, and no UI, and nothing writes to
+> these tables yet. Do not read "the migration is applied" as evidence that any
+> workforce capability works.
 
 ## 10. Required agent behavior
 
