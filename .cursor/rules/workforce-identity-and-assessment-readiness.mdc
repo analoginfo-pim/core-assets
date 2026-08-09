@@ -236,7 +236,7 @@ lives in `pim-offline-server/docs/dev/training-awareness-packs.md`.
 | Document library, plain-language rewrite in progress | **Live** (authoring layer) |
 | Scope determinations — basis, decider, timestamp, review date, mandatory rationale, considered exclusions for people with no roster row | **Schema only** (`003000050`), 31 constraint probes pass |
 | Identity bindings — plural per person, federated ones keyed on issuer and subject, unlink recorded rather than deleted | **Schema only** (`003000050`), same probe run |
-| **Welcome letter documents for employees and contractors** | **Absent** — the notification slot exists, the content does not |
+| **Welcome letter documents for employees and contractors** | **Authoring content live** (`welcome-letter-employee`, `welcome-letter-contractor` in `src/training/templates_welcome_letters.rs`) — domain / API / scheduler / UI still Absent |
 | **Grading, testing, scores, thresholds, attempt history** | **Absent** — no such tables |
 | Domain layer, HTTP API, scheduler, and UI for any of the above | **Absent** |
 | Binder section derived from live program state | **Absent** |
