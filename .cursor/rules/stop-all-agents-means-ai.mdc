@@ -1,0 +1,60 @@
+---
+description: >-
+  Hard rule: "stop/pause all agents" always means AI agents only — never
+  kill shell jobs, deploys, services, or lab processes unless explicitly named.
+alwaysApply: true
+---
+
+# Stop all agents = AI agents only (hard rule)
+
+Operator directive (Phil, 2026-08-09):
+
+> **When I say stop / pause / halt all agents, I always mean AI agents.**
+
+## The rule
+
+> **Phrases like “stop all agents,” “pause all agents,” “halt agents,” or
+> “kill the agents” apply only to Cursor AI agents (this chat’s Task /
+> Multitask children, and guidance to abandon / not spawn more). They do
+> NOT mean kill shell PIDs, cargo builds, Playwright, `Deploy-*.ps1`,
+> `npm run dev`, Windows services, Hyper-V VMs, or lab infrastructure —
+> unless the operator names those processes or services in the same
+> message.**
+
+## Required agent behavior
+
+1. **Stop AI work** — Do not spawn new `Task` / subagents. Do not resume
+   stuck Multitask children. Interrupt only when acting as the owning
+   parent per [`stuck-agent-supervisor.mdc`](stuck-agent-supervisor.mdc).
+2. **Leave machine work alone** — Do not ask whether to kill deploys,
+   Vite, cargo, or services as part of “stop agents.” Report them only
+   if useful for a resume note; do not stop them.
+3. **Resume lists** — When capturing work for later restart, list AI
+   chats / agent IDs first. Background shells are optional context, not
+   “agents that were stopped.”
+4. **Explicit exception** — Only kill or stop non-AI processes when the
+   same message names them (e.g. “stop all agents and kill the duplicate
+   deploys”).
+
+## Forbidden
+
+- Treating “stop all agents” as permission to `Stop-Process` on deploy /
+  build / dev-server PIDs.
+- Stopping `aic-server-service` / agent services as part of an agents pause.
+- Asking clarifying questions about killing background jobs when the only
+  instruction was to stop agents (ask only if the operator also asked to
+  clean up machine processes).
+
+## Cross-references
+
+| Rule | Overlap |
+| --- | --- |
+| [`stuck-agent-supervisor.mdc`](stuck-agent-supervisor.mdc) | How to interrupt / abandon AI children |
+| [`host-session-safety.mdc`](host-session-safety.mdc) | Do not damage the interactive desktop session |
+| [`auto-model-only.mdc`](auto-model-only.mdc) | No fan-out after a stop |
+
+## Origin
+
+2026-08-09 — after a pause-all-agents turn offered to kill
+`Deploy-OfflineServerDev` and licensing Vite; operator clarified that
+“agents” always means AI agents only.
