@@ -1,25 +1,41 @@
 ---
 description: >-
-  Hard rule: "stop/pause all agents" always means AI agents only — never
-  kill shell jobs, deploys, services, or lab processes unless explicitly named.
+  Hard rule: "stop" / "pause" / "halt" (with or without "all agents") means
+  pause all AI agents only — never kill shell jobs or services unless named.
 alwaysApply: true
 ---
 
-# Stop all agents = AI agents only (hard rule)
+# Stop / pause = pause all AI agents (hard rule)
 
-Operator directive (Phil, 2026-08-09):
+Operator directives (Phil, 2026-08-09):
 
 > **When I say stop / pause / halt all agents, I always mean AI agents.**
+>
+> **When I say stop, I also mean pause all AI agents.**
 
 ## The rule
 
-> **Phrases like “stop all agents,” “pause all agents,” “halt agents,” or
-> “kill the agents” apply only to Cursor AI agents (this chat’s Task /
-> Multitask children, and guidance to abandon / not spawn more). They do
-> NOT mean kill shell PIDs, cargo builds, Playwright, `Deploy-*.ps1`,
-> `npm run dev`, Windows services, Hyper-V VMs, or lab infrastructure —
-> unless the operator names those processes or services in the same
-> message.**
+> **A bare “stop,” “pause,” or “halt” — and phrases like “stop all
+> agents,” “pause all agents,” “halt agents,” or “kill the agents” —
+> all mean: pause every Cursor AI agent. Stop spawning Task /
+> Multitask children; do not resume stuck AI children; interrupt only
+> as the owning parent per
+> [`stuck-agent-supervisor.mdc`](stuck-agent-supervisor.mdc). These
+> words do NOT mean kill shell PIDs, cargo builds, Playwright,
+> `Deploy-*.ps1`, `npm run dev`, Windows services, Hyper-V VMs, or lab
+> infrastructure — unless the operator names those processes or
+> services in the same message.**
+
+## Trigger phrases (non-exhaustive)
+
+| Operator says | Agent does |
+| --- | --- |
+| `stop` | Pause all AI agents |
+| `pause` / `halt` | Pause all AI agents |
+| `stop all agents` / `pause all agents` / `kill the agents` | Pause all AI agents |
+| Same + named PIDs / services / deploys | Pause AI agents **and** act on the named machine targets |
+
+Bare `stop` is enough. Do not wait for “all agents.”
 
 ## Required agent behavior
 
@@ -27,23 +43,23 @@ Operator directive (Phil, 2026-08-09):
    stuck Multitask children. Interrupt only when acting as the owning
    parent per [`stuck-agent-supervisor.mdc`](stuck-agent-supervisor.mdc).
 2. **Leave machine work alone** — Do not ask whether to kill deploys,
-   Vite, cargo, or services as part of “stop agents.” Report them only
-   if useful for a resume note; do not stop them.
+   Vite, cargo, or services as part of “stop.” Report them only if
+   useful for a resume note; do not stop them.
 3. **Resume lists** — When capturing work for later restart, list AI
    chats / agent IDs first. Background shells are optional context, not
    “agents that were stopped.”
 4. **Explicit exception** — Only kill or stop non-AI processes when the
-   same message names them (e.g. “stop all agents and kill the duplicate
-   deploys”).
+   same message names them (e.g. “stop and kill the duplicate deploys”).
 
 ## Forbidden
 
-- Treating “stop all agents” as permission to `Stop-Process` on deploy /
-  build / dev-server PIDs.
-- Stopping `aic-server-service` / agent services as part of an agents pause.
-- Asking clarifying questions about killing background jobs when the only
-  instruction was to stop agents (ask only if the operator also asked to
-  clean up machine processes).
+- Treating “stop” / “stop all agents” as permission to `Stop-Process`
+  on deploy / build / dev-server PIDs.
+- Stopping `aic-server-service` / agent services as part of an AI pause.
+- Asking clarifying questions about killing background jobs when the
+  only instruction was stop / pause (ask only if the operator also
+  asked to clean up machine processes).
+- Requiring the words “all agents” before pausing AI work.
 
 ## Cross-references
 
@@ -57,4 +73,5 @@ Operator directive (Phil, 2026-08-09):
 
 2026-08-09 — after a pause-all-agents turn offered to kill
 `Deploy-OfflineServerDev` and licensing Vite; operator clarified that
-“agents” always means AI agents only.
+“agents” always means AI agents only. Same day: bare “stop” also means
+pause all AI agents.
