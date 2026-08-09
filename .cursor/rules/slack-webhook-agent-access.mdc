@@ -1,0 +1,99 @@
+# Slack access via Incoming Webhooks (hard rule)
+
+Operator directive (Phil, 2026-08-09): **Agents are not blocked from Slack.**
+Cursor has Incoming Webhooks for Phil and Robert. Missing Slack MCP is **not**
+a reason to skip notifications or ask the operator to paste a draft.
+
+## The rule
+
+> **When an agent must notify Phil and/or Robert on Slack (major complete,
+> partner share, status that previously said “Slack blocked / no MCP”),
+> send via the lab Incoming Webhooks. Do not claim Slack is unavailable
+> because `plugin-slack-slack` / Slack MCP is absent. Prefer Slack MCP when
+> it is connected; otherwise use the webhook path below. Never commit
+> webhook URLs into git.**
+
+## Recipients
+
+| Alias | Who | When to use |
+| --- | --- | --- |
+| **Phil** | Operator | Major completes, blockers needing operator decision, lab status |
+| **Robert** | Partner | Partner-facing drops, MSI/share notes, joint feature summaries |
+
+Default for “notify the team” / “Slack Phil + Robert”: send **both**.
+
+## Where the URLs live (secrets — not in this rule)
+
+Canonical local store (machine-only, gitignored):
+
+`c:\analog-pim\.cursor\secrets\slack-webhooks.json`
+
+Shape:
+
+```json
+{
+  "phil": "https://hooks.slack.com/services/…",
+  "robert": "https://hooks.slack.com/services/…"
+}
+```
+
+If that file is missing: report **BLOCKED — Slack webhooks file missing** once,
+and leave a draft under `docs/dev/` or the product `docs/` path. Do **not**
+invent that Slack itself is unsupported.
+
+## How to send (required pattern)
+
+Prefer the helper (reads the secrets file, never echoes the URL):
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File `
+  c:\analog-pim\.cursor\automations\Send-AgentSlack.ps1 `
+  -To Both `
+  -Text "Short US English status. No secrets. Name SHA / evidence path."
+```
+
+`-To` accepts `Phil`, `Robert`, or `Both`.
+
+One-off without the helper (still read URL from the secrets file — do not
+hardcode webhooks into commits or chat logs when avoidable):
+
+```powershell
+$hooks = Get-Content c:\analog-pim\.cursor\secrets\slack-webhooks.json -Raw | ConvertFrom-Json
+$body = @{ text = "Your message" } | ConvertTo-Json
+Invoke-RestMethod -Uri $hooks.phil -Method Post -ContentType "application/json" -Body $body
+```
+
+Expect Slack response body `ok`. On failure: log once, leave a draft, continue
+the slice — do not retry-spam the webhook.
+
+## Message content
+
+- Plain US English; short; name evidence path / SHA when claiming done.
+- No passwords, tokens, webhook URLs, Admin-Token, SoftHSM PINs, or other secrets.
+- Honesty: Live / Partial / Absent / BLOCKED — never Met / certified from chrome.
+- Webhooks post as the Slack app into a pre-chosen channel/DM destination;
+  they are not a full Slack API (no user search, no thread reply unless the
+  webhook destination already is that DM/channel).
+
+## Forbidden constructs
+
+- “Slack blocked / no Slack MCP / cannot notify” when
+  `slack-webhooks.json` exists and has the needed key.
+- Asking the operator to enable Slack MCP as the **only** path for a
+  notification that webhooks can deliver.
+- Committing webhook URLs to any repo, rule body, evidence README, or SPA.
+- Pasting webhook URLs into partner-facing docs or Assessment Binder text.
+- Using Slack to leak lab SOP into product UI (see
+  [`no-lab-config-in-operator-ui.mdc`](no-lab-config-in-operator-ui.mdc)).
+
+## MCP vs webhook
+
+| Path | Use when |
+| --- | --- |
+| Slack MCP (`plugin-slack-slack` etc.) | Connected and tools work — DMs by user id, search, richer API |
+| Incoming Webhooks | MCP missing or broken — **default fallback; agents are unblocked** |
+
+## Origin
+
+2026-08-09 — Phil provided Incoming Webhooks for Phil and Robert and directed
+agents previously blocked on Slack MCP to use webhooks instead.
