@@ -1,0 +1,80 @@
+---
+description: >-
+  Hard rule — when agents or scripts launch a new Windows console window
+  (conhost, Windows Terminal, PowerShell/cmd, Start-Process of a console app),
+  launch minimized (or Hidden for true background) and do not steal focus.
+alwaysApply: true
+---
+
+# Launch consoles minimized (operator preference)
+
+Operator preference (Phil, 2026-08-14): **minimize Windows Terminal hosts and
+other console windows when you launch them so they do not interfere with other
+windows.**
+
+## The rule
+
+> **When an agent or a script launches a new console window on Windows
+> (conhost, Windows Terminal `wt.exe`, PowerShell/cmd windows, `Start-Process`
+> of a console app, deploy/run helpers that open a server window), it MUST
+> launch minimized (or hidden for true background) and MUST NOT steal focus
+> from the operator's foreground window.**
+
+This complements [`host-session-safety.mdc`](host-session-safety.mdc): do not
+disrupt the interactive desktop session. Focus-stealing consoles that cover
+Cursor, browsers, or other operator work are the same class of disruption as
+killing tray apps or clearing session state.
+
+## Practical guidance
+
+| Need | Do this |
+| --- | --- |
+| Long-running server / agent / Vite / sink in its **own** OS window | `Start-Process … -WindowStyle Minimized` |
+| Truly headless helper (no operator-visible console needed) | `Start-Process … -WindowStyle Hidden` (or `-NoNewWindow` when output stays in the caller) |
+| Avoid | `-WindowStyle Normal` / `Maximized`; Activate / Raise / BringToFront after spawn |
+| Out of scope | The agent's own Shell tool commands in the **integrated** terminal — this rule targets scripts/processes that spawn **new** OS console windows |
+
+Preferred PowerShell shape:
+
+```powershell
+Start-Process -FilePath $exePath -WorkingDirectory $root -WindowStyle Minimized
+```
+
+For Windows Terminal hosts, pass the equivalent minimize / no-activate flags so
+the new `wt.exe` tab or window does not come to the foreground.
+
+## Forbidden constructs
+
+- Launching server, agent, build, Vite, Mailpit, or similar console windows that
+  pop to the **foreground** and cover the operator's other windows.
+- Defaulting `Start-Process` (no `-WindowStyle`) for a new long-running console
+  when Minimized would preserve function.
+- Changing `-WindowStyle Hidden` on a genuine background helper to Normal so
+  "you can see the logs" — leave Hidden; use Minimized only when a console must
+  exist but should not steal focus.
+- Treating UAC / elevation consent UI as something to hide — elevation prompts
+  must remain visible when required. This rule does not waive that.
+
+## Required agent behavior
+
+1. When writing or editing a script that opens a **new** OS console for a
+   long-running process, set `-WindowStyle Minimized` (or keep `Hidden` /
+   `-NoNewWindow` when already headless).
+2. Do not relaunch a healthy Running service solely to apply this style — the
+   next launch picks it up.
+3. Mirror this rule to `core-assets/.cursor/rules/` in the same change set
+   ([`auto-commit-push.mdc`](auto-commit-push.mdc)) — the workspace `.cursor`
+   directory is not a git root.
+
+## Cross-references
+
+| Rule | Overlap |
+| --- | --- |
+| [`host-session-safety.mdc`](host-session-safety.mdc) | Do not damage or disrupt the interactive desktop session |
+| [`stop-all-agents-means-ai.mdc`](stop-all-agents-means-ai.mdc) | Pause AI agents ≠ kill console / service PIDs |
+| [`agent-bounded-ops.mdc`](agent-bounded-ops.mdc) | Prefer small, non-disruptive tool invocations |
+
+## Origin
+
+2026-08-14 — operator preference to keep launched console windows minimized and
+non-focus-stealing.
