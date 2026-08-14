@@ -25,6 +25,19 @@ vault lifecycle, or session proxy features:
 6. Never call a stub or partial implementation parity. Document the missing
    wrapper controls and tests explicitly.
 
+## When upstream is locked
+
+If mix-server / massman / pim-disc (or a sibling) is **read-only or locked**
+— AIC cannot push, cannot merge on Robert’s schedule, or needs extensive
+changes he has not taken — **do not** stop and invent a BLOCKED CLI /
+gitignored local-only binary / unset `NETWORK_CREDENTIAL_PROBE_CLI`-style
+gate. Follow
+[`fork-locked-robert-repos.mdc`](fork-locked-robert-repos.mdc): copy/fork
+under an AIC-owned GitHub name, push, and pin consumers at that git URL +
+rev (or use an already-published extraction that unblocks this slice).
+Reuse-first still applies when upstream is unlocked; **the fork rule wins
+when locked.**
+
 Current source map:
 
 - `mix-server/crates/disc` and `mix-server/crates/massman`: discovery,

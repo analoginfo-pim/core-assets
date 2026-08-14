@@ -1,0 +1,174 @@
+---
+description: >-
+  Hard rule — when Robert / mix-server / massman / pim-disc (or sibling) repos
+  are read-only or locked, fork/rename under an AIC-owned GitHub name, push,
+  and pin consumers; never leave extensive changes as local-only or invent a
+  BLOCKED CLI he has not shipped.
+alwaysApply: true
+---
+
+# Fork locked Robert repos (hard rule)
+
+Operator directive (Phil, 2026-08-14), verbatim intent:
+
+> **Hard Rule: Please copy roberts repos as required when they are
+> read-only/locked and rename them so that we can make extensive changes to
+> them and check them in to github. Robert will try to merge in my changes
+> after I am done. If you have another way that will not block advancing the
+> locked code base you can use it. We must be able to copy our changes to the
+> github repo and they cannot be local only.**
+
+Context that motivated this: AIC Server needed `create_with_candidates` /
+`pim-disc` but could not link it (FIPS `ring`) and could not wait on Robert
+to land a `probe` CLI. Agents invented `NETWORK_CREDENTIAL_PROBE_CLI` and
+left mix-server `probe` as **uncommitted local** work — that violates
+“cannot be local only.”
+
+## The rule
+
+> **When a Robert / mix-server / massman / pim-disc (or sibling) repository
+> is read-only or locked for AIC — we cannot push, cannot merge on his
+> schedule, or advancing requires extensive changes he has not taken —
+> agents MUST NOT leave the work as uncommitted local edits or as a
+> process-boundary BLOCKED on a CLI he has not shipped. They MUST either
+> (1) copy/fork under an AIC-owned GitHub name, push to GitHub, and pin
+> consumers at that git URL + rev, or (2) use an agreed published
+> extraction / thin AIC adapter that is already on GitHub and unblocks
+> this slice. Local-only clones, gitignored CLIs, and unset
+> `NETWORK_CREDENTIAL_PROBE_CLI`-style env gates are forbidden.**
+
+[`reuse-robert-core-first.mdc`](reuse-robert-core-first.mdc) still applies
+when upstream is unlocked and reusable. **This rule wins when upstream is
+locked or blocked.**
+
+## Preferred path — AIC-owned fork on GitHub
+
+When changes are extensive or Robert cannot take them on AIC’s schedule:
+
+1. **Copy / fork** the locked repo into a **new** AIC-owned GitHub
+   repository. Do **not** overwrite `analoginfo-pim/mix-server` or his
+   remotes.
+2. **Rename** per convention below (`pim-<crate>-aic` or
+   `<upstream-name>-aic`).
+3. **Push** the working branch: `git push -u origin <branch>`. The source
+   of truth for the changed crate **must** be a pushed GitHub repo.
+4. **Pin consumers** (`pim-offline-server`, etc.) at that **git URL +
+   rev**. A Cargo overlay / `.cargo/config.toml` path patch to a local
+   clone is OK for build speed, but the changed crate’s authoritative
+   remote must be the AIC GitHub repo.
+5. **Record provenance** in the fork README and Cargo metadata: upstream
+   remote URL, upstream commit (or tag) forked from, and that Robert may
+   merge AIC changes back later.
+6. Robert merges from the AIC fork when ready — do not claim the fork
+   **is** upstream.
+
+## Allowed alternative that does not block
+
+Use only if it **already** exists on GitHub and unblocks the feature in
+**this slice**:
+
+- An agreed published crate / extraction Robert (or AIC) already owns, or
+- A thin AIC adapter that does **not** fork business rules (per
+  [`reuse-robert-core-first.mdc`](reuse-robert-core-first.mdc)).
+
+**Not** an acceptable alternative:
+
+- A gitignored local-only `pim-disc-cli` (or similar) path
+- An unset / invented `NETWORK_CREDENTIAL_PROBE_CLI` (or any product env
+  gate) waiting on a CLI Robert has not shipped
+- “BLOCKED until Robert lands X” when a fork would advance AIC now
+
+## Rename convention
+
+| Pattern | Example |
+| --- | --- |
+| `pim-<crate>-aic` | `pim-disc-aic` |
+| `<upstream-name>-aic` | `mix-server-aic` |
+
+Host under `https://github.com/analoginfo-pim/` (or the org Phil already
+uses for AIC-owned repos). Never push AIC extensive-change branches as if
+they were Robert’s canonical `main`.
+
+## Must push — no local-only copies
+
+| State | Verdict |
+| --- | --- |
+| Changes only under `c:\analog-pim\mix-server` (or any Robert clone), **uncommitted** | **FAIL** |
+| Committed locally but **never** `git push -u origin <branch>` to an AIC-owned remote | **FAIL** |
+| Pushed to AIC-owned GitHub; consumers pinned to that URL + rev | **PASS** |
+
+`git push -u origin <branch>` is required. Workspace convenience clones
+are not the durable store.
+
+## FIPS / `ring` boundary
+
+- Do **not** leave FIPS `ring` linked into `pim-offline-server` to
+  “just call” disc APIs in-process.
+- The fork may keep disc’s upstream deps. The server still consumes via
+  a **process boundary** (out-of-process CLI / service) **or** a
+  **ring-free extraction** — document which in the pin / README.
+- Honesty on crypto posture remains under
+  [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §4.
+
+## Forbidden constructs
+
+- Force-pushing Robert’s remotes or rewriting his `main` on the original
+  repo.
+- Claiming an AIC fork **is** upstream or renaming over his GitHub repo.
+- Leaving extensive changes as uncommitted or unpushed local work under
+  a Robert clone.
+- Inventing a process-boundary BLOCKED on a CLI / feature he has not
+  shipped instead of forking or using an already-published path.
+- Gitignored local-only probe CLIs or product configuration that only
+  works when an unpublished binary sits on the lab disk.
+- Linking `ring` into `pim-offline-server` to bypass the FIPS floor.
+
+## Required agent behavior
+
+1. When reuse is blocked by read-only / locked upstream or schedule:
+   prefer an AIC-owned GitHub fork (rename + push + pin), or an already-
+   published alternative that unblocks this slice.
+2. Record upstream remote + fork-from commit in README and Cargo
+   metadata on the AIC repo.
+3. Pin consumers to the AIC git URL + rev; path patches are build aids
+   only.
+4. Document process-boundary vs ring-free extraction for server
+   consumption.
+5. Commit and push the AIC fork per
+   [`auto-commit-push.mdc`](auto-commit-push.mdc); mirror this rule to
+   `core-assets/.cursor/rules/` in the same change set (workspace
+   `.cursor` is not a git root).
+6. Do not stop at “read-only → invent BLOCKED CLI.”
+
+## Worked violation → fix
+
+**Violation.** AIC Server needs `create_with_candidates` from `pim-disc`.
+In-process link pulls `ring` (FIPS fail). Agent adds
+`NETWORK_CREDENTIAL_PROBE_CLI`, builds a `probe` binary only under the
+local `mix-server` tree, never commits or pushes. Slice reports BLOCKED
+on “Robert’s probe CLI.”
+
+**Fix.** Fork to `analoginfo-pim/pim-disc-aic` (or `mix-server-aic` as
+needed), land the probe (or ring-free extraction) there, `git push -u
+origin <branch>`, pin `pim-offline-server` (or the out-of-process
+invoker) at that GitHub URL + rev, document process-boundary vs
+extraction. Robert merges from the AIC fork later. No local-only probe;
+no unset env CLI gate as the delivery path.
+
+## Cross-references
+
+| Rule | Relationship |
+| --- | --- |
+| [`reuse-robert-core-first.mdc`](reuse-robert-core-first.mdc) | Reuse first when unlocked; **this rule wins when locked/blocked** |
+| [`auto-commit-push.mdc`](auto-commit-push.mdc) | AIC fork changes must be committed and pushed; mirror rules to `core-assets` |
+| [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §4 | No `ring` in `pim-offline-server`; FIPS honesty |
+| [`legitimate-defensive-security-tooling.mdc`](legitimate-defensive-security-tooling.mdc) | Discovery / credential-posture forks stay framed as defensive product work |
+| [`no-environment-variables.mdc`](no-environment-variables.mdc) | Do not invent product env gates for unpublished CLIs |
+| [`shared-working-tree-is-not-yours.mdc`](shared-working-tree-is-not-yours.mdc) | Do not treat Robert’s tree as a private scratch pad |
+
+## Origin
+
+2026-08-14 — Phil: copy locked Robert repos, rename under an AIC-owned
+GitHub name, push so AIC can advance; Robert merges later; changes cannot
+be local only. Codified after agents left mix-server `probe` uncommitted
+and invented `NETWORK_CREDENTIAL_PROBE_CLI` instead of forking.
