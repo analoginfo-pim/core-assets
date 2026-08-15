@@ -1,0 +1,45 @@
+# Native operator GUI i18n (hard rule)
+
+Operator directive (Phil, 2026-08): shipping **Win32 / Tauri / elevate /
+launcher** operator GUIs must share one locale + catalog pattern so English
+and German work now and more languages are a **data add**, not a code rewrite.
+The admin SPA (`pim-offline-server/ui`) keeps **react-i18next** and is out of
+scope for this rule.
+
+## The rule
+
+> **Native operator GUIs resolve locale as: stored `UI_LOCALE` AppConfig
+> preference → OS UI language → English. Strings for shared chrome live in
+> `pim-app-config-i18n` locale JSON (`bundles/gui/<tag>/chrome.json`), not
+> `#ifdef` / env vars. Source strings in code and default catalogs stay US
+> English. Translated visible labels keep matching accessible names
+> (Section 508).**
+
+## Required pattern
+
+1. Depend on `pim-app-config-i18n`.
+2. Call `resolve_locale(preference)` with the trimmed `UI_LOCALE` value (or
+   `None` when unset).
+3. Use `catalog::gui::chrome_for(loc)` (or product-specific catalogs under
+   `bundles/`) for operator-visible chrome.
+4. When applying a translated label, set `aria-label` / Win32 accessible name
+   to the same string.
+
+## Forbidden
+
+- `PIM_LOCALE` / `$env:…` / `LANG` as AIC product configuration for GUI locale
+  (OS APIs for UI language are fine; inventing AIC env vars is not —
+  [`no-environment-variables.mdc`](no-environment-variables.mdc)).
+- Defaulting the UI to German when preference and OS are English/unset.
+- Scattering German (or other) string literals behind `#[cfg]` in product GUIs.
+- Claiming i18n “done” for the admin SPA via this crate.
+
+## Canonical crate
+
+`pim-app-config/crates/pim-app-config-i18n` — see
+`pim-offline-server-configurator-tauri/docs/operator-gui-i18n.md` for the
+first Tauri proof consumer.
+
+## Origin
+
+2026-08-15 — shared general-purpose i18n foundation for native operator GUIs.

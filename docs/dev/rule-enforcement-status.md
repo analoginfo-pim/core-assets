@@ -265,7 +265,7 @@ Refresh with:
 | `OFFLINE_DEV_FIXTURES` | `pim-offline-server/src/bin/seed_dev/main.rs:106` | seed-dev is a binary; tests must not import it |
 | `OFFLINE_ADMIN_TOKEN` | `pim-offline-server/src/auth/admin.rs` | `AdminAuth::with_token(&str)` |
 | `ENABLE_LEGACY_COMPAT` | `pim-offline-server/src/api/legacy/…` | `LegacyTranslator::enabled(bool)` |
-| `LOCALE_ENV_VAR` | `pim-app-config/crates/pim-app-config-i18n/src/locale.rs` | `Locale::override_for_tests(&str)` |
+| `UI_LOCALE` / `resolve_locale` | `pim-app-config/crates/pim-app-config-i18n/src/locale.rs` | Explicit preference arg + OS UI language; no `PIM_LOCALE` env (fixture: `resolve_locale(Some("de"))`) |
 
 Any new env-var read must arrive with its fixture API in the same change
 set, and this table must be updated.
