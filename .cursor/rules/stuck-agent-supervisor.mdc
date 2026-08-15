@@ -141,11 +141,15 @@ host does **not** have
 cannot scan local Multitask transcripts or `Task`-interrupt local
 parents. Treat the Cloud Automation draft named **"Stuck agent
 supervisor"** as **non-functional for unsticking** unless Cursor later
-ships a true local Automations runtime. Prefer disabling it.
+ships a true local Automations runtime. Prefer disabling it — **never
+rely on Cloud cron** as the backup.
 
-### Working backup — local Windows Scheduled Task
+### Working backup — local Hidden Windows Scheduled Task
 
-Install once on the workstation (Phil Enable path):
+Install once on the workstation (Phil Enable path). The task must run
+**Hidden** so it never steals focus from the operator desktop
+([`launch-consoles-minimized.mdc`](launch-consoles-minimized.mdc),
+[`host-session-safety.mdc`](host-session-safety.mdc)):
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File `
@@ -153,13 +157,19 @@ powershell -NoProfile -ExecutionPolicy Bypass -File `
   -IntervalMinutes 5 -RunOnceNow
 ```
 
-Task name: `AIC-StuckAgentLocalWatcher`. It runs
-`Scan-StuckAgents.ps1`, writes
+Task name: `AIC-StuckAgentLocalWatcher`. It runs every **5 minutes** with
+`powershell.exe -WindowStyle Hidden` (task settings Hidden). It scans
+local Multitask / `agent-transcripts` (including `...\subagents\*.jsonl`),
+writes
 `C:\analog-pim\.cursor\automations\local-watcher-state\latest-report.md`,
-and queues one interrupt-request markdown per newly stuck ID under
-`...\interrupt-queue\`. The **owning Multitask parent** still performs
-the actual `Task` interrupt (AUTO only). Details:
-[`README-local-watcher.md`](../automations/README-local-watcher.md).
+and queues **one** interrupt-request markdown per **newly** stuck ID
+under `...\interrupt-queue\` (deduped). Default idle detect window is
+**~4 minutes** (rule band 3–5). Agents that already have
+`turn_ended`/`success` on disk are **UI ghosts** — listed in the report,
+never interrupt-queued. The watcher **does not** spawn Cursor agents;
+the **owning Multitask parent** must `Task` interrupt (AUTO only).
+Details: [`README-local-watcher.md`](../automations/README-local-watcher.md).
+Scripts are mirrored under `core-assets/.cursor/automations/`.
 
 Do not treat any supervisor as a substitute for parent duty in the
 active chat.
