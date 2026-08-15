@@ -1,0 +1,69 @@
+---
+description: IAM permission gates must wait for resolved before denial; enforced by ui/scripts/audit-permission-gate.mjs
+globs:
+  - ui/src/**/*.tsx
+  - ui/packages/**/*.tsx
+  - ui/scripts/audit-permission-gate.mjs
+  - ui/package.json
+  - ui/docs/permission-gate-deferred.md
+alwaysApply: false
+---
+
+# Permission gate render order (glob-scoped)
+
+Operator incident (2026-08-15): twenty-nine admin SPA pages evaluated
+`canView` before `useEffectivePermissionsState().resolved`, flashing a false
+"you do not have permission" Alert while the IAM session was still loading.
+An empty permission set is indistinguishable from denied until settled.
+
+Glob-scoped only — not always-apply.
+
+## The rule
+
+> **While IAM permissions are unresolved, render a loading state — never
+> granted content and never a permission denial. Only after `resolved` is
+> true may the page show a real denial or the protected body. Defaulting to
+> permissive rendering while unresolved would be a security-floor regression
+> under `baseline-security-perfect-always.mdc`. Enforced by
+> `ui/scripts/audit-permission-gate.mjs` in `prebuild` and `lint` with
+> `--deny`.**
+
+## Required pattern
+
+```tsx
+const { permissions: perms, resolved } = useEffectivePermissionsState()
+const canView = hasAnyRequiredPermission(perms, …)
+
+if (!resolved) return <PermissionsLoading label="…" />
+if (!canView) return <Alert>…real denial…</Alert>
+```
+
+OT pages may use `useOtPermissions()` + `OtPermissionsLoading`. Hiding with
+`if (!resolved || !canView) return null` is safe (no denial chrome).
+
+Reference: `ui/src/auth/PermissionsLoading.tsx`, `PermissionGate.tsx`,
+commit `c7a41f1f2`.
+
+## Forbidden
+
+- `if (!canView) return <Alert>…` before any `!resolved` loading gate.
+- `useEffectivePermissions()` on a page that renders permission denial UI
+  (use `useEffectivePermissionsState()` instead).
+- Removing `audit:permission-gate` from `prebuild` / `lint` or dropping
+  `--deny` to make a build pass.
+
+Deferred gaps are listed in `ui/docs/permission-gate-deferred.md` until the
+sibling agent lands fixes; remove rows as files go green.
+
+## Cross-references
+
+| Rule | Relationship |
+| --- | --- |
+| [`baseline-security-perfect-always.mdc`](../../../.cursor/rules/baseline-security-perfect-always.mdc) | No permissive render while unresolved |
+| [`api-client-path-composition.mdc`](api-client-path-composition.mdc) | Sibling static audit pattern |
+| [`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc) | Visual proof after deploy |
+
+## Origin
+
+2026-08-15 — twenty-nine false permission denies during IAM cold load; audit
+follows `audit-api-base-path.mjs` shape.
