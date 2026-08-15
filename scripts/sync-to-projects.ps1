@@ -177,6 +177,16 @@ $assetMap = [ordered]@{
         "pim-offline-server/ui/public/enterprise-atmosphere.svg"
     )
 
+    # ----- Elevation sensitive apps (original AIC CSV; not LOLBAS/GTFOBins) -----
+    "data/elevation-sensitive-apps/elevation-sensitive-apps.v1.csv" = @(
+        "pim-offline-server/data/elevation-sensitive-apps/elevation-sensitive-apps.v1.csv",
+        "pim-offline-server/src/lab_dev_seed/elevation-sensitive-apps.v1.csv"
+    )
+    "data/elevation-sensitive-apps/ATTRIBUTION.md" = @(
+        "pim-offline-server/data/elevation-sensitive-apps/ATTRIBUTION.md",
+        "pim-offline-server/src/lab_dev_seed/elevation-sensitive-apps.ATTRIBUTION.md"
+    )
+
     # ----- Known-default credential dictionaries (commercial redistribution) -----
     # Full tree: DefaultCreds (MIT), SCADAPASS via ITI (CC-BY-4.0), SecLists (MIT),
     # CISA ICS citations (USG). Sync directory by file map below.
