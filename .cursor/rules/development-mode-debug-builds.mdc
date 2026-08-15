@@ -1,0 +1,155 @@
+---
+description: Development mode - every agent-run build, deploy, and MSI packaging pass uses the Cargo dev/debug profile; never `--release` or `-Configuration Release` unless the operator asks for a release build in that same message.
+alwaysApply: true
+---
+
+# Development mode: debug builds only (hard rule)
+
+Operator directive (Phil, 2026-08-15), verbatim:
+
+> **Hard Rule: We are in development mode. There is no reason to build a
+> release build even for use in the MSI.**
+
+This is a **speed** decision, not a correctness one. Nothing about the
+product's behavior requires the release profile while the workspace is in
+development mode, and the release profile costs roughly an order of
+magnitude more wall clock per iteration on the largest crate in the tree.
+
+## The rule
+
+> **While the workspace is in development mode, every build an agent runs
+> uses the Cargo dev/debug profile -- local dev deploys and MSI packaging
+> alike. Agents must not pass `--release`, `-Configuration Release`, or
+> `-ReleaseBuild`, and must not invoke a script path whose default profile
+> is release, unless the operator explicitly asks for a release build in
+> that same message. Scripts keep an explicit opt-in switch for the
+> operator; the default is debug.**
+
+## Why -- the measured cost
+
+`pim-offline-server/Cargo.toml` declares, for `[profile.release]`:
+
+| Setting | Value | Consequence |
+| --- | --- | --- |
+| `incremental` | `false` | Every touch of the crate is a from-scratch compile |
+| `codegen-units` | `16` | Little parallelism across codegen units |
+| `opt-level` | `3` | Full optimization on a very large library crate |
+
+Because `build.rs` copies `ui/dist` into `ui-dist` and `src/static_files.rs`
+embeds it with `include_dir!`, **any admin-SPA bundle change invalidates the
+Rust crate** and forces that from-scratch opt-level-3 recompile. Measured on
+the lab host: **roughly 10+ minutes per iteration**.
+
+The dev profile has `incremental = true` and `codegen-units = 256`, and
+`target\debug` is already warm. The same change set rebuilds in a small
+fraction of that time.
+
+## Scope
+
+| Surface | Default profile while in development mode |
+| --- | --- |
+| `cargo build` / `cargo run` run by an agent | **debug** (no `--release`) |
+| `pim-offline-server/scripts/Deploy-OfflineServerDev.ps1` | **debug** (`-ReleaseBuild` opts in) |
+| `pim-offline-client/scripts/Deploy-OfflineAgentDev.ps1` | **debug** (`-ReleaseBuild` opts in) |
+| `pim-installers/scripts/Build-Pim*Msi.ps1` | **debug preferred** (`-Configuration Release` opts in); falls back to a release artifact when no debug artifact exists in a sibling repo |
+| Operator-requested release build, named in the same message | release |
+| Customer / partner / public share | release -- see the public-share carve-out below |
+
+Artifact paths follow the profile: `target\debug\...` rather than
+`target\release\...`. That includes the staged AWS-LC FIPS DLL
+(see [`fips-dll-staging.mdc`](fips-dll-staging.mdc)) -- the
+`aws_lc_fips_*_crypto.dll` must sit next to the **debug** binaries too, or
+the service fails to start on Windows with a missing-DLL error.
+
+## Forbidden constructs
+
+- `cargo build --release` / `cargo run --release` / `cargo test --release`
+  in any agent-run command or default script path.
+- `-Configuration Release` or `-ReleaseBuild` passed by an agent on its own
+  initiative.
+- Adding a new build or deploy script whose default profile is release.
+- **Editing a `[profile.dev]` or `[profile.release]` table to "make release
+  faster."** Profile settings feed Cargo's metadata hash: changing one
+  invalidates the entire dependency graph in both directions and forces a
+  full rebuild -- including `aws-lc-fips-sys`, which
+  [`never-rebuild-aws-lc.mdc`](never-rebuild-aws-lc.mdc) forbids rebuilding
+  at all. **The fix is to stop using release, not to retune it.**
+- Reaching for `cargo clean` or deleting `target/**` to "reset" after a
+  profile mix-up. Both profiles coexist; keep them both warm.
+- Using this rule as a reason to skip a UI build. It changes the **Rust
+  profile only** -- see the cross-reference below.
+- Calling a debug-profile MSI a signed release artifact.
+
+## Required agent behavior
+
+1. Default every build to the dev profile. Omit `--release`; let scripts use
+   their debug default.
+2. When a script needs a profile-specific path, resolve it from the profile
+   in use rather than hard-coding `target\release`.
+3. Verify the FIPS DLL is staged next to the debug binary before starting a
+   service, per [`fips-dll-staging.mdc`](fips-dll-staging.mdc).
+4. If the operator asks for a release build, say plainly that this rule is
+   being set aside for that request, and do it.
+5. When a sibling repo has no debug artifact and packaging would break,
+   fall back to that repo's release artifact and say so -- do not fail the
+   packaging run, and do not silently claim a full debug build.
+6. Mirror this rule to `core-assets/.cursor/rules/` in the same change set
+   ([`auto-commit-push.mdc`](auto-commit-push.mdc)) -- the workspace
+   `.cursor` directory is not a git root.
+
+## Worked violation to fix
+
+**Violation.** An agent changes one admin-SPA page, rebuilds the Vite
+bundle, and then runs:
+
+```powershell
+cargo build --release --features skip-ui-build --bin pim-offline-server
+powershell .\scripts\Deploy-OfflineServerDev.ps1 -SkipUiBuild
+```
+
+The embedded `ui-dist` changed, so the release profile recompiles the whole
+`pim-offline-server` library at `opt-level = 3` with `incremental = false`.
+Ten-plus minutes pass before the operator can look at a one-line UI change.
+The agent then "optimizes" by setting `[profile.release] opt-level = 1`,
+which flips the Cargo metadata hash and triggers a second full-graph rebuild
+including the locked AWS-LC FIPS module.
+
+**Fix.** Build the same change set on the dev profile and deploy with the
+debug default:
+
+```powershell
+cargo build --features skip-ui-build --bin pim-offline-server
+powershell .\scripts\Deploy-OfflineServerDev.ps1 -SkipUiBuild
+```
+
+`target\debug` is incremental and already warm, so the iteration is a small
+fraction of the release cost. The `[profile.*]` tables are left untouched,
+so no fingerprint flips and AWS-LC is never rebuilt.
+
+## Cross-references
+
+| Rule | Relationship |
+| --- | --- |
+| [`never-rebuild-aws-lc.mdc`](never-rebuild-aws-lc.mdc) | Profile edits flip the Cargo metadata hash and force an AWS-LC FIPS rebuild. This rule does **not** license retuning `[profile.*]` -- stop using release instead |
+| [`never-skip-ui-build-on-ui-change.mdc`](never-skip-ui-build-on-ui-change.mdc) | A UI change still requires a real UI build. This rule changes the **Rust profile only**; it never authorizes `-SkipUiBuild` on a change set that touches `ui/**` |
+| [`fips-dll-staging.mdc`](fips-dll-staging.mdc) | The staged `aws_lc_fips_*_crypto.dll` must exist next to the **debug** binaries too, not only under `target\release` |
+| [`public-share-signed-hashed.mdc`](public-share-signed-hashed.mdc) | Debug-profile MSIs are **development artifacts**. They are not the signed + SHA-256-manifested public-share path. A customer-facing, partner, or auditor drop is the explicit-release case and must follow that rule in full |
+| [`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc) | Never present a debug-profile artifact as a release or certified build |
+| [`auto-commit-push.mdc`](auto-commit-push.mdc) | Mirror this rule to `core-assets/.cursor/rules/`; the workspace `.cursor` directory is not a git root |
+
+## When development mode ends
+
+**This rule is the thing to revisit.** When the workspace leaves development
+mode -- a GA cut, a customer pilot, a signed partner drop -- the operator
+flips the default back and this file is updated (or removed) in the same
+change set. Until that happens, debug is the default everywhere and the
+opt-in switches stay available for one-off release builds.
+
+## Origin
+
+2026-08-15 -- operator hard rule: we are in development mode; there is no
+reason to build a release build even for use in the MSI. Recorded after a
+one-line admin-SPA change forced a roughly 10+ minute from-scratch
+opt-level-3 recompile of `pim-offline-server` because the embedded `ui-dist`
+bundle invalidated the crate under a release profile with
+`incremental = false`.
