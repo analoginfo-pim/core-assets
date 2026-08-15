@@ -1,4 +1,4 @@
-# Stuck agent supervisor — local Hidden watcher (the path that works)
+# Stuck agent supervisor — local Hidden watcher (multi-signal)
 
 ## Slack notifications (unrelated to stuck-scan)
 
@@ -6,77 +6,100 @@ Agents notify Phil/Robert via Incoming Webhooks when Slack MCP is missing.
 See `../rules/slack-webhook-agent-access.mdc` and `Send-AgentSlack.ps1`.
 Webhook URLs live only in `../secrets/slack-webhooks.json` (gitignored).
 
-## Root cause: Cloud Automation cannot unstick local agents
+The watcher itself Slacks Phil **only when a new live-stuck ID is queued**
+— not on every tick, not for UI ghosts.
 
-Cursor Automations cron jobs run as **Cloud Agents on a remote VM**. That
-host does **not** mount Phil's workstation paths:
+## Why the old watcher was worthless
 
-`C:\Users\phil\.cursor\projects\c-analog-pim\agent-transcripts`
+`mtime` / last-jsonl-write idle is a weak signal:
 
-So even a perfectly Saved + Enabled **"Stuck agent supervisor"** automation:
+- Cursor can sit on **Planning next moves** with **no new jsonl lines**
+  (prompt-only forever). The file never contains the string
+  `planning next moves`, so a string match misses it.
+- Cursor can keep writing **thinking / status** so mtime stays fresh
+  while **no tool** runs (tool-starvation).
+- Finished agents with `turn_ended`/`success` still show Running in
+  Multitask (UI ghosts). Listing them as live-stuck caused false
+  interrupts; ignoring them without a parent signal left Phil blind.
+- Tightening idle 15m → 4m did not fix detection.
 
-1. Cannot see local transcripts (scan path does not exist in the cloud).
-2. Cannot `Task` interrupt into local Multitask parent chats.
-3. At best writes a status note in a cloud chat Phil rarely watches.
+## Strategies adopted (sourced — not "best practice" without a link)
 
-**Do not rely on Cloud for unstick.** Parent duty in Multitask remains
-mandatory (`.cursor/rules/stuck-agent-supervisor.mdc`). The local **Hidden**
-Scheduled Task is the always-on backup that can actually see transcripts.
+| # | Strategy | From | What we implemented |
+| --- | --- | --- | --- |
+| 1 | **Dead-man lease + isolated supervisor** | [Crontap / Healthchecks.io dead-man](https://crontap.com/blog/dead-man-switch-explained-for-developers); [OpenClaw isolated heartbeat](https://buttergrow.com/blog/isolated-session-heartbeat-monitoring); [Antigravity monotonic `step_idx`](https://antigravitylab.net/en/articles/agents/antigravity-long-running-agent-supervision-architecture) | Cursor hooks (`preToolUse`, `postToolUse`, `afterAgentThought`, `subagentStart`, `stop`, …) write `local-watcher-state/leases/<id>.json`. Thought-only bumps `thought_idx`, **not** `progress_idx`. The Hidden scheduled task is the isolated reader. |
+| 2 | **Stuck-tool / tool-starvation / zero-tool planning stall** | [ClawGuard `stuck-tool` + `loop`](https://github.com/clawnify/clawguard); Antigravity (timestamp-only heartbeat is insufficient — need progress vs stage) | Parse jsonl for last **tool_use** vs last **thinking/text** vs `turn_ended`. Prompt-only forever = 0 tools + age > ~3.5 min → live-stuck. Last event `tool_use` with no result + idle → stuck-tool. Thinking-only while `tool_count` unchanged across ticks → tool-starvation. |
+| 3 | **Hung helper CPU** | OpenClaw: in-process heartbeat dies with the hang | Sample Cursor/node CPU across ticks. 0-CPU helpers (not the main UI) go in the report with PID + name. **Never** auto-killed. |
+
+Cursor Cloud Automations still cannot see
+`C:\Users\phil\.cursor\projects\c-analog-pim\agent-transcripts`.
+Do not rely on Cloud for unstick.
 
 ## What this local watcher does
 
 | Piece | Role |
 | --- | --- |
-| `Scan-StuckAgents.ps1` | Scans local transcripts (parents + `*/subagents/*.jsonl`); writes `local-watcher-state/latest-report.md` + JSON |
+| `../hooks/Write-AgentHeartbeat.ps1` + `../hooks.json` | Cursor hook: renew lease. Fail-open, Hidden, never deny. Also copied to `%USERPROFILE%\.cursor\hooks`. |
+| `Scan-StuckAgents.ps1` | Multi-signal scan; writes `latest-report.md`, `PARENT-SIGNAL.md`, `status.json` |
 | Interrupt queue | One markdown request per **newly** stuck ID under `local-watcher-state/interrupt-queue/` (deduped) |
-| `Install-StuckAgentLocalWatcher.ps1` | Registers Windows Scheduled Task `AIC-StuckAgentLocalWatcher` with **Hidden** PowerShell (no focus steal) |
+| Slack | Only on **new** live-stuck IDs |
+| `Install-StuckAgentLocalWatcher.ps1` | Registers `AIC-StuckAgentLocalWatcher` Hidden + installs user hooks |
 
 It does **not** spawn Cursor agents, Opus workers, or explore fan-out. It
 **queues** a single stop-planning interrupt request. The **owning Multitask
 parent** must run `Task` + `interrupt: true` (AUTO only).
 
-### Detection (aligned with the rule)
+### Detection classes
 
 | Class | Behavior |
 | --- | --- |
-| **Live stuck** | Idle ≥ **~4 min** (default; rule band 3–5), **no** `turn_ended`/success; planning with no tools, Read/Grep loops, mid-tool hang, or no transcript growth across ticks → interrupt queue |
-| **UI ghost (completed)** | `turn_ended`/`success` on disk in the last N hours (default 6) → listed in report only; **never** interrupt-queued (Multitask may still show Running) |
+| **Live stuck** | Planning stall (0 tools, age ≥ ~3.5 min), tool-starvation, stuck-tool pending, read/grep loop, or repeated-tool loop — **and** no `turn_ended`/success → interrupt queue |
+| **UI ghost (completed)** | `turn_ended`/`success` on disk → report only; **never** interrupt-queued |
+| **Hung helper** | Cursor/node PID with ~0 CPU over the idle window and no recent transcript write → report only |
 | **Cold aborted** | Old aborted / missing turn_ended beyond live window → report only |
+
+Never-interrupt prefixes (hard-coded, do not queue): `5516df5e`,
+`873476da`, `e766aa3a`, `8e2dd3b8`.
+
+## How a parent consumes the queue
+
+1. At the start of a Multitask parent turn (or after sleep), **read**
+   `local-watcher-state/PARENT-SIGNAL.md` first. That file is the
+   parent-visible signal (no window, no toast).
+2. If **Live stuck** is 0: still do your own child status-check (watcher
+   is complement, not substitute).
+3. For each **Interrupt now** id: `Task` with `resume: <id>`,
+   `interrupt: true`, omit model (AUTO). Prompt = the stop-planning
+   text in `interrupt-queue\<parent>__<id>.md`.
+4. One interrupt per id per incident. If it does not deliver, abandon.
+   Do not interrupt ghosts.
 
 ## Exact steps for Phil (Enable)
 
-1. Open PowerShell on this workstation (operator desktop). A one-shot install
-   console is fine; the **task itself** runs Hidden thereafter.
-2. Install and run once Hidden:
-
 ```powershell
 cd C:\analog-pim\.cursor\automations
-powershell -NoProfile -ExecutionPolicy Bypass -File .\Install-StuckAgentLocalWatcher.ps1 -IntervalMinutes 5 -RunOnceNow
+powershell -NoProfile -ExecutionPolicy Bypass -File .\Install-StuckAgentLocalWatcher.ps1 -IntervalMinutes 3 -RunOnceNow
 ```
 
-`-RunOnceNow` uses `Start-Process -WindowStyle Hidden` — no window on top of
-your work.
+`-RunOnceNow` uses `Start-Process -WindowStyle Hidden`.
 
-3. Confirm the task exists, is Ready, and the action includes Hidden:
+Confirm Hidden + report:
 
 ```powershell
 Get-ScheduledTask -TaskName AIC-StuckAgentLocalWatcher | Format-List TaskName, State
 schtasks /Query /TN AIC-StuckAgentLocalWatcher /V /FO LIST | Select-String -Pattern 'Task To Run|Last Run|Status|Hidden'
-Get-Content C:\analog-pim\.cursor\automations\local-watcher-state\latest-report.md -Head 20
+Get-Content C:\analog-pim\.cursor\automations\local-watcher-state\PARENT-SIGNAL.md
+Get-Content C:\analog-pim\.cursor\automations\local-watcher-state\latest-report.md -Head 40
 ```
-
-4. When the report lists **Live stuck** IDs, open the owning **parent** Multitask
-   chat and interrupt once using the text in
-   `local-watcher-state\interrupt-queue\<parent>__<agent>.md`.
-
-5. Optional: leave the Cursor Automation **"Stuck agent supervisor"** Disabled
-   (or delete it). Prefer this local Hidden watcher.
 
 ### Uninstall
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File C:\analog-pim\.cursor\automations\Install-StuckAgentLocalWatcher.ps1 -Uninstall
 ```
+
+User hooks under `%USERPROFILE%\.cursor\hooks` are left in place (fail-open;
+they only write lease files).
 
 ## Manual one-shot scan (Hidden, no task)
 
@@ -86,12 +109,6 @@ Start-Process -FilePath "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powersh
   -WindowStyle Hidden -Wait
 ```
 
-Or (if you accept a console for debugging):
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File C:\analog-pim\.cursor\automations\Scan-StuckAgents.ps1
-```
-
 Exit codes: `0` = no live stuck, `1` = live stuck found, `2` = transcript root missing.
 
 ## Focus / host-session safety
@@ -99,8 +116,9 @@ Exit codes: `0` = no live stuck, `1` = live stuck found, `2` = transcript root m
 - Scheduled Task action: `powershell.exe -WindowStyle Hidden ...`
 - Task settings: `-Hidden`
 - `-RunOnceNow`: `Start-Process -WindowStyle Hidden`
+- Hook command: `powershell.exe -WindowStyle Hidden ...`
 - **Never** Normal/Maximized, never Activate/BringToFront
-- Notifications = file under `local-watcher-state\` (and optional Slack) — not a toast window
+- Notifications = `PARENT-SIGNAL.md` + optional Slack on **new** live-stuck
 
 ## Stop-planning interrupt text (for parents)
 
@@ -113,5 +131,5 @@ If you lack facts, mark blocked with the one smallest missing path — then stop
 
 ## Durable copy
 
-Workspace `.cursor` is not a git root. Scripts are mirrored under
-`core-assets/.cursor/automations/` so they are not machine-only.
+Workspace `.cursor` is not a git root. Scripts, hooks, and the rule are
+mirrored under `core-assets/.cursor/` so they are not machine-only.

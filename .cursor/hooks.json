@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "command": "powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File C:\\analog-pim\\.cursor\\hooks\\Write-AgentHeartbeat.ps1",
+        "timeout": 5
+      }
+    ],
+    "beforeSubmitPrompt": [
+      {
+        "command": "powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File C:\\analog-pim\\.cursor\\hooks\\Write-AgentHeartbeat.ps1",
+        "timeout": 5
+      }
+    ],
+    "subagentStart": [
+      {
+        "command": "powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File C:\\analog-pim\\.cursor\\hooks\\Write-AgentHeartbeat.ps1",
+        "timeout": 5
+      }
+    ],
+    "preToolUse": [
+      {
+        "command": "powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File C:\\analog-pim\\.cursor\\hooks\\Write-AgentHeartbeat.ps1",
+        "timeout": 5
+      }
+    ],
+    "postToolUse": [
+      {
+        "command": "powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File C:\\analog-pim\\.cursor\\hooks\\Write-AgentHeartbeat.ps1",
+        "timeout": 5
+      }
+    ],
+    "postToolUseFailure": [
+      {
+        "command": "powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File C:\\analog-pim\\.cursor\\hooks\\Write-AgentHeartbeat.ps1",
+        "timeout": 5
+      }
+    ],
+    "afterAgentThought": [
+      {
+        "command": "powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File C:\\analog-pim\\.cursor\\hooks\\Write-AgentHeartbeat.ps1",
+        "timeout": 5
+      }
+    ],
+    "afterAgentResponse": [
+      {
+        "command": "powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File C:\\analog-pim\\.cursor\\hooks\\Write-AgentHeartbeat.ps1",
+        "timeout": 5
+      }
+    ],
+    "subagentStop": [
+      {
+        "command": "powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File C:\\analog-pim\\.cursor\\hooks\\Write-AgentHeartbeat.ps1",
+        "timeout": 5
+      }
+    ],
+    "stop": [
+      {
+        "command": "powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File C:\\analog-pim\\.cursor\\hooks\\Write-AgentHeartbeat.ps1",
+        "timeout": 5
+      }
+    ],
+    "sessionEnd": [
+      {
+        "command": "powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File C:\\analog-pim\\.cursor\\hooks\\Write-AgentHeartbeat.ps1",
+        "timeout": 5
+      }
+    ]
+  }
+}

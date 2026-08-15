@@ -106,15 +106,20 @@ planning stalls.
 When the user says the machine slept, agents are stuck, or asks whether
 a supervisor is running, a **parent coordinator in Multitask Mode MUST**:
 
-1. **Status-check every active child** (idle wall-clock, planning stall,
-   empty transcript growth, cold resume after sleep).
-2. **Interrupt once** per stuck child (Step 1), then **abandon cold IDs**
-   that do not deliver after that interrupt — do not resume abandoned
-   agent IDs in a retry loop (same pattern as abandoning `18e6f253`).
-3. Finish the slice in the parent or with at most one AUTO replacement.
-   Do **not** wait for a background supervisor process that may not exist.
-4. Answer plainly: rule exists; no supervisor process unless the
-   Automation is enabled; what was interrupted / abandoned.
+1. **Read** `C:\analog-pim\.cursor\automations\local-watcher-state\PARENT-SIGNAL.md`
+   first (no window — that file is the parent-visible signal).
+2. **Status-check every active child** using the new signals, not mtime
+   alone: last jsonl event kind (tool vs thinking vs `turn_ended`), hook
+   lease `progress_idx` vs `thought_idx`, 0-tool planning stall (~3.5 min),
+   hung helper PIDs in the report.
+3. **Interrupt once** per **live-stuck** id listed under Interrupt now
+   (or that you independently classify stuck). Then **abandon** ids that
+   do not deliver — do not resume abandoned IDs in a retry loop.
+4. Finish the slice in the parent or with at most one AUTO replacement.
+   Do **not** wait for the watcher; it only queues.
+5. Answer plainly: watcher task name `AIC-StuckAgentLocalWatcher`; what
+   PARENT-SIGNAL said; what was interrupted / abandoned. Never interrupt
+   UI ghosts (`turn_ended`/`success` on disk).
 
 ## Forbidden constructs
 
@@ -144,7 +149,7 @@ supervisor"** as **non-functional for unsticking** unless Cursor later
 ships a true local Automations runtime. Prefer disabling it — **never
 rely on Cloud cron** as the backup.
 
-### Working backup — local Hidden Windows Scheduled Task
+### Working backup — local Hidden Windows Scheduled Task (multi-signal)
 
 Install once on the workstation (Phil Enable path). The task must run
 **Hidden** so it never steals focus from the operator desktop
@@ -154,22 +159,31 @@ Install once on the workstation (Phil Enable path). The task must run
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File `
   C:\analog-pim\.cursor\automations\Install-StuckAgentLocalWatcher.ps1 `
-  -IntervalMinutes 5 -RunOnceNow
+  -IntervalMinutes 3 -RunOnceNow
 ```
 
-Task name: `AIC-StuckAgentLocalWatcher`. It runs every **5 minutes** with
-`powershell.exe -WindowStyle Hidden` (task settings Hidden). It scans
-local Multitask / `agent-transcripts` (including `...\subagents\*.jsonl`),
-writes
-`C:\analog-pim\.cursor\automations\local-watcher-state\latest-report.md`,
-and queues **one** interrupt-request markdown per **newly** stuck ID
-under `...\interrupt-queue\` (deduped). Default idle detect window is
-**~4 minutes** (rule band 3–5). Agents that already have
-`turn_ended`/`success` on disk are **UI ghosts** — listed in the report,
-never interrupt-queued. The watcher **does not** spawn Cursor agents;
-the **owning Multitask parent** must `Task` interrupt (AUTO only).
-Details: [`README-local-watcher.md`](../automations/README-local-watcher.md).
-Scripts are mirrored under `core-assets/.cursor/automations/`.
+Task name: `AIC-StuckAgentLocalWatcher`. Interval **≤ 5 min** (default 3)
+with `powershell.exe -WindowStyle Hidden` (task settings Hidden).
+
+**Do not treat mtime-only idle as the detector.** The scanner uses:
+
+1. Transcript last event kind (tool vs thinking vs `turn_ended`) —
+   ClawGuard stuck-tool / loop.
+2. Cursor hook dead-man leases (`leases/*.json`) — thought-only does
+   **not** count as progress (Antigravity `step_idx` / Healthchecks.io
+   dead-man / OpenClaw isolated heartbeat).
+3. Helper process CPU sample — hung Cursor/node PIDs are reported, never
+   auto-killed.
+
+It writes `PARENT-SIGNAL.md` (read this first), `latest-report.md`, and
+**one** interrupt-request markdown per **newly** live-stuck ID under
+`interrupt-queue\` (deduped). Slack fires only on a **new** live-stuck
+id, never for ghosts, never every tick. `turn_ended`/`success` on disk
+= UI ghost — never interrupt-queued. The watcher **does not** spawn
+Cursor agents; the **owning Multitask parent** must `Task` interrupt
+(AUTO only). Details:
+[`README-local-watcher.md`](../automations/README-local-watcher.md).
+Scripts + hooks are mirrored under `core-assets/.cursor/`.
 
 Do not treat any supervisor as a substitute for parent duty in the
 active chat.
@@ -180,3 +194,7 @@ active chat.
 planning with no deliverable; interrupt + stop-planning recovered a
 minimal DONE checklist. Codified so parents act without waiting for
 operator notice.
+
+2026-08-15 — local watcher rewritten: mtime-only + 4 min idle was
+missing prompt-only forever and thinking-only stalls. Multi-signal
+detector + hook leases + PARENT-SIGNAL.md.

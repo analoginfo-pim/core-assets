@@ -4,8 +4,10 @@
 
 .DESCRIPTION
   Registers AIC-StuckAgentLocalWatcher to run Scan-StuckAgents.ps1 every
-  N minutes under the current user with a Hidden PowerShell host so the
-  scan never steals focus (launch-consoles-minimized / host-session-safety).
+  N minutes (default 3) under the current user with a Hidden PowerShell
+  host so the scan never steals focus (launch-consoles-minimized /
+  host-session-safety). Also installs user-level Cursor hooks that write
+  dead-man leases on tool/thought/subagent events.
 
   Cursor Automations Cloud Agents cannot see local transcript paths — this
   local Hidden task is the Enable path that works on the workstation.
@@ -22,7 +24,7 @@
 [CmdletBinding()]
 param(
     [ValidateRange(1, 60)]
-    [int]$IntervalMinutes = 5,
+    [int]$IntervalMinutes = 3,
     [switch]$Uninstall,
     [switch]$RunOnceNow
 )
@@ -32,6 +34,10 @@ $ErrorActionPreference = 'Stop'
 
 $taskName = 'AIC-StuckAgentLocalWatcher'
 $scriptPath = Join-Path $PSScriptRoot 'Scan-StuckAgents.ps1'
+$hookSrc = Join-Path (Split-Path $PSScriptRoot -Parent) 'hooks\Write-AgentHeartbeat.ps1'
+$hookJsonSrc = Join-Path (Split-Path $PSScriptRoot -Parent) 'hooks.json'
+$userHookDir = Join-Path $env:USERPROFILE '.cursor\hooks'
+$userHookJson = Join-Path $env:USERPROFILE '.cursor\hooks.json'
 
 if (-not (Test-Path -LiteralPath $scriptPath)) {
     throw "Missing scanner script: $scriptPath"
@@ -61,6 +67,18 @@ if ($Uninstall) {
         Write-Output "No Scheduled Task named $taskName was registered."
     }
     exit 0
+}
+
+# User-level Cursor hooks (dead-man lease). Fail-open; Hidden; no deny.
+if ((Test-Path -LiteralPath $hookSrc) -and (Test-Path -LiteralPath $hookJsonSrc)) {
+    New-Item -ItemType Directory -Force -Path $userHookDir | Out-Null
+    Copy-Item -LiteralPath $hookSrc -Destination (Join-Path $userHookDir 'Write-AgentHeartbeat.ps1') -Force
+    Copy-Item -LiteralPath $hookJsonSrc -Destination $userHookJson -Force
+    Write-Output "Installed Cursor user hooks: $userHookJson"
+    Write-Output "  Heartbeat script: $(Join-Path $userHookDir 'Write-AgentHeartbeat.ps1')"
+}
+else {
+    Write-Output "Hook sources missing; scheduled task will still scan transcripts without leases."
 }
 
 # Prefer Windows PowerShell for Scheduled Task (stable -WindowStyle Hidden).
@@ -100,7 +118,7 @@ Register-ScheduledTask `
     -Trigger $trigger `
     -Settings $settings `
     -Principal $principal `
-    -Description 'Local AIC stuck-agent supervisor (Hidden). Scans Cursor agent-transcripts on this machine; writes latest-report.md and queues interrupt requests for Multitask parents. Does not spawn Cursor agents. Replaces non-functional Cloud Automation path.' `
+    -Description 'Local AIC multi-signal stuck-agent supervisor (Hidden). Transcript last-kind + hook leases + helper CPU. Writes PARENT-SIGNAL.md / latest-report.md and queues interrupt requests. Does not spawn Cursor agents. Does not steal focus.' `
     -Force | Out-Null
 
 Write-Output "Registered Scheduled Task: $taskName"
