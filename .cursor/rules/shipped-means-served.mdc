@@ -1,0 +1,167 @@
+---
+description: >-
+  A change is shipped only when the running product serves it. Compiling,
+  building, committing, and "service RUNNING" are not delivery. Verify the
+  served bundle identity before reporting any operator-facing work as done.
+alwaysApply: true
+---
+
+# Shipped means served, not compiled (hard rule)
+
+Operator incident (2026-08-15): a better IP Scanner, a PUM solution, and new
+dashboard pages were worked for **two days**. Code was written, committed, and
+built. **Nothing changed in the GUI.** Two mechanisms combined: the admin SPA
+is embedded into the Rust binary at compile time by `include_dir!` in
+`pim-offline-server/src/static_files.rs`, so a UI edit reaches the browser only
+after a Rust rebuild **and** a redeploy; and a slow rebuild made that step easy
+to skip or interrupt. "I built it" was repeatedly mistaken for "it is live."
+
+[`never-skip-ui-build-on-ui-change.mdc`](never-skip-ui-build-on-ui-change.mdc)
+forbids one specific cause (`-SkipUiBuild`).
+[`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc)
+governs what a rendered page must look like. Neither closes the gap this
+incident exposed: the step between **code committed** and **bytes served by the
+running server**.
+
+## The rule
+
+> **A change is delivered when the operator-facing behavior has been observed
+> in the running product — never when the code exists, the crate compiles, the
+> commit landed, the deploy script exited 0, or the service reports RUNNING.
+> Before reporting any operator-facing change as done, prove the running server
+> is serving the new bytes: the asset hash the server returns must match the
+> asset hash the build produced on disk. A change that slows the
+> edit-to-observe loop is a defect to be fixed, never a cost to be absorbed by
+> skipping this verification.**
+
+## When this rule applies
+
+Any claim that an operator-facing change is done, live, shipped, working,
+visible, fixed, or available — in the admin SPA, a configurator GUI, a CLI
+surface, or an API an operator calls. It does **not** apply to internal
+refactors, tests, or documentation with no operator-visible behavior; say so
+explicitly rather than implying delivery.
+
+## The served-bundle check (admin SPA)
+
+Vite emits content-hashed asset names, so the served bundle identifies itself.
+Run this **after** the deploy, before claiming anything:
+
+```powershell
+# What the build produced on disk:
+$disk = (Select-String -Path c:\analog-pim\pim-offline-server\ui\dist\index.html `
+  -Pattern 'src="(/assets/index-[^"]+)"').Matches.Groups[1].Value
+
+# What the running server actually serves:
+$served = (curl.exe -sk --max-time 20 https://127.0.0.1:8443/ | Out-String)
+if ($served -match 'src="(/assets/index-[^"]+)"') { $srv = $matches[1] }
+
+"disk=$disk served=$srv match=$($disk -eq $srv)"
+```
+
+`match=False` — or an empty served value — means the running server is on a
+**stale embedded bundle** and no UI claim may be made. `match=True` is the
+floor, not the finish: still observe the behavior per
+[`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc),
+with a hard reload so the browser cache is not mistaken for the server.
+
+For non-SPA surfaces the equivalent identity anchor is the deployed binary:
+compare the file version / build hash the running service reports against the
+artifact just built. Naming a *specific* observed artifact identity is the
+requirement; the SPA hash is one instance of it.
+
+## Required agent behavior
+
+1. **Deploy, then verify, then claim** — in that order. Run
+   `pim-offline-server/scripts/Deploy-OfflineServerDev.ps1` with **no**
+   `-SkipUiBuild` on any UI change set, then run the served-bundle check, then
+   observe the behavior.
+2. **Name the evidence.** Every delivery claim states the observed artifact
+   identity (the matching asset hash, or the binary version) and the observation
+   (screenshot path or Playwright assertion). No named evidence means not done.
+3. **Report an interrupted deploy as interrupted.** A cancelled, timed-out, or
+   partially completed build leaves the previous bundle in place. Say so;
+   never round it up to shipped.
+4. **Distinguish the three states plainly** when reporting: *committed*,
+   *deployed and served*, *observed working*. They are not synonyms.
+
+## Iteration cost is a correctness issue
+
+The causal chain in this incident was slow loop → skipped verification →
+undetected breakage for two days. Therefore:
+
+- **A change that materially slows the edit-to-observe loop is a defect**, in
+  the same category as a failing test — file it, fix it, or escalate it. It is
+  not an inconvenience to route around.
+- **The response to a slow loop is never to skip verification.** If the loop is
+  too slow to verify every iteration, that is an argument for fixing the loop
+  or batching the work, never for reporting unverified work as done.
+- Fix the loop by the means the workspace already sanctions: the dev profile
+  per [`development-mode-debug-builds.mdc`](development-mode-debug-builds.mdc),
+  and incremental caches left intact per
+  [`never-rebuild-aws-lc.mdc`](never-rebuild-aws-lc.mdc). Do **not** "speed
+  things up" by editing `[profile.*]` tables — that flips the Cargo metadata
+  hash and forces a full-graph rebuild in both directions, making the loop
+  slower, and it is separately forbidden.
+
+## Forbidden constructs
+
+- Reporting a feature as shipped, live, working, or complete on the strength of
+  `cargo build` output, a green commit, an exit-0 deploy script, an HTTP 200, or
+  `Service RUNNING`.
+- Claiming a UI change is live without the served-bundle check, or after a
+  deploy that was interrupted, cancelled, or run with `-SkipUiBuild`.
+- Presenting a screenshot taken before the deploy, or from a browser cache, as
+  proof the new bytes are being served.
+- "It's in the code, the operator just needs to refresh." Verify it yourself.
+- Skipping verification because the build is slow — the explicit failure mode
+  this rule exists to stop.
+- Editing `[profile.dev]` / `[profile.release]` to reduce build time.
+
+## Worked violation to fix
+
+**Violation** (the actual two-day incident). An agent edits the IP Scanner
+page, adds PUM screens and dashboard pages, runs `cargo build`, sees it
+succeed, commits, and reports: *"IP Scanner improvements, PUM solution, and new
+dashboard pages are complete."* The Rust binary was never redeployed, so the
+running server kept serving the previously embedded `ui-dist`. The operator
+opened the product, saw no change, and lost two days before the cause was
+found — during which more code was layered on top of an unverified base.
+
+**Fix.** Same edits, then:
+
+```powershell
+pwsh c:\analog-pim\pim-offline-server\scripts\Deploy-OfflineServerDev.ps1   # no -SkipUiBuild
+# served-bundle check above → disk=/assets/index-ekQLG3_p.js
+#                             served=/assets/index-ekQLG3_p.js  match=True
+# hard-reload the browser, open the IP Scanner page, capture the screenshot
+```
+
+The report then reads: *"IP Scanner, PUM, and dashboard pages deployed and
+served (bundle `index-ekQLG3_p.js`, disk and served hashes match); IP Scanner
+observed rendering live scan results at 1280x800, screenshot at
+`docs/dev/evidence/...`. PUM page still shows an empty result set — not yet
+verified as working."* Delivered, partially delivered, and unverified are each
+reported for what they are.
+
+## Cross-references
+
+| Rule | Relationship |
+| --- | --- |
+| [`never-skip-ui-build-on-ui-change.mdc`](never-skip-ui-build-on-ui-change.mdc) | Forbids one specific cause of a stale bundle; this rule verifies the outcome regardless of cause |
+| [`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc) | What the rendered page must look like once it is genuinely served; visual proof requirements are unchanged and additional to this gate |
+| [`development-mode-debug-builds.mdc`](development-mode-debug-builds.mdc) | The sanctioned way to make the loop fast; never a reason to skip verification |
+| [`never-rebuild-aws-lc.mdc`](never-rebuild-aws-lc.mdc) | Protects the incremental cache the fast loop depends on; forbids profile-table churn |
+| [`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc) | Live / Partial / Absent / BLOCKED vocabulary for the report |
+| [`silent-failure-is-a-bug.mdc`](silent-failure-is-a-bug.mdc) | A page that fails silently is why a stale or broken deploy went unnoticed |
+| [`beavis2-lab-baseline-after-deploy.mdc`](beavis2-lab-baseline-after-deploy.mdc) | Post-deploy lab baseline; complementary end-of-deploy verification |
+
+## Origin
+
+2026-08-15 — **prevents incident 1 and incident 5.** Incident 1: two days of IP
+Scanner, PUM, and dashboard work never reached the browser because the embedded
+`ui-dist` bundle was never redeployed; the served-bundle check makes that state
+impossible to report as complete, because the disk and served asset hashes
+would not have matched. Incident 5: build time became the dominant cost of each
+iteration and verification was dropped to compensate; this rule names slow
+loops as defects and closes the "skip verification to save time" escape.

@@ -144,6 +144,74 @@ correlates with the Windows Event Log entries (which use the
 same field names per
 [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §5).
 
+## Silent empty states in the admin SPA
+
+The same defect class has a front-end shape, and it is the more
+expensive one because the operator, not a log reader, is the
+person misled.
+
+> **A page whose data request failed must not render as an empty
+> shell. A failed query renders a visible, readable error state
+> that says the request failed, and it must be distinguishable at
+> a glance from "loaded successfully, no rows yet."**
+
+Three states, three distinct renderings, never collapsed into
+one:
+
+| State | Render |
+| --- | --- |
+| **Loading** | Skeleton or spinner |
+| **Loaded, empty** | Neutral empty state — "No scan runs yet." Plus the action that creates the first one |
+| **Failed** | `Alert severity="error"` naming what failed, the HTTP status when there is one, and a Retry control |
+
+Requirements at every data-fetching page or panel:
+
+1. **Consume the error channel.** With TanStack Query, branch on
+   `isError` / `error`, not only on `isLoading` and `data.length`.
+   A hook whose `error` is never read is this bug.
+2. **Fail loudly in the console too.** Log the failing method,
+   the resolved URL, and the status, so the browser devtools
+   answer "why is this empty?" without a debugger.
+3. **The error text is readable**, per
+   [`readable-read-only-controls.mdc`](readable-read-only-controls.mdc)
+   and Section 508 — normal contrast, `role="alert"`, not a
+   faded caption.
+4. **Never swallow.** `.catch(() => {})`, `.catch(() => [])`, and
+   `try { … } catch {}` around a fetch are forbidden; an empty
+   array returned from a `catch` is indistinguishable from real
+   emptiness and is exactly how two days were lost.
+5. **`data ?? []` is not error handling.** It renders "no data"
+   for a 404, a 500, and a network partition alike.
+
+**Worked violation to fix** — the netscan and
+known-default-credentials pages, August 2026. Every request 404'd
+on a doubled `/api/api/...` path (see
+[`api-client-path-composition.mdc`](../../pim-offline-server/.cursor/rules/api-client-path-composition.mdc)),
+the components rendered `rows={data ?? []}`, and the operator saw
+tidy empty grids. Nothing anywhere said "request failed."
+
+```tsx
+// Violation
+const { data } = useQuery({ queryKey: ['netscan'], queryFn: fetchRuns })
+return <DataGrid rows={data ?? []} />
+
+// Fix
+const { data, isLoading, isError, error, refetch } = useQuery(...)
+if (isLoading) return <Skeleton />
+if (isError)
+  return (
+    <Alert severity="error" role="alert"
+           action={<Button onClick={() => refetch()}>Retry</Button>}>
+      Could not load scan runs: {describeApiError(error)}
+    </Alert>
+  )
+if (data.length === 0) return <EmptyState message="No scan runs yet." />
+return <DataGrid rows={data} />
+```
+
+An empty grid then means empty, and a broken page announces
+itself the first time it is opened.
+
 ## Worked violation → fix — the scheduler's HTTP loop
 
 **Violation** (today, conceptual, in
@@ -241,6 +309,7 @@ state.
 | `pim-offline-server` background jobs (audit log writer, OTLP exporter) | audit ongoing |
 | All four configurator GUIs | inherits library logging shape via `pim-app-config-cli::dialog_helpers` |
 | `pim-app-config` CLI (`set` / `unset` / `get` / `orphans`) | inherits via R2 exit codes |
+| Admin SPA data-fetching pages (`pim-offline-server/ui`) | audit ongoing — netscan and known-default-credentials rendered empty shells on 404 (2026-08-15) |
 
 ## Cross-references
 
@@ -261,4 +330,17 @@ state.
 - [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §5 —
  the masking contract every error-log site must honor for
  password / token / activation-code / DB-URL inputs.
+- [`api-client-path-composition.mdc`](../../pim-offline-server/.cursor/rules/api-client-path-composition.mdc)
+  — the request bug the SPA section above made invisible;
+  glob-scoped to UI source.
+- [`shipped-means-served.mdc`](shipped-means-served.mdc) — a page
+  that silently swallows its error looks identical to a page that
+  was never deployed; both were live at once in this incident.
+- [`readable-read-only-controls.mdc`](readable-read-only-controls.mdc)
+  — the error state must be legible, not a faded caption.
 - Origin: post-2026-05-19 win32 configurator audit (Wave 1).
+- Origin (SPA section): 2026-08-15 — **prevents incident 2's
+  cost.** The `/api/api/...` 404s were the defect; the silent
+  empty shells were why the defect survived two days. Requiring a
+  visible error state would have surfaced it the first time the
+  netscan page was opened.

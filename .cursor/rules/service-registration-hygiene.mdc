@@ -1,0 +1,173 @@
+---
+description: >-
+  One canonical Windows service name per product, declared in one authoritative
+  place. Installs are idempotent, names are never computed, and a deploy ends by
+  proving only the canonical services are registered.
+alwaysApply: true
+---
+
+# Service registration hygiene (hard rule)
+
+Operator incident (2026-08-15): repeated deploy runs left **multiple AIC
+services registered** on the lab workstation — duplicates pointing at the same
+binary, names suffixed with a lab identity, and a legacy registration from an
+older product layout. The Service Control Manager waits on every registered
+service at shutdown, and this is under investigation as the cause of a
+multi-day shutdown hang that forced hard resets and Windows maintenance-mode
+boots. The workspace already carries documented history of a `PimOfflinePim*`
+doubled-prefix typo reaching a build, so name drift here is a repeat offense.
+
+Measured on the lab host, 2026-08-15:
+
+| Registered name | Points at | Verdict |
+| --- | --- | --- |
+| `aic-server-service` | `PimServer\pim-offline-server.exe` | canonical |
+| `aic-offline-agent-service` | `PimAgent\pim-offline-agent.exe` | canonical |
+| `aic-agent-service` | **the same** `PimAgent\pim-offline-agent.exe` | **duplicate** — second SCM wait on one binary |
+| `AIC-PIM-Lab-Prop-Svc-liebsoft` | `powershell.exe` sleep loop | **name computed from an identity variable** |
+| `AIC-PIM-Lab-Prop-Svc-lanicu` | `powershell.exe` sleep loop | **same defect, second copy** |
+| `PIMServer` | `AIC\PIM Server\bin\pim-server.exe` | **legacy layout, off-convention name** |
+
+`Deploy-OfflineServerDev.ps1` compounds it by probing two candidate names
+(`aic-server-service`, then `aic-offline-server-service`) and using whichever
+answers — tooling that accommodates drift instead of preventing it.
+
+## The rule
+
+> **Each product registers exactly one Windows service, under one canonical
+> name declared in one authoritative place in that product's repository.
+> Service names are literal constants — never composed from a timestamp, GUID,
+> username, hostname, branch, version, or any other variable or build metadata.
+> Installation is idempotent: creating a registration removes any prior
+> registration for that product first, and a failed or interrupted install
+> leaves no registration behind. No registration may point at a binary that no
+> longer exists. Every deploy ends by enumerating registered services and
+> proving that only the canonical set is present.**
+
+## The canonical set
+
+| Product | Canonical service name | Display name |
+| --- | --- | --- |
+| `pim-offline-server` | `aic-server-service` | AIC Server |
+| `pim-offline-agent` | `aic-offline-agent-service` | AIC Agent |
+| DB management agent | `aic-db-mgmt-agent-service` | AIC Database Management Agent |
+| Workstation Assurance agent | `aic-workstation-assurance-agent-service` | AIC Workstation Assurance Agent |
+
+Adding a product means adding a row here **and** to that product's install
+script — in the same change set. The `%PROGRAMDATA%` / data-directory naming
+contract (`OfflinePim<Agent|Server>`, never `PimOfflinePim*`) is pinned
+separately by [`runtime-status.mdc`](runtime-status.mdc); service names and
+data directories are two contracts and both must hold.
+
+## Required install pattern
+
+```powershell
+# Literal constant, declared once. Never interpolated.
+$ServiceName = 'aic-server-service'
+
+# Idempotent: remove any prior registration for THIS product before creating.
+foreach ($stale in @($ServiceName, 'aic-offline-server-service')) {
+    if ((sc.exe query $stale 2>&1) -match 'SERVICE_NAME') {
+        sc.exe stop   $stale | Out-Null
+        sc.exe delete $stale | Out-Null
+    }
+}
+
+try {
+    sc.exe create $ServiceName binPath= "`"$exe`" --windows-scm-dispatcher" `
+        DisplayName= 'AIC Server' start= auto
+    if ($LASTEXITCODE -ne 0) { throw "sc.exe create failed: $LASTEXITCODE" }
+} catch {
+    # An interrupted install must not leave a half-registration behind.
+    sc.exe delete $ServiceName 2>&1 | Out-Null
+    throw
+}
+```
+
+The legacy-name list in the removal loop is the migration path: known former
+names are deleted, never probed-and-adopted.
+
+## Required end-of-deploy verification
+
+Every deploy script ends with this, and an agent claiming a deploy succeeded
+states the result:
+
+```powershell
+$canonical = @('aic-server-service','aic-offline-agent-service',
+               'aic-db-mgmt-agent-service','aic-workstation-assurance-agent-service')
+$found = Get-Service | Where-Object { $_.Name -match '^aic|^AIC-PIM|^PIMServer' }
+$extra = $found | Where-Object { $canonical -notcontains $_.Name }
+if ($extra) { Write-Error "non-canonical AIC services registered: $($extra.Name -join ', ')" }
+
+foreach ($svc in $found) {
+    $img = (Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Services\$($svc.Name)").ImagePath
+    if ($img -match '^"([^"]+)"' -or $img -match '^(\S+)') {
+        if (-not (Test-Path -LiteralPath $matches[1])) {
+            Write-Error "orphaned service $($svc.Name) -> missing $($matches[1])"
+        }
+    }
+}
+```
+
+Removing a stale registration touches machine state, so it obeys
+[`host-session-safety.mdc`](host-session-safety.mdc): an install script may
+delete registrations **for its own product**; an agent doing ad-hoc cleanup of
+unrelated services reports the finding and asks first.
+
+## Forbidden constructs
+
+- More than one registered service per product, including a duplicate under a
+  former name pointing at the same binary.
+- `sc.exe create "AIC-Svc-$user"` / `"...-$(Get-Date -f yyyyMMdd)"` /
+  `"...-$([guid]::NewGuid())"` — any name built from a variable, timestamp,
+  GUID, identity, branch, or version.
+- `New-Service` / `sc.exe create` without first removing the prior registration
+  for that product.
+- An install path that can throw after `sc.exe create` without deleting the
+  registration it just made.
+- A registration whose `ImagePath` binary does not exist on disk.
+- Deploy tooling that **probes** candidate service names and adopts whichever
+  answers, instead of asserting the canonical name.
+- Declaring the service name in more than one place (script, WiX, docs) with no
+  single authority — the copies drift, and the doubled-prefix typo is what that
+  looks like when it ships.
+- Reporting a deploy as successful without the end-of-deploy verification above.
+
+## Worked violation to fix
+
+**Violation** (the measured lab state). A lab helper registers a per-identity
+propagation service as `"AIC-PIM-Lab-Prop-Svc-$Identity"`. Run once for
+`liebsoft` and once for `lanicu`, it leaves two registrations, both hosting a
+`powershell.exe` sleep loop, neither cleaned up. Separately, an agent renaming
+the agent service creates `aic-offline-agent-service` without deleting
+`aic-agent-service`, leaving two registrations for one binary. SCM now waits on
+four extra services at shutdown, and the host hangs.
+
+**Fix.** One literal name — `aic-lab-propagation-service` — with the identity
+passed as a service **argument**, not baked into the name. The installer deletes
+any prior registration (including every known former name) before creating, and
+deletes on failure. The end-of-deploy check then reports the non-canonical
+`aic-agent-service`, `AIC-PIM-Lab-Prop-Svc-*`, and `PIMServer` registrations by
+name so they are removed deliberately rather than accumulating silently.
+
+## Cross-references
+
+| Rule | Relationship |
+| --- | --- |
+| [`shutdown-compliance.mdc`](shutdown-compliance.mdc) | Per-service drain budgets; every extra registration is another SCM wait against the platform budget |
+| [`runtime-status.mdc`](runtime-status.mdc) | Pins the `OfflinePim<Agent\|Server>` data-directory naming and forbids the `PimOfflinePim*` doubled prefix |
+| [`service-lifecycle-logs.mdc`](service-lifecycle-logs.mdc) | The `service` field in the 41010/41011/41012 records is this canonical name |
+| [`host-session-safety.mdc`](host-session-safety.mdc) | Deleting registrations is machine-state change; own-product only without explicit consent |
+| [`shipped-means-served.mdc`](shipped-means-served.mdc) | Both close the gap between "the deploy script ran" and "the machine is in the intended state" |
+| [`no-offline-product-naming.mdc`](no-offline-product-naming.mdc) | Existing shipped program ids keep their historical names; do not rename outside a deliberate migration |
+
+## Origin
+
+2026-08-15 — **prevents incident 3.** Repeated deploys accumulated
+`aic-agent-service` alongside `aic-offline-agent-service` (same binary), two
+identity-suffixed `AIC-PIM-Lab-Prop-Svc-*` registrations, and a legacy
+`PIMServer`, all of which SCM waits on at shutdown — the suspected cause of the
+multi-day shutdown hang and forced hard resets. Idempotent install plus the
+end-of-deploy enumeration would have caught each of the four the first time it
+appeared, and the literal-name requirement would have prevented the two
+identity-suffixed ones from ever being created.
