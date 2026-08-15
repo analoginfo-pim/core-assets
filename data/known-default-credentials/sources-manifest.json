@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "description": "Bundled known-default credential sources for AIC Server posture import",
+  "sources": [
+    {
+      "id": "defaultcreds",
+      "display_name": "DefaultCreds Cheat Sheet",
+      "kind": "it",
+      "format": "csv_defaultcreds",
+      "bundled": true,
+      "relative_path": "defaultcreds/DefaultCreds-Cheat-Sheet.csv",
+      "license_spdx": "MIT",
+      "upstream_url": "https://github.com/ihebski/DefaultCreds-cheat-sheet",
+      "attribution_path": "defaultcreds/ATTRIBUTION.md",
+      "fetch_latest_url": "https://raw.githubusercontent.com/ihebski/DefaultCreds-cheat-sheet/master/DefaultCreds-Cheat-Sheet.csv",
+      "plain_summary": "Large IT-focused list of published vendor factory defaults (some OT gear included)."
+    },
+    {
+      "id": "scadapass",
+      "display_name": "SCADAPASS (ITI CC-BY Mirror)",
+      "kind": "ot",
+      "format": "csv_scadapass",
+      "bundled": true,
+      "relative_path": "scadapass/scadapass.csv",
+      "license_spdx": "CC-BY-4.0",
+      "upstream_url": "https://github.com/ITI/ICS-Security-Tools/blob/master/configurations/passwords/scadapass.csv",
+      "attribution_path": "scadapass/ATTRIBUTION.md",
+      "fetch_latest_url": "https://raw.githubusercontent.com/ITI/ICS-Security-Tools/master/configurations/passwords/scadapass.csv",
+      "plain_summary": "OT/ICS factory defaults (SCADA StrangeLove compilation) redistributed under CC-BY-4.0 via ITI ICS-Security-Tools. Raw scadastrangelove/SCADAPASS and SCADAhacker site have no SPDX — not bundled from those origins."
+    },
+    {
+      "id": "seclists-default",
+      "display_name": "SecLists Default Credentials",
+      "kind": "it_ot",
+      "format": "csv_defaultcreds",
+      "bundled": true,
+      "relative_path": "seclists-default/default-passwords.csv",
+      "license_spdx": "MIT",
+      "upstream_url": "https://github.com/danielmiessler/SecLists/tree/master/Passwords/Default-Credentials",
+      "attribution_path": "seclists-default/ATTRIBUTION.md",
+      "fetch_latest_url": "https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Default-Credentials/default-passwords.csv",
+      "plain_summary": "MIT SecLists default-password CSV (IT + device defaults)."
+    },
+    {
+      "id": "seclists-scada",
+      "display_name": "SecLists SCADA Pass",
+      "kind": "ot",
+      "format": "csv_scadapass",
+      "bundled": true,
+      "relative_path": "seclists-default/scada-pass.csv",
+      "license_spdx": "MIT",
+      "upstream_url": "https://github.com/danielmiessler/SecLists/blob/master/Passwords/Default-Credentials/scada-pass.csv",
+      "attribution_path": "seclists-default/ATTRIBUTION.md",
+      "fetch_latest_url": "https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Default-Credentials/scada-pass.csv",
+      "plain_summary": "OT/SCADA default credentials as carried in SecLists under MIT."
+    },
+    {
+      "id": "cisa-ics",
+      "display_name": "CISA ICS Advisory Citations",
+      "kind": "ot",
+      "format": "json_cisa_advisory",
+      "bundled": true,
+      "relative_path": "cisa-ics/cisa-hardcoded-defaults.json",
+      "license_spdx": "US-Government-Work",
+      "upstream_url": "https://www.cisa.gov/news-events/cybersecurity-advisories",
+      "attribution_path": "cisa-ics/ATTRIBUTION.md",
+      "fetch_latest_url": null,
+      "plain_summary": "Official CISA ICS alerts confirming hardcoded or default credentials. Vendor names are metadata on USG rows; vendor PDFs are not shipped."
+    }
+  ]
+}

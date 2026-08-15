@@ -177,16 +177,48 @@ $assetMap = [ordered]@{
         "pim-offline-server/ui/public/enterprise-atmosphere.svg"
     )
 
-    # ----- Known-default credential dictionary (MIT DefaultCreds) --------
+    # ----- Known-default credential dictionaries (commercial redistribution) -----
+    # Full tree: DefaultCreds (MIT), SCADAPASS via ITI (CC-BY-4.0), SecLists (MIT),
+    # CISA ICS citations (USG). Sync directory by file map below.
 
-    "data/known-default-credentials/DefaultCreds-Cheat-Sheet.csv" = @(
-        "pim-offline-server/data/known-default-credentials/DefaultCreds-Cheat-Sheet.csv"
+    "data/known-default-credentials/sources-manifest.json" = @(
+        "pim-offline-server/data/known-default-credentials/sources-manifest.json"
     )
-    "data/known-default-credentials/ATTRIBUTION.md" = @(
-        "pim-offline-server/data/known-default-credentials/ATTRIBUTION.md"
+    "data/known-default-credentials/defaultcreds/DefaultCreds-Cheat-Sheet.csv" = @(
+        "pim-offline-server/data/known-default-credentials/defaultcreds/DefaultCreds-Cheat-Sheet.csv"
     )
-    "data/known-default-credentials/LICENSE-DefaultCreds-cheat-sheet.txt" = @(
-        "pim-offline-server/data/known-default-credentials/LICENSE-DefaultCreds-cheat-sheet.txt"
+    "data/known-default-credentials/defaultcreds/ATTRIBUTION.md" = @(
+        "pim-offline-server/data/known-default-credentials/defaultcreds/ATTRIBUTION.md"
+    )
+    "data/known-default-credentials/defaultcreds/LICENSE.txt" = @(
+        "pim-offline-server/data/known-default-credentials/defaultcreds/LICENSE.txt"
+    )
+    "data/known-default-credentials/scadapass/scadapass.csv" = @(
+        "pim-offline-server/data/known-default-credentials/scadapass/scadapass.csv"
+    )
+    "data/known-default-credentials/scadapass/ATTRIBUTION.md" = @(
+        "pim-offline-server/data/known-default-credentials/scadapass/ATTRIBUTION.md"
+    )
+    "data/known-default-credentials/scadapass/LICENSE-ITI-ICS-Security-Tools.md" = @(
+        "pim-offline-server/data/known-default-credentials/scadapass/LICENSE-ITI-ICS-Security-Tools.md"
+    )
+    "data/known-default-credentials/seclists-default/default-passwords.csv" = @(
+        "pim-offline-server/data/known-default-credentials/seclists-default/default-passwords.csv"
+    )
+    "data/known-default-credentials/seclists-default/scada-pass.csv" = @(
+        "pim-offline-server/data/known-default-credentials/seclists-default/scada-pass.csv"
+    )
+    "data/known-default-credentials/seclists-default/ATTRIBUTION.md" = @(
+        "pim-offline-server/data/known-default-credentials/seclists-default/ATTRIBUTION.md"
+    )
+    "data/known-default-credentials/seclists-default/LICENSE.txt" = @(
+        "pim-offline-server/data/known-default-credentials/seclists-default/LICENSE.txt"
+    )
+    "data/known-default-credentials/cisa-ics/cisa-hardcoded-defaults.json" = @(
+        "pim-offline-server/data/known-default-credentials/cisa-ics/cisa-hardcoded-defaults.json"
+    )
+    "data/known-default-credentials/cisa-ics/ATTRIBUTION.md" = @(
+        "pim-offline-server/data/known-default-credentials/cisa-ics/ATTRIBUTION.md"
     )
 
     # ----- Installer wizard bitmaps (WiX WixUIBannerBmp / WixUIDialogBmp) -----

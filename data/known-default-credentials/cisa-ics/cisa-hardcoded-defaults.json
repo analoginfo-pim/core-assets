@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "title": "CISA ICS hardcoded / default credential citations",
+  "license": "US Government work (17 U.S.C. 105) — curated mapping authored for AIC posture use",
+  "honesty": "Credentials listed only when publicly documented for remediation. Empty password means the advisory confirmed hardcoded credentials but did not republish the string; remediate via the vendor fix named in the advisory.",
+  "entries": [
+    {
+      "advisory_id": "ICS-ALERT-11-346-01",
+      "follow_up": "ICSA-12-018-01",
+      "vendor": "Schneider Electric",
+      "product": "Quantum Ethernet Module",
+      "username": "",
+      "password": "",
+      "platform_pattern": "ot_plc",
+      "banner_match_hint": "schneider|quantum|modicon",
+      "protocol_hint": "any",
+      "notes": "CISA confirmed multiple hardcoded credentials on Telnet, Windriver debug, and FTP. Specific strings not republished in the alert body — obtain remediation from Schneider / ICSA-12-018-01.",
+      "reference_url": "https://www.cisa.gov/news-events/ics-alerts/ics-alert-11-346-01"
+    },
+    {
+      "advisory_id": "ICS-ALERT-11-204-01B",
+      "follow_up": "ICSA-11-223-01",
+      "vendor": "Siemens",
+      "product": "SIMATIC S7-300 (older PN firmware)",
+      "username": "",
+      "password": "",
+      "platform_pattern": "ot_plc",
+      "banner_match_hint": "siemens|simatic|s7-300",
+      "protocol_hint": "any",
+      "notes": "CISA confirmed hardcoded credentials affecting certain S7-300 PN CPUs shipped before vendor fix dates. Use vendor firmware upgrade; do not rely on republished secrets.",
+      "reference_url": "https://www.cisa.gov/news-events/ics-alerts/ics-alert-11-204-01b"
+    },
+    {
+      "advisory_id": "ICS-ALERT-14-155-01",
+      "vendor": "Daktronics",
+      "product": "Vanguard highway notification signs",
+      "username": "",
+      "password": "",
+      "platform_pattern": "appliance",
+      "banner_match_hint": "daktronics|vanguard",
+      "protocol_hint": "any",
+      "notes": "CISA alert: hardcoded password in configuration software. Rotate credentials and harden paths per advisory.",
+      "reference_url": "https://www.cisa.gov/news-events/ics-alerts/ics-alert-14-155-01"
+    },
+    {
+      "advisory_id": "ICS-ALERT-15-224-01",
+      "vendor": "KACO",
+      "product": "HMI products",
+      "username": "",
+      "password": "",
+      "platform_pattern": "ot_plc",
+      "banner_match_hint": "kaco",
+      "protocol_hint": "any",
+      "notes": "CISA alert: hard-coded password found in client code. Apply vendor mitigation.",
+      "reference_url": "https://www.cisa.gov/news-events/ics-alerts/ics-alert-15-224-01"
+    }
+  ]
+}
