@@ -1,50 +1,32 @@
 ---
 description: Every binary registered as a Windows service / systemd unit / launchd job emits, at INFO, three records to BOTH the Windows Event Log AND the rolling tracing log — "service started" (pid, exe, version, config-store kind, resolved service_uri, machine_guid, FIPS posture, warnings count), "service stopping" (reason, last_sync_age, consecutive_failures, in-flight HTTP requests with URL+elapsed), "service stopped" (exit code, drain steps with elapsed, total drain ms). IDs come from the lifecycle range 41001-41099.
-alwaysApply: true
+globs: "**/*.rs"
+alwaysApply: false
 ---
 
 # Service lifecycle logs (anti-flake clause 5)
 
-The AIC PIM workspace's daemons are managed by the platform's
-service supervisor (Windows SCM, systemd, launchd). When a
-customer support engineer or government auditor opens the
-Windows Event Viewer (or `journalctl -u pim-offline-agent`,
-or `log show --predicate 'process == "pim-offline-agent"'` on
-macOS), they expect to see a **three-record story** for every
-service lifetime: started, stopping, stopped. The records must
-carry enough context to answer:
-
-- "When did this service start, with what version, talking to
- which endpoint?" → `service started`.
-- "What was the daemon doing when it began shutdown? Was a
- sync in flight?" → `service stopping`.
-- "Did the drain finish cleanly within budget?" → `service stopped`.
-
-The post-2026-05-19 win32 configurator audit caught services
-that emitted only the generic
-`PROCESS_STARTED` / `PROCESS_STOPPED` records from
-`pim-windows-oplog::ids` (IDs 41001 / 41002) with no service-
-lifecycle context. An auditor reading those records could not
-tell which `pim-offline-server` version was running, which
-endpoint it was advertising, or whether shutdown was clean.
-This rule pins the three-record contract.
+A support engineer or auditor opening Event Viewer (or `journalctl -u
+pim-offline-agent`, or `log show` on macOS) must see a **three-record
+story** for every service lifetime: started, stopping, stopped — with
+enough context to answer which version was running against which
+endpoint, what was in flight when stop arrived, and whether the drain
+finished inside budget. Generic `PROCESS_STARTED` / `PROCESS_STOPPED`
+records answer none of those.
 
 ## The rule
 
-> **Every binary registered as a Windows service, a systemd
-> unit, or a launchd job emits, at `tracing::Level::INFO`,
-> three records — `service.started`, `service.stopping`,
-> `service.stopped` — to BOTH the Windows Event Log (via
-> `pim-windows-oplog`) AND the rolling `tracing` log. The
-> Windows Event Log entries use IDs from the lifecycle range
-> `41001-41099` (concrete allocation below). The payload
-> shape for each record is fixed by this rule.**
+> **Every binary registered as a Windows service, a systemd unit, or a
+> launchd job emits, at `tracing::Level::INFO`, three records —
+> `service.started`, `service.stopping`, `service.stopped` — to BOTH the
+> Windows Event Log (via `pim-windows-oplog`) AND the rolling `tracing`
+> log. The Windows Event Log entries use IDs from the lifecycle range
+> `41001-41099`. The payload shape for each record is fixed by this
+> rule.**
 
-The existing `PROCESS_STARTED` (41001) and `PROCESS_STOPPED`
-(41002) IDs continue to mark the generic process boundary
-(useful for non-service binaries — configurator CLIs,
-diagnostics tools). Services additionally emit the richer
-triplet below.
+`PROCESS_STARTED` (41001) / `PROCESS_STOPPED` (41002) still mark the
+generic process boundary for non-service binaries. Services emit the
+richer triplet **in addition**.
 
 ## Event ID allocation (lifecycle range 41001-41099)
 
@@ -55,293 +37,107 @@ triplet below.
 | 41003 | `STARTUP_FAILED` | Every binary (existing) |
 | 41004 | `OPERATIONAL_WARNING` | Every binary (existing) |
 | 41005 | `OPERATIONAL_ERROR` | Every binary (existing) |
-| **41010** | **`SERVICE_STARTED`** | Services only (new — this rule) |
-| **41011** | **`SERVICE_STOPPING`** | Services only (new — this rule) |
-| **41012** | **`SERVICE_STOPPED`** | Services only (new — this rule) |
+| **41010** | **`SERVICE_STARTED`** | Services only |
+| **41011** | **`SERVICE_STOPPING`** | Services only |
+| **41012** | **`SERVICE_STOPPED`** | Services only |
 
-41006-41009 are reserved for future generic-process records
-(e.g. a "configuration reload" event); 41013-41099 are reserved
-for future service-lifecycle records (e.g. health-degraded /
-health-restored beacons). Adding a new ID in the range requires
-bumping the message catalog (`pim-windows-oplog-messages/oplog_messages.mc`)
-and registering the ID in `declared_event_ids()` per the
-existing `pim-windows-oplog` contract.
+41006-41009 reserved for future generic-process records; 41013-41099 for
+future service-lifecycle records. A new ID requires bumping the message
+catalog (`pim-windows-oplog-messages/oplog_messages.mc`) **and**
+registering it in `declared_event_ids()`.
 
-## Required payload shape — `service.started` (41010)
+## Required payload — `service.started` (41010)
 
-Emitted as the first action after `pim_shutdown` handler
-installation completes and BEFORE any long-running task spawns.
-Both the Windows Event Log entry and the `tracing::info!`
-record carry these fields:
+Emitted as the first action after `pim_shutdown` handler installation
+completes and BEFORE any long-running task spawns. Both the Event Log
+entry and the `tracing::info!` record carry these fields.
 
 | Field | Type | Source |
 | --- | --- | --- |
-| `service` | string | the binary's program id (`pim-offline-server`, `pim-offline-agent`, …) |
+| `service` | string | program id (`pim-offline-server`, `pim-offline-agent`, …) |
 | `pid` | u32 | `std::process::id()` |
-| `exe` | string | `std::env::current_exe()` (path) |
+| `exe` | string | `std::env::current_exe()` |
 | `version` | string | `env!("CARGO_PKG_VERSION")` |
-| `git_sha` | string | `option_env!("PIM_BUILD_GIT_SHA").unwrap_or("unknown")` (set by `build.rs`) |
+| `git_sha` | string | `option_env!("PIM_BUILD_GIT_SHA").unwrap_or("unknown")` |
 | `config_store_kind` | string | `"registry-hklm"` / `"libsecret+toml"` / `"keychain+plist"` |
-| `service_uri` | string | the daemon's primary listening URL (server) or its peer URL (agent) — empty if not applicable |
-| `machine_guid` | string | the manifest's `MACHINE_GUID` value if set, else empty (R6) |
-| `fips_posture` | string | `pim_crypto_rustls_bridge::fips_status()` rendered as `"validated:4759"` / `"pending"` / `"native-tls:schannel"` etc. |
+| `service_uri` | string | primary listening URL (server) or peer URL (agent); empty if N/A |
+| `machine_guid` | string | manifest `MACHINE_GUID` if set, else empty (R6) |
+| `fips_posture` | string | `pim_crypto_rustls_bridge::fips_status()` rendered, e.g. `"validated:4759"` |
 | `warnings_count` | u32 | `runtime_status.warnings.len()` at startup (R7) |
-| `tenant_count` | u32 | server only — number of tenants the SQL store knows about; agents omit this field |
+| `tenant_count` | u32 | server only; agents omit |
 
-Example `tracing::info!`:
+## Required payload — `service.stopping` (41011)
 
-```rust
-tracing::info!(
-    op = "service.started",
-    service = %SERVICE_ID,
-    pid = std::process::id(),
-    exe = %std::env::current_exe()?.display(),
-    version = env!("CARGO_PKG_VERSION"),
-    git_sha = option_env!("PIM_BUILD_GIT_SHA").unwrap_or("unknown"),
-    config_store_kind = %config_store_kind_str(),
-    service_uri = %service_uri_redacted_or_empty(),
-    machine_guid = %resolved.machine_guid_or_empty(),
-    fips_posture = %fips_status_str(),
-    warnings_count = warnings.len() as u32,
-    "service started",
-);
-```
-
-The Windows Event Log mirror uses `pim_windows_oplog::emit(ids::SERVICE_STARTED, …)`
-with the same field set (rendered into the message catalog
-template for ID 41010).
-
-## Required payload shape — `service.stopping` (41011)
-
-Emitted from the shutdown handler the moment the shutdown
-channel fires, BEFORE the drain step begins. This is the record
-the auditor needs to answer "what was in flight when stop
-arrived?".
+Emitted from the shutdown handler the moment the shutdown channel fires,
+BEFORE the drain begins. This is the record that answers "what was in
+flight when stop arrived?".
 
 | Field | Type | Source |
 | --- | --- | --- |
-| `service` | string | same as above |
+| `service` | string | as above |
 | `reason` | string | `"signal:SIGTERM"` / `"signal:SIGINT"` / `"scm:stop"` / `"scm:preshutdown"` / `"scm:shutdown"` / `"close-requested"` / `"internal:fatal"` |
 | `pid` | u32 | `std::process::id()` |
-| `uptime_s` | u64 | seconds since `service.started` was emitted |
-| `last_sync_age_s` | u64 | seconds since last successful sync (`u64::MAX` if never) — agent only; server omits |
-| `consecutive_failures` | u32 | the scheduler's failure counter (R8 worked example) — agent only |
-| `in_flight_requests` | array | one entry per outbound HTTP request still pending, `{ url: String, elapsed_ms: u64 }` — URL redacted per `pim_app_config::windows_oplog::redact::redact_url` (passwords stripped) |
-| `inflight_count` | u32 | `in_flight_requests.len()` (for SIEM filters that don't want to parse arrays) |
+| `uptime_s` | u64 | seconds since `service.started` |
+| `last_sync_age_s` | u64 | seconds since last successful sync (`u64::MAX` if never) — agent only |
+| `consecutive_failures` | u32 | scheduler failure counter — agent only |
+| `in_flight_requests` | array | `{ url, elapsed_ms }` per pending outbound request; URL redacted via `pim_app_config::windows_oplog::redact::redact_url` |
+| `inflight_count` | u32 | `in_flight_requests.len()` |
 
-Example:
+## Required payload — `service.stopped` (41012)
 
-```rust
-tracing::info!(
-    op = "service.stopping",
-    service = %SERVICE_ID,
-    reason = %reason,
-    pid = std::process::id(),
-    uptime_s = started_at.elapsed().as_secs(),
-    last_sync_age_s = state.last_sync_age().as_secs(),
-    consecutive_failures = state.consecutive_failures,
-    inflight_count = inflight.len() as u32,
-    in_flight_requests = ?inflight,
-    "service stopping",
-);
-```
-
-## Required payload shape — `service.stopped` (41012)
-
-Emitted as the very last `tracing::info!` (and very last
-`pim_windows_oplog::emit`) call before `std::process::exit` (or
-before `main` returns). Mirrors the per-component drain budgets
-documented in [`shutdown-compliance.mdc`](shutdown-compliance.mdc).
+Emitted as the very last `tracing::info!` and `pim_windows_oplog::emit`
+before `std::process::exit` (or before `main` returns).
 
 | Field | Type | Source |
 | --- | --- | --- |
-| `service` | string | same as above |
-| `exit_code` | i32 | the value passed to `std::process::exit` (`0` for clean drain) |
-| `drain_total_ms` | u64 | wall-clock from `service.stopping` to this record |
-| `drain_steps` | array | one entry per `pim_shutdown::drain::bounded` step: `{ name: String, elapsed_ms: u64, outcome: "ok" | "timeout" | "error" }` |
+| `service` | string | as above |
+| `exit_code` | i32 | value passed to `std::process::exit` (`0` for clean drain) |
+| `drain_total_ms` | u64 | wall clock from `service.stopping` to this record |
+| `drain_steps` | array | per `pim_shutdown::drain::bounded` step: `{ name, elapsed_ms, outcome: "ok"｜"timeout"｜"error" }` |
 | `aborted_steps` | u32 | count of `drain_steps[].outcome != "ok"` |
-| `platform_budget_ms` | u64 | the platform's drain budget for this signal class (5_000 for SCM_STOP, 180_000 for PRESHUTDOWN, etc.) |
-
-Example:
-
-```rust
-tracing::info!(
-    op = "service.stopped",
-    service = %SERVICE_ID,
-    exit_code = exit_code,
-    drain_total_ms = drain_started.elapsed().as_millis() as u64,
-    aborted_steps = drain_results.iter().filter(|s| s.outcome != "ok").count() as u32,
-    platform_budget_ms = platform_budget.as_millis() as u64,
-    drain_steps = ?drain_results,
-    "service stopped",
-);
-```
+| `platform_budget_ms` | u64 | platform drain budget for this signal class (5_000 SCM_STOP, 180_000 PRESHUTDOWN, …) — the literal value from [`shutdown-compliance.mdc`](shutdown-compliance.mdc) |
 
 ## Forbidden constructs
 
 - A service whose only lifecycle record is `PROCESS_STARTED` /
- `PROCESS_STOPPED`. Services additionally emit the three
- 41010 / 41011 / 41012 records.
-- `tracing::info!("service started")` without the structured
- field set above. The message string is the operator-facing
- summary; the fields are the SIEM-facing payload. Both must
- be present.
-- A `service.stopping` record that omits the `in_flight_requests`
- array. The whole reason the record exists is to make
- "what was the daemon doing when stop arrived?" answerable
- without a debugger.
-- A `service.stopped` record emitted with `exit_code = 0` when
- any drain step's `outcome` is `"timeout"` or `"error"`. A
- timed-out drain is still a non-clean shutdown — surface it
- in the exit code (use `pim_shutdown::drain::ExitCode::DRAIN_TIMEOUT`,
- conventionally `75` per `sysexits.h` EX_TEMPFAIL or a
- product-pinned value).
-- A Windows Event Log emit that bypasses `pim-windows-oplog`
- (e.g. a direct `ReportEventW` call). Always go through the
- shared crate so the message catalog DLL is kept honest by
- the self-test.
-- A `tracing::info!("service started")` BEFORE the
- `pim_shutdown` handler is installed. The handler must be
- the first thing in `main()`; the lifecycle log comes after
- installation completes so a fast-arriving signal is already
- observable.
+  `PROCESS_STOPPED`.
+- `tracing::info!("service started")` without the structured field set
+  above. The message string is the operator summary; the fields are the
+  SIEM payload. Both must be present.
+- A `service.stopping` record that omits `in_flight_requests`.
+- A `service.stopped` record with `exit_code = 0` when any drain step's
+  outcome is `"timeout"` or `"error"`. Use
+  `pim_shutdown::drain::ExitCode::DRAIN_TIMEOUT` (conventionally `75`,
+  `sysexits.h` EX_TEMPFAIL).
+- A Windows Event Log emit that bypasses `pim-windows-oplog` (direct
+  `ReportEventW`) — the shared crate keeps the message catalog honest.
+- Emitting `service.started` BEFORE the `pim_shutdown` handler is
+  installed. Handler first, then the lifecycle log.
 
 ## Worked violation → fix
 
-**Violation** (today, conceptual):
+**Violation:** `main()` calls `tracing::info!("starting
+pim-offline-agent")`, awaits `ctrl_c()`, calls `scheduler.shutdown()`,
+returns `Ok(())`. No version, no reason, no drain elapsed — Event Viewer
+shows only a generic SCM start/stop pair, useless for fleet forensics.
 
-```rust
-#[tokio::main]
-async fn main() -> Result<()> {
-    tracing_subscriber::init();
-    tracing::info!("starting pim-offline-agent");
-
-    let cfg = load_config()?;
-    let http = HttpClient::new(&cfg)?;
-    let scheduler = Scheduler::spawn(http, cfg);
-
-    tokio::signal::ctrl_c().await?;
-    scheduler.shutdown().await;
-    Ok(())
-}
-```
-
-No `service.started` with version, no `service.stopping` with
-reason, no `service.stopped` with drain elapsed. An auditor
-opening Event Viewer sees only a generic
-`Service Control Manager` start/stop pair — useless for
-forensic correlation across the fleet.
-
-**Fix**:
-
-```rust
-#[tokio::main]
-async fn main() -> Result<()> {
-    tracing_subscriber::init();
-
-    let (shutdown_tx, mut shutdown_rx) = tokio::sync::watch::channel(false);
-    pim_shutdown::install_unix_signal_handler(shutdown_tx.clone())?;
-    #[cfg(windows)]
-    pim_shutdown::install_console_ctrl_handler(shutdown_tx.clone())?;
-
-    let cfg = load_config()?;
-    let warnings = runtime_status::fingerprint_warnings(&cfg);
-    let http = HttpClient::new(&cfg)?;
-    let started_at = std::time::Instant::now();
-
-    pim_windows_oplog::emit(ids::SERVICE_STARTED, &service_started_payload(&cfg, &warnings))?;
-    tracing::info!(
-        op = "service.started",
-        service = "pim-offline-agent",
-        pid = std::process::id(),
-        exe = %std::env::current_exe()?.display(),
-        version = env!("CARGO_PKG_VERSION"),
-        git_sha = option_env!("PIM_BUILD_GIT_SHA").unwrap_or("unknown"),
-        config_store_kind = %cfg.store_kind(),
-        service_uri = %cfg.server_uri_redacted(),
-        machine_guid = %cfg.machine_guid_or_empty(),
-        fips_posture = %pim_crypto_rustls_bridge::fips_status_str(),
-        warnings_count = warnings.len() as u32,
-        "service started",
-    );
-
-    let scheduler = Scheduler::spawn(http.clone(), cfg.clone(), shutdown_rx.clone());
-    let _ = shutdown_rx.changed().await;
-
-    let reason = pim_shutdown::reason_of_last_signal();
-    let inflight = http.snapshot_inflight();
-    pim_windows_oplog::emit(ids::SERVICE_STOPPING, &service_stopping_payload(&inflight, reason))?;
-    tracing::info!(
-        op = "service.stopping",
-        service = "pim-offline-agent",
-        reason = %reason,
-        pid = std::process::id(),
-        uptime_s = started_at.elapsed().as_secs(),
-        last_sync_age_s = scheduler.last_sync_age_s(),
-        consecutive_failures = scheduler.consecutive_failures(),
-        inflight_count = inflight.len() as u32,
-        in_flight_requests = ?inflight,
-        "service stopping",
-    );
-
-    let drain_started = std::time::Instant::now();
-    let drain_results = scheduler.drain(PLATFORM_BUDGET).await;
-    let exit_code = if drain_results.iter().any(|s| s.outcome != "ok") { 75 } else { 0 };
-
-    pim_windows_oplog::emit(ids::SERVICE_STOPPED, &service_stopped_payload(exit_code, &drain_results, PLATFORM_BUDGET))?;
-    tracing::info!(
-        op = "service.stopped",
-        service = "pim-offline-agent",
-        exit_code,
-        drain_total_ms = drain_started.elapsed().as_millis() as u64,
-        aborted_steps = drain_results.iter().filter(|s| s.outcome != "ok").count() as u32,
-        platform_budget_ms = PLATFORM_BUDGET.as_millis() as u64,
-        drain_steps = ?drain_results,
-        "service stopped",
-    );
-
-    std::process::exit(exit_code);
-}
-```
-
-The auditor's Event Viewer now shows IDs 41010 / 41011 / 41012
-with the full payload; the rolling log carries the same fields
-under structured keys for Loki / Splunk / Datadog correlation.
-
-## Where this is currently enforced
-
-| Binary | Status |
-| --- | --- |
-| `pim-offline-server` (Windows SCM service + systemd) | partial — emits PROCESS_STARTED / PROCESS_STOPPED; service-lifecycle triplet pending |
-| `pim-offline-agent` (Windows SCM service + systemd + launchd) | partial — same |
-| `pim-offline-{client,server}-configurator-{win32,tauri}` | n/a — configurators are not services; they emit per-action audit events instead |
-| `pim-offline-client-elevate-{win32,tauri}` | n/a — modal helpers, not services |
-| `pim-product-launcher-{slint,win32}` | n/a — not services |
-| `pim-windows-oplog::ids::SERVICE_STARTED/STOPPING/STOPPED` constants (41010/41011/41012) | new — Wave 1 ID allocation; message catalog entry pending |
+**Fix:** install the shutdown handler first; emit
+`pim_windows_oplog::emit(ids::SERVICE_STARTED, …)` plus the matching
+`tracing::info!(op = "service.started", …)` with every field in the
+table above; on shutdown emit `SERVICE_STOPPING` with `reason` and
+`http.snapshot_inflight()`; after `scheduler.drain(PLATFORM_BUDGET)`
+emit `SERVICE_STOPPED` with `drain_steps`, deriving `exit_code = 75`
+when any step did not return `"ok"`.
 
 ## Cross-references
 
-- [`shutdown-compliance.mdc`](shutdown-compliance.mdc) — the
- platform drain budgets every `drain_total_ms` value must
- respect; `platform_budget_ms` in the `service.stopped`
- payload is the literal value from that rule's table.
-- [`silent-failure-is-a-bug.mdc`](silent-failure-is-a-bug.mdc)
- (anti-flake clause 1) — the structured field shape
- (`op`, `service`, `error`, `recovery`) is shared with
- every per-cycle error log.
+- [`shutdown-compliance.mdc`](shutdown-compliance.mdc) — source of the
+  `platform_budget_ms` values `drain_total_ms` must respect.
 - [`bounded-network-io-in-drains.mdc`](bounded-network-io-in-drains.mdc)
- (R4) — the `in_flight_requests` field in `service.stopping`
- comes from the bounded HTTP helper's outstanding-request
- tracker.
-- [`runtime-status-flags-test-fixtures.mdc`](runtime-status-flags-test-fixtures.mdc)
- (R7) — `warnings_count` in `service.started` is the
- fingerprint-warnings count.
-- [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §5 —
- the masking contract URLs / fingerprints in these records
- must honor; the redact helpers in
- `pim_app_config::windows_oplog::redact::*` are the right
- place to render `service_uri` / `in_flight_requests[].url`.
-- `pim-windows-oplog/docs/WINDOWS_OPERATIONAL_EVENT_LOG.md` —
- the canonical reference for adding new event IDs and
- registering the message catalog.
+  (R4) — supplies the `in_flight_requests` tracker.
+- [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §5 — masking
+  contract for `service_uri` / `in_flight_requests[].url`.
+- `pim-windows-oplog/docs/WINDOWS_OPERATIONAL_EVENT_LOG.md` — adding new
+  event IDs and registering the message catalog.
+- Per-binary adoption status: `core-assets/docs/dev/rule-enforcement-status.md`.
 - Origin: post-2026-05-19 win32 configurator audit (Wave 1).

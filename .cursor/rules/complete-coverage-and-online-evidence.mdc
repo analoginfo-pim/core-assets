@@ -20,8 +20,8 @@ organization does not need a tool that covers the parts that were convenient to
 build. It needs every obligation it carries to land somewhere in the product
 with a document to read, a workflow that drives it to done, and a record that
 survives an assessor asking "show me." Anything the product declines to serve
-becomes a spreadsheet, a shared drive, or a binder in a filing cabinet — and
-those are exactly the artifacts that fail an assessment interview.
+becomes a spreadsheet, a shared drive, or a binder in a filing cabinet — exactly
+the artifacts that fail an assessment interview.
 
 ## The rule
 
@@ -34,9 +34,10 @@ those are exactly the artifacts that fail an assessment interview.
 > theirs, the artifact and the record are ours to provide.**
 
 Coverage and honesty are **both** required, simultaneously. This rule says what
-the product must **provide**. [`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc)
-says what the product may **claim**. Complete coverage never upgrades a status
-to Met, and honest status reporting never excuses shipping nothing.
+the product must **provide**.
+[`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc) says what the
+product may **claim**. Complete coverage never upgrades a status to Met, and
+honest status reporting never excuses shipping nothing.
 
 ## 1. The three-part coverage test
 
@@ -51,8 +52,7 @@ work, whether or not the requirement is "customer-owned."
 
 Three-part coverage is the working definition of "done" for a compliance
 feature. A document library with no assignment is a resource with no workflow.
-An assignment with no signed record is a workflow with no evidence. Both are
-half-built.
+An assignment with no signed record is a workflow with no evidence.
 
 ## 2. Evidence is gathered online, by us
 
@@ -61,7 +61,7 @@ half-built.
 > attachment to an administrator, or file a signed sheet of paper, the product
 > has not covered that need.
 
-Every evidence record the product produces must be:
+Every evidence record must be:
 
 | Property | Requirement |
 | --- | --- |
@@ -73,36 +73,34 @@ Every evidence record the product produces must be:
 | **Exportable** | Leaves the product in a form an assessor accepts, with the honesty framing attached |
 | **Integrity-checkable** | Uploaded artifacts carry a content hash so a swapped file is detectable |
 
-Paper and out-of-band paths may exist as a **fallback the product records**
-(an operator attests that an offline act occurred, with a reason and an
-attachment). They may never be the **only** path. The difference is whether
-the product ends up holding the record.
+Paper and out-of-band paths may exist as a **fallback the product records** (an
+operator attests that an offline act occurred, with a reason and an attachment).
+They may never be the **only** path. The difference is whether the product ends
+up holding the record.
 
 ## 3. The workforce is a first-class surface
 
 The directive says "and their workforces." Coverage that only serves the
 administrator is half coverage. The person who handles the data needs their own
 path: receive the assignment, read the material, and attest — without an
-administrator doing it for them, and without needing to understand the
-framework to complete the task.
+administrator doing it for them, and without needing to understand the framework
+to complete the task.
 
 That surface inherits every accessibility and plain-language obligation:
-
-- Written for a reader with no IT or security background, image rich, original
- content only — [`training-materials-plain-language-and-images.mdc`](training-materials-plain-language-and-images.mdc).
-- Section 508 / WCAG 2.0 AA — [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §2.
-- Readable contrast on content people must actually read —
- [`readable-read-only-controls.mdc`](readable-read-only-controls.mdc).
-- Low-friction authentication for a non-administrative worker, without
- weakening the security floor — [`baseline-security-perfect-always.mdc`](baseline-security-perfect-always.mdc).
-
-A workflow a worker cannot complete without help from IT is a workflow that
-will not be completed, and an assessment interview finds that out.
+sixth-grade reading level and image-rich original content
+([`training-materials-plain-language-and-images.mdc`](training-materials-plain-language-and-images.mdc)),
+Section 508 / WCAG 2.0 AA
+([`enterprise-compliance.mdc`](enterprise-compliance.mdc) §2), readable contrast
+([`readable-read-only-controls.mdc`](readable-read-only-controls.mdc)), and
+low-friction authentication that does not weaken the security floor
+([`baseline-security-perfect-always.mdc`](baseline-security-perfect-always.mdc)).
+A workflow a worker cannot complete without help from IT will not be completed,
+and an assessment interview finds that out.
 
 ## 4. "Customer-owned" is not an exit
 
-The honest split is narrower than it has been treated. Decompose every
-"customer-owned" requirement before accepting it as out of scope:
+Decompose every "customer-owned" requirement before accepting it as out of
+scope:
 
 | Genuinely not ours | Ours to provide anyway |
 | --- | --- |
@@ -111,22 +109,16 @@ The honest split is narrower than it has been treated. Decompose every
 | A physical act in the world (a lock, a fence, a shredder, a background check) | The policy, the procedure, the checklist, the completion record, the attestation, the evidence attachment |
 | A third-party attestation we do not issue | The intake, storage, hashing, expiry tracking, and renewal reminder for it |
 
-Worked reframes, in the spirit the operator intends:
-
-- **Physical protection (PE).** We do not install a door. We do provide the
- visitor-log workflow, the escort attestation, the facility-access review
- cycle, the policy template, and the attachment slot for a photograph or a
- badge-system export.
-- **Personnel security (PS).** We do not run a background check. We do provide
- the screening checklist, the completion record, the onboarding and
- offboarding workflow, the reminder, and the evidence attachment for the
- provider's result letter.
-- **Awareness and training (AT).** We do not decide the curriculum is adequate
- for their environment. We do provide the documents, the schedule, the
- assignment, the reminder ladder, the signed attestation, and the completion
- report.
-- **Media protection (MP).** We do not stand over a shredder. We do provide the
- destruction procedure, the witnessed-destruction attestation, and the log.
+Worked reframes. **PE:** we do not install a door; we do provide the visitor-log
+workflow, escort attestation, facility-access review cycle, policy template, and
+the attachment slot for a badge-system export. **PS:** we do not run a
+background check; we do provide the screening checklist, completion record,
+onboarding/offboarding workflow, reminder, and the attachment for the provider's
+result letter. **AT:** we do not decide the curriculum is adequate for their
+environment; we do provide the documents, schedule, assignment, reminder ladder,
+signed attestation, and completion report. **MP:** we do not stand over a
+shredder; we do provide the destruction procedure, the witnessed-destruction
+attestation, and the log.
 
 In each case the product ends up holding evidence the customer would otherwise
 keep in a spreadsheet. That is the whole point of the directive.
@@ -139,59 +131,59 @@ what would close it. The canonical registers are
 `pim-offline-server/docs/dev/cmmc-800-53-full-gap-analysis.md` and
 `cmmc-800-53-closeable-dev-plan.md`.
 
-A need that is **permanently** outside software's reach is recorded with that
-reason, and still gets an **evidence intake path** per §4. "Customer forever"
-rows are re-read against §4 before being accepted — several of them are
-actually "verdict is theirs, record is ours."
+A need **permanently** outside software's reach is recorded with that reason,
+and still gets an **evidence intake path** per §4. "Customer forever" rows are
+re-read against §4 before being accepted — several of them are actually "verdict
+is theirs, record is ours."
 
 ## 6. Forbidden constructs
 
-- Shipping a document library with no assignment, schedule, or completion
- record and describing the requirement as addressed.
+- Shipping a document library with no assignment, schedule, or completion record
+  and describing the requirement as addressed.
 - Shipping a workflow whose completion leaves no durable, attributable record.
 - Telling a customer, in documentation or UI copy, to track something in a
- spreadsheet, a shared drive, an email thread, or on paper as the only path.
+  spreadsheet, a shared drive, an email thread, or on paper as the only path.
 - Accepting a requirement as customer-owned without running the §4
- decomposition, when a resource, workflow, or evidence slot is clearly
- buildable.
+  decomposition, when a resource, workflow, or evidence slot is clearly
+  buildable.
 - An administrator-only surface for an obligation a workforce member personally
- carries.
+  carries.
 - Evidence records that are client-timestamped, mutable in place where audit
- requires append-only, unattributable, or reachable only by reading a log.
+  requires append-only, unattributable, or reachable only by reading a log.
 - Uploaded artifacts stored without a content hash.
 - Reading "COMPLETELY cover" as license to stamp Met, certified, compliant, or
- assessment-ready. Coverage is what we provide; status is what we proved.
- Both rules bind at once.
-- Dropping acceptance criteria or verification to claim broader coverage
- sooner. Breadth never buys its way past
- [`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc)
- or the sibling proof rules.
+  assessment-ready. Coverage is what we provide; status is what we proved. Both
+  rules bind at once.
+- Dropping acceptance criteria or verification to claim broader coverage sooner.
+  Breadth never buys its way past
+  [`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc)
+  or the sibling proof rules.
 
 ## 7. Required agent behavior
 
 1. When planning or implementing a compliance feature, state the three-part
- coverage row explicitly: what the resource is, what the workflow is, and
- where the evidence lands. If a column is empty, say so and say why.
-2. When a requirement looks customer-owned, run the §4 decomposition in the
- open before accepting it. Name what remains genuinely theirs.
+   coverage row explicitly: what the resource is, what the workflow is, and
+   where the evidence lands. If a column is empty, say so and say why.
+2. When a requirement looks customer-owned, run the §4 decomposition in the open
+   before accepting it. Name what remains genuinely theirs.
 3. When adding an evidence record, satisfy every property in §2 in the same
- change set. A record added now and made attributable later is a record an
- assessor rejects.
+   change set. A record added now and made attributable later is a record an
+   assessor rejects.
 4. Report coverage and status as two separate statements. "Resource, workflow,
- and evidence are live; the assessment verdict remains the assessor's" is
- honest and complete. "Covered, therefore Met" is neither.
+   and evidence are live; the assessment verdict remains the assessor's" is
+   honest and complete. "Covered, therefore Met" is neither.
 5. Update the owning gap register in the same change set when coverage moves.
 6. Mirror this rule to `core-assets/.cursor/rules/` when editing the workspace
- copy — the workspace `.cursor` directory is not a git root
- ([`auto-commit-push.mdc`](auto-commit-push.mdc)).
+   copy — the workspace `.cursor` directory is not a git root
+   ([`auto-commit-push.mdc`](auto-commit-push.mdc)).
 
 ## Worked violation to fix
 
 **Violation.** A release ships a library of awareness documents an operator can
-render and download. The gap analysis row for the Awareness and Training family
-is updated to say the product now addresses it. There is no way to assign a
-document to a named person, no due date, no reminder, and no record that anyone
-read anything. The customer is told to track completion in their HR system.
+render and download. The gap analysis row for Awareness and Training is updated
+to say the product now addresses it. There is no way to assign a document to a
+named person, no due date, no reminder, and no record that anyone read anything.
+The customer is told to track completion in their HR system.
 
 Two rules broken at once: coverage, because the workflow and evidence columns
 are empty; and honesty, because a render was described as addressing a control.
@@ -200,22 +192,19 @@ are empty; and honesty, because a render was described as addressing a control.
 attestation ledger that names the person, the document version, and the UTC
 server timestamp. Expose a completion report and feed the evidence into the
 assessment binder. Then state both halves plainly: the product now provides the
-resource, the workflow, and the record; whether the content is adequate for
-that environment, and whether the control is satisfied, remain the customer's
-and the assessor's calls.
+resource, the workflow, and the record; whether the content is adequate for that
+environment, and whether the control is satisfied, remain the customer's and the
+assessor's calls.
 
 ## Cross-references
 
-| Rule | Relationship |
-| --- | --- |
-| [`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc) | The counterweight — this rule sets what we build, that rule sets what we claim |
-| [`nist-800-53-floor.mdc`](nist-800-53-floor.mdc) | 800-53 moderate is the floor coverage is measured against |
-| [`enterprise-compliance.mdc`](enterprise-compliance.mdc) | US English, Section 508, FIPS, AU-2/3/9/12 audit payload for every evidence record |
-| [`baseline-security-perfect-always.mdc`](baseline-security-perfect-always.mdc) | Broader coverage never weakens the auth, session, or crypto floor |
-| [`training-materials-plain-language-and-images.mdc`](training-materials-plain-language-and-images.mdc) | The workforce-facing resources this rule requires must be readable by their audience |
-| [`assessment-binder-section-content.mdc`](assessment-binder-section-content.mdc) | Evidence that reaches the binder needs real content, not chrome |
-| [`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc) | Every surface this rule adds still needs visual proof |
-| [`single-source-of-truth-for-settings.mdc`](single-source-of-truth-for-settings.mdc) | Evidence and configuration each have one canonical store |
+[`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc) is the
+counterweight — this rule sets what we build, that one sets what we may claim.
+[`workforce-identity-and-assessment-readiness.mdc`](workforce-identity-and-assessment-readiness.mdc)
+is the workforce half: who the record is about and how they are identified.
+800-53 moderate ([`nist-800-53-floor.mdc`](nist-800-53-floor.mdc)) is the floor
+coverage is measured against, and every evidence record carries the AU-2/3/9/12
+payload from [`enterprise-compliance.mdc`](enterprise-compliance.mdc).
 
 ## Origin
 
@@ -224,5 +213,5 @@ every resource, workflow, and attestation a regulated organization and its
 workforce needs, with the evidence gathered through the product's own online
 systems. Written down because prior work repeatedly stopped at the resource
 layer and recorded the requirement as addressed, and because "customer-owned"
-had been accepted as a reason to ship nothing rather than as a statement about
-who renders the verdict.
+had been accepted as a reason to ship nothing rather than a statement about who
+renders the verdict.

@@ -1,35 +1,29 @@
 ---
-description: Platform settings and secret backends (HKLM, libsecret, Keychain) store one typed scalar per key. JSON objects and arrays belong in import-staging settings.json only; never stringify serde_json documents into registry or keyring values.
-alwaysApply: true
+description: Registry, TOML settings files, and OS secret backends store ONE typed scalar per key. Never persist a serde_json object/array (or a string that parses as JSON) through set_setting / set_secret / AppConfig::set / set_secret_extra — use json_value_to_scalar_string and reject_json_document at every boundary.
+globs: "**/{*.rs,app-config.toml}"
+alwaysApply: false
 ---
 
 # No JSON documents in registry or keyring (scalar-only platform storage)
 
-The AIC PIM workspace routes runtime configuration through
-**`pim-app-config`** and **`pim-config-storage`**. On Windows the
-platform store is **HKLM** (`REG_SZ`, `REG_DWORD`, `REG_BINARY` per
-manifest `value_type`). Secrets live in the **OS secret backend**
-(Credential Manager, Keychain, Secret Service). On Linux and macOS
-the non-secret surface is a **TOML settings file** under
-`/etc/aic/<program_id>/` or `/Library/Preferences/…`, with secrets
-in the keyring.
+Runtime configuration routes through **`pim-app-config`** and
+**`pim-config-storage`**. On Windows the platform store is HKLM
+(`REG_SZ`, `REG_DWORD`, `REG_BINARY` per manifest `value_type`); secrets
+live in the OS secret backend (Credential Manager, Keychain, Secret
+Service). On Linux and macOS the non-secret surface is a TOML file under
+`/etc/aic/<program_id>/` or `/Library/Preferences/…`.
 
-Those backends are **scalar-only**: each key holds **one** typed
-scalar string (or the platform-native encoding of a bool / integer /
-base64 blob). They are not document stores. A value like
-`{"id":"…","shape":"…"}` written to HKLM or the keyring is opaque to
-operators, breaks SIEM parsers, and cannot round-trip through the
-configurator's typed widgets.
+Those backends are **scalar-only**: one typed scalar per key. They are
+not document stores. A value like `{"id":"…","shape":"…"}` in HKLM or the
+keyring is opaque to operators, breaks SIEM parsers, and cannot
+round-trip through the configurator's typed widgets.
 
-**JSON documents belong in the import-staging `settings.json` file
-only** (see
+JSON documents belong in the import-staging `settings.json` **only** (see
 [`single-source-of-truth-for-settings.mdc`](single-source-of-truth-for-settings.mdc)).
-The staging file may contain nested objects (for example a full
-`enrollment_token` block). The **import path** must decompose those
-blocks into manifest-declared scalars and dedicated secret-extra keys
-**before** anything reaches `AppConfig::set` or
-`AppConfig::set_secret_extra`. After import, runtime reads never open
-`settings.json`.
+The staging file may nest (for example a full `enrollment_token` block);
+the **import path** decomposes those blocks into manifest-declared
+scalars and dedicated secret-extra keys **before** anything reaches
+`AppConfig::set` or `AppConfig::set_secret_extra`.
 
 ## The rule
 
@@ -39,172 +33,96 @@ blocks into manifest-declared scalars and dedicated secret-extra keys
 > `set_setting`, `set_secret`, `AppConfig::set`, or
 > `AppConfig::set_secret_extra`. Use
 > `pim_app_config::json_value_to_scalar_string` and
-> `pim_app_config::reject_json_document` at every boundary that
-> copies staging JSON into platform storage.**
+> `pim_app_config::reject_json_document` at every boundary that copies
+> staging JSON into platform storage.**
 
-Concretely:
-
-1. **`AppConfig::set` and `AppConfig::set_secret_extra` call
-   `reject_json_document(value)`** before any backend write. A CLI
-   or GUI that passes `{"foo":1}` as a "string" value must fail with
-   `AppConfigError::NonScalarValue`, not store the blob.
+1. **`AppConfig::set` and `set_secret_extra` call
+   `reject_json_document(value)`** before any backend write. A CLI or
+   GUI passing `{"foo":1}` as a "string" fails with
+   `AppConfigError::NonScalarValue` rather than storing the blob.
 2. **`import_settings_file` and product bridges call
-   `json_value_to_scalar_string`** for each manifest key in a staging
-   object. `Value::Object` / `Value::Array` return
-   `NonScalarValue` — the importer skips or errors; nested blocks use
-   a dedicated handler (enrollment token, etc.).
-3. **Secret-extra keys hold scalars only** (token id, shape name,
-   opaque PEM fingerprint). Metadata that used to live in a single
-   JSON secret (`enrollment_token_meta`) is migrated to separate
-   scalar extras; never reintroduce a JSON document in the keyring.
-4. **`pim-config-storage` backends** expose `put(key, scalar_string)`;
-   callers above this layer enforce the contract. Do not add a
-   "store JSON blob" API to the storage crate.
+   `json_value_to_scalar_string`** per manifest key. `Value::Object` /
+   `Value::Array` return `NonScalarValue`; the importer skips or errors,
+   and nested blocks use a dedicated handler.
+3. **Secret-extra keys hold scalars only** (token id, shape name, PEM
+   fingerprint). Metadata that once lived in a single JSON secret
+   (`enrollment_token_meta`) is migrated to separate scalar extras.
+4. **`pim-config-storage` backends expose `put(key, scalar_string)`.**
+   Callers above that layer enforce the contract; do not add a "store
+   JSON blob" API to the storage crate.
 
 ## Canonical helpers
 
-Implementation lives in
-[`pim-app-config/crates/pim-app-config/src/scalar_value.rs`](../../pim-app-config/crates/pim-app-config/src/scalar_value.rs):
+In
+[`pim-app-config/crates/pim-app-config/src/scalar_value.rs`](../../pim-app-config/crates/pim-app-config/src/scalar_value.rs),
+re-exported from `pim_app_config`:
 
 | Function | Role |
-| -------- | ---- |
-| `json_value_to_scalar_string(&Value) -> Result<Option<String>>` | Converts staging `string` / `bool` / `number` / `null` to the string written by `AppConfig::set`. Rejects objects and arrays. |
-| `reject_json_document(&str) -> Result<()>` | Rejects string values that trim to a parseable JSON object or array (even when `value_type = "string"` in the manifest). |
+| --- | --- |
+| `json_value_to_scalar_string(&Value) -> Result<Option<String>>` | Converts staging `string` / `bool` / `number` / `null` to the string `AppConfig::set` writes. Rejects objects and arrays. |
+| `reject_json_document(&str) -> Result<()>` | Rejects string values that trim to a parseable JSON object or array, even when `value_type = "string"`. |
 
-Re-exported from `pim_app_config` in `lib.rs`; import as
-`pim_app_config::json_value_to_scalar_string` /
-`pim_app_config::reject_json_document`.
-
-## Required behavior — library surface
+## Required patterns
 
 ```rust
-// pim-app-config/crates/pim-app-config/src/app_config.rs
-pub fn set(&self, key: &str, value: &str) -> Result<()> {
-    let Some(def) = self.manifest.find(key) else {
-        return Err(AppConfigError::UnknownKey { key: key.to_string() });
-    };
-    reject_json_document(value)?;
-    match def.kind {
-        ValueKind::Setting => set_setting(&self.paths, key, value, Some(def.value_type)),
-        ValueKind::Secret => set_secret(&self.paths, key, value),
-    }
-}
-
-pub fn set_secret_extra(&self, key: &str, value: &str) -> Result<()> {
-    reject_json_document(value)?;
-    set_secret(&self.paths, key, value)
+// AppConfig::set / set_secret_extra
+reject_json_document(value)?;
+match def.kind {
+    ValueKind::Setting => set_setting(&self.paths, key, value, Some(def.value_type)),
+    ValueKind::Secret  => set_secret(&self.paths, key, value),
 }
 ```
 
 ```rust
-// pim-app-config/crates/pim-app-config/src/settings_import.rs
-use crate::json_value_to_scalar_string;
-
-// For each (key, value) in the staging file object:
+// settings_import — per (key, value) in the staging object
 if let Some(scalar) = json_value_to_scalar_string(value)? {
     config.set(&key, &scalar)?;
 }
-// Objects/arrays: Err(NonScalarValue) or dedicated import branch — never set().
+// Objects/arrays: Err(NonScalarValue) or a dedicated import branch — never set().
 ```
 
-```rust
-// pim-offline-client/src/app_config_bridge.rs — persist_from_settings
-if let Ok(Some(s)) = pim_app_config::json_value_to_scalar_string(val) {
-    cfg.set(k, &s)?;
-} else {
-    tracing::warn!(
-        key = %k,
-        recovery = "skip persist; nested values belong in dedicated import paths",
-        "OfflineSettings field is not a scalar; refusing to write JSON to platform storage",
-    );
-}
-```
-
-## Required behavior — CLI surface
-
-`pim-app-config-cli` `set` (and every per-binary embedded clone)
-calls `AppConfig::set`, so `NonScalarValue` propagates to stderr with
-a non-zero exit. Scripts should treat it like manifest validation
-failure (distinct from `UnknownKey`).
+CLI `set` inherits the gate through `AppConfig::set`, so
+`NonScalarValue` reaches stderr with a non-zero exit:
 
 ```text
-$ pim-offline-agent-configurator-cli set SERVER_PUBLIC_URL='{"host":"x"}'
 error: non-scalar configuration value: configuration values must be scalars, not JSON documents
 ```
 
 ## Forbidden constructs
 
-In `pim-app-config`, `pim-config-storage`, configurators, and daemon
-bridge code:
-
-- `value.to_string()` on a `serde_json::Value::Object` or
-  `::Array` before `set_setting` / `set_secret` / `AppConfig::set`.
-- `serde_json::to_string(&nested_obj)` into a single registry value
-  or secret-extra key (for example `enrollment_token_meta =
-  '{"id":"…","shape":"…"}'`).
+- `value.to_string()` on a `Value::Object` / `Value::Array` before
+  `set_setting` / `set_secret` / `AppConfig::set`.
+- `serde_json::to_string(&nested_obj)` into a single registry value or
+  secret-extra key (e.g. `enrollment_token_meta = '{"id":"…"}'`).
 - `backend.put(key, &json_blob, …)` bypassing `reject_json_document`.
-- CLI or GUI "Save" paths that accept pasted JSON for a scalar
-  manifest field without validation.
-- A `settings_import` loop that calls `config.set` on every key in
-  the staging file without `json_value_to_scalar_string` (nested keys
-  must use explicit handlers).
+- CLI or GUI "Save" paths accepting pasted JSON for a scalar manifest
+  field without validation.
+- A `settings_import` loop calling `config.set` on every staging key
+  without `json_value_to_scalar_string` — nested keys need explicit
+  handlers.
 
 ## Worked violation → fix
 
-**Violation** (conceptual import path):
+**Violation:** `for (k, v) in staging_obj { config.set(&k, &v.to_string())?; }`
+— serializes `{"id":"x"}` straight into HKLM.
 
-```rust
-for (k, v) in staging_obj {
-    config.set(&k, &v.to_string())?; // serializes {"id":"x"} into HKLM
-}
-```
-
-**Fix**:
-
-```rust
-for (k, v) in staging_obj {
-    if let Some(scalar) = json_value_to_scalar_string(v)? {
-        config.set(&k, &scalar)?;
-    } else {
-        // null → skip or unset per product policy
-    }
-}
-// enrollment_token: { "id": "…", "plaintext": "…" } → dedicated path,
-// not the generic loop above.
-```
-
-## Where this is currently enforced
-
-| Surface | Status |
-| ------- | ------ |
-| `pim-app-config` (`scalar_value.rs`, `AppConfig::set`, `set_secret_extra`) | **enacted** |
-| `pim-app-config` (`settings_import::import_settings_file`) | **enacted** — scalar keys via `json_value_to_scalar_string` |
-| `pim-app-config-cli` `set` / embedded configurators | **enacted** — inherits `AppConfig::set` gate |
-| `pim-offline-client` `app_config_bridge::persist_from_settings` | **enacted** |
-| `pim-offline-client` enrollment token import (scalar id/shape extras) | **enacted** — legacy JSON meta migration |
-| `pim-config-storage` backends | compliant by API shape (`put` takes scalar strings); no JSON helper |
-| `pim-offline-server` app-config bridge / import | audit ongoing — must mirror agent pattern |
-| `pim-offline-*-configurator-{win32,tauri}` Save flows | **enacted** via `AppConfig::set` in-process |
-
-The "audit ongoing" rows are not necessarily defective; they are
-unverified. A future PR that stringifies a JSON object into HKLM or
-the keyring is rejected at review.
+**Fix:** `for (k, v) in staging_obj { if let Some(s) =
+json_value_to_scalar_string(v)? { config.set(&k, &s)?; } }`, with
+`enrollment_token: { "id": …, "plaintext": … }` routed through its own
+dedicated path rather than the generic loop.
 
 ## Cross-references
 
 - [`manifest-gates-storage-writes.mdc`](manifest-gates-storage-writes.mdc)
- (R2) — unknown keys are refused before write; this rule constrains
- **shape** of values that pass the manifest gate.
+  (R2) — unknown keys are refused before write; this rule constrains the
+  **shape** of values that pass that gate.
 - [`single-source-of-truth-for-settings.mdc`](single-source-of-truth-for-settings.mdc)
- (R3) — `settings.json` is import-staging only; JSON nesting stays
- there until import decomposes it.
-- [`pim-app-config/docs/CONFIGURATION_STORAGE.md`](../../pim-app-config/docs/CONFIGURATION_STORAGE.md)
- — per-platform paths, single-store discipline, enrollment token
- scalar extras.
+  (R3) — `settings.json` is import-staging only.
 - [`no-panic.mdc`](no-panic.mdc) — `NonScalarValue` propagates via
- `Result`; never panic on rejected JSON.
-- [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §3 CM-6 /
- SI-10 — scalar-only storage supports typed validation and audit
- clarity.
-- Origin: Wave 3 / Track G single-store discipline; formalized as a
- workspace rule May 2026.
+  `Result`; never panic on rejected JSON.
+- [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §3 — CM-6 /
+  SI-10; scalar-only storage supports typed validation and audit clarity.
+- `pim-app-config/docs/CONFIGURATION_STORAGE.md` — per-platform paths and
+  enrollment-token scalar extras.
+- Per-surface adoption status: `core-assets/docs/dev/rule-enforcement-status.md`.
+- Origin: Wave 3 / Track G single-store discipline.

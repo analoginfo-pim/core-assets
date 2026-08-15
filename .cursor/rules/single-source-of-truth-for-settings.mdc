@@ -1,202 +1,119 @@
 ---
-description: Every binary in this workspace names exactly one canonical settings store. Any second store that historically held the same data becomes a one-shot migration source, read once at startup and never written to again.
-alwaysApply: true
+description: Every binary names exactly ONE canonical settings store in its app-config.toml manifest; runtime reads resolve through that store only. A legacy store is a one-shot startup migration source (gated through the manifest, then sentinel-marked), never a per-read fallback. Writes always go to the canonical store.
+globs: "**/{*.rs,app-config.toml}"
+alwaysApply: false
 ---
 
 # Single source of truth for settings (R3)
 
-The AIC PIM workspace has historically grown **two parallel stores**
-for several binaries' settings:
+Several binaries historically grew **two parallel stores**: a
+product-specific JSON file
+(`%PROGRAMDATA%\AIC\OfflinePimAgent\settings.json`,
+`/etc/aic/pim-offline-agent/settings.json`) used by the legacy import
+path, and the `pim-app-config` platform store (HKLM under
+`HKLM\Software\AnalogInfo\<program_id>`; libsecret / Keychain plus
+`/etc/aic/<program_id>/settings.toml` elsewhere) used by the
+configurator GUIs and the manifest-driven flow.
 
-- The product-specific JSON file (`%PROGRAMDATA%\AIC\OfflinePimAgent\settings.json`,
- `/etc/aic/pim-offline-agent/settings.json`) — used by the legacy
- import path.
-- The `pim-app-config` platform store (Windows Registry under
- `HKLM\Software\AnalogInfo\<program_id>`, libsecret / Keychain +
- `/etc/aic/<program_id>/settings.toml` elsewhere) — used by the
- configurator GUIs and the modern manifest-driven flow.
-
-When a binary reads both, the daemon's "effective" configuration
-becomes a function of read order, file mtime, and whether the
-configurator was run last. The post-2026-05-19 win32 configurator
-audit caught a case where the agent read its old JSON file AFTER
-the operator had updated the same key in HKLM via the configurator,
-silently reverting the change. This rule prevents that class of bug
-from recurring.
+When a binary reads both, "effective" configuration becomes a function
+of read order, file mtime, and whether the configurator ran last. The
+audit caught an agent reading its old JSON **after** the operator had
+updated the same key in HKLM, silently reverting the change.
 
 ## The rule
 
-> **Every binary in this workspace names exactly ONE canonical
-> settings store in its `app-config.toml` manifest. Reads at
-> runtime resolve through that store and only that store. Any
-> second store that historically held the same data is a
-> migration source — read once on startup if the canonical
-> store has not been initialized for this machine, then written
-> through to the canonical store and never read again. Writes
+> **Every binary names exactly ONE canonical settings store in its
+> `app-config.toml` manifest. Reads at runtime resolve through that
+> store and only that store. Any second store that historically held the
+> same data is a migration source — read once on startup if the
+> canonical store has not been initialized for this machine, then
+> written through to the canonical store and never read again. Writes
 > ALWAYS go to the canonical store.**
 
-Concretely:
+1. **Every manifest declares its canonical store.** Today it is implicit
+   in the `pim-config-storage` backend selection per OS (registry on
+   Windows, libsecret + TOML elsewhere). When the typed field ships, the
+   manifest names it explicitly.
+2. **The startup migration is one-shot.** On first boot after upgrade,
+   if the canonical store has no rows for this machine AND the legacy
+   store does, copy each value through `AppConfig::set_value` (so R2
+   validation runs), then rename the legacy file to
+   `<name>.migrated-<ISO-8601-UTC>.json` (Unix) or set a `Migrated`
+   `REG_DWORD = 1` sentinel under the legacy key (Windows). Later boots
+   see the sentinel and skip entirely.
+3. **The migration runs through the manifest gate.** A legacy key the
+   new manifest does not declare produces a `warn!` naming the orphan
+   (no values) and stays in the legacy file for the operator. It is
+   neither silently dropped nor written to the canonical store.
+4. **Writes ALWAYS go to the canonical store.** No path may write the
+   legacy file after migration. Legacy `Settings::save_to_file` helpers
+   are removed or renamed
+   `save_to_legacy_file_for_export_only` so intent is unambiguous.
 
-1. **Every `app-config.toml` declares `canonical_store = "<kind>"`**
- (or the equivalent typed field once `pim-app-config` 0.x grows
- it). Today the canonical store is implicit in the
- `pim-config-storage` backend selection per OS (registry on
- Windows, libsecret + TOML elsewhere). When the typed field
- ships, the manifest must name it explicitly.
-2. **The startup migration is one-shot.** On first daemon boot
- after upgrade, if the canonical store has no rows for this
- machine AND the legacy store has rows, the daemon copies each
- legacy value through `AppConfig::set_value` (so manifest
- validation runs — see R2), then renames the legacy file to
- `<name>.migrated-<ISO-8601-UTC>.json` (Linux/macOS) or sets a
- `Migrated` `REG_DWORD = 1` sentinel under the legacy key
- (Windows). Subsequent boots see the sentinel and skip the
- migration entirely.
-3. **The migration runs through the manifest gate** (R2). If a
- legacy file contains a key the new manifest does not declare,
- the daemon logs a `warn!` with the orphan list (no values) and
- leaves the orphan in the legacy file for the operator. It
- does NOT silently drop the orphan and it does NOT write it to
- the canonical store.
-4. **Writes ALWAYS go to the canonical store.** No code path may
- write the legacy file after the migration. The configurator
- GUIs writing through `AppConfig::set_value` already satisfy
- this; legacy `Settings::save_to_file` paths must be removed or
- renamed to `Settings::save_to_legacy_file_for_export_only` so
- the intent is unambiguous.
-
-## Per-binary canonical-store table
-
-This table is the single source of truth for "where does this
-binary read its settings from at runtime". Update it in the same
-change set when a binary's store changes. The detailed per-platform
-paths live in
-[`pim-app-config/docs/CONFIGURATION_STORAGE.md`](../../pim-app-config/docs/CONFIGURATION_STORAGE.md);
-this table summarizes the canonical / legacy split.
+## Per-binary canonical store
 
 | Binary | Canonical store | Legacy migration source (one-shot) |
 | --- | --- | --- |
-| `pim-offline-server` | `pim-app-config` platform store, program id `pim-offline-server` (HKLM on Windows, libsecret + `/etc/aic/pim-offline-server/settings.toml` elsewhere) | none — greenfield |
-| `pim-offline-agent` | `pim-app-config` platform store, program id `pim-offline-agent` (HKLM on Windows, libsecret + `/etc/aic/pim-offline-agent/settings.toml` elsewhere) | server-produced `settings.json` imported via `pim-offline-agent import-settings`; **NOT** read at runtime — see TODO below |
-| `pim-offline-client-configurator-{win32,tauri}` | same as `pim-offline-agent` (the configurator edits the agent's store) | n/a |
-| `pim-offline-client-elevate-{win32,tauri}` | none (writes nothing; reads pipe path only) | n/a |
-| `pim-offline-server-configurator-{win32,tauri}` | same as `pim-offline-server` (the configurator edits the server's store) | n/a |
+| `pim-offline-server` | `pim-app-config` platform store, program id `pim-offline-server` | none — greenfield |
+| `pim-offline-agent` | `pim-app-config` platform store, program id `pim-offline-agent` | server-produced `settings.json` imported via `pim-offline-agent import-settings`; **NOT** read at runtime |
+| `pim-offline-client-configurator-{win32,tauri}` | same as `pim-offline-agent` (edits the agent's store) | n/a |
+| `pim-offline-server-configurator-{win32,tauri}` | same as `pim-offline-server` | n/a |
+| `pim-offline-client-elevate-{win32,tauri}` | none (reads pipe path only) | n/a |
 | `pim-app-config` (sample CLI) | the manifest passed via `--manifest` | n/a |
 
-> **TODO** (Wave 1 Track C): `pim-app-config/docs/CONFIGURATION_STORAGE.md`
-> currently documents `pim-offline-agent` and `pim-offline-server`
-> as the two greenfield program ids and notes that the agent's
-> server-produced `settings.json` is imported via
-> `import-settings`. The doc should additionally call out that
-> **the agent does not read `settings.json` at runtime** — the
-> import is a one-shot translation into the canonical platform
-> store. Until that line is added to `CONFIGURATION_STORAGE.md`,
-> this rule is the authoritative statement of the contract.
+The agent does **not** read `settings.json` at runtime — the import is a
+one-shot translation into the canonical platform store. This rule is the
+authoritative statement of that contract; per-platform paths live in
+`pim-app-config/docs/CONFIGURATION_STORAGE.md`.
 
 ## Forbidden constructs
 
-- A daemon's runtime configuration resolver that reads `settings.json`
- directly (i.e. without going through `AppConfig::get_value`).
- Once the migration is complete, `settings.json` is a build
- artifact / import payload, not a runtime configuration source.
-- A `Settings::save(&self)` helper that writes the legacy file
- AFTER the migration has already run. Either delete the helper or
- rename it to `save_to_legacy_file_for_export_only(&self, &Path)`
- with a doc comment saying so.
-- A configurator GUI that writes to two stores ("HKLM AND the file
- because we used to do it that way"). The configurator writes
- only to the canonical store; the daemon picks it up on the next
- SCM restart (or hot-reload, if implemented).
-- Conditional resolution chains like `read HKLM → fall back to
- settings.json → fall back to manifest default` AT RUNTIME (per
- request). The fall-back to legacy is the **one-shot startup
- migration**, not a per-read fallback.
+- A runtime resolver that reads `settings.json` directly (without going
+  through `AppConfig::get_value`). Post-migration that file is an import
+  payload, not a configuration source.
+- A `Settings::save(&self)` helper that writes the legacy file after
+  migration. Delete it or rename it
+  `save_to_legacy_file_for_export_only(&self, &Path)` with a doc comment.
+- A configurator that writes to two stores ("HKLM AND the file because
+  we used to"). Write only the canonical store; the daemon picks it up
+  on the next restart or hot reload.
+- Per-read fallback chains (`read HKLM → fall back to settings.json →
+  fall back to manifest default`) **at runtime**. The legacy fallback is
+  the one-shot startup migration, not a per-request resolution step.
 
 ## Worked violation → fix
 
-**Violation** (today, conceptual, in the agent's settings
-resolver):
+**Violation:** `load()` reads the HKLM snapshot, then reads the JSON
+file, then merges one over the other. The operator's configurator edit
+is silently reverted or silently honored depending on history.
+
+**Fix:**
 
 ```rust
-impl Settings {
-    pub fn load(&self) -> Result<ResolvedSettings> {
-        let from_hklm = AppConfig::for_program("pim-offline-agent")?.snapshot()?;
-        let from_file = Self::load_from_file(&Self::default_path())?;
-        Ok(from_hklm.merged_over(from_file))
-    }
+pub fn load() -> Result<ResolvedSettings> {
+    let cfg = AppConfig::for_program("pim-offline-agent")?;
+    Self::migrate_from_legacy_once(&cfg)?;   // no-op once the sentinel is set
+    Ok(cfg.snapshot()?)                      // exactly ONE store
 }
 ```
 
-The operator updates `DISPLAY_NAME` via the configurator (HKLM
-write). The daemon restarts. `load()` reads HKLM, then reads the
-stale JSON file, then merges file-over-HKLM (or vice versa
-depending on the bug). The configurator change is silently
-reverted or silently honored depending on history.
-
-**Fix** (canonical store + one-shot startup migration):
-
-```rust
-impl Settings {
-    pub fn load() -> Result<ResolvedSettings> {
-        let cfg = AppConfig::for_program("pim-offline-agent")?;
-        Self::migrate_from_legacy_once(&cfg)?;
-        Ok(cfg.snapshot()?)
-    }
-
-    fn migrate_from_legacy_once(cfg: &AppConfig) -> Result<()> {
-        if cfg.has_been_initialized()? {
-            return Ok(());
-        }
-        let legacy = match Self::load_from_legacy_file() {
-            Ok(Some(s)) => s,
-            Ok(None) => return cfg.mark_initialized(),
-            Err(e) => {
-                tracing::warn!(error = ?e, "legacy settings.json unreadable; treating as empty");
-                return cfg.mark_initialized();
-            }
-        };
-        for (k, v) in legacy.into_typed_pairs() {
-            match cfg.set_value(&k, &v) {
-                Ok(()) => {}
-                Err(AppConfigError::UnknownKey { key, manifest }) => {
-                    tracing::warn!(%key, %manifest, "legacy settings.json contains key not declared in current manifest; preserved in legacy file for operator review");
-                }
-                Err(e) => return Err(e.into()),
-            }
-        }
-        Self::rename_legacy_to_migrated()?;
-        cfg.mark_initialized()
-    }
-}
-```
-
-The runtime resolver now goes through exactly ONE store. The
-migration runs once, gates through the manifest (R2), warns about
-orphans, and the legacy file is renamed so the next boot is a
-trivial no-op.
-
-## Where this is currently enforced
-
-| Binary | Status |
-| --- | --- |
-| `pim-offline-server` | compliant — greenfield, single store |
-| `pim-offline-agent` | partial — runtime resolver still consults `settings.json` in some paths; Wave 1 Track C owns the fix |
-| `pim-offline-client-configurator-{win32,tauri}` | inherits agent's compliance |
-| `pim-offline-server-configurator-{win32,tauri}` | compliant — writes only to HKLM via `AppConfig::set_value` |
-| `pim-offline-client-elevate-{win32,tauri}` | n/a — no settings store |
+`migrate_from_legacy_once` returns early on
+`cfg.has_been_initialized()?`, treats an unreadable legacy file as empty
+(with a `warn!`), writes each pair via `cfg.set_value` while logging
+`UnknownKey` orphans without aborting, renames the legacy file, and
+calls `cfg.mark_initialized()`.
 
 ## Cross-references
 
 - [`manifest-gates-storage-writes.mdc`](manifest-gates-storage-writes.mdc)
- (R2) — every migration write goes through `set_value`, so the
- manifest gate runs on legacy data too.
+  (R2) — every migration write goes through `set_value`, so the manifest
+  gate runs on legacy data too.
 - [`placeholder-guids-are-empty.mdc`](placeholder-guids-are-empty.mdc)
- (R6) — the legacy import is the place to translate magic-GUID
- sentinels into the empty string.
+  (R6) — the legacy import is where magic-GUID sentinels become empty.
 - [`manifest-defaults-must-be-realistic.mdc`](manifest-defaults-must-be-realistic.mdc)
- (R5) — defaults only apply when the canonical store has no row;
- the migration writes a row, so defaults are bypassed where the
- legacy file had a value.
-- `pim-app-config/docs/CONFIGURATION_STORAGE.md` — per-platform
- paths and the program-id table.
+  (R5) — defaults apply only when the canonical store has no row.
+- [`no-json-in-platform-storage.mdc`](no-json-in-platform-storage.mdc) —
+  the migration decomposes nested JSON into scalars before writing.
+- `pim-app-config/docs/CONFIGURATION_STORAGE.md` — per-platform paths.
+- Per-binary adoption status: `core-assets/docs/dev/rule-enforcement-status.md`.
 - Origin: post-2026-05-19 win32 configurator audit (Wave 1).

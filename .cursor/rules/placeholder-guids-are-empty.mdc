@@ -1,71 +1,35 @@
 ---
-description: The sentinel "not yet configured" in this workspace is the empty string ONLY — never "0", never "00000000-0000-0000-0000-000000000000", never "00000000-0000-0000-0000-000000000001", never "12345678-1234-1234-1234-123456789012". Validators check is_empty(). Provides a one-shot migration helper signature for crates with legacy magic-GUID values on disk.
-alwaysApply: true
+description: The only "not yet configured" sentinel for a GUID-shaped field is the empty string (or Option::None) — never "0", never the zero / zero-plus-one / sequence GUIDs. Crates with legacy magic-GUID data provide a one-shot normalize_legacy_guid_sentinel migration.
+globs: "**/{*.rs,*.sql,app-config.toml}"
+alwaysApply: false
 ---
 
 # Placeholder GUIDs are empty (R6)
 
-The AIC PIM workspace handles many GUID-shaped fields: `agent_uuid`,
-`tenant_guid`, `machine_guid`, `enrollment_token_id`, the per-tenant
-defaults the server hands agents at enrollment. The
-post-2026-05-19 win32 configurator audit found at least four
-different "placeholder" GUID values in active use to mean "the
-operator has not set this yet":
-
-| Sentinel | Where it was found |
-| --- | --- |
-| `""` (empty) | Most newer code paths |
-| `"0"` | A SQL upsert that defaulted `tenant_guid` |
-| `"00000000-0000-0000-0000-000000000000"` (zero GUID) | An old import path |
-| `"00000000-0000-0000-0000-000000000001"` (zero-plus-one) | A test fixture that leaked into a default |
-| `"12345678-1234-1234-1234-123456789012"` (sequence GUID) | The Win32 configurator's "Default Tenant" placeholder text |
-
-Five different ways to spell "not configured" produced five
-different downstream behaviors: a `WHERE tenant_guid = '0'` query
-that matched nothing, an enrollment that sent the zero GUID to the
-server and got back a confusing `404 tenant not found`, a Windows
-Event Log entry that showed the sequence GUID and looked like real
-machine data to the SIEM team. This rule pins the only valid
-sentinel — empty — and forbids the magic-GUID variants.
+The workspace handles many GUID-shaped fields: `agent_uuid`,
+`tenant_guid`, `machine_guid`, `enrollment_token_id`, per-tenant
+enrollment defaults. The audit found **five** different spellings of
+"not configured" in active use — `""`, `"0"`, the zero GUID, the
+zero-plus-one GUID, and the sequence GUID
+`12345678-1234-1234-1234-123456789012` — producing five different
+downstream behaviors: a `WHERE tenant_guid = '0'` that matched nothing,
+an enrollment that sent the zero GUID and got a confusing `404 tenant
+not found`, and an Event Log entry showing the sequence GUID that looked
+like real machine data to the SIEM team.
 
 ## The rule
 
-> **The sentinel "not yet configured" for any GUID-shaped field
-> in this workspace is the empty string. Never `"0"`, never
+> **The sentinel "not yet configured" for any GUID-shaped field in this
+> workspace is the empty string. Never `"0"`, never
 > `"00000000-0000-0000-0000-000000000000"`, never
 > `"00000000-0000-0000-0000-000000000001"`, never
-> `"12345678-1234-1234-1234-123456789012"`, never any other
-> placeholder GUID value. Validators check `String::is_empty()`
-> (or `Option::None` if the type is `Option<Uuid>`).**
+> `"12345678-1234-1234-1234-123456789012"`, never any other placeholder
+> GUID value. Validators check `String::is_empty()` (or
+> `Option::None` if the type is `Option<Uuid>`).**
 
-Crates with legacy magic-GUID values still resident on disk
-provide a one-shot migration helper of the signature below that
-collapses every known magic value to the empty string on first
-load (or to `None` if the type is `Option<Uuid>`).
-
-## Forbidden constructs
-
-In every shipping crate in this workspace:
-
-- `const DEFAULT_TENANT_GUID: &str = "12345678-1234-1234-1234-123456789012";`
- or any literal sequence GUID used as a sentinel.
-- `const ZERO_GUID: &str = "00000000-0000-0000-0000-000000000000";`
- or any literal zero / zero-plus-one GUID used as a sentinel.
- (Real cryptographic uses of the zero GUID — e.g. a documented
- vendor-reserved value in an external protocol — are exempt;
- add a per-site `#[allow]` and a comment.)
-- `if guid == "0" { … treat as not set … }` — both the comparison
- string and the practice.
-- `Default::default()` on a `Uuid` field that the surrounding
- type later treats as "not set" (this produces the zero GUID
- silently). Use `Option<Uuid>` and `None`, or `String` and
- `""`.
-- `let agent = AgentId::new_placeholder()` / any constructor
- that hands back a magic GUID. Either return
- `Result<AgentId, NotConfigured>` or use `Option<AgentId>`.
-- `format!("agent={agent_uuid}")` where `agent_uuid` is empty
- and the receiver expects an absent value. Guard with
- `if !agent_uuid.is_empty() { … }` or pass `Option`.
+Crates with legacy magic-GUID values still on disk provide the one-shot
+migration helper below, collapsing every known magic value to empty
+(or `None`) on first load.
 
 ## Required validation pattern
 
@@ -74,36 +38,21 @@ fn validate_agent_uuid(s: &str) -> Result<(), Validation> {
     if s.is_empty() {
         return Err(Validation::NotConfigured("AGENT_UUID"));
     }
-    Uuid::parse_str(s).map_err(|e| Validation::Malformed {
-        key: "AGENT_UUID",
-        source: e,
-    })?;
+    Uuid::parse_str(s).map_err(|e| Validation::Malformed { key: "AGENT_UUID", source: e })?;
     Ok(())
 }
 ```
 
-Note that `is_empty()` is the ONLY sentinel check. No
-`s == "12345678-…"` branch. No `Uuid::nil() == parsed` branch.
-If a legacy magic GUID survives the migration helper (below),
-it will fail `Uuid::parse_str(s).is_ok()` for `"0"` and parse
-successfully for the four sentinel UUIDs above — at which point
-downstream code treats it as a real GUID and reports a clear
-"no tenant with that GUID exists" error, which is the correct
-behavior post-migration.
+`is_empty()` is the ONLY sentinel check — no `s == "12345678-…"` branch,
+no `Uuid::nil() == parsed` branch. Post-migration, a surviving magic
+GUID parses as a real GUID and downstream code reports a clear "no
+tenant with that GUID exists", which is the correct behavior.
 
-## Required one-shot migration helper signature
-
-Every crate that may have legacy magic-GUID values on disk (in
-`%PROGRAMDATA%`, HKLM, the legacy `settings.json` import, the
-SQL `audit_*` tables) exposes a helper of this shape so a single
-upgrade pass cleans them up:
+## Required one-shot migration helper
 
 ```rust
-// pim-app-config/crates/pim-app-config/src/migration.rs
-//
-// Returns Some(normalized) if `raw` matches a known magic-GUID
-// placeholder; returns None if `raw` is already either empty
-// or a non-placeholder GUID-shaped value.
+/// Returns Some(normalized) if `raw` is a known magic-GUID placeholder;
+/// None if `raw` is already empty or a genuine GUID-shaped value.
 pub fn normalize_legacy_guid_sentinel(raw: &str) -> Option<String> {
     const SENTINELS: &[&str] = &[
         "0",
@@ -111,101 +60,71 @@ pub fn normalize_legacy_guid_sentinel(raw: &str) -> Option<String> {
         "00000000-0000-0000-0000-000000000001",
         "12345678-1234-1234-1234-123456789012",
     ];
-    if SENTINELS.iter().any(|s| s.eq_ignore_ascii_case(raw)) {
-        Some(String::new())
-    } else {
-        None
-    }
+    SENTINELS.iter().any(|s| s.eq_ignore_ascii_case(raw)).then(String::new)
 }
 ```
 
-Call site (one per crate, in the startup migration path — see
-R3):
+Called once per crate in the startup migration path (R3):
 
 ```rust
 for key in ["AGENT_UUID", "DEFAULT_TENANT_GUID", "MACHINE_GUID"] {
     if let Some(raw) = cfg.raw_value(key)? {
         if let Some(normalized) = normalize_legacy_guid_sentinel(&raw) {
             tracing::info!(%key, %raw, "collapsing legacy magic-GUID placeholder to empty");
-            cfg.set_value(key, &normalized)?;
+            cfg.set_value(key, &normalized)?;   // R2 manifest gate still applies
         }
     }
 }
 ```
 
-`set_value` enforces R2 (manifest gate), so this also catches
-the case where the legacy file held the magic GUID under a key
-the new manifest no longer declares.
+## Forbidden constructs
+
+- `const DEFAULT_TENANT_GUID: &str = "12345678-…";` or any literal
+  sequence GUID used as a sentinel.
+- Literal zero / zero-plus-one GUIDs used as sentinels. (A documented
+  vendor-reserved zero GUID in an external protocol is exempt — add a
+  per-site `#[allow]` and a comment.)
+- `if guid == "0" { … treat as not set … }` — both the comparison string
+  and the practice.
+- `Default::default()` on a `Uuid` field the surrounding type later
+  treats as "not set" — that silently produces the zero GUID. Use
+  `Option<Uuid>` / `None`, or `String` / `""`.
+- `AgentId::new_placeholder()` or any constructor handing back a magic
+  GUID. Return `Result<AgentId, NotConfigured>` or `Option<AgentId>`.
+- `format!("agent={agent_uuid}")` where the value is empty and the
+  receiver expects an absent value. Guard, or pass `Option`.
+
+## Configurator GUI surfacing
+
+GUIs render any `operator_must_set` GUID field as empty (placeholder
+text in the control, not in the value). If an operator types `"0"` or a
+magic GUID and clicks Save, the manifest validator (R2) rejects it with
+`InvalidValue { reason: "placeholder GUID is not a valid configured
+value; leave empty if not yet set" }`, keeping the field highlighted and
+the reason in the status pane.
 
 ## Worked violation → fix
 
-**Violation** (today, in a hypothetical SQL upsert path):
+**Violation:** `let tenant = req.tenant_guid.unwrap_or_else(|| "0".to_string());`
+then binding that into an INSERT. A later `WHERE tenant_guid = ?` with
+the operator's real GUID misses the row, and a cleanup migration cannot
+distinguish "not yet enrolled" from a legitimate zero GUID elsewhere.
 
-```rust
-let tenant = req.tenant_guid.unwrap_or_else(|| "0".to_string());
-sqlx::query("INSERT INTO offline_agents (id, tenant_guid) VALUES ($1, $2)")
-    .bind(agent.id())
-    .bind(&tenant)
-    .execute(&mut tx).await?;
-```
-
-A subsequent query `WHERE tenant_guid = ?` with the operator's
-real tenant GUID misses the inserted row. A migration query
-trying to "fix" the zero GUIDs later cannot tell the legitimate
-"not yet enrolled" rows from the legitimate "zero is a real
-GUID in some other system" rows.
-
-**Fix** (typed: `Option<Uuid>` end-to-end; empty string when
-serialized; explicit `NULL` in SQL):
-
-```rust
-let tenant: Option<Uuid> = req.tenant_guid; // None if operator did not provide
-sqlx::query("INSERT INTO offline_agents (id, tenant_guid) VALUES ($1, $2)")
-    .bind(agent.id())
-    .bind(tenant)  // sqlx binds None as NULL
-    .execute(&mut tx).await?;
-```
-
-The audit log and the configurator UI render `tenant_guid` as
-empty when the column is `NULL`; the SQL `WHERE tenant_guid = ?`
-no longer false-positively matches a placeholder.
-
-## Configurator GUI surfacing rule
-
-The four configurator GUIs render any `operator_must_set` GUID
-field as empty (placeholder text in the input control, not in
-the value). The first-run banner from R5 names the empty fields.
-If an operator types `"0"` or `"00000000-…"` and clicks Save, the
-manifest validator (R2) rejects the value with
-`InvalidValue { key, reason: "placeholder GUID is not a valid
-configured value; leave empty if not yet set" }`. The dialog
-keeps the field highlighted with the reason in the status pane.
-
-## Where this is currently enforced
-
-| Surface | Status |
-| --- | --- |
-| `pim-app-config::normalize_legacy_guid_sentinel` | not yet implemented — Wave 1 Track F |
-| `pim-offline-agent` `AGENT_UUID` validator | partial — Wave 1 Track C audit pending |
-| `pim-offline-server` `DEFAULT_TENANT_GUID` validator | partial — Wave 1 Track C audit pending |
-| All four configurator GUIs (Save flow) | inherits the manifest validator (R2) |
-| SQL upserts in `pim-offline-server/src/db/` | audit ongoing — no `"0"` fallbacks in current code, but the rule pins the contract |
-| Legacy `settings.json` migration path | runs `normalize_legacy_guid_sentinel` per key before `set_value` |
+**Fix:** keep `Option<Uuid>` end to end and bind it directly — sqlx
+binds `None` as SQL `NULL`. The audit log and configurator render an
+empty `tenant_guid` when the column is `NULL`, and equality predicates
+stop false-matching a placeholder.
 
 ## Cross-references
 
 - [`manifest-gates-storage-writes.mdc`](manifest-gates-storage-writes.mdc)
- (R2) — the manifest's `validate` function on each GUID field
- calls the validator above; magic-GUID writes are rejected as
- `InvalidValue`.
+  (R2) — GUID validators run inside the manifest gate, so magic-GUID
+  writes are rejected as `InvalidValue`.
 - [`single-source-of-truth-for-settings.mdc`](single-source-of-truth-for-settings.mdc)
- (R3) — the legacy migration runs the GUID-normalizer helper
- before writing to the canonical store.
+  (R3) — the legacy migration runs the normalizer before `set_value`.
 - [`manifest-defaults-must-be-realistic.mdc`](manifest-defaults-must-be-realistic.mdc)
- (R5) — `default_dev` / `default_prod` for GUID fields stay
- empty; never magic GUIDs.
+  (R5) — GUID defaults stay empty, never magic GUIDs.
 - [`runtime-status-flags-test-fixtures.mdc`](runtime-status-flags-test-fixtures.mdc)
- (R7) — daemons emit a runtime warning if a resolved GUID
- setting matches a magic-GUID fingerprint (defense-in-depth
- for legacy data that escaped the migration).
+  (R7) — runtime warning for legacy data that escaped the migration.
+- Per-surface adoption status: `core-assets/docs/dev/rule-enforcement-status.md`.
 - Origin: post-2026-05-19 win32 configurator audit (Wave 1).

@@ -1,122 +1,75 @@
 ---
-description: Every outbound network call inside a long-running task in this workspace must wrap in tokio::time::timeout AND/OR a tokio::select on the shutdown channel. Per-request budget * max attempts + 500 ms must fit inside the binary's drain budget minus slack. Bare client.execute(req) outside the project's bounded helper is forbidden.
-alwaysApply: true
+description: Every outbound network call inside a long-running task wraps in tokio::time::timeout AND/OR a biased tokio::select! arm on the shutdown channel; per-request budget × max attempts + 500 ms slack must fit inside the binary's platform drain budget. Bare client.execute(req) outside the bounded helper is forbidden.
+globs: "**/*.rs"
+alwaysApply: false
 ---
 
 # Bounded network I/O in drains (R4)
 
-This rule extends [`shutdown-compliance.mdc`](shutdown-compliance.mdc).
-That rule defines per-platform drain budgets (Windows SCM 5 s, SCM
-preshutdown 180 s, systemd 90 s, launchd 20 s, GUI session 5 s). A
-binary that respects its handler contract but blocks on a 60-second
-HTTP timeout inside a long-running task **still** violates the
-budget — because the drain cannot reach the bounded HTTP wait once
-shutdown fires, and the operating system kills the process before
-the wait completes.
-
-The post-2026-05-19 win32 configurator audit found two patterns of
-this bug: (a) an outbound `client.execute(req)` with the underlying
-reqwest default connect+read timeout (no explicit budget), and
-(b) a retry loop that observed the shutdown channel between
-attempts but not during them. Both this rule and the existing
-shutdown rule must be honored for a binary to be drain-compliant.
+This extends [`shutdown-compliance.mdc`](shutdown-compliance.mdc). A
+binary can honor its handler contract and **still** blow the platform
+drain budget by blocking on a 60-second HTTP timeout inside a
+long-running task — the drain never gets to run before the OS kills the
+process. Two observed shapes: an `execute(req)` with only reqwest's
+default timeout, and a retry loop that observes the shutdown channel
+between attempts but not during them.
 
 ## The rule
 
-> **Every outbound network call inside a long-running task wraps
-> in `tokio::time::timeout` AND / OR a `tokio::select!` arm on
-> the binary's shutdown channel. Per-request budget multiplied
-> by max attempts, plus 500 ms of slack for the final status
-> report, must be less than or equal to the binary's drain
-> budget minus its other drain steps. Bare `client.execute(req)`
-> / `reqwest::Client::get(url).send()` / `ureq::get(url).call()`
-> outside the project's `Client::execute_with_budget(req, dur)`
-> helper is forbidden.**
+> **Every outbound network call inside a long-running task wraps in
+> `tokio::time::timeout` AND / OR a `tokio::select!` arm on the binary's
+> shutdown channel. Per-request budget multiplied by max attempts, plus
+> 500 ms of slack for the final status report, must be less than or
+> equal to the binary's drain budget minus its other drain steps. Bare
+> `client.execute(req)` / `reqwest::Client::get(url).send()` /
+> `ureq::get(url).call()` outside the project's
+> `Client::execute_with_budget(req, dur)` helper is forbidden.**
 
-Concretely:
-
-1. **Every HTTP call site uses the bounded helper.** In the
- offline client and offline server this is
- `HttpClient::execute_with_budget(req: Request, budget: Duration)
- -> Result<Response, HttpError>` (the exact name lives in
- `pim-offline-client/src/http_client/client.rs` and the
- server-side mirror). The helper internally wraps `execute`
- in `tokio::time::timeout(budget, …)` and folds the elapsed
- time into the returned error chain for diagnosability.
-2. **Every retry loop selects on shutdown between AND during
- attempts.** Between attempts: `tokio::select! { _ =
- shutdown.changed() => break, _ = tokio::time::sleep(backoff)
- => {} }`. During attempts: the bounded helper already wraps
- in `timeout`, and the surrounding `select!` arm cancels the
- future on shutdown (HTTP clients in this workspace are
- cancel-safe at the future boundary).
-3. **The per-task budget math is documented at the call site.**
- A comment naming `per_attempt_ms`, `max_attempts`, and the
- product `per_attempt_ms * max_attempts + slack_ms` must
- appear next to the loop, and that product must be `<=` the
- binary's drain budget for that step (see
- `shutdown-compliance.mdc` for budgets) minus the slack the
- binary reserves for its lifecycle handshake.
-4. **The drain path observes the same budget.** When shutdown
- fires while a request is in flight, the drain step does NOT
- wait for the request to finish naturally — it relies on the
- cancellation that `tokio::select!` already triggered. The
- final `pim_shutdown::drain::bounded` wrapper logs the elapsed
- time and the request URL for forensics.
+1. **Every HTTP call site uses the bounded helper** —
+   `HttpClient::execute_with_budget(req, budget)`, which wraps `execute`
+   in `tokio::time::timeout` and folds elapsed time into the error chain.
+2. **Every retry loop selects on shutdown between AND during attempts.**
+   Between: `select! { _ = shutdown.changed() => break, _ = sleep(backoff) => {} }`.
+   During: the surrounding `select!` arm cancels the in-flight future
+   (HTTP clients here are cancel-safe at the future boundary).
+3. **The budget math is documented at the call site** — a comment naming
+   `per_attempt_ms`, `max_attempts`, and the product
+   `per_attempt_ms * max_attempts + slack_ms`, which must be `<=` the
+   drain budget for that step minus reserved slack.
+4. **The drain path observes the same budget.** When shutdown fires
+   mid-request the drain does not wait for natural completion; it relies
+   on the cancellation `select!` already triggered.
+   `pim_shutdown::drain::bounded` logs elapsed time and URL for forensics.
 
 ## Required helper signature
 
-Every binary that makes outbound HTTP calls in a long-running task
-goes through a project-local helper of this shape:
-
 ```rust
-impl HttpClient {
-    /// Execute `req` with a hard per-request budget. Returns
-    /// `Err(HttpError::Timeout { url, elapsed })` if the budget
-    /// is exceeded. The underlying transport is cancel-safe at
-    /// the future boundary, so callers can wrap this future in
-    /// `tokio::select!` against their shutdown channel.
-    pub async fn execute_with_budget(
-        &self,
-        req: Request,
-        budget: Duration,
-    ) -> Result<Response, HttpError> {
-        let url = req.url().clone();
-        let started = Instant::now();
-        match tokio::time::timeout(budget, self.inner.execute(req)).await {
-            Ok(Ok(resp)) => Ok(resp),
-            Ok(Err(e)) => Err(HttpError::Transport {
-                url,
-                source: e,
-                elapsed: started.elapsed(),
-            }),
-            Err(_) => Err(HttpError::Timeout {
-                url,
-                elapsed: started.elapsed(),
-                budget,
-            }),
-        }
+/// Execute `req` with a hard per-request budget. Cancel-safe at the
+/// future boundary, so callers may wrap it in `tokio::select!`.
+pub async fn execute_with_budget(
+    &self,
+    req: Request,
+    budget: Duration,
+) -> Result<Response, HttpError> {
+    let url = req.url().clone();
+    let started = Instant::now();
+    match tokio::time::timeout(budget, self.inner.execute(req)).await {
+        Ok(Ok(resp)) => Ok(resp),
+        Ok(Err(e)) => Err(HttpError::Transport { url, source: e, elapsed: started.elapsed() }),
+        Err(_) => Err(HttpError::Timeout { url, elapsed: started.elapsed(), budget }),
     }
 }
 ```
 
-The error variants carry **URL** and **elapsed** so the service-
-lifecycle "service stopping" log (see R9) can name the in-flight
-requests that were cut off.
+Error variants carry **URL** and **elapsed** so the `service.stopping`
+record can name the requests that were cut off.
 
 ## Required call-site pattern
 
 ```rust
-// pim-offline-client/src/service_scheduler/sync_loop.rs (illustrative)
-//
-// Drain budget for this step: 4_000 ms (out of the 5_000 ms WACK
-// budget for SCM_STOP, with 1_000 ms reserved for status reporter
-// final handshake).
-//
-// per_attempt_ms = 1_000
-// max_attempts   = 3
-// slack_ms       = 500
-// total          = 1_000 * 3 + 500 = 3_500 ms (<= 4_000 ms drain budget)
+// Drain budget for this step: 4_000 ms (of the 5_000 ms SCM_STOP budget,
+// 1_000 ms reserved for the final status handshake).
+// per_attempt 1_000 × max_attempts 3 + slack 500 = 3_500 ms <= 4_000 ms
 const PER_ATTEMPT: Duration = Duration::from_millis(1_000);
 const MAX_ATTEMPTS: usize = 3;
 const BACKOFF: Duration = Duration::from_millis(500);
@@ -149,126 +102,47 @@ for attempt in 1..=MAX_ATTEMPTS {
         _ = tokio::time::sleep(BACKOFF) => {}
     }
 }
-tracing::error!("sync HTTP request failed after {MAX_ATTEMPTS} attempts");
 Err(HttpError::ExhaustedRetries)
 ```
 
-The `biased` keyword in each `select!` is required: it tells Tokio
-to poll the shutdown arm first, so a shutdown that arrives in the
-same scheduler tick wins the race rather than racing the HTTP
-future.
+`biased;` is **required**: it polls the shutdown arm first, so a
+shutdown arriving in the same scheduler tick wins the race.
 
 ## Forbidden constructs
 
-In every shipping binary in this workspace:
-
-- `client.execute(req).await` (bare reqwest call) outside the
- project's bounded helper. Same for `client.get(url).send()`,
- `client.post(url).body(b).send()`, etc.
-- `ureq::get(url).call()`, `ureq::post(url).send(body)` — the
- `ureq` blocking surface has no cancellation; if it must be
- used (legacy code path), it goes inside
- `tokio::task::spawn_blocking` and the spawned task is
- abandoned (not awaited) when shutdown fires.
-- `loop { let r = client.execute(req.clone()).await?; … }` — a
- retry loop without a shutdown observer.
-- `tokio::time::sleep(Duration::from_secs(60)).await` inside the
- drain path (this is also forbidden by
- [`shutdown-compliance.mdc`](shutdown-compliance.mdc); restating
- here because the most common cause is "I'm waiting for the HTTP
- retry backoff to settle").
-- `reqwest::ClientBuilder::default().build()` with no
- `.timeout(...)`. The HTTP client constructor must set a hard
- default ceiling that is also reflected in the bounded helper's
- per-call budget. A timeout-less client is a footgun even if
- every call site is correct today.
-- `tokio::select!` without a `biased;` directive when one arm is
- the shutdown channel and another is an HTTP future. Without
- `biased`, a shutdown that arrives in the same tick as a
- response loses the race.
+- `client.execute(req).await` / `client.get(url).send()` /
+  `client.post(url).body(b).send()` outside the bounded helper.
+- `ureq::get(url).call()` and other blocking, non-cancellable calls. If
+  a legacy path needs them, run inside `tokio::task::spawn_blocking` and
+  abandon (do not await) the task when shutdown fires.
+- `loop { let r = client.execute(req.clone()).await?; … }` — a retry
+  loop with no shutdown observer.
+- `tokio::time::sleep(Duration::from_secs(60)).await` inside the drain
+  path.
+- `reqwest::ClientBuilder::default().build()` with no `.timeout(...)`. A
+  timeout-less client is a footgun even when every call site is correct.
+- `tokio::select!` without `biased;` when one arm is the shutdown channel
+  and another is an HTTP future.
 
 ## Worked violation → fix
 
-**Violation** (today, conceptual):
+**Violation:** `loop { let resp = http.execute(req.clone()).await?; if
+success { … } tokio::time::sleep(Duration::from_secs(30)).await; }`.
+Two defects — the request can hang on the OS TCP stack for minutes past
+the 5 s SCM budget, and a shutdown arriving 1 ms into the backoff waits
+29 999 ms to be noticed.
 
-```rust
-async fn sync_once(http: &HttpClient, req: Request) -> Result<()> {
-    loop {
-        let resp = http.execute(req.clone()).await?; // unbounded
-        if resp.status().is_success() { return handle(resp).await; }
-        tokio::time::sleep(Duration::from_secs(30)).await; // unobservant
-    }
-}
-```
-
-Two problems: (1) `http.execute` may hang on the OS TCP stack for
-minutes if the offline server is partition-isolated, blocking the
-drain past the SCM 5 s budget; (2) the 30 s backoff sleep does not
-observe the shutdown channel, so a shutdown arriving 1 ms after
-the sleep starts waits 29 999 ms before noticing.
-
-**Fix**:
-
-```rust
-async fn sync_once(
-    http: &HttpClient,
-    req: Request,
-    shutdown: &mut watch::Receiver<bool>,
-) -> Result<()> {
-    const PER_ATTEMPT: Duration = Duration::from_millis(1_000);
-    const MAX_ATTEMPTS: usize = 3;
-    const BACKOFF: Duration = Duration::from_millis(500);
-
-    for attempt in 1..=MAX_ATTEMPTS {
-        tokio::select! {
-            biased;
-            _ = shutdown.changed() => return Ok(()),
-            result = http.execute_with_budget(req.clone(), PER_ATTEMPT) => {
-                if let Ok(resp) = result {
-                    if resp.status().is_success() { return handle(resp).await; }
-                }
-            }
-        }
-        tokio::select! {
-            biased;
-            _ = shutdown.changed() => return Ok(()),
-            _ = tokio::time::sleep(BACKOFF) => {}
-        }
-    }
-    Err(HttpError::ExhaustedRetries)
-}
-```
-
-The total worst-case wall clock is now `1_000 * 3 + 500 * 2 =
-4_000 ms` — comfortably inside the 5 s SCM_STOP budget with
+**Fix:** the call-site pattern above. Worst case becomes
+`1_000 × 3 + 500 × 2 = 4_000 ms`, inside the 5 s SCM_STOP budget with
 1 000 ms of slack for the final status handshake.
-
-## Where this is currently enforced
-
-| Binary | Has bounded helper? | All call sites use it? |
-| --- | --- | --- |
-| `pim-offline-client` (`HttpClient::execute_with_budget`) | yes (Wave 1 Track D in flight) | partial |
-| `pim-offline-server` (server-side outbound: update checks, OTLP) | partial — OTLP exporter wraps in its own timeout; update-feed client audit ongoing | partial |
-| `pim-offline-client-configurator-{win32,tauri}` connectivity test | yes via `pim_app_config_cli::dialog_helpers::run_offline_server_probe` (bounded) | yes |
-| `pim-offline-server-configurator-{win32,tauri}` connectivity test | yes via `run_postgres_probe` (bounded) | yes |
-| `pim-offline-client-elevate-{win32,tauri}` | n/a — IPC only, no HTTP |
-
-The "audit ongoing" rows are not necessarily defective; they are
-unverified. A future PR that introduces a bare `client.execute(req)`
-in a long-running task is rejected at review.
 
 ## Cross-references
 
-- [`shutdown-compliance.mdc`](shutdown-compliance.mdc) — the
- platform drain budgets this rule must respect.
-- [`no-panic.mdc`](no-panic.mdc) — every HTTP error variant
- propagates via `Result` with logged context.
-- [`silent-failure-is-a-bug.mdc`](silent-failure-is-a-bug.mdc) —
- every reachable `Err(_)` arm in the bounded HTTP loop above
- logs through `tracing` with op-name, URL, elapsed, and
- recovery action (retry / give up).
-- [`service-lifecycle-logs.mdc`](service-lifecycle-logs.mdc) —
- the "service stopping" record lists in-flight HTTP requests
- with URL + elapsed; the bounded helper's error variants are
- the source of those fields.
+- [`shutdown-compliance.mdc`](shutdown-compliance.mdc) — the platform
+  drain budgets this rule must fit inside.
+- [`silent-failure-is-a-bug.mdc`](silent-failure-is-a-bug.mdc) — every
+  reachable `Err(_)` arm above logs op, URL, elapsed, and recovery.
+- [`service-lifecycle-logs.mdc`](service-lifecycle-logs.mdc) — the
+  `in_flight_requests` field is sourced from this helper's tracker.
+- Per-binary adoption status: `core-assets/docs/dev/rule-enforcement-status.md`.
 - Origin: post-2026-05-19 win32 configurator audit (Wave 1).

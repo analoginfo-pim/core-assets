@@ -2,7 +2,8 @@
 description: >-
   Hard rule — every navigation menu item, sidebar label, and top-level menu
   title in operator GUIs uses US English Title Case (first letter of each word).
-alwaysApply: true
+globs: ["**/*.tsx", "**/*.ts", "**/*.jsx", "**/*.rc", "**/ui/**"]
+alwaysApply: false
 ---
 
 # Menu titles use Title Case (hard rule)

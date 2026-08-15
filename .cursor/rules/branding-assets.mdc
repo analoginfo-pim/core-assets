@@ -3,165 +3,99 @@ description: Use core-assets as the single source for branding (icons, logos, EU
 alwaysApply: true
 ---
 
-# Branding & legal assets: one canonical source for every project
+# Branding and legal assets: one canonical source for every project
 
-All Analog Informatics Corporation (AIC) PIM products in this workspace share
-one asset repository:
+All AIC PIM products in this workspace share one asset repository:
 
 - **Local path:** `c:\analog-pim\core-assets`
 - **Remote:** `https://github.com/analoginfo-pim/core-assets`
 
-This is the **only** authoritative source for product branding (icons,
-logos, splash images, header art, in-app bitmaps) and shared legal text
-(EULAs, license files). Treat every other copy in the workspace as a
-*build output* of `core-assets` — even when those copies are committed
-alongside source code so a `cargo build` or `tauri build` can find them at
-compile time.
+This is the **only** authoritative source for product branding (icons, logos,
+splash images, header art, in-app bitmaps) and shared legal text (EULAs, license
+files). Every other copy in the workspace is a *build output* of `core-assets` —
+even when committed alongside source so `cargo build` / `tauri build` can find it.
 
-## Scope: every project in the workspace
-
-The rule applies, with no exceptions, to **every** workspace root, including
-but not limited to:
-
-- `pim-orm`, `pim-orm-offline`
-- `pim-app-config`
-- `pim-ui-kit`
-- `pim-offline-server`, `pim-offline-server-configurator-tauri`,
-  `pim-offline-server-configurator-win32`
-- `pim-offline-client`, `pim-offline-legacy-client`,
-  `pim-offline-client-configurator-tauri`, `pim-offline-client-configurator-win32`,
-  `pim-offline-client-elevate-tauri`, `pim-offline-client-elevate-win32`
-- `pim-product-launcher-slint`, `pim-product-launcher-win32`
-- `pim-installers`
-
-If a future project enters the workspace, add its branded destinations to
+The rule applies to **every** workspace root with no exceptions (`pim-orm*`,
+`pim-app-config`, `pim-ui-kit`, all `pim-offline-*` server / client /
+configurator / elevate crates, both product launchers, `pim-installers`, and any
+future project). Add a new project's branded destinations to
 [`core-assets/scripts/sync-to-projects.ps1`](../../core-assets/scripts/sync-to-projects.ps1)
 *before* committing branded files into it.
 
 ## Hard rules
 
-### R1. Never edit a branding file outside `core-assets`
+**R1. Never edit a branding file outside `core-assets`.** Covers `*.ico`,
+`*.icns`, `*.svg`, `*.png` (logo / launcher / favicon variants), `EULA*.rtf`,
+`License*.rtf`, `LICENSE*` used by installers, splash / header / about art, PWA
+`manifest.json` icon entries, Apple Touch icons, and any branded resource
+referenced by HTML / Tauri / WiX. Drift between an in-tree copy and
+`core-assets` is a sync bug, not a legitimate per-project variant.
 
-This includes:
+**R2. New resolutions or formats live in `core-assets` only.** When a project
+needs a new size, format, or platform variant:
 
-- `*.ico`, `*.icns`, `*.svg`, `*.png` (logo / launcher / favicon variants)
-- `EULA*.rtf`, `License*.rtf`, `LICENSE*` files used by installers
-- Splash / header / about-screen art that ships with products
-- PWA `manifest.json` icon entries, Apple Touch icons, and any other
-  branded resource referenced by HTML / Tauri / WiX
+1. Add or extend the source under `core-assets/icons/source/` or
+   `core-assets/branding/`.
+2. Generate the derivative **inside `core-assets`** — `scripts/generate-icons.ps1`
+   for raster-from-SVG, or
+   `tauri icon core-assets/icons/source/aic-icon-1024.png --output core-assets/icons/tauri`
+   for Tauri platform icons.
+3. Commit and push **the source plus every generated artifact** to
+   `core-assets`. That repository is the single physical home for the binary
+   outputs — projects do not regenerate them locally.
+4. Add the consumer destination to `scripts/sync-to-projects.ps1` and run the
+   sync. The project then consumes the artifact as an external asset.
 
-If you find drift between an in-tree copy and `core-assets`, treat it as a
-bug in the sync, not as a legitimate per-project variant.
+Forbidden: running `magick convert` / `inkscape` / `tauri icon` / `iconutil` or
+any other generator inside a project repo and checking in the output; a project
+build script that converts an asset on the fly into a different size or format,
+even reading from a synced `core-assets` source; hand-editing a synced asset in
+a project to tweak color, padding, or margin (tweak in `core-assets`, resync).
 
-### R2. New resolutions or formats live in `core-assets` only
+**R3. Add new shared assets to `core-assets` first**, under `icons/`,
+`branding/`, `logos/`, or `legal/`, and only then sync into the consumer.
+Extend `sync-to-projects.ps1` when you add a new consumer.
 
-If a project needs a new size, format, or platform variant of an existing
-brand asset (for example, a 192×192 PWA icon, a 64×64 toolbar bitmap, an
-`.icns` for macOS, a Tauri Android launcher set), the artefact MUST be
-produced in `core-assets`:
+**R4. Never re-introduce a "local" branding fallback.** Build scripts point at
+`core-assets` directly, or at the per-project copy the sync script populated.
+Do not add a fallback chain searching a loose `deployment/windows/`,
+`assets/branding/`, or similar drop directory — those uncontrolled paths are
+exactly what puts the wrong logo on a customer's desktop.
 
-1. Add the source (or extend an existing source) under
-   `core-assets/icons/source/` or `core-assets/branding/`.
-2. Run / extend `core-assets/scripts/generate-icons.ps1` (raster from SVG)
-   or `tauri icon core-assets/icons/source/aic-icon-1024.png --output core-assets/icons/tauri`
-   (Tauri platform icons) so the derivative is built **inside `core-assets`**.
-3. Commit and push **the source plus every generated artefact** to
-   `core-assets`. The repository is the single physical home for the
-   binary outputs — projects do not regenerate them locally.
-4. Add the consumer's destination to
-   [`core-assets/scripts/sync-to-projects.ps1`](../../core-assets/scripts/sync-to-projects.ps1)
-   and run the sync. The project then consumes the artefact as an
-   external asset, not as a thing it derived for itself.
-
-It is **forbidden** to:
-
-- Run `magick convert` / `inkscape` / `tauri icon` / `iconutil` /
-  any other rasterizer or icon generator inside a project repo and check
-  in the output as an "in-tree" asset.
-- Add a build script in a project that converts an asset on the fly into
-  a different size or format, even if it reads from a synced
-  `core-assets` source — derivatives must already exist in `core-assets`
-  by the time the project's build runs.
-- Hand-edit a synced asset in a project to "tweak" it (colour, padding,
-  margin) — make the tweak in `core-assets` and resync.
-
-### R3. Add new shared assets to `core-assets` first
-
-When a new product or a new SKU needs a logo or document, place the
-canonical file under `core-assets/icons/...`, `core-assets/branding/...`,
-`core-assets/logos/...`, or `core-assets/legal/...` and *only then* sync
-it into the consumer project. The
-[`scripts/sync-to-projects.ps1`](../../core-assets/scripts/sync-to-projects.ps1)
-script enumerates the official targets — extend it when you add a new
-consumer.
-
-### R4. Never re-introduce a "local" branding fallback
-
-If a build script needs to source an icon or EULA, point it at
-`core-assets` directly (or at the per-project copy that the sync script
-populated from `core-assets`). Do **not** add a fallback chain that
-searches a loose `deployment/windows/`, `assets/branding/`, or similar
-drop directory: those are exactly the uncontrolled paths that produce the
-wrong logo on a customer's desktop.
-
-### R5. Never commit a placeholder logo or stub license
-
-Generic "W"-shape Word document icons, blank `License.rtf` stubs, etc. are
-forbidden — even temporarily — because they get picked up by build scripts
-and shipped. If you genuinely need a non-AIC asset for a test, store it
-in `core-assets/icons/test/` and document why.
+**R5. Never commit a placeholder logo or stub license.** Generic "W"-shape Word
+document icons, blank `License.rtf` stubs, and similar are forbidden even
+temporarily, because build scripts pick them up and ship them. A non-AIC asset
+needed for a test lives in `core-assets/icons/test/` with a documented reason.
 
 Desktop / Start Menu shortcuts and PE icon resources must never ship the
-noise/static placeholder family (`aic-header.PLACEHOLDER-do-not-use.png`,
-stale Tauri `icon.ico` noise). See
+noise/static placeholder family (`aic-header.PLACEHOLDER-do-not-use.png`, stale
+Tauri `icon.ico` noise). See
 [`no-noise-desktop-icons.mdc`](no-noise-desktop-icons.mdc).
 
-## Adding a new branded artefact (full procedure)
+## Adding a new branded artifact
 
-1. **Identify or add the source** in `core-assets`:
-   - SVG vector → `icons/source/<name>.svg`
-   - High-res master raster → `icons/source/<name>-<dim>.png`
-   - In-app bitmap (about / header / splash) → `branding/<name>.png`
-   - Legal text → `legal/<name>.rtf`
-2. **Generate every derivative the consumers need** *inside `core-assets`*:
-   - Multi-resolution `.ico` via `scripts/generate-icons.ps1`
-   - Tauri platform tree via `tauri icon icons/source/aic-icon-1024.png --output icons/tauri`
-   - `.icns` for macOS via `iconutil` or `magick` (script TBD)
-3. **Commit & push** the source + generated artefacts to `core-assets`.
-4. **Extend** `scripts/sync-to-projects.ps1` with the consumer's
-   destination path(s).
-5. **Run** `scripts/sync-to-projects.ps1` and commit the resulting copies
-   in each consumer repo with a message like
-   `chore(branding): sync from core-assets@<short-sha>`.
-
-## Where consumers look today
+1. Identify or add the source in `core-assets`: SVG vector →
+   `icons/source/<name>.svg`; high-res master raster →
+   `icons/source/<name>-<dim>.png`; in-app bitmap →
+   `branding/<name>.png`; legal text → `legal/<name>.rtf`.
+2. Generate every derivative consumers need, *inside `core-assets`*.
+3. Commit and push source plus generated artifacts to `core-assets`.
+4. Extend `scripts/sync-to-projects.ps1` with the consumer destinations.
+5. Run the sync and commit the resulting copies in each consumer with a message
+   like `chore(branding): sync from core-assets@<short-sha>`.
 
 `core-assets/scripts/sync-to-projects.ps1` is the source of truth for the
-"who-consumes-what" map. As of the last sync the destinations include:
+who-consumes-what map (Tauri icon trees, 15+ `aic-icon.ico` destinations, web
+favicon / manifest sets, `aic-header.png`, `aic-about.png`, and the commercial
+EULA staged into MSIs). When in doubt, search that script for the file you are
+about to touch; if it is listed, edit `core-assets` instead and run the sync.
 
-| Asset (in `core-assets`) | Consumer paths |
-| ------------------------ | -------------- |
-| `icons/source/aic-icon.svg` | `pim-offline-client/assets/icon.svg` |
-| `icons/source/aic-icon-1024.png` | All three Tauri projects' `src-tauri/icons/icon.png` |
-| `icons/desktop/aic-icon.ico` | All Win32 / Tauri-favicon / web-favicon consumers (15+ destinations — see the script). |
-| `icons/desktop/aic-icon-preview.png` | `pim-offline-client/assets/icon-preview.png` |
-| `icons/web/{favicon,apple-touch-icon,logo}.svg`, `manifest.json` | `pim-offline-server/ui/public/`, `pim-ui-kit/packages/demo/public/`, `pim-ui-kit/templates/app-template/public/` |
-| `branding/aic-about.png` | `pim-offline-client/assets/aic-about.png` |
-| `branding/aic-header.png` | All three Tauri projects' `src/assets/aic-header.png` |
-| `legal/EULA_AIC_Commercial.rtf` | `pim-installers/legal/EULA_AIC_Commercial.rtf` (restaged into MSIs as `assets/EULA.rtf` by the build scripts) |
+## When agents must not do branding work
 
-When in doubt, search the consumer-paths column for the file you are about
-to touch. If it is listed, edit `core-assets` instead and run the sync.
-
-## When agents must NOT do branding work
-
-- If the user asks you to change a logo, asset, or EULA but the request
-  would require editing a file *outside* `core-assets`, push back: explain
-  that the edit belongs in `core-assets` and then sync, and ask for
-  confirmation before bypassing the rule.
-- If you encounter a stale copy that disagrees with `core-assets`, the
-  default action is to **resync from `core-assets`**, not to "promote" the
-  stale copy.
-- If a project asks for a new icon size or format that does not yet exist
-  in `core-assets`, **do not** generate it locally — generate it in
-  `core-assets`, commit there, then sync.
+- If a requested change would require editing a branded file *outside*
+  `core-assets`, push back: the edit belongs in `core-assets` followed by a
+  sync. Ask for confirmation before bypassing the rule.
+- A stale copy that disagrees with `core-assets` is **resynced from
+  `core-assets`** — never "promoted" over the canonical file.
+- A new icon size or format that does not yet exist is generated in
+  `core-assets`, committed there, then synced. Never generated locally.

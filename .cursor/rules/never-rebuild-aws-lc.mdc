@@ -5,133 +5,103 @@ alwaysApply: true
 
 # Never rebuild aws-lc (locked FIPS module)
 
-`aws-lc-fips-sys` is **not** an ordinary Rust dependency. It compiles a
-large C / CMake / Go-assembly cryptographic module — the **CMVP-validated
-AWS-LC FIPS module (cert #4759)** that
-[`enterprise-compliance.mdc`](enterprise-compliance.mdc) §4 pins as the
-Track-A boundary. The workspace consumes it as a **locked, prebuilt
-version from Amazon**: the module version never changes, because the
-whole point of pinning a validated module is that its bytes are fixed.
-
-Nothing we do to our own Rust source can change what that module
-contains. Therefore **rebuilding it produces a bit-identical result and
-buys nothing** — it only costs multiple minutes of wall clock, every
-time, on every developer and lab host.
+`aws-lc-fips-sys` is **not** an ordinary Rust dependency. It compiles a large
+C / CMake / Go-assembly cryptographic module — the **CMVP-validated AWS-LC FIPS
+module (cert #4759)** that [`enterprise-compliance.mdc`](enterprise-compliance.mdc)
+§4 pins as the Track-A boundary. The workspace consumes it as a **locked,
+prebuilt version from Amazon**: the module version never changes, because the
+whole point of pinning a validated module is that its bytes are fixed. Nothing
+we do to our own Rust source can change what that module contains, so
+**rebuilding produces a bit-identical result and buys nothing** — it only costs
+multiple minutes of wall clock, every time, on every developer and lab host.
 
 ## The rule
 
-> **Never cause `aws-lc-fips-sys` to rebuild. It is a locked prebuilt
-> FIPS module; its output cannot change. If a debug build of it is ever
-> genuinely unavoidable, build it exactly **once** and then never
+> **Never cause `aws-lc-fips-sys` to rebuild. It is a locked prebuilt FIPS
+> module; its output cannot change. If a build of it is ever genuinely
+> unavoidable, build it exactly **once** per `(profile, target)` and then never
 > again — preserve the resulting
 > `target/<profile>/build/aws-lc-fips-sys-*/out/` tree forever.**
 
-## Why this keeps happening (the actual mechanism)
+## Why it happens
 
-Cargo keys every build-script *execution* directory on a metadata hash:
-
-```
-target/<profile>/build/aws-lc-fips-sys-<HASH>/out/build/artifacts/
-```
-
-If the `<HASH>` changes, Cargo does **not** reuse the previous
-directory — it runs the build script again from scratch, paying the full
-C/CMake compile, and leaves the old directory behind as dead disk. The
-hash is **not** derived from the crate's source (which is pinned); it is
-derived from the *build environment*. The inputs that flip it:
+Cargo keys every build-script execution directory on a metadata hash
+(`target/<profile>/build/aws-lc-fips-sys-<HASH>/out/...`). If `<HASH>` changes,
+Cargo re-runs the build script from scratch and leaves the old directory as dead
+disk. The hash comes from the *build environment*, not the pinned crate source:
 
 | Invalidator | Why it flips the hash |
 | --- | --- |
-| `.cargo/config.toml` `rustflags` / `linker` changes (e.g. toggling `rust-lld`) | Linker + rustflags are part of every unit's metadata hash — a full-graph invalidation |
-| `RUSTFLAGS` / `CARGO_ENCODED_RUSTFLAGS` set for some invocations and not others | Same as above, but flips **back and forth** — the worst case, rebuilds on every alternation |
+| `.cargo/config.toml` `rustflags` / `linker` changes (e.g. toggling `rust-lld`) | Part of every unit's metadata hash — full-graph invalidation |
+| `RUSTFLAGS` / `CARGO_ENCODED_RUSTFLAGS` set for some invocations and not others | Same, but flips back and forth — rebuilds on every alternation |
 | `[profile.dev]` / `[profile.release]` edits (`debug`, `opt-level`, `codegen-units`, `lto`) | Profile settings feed the hash |
-| `Cargo.toml` dependency / `[patch]` churn that changes feature unification reaching `aws-lc-fips-sys` | Enabled feature set is part of the hash |
-| An **uncommitted** or per-developer `.cargo/config.local.toml` that appears/disappears | Silently flips rustflags between runs |
-| `cargo clean`, deleting `target/`, "let's start fresh" | Destroys the artifacts outright |
-| Changing `CC` / `CXX` / `CMAKE` / `GOPATH` / `AWS_LC_*` in the environment | The build script declares `rerun-if-env-changed` on these |
+| Dependency / `[patch]` churn changing feature unification reaching `aws-lc-fips-sys` | Enabled feature set is part of the hash |
+| An uncommitted per-developer `.cargo/config.local.toml` appearing/disappearing | Silently flips rustflags between runs |
+| `cargo clean`, deleting `target/` | Destroys the artifacts outright |
+| Changing `CC` / `CXX` / `CMAKE` / `GOPATH` / `AWS_LC_*` | The build script declares `rerun-if-env-changed` on these |
 
-A healthy host accumulates **at most one** `aws-lc-fips-sys-<hash>/out`
-directory per `(profile, target)` pair. If `ls target/*/build/` shows
-many of them, the workflow has been thrashing and each extra directory
-is several wasted minutes.
+A healthy host accumulates **at most one** `aws-lc-fips-sys-<hash>/out` directory
+per `(profile, target)`. Many of them means the workflow has been thrashing, and
+each extra directory is several wasted minutes.
 
 ## Diagnostic
 
 ```powershell
-# How many full aws-lc FIPS builds has this host paid for?
 Get-ChildItem target\debug\build -Directory -Filter "aws-lc-fips-sys-*" |
   Where-Object { Test-Path (Join-Path $_.FullName "out\build\artifacts") } |
   Select-Object Name, LastWriteTime
 ```
 
-Before and after any build-configuration change, run this. If the count
-increased, the change was an invalidator — say so plainly in your
-report rather than absorbing it silently.
+Run this before and after any build-configuration change. If the count
+increased, the change was an invalidator — say so plainly rather than absorbing
+it silently.
 
 ## Forbidden actions
 
-- **`cargo clean`** — in any repo under `c:\analog-pim\`, for any
-  reason. There is no development problem whose correct solution is
-  wiping `target/`. If you believe the cache is corrupt, delete the
-  *specific* offending crate's fingerprint directory
-  (`target/<profile>/.fingerprint/<crate>-*`) and never
-  `aws-lc-fips-sys-*`.
+- **`cargo clean`** in any repo under `c:\analog-pim\`, for any reason. No
+  development problem's correct solution is wiping `target/`. If a cache truly
+  looks corrupt, delete the *specific* crate's fingerprint directory
+  (`target/<profile>/.fingerprint/<crate>-*`) and never `aws-lc-fips-sys-*`.
 - **Deleting `target/**/aws-lc-fips-sys-*`**, its `out/`, or its
   `build/artifacts/` tree — including "disk cleanup" sweeps.
-- **Deleting staged FIPS DLLs** (`target/<profile>/aws_lc_fips_*_crypto.dll`
-  and the `deps/` copy) — see
-  [`fips-dll-staging.mdc`](fips-dll-staging.mdc). Removing them forces
-  `build.rs` to re-run and re-locate artifacts unnecessarily.
-- **Gratuitous `rustflags` / `linker` / `[profile.*]` churn.** These
-  settings are committed precisely so they stay put. Do not "try"
-  a linker or profile tweak on a whim; a single experiment costs a
-  full-graph rebuild in **both** directions (once to apply, once to
-  revert).
-- **Setting `RUSTFLAGS` in a shell, script, or task** for a one-off
-  build. Put the flag in the committed `.cargo/config.toml` or do not
-  use it at all. Per
-  [`no-environment-variables.mdc`](no-environment-variables.mdc), env
-  vars are not a configuration surface in this workspace anyway.
-- **Feature toggling that changes `aws-lc-fips-sys`'s own feature set.**
-  Per `enterprise-compliance.mdc` §4 the FIPS posture is hard-coded, not
-  a Cargo feature — so there is nothing legitimate to toggle here.
-  (Crate-local features that do *not* reach `aws-lc-fips-sys`, such as
+- **Deleting staged FIPS DLLs** (`target/<profile>/aws_lc_fips_*_crypto.dll` and
+  the `deps/` copy) — see [`fips-dll-staging.mdc`](fips-dll-staging.mdc).
+- **Gratuitous `rustflags` / `linker` / `[profile.*]` churn.** These settings are
+  committed precisely so they stay put. A single experiment costs a full-graph
+  rebuild in **both** directions (once to apply, once to revert).
+- **Setting `RUSTFLAGS` in a shell, script, or task** for a one-off build. Put
+  the flag in the committed `.cargo/config.toml` or do not use it — per
+  [`no-environment-variables.mdc`](no-environment-variables.mdc), env vars are
+  not a configuration surface here anyway.
+- **Feature toggling that changes `aws-lc-fips-sys`'s own feature set.** FIPS
+  posture is hard-coded, not a Cargo feature, so nothing legitimate to toggle.
+  (Crate-local features that do not reach `aws-lc-fips-sys`, such as
   `skip-ui-build`, are fine.)
 
 ## Allowed
 
-- **Exactly one** build per `(profile, target)` pair, on first use of
-  that combination on a host — e.g. one `dev` build and one `release`
-  build. That is the "unavoidable, build it once" case.
-- Keeping **both** the `dev` and `release` aws-lc trees warm
-  simultaneously. Do not delete one to make room for the other.
-- A deliberate, announced, one-time invalidation when a build-config
-  change is genuinely required (e.g. adopting a linker that measurably
-  helps). Announce the cost up front, make the change **once**, commit
-  it, and never revert casually — reverting costs the same rebuild
-  again.
+- **Exactly one** build per `(profile, target)` pair on first use of that
+  combination on a host — the "unavoidable, build it once" case.
+- Keeping **both** the `dev` and `release` aws-lc trees warm simultaneously.
+  Do not delete one to make room for the other.
+- A deliberate, announced, one-time invalidation when a build-config change is
+  genuinely required. Announce the cost up front, make the change once, commit
+  it, and do not revert casually.
 
 ## Reverting a past invalidator is usually the wrong fix
 
-If a previous commit already paid for a rebuild and the new fingerprint
-is now stable and cached, **leave it alone**. Reverting the setting
-would force a *second* full rebuild to get back to the old hash. The
-cost is sunk; the correct action is to stop churning, not to undo. Only
-revert if the setting is actively flipping the hash on repeated runs.
+If a previous commit already paid for a rebuild and the new fingerprint is now
+stable and cached, **leave it alone** — reverting forces a *second* full rebuild
+to get back to the old hash. The cost is sunk; stop churning rather than undoing.
+Only revert if the setting is actively flipping the hash on repeated runs.
 
 ## Cross-references
 
 - [`fips-dll-staging.mdc`](fips-dll-staging.mdc) — the staged
-  `aws_lc_fips_*_crypto.dll` next to each binary; this rule protects
-  the upstream artifacts that staging copies from.
-- [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §4 — the
-  CMVP #4759 boundary and the hard-coded (non-feature-gated) FIPS
-  posture that makes rebuilding pointless.
-- [`crypto-dual-backend-keyring.mdc`](crypto-dual-backend-keyring.mdc) —
-  AWS-LC software backend must always be available; that availability
-  depends on these artifacts existing.
-- [`host-session-safety.mdc`](host-session-safety.mdc) — the same
-  "don't destroy expensive local state" principle applied to the
-  operator's desktop session.
-- Origin: 2026-07-25 — BEAVIS2 accumulated 8 full aws-lc FIPS builds in
-  six days from linker / profile / dependency-graph churn.
+  `aws_lc_fips_*_crypto.dll` next to each binary; this rule protects the
+  upstream artifacts staging copies from.
+- [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §4 — the CMVP #4759
+  boundary and the hard-coded (non-feature-gated) FIPS posture that makes
+  rebuilding pointless.
+- Origin: 2026-07-25 — BEAVIS2 accumulated 8 full aws-lc FIPS builds in six days
+  from linker / profile / dependency-graph churn.

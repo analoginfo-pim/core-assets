@@ -1,5 +1,5 @@
 ---
-description: Cost control — default AUTO or Grok 4.5 Fast High; Opus only for rendered-UI acceptance review, failed-fix diagnosis, or operator-named cases
+description: Cost control - default AUTO or Grok 4.5 Fast High; Opus only for rendered-UI acceptance review, failed-fix diagnosis, or operator-named cases
 alwaysApply: true
 ---
 
@@ -17,25 +17,22 @@ retrying after API limits. That pattern is forbidden.
 > message — except where the narrow visual-acceptance override below applies.
 > Never reopen failed workers in a retry loop.**
 
-Concretely:
-
-1. **Omit the `model` field** on `Task` / subagent launches so the runtime
-   uses AUTO, **or** pin `cursor-grok-4.5-high-fast` for implementation work —
-   **unless** this agent is itself running on an expensive model (see
-   **Model inheritance is an amplifier** below). Do not set
-   `claude-opus-4-8-thinking-high`, `claude-opus-4-8`, or equivalent pins
-   except under the override in the next section.
-2. **On API / usage / credit errors:** stop. Report once. Do **not** spawn
-   a replacement Task on another expensive model.
-3. **Concurrency:** at most two background `generalPurpose` / `explore`
-   workers per turn; prefer one slice. No "resume remaining tasks" that
-   fans out into N Opus workers.
-4. **No unsupervised loops:** do not start `/loop`, `AGENT_LOOP_*` tickers,
-   or babysit–retry watchers unless the user asked for a loop.
+1. **Omit the `model` field** on `Task` / subagent launches so the runtime uses
+   AUTO, **or** pin `cursor-grok-4.5-high-fast` for implementation work —
+   **unless** this agent is itself running on an expensive model (see **Model
+   inheritance is an amplifier**). Do not set `claude-opus-4-8-thinking-high`,
+   `claude-opus-4-8`, or equivalent pins except under the override below.
+2. **On API / usage / credit errors:** stop. Report once. Do **not** spawn a
+   replacement Task on another expensive model.
+3. **Concurrency:** at most two background `generalPurpose` / `explore` workers
+   per turn; prefer one slice. No "resume remaining tasks" that fans out into N
+   Opus workers.
+4. **No unsupervised loops:** do not start `/loop`, `AGENT_LOOP_*` tickers, or
+   babysit–retry watchers unless the user asked for a loop.
 5. **If the user reports credit burn or says "use AUTO":** do not resume
    Opus-pinned agent IDs; interrupt only from the owning parent chat; continue
-   only on AUTO or `cursor-grok-4.5-high-fast`. Apply the
-   **Budget-pressure behavior** clause below.
+   only on AUTO or `cursor-grok-4.5-high-fast`. Apply **Budget-pressure
+   behavior** below.
 6. **Do not pin Opus to supervise or unstick a stuck child** (see
    [`stuck-agent-supervisor.mdc`](stuck-agent-supervisor.mdc)).
 
@@ -43,22 +40,21 @@ Concretely:
 
 > **Opus survives but is narrow.** The visual-proof requirement in
 > [`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc)
-> is unchanged and remains a hard requirement. What changes is *when* Opus
-> may be pinned: Opus is the **acceptance reviewer of rendered output** and
-> the **diagnostician of a UI defect that a cheaper pass already failed to
-> fix** — not the default implementer of anything UI-adjacent.
+> is unchanged and remains a hard requirement. What changes is *when* Opus may
+> be pinned: Opus is the **acceptance reviewer of rendered output** and the
+> **diagnostician of a UI defect that a cheaper pass already failed to fix** —
+> not the default implementer of anything UI-adjacent.
 
 This is an **operator-directed precedence rule** (Phil, 2026-07-27; throttle
 2026-07-28), not an agent's discretionary judgment call. When a case falls
-inside the permitted set below, an agent may use an Opus-class model
-**without** the operator naming it again in the same message — no
-permission-seeking, no re-confirmation each time. When a case falls outside
-that set, Opus is forbidden even if the files touched live under `ui/`.
+inside the permitted set below, an agent may use an Opus-class model **without**
+the operator naming it again in the same message. When a case falls outside that
+set, Opus is forbidden even if the files touched live under `ui/`.
 
 Operator record (Phil, 2026-07-27):
 
-> **Use Opus for visual design.** The other models have consistently gotten
-> this area of design wrong just about every time.
+> **Use Opus for visual design.** The other models have consistently gotten this
+> area of design wrong just about every time.
 >
 > **Preference for implementation work is Grok 4.5 Fast High
 > (`cursor-grok-4.5-high-fast`) or AUTO.** Use less expensive models for
@@ -66,40 +62,32 @@ Operator record (Phil, 2026-07-27):
 
 Operator throttle (Phil, 2026-07-28), verbatim:
 
-> Try to throttle down a bit use of Opus 5 as you are now at 90% usage and
-> try to use Auto where possible. Use Opus where it is essential and in well
-> known cases where no other model works.
+> Try to throttle down a bit use of Opus 5 as you are now at 90% usage and try
+> to use Auto where possible. Use Opus where it is essential and in well known
+> cases where no other model works.
 
-### Decision procedure — Opus permitted only for
-
-Use an Opus-class model **only** when the work is one of:
+### Opus permitted only for
 
 1. **Acceptance review of rendered operator-GUI output** — inspecting a
    screenshot or Playwright bounding-box result and judging whether primary
-   actions are visible, whether rows overlap, whether spacing and contrast
-   are usable.
-2. **Diagnosis of a UI layout defect that a cheaper model has already
-   attempted and failed to fix.** Cite the failed attempt (worker ID,
-   summary of what was tried, what still fails visually) before pinning Opus.
+   actions are visible, whether rows overlap, whether spacing and contrast are
+   usable.
+2. **Diagnosis of a UI layout defect that a cheaper model has already attempted
+   and failed to fix.** Cite the failed attempt (worker ID, what was tried, what
+   still fails visually) before pinning Opus.
 3. **Cases the operator names explicitly in the same message** (exact model
    name, or an unambiguous "use Opus for this").
 
-### Decision procedure — Opus not permitted (use Grok or AUTO)
+### Opus not permitted — use Grok or AUTO
 
-Use `cursor-grok-4.5-high-fast` or AUTO — **never** Opus — for:
-
-- Backend, API, ORM, database migrations, or test-fixture work.
-- Documentation, compliance control mapping, runbooks, and binder prose.
-- Lab scripting, deployment scripts, PowerShell.
-- **Mechanical UI edits:** label and terminology renames, moving items
-  between navigation menus, adding a column, wiring an export. These are
-  implementation, not visual design, even though they touch UI files.
-- Root-cause analysis of non-UI defects.
-- Planning, exploration, and codebase reconnaissance.
+Backend, API, ORM, database migrations, test fixtures; documentation, compliance
+control mapping, runbooks, binder prose; lab scripting, deployment scripts,
+PowerShell; **mechanical UI edits** (label and terminology renames, moving items
+between navigation menus, adding a column, wiring an export — implementation,
+not visual design, even though they touch UI files); root-cause analysis of
+non-UI defects; planning, exploration, and codebase reconnaissance.
 
 ### Sequencing — cheap implement, expensive accept
-
-The default shape for UI work is:
 
 1. A Grok or AUTO worker makes the edit and **captures the proof artifact**
    (screenshot and/or bounding-box assertion after a full non-`SkipUiBuild`
@@ -107,99 +95,63 @@ The default shape for UI work is:
 2. Opus is spent on **one focused review pass** of that artifact.
 
 Prefer one Opus acceptance pass over Opus owning implementation end to end.
-Throttling the reviewer must not become an excuse to skip the screenshot or
-the bounding-box assertion — the cheaper implementer remains fully
-responsible for capturing proof (see
-[`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc)).
-
-Resolved policy both rules agree on:
-
-| Work | Model |
-| --- | --- |
-| Acceptance review of rendered GUI proof; diagnosis after a cheaper UI fix failed; operator-named Opus cases | Opus-class (this override) |
-| UI implementation (including mechanical edits), backend, API, ORM, lab, infrastructure, compliance, documentation, planning, exploration | `cursor-grok-4.5-high-fast` or AUTO |
+Throttling the reviewer must not become an excuse to skip the screenshot or the
+bounding-box assertion.
 
 ### Model inheritance is an amplifier
 
-A subagent launched without an explicit `model` inherits its parent's model.
-An Opus-pinned parent that spawns children therefore silently spawns Opus
-children, multiplying spend without anyone choosing to.
+A subagent launched without an explicit `model` inherits its parent's model. An
+Opus-pinned parent that spawns children therefore silently spawns Opus children,
+multiplying spend without anyone choosing to.
 
 **Required:** any agent running on an expensive model (Opus / Max /
 thinking-high) must either (a) do its own work directly with no children, or
 (b) pin `cursor-grok-4.5-high-fast` or omit `model` only when that omission
-resolves to AUTO — never leave child model selection implicit when the parent
-is expensive. Prefer an **explicit** `cursor-grok-4.5-high-fast` pin on every
-child an expensive parent launches. Never let expensive-model selection
-propagate by inheritance.
+resolves to AUTO. Prefer an **explicit** `cursor-grok-4.5-high-fast` pin on every
+child an expensive parent launches. Never let expensive-model selection propagate
+by inheritance.
 
 ### Budget-pressure behavior
 
-When the operator signals that expensive-model budget is constrained
-(credit burn, "use AUTO", usage percentage, or equivalent), Opus use
-**narrows in breadth, not in the ability to fix a known-broken page**.
+When the operator signals constrained budget (credit burn, "use AUTO", a usage
+percentage), Opus use **narrows in breadth, not in the ability to fix a
+known-broken page**. It remains **permitted** for: one focused acceptance-review
+pass of a rendered proof artifact; **diagnosis of a UI layout defect a cheaper
+model already failed to fix** — the "no other model works" case, bounded to one
+focused pass on the specific defect, scoped to diagnosis and fix direction, not
+a general page re-review or feature rewrite; and cases the operator names
+explicitly.
 
-Under budget pressure, Opus remains **permitted** for:
+What budget pressure **removes** is breadth and waste: speculative Opus review,
+second opinions, Opus owning implementation end to end, fleet fan-out, and retry
+loops on expensive models.
 
-1. **Acceptance review of a rendered proof artifact** (one focused pass).
-2. **Diagnosis of a UI layout defect that a cheaper model has already
-   attempted and failed to fix** — this is exactly the "no other model
-   works" case. Bound it: **one focused pass** on the specific defect,
-   scoped to diagnosis and the fix direction, not a general re-review of
-   the page or a rewrite of the feature. Cite the failed cheap attempt.
-3. **Cases the operator names explicitly in the same message.**
-
-What budget pressure **removes** is breadth and waste: speculative Opus
-review, second opinions, Opus owning implementation end to end, fleet
-fan-out, and retry loops on expensive models. It does **not** remove the
-ability to unblock a defect that is actually broken after a cheap pass
-failed.
-
-As of **2026-07-28** the operator reported **90% Opus usage**, asked for
-AUTO wherever possible, and added: **"Do not sacrifice quality
-completion."** The throttle eliminates waste; it does not license
-incomplete or unverified work.
+As of **2026-07-28** the operator reported **90% Opus usage**, asked for AUTO
+wherever possible, and added: **"Do not sacrifice quality completion."** The
+throttle eliminates waste; it does not license incomplete or unverified work.
 
 ### Do not sacrifice quality completion (anti-corner-cutting)
 
-Model throttling never justifies:
+Model throttling never justifies reducing the scope of a slice, dropping
+acceptance criteria, or leaving a feature partly wired to finish sooner; skipping
+or weakening the visual-proof artifact required by
+[`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc);
+reporting work as done when verification is pending (pending must be reported as
+pending, with reason and blocker named); or choosing a cheaper model for work it
+will predictably get wrong and then shipping the result unreviewed. If a cheap
+pass produces something unusable, that is the escalation case, not an acceptable
+outcome.
 
-- Reducing the scope of a slice, dropping acceptance criteria, or leaving
-  a feature partly wired in order to finish sooner.
-- Skipping or weakening the visual-proof artifact required by
-  [`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc).
-- Reporting work as done when verification is pending — pending must be
-  reported as pending, with the reason and the blocker named.
-- Choosing a cheaper model for work it will predictably get wrong, then
-  shipping the result unreviewed. If a cheap pass produces something
-  unusable, that is the escalation case (item 2 above), not an acceptable
-  outcome.
-
-**Ordering:** correctness and completeness first, then cost. Cost
-discipline decides *which model* does a piece of work and *how many
-passes* it gets — never *whether* the work is finished or verified.
-
-This override does **not**:
-
-1. **Weaken acceptance evidence** in
-   [`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc).
-   Primary actions visible at 1280x800 and 1024x768, no overlapping rows/cells,
-   bounding-box asserts or screenshots the agent read back, a named evidence
-   artifact, and a full deploy with **no** `-SkipUiBuild` before any screenshot
-   counts as proof — all stand unchanged. The override is **which model** may
-   review rendered output; it does not lower the bar the work must clear.
-2. **License Opus fan-out or spend escalation anywhere else.** No Opus across
-   a fleet of background workers, no Opus retry loops after a usage or credit
-   error, no Opus to supervise or unstick a stuck child. Items 1–6 above remain
-   binding for all non-override work.
+**Ordering:** correctness and completeness first, then cost. Cost discipline
+decides *which model* does a piece of work and *how many passes* it gets — never
+*whether* the work is finished or verified.
 
 ## Origin
 
-2026-07-15 Opus overspend on CMMC enclave / SBOM / KMS background Task fleet
-under parent chat `072a9d53-3dd4-4a90-9749-4e2ac1d5de47`.
-Visual-design precedence added 2026-07-27 per operator directive.
-2026-07-28 throttle: operator reported 90% Opus usage and asked for AUTO
-wherever possible without sacrificing quality completion; carve-out
-narrowed to rendered acceptance review, bounded failed-fix diagnosis, and
-operator-named cases; inheritance amplifier, cheap-implement /
-expensive-accept sequencing, and anti-corner-cutting clause added.
+2026-07-15 Opus overspend on a CMMC enclave / SBOM / KMS background Task fleet.
+Visual-design precedence added 2026-07-27 per operator directive. 2026-07-28
+throttle: operator reported 90% Opus usage and asked for AUTO wherever possible
+without sacrificing quality completion; carve-out narrowed to rendered
+acceptance review, bounded failed-fix diagnosis, and operator-named cases;
+inheritance amplifier, cheap-implement / expensive-accept sequencing, and
+anti-corner-cutting clause added.

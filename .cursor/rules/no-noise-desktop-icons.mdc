@@ -5,122 +5,110 @@ alwaysApply: true
 
 # No noise / placeholder Desktop icons (hard rule)
 
-Operator defect (2026-08): Desktop **Jump Config** showed a
-**multi-colored noise/static** icon (plus the UAC shield). Recurrence
-(2026-08-06): `mix-server` WiX shipped **BMP/DIB-only** product ICOs
-(~285 KB) that Explorer can paint as static; local tree had drifted
-from the PNG-compressed `core-assets` installer-shortcuts. That class
-of failure is forbidden permanently — not a Windows quirk to ignore.
+Operator defect (2026-08): Desktop **Jump Config** showed a **multi-colored
+noise/static** icon (plus the UAC shield). Recurrence (2026-08-06): `mix-server`
+WiX shipped **BMP/DIB-only** product ICOs (~285 KB) that Explorer can paint as
+static; the local tree had drifted from the PNG-compressed `core-assets`
+installer-shortcuts. That class of failure is forbidden permanently — not a
+Windows quirk to ignore.
 
 ## The rule
 
 > **Never generate, commit, stage, sync, or ship Desktop, Start Menu,
-> Add/Remove Programs, WiX `Icon=`, or PE-embedded icons that are
-> random-bit / noise / static pixels, or that are BMP/DIB-only `.ico`
-> files. Every advertised shortcut and every shipping PE / MSI icon
-> resource MUST be a PNG-compressed AIC `.ico` produced in
-> `core-assets` (or a validated `installer-shortcuts` derivative) and
-> copied into consumers via `sync-to-projects.ps1`. Agents MUST NOT
-> invent, regenerate, or “fix” icons with ad-hoc ImageMagick /
-> `tauri icon` / hand edits outside `core-assets`.**
+> Add/Remove Programs, WiX `Icon=`, or PE-embedded icons that are random-bit /
+> noise / static pixels, or that are BMP/DIB-only `.ico` files. Every advertised
+> shortcut and every shipping PE / MSI icon resource MUST be a PNG-compressed
+> AIC `.ico` produced in `core-assets` (or a validated `installer-shortcuts`
+> derivative) and copied into consumers via `sync-to-projects.ps1`. Agents MUST
+> NOT invent, regenerate, or "fix" icons with ad-hoc ImageMagick / `tauri icon`
+> / hand edits outside `core-assets`.**
 
 ## Permanent generation ban (agents)
 
-These actions are **forbidden** in every repo under `c:\analog-pim`:
+Forbidden in every repo under `c:\analog-pim`:
 
-1. **Creating a new `.ico` outside `core-assets`** for product /
-   shortcut / WiX / Tauri use.
-2. **`magick … out.ico`** (or equivalent) that emits **BMP/DIB-only**
-   frames — ImageMagick 7.1’s default ICO path. Explorer paints those
-   as multi-colored static even when the pixel art is a real logo.
-3. **Committing an `.ico` with zero PNG payloads** (all frames are
-   `BITMAPINFOHEADER` / DIB). Size heuristic: a 256× multi-size tile
-   that is ~200–300 KB with no `89 50 4E 47` markers is almost always
-   this defect.
-4. **Using `aic-header.PLACEHOLDER-do-not-use.png`** or any random-bit
-   bitmap as an icon or header source.
-5. **Leaving shortcut `IconLocation` empty / `,0`** so Explorer falls
-   back to a PE that embeds a bad or BMP-only ICO.
+1. **Creating a new `.ico` outside `core-assets`** for product / shortcut / WiX
+   / Tauri use.
+2. **`magick … out.ico`** (or equivalent) emitting **BMP/DIB-only** frames —
+   ImageMagick 7.1's default ICO path. Explorer paints those as multi-colored
+   static even when the pixel art is a real logo.
+3. **Committing an `.ico` with zero PNG payloads** (all frames
+   `BITMAPINFOHEADER` / DIB). Size heuristic: a 256× multi-size tile around
+   200–300 KB with no `89 50 4E 47` markers is almost always this defect.
+4. **Using `aic-header.PLACEHOLDER-do-not-use.png`** or any random-bit bitmap as
+   an icon or header source.
+5. **Leaving shortcut `IconLocation` empty / `,0`** so Explorer falls back to a
+   PE that embeds a bad or BMP-only ICO.
 
-If a consumer needs a new size or product variant: generate it **inside
-`core-assets`**, commit there, extend `sync-to-projects.ps1`, run the
-sync, then commit the synced copies in each consumer. See
-[`branding-assets.mdc`](branding-assets.mdc).
+A new size or product variant is generated **inside `core-assets`**, committed
+there, added to `sync-to-projects.ps1`, synced, then committed in each consumer.
+See [`branding-assets.mdc`](branding-assets.mdc).
 
-## Why shortcuts become noise (RCA contract)
+## Why shortcuts become noise
 
 | Cause | What happens |
 | --- | --- |
-| **Shortcut `IconLocation` empty / `,0`** | Explorer extracts the target EXE’s icon resource. If that PE embeds a bad Tauri `icon.ico`, the Desktop tile is noise (+ UAC shield when elevated). |
-| **Stale `src-tauri/icons/icon.ico`** | Historical `tauri icon` / unsynced tree left a noise ICO in Jump / DB Mgmt / WA / Recording / sibling Tauri apps. Empty `core-assets/icons/tauri` → sync is a no-op. |
-| **BMP/DIB-only `.ico` (ImageMagick 7.1 default)** | Explorer paints BMP frames as multi-colored static. Canonical generators assemble **PNG-compressed** ICO only (`generate-icons.ps1`, `generate-installer-shortcut-icons.ps1`). |
-| **Missing staged `aic-icon.ico`** | Side-load / incomplete MSI has the Tauri EXE but no sidecar `aic-icon.ico`; sync scripts that omit `IconLocation` fall back to the EXE. |
-| **Header / in-app placeholder** | `core-assets/branding/aic-header.PLACEHOLDER-do-not-use.png` must never re-enter `src/assets/` or be used as an icon source. |
-| **WiX / Mix drift** | `mix-server/wix/assets/aic-server-*.ico` must stay byte-identical to `core-assets/icons/desktop/installer-shortcuts/` via sync — never re-encode locally. |
+| **Shortcut `IconLocation` empty / `,0`** | Explorer extracts the target EXE's icon resource; a bad Tauri `icon.ico` makes the tile noise (+ UAC shield when elevated) |
+| **Stale `src-tauri/icons/icon.ico`** | Historical `tauri icon` / unsynced tree left a noise ICO in Jump / DB Mgmt / WA / Recording / sibling Tauri apps; an empty `core-assets/icons/tauri` makes the sync a no-op |
+| **BMP/DIB-only `.ico`** | Explorer paints BMP frames as multi-colored static; canonical generators assemble **PNG-compressed** ICO only |
+| **Missing staged `aic-icon.ico`** | Side-load / incomplete MSI has the Tauri EXE but no sidecar icon; scripts omitting `IconLocation` fall back to the EXE |
+| **Header / in-app placeholder** | `aic-header.PLACEHOLDER-do-not-use.png` must never re-enter `src/assets/` or be used as an icon source |
+| **WiX / Mix drift** | `mix-server/wix/assets/aic-server-*.ico` must stay byte-identical to `core-assets/icons/desktop/installer-shortcuts/` via sync — never re-encode locally |
 
 ## Required patterns
 
 1. **Canonical mark** — `core-assets/icons/desktop/aic-icon.ico` (or
    `icons/desktop/installer-shortcuts/*.ico` for MSI / WiX variants).
-2. **PNG-compressed ICO** — at least one PNG payload per file
-   (`89 50 4E 47` inside the `.ico`). Refuse BMP/DIB-only at stage time
-   (`Stage-InstallerShortcutIcons.ps1`, Jump/DB/Recording/WA MSI builders,
-   and any Mix / WiX asset copy).
+2. **PNG-compressed ICO** — at least one PNG payload per file (`89 50 4E 47`
+   inside the `.ico`). Refuse BMP/DIB-only at stage time
+   (`Stage-InstallerShortcutIcons.ps1`, Jump/DB/Recording/WA MSI builders, and
+   any Mix / WiX asset copy).
 3. **Shortcut `IconLocation`** — every Desktop / Start Menu `.lnk` for a
-   configurator MUST set
-   `IconLocation = "<installDir>\aic-icon.ico,0"` (or the WiX-advertised
-   `Icon=` resource). Never rely on bare EXE `,0` for suite products.
-4. **Tauri PE resources** — `src-tauri/icons/` from
-   `core-assets/icons/tauri` via `sync-to-projects.ps1`. If that tree is
-   empty, regenerate with
+   configurator sets `IconLocation = "<installDir>\aic-icon.ico,0"` (or the
+   WiX-advertised `Icon=` resource). Never rely on bare EXE `,0` for suite
+   products.
+4. **Tauri PE resources** — `src-tauri/icons/` comes from
+   `core-assets/icons/tauri` via `sync-to-projects.ps1`. If that tree is empty,
+   regenerate with
    `cargo tauri icon icons/source/aic-icon-1024.png --output icons/tauri`
    **in core-assets**, commit, sync — do not invent local noise ICOs.
-5. **Pre-commit / pre-push check (agents)** — before committing any
-   `.ico` change, verify: (a) file is listed in
-   `core-assets/scripts/sync-to-projects.ps1` destinations or is the
-   `core-assets` source itself; (b) at least one PNG frame exists;
-   (c) SHA-256 matches the `core-assets` source when the path is a
-   sync destination. If (b) or (c) fails, **do not commit**.
-6. **Section 508 / credibility** — brand image must be the real AIC mark
+5. **Pre-commit check (agents)** — before committing any `.ico` change verify:
+   (a) the file is a `sync-to-projects.ps1` destination or the `core-assets`
+   source itself; (b) at least one PNG frame exists; (c) SHA-256 matches the
+   `core-assets` source when the path is a sync destination. If (b) or (c)
+   fails, **do not commit**.
+6. **Section 508 / credibility** — the brand image must be the real AIC mark
    ([`enterprise-compliance.mdc`](enterprise-compliance.mdc) §2;
    [`operator-ui-credibility.mdc`](operator-ui-credibility.mdc)).
 
 ## Forbidden constructs
 
-- `New-Object WScript.Shell` / WiX `<Shortcut>` without an explicit AIC
-  icon path or `Icon="ProductIcon"` backed by staged `aic-icon.ico`.
+- `New-Object WScript.Shell` / WiX `<Shortcut>` without an explicit AIC icon path
+  or `Icon="ProductIcon"` backed by staged `aic-icon.ico`.
 - Committing or syncing `aic-header.PLACEHOLDER-do-not-use.png` (or any
   random-bit bitmap) as `icon.ico`, `aic-icon.ico`, or header art.
-- `magick … out.ico` without the PNG-compressed assembly path documented
-  in `core-assets/icons/desktop/installer-shortcuts/README.md`.
-- Replacing a sync-destination `.ico` with a locally regenerated file
-  that does not match `core-assets` SHA-256.
-- Claiming a Desktop icon fix without a screenshot of the live shortcut
-  tile (or an extracted PNG from the shortcut’s `IconLocation` target).
+- `magick … out.ico` without the PNG-compressed assembly path documented in
+  `core-assets/icons/desktop/installer-shortcuts/README.md`.
+- Replacing a sync-destination `.ico` with a locally regenerated file that does
+  not match `core-assets` SHA-256.
+- Claiming a Desktop icon fix without a screenshot of the live shortcut tile (or
+  an extracted PNG from the shortcut's `IconLocation` target).
 
-## Worked examples
+## Worked example
 
-### Jump Config (2026-08)
-
-**Broken:** `Jump Config.lnk` →
-`…\pim-jump-server-configurator-tauri.exe` with `IconLocation = ,0`;
-install dir missing `aic-icon.ico`; EXE embeds noise `icon.ico`.
+**Broken (Jump Config, 2026-08):** `Jump Config.lnk` →
+`…\pim-jump-server-configurator-tauri.exe` with `IconLocation = ,0`; install dir
+missing `aic-icon.ico`; the EXE embeds a noise `icon.ico`.
 
 **Fixed:** stage `core-assets/icons/desktop/aic-icon.ico` as
-`%ProgramFiles%\AIC\PimJumpServer\aic-icon.ico` (or MSI `JumpServer`);
-set shortcut `IconLocation` to that file; keep Tauri `src-tauri/icons`
-synced from `core-assets/icons/tauri`.
+`%ProgramFiles%\AIC\PimJumpServer\aic-icon.ico`; set the shortcut
+`IconLocation` to that file; keep `src-tauri/icons` synced from
+`core-assets/icons/tauri`.
 
-### Mix WiX product icons (2026-08-06)
-
-**Broken:** `mix-server/wix/assets/aic-server-admin-win32.ico` and
-`aic-server-product.ico` were ~285 KB **BMP/DIB-only** (4 frames, zero
-PNG payloads) — the Explorer static failure mode.
-
-**Fixed:** restore byte-identical copies from
-`core-assets/icons/desktop/installer-shortcuts/` (PNG-compressed,
-~14–16 KB). Sync map already lists these destinations in
-`sync-to-projects.ps1`; do not re-encode in `mix-server`.
+Same shape for the 2026-08-06 Mix WiX regression: ~285 KB BMP/DIB-only product
+ICOs were restored from the byte-identical PNG-compressed
+`core-assets/icons/desktop/installer-shortcuts/` copies (~14–16 KB) rather than
+re-encoded in `mix-server`.
 
 ## Cross-references
 
@@ -131,13 +119,10 @@ PNG payloads) — the Explorer static failure mode.
 | `core-assets/icons/desktop/installer-shortcuts/README.md` | BMP→noise; PNG-compressed ICO contract |
 | `core-assets/scripts/sync-to-projects.ps1` | Includes `mix-server/wix/assets/aic-server-*.ico` |
 | `pim-installers/scripts/Sync-AicConfiguratorDesktopShortcuts.ps1` | Lab Desktop/Start Menu sync must set `IconLocation` |
-| `pim-offline-client/AGENTS.md` | Brand image = real AIC mark, not noise placeholder |
 
 ## Origin
 
-2026-08-04 — Desktop Jump Config noise/static icon + UAC shield; suite
-audit of Tauri `icon.ico` and shortcut `IconLocation` omissions.
-
-2026-08-06 — operator hard follow-up: permanently stop generating noise
-icons; Mix WiX BMP-only product ICOs replaced with PNG-compressed
-`core-assets` installer-shortcuts.
+2026-08-04 — Desktop Jump Config noise/static icon + UAC shield; suite audit of
+Tauri `icon.ico` and shortcut `IconLocation` omissions. 2026-08-06 — operator
+hard follow-up: permanently stop generating noise icons; Mix WiX BMP-only
+product ICOs replaced with PNG-compressed `core-assets` installer-shortcuts.

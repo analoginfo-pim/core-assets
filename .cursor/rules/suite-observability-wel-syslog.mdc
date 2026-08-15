@@ -5,69 +5,55 @@ alwaysApply: true
 
 # Suite observability: Windows Event Log + syslog (hard requirement)
 
-Operator directive (2026-08): **tracking of all applications in this
-suite is a hard requirement.** Every shipping agent and component MUST
-generate events to native Windows Event Log **and** MUST be able to
-generate syslog events. Tracing alone is not enough.
-
-This rule binds agent code-generation behavior AND the resulting source
-in every workspace repository, including future products.
+Operator directive (2026-08): **tracking of all applications in this suite is a
+hard requirement.** Every shipping agent and component MUST generate events to
+native Windows Event Log **and** MUST be able to generate syslog events.
+Tracing alone is not enough.
 
 ## The rule
 
-> **Every shipping Windows binary in the AIC PIM suite emits
-> operational and security-relevant events through
-> `pim-windows-oplog` (registered Event Source + shared or product
-> message DLL). Every shipping binary — Windows, Linux, and macOS —
-> implements an RFC 5424 syslog sink wired to `app-config` keys so
-> operators can enable remote forwarding. Default may be off; the
-> implementation is required. Manifest keys without a real sink are
-> forbidden.**
+> **Every shipping Windows binary in the AIC PIM suite emits operational and
+> security-relevant events through `pim-windows-oplog` (registered Event Source
+> + shared or product message DLL). Every shipping binary — Windows, Linux, and
+> macOS — implements an RFC 5424 syslog sink wired to `app-config` keys so
+> operators can enable remote forwarding. Default may be off; the implementation
+> is required. Manifest keys without a real sink are forbidden.**
 
-Concretely:
-
-1. **Windows Event Log (WEL)** — On Windows, process lifecycle,
-   startup failure, and security-relevant operator / audit actions go
-   through `pim_windows_oplog::emit` / `report_*` / `AuditEvent` (or
-   the `pim_app_config::windows_oplog` re-export). The Event Source is
-   registered (installer and/or self-heal at process start). Message
-   text resolves via the shared `pim_windows_oplog_messages.dll` and/or
-   a product message catalog registered for that source.
-2. **Syslog (RFC 5424)** — Each shipping binary can forward the same
-   class of events to a remote collector when configured. Keys live in
-   that product's `app-config.toml` (for example `SYSLOG_ENABLED`,
-   `SYSLOG_HOST`, `SYSLOG_PORT`, `SYSLOG_PROTOCOL`, facility, ident,
-   TLS CA / SNI). Default may be `false` / empty host; the code path,
-   configurator fields, and diagnostics probe must exist.
-3. **Cross-platform** — On Linux/macOS, WEL is N/A; syslog (and/or
-   journald / unified-log mirrors documented per product) still
-   applies. Do not treat "Windows-only suite" as an excuse to skip
-   syslog on Unix daemons.
-4. **AU-* alignment** — This operationalizes
-   [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §5
-   (NIST SP 800-53 AU-2, AU-3, AU-9, AU-12): auditable events reach
-   native OS and SIEM-friendly channels, not only rolling `tracing`
-   files.
+1. **Windows Event Log (WEL)** — process lifecycle, startup failure, and
+   security-relevant operator / audit actions go through
+   `pim_windows_oplog::emit` / `report_*` / `AuditEvent` (or the
+   `pim_app_config::windows_oplog` re-export). The Event Source is registered
+   (installer and/or self-heal at process start). Message text resolves via the
+   shared `pim_windows_oplog_messages.dll` and/or a product message catalog.
+2. **Syslog (RFC 5424)** — each shipping binary can forward the same class of
+   events to a remote collector when configured. Keys live in that product's
+   `app-config.toml` (for example `SYSLOG_ENABLED`, `SYSLOG_HOST`,
+   `SYSLOG_PORT`, `SYSLOG_PROTOCOL`, facility, ident, TLS CA / SNI). Default may
+   be `false` / empty host; the code path, configurator fields, and diagnostics
+   probe must exist.
+3. **Cross-platform** — on Linux/macOS, WEL is N/A; syslog (and/or journald /
+   unified-log mirrors documented per product) still applies. "Windows-only
+   suite" is not an excuse to skip syslog on Unix daemons.
+4. **AU-\* alignment** — this operationalizes
+   [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §5 (NIST SP 800-53
+   AU-2, AU-3, AU-9, AU-12): auditable events reach native OS and SIEM-friendly
+   channels, not only rolling `tracing` files.
 
 ## Applies to (shipping products)
 
-| Product / binary class | WEL (`pim-windows-oplog`) | RFC5424 syslog sink |
-| --- | --- | --- |
-| AIC Server (`pim-offline-server` and service hosts) | required on Windows | required |
-| Endpoint agent (`pim-offline-agent` / client) | required on Windows | required |
-| Recording agent / evidence writers | required on Windows | required |
-| Workspace Agent (WA) and related shipping agents | required on Windows | required |
-| Database management (`db-mgmt` and shipping GUIs/CLIs) | required on Windows | required |
-| Jump / session / recording proxy capacity binaries that ship | required on Windows | required |
-| All shipping configurators (Win32 + Tauri) and elevate helpers | required on Windows | required (probe + config keys; forward security-relevant actions) |
-| Future shipping suite binaries | same | same |
+WEL required on Windows **and** RFC5424 syslog required for: AIC Server
+(`pim-offline-server` and service hosts); endpoint agent
+(`pim-offline-agent` / client); recording agent and evidence writers; Workspace
+Agent (WA) and related shipping agents; database management (`db-mgmt` and
+shipping GUIs/CLIs); jump / session / recording proxy capacity binaries that
+ship; all shipping configurators (Win32 + Tauri) and elevate helpers (probe +
+config keys; forward security-relevant actions); and every future shipping suite
+binary.
 
-Internal libraries, one-shot build tools, and non-shipping examples are
-out of scope unless they are packaged into a customer-facing EXE.
+Internal libraries, one-shot build tools, and non-shipping examples are out of
+scope unless packaged into a customer-facing EXE.
 
 ## Required patterns
-
-### Windows Event Log
 
 ```rust
 // At process start (after fatal config checks where appropriate):
@@ -81,62 +67,50 @@ pim_windows_oplog::emit(ids::SOME_AUDIT_ID, &payload)?;
 
 Each **binary-producing** crate links the message resource from its own
 `build.rs` (see `pim-windows-oplog/docs/WINDOWS_OPERATIONAL_EVENT_LOG.md`).
-Installers register the Event Source; runtime may self-heal
-`EventMessageFile` drift.
+Installers register the Event Source; runtime may self-heal `EventMessageFile`
+drift.
 
-### Syslog
-
-- Declare `SYSLOG_*` (or product-prefixed equivalents such as
-  `syslog_enabled` / `syslog_host`) in `app-config.toml`.
-- Construct a real sink at startup / settings refresh that sends
-  RFC 5424 when enabled.
-- Provide an operator diagnostics probe (configurator and/or admin API)
-  that proves reachability without requiring a full production SIEM.
-- Honor [`no-environment-variables.mdc`](no-environment-variables.mdc):
-  configuration comes from `pim-app-config`, never `$env:SYSLOG_*`.
+For syslog: declare `SYSLOG_*` (or product-prefixed `syslog_enabled` /
+`syslog_host`) in `app-config.toml`; construct a real sink at startup / settings
+refresh that sends RFC 5424 when enabled; provide an operator diagnostics probe
+(configurator and/or admin API) proving reachability without a production SIEM;
+honor [`no-environment-variables.mdc`](no-environment-variables.mdc) —
+configuration comes from `pim-app-config`, never `$env:SYSLOG_*`.
 
 ## Forbidden constructs
 
-In every shipping binary and its tests that claim observability:
-
-- **Tracing-only stubs for “event ids”** — constants, enums, or log
-  lines that name WEL / syslog event IDs without calling
-  `pim-windows-oplog` (Windows) or the syslog sink (when enabled).
-- **Unused `EVENTS_*` / `SYSLOG_*` / `event_log_*` / `syslog_*`
-  manifest keys** with no fan-out sink constructed at runtime.
-- **Bypassing `pim-windows-oplog`** with raw `ReportEventW` /
-  `EventLog::write` that skips the shared catalog, redaction helpers,
-  and `declared_event_ids()` self-test.
-- **"We'll add syslog later"** for a new shipping product — the sink
-  (even default-off) lands in the same change set as the binary's
-  first customer-facing release path.
+- **Tracing-only stubs for "event ids"** — constants, enums, or log lines naming
+  WEL / syslog event IDs without calling `pim-windows-oplog` (Windows) or the
+  syslog sink (when enabled).
+- **Unused `EVENTS_*` / `SYSLOG_*` / `event_log_*` / `syslog_*` manifest keys**
+  with no fan-out sink constructed at runtime.
+- **Bypassing `pim-windows-oplog`** with raw `ReportEventW` / `EventLog::write`
+  that skips the shared catalog, redaction helpers, and `declared_event_ids()`
+  self-test.
+- **"We'll add syslog later"** for a new shipping product — the sink (even
+  default-off) lands in the same change set as the binary's first
+  customer-facing release path.
 - Logging secret plaintext into WEL or syslog — mask per
   [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §5
   (`pim_app_config::windows_oplog::redact::*`).
 
-## Relationship to sibling rules
+WEL writes remain best-effort relative to the operator-visible action (AU-9:
+record the audit-write failure to the diagnostic log and proceed). That does
+**not** excuse missing the sink implementation.
+
+## Cross-references
 
 | Rule | Overlap |
 | --- | --- |
 | [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §5 | AU-* audit payload, masking, Event ID ranges |
 | [`service-lifecycle-logs.mdc`](service-lifecycle-logs.mdc) | Service started / stopping / stopped triplet (41010–41012) via WEL + tracing |
-| [`silent-failure-is-a-bug.mdc`](silent-failure-is-a-bug.mdc) | Sink failures log at `warn` / diagnostic; do not silently drop without a trail |
-| [`no-environment-variables.mdc`](no-environment-variables.mdc) | Syslog and event-log toggles are app-config keys only |
+| [`silent-failure-is-a-bug.mdc`](silent-failure-is-a-bug.mdc) | Sink failures log at `warn` / diagnostic; never silently dropped |
 
-WEL writes remain best-effort relative to the operator-visible action
-(AU-9: record the audit-write failure to the diagnostic log and
-proceed). That does **not** excuse missing the sink implementation.
-
-## Canonical docs
-
-| Location | Role |
-| --- | --- |
-| `pim-windows-oplog/docs/WINDOWS_OPERATIONAL_EVENT_LOG.md` | WEL registration, message DLL, build.rs link, ID ranges |
-| `pim-windows-oplog/README.md` | Crate overview + suite hard-requirement pointer |
-| Per-product `app-config.toml` + `AGENTS.md` | `SYSLOG_*` / `event_log_*` keys and probes |
+Canonical docs: `pim-windows-oplog/docs/WINDOWS_OPERATIONAL_EVENT_LOG.md` (WEL
+registration, message DLL, build.rs link, ID ranges), `pim-windows-oplog/README.md`,
+and each product's `app-config.toml` + `AGENTS.md` for `SYSLOG_*` keys and probes.
 
 ## Origin
 
-2026-08-02 — operator hard requirement: all suite components generate
-native Windows Event Log events and syslog events; suite-wide tracking
-is mandatory.
+2026-08-02 — operator hard requirement: all suite components generate native
+Windows Event Log events and syslog events; suite-wide tracking is mandatory.

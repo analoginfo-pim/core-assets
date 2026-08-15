@@ -14,13 +14,12 @@ for readers with at most a 6th grade education and no knowledge of IT or
 Security, and must be image rich to enforce lessons. Do not use copyrighted
 materials — use only open source or create original documentation.**
 
-Context the operator named: **Thoropass** ships training and attestation for
-SOC 2; HR platforms like **ADP** and **Paychex** ship the same shape of
-assign-read-attest workflow. Those products win on *comprehension*, not on
+Thoropass (SOC 2) and HR platforms like ADP and Paychex ship the same
+assign-read-attest workflow, and they win on **comprehension**, not on
 control-mapping density. A workforce member who cannot read the document
 cannot be trained by it, and an attestation collected against text the
-reader did not understand is a signature on nothing — it is audit theater
-that fails the moment an assessor interviews the workforce.
+reader did not understand is a signature on nothing — audit theater that
+fails the moment an assessor interviews the workforce.
 
 ## The rule
 
@@ -41,13 +40,12 @@ that fails the moment an assessor interviews the workforce.
 | Unexplained IT / security jargon | **zero** | `training::readability::banned_jargon` |
 
 Flesch-Kincaid is the formula the US Government already applies to itself
-(Plain Writing Act of 2010 guidance; DoDI 5025.13). Using the customer's own
-plain-language yardstick means "how do you know this is 6th-grade text?" has
-a checkable answer.
+(Plain Writing Act of 2010 guidance; DoDI 5025.13), so "how do you know
+this is 6th-grade text?" has a checkable answer.
 
-**Averages hide monsters.** A document can average grade 5 and still contain
-one 60-word sentence that stops every reader. Both the average and the
-worst sentence are checked.
+**Averages hide monsters.** A document can average grade 5 and still
+contain one 60-word sentence that stops every reader. Both the average
+and the worst sentence are checked.
 
 ### Writing moves that get you there
 
@@ -59,25 +57,24 @@ worst sentence are checked.
 | "Utilize multifactor authentication." | "Use your password and one more step, like a code on your phone." |
 | "Notwithstanding the foregoing, deviations require approval." | "You can only skip this if your manager says yes in writing." |
 
-- One idea per sentence. One lesson per section.
-- Second person ("you"), active voice, present tense.
-- Define a term the first time you need it, then use it freely.
-- Numbers as digits ("72 hours", not "seventy-two hours").
-- Never make the reader hold two ideas to understand a third.
+One idea per sentence. One lesson per section. Second person ("you"),
+active voice, present tense. Define a term the first time you need it,
+then use it freely. Numbers as digits ("72 hours"). Never make the reader
+hold two ideas to understand a third.
 
 ## 2. Jargon — define on first use or do not use it
 
-Flesch-Kincaid cannot see jargon. "Phishing" is two syllables and scores as
-easy text, but a reader with no security background does not know it. The
-term list in `training::readability::banned_jargon` pairs each term with a
-plain replacement. Using the term is allowed **after** the document has
-explained it in plain words.
+Flesch-Kincaid cannot see jargon. "Phishing" is two syllables and scores
+as easy text, but a reader with no security background does not know it.
+The term list in `training::readability::banned_jargon` pairs each term
+with a plain replacement. Using the term is allowed **after** the document
+has explained it in plain words.
 
-Forbidden outright, with no acceptable definition-and-proceed path, because
-a plain word already exists: `utilize` (use), `commence` (start),
-`terminate` (end), `ascertain` (find out), `prior to` (before),
-`subsequent` (later), `in the event that` (if), `pursuant to` (under),
-`notwithstanding` (even so), `disseminate` (share), `promulgate` (publish).
+Forbidden outright, with no definition-and-proceed path, because a plain
+word already exists: `utilize` (use), `commence` (start), `terminate`
+(end), `ascertain` (find out), `prior to` (before), `subsequent` (later),
+`in the event that` (if), `pursuant to` (under), `notwithstanding` (even
+so), `disseminate` (share), `promulgate` (publish).
 
 ## 3. Image rich — illustrations carry the lesson
 
@@ -91,16 +88,16 @@ a plain word already exists: `utilize` (use), `commence` (start),
 | Alt text | **Required, non-empty, and load-bearing** — it must teach the same lesson in words (Section 508 / WCAG 1.1.1) |
 | Caption | Required. States the lesson, not "Figure 3" |
 | Plaintext fallback | Alt text renders in `plaintext` and `markdown` exports so no format loses the lesson |
-| Contrast / color | Meets WCAG 2.0 AA; never conveys meaning by color alone (a red X and a green check must also differ in shape) |
-| Text in image | Keep to short labels. Never put a sentence a reader needs *only* inside an image |
+| Contrast / color | WCAG 2.0 AA; never convey meaning by color alone (a red X and a green check must also differ in shape) |
+| Text in image | Short labels only. Never put a sentence a reader needs *only* inside an image |
 
-Illustration style that works for this audience: do-this / not-this pairs,
-numbered step strips, simple boundary diagrams (what is inside the
-protected area and what is outside), and traffic-light decision trees.
+Styles that work for this audience: do-this / not-this pairs, numbered
+step strips, simple boundary diagrams (what is inside the protected area
+and what is outside), and traffic-light decision trees.
 
 Training illustrations are **document content**, not product branding, so
-they live with the documents rather than in `core-assets`. Icons, logos, and
-header art remain governed by
+they live with the documents rather than in `core-assets`. Icons, logos,
+and header art remain governed by
 [`branding-assets.mdc`](branding-assets.mdc) and must still come from
 `core-assets`. Never ship a noise / placeholder bitmap
 ([`no-noise-desktop-icons.mdc`](no-noise-desktop-icons.mdc)).
@@ -113,8 +110,6 @@ header art remain governed by
 > unclear license, not a chapter of a book, not a competitor's SOC 2
 > awareness deck.
 
-Permitted sources:
-
 | Source | Status | Note |
 | --- | --- | --- |
 | Original prose written for this product | **preferred** | Default for every document |
@@ -125,9 +120,7 @@ Permitted sources:
 
 Quoting a **regulation** is fine and expected — that is the authority the
 document exists to explain. Quoting somebody's **explanation** of the
-regulation is not.
-
-Citing a clause is not the same as claiming compliance
+regulation is not. Citing a clause is not the same as claiming compliance
 ([`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc)).
 
 ## 5. Forbidden constructs
@@ -140,8 +133,8 @@ Citing a clause is not the same as claiming compliance
 - An illustration that carries a required lesson with no text equivalent.
 - Third-party copyrighted prose or art, including reworded derivatives.
 - Lowering `MAX_GRADE_LEVEL`, weakening the enforcing test, or adding an
-  allow-list of "legacy" documents to make a failing catalog pass. Rewrite
-  the document.
+  allow-list of "legacy" documents to make a failing catalog pass.
+  **Rewrite the document.**
 - Claiming a document is 6th-grade without the measured score.
 
 ## 6. Required agent behavior
@@ -152,15 +145,18 @@ Citing a clause is not the same as claiming compliance
 2. Land illustrations **in the same change set** as the prose. "Text now,
    pictures later" ships the defect this rule exists to prevent.
 3. Never weaken the threshold to make a document pass.
-4. Attestation surfaces inherit this rule: the consent text a person signs,
-   the reminder email, and the completion screen are all training materials.
+4. Attestation surfaces inherit this rule: the consent text a person
+   signs, the reminder email, and the completion screen are all training
+   materials.
 5. Mirror this rule to `core-assets/.cursor/rules/` in the same change set
    ([`auto-commit-push.mdc`](auto-commit-push.mdc)) — the workspace
    `.cursor` directory is not a git root.
 
 ## Worked violation to fix
 
-**Violation** (the style shipped before this rule, grade 15.9):
+**Violation** (the style shipped before this rule, grade 15.9): one
+34-word sentence, five words over four syllables, no illustration, and it
+never says what the reader should do.
 
 ```text
 Organizations must implement configuration management processes that ensure
@@ -168,9 +164,6 @@ the authorized baseline is maintained throughout the system development
 lifecycle, including the documentation of deviations and the subsequent
 remediation of identified nonconformities.
 ```
-
-One 34-word sentence, five words over four syllables, no illustration, and
-it never says what the reader should do.
 
 **Fix** (grade 4.4, one lesson, one picture):
 
@@ -196,19 +189,15 @@ Caption: Ask before you change anything on your work computer.]
 
 ## Cross-references
 
-| Rule | Overlap |
-| --- | --- |
-| [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §1-2 | US English; Section 508 / WCAG 2.0 AA alt text and contrast |
-| [`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc) | Readable text still may not claim Met or certified |
-| [`operator-ui-credibility.mdc`](operator-ui-credibility.mdc) | Unreadable material is a credibility defect, not backlog |
-| [`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc) | Illustrations rendered in the SPA need visual proof |
-| [`branding-assets.mdc`](branding-assets.mdc) | Icons / logos / header art stay in `core-assets` |
-| [`readable-read-only-controls.mdc`](readable-read-only-controls.mdc) | Normal contrast for content a reader must read |
+US English plus Section 508 / WCAG 2.0 AA alt text and contrast come from
+[`enterprise-compliance.mdc`](enterprise-compliance.mdc) §1-2; readable text
+still may not claim Met or certified
+([`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc)); welcome
+letters are training materials and inherit this rule
+([`workforce-identity-and-assessment-readiness.mdc`](workforce-identity-and-assessment-readiness.mdc)).
 
 ## Origin
 
-2026-08-07 — operator hard rule. Thoropass (SOC 2) and HR platforms (ADP,
-Paychex) set the market bar for assign-read-attest training; they win on
-comprehension. Prior AIC templates were written in professional prose at
-roughly grade 12-17 with no illustrations, which cannot train the workforce
-an attestation is collected from.
+2026-08-07 — operator hard rule. Prior AIC templates were written in
+professional prose at roughly grade 12-17 with no illustrations, which
+cannot train the workforce an attestation is collected from.

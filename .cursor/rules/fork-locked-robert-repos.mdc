@@ -80,25 +80,17 @@ Use only if it **already** exists on GitHub and unblocks the feature in
 
 ## Rename convention
 
-| Pattern | Example |
-| --- | --- |
-| `pim-<crate>-aic` | `pim-disc-aic` |
-| `<upstream-name>-aic` | `mix-server-aic` |
-
-Host under `https://github.com/analoginfo-pim/` (or the org Phil already
-uses for AIC-owned repos). Never push AIC extensive-change branches as if
-they were Robert’s canonical `main`.
+`pim-<crate>-aic` (e.g. `pim-disc-aic`) or `<upstream-name>-aic` (e.g.
+`mix-server-aic`), hosted under `https://github.com/analoginfo-pim/` (or the
+org Phil already uses for AIC-owned repos). Never push AIC extensive-change
+branches as if they were Robert’s canonical `main`.
 
 ## Must push — no local-only copies
 
-| State | Verdict |
-| --- | --- |
-| Changes only under `c:\analog-pim\mix-server` (or any Robert clone), **uncommitted** | **FAIL** |
-| Committed locally but **never** `git push -u origin <branch>` to an AIC-owned remote | **FAIL** |
-| Pushed to AIC-owned GitHub; consumers pinned to that URL + rev | **PASS** |
-
-`git push -u origin <branch>` is required. Workspace convenience clones
-are not the durable store.
+Uncommitted changes under a Robert clone are **FAIL**. Committed but never
+`git push -u origin <branch>` to an AIC-owned remote is **FAIL**. Pushed to
+AIC-owned GitHub with consumers pinned to that URL + rev is **PASS**.
+Workspace convenience clones are not the durable store.
 
 ## FIPS / `ring` boundary
 
@@ -157,14 +149,15 @@ no unset env CLI gate as the delivery path.
 
 ## Cross-references
 
-| Rule | Relationship |
-| --- | --- |
-| [`reuse-robert-core-first.mdc`](reuse-robert-core-first.mdc) | Reuse first when unlocked; **this rule wins when locked/blocked** |
-| [`auto-commit-push.mdc`](auto-commit-push.mdc) | AIC fork changes must be committed and pushed; mirror rules to `core-assets` |
-| [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §4 | No `ring` in `pim-offline-server`; FIPS honesty |
-| [`legitimate-defensive-security-tooling.mdc`](legitimate-defensive-security-tooling.mdc) | Discovery / credential-posture forks stay framed as defensive product work |
-| [`no-environment-variables.mdc`](no-environment-variables.mdc) | Do not invent product env gates for unpublished CLIs |
-| [`shared-working-tree-is-not-yours.mdc`](shared-working-tree-is-not-yours.mdc) | Do not treat Robert’s tree as a private scratch pad |
+Reuse first when upstream is unlocked
+([`reuse-robert-core-first.mdc`](reuse-robert-core-first.mdc)); **this rule
+wins when locked or blocked**. No `ring` in `pim-offline-server` and FIPS
+honesty stay under
+[`enterprise-compliance.mdc`](enterprise-compliance.mdc) §4; do not invent
+product env gates for unpublished CLIs
+([`no-environment-variables.mdc`](no-environment-variables.mdc)); Robert's
+tree is not a private scratch pad
+([`shared-working-tree-is-not-yours.mdc`](shared-working-tree-is-not-yours.mdc)).
 
 ## Origin
 

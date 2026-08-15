@@ -1,253 +1,129 @@
 ---
-description: pim_app_config::set_value / unset_value must refuse any key not declared in the active app-config manifest, returning Error::UnknownKey. CLI set/unset surface that error with non-zero exit. An orphan-purge subcommand removes pre-manifest keys still resident in the configured store.
-alwaysApply: true
+description: pim_app_config set_value / unset_value must refuse keys the active manifest does not declare, returning AppConfigError::UnknownKey; CLI set/unset surface that with documented non-zero exit codes, and an orphans subcommand lists / purges storage keys absent from the manifest.
+globs: "**/{*.rs,app-config.toml}"
+alwaysApply: false
 ---
 
 # Manifest gates every storage write (R2)
 
-The AIC PIM workspace uses **`pim-app-config`** as the single
-abstraction over per-binary settings storage (registry on Windows,
-`/etc/aic/<program>/settings.json` on Linux, plist on macOS, the
-OS keyring for secrets). Every program ships a static
-**`app-config.toml`** manifest enumerating the keys it understands,
-their types, defaults, secret flags, and validation rules. The
-manifest exists so that:
+`pim-app-config` is the single abstraction over per-binary settings
+storage (registry on Windows, `/etc/aic/<program>/settings.json` on
+Linux, plist on macOS, OS keyring for secrets). Every program ships a
+static `app-config.toml` enumerating the keys it understands, their
+types, defaults, secret flags, and validation rules — so configurator
+GUIs can render typed widgets without hard-coding a schema, the CLI can
+refuse `set FOO=…` for keys the daemon never reads, and orphans from old
+releases can be enumerated and purged on upgrade.
 
-- The configurator GUIs can render typed input widgets without
- hard-coding the schema.
-- The CLI can refuse `set FOO=…` for keys the program does not
- read, instead of silently writing a value the daemon will ignore.
-- Orphan keys from old releases can be enumerated and purged on
- upgrade.
-
-The corrective audit (post-2026-05-19 win32 configurator audit)
-found that `set_value` / `unset_value` did not consistently refuse
-unknown keys — meaning an operator could `pim-offline-agent-configurator-cli
-set TYPO_KEY=value`, see "ok", and never notice the daemon never
-read it. This rule closes that gap and pins the contract for the
-future.
+The audit found `set_value` / `unset_value` inconsistently refusing
+unknown keys: an operator could `set TYPO_KEY=value`, see "ok", and
+never learn the daemon ignored it.
 
 ## The rule
 
-> **`pim_app_config::set_value` and `pim_app_config::unset_value`
-> MUST refuse a key that is not declared in the active manifest,
-> returning a typed `AppConfigError::UnknownKey { key, manifest }`.
-> CLI `set` / `unset` subcommands surface that error with a
-> non-zero exit code and a US-English diagnostic naming the
-> manifest. The `pim-app-config orphans` subcommand (or its
-> per-binary embedded equivalent) lists / purges keys present in
+> **`pim_app_config::set_value` and `pim_app_config::unset_value` MUST
+> refuse a key that is not declared in the active manifest, returning a
+> typed `AppConfigError::UnknownKey { key, manifest }`. CLI `set` /
+> `unset` subcommands surface that error with a non-zero exit code and a
+> US-English diagnostic naming the manifest. The `orphans` subcommand
+> (or its per-binary embedded equivalent) lists / purges keys present in
 > storage but absent from the manifest.**
 
-The library `get_value` is unaffected — reads return the stored
-value if any, regardless of manifest. Reads remain permissive so an
-older daemon can still load a newer settings file without crashing.
+`get_value` is unaffected — reads stay permissive so an older daemon can
+load a newer settings file without crashing.
 
-## Required behavior — library surface
+## Required library surface
 
 ```rust
-// pim-app-config/crates/pim-app-config/src/app_config.rs
-pub enum AppConfigError {
-    UnknownKey { key: String, manifest: String },
-    InvalidValue { key: String, reason: String, manifest: String },
-    Storage(#[from] StorageError),
-    // ...
-}
-
-impl AppConfig {
-    /// Writes `value` for `key` in the configured backend.
-    /// Returns AppConfigError::UnknownKey if the active manifest
-    /// does not declare `key`.
-    pub fn set_value(&self, key: &str, value: &str) -> Result<(), AppConfigError> {
-        let entry = self.manifest.entry(key).ok_or_else(|| {
-            AppConfigError::UnknownKey {
-                key: key.to_string(),
-                manifest: self.manifest.program_id().to_string(),
-            }
-        })?;
-        entry.validate(value)
-            .map_err(|reason| AppConfigError::InvalidValue {
-                key: key.to_string(),
-                reason,
-                manifest: self.manifest.program_id().to_string(),
-            })?;
-        self.backend.put(key, value, entry.is_secret())?;
-        Ok(())
-    }
-
-    pub fn unset_value(&self, key: &str) -> Result<(), AppConfigError> {
-        self.manifest.entry(key).ok_or_else(|| {
-            AppConfigError::UnknownKey {
-                key: key.to_string(),
-                manifest: self.manifest.program_id().to_string(),
-            }
-        })?;
-        self.backend.remove(key)?;
-        Ok(())
-    }
+pub fn set(&self, key: &str, value: &str) -> Result<(), AppConfigError> {
+    let entry = self.manifest.entry(key).ok_or_else(|| AppConfigError::UnknownKey {
+        key: key.to_string(),
+        manifest: self.manifest.program_id().to_string(),
+    })?;
+    entry.validate(value).map_err(|reason| AppConfigError::InvalidValue {
+        key: key.to_string(), reason,
+        manifest: self.manifest.program_id().to_string(),
+    })?;
+    self.backend.put(key, value, entry.is_secret())?;
+    Ok(())
 }
 ```
 
-## Required behavior — CLI surface
+`unset_value` performs the same `manifest.entry(key).ok_or_else(…)?`
+check before `backend.remove(key)`.
 
-`pim-app-config set` (and every per-binary embedded clone:
-`pim-offline-agent-configurator-cli`,
-`pim-offline-server-configurator`) MUST exit non-zero on
-`UnknownKey` and `InvalidValue`. Stdout is empty on error;
-stderr carries the operator-facing message in US English. No
-`println!("ok")` after a write that returned `Err`.
-
-```text
-$ pim-offline-agent-configurator-cli set TYPO_KEY=value
-error: unknown configuration key 'TYPO_KEY' for program 'pim-offline-agent'
-
-The active manifest does not declare this key. Did you mean
-DISPLAY_NAME, AGENT_UUID, or HTTP_PROXY_URL?
-
-See `pim-offline-agent-configurator-cli list` for the full key set.
-$ echo $LASTEXITCODE
-2
-```
-
-Exit codes (pinned for SIEM / scripting):
+## CLI exit codes (pinned for SIEM / scripting)
 
 | Code | Meaning |
 | --- | --- |
 | `0` | Success |
-| `2` | `UnknownKey` (manifest does not declare the requested key) |
-| `3` | `InvalidValue` (manifest declares it but the value fails validation) |
-| `4` | `Storage` (backend write / read failure — registry locked, file permission, keyring offline) |
-| `64..=78` | Reserved per `sysexits.h` for usage / config / data errors at the CLI argument level |
+| `2` | `UnknownKey` — manifest does not declare the requested key |
+| `3` | `InvalidValue` — declared, but the value fails validation |
+| `4` | `Storage` — backend read/write failure (registry locked, permissions, keyring offline) |
+| `64..=78` | Reserved per `sysexits.h` for CLI-argument usage / config / data errors |
 
-## Required behavior — orphan purge subcommand
+Stdout is empty on error; stderr carries the operator-facing US-English
+message. Never `println!("ok")` after a write that returned `Err`.
 
-Manifests evolve. A v1.2 release of the agent may drop a key that
-v1.1 wrote into the operator's settings store. Those rows must be
-discoverable and purgeable.
+## Orphan purge subcommand
 
 ```text
-pim-app-config orphans [--program <id>] [--purge] [--json]
+pim-app-config orphans [--program <id>] [--purge] [--yes] [--json]
 
-  Lists keys present in the backend for <program> (default: the
-  embedded manifest's program_id) that are not declared in the
-  active manifest. Without --purge, reports only. With --purge,
-  removes each orphan after a confirmation prompt unless --yes
-  is also given. With --json, machine-readable output for
+  Lists keys present in the backend for <program> that the active
+  manifest does not declare. --purge removes each after confirmation
+  (skipped with --yes). --json emits machine-readable output for
   upgrade scripts.
 
 Exit codes:
-  0  no orphans found (or all purged after confirmation)
+  0  no orphans found (or all purged)
   5  orphans found, no --purge requested (informational)
   6  --purge requested but at least one removal failed
 ```
 
-Per-binary configurators MUST embed this subcommand under the
-same name (`pim-offline-agent-configurator-cli orphans …`) so an
-MSI upgrade script can call it without depending on a separate
-`pim-app-config` binary being installed.
-
-Secrets-marked orphans (the manifest entry was `secret = true`)
-are purged from the **secret backend** (keyring / encrypted HKLM
-sub-key); the operator-visible report shows
-`[secret len=N] (purged)` so we never echo the secret value.
+Per-binary configurators embed this under the same name so an MSI
+upgrade script need not depend on a separate `pim-app-config` binary.
+Secret-marked orphans are purged from the secret backend and reported as
+`[secret len=N] (purged)` — never echoing the value.
 
 ## Forbidden constructs
 
-In `pim-app-config`, every per-binary configurator CLI, and every
-configurator GUI that wraps the library:
-
 - `self.backend.put(key, value)` without a prior
- `self.manifest.entry(key).ok_or_else(…)?` check — banned.
- Always go through `AppConfig::set_value`.
-- `let _ = config.set_value(key, value);` — banned. Discarding
- the `Result` discards the `UnknownKey` rejection that is the
- whole point of the rule.
-- `println!("ok")` / `dialog_show_success(...)` on a CLI / GUI
- path that has not first matched on the `Result` — banned.
-- A `set` / `unset` CLI subcommand that returns exit code 0 on
- `UnknownKey` — banned. The shell-script call site cannot tell
- success from typo.
-- A configurator GUI "Save" button that catches `UnknownKey` and
- silently drops it — banned. Render the error in the dialog's
- status pane, leave the field highlighted, do not close the
- dialog.
-
-## Where this is currently enforced
-
-| Surface | Status |
-| --- | --- |
-| `pim_app_config::AppConfigError::UnknownKey` (variant exists) | enacted at `crates/pim-app-config/src/error.rs` |
-| `AppConfig::set_value` returns `UnknownKey` for unknown keys | enacted at `crates/pim-app-config/src/app_config.rs:192` |
-| `AppConfig::unset_value` returns `UnknownKey` | audit ongoing — Wave 1 Track F |
-| `pim-app-config-cli` `set` / `unset` exit codes | audit ongoing — Wave 1 Track F |
-| `pim-offline-agent-configurator-cli` (thin `[[bin]]`) | inherits Track F |
-| `pim-offline-server-configurator` (thin `[[bin]]`) | inherits Track F |
-| `pim-offline-client-configurator-win32` Save flow | audit ongoing |
-| `pim-offline-client-configurator-tauri` Save flow | audit ongoing |
-| `pim-offline-server-configurator-win32` Save flow | audit ongoing |
-| `pim-offline-server-configurator-tauri` Save flow | audit ongoing |
-| `orphans` subcommand | not yet implemented — must arrive before next MSI version bump |
-
-The "audit ongoing" rows are not necessarily defective; they are
-unverified. For certification purposes "unverified" is equivalent
-to "defective" until the manifest-gate behavior is covered by a
-unit test in the owning crate.
+  `self.manifest.entry(key).ok_or_else(…)?`. Always go through
+  `AppConfig::set_value`.
+- `let _ = config.set_value(key, value);` — discarding the `Result`
+  discards the rejection that is the whole point of the rule.
+- `println!("ok")` / `dialog_show_success(...)` on a path that has not
+  matched on the `Result` first.
+- A `set` / `unset` CLI subcommand returning exit code 0 on
+  `UnknownKey` — the calling script cannot tell success from a typo.
+- A configurator "Save" that catches `UnknownKey` and silently drops it.
+  Render it in the status pane, keep the field highlighted, do not close
+  the dialog.
 
 ## Worked violation → fix
 
-**Violation** (CLI):
+**Violation:** `fn cmd_set(...) { let _ = config.backend.put(key, value,
+false); println!("ok"); }` — a typo reports success and the daemon never
+reads the key.
 
-```rust
-fn cmd_set(config: &AppConfig, key: &str, value: &str) {
-    let _ = config.backend.put(key, value, false);
-    println!("ok");
-}
-```
-
-**Fix**:
-
-```rust
-fn cmd_set(config: &AppConfig, key: &str, value: &str) -> std::process::ExitCode {
-    match config.set_value(key, value) {
-        Ok(()) => {
-            println!("ok");
-            std::process::ExitCode::SUCCESS
-        }
-        Err(AppConfigError::UnknownKey { key, manifest }) => {
-            eprintln!(
-                "error: unknown configuration key '{key}' for program '{manifest}'\n\
-                 The active manifest does not declare this key. See `… list` for the full key set."
-            );
-            std::process::ExitCode::from(2)
-        }
-        Err(AppConfigError::InvalidValue { key, reason, manifest }) => {
-            eprintln!("error: invalid value for '{key}' in '{manifest}': {reason}");
-            std::process::ExitCode::from(3)
-        }
-        Err(AppConfigError::Storage(e)) => {
-            eprintln!("error: storage backend failure writing '{key}': {e:#}");
-            std::process::ExitCode::from(4)
-        }
-    }
-}
-```
-
-The CLI now refuses typos with a clear message AND a documented
-exit code. The configurator GUI calls the same `set_value` and
-surfaces the same error variants in its status pane.
+**Fix:** call `config.set_value(key, value)` and match every variant,
+returning `ExitCode::from(2)` for `UnknownKey` with `error: unknown
+configuration key '<key>' for program '<manifest>'`, `3` for
+`InvalidValue`, `4` for `Storage`. The configurator GUI calls the same
+`set_value` and surfaces the same variants in its status pane.
 
 ## Cross-references
 
-- [`no-panic.mdc`](no-panic.mdc) — `UnknownKey` propagates via
- `Result`; never panic on it.
 - [`single-source-of-truth-for-settings.mdc`](single-source-of-truth-for-settings.mdc)
- (R3) — every binary names exactly one canonical settings store
- (the one the manifest gates).
+  (R3) — one canonical store, and the legacy migration writes through
+  this gate.
 - [`manifest-defaults-must-be-realistic.mdc`](manifest-defaults-must-be-realistic.mdc)
- (R5) — defaults declared in the manifest must be values the dev
- stack can actually use.
-- [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §3
- NIST 800-53 CM-6 (configuration settings) and SI-10 (input
- validation) — this rule operationalizes both for settings I/O.
-- `pim-app-config/docs/CONFIGURATION_STORAGE.md` — per-platform
- storage layout (registry / file / keyring paths).
+  (R5) — declared defaults must be usable by the dev stack.
+- [`no-json-in-platform-storage.mdc`](no-json-in-platform-storage.mdc) —
+  values that pass this gate must still be scalars.
+- [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §3 — NIST
+  CM-6 (configuration settings) and SI-10 (input validation).
+- `pim-app-config/docs/CONFIGURATION_STORAGE.md` — per-platform layout.
+- Per-surface adoption status: `core-assets/docs/dev/rule-enforcement-status.md`.
 - Origin: post-2026-05-19 win32 configurator audit (Wave 1).

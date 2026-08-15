@@ -1,0 +1,75 @@
+---
+description: >-
+  Hard rule — every interactive field and control in the AIC Server admin SPA
+  must expose mouse-over (and keyboard-reachable) purpose help.
+globs: ["**/*.tsx", "**/*.ts", "**/*.jsx", "**/ui/**"]
+alwaysApply: false
+---
+
+# Mouse-over help on every field and control (hard rule)
+
+Operator directive (Phil, 2026-08): **every field and control in the
+admin SPA must have mouse-over help.**
+
+## The rule
+
+> **Every interactive field and control in the AIC Server admin SPA
+> (`pim-offline-server/ui`) must expose mouse-over help that explains
+> what the control does — via MUI `Tooltip`, registered `fieldHelper` /
+> `FieldHelpIcon` / `ControlHelp` / `Helped*` wrappers, or
+> `data-help-key` backed by [`ui/src/help/fieldHelp.ts`](../../pim-offline-server/ui/src/help/fieldHelp.ts).
+> Native HTML `title` alone is insufficient for icon-only actions when
+> a Tooltip is available. Section 508: help must also be reachable via
+> keyboard focus (`Tab`) and `aria-label` / `aria-describedby` where
+> appropriate. Truncation tooltips that only repeat the cell value do
+> **not** count as field help.**
+
+## Applies to
+
+| Control class | Help required |
+| --- | --- |
+| Text inputs | `TextField`, `Select`, `Autocomplete`, `Checkbox`, `Switch`, `Radio`, `Slider` |
+| Actions | `Button`, `IconButton`, clickable `Chip`, DataGrid action cells |
+| Headers | DataGrid column headers that are interactive (sort/filter menus) |
+
+## Does not apply to
+
+- Pure static typography / decorative icons with no operator action
+- Truncation-only value tooltips (still required for overflow per
+  [`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc);
+  add separate purpose help when the control is interactive)
+
+## Required patterns
+
+1. Prefer a **registry key** in `FIELD_HELP` / `CONTROL_HELP` and
+   `HelpedTextField` / `HelpedIconButton` / `ControlHelp`.
+2. `helperText={fieldHelper('key')}` or `Tooltip title={…}` with the
+   purpose text; set `data-help-key="key"` for audit.
+3. Icon-only buttons: always wrap with `Tooltip` (or `HelpedIconButton`)
+   plus `aria-label` matching the help summary.
+4. Help copy: short (1–2 sentences), US English, no unexplained jargon.
+
+## Forbidden
+
+- Shipping a new `TextField` / `IconButton` / primary action without
+  purpose help.
+- Treating truncated-value `Tooltip title={cellValue}` as compliance
+  with this rule.
+- Claiming suite-wide coverage while `scripts/audit-control-help.mjs`
+  reports gaps on in-scope paths.
+
+## Enforcement
+
+- Static: `pim-offline-server/ui/scripts/audit-control-help.mjs` —
+  `npm run audit:control-help` (and `prebuild` / `lint`) run with
+  `--deny` and fail on bare controls. Warn-only:
+  `npm run audit:control-help:warn`. Allowlist:
+  `ui/docs/control-help-allowlist.md` (must stay empty unless justified).
+- Live: Playwright hover spot checks under `ui/e2e/*control-help*`.
+- Agent: when adding or editing admin SPA controls, land help in the
+  same change set.
+
+## Origin
+
+2026-08-15 — operator hard rule: every field and control must have
+mouse-over help.

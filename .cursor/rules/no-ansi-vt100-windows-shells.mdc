@@ -5,53 +5,48 @@ alwaysApply: true
 
 # No ANSI / VT100 for Windows shells (hard rule)
 
-Operator directive (Phil, 2026-08): classic Windows shells do **not**
-reliably render ANSI / VT100 escape sequences. Emitting `\x1b[` styling
-into `cmd.exe` or Windows PowerShell produces garbage in operator logs,
-installer transcripts, and redirected captures. Color is optional on
-Unix terminals only, and **plain text is preferred**.
+Operator directive (Phil, 2026-08): classic Windows shells do **not** reliably
+render ANSI / VT100 escape sequences. Emitting `\x1b[` styling into `cmd.exe` or
+Windows PowerShell produces garbage in operator logs, installer transcripts, and
+redirected captures. Color is optional on Unix terminals only, and **plain text
+is preferred**.
 
 ## The rule
 
-> **Do not generate ANSI / VT100 escape sequences when the target is
-> Windows Command Prompt or Windows PowerShell.** That may be OK on
-> Linux/macOS terminals that support it, but it does **not** work
-> reliably in classic Windows shells. On Linux/macOS, ANSI must be
-> **configurable**, with **plain text preferred** as the default (or
-> easy opt-in for color).
+> **Do not generate ANSI / VT100 escape sequences when the target is Windows
+> Command Prompt or Windows PowerShell.** That may be OK on Linux/macOS
+> terminals that support it, but it does **not** work reliably in classic
+> Windows shells. On Linux/macOS, ANSI must be **configurable**, with **plain
+> text preferred** as the default (or easy opt-in for color).
 
-Concretely:
-
-1. **Windows (`cmd.exe`, Windows PowerShell 5.x, redirected hosts):**
-   never write CSI / OSC / VT100 sequences (`\x1b[…`, `\033[…`, raw
-   `$esc = [char]27` strings) to stdout or stderr for operator-facing
-   CLIs, installers, services, or scripts.
-2. **Preferred output:** plain US English text; structured fields
-   (`tracing` key=value); status words like `[ OK ]` / `FAIL` that do
-   not rely on color alone (Section 508 / WCAG 2.0 AA 1.4.1).
-3. **Linux/macOS:** color is opt-in. Manifest / CLI default is `plain`
-   (or equivalent). `auto` may colorize only when the stream is an
-   interactive TTY **and** industry disable switches are unset.
+1. **Windows (`cmd.exe`, Windows PowerShell 5.x, redirected hosts):** never
+   write CSI / OSC / VT100 sequences (`\x1b[…`, `\033[…`, raw
+   `$esc = [char]27` strings) to stdout or stderr for operator-facing CLIs,
+   installers, services, or scripts.
+2. **Preferred output:** plain US English text; structured fields (`tracing`
+   key=value); status words like `[ OK ]` / `FAIL` that do not rely on color
+   alone (Section 508 / WCAG 2.0 AA 1.4.1).
+3. **Linux/macOS:** color is opt-in. Manifest / CLI default is `plain`. `auto`
+   may colorize only when the stream is an interactive TTY **and** industry
+   disable switches are unset.
 4. **Do not invent AIC product env vars** for color (see
-   [`no-environment-variables.mdc`](no-environment-variables.mdc)).
-   Product CLIs use manifest keys (`LOG_FORMAT` / `log_format`) and/or
-   CLI flags (`--color` / `--no-color`). `NO_COLOR` and `CLICOLOR=0`
-   are **industry terminal conventions** already honored by many deps —
-   reading them inside a dedicated terminal-styling helper is an
-   allowed exception; do not document them as AIC configuration.
+   [`no-environment-variables.mdc`](no-environment-variables.mdc)). Product CLIs
+   use manifest keys (`LOG_FORMAT` / `log_format`) and/or CLI flags (`--color` /
+   `--no-color`). `NO_COLOR` and `CLICOLOR=0` are **industry terminal
+   conventions** already honored by many deps — reading them inside a dedicated
+   terminal-styling helper is an allowed exception; do not document them as AIC
+   configuration.
 
 ## Forbidden constructs
 
-In shipping CLIs, installers, PowerShell under `pim-installers` /
-`scripts/`, Rust `println!` paths, and Node tooling that targets
-Windows operators:
+In shipping CLIs, installers, PowerShell under `pim-installers` / `scripts/`,
+Rust `println!` paths, and Node tooling that targets Windows operators:
 
-- Emitting `\x1b[`, `\u001b[`, `\033[`, or `$([char]27) + '['` style
-  strings to stdout/stderr for Windows consumers.
-- Unconditional use of `owo-colors`, `colored`, `console::style`,
-  `yansi`, `nu-ansi-term`, `clap` color, Node `chalk` / `kleur` /
-  `ansi-styles` when the binary or script runs under classic Windows
-  shells without a plain-text gate.
+- Emitting `\x1b[`, `\u001b[`, `\033[`, or `$([char]27) + '['` style strings to
+  stdout/stderr for Windows consumers.
+- Unconditional use of `owo-colors`, `colored`, `console::style`, `yansi`,
+  `nu-ansi-term`, `clap` color, Node `chalk` / `kleur` / `ansi-styles` when the
+  binary or script runs under classic Windows shells without a plain-text gate.
 - `tracing_subscriber` / `env_logger` `.with_ansi(true)` or
   `WriteStyle::Always` on Windows under `auto` / default settings.
 - PowerShell that builds ANSI strings for status:
@@ -62,44 +57,19 @@ Windows operators:
 
 | Surface | Do this |
 | --- | --- |
-| Rust operator CLI / daemon stderr | Plain by default. Gate via `LOG_FORMAT` / `log_format` = `plain` \| `auto` \| `ansi`. On **Windows**, `auto` **never** enables ANSI. On Unix, `auto` only when stderr/stdout is a TTY. |
+| Rust operator CLI / daemon stderr | Plain by default. Gate via `LOG_FORMAT` / `log_format` = `plain` \| `auto` \| `ansi`. On **Windows**, `auto` **never** enables ANSI. On Unix, `auto` only when the stream `is_terminal()`. |
 | Color crates | Prefer `anstyle` + explicit false on `cfg(windows)` unless ConPTY / VT is proven; or strip with a shared `strip_ansi_escapes` helper before Win32/Tauri panes. |
 | PowerShell | `Write-Host -ForegroundColor Green` (native console API — OK) **or** plain `Write-Output`. Never raw ESC sequences. |
 | Node (Windows operator tools) | Disable chalk/kleur by default on `win32`; require `--color` for opt-in. |
 | Captured / GUI panes | Always strip ANSI before display (`pim_app_config_cli::strip_ansi_escapes`). |
 
-### Rust — configuration ladder (canonical)
-
-```rust
-// tracing_stderr_ansi.rs (server + agent)
-// 1. NO_COLOR / CLICOLOR=0 → plain (industry convention exception)
-// 2. LOG_FORMAT / log_format: plain | auto | ansi (pim-app-config)
-// 3. auto + Windows → plain always
-// 4. auto + Unix → color only if stream.is_terminal()
-pub fn stderr_use_ansi() -> bool { /* … */ }
-```
-
-Defaults in `app-config.toml`: `default_dev = "plain"`,
-`default_prod = "plain"`. Operators who want color on a VT-capable
-Unix TTY or Windows Terminal set `ansi` (or `auto` on Unix).
-
-### PowerShell — OK vs forbidden
-
-```powershell
-# OK — PowerShell native console coloring (not raw VT100 bytes)
-Write-Host "BEAVIS2 lab baseline OK" -ForegroundColor Green
-
-# OK — plain
-Write-Output "BEAVIS2 lab baseline OK"
-
-# FORBIDDEN — raw ANSI / VT100
-$esc = [char]27
-Write-Output "$esc[32mOK$esc[0m"
-```
+Canonical Rust ladder (`tracing_stderr_ansi.rs`, server + agent): `NO_COLOR` /
+`CLICOLOR=0` → plain; then `LOG_FORMAT` / `log_format` (`plain` | `auto` |
+`ansi`); `auto` + Windows → plain always; `auto` + Unix → color only if
+`stream.is_terminal()`. Defaults in `app-config.toml` are
+`default_dev = "plain"`, `default_prod = "plain"`.
 
 ## Worked violation → fix
-
-### Rust (`owo-colors` / `colored` / `console`)
 
 **Violation:**
 
@@ -110,10 +80,9 @@ println!("{} service started", "ok".green());
 
 On Windows PowerShell this often prints literal `←[32mok←[0m service started`.
 
-**Fix:**
+**Fix** — plain by default; never colorize on Windows for operator CLIs:
 
 ```rust
-// Plain by default; never colorize on Windows for operator CLIs.
 #[cfg(windows)]
 fn paint_ok(s: &str) -> String { s.to_string() }
 
@@ -130,58 +99,22 @@ fn paint_ok(s: &str) -> String {
 println!("{} service started", paint_ok("[ OK ]"));
 ```
 
-Or disable the crate entirely and print `[ OK ]` / `FAIL` in plain text.
-
-### tracing_subscriber
-
-**Violation:** `.with_ansi(true)` or `auto` that treats a Windows console
-as VT-capable because `GetConsoleWindow()` is non-null.
-
-**Fix:** On Windows, `auto` returns `false`. Only explicit
-`LOG_FORMAT=ansi` (operator opt-in for a known VT host) enables ANSI.
-
-### PowerShell
-
-**Violation:** `$esc = [char]27; Write-Host "$esc[31mFAIL$esc[0m"`
-
-**Fix:** `Write-Host "FAIL  endpoint missing" -ForegroundColor Red`
-or plain `Write-Output "FAIL  endpoint missing"`.
+PowerShell parallel: replace `$esc = [char]27; Write-Host "$esc[31mFAIL$esc[0m"`
+with `Write-Host "FAIL endpoint missing" -ForegroundColor Red` or plain
+`Write-Output`.
 
 ## Industry env exceptions (narrow)
 
-| Variable | Role | AIC product config? |
-| --- | --- | --- |
-| `NO_COLOR` (any non-empty value) | Force plain — [no-color.org](https://no-color.org/) | No — terminal convention only |
-| `CLICOLOR=0` | Force plain (BSD / common CLI convention) | No — terminal convention only |
-
-Do **not** add `$env:AIC_COLOR`, `OFFLINE_LOG_COLOR`, or similar.
-Do **not** instruct operators to set env vars for AIC settings; use
-`pim-app-config` / configurator / `--color` flags.
-
-Allowed read sites: the dedicated `tracing_stderr_ansi` (or equivalent)
-helper only — keep `forbid_env_var_reads` allowlists in sync.
-
-## Alignments
-
-| Rule / contract | Overlap |
-| --- | --- |
-| [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §1–2 | US English strings; Section 508 — do not rely on color alone |
-| [`no-environment-variables.mdc`](no-environment-variables.mdc) | No AIC product env for color; `NO_COLOR` / `CLICOLOR` are documented industry exceptions only |
-| [`silent-failure-is-a-bug.mdc`](silent-failure-is-a-bug.mdc) | Status text must remain readable when color is stripped |
-| Win32 / Tauri panes | Always strip ANSI before embedding in edit controls |
-
-## Where enforced today
-
-| Surface | Status |
-| --- | --- |
-| `pim-offline-server/src/tracing_stderr_ansi.rs` | Windows `auto` → plain; default `LOG_FORMAT=plain` |
-| `pim-offline-client/src/tracing_stderr_ansi.rs` | Same for agent |
-| `pim-app-config-cli::strip_ansi_escapes` | Strips CSI/OSC before GUI panes |
-| PowerShell lab / installer scripts | Use `Write-Host -ForegroundColor` or plain — no raw ESC |
-| Node chalk in admin SPA build tools | Prefer plain on `win32` when adding new operator CLIs |
+`NO_COLOR` (any non-empty value, [no-color.org](https://no-color.org/)) and
+`CLICOLOR=0` force plain. Both are **terminal conventions, not AIC product
+configuration**. Do not add `$env:AIC_COLOR`, `OFFLINE_LOG_COLOR`, or similar,
+and do not instruct operators to set env vars for AIC settings — use
+`pim-app-config` / configurator / `--color` flags. Allowed read sites: the
+dedicated `tracing_stderr_ansi` (or equivalent) helper only; keep
+`forbid_env_var_reads` allowlists in sync.
 
 ## Origin
 
-2026-08-03 — operator hard rule: do not emit ANSI/VT100 for Windows
-Command Prompt or Windows PowerShell; Unix color configurable with
-plain preferred as default.
+2026-08-03 — operator hard rule: do not emit ANSI/VT100 for Windows Command
+Prompt or Windows PowerShell; Unix color configurable with plain preferred as
+default.

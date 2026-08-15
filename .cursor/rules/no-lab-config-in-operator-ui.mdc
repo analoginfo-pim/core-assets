@@ -1,6 +1,6 @@
 ---
 description: >-
-  Hard rule — never leak lab configuration or AI/agent thinking into any
+  Hard rule - never leak lab configuration or AI/agent thinking into any
   operator-facing surface, visible data field, or browser-shipped SPA
   source. Comments may describe asset use case in product language only.
 alwaysApply: true
@@ -60,13 +60,13 @@ payloads meant as UI chrome, or seeded fields operators read.
 Both classes are forbidden in **runtime chrome**, **operator-visible
 data**, and **browser-shipped UI source**.
 
-## Scope — runtime UI, data fields, and shipped source
+## Scope
 
 | Surface | May contain lab config or AI thinking? |
 | --- | --- |
 | Admin SPA runtime (banners, chips, tooltips, helperText, placeholders, empty states, menus) | **No** |
-| Admin SPA **source** that ships to the browser: `pim-offline-server/ui/src/**` (and any path imported into the client bundle) — string literals, defaults, i18n catalogs, fixtures, and comments a bundler may retain | **No** |
-| Sibling client UI that bundles to the browser (Tauri/web shells under product `src/` that ship) | **No** |
+| Admin SPA **source** shipping to the browser: `pim-offline-server/ui/src/**` and any path imported into the client bundle — string literals, defaults, i18n catalogs, fixtures, retained comments | **No** |
+| Sibling client UI bundling to the browser (Tauri/web shells under product `src/` that ship) | **No** |
 | Win32 / Tauri configurators, elevate helpers, launchers, About text | **No** |
 | Customer-facing CLI `--help` / operator messages | **No** |
 | API error / OpenAPI text returned into the UI as chrome | **No** |
@@ -75,11 +75,11 @@ data**, and **browser-shipped UI source**.
 | `docs/dev/**`, `.cursor/rules/**`, agent skills, Task prompts | **Yes** — not product UI / not browser bundle |
 | Playwright / e2e under `ui/e2e/**` (not imported by `ui/src`) | **Yes** — test-only; never import those fixtures into the SPA |
 | Lab PowerShell under `scripts/` | **Yes** — operator/agent tooling |
-| Server-only lab seed modules | **Yes**, if they **never** serialize instructional lab SOP into API payloads meant as UI chrome; seed **comments** still follow the narrow exception (product-language use case only) |
+| Server-only lab seed modules | **Yes**, if they **never** serialize instructional lab SOP into API payloads meant as UI chrome; seed **comments** still follow the narrow exception |
 
-Hiding a string behind `import.meta.env.DEV`, a dead branch, or a
-"lab only" comment in `ui/src` does **not** satisfy this rule — if it
-is in browser-shipped source, it is forbidden.
+Hiding a string behind `import.meta.env.DEV`, a dead branch, or a "lab
+only" comment in `ui/src` does **not** satisfy this rule — if it is in
+browser-shipped source, it is forbidden.
 
 ## Per-system comment exception (narrow)
 
@@ -93,48 +93,44 @@ smuggle lab SOP or agent notes into the database or into SPA defaults.
 | Asset role / purpose in product words | **Allowed** |
 | Caution about personal admin accounts in generic terms | **Allowed** |
 | Lab hostnames, lab accounts, phil bans, CLI lab recipes, BEAVIS2, SoftHSM PINs, Mailpit, seed-dev flags | **Forbidden** (even in comments / even in `ui/src` defaults) |
-| AI/agent thinking, slice status, Cursor notes, engineer delivery jargon | **Forbidden** (even in comments / even in source comments that ship) |
+| AI/agent thinking, slice status, Cursor notes, engineer delivery jargon | **Forbidden** (even in source comments that ship) |
 | Paste of agent dialog or private lab SOP into any seed profile | **Forbidden** |
 
-Dev/demo/prod seeds alike: comments stay use-case clean. Dev seeds may
-say the asset is for discovery drills; they still must not name the lab
-or the agent.
+Dev/demo/prod seeds alike: comments stay use-case clean. Dev seeds may say
+the asset is for discovery drills; they still must not name the lab or the
+agent.
 
 ## Required agent behavior
 
-1. Before writing **any** operator-visible string, seed field, or
-   `ui/src` (or other client-bundled) literal, ask: is this lab
-   configuration, or agent/AI thinking? If yes → `docs/dev` or Cursor
-   rules only — never product chrome, customer-visible data, or
-   browser-shipped source.
+1. Before writing **any** operator-visible string, seed field, or `ui/src`
+   (or other client-bundled) literal, ask: is this lab configuration, or
+   agent/AI thinking? If yes → `docs/dev` or Cursor rules only.
 2. Do not "park" lab recipes in SPA comments, i18n keys, or unused
-   constants "for developers" — View Source / source maps expose them.
+   constants "for developers" — View Source and source maps expose them.
 3. When seeding comments, describe only what the **operator** needs about
    that asset's use case, in product language.
 4. Keep lab identity and host rules in
    [`beavis2-lab-hard-rules.mdc`](beavis2-lab-hard-rules.mdc) and lab
    scripts — never paste them into UI source or inventory fields.
 5. Product honesty
-   ([`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc))
-   and credibility
+   ([`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc)) and
+   credibility
    ([`operator-ui-credibility.mdc`](operator-ui-credibility.mdc)) still
    bind: lab jargon and AI meta-talk in the product are P0 defects.
-6. Mirror this rule to `core-assets/.cursor/rules/` in the same change
-   set ([`auto-commit-push.mdc`](auto-commit-push.mdc)).
+6. Mirror this rule to `core-assets/.cursor/rules/` in the same change set
+   ([`auto-commit-push.mdc`](auto-commit-push.mdc)).
 
 ## Worked violation → fix
 
-### Chrome and browser-shipped source
-
-**Bad** (OT Inventory Rotate panel — lab runbook in UI **and** in
-`ui/src` string literals):
+**Bad** — OT Inventory Rotate panel, lab runbook in UI *and* in `ui/src`
+string literals:
 
 ```text
 Path 2 Live (lab): ot-credentials rotate-job --custody key-manager…
 Lab only — never rotate phil. Selected asset: (lab default)
 ```
 
-**Good** (generic product chrome / source):
+**Good** — generic product chrome / source:
 
 ```text
 Rotate credentials for the selected asset. Leave the old password empty
@@ -142,19 +138,11 @@ to rotate the password currently in effect. Prefer a dedicated service
 account — do not use personal administrator accounts for rotation drills.
 ```
 
-### Inventory comment (data field — still gated)
-
-**Bad comment** (lab + AI thinking leaked into a visible field):
-
-```text
-Path 2 Live lab — agent will rotate via ot-credentials…
-```
+**Bad comment** (lab + AI thinking in a visible data field):
+`Path 2 Live lab — agent will rotate via ot-credentials…`
 
 **Good comment** (asset use case in product language):
-
-```text
-Modbus TCP simulator used for discovery and credential drills.
-```
+`Modbus TCP simulator used for discovery and credential drills.`
 
 Lab CLI recipes, BEAVIS2, phil bans, SoftHSM/Mailpit wiring, and agent
 plans stay in `docs/dev`, server-only seed modules (without SOP-as-chrome
@@ -164,14 +152,10 @@ payloads), and agent prompts — not in `ui/src` or any client bundle.
 
 | Rule | Relationship |
 | --- | --- |
-| [`beavis2-lab-hard-rules.mdc`](beavis2-lab-hard-rules.mdc) | Lab identities/SoftHSM for agents/scripts — never product fields or SPA source |
-| [`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc) | Lab recipes in UI are not customer proof |
+| [`beavis2-lab-hard-rules.mdc`](beavis2-lab-hard-rules.mdc) | Lab identities / SoftHSM for agents and scripts — never product fields or SPA source |
 | [`operator-ui-credibility.mdc`](operator-ui-credibility.mdc) | Lab jargon / AI meta-talk in product is a credibility defect |
-| [`mailpit-messaging-comprehensive-test.mdc`](mailpit-messaging-comprehensive-test.mdc) | Mailpit is lab preflight — not product copy, comments, or `ui/src` |
 | [`no-environment-variables.mdc`](no-environment-variables.mdc) | Lab constants stay in e2e/docs — not UI source or seed comments |
-| [`never-skip-ui-build-on-ui-change.mdc`](never-skip-ui-build-on-ui-change.mdc) | SPA source changes ship in the embedded bundle — clean source matters |
 | [`db-init-must-seed-lab.mdc`](db-init-must-seed-lab.mdc) | Seeds may attach product-language use-case comments only |
-| [`auto-model-only.mdc`](auto-model-only.mdc) | Agent plans stay in chat — never in operator-visible fields or SPA source |
 
 ## Origin
 

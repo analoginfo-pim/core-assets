@@ -132,61 +132,32 @@ a supervisor is running, a **parent coordinator in Multitask Mode MUST**:
   a stuck child (unless the user named that model in the same message).
 - Replacing a stuck explore worker with a fleet of new explore workers.
 
-## Optional local watcher (secondary complement that actually works)
+## Optional local watcher (secondary complement)
 
-The **project always-apply rule** (this file) is the primary, reliable
-enforcement surface in chat. Parents MUST keep doing Steps 1–3 and the
-wake-from-sleep status check even when a watcher exists.
+This rule is the primary enforcement surface. Parents MUST keep doing
+Steps 1–3 and the wake-from-sleep status check even when a watcher exists;
+**no supervisor substitutes for parent duty in the active chat.**
 
-### Why the Cursor Cloud Automation fails
+**Never rely on Cloud cron.** Cursor Automations run as a Cloud Agent on a
+remote VM with no access to
+`C:\Users\phil\.cursor\projects\c-analog-pim\agent-transcripts`, so the
+Automation draft named "Stuck agent supervisor" **cannot** unstick anything.
+Prefer disabling it.
 
-Cursor Automations cron runs as a **Cloud Agent on a remote VM**. That
-host does **not** have
-`C:\Users\phil\.cursor\projects\c-analog-pim\agent-transcripts`, so it
-cannot scan local Multitask transcripts or `Task`-interrupt local
-parents. Treat the Cloud Automation draft named **"Stuck agent
-supervisor"** as **non-functional for unsticking** unless Cursor later
-ships a true local Automations runtime. Prefer disabling it — **never
-rely on Cloud cron** as the backup.
-
-### Working backup — local Hidden Windows Scheduled Task (multi-signal)
-
-Install once on the workstation (Phil Enable path). The task must run
-**Hidden** so it never steals focus from the operator desktop
-([`launch-consoles-minimized.mdc`](launch-consoles-minimized.mdc),
-[`host-session-safety.mdc`](host-session-safety.mdc)):
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File `
-  C:\analog-pim\.cursor\automations\Install-StuckAgentLocalWatcher.ps1 `
-  -IntervalMinutes 3 -RunOnceNow
-```
-
-Task name: `AIC-StuckAgentLocalWatcher`. Interval **≤ 5 min** (default 3)
-with `powershell.exe -WindowStyle Hidden` (task settings Hidden).
-
-**Do not treat mtime-only idle as the detector.** The scanner uses:
-
-1. Transcript last event kind (tool vs thinking vs `turn_ended`) —
-   ClawGuard stuck-tool / loop.
-2. Cursor hook dead-man leases (`leases/*.json`) — thought-only does
-   **not** count as progress (Antigravity `step_idx` / Healthchecks.io
-   dead-man / OpenClaw isolated heartbeat).
-3. Helper process CPU sample — hung Cursor/node PIDs are reported, never
-   auto-killed.
-
-It writes `PARENT-SIGNAL.md` (read this first), `latest-report.md`, and
-**one** interrupt-request markdown per **newly** live-stuck ID under
-`interrupt-queue\` (deduped). Slack fires only on a **new** live-stuck
-id, never for ghosts, never every tick. `turn_ended`/`success` on disk
-= UI ghost — never interrupt-queued. The watcher **does not** spawn
-Cursor agents; the **owning Multitask parent** must `Task` interrupt
-(AUTO only). Details:
-[`README-local-watcher.md`](../automations/README-local-watcher.md).
-Scripts + hooks are mirrored under `core-assets/.cursor/`.
-
-Do not treat any supervisor as a substitute for parent duty in the
-active chat.
+The working backup is the local Windows Scheduled Task
+`AIC-StuckAgentLocalWatcher` (interval ≤ 5 min, run **Hidden** so it never
+steals desktop focus —
+[`launch-consoles-minimized.mdc`](launch-consoles-minimized.mdc),
+[`host-session-safety.mdc`](host-session-safety.mdc)). It detects on multiple
+signals (last transcript event kind, hook dead-man leases where thought-only
+does **not** count as progress, helper-process CPU) — never mtime-only idle —
+and writes `PARENT-SIGNAL.md`, `latest-report.md`, and one deduped
+interrupt-request per **newly** live-stuck id. `turn_ended` / `success` on
+disk is a UI ghost and is never queued. The watcher **only queues**; the
+owning Multitask parent must `Task` interrupt (AUTO only). Install command,
+detector detail, and Slack behavior:
+[`README-local-watcher.md`](../automations/README-local-watcher.md). Scripts
+and hooks are mirrored under `core-assets/.cursor/`.
 
 ## Origin
 

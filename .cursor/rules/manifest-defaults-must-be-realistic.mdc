@@ -1,245 +1,131 @@
 ---
-description: Every default_dev in any app-config.toml must let a cargo build -> msi-install -> Test-connectivity smoke loop pass against the workspace's reference dev stack (pim-offline-server on https://localhost:8443, default Postgres on localhost:5432). If a default cannot, leave it empty AND document "operator must set before first run" in both the manifest comment and the configurator's first-run banner.
-alwaysApply: true
+description: Every default_dev in an app-config.toml must let the reference dev smoke loop (cargo build → MSI install → configurator Test-connectivity) pass with no operator edits; values that cannot be guessed stay empty, are marked operator_must_set, and surface in the configurator first-run banner.
+globs: "**/{app-config.toml,*.rs}"
+alwaysApply: false
 ---
 
 # Manifest defaults must be realistic (R5)
 
-The AIC PIM workspace's `app-config.toml` manifests carry two
-defaults per key: `default_dev` (used by `cargo run` and the
-dev-mode resolver) and `default_prod` (used by MSI / RPM /
-notarized-pkg installs). The post-2026-05-19 win32 configurator
-audit found multiple `default_dev` entries that were stale
-placeholders (`server.example.com`, `12345678-1234-1234-1234-123456789012`,
-`my-test-tenant`), so a fresh developer running through `cargo
-build` → `Build-PimOfflineAgentMsi.ps1` → install → configurator
-"Test connectivity" got a confusing failure on the first try
-even though both halves of the dev stack were healthy. This rule
-prevents that class of friction from recurring and pins the
-contract for prod defaults that genuinely cannot be guessed.
+`app-config.toml` manifests carry two defaults per key: `default_dev`
+(used by `cargo run` and the dev resolver) and `default_prod` (used by
+MSI / RPM / notarized-pkg installs). The audit found `default_dev`
+entries that were stale placeholders (`server.example.com`,
+`12345678-1234-1234-1234-123456789012`, `my-test-tenant`), so a fresh
+developer's first "Test connectivity" click failed even though both
+halves of the dev stack were healthy.
 
 ## The rule
 
-> **Every `default_dev` in any `app-config.toml` in this
-> workspace must be a value that lets the reference dev smoke
-> loop — `cargo build` → MSI install → configurator
-> Test-connectivity — pass without operator edits. The
-> reference dev stack is: `pim-offline-server` on
-> `https://localhost:8443/`, the matching dev TLS cert from
-> `core-assets/certs/localhost-dev/`, default Postgres on
+> **Every `default_dev` must be a value that lets the reference dev
+> smoke loop — `cargo build` → MSI install → configurator
+> Test-connectivity — pass without operator edits. The reference dev
+> stack is: `pim-offline-server` on `https://localhost:8443/`, the dev
+> TLS cert from `core-assets/certs/localhost-dev/`, default Postgres on
 > `localhost:5432` with the bootstrap credentials from
-> `pim-installers/dev/postgres.env`. If a `default_dev` cannot
-> satisfy that loop (a required secret, a per-tenant GUID, a
-> field whose value depends on the operator's deployment),
-> leave the value empty AND document the requirement in two
-> places: (a) the `# operator must set before first run`
-> comment in the manifest, and (b) the configurator's
-> first-run banner that lists "fields you must set before
-> Save".**
+> `pim-installers/dev/postgres.env`. If a `default_dev` cannot satisfy
+> that loop (a required secret, a per-tenant GUID, a deployment-specific
+> field), leave the value empty AND document the requirement in two
+> places: (a) the `# operator must set before first run` comment in the
+> manifest, and (b) the configurator's first-run banner listing "fields
+> you must set before Save".**
 
-`default_prod` is unaffected — production defaults that require
-operator input legitimately stay empty and surface in the
-configurator's first-run banner. The rule's first half about the
-dev smoke loop applies only to `default_dev`.
+`default_prod` may legitimately stay empty for values requiring operator
+input; the smoke-loop half of the rule applies only to `default_dev`.
 
-## Reference dev stack (pin these values, update when the stack moves)
+## Reference dev stack (keep in sync when the stack moves)
 
-| Component | Endpoint / value |
+| Component | Value |
 | --- | --- |
 | Offline server (TLS) | `https://localhost:8443/` |
-| Offline server (plain) | `http://localhost:8080/` (legacy / health) |
-| Offline server TLS bundle | `core-assets/certs/localhost-dev/server.{crt,key}` (synced via `pim-installers/scripts/Sync-DevCerts.ps1`) |
-| Offline server dev CA | `core-assets/certs/localhost-dev/dev-ca.crt` |
-| Postgres host | `localhost` |
-| Postgres port | `5432` |
-| Postgres database | `pim_offline_dev` |
-| Postgres user / password | from `pim-installers/dev/postgres.env` (development only — never committed) |
+| Offline server (plain / health) | `http://localhost:8080/` |
+| Server TLS bundle | `core-assets/certs/localhost-dev/server.{crt,key}` (synced by `pim-installers/scripts/Sync-DevCerts.ps1`) |
+| Dev CA | `core-assets/certs/localhost-dev/dev-ca.crt` |
+| Postgres host / port / db | `localhost` / `5432` / `pim_offline_dev` |
+| Postgres user / password | from `pim-installers/dev/postgres.env` (development only, never committed) |
 | Default tenant name | `Default Tenant` |
-| Default tenant GUID | (empty — operator chooses; R6) |
+| Default tenant GUID | empty — operator chooses (R6) |
 
-These values are what the manifest `default_dev` columns must
-agree with. When the stack moves (e.g. the server picks a
-different default port), the manifests AND this table move
-together.
+## Required patterns
 
-## Required pattern: useful default_dev when possible
+Useful default when possible:
 
 ```toml
 [[key]]
 name = "SERVER_PUBLIC_URL"
 value_type = "string"
-default_dev  = "https://localhost:8443"
-default_prod = ""   # operator MUST set before first run
-description  = "Base URL the offline server advertises in installation JSON."
-
-[[key]]
-name = "DATABASE_HOST"
-value_type = "string"
-default_dev  = "localhost"
-default_prod = ""
-description  = "PostgreSQL hostname."
-
-[[key]]
-name = "DATABASE_PORT"
-value_type = "uint"
-default_dev  = 5432
-default_prod = 5432
-description  = "PostgreSQL port. Same default for dev and prod."
-
-[[key]]
-name = "TLS_PORT"
-value_type = "uint"
-default_dev  = 8443
-default_prod = 8443
-description  = "HTTPS listener port."
+default_dev = "https://localhost:8443"
+default_prod = ""            # operator MUST set before first run
+description = "Base URL the offline server advertises in installation JSON."
+operator_must_set = true
 ```
 
-A developer who runs `cargo build` against this manifest and
-installs the resulting MSI gets a daemon that, when paired with
-a running `pim-offline-server` on the same loopback host, passes
-"Test connectivity" on first click. Zero operator edits.
-
-## Required pattern: empty default + first-run banner when not possible
-
-Some values genuinely cannot be guessed. Tenant GUIDs, customer
-secrets, per-deployment URLs — these stay empty in the manifest
-and surface in the configurator's first-run banner.
+Empty default plus first-run banner when the value cannot be guessed:
 
 ```toml
 [[key]]
 name = "AGENT_UUID"
 value_type = "string"
-default_dev  = ""   # operator must set before first run
-default_prod = ""   # operator must set before first run
-description  = "Stable identity supplied by the operator at install."
-operator_must_set = true   # surfaces in the first-run banner
-```
-
-```toml
-[[key]]
-name = "DEFAULT_TENANT_GUID"
-value_type = "string"
-default_dev  = ""   # operator must set before first run; do NOT use a magic GUID (R6)
+default_dev = ""             # operator must set before first run
 default_prod = ""
-description  = "GUID of the default tenant; operator selects at install."
-operator_must_set = true
+description = "Stable identity supplied by the operator at install."
+operator_must_set = true     # surfaces in the first-run banner
 ```
 
-The configurator GUIs read the `operator_must_set = true` flag
-and render a "Fields you must set before Save" banner on the
-first run. The banner enumerates exactly the keys that fall into
-this category, sorted by manifest order, with a click-to-focus
-affordance per row. If the operator clicks Save with any
-`operator_must_set` field still empty, Save fails with an inline
-error message naming the field (no toast — the field stays
-highlighted).
+Configurator GUIs read `operator_must_set = true` and render a "Fields
+you must set before Save" banner on first run, enumerating those keys in
+manifest order with click-to-focus per row. Save with any such field
+still empty fails with an inline error naming the field — no toast, and
+the field stays highlighted.
 
 ## Forbidden constructs
 
-In every `app-config.toml` in this workspace:
-
-- `default_dev = "server.example.com"` / any `.example` /
- `.test` / `.invalid` hostname. The dev stack does not run
- on those hostnames.
-- `default_dev = "12345678-1234-1234-1234-123456789012"` or any
- placeholder GUID. This is also banned by
- [`placeholder-guids-are-empty.mdc`](placeholder-guids-are-empty.mdc)
- (R6); the empty string is the only sentinel.
-- `default_dev = "my-test-tenant"` / `"changeme"` / `"do-not-ship"` /
- `"test-secret"` / any value containing the strings the runtime-
- status fingerprinter (R7) flags as a stale placeholder.
-- `default_dev = "0.0.0.0"` for a connect target. (Bind targets
- are fine; connect targets must be reachable from the same
- host.)
-- A `default_prod` that names `localhost` for a value an MSI
- install of an offline server will not have a localhost service
- for (e.g. an LDAP or KDC URL — these are deployment-specific).
-- Asymmetric `default_dev` / `default_prod` where the dev value
- is realistic and the prod value is a copy of the dev value
- (this leaks dev endpoints into prod installs).
+- `default_dev` naming any `.example` / `.test` / `.invalid` hostname —
+  the dev stack does not run there.
+- `default_dev` set to a placeholder GUID (also banned by R6; empty is
+  the only sentinel).
+- `default_dev` containing `changeme` / `do-not-ship` / `test-secret` /
+  `my-test-tenant` or any other string the runtime fingerprinter (R7)
+  flags.
+- `default_dev = "0.0.0.0"` for a **connect** target (bind targets are
+  fine).
+- `default_prod` naming `localhost` for a value an MSI install will have
+  no localhost service for (LDAP, KDC, …).
+- A `default_prod` that is a copy of a realistic `default_dev` — that
+  leaks dev endpoints into prod installs.
 
 ## Reference dev smoke loop (manual verification)
 
-A developer or CI agent verifies this rule by running the loop
-the rule describes, against the reference dev stack:
-
 ```powershell
-# 1. Build the offline agent and the configurator from clean.
-cd c:\analog-pim\pim-offline-client
-cargo build --release
-
-# 2. Build and install the MSI (per-product script under pim-installers).
-cd c:\analog-pim\pim-installers
-pwsh .\scripts\Build-PimOfflineAgentMsi.ps1 -Configuration Release
+cd c:\analog-pim\pim-offline-client;  cargo build
+cd c:\analog-pim\pim-installers;      pwsh .\scripts\Build-PimOfflineAgentMsi.ps1
 msiexec /i .\dist\AIC-OfflinePimAgent.msi /qb
-
-# 3. Start the reference offline server on https://localhost:8443
-#    (separate window).
-cd c:\analog-pim\pim-offline-server
-cargo run --release
-
-# 4. Open the configurator and click "Test connectivity".
+cd c:\analog-pim\pim-offline-server;  cargo run       # separate window
 & "$env:ProgramFiles\AIC\OfflinePimAgent\pim-offline-client-configurator-win32.exe"
-#    Settings -> Server Connection -> Test connectivity
+# Settings -> Server Connection -> Test connectivity
 ```
 
-Every substep (parse / DNS / TCP / TLS / app-level handshake)
-must report success without the operator first editing any
-field. If any step fails because of a placeholder default, the
-manifest fails this rule and must be corrected.
+Every substep (parse / DNS / TCP / TLS / app handshake) must succeed
+with no field edited first. Profile follows
+[`development-mode-debug-builds.mdc`](development-mode-debug-builds.mdc).
 
 ## Worked violation → fix
 
-**Violation** (today, conceptual, in `pim-offline-client/app-config.toml`):
+**Violation:** `default_dev = "https://server.example.com:8443"` for
+`SERVER_PUBLIC_URL` (and the same value copied into `default_prod`).
+Test connectivity fails on a fresh install because the hostname does not
+resolve.
 
-```toml
-[[key]]
-name = "SERVER_PUBLIC_URL"
-default_dev  = "https://server.example.com:8443"
-default_prod = "https://server.example.com:8443"
-```
-
-The configurator's "Test connectivity" fails on a fresh install
-because `server.example.com` does not resolve.
-
-**Fix**:
-
-```toml
-[[key]]
-name = "SERVER_PUBLIC_URL"
-default_dev  = "https://localhost:8443"
-default_prod = ""    # operator must set before first run
-description  = "Base URL of the AIC Offline Server (set by the operator at install)."
-operator_must_set = true
-```
-
-The dev smoke loop now passes on first click; the operator
-installing on prod sees the field flagged in the first-run
-banner.
-
-## Where this is currently enforced
-
-| Manifest | Status |
-| --- | --- |
-| `pim-offline-client/app-config.toml` | partial — Wave 1 Track C audits each `default_dev` against the smoke loop |
-| `pim-offline-server/app-config.toml` | partial — same review pass |
-| `pim-app-config` sample manifest | exempt (it's a sample, not a shipping product) |
-| Future per-product manifests | this rule applies on creation |
+**Fix:** `default_dev = "https://localhost:8443"`, `default_prod = ""`
+with `operator_must_set = true`. The dev loop passes on first click; the
+prod installer flags the field in the first-run banner.
 
 ## Cross-references
 
 - [`manifest-gates-storage-writes.mdc`](manifest-gates-storage-writes.mdc)
- (R2) — defaults take effect when the canonical store has no
- row for the key; `set_value` still rejects unknown keys.
+  (R2) — defaults apply only when the canonical store has no row.
 - [`placeholder-guids-are-empty.mdc`](placeholder-guids-are-empty.mdc)
- (R6) — empty is the only valid "not yet set" sentinel; no
- magic GUIDs in `default_dev` either.
+  (R6) — empty is the only "not yet set" sentinel.
 - [`runtime-status-flags-test-fixtures.mdc`](runtime-status-flags-test-fixtures.mdc)
- (R7) — daemons emit a warning if a resolved setting matches a
- placeholder fingerprint at runtime; this rule keeps the
- manifest from generating those warnings on a fresh install.
-- [`single-source-of-truth-for-settings.mdc`](single-source-of-truth-for-settings.mdc)
- (R3) — defaults only apply when the canonical store has no
- row; the legacy migration path bypasses them where the legacy
- file had a value.
+  (R7) — the runtime check that catches a default which leaked anyway.
+- Per-manifest adoption status: `core-assets/docs/dev/rule-enforcement-status.md`.
 - Origin: post-2026-05-19 win32 configurator audit (Wave 1).
