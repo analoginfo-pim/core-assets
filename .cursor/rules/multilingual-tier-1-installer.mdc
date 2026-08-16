@@ -75,8 +75,20 @@ A catalog that exists only in a repo and is not in `core-assets/content/`
 - Inventing a product env var for locale
   ([`no-environment-variables.mdc`](no-environment-variables.mdc)).
 
+## Must-localize compliance artifacts
+
+Reports, evidence exports, policy docs, risk templates, regulatory
+mappings, legal/privacy/DPA/consent text, session-recording and access
+evidence, change logs, IR documentation, and compliance dashboards are
+**must-localize**. See
+[`compliance-artifacts-must-localize.mdc`](compliance-artifacts-must-localize.mdc).
+English-only shipping text on those surfaces is a defect even when the
+MSI already copies a locale folder.
+
 ## Cross-references
 
+[`compliance-artifacts-must-localize.mdc`](compliance-artifacts-must-localize.mdc)
+(must-localize list) ·
 [`native-operator-gui-i18n.mdc`](native-operator-gui-i18n.mdc) (Win32 /
 Tauri catalogs) · [`enterprise-compliance.mdc`](enterprise-compliance.mdc)
 §1 (US English source; i18n layer on top) ·

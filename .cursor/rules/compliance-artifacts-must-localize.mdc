@@ -1,0 +1,97 @@
+---
+description: Compliance artifacts must ship localized catalogs, not English-only chrome.
+alwaysApply: true
+---
+
+# Compliance artifacts must be localized (hard rule)
+
+Operator directive (Phil, 2026-08-16): **localize rules for products.**
+The following compliance surfaces are **must-localize** — English-only
+shipping text is a defect.
+
+## The rule
+
+> **Every compliance artifact this product shows, exports, or files must
+> have localized catalogs for every shipped content language (`en`, `de`,
+> `fr`, `es` today). Preferred language on the person record wins when
+> set; otherwise the page cookie / Accept-Language / English. Operators
+> can edit each language’s version. Official regulation text stays in
+> the language the authority published; AIC chrome, mappings, notices,
+> and summaries are localized.**
+
+## Must-localize list
+
+| Artifact | Typical home |
+| --- | --- |
+| Audit reports | Report Center catalogs + export chrome |
+| Evidence exports | Binder / auditor package export |
+| Policy documentation | Playbooks, policy templates, docs |
+| Risk assessment templates | Risks catalogs + SPA `risks` |
+| Regulatory mappings (IEC 62443, NERC CIP, CMMC, ISO 27001) | Catalog + binder mapping chrome |
+| Legal text (privacy, data handling, retention, chain-of-custody) | Disclosures + legal notices |
+| Session recording evidence summaries | Recording / session evidence chrome |
+| Access control evidence | IAM / access evidence reports |
+| Change management logs | Change / CM evidence views |
+| Incident response documentation | IR playbooks, notices, exports |
+| Data processing agreements | Legal / DPA templates |
+| Consent and privacy notices | Disclosures, welcome, training |
+| Compliance dashboards | Dashboard / CSC / operations chrome |
+
+A new row on this list lands with EN + DE + FR + ES catalog keys in the
+same change set (or an honest **BLOCKED** with the missing tag named).
+
+## How locale is chosen
+
+1. Person **preferred language** (`ui_locale`) when set.
+2. Else web cookie / language selector / `Accept-Language`.
+3. Else English.
+
+Empty preferred language is **Not Set**, not English-forced.
+
+## Official text vs AIC prose
+
+| Kind | Localize? |
+| --- | --- |
+| AIC labels, dashboard chrome, export headings, notices, DPA/consent we author | **Yes** — all shipped tags |
+| AIC mapping explanations and crosswalk summaries | **Yes** |
+| Official CMMC / NIST 800-53 / 800-171 control bodies | Keep the authority language (English) |
+| ISO 27001 licensed control text | Do **not** translate or paste — identifiers + AIC summary only |
+| GDPR / NIS2 official translations | Use the published language text, cited |
+
+Localizing a mapping is not a **Met** or certified claim
+([`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc)).
+
+## Required agent behavior
+
+1. New or edited text on a must-localize surface goes through catalogs
+   (`locales/<tag>/`, SPA `ui/src/i18n/locales/<tag>/`, or
+   `offline_localized_copy`) — not hardcoded English-only in TSX/Rust.
+2. Administrators can edit each language (Defaults, templates, binder
+   copy) without replacing the English inheritance row.
+3. Exports and Email/SMS use the recipient’s preferred language when set.
+4. Mirror this rule to `core-assets/.cursor/rules/` in the same change
+   set ([`auto-commit-push.mdc`](auto-commit-push.mdc)).
+
+## Forbidden
+
+- Shipping any row in the must-localize list in English only when other
+  content languages already ship.
+- Translating copyrighted ISO control text, or inventing unofficial
+  CMMC / 800-53 body translations and calling them the control.
+- Claiming a dashboard, binder export, or report is localized because
+  the nav label translated.
+- Writing preferred language from the page cookie onto the profile.
+
+## Cross-references
+
+[`multilingual-tier-1-installer.mdc`](multilingual-tier-1-installer.mdc)
+(catalogs ship in the installer) ·
+[`native-operator-gui-i18n.mdc`](native-operator-gui-i18n.mdc) ·
+[`enterprise-compliance.mdc`](enterprise-compliance.mdc) §1 ·
+[`assessment-binder-section-content.mdc`](assessment-binder-section-content.mdc) ·
+[`training-materials-plain-language-and-images.mdc`](training-materials-plain-language-and-images.mdc)
+
+## Origin
+
+2026-08-16 — operator: localize product rules; must-localize list for
+compliance artifacts (reports, evidence, mappings, legal, IR, dashboards).
