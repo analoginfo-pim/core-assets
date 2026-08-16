@@ -12,12 +12,11 @@ shipping text is a defect.
 ## The rule
 
 > **Every compliance artifact this product shows, exports, or files must
-> have localized catalogs for every shipped content language (`en`, `de`,
-> `fr`, `es` today). Preferred language on the person record wins when
-> set; otherwise the page cookie / Accept-Language / English. Operators
-> can edit each language’s version. Official regulation text stays in
-> the language the authority published; AIC chrome, mappings, notices,
-> and summaries are localized.**
+> have localized catalogs for every Tier 1 content language. Preferred
+> language on the person record wins when set; otherwise the page cookie
+> / Accept-Language / English (US). Operators can edit each language’s
+> version. Official regulation text stays in the language the authority
+> published; AIC chrome, mappings, notices, and summaries are localized.**
 
 ## Must-localize list
 
@@ -37,22 +36,75 @@ shipping text is a defect.
 | Consent and privacy notices | Disclosures, welcome, training |
 | Compliance dashboards | Dashboard / CSC / operations chrome |
 
-A new row on this list lands with EN + DE + FR + ES catalog keys in the
+A new row on this list lands with **every Tier 1** catalog key in the
 same change set (or an honest **BLOCKED** with the missing tag named).
+
+## Language tiers (compliance documentation)
+
+These tags are for **filings, audit evidence, certification packages,
+and legal text** — not optional chrome. BCP-47 folder names are the
+catalog keys. Source identifiers stay US English
+([`enterprise-compliance.mdc`](enterprise-compliance.mdc) §1).
+
+**Shipped catalogs today:** `en`, `de`, `fr`, `es`. Missing Tier 1 tags
+(`en-GB`, `zh-Hans`) are **BLOCKED** until catalogs land in
+`core-assets/content/` and the installer — do not claim they ship.
+
+### Tier 1 — mandatory
+
+Required for regulatory filings, audit evidence, certification packages,
+and legal text.
+
+| # | Language | Tag | Why it is mandatory |
+| --- | --- | --- | --- |
+| 1a | English (US) | `en` | Source catalog. NERC CIP, IEC 62443, ISO 27001, SOC 2, CMMC, DoD, DHS, DOE. All listed audit bodies and certification packages accept English. Defense and OT regulators accept English. |
+| 1b | English (UK) | `en-GB` | Distinct filing variant (UK spelling and legal phrasing). Same English-accepting bodies; required where a UK package is the filing language. Not a rewrite of US source identifiers. |
+| 2 | German | `de` | Strictest industrial compliance ecosystem in the EU. BSI, TÜV, German industrial safety and OT cybersecurity audits. |
+| 3 | French | `fr` | ANSSI. French energy, utilities, transportation, and manufacturing audits. Schneider Electric compliance ecosystems. African francophone OT regulators. |
+| 4 | Spanish | `es` | Spain industrial cybersecurity audits. LATAM energy, mining, and manufacturing regulators. Mexico critical-infrastructure compliance. Chile / Colombia / Argentina OT audit documentation. |
+| 5 | Chinese (Simplified) | `zh-Hans` | Chinese industrial cybersecurity (MLPS 2.0). Chinese energy, manufacturing, and transportation audits. Chinese OT integrators and certification bodies. |
+
+### Tier 2 — high-value
+
+Frequent in OT audit ecosystems and defense-contractor compliance.
+Land catalogs when a customer or filing needs them; do not treat as
+optional chrome once a catalog exists.
+
+| # | Language | Tag | Why |
+| --- | --- | --- | --- |
+| 6 | Japanese | `ja` | Japan industrial cybersecurity audits. METI and NISC documentation. Japanese OT integrators (Mitsubishi, Hitachi, Toshiba). |
+| 7 | Korean | `ko` | Korean industrial cybersecurity audits. KISA documentation. Korean OT integrators (Samsung, Hyundai, POSCO). |
+| 8 | Portuguese (Brazil) | `pt-BR` | Brazil LGPD. Brazilian critical-infrastructure audits (energy, mining, utilities). Embraer and LATAM industrial compliance. |
+| 9 | Italian | `it` | Italian industrial cybersecurity audits. ENEL, Leonardo, Fincantieri ecosystems. Italian OT integrators. |
+
+### Tier 3 — optional, regional
+
+Matter in specific regulatory regions. Add as a data catalog when a
+filing needs them. English is often accepted alongside Arabic (MSA).
+
+| Language | Tag | Why |
+| --- | --- | --- |
+| Polish | `pl` | Poland critical-infrastructure regulations |
+| Turkish | `tr` | Turkish industrial cybersecurity audits |
+| Dutch | `nl` | Netherlands energy / water regulators |
+| Swedish | `sv` | Swedish industrial compliance |
+| Finnish | `fi` | Finnish energy / mining audits |
+| Arabic (MSA) | `ar` | Gulf industrial regulators (English often accepted) |
 
 ## How locale is chosen
 
 1. Person **preferred language** (`ui_locale`) when set.
 2. Else web cookie / language selector / `Accept-Language`.
-3. Else English.
+3. Else English (US).
 
 Empty preferred language is **Not Set**, not English-forced.
+`en-GB` is a distinct preferred-language choice, not an alias of `en`.
 
 ## Official text vs AIC prose
 
 | Kind | Localize? |
 | --- | --- |
-| AIC labels, dashboard chrome, export headings, notices, DPA/consent we author | **Yes** — all shipped tags |
+| AIC labels, dashboard chrome, export headings, notices, DPA/consent we author | **Yes** — every Tier 1 tag (and any shipped Tier 2 / 3) |
 | AIC mapping explanations and crosswalk summaries | **Yes** |
 | Official CMMC / NIST 800-53 / 800-171 control bodies | Keep the authority language (English) |
 | ISO 27001 licensed control text | Do **not** translate or paste — identifiers + AIC summary only |
@@ -69,13 +121,18 @@ Localizing a mapping is not a **Met** or certified claim
 2. Administrators can edit each language (Defaults, templates, binder
    copy) without replacing the English inheritance row.
 3. Exports and Email/SMS use the recipient’s preferred language when set.
-4. Mirror this rule to `core-assets/.cursor/rules/` in the same change
+4. A new language is a **data add** (folder + register + MSI row), not a
+   code rewrite. Tier 1 tags that are not on disk yet stay **BLOCKED**.
+5. Mirror this rule to `core-assets/.cursor/rules/` in the same change
    set ([`auto-commit-push.mdc`](auto-commit-push.mdc)).
 
 ## Forbidden
 
 - Shipping any row in the must-localize list in English only when other
-  content languages already ship.
+  Tier 1 content languages already ship.
+- Claiming Tier 1 complete while `en-GB` or `zh-Hans` catalogs are absent.
+- Collapsing UK English into US English, or Simplified Chinese into a
+  generic `zh` that mixes Traditional.
 - Translating copyrighted ISO control text, or inventing unofficial
   CMMC / 800-53 body translations and calling them the control.
 - Claiming a dashboard, binder export, or report is localized because
@@ -95,3 +152,6 @@ Localizing a mapping is not a **Met** or certified claim
 
 2026-08-16 — operator: localize product rules; must-localize list for
 compliance artifacts (reports, evidence, mappings, legal, IR, dashboards).
+Same day: language tiers — Tier 1 mandatory (en, en-GB, de, fr, es,
+zh-Hans); Tier 2 high-value (ja, ko, pt-BR, it); Tier 3 regional
+(pl, tr, nl, sv, fi, ar).

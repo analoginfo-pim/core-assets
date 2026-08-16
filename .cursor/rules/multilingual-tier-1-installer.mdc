@@ -27,7 +27,7 @@ Operator directive (Phil, 2026-08-16):
 | Tree | Role |
 | --- | --- |
 | `core-assets/content/auditor-playbooks/` | Every playbook JSON (including `scaffold-spec-24.json`) |
-| `core-assets/content/locales/{en,de,es,fr}/` | Server catalogs (binder, reports, risks, cli, messaging, disclosures) |
+| `core-assets/content/locales/<tag>/` | Server catalogs (binder, reports, risks, cli, messaging, disclosures). **Shipped today:** `en`, `de`, `es`, `fr`. **Tier 1 also requires** `en-GB` and `zh-Hans` — see language tiers. |
 | `core-assets/content/locales-ui/<tag>/` | Admin-SPA locale JSON (inspectable MSI copy) |
 | `core-assets/content/i18n-native/` | Native GUI / agent / recording catalogs (`pim-app-config-i18n` bundles) |
 
@@ -44,7 +44,7 @@ This rule covers **content packs**, not icons or EULAs.
 | Control catalog (CMMC, NIST, Spec 42, Spec 24, …) | Yes — `pim-compliance-catalog` | Playbook JSON under `auditor-playbooks\` |
 | Training / welcome templates | Yes — `training/templates*.rs` | Locale JSON when a catalog exists |
 | Auditor playbooks | Seeded from install-tree JSON | **Required** — every `*.json` except `_` scratch |
-| Server locales (en/de/es/fr) | Yes — `include_str` | **Required** — `INSTALLFOLDER\locales\` |
+| Server locales (every shipped tag) | Yes — `include_str` | **Required** — `INSTALLFOLDER\locales\` |
 | Admin SPA locales | Yes — Vite bundle | **Required** — `INSTALLFOLDER\locales\ui\` |
 | Native operator GUIs, agent, recording | Yes — `pim-app-config-i18n` `include_str` | Canonical copies in `core-assets/content/i18n-native/` |
 
@@ -59,7 +59,9 @@ A catalog that exists only in a repo and is not in `core-assets/content/`
    row, and extend `sync-to-projects.ps1` if a new tree is needed.
 2. **New language** — add `locales/<tag>/` catalogs, register in
    `i18n_content.rs` / `pim-app-config-i18n`, stage in the MSI, copy to
-   `core-assets/content/`. A data add, not a code rewrite.
+   `core-assets/content/`. A data add, not a code rewrite. Tier 1 tags
+   (`en`, `en-GB`, `de`, `fr`, `es`, `zh-Hans`) are mandatory for
+   compliance documentation; missing tags are **BLOCKED**, not optional.
 3. **Do not** treat lab `Deploy-OfflineServerDev.ps1` copy as installer
    proof. The MSI required list and `installer.wxs` must name the file.
 4. Mirror this rule to `core-assets/.cursor/rules/` in the same change
@@ -81,9 +83,10 @@ Reports, evidence exports, policy docs, risk templates, regulatory
 mappings, legal/privacy/DPA/consent text, session-recording and access
 evidence, change logs, IR documentation, and compliance dashboards are
 **must-localize**. See
-[`compliance-artifacts-must-localize.mdc`](compliance-artifacts-must-localize.mdc).
-English-only shipping text on those surfaces is a defect even when the
-MSI already copies a locale folder.
+[`compliance-artifacts-must-localize.mdc`](compliance-artifacts-must-localize.mdc)
+(artifact list **and** language tiers). English-only shipping text on
+those surfaces is a defect even when the MSI already copies a locale
+folder. Tier 1 is incomplete until `en-GB` and `zh-Hans` catalogs ship.
 
 ## Cross-references
 
