@@ -1,0 +1,20 @@
+{
+  "cli.about": "AIC Server API-Server",
+  "cli.help.locale": "Anzeigesprache für CLI-Hilfe und Konsolenmeldungen (en, de). Ändert keine Audit-, Windows-Ereignisprotokoll- oder Syslog-Feldnamen.",
+  "cli.help.install_service": "Als Windows-Dienst (erhöhte Rechte) oder als systemd-Unit unter Linux (root) installieren.",
+  "cli.help.windows_service_account": "Nur Windows (mit --install-service): SCM-Anmeldekonto. Weglassen für LocalSystem. Kürzel: local-system, network-service, local-service; sonst DOMAIN\\User oder .\\User.",
+  "cli.help.windows_service_password": "Nur Windows (mit --install-service): Dienstkontopasswort für sc.exe password=. Im Prozess-Befehl sichtbar; weglassen für LocalSystem / NT AUTHORITY oder gMSA / konten ohne Passwort.",
+  "cli.help.uninstall_service": "Den mit --install-service installierten Windows-Dienst oder die Linux-systemd-Unit entfernen.",
+  "cli.help.start_service": "Den installierten Dienst starten (sc start / systemctl start).",
+  "cli.help.stop_service": "Den installierten Dienst stoppen (sc stop / systemctl stop).",
+  "cli.help.config_dir": "Sandbox-Einstellungsroot für Lab / WSL-Smoke (leitet AppConfig nach {dir}/pim-offline-server/ statt HKLM oder /etc). Explizit als Flag übergeben; keine Prozess-Umgebungsvariablen.",
+  "cli.cmd.run": "Den AIC-Server-Daemon im Vordergrund ausführen (systemd / Konsole).",
+  "cli.cmd.version": "Die Paketversion ausgeben (gleicher Inhalt wie --version / -V).",
+  "cli.cmd.readiness_report": "Einen prüferorientierten CMMC-L2-Enclave-Bereitschaftsbericht aus der Live-Server-Lage erzeugen (keine Geheimnisse).",
+  "cli.cmd.meter_usage": "Einen konservativen, datenschutzschonenden Nutzungs-Schnappschuss erfassen und über den gewählten Marketplace-Zähler senden (Standard: Offline-Dry-Run).",
+  "cli.help.meter_dry_run": "Den Offline-Dry-Run-Recorder erzwingen, auch wenn ein Cloud-Anbieter gewählt ist.",
+  "cli.help.meter_plan_only": "Plan und Cloud-Bereitschaftsmatrix ausgeben und beenden, ohne Schnappschuss oder Versand.",
+  "cli.help.readiness_format": "Ausgabeformat: json (maschinenlesbar) oder md (Markdown-Checkliste).",
+  "cli.msg.audit_english_only": "Audit-, Windows-Ereignisprotokoll- und Syslog-Nutzlasten bleiben US-Englisch (stabile Feldnamen und Ereignis-IDs).",
+  "cli.msg.api_codes_english": "API-Fehlercodes bleiben englisches snake_case; die Admin-SPA übersetzt Codes in die Anzeigesprache."
+}

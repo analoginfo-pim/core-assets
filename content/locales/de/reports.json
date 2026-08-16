@@ -1,0 +1,45 @@
+{
+  "categories": {
+    "Operations": "Betrieb",
+    "Privileged Access": "Privilegierter Zugriff",
+    "Compliance Evidence": "Compliance-Nachweise"
+  },
+  "edit_guidance": "Ausgelieferte Definition — schreibgeschützt. Klonen Sie sie zum Anpassen. Der Katalogeintrag bleibt unveränderlich; ein Klon speichert nur eine Darstellungsschicht (Datenquelle und Sammler bleiben ausgeliefert). Exportieren Sie JSON für Prüfer-Nachweispakete.",
+  "aic.audit-activity.v1": { "display_name": "Prüfaktivität" },
+  "aic.job-execution-outcomes.v1": { "display_name": "Auftragsergebnisse" },
+  "aic.pam.failed-authentication-machines.v1": { "display_name": "Rechner mit fehlgeschlagener Anmeldung" },
+  "aic.pam.lost-communications-machines.v1": { "display_name": "Rechner mit verlorener Verbindung" },
+  "aic.pam.privileged-session-activity.v1": { "display_name": "Privilegierte Sitzungsaktivität" },
+  "aic.pam.password-rotation-overdue.v1": { "display_name": "Kennwortalter / überfällige Rotation" },
+  "aic.pam.failed-elevation-checkout.v1": { "display_name": "Fehlgeschlagene Elevation / Ausgabe" },
+  "aic.pam.orphaned-local-admins.v1": { "display_name": "Verwaiste / lokale Administratorkonten" },
+  "aic.pam.inactive-privileged-accounts.v1": { "display_name": "Inaktive privilegierte Konten" },
+  "aic.pam.stale-agent-heartbeat.v1": { "display_name": "Systeme ohne aktuellen Agenten-Herzschlag" },
+  "aic.pam.denied-access-requests.v1": { "display_name": "Abgelehnte Zugriffsanfragen" },
+  "aic.compliance.access-assignment.v1": { "display_name": "Zugriffszuweisung und Ausnahmen vom geringsten Recht" },
+  "aic.compliance.crypto-posture.v1": { "display_name": "Kryptografie- und FIPS-Haltung" },
+  "aic.compliance.audit-coverage.v1": { "display_name": "Prüfabdeckung, Aufbewahrung und Lückennachweis" },
+  "aic.compliance.service-build-provenance.v1": { "display_name": "Dienstbuild und Herkunft signierter Binärdateien" },
+  "aic.compliance.configuration-proof.v1": { "display_name": "Enclave-Konfigurationsnachweis" },
+  "aic.compliance.account-assurance.v1": { "display_name": "Kontosicherheit (ruheend, Kennwortalter, MFA)" },
+  "aic.compliance.privileged-activity.v1": { "display_name": "Privilegierte Sitzungen, Elevation und Doppelkontrolle" },
+  "aic.compliance.tls-certificate-posture.v1": { "display_name": "TLS- und Zertifikatsablauf-Haltung" },
+  "aic.compliance.network-boundary.v1": { "display_name": "Netzwerk-Listener und genehmigte Grenzdaten" },
+  "aic.compliance.findings-poam-sprs.v1": { "display_name": "Feststellungen, POA&M und SPRS-Blatt" },
+  "aic.compliance.cui-transfer-delivery.v1": { "display_name": "CUI-Übertragung, Export, Zustellung und Ablehnung" },
+  "aic.compliance.incident-timeline.v1": { "display_name": "Zeitlinie der Vorfallreaktion" },
+  "aic.compliance.assessment-package.v1": { "display_name": "Bewertungs-Nachweispaket" },
+  "aic.compliance.operational-proof.v1": { "display_name": "Operative Enclave-Nachweise" },
+  "aic.compliance.ssp.v1": { "display_name": "System-Sicherheitsplan (Kontrollumsetzung)" },
+  "aic.compliance.objective-workbook.v1": { "display_name": "800-171A- / 800-172A-Zielarbeitsmappe" },
+  "aic.compliance.control-crosswalk.v1": { "display_name": "171 <-> 172 <-> 800-53 <-> CMMC-Zuordnung" },
+  "aic.compliance.backup-restore-exercise.v1": { "display_name": "Nachweis der Sicherungs- und Wiederherstellungsübung" },
+  "aic.compliance.vulnerability-inventory.v1": {
+    "display_name": "Schwachstellen- und Endpunktbestand",
+    "gap": "CVE-/Schweregradzellen bleiben not_scanned, bis ein Operator einen Scan hochlädt; nur CM-8-Bestand. Kein automatischer CVE-Scanner in dieser Grenze."
+  },
+  "aic.compliance.workstation-assurance.v1": {
+    "display_name": "Bereitschaft externer Arbeitsplätze (WA-Bestätigung)",
+    "gap": "Keine C3PAO-Entscheidung; Überspringen und ungeprüfte Checks sind nicht MET. Nur verbindende Clients (ERASG), keine Enclave-Hosts."
+  }
+}

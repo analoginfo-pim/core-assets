@@ -1,0 +1,89 @@
+---
+description: Spec packages and multilingual catalogs are tier 1 and must ship in core-assets plus the installer.
+alwaysApply: true
+---
+
+# Multilingual + spec packs ship with the installer (tier 1)
+
+Operator directive (Phil, 2026-08-16):
+
+> **Confirm that all spec packages ship with the installer and are part of
+> common assets including multilingual assets. Multilingual assets for all
+> components are shipped with the installer. Multilingual support is a
+> tier 1 supported capability.**
+
+## The rule
+
+> **Multilingual support is tier 1 — not an optional add-on and not a
+> later wave. Every spec package (CMMC, NIST 800-171 / 172 / 53, PCI,
+> GDPR, California, Spec 24 / Spec 2400, Spec 42 catalog, and any future
+> spec) and every language catalog the product ships must live in
+> `core-assets/content/` and must be present in the product installer
+> (on disk and/or compiled into a shipping EXE). Omitting a spec pack or
+> a language from the MSI is a defect.**
+
+## Common-assets home
+
+| Tree | Role |
+| --- | --- |
+| `core-assets/content/auditor-playbooks/` | Every playbook JSON (including `scaffold-spec-24.json`) |
+| `core-assets/content/locales/{en,de,es,fr}/` | Server catalogs (binder, reports, risks, cli, messaging, disclosures) |
+| `core-assets/content/locales-ui/<tag>/` | Admin-SPA locale JSON (inspectable MSI copy) |
+| `core-assets/content/i18n-native/` | Native GUI / agent / recording catalogs (`pim-app-config-i18n` bundles) |
+
+`scripts/sync-to-projects.ps1` mirrors playbooks and server locales into
+`pim-offline-server`. Native bundles sync into `pim-app-config-i18n`.
+
+Branding and legal stay under [`branding-assets.mdc`](branding-assets.mdc).
+This rule covers **content packs**, not icons or EULAs.
+
+## How each surface ships
+
+| Surface | In the EXE | On disk in the MSI |
+| --- | --- | --- |
+| Control catalog (CMMC, NIST, Spec 42, Spec 24, …) | Yes — `pim-compliance-catalog` | Playbook JSON under `auditor-playbooks\` |
+| Training / welcome templates | Yes — `training/templates*.rs` | Locale JSON when a catalog exists |
+| Auditor playbooks | Seeded from install-tree JSON | **Required** — every `*.json` except `_` scratch |
+| Server locales (en/de/es/fr) | Yes — `include_str` | **Required** — `INSTALLFOLDER\locales\` |
+| Admin SPA locales | Yes — Vite bundle | **Required** — `INSTALLFOLDER\locales\ui\` |
+| Native operator GUIs, agent, recording | Yes — `pim-app-config-i18n` `include_str` | Canonical copies in `core-assets/content/i18n-native/` |
+
+A catalog that exists only in a repo and is not in `core-assets/content/`
+**or** not in the MSI / shipping EXE has not shipped.
+
+## Required agent behavior
+
+1. **New spec pack** — add the playbook (or document catalog-only + why),
+   add EN and at least DE locale strings in the same change set, copy
+   into `core-assets/content/`, add the WiX `File` + MSI required-list
+   row, and extend `sync-to-projects.ps1` if a new tree is needed.
+2. **New language** — add `locales/<tag>/` catalogs, register in
+   `i18n_content.rs` / `pim-app-config-i18n`, stage in the MSI, copy to
+   `core-assets/content/`. A data add, not a code rewrite.
+3. **Do not** treat lab `Deploy-OfflineServerDev.ps1` copy as installer
+   proof. The MSI required list and `installer.wxs` must name the file.
+4. Mirror this rule to `core-assets/.cursor/rules/` in the same change
+   set ([`auto-commit-push.mdc`](auto-commit-push.mdc)).
+
+## Forbidden
+
+- Shipping a spec (Spec 24, PCI, …) in git / lab deploy but omitting it
+  from `Build-PimOfflineServerMsi.ps1` `$requiredPlaybooks` or WiX.
+- English-only installer trees when DE (or another shipped tag) catalogs
+  exist in the repo.
+- Calling multilingual “nice to have,” “phase 2,” or “optional SKU.”
+- Inventing a product env var for locale
+  ([`no-environment-variables.mdc`](no-environment-variables.mdc)).
+
+## Cross-references
+
+[`native-operator-gui-i18n.mdc`](native-operator-gui-i18n.mdc) (Win32 /
+Tauri catalogs) · [`enterprise-compliance.mdc`](enterprise-compliance.mdc)
+§1 (US English source; i18n layer on top) ·
+[`branding-assets.mdc`](branding-assets.mdc) (icons/legal SoT — not
+content packs)
+
+## Origin
+
+2026-08-16 — operator: all spec packages and multilingual assets ship
+with the installer and live in common assets; multilingual is tier 1.

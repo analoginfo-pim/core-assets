@@ -1,0 +1,222 @@
+{
+  "honesty_banner": "Erstellt mit AIC Server zur Vorbereitung eines Bewertungspakets. Dies ist keine Entscheidung eines Prüfers und keine behördliche Zulassung. Lücken und Unbekanntes bleiben aufgeführt. Die Sicherheitsauslegung folgt NIST SP 800-53 Rev 5. CMMC-Verpackung senkt diese Schwelle nicht. Ein Prüfer entscheidet über Met nach der Nachweissichtung. Dieser Text allein kennzeichnet keine Kontrolle als Met.",
+  "architecture_boilerplate": "Dieser Binder beschreibt das feste AIC-Server-Enclave-Modell für die Bewertungspackung.\n\nDie Steuerungsebene umfasst Anmeldung, privilegierte Zugriffe, Bestand, Current State Compliance, den Assessment Binder, Hinweise und Secure Share. Verwaltete Rechner nutzen Agenten, wenn sie aufgenommen sind. Agentenlose Erkennung wird genutzt, wo sie unterstützt wird. Systemgruppen setzen den Stichprobenumfang. Fernzugriff / Verbinden zeichnet Operatorsitzungen auf zugewiesenen Arbeitsplätzen auf.\n\nOrganisationsfelder (Rechtsname, CAGE, Enclave-Name, MSP) füllen diese Instanz. Sie ändern das Produktmodell nicht.\n\nTypische Bereitstellungen laufen in Cloud-Infrastruktur (von AIC betrieben oder im Kundenmandant). Vor-Ort-Partnermodelle können gelten. AIC behält in der Regel keinen dauerhaften Anmeldezugang zu Kundenhosts. Die tägliche Arbeit nutzt Produktrollen, Begründungen und Nachweiszitate.\n\nZitieren Sie live Compliance-Scans, Bestand, Systemgruppen, Secure-Share-Zitate (nur Titel und Kennungen — keine CUI-Dokumentkörper), Connect-Aufzeichnungen, Krypto-Status, Hinweise und Nachtests. Behandeln Sie diese Erzählung allein nicht als Nachweis. Labor-SoftHSM und Demo-Kennwörter sind keine Produktionsaussagen.\n\nDie Erstpackung deckt CMMC-Stufen 1–3 und zugehörige NIST-SP-800-171- / 800-172-Bedarfe ab. NIST SP 800-53 bleibt die Sicherheitsauslegungs-Untergrenze.\n\nCloud-Varianten zielen auf FedRAMP- und Microsoft-GCC-High-Haltungen, wo gewählt. Dieser Text behauptet keine aktuelle FedRAMP-ATO. Unterschriftszeilen des Prüfers bleiben in diesem Werkzeug leer. Ein Prüfer entscheidet über Met nach der Nachweissichtung. Dieser Text allein kennzeichnet keine Kontrolle als Met.",
+  "fedramp_gcc_high_notes": "Cloud-Angebote zielen auf FedRAMP- und GCC-High-Bereitstellungshaltungen. Dieser Binder behauptet nicht, dass eine Betriebserlaubnis (ATO) bereits erteilt wurde.",
+  "iga_out_of_scope_label": "Außerhalb des Umfangs für diesen Produktdurchlauf — AIC Server liefert in dieser Version keinen unternehmensweiten Identitätslebenszyklus (IGA). Beschreiben Sie unten, wie dieser Kunde heute Aufnahme / Wechsel / Austritt bereitstellt.",
+  "operator_authored": "Vom Operator verfasste Erzählung",
+  "readiness_pending": "Die Abschnittsbereitschaft wird beim Zusammenstellen des Binders berechnet.",
+  "floor_note": "NIST SP 800-53 Rev 5 ist die Kontrollauslegungs-Untergrenze. CMMC / 800-171 / 800-172 sind Verpackungsüberlagerungen, die Enclave-Nachweise wiederverwenden.",
+  "switch_effect": "Ein Wechsel des Bewertungsstandards ordnet die Prüfliste und die Nachweisansicht dieser Verpackungsüberlagerung neu zu (welche Praktiken / Kontrollfamilien im Umfang sind). Bereits erfasste Enclave-Nachweise werden wiederverwendet und neu zugeordnet — sie werden nicht gelöscht oder neu erfasst.",
+  "attestation_default": "Die Angaben in diesem Paket sind nach meinem besten Wissen zutreffend und vollständig.",
+  "please_fill_in": "Bitte ausfüllen",
+  "please_complete": "Bitte vervollständigen",
+  "section_titles": {
+    "cover": "Deckblatt",
+    "architecture": "Architektur und Betriebsmodell",
+    "toc": "Inhaltsverzeichnis",
+    "scoping_l1": "CMMC L1 / FCI-Abgrenzung",
+    "scoping_l2": "CMMC L2 / CUI-Abgrenzung und Grenze",
+    "ssp": "SSP-Erzählungen (800-171-Praktiken)",
+    "objective_workbook": "Zielarbeitsmappe (800-171A)",
+    "enhanced_800_172": "800-172 / CMMC L3 erweiterte Anforderungen",
+    "current_state_gaps": "Aktueller Compliance-Stand und Lücken",
+    "external_workstation_readiness": "Bereitschaft externer Arbeitsplätze (WA / ERASG)",
+    "iga_provisioning_narrative": "IGA / Bereitstellung (außerhalb des Umfangs — Kundenerzählung)",
+    "evidence_index": "Nachweisindex nach Praxis",
+    "incident_response": "Vorfallreaktion",
+    "poam": "POA&M",
+    "sprs": "SPRS-Bewertungsblatt",
+    "assessor_notes": "Prüfernotizen und Gesprächsprotokoll",
+    "export_package_notes": "Hinweise zum Exportpaket"
+  },
+  "sections": {
+    "cover": {
+      "completeness": "complete",
+      "html": "<h2 class=\"binder-rt-lg\">Deckblatt</h2>\n<p>Erstellt von <strong>{auditor_name}</strong> (<strong>{company}</strong>) am <strong>{date}</strong>.</p>\n<p>Organisation: <strong>{org_legal_name}</strong>. Systemname: <strong>{system_enclave_name}</strong>.</p>\n<p>Dieser Binder hilft der Organisation bei der Vorbereitung auf eine Bewertung nach <strong>CMMC Stufe 2</strong> (auf Basis von <strong>NIST SP 800-171</strong>).</p>\n<p><u>Bitte ausfüllen</u>: Rechtsname, CAGE-Code, Systemname, Bewertungsdatum und Kontakte der Prüfer vor dem Export.</p>\n<p>Die Sicherheitsauslegung folgt <strong>NIST SP 800-53 Rev 5</strong>. CMMC-Verpackung senkt diese Schwelle nicht.</p>\n<p>Unterschriftszeilen des Prüfers bleiben in diesem Werkzeug leer. Ein Prüfer entscheidet über <strong>Met</strong> nach der Nachweissichtung. Dieser Text allein kennzeichnet keine Kontrolle als Met.</p>"
+    },
+    "architecture": {
+      "completeness": "complete",
+      "html": "<h2 class=\"binder-rt-lg\">Architekturüberblick</h2>\n<p>Erstellt von <strong>{auditor_name}</strong> (<strong>{company}</strong>) am <strong>{date}</strong>.</p>\n<p>Das bewertete System (<strong>{system_enclave_name}</strong>) umfasst Rechner, die für diese Bewertung <strong>CUI</strong> verarbeiten, speichern oder senden.</p>\n<p><strong>Grenzobjekte</strong> (Anmeldesysteme, Sprunghosts und Überwachungswerkzeuge) müssen aus dem Live-Bestand und aus Compliance-Scans stammen. Erfinden Sie keine Namen oder Anzahlen.</p>\n<ul>\n<li>Steuerungsebene: Anmeldung, privilegierter Zugriff, Bestand, Current State Compliance, Assessment Binder, Hinweise, Secure Share</li>\n<li>Verwaltete Rechner mit Agenten, wo aufgenommen</li>\n<li>Systemgruppen für den Stichprobenumfang</li>\n<li>Aufgezeichneter Fernzugriff / Verbinden, wo zugewiesen</li>\n</ul>\n<p>Unternehmens-IT außerhalb der <strong>CUI</strong>-Grenze liegt außerhalb des Umfangs, sofern dieses Paket sie nicht als geteilte Dienste auflistet.</p>\n<p>Die Sicherheitsauslegung folgt <strong>NIST SP 800-53 Rev 5</strong>. Die Verpackung nach <strong>CMMC Stufe 2</strong> senkt diese Schwelle nicht.</p>\n<p>Ein Prüfer entscheidet über <strong>Met</strong> nach der Nachweissichtung. Dieser Text allein kennzeichnet keine Kontrolle als Met. Kontrollen ohne Nachweis bleiben <strong>nicht bewertet</strong>.</p>"
+    },
+    "toc": {
+      "completeness": "complete",
+      "html": "<h2 class=\"binder-rt-lg\">Inhaltsverzeichnis</h2>\n<p>Das Inhaltsverzeichnis wird aus der Abschnittliste dieses Binders für das gewählte Bewertungsziel gebaut.</p>\n<p>Fügen Sie hier nur eine kurze Notiz hinzu, wenn der Export eine Überschrift über dieser Liste braucht. Erfinden Sie keine Abschnittstitel, die nicht in der Gliederung stehen.</p>\n<p>Diese Notiz ändert keine Bereitschaftswerte. Ein Prüfer entscheidet über <strong>Met</strong> nach der Nachweissichtung. Dieser Text allein kennzeichnet keine Kontrolle als Met.</p>\n<p><u>Bitte ausfüllen</u> (optional): Paketkennung oder Bewertungsfenster, wenn Ihr Prüfprozess das braucht.</p>"
+    },
+    "scoping_l1": {
+      "completeness": "scaffold",
+      "html": "<h2 class=\"binder-rt-lg\">Stufe 1 / FCI-Abgrenzung</h2>\n<p><u>[Bitte für Bewertungen der Stufe 1 vervollständigen]</u> Beschreiben Sie die Grenze der Federal Contract Information (<strong>FCI</strong>) für diese Organisation.</p>\n<p>Ersetzen Sie diesen Platzhalter vor dem Export. Aussagen ohne Nachweis bleiben <strong>nicht bewertet</strong>.</p>\n<p>Ein Prüfer entscheidet über <strong>Met</strong> nach der Nachweissichtung. Dieser Text allein kennzeichnet keine Kontrolle als Met.</p>"
+    },
+    "scoping_l2": {
+      "completeness": "complete",
+      "html": "<h2 class=\"binder-rt-lg\">Stufe 2 / CUI-Abgrenzung</h2>\n<p>Die Bewertungsgrenze umfasst Anlagen, die <strong>CUI</strong> verarbeiten, speichern oder senden, plus die Werkzeuge, die diese Grenze schützen.</p>\n<ul>\n<li>CUI-Arbeitsplätze und Server</li>\n<li>Steuerungsebene und privilegierte Zugriffszeilen, wo aufgenommen</li>\n<li>Überwachungssammler, die aus dem Bestand zitiert werden</li>\n</ul>\n<p>Anlagen außerhalb des <strong>CUI</strong>-Systems sind ausgeschlossen, sofern dieses Paket keine Vererbung geteilter Dienste festhält.</p>\n<p><u>Bitte ausfüllen</u>: Hostanzahlen, Standorte und Cloud-Mandantschaft für diese Bewertung.</p>\n<p>Ein Prüfer entscheidet über <strong>Met</strong> nach der Nachweissichtung. Dieser Text allein kennzeichnet keine Kontrolle als Met.</p>"
+    },
+    "ssp": {
+      "completeness": "complete",
+      "html": "<h2 class=\"binder-rt-lg\">System-Sicherheitsplan</h2>\n<p>Für softwaregedeckte Praxisfamilien stützt sich <strong>{org_legal_name}</strong> auf die dokumentierte Kontrollauslegung des Produkts.</p>\n<p>Zitieren Sie Live-Nachweise aus Compliance-Scans und dem Rechnerbestand. Erfinden Sie in dieser Erzählung keine Scanergebnisse.</p>\n<ul>\n<li>Zeilen von Current State Compliance</li>\n<li>Endpunktbestand und Agentenaufnahme</li>\n<li>Elevations- und Kennwortwiederherstellungsspuren, wo im Umfang</li>\n<li>Secure-Share-Zitate (nur Titel und Kennungen)</li>\n</ul>\n<p>Praktiken ohne Live-Nachweis bleiben <strong>nicht bewertet</strong>, bis die Stichprobe fertig ist.</p>\n<p>Erstellt von <strong>{auditor_name}</strong> am <strong>{date}</strong>.</p>\n<p>Ein Prüfer entscheidet über <strong>Met</strong> nach der Nachweissichtung. Dieser Text allein kennzeichnet keine Kontrolle als Met.</p>"
+    },
+    "objective_workbook": {
+      "completeness": "complete",
+      "html": "<h2 class=\"binder-rt-lg\">Zielarbeitsmappe — Stichprobennotizen</h2>\n<p>Die Stichprobe nutzte den Live-Kontrollsatz für das gewählte Bewertungsziel.</p>\n<p>Als <strong>nicht bewertet</strong> markierte Praktiken brauchen noch Nachweise.</p>\n<p><u>Bitte ausfüllen</u>: Stichprobensatz, Hosts und Daten für diese Bewertung.</p>\n<p>Ein Prüfer entscheidet über <strong>Met</strong> nach der Nachweissichtung. Dieser Text allein kennzeichnet keine Kontrolle als Met.</p>"
+    },
+    "enhanced_800_172": {
+      "completeness": "scaffold",
+      "html": "<h2 class=\"binder-rt-lg\">Erweiterte Anforderungen (800-172 / CMMC L3)</h2>\n<p><u>[Gerüst — nur ausfüllen, wenn Stufe 3 oder NIST SP 800-172 im Umfang ist]</u></p>\n<p>Dieser Abschnitt packt erweiterte Kontrollen nach <strong>NIST SP 800-172</strong>, die für die Bewertung gewählt wurden.</p>\n<p>Sie überlagern denselben Bestand, Current State Compliance und Binder-Nachweisweg, der für die zugrunde liegenden 800-171-Praktiken genutzt wird.</p>\n<h3>Was Laborwege zeigen</h3>\n<ul>\n<li>Aufgezeichnete Connect-Sitzungen</li>\n<li>Elevations-Mint auf aufgenommenen Agenten</li>\n<li>Secure-Share-Zusammenarbeit innerhalb der Enclave</li>\n<li>SoftHSM- / HSM-Verwahrung im Referenzlabor</li>\n</ul>\n<p>Diese Wege zeigen Produktfähigkeit. Sie erfüllen nicht automatisch jede erweiterte Anforderung für eine Kundenproduktions-Enclave.</p>\n<h3>Was hier unbewiesen bleibt</h3>\n<ul>\n<li>Hardware-PAW und andere nur-Stufe-3-Abweichungen, die das Produkt nicht bewiesen hat</li>\n<li>Jede erweiterte Aussage ohne Current-State-Nachweis und geprüften Nachtest</li>\n</ul>\n<p>Unbewiesene erweiterte Aussagen bleiben teilweise, Lücke oder <strong>nicht bewertet</strong>. Behandeln Sie die Erzählung allein nicht als <strong>Met</strong>.</p>\n<p>Erstellt von <strong>{auditor_name}</strong> (<strong>{company}</strong>) am <strong>{date}</strong>.</p>\n<p>Ein Prüfer entscheidet über <strong>Met</strong> nach der Nachweissichtung. Dieser Text allein kennzeichnet keine Kontrolle als Met.</p>"
+    },
+    "current_state_gaps": {
+      "completeness": "complete",
+      "html": "<h2 class=\"binder-rt-lg\">Aktuelle Lücken</h2>\n<p>Offene Lücken in diesem Abschnitt haben einen Eigentümer und ein Zieldatum im <strong>POA&amp;M</strong>.</p>\n<p>Vorübergehende Ausgleichskontrollen sind auf jeder Feststellung beschrieben. Der Abschluss braucht einen sauberen Nachtest — nicht die Erzählung allein.</p>\n<p>Einträge wechseln zu <strong>Behebung versucht</strong>, wenn die Arbeit beginnt.</p>\n<p>Ein Prüfer entscheidet über <strong>Met</strong> nach der Nachweissichtung. Dieser Text allein kennzeichnet keine Kontrolle als Met.</p>"
+    },
+    "iga_provisioning_narrative": {
+      "completeness": "complete",
+      "html": "<h2 class=\"binder-rt-lg\">Identitätsbereitstellung — außerhalb des Umfangs</h2>\n<p>Unternehmens-Workflows zur Identitätsbereitstellung liegen außerhalb des Umfangs dieses Assessment-Binder-Pakets.</p>\n<p>Wenn ein Unternehmens-Identitätssystem existiert, behandeln Sie es als geteilten Dienst, sofern kein getrennter Nachweis angehängt ist.</p>\n<p>Zugehörige Praktiken bleiben bis dahin <strong>nicht bewertet</strong>.</p>\n<p>Ein Prüfer entscheidet über <strong>Met</strong> nach der Nachweissichtung. Dieser Text allein kennzeichnet keine Kontrolle als Met.</p>"
+    },
+    "evidence_index": {
+      "completeness": "complete",
+      "html": "<h2 class=\"binder-rt-lg\">Nachweisindex</h2>\n<p>Zitate zeigen auf Compliance-Scanzeilen, Titel von Tresorobjekten und Konfigurationsverweise.</p>\n<ul>\n<li>Current-State-Compliance-Feststellungen und Fix-It-Spur</li>\n<li>Systeme- / Endpunktbestand</li>\n<li>Secure-Share-Zitate (nur Titel und Kennungen)</li>\n<li>Connect-Sitzungsaufzeichnungen, wo im Umfang</li>\n</ul>\n<p>Fügen Sie keine <strong>CUI</strong>-Dokumentkörper oder Geheimwerte in Binder-Notizen ein.</p>\n<p><u>Bitte ausfüllen</u>: Stichprobennotizen und Zitatkennungen nach Bedarf.</p>\n<p>Ein Prüfer entscheidet über <strong>Met</strong> nach der Nachweissichtung. Dieser Text allein kennzeichnet keine Kontrolle als Met.</p>"
+    },
+    "poam": {
+      "completeness": "complete",
+      "html": "<h2 class=\"binder-rt-lg\">Maßnahmen- und Meilensteinplan</h2>\n<p>Risikoakzeptierte Einträge nennen eine genehmigende Stelle, eine Ausgleichskontrolle und ein Wiedervorlagedatum.</p>\n<p>Die Akzeptanz entfernt die Verfolgung des Restrisikos nicht.</p>\n<p>Einträge wechseln zu <strong>Behebung versucht</strong>, wenn die Arbeit beginnt, und zu Gelöst nur nach einem geprüften Nachtest.</p>\n<p>Ein Prüfer entscheidet über <strong>Met</strong> nach der Nachweissichtung. Dieser Text allein kennzeichnet keine Kontrolle als Met.</p>"
+    },
+    "sprs": {
+      "completeness": "complete",
+      "html": "<h2 class=\"binder-rt-lg\">SPRS-Bewertungsblatt</h2>\n<p>Punktzahlen müssen zur Zielarbeitsmappe und zu den Live-Compliance-Ergebnissen für dieses Ziel passen.</p>\n<p>Heben Sie Punktzahlen nicht allein aus der Erzählung an.</p>\n<p><u>Bitte ausfüllen</u>: SPRS-Einreichungsdatum und Punktzahlkennung, wenn verfügbar.</p>\n<p>Ein Prüfer entscheidet über <strong>Met</strong> nach der Nachweissichtung. Dieser Text allein kennzeichnet keine Kontrolle als Met.</p>"
+    },
+    "assessor_notes": {
+      "completeness": "complete",
+      "html": "<h2 class=\"binder-rt-lg\">Stichprobennotizen des Prüfers</h2>\n<p>Halten Sie Hosts, Daten und Folgepunkte für diese Packungsansicht fest.</p>\n<ul>\n<li>Beprobte Hosts und Systemgruppen</li>\n<li>Gesprächsteilnehmer und Folgepunkte</li>\n<li>Zitate zu Compliance-Zeilen, Connect-Nachweisen und Hinweisen</li>\n</ul>\n<p>Unterschriftsblöcke des Prüfers bleiben in diesem Werkzeug leer. Fügen Sie keine <strong>CUI</strong>-Dokumentkörper in Notizen ein.</p>\n<p>Ein Prüfer entscheidet über <strong>Met</strong> nach der Nachweissichtung. Dieser Text allein kennzeichnet keine Kontrolle als Met.</p>"
+    },
+    "export_package_notes": {
+      "completeness": "complete",
+      "html": "<h2 class=\"binder-rt-lg\">Hinweise zum Exportpaket</h2>\n<p>Dieser Export trägt nur Zitate. PDF-, Word- und RTF-Ausgaben dürfen keine Geheimwerte enthalten.</p>\n<p>Bestätigen Sie das Ehrlichkeitstransparent und die Bereitschaftschips, bevor Sie das Paket an einen Prüfer senden.</p>\n<p>Bestätigen Sie, dass die Felder Leitender Prüfer / Qualitätsprüfer vor der Freigabe leer sind.</p>\n<p>Ein Prüfer entscheidet über <strong>Met</strong> nach der Nachweissichtung. Dieser Text allein kennzeichnet keine Kontrolle als Met.</p>"
+    },
+    "default": {
+      "completeness": "operator_must_complete",
+      "html": "<h2 class=\"binder-rt-lg\">Abschnittserzählung</h2>\n<p><u>[Bitte vervollständigen]</u> Für diesen Abschnitt ist noch kein Standardtext definiert. Ersetzen Sie diesen Platzhalter vor dem Export.</p>\n<p>Ein Prüfer entscheidet über <strong>Met</strong> nach der Nachweissichtung. Dieser Text allein kennzeichnet keine Kontrolle als Met. Unbewiesene Praktiken bleiben <strong>nicht bewertet</strong>.</p>"
+    }
+  },
+  "iga": {
+    "customer_entra_ad": {
+      "label": "Kundenverwaltetes AD / externes Verzeichnis",
+      "boilerplate": "Bereitstellung und Identitätslebenszyklus für diesen Kunden laufen in einem kundenverwalteten Active Directory und/oder einem externen OIDC-Verzeichnis außerhalb von AIC Server. Aufnahme/Wechsel/Austritt, Gruppenmitgliedschaft und HR-gesteuerte Bereitstellung liegen beim IdP-Team des Kunden. Dieser Binder zitiert nur Zugriffs- und Endpunktkontext; er betreibt keinen IGA-Konnektor."
+    },
+    "msp_run_iga": {
+      "label": "MSP-betriebenes IGA",
+      "boilerplate": "Ein MSP betreibt den IGA- / Identitätslebenszyklus dieses Kunden (Aufnahme-Wechsel-Austritt, Zugriffsreviews und zugehörige Bereitstellung) außerhalb von AIC Server. Der MSP dokumentiert Verfahren und Nachweise im vom Kunden gewählten IGA-Werkzeug. AIC Server liefert in diesem Produktdurchlauf kein Unternehmens-IGA."
+    },
+    "deferred_robert": {
+      "label": "Zurückgestellt auf künftige Identitätslebenszyklus-Zusammenarbeit",
+      "boilerplate": "Unternehmens-IGA / Lebenszyklusbereitstellung liegt außerhalb des Umfangs dieses AIC-Server-Produktdurchlaufs. Sie ist für eine spätere Zusammenarbeit mit dem Identitätslebenszyklus-Kern vorgesehen. Bis dahin dokumentiert dieser Kunde, wie die Bereitstellung außerhalb dieses Produkts läuft (IdP, MSP oder Partner). Behandeln Sie diesen Abschnitt nicht als Nachweis, dass AIC heute IGA liefert."
+    },
+    "partner_netthunder": {
+      "label": "Partner- / Vor-Ort-Bereitstellung",
+      "boilerplate": "Für diesen Kunden gilt eine vor Ort oder vom Partner betriebene Identitätsbereitstellung. Der benannte Partner betreibt Verzeichnis- / Bereitstellungsintegrationen. AIC Server liefert in diesem Produktdurchlauf kein Unternehmens-IGA; beschreiben Sie hier den partnerbetriebenen Prozess und den Nachweisort."
+    },
+    "none_na": {
+      "label": "Keine / nicht zutreffend",
+      "boilerplate": "IGA / Unternehmensbereitstellung gilt nicht für die Bewertungsgrenze dieser Binder-Instanz, oder keine IGA-Fähigkeit ist im Umfang. Operatoren müssen das vor dem Export mit der OSP bestätigen. Das ist keine Aussage, dass Bereitstellungskontrollen MET sind."
+    }
+  },
+  "profiles": {
+    "cmmc": {
+      "label": "CMMC",
+      "explanation": "CMMC (32 CFR 170) ist die DoD-Bewertungsverpackung über NIST SP 800-171 (und auf Stufe 3 ausgewählte erweiterte Anforderungen nach NIST SP 800-172). Stufe 1 deckt grundlegenden FCI-Schutz ab; Stufe 2 richtet sich nach den 110 Praktiken von 800-171 Rev 2 für CUI; Stufe 3 fügt erweiterte 800-172-Anforderungen hinzu. CMMC ersetzt nicht die Kontrollauslegungs-Untergrenze nach NIST SP 800-53 Rev 5 — es packt Bewertungsnachweise für eine C3PAO- / DoD-Prüfung."
+    },
+    "nist_800_171": {
+      "label": "NIST SP 800-171",
+      "explanation": "NIST SP 800-171 Rev 2 definiert 110 Sicherheitsanforderungen in 14 Familien zum Schutz von CUI in nicht-föderalen Systemen. Die Verpackung der Stufe 1 fokussiert grundlegende / FCI-orientierte Praktiken; Stufe 2 ist der volle 110-Praktiken-Satz, der oft mit CMMC Stufe 2 gepaart wird; die Rahmung der Stufe 3 kann zusätzliche erweiterte Erwartungen nennen. Die Produktkontrollauslegung folgt weiter der Untergrenze nach NIST SP 800-53 Rev 5; 800-171 ist Bewertungsverpackung über dieser Untergrenze."
+    },
+    "nist_800_172": {
+      "label": "NIST SP 800-172",
+      "explanation": "NIST SP 800-172 (Feb. 2021) fügt 35 erweiterte Sicherheitsanforderungen über 800-171 hinaus hinzu. CMMC Stufe 3 wählt eine Teilmenge. Diese Verpackungsansicht betont erweiterte Anforderungen zusammen mit den zugrunde liegenden 800-171- / CMMC-Nachweisen. Unbewiesene erweiterte Aussagen bleiben Lücke oder unbekannt — ein Wechsel hier filtert/ordnet den Umfang neu; er erfindet keine neuen Hostnachweise."
+    },
+    "nist_800_53": {
+      "label": "NIST SP 800-53",
+      "explanation": "NIST SP 800-53 Rev 5 ist die Kontrollauslegungs-Untergrenze dieses Produkts (mittlere Baseline, High wo gewählt). Kontrollfamilien (AC, AU, CM, IA, SC, SI und andere) gliedern den Katalog. CMMC- / 800-171- / 800-172-Zeilen andernorts sind Bewertungsverpackungsüberlagerungen, die dieselben Enclave-Nachweise wiederverwenden — sie sind kein dünnerer Ersatz für die 800-53-Untergrenze."
+    },
+    "level_1": "Stufe 1",
+    "level_2": "Stufe 2",
+    "level_3": "Stufe 3",
+    "level_1_fci": "Stufe 1 (grundlegend / FCI)",
+    "moderate": "Mittel",
+    "high": "Hoch",
+    "banner_cmmc_1": "Ziel: CMMC Stufe 1 (NIST SP 800-171 grundlegend / FCI)",
+    "banner_cmmc_2": "Ziel: CMMC Stufe 2 (NIST SP 800-171)",
+    "banner_cmmc_3": "Ziel: CMMC Stufe 3 (NIST SP 800-171 + NIST SP 800-172)",
+    "banner_171_1": "Ziel: NIST SP 800-171 Stufe 1 (grundlegend / FCI)",
+    "banner_171_2": "Ziel: NIST SP 800-171 Stufe 2",
+    "banner_171_3": "Ziel: NIST SP 800-171 Stufe 3",
+    "banner_172_2": "Ziel: NIST SP 800-172 Stufe 2",
+    "banner_172_3": "Ziel: NIST SP 800-172 Stufe 3",
+    "banner_53_moderate": "Ziel: NIST SP 800-53 Mittel",
+    "banner_53_high": "Ziel: NIST SP 800-53 Hoch"
+  },
+  "wizard": {
+    "cover_standard": { "label": "Deckblatt — Standard", "description": "Standard-Deckblatterzählung für die Bewertungspackung." },
+    "architecture_standard": { "label": "Architektur — Standard", "description": "Standard-Architekturüberblick für das bewertete System." },
+    "toc_standard": { "label": "Inhaltsverzeichnis — Standard", "description": "Optionale Notiz über dem automatisch gebauten Inhaltsverzeichnis." },
+    "scoping_l1_placeholder": { "label": "Stufe 1 / FCI-Abgrenzung — Gerüst", "description": "Platzhalter für die Abgrenzung von Federal Contract Information der Stufe 1." },
+    "scoping_l2_standard": { "label": "Stufe 2 / CUI-Abgrenzung — Standard", "description": "Standarderzählung zur CUI-Grenze." },
+    "ssp_standard": { "label": "System-Sicherheitsplan — Standard", "description": "Standarderzählung zum System-Sicherheitsplan." },
+    "objective_workbook_sampling": { "label": "Ziele — Stichprobennotizen", "description": "Standard-Stichprobennotizen für die Zielarbeitsmappe." },
+    "enhanced_800_172_scaffold": { "label": "Erweiterte Anforderungen — Gerüst", "description": "Gerüst, wenn Stufe 3 / 800-172 im Umfang ist." },
+    "gaps_remediation_plan": { "label": "Lücken — Behebungsplan", "description": "Standardtext für offene Lücken mit Eigentümern und Daten." },
+    "iga_deferred_robert": { "label": "Identitätsbereitstellung — außerhalb des Umfangs", "description": "Standardhinweis außerhalb des Umfangs für Unternehmens-Identitätsbereitstellung." },
+    "evidence_index_standard": { "label": "Nachweisindex — Standard", "description": "Standardrahmen für einen nur-Zitate-Nachweisindex." },
+    "poam_risk_accepted_template": { "label": "POA&M — Risikoakzeptanz", "description": "Standardrahmen für Risikoakzeptanz im Maßnahmenplan." },
+    "sprs_standard": { "label": "SPRS-Bewertung — Standard", "description": "Standardrahmen für das SPRS-Bewertungsblatt." },
+    "assessor_notes_sampling": { "label": "Prüfernotizen — Stichprobe", "description": "Standard-Abschlussnotizen zur Stichprobe." },
+    "export_package_notes_standard": { "label": "Exportpaket — Standard", "description": "Standard-Ehrlichkeitshinweis zum Export." },
+    "architecture_shared_services": { "label": "Vererbung geteilter Dienste", "description": "Wenn einige Kontrollen von einem Unternehmens-Gemeinschaftsdienst kommen." },
+    "ssp_customer_responsibility": { "label": "System-Sicherheitsplan — Kundeneinrichtung nötig", "description": "Wenn die Organisation die Einrichtung über Produktdefaults hinaus abschließen muss." },
+    "assessor_notes_follow_up": { "label": "Prüfernotizen — Nacharbeit nötig", "description": "Wenn die Stichprobe vor dem Abschluss eine Antwort der Organisation braucht." },
+    "finding_justified_compensating": { "label": "Begründet — Ausgleichskontrolle", "description": "Erklären Sie die Feststellung, ohne sie zu löschen; zitieren Sie die Ausgleichskontrolle." },
+    "finding_justified_inherited": { "label": "Begründet — geerbter Gemeinschaftsdienst", "description": "Wenn die Lücke von einem Unternehmens-Gemeinschaftsdienst kommt." },
+    "finding_risk_accepted_temporary": { "label": "Risiko akzeptiert — vorübergehend mit Wiedervorlage", "description": "Die Organisation akzeptiert Restrisiko mit Eigentümer und Wiedervorlagedatum." },
+    "finding_not_applicable_scope": { "label": "Nicht zutreffend — außerhalb des bewerteten Umfangs", "description": "Die Feststellung gilt nicht für die bewertete CUI-Systemgrenze." },
+    "signoff_msp_prepared": { "label": "MSP hat das Paket vorbereitet", "description": "Füllt Erstellt von / Geprüft von für ein MSP-geführtes Paket. Prüferzeilen bleiben leer." },
+    "signoff_osa_prepared": { "label": "Organisation hat das Paket vorbereitet", "description": "Füllt Erstellt von und Platzhalter für den bestätigenden Verantwortlichen bei Selbstvorbereitung." },
+    "signoff_attestation_conservative": { "label": "Bestätigungstext — konservativer Default", "description": "Ersetzt nur den Bestätigungstext; Namensfelder bleiben für den Operator." }
+  },
+  "wizard_bodies": {
+    "architecture_shared_services": "<h2 class=\"binder-rt-lg\">Vererbung geteilter Dienste</h2>\n<p>Einige Kontrollen kommen von einem Unternehmens-Gemeinschaftsdienst (Anmeldung, Geräteverwaltung oder zentrales Protokollieren).</p>\n<p>Halten Sie fest, welche Praktiken in der Zielarbeitsmappe geerbt sind. Das Restrisiko auf kundenbetriebenen Hosts bleibt bei der Organisation und wird im <strong>POA&amp;M</strong> verfolgt.</p>\n<p><u>Bitte ausfüllen</u>: Name des Gemeinschaftsdienstes, geerbte Praxis-IDs und Hosts, die die Organisation noch besitzt.</p>\n<p>Ein Prüfer entscheidet über <strong>Met</strong> nach der Nachweissichtung. Dieser Text allein kennzeichnet keine Kontrolle als Met. Unvollständige Vererbungsnachweise lassen Praktiken <strong>nicht bewertet</strong>.</p>",
+    "ssp_customer_responsibility": "<h2 class=\"binder-rt-lg\">System-Sicherheitsplan — Kundeneinrichtung nötig</h2>\n<p>Diese Praxisfamilie braucht Organisationseinrichtung (Richtlinienobjekte, Identitätsbindungen oder Host-Härtung) über den Produktdefault hinaus.</p>\n<p>Die Organisation trägt das Restrisiko der Einrichtung. Zitieren Sie die konfigurierten Artefakte. Halten Sie offene Lücken in Compliance-Ergebnissen und im <strong>POA&amp;M</strong> fest.</p>\n<p><u>Bitte ausfüllen</u>: Richtlinien, Verzeichnisbindungen, Härtungsbaselines, Eigentümer und Zieldaten.</p>\n<p>Ein Prüfer entscheidet über <strong>Met</strong> nach der Nachweissichtung. Dieser Text allein kennzeichnet keine Kontrolle als Met.</p>",
+    "assessor_notes_follow_up": "<h2 class=\"binder-rt-lg\">Prüfernotizen — Nacharbeit nötig</h2>\n<p>Nacharbeit ist nötig für Einträge, die in Feststellungen als Begründet oder <strong>Risiko akzeptiert</strong> markiert sind.</p>\n<p>Die Organisation muss Zitate hinzufügen oder das <strong>POA&amp;M</strong> aktualisieren, bevor dieses Paket exportbereit ist.</p>\n<p>Unterschriftsblöcke des Prüfers bleiben in diesem Werkzeug leer.</p>\n<p><u>Bitte ausfüllen</u>: jeden Folgepunkt, Eigentümer und Fälligkeitsdatum.</p>\n<p>Ein Prüfer entscheidet über <strong>Met</strong> nach der Nachweissichtung. Dieser Text allein kennzeichnet keine Kontrolle als Met.</p>",
+    "finding_justified_compensating": "<h2 class=\"binder-rt-lg\">Begründet — Ausgleichskontrolle</h2>\n<p>Diese Feststellung ist für den Prüfer erklärt. Eine Ausgleichskontrolle ist in Kraft und in Compliance-Ergebnissen oder Nachweisverknüpfungen zitiert.</p>\n<p>Die Feststellung bleibt sichtbar, bis ein sauberer Nachscan die Behebung bestätigt.</p>\n<p><u>Bitte ausfüllen</u>: Hosts, Kontroll-IDs und Daten.</p>\n<p>Ein Prüfer entscheidet über <strong>Met</strong> nach der Nachweissichtung. Dieser Text allein kennzeichnet keine Kontrolle als Met.</p>",
+    "finding_justified_inherited": "<h2 class=\"binder-rt-lg\">Begründet — geerbter Gemeinschaftsdienst</h2>\n<p>Diese Feststellung ist als von einem Unternehmens-Gemeinschaftsdienst geerbt erklärt.</p>\n<p>Halten Sie Vererbung und verbleibende Organisationspflichten im System-Sicherheitsplan oder in der Zielarbeitsmappe fest.</p>\n<p><u>Bitte ausfüllen</u>: den Namen des Gemeinschaftsdienstes und die Praxiszuordnung.</p>\n<p>Ein Prüfer entscheidet über <strong>Met</strong> nach der Nachweissichtung. Dieser Text allein kennzeichnet keine Kontrolle als Met.</p>",
+    "finding_risk_accepted_temporary": "<h2 class=\"binder-rt-lg\">Risiko akzeptiert — vorübergehend mit Wiedervorlage</h2>\n<p>Die Organisation akzeptiert das Restrisiko für diese Feststellung mit einem zugewiesenen Eigentümer und einem dokumentierten Wiedervorlagedatum.</p>\n<p>Ausgleichende Überwachung ist für den Prüfer beschrieben.</p>\n<p>Das behauptet weder <strong>Met</strong> noch Gelöst — nur Risikoakzeptanz mit einem Grund.</p>\n<p>Ein Prüfer entscheidet über <strong>Met</strong> nach der Nachweissichtung. Dieser Text allein kennzeichnet keine Kontrolle als Met.</p>",
+    "finding_not_applicable_scope": "<h2 class=\"binder-rt-lg\">Nicht zutreffend — außerhalb des bewerteten Umfangs</h2>\n<p>Diese Feststellung gilt nicht für das bewertete <strong>CUI</strong>-System.</p>\n<p>Die zugehörige Fähigkeit liegt außerhalb der Bewertungsgrenze oder wird nicht für <strong>CUI</strong> genutzt.</p>\n<p><u>Bitte ausfüllen</u>: eine Umfangsangabe, die ein Prüfer prüfen kann.</p>\n<p>Ein Prüfer entscheidet über <strong>Met</strong> nach der Nachweissichtung. Dieser Text allein kennzeichnet keine Kontrolle als Met.</p>",
+    "signoff_msp_prepared": "Die Angaben in diesem Paket sind nach meinem besten Wissen zutreffend und vollständig für die Bewertungsvorbereitung. Die SPRS-Bestätigung reicht der bestätigende Verantwortliche getrennt ein — nicht durch Unterschrift unter dieses Dokument.",
+    "signoff_osa_prepared": "Die Angaben in diesem Paket sind nach meinem besten Wissen zutreffend und vollständig. Der bestätigende Verantwortliche reicht die SPRS-Bestätigung ein — nicht in diesem Dokument. Bitte Namen und Titel vor dem Export ausfüllen.",
+    "signoff_attestation_conservative": "Die Angaben in diesem Paket sind nach meinem besten Wissen zutreffend und vollständig. Diese Bestätigung stützt nur die Bewertungsvorbereitung und ist keine SPRS-Bestätigung. Die Rechtsberatung darf diesen Text ersetzen."
+  },
+  "playbooks": {
+    "generic": { "title": "Allgemein (CMMC Stufe 2 / 171)", "description": "Firmenneutrale Standardantworten für die Verpackung nach CMMC Stufe 2 / NIST SP 800-171." },
+    "generic-cmmc-l1": { "title": "Allgemein (CMMC Stufe 1)", "description": "Firmenneutrale Standardantworten für die Verpackung nach CMMC Stufe 1 / FCI." },
+    "generic-cmmc-l2": { "title": "Allgemein (CMMC Stufe 2 / 171)", "description": "Firmenneutrale Standardantworten für die Verpackung nach CMMC Stufe 2 / NIST SP 800-171." },
+    "generic-cmmc-l3": { "title": "Allgemein (CMMC Stufe 3)", "description": "Firmenneutrale Standardantworten für die Verpackung nach CMMC Stufe 3 / 800-172." },
+    "generic-nist-800-171-l1": { "title": "Allgemein (NIST SP 800-171 Stufe 1)", "description": "Firmenneutrale Standardantworten für die Verpackung nach NIST SP 800-171 Stufe 1." },
+    "generic-nist-800-171-l2": { "title": "Allgemein (NIST SP 800-171 Stufe 2)", "description": "Firmenneutrale Standardantworten für die Verpackung nach NIST SP 800-171 Stufe 2." },
+    "generic-nist-800-171-l3": { "title": "Allgemein (NIST SP 800-171 Stufe 3)", "description": "Firmenneutrale Standardantworten für die Verpackung nach NIST SP 800-171 Stufe 3." },
+    "generic-nist-800-172-l2": { "title": "Allgemein (NIST SP 800-172 Stufe 2)", "description": "Firmenneutrale Standardantworten für die Verpackung nach NIST SP 800-172 Stufe 2." },
+    "generic-nist-800-172-l3": { "title": "Allgemein (NIST SP 800-172 Stufe 3)", "description": "Firmenneutrale Standardantworten für die Verpackung nach NIST SP 800-172 Stufe 3." },
+    "generic-nist-800-53-moderate": { "title": "Allgemein (NIST SP 800-53 Mittel)", "description": "Firmenneutrale Standardantworten für die Verpackung nach NIST SP 800-53 Mittel." },
+    "generic-nist-800-53-high": { "title": "Allgemein (NIST SP 800-53 Hoch)", "description": "Firmenneutrale Standardantworten für die Verpackung nach NIST SP 800-53 Hoch." },
+    "sample-audit-llp-cmmc-l2": { "title": "Beispiel-Prüfungs-GmbH (CMMC Stufe 2)", "description": "Beispielfirmen-Klon des allgemeinen Playbooks für CMMC Stufe 2." },
+    "scaffold-pci": { "title": "Gerüst (PCI)", "description": "Ehrlich unvollständiger Katalog — PCI-Abschnittsschlüssel sind noch nicht in der Binder-Gliederung." },
+    "scaffold-gdpr": { "title": "Gerüst (DSGVO)", "description": "Ehrlich unvollständiger Katalog — DSGVO-Abschnittsschlüssel sind noch nicht in der Binder-Gliederung." },
+    "scaffold-california": { "title": "Gerüst (Kalifornien / CPRA)", "description": "Ehrlich unvollständiger Katalog — kalifornische Datenschutz-Abschnittsschlüssel sind noch nicht in der Binder-Gliederung." },
+    "scaffold-spec-24": {
+      "title": "Spec 24 / Spec 2400-Abgleich (Pack aus öffentlicher Dokumentation)",
+      "description": "Dies ist kein lizenzierter Standard. Die Zuordnung stammt aus öffentlicher Dokumentation zu Spec 24 / ATA Spec 2400 und ist nicht als korrekt garantiert. Sie wird nicht von Spec-24-Lizenzgebern unterstützt oder empfohlen.",
+      "sections": {
+        "cover": "<h2>Spec 24 / Spec 2400-Abgleichspaket</h2><p>Erstellt von {auditor_name} ({company}) am {date}.</p><p><strong>Hinweis.</strong> Dies ist kein lizenzierter Standard. Die Zuordnung stammt aus öffentlicher Dokumentation zu Spec 24 / ATA Spec 2400 und ist nicht als korrekt garantiert. Sie wird nicht von Spec-24-Lizenzgebern, Airlines for America oder dem ATA e-Business Program unterstützt oder empfohlen.</p>",
+        "architecture": "<h2>Was dieses Produkt beiträgt</h2><p>Öffentliche Übersichtstexte beschreiben den Austausch eines zulässigen Flugzeug- oder Komponentenaufbaus. Dieser Binder nutzt Inventar, privilegierten Zugriff, Konfigurationsnachweisberichte und Schulungs-Unterschriften. Das ist kein Lufttüchtigkeitsnachweis.</p>",
+        "current_state_gaps": "<h2>Ehrlicher Lieferstatus</h2><p>Live: privilegierter Zugriff und Sitzungsprüfung. Teilweise: IT/OT-Inventar statt Flugzeugdateien. Fehlend: Spec-2400-Dateiprüfung und Function-Position-Validierung. Die Zuordnung stammt nur aus öffentlicher Dokumentation und ist nicht als korrekt garantiert.</p>",
+        "evidence_index": "<h2>Nachweisindex</h2><p>Nennen Sie Konfigurationsnachweis, privilegierte Aktivität, Inventar und Schulungs-Unterschriften. Themenschlüssel sind von AIC verfasst. Sie sind keine lizenzierten Spec-2400-Klauselnummern.</p>",
+        "assessor_notes": "<h2>Prüfernotizen</h2><p>Fragen Sie, wie lizenzierte Spec-2400-Referenzen auf der Registerkarte Kunden-Zuordnungen eingetragen werden. Fügen Sie keine lizenzierten Spec-2400-Auszüge in diesen Binder ein.</p>",
+        "export_package_notes": "<h2>Exporthinweise</h2><p>Nehmen Sie den Hinweis zur öffentlichen Dokumentation in jeden Export auf. Behaupten Sie nicht, das Paket prüfe zulässige Flugzeug-Konfigurationsdateien.</p>"
+      }
+    }
+  }
+}

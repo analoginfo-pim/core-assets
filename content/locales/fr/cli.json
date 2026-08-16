@@ -1,0 +1,20 @@
+{
+  "cli.about": "Serveur API AIC Server",
+  "cli.help.locale": "Langue d'affichage pour l'aide CLI et les messages console (en, de, fr). Ne modifie pas les noms de champs d'audit, du journal d'événements Windows ou de syslog.",
+  "cli.help.install_service": "Installer comme service Windows (droits élevés) ou unité systemd sous Linux (root).",
+  "cli.help.windows_service_account": "Windows uniquement (avec --install-service) : compte d'ouverture SCM. Omettre pour LocalSystem. Raccourcis : local-system, network-service, local-service ; sinon DOMAIN\\User ou .\\User.",
+  "cli.help.windows_service_password": "Windows uniquement (avec --install-service) : mot de passe du compte de service pour sc.exe password=. Visible dans la ligne de commande du processus ; omettre pour LocalSystem / NT AUTHORITY ou gMSA / comptes sans mot de passe.",
+  "cli.help.uninstall_service": "Supprimer le service Windows ou l'unité systemd Linux installé par --install-service.",
+  "cli.help.start_service": "Démarrer le service installé (sc start / systemctl start).",
+  "cli.help.stop_service": "Arrêter le service installé (sc stop / systemctl stop).",
+  "cli.help.config_dir": "Racine de configuration bac à sable pour lab / WSL (route AppConfig vers {dir}/pim-offline-server/ au lieu de HKLM ou /etc). Passer ce drapeau explicitement ; pas de variables d'environnement de processus.",
+  "cli.cmd.run": "Exécuter le démon AIC Server au premier plan (systemd / console).",
+  "cli.cmd.version": "Afficher la version du paquet (même contenu que --version / -V).",
+  "cli.cmd.readiness_report": "Émettre un rapport de préparation d'enclave CMMC L2 à partir de la posture serveur en direct (sans secrets).",
+  "cli.cmd.meter_usage": "Collecter un instantané d'usage conservateur et le transmettre via le fournisseur Marketplace sélectionné (par défaut : enregistreur dry-run hors ligne).",
+  "cli.help.meter_dry_run": "Forcer l'enregistreur dry-run hors ligne même si un fournisseur cloud est sélectionné.",
+  "cli.help.meter_plan_only": "Afficher le plan et la matrice de préparation cloud, puis quitter sans instantané ni envoi.",
+  "cli.help.readiness_format": "Format de sortie : json (lisible machine) ou md (liste Markdown).",
+  "cli.msg.audit_english_only": "Les charges utiles d'audit, du journal d'événements Windows et de syslog restent en anglais américain (noms de champs et ID d'événement stables).",
+  "cli.msg.api_codes_english": "Les codes d'erreur API restent en snake_case anglais ; l'admin SPA mappe les codes vers la langue d'affichage."
+}

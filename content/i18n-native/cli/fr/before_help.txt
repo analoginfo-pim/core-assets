@@ -1,0 +1,20 @@
+WHAT THIS TOOL DOES
+  Reads and writes the application manifest (keys, types, defaults) into the
+  platform store (Windows registry / Linux & macOS config files) and the OS
+  secret vault for sensitive values.
+
+TYPICAL WORKFLOW
+  1) init      — seed storage with manifest defaults (safe if keys already exist).
+  2) list      — inspect resolved values (secrets masked unless --reveal in dev).
+  3) test      — verify connectivity (HTTP service, database) when the manifest defines them.
+
+IDENTITY
+  Use --program <id> for a registered or shipped manifest, or --manifest PATH
+  to load a specific app-config.toml. If this binary was built for one product,
+  you may omit both when the default program id is compiled in.
+
+MODE & PATHS
+  --app-mode development|production — même stockage ; le mode development masque moins les secrets.
+  --config-dir DIR                — stockage sous DIR/<program_id>/ (opt-in explicite ; pas via variables d'environnement).
+
+For full subcommand reference see the project README or docs/INTEGRATION.md.

@@ -1,0 +1,48 @@
+{
+  "email": {
+    "builtin.drift.alert": {
+      "subject": "[Desfase de reloj] {{endpoint.machine_name}} {{drift.seconds}}s",
+      "body": "El punto {{endpoint.machine_name}} ({{endpoint.machine_ip}}) informó un desfase de {{drift.seconds}} segundos a las {{event.timestamp}}.\nUmbral: {{endpoint.max_drift_seconds}}s."
+    },
+    "builtin.register.success": {
+      "subject": "[Punto registrado] {{endpoint.machine_name}}",
+      "body": "El punto {{endpoint.machine_name}} ({{endpoint.machine_ip}}) se registró a las {{event.timestamp}}.\nGrupo: {{endpoint.system_group_name}}."
+    },
+    "builtin.checkin.failure": {
+      "subject": "[Fallo de comprobación] {{endpoint.machine_name}}",
+      "body": "La comprobación de {{endpoint.machine_name}} falló a las {{event.timestamp}}.\nMotivo: {{event.reason}}."
+    },
+    "builtin.wizard.issuance": {
+      "subject": "[Asistente] settings.json emitido para {{endpoint.machine_name}}",
+      "body": "El asistente emitió un archivo para {{endpoint.machine_name}} ({{wizard.usage_type}}) a las {{event.timestamp}}.\nEmitido por: {{wizard.issued_by}}."
+    },
+    "builtin.elevation.code": {
+      "subject": "Código de elevación para {{endpoint.machine_name}}",
+      "body": "Se generó un código de elevación local para {{endpoint.machine_name}} a las {{event.timestamp}}.\nCódigo: {{elevation.code}}\nCaduca: {{elevation.expires_at}}."
+    },
+    "builtin.password.recovery": {
+      "subject": "Contraseña rotada para {{endpoint.machine_name}}",
+      "body": "La contraseña de la cuenta local de {{endpoint.machine_name}} ({{endpoint.local_account_name}}) se rotó a las {{event.timestamp}}."
+    }
+  },
+  "sms": {
+    "builtin.drift.alert.sms": {
+      "body": "Desfase {{drift.seconds}}s en {{endpoint.machine_name}} a las {{event.timestamp}}."
+    },
+    "builtin.register.success.sms": {
+      "body": "Registrado: {{endpoint.machine_name}} ({{endpoint.machine_ip}}) a las {{event.timestamp}}."
+    },
+    "builtin.checkin.failure.sms": {
+      "body": "Comprobación fallida para {{endpoint.machine_name}}: {{event.reason}}."
+    },
+    "builtin.wizard.issuance.sms": {
+      "body": "Ajustes emitidos para {{endpoint.machine_name}} ({{wizard.usage_type}})."
+    },
+    "builtin.elevation.code.sms": {
+      "body": "Código de elevación para {{endpoint.machine_name}}: {{elevation.code}}, caduca {{elevation.expires_at}}."
+    },
+    "builtin.password.recovery.sms": {
+      "body": "Contraseña rotada para {{endpoint.local_account_name}} en {{endpoint.machine_name}}."
+    }
+  }
+}

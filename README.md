@@ -31,6 +31,7 @@ text, and generation/sync scripts used across all AIC PIM projects:
 
 ```
 core-assets/
+├── content/              # Spec playbooks + multilingual catalogs (tier 1)
 ├── certs/
 │   └── localhost-dev/    # Dev / lab TLS bundle
 ├── geoip/                # MaxMind GeoLite2-Country.mmdb + product credentials
@@ -49,6 +50,17 @@ core-assets/
 │   └── create-desktop-icon.ps1
 └── docs/                 # Branding guidelines and usage docs
 ```
+
+### Spec packages + multilingual catalogs (tier 1)
+
+`content/` is the common-assets home for **every spec playbook** and
+**every language catalog** the suite ships. Multilingual support is a
+tier-1 capability: English and German ship now; more languages are a
+data add. The AIC Server MSI installs playbooks under
+`auditor-playbooks\` and catalogs under `locales\`. Native GUI / agent
+catalogs live in `content/i18n-native/` and compile into each product
+EXE. See `content/README.md` and workspace rule
+`multilingual-tier-1-installer.mdc`.
 
 ### GeoIP + threat intel (shared product seed)
 

@@ -1,0 +1,48 @@
+{
+  "email": {
+    "builtin.drift.alert": {
+      "subject": "[Drift Alert] {{endpoint.machine_name}} drift {{drift.seconds}}s",
+      "body": "Endpoint {{endpoint.machine_name}} ({{endpoint.machine_ip}}) reported a clock drift of {{drift.seconds}} seconds at {{event.timestamp}}.\nThreshold: {{endpoint.max_drift_seconds}}s."
+    },
+    "builtin.register.success": {
+      "subject": "[Endpoint Registered] {{endpoint.machine_name}}",
+      "body": "Endpoint {{endpoint.machine_name}} ({{endpoint.machine_ip}}) successfully registered at {{event.timestamp}}.\nGroup: {{endpoint.system_group_name}}."
+    },
+    "builtin.checkin.failure": {
+      "subject": "[Check-in Failure] {{endpoint.machine_name}}",
+      "body": "Endpoint {{endpoint.machine_name}} failed check-in at {{event.timestamp}}.\nReason: {{event.reason}}."
+    },
+    "builtin.wizard.issuance": {
+      "subject": "[Wizard Issuance] settings.json issued for {{endpoint.machine_name}}",
+      "body": "A wizard issuance was generated for {{endpoint.machine_name}} ({{wizard.usage_type}}) at {{event.timestamp}}.\nIssued by: {{wizard.issued_by}}."
+    },
+    "builtin.elevation.code": {
+      "subject": "Elevation code for {{endpoint.machine_name}}",
+      "body": "A local elevation code was generated for {{endpoint.machine_name}} at {{event.timestamp}}.\nCode: {{elevation.code}}\nExpires: {{elevation.expires_at}}."
+    },
+    "builtin.password.recovery": {
+      "subject": "Password rotated for {{endpoint.machine_name}}",
+      "body": "The local account password for {{endpoint.machine_name}} ({{endpoint.local_account_name}}) was rotated at {{event.timestamp}}."
+    }
+  },
+  "sms": {
+    "builtin.drift.alert.sms": {
+      "body": "Drift {{drift.seconds}}s on {{endpoint.machine_name}} at {{event.timestamp}}."
+    },
+    "builtin.register.success.sms": {
+      "body": "Registered {{endpoint.machine_name}} ({{endpoint.machine_ip}}) at {{event.timestamp}}."
+    },
+    "builtin.checkin.failure.sms": {
+      "body": "Check-in failed for {{endpoint.machine_name}}: {{event.reason}}."
+    },
+    "builtin.wizard.issuance.sms": {
+      "body": "Settings issued for {{endpoint.machine_name}} ({{wizard.usage_type}})."
+    },
+    "builtin.elevation.code.sms": {
+      "body": "Elevation code for {{endpoint.machine_name}}: {{elevation.code}} expires {{elevation.expires_at}}."
+    },
+    "builtin.password.recovery.sms": {
+      "body": "Password rotated for {{endpoint.local_account_name}} on {{endpoint.machine_name}}."
+    }
+  }
+}

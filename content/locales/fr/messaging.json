@@ -1,0 +1,48 @@
+{
+  "email": {
+    "builtin.drift.alert": {
+      "subject": "[Dérive d'horloge] {{endpoint.machine_name}} {{drift.seconds}}s",
+      "body": "Le point de terminaison {{endpoint.machine_name}} ({{endpoint.machine_ip}}) a signalé une dérive de {{drift.seconds}} secondes à {{event.timestamp}}.\nSeuil : {{endpoint.max_drift_seconds}}s."
+    },
+    "builtin.register.success": {
+      "subject": "[Point enregistré] {{endpoint.machine_name}}",
+      "body": "Le point de terminaison {{endpoint.machine_name}} ({{endpoint.machine_ip}}) a été enregistré à {{event.timestamp}}.\nGroupe : {{endpoint.system_group_name}}."
+    },
+    "builtin.checkin.failure": {
+      "subject": "[Échec de contrôle] {{endpoint.machine_name}}",
+      "body": "Le contrôle de {{endpoint.machine_name}} a échoué à {{event.timestamp}}.\nMotif : {{event.reason}}."
+    },
+    "builtin.wizard.issuance": {
+      "subject": "[Assistant] settings.json émis pour {{endpoint.machine_name}}",
+      "body": "L'assistant a émis un fichier pour {{endpoint.machine_name}} ({{wizard.usage_type}}) à {{event.timestamp}}.\nÉmis par : {{wizard.issued_by}}."
+    },
+    "builtin.elevation.code": {
+      "subject": "Code d'élévation pour {{endpoint.machine_name}}",
+      "body": "Un code d'élévation local a été créé pour {{endpoint.machine_name}} à {{event.timestamp}}.\nCode : {{elevation.code}}\nExpire : {{elevation.expires_at}}."
+    },
+    "builtin.password.recovery": {
+      "subject": "Mot de passe renouvelé pour {{endpoint.machine_name}}",
+      "body": "Le mot de passe du compte local de {{endpoint.machine_name}} ({{endpoint.local_account_name}}) a été renouvelé à {{event.timestamp}}."
+    }
+  },
+  "sms": {
+    "builtin.drift.alert.sms": {
+      "body": "Dérive {{drift.seconds}}s sur {{endpoint.machine_name}} à {{event.timestamp}}."
+    },
+    "builtin.register.success.sms": {
+      "body": "Enregistré : {{endpoint.machine_name}} ({{endpoint.machine_ip}}) à {{event.timestamp}}."
+    },
+    "builtin.checkin.failure.sms": {
+      "body": "Contrôle échoué pour {{endpoint.machine_name}} : {{event.reason}}."
+    },
+    "builtin.wizard.issuance.sms": {
+      "body": "Paramètres émis pour {{endpoint.machine_name}} ({{wizard.usage_type}})."
+    },
+    "builtin.elevation.code.sms": {
+      "body": "Code d'élévation pour {{endpoint.machine_name}} : {{elevation.code}}, expire {{elevation.expires_at}}."
+    },
+    "builtin.password.recovery.sms": {
+      "body": "Mot de passe renouvelé pour {{endpoint.local_account_name}} sur {{endpoint.machine_name}}."
+    }
+  }
+}

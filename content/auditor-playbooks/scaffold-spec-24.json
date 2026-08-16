@@ -1,0 +1,63 @@
+{
+  "format": "aic-auditor-playbook/v1",
+  "package_version": 10,
+  "slug": "scaffold-spec-24",
+  "title": "Spec 24 / Spec 2400 alignment (public-documentation pack)",
+  "description": "This is not a licensed standard. Mapping is from public documentation on Spec 24 / ATA Spec 2400 and is not guaranteed to be correct. It is not endorsed or supported by Spec 24 licensors, Airlines for America, or the ATA e-Business Program. Binder outline keys are reused; narratives are Spec 24 alignment, not a CMMC verdict.",
+  "company_name": "",
+  "target_standard": "ata_spec_2400",
+  "target_level": "",
+  "catalog_coverage": "scaffold",
+  "is_system": true,
+  "locale": "en-US",
+  "sections": [
+    {
+      "section_key": "cover",
+      "title": "Cover sheet",
+      "field_kind": "section_narrative",
+      "completeness": "operator_must_complete",
+      "ordinal": 0,
+      "response_text": "<h2>Spec 24 / Spec 2400 alignment pack</h2><p>Prepared by {auditor_name} ({company}) on {date}.</p><p><strong>Disclaimer.</strong> This is not a licensed standard. Mapping is from public documentation on Spec 24 / ATA Spec 2400 and is not guaranteed to be correct. It is not endorsed or supported by Spec 24 licensors, Airlines for America, or the ATA e-Business Program.</p><p>AIC does not generate Spec 2400 allowable-configuration files, validate aircraft Function Positions, or replace OEM distributions. Status words are Live, Partial, Absent, and BLOCKED. This text does not mark a control Met.</p>"
+    },
+    {
+      "section_key": "architecture",
+      "title": "Architecture &amp; operating model",
+      "field_kind": "section_narrative",
+      "completeness": "operator_must_complete",
+      "ordinal": 1,
+      "response_text": "<h2>What this product contributes</h2><p>Public ATA e-Business overview text describes exchanging an allowable aircraft or component setup so operators can compare it with what is installed. This binder reuses the product enclave model: sign-in, privileged access, inventory, configuration-proof reports, the Assessment Binder, and training attestation records.</p><p>Cite live inventory, privileged-session reports, configuration-proof, and signed training records. Do not treat this narrative as aircraft airworthiness evidence. Organization fields fill names only. They do not change product scope.</p>"
+    },
+    {
+      "section_key": "current_state_gaps",
+      "title": "Current-state compliance &amp; gaps",
+      "field_kind": "section_narrative",
+      "completeness": "operator_must_complete",
+      "ordinal": 8,
+      "response_text": "<h2>Honest delivery status</h2><ul><li><strong>Live</strong> — privileged access to systems that hold setup data; audit of who opened those sessions.</li><li><strong>Partial</strong> — IT/OT inventory and configuration-proof versus aircraft allowable-setup files; part identity versus aircraft parts.</li><li><strong>Absent</strong> — Spec 2400 file parse, Function Position validation, OEM exchange gateway.</li></ul><p>Mapping is from public documentation only and is not guaranteed to be correct. Licensors did not endorse these rows. An assessor decides after evidence review. This list is not a Met stamp.</p>"
+    },
+    {
+      "section_key": "evidence_index",
+      "title": "Evidence index by practice",
+      "field_kind": "section_narrative",
+      "completeness": "operator_must_complete",
+      "ordinal": 11,
+      "response_text": "<h2>Evidence index (product reports, not Spec 2400 clauses)</h2><p>Theme keys are AIC-authored (SPEC24-THEME-*). They are not licensed clause numbers.</p><ul><li>Approved versus actual setup — Enclave Configuration Proof; Vulnerability and Endpoint Inventory (CM-8 inventory cells).</li><li>Access to setup systems — Privileged Sessions, Elevation, and Dual Control; PAM session activity.</li><li>Audit of access — Audit Coverage, Retention, and Gap Proof; Audit Activity.</li><li>Training and sign-off — assigned Spec 24 welcome letter and Approved Setup class; attestation ledger rows bound to the person record and document version.</li></ul><p>Do not invent a Spec 2400 file-validation report. That path is Absent.</p>"
+    },
+    {
+      "section_key": "assessor_notes",
+      "title": "Assessor notes &amp; interview log",
+      "field_kind": "section_narrative",
+      "completeness": "operator_must_complete",
+      "ordinal": 15,
+      "response_text": "<h2>Assessor notes</h2><p>Ask how the organization maps licensed Spec 2400 requirement references on the Control Catalog customer-mappings tab. AIC stores only the operator-entered reference, never licensed body text.</p><p>Ask who determined workforce scope for the Spec 24 setup class, and where welcome letters and attestations are stored. Interview notes go here. Do not paste licensed Spec 2400 excerpts into this binder.</p>"
+    },
+    {
+      "section_key": "export_package_notes",
+      "title": "Export package notes",
+      "field_kind": "section_narrative",
+      "completeness": "operator_must_complete",
+      "ordinal": 16,
+      "response_text": "<h2>Export notes</h2><p>Include this disclaimer on every export: this is not a licensed standard; mapping is from public documentation on Spec 24 / ATA Spec 2400 and is not guaranteed to be correct; it is not endorsed or supported by Spec 24 licensors.</p><p>Attach configuration-proof, privileged-activity, inventory, and training attestation exports. Do not claim the package validates aircraft allowable-configuration files. Honesty banner stays on the cover.</p>"
+    }
+  ]
+}

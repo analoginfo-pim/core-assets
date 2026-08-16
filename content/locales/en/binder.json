@@ -1,0 +1,144 @@
+{
+  "honesty_banner": "Prepared with AIC Server to help package an assessment. This is not an assessor decision and not an agency authorization. Gaps and unknowns stay listed. Security design follows NIST SP 800-53 Rev 5. CMMC packaging does not lower that bar. An assessor will decide Met after evidence review. This text alone does not mark a control Met.",
+  "architecture_boilerplate": "This binder describes the fixed AIC Server enclave model used for assessment packaging.\n\nThe control plane includes sign-in, privileged access, inventory, Current State Compliance, the Assessment Binder, disclosures, and Secure Share. Managed machines use agents when enrolled. Agentless discovery is used where supported. System Groups set sampling scope. Remote Access / Connect records operator sessions on assigned workstations.\n\nOrganization fields (legal name, CAGE, enclave name, MSP) fill this instance. They do not change the product model.\n\nTypical deployments run in cloud infrastructure (AIC-operated or customer tenant). On-premises partner models may apply. AIC usually does not keep standing login access to customer hosts. Day-to-day work uses product roles, justifications, and evidence citations.\n\nCite live compliance scans, inventory, System Groups, Secure Share citations (titles and ids only - no CUI document bodies), Connect recordings, crypto status, disclosures, and retests. Do not treat this narrative alone as proof. Lab SoftHSM and demo passwords are not production claims.\n\nFirst-pass packaging covers CMMC Levels 1 - 3 and related NIST SP 800-171 / 800-172 needs. NIST SP 800-53 remains the security design floor.\n\nCloud SKUs target FedRAMP and Microsoft GCC High postures where selected. This text does not claim a current FedRAMP ATO. Assessor sign-off lines stay blank in this tool. An assessor will decide Met after evidence review. This text alone does not mark a control Met.",
+  "fedramp_gcc_high_notes": "Cloud offerings aim at FedRAMP and GCC High deployment postures. This binder does not claim that an Authorization to Operate (ATO) has already been granted.",
+  "iga_out_of_scope_label": "Out of scope for this product pass - AIC Server does not deliver enterprise identity lifecycle (IGA) in this release. Describe below how this customer handles joiner / mover / leaver provisioning today.",
+  "operator_authored": "Operator-authored narrative",
+  "readiness_pending": "Section readiness will be computed at binder assembly.",
+  "floor_note": "NIST SP 800-53 Rev 5 is the control design floor. CMMC / 800-171 / 800-172 are packaging overlays that reuse enclave evidence.",
+  "switch_effect": "Switching the assessment standard remaps the punch-list and evidence view to that packaging overlay (which practices / control families are in scope). Enclave evidence already collected is reused and remapped - it is not wiped or re-collected.",
+  "attestation_default": "The information in this package is accurate and complete to the best of my knowledge.",
+  "please_fill_in": "Please fill in",
+  "please_complete": "Please complete",
+  "section_titles": {
+    "cover": "Cover sheet",
+    "architecture": "Architecture & operating model",
+    "toc": "Table of contents",
+    "scoping_l1": "CMMC L1 / FCI scoping",
+    "scoping_l2": "CMMC L2 / CUI scoping & boundary",
+    "ssp": "SSP narratives (800-171 practices)",
+    "objective_workbook": "Objective workbook (800-171A)",
+    "enhanced_800_172": "800-172 / CMMC L3 enhanced requirements",
+    "current_state_gaps": "Current-state compliance & gaps",
+    "external_workstation_readiness": "External workstation readiness (WA / ERASG)",
+    "iga_provisioning_narrative": "IGA / provisioning (out of scope - customer narrative)",
+    "evidence_index": "Evidence index by practice",
+    "incident_response": "Incident Response",
+    "poam": "POA&M",
+    "sprs": "SPRS scoring worksheet",
+    "assessor_notes": "Assessor notes & interview log",
+    "export_package_notes": "Export package notes"
+  },
+  "iga": {
+    "customer_entra_ad": {
+      "label": "Customer-managed AD / external directory",
+      "boilerplate": "Provisioning and identity lifecycle for this customer are handled in customer-managed Active Directory and/or an external OIDC directory outside AIC Server. Joiner/mover/leaver, group membership, and HR-driven provisioning are owned by the customer IdP team. This binder cites access and endpoint context only; it does not operate an IGA connector."
+    },
+    "msp_run_iga": {
+      "label": "MSP-run IGA",
+      "boilerplate": "An MSP operates this customer's IGA / identity lifecycle (joiner-mover-leaver, access reviews, and related provisioning) outside AIC Server. The MSP documents procedures and evidence under the customer's chosen IGA tool. AIC Server does not deliver enterprise IGA in this product pass."
+    },
+    "deferred_robert": {
+      "label": "Deferred to future identity-lifecycle collaboration",
+      "boilerplate": "Enterprise IGA / lifecycle provisioning is out of scope for this AIC Server product pass. It is slated for future collaboration with the identity-lifecycle core. Until that work lands, this customer documents how provisioning is handled outside this product (IdP, MSP, or partner). Do not treat this section as evidence that AIC delivers IGA today."
+    },
+    "partner_netthunder": {
+      "label": "Partner / on-premises provisioning",
+      "boilerplate": "On-premises or partner-operated identity provisioning applies for this customer. The named partner operates directory / provisioning integrations. AIC Server does not deliver enterprise IGA in this product pass; describe the partner-run process and evidence location here."
+    },
+    "none_na": {
+      "label": "None / not applicable",
+      "boilerplate": "IGA / enterprise provisioning is not applicable to the assessment boundary for this binder instance, or no IGA capability is in scope. Operators must confirm this with the OSP before export. This is not a claim that provisioning controls are MET."
+    }
+  },
+  "profiles": {
+    "cmmc": {
+      "label": "CMMC",
+      "explanation": "CMMC (32 CFR 170) is DoD assessment packaging over NIST SP 800-171 (and, at Level 3, selected NIST SP 800-172 enhanced requirements). Level 1 covers basic FCI safeguarding; Level 2 aligns to the 110 800-171 Rev 2 practices for CUI; Level 3 adds enhanced 800-172 requirements. CMMC does not replace the NIST SP 800-53 Rev 5 control design floor - it packages assessment evidence for a C3PAO / DoD review."
+    },
+    "nist_800_171": {
+      "label": "NIST SP 800-171",
+      "explanation": "NIST SP 800-171 Rev 2 defines 110 security requirements in 14 families for protecting CUI in non-federal systems. Level 1 packaging focuses on basic / FCI-oriented practices; Level 2 is the full 110-practice set commonly paired with CMMC Level 2; Level 3 framing may reference additional enhanced expectations. Product control design still follows the NIST SP 800-53 Rev 5 floor; 800-171 is assessment packaging over that floor."
+    },
+    "nist_800_172": {
+      "label": "NIST SP 800-172",
+      "explanation": "NIST SP 800-172 (Feb 2021) adds 35 enhanced security requirements beyond 800-171. CMMC Level 3 selects a subset of these. This packaging view emphasizes enhanced requirements together with the underlying 800-171 / CMMC evidence. Unproven enhanced claims stay gap or unknown - switching here filters/remaps scope; it does not invent new host evidence."
+    },
+    "nist_800_53": {
+      "label": "NIST SP 800-53",
+      "explanation": "NIST SP 800-53 Rev 5 is the control design floor for this product (moderate baseline, with High where selected). Control families (AC, AU, CM, IA, SC, SI, and others) organize the catalog. CMMC / 800-171 / 800-172 rows elsewhere are assessment packaging overlays that reuse the same enclave evidence - they are not a thinner substitute for the 800-53 floor."
+    },
+    "level_1": "Level 1",
+    "level_2": "Level 2",
+    "level_3": "Level 3",
+    "level_1_fci": "Level 1 (basic / FCI)",
+    "moderate": "Moderate",
+    "high": "High",
+    "banner_cmmc_1": "Target: CMMC Level 1 (NIST SP 800-171 basic / FCI)",
+    "banner_cmmc_2": "Target: CMMC Level 2 (NIST SP 800-171)",
+    "banner_cmmc_3": "Target: CMMC Level 3 (NIST SP 800-171 + NIST SP 800-172)",
+    "banner_171_1": "Target: NIST SP 800-171 Level 1 (basic / FCI)",
+    "banner_171_2": "Target: NIST SP 800-171 Level 2",
+    "banner_171_3": "Target: NIST SP 800-171 Level 3",
+    "banner_172_2": "Target: NIST SP 800-172 Level 2",
+    "banner_172_3": "Target: NIST SP 800-172 Level 3",
+    "banner_53_moderate": "Target: NIST SP 800-53 Moderate",
+    "banner_53_high": "Target: NIST SP 800-53 High"
+  },
+  "wizard": {
+    "cover_standard": { "label": "Cover sheet - standard", "description": "Stock cover narrative for assessment packaging." },
+    "architecture_standard": { "label": "Architecture - standard", "description": "Stock architecture overview for the assessed system." },
+    "toc_standard": { "label": "Table of contents - standard", "description": "Optional note above the auto-built table of contents." },
+    "scoping_l1_placeholder": { "label": "Level 1 / FCI scoping - scaffold", "description": "Placeholder for Level 1 Federal Contract Information scoping." },
+    "scoping_l2_standard": { "label": "Level 2 / CUI scoping - standard", "description": "Stock CUI boundary scoping narrative." },
+    "ssp_standard": { "label": "System security plan - standard", "description": "Stock system security plan narrative." },
+    "objective_workbook_sampling": { "label": "Objectives - sampling notes", "description": "Stock sampling notes for the objective workbook." },
+    "enhanced_800_172_scaffold": { "label": "Enhanced requirements - scaffold", "description": "Scaffold when Level 3 / 800-172 is in scope." },
+    "gaps_remediation_plan": { "label": "Gaps - remediation plan", "description": "Stock language for open gaps with owners and dates." },
+    "iga_deferred_robert": { "label": "Identity provisioning - out of scope", "description": "Stock out-of-scope note for corporate identity provisioning." },
+    "evidence_index_standard": { "label": "Evidence index - standard", "description": "Stock citation-only evidence index framing." },
+    "poam_risk_accepted_template": { "label": "POA&M - risk acceptance framing", "description": "Stock plan-of-action risk acceptance framing." },
+    "sprs_standard": { "label": "SPRS scoring - standard", "description": "Stock SPRS worksheet framing." },
+    "assessor_notes_sampling": { "label": "Assessor notes - sampling", "description": "Stock sampling close-out notes." },
+    "export_package_notes_standard": { "label": "Export package notes - standard", "description": "Stock export honesty note." },
+    "architecture_shared_services": { "label": "Shared services inheritance", "description": "When some controls come from a corporate shared service." },
+    "ssp_customer_responsibility": { "label": "System security plan - customer setup required", "description": "When the organization must finish setup beyond product defaults." },
+    "assessor_notes_follow_up": { "label": "Assessor notes - follow-up required", "description": "When sampling needs organization response before close." },
+    "finding_justified_compensating": { "label": "Justified - compensating control", "description": "Explain the finding without clearing it; cite the compensating control." },
+    "finding_justified_inherited": { "label": "Justified - inherited shared service", "description": "When the gap comes from a corporate shared service." },
+    "finding_risk_accepted_temporary": { "label": "Risk accepted - temporary with revisit", "description": "Organization accepts residual risk with owner and revisit date." },
+    "finding_not_applicable_scope": { "label": "Not applicable - outside assessed scope", "description": "Finding does not apply to the assessed CUI system boundary." },
+    "signoff_msp_prepared": { "label": "MSP prepared package", "description": "Fills Prepared by / Reviewed by for an MSP-led package. Assessor rows stay blank." },
+    "signoff_osa_prepared": { "label": "Organization prepared package", "description": "Fills Prepared by and Affirming Official name placeholders for self-prep." },
+    "signoff_attestation_conservative": { "label": "Attestation text - conservative default", "description": "Replaces attestation text only; leaves name fields for the operator." }
+  },
+  "playbooks": {
+    "generic": { "title": "Generic (CMMC Level 2 / 171)", "description": "Firm-neutral default section responses for CMMC Level 2 / NIST SP 800-171 packaging." },
+    "generic-cmmc-l1": { "title": "Generic (CMMC Level 1)", "description": "Firm-neutral default section responses for CMMC Level 1 / FCI packaging." },
+    "generic-cmmc-l2": { "title": "Generic (CMMC Level 2 / 171)", "description": "Firm-neutral default section responses for CMMC Level 2 / NIST SP 800-171 packaging." },
+    "generic-cmmc-l3": { "title": "Generic (CMMC Level 3)", "description": "Firm-neutral default section responses for CMMC Level 3 / 800-172 packaging." },
+    "generic-nist-800-171-l1": { "title": "Generic (NIST SP 800-171 Level 1)", "description": "Firm-neutral default section responses for NIST SP 800-171 Level 1 packaging." },
+    "generic-nist-800-171-l2": { "title": "Generic (NIST SP 800-171 Level 2)", "description": "Firm-neutral default section responses for NIST SP 800-171 Level 2 packaging." },
+    "generic-nist-800-171-l3": { "title": "Generic (NIST SP 800-171 Level 3)", "description": "Firm-neutral default section responses for NIST SP 800-171 Level 3 packaging." },
+    "generic-nist-800-172-l2": { "title": "Generic (NIST SP 800-172 Level 2)", "description": "Firm-neutral default section responses for NIST SP 800-172 Level 2 packaging." },
+    "generic-nist-800-172-l3": { "title": "Generic (NIST SP 800-172 Level 3)", "description": "Firm-neutral default section responses for NIST SP 800-172 Level 3 packaging." },
+    "generic-nist-800-53-moderate": { "title": "Generic (NIST SP 800-53 Moderate)", "description": "Firm-neutral default section responses for NIST SP 800-53 Moderate packaging." },
+    "generic-nist-800-53-high": { "title": "Generic (NIST SP 800-53 High)", "description": "Firm-neutral default section responses for NIST SP 800-53 High packaging." },
+    "sample-audit-llp-cmmc-l2": { "title": "Sample Audit LLP (CMMC Level 2)", "description": "Sample firm clone of the CMMC Level 2 generic playbook." },
+    "scaffold-pci": { "title": "Scaffold (PCI)", "description": "Honest incomplete catalog — PCI section keys are not in the binder outline yet." },
+    "scaffold-gdpr": { "title": "Scaffold (GDPR)", "description": "Honest incomplete catalog — GDPR section keys are not in the binder outline yet." },
+    "scaffold-california": { "title": "Scaffold (California / CPRA)", "description": "Honest incomplete catalog — California privacy section keys are not in the binder outline yet." },
+    "scaffold-spec-24": {
+      "title": "Spec 24 / Spec 2400 alignment (public-documentation pack)",
+      "description": "This is not a licensed standard. Mapping is from public documentation on Spec 24 / ATA Spec 2400 and is not guaranteed to be correct. It is not endorsed or supported by Spec 24 licensors.",
+      "sections": {
+        "cover": "<h2>Spec 24 / Spec 2400 alignment pack</h2><p>Prepared by {auditor_name} ({company}) on {date}.</p><p><strong>Disclaimer.</strong> This is not a licensed standard. Mapping is from public documentation on Spec 24 / ATA Spec 2400 and is not guaranteed to be correct. It is not endorsed or supported by Spec 24 licensors, Airlines for America, or the ATA e-Business Program.</p>",
+        "architecture": "<h2>What this product contributes</h2><p>Public overview text describes exchanging an allowable aircraft or component setup. This binder uses inventory, privileged access, configuration-proof reports, and training sign-off records. It is not aircraft airworthiness evidence.</p>",
+        "current_state_gaps": "<h2>Honest delivery status</h2><p>Live: privileged access and session audit. Partial: IT/OT inventory versus aircraft files. Absent: Spec 2400 file parse and Function Position validation. Mapping is from public documentation only and is not guaranteed to be correct.</p>",
+        "evidence_index": "<h2>Evidence index</h2><p>Cite configuration-proof, privileged-activity, inventory, and training attestation records. Theme keys are AIC-authored. They are not licensed Spec 2400 clause numbers.</p>",
+        "assessor_notes": "<h2>Assessor notes</h2><p>Ask how licensed Spec 2400 references are entered on the customer-mappings tab. Do not paste licensed Spec 2400 excerpts into this binder.</p>",
+        "export_package_notes": "<h2>Export notes</h2><p>Include the public-documentation disclaimer on every export. Do not claim the package validates aircraft allowable-configuration files.</p>"
+      }
+    }
+  }
+}

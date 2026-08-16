@@ -1,0 +1,48 @@
+{
+  "email": {
+    "builtin.drift.alert": {
+      "subject": "[Zeitabweichung] {{endpoint.machine_name}} {{drift.seconds}}s",
+      "body": "Der Endpunkt {{endpoint.machine_name}} ({{endpoint.machine_ip}}) hat um {{event.timestamp}} eine Zeitabweichung von {{drift.seconds}} Sekunden gemeldet.\nSchwelle: {{endpoint.max_drift_seconds}}s."
+    },
+    "builtin.register.success": {
+      "subject": "[Endpunkt registriert] {{endpoint.machine_name}}",
+      "body": "Der Endpunkt {{endpoint.machine_name}} ({{endpoint.machine_ip}}) wurde um {{event.timestamp}} registriert.\nGruppe: {{endpoint.system_group_name}}."
+    },
+    "builtin.checkin.failure": {
+      "subject": "[Check-in fehlgeschlagen] {{endpoint.machine_name}}",
+      "body": "Der Check-in von {{endpoint.machine_name}} ist um {{event.timestamp}} fehlgeschlagen.\nGrund: {{event.reason}}."
+    },
+    "builtin.wizard.issuance": {
+      "subject": "[Assistent] settings.json für {{endpoint.machine_name}}",
+      "body": "Der Assistent hat um {{event.timestamp}} eine Ausgabe für {{endpoint.machine_name}} ({{wizard.usage_type}}) erzeugt.\nAusgestellt von: {{wizard.issued_by}}."
+    },
+    "builtin.elevation.code": {
+      "subject": "Erhöhungscode für {{endpoint.machine_name}}",
+      "body": "Ein lokaler Erhöhungscode wurde um {{event.timestamp}} für {{endpoint.machine_name}} erzeugt.\nCode: {{elevation.code}}\nGültig bis: {{elevation.expires_at}}."
+    },
+    "builtin.password.recovery": {
+      "subject": "Kennwort gedreht für {{endpoint.machine_name}}",
+      "body": "Das lokale Kennwort für {{endpoint.machine_name}} ({{endpoint.local_account_name}}) wurde um {{event.timestamp}} gedreht."
+    }
+  },
+  "sms": {
+    "builtin.drift.alert.sms": {
+      "body": "Zeitabweichung {{drift.seconds}}s auf {{endpoint.machine_name}} um {{event.timestamp}}."
+    },
+    "builtin.register.success.sms": {
+      "body": "Registriert: {{endpoint.machine_name}} ({{endpoint.machine_ip}}) um {{event.timestamp}}."
+    },
+    "builtin.checkin.failure.sms": {
+      "body": "Check-in fehlgeschlagen für {{endpoint.machine_name}}: {{event.reason}}."
+    },
+    "builtin.wizard.issuance.sms": {
+      "body": "Einstellungen ausgegeben für {{endpoint.machine_name}} ({{wizard.usage_type}})."
+    },
+    "builtin.elevation.code.sms": {
+      "body": "Erhöhungscode für {{endpoint.machine_name}}: {{elevation.code}}, gültig bis {{elevation.expires_at}}."
+    },
+    "builtin.password.recovery.sms": {
+      "body": "Kennwort gedreht für {{endpoint.local_account_name}} auf {{endpoint.machine_name}}."
+    }
+  }
+}

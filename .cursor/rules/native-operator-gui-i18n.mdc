@@ -40,6 +40,12 @@ scope for this rule.
 `pim-offline-server-configurator-tauri/docs/operator-gui-i18n.md` for the
 first Tauri proof consumer.
 
+Bundles are common assets (`core-assets/content/i18n-native/`) and ride
+inside every shipping EXE that depends on this crate. That is how
+multilingual assets for native components ship with each product
+installer. See
+[`multilingual-tier-1-installer.mdc`](multilingual-tier-1-installer.mdc).
+
 ## Origin
 
 2026-08-15 — shared general-purpose i18n foundation for native operator GUIs.

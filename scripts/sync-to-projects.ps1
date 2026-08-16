@@ -293,6 +293,11 @@ $assetMap = [ordered]@{
         "pim-offline-server/assets/threat-intel/overrides.toml",
         "pim-installers/assets/threat-intel/overrides.toml"
     )
+
+    # Spec playbooks + multilingual catalogs (tier 1). Tree sync skips README*.
+    "content/auditor-playbooks/README.md" = @(
+        "pim-offline-server/assets/auditor-playbooks/README.md"
+    )
 }
 
 # Tree-style sync targets: copy an entire core-assets directory recursively
@@ -313,6 +318,17 @@ $treeMap = [ordered]@{
         "pim-workstation-assurance-agent/configurator-tauri/src-tauri/icons",
         "pim-offline-client/recording-agent-configurator-tauri/src-tauri/icons",
         "pim-jump-server/configurator-tauri/src-tauri/icons"
+    )
+    # Spec playbooks + multilingual catalogs (tier 1). README files are
+    # skipped by tree sync; they ride the assetMap entries below.
+    "content/auditor-playbooks" = @(
+        "pim-offline-server/assets/auditor-playbooks"
+    )
+    "content/locales" = @(
+        "pim-offline-server/locales"
+    )
+    "content/i18n-native" = @(
+        "pim-app-config/crates/pim-app-config-i18n/bundles"
     )
 }
 

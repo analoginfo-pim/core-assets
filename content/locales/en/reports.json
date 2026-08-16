@@ -1,0 +1,45 @@
+{
+  "categories": {
+    "Operations": "Operations",
+    "Privileged Access": "Privileged Access",
+    "Compliance Evidence": "Compliance Evidence"
+  },
+  "edit_guidance": "Shipped definition — read-only. Clone it to customize. The catalog entry stays immutable; a clone stores a presentation overlay only (data source and collector stay shipped-owned). Export JSON for auditor evidence packages.",
+  "aic.audit-activity.v1": { "display_name": "Audit Activity" },
+  "aic.job-execution-outcomes.v1": { "display_name": "Job Execution Outcomes" },
+  "aic.pam.failed-authentication-machines.v1": { "display_name": "List of Machines with Failed Authentication" },
+  "aic.pam.lost-communications-machines.v1": { "display_name": "List of Machines with Lost Communications" },
+  "aic.pam.privileged-session-activity.v1": { "display_name": "Privileged Session Activity" },
+  "aic.pam.password-rotation-overdue.v1": { "display_name": "Password Age / Rotation Overdue" },
+  "aic.pam.failed-elevation-checkout.v1": { "display_name": "Failed Elevation / Checkout" },
+  "aic.pam.orphaned-local-admins.v1": { "display_name": "Orphaned / Local Admin Accounts" },
+  "aic.pam.inactive-privileged-accounts.v1": { "display_name": "Inactive Privileged Accounts" },
+  "aic.pam.stale-agent-heartbeat.v1": { "display_name": "Systems with No Recent Agent Heartbeat" },
+  "aic.pam.denied-access-requests.v1": { "display_name": "Denied Access Requests" },
+  "aic.compliance.access-assignment.v1": { "display_name": "Access Assignment and Least-Privilege Exceptions" },
+  "aic.compliance.crypto-posture.v1": { "display_name": "Cryptographic and FIPS Posture" },
+  "aic.compliance.audit-coverage.v1": { "display_name": "Audit Coverage, Retention, and Gap Proof" },
+  "aic.compliance.service-build-provenance.v1": { "display_name": "Service Build and Signed Binary Provenance" },
+  "aic.compliance.configuration-proof.v1": { "display_name": "Enclave Configuration Proof" },
+  "aic.compliance.account-assurance.v1": { "display_name": "Account Assurance (Dormant, Credential Age, MFA)" },
+  "aic.compliance.privileged-activity.v1": { "display_name": "Privileged Sessions, Elevation, and Dual Control" },
+  "aic.compliance.tls-certificate-posture.v1": { "display_name": "TLS and Certificate Expiration Posture" },
+  "aic.compliance.network-boundary.v1": { "display_name": "Network Listeners and Approved Boundary Facts" },
+  "aic.compliance.findings-poam-sprs.v1": { "display_name": "Findings, POA&M, and SPRS Worksheet" },
+  "aic.compliance.cui-transfer-delivery.v1": { "display_name": "CUI Transfer, Export, Delivery, and Denial" },
+  "aic.compliance.incident-timeline.v1": { "display_name": "Incident Response Timeline" },
+  "aic.compliance.assessment-package.v1": { "display_name": "Assessment Evidence Package" },
+  "aic.compliance.operational-proof.v1": { "display_name": "Enclave Operational Evidence" },
+  "aic.compliance.ssp.v1": { "display_name": "System Security Plan (Control Implementation)" },
+  "aic.compliance.objective-workbook.v1": { "display_name": "800-171A / 800-172A Assessment Objective Workbook" },
+  "aic.compliance.control-crosswalk.v1": { "display_name": "171 <-> 172 <-> 800-53 <-> CMMC Crosswalk" },
+  "aic.compliance.backup-restore-exercise.v1": { "display_name": "Backup and Restore Exercise Evidence" },
+  "aic.compliance.vulnerability-inventory.v1": {
+    "display_name": "Vulnerability and Endpoint Inventory",
+    "gap": "CVE/severity cells stay not_scanned until an operator uploads a scan; CM-8 inventory only. No automated CVE scanner in this boundary."
+  },
+  "aic.compliance.workstation-assurance.v1": {
+    "display_name": "External Workstation Readiness (WA Attestation)",
+    "gap": "Not a C3PAO determination; skips and unevaluated checks are not MET. Connecting clients only (ERASG), not enclave hosts."
+  }
+}

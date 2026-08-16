@@ -1,0 +1,20 @@
+{
+  "cli.about": "AIC Server API server",
+  "cli.help.locale": "Operator display language for CLI help and console messages (en, de). Does not change audit, Windows Event Log, or syslog field names.",
+  "cli.help.install_service": "Install as a Windows service (elevated) or a systemd unit on Linux (root).",
+  "cli.help.windows_service_account": "Windows only (with --install-service): SCM logon. Omit for LocalSystem. Shortcuts: local-system, network-service, local-service; otherwise DOMAIN\\User or .\\User.",
+  "cli.help.windows_service_password": "Windows only (with --install-service): service account password for sc.exe password=. Visible in the process command line; omit for LocalSystem / NT AUTHORITY or for gMSA / no-password accounts.",
+  "cli.help.uninstall_service": "Remove the Windows service or Linux systemd unit installed by --install-service.",
+  "cli.help.start_service": "Start the installed service (sc start / systemctl start).",
+  "cli.help.stop_service": "Stop the installed service (sc stop / systemctl stop).",
+  "cli.help.config_dir": "Sandbox settings root for lab / WSL smoke (routes AppConfig to {dir}/pim-offline-server/ instead of HKLM or /etc). Pass this flag explicitly; no process environment variables.",
+  "cli.cmd.run": "Run the AIC Server daemon in the foreground (systemd / console).",
+  "cli.cmd.version": "Print the package version (same payload as --version / -V).",
+  "cli.cmd.readiness_report": "Emit an assessor-facing CMMC L2 enclave readiness report evaluated from the live server posture (no secrets).",
+  "cli.cmd.meter_usage": "Gather a conservative, privacy-safe usage snapshot and dispatch it through the selected Marketplace metering provider (default: offline dry-run recorder).",
+  "cli.help.meter_dry_run": "Force the offline dry-run recorder even if a cloud provider is selected.",
+  "cli.help.meter_plan_only": "Print the plan and per-cloud readiness matrix, then exit without gathering a snapshot or dispatching.",
+  "cli.help.readiness_format": "Output format: json (machine-readable) or md (Markdown checklist).",
+  "cli.msg.audit_english_only": "Audit, Windows Event Log, and syslog payloads stay US English (stable field names and event IDs).",
+  "cli.msg.api_codes_english": "API error codes stay English snake_case; the admin SPA maps codes to locale text."
+}
