@@ -1,0 +1,64 @@
+---
+description: >-
+  Hard rule - operator clocks use the program DISPLAY_TIMEZONE (IANA).
+  Instants stay RFC 3339. Never default display to silent UTC/GMT.
+alwaysApply: true
+---
+
+# Program display timezone (hard rule)
+
+Operator directive (Phil, 2026-08-16): times use the program default
+timezone set by the super administrator. The zone is always shown on
+the time string. UTC and GMT as the silent default are unneeded
+complexity. Storage stays a modern instant so calculations stay
+correct in every zone.
+
+## The rule
+
+> **Every operator-facing clock uses `DISPLAY_TIMEZONE` (IANA). Empty
+> means host or client local time — never silent UTC. The zone
+> abbreviation or `UTC±HH:MM` offset is always part of the string.
+> Instants on the wire and in the database stay RFC 3339 / ISO 8601
+> so arithmetic is timezone-correct. Logs in `local` mode use the
+> same program zone (or host local) and always include the offset.**
+
+## Configuration
+
+| Surface | Detail |
+| --- | --- |
+| Manifest | `DISPLAY_TIMEZONE` in `pim-offline-server/app-config.toml` |
+| Super-admin UI | Settings → General → Program time zone |
+| API | `GET`/`PUT /api/admin/display-timezone` |
+| Session | IAM session JSON also returns `display_timezone*` |
+| Logs | `LOG_TIME_ZONE=local` (default) calls `display_time::format_now_local()` |
+
+Empty `DISPLAY_TIMEZONE` follows the host (server logs) or the
+browser (SPA) local zone. Super administrators may set an IANA id
+such as `America/Los_Angeles`. `gmt` remains an explicit log-mode
+opt-in, not the product default.
+
+## Required display
+
+Example: `2026-08-15 10:23:00 PDT (UTC-07:00)`
+
+- SPA: `formatAppDateTime` / `useDisplayTime()` /
+  `DisplayTimeProvider` (sets the shared current zone so older
+  `formatUtc` helpers follow it)
+- Server: `crate::display_time::format_instant`
+
+## Forbidden
+
+- Rendering `toISOString()` or `YYYY-MM-DD HH:MM UTC` as operator
+  chrome
+- Defaulting a new clock to UTC/GMT because “that is simpler”
+- Storing wall-clock-without-offset as the source of truth
+- Inventing a product env var for the zone
+  ([`no-environment-variables.mdc`](no-environment-variables.mdc))
+- Lab hostnames or “BEAVIS2 local” in the Settings helper
+  ([`no-lab-config-in-operator-ui.mdc`](no-lab-config-in-operator-ui.mdc))
+
+## Origin
+
+2026-08-16 — operator: confirm the timezone can be configured; use it
+universally; show TZ on every time string; keep RFC 3339 instants for
+correct calculations.

@@ -1,0 +1,53 @@
+---
+description: >-
+  Hard rule - every control id in a list, grid, chip, or sentence must
+  include a short multilingual title (AC-1 — Policy and Procedures).
+alwaysApply: true
+---
+
+# Control lists include a short multilingual title (hard rule)
+
+Operator directive (Phil, 2026-08-16): when the product lists controls
+such as AC-1, always provide a very short description of what the
+control is. That string is multilingual.
+
+## The rule
+
+> **Never show a bare control identifier in an operator list, grid,
+> chip, or sentence. Always render `{id} — {short title}` using the
+> active locale catalog. Official NIST SP 800-53 short titles are the
+> English source. Localized catalogs overlay those titles; the
+> identifier stays Latin.**
+
+## Required pattern
+
+Use `formatControlLabel` / `formatControlLabelList` from
+`pim-offline-server/ui/src/utils/controlLabel.ts` (or the API `title`
+field already localized by the server). Do not concatenate ids with
+commas and leave the meaning off.
+
+```tsx
+formatControlLabel('AC-1', tControl)
+// AC-1 — Policy and Procedures
+```
+
+English source: `ui/src/i18n/controlTitles.en.json` (official NIST
+short titles, US Government work). Overlays: `ui/src/i18n/locales/<tag>/controls.json`.
+New titles land in every shipped content language in the same change
+set ([`compliance-artifacts-must-localize.mdc`](compliance-artifacts-must-localize.mdc)).
+
+Enhancements such as `AC-2(1)` use the base title plus
+`(enhancement 1)`.
+
+## Forbidden
+
+- A Control column that shows only `AC-1`
+- Hardcoded English titles in TSX instead of the `controls` namespace
+- Inventing unofficial control body text and calling it the control
+- Claiming a control is Met because a title is shown
+  ([`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc))
+
+## Origin
+
+2026-08-16 — operator: Control State History and every other control
+list must show a short multilingual description next to the id.
