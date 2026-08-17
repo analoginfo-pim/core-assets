@@ -1,0 +1,113 @@
+---
+description: Enterprise localization quality — all security products, including Robert's line. IGA is roadmap.
+alwaysApply: true
+---
+
+# Enterprise localization (central rule — all products)
+
+Operator directive (Phil, 2026-08-16): **this is the markdown for
+localization. Share it with Robert as a central rule for all products.
+IGA is on the roadmap.**
+
+Partner-readable full text (share this file):
+`core-assets/docs/enterprise-localization.md`
+
+> **Produce high-accuracy, domain-correct localization for UI, workflows,
+> alerts, logs, documentation, and compliance text. Literal, consistent,
+> and domain-correct — not stylistic. Never invent features or terms.
+> IGA strings only when IGA surfaces exist.**
+
+Applies to PIM, PAM, PUM, IGA (roadmap), auditing / session recording,
+secure remote access, and compliance & reporting — DIB, IC, OT,
+enterprise IT, critical infrastructure, and regulated industries.
+
+Workforce training / welcome letters stay under
+[`training-materials-plain-language-and-images.mdc`](training-materials-plain-language-and-images.mdc)
+(sixth grade). This rule is operator, administrator, auditor, and
+product UI/compliance text.
+
+Official regulation bodies stay in the authority language. AIC chrome,
+mappings, notices, and summaries localize. Do not translate licensed
+ISO 27001 control text. Do not invent unofficial CMMC / 800-53 bodies.
+
+Language tiers and the must-localize artifact list:
+[`compliance-artifacts-must-localize.mdc`](compliance-artifacts-must-localize.mdc).
+
+## 1. General
+
+1. **Accuracy** — precise security, identity, OT, and compliance terms.
+   Ambiguous term → most common enterprise security meaning.
+2. **Tone** — professional, clear, neutral, regulated-industry suitable.
+   No idioms, slang, or culturally specific phrasing.
+3. **No creativity** — not a style rewrite.
+4. **Placeholders** — do not translate `{username}`, `{session_id}`,
+   `{resource}`, SAML, Kerberos, LDAP, Modbus, OPC-UA, DNP3, or other
+   tokens / protocol names.
+5. **Capitalization** — follow the target language for buttons, menus,
+   alerts, headings, and policy names.
+
+## 2. Modules
+
+| Module | Translate (when the surface exists) |
+| --- | --- |
+| **PAM / PIM / PUM** | Access request, approve/deny, justification, elevation, vault, rotation/checkout/heartbeat, session start/end, policy editor, roles, MFA, credential lifecycle |
+| **IGA (roadmap)** | Certification campaigns, access reviews, governance, risk scoring, policy, delegation, identity lifecycle, compliance mappings — **only for shipped IGA UI** |
+| **Auditing / session recording** | Playback, timeline, annotations, keystroke/command summaries, evidence export, chain-of-custody, audit metadata, alerts, forensic workflow |
+| **OT security** | Asset inventory, Modbus / S7 / DNP3 / OPC-UA events, topology, operator alerts, remote access, maintenance sessions, safety-critical warnings, ICS/SCADA terms |
+| **Compliance & reporting** | AIC GDPR/LGPD/NERC CIP/IEC 62443/ISO 27001 chrome and summaries, policy docs, evidence, risk templates, legal notices, retention, privacy, audit report sections |
+
+## 3. Language register
+
+| Tag | Register |
+| --- | --- |
+| `de` | Formal Sie; correct compounds (Sitzungsaufzeichnung, Rollenüberprüfung); no English loanwords unless industry-standard |
+| `fr` | Formal vous; ANSSI cybersecurity terms; anglicisms only when required (session, audit) |
+| `es` | Neutral international Spanish; formal usted; no country idioms |
+| `zh-Hans` | Mainland China; MLPS 2.0 vocabulary |
+| `en-GB` | UK spelling/legal phrasing; do not alias to `en` |
+| `ja` | Polite です/ます; Japanese IT/security terms; avoid katakana overuse |
+| `ko` | Formal polite; Korean cybersecurity standards |
+| `pt-BR` | Brazilian Portuguese; LGPD terminology |
+| `it` | Formal Lei; Italian cybersecurity terms |
+| `pl` | Formal; Polish industrial cybersecurity terms |
+| `tr` | Formal; Turkish IT/security terms |
+| `nl` `sv` `fi` `ar` | Formal register; industry terms; no idioms. English often accepted with Arabic |
+
+## 4. Translator output
+
+When producing localized strings, output JSON (review packet). Product
+catalogs still land in `locales/<tag>/` or `offline_localized_copy`.
+
+Single string:
+
+```json
+{
+  "source_text": "...",
+  "target_language": "French",
+  "localized_text": "...",
+  "notes": "Domain decision if needed"
+}
+```
+
+Batch: JSON array. Include `target_language` or `tag` on every object
+when more than one language is in the packet.
+
+## 5. Quality checks (before done)
+
+- Industry terminology; placeholders intact; no invented features
+- Formal tone; no cultural misfit; no ambiguous or missing security context
+- OT protocol names and compliance/legal AIC prose are correct
+- No IGA copy for unbuilt IGA; no rewritten official control bodies
+
+## Required agent behavior
+
+1. Follow this file and `core-assets/docs/enterprise-localization.md`
+   for every localization task across AIC and mix-server products.
+2. Do not claim IGA is shipping.
+3. Mirror this rule to `core-assets/.cursor/rules/` in the same change
+   set ([`auto-commit-push.mdc`](auto-commit-push.mdc)).
+
+## Origin
+
+2026-08-16 — operator: central localization markdown for all products;
+share with Robert; IGA on the roadmap.
