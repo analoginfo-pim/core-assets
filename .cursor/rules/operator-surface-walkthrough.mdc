@@ -1,0 +1,196 @@
+---
+description: >-
+  Campaign mode (not every chat). Trigger phrases: thorough walkthrough,
+  workflow cleanup, half-working pages, dumb mistakes, GUI QA campaign,
+  all-platforms walk. Includes English (US) ↔ German localization flip.
+  Inventory every operator GUI class, classify Live / Partial / weird-half
+  / dead / N/A, fix vertical workflow slices, prove served bytes, no false
+  green, no stall.
+alwaysApply: false
+---
+
+# Operator-surface walkthrough (campaign)
+
+Operator-readable copy:
+`pim-offline-server/docs/dev/operator-surface-walkthrough-plan.md`.
+
+## The rule
+
+> **When this campaign is invoked, inventory every operator GUI class
+> present this run (not SPA-only), classify each surface honestly, fix
+> dumb mistakes and workflow holes in vertical slices, and prove the
+> running product — never chrome, never Windows-only as “all platforms.”
+> Walk + implement on Grok or AUTO. Opus is one rendered-acceptance
+> (or failed-fix diagnosis) pass per named artifact. Flip English (US)
+> ↔ German on every inventory class that has a locale switch; leftover
+> English on German is a defect — wrap in `t()` and land DE catalog
+> keys in the same change set. Do not stall. Parallelize only on
+> disjoint ownership. Pending stays pending.**
+
+## Operator card
+
+| | |
+| --- | --- |
+| **Invoke** | “run the walkthrough plan”, “thorough walkthrough”, “workflow cleanup”, “half-working pages”, “dumb mistakes”, “GUI QA campaign”, “all-platforms walk”. Attach this rule or the docs/dev plan. |
+| **Models** | Walk + classify + implement: `cursor-grok-4.5-high-fast` or AUTO. Omit `model` on `Task` unless pinning Grok. Opus **only** for rendered-GUI acceptance of a **named** screenshot / bounding-box after a cheaper pass, or diagnosis after that pass failed. **One Opus pass per defect.** No Opus fleet, no Opus supervisor, no Opus inheritance (expensive parent **must** pin Grok/AUTO on children). |
+| **Stall recovery** | Git first. One slice per worker. Two Read/Grep-only turns → DONE checklist. Child stuck (“planning next moves”, no tools) → interrupt **once** (stop-planning) → abandon → finish in parent or **one** AUTO replacement. No explore fan-out while a sibling is stuck. ~10 minutes with no mutation → classify BLOCKED / Partial and move on. |
+| **Parallelism** | Parent max **two** concurrent `generalPurpose` / `explore` workers. Split only on **disjoint** file / ownership areas. Never two writers on the same `ui/src` file. One deploy owner at a time. Explicit-path commit early. Never stash / reset / `checkout -- .`. |
+| **Locale flip** | Every inventory class: English (US) ↔ German. Flag leftover English on DE. Fix hardcoded strings → catalog keys / `t()` and add DE pack rows in the **same** change set. Reuse `ui/e2e/i18n-german-embedded-live.spec.ts` — do not invent a new SPA spec. N/A if that binary has no locale switch this run. Opus only if a German screenshot is unreadable or clipped after a cheaper pass. |
+| **Quality** | Pending stays pending. Status words: Live / Partial / Absent / BLOCKED / N/A. No Met / certified from a walk. Do not claim Tier 1 complete while `en-GB` / `zh-Hans` catalogs are absent. |
+
+## Model mix (binding)
+
+Walk, classify, implement, locale flip, string harvest, and pack edits
+on Grok or AUTO ([`auto-model-only.mdc`](auto-model-only.mdc)). The
+narrow Opus carve-out in
+[`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc)
+still applies: Opus reviews a **rendered** artifact or diagnoses a
+layout defect a cheaper pass already failed — including a German
+screenshot that is unreadable or clipped. Do not sacrifice quality to
+finish faster — unverified claims stay **pending** with the blocker
+named.
+
+## All platforms
+
+Inventory and walk **every operator GUI class present**, not SPA-only:
+
+| Class | Examples |
+| --- | --- |
+| Admin SPA (embedded) | AIC Server admin UI served by the running binary |
+| Win32 configurators / elevate | Server and agent configurators, elevate helpers |
+| Tauri shells | Same product family in Tauri |
+| Linux / macOS equivalents | When those binaries exist **this run** |
+
+Record **N/A — no seat/binary** with evidence (path missing, not built,
+not installed). Never green a Windows-only walk as “all platforms.”
+Apply the English (US) ↔ German flip on **each** class that has a
+locale switch this run; **N/A — no locale switch** is allowed only
+with evidence, never by skipping native GUIs after an SPA-only flip.
+
+## Anti-stall (hard)
+
+- Git first, one slice per worker, no full-plan re-read
+  ([`agent-slice-discipline.mdc`](agent-slice-discipline.mdc)).
+- Stop after two Read/Grep-only turns; deliver a DONE checklist
+  (done / deferred / blocked).
+- Parent: if a child is stuck, interrupt **once** with a stop-planning
+  prompt; then abandon; finish in the parent or **one** AUTO replacement
+  ([`stuck-agent-supervisor.mdc`](stuck-agent-supervisor.mdc)).
+- No retry loops on structural failure (same compile / hook / tree
+  error repeating). Switch approach or mark BLOCKED.
+- Time-box a page: if no mutation in ~10 minutes, classify BLOCKED /
+  Partial and move on.
+
+## Parallelism (fast but safe)
+
+- Parent max **two** concurrent `generalPurpose` / `explore` workers.
+- Split only on **disjoint** areas (example: live-session chrome vs
+  Report Center vs a Win32 configurator). Never two writers on the
+  same `ui/src` file.
+- Shared working tree: explicit-path commit early; never stash /
+  reset / `checkout -- .`
+  ([`shared-working-tree-is-not-yours.mdc`](shared-working-tree-is-not-yours.mdc)).
+- **One deploy owner** at a time for `aic-server-service` / UI embed.
+  Serialize deploys; parallelize diagnosis and non-overlapping edits.
+- Internal worker split is OK if that worker owns disjoint paths.
+
+## Walk method
+
+1. **Inventory** routes, menus, and binaries present this run.
+2. **Classify** each: Live / Partial / weird-half / dead / N/A.
+   Screenshot or bounding-box required to claim visible / working
+   ([`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc)).
+3. **Fix** dumb mistakes and workflow holes in **vertical slices**
+   (one workflow per slice — example: live session Disconnect + File
+   transfer honesty).
+4. **Locale flip (required):** English (US) ↔ German on every
+   inventory class (see Localization flip below). Flag leftover
+   English on DE; fix code + DE packs in the same change set.
+5. **Deploy:** UI changes = no `-SkipUiBuild`; prove disk = served
+   ([`shipped-means-served.mdc`](shipped-means-served.mdc)). Debug
+   profile. No `cargo clean`. Leave the server service Running unless
+   a recycle is required. Lab rotation identities stay in the docs/dev
+   plan — never the operator’s personal account.
+6. **Proof bars** — no false green:
+   - Connect / Open / Launch → protocol surface
+     ([`session-connect-protocol-surface.mdc`](session-connect-protocol-surface.mdc));
+     comprehensive PAM also needs the protocol × workstation-type
+     matrix
+     ([`workstation-protocols-and-command-restrictions.mdc`](workstation-protocols-and-command-restrictions.mdc)).
+   - Assessment Binder → section bodies, live IAM
+     ([`assessment-binder-section-content.mdc`](assessment-binder-section-content.mdc)).
+   - Messaging / email / approver notify → real inbox
+     ([`mailpit-messaging-comprehensive-test.mdc`](mailpit-messaging-comprehensive-test.mdc)).
+   - Locale flip → leftover English on German flagged and fixed, or
+     honest Partial with named strings (see Localization flip).
+7. **Commit + push** per slice (explicit paths). Slack the operator
+   after each cluster if the Slack helper exists
+   ([`slack-webhook-agent-access.mdc`](slack-webhook-agent-access.mdc)).
+
+## Localization flip (en ↔ de, required)
+
+Reuse the just-completed German leftover-English test. Do **not**
+invent a new SPA spec.
+
+| Surface | Reuse |
+| --- | --- |
+| Admin SPA | `pim-offline-server/ui/e2e/i18n-german-embedded-live.spec.ts` (extend frozen routes). Also `docs-i18n-embedded-live.spec.ts`, `training-i18n-embedded-live.spec.ts` when those pages are in the slice. |
+| Method | Flip English (US) ↔ German. Flag chrome that stays English on DE (identity / seat names / official regulation bodies are not leftover chrome). |
+| Fix | Hardcoded English → catalog keys / `t()`. Add DE rows in the **same** change set: `core-assets/content/locales/de/`, SPA `ui/src/i18n/locales/de/`, native `core-assets/content/i18n-native` / `pim-app-config-i18n` bundles. EN source stays US English. |
+| Native GUIs | Same flip when a locale switch exists (`UI_LOCALE` / Appearance Language). See [`native-operator-gui-i18n.mdc`](native-operator-gui-i18n.mdc). **N/A — no locale switch** only with evidence. |
+| Honesty | Official regulation bodies stay in the authority language. AIC chrome localizes. Do not invent IGA copy. This walk’s flip is **en ↔ de** as shipped today — do not claim Tier 1 complete while `en-GB` / `zh-Hans` catalogs are absent. |
+
+Cross-link: [`enterprise-localization.mdc`](enterprise-localization.mdc),
+[`compliance-artifacts-must-localize.mdc`](compliance-artifacts-must-localize.mdc),
+[`multilingual-tier-1-installer.mdc`](multilingual-tier-1-installer.mdc),
+[`native-operator-gui-i18n.mdc`](native-operator-gui-i18n.mdc).
+
+## File-transfer honesty (known defect class)
+
+Broker staging is **not** delivery to the remote. An upload toast that
+says the file reached broker staging is **Partial** until a target push
+is observed. Do not mark File transfer **Live** from staging success,
+a visible panel, or an HTTP 200 on the broker.
+
+## Forbidden “false green”
+
+- SPA-only walk cited as all-platforms
+- Windows-only binaries cited as Linux / macOS coverage
+- Connect chrome, Jump fleet, or `/options` 200 without protocol surface
+- Binder list / tabs / export without sampled section bodies
+- Messaging page load without an observed inbox message
+- File transfer Live from broker-staging toast
+- “Works” from `cargo build`, deploy exit 0, or service RUNNING
+  without served-bundle (or equivalent) identity + inspected proof
+- Single-seat or SSH-only matrix as “all protocols / all workstations”
+- SPA-only German flip cited as all-platforms localization
+- Leftover English on DE marked Live because the locale cookie flipped
+- New i18n spec invented while `i18n-german-embedded-live.spec.ts` exists
+- Tier 1 complete while `en-GB` / `zh-Hans` catalogs are absent
+- Invented IGA copy, or unofficial translations of official control bodies
+
+## Worked violation → fix
+
+**Violation.** Campaign reports Connect / File transfer / Binder PASS
+from admin-SPA chrome on Windows only. SSH-only seat. File transfer
+toast is staging-only. Binder tabs never open a section body. German
+is “done” because the locale cookie flipped while headings stayed
+English. Two workers edit the same live-session file. A child sits
+in “planning next moves”; the parent fans out explore workers.
+
+**Fix.** Inventory every GUI class this run and mark missing Unix
+binaries **N/A — no binary**. Protocol-surface (or honest BLOCKED) for
+each offered protocol. File transfer stays Partial until target push.
+Binder: live session + section bodies ≥ 40 characters, not placeholder.
+en ↔ de flip on each class with a locale switch; leftover English →
+`t()` + DE packs in the same commit; reuse
+`i18n-german-embedded-live.spec.ts`. One writer per file; one deploy
+owner. Interrupt the stuck child once, abandon, finish in the parent.
+
+## Origin
+
+2026-08-17 — operator: durable reusable walkthrough / workflow-cleanup
+campaign; all platforms; no stall; as fast as possible with safe
+parallelism. Same day: walk must include the en ↔ de localization
+flip from the Multilingual localization project (reuse the existing
+German leftover-English spec; fix code + packs together).
