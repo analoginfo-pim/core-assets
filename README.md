@@ -45,6 +45,7 @@ core-assets/
 ├── scripts/
 │   ├── generate-icons.ps1
 │   ├── sync-to-projects.ps1
+│   ├── localization-work/  # Record new / changed localization work
 │   ├── Update-MaxMindGeoLite.ps1
 │   ├── Update-ThreatIntelLists.ps1
 │   └── create-desktop-icon.ps1
@@ -60,7 +61,9 @@ data add. The AIC Server MSI installs playbooks under
 `auditor-playbooks\` and catalogs under `locales\`. Native GUI / agent
 catalogs live in `content/i18n-native/` and compile into each product
 EXE. See `content/README.md` and workspace rule
-`multilingual-tier-1-installer.mdc`.
+`multilingual-tier-1-installer.mdc`. New and changed Help / must-localize
+source is recorded in `content/localization-work/` (see that folder's
+README).
 
 ### GeoIP + threat intel (shared product seed)
 

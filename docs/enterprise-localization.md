@@ -305,7 +305,35 @@ Before finalizing, ensure:
 
 ---
 
+--------------------------------------------------
+6. WORK QUEUE (new and changed source)
+--------------------------------------------------
+
+`core-assets` is the localization home. There is no separate localization
+GitHub repository.
+
+When Help, manuals, or other must-localize English source is **added or
+changed**, record a work item in
+`content/localization-work/` in the same change set. Translators read
+`content/localization-work/queue.md`. The recorder is
+`scripts/localization-work/localization_work.py` (Python 3, stdlib only).
+
+Agent draft catalogs do **not** close an item. Close only when every
+required tag has a reviewed catalog. Missing Tier 1 tags (`en-GB`,
+`zh-Hans` today) keep the item open.
+
+Do not add a git hook or a product environment variable for this queue.
+Queue notes stay in product language.
+
+See `content/localization-work/README.md` and the agent rule
+`localization-work-queue.mdc`.
+
+---
+
 ## Origin
 
 2026-08-16 — operator: this markdown is the central localization rule
 for all products; share with Robert. IGA is on the roadmap.
+
+2026-08-17 — operator: record new and changed localization work in
+`content/localization-work/` so translators see a durable to-do list.

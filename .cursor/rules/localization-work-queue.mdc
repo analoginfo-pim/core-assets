@@ -1,0 +1,78 @@
+---
+description: Record new and changed Help, manuals, and must-localize strings in the core-assets localization work queue.
+alwaysApply: true
+---
+
+# Localization work queue (hard rule)
+
+Operator directive (Phil, 2026-08-17): **as we add and change things,
+they become recorded in the localization repo as new work.**
+
+There is no separate localization GitHub repository. **`core-assets` is
+the localization home.** The durable to-do list is
+`core-assets/content/localization-work/`.
+
+## The rule
+
+> **When an agent adds or changes operator-visible Help, manuals, or
+> other must-localize strings, it records a work item in
+> `core-assets/content/localization-work/` in the same change set.
+> Translators read that queue. Agent draft catalogs do not close an
+> item. Closing requires reviewed catalogs for every required tag.**
+
+## When this applies
+
+Record (or reopen) a queue item when any of the following lands:
+
+- A new Help chapter, operator manual, or auditor / admin / user guide
+- A change to English source prose that already has a queue row
+- New must-localize chrome on reports, binder, risks, legal notices,
+  IR, dashboards, or other rows in
+  [`compliance-artifacts-must-localize.mdc`](compliance-artifacts-must-localize.mdc)
+
+Does **not** apply to internal `docs/dev` runbooks, Cursor rules, or
+lab scripts that never ship to an operator.
+
+## How to record
+
+From the `core-assets` repo root (Python 3, stdlib only):
+
+```text
+python3 scripts/localization-work/localization_work.py add --id <stable.id> --title "..." --source-path <path> --source-file <local-file>
+python3 scripts/localization-work/localization_work.py record --id <stable.id> --source-file <local-file>
+```
+
+Also add a row to `content/localization-work/surfaces.json` so
+`record-all` can rehash the English source later.
+
+`record` / `record-all` reopen the item when the source SHA-256 changes.
+
+## Closing
+
+Set `status` to `closed` only when every `required_tags` entry has a
+reviewed catalog. Draft `de` / `fr` / `es` strings are **not** close.
+Missing Tier 1 tags (`en-GB`, `zh-Hans` today) keep the item **open**.
+Closing is not a Met or certified claim
+([`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc)).
+
+## Forbidden
+
+- Shipping a new Help chapter or must-localize surface without a queue
+  row in the same change set
+- Treating agent-written locale JSON as closed localization work
+- Adding a git hook or product environment variable for this queue
+- Lab hostnames, lab accounts, or agent thinking in queue notes
+- Inventing a second localization GitHub repo for the to-do list
+
+## Required agent behavior
+
+1. Enqueue or `record` in `core-assets` in the **same change set** as
+   the English source change.
+2. Mirror this rule to `core-assets/.cursor/rules/` when editing the
+   workspace copy ([`auto-commit-push.mdc`](auto-commit-push.mdc)).
+3. Point translators at `content/localization-work/queue.md`.
+
+## Origin
+
+2026-08-17 — operator: add the Auditor Setup guide as localization
+to-do, and record new and changed work in the localization repo.

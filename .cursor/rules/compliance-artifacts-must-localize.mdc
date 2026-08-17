@@ -123,7 +123,10 @@ Localizing a mapping is not a **Met** or certified claim
 3. Exports and Email/SMS use the recipient’s preferred language when set.
 4. A new language is a **data add** (folder + register + MSI row), not a
    code rewrite. Tier 1 tags that are not on disk yet stay **BLOCKED**.
-5. Mirror this rule to `core-assets/.cursor/rules/` in the same change
+5. New or changed must-localize English source is recorded in
+   `core-assets/content/localization-work/` in the same change set
+   ([`localization-work-queue.mdc`](localization-work-queue.mdc)).
+6. Mirror this rule to `core-assets/.cursor/rules/` in the same change
    set ([`auto-commit-push.mdc`](auto-commit-push.mdc)).
 
 ## Forbidden

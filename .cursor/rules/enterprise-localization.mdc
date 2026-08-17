@@ -104,7 +104,11 @@ when more than one language is in the packet.
 1. Follow this file and `core-assets/docs/enterprise-localization.md`
    for every localization task across AIC and mix-server products.
 2. Do not claim IGA is shipping.
-3. Mirror this rule to `core-assets/.cursor/rules/` in the same change
+3. When Help, manuals, or must-localize English source is added or
+   changed, record a work item in
+   `core-assets/content/localization-work/` in the same change set
+   ([`localization-work-queue.mdc`](localization-work-queue.mdc)).
+4. Mirror this rule to `core-assets/.cursor/rules/` in the same change
    set ([`auto-commit-push.mdc`](auto-commit-push.mdc)).
 
 ## Origin

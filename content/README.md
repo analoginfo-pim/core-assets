@@ -15,6 +15,7 @@ installer. A file that exists only in a product repo has not shipped.
 | `locales/{en,de,es,fr}/` | Server catalogs (binder, reports, risks, cli, messaging, disclosures, training) | AIC Server MSI → `INSTALLFOLDER\locales\` |
 | `locales-ui/<tag>/` | Admin-SPA locale JSON (inspectable copy; also in the Vite bundle) | AIC Server MSI → `INSTALLFOLDER\locales\ui\` |
 | `i18n-native/` | Native GUI / agent / recording catalogs (`pim-app-config-i18n` bundles) | Compiled into each product EXE |
+| `localization-work/` | Open localization to-do list (`queue.json` / `queue.md`) | Not installed — translator / agent work queue |
 
 Sync: `scripts/sync-to-projects.ps1` (`content/auditor-playbooks`,
 `content/locales`, `content/i18n-native`).
