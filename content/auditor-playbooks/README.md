@@ -121,7 +121,7 @@ server upserts a system playbook per English slug with `locale = de`, using
 
 To add another language:
 
-1. Add `locales/<tag>/binder.json` (and `reports.json` / `risks.json`).
+1. Add `locales/<tag>/binder.json` (and `reports.json` / `risks.json` / `training.json`).
 2. Register the file in `src/i18n_content.rs`.
 3. Extend `Locale` in `pim-app-config-i18n` if the tag is new.
 4. Optional: a parallel playbook JSON with `"locale": "<tag>"` still imports

@@ -1,0 +1,60 @@
+{
+  "honesty_note": "This document is a customizable template. The customer organization decides whether the content is right, who must read it, and how often. A rendered document is not training delivery and is not a control assessment.",
+  "program_honesty_note": "Completion records show that a named person read and affirmed a specific document version at a specific time. They are evidence of training records (NIST AT-4) and support the delivery side of awareness training (AT-2, AT-3, CMMC 3.2.1, 3.2.2). Content, audience, and frequency stay with the customer organization. Reading and affirming is NOT a practical exercise and must not be offered as evidence for 800-172 3.2.2e. No percentage here says a control is Met or that any certification exists.",
+  "practical_exercise_exclusion": "800-172 3.2.2e requires practical exercises on current threats, with feedback to participants and supervisors. This product does not run exercises, phishing simulations, or tabletops, and it reports no evidence for 3.2.2e.",
+  "coverage_honesty_note": "Covered means a document exists in the library and cites a clause of that standard. It does not mean anyone has read the document, and it is not a control assessment. Completion records come from assigned programs and signed attestations, and the compliance verdict belongs to your assessor.",
+  "intent_statement": "I read this document. I understand what it asks me to do in my job.",
+  "attestation_source_note": "Every row in this release is operator_recorded: an administrator entered evidence of completion that happened out of band. No self-service signing surface exists, so no row was produced by the signer.",
+  "audience": {
+    "all-personnel": "All Personnel",
+    "privileged-users": "Privileged Users",
+    "administrators": "Administrators",
+    "executives": "Executives",
+    "auditors": "Auditors",
+    "new-hire": "New Hire",
+    "incident-responders": "Incident Responders"
+  },
+  "export": {
+    "marking": "Marking",
+    "generated_at": "Generated at (UTC)",
+    "picture": "Picture"
+  },
+  "notify": {
+    "due_date_fallback": "the date on your assignment",
+    "ladder_note": "A sent count is delivery attempts, not completions and not a control verdict.",
+    "welcome": {
+      "subject": "You have been assigned training",
+      "body": "Hello {full_name}. You have been assigned {program_name}. Please finish it by {due_date}. This message records what we asked you to read. It is not a grade. Ask your manager if you need help."
+    },
+    "reminder": {
+      "subject": "Training is due soon",
+      "body": "Hello {full_name}. {program_name} is due on {due_date}. Please finish it. This is a reminder, not a grade."
+    },
+    "due": {
+      "subject": "Training is due today",
+      "body": "Hello {full_name}. {program_name} is due today ({due_date}). Please finish it."
+    },
+    "overdue": {
+      "subject": "Training is overdue",
+      "body": "Hello {full_name}. {program_name} was due on {due_date}. It is now late. Please finish it or tell your manager."
+    }
+  },
+  "templates": {
+    "spec-24-approved-setup": {
+      "title": "Approved Setup vs What Is Installed",
+      "purpose": "Shows what {customer_name} asks when your work touches the approved setup. Written for every worker. This is not a licensed Spec 24 class."
+    },
+    "spec-24-alignment-pack": {
+      "title": "Reading a Spec 24 Alignment Pack",
+      "purpose": "Shows an auditor how to read this Spec 24 pack. The pack is not a licensed standard. Mapping is from public pages and may be wrong."
+    },
+    "spec-24-welcome-employee": {
+      "title": "Welcome Letter for Spec 24 Setup Training (Employees)",
+      "purpose": "Tell employees at {organization_name} what this Spec 24 setup ask is. Show what to read and sign. This is not a licensed standard."
+    },
+    "spec-24-welcome-contractor": {
+      "title": "Welcome Letter for Spec 24 Setup Training (Contractors)",
+      "purpose": "Tell contractors at {organization_name} what this Spec 24 setup ask is. Show whose rules apply. This is not a licensed standard."
+    }
+  }
+}

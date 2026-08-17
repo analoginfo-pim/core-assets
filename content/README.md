@@ -12,7 +12,7 @@ installer. A file that exists only in a product repo has not shipped.
 | Path | What it is | Installer |
 | --- | --- | --- |
 | `auditor-playbooks/` | Every Assessment Binder playbook JSON (CMMC, NIST, PCI, GDPR, California, Spec 24 / Spec 2400) | AIC Server MSI → `INSTALLFOLDER\auditor-playbooks\` |
-| `locales/{en,de,es,fr}/` | Server catalogs (binder, reports, risks, cli, messaging, disclosures) | AIC Server MSI → `INSTALLFOLDER\locales\` |
+| `locales/{en,de,es,fr}/` | Server catalogs (binder, reports, risks, cli, messaging, disclosures, training) | AIC Server MSI → `INSTALLFOLDER\locales\` |
 | `locales-ui/<tag>/` | Admin-SPA locale JSON (inspectable copy; also in the Vite bundle) | AIC Server MSI → `INSTALLFOLDER\locales\ui\` |
 | `i18n-native/` | Native GUI / agent / recording catalogs (`pim-app-config-i18n` bundles) | Compiled into each product EXE |
 
