@@ -1,0 +1,74 @@
+---
+description: >-
+  Never park a product decision on the operator. Default to competitor
+  vault/PAM parity, else the most responsible USG/enterprise option.
+  Record the basis. Close open-q-* in the same change set.
+alwaysApply: true
+---
+
+# Competitor-default product decisions (hard rule)
+
+Operator directive (Phil, 2026-08-16): **when a product decision would
+have been asked of Phil, do not ask.** Default to what CyberArk,
+Delinea, BeyondTrust, HashiCorp Vault, 1Password Business, and
+Bitwarden Enterprise do for that scenario. If no competitor signal,
+choose the most responsible, assessor-defensible option for a
+USG/enterprise privileged-identity product (NIST SP 800-53 AC/AU,
+attribution, least surprise for auditors). Record the decision and
+the basis in the commit body. Do not leave `open-q-*` hanging.
+
+## The rule
+
+> **Never park a product UX, default, or evidence-visibility decision
+> on the operator.** Competitor parity first. Else the most
+> responsible cybersecurity default. Write the decision and the
+> basis into the commit. Close the `open-q-*` in the same change
+> set. US English. No lab leaks in UI.
+
+## Required agent behavior
+
+1. **Do not ask** when the alternative is “should we show X?” /
+   “what should the default be?” / leaving `open-q-*` for Phil.
+2. **Competitor first** — match the named vault/PAM vendors for
+   that scenario (who owns a secret, who approved access, what
+   is visible in a list by default).
+3. **Else responsible default** — attribution (AU-2/AU-3), least
+   privilege, fail closed, auditor-least-surprise. Density or
+   chrome compactness is not a reason to hide the accountable
+   party.
+4. **Record the basis** in the commit body: vendors consulted, or
+   the 800-53 / attribution reason when no vendor signal.
+5. **Close `open-q-*`** in the same change set. Do not add a new
+   parked question.
+6. Source identifiers and UI copy stay US English
+   ([`enterprise-compliance.mdc`](enterprise-compliance.mdc) §1).
+   Never put lab configuration or agent thinking in operator UI
+   ([`no-lab-config-in-operator-ui.mdc`](no-lab-config-in-operator-ui.mdc)).
+
+## Forbidden
+
+- Asking the operator to pick a default the named competitors
+  already settled.
+- Leaving `open-q-*` in a queue, spec comment, or evidence note
+  after the slice that found it.
+- Hiding an accountable party (owner, approver, actor) to save
+  column width.
+- Inventing a fake owner / email-as-identity when the person
+  record is missing — bind to the durable principal, or say
+  unresolved honestly.
+
+## Worked example
+
+**Wrong:** Secure Share Owner column exists on the API but starts
+hidden; spec comment says `open-q-owner` and the agent asks
+whether to show it.
+
+**Right:** CyberArk / Delinea / Bitwarden Enterprise / 1Password
+Business show who owns a shared secret. Show Owner by default;
+Columns may hide it. Commit body records competitor + AU-2/AU-3.
+
+## Origin
+
+2026-08-16 — operator: do not ask; competitor parity first; else
+the most responsible cybersecurity default; record the basis;
+close `open-q-*`.
