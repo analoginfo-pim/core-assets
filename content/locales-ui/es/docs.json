@@ -1,0 +1,137 @@
+{
+  "chrome": {
+    "backToDocs": "Volver a la documentación",
+    "contents": "Contenido",
+    "chapters": "Capítulos",
+    "backToContents": "Volver al contenido",
+    "openInProduct": "Abrir en el producto",
+    "honestyAlert": "Manuales operativos de esta clase de documentación. Los capítulos describen lo que el producto hace hoy, en español claro. No son un plan de seguridad del sistema, un paquete FedRAMP ni una afirmación de certificación: asigne los controles en su carpeta a las evidencias que realmente recopile.",
+    "contentsAria": "Contenido de {{title}}",
+    "stepsAria": "Pasos de {{title}}",
+    "openChapterAria": "Abrir {{title}} en el producto",
+    "resourceManuals": "Manuales {{class}}",
+    "configLinks": "Dónde se hacen estos ajustes"
+  },
+  "landing": {
+    "title": "Documentación",
+    "auditor": {
+      "label": "Manuales del auditor",
+      "description": "Guía de configuración de auditores, más los capítulos de revisión de evidencias."
+    }
+  },
+  "auditor": {
+    "title": "Manuales del auditor",
+    "intro": "Empiece por la Guía de configuración de auditores si va a asignar evaluadores. Los capítulos posteriores son guías de lectura para quienes revisan evidencias, carpetas y registros de auditoría sin privilegios de corrección. Las etiquetas de estado de la carpeta deben ser honestas (Implementado / Parcial / Planificado). Este producto no inventa afirmaciones de certificación FedRAMP, CMMC o FIPS."
+  },
+  "auditorSetup": {
+    "title": "Guía de configuración de auditores",
+    "summary": "Cómo asignar auditores en la misma página de inicio de sesión, qué grupos usar y dónde configurarlos.",
+    "body": [
+      "Todos inician sesión en la misma página. No hay un portal de auditor independiente. Los menús y los derechos provienen de los grupos que usted asigna. Esto coincide con el modelo Thoropass: un auditor revisa evidencias; un administrador de auditoría (responsable) también puede asignar a otros auditores. Los administradores de identidad crean las cuentas que no son de auditor. Esa no es una tarea de auditor.",
+      "Los enclaves de demostración incluyen tres cuentas iniciales para probar cada función. Cambie esas contraseñas antes de cualquier demostración compartida. Los enclaves de producción crean sus propias personas y las colocan en los grupos siguientes. Esta guía describe cómo se configura el producto. No es una afirmación de certificación."
+    ],
+    "steps": [
+      "Abra Administración IAM local y cree o seleccione a la persona.",
+      "Añada a la persona a los grupos de su función en la tabla siguiente.",
+      "O inscríbala con el valor preestablecido de inscripción correspondiente.",
+      "Pídale que inicie sesión en la página de inicio de sesión habitual.",
+      "Abra Compromisos de auditoría para invitarla a un compromiso cuando su proceso use invitaciones."
+    ],
+    "productLabel": "Abrir Administración IAM local",
+    "tables": {
+      "jobs": {
+        "caption": "Funciones de auditor, grupos y límites",
+        "headers": ["Función", "Grupos", "Valor preestablecido de inscripción", "Puede", "No debe"],
+        "rows": [
+          [
+            "Observador de solo lectura",
+            "Evaluadores de solo lectura y usuarios de documentación",
+            "read-only-assessor",
+            "Ver la carpeta de evaluación y los informes",
+            "Escribir contenido de la carpeta, usar Fix-It o administrar identidades"
+          ],
+          [
+            "Auditor en ejercicio (Auditor)",
+            "Evaluadores CMMC, equipo de evaluación y usuarios de documentación",
+            "cmmc-assessor",
+            "Escribir contenido de la carpeta, revisar compromisos y mantener riesgos",
+            "Crear cuentas, restablecer contraseñas, usar Fix-It o aceptar el riesgo residual"
+          ],
+          [
+            "Auditor responsable (administrador de auditoría)",
+            "Auditores responsables, evaluadores CMMC, equipo de evaluación y usuarios de documentación",
+            "lead-auditor",
+            "Igual que el auditor en ejercicio, más crear cuentas de clase auditor, añadirlas a grupos de auditores, restablecer solo esas contraseñas y administrar compromisos",
+            "Restablecer contraseñas de administrador, conceder Super Admin, administrar proveedores de identidad o usar Fix-It"
+          ]
+        ]
+      },
+      "seeds": {
+        "caption": "Cuentas iniciales de demostración",
+        "headers": ["Nombre de usuario", "Función", "Grupos", "Notas"],
+        "rows": [
+          [
+            "readonly",
+            "Observador de solo lectura",
+            "Evaluadores de solo lectura y usuarios de documentación",
+            "Consulta evidencias. No puede escribir en la carpeta."
+          ],
+          [
+            "auditor",
+            "Auditor en ejercicio",
+            "Evaluadores CMMC, equipo de evaluación y usuarios de documentación",
+            "Revisa y escribe evidencias. No puede crear cuentas."
+          ],
+          [
+            "auditorlead",
+            "Auditor responsable (administrador de auditoría)",
+            "Auditores responsables, evaluadores CMMC, equipo de evaluación y usuarios de documentación",
+            "Puede asignar a otros auditores. No puede restablecer contraseñas de administrador."
+          ]
+        ]
+      },
+      "screens": {
+        "caption": "Pantallas y quién puede usarlas",
+        "headers": ["Pantalla", "Solo lectura", "Auditor en ejercicio", "Responsable (administrador de auditoría)"],
+        "rows": [
+          ["Iniciar sesión", "Sí", "Sí", "Sí"],
+          ["Carpeta de evaluación", "Ver", "Ver y escribir", "Ver y escribir"],
+          ["Centro de informes", "Ver y descargar", "Ver y descargar", "Ver y descargar"],
+          ["Compromisos de auditoría", "Ver si está invitado", "Revisar", "Revisar y administrar"],
+          ["Cumplimiento del estado actual", "Leer", "Leer", "Leer"],
+          ["Auditoría", "Leer", "Leer", "Leer"],
+          ["Administración IAM local", "No", "No", "Solo cuentas de clase auditor"],
+          ["Inscripción y control de acceso", "Leer la matriz", "Leer la matriz", "Leer la matriz"],
+          ["Configuración del servidor / Fix-It", "No", "No", "No"]
+        ]
+      }
+    },
+    "configLinksTitle": "Dónde se hacen estos ajustes",
+    "configLinks": [
+      {
+        "label": "Iniciar sesión",
+        "note": "La única página de inicio de sesión. Los auditores la usan como todos los demás."
+      },
+      {
+        "label": "Administración IAM local",
+        "note": "Acceso e identidad → Directorio → Administración IAM local. Crear personas, asignar grupos y restablecer contraseñas de clase auditor (solo el responsable)."
+      },
+      {
+        "label": "Inscripción y control de acceso",
+        "note": "Acceso e identidad → Directorio → Inscripción y control de acceso. Muestra los valores preestablecidos de inscripción (read-only-assessor, cmmc-assessor, lead-auditor)."
+      },
+      {
+        "label": "Compromisos de auditoría",
+        "note": "Cumplimiento → Compromisos de auditoría. Invitar auditores y administrar el compromiso."
+      },
+      {
+        "label": "Carpeta de evaluación",
+        "note": "Cumplimiento → Carpeta de evaluación. Redactar o revisar narrativas de control y evidencias."
+      },
+      {
+        "label": "Manuales del auditor",
+        "note": "Documentación → Manuales del auditor. Esta guía y los capítulos de trabajo del evaluador."
+      }
+    ]
+  }
+}

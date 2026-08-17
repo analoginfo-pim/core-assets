@@ -1,0 +1,137 @@
+{
+  "chrome": {
+    "backToDocs": "Retour à la documentation",
+    "contents": "Sommaire",
+    "chapters": "Chapitres",
+    "backToContents": "Retour au sommaire",
+    "openInProduct": "Ouvrir dans le produit",
+    "honestyAlert": "Manuels opérationnels pour cette classe de documentation. Les chapitres décrivent ce que le produit fait aujourd'hui, en français clair. Ils ne constituent pas un plan de sécurité du système, un dossier FedRAMP ou une allégation de certification — associez les contrôles dans votre classeur aux preuves que vous collectez réellement.",
+    "contentsAria": "Sommaire de {{title}}",
+    "stepsAria": "Étapes de {{title}}",
+    "openChapterAria": "Ouvrir {{title}} dans le produit",
+    "resourceManuals": "Manuels {{class}}",
+    "configLinks": "Où effectuer ces réglages"
+  },
+  "landing": {
+    "title": "Documentation",
+    "auditor": {
+      "label": "Manuels auditeur",
+      "description": "Guide de configuration des auditeurs, plus les chapitres d'examen des preuves."
+    }
+  },
+  "auditor": {
+    "title": "Manuels auditeur",
+    "intro": "Commencez par le guide de configuration des auditeurs si vous affectez des évaluateurs. Les chapitres suivants sont des guides de lecture pour les personnes qui examinent les preuves, les classeurs et les pistes d'audit sans droits de correction. Les libellés d'état du classeur doivent rester honnêtes (Mis en œuvre / Partiel / Planifié). Ce produit n'invente pas d'allégations de certification FedRAMP, CMMC ou FIPS."
+  },
+  "auditorSetup": {
+    "title": "Guide de configuration des auditeurs",
+    "summary": "Comment affecter des auditeurs sur la même page de connexion, quels groupes utiliser et où les configurer.",
+    "body": [
+      "Tout le monde se connecte sur la même page de connexion. Il n'existe pas de portail auditeur distinct. Les menus et les droits viennent des groupes que vous attribuez. Cela correspond au modèle Thoropass : un auditeur examine les preuves ; un administrateur d'audit (responsable) peut aussi affecter d'autres auditeurs. Les administrateurs d'identité créent les comptes qui ne sont pas des auditeurs. Ce n'est pas une tâche d'auditeur.",
+      "Les enclaves de démonstration incluent trois comptes de départ pour essayer chaque rôle. Changez ces mots de passe avant toute démonstration partagée. Les enclaves de production créent leurs propres personnes et les placent dans les groupes ci-dessous. Ce guide décrit la configuration du produit. Ce n'est pas une allégation de certification."
+    ],
+    "steps": [
+      "Ouvrez l'administration IAM locale et créez ou sélectionnez la personne.",
+      "Ajoutez la personne aux groupes correspondant à son rôle dans le tableau ci-dessous.",
+      "Ou inscrivez-la avec le préréglage d'inscription correspondant.",
+      "Demandez-lui de se connecter sur la page de connexion habituelle.",
+      "Ouvrez les missions d'audit pour l'inviter à une mission lorsque votre processus utilise des invitations."
+    ],
+    "productLabel": "Ouvrir l'administration IAM locale",
+    "tables": {
+      "jobs": {
+        "caption": "Rôles d'auditeur, groupes et limites",
+        "headers": ["Rôle", "Groupes", "Préréglage d'inscription", "Peut", "Ne doit pas"],
+        "rows": [
+          [
+            "Observateur en lecture seule",
+            "Évaluateurs en lecture seule et utilisateurs de la documentation",
+            "read-only-assessor",
+            "Consulter le classeur d'évaluation et les rapports",
+            "Écrire le contenu du classeur, corriger (Fix-It) ou gérer les identités"
+          ],
+          [
+            "Auditeur en activité (Auditeur)",
+            "Évaluateurs CMMC, équipe d'évaluation et utilisateurs de la documentation",
+            "cmmc-assessor",
+            "Écrire le contenu du classeur, examiner les missions, tenir les risques",
+            "Créer des comptes, réinitialiser des mots de passe, corriger (Fix-It) ou accepter un risque résiduel"
+          ],
+          [
+            "Auditeur responsable (administrateur d'audit)",
+            "Auditeurs responsables, évaluateurs CMMC, équipe d'évaluation et utilisateurs de la documentation",
+            "lead-auditor",
+            "Comme l'auditeur en activité, plus créer des comptes de classe auditeur, les ajouter aux groupes d'auditeurs, réinitialiser uniquement ces mots de passe et gérer les missions",
+            "Réinitialiser les mots de passe d'administrateur, accorder Super Admin, gérer les fournisseurs d'identité ou corriger (Fix-It)"
+          ]
+        ]
+      },
+      "seeds": {
+        "caption": "Comptes de départ pour la démonstration",
+        "headers": ["Nom d'utilisateur", "Rôle", "Groupes", "Notes"],
+        "rows": [
+          [
+            "readonly",
+            "Observateur en lecture seule",
+            "Évaluateurs en lecture seule et utilisateurs de la documentation",
+            "Consulte les preuves. Ne peut pas écrire dans le classeur."
+          ],
+          [
+            "auditor",
+            "Auditeur en activité",
+            "Évaluateurs CMMC, équipe d'évaluation et utilisateurs de la documentation",
+            "Examine et écrit les preuves. Ne peut pas créer de comptes."
+          ],
+          [
+            "auditorlead",
+            "Auditeur responsable (administrateur d'audit)",
+            "Auditeurs responsables, évaluateurs CMMC, équipe d'évaluation et utilisateurs de la documentation",
+            "Peut affecter d'autres auditeurs. Ne peut pas réinitialiser les mots de passe d'administrateur."
+          ]
+        ]
+      },
+      "screens": {
+        "caption": "Écrans et qui peut les utiliser",
+        "headers": ["Écran", "Lecture seule", "Auditeur en activité", "Responsable (administrateur d'audit)"],
+        "rows": [
+          ["Connexion", "Oui", "Oui", "Oui"],
+          ["Classeur d'évaluation", "Consultation", "Consultation et écriture", "Consultation et écriture"],
+          ["Centre de rapports", "Consultation et téléchargement", "Consultation et téléchargement", "Consultation et téléchargement"],
+          ["Missions d'audit", "Consultation si invité", "Examen", "Examen et gestion"],
+          ["Conformité de l'état actuel", "Lecture", "Lecture", "Lecture"],
+          ["Audit", "Lecture", "Lecture", "Lecture"],
+          ["Administration IAM locale", "Non", "Non", "Comptes de classe auditeur uniquement"],
+          ["Inscription et contrôle d'accès", "Lire la matrice", "Lire la matrice", "Lire la matrice"],
+          ["Paramètres serveur / Fix-It", "Non", "Non", "Non"]
+        ]
+      }
+    },
+    "configLinksTitle": "Où effectuer ces réglages",
+    "configLinks": [
+      {
+        "label": "Connexion",
+        "note": "La seule page de connexion. Les auditeurs l'utilisent comme tout le monde."
+      },
+      {
+        "label": "Administration IAM locale",
+        "note": "Accès et identité → Annuaire → Administration IAM locale. Créer des personnes, attribuer des groupes et réinitialiser les mots de passe de classe auditeur (responsable uniquement)."
+      },
+      {
+        "label": "Inscription et contrôle d'accès",
+        "note": "Accès et identité → Annuaire → Inscription et contrôle d'accès. Affiche les préréglages d'inscription (read-only-assessor, cmmc-assessor, lead-auditor)."
+      },
+      {
+        "label": "Missions d'audit",
+        "note": "Conformité → Missions d'audit. Inviter des auditeurs et gérer la mission."
+      },
+      {
+        "label": "Classeur d'évaluation",
+        "note": "Conformité → Classeur d'évaluation. Rédiger ou examiner les récits de contrôle et les preuves."
+      },
+      {
+        "label": "Manuels auditeur",
+        "note": "Documentation → Manuels auditeur. Ce guide et les chapitres de travail de l'évaluateur."
+      }
+    ]
+  }
+}

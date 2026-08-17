@@ -9,7 +9,8 @@
     "contentsAria": "{{title}} Inhalt",
     "stepsAria": "{{title}} Schritte",
     "openChapterAria": "{{title}} im Produkt öffnen",
-    "resourceManuals": "{{class}}-Handbücher"
+    "resourceManuals": "{{class}}-Handbücher",
+    "configLinks": "Wo Sie diese Einstellungen vornehmen"
   },
   "landing": {
     "title": "Dokumentation",
@@ -21,7 +22,7 @@
     },
     "auditor": {
       "label": "Auditor-Handbücher",
-      "description": "Dokumentation für Assessoren und die Prüfung von Nachweisen."
+      "description": "Leitfaden zur Auditor-Einrichtung und -Konfiguration sowie Kapitel zur Prüfung von Nachweisen."
     },
     "admin": {
       "label": "Admin-Handbücher",
@@ -31,6 +32,117 @@
       "label": "Technische Dokumentation",
       "description": "OpenAPI, Swagger UI und technische Entwicklerreferenz."
     }
+  },
+  "auditorSetup": {
+    "title": "Leitfaden zur Auditor-Einrichtung und -Konfiguration",
+    "summary": "So richten Sie Auditoren auf derselben Anmeldeseite ein, welche Gruppen Sie verwenden und wo Sie die Einstellungen vornehmen.",
+    "body": [
+      "Jeder meldet sich auf derselben Anmeldeseite an. Es gibt kein getrenntes Auditor-Portal. Menüs und Rechte kommen aus den Gruppen, die Sie zuweisen. Das entspricht dem Thoropass-Modell: ein Auditor prüft Nachweise; ein Audit-Admin (Leitung) kann außerdem andere Auditoren einrichten. Identitätsadministratoren legen Konten an, die keine Auditoren sind. Das ist keine Auditoraufgabe.",
+      "Demonstrationsumgebungen enthalten drei Startkonten, damit Sie jede Aufgabe ausprobieren können. Ändern Sie diese Passwörter vor jeder gemeinsamen Demonstration. Produktionsumgebungen legen eigene Personen an und ordnen sie den Gruppen unten zu. Dieser Leitfaden beschreibt die Einrichtung des Produkts. Er ist keine Zertifizierungsbehauptung."
+    ],
+    "steps": [
+      "Öffnen Sie die lokale IAM-Verwaltung und legen Sie die Person an oder wählen Sie sie aus.",
+      "Fügen Sie die Person den Gruppen für ihre Aufgabe in der Tabelle unten hinzu.",
+      "Oder schreiben Sie sie mit der passenden Einschreibungsvorgabe ein.",
+      "Bitten Sie sie, sich auf der gewöhnlichen Anmeldeseite anzumelden.",
+      "Öffnen Sie Audit-Engagements, um sie zu einem Engagement einzuladen, wenn Ihr Verfahren Einladungen verwendet."
+    ],
+    "productLabel": "Lokale IAM-Verwaltung öffnen",
+    "tables": {
+      "jobs": {
+        "caption": "Auditoraufgaben, Gruppen und Grenzen",
+        "headers": ["Aufgabe", "Gruppen", "Einschreibungsvorgabe", "Darf", "Darf nicht"],
+        "rows": [
+          [
+            "Nur-Lesen-Beobachter",
+            "Nur-Lesen-Assessoren und Dokumentationsbenutzer",
+            "read-only-assessor",
+            "Assessment-Binder und Berichte ansehen",
+            "Binderinhalt schreiben, Fix-It oder Identitäten verwalten"
+          ],
+          [
+            "Arbeitender Auditor (Auditor)",
+            "CMMC-Assessoren, Assessment-Team und Dokumentationsbenutzer",
+            "cmmc-assessor",
+            "Binderinhalt schreiben, Engagements prüfen, Risiken pflegen",
+            "Konten anlegen, Passwörter zurücksetzen, Fix-It oder Restrisiko akzeptieren"
+          ],
+          [
+            "Leitender Auditor (Audit-Admin)",
+            "Leitende Auditoren, CMMC-Assessoren, Assessment-Team und Dokumentationsbenutzer",
+            "lead-auditor",
+            "Wie der arbeitende Auditor, plus auditorbezogene Konten anlegen, sie Auditorgruppen hinzufügen, nur diese Passwörter zurücksetzen und Engagements verwalten",
+            "Administratorpasswörter zurücksetzen, Super-Admin vergeben, Identitätsanbieter verwalten oder Fix-It"
+          ]
+        ]
+      },
+      "seeds": {
+        "caption": "Startkonten für Demonstrationen",
+        "headers": ["Benutzername", "Aufgabe", "Gruppen", "Hinweise"],
+        "rows": [
+          [
+            "readonly",
+            "Nur-Lesen-Beobachter",
+            "Nur-Lesen-Assessoren und Dokumentationsbenutzer",
+            "Sieht Nachweise. Kann den Binder nicht schreiben."
+          ],
+          [
+            "auditor",
+            "Arbeitender Auditor",
+            "CMMC-Assessoren, Assessment-Team und Dokumentationsbenutzer",
+            "Prüft und schreibt Nachweise. Kann keine Konten anlegen."
+          ],
+          [
+            "auditorlead",
+            "Leitender Auditor (Audit-Admin)",
+            "Leitende Auditoren, CMMC-Assessoren, Assessment-Team und Dokumentationsbenutzer",
+            "Kann andere Auditoren einrichten. Kann keine Administratorpasswörter zurücksetzen."
+          ]
+        ]
+      },
+      "screens": {
+        "caption": "Bildschirme und wer sie nutzen darf",
+        "headers": ["Bildschirm", "Nur-Lesen", "Arbeitender Auditor", "Leitung (Audit-Admin)"],
+        "rows": [
+          ["Anmelden", "Ja", "Ja", "Ja"],
+          ["Assessment-Binder", "Ansehen", "Ansehen und schreiben", "Ansehen und schreiben"],
+          ["Berichtszentrum", "Ansehen und herunterladen", "Ansehen und herunterladen", "Ansehen und herunterladen"],
+          ["Audit-Engagements", "Ansehen, wenn eingeladen", "Prüfen", "Prüfen und verwalten"],
+          ["Aktueller Compliance-Stand", "Lesen", "Lesen", "Lesen"],
+          ["Auditierung", "Lesen", "Lesen", "Lesen"],
+          ["Lokale IAM-Verwaltung", "Nein", "Nein", "Nur auditorbezogene Konten"],
+          ["Einschreibung und Zugriffskontrolle", "Matrix lesen", "Matrix lesen", "Matrix lesen"],
+          ["Servereinstellungen / Fix-It", "Nein", "Nein", "Nein"]
+        ]
+      }
+    },
+    "configLinksTitle": "Wo Sie diese Einstellungen vornehmen",
+    "configLinks": [
+      {
+        "label": "Anmelden",
+        "note": "Die einzige Anmeldeseite. Auditoren nutzen diese Seite wie alle anderen."
+      },
+      {
+        "label": "Lokale IAM-Verwaltung",
+        "note": "Zugriff und Identität → Verzeichnis → Lokale IAM-Verwaltung. Personen anlegen, Gruppen zuweisen und auditorbezogene Passwörter zurücksetzen (nur Leitung)."
+      },
+      {
+        "label": "Einschreibung und Zugriffskontrolle",
+        "note": "Zugriff und Identität → Verzeichnis → Einschreibung und Zugriffskontrolle. Zeigt die Einschreibungsvorgaben (read-only-assessor, cmmc-assessor, lead-auditor)."
+      },
+      {
+        "label": "Audit-Engagements",
+        "note": "Compliance → Audit-Engagements. Auditoren einladen und das Engagement verwalten."
+      },
+      {
+        "label": "Assessment-Binder",
+        "note": "Compliance → Assessment-Binder. Steuerungsnarrative und Nachweise schreiben oder prüfen."
+      },
+      {
+        "label": "Auditor-Handbücher",
+        "note": "Dokumentation → Auditor-Handbücher. Dieser Leitfaden und die Kapitel für die Assessorarbeit."
+      }
+    ]
   },
   "user": {
     "title": "Benutzerhandbücher",
@@ -115,7 +227,7 @@
   },
   "auditor": {
     "title": "Auditor-Handbücher",
-    "intro": "Lesende Leitfäden für Assessoren, die Nachweise, Binder und Audit-Spuren prüfen, ohne Fix-It-Rechte. Binder-Statusbezeichnungen müssen ehrlich bleiben (Umgesetzt / Teilweise / Geplant). Dieses Produkt erfindet keine FedRAMP-, CMMC- oder FIPS-Zertifizierungsbehauptungen für Sie.",
+    "intro": "Beginnen Sie mit dem Leitfaden zur Auditor-Einrichtung und -Konfiguration, wenn Sie Assessoren einrichten. Die späteren Kapitel sind lesende Leitfäden für Personen, die Nachweise, Binder und Audit-Spuren prüfen, ohne Fix-It-Rechte. Binder-Statusbezeichnungen müssen ehrlich bleiben (Umgesetzt / Teilweise / Geplant). Dieses Produkt erfindet keine FedRAMP-, CMMC- oder FIPS-Zertifizierungsbehauptungen für Sie.",
     "chapters": {
       "assessment-binder": {
         "title": "Assessment-Binder",
