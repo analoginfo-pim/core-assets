@@ -4,14 +4,15 @@ Partner-readable status for Phil and Robert. Updated after each milestone push t
 
 ## Latest
 
-**Milestone:** Catalog entry format + SHA-256 hash migration (in progress — see History for prior SHA).
+**Milestone:** Wave A — French (`fr`) and Spanish (`es`) complete for aic-server + matching native chrome (vous / usted; placeholders preserved).
 
-- All existing JSON catalogs under `locales/`, `locales-ui/`, and `i18n-native/` use `{ "text", "source_sha256" }` leaves.
-- `language_packs.py hash` recomputed US English hashes; matching keys in `de` / `es` / `fr` stamped when empty.
-- **aic-server audit (after hash):** see `docs/language-pack-audit-aic-server.json`.
-- **Known gap:** German SPA catalogs contain many keys not yet in US English packs (`en` SPA still smaller than `de`). Those keys are orphans until English source rows land. Other languages will be filled from the current `en` key set only — English is never pasted as a “translation.”
-- Flags and Wave A–D pack fills are next.
+- **aic-server audit** (`docs/language-pack-audit-aic-server.json`): `en_total` **536**; **fr** missing **0**, stale **0**; **es** missing **0**, stale **0** (orphans are extra `locales-ui/docs.json` keys not in current `en`).
+- **Native** (gui chrome + server_configurator + agent + recording-agent): `en_total` **470**; **fr** / **es** missing **0**, stale **0**.
+- Catalog leaf format remains `{ "text", "source_sha256" }` with hashes matching US English.
+- German (`de`) untouched this wave. `en-GB` / `zh-Hans` not started.
+- Tooling helpers under `scripts/language-packs/wave_a_*.py` support apply/fill; do not treat English as a translation.
 
 ## History
 
+- `fd368bf` — Catalog entry format + SHA-256 hash migration.
 - `b6be41d` — manifest.json, glossary, Python tools + wrappers.

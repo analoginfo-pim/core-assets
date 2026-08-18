@@ -1,0 +1,18 @@
+{
+  "cli.about": {
+    "text": "AIC Agent — elevación de cuenta sin conexión y rotación de contraseñas",
+    "source_sha256": "04035fdaec4f3aef455aea1f6d0ae260c70748ffd4f6961f42d5beb52405faf4"
+  },
+  "cli.long_about": {
+    "text": "AIC Agent (binario: pim-offline-agent)\n\nDESCRIPCIÓN:\n    El AIC Agent proporciona elevación segura de cuentas sin conexión y\n    rotación automática de contraseñas con integración de servicio web.\n    Diseñado para entornos empresariales que requieren criptografía\n    conforme a FIPS y pistas de auditoría completas.\n\nFUNCIONES PRINCIPALES:\n    - Códigos de elevación con límite de tiempo para escalada temporal\n    - Rotación automática de contraseñas con políticas configurables\n    - Diagnósticos y supervisión de estado completos\n    - Pista de auditoría completa con exportación JSON\n    - Métricas Prometheus para visibilidad operativa\n    - Registro estructurado con rotación diaria\n\nUSO:\n    Consola interactiva (sin argumentos):\n        pim-offline-agent\n        → consejo: pruebe 'pim-offline-agent --help' (exit 2)\n\n    Ejecutar como demonio (explícito, o arranque bare no-TTY / systemd):\n        pim-offline-agent daemon\n\n    Generar código de elevación:\n        pim-offline-agent elevate --show-code\n\n    Ejecutar diagnósticos:\n        pim-offline-agent diagnose\n\n    Configurar de forma interactiva:\n        pim-offline-agent wizard\n\n    Para más ayuda sobre un comando:\n        pim-offline-agent <command> --help\n\nDOCUMENTACIÓN:\n    Documentación completa: README.md\n    Guía de instalación:    INSTALLATION_GUIDE.md\n    Supervisión:            MONITORING.md\n    Completados de shell:   SHELL_COMPLETIONS_GUIDE.md",
+    "source_sha256": "763ba471d83fbc6ea7d4aef451a3d4fac8ff8b40af0dded046f7e75d2a4026ed"
+  },
+  "cli.help.locale": {
+    "text": "Idioma de visualización para la ayuda CLI y los mensajes de consola (en, de, fr, es). No cambia los nombres de campos de auditoría, Windows Event Log ni syslog.",
+    "source_sha256": "ea54d1c157ba10af11f561d11893e1ffd2f8b3d25d04dac1269ed4a04c856957"
+  },
+  "cli.msg.audit_english_only": {
+    "text": "Las cargas útiles de auditoría, Windows Event Log y syslog permanecen en inglés de EE. UU. (nombres de campo e ID de evento estables).",
+    "source_sha256": "66dab701f9bec400fcd79c3d0ff49e9273833d0c7a09d8d327ab7425e69af831"
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "honesty_note": {
+    "text": "Ce document est un modèle personnalisable. L'organisation cliente décide si le contenu est adapté, qui doit le lire et à quelle fréquence. Un document rendu n'est pas une livraison de formation ni une évaluation de contrôle.",
+    "source_sha256": "bf844fab9037cf44872431ff7c9e557e0e08d4fdcd3c87fdbe3b1b8600624947"
+  },
+  "program_honesty_note": {
+    "text": "Les enregistrements d'achèvement montrent qu'une personne nommée a lu et affirmé une version précise de document à un moment précis. Ils sont des preuves de dossiers de formation (NIST AT-4) et soutiennent le côté livraison de la sensibilisation (AT-2, AT-3, CMMC 3.2.1, 3.2.2). Le contenu, le public et la fréquence restent à l'organisation cliente. Lire et affirmer n'est PAS un exercice pratique et ne doit pas être présenté comme preuve pour 800-172 3.2.2e. Aucun pourcentage ici n'indique qu'un contrôle est Met ni qu'une certification existe.",
+    "source_sha256": "a9be08253ae67bf02d16e2b2603a41377fd7f5022cead971bb4baac83ff9ea04"
+  },
+  "practical_exercise_exclusion": {
+    "text": "800-172 3.2.2e exige des exercices pratiques sur les menaces actuelles, avec retour aux participants et aux superviseurs. Ce produit n'exécute pas d'exercices, de simulations de hameçonnage ni de table top, et ne rapporte aucune preuve pour 3.2.2e.",
+    "source_sha256": "87a098c9e195eecb07e71e199fa682f1e49635b06971c311d8ac9ce2655ac001"
+  },
+  "coverage_honesty_note": {
+    "text": "Couvert signifie qu'un document existe dans la bibliothèque et cite une clause de cette norme. Cela ne signifie pas que quelqu'un a lu le document, et ce n'est pas une évaluation de contrôle. Les enregistrements d'achèvement proviennent des programmes assignés et des attestations signées ; le verdict de conformité appartient à votre évaluateur.",
+    "source_sha256": "f2bebcfefcf69f1d53a7af9e27e5cd922740043447c06b66e2ee6bca7698f347"
+  },
+  "intent_statement": {
+    "text": "J'ai lu ce document. Je comprends ce qu'il me demande de faire dans mon travail.",
+    "source_sha256": "36e95eca063d855727db2c629d6ceed8a9fff828ec07e2e74d3dec86e79da016"
+  },
+  "attestation_source_note": {
+    "text": "Chaque ligne de cette version est operator_recorded : un administrateur a saisi la preuve d'un achèvement hors bande. Aucune surface de signature en libre-service n'existe, donc aucune ligne n'a été produite par le signataire.",
+    "source_sha256": "865d786b5848105037f06f61237f726b82eb911a657874675391d56d2c67fc08"
+  },
+  "audience": {
+    "all-personnel": {
+      "text": "Tout le personnel",
+      "source_sha256": "86d27dd9e1b05f05f99d80f8474db8d21f7fc11751b1c856be5ee6dac6d53428"
+    },
+    "privileged-users": {
+      "text": "Utilisateurs privilégiés",
+      "source_sha256": "ee46f4edfd7e8dc25e86b9e1bca938a61e9e8a9b4d589cb0360417d17553880f"
+    },
+    "administrators": {
+      "text": "Administrateurs",
+      "source_sha256": "919fb224a3e32e407e51de2e2fc0820cb3ccaf8680ac3c5c640e7bde35ddeb60"
+    },
+    "executives": {
+      "text": "Dirigeants",
+      "source_sha256": "e0db2a8b264a99d6b01206d803905a551ad6745c3a5a486d14499b2a28f73aa9"
+    },
+    "auditors": {
+      "text": "Auditeurs",
+      "source_sha256": "40607f44b00a274996d57977dc6f90cc5c9ba7a353b8c164129e7c9ab95e0286"
+    },
+    "new-hire": {
+      "text": "Nouvelle embauche",
+      "source_sha256": "e2b5066deb9843472073b474194329fd73bbe8be7482b33a744f1261697c6d5e"
+    },
+    "incident-responders": {
+      "text": "Intervenants sur incidents",
+      "source_sha256": "7229735c9ee630a23ec7172387a48884d5760659351baf26185064b5ebe8a014"
+    }
+  },
+  "export": {
+    "marking": {
+      "text": "Marquage",
+      "source_sha256": "94f73dfec8a797a4b46706fc7194ee63f0bd5516f7ecf18fdb64fd25f1321904"
+    },
+    "generated_at": {
+      "text": "Généré le (UTC)",
+      "source_sha256": "bf5110c1c68187b8f2f836277368682657e8cb5a30f3c6441048d33e762351e5"
+    },
+    "picture": {
+      "text": "Image",
+      "source_sha256": "9a1c54f55e7cfb1cc2cdad2991525037bc475a509fa37262e123c44e958d2d36"
+    }
+  },
+  "notify": {
+    "due_date_fallback": {
+      "text": "la date de votre affectation",
+      "source_sha256": "f37c7238ea7e097f83032a497db618e7b085cb6ebcfba6664ce0d35c2af5f20b"
+    },
+    "ladder_note": {
+      "text": "Un nombre d'envois compte les tentatives de livraison, pas les achèvements ni un verdict de contrôle.",
+      "source_sha256": "1515a18f6090478c5614c78c44263208ec942948fa0c4e358d71ddfda996a6b4"
+    },
+    "welcome": {
+      "subject": {
+        "text": "Une formation vous a été assignée",
+        "source_sha256": "6644e8dc01cf72c8ff8abfd33a0ce358622263a477748a552f9e0ea4b141b2d1"
+      },
+      "body": {
+        "text": "Bonjour {full_name}. On vous a assigné {program_name}. Veuillez le terminer avant le {due_date}. Ce message enregistre ce que nous vous avons demandé de lire. Ce n'est pas une note. Demandez à votre responsable si vous avez besoin d'aide.",
+        "source_sha256": "9062937cc546e75561cb60cb064ea90b8cc96dd8672deea1d49ef69d891226b8"
+      }
+    },
+    "reminder": {
+      "subject": {
+        "text": "La formation arrive bientôt à échéance",
+        "source_sha256": "cdb4f2fa4f1b84727268dda25673030cb5c0376021ab95809a3cbd7471411052"
+      },
+      "body": {
+        "text": "Bonjour {full_name}. {program_name} est dû le {due_date}. Veuillez le terminer. Ceci est un rappel, pas une note.",
+        "source_sha256": "4356efd319ed9e93c8cd2f44da1cfb17d77e182c7b0e0a48d3bb807bf81a3162"
+      }
+    },
+    "due": {
+      "subject": {
+        "text": "La formation est due aujourd'hui",
+        "source_sha256": "f3f830f40fa6e94505b8168ef2bbc7093c96618ee011fab9cf579283b7324f6d"
+      },
+      "body": {
+        "text": "Bonjour {full_name}. {program_name} est dû aujourd'hui ({due_date}). Veuillez le terminer.",
+        "source_sha256": "57f675215a96ffe13d3f61ceecce0858e68e7c04f8829b033bfc2ea4fa0037c9"
+      }
+    },
+    "overdue": {
+      "subject": {
+        "text": "La formation est en retard",
+        "source_sha256": "8a11f65d250e5c6a4f881fc1920f74a6e48d97459184d8b4a35d452e336d5441"
+      },
+      "body": {
+        "text": "Bonjour {full_name}. {program_name} était dû le {due_date}. Il est maintenant en retard. Veuillez le terminer ou en informer votre responsable.",
+        "source_sha256": "e42b3239d4364fb6f1414c148e3b3f5e9bc02ac7da54e68e5eca2fe5a376c17e"
+      }
+    }
+  },
+  "templates": {
+    "spec-24-approved-setup": {
+      "title": {
+        "text": "Configuration approuvée par rapport à ce qui est installé",
+        "source_sha256": "4b8b3d9f506263414eabd33fcd8fe2346c50d2618e839326abd8d470a7c52fa8"
+      },
+      "purpose": {
+        "text": "Montre ce que {customer_name} demande lorsque votre travail touche la configuration approuvée. Rédigé pour chaque travailleur. Ce n'est pas un cours Spec 24 sous licence.",
+        "source_sha256": "d0a5d3f09b55885ec1db9dcdfa3fef03c242ee19c0cd6aa95369df0aa8ef3eb4"
+      }
+    },
+    "spec-24-alignment-pack": {
+      "title": {
+        "text": "Lecture d'un pack d'alignement Spec 24",
+        "source_sha256": "57931c71c1912fcc7173e4f80eecb7b48c7a780b3a71dccd4896cae6fae988ca"
+      },
+      "purpose": {
+        "text": "Montre à un auditeur comment lire ce pack Spec 24. Le pack n'est pas une norme sous licence. Le mappage provient de pages publiques et peut être incorrect.",
+        "source_sha256": "da1d2540c7c215f95144c1db4d3b1be5dc626d7200eb698a0d7846e964c42e48"
+      }
+    },
+    "spec-24-welcome-employee": {
+      "title": {
+        "text": "Lettre de bienvenue pour la formation de configuration Spec 24 (employés)",
+        "source_sha256": "9047996c8e3ba4f29b4e5b26572ad05f4e6e95e2bb178e446817afff198487d7"
+      },
+      "purpose": {
+        "text": "Expliquer aux employés de {organization_name} ce que demande cette configuration Spec 24. Montrer quoi lire et signer. Ce n'est pas une norme sous licence.",
+        "source_sha256": "b1b77d58354bce66523d3b23c059d0cc519c3ad64307a3838ae81f453dd485be"
+      }
+    },
+    "spec-24-welcome-contractor": {
+      "title": {
+        "text": "Lettre de bienvenue pour la formation de configuration Spec 24 (contractants)",
+        "source_sha256": "774fbe60c8c8c4b5c6dd35f1941d32ab90af7e8d07c506d951e091a9cf6d8187"
+      },
+      "purpose": {
+        "text": "Expliquer aux contractants de {organization_name} ce que demande cette configuration Spec 24. Montrer quelles règles s'appliquent. Ce n'est pas une norme sous licence.",
+        "source_sha256": "e856a7f61d89d15735e149cee11122026721ee65262887b7fcb8eea66b4fa6de"
+      }
+    }
+  }
+}

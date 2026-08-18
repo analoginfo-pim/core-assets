@@ -1,0 +1,462 @@
+{
+  "discoverTitle": {
+    "text": "Découvrir",
+    "source_sha256": "d4a33d5b78bccebe3f16843dc30e6c0f73b4eb6efb4e7114ddfebde7fa2c9954"
+  },
+  "discoverIntro": {
+    "text": "Analysez les réseaux configurés pour trouver des cibles OT. Les résultats mettent à jour l'état de l'inventaire sur la page Inventaire.",
+    "source_sha256": "c2c468ed5a09c494f0a140701f0e3b6a546c0dd474538b47bfdbf09bb91a71eb"
+  },
+  "discoverNoPermission": {
+    "text": "Vous avez besoin de l'autorisation Afficher les cibles de connexion pour ouvrir OT Découvrir.",
+    "source_sha256": "4e85863f5771d993c7a80002144b0e0e9e5f1a268d6046fe989c328f2c4f14c1"
+  },
+  "connectNoPermission": {
+    "text": "Vous avez besoin de l'autorisation Afficher les cibles de connexion pour ouvrir OT Connecter.",
+    "source_sha256": "b2d9dfbf3abb24cb12c529e63d7986c25f6ddc21b9581226ceb5f52e412375dd"
+  },
+  "inventoryNoPermission": {
+    "text": "Vous avez besoin de l'autorisation Afficher les cibles de connexion pour ouvrir OT Inventaire.",
+    "source_sha256": "f8b4e687e02a229da707b433316b5927e00febe384b991cdf620413038c8bafe"
+  },
+  "credentialsNoPermission": {
+    "text": "Vous avez besoin de l'autorisation Afficher les cibles de connexion pour ouvrir OT Identifiants.",
+    "source_sha256": "26f6082c0be44f40bafe405d2b92c5032e6a9a143b55100e8f7992757eba89e4"
+  },
+  "sessionsNoPermission": {
+    "text": "Vous avez besoin de l'autorisation Afficher les cibles de connexion pour ouvrir OT Sessions.",
+    "source_sha256": "a91b21b8590ae6ec1a62f1d88a07dedcffd13b2f51d41e3e4aa3c95b180bd77a"
+  },
+  "inventoryTitle": {
+    "text": "Inventaire",
+    "source_sha256": "758f487fe8e9fcc59cec4694d95a9032224f967b29f39543a1fb04e2901b079e"
+  },
+  "inventoryIntro": {
+    "text": "Examinez les cibles découvertes, lisez les pastilles d'état et ouvrez Configurer pour les champs non secrets et les plannings de renouvellement.",
+    "source_sha256": "e6276c27c5bb1926a17de2a83047ed9892247da5b9ba28815ec497c81b8ca265"
+  },
+  "connectTitle": {
+    "text": "Connecter",
+    "source_sha256": "1a2303ede07493acc7caaa7c737f3c52bcc9cf04372be19ed1b0af6b9f2c791e"
+  },
+  "connectIntro": {
+    "text": "Exécutez Vérifier la connectivité (active Connecter) dans la bannière d'état avant que Connecter ne soit actif sur les nouvelles cibles. Les sessions OT portent des données PDU — pas des bureaux SSH, RDP ou VNC.",
+    "source_sha256": "34aea5c9e3ffaf77a9e0c4db9f450272744f71979b3bc64a95b203d5123124db"
+  },
+  "credentialsTitle": {
+    "text": "Identifiants",
+    "source_sha256": "d48a617c7da5163c44f117b9b23d8c920e69b4aa83d7b6570d71a66f3a857183"
+  },
+  "credentialsIntro": {
+    "text": "Sélectionnez une cible, puis renouvelez un mot de passe ou demandez une révélation break-glass journalisée.",
+    "source_sha256": "2a18cc971d50befd1d5af778ff78cc69d304504ea9c10a183697a754c5efae95"
+  },
+  "sessionsTitle": {
+    "text": "Sessions / preuves",
+    "source_sha256": "26cf51ff70fec3bbb07700b3c95f0b87b1fe05cc2520521d3d766b686faf2283"
+  },
+  "sessionsIntro": {
+    "text": "Examinez les sessions de protocole OT enregistrées comme preuves d'audit. Ouvrir la session pour la chronologie PDU.",
+    "source_sha256": "c5ea2b4bf6a5139a7a6e861c6bd40a58ed469046642cb5d1e53bc50b18355f99"
+  },
+  "permissionsLoading": {
+    "text": "Chargement des autorisations…",
+    "source_sha256": "946f1570503ea779a81b7b96df07bf94f027ca09e663f1349e59624e60e155a1"
+  },
+  "runDiscovery": {
+    "text": "Lancer la découverte",
+    "source_sha256": "23e7f7cbb14fb0f37d996c1634562c95f0f243cadebe1a40a3ed8c97be530ad2"
+  },
+  "running": {
+    "text": "Exécution…",
+    "source_sha256": "46c541363b0253b1b7d736ca2ff004b6c8eb816f253c16bf2f154472152fb66d"
+  },
+  "statusHelpLive": {
+    "text": "Live signifie que cette cible a récemment répondu à une sonde de découverte. Ce n'est pas un verdict d'évaluation.",
+    "source_sha256": "1e5705a04b271357ea4394b6f4a6578e3947d78d1da569e7ed0697d899596094"
+  },
+  "statusHelpBlocked": {
+    "text": "BLOCKED signifie que la dernière sonde n'a pas pu atteindre cette cible. Vérifiez la joignabilité, puis relancez la découverte.",
+    "source_sha256": "0f468c61bd9f57749f91d567ba7eb8fd24abc4b04fa465ea7cf7c0882df581cf"
+  },
+  "statusHelpPartial": {
+    "text": "Partial signifie que la cible est listée mais n'est pas encore Live. Lancez la découverte pour mettre à jour l'état.",
+    "source_sha256": "d92ef9372324ec8049396c5178d5cb057d11b6137f761e43517299c65f27645a"
+  },
+  "inventoryRows": {
+    "text": "Lignes d'inventaire : {{count}}",
+    "source_sha256": "053d87c1af6e0319a08ef69da5fd22bc75f0b3cfe6a244949932f778eeb44401"
+  },
+  "saveSchedule": {
+    "text": "Enregistrer le planning",
+    "source_sha256": "387f355f83e2679c18a587ad4a913919e525160286023f5b0f05c6ef3840d807"
+  },
+  "checkConnectivity": {
+    "text": "Vérifier la connectivité",
+    "source_sha256": "2ce6af084aa8c1239148bf25a5696eceef2a27e0041cc09c4ac1f7ad6914ea91"
+  },
+  "connect": {
+    "text": "Connecter",
+    "source_sha256": "1a2303ede07493acc7caaa7c737f3c52bcc9cf04372be19ed1b0af6b9f2c791e"
+  },
+  "configure": {
+    "text": "Configurer",
+    "source_sha256": "6defafa2caa65304173956e3fbc26b6947c50bc769c08c3da32c1032fa6519d4"
+  },
+  "rotate": {
+    "text": "Renouveler",
+    "source_sha256": "c3613b1704f54c8bd38987e4e810ae6040935d048ac5bb0dd9c0bde269ecf739"
+  },
+  "breakGlass": {
+    "text": "Break-glass",
+    "source_sha256": "0db7ad9bb75a328f4d137c39ff77bece1b0f49b3bbdf5ac261bb0d755373d77f"
+  },
+  "openSession": {
+    "text": "Ouvrir la session",
+    "source_sha256": "b205bb47f81a30968789eac28cefb848c4b849245d4d12f9311557c5f56ce770"
+  },
+  "tryDefaults": {
+    "text": "Essayer les identifiants par défaut",
+    "source_sha256": "11d0e658c685f8bff562b1bdee99b7c1bd416adf133e2ba277b19654688208e0"
+  },
+  "statusPartial": {
+    "text": "Partial",
+    "source_sha256": "a4d50fb85403654840e078e3ffe72dffe37df3ae280c6d98f39a41d346c88a14"
+  },
+  "statusLive": {
+    "text": "Live",
+    "source_sha256": "b64ac05f17e64d037db81a98f51e2688216e292ae9748f979f04dfbac49fd7fc"
+  },
+  "statusBlocked": {
+    "text": "BLOCKED",
+    "source_sha256": "a1f4014f85aac4c098906327b4ec4b6e3fb1308984bbe3531130643dc22feb02"
+  },
+  "statusPlanned": {
+    "text": "Planifié",
+    "source_sha256": "fb6f7c93e6bf3dfac450d268bf57844ae92b9c93f7d027b07f715bfbc467d225"
+  },
+  "discoveryFinished": {
+    "text": "Découverte terminée avec le statut {{status}}",
+    "source_sha256": "de359dc0ccf8d271d334355e29fe9d487e2b8a6c8d255659871473d4884b6d6f"
+  },
+  "discoveryAssets": {
+    "text": "{{count}} cible(s) signalée(s)",
+    "source_sha256": "cfd7aa07f1c5c95703594844402ff2dc801b9217faa57fa6ef82475699fd6bcf"
+  },
+  "discoveryProbes": {
+    "text": "Sondes réussies : {{ok}}, échouées : {{fail}}",
+    "source_sha256": "b6a030ffc00ac3c9ce3adc8c5101d8f51f5dddeae4b38191ae4655f49ad8ae50"
+  },
+  "scanNetworks": {
+    "text": "Analyser les réseaux (CIDR)",
+    "source_sha256": "9080238f38bde8077ec49d71acda404627fa08475848f928d6b1b168b3bc045e"
+  },
+  "scheduleEnabled": {
+    "text": "Planning activé",
+    "source_sha256": "cb056f3fdc52a08358758b733bec233aaa7eae95113109be3141a4158d4e6333"
+  },
+  "scheduleInterval": {
+    "text": "Intervalle (minutes)",
+    "source_sha256": "b8de8e60ad9e726a112e3d166937927b09b694c60f11109fb36c13243090f152"
+  },
+  "protocolsSupported": {
+    "text": "Protocoles pris en charge",
+    "source_sha256": "d2b7b1871060a08f8633b3c2586f58ff4c6bad3355e30840fd071888d23f92b8"
+  },
+  "selectAsset": {
+    "text": "Sélectionner",
+    "source_sha256": "2a78025de6aae5e7ff88e5a951bb3a78ddd67388913529cf9e2dd9653e62b02d"
+  },
+  "oldPasswordEmpty": {
+    "text": "Laissez l'ancien mot de passe vide pour utiliser le mot de passe stocké.",
+    "source_sha256": "12819f1f1eec1bff041c5c55304feeb6cad3b3428b9716f814513bf28045079c"
+  },
+  "protocolChipsTitle": {
+    "text": "Pastilles de protocole",
+    "source_sha256": "7ff13a1d3d411f1502899b85a10843751008bc1cd20d7cc7cb3d246e7b18930c"
+  },
+  "protocolChipsIntro": {
+    "text": "Protocoles OT pris en charge et leur préparation actuelle à la connexion.",
+    "source_sha256": "eea1759c662eac78dc98346e5b745627bd6cb9c616853b12c0990c16677ae7e4"
+  },
+  "checking": {
+    "text": "Vérification…",
+    "source_sha256": "ec963ffc911b840134fc738b41a8bb0493489c402a4a761efd36c16dea7d984b"
+  },
+  "checkConnectivityEnablesConnect": {
+    "text": "Vérifier la connectivité (active Connecter)",
+    "source_sha256": "4e91cc9dce98bc7ec7df0ece73c944073191c645102aa6f77930c5eb0658d099"
+  },
+  "checkConnectivityAria": {
+    "text": "Vérifier la connectivité de toutes les cibles OT",
+    "source_sha256": "3267793c4dad5d7ab48bef23156ab0ed37b51aea18293834bd26bac5a4a776a9"
+  },
+  "inventoryHonesty": {
+    "text": "État de l'inventaire : {{status}} · {{count}} actifs. Connecter utilise la dernière sonde TCP de chaque port d'appel (disponibilité uniquement — pas une preuve de session live).",
+    "source_sha256": "f9d1740334d360d08c8a9fd0380566096034fdb4d770131d04d38bbda32d92ca"
+  },
+  "statusLiveDetail": {
+    "text": "Live signifie que cette cible a récemment répondu avec succès à une sonde de découverte ou de protocole.",
+    "source_sha256": "d2cbaeaabd2fcc542cfd2636c99365a6423d9dbd9bf167f1e55cba556ff5ec24"
+  },
+  "statusLiveNext": {
+    "text": "Utilisez Connecter pour ouvrir une session, ou Configurer pour modifier les paramètres et les plannings.",
+    "source_sha256": "6c02f6ef103f793f1edc3f804df6700e8a441f5d69d5c99e34308e6d02f5e305"
+  },
+  "statusBlockedDetail": {
+    "text": "BLOCKED signifie que la dernière sonde de découverte ou de protocole n'a pas pu atteindre cette cible.",
+    "source_sha256": "48906c5a92d1b1c65233b9a9ce4d85a6b5b913b63c4e8cc8b255803bceeb72de"
+  },
+  "statusBlockedNext": {
+    "text": "Confirmez que l'hôte est joignable, puis lancez Découvrir et réessayez Connecter.",
+    "source_sha256": "99b391421c950d99eb5603d365394c4c01d2705974d22b1b557b66cf61c5408f"
+  },
+  "statusPartialDetail": {
+    "text": "Partial signifie que cette cible est dans l'inventaire mais n'a pas encore pleinement prouvé Live sur une sonde de découverte ou de protocole. C'est un état de livraison — pas un verdict de conformité.",
+    "source_sha256": "ca3d0fffa899e037d14ae85de1ea8847ddd52a567c45fb37be0fcd682cb22cb4"
+  },
+  "statusPartialNext": {
+    "text": "Ensuite : lancez Découvrir, puis utilisez Connecter lorsque la cible est prête.",
+    "source_sha256": "dbc7558af551d54abf8db6aa5d6b5ff46cbe1d66b5532d4e6acce072c5373da3"
+  },
+  "partialStatusHelp": {
+    "text": "Partial signifie qu'une cible est listée mais n'a pas encore pleinement prouvé Live sur une sonde de découverte ou de protocole. Survolez une pastille État pour l'étape suivante. Les valeurs d'état décrivent la livraison — ce ne sont pas un verdict de conformité.",
+    "source_sha256": "774a027ecc6479ffe9ca2bb9f844f89e4bd98a65026a6f9249bcc85cc99734f2"
+  },
+  "discoveryJobsLive": {
+    "text": "Travaux de découverte (Live)",
+    "source_sha256": "590e5fa9296bcdb98515687c8b79da5b9ac9428dd82c0c97963e447f60974418"
+  },
+  "discoveryJobsIntro": {
+    "text": "Saisissez les réseaux à analyser, puis lancez la découverte. Les résultats mettent à jour l'état de l'inventaire. Un planning facultatif répète l'analyse.",
+    "source_sha256": "241ffca00cca9389b1221316ae088d71e489ae2f9f11cf4fddbbff63510ba831"
+  },
+  "scanNetworksHelper": {
+    "text": "Un réseau IPv4 par ligne au format CIDR (par exemple 192.168.10.0/24). Cette exécution utilise le premier réseau. Laissez vide pour la valeur par défaut configurée.",
+    "source_sha256": "9168bacc150026356779e5098684717649d1e8df2bc01fae1b89e8168f929362"
+  },
+  "startDiscoveryAria": {
+    "text": "Démarrer le travail de découverte OT",
+    "source_sha256": "af81d43288c5e311b97d926fe0c43f54959b7a6020c25d1d32e137676bb5634c"
+  },
+  "enableScheduleAria": {
+    "text": "Activer le planning de découverte OT",
+    "source_sha256": "1807f8d18ae899adb66386339c95100e4e87bc65e278be33473ef1046b4e2b4e"
+  },
+  "intervalAria": {
+    "text": "Intervalle de découverte OT en minutes",
+    "source_sha256": "f871eca3ba4ba3d65c263144cc1662ed0371b52d66b1dbbd119fb9ff87698942"
+  },
+  "scanNetworksAria": {
+    "text": "Réseaux d'analyse de découverte OT",
+    "source_sha256": "5ffa298a64699bd81c240f5ae66d0e7d8c594f36f32f4ecc5191a52ed58abcf2"
+  },
+  "sharedNetworkScan": {
+    "text": "Analyse réseau partagée",
+    "source_sha256": "c59fd1d82db9ed7ea487bb38bea0fbc932efa29b46e9da57b9176f74888340ae"
+  },
+  "tryDefaultsAria": {
+    "text": "Essayer les identifiants par défaut publiés sur {{ip}}",
+    "source_sha256": "27df4593068f9cbb3a5b521c9f0202c8d7d6cd87789e78dcfc984e984fec92a3"
+  },
+  "discoveryJobAria": {
+    "text": "Travail de découverte {{status}}",
+    "source_sha256": "6254f014b1861b00e62c8a3257a0b4848f97bb2b5f039708148424028d6fbbca"
+  },
+  "assetList": {
+    "text": "Liste des actifs",
+    "source_sha256": "2d1e900888c3bf10f2421cc60091abef931033b021f1c883926df0bd761ea3bc"
+  },
+  "assetListAria": {
+    "text": "Liste des actifs OT",
+    "source_sha256": "6443189130f62ab8499b1c511ae0c5c41ca00e6b10a9653f7609955263730cc9"
+  },
+  "gridAsset": {
+    "text": "Actif",
+    "source_sha256": "80d298c9f240900f00b327f5b611dc41aa785788d6fd3edbe35812ca88f02e9a"
+  },
+  "gridAssetHelp": {
+    "text": "Nom d'affichage de la cible d'inventaire OT.",
+    "source_sha256": "cc5bc4fa3b18b4f2098c2cbbc8a3e5eddc5c0eabc0d7b4cd4257cdba55226fc4"
+  },
+  "gridComment": {
+    "text": "Commentaire",
+    "source_sha256": "44f5e3fbec57be75ebfb2e42caf7f5ee1542f84748a0380b6f20238c4a257e1b"
+  },
+  "gridCommentHelp": {
+    "text": "Note d'usage opérateur pour cette cible. Survolez pour lire le texte complet s'il est tronqué.",
+    "source_sha256": "509db25522eee76b0a0c87668063d986ed55c27fe53f3df65a73b5e05ecab6e8"
+  },
+  "gridProtocol": {
+    "text": "Protocole",
+    "source_sha256": "cf0883343f4abef779b777c35764f86c9f1f4324e8b5490840245d02ad2f7c6f"
+  },
+  "gridProtocolHelp": {
+    "text": "Pastille de protocole OT pour ce siège (Modbus, OPC UA, DNP3, etc.). Pas IT SSH/RDP/VNC.",
+    "source_sha256": "d36881bbec0afd3aaa07b96f6addaaa62b848a0afcfdadaf9c5fc9102038f2a4"
+  },
+  "gridReachability": {
+    "text": "Joignabilité",
+    "source_sha256": "66f0f43287781c8eb41ea0324942f05449e9e864657497105bac41627a336bb4"
+  },
+  "gridReachabilityHelp": {
+    "text": "Contrôle TCP du port d'appel Connect (hôte:port). Joignable active uniquement le contrôle Connecter — pas une preuve de surface de protocole de session live.",
+    "source_sha256": "e888948942d4e8ed0f9edbe4c2a1199b8ef47e5d6879d3de139810539537e230"
+  },
+  "gridHost": {
+    "text": "Hôte",
+    "source_sha256": "4a823118b9ba8baa2f47489c0716f52755368e3e3c2c26d60736ccfa1bb21b5e"
+  },
+  "gridHostHelp": {
+    "text": "Point de terminaison réseau sous la forme hôte:port pour cette cible OT.",
+    "source_sha256": "a95a507d130b4ce264b1f6e931a0b2bea30241ea82cd9b18f937ece14011a9e4"
+  },
+  "gridStatus": {
+    "text": "État",
+    "source_sha256": "920e413c7d411b61ef3e8c63b1cb6ad058d5f95f8b481dbafe60248387d8c355"
+  },
+  "gridStatusHelp": {
+    "text": "État de livraison depuis l'inventaire/la découverte (Live, Partial ou BLOCKED). Jamais Met ni certifié.",
+    "source_sha256": "65dfddcf488ccfdef51cfeb1175afbb7d98a71132d18d52d9b477b177e34c5c6"
+  },
+  "gridActions": {
+    "text": "Actions",
+    "source_sha256": "ff8059dc6752afdd30d275932b1d5031a2ec854b387a8c57ecc6689915293a43"
+  },
+  "gridActionsHelp": {
+    "text": "Connecter ouvre OT PDU Live. Configurer modifie les paramètres non secrets de la cible. Sélectionner choisit une ligne pour break-glass sur Identifiants.",
+    "source_sha256": "87698a99d9fdae279b853d407dd32ff5ad0f5087b8ff89d5e40ca29e18b63923"
+  },
+  "noComment": {
+    "text": "Aucun commentaire",
+    "source_sha256": "f23d3d1c412726e40c3d9a4a6bb2092437b82dd25116402ebe0951ee46751016"
+  },
+  "commentAria": {
+    "text": "Commentaire : {{text}}",
+    "source_sha256": "a53dc5bedc0088ba02c9ded6e17afcbde3f68456a2f78a87b56c8dd56d890951"
+  },
+  "protocolTip": {
+    "text": "Protocole OT : {{label}}. Connecter ouvre une session PDU OT pour ce protocole — pas un canevas SSH/RDP/VNC.",
+    "source_sha256": "35a23009a6b71f14c31175d1d2f867a2543ccdfcf2baad8c53df066371e634d9"
+  },
+  "reachTip": {
+    "text": "{{dial}} est {{status}}.{{last}} Disponibilité uniquement — pas un PASS de surface de protocole Connect.",
+    "source_sha256": "103fd43fdfabaa808a11ae1f5b34dc099ce2cad7e9d1f8e142172607ba2f93fa"
+  },
+  "lastChecked": {
+    "text": " Dernière vérification {{when}}.",
+    "source_sha256": "4de1e5c50f587a037dd626733bb8763efd9eb656dac068abff5d17788dc5325d"
+  },
+  "notCheckedYet": {
+    "text": " Pas encore vérifié.",
+    "source_sha256": "f8c4f1c424909f3d25c18d25c27671f5ba69bcccf3fa61e8149a776716a13473"
+  },
+  "hostTip": {
+    "text": "Point d'appel {{ep}}",
+    "source_sha256": "4b35e3cf163d53229ed36a85750610c618b1d03c07c2d25f3afd05958305c931"
+  },
+  "hostAria": {
+    "text": "Hôte {{ep}}",
+    "source_sha256": "bd35bfaa68aa30daab97368ed8e57b44df3ffbb07e626cf6edfdccc17f09703b"
+  },
+  "connectReadyTitle": {
+    "text": "Connecter / Ouvrir une session courtier OT → chronologie OT PDU Live. Disponibilité uniquement jusqu'à ce que la session prouve connecting|connected.",
+    "source_sha256": "33c0978278a599b297f44c24269fcfb378bc065c21312909f32dbc1c9f545942"
+  },
+  "connectUnknownTitle": {
+    "text": "Connecter reste désactivé jusqu'à ce que vous exécutiez Vérifier la connectivité (bannière d'état ci-dessus). Aucune sonde n'a encore été exécutée pour cette cible.",
+    "source_sha256": "9292ec3d1d63b163e309d49173c55dbc86360bab0fdecb23f0755523d22c9824"
+  },
+  "connectCheckingTitle": {
+    "text": "Sonde de connectivité en cours… Connecter reste désactivé jusqu'à la fin.",
+    "source_sha256": "3c34feb7d7eb55081e19734e05c0e9f13befe39ac864302b87b6c1b012cd8896"
+  },
+  "connectUnreachableTitle": {
+    "text": "Le port d'appel de la cible n'était pas joignable lors de la dernière sonde. Exécutez à nouveau Vérifier la connectivité après correction du chemin réseau.",
+    "source_sha256": "c15d7b752ccdc9157c17d324ade3dbd437e5457b8324d2dfc1d2504708ff3107"
+  },
+  "connectAriaReady": {
+    "text": "Connecter la session courtier OT à {{name}}",
+    "source_sha256": "920dee31b3bb1840573cd3f4eaa4c64c5570ad91518a3d07dc9179d1a37d71ed"
+  },
+  "connectAriaUnknown": {
+    "text": "Connecter désactivé — exécutez Vérifier la connectivité avant de vous connecter à {{name}}",
+    "source_sha256": "829d1d636e1854b446e5c2866a1ae1bae99b794d8c7ddc6559825c3ec1a58a0d"
+  },
+  "connectAriaUnreachable": {
+    "text": "Connecter désactivé — {{name}} n'est pas joignable sur {{host}}:{{port}}",
+    "source_sha256": "cf41a8276f8e8dae39cd84151df31bf05128d7880106ae40f6b76d7e753ebd84"
+  },
+  "configureAria": {
+    "text": "Configurer la cible OT {{name}}",
+    "source_sha256": "3d4ade21a687e67883a45f658bda3824e82bba48a10ec16ca6691cc7a7a47f88"
+  },
+  "selectAria": {
+    "text": "Sélectionner {{name}} pour les identifiants",
+    "source_sha256": "d73955db3e8d4f17263479c31f2452c2300177b6dcd949fec228c4a08965e5ad"
+  },
+  "reachable": {
+    "text": "Joignable",
+    "source_sha256": "f94b5f3d38405630f6f454e19f4bf325bc6db314351cf9f3298a7d211a97df03"
+  },
+  "unreachable": {
+    "text": "Non joignable",
+    "source_sha256": "abaa46adb4e13ab2e7202ad1480a4182fde02f70e2e8ac27eb8b8dd04dc3c427"
+  },
+  "unknown": {
+    "text": "Inconnu",
+    "source_sha256": "b764cdc0eab7137467211272fa539f1260d1bf2e71bcf6ff3bdc960f5c16aa14"
+  },
+  "wizardTitle": {
+    "text": "Assistant de démarrage",
+    "source_sha256": "8f6f7902dad68c15069e69c37d098560bdbb138d9a7a7b6f0400200bafab2538"
+  },
+  "wizardIntro": {
+    "text": "Configurez votre environnement OT : trouvez des cibles, examinez-les et inscrivez-les dans l'inventaire. Les valeurs d'état sont des preuves de livraison (Live, Partial ou BLOCKED) — pas un verdict d'évaluation.",
+    "source_sha256": "52432ec2223583b33927e7a0e5d0624795fc43467647189e343bf6f1e38bda5e"
+  },
+  "wizardStepWelcome": {
+    "text": "Bienvenue",
+    "source_sha256": "0e2226b5235f0ff94a276eb4d07a3bfea74b7e3b8b85e9efca6c18430f041bf8"
+  },
+  "wizardStepEnvironment": {
+    "text": "Environnement",
+    "source_sha256": "9e471951a1b4106e54be128a21112b02914fe98cc79b2c92b49ee80c5464487c"
+  },
+  "wizardStepDiscover": {
+    "text": "Découvrir",
+    "source_sha256": "d4a33d5b78bccebe3f16843dc30e6c0f73b4eb6efb4e7114ddfebde7fa2c9954"
+  },
+  "wizardStepReview": {
+    "text": "Examiner et inscrire",
+    "source_sha256": "dedf19d7c91b9d9834c046760e0a0a164546cbb593579ed41b3da11b8c3d81dc"
+  },
+  "wizardStepSchedules": {
+    "text": "Plannings",
+    "source_sha256": "221ff19c904c30d01c3458103b8d58f9e0eed89712013da6edc739744d0b3089"
+  },
+  "wizardStepDone": {
+    "text": "Terminé",
+    "source_sha256": "11a6767d5674c7e45f7e00dc525762275b3a48491ad6045427d2609cc496c516"
+  },
+  "gridName": {
+    "text": "Nom",
+    "source_sha256": "dcd1d5223f73b3a965c07e3ff5dbee3eedcfedb806686a05b9b3868a2c3d6d50"
+  },
+  "gridPort": {
+    "text": "Port",
+    "source_sha256": "72e9a59f5a1d6289dbacb35df897d6c007c55a27e77018455c37e7b372668475"
+  },
+  "gridEnrolled": {
+    "text": "Inscrit",
+    "source_sha256": "655e733ea6106d12ae2c68c0c4650c66a8908a192d6aaa60ecbc1e92fd4ee0f7"
+  },
+  "yes": {
+    "text": "Oui",
+    "source_sha256": "85a39ab345d672ff8ca9b9c6876f3adcacf45ee7c1e2dbd2408fd338bd55e07e"
+  },
+  "no": {
+    "text": "Non",
+    "source_sha256": "1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da161c6099be3691d"
+  }
+}

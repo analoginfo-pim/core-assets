@@ -1,0 +1,18 @@
+{
+  "cli.about": {
+    "text": "AIC Agent — élévation de compte hors ligne et renouvellement de mot de passe",
+    "source_sha256": "04035fdaec4f3aef455aea1f6d0ae260c70748ffd4f6961f42d5beb52405faf4"
+  },
+  "cli.long_about": {
+    "text": "AIC Agent (binaire : pim-offline-agent)\n\nDESCRIPTION :\n    L'AIC Agent fournit une élévation de compte sécurisée hors ligne et\n    un renouvellement automatique des mots de passe avec intégration de\n    service web. Conçu pour les environnements d'entreprise exigeant une\n    cryptographie conforme FIPS et des pistes d'audit complètes.\n\nFONCTIONS PRINCIPALES :\n    - Codes d'élévation limités dans le temps pour une élévation temporaire\n    - Renouvellement automatique des mots de passe avec politiques configurables\n    - Diagnostics et surveillance de l'état de santé complets\n    - Piste d'audit complète avec export JSON\n    - Métriques Prometheus pour la visibilité opérationnelle\n    - Journalisation structurée avec rotation quotidienne\n\nUTILISATION :\n    Console interactive (sans arguments) :\n        pim-offline-agent\n        → conseil : essayez 'pim-offline-agent --help' (exit 2)\n\n    Exécuter en démon (explicite, ou démarrage bare non-TTY / systemd) :\n        pim-offline-agent daemon\n\n    Générer un code d'élévation :\n        pim-offline-agent elevate --show-code\n\n    Exécuter les diagnostics :\n        pim-offline-agent diagnose\n\n    Configurer de façon interactive :\n        pim-offline-agent wizard\n\n    Pour plus d'aide sur une commande :\n        pim-offline-agent <command> --help\n\nDOCUMENTATION :\n    Documentation complète : README.md\n    Guide d'installation :  INSTALLATION_GUIDE.md\n    Surveillance :          MONITORING.md\n    Complétions shell :     SHELL_COMPLETIONS_GUIDE.md",
+    "source_sha256": "763ba471d83fbc6ea7d4aef451a3d4fac8ff8b40af0dded046f7e75d2a4026ed"
+  },
+  "cli.help.locale": {
+    "text": "Langue d'affichage pour l'aide CLI et les messages console (en, de, fr, es). Ne modifie pas les noms de champs d'audit, du journal d'événements Windows ou de syslog.",
+    "source_sha256": "ea54d1c157ba10af11f561d11893e1ffd2f8b3d25d04dac1269ed4a04c856957"
+  },
+  "cli.msg.audit_english_only": {
+    "text": "Les charges utiles d'audit, du journal d'événements Windows et de syslog restent en anglais américain (noms de champs et ID d'événement stables).",
+    "source_sha256": "66dab701f9bec400fcd79c3d0ff49e9273833d0c7a09d8d327ab7425e69af831"
+  }
+}
