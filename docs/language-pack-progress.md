@@ -4,22 +4,20 @@ Partner-readable status for Phil and Robert. Updated after each milestone push t
 
 ## Latest
 
-**Product integration (Beavis2):** Wave A–D packs synced and staged; AIC Server
-packs API lists all 18 complete tags (`en` required). MSI harvest in
-`pim-installers` includes Server / Agent / Recording Features for every tag.
-Sync map now copies `content/locales-ui` → `pim-offline-server/locales/ui`.
+**Jump + DB Mgmt native packs (Wave A–D):** product catalogs +
+`jump_configurator.json` / `db_mgmt_configurator.json` for all 18 tags;
+`shared-gui-chrome` merges into Jump/DB MSI stage. Installers harvest the
+same Feature set as Agent/Recording (`en` required).
 
-**core-assets catalog SHAs:** Wave C `9a24427`, Wave D `fa05cb7`, progress
-`c6053d8`; later en-GB UK quality on `main` (`7118aad` / `66ec69d`).
-
-Complete selectable tags:
+Complete tags:
 
 `en`, `de`, `fr`, `es`, `en-GB`, `zh-Hans`, `zh-TW`, `ja`, `ko`, `pt-BR`,
 `it`, `he`, `pl`, `tr`, `nl`, `sv`, `fi`, `ar`
 
 ## History
 
-- (this push) — sync locales-ui into server; product harvest / Beavis2 stage note
+- (this push) — Jump/DB native catalogs for all 18 tags + configurator JSON
+- `bf48f53` — sync locales-ui into server; product harvest / Beavis2 stage note
 - `66ec69d` / `7118aad` — en-GB UK quality follow-up lexical pass
 - `d4fe15f` / `1941fae` — en-GB UK quality rewrite
 - `fa05cb7` — Wave D pl/tr/nl/sv/fi/ar

@@ -47,8 +47,8 @@ repository. Manifest: `content/language-packs/manifest.json`.
 | `aic-server-configurator` | `content/i18n-native/gui/<tag>/server_configurator.json` (+ help/screens as added) | Server configurator |
 | `aic-agent` | `content/i18n-native/apps/pim-offline-agent/<tag>/` | Endpoint agent |
 | `aic-agent-configurator` | native under `i18n-native` (as added) | Agent configurator |
-| `aic-jump-configurator` | native (as added) | Jump configurator |
-| `aic-db-mgmt-configurator` | native (as added) | DB management configurator |
+| `aic-jump-configurator` | `apps/pim-jump-server/<tag>/` + `gui/<tag>/jump_configurator.json` (+ `chrome.json`) | Jump Server MSI |
+| `aic-db-mgmt-configurator` | `apps/pim-db-mgmt-agent/<tag>/` + `gui/<tag>/db_mgmt_configurator.json` (+ `chrome.json`) | DB Mgmt Agent MSI |
 | `aic-recording-agent` | `content/i18n-native/apps/pim-offline-recording-agent/<tag>/` | Recording agent |
 
 An installer loads **only** that product’s packs plus `shared-gui-chrome` for

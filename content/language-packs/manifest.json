@@ -41,16 +41,20 @@
     {
       "id": "aic-jump-configurator",
       "areas": [
-        "content/i18n-native/gui/<tag>/jump_configurator.json"
+        "content/i18n-native/apps/pim-jump-server/<tag>/",
+        "content/i18n-native/gui/<tag>/jump_configurator.json",
+        "content/i18n-native/gui/<tag>/chrome.json"
       ],
-      "ships_with": "Jump configurator (native packs not complete yet)"
+      "ships_with": "Jump Server MSI (product + shared-gui-chrome)"
     },
     {
       "id": "aic-db-mgmt-configurator",
       "areas": [
-        "content/i18n-native/gui/<tag>/db_mgmt_configurator.json"
+        "content/i18n-native/apps/pim-db-mgmt-agent/<tag>/",
+        "content/i18n-native/gui/<tag>/db_mgmt_configurator.json",
+        "content/i18n-native/gui/<tag>/chrome.json"
       ],
-      "ships_with": "DB management configurator (native packs not complete yet)"
+      "ships_with": "DB Management Agent MSI (product + shared-gui-chrome)"
     },
     {
       "id": "aic-recording-agent",
