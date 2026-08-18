@@ -1,0 +1,82 @@
+---
+description: Shipping catalogs and locale strings self-heal after upgrade; never 400 or silent empty/missing-key.
+alwaysApply: true
+---
+
+# Release data and locale strings self-heal (hard rule)
+
+Operator directive (Phil, 2026-08-18): **distribution data that ships with a
+release must load itself if missing after upgrade.** The same pattern applies
+to UI locale strings.
+
+> **Shipping catalogs, seed packs, and reference dictionaries that land in a
+> release must self-heal when missing or empty after upgrade. Operator-visible
+> one-time configuration (toast + progress + what was done), then serve the
+> data. 400-on-missing-distribution-data is forbidden. Empty-forever without
+> heal is forbidden. Schema-only is not delivery.**
+>
+> **If a UI string is missing: reload that string once from the shipped
+> locale catalogs. If it is still missing, show an on-screen error that names
+> the string ID and log it. Do not invent a translation. Do not hide the gap
+> with a silent English fallback.**
+
+## 1. Catalogs / seed / reference packs
+
+Applies to known-default-credentials, playbooks, locale packs, and any other
+install-tree or embedded pack the MSI / `core-assets` already ships. Find the
+existing pack — do not invent a second dictionary.
+
+| Required | Forbidden |
+| --- | --- |
+| GET list returns **200** after heal (or 200 + empty **after** a failed heal with a visible error) | HTTP 400 because a shipped file or seed is absent |
+| Heal from the product pack (installer / `core-assets` / embedded) | Empty-forever page with no heal attempt |
+| Toast: one-time configuration is running; progress; then “Loaded … (N)” | Silent spinner-forever; lab SOP in the toast |
+| Fail closed: visible error + Retry if heal fails | Silent drop ([`silent-failure-is-a-bug.mdc`](silent-failure-is-a-bug.mdc)) |
+
+Worked catalog example: `GET /api/admin/known-default-credentials/sources`
+must never 400 when `sources-manifest.json` is off the exe path. Heal or
+return 200 + empty list + honesty. Catalog rows seed from the shipped pack.
+
+## 2. Missing UI strings
+
+Shipped catalogs: `core-assets/content/locales*`, SPA `ui/src/i18n`,
+`pim-app-config-i18n`, server `locales/<tag>/`.
+
+1. **Reload once** (in-session) from those resource files.
+2. **If still missing:** on-screen error that names the **string ID** (key).
+   Log (`tracing` / front-end logger). Do not invent a translation.
+3. Do **not** show a bare key with no explanation. Do **not** silently
+   substitute English in a loaded non-English pack (that hides the gap).
+   US English **source** `defaultValue` on `en` remains the identifier path
+   ([`enterprise-localization.mdc`](enterprise-localization.mdc)).
+
+```text
+// BAD — silent English in a German pack; gap invisible
+t('knownDefaults.title') → "Known Default Credentials"
+
+// BAD — raw key, no explanation
+t('knownDefaults.title') → "knownDefaults.title"
+
+// GOOD — after one catalog reload still missing
+"Missing string: common:knownDefaults.title"
+```
+
+Agent drafts do not close localization-work items
+([`localization-work-queue.mdc`](localization-work-queue.mdc)).
+
+## 3. Agent duty
+
+1. New or changed shipping reference data includes a heal path in the same
+   change set (list GET + operator UX).
+2. New SPA/server chrome keys land in US English source and DE in the same
+   change set; missing-key healer stays wired.
+3. Mirror this file to `core-assets/.cursor/rules/` 
+   ([`auto-commit-push.mdc`](auto-commit-push.mdc)).
+4. No lab hostnames, identities, or agent thinking in operator chrome
+   ([`no-lab-config-in-operator-ui.mdc`](no-lab-config-in-operator-ui.mdc)).
+
+## Origin
+
+2026-08-18 — operator: catalog is part of the distribution; demo sources 400
+is the same defect; self-heal UX then data; missing UI strings reload once
+then named-ID error + log. Global, not this page only.
