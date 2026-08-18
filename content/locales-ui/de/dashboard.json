@@ -813,6 +813,82 @@
     "noWorkRows": {
       "text": "Keine verbleibenden Arbeitszeilen.",
       "source_sha256": "e5c2a8eef1925db15b9670d470194971c1aad3e97d8b854459343b4fd0e7d1ea"
+    },
+    "kpiHelp": {
+      "attack_techniques": {
+        "absent": {
+          "text": "Keine abgelehnten oder fehlgeschlagenen Ereignisse wurden in diesem Zeitraum einer ATT&CK-Technik zugeordnet.",
+          "source_sha256": "feef7a7e7dd900a7b5c32792f6a1873cc11e9554323912467f36877476ad72d5"
+        },
+        "live": {
+          "text": "Unterschiedliche MITRE ATT&CK-Techniken aus abgelehnten oder fehlgeschlagenen Ereignissen in diesem Zeitraum.",
+          "source_sha256": "b2385493dd8961f83547a0173cc22ec4fbd99feb6e2eed9e60e047b220656483"
+        }
+      },
+      "blocked_commands": {
+        "absent": {
+          "text": "Keine geregelten Befehle wurden in diesem Zeitraum abgelehnt. Ein Länderfilter blendet diese Zahl aus, weil Befehle nicht nach Land gekennzeichnet sind.",
+          "source_sha256": "489b0e8a34d4a8b5a98de98ddf3fee4ab8a84f75e5b6821f1266230acc293f9c"
+        },
+        "live": {
+          "text": "SSH- oder PAM-Befehle, die dieser Server in diesem Zeitraum nach Befehlsregeln blockiert hat.",
+          "source_sha256": "b10cfeffd88c3c0903751c0151333cc975027e8c83ed5b2820195d1f8e3c2a2a"
+        }
+      },
+      "blocked_routes": {
+        "absent": {
+          "text": "Keine API-Routen-Ablehnungen in diesem Zeitraum.",
+          "source_sha256": "03a2ef4b5a6628f3c2b234e36ba363ef2172c70915a681bf338e59c66922fc8f"
+        },
+        "live": {
+          "text": "API-Anfragen, die dieser Server in diesem Zeitraum abgelehnt hat, gezählt nach Route.",
+          "source_sha256": "93b62aa5095716c8c0e91609deef04beb5ab57f721fb477b6062ef2ac3f4b01b"
+        }
+      },
+      "denied_sessions": {
+        "absent": {
+          "text": "Keine abgelehnten oder fehlgeschlagenen Sitzungen in diesem Zeitraum. Das Protokoll war lesbar.",
+          "source_sha256": "9a2ae848e268ba22ce4e251c1cce118531d9ba6b1effc0845b022ee48e6ef245"
+        },
+        "live": {
+          "text": "Sitzungen, die dieser Server in diesem Zeitraum abgelehnt hat oder die nicht gestartet sind. Keine erfolgreichen Anmeldungen.",
+          "source_sha256": "cac6c53a3160d532315f77d90538c0a8219a71a9a51c729070c3bbd911bae2af"
+        }
+      },
+      "failed_logons": {
+        "absent": {
+          "text": "Keine fehlgeschlagenen oder abgelehnten Anmeldeversuche in diesem Zeitraum. Das Protokoll war lesbar.",
+          "source_sha256": "6862a3cf4c033ced4186c1d87b7b04a05efc086b7e5d6348290a58e1717e7c20"
+        },
+        "live": {
+          "text": "Anmeldeversuche, die dieser Server in diesem Zeitraum abgelehnt hat oder die fehlgeschlagen sind.",
+          "source_sha256": "fe2bcc9ba60c2eaaaf283e378e2ba6c6489b27a53bffce52d2171b91e24dc0f4"
+        }
+      },
+      "threat_intel": {
+        "absent": {
+          "text": "Keine Bedrohungslisten-Ablehnungen in diesem Zeitraum. Diese Karte ist absichtlich leer. Dieses Produkt ist kein Schadsoftware-Archiv.",
+          "source_sha256": "5218b161b17b9e91f4baf7e91034efeaa70e6161d3eb9ea44ba377f54a6929e8"
+        },
+        "live": {
+          "text": "Anmeldeablehnungen, die in diesem Zeitraum zu einer Bedrohungsliste passten. Das ist eine Ablehnungszahl, keine gesammelte Schadsoftware.",
+          "source_sha256": "cf5190bf33128b6113f07d8bf95b4c9d59d64088270f391f9581b779b6c8f3bd"
+        }
+      },
+      "unique_ips": {
+        "absent": {
+          "text": "Keine Quelladressen auf abgelehnten oder fehlgeschlagenen Ereignissen in diesem Zeitraum.",
+          "source_sha256": "6cd9211d2338e968a82c37f350dc3264672a61c53f813503e5bb1600c417d702"
+        },
+        "live": {
+          "text": "Unterschiedliche Quelladressen auf abgelehnten oder fehlgeschlagenen Ereignissen in diesem Zeitraum.",
+          "source_sha256": "1ebb23191be1f6a8daeb4dfd40d9d173bba94b0424cc5bdefc83e699df22c245"
+        }
+      }
+    },
+    "loadingWindow": {
+      "text": "Rückblickzeitraum wird geladen",
+      "source_sha256": "a95cc421c3e81a06612243727c3cdf1406cb1010f4492296918e77f913c3622f"
     }
   },
   "tileLinks": {
@@ -848,5 +924,9 @@
       "text": "Ereignisprotokoll öffnen",
       "source_sha256": ""
     }
+  },
+  "pageTitle": {
+    "text": "Übersicht",
+    "source_sha256": "67b696468610b879ed7f224dbf6b0861f27e39d20454cb9d7af1ec52d3e5eeaa"
   }
 }

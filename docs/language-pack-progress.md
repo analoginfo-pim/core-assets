@@ -4,6 +4,17 @@ Partner-readable status for Phil and Robert. Updated after each milestone push t
 
 ## Latest
 
+**German (`de`) aic-server key parity:** filled **53** missing SPA keys
+(`locales-ui` — 16 dashboard defense KPI help strings, 35 live-session
+chrome strings, 2 login demo-account strings). Audit
+`language_packs.py audit --product aic-server`: **`de` missing 0** vs
+`en` (642/642 present). Orphans (~7624) left untouched (older binder /
+server catalog leaves not in current `en` key set). Stale **69** remain
+(mostly empty `source_sha256` on older `de` leaves — restamp, not
+missing keys). Synced to `pim-offline-server/locales/ui/de/` and lab
+`PimServer\locales\ui\de\`. Agent draft only — localization-work queue
+not closed. Not a Met / certified claim.
+
 **Tauri Appearance language combo (System + 18 PACK_TAGS):** Server Tauri,
 Agent Tauri, Jump Config Tauri, and DB Mgmt Tauri now list the same language
 choices as Win32 — System default plus every [`PACK_TAGS`] entry via
@@ -64,7 +75,8 @@ configurator key set):
 
 ## History
 
-- *(this note)* — Tauri Appearance: System + 18 PACK_TAGS (Server/Agent/Jump/DB)
+- *(this note)* — `de` aic-server locales-ui: 53 missing → 0 (KPI help + liveSession + login)
+- *(prior)* — Tauri Appearance: System + 18 PACK_TAGS (Server/Agent/Jump/DB)
 - *(prior)* — Appearance combo lists System + 18 PACK_TAGS (he/ar RTL) Win32
 - *(prior)* — Win32 GDI RTL (he/ar) on Server/Agent main + Help About
 - *(prior)* — Beavis2 live debug restage (Agent/Jump/DB/Server + service)
