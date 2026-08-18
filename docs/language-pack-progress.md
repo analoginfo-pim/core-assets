@@ -22,7 +22,7 @@ configurator key set):
 
 ## History
 
-- (this push) — configurator screen/help keys (Server/Agent/Jump/DB) en+de
+- `30a1460` — configurator screen/help keys (Server/Agent/Jump/DB) en+de
 - `bab36a4` — Jump/DB native catalogs for all 18 tags + configurator JSON
 - `bf48f53` — sync locales-ui into server; product harvest / Beavis2 stage note
 - `66ec69d` / `7118aad` — en-GB UK quality follow-up lexical pass
