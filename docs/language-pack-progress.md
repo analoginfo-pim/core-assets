@@ -18,7 +18,12 @@ copy for Agent (`dc2905e`), Jump Tauri, DB Mgmt Tauri, Server Win32 +
 Tauri configurators, and AIC Server service (`fec50ab06`,
 `-SkipUiBuild`). `aic-server-service` / `aic-offline-agent-service`
 **Running**. Locale packs re-staged beside Agent/Jump/DB Mgmt EXEs.
-Classic Win32 **GDI RTL** still not wired.
+
+**Win32 GDI RTL (he/ar):** Server + Agent Win32 configurators call
+`SetProcessDefaultLayout(LAYOUT_RTL)` and set `WS_EX_LAYOUTRTL` on
+main (`IDD_MAIN`) and Help → Version (`IDD_ABOUT`) when
+`Locale::is_rtl()`. Nested settings modals not exhaustively mirrored
+this slice.
 
 **Prior:** Beavis2 INSTALLFOLDER native `locales\` staging (disk packs
 on disk). Catalog fill `bd9378a` / prior bundle sync `e1d579b`.
@@ -51,7 +56,9 @@ configurator key set):
 
 ## History
 
-- *(this note)* — Locale tag string + PACK_TAGS; consumers off En/De/Fr enum
+- *(this note)* — Win32 GDI RTL (he/ar) on Server/Agent main + Help About
+- *(prior)* — Beavis2 live debug restage (Agent/Jump/DB/Server + service)
+- `69f73e0` — Locale tag string + PACK_TAGS; consumers off En/De/Fr enum
 - `001b69e` — Beavis2 INSTALLFOLDER native `locales\` stage; skip include_str rebuild
 - `13d0eac` — sync-to-projects + Beavis2 server locale overlay from `bd9378a`
 - `bd9378a` — fill NEW configurator keys for 16 tags
