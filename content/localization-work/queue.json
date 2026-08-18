@@ -200,6 +200,30 @@
       ],
       "draft_tags": [],
       "notes": "Vault list leftover English wrapped in t(); DE draft in locales-ui/de/pages.json. Owner column remains default-visible. Agent draft does not close. Dialogs and wizards deferred. Do not claim Tier 1 complete."
+    },
+    {
+      "id": "spa.ot-inventory-leftover-en",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "leftover-chrome",
+      "title": "OT Inventory leftover English chrome",
+      "added": "2026-08-17",
+      "updated": "2026-08-17",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/pages/ot/OtAssetGrid.tsx",
+      "source_sha256": "4e108463ee91c856c693c0dadf571c4ea69694ec54a7c61365f0a88686fad623",
+      "product_route": "/pam/ot-inventory",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans"
+      ],
+      "draft_tags": [
+        "de"
+      ],
+      "notes": "Grid tooltips, reachability/connect titles, and aria wrapped in t(); EN ot.json registered as source catalog; DE draft in locales-ui/de/ot.json. Agent draft does not close. Detail/configure and OT dialogs deferred. Do not claim Tier 1 complete."
     }
   ]
 }
