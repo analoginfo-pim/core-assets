@@ -1,0 +1,18 @@
+{
+  "cli.about": {
+    "text": "AIC 代理程式 — 離線帳戶提權與密碼輪替",
+    "source_sha256": "04035fdaec4f3aef455aea1f6d0ae260c70748ffd4f6961f42d5beb52405faf4"
+  },
+  "cli.long_about": {
+    "text": "AIC 代理程式（二進位檔：pim-offline-agent）\n\n說明：\n    AIC 代理程式提供安全的離線帳戶提權，以及\n    與 Web 服務整合的自動密碼輪替。適用於需要\n    FIPS 合規密碼學與完整稽核軌跡的企業環境。\n\n核心功能：\n    - 用於暫時特權提升的限時提權碼\n    - 可設定原則的自動密碼輪替\n    - 完整診斷與健康監控\n    - 支援 JSON 匯出的完整稽核軌跡\n    - 供營運可見性使用的 Prometheus 指標\n    - 每日輪替的結構化記錄\n\n用法：\n    互動式主控台（無引數）：\n        pim-offline-agent\n        → 提示：請試 'pim-offline-agent --help'（結束代碼 2）\n\n    以常駐程式執行（明確指定，或非 TTY / systemd 裸啟動）：\n        pim-offline-agent daemon\n\n    產生提權碼：\n        pim-offline-agent elevate --show-code\n\n    執行診斷：\n        pim-offline-agent diagnose\n\n    互動式設定：\n        pim-offline-agent wizard\n\n    查看特定命令的其他說明：\n        pim-offline-agent <command> --help\n\n文件：\n    完整文件：README.md\n    安裝指南：INSTALLATION_GUIDE.md\n    監控設定：MONITORING.md\n    Shell 補全：SHELL_COMPLETIONS_GUIDE.md",
+    "source_sha256": "763ba471d83fbc6ea7d4aef451a3d4fac8ff8b40af0dded046f7e75d2a4026ed"
+  },
+  "cli.help.locale": {
+    "text": "CLI 說明與主控台訊息的操作人員顯示語言（en、zh-TW、de）。不會變更稽核、Windows 事件記錄或 syslog 欄位名稱。",
+    "source_sha256": "ea54d1c157ba10af11f561d11893e1ffd2f8b3d25d04dac1269ed4a04c856957"
+  },
+  "cli.msg.audit_english_only": {
+    "text": "稽核、Windows 事件記錄與 syslog 承載內容維持美式英語（穩定的欄位名稱與事件 ID）。",
+    "source_sha256": "66dab701f9bec400fcd79c3d0ff49e9273833d0c7a09d8d327ab7425e69af831"
+  }
+}

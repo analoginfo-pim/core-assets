@@ -1,0 +1,18 @@
+{
+  "cli.about": {
+    "text": "AIC Agent — offline account elevation and password rotation",
+    "source_sha256": "04035fdaec4f3aef455aea1f6d0ae260c70748ffd4f6961f42d5beb52405faf4"
+  },
+  "cli.long_about": {
+    "text": "AIC Agent (binary: pim-offline-agent)\n\nDESCRIPTION:\n    The AIC Agent provides secure offline account elevation and\n    automated password rotation with web-service integration. It is designed for\n    enterprise environments that require FIPS-compliant cryptography and\n    comprehensive audit trails.\n\nCORE FEATURES:\n    - Time-limited elevation codes for temporary privilege escalation\n    - Automatic password rotation with configurable policies\n    - Comprehensive diagnostics and health monitoring\n    - Full audit trail with JSON export capabilities\n    - Prometheus metrics for operational visibility\n    - Structured logging with daily rotation\n\nUSAGE:\n    Interactive console (no arguments):\n        pim-offline-agent\n        → tip: Try 'pim-offline-agent --help' (exit 2)\n\n    Run as a daemon (explicit, or non-TTY / systemd bare start):\n        pim-offline-agent daemon\n\n    Generate an elevation code:\n        pim-offline-agent elevate --show-code\n\n    Run diagnostics:\n        pim-offline-agent diagnose\n\n    Configure interactively:\n        pim-offline-agent wizard\n\n    For more help on a specific command:\n        pim-offline-agent <command> --help\n\nDOCUMENTATION:\n    Full documentation: README.md\n    Installation guide:  INSTALLATION_GUIDE.md\n    Monitoring set-up:   MONITORING.md\n    Shell completions:   SHELL_COMPLETIONS_GUIDE.md",
+    "source_sha256": "763ba471d83fbc6ea7d4aef451a3d4fac8ff8b40af0dded046f7e75d2a4026ed"
+  },
+  "cli.help.locale": {
+    "text": "Operator display language for CLI help and console messages (en, en-GB, de). Does not change audit, Windows Event Log, or syslog field names.",
+    "source_sha256": "ea54d1c157ba10af11f561d11893e1ffd2f8b3d25d04dac1269ed4a04c856957"
+  },
+  "cli.msg.audit_english_only": {
+    "text": "Audit, Windows Event Log, and syslog payloads remain in US English (stable field names and event IDs).",
+    "source_sha256": "66dab701f9bec400fcd79c3d0ff49e9273833d0c7a09d8d327ab7425e69af831"
+  }
+}

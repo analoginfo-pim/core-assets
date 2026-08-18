@@ -1,0 +1,462 @@
+{
+  "discoverTitle": {
+    "text": "探索",
+    "source_sha256": "d4a33d5b78bccebe3f16843dc30e6c0f73b4eb6efb4e7114ddfebde7fa2c9954"
+  },
+  "discoverIntro": {
+    "text": "掃描已設定的網路以尋找 OT 目標。結果會更新清冊頁面上的清冊狀態。",
+    "source_sha256": "c2c468ed5a09c494f0a140701f0e3b6a546c0dd474538b47bfdbf09bb91a71eb"
+  },
+  "discoverNoPermission": {
+    "text": "您需要「檢視連線目標」權限才能開啟 OT 探索。",
+    "source_sha256": "4e85863f5771d993c7a80002144b0e0e9e5f1a268d6046fe989c328f2c4f14c1"
+  },
+  "connectNoPermission": {
+    "text": "您需要「檢視連線目標」權限才能開啟 OT 連線。",
+    "source_sha256": "b2d9dfbf3abb24cb12c529e63d7986c25f6ddc21b9581226ceb5f52e412375dd"
+  },
+  "inventoryNoPermission": {
+    "text": "您需要「檢視連線目標」權限才能開啟 OT 清冊。",
+    "source_sha256": "f8b4e687e02a229da707b433316b5927e00febe384b991cdf620413038c8bafe"
+  },
+  "credentialsNoPermission": {
+    "text": "您需要「檢視連線目標」權限才能開啟 OT 認證。",
+    "source_sha256": "26f6082c0be44f40bafe405d2b92c5032e6a9a143b55100e8f7992757eba89e4"
+  },
+  "sessionsNoPermission": {
+    "text": "您需要「檢視連線目標」權限才能開啟 OT 工作階段。",
+    "source_sha256": "a91b21b8590ae6ec1a62f1d88a07dedcffd13b2f51d41e3e4aa3c95b180bd77a"
+  },
+  "inventoryTitle": {
+    "text": "清冊",
+    "source_sha256": "758f487fe8e9fcc59cec4694d95a9032224f967b29f39543a1fb04e2901b079e"
+  },
+  "inventoryIntro": {
+    "text": "檢視已探索的目標、狀態晶片，並為非機密欄位與輪替排程開啟「設定」。",
+    "source_sha256": "e6276c27c5bb1926a17de2a83047ed9892247da5b9ba28815ec497c81b8ca265"
+  },
+  "connectTitle": {
+    "text": "連線",
+    "source_sha256": "1a2303ede07493acc7caaa7c737f3c52bcc9cf04372be19ed1b0af6b9f2c791e"
+  },
+  "connectIntro": {
+    "text": "在狀態橫幅中執行「檢查連線」（啟用連線），新目標上的「連線」才會變為可用。OT 工作階段承載 PDU 資料 — 不是 SSH、RDP 或 VNC 桌面。",
+    "source_sha256": "34aea5c9e3ffaf77a9e0c4db9f450272744f71979b3bc64a95b203d5123124db"
+  },
+  "credentialsTitle": {
+    "text": "認證",
+    "source_sha256": "d48a617c7da5163c44f117b9b23d8c920e69b4aa83d7b6570d71a66f3a857183"
+  },
+  "credentialsIntro": {
+    "text": "選取目標，然後輪替密碼或要求已記錄的緊急揭示。",
+    "source_sha256": "2a18cc971d50befd1d5af778ff78cc69d304504ea9c10a183697a754c5efae95"
+  },
+  "sessionsTitle": {
+    "text": "工作階段 / 證據",
+    "source_sha256": "26cf51ff70fec3bbb07700b3c95f0b87b1fe05cc2520521d3d766b686faf2283"
+  },
+  "sessionsIntro": {
+    "text": "將已記錄的 OT 通訊協定工作階段作為稽核證據檢視。開啟工作階段以查看 PDU 時間軸。",
+    "source_sha256": "c5ea2b4bf6a5139a7a6e861c6bd40a58ed469046642cb5d1e53bc50b18355f99"
+  },
+  "permissionsLoading": {
+    "text": "正在載入權限…",
+    "source_sha256": "946f1570503ea779a81b7b96df07bf94f027ca09e663f1349e59624e60e155a1"
+  },
+  "runDiscovery": {
+    "text": "執行探索",
+    "source_sha256": "23e7f7cbb14fb0f37d996c1634562c95f0f243cadebe1a40a3ed8c97be530ad2"
+  },
+  "running": {
+    "text": "正在執行…",
+    "source_sha256": "46c541363b0253b1b7d736ca2ff004b6c8eb816f253c16bf2f154472152fb66d"
+  },
+  "statusHelpLive": {
+    "text": "Live 表示此目標最近回應了探索探測。這不是評估裁決。",
+    "source_sha256": "1e5705a04b271357ea4394b6f4a6578e3947d78d1da569e7ed0697d899596094"
+  },
+  "statusHelpBlocked": {
+    "text": "BLOCKED 表示上次探測無法到達此目標。請檢查可達性，然後再次執行探索。",
+    "source_sha256": "0f468c61bd9f57749f91d567ba7eb8fd24abc4b04fa465ea7cf7c0882df581cf"
+  },
+  "statusHelpPartial": {
+    "text": "Partial 表示目標已列出但尚未為 Live。請執行探索以更新狀態。",
+    "source_sha256": "d92ef9372324ec8049396c5178d5cb057d11b6137f761e43517299c65f27645a"
+  },
+  "inventoryRows": {
+    "text": "清冊列：{{count}}",
+    "source_sha256": "053d87c1af6e0319a08ef69da5fd22bc75f0b3cfe6a244949932f778eeb44401"
+  },
+  "saveSchedule": {
+    "text": "儲存排程",
+    "source_sha256": "387f355f83e2679c18a587ad4a913919e525160286023f5b0f05c6ef3840d807"
+  },
+  "checkConnectivity": {
+    "text": "檢查連線",
+    "source_sha256": "2ce6af084aa8c1239148bf25a5696eceef2a27e0041cc09c4ac1f7ad6914ea91"
+  },
+  "connect": {
+    "text": "連線",
+    "source_sha256": "1a2303ede07493acc7caaa7c737f3c52bcc9cf04372be19ed1b0af6b9f2c791e"
+  },
+  "configure": {
+    "text": "設定",
+    "source_sha256": "6defafa2caa65304173956e3fbc26b6947c50bc769c08c3da32c1032fa6519d4"
+  },
+  "rotate": {
+    "text": "輪替",
+    "source_sha256": "c3613b1704f54c8bd38987e4e810ae6040935d048ac5bb0dd9c0bde269ecf739"
+  },
+  "breakGlass": {
+    "text": "緊急存取",
+    "source_sha256": "0db7ad9bb75a328f4d137c39ff77bece1b0f49b3bbdf5ac261bb0d755373d77f"
+  },
+  "openSession": {
+    "text": "開啟工作階段",
+    "source_sha256": "b205bb47f81a30968789eac28cefb848c4b849245d4d12f9311557c5f56ce770"
+  },
+  "tryDefaults": {
+    "text": "嘗試預設認證",
+    "source_sha256": "11d0e658c685f8bff562b1bdee99b7c1bd416adf133e2ba277b19654688208e0"
+  },
+  "statusPartial": {
+    "text": "Partial",
+    "source_sha256": "a4d50fb85403654840e078e3ffe72dffe37df3ae280c6d98f39a41d346c88a14"
+  },
+  "statusLive": {
+    "text": "Live",
+    "source_sha256": "b64ac05f17e64d037db81a98f51e2688216e292ae9748f979f04dfbac49fd7fc"
+  },
+  "statusBlocked": {
+    "text": "BLOCKED",
+    "source_sha256": "a1f4014f85aac4c098906327b4ec4b6e3fb1308984bbe3531130643dc22feb02"
+  },
+  "statusPlanned": {
+    "text": "已規劃",
+    "source_sha256": "fb6f7c93e6bf3dfac450d268bf57844ae92b9c93f7d027b07f715bfbc467d225"
+  },
+  "discoveryFinished": {
+    "text": "探索已完成，狀態為 {{status}}",
+    "source_sha256": "de359dc0ccf8d271d334355e29fe9d487e2b8a6c8d255659871473d4884b6d6f"
+  },
+  "discoveryAssets": {
+    "text": "已回報 {{count}} 個目標",
+    "source_sha256": "cfd7aa07f1c5c95703594844402ff2dc801b9217faa57fa6ef82475699fd6bcf"
+  },
+  "discoveryProbes": {
+    "text": "探測成功：{{ok}}，失敗：{{fail}}",
+    "source_sha256": "b6a030ffc00ac3c9ce3adc8c5101d8f51f5dddeae4b38191ae4655f49ad8ae50"
+  },
+  "scanNetworks": {
+    "text": "掃描網路（CIDR）",
+    "source_sha256": "9080238f38bde8077ec49d71acda404627fa08475848f928d6b1b168b3bc045e"
+  },
+  "scheduleEnabled": {
+    "text": "已啟用排程",
+    "source_sha256": "cb056f3fdc52a08358758b733bec233aaa7eae95113109be3141a4158d4e6333"
+  },
+  "scheduleInterval": {
+    "text": "間隔（分鐘）",
+    "source_sha256": "b8de8e60ad9e726a112e3d166937927b09b694c60f11109fb36c13243090f152"
+  },
+  "protocolsSupported": {
+    "text": "支援的通訊協定",
+    "source_sha256": "d2b7b1871060a08f8633b3c2586f58ff4c6bad3355e30840fd071888d23f92b8"
+  },
+  "selectAsset": {
+    "text": "選取",
+    "source_sha256": "2a78025de6aae5e7ff88e5a951bb3a78ddd67388913529cf9e2dd9653e62b02d"
+  },
+  "oldPasswordEmpty": {
+    "text": "將舊密碼留空以使用已儲存的密碼。",
+    "source_sha256": "12819f1f1eec1bff041c5c55304feeb6cad3b3428b9716f814513bf28045079c"
+  },
+  "protocolChipsTitle": {
+    "text": "通訊協定晶片",
+    "source_sha256": "7ff13a1d3d411f1502899b85a10843751008bc1cd20d7cc7cb3d246e7b18930c"
+  },
+  "protocolChipsIntro": {
+    "text": "支援的 OT 通訊協定及其目前連線就緒狀態。",
+    "source_sha256": "eea1759c662eac78dc98346e5b745627bd6cb9c616853b12c0990c16677ae7e4"
+  },
+  "checking": {
+    "text": "正在檢查…",
+    "source_sha256": "ec963ffc911b840134fc738b41a8bb0493489c402a4a761efd36c16dea7d984b"
+  },
+  "checkConnectivityEnablesConnect": {
+    "text": "檢查連線（啟用連線）",
+    "source_sha256": "4e91cc9dce98bc7ec7df0ece73c944073191c645102aa6f77930c5eb0658d099"
+  },
+  "checkConnectivityAria": {
+    "text": "檢查所有 OT 目標的連線",
+    "source_sha256": "3267793c4dad5d7ab48bef23156ab0ed37b51aea18293834bd26bac5a4a776a9"
+  },
+  "inventoryHonesty": {
+    "text": "清冊狀態：{{status}} · {{count}} 個資產。連線使用每個撥號連接埠的上次 TCP 探測（僅可用性 — 不是即時工作階段證明）。",
+    "source_sha256": "f9d1740334d360d08c8a9fd0380566096034fdb4d770131d04d38bbda32d92ca"
+  },
+  "statusLiveDetail": {
+    "text": "Live 表示此目標最近成功回應了探索或通訊協定探測。",
+    "source_sha256": "d2cbaeaabd2fcc542cfd2636c99365a6423d9dbd9bf167f1e55cba556ff5ec24"
+  },
+  "statusLiveNext": {
+    "text": "使用「連線」開啟工作階段，或使用「設定」編輯設定與排程。",
+    "source_sha256": "6c02f6ef103f793f1edc3f804df6700e8a441f5d69d5c99e34308e6d02f5e305"
+  },
+  "statusBlockedDetail": {
+    "text": "BLOCKED 表示上次探索或通訊協定探測無法到達此目標。",
+    "source_sha256": "48906c5a92d1b1c65233b9a9ce4d85a6b5b913b63c4e8cc8b255803bceeb72de"
+  },
+  "statusBlockedNext": {
+    "text": "確認主機可達，然後執行探索並重試連線。",
+    "source_sha256": "99b391421c950d99eb5603d365394c4c01d2705974d22b1b557b66cf61c5408f"
+  },
+  "statusPartialDetail": {
+    "text": "Partial 表示此目標已在清冊中，但尚未在探索或通訊協定探測上完全證明為 Live。這是交付狀態 — 不是法規遵循裁決。",
+    "source_sha256": "ca3d0fffa899e037d14ae85de1ea8847ddd52a567c45fb37be0fcd682cb22cb4"
+  },
+  "statusPartialNext": {
+    "text": "下一步：執行探索，然後在目標就緒時使用連線。",
+    "source_sha256": "dbc7558af551d54abf8db6aa5d6b5ff46cbe1d66b5532d4e6acce072c5373da3"
+  },
+  "partialStatusHelp": {
+    "text": "Partial 表示目標已列出，但尚未在探索或通訊協定探測上完全證明為 Live。將滑鼠懸停在狀態晶片上可查看下一步。狀態值描述交付 — 它們不是法規遵循裁決。",
+    "source_sha256": "774a027ecc6479ffe9ca2bb9f844f89e4bd98a65026a6f9249bcc85cc99734f2"
+  },
+  "discoveryJobsLive": {
+    "text": "探索工作（Live）",
+    "source_sha256": "590e5fa9296bcdb98515687c8b79da5b9ac9428dd82c0c97963e447f60974418"
+  },
+  "discoveryJobsIntro": {
+    "text": "輸入要掃描的網路，然後執行探索。結果會更新清冊狀態。選用排程會重複掃描。",
+    "source_sha256": "241ffca00cca9389b1221316ae088d71e489ae2f9f11cf4fddbbff63510ba831"
+  },
+  "scanNetworksHelper": {
+    "text": "每行一個 CIDR 形式的 IPv4 網路（例如 192.168.10.0/24）。本次執行使用第一個網路。留空則使用已設定的預設值。",
+    "source_sha256": "9168bacc150026356779e5098684717649d1e8df2bc01fae1b89e8168f929362"
+  },
+  "startDiscoveryAria": {
+    "text": "啟動 OT 探索工作",
+    "source_sha256": "af81d43288c5e311b97d926fe0c43f54959b7a6020c25d1d32e137676bb5634c"
+  },
+  "enableScheduleAria": {
+    "text": "啟用 OT 探索排程",
+    "source_sha256": "1807f8d18ae899adb66386339c95100e4e87bc65e278be33473ef1046b4e2b4e"
+  },
+  "intervalAria": {
+    "text": "OT 探索間隔（分鐘）",
+    "source_sha256": "f871eca3ba4ba3d65c263144cc1662ed0371b52d66b1dbbd119fb9ff87698942"
+  },
+  "scanNetworksAria": {
+    "text": "OT 探索掃描網路",
+    "source_sha256": "5ffa298a64699bd81c240f5ae66d0e7d8c594f36f32f4ecc5191a52ed58abcf2"
+  },
+  "sharedNetworkScan": {
+    "text": "共用網路掃描",
+    "source_sha256": "c59fd1d82db9ed7ea487bb38bea0fbc932efa29b46e9da57b9176f74888340ae"
+  },
+  "tryDefaultsAria": {
+    "text": "在 {{ip}} 上嘗試已發佈的預設認證",
+    "source_sha256": "27df4593068f9cbb3a5b521c9f0202c8d7d6cd87789e78dcfc984e984fec92a3"
+  },
+  "discoveryJobAria": {
+    "text": "探索工作 {{status}}",
+    "source_sha256": "6254f014b1861b00e62c8a3257a0b4848f97bb2b5f039708148424028d6fbbca"
+  },
+  "assetList": {
+    "text": "資產清單",
+    "source_sha256": "2d1e900888c3bf10f2421cc60091abef931033b021f1c883926df0bd761ea3bc"
+  },
+  "assetListAria": {
+    "text": "OT 資產清單",
+    "source_sha256": "6443189130f62ab8499b1c511ae0c5c41ca00e6b10a9653f7609955263730cc9"
+  },
+  "gridAsset": {
+    "text": "資產",
+    "source_sha256": "80d298c9f240900f00b327f5b611dc41aa785788d6fd3edbe35812ca88f02e9a"
+  },
+  "gridAssetHelp": {
+    "text": "OT 清冊目標的顯示名稱。",
+    "source_sha256": "cc5bc4fa3b18b4f2098c2cbbc8a3e5eddc5c0eabc0d7b4cd4257cdba55226fc4"
+  },
+  "gridComment": {
+    "text": "註解",
+    "source_sha256": "44f5e3fbec57be75ebfb2e42caf7f5ee1542f84748a0380b6f20238c4a257e1b"
+  },
+  "gridCommentHelp": {
+    "text": "此目標的操作人員用例說明。截斷時懸停可閱讀全文。",
+    "source_sha256": "509db25522eee76b0a0c87668063d986ed55c27fe53f3df65a73b5e05ecab6e8"
+  },
+  "gridProtocol": {
+    "text": "通訊協定",
+    "source_sha256": "cf0883343f4abef779b777c35764f86c9f1f4324e8b5490840245d02ad2f7c6f"
+  },
+  "gridProtocolHelp": {
+    "text": "此席位的 OT 通訊協定晶片（Modbus、OPC UA、DNP3 等）。不是 IT SSH/RDP/VNC。",
+    "source_sha256": "d36881bbec0afd3aaa07b96f6addaaa62b848a0afcfdadaf9c5fc9102038f2a4"
+  },
+  "gridReachability": {
+    "text": "可達性",
+    "source_sha256": "66f0f43287781c8eb41ea0324942f05449e9e864657497105bac41627a336bb4"
+  },
+  "gridReachabilityHelp": {
+    "text": "連線撥號連接埠（host:port）的 TCP 檢查。可達僅啟用連線控制項 — 不是即時工作階段證明。",
+    "source_sha256": "e888948942d4e8ed0f9edbe4c2a1199b8ef47e5d6879d3de139810539537e230"
+  },
+  "gridHost": {
+    "text": "主機",
+    "source_sha256": "4a823118b9ba8baa2f47489c0716f52755368e3e3c2c26d60736ccfa1bb21b5e"
+  },
+  "gridHostHelp": {
+    "text": "此 OT 目標的網路端點（host:port）。",
+    "source_sha256": "a95a507d130b4ce264b1f6e931a0b2bea30241ea82cd9b18f937ece14011a9e4"
+  },
+  "gridStatus": {
+    "text": "狀態",
+    "source_sha256": "920e413c7d411b61ef3e8c63b1cb6ad058d5f95f8b481dbafe60248387d8c355"
+  },
+  "gridStatusHelp": {
+    "text": "來自清冊/探索的交付狀態（Live、Partial 或 BLOCKED）。絕不是 Met 或已認證。",
+    "source_sha256": "65dfddcf488ccfdef51cfeb1175afbb7d98a71132d18d52d9b477b177e34c5c6"
+  },
+  "gridActions": {
+    "text": "動作",
+    "source_sha256": "ff8059dc6752afdd30d275932b1d5031a2ec854b387a8c57ecc6689915293a43"
+  },
+  "gridActionsHelp": {
+    "text": "連線開啟 OT PDU Live。設定編輯非機密目標設定。選取用於在認證上執行緊急存取。",
+    "source_sha256": "87698a99d9fdae279b853d407dd32ff5ad0f5087b8ff89d5e40ca29e18b63923"
+  },
+  "noComment": {
+    "text": "無註解",
+    "source_sha256": "f23d3d1c412726e40c3d9a4a6bb2092437b82dd25116402ebe0951ee46751016"
+  },
+  "commentAria": {
+    "text": "註解：{{text}}",
+    "source_sha256": "a53dc5bedc0088ba02c9ded6e17afcbde3f68456a2f78a87b56c8dd56d890951"
+  },
+  "protocolTip": {
+    "text": "OT 通訊協定：{{label}}。連線為此通訊協定開啟 OT PDU 工作階段 — 不是 SSH/RDP/VNC 畫布。",
+    "source_sha256": "35a23009a6b71f14c31175d1d2f867a2543ccdfcf2baad8c53df066371e634d9"
+  },
+  "reachTip": {
+    "text": "{{dial}} 為 {{status}}。{{last}} 僅可用性 — 不是連線通訊協定表面 PASS。",
+    "source_sha256": "103fd43fdfabaa808a11ae1f5b34dc099ce2cad7e9d1f8e142172607ba2f93fa"
+  },
+  "lastChecked": {
+    "text": " 上次檢查 {{when}}。",
+    "source_sha256": "4de1e5c50f587a037dd626733bb8763efd9eb656dac068abff5d17788dc5325d"
+  },
+  "notCheckedYet": {
+    "text": " 尚未檢查。",
+    "source_sha256": "f8c4f1c424909f3d25c18d25c27671f5ba69bcccf3fa61e8149a776716a13473"
+  },
+  "hostTip": {
+    "text": "撥號端點 {{ep}}",
+    "source_sha256": "4b35e3cf163d53229ed36a85750610c618b1d03c07c2d25f3afd05958305c931"
+  },
+  "hostAria": {
+    "text": "主機 {{ep}}",
+    "source_sha256": "bd35bfaa68aa30daab97368ed8e57b44df3ffbb07e626cf6edfdccc17f09703b"
+  },
+  "connectReadyTitle": {
+    "text": "連線 / 開啟 OT 代理工作階段 → OT PDU Live 時間軸。在工作階段證明 connecting|connected 之前僅為可用性。",
+    "source_sha256": "33c0978278a599b297f44c24269fcfb378bc065c21312909f32dbc1c9f545942"
+  },
+  "connectUnknownTitle": {
+    "text": "在執行「檢查連線」（上方狀態橫幅）之前，「連線」保持關閉。尚未對此目標執行探測。",
+    "source_sha256": "9292ec3d1d63b163e309d49173c55dbc86360bab0fdecb23f0755523d22c9824"
+  },
+  "connectCheckingTitle": {
+    "text": "連線探測進行中… 完成前「連線」保持關閉。",
+    "source_sha256": "3c34feb7d7eb55081e19734e05c0e9f13befe39ac864302b87b6c1b012cd8896"
+  },
+  "connectUnreachableTitle": {
+    "text": "上次探測時目標撥號連接埠不可達。修復網路路徑後再次執行檢查連線。",
+    "source_sha256": "c15d7b752ccdc9157c17d324ade3dbd437e5457b8324d2dfc1d2504708ff3107"
+  },
+  "connectAriaReady": {
+    "text": "連線 OT 代理工作階段到 {{name}}",
+    "source_sha256": "920dee31b3bb1840573cd3f4eaa4c64c5570ad91518a3d07dc9179d1a37d71ed"
+  },
+  "connectAriaUnknown": {
+    "text": "連線已停用 — 在連線到 {{name}} 之前請執行檢查連線",
+    "source_sha256": "829d1d636e1854b446e5c2866a1ae1bae99b794d8c7ddc6559825c3ec1a58a0d"
+  },
+  "connectAriaUnreachable": {
+    "text": "連線已停用 — {{name}} 在 {{host}}:{{port}} 上不可達",
+    "source_sha256": "cf41a8276f8e8dae39cd84151df31bf05128d7880106ae40f6b76d7e753ebd84"
+  },
+  "configureAria": {
+    "text": "設定 OT 目標 {{name}}",
+    "source_sha256": "3d4ade21a687e67883a45f658bda3824e82bba48a10ec16ca6691cc7a7a47f88"
+  },
+  "selectAria": {
+    "text": "選取 {{name}} 用於認證",
+    "source_sha256": "d73955db3e8d4f17263479c31f2452c2300177b6dcd949fec228c4a08965e5ad"
+  },
+  "reachable": {
+    "text": "可達",
+    "source_sha256": "f94b5f3d38405630f6f454e19f4bf325bc6db314351cf9f3298a7d211a97df03"
+  },
+  "unreachable": {
+    "text": "不可達",
+    "source_sha256": "abaa46adb4e13ab2e7202ad1480a4182fde02f70e2e8ac27eb8b8dd04dc3c427"
+  },
+  "unknown": {
+    "text": "未知",
+    "source_sha256": "b764cdc0eab7137467211272fa539f1260d1bf2e71bcf6ff3bdc960f5c16aa14"
+  },
+  "wizardTitle": {
+    "text": "啟動精靈",
+    "source_sha256": "8f6f7902dad68c15069e69c37d098560bdbb138d9a7a7b6f0400200bafab2538"
+  },
+  "wizardIntro": {
+    "text": "設定您的 OT 環境：尋找目標、檢視它們並將其登錄到清冊。狀態值是交付證據（Live、Partial 或 BLOCKED）— 不是評估裁決。",
+    "source_sha256": "52432ec2223583b33927e7a0e5d0624795fc43467647189e343bf6f1e38bda5e"
+  },
+  "wizardStepWelcome": {
+    "text": "歡迎",
+    "source_sha256": "0e2226b5235f0ff94a276eb4d07a3bfea74b7e3b8b85e9efca6c18430f041bf8"
+  },
+  "wizardStepEnvironment": {
+    "text": "環境",
+    "source_sha256": "9e471951a1b4106e54be128a21112b02914fe98cc79b2c92b49ee80c5464487c"
+  },
+  "wizardStepDiscover": {
+    "text": "探索",
+    "source_sha256": "d4a33d5b78bccebe3f16843dc30e6c0f73b4eb6efb4e7114ddfebde7fa2c9954"
+  },
+  "wizardStepReview": {
+    "text": "檢視並登錄",
+    "source_sha256": "dedf19d7c91b9d9834c046760e0a0a164546cbb593579ed41b3da11b8c3d81dc"
+  },
+  "wizardStepSchedules": {
+    "text": "排程",
+    "source_sha256": "221ff19c904c30d01c3458103b8d58f9e0eed89712013da6edc739744d0b3089"
+  },
+  "wizardStepDone": {
+    "text": "完成",
+    "source_sha256": "11a6767d5674c7e45f7e00dc525762275b3a48491ad6045427d2609cc496c516"
+  },
+  "gridName": {
+    "text": "名稱",
+    "source_sha256": "dcd1d5223f73b3a965c07e3ff5dbee3eedcfedb806686a05b9b3868a2c3d6d50"
+  },
+  "gridPort": {
+    "text": "連接埠",
+    "source_sha256": "72e9a59f5a1d6289dbacb35df897d6c007c55a27e77018455c37e7b372668475"
+  },
+  "gridEnrolled": {
+    "text": "已登錄",
+    "source_sha256": "655e733ea6106d12ae2c68c0c4650c66a8908a192d6aaa60ecbc1e92fd4ee0f7"
+  },
+  "yes": {
+    "text": "是",
+    "source_sha256": "85a39ab345d672ff8ca9b9c6876f3adcacf45ee7c1e2dbd2408fd338bd55e07e"
+  },
+  "no": {
+    "text": "否",
+    "source_sha256": "1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da161c6099be3691d"
+  }
+}

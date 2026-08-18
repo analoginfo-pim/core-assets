@@ -1,0 +1,74 @@
+{
+  "cli.about": {
+    "text": "AIC Server API 伺服器",
+    "source_sha256": "9b5030c3213a388ab38ef5877e7c33e2615a5fcd5470d337c50caa4de93a8913"
+  },
+  "cli.help.locale": {
+    "text": "CLI 說明與主控台訊息的操作人員顯示語言（en、zh-TW、de）。不會變更稽核、Windows 事件記錄或 syslog 欄位名稱。",
+    "source_sha256": "ea54d1c157ba10af11f561d11893e1ffd2f8b3d25d04dac1269ed4a04c856957"
+  },
+  "cli.help.install_service": {
+    "text": "安裝為 Windows 服務（需提升權限）或 Linux 上的 systemd 單元（root）。",
+    "source_sha256": "249d82c97f104b970b99e46f48b86fbc2c1f0c0df77ebdb32694b7f3bc1c14e1"
+  },
+  "cli.help.windows_service_account": {
+    "text": "僅限 Windows（搭配 --install-service）：SCM 登入帳戶。省略則使用 LocalSystem。捷徑：local-system、network-service、local-service；否則為 DOMAIN\\User 或 .\\User。",
+    "source_sha256": "e0fed1684dbc18830e788315b20019a1369bbe3854455f453c889a92390816a8"
+  },
+  "cli.help.windows_service_password": {
+    "text": "僅限 Windows（搭配 --install-service）：供 sc.exe password= 使用的服務帳戶密碼。會顯示於處理程序命令列；LocalSystem / NT AUTHORITY 或 gMSA / 無密碼帳戶請省略。",
+    "source_sha256": "73b64e34213ccfa565605dbed747ae5d361c58d99156ecf46756162d174b5c49"
+  },
+  "cli.help.uninstall_service": {
+    "text": "移除由 --install-service 安裝的 Windows 服務或 Linux systemd 單元。",
+    "source_sha256": "be40ce285d07cdcbe7a0d969efa253c4e5e44c815df8a7f8d8b9860d8418111c"
+  },
+  "cli.help.start_service": {
+    "text": "啟動已安裝的服務（sc start / systemctl start）。",
+    "source_sha256": "28af9fa1299c64e54773d467f2b511acf7a52437bb7236fa0a740210a7606566"
+  },
+  "cli.help.stop_service": {
+    "text": "停止已安裝的服務（sc stop / systemctl stop）。",
+    "source_sha256": "df561725c8481a3282c25cb9292652101cf48e8c8bc8dd888fd259c56ece6918"
+  },
+  "cli.help.config_dir": {
+    "text": "實驗室 / WSL 煙霧測試的沙箱設定根目錄（將 AppConfig 路由至 {dir}/pim-offline-server/，而非 HKLM 或 /etc）。請明確傳遞此旗標；不使用處理程序環境變數。",
+    "source_sha256": "ce6051d6d4e9cf0fa5d458a2d45ddde022e1ebc5572a070b0c056b92d254c6f0"
+  },
+  "cli.cmd.run": {
+    "text": "在前景執行 AIC Server 常駐程式（systemd / 主控台）。",
+    "source_sha256": "2201ed894842e7f5544b809d4677947ea1441890a02b8cc0692d0b663bac1367"
+  },
+  "cli.cmd.version": {
+    "text": "列印套件版本（與 --version / -V 相同的承載內容）。",
+    "source_sha256": "cfcdba07c20fc6676ef1e1844875da1b8c6f5169b3de312f20ed58d86b3bda47"
+  },
+  "cli.cmd.readiness_report": {
+    "text": "依即時伺服器態勢產生面向評估方的 CMMC L2 飛地就緒報告（不含機密）。",
+    "source_sha256": "a7a44f8f1b8034b087339f9ef23a440d934218337319954044e4c9f3febf615b"
+  },
+  "cli.cmd.meter_usage": {
+    "text": "收集保守且注重隱私的用量快照，並透過所選 Marketplace 計量提供者分派（預設：離線試運行記錄器）。",
+    "source_sha256": "1a95eaca40c24536837346566c713b525ce9e1f2f964a1fc6ec656ef43bea5b8"
+  },
+  "cli.help.meter_dry_run": {
+    "text": "即使已選取雲端提供者，仍強制使用離線試運行記錄器。",
+    "source_sha256": "dc25e2bb9fe3f40cfc0bad627473069f031e15dc01779a894bc12b0bb7005d2a"
+  },
+  "cli.help.meter_plan_only": {
+    "text": "列印計畫與各雲端就緒矩陣後結束，不收集快照也不分派。",
+    "source_sha256": "f1d3aaf7ec84c2db856f9087084e38093fa3fcbc59fe9c35fdca1bfb315b64c9"
+  },
+  "cli.help.readiness_format": {
+    "text": "輸出格式：json（機器可讀）或 md（Markdown 檢查清單）。",
+    "source_sha256": "56d3eaa8d6cdb6ae4fc7fa5a149d18008de1e1ab5c160768d22f73b51bfbcba9"
+  },
+  "cli.msg.audit_english_only": {
+    "text": "稽核、Windows 事件記錄與 syslog 承載內容維持美式英語（穩定的欄位名稱與事件 ID）。",
+    "source_sha256": "66dab701f9bec400fcd79c3d0ff49e9273833d0c7a09d8d327ab7425e69af831"
+  },
+  "cli.msg.api_codes_english": {
+    "text": "API 錯誤代碼維持英語 snake_case；管理 SPA 將代碼對應為地區設定文字。",
+    "source_sha256": "1fa569f0ad93f293d06b8054d186416e0842b691eff86bed1aad9dc4ef187ab3"
+  }
+}

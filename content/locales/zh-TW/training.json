@@ -1,0 +1,162 @@
+{
+  "honesty_note": {
+    "text": "本文件是可自訂的範本。客戶組織決定內容是否適當、誰必須閱讀以及頻率如何。已呈現的文件不是訓練交付，也不是控制評估。",
+    "source_sha256": "bf844fab9037cf44872431ff7c9e557e0e08d4fdcd3c87fdbe3b1b8600624947"
+  },
+  "program_honesty_note": {
+    "text": "完成紀錄顯示具名人員在特定時間閱讀並確認了特定文件版本。它們是訓練紀錄（NIST AT-4）的證據，並支援意識訓練的交付面（AT-2、AT-3、CMMC 3.2.1、3.2.2）。內容、對象與頻率由客戶組織決定。閱讀並確認不是實作演練，不得作為 800-172 3.2.2e 的證據。此處的任何百分比都不表示控制為 Met，也不表示存在任何認證。",
+    "source_sha256": "a9be08253ae67bf02d16e2b2603a41377fd7f5022cead971bb4baac83ff9ea04"
+  },
+  "practical_exercise_exclusion": {
+    "text": "800-172 3.2.2e 要求針對目前威脅進行實作演練，並向參與者與主管提供回饋。本產品不執行演練、釣魚模擬或桌面推演，也不回報 3.2.2e 的證據。",
+    "source_sha256": "87a098c9e195eecb07e71e199fa682f1e49635b06971c311d8ac9ce2655ac001"
+  },
+  "coverage_honesty_note": {
+    "text": "「已涵蓋」表示庫中存在文件並引用該標準的條款。這並不表示有人已閱讀該文件，也不是控制評估。完成紀錄來自已指派的計畫與已簽署的證明，法規遵循裁決屬於您的評估方。",
+    "source_sha256": "f2bebcfefcf69f1d53a7af9e27e5cd922740043447c06b66e2ee6bca7698f347"
+  },
+  "intent_statement": {
+    "text": "我已閱讀本文件。我了解它要求我在工作中做什麼。",
+    "source_sha256": "36e95eca063d855727db2c629d6ceed8a9fff828ec07e2e74d3dec86e79da016"
+  },
+  "attestation_source_note": {
+    "text": "本發行中的每一列皆為 operator_recorded：管理員輸入了在帶外發生的完成證據。不存在自助簽署介面，因此沒有任何列由簽署人產生。",
+    "source_sha256": "865d786b5848105037f06f61237f726b82eb911a657874675391d56d2c67fc08"
+  },
+  "audience": {
+    "all-personnel": {
+      "text": "全體人員",
+      "source_sha256": "86d27dd9e1b05f05f99d80f8474db8d21f7fc11751b1c856be5ee6dac6d53428"
+    },
+    "privileged-users": {
+      "text": "特權使用者",
+      "source_sha256": "ee46f4edfd7e8dc25e86b9e1bca938a61e9e8a9b4d589cb0360417d17553880f"
+    },
+    "administrators": {
+      "text": "管理員",
+      "source_sha256": "919fb224a3e32e407e51de2e2fc0820cb3ccaf8680ac3c5c640e7bde35ddeb60"
+    },
+    "executives": {
+      "text": "高階主管",
+      "source_sha256": "e0db2a8b264a99d6b01206d803905a551ad6745c3a5a486d14499b2a28f73aa9"
+    },
+    "auditors": {
+      "text": "稽核人員",
+      "source_sha256": "40607f44b00a274996d57977dc6f90cc5c9ba7a353b8c164129e7c9ab95e0286"
+    },
+    "new-hire": {
+      "text": "新進人員",
+      "source_sha256": "e2b5066deb9843472073b474194329fd73bbe8be7482b33a744f1261697c6d5e"
+    },
+    "incident-responders": {
+      "text": "事件回應人員",
+      "source_sha256": "7229735c9ee630a23ec7172387a48884d5760659351baf26185064b5ebe8a014"
+    }
+  },
+  "export": {
+    "marking": {
+      "text": "標記",
+      "source_sha256": "94f73dfec8a797a4b46706fc7194ee63f0bd5516f7ecf18fdb64fd25f1321904"
+    },
+    "generated_at": {
+      "text": "產生時間（UTC）",
+      "source_sha256": "bf5110c1c68187b8f2f836277368682657e8cb5a30f3c6441048d33e762351e5"
+    },
+    "picture": {
+      "text": "圖片",
+      "source_sha256": "9a1c54f55e7cfb1cc2cdad2991525037bc475a509fa37262e123c44e958d2d36"
+    }
+  },
+  "notify": {
+    "due_date_fallback": {
+      "text": "您指派上的日期",
+      "source_sha256": "f37c7238ea7e097f83032a497db618e7b085cb6ebcfba6664ce0d35c2af5f20b"
+    },
+    "ladder_note": {
+      "text": "傳送次數是投遞嘗試次數，不是完成次數，也不是控制裁決。",
+      "source_sha256": "1515a18f6090478c5614c78c44263208ec942948fa0c4e358d71ddfda996a6b4"
+    },
+    "welcome": {
+      "subject": {
+        "text": "您已被指派訓練",
+        "source_sha256": "6644e8dc01cf72c8ff8abfd33a0ce358622263a477748a552f9e0ea4b141b2d1"
+      },
+      "body": {
+        "text": "您好 {full_name}。您已被指派 {program_name}。請在 {due_date} 前完成。本訊息記錄我們要求您閱讀的內容。這不是成績。如需協助請詢問您的主管。",
+        "source_sha256": "9062937cc546e75561cb60cb064ea90b8cc96dd8672deea1d49ef69d891226b8"
+      }
+    },
+    "reminder": {
+      "subject": {
+        "text": "訓練即將到期",
+        "source_sha256": "cdb4f2fa4f1b84727268dda25673030cb5c0376021ab95809a3cbd7471411052"
+      },
+      "body": {
+        "text": "您好 {full_name}。{program_name} 將於 {due_date} 到期。請完成。這是提醒，不是成績。",
+        "source_sha256": "4356efd319ed9e93c8cd2f44da1cfb17d77e182c7b0e0a48d3bb807bf81a3162"
+      }
+    },
+    "due": {
+      "subject": {
+        "text": "訓練今日到期",
+        "source_sha256": "f3f830f40fa6e94505b8168ef2bbc7093c96618ee011fab9cf579283b7324f6d"
+      },
+      "body": {
+        "text": "您好 {full_name}。{program_name} 今日到期（{due_date}）。請完成。",
+        "source_sha256": "57f675215a96ffe13d3f61ceecce0858e68e7c04f8829b033bfc2ea4fa0037c9"
+      }
+    },
+    "overdue": {
+      "subject": {
+        "text": "訓練已逾期",
+        "source_sha256": "8a11f65d250e5c6a4f881fc1920f74a6e48d97459184d8b4a35d452e336d5441"
+      },
+      "body": {
+        "text": "您好 {full_name}。{program_name} 已於 {due_date} 到期。現已逾期。請完成或告知您的主管。",
+        "source_sha256": "e42b3239d4364fb6f1414c148e3b3f5e9bc02ac7da54e68e5eca2fe5a376c17e"
+      }
+    }
+  },
+  "templates": {
+    "spec-24-approved-setup": {
+      "title": {
+        "text": "已核准設定與已安裝內容",
+        "source_sha256": "4b8b3d9f506263414eabd33fcd8fe2346c50d2618e839326abd8d470a7c52fa8"
+      },
+      "purpose": {
+        "text": "說明當您的工作涉及已核准設定時 {customer_name} 的要求。面向每位工作人員。這不是授權的 Spec 24 課程。",
+        "source_sha256": "d0a5d3f09b55885ec1db9dcdfa3fef03c242ee19c0cd6aa95369df0aa8ef3eb4"
+      }
+    },
+    "spec-24-alignment-pack": {
+      "title": {
+        "text": "閱讀 Spec 24 對齊套件",
+        "source_sha256": "57931c71c1912fcc7173e4f80eecb7b48c7a780b3a71dccd4896cae6fae988ca"
+      },
+      "purpose": {
+        "text": "向稽核人員說明如何閱讀此 Spec 24 套件。該套件不是授權標準。對應來自公開頁面，可能有誤。",
+        "source_sha256": "da1d2540c7c215f95144c1db4d3b1be5dc626d7200eb698a0d7846e964c42e48"
+      }
+    },
+    "spec-24-welcome-employee": {
+      "title": {
+        "text": "Spec 24 設定訓練歡迎信（員工）",
+        "source_sha256": "9047996c8e3ba4f29b4e5b26572ad05f4e6e95e2bb178e446817afff198487d7"
+      },
+      "purpose": {
+        "text": "向 {organization_name} 的員工說明本次 Spec 24 設定要求。說明要閱讀與簽署的內容。這不是授權標準。",
+        "source_sha256": "b1b77d58354bce66523d3b23c059d0cc519c3ad64307a3838ae81f453dd485be"
+      }
+    },
+    "spec-24-welcome-contractor": {
+      "title": {
+        "text": "Spec 24 設定訓練歡迎信（承包商）",
+        "source_sha256": "774fbe60c8c8c4b5c6dd35f1941d32ab90af7e8d07c506d951e091a9cf6d8187"
+      },
+      "purpose": {
+        "text": "向 {organization_name} 的承包商說明本次 Spec 24 設定要求。說明適用誰的規則。這不是授權標準。",
+        "source_sha256": "e856a7f61d89d15735e149cee11122026721ee65262887b7fcb8eea66b4fa6de"
+      }
+    }
+  }
+}
