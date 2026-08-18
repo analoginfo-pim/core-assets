@@ -528,5 +528,103 @@
       "text": "残りの作業行はありません。",
       "source_sha256": "e5c2a8eef1925db15b9670d470194971c1aad3e97d8b854459343b4fd0e7d1ea"
     }
+  },
+  "honestyNotes": {
+    "env": {
+      "systems_count": {
+        "text": "現時点の登録済みエンクレーブシステム数。トレンド線はサンプリング履歴を使用し、最初のサンプル前は系列が空で、履歴はそのサンプルから始まります。カバレッジ率でも評価結論でもありません。",
+        "source_sha256": "69db030a51534b9f1c94b4fc22caa29a357b0ec4f5103a77832e90ae82f4f420"
+      },
+      "probe_enabled_count": {
+        "text": "現在プロービングが有効な登録済みシステムの数。トレンド線はサンプリング履歴を使用し、最初のサンプルまで空です。有効なプロービングはコントロール合格の証拠ではありません。",
+        "source_sha256": "6b4019cc538d7e6452bba4d7e522f9a461163c02db6bc0e7aef58edcb84d3619"
+      },
+      "physical_vs_log": {
+        "text": "physical_host対log_derivedでタグ付けされた最新の証拠行の内訳。トレンド線はサンプリング履歴を使用し、最初のサンプルまで空です。収集した証拠の構成のみ — 合格率ではありません。",
+        "source_sha256": "2855f98debf6941663aedc64b7d515611ce8065d6126f3bbbefb7e54e93d7710"
+      },
+      "punch_list_open": {
+        "text": "最新のフリート証拠からの未解決の指摘と部分的な結果。オペレーター向けの配信バックログであり、残余リスクスコアではありません。トレンド線はサンプリング履歴を使用し、最初のサンプルまで空です。",
+        "source_sha256": "892e38b032e917ebc3e1f700df18c4531b2fbb56c67a8f4992a3738468d7531f"
+      },
+      "discovered_systems": {
+        "text": "IDがdiscovery（インポート / スキャン / ディレクトリ）由来の登録済みシステム。トレンド線はその登録起源件数のサンプリング履歴を使用し、最初のサンプルまで空です — 事前履歴点を捏造しないでください。",
+        "source_sha256": "de19ba275f78d499fb3efa2f0526d1449bffa600d502c0b7de15f1102c865e6c"
+      }
+    },
+    "training": {
+      "framework_coverage": {
+        "text": "Coveredは、その規格の条項を引用する研修文書が存在することを意味します。誰かが文書を読んだことやコントロール評価を意味しません。トレンド線はサンプリング履歴を使用し、最初のサンプルまで空です。",
+        "source_sha256": "a8be8f3e73b4b91f364a40d87d643ac04e08d3ab20383238fef47a64d8ad5a15"
+      },
+      "uncovered_frameworks": {
+        "text": "労働力の意識を義務付けるが、ライブラリにまだカバー文書がないフレームワーク。文書ギャップであり、人員が未訓練であるという指摘ではありません。トレンド線はサンプリング履歴を使用し、最初のサンプルまで空です。",
+        "source_sha256": "784464ec9f7d460d2ca6834bb60f8c8ae28c5bbd2684625a205de9d1d7481aa2"
+      }
+    },
+    "compliance": {
+      "pack_readiness": {
+        "text": "available、partial、planned、またはblockedの配信状態にあるReport Centerファミリーの件数。製品コレクターの準備状況であり、CMMCまたはFedRAMPの判定ではありません。トレンド線はサンプリング履歴を使用し、最初のサンプルまで空です。",
+        "source_sha256": "9beb070ca0de42316f2835009cf5f98bb8253d564e55ed2cd3c21c5ae8400f8c"
+      },
+      "poam_open": {
+        "text": "ステータスがopen、in_progress、またはdeferredのPOA&M行数。記録された是正作業を追跡します — 露出が許容可能かどうかではありません。トレンド線はサンプリング履歴を使用し、最初のサンプルまで空です。",
+        "source_sha256": "5a896b5deb083d047b45798d2968c20f5eb14923a05d1ca423b64f19e8aacf4b"
+      },
+      "attestations_recorded": {
+        "text": "attested_atが選択した7/30/90日ウィンドウ（既定30）に入るoffline_compliance_attestationsの行数。アテステーション記録が書き込まれたことの証明であり、必要なすべてのアテステーションが完了したことではありません。",
+        "source_sha256": "a54857fb8f45e50b3e5423ad1825b8e6d061f9ba89707a729577c5494235ac68"
+      }
+    },
+    "pum": {
+      "violations_24h": {
+        "text": "各サンプル時点で過去24時間に記録されたprivileged-use management違反イベント。トレンド線は選択した7/30/90ウィンドウのそのサンプリング履歴を使用し、最初のサンプルまで空です。重大度スコアではありません。",
+        "source_sha256": "fa97fb2f5cb07cc43edb78acfb4d18d6c15c5742f59f234b75f96d508ac3d0dd"
+      },
+      "endpoints_enrolled": {
+        "text": "現時点でPUMポリシー割り当てがあるエンドポイント。トレンド線はサンプリング履歴を使用し、最初のサンプルまで空です。登録件数のみ — 実施品質ではありません。",
+        "source_sha256": "f9782cd71f65e67c68227b52dc200d793849ce54eec82bf92c9fb6ba0a12e5af"
+      }
+    },
+    "ir": {
+      "open_cases": {
+        "text": "ステータスがopenまたはprocessingで、opened_atが選択した7/30/90日ウィンドウ（既定30）に入るIRケース数。offline_ir_casesからの作業負荷バックログであり、インシデント対応が有効であるという判断ではありません。メトリクスサンプラーが到着するまで折れ線グラフに日次履歴はありません。空の系列は明示的であり、捏造されたゼロ傾向ではありません。",
+        "source_sha256": "a91e296ab260af632c2660d7067801347d7cb3d18e92e1c86b64fbbb0322ca49"
+      },
+      "cases_opened_closed": {
+        "text": "offline_ir_casesから、opened_atまたはclosed_atが選択した7/30/90日ウィンドウ（既定30）内のケース。記録されたケース作業のスループットであり、対応品質やコントロール有効性ではありません。",
+        "source_sha256": "7ade5f268580015310b250936cd9867ca900607fa7ef4c9eadd204b93f29b9fc"
+      }
+    },
+    "defense": {
+      "blocked_attempts": {
+        "text": "選択した7/30/90日ウィンドウ内の失敗および拒否されたログオンとブロックされたAPI要求。拒否された試行の件数のみ — 攻撃者がコマンドを実行した、またはマルウェアを捕捉したという主張ではありません。ブロックされた攻撃ページを開きます。",
+        "source_sha256": "142c4df58a904c676ac11691195f2c9b92b506f8e5540446b4fdd8c680f23543"
+      }
+    },
+    "events": {
+      "by_type": {
+        "text": "現時点のプロセス内イベントリングバッファからの件数。永続履歴ではなく、7/30/90の傾向でもありません — バッファサイズが見える内容を制限します。",
+        "source_sha256": "260d7582bad3557747bfacc83be9d06e2fef0f3134c76d6fefe9a4a79c6bb527"
+      }
+    }
+  },
+  "chartLabels": {
+    "ConfigChanged": {
+      "text": "構成が変更されました",
+      "source_sha256": "89806bdbb952182b561250f335cd67d8714b298087dcb32e06038305fc01ad32"
+    },
+    "PasswordRecovered": {
+      "text": "パスワードを回復しました",
+      "source_sha256": "75159a913fda61e88175c1bd8644a881006d5154bbf7136cef4d534e8201d956"
+    },
+    "AdminLogonSucceeded": {
+      "text": "管理者サインイン成功",
+      "source_sha256": "a073eb97dffeb815ae90db602e3281b87a70c62d9e97d2526ca91dfba77331f8"
+    },
+    "ElevationCodeMinted": {
+      "text": "昇格コードを発行しました",
+      "source_sha256": "122c0c6c1e9f4fe69bf20987e42011f4160744509598ffe02ae538fb6a73c86c"
+    }
   }
 }

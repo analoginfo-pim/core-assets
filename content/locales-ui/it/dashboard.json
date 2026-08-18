@@ -528,5 +528,103 @@
       "text": "Nessuna riga di lavoro rimanente.",
       "source_sha256": "e5c2a8eef1925db15b9670d470194971c1aad3e97d8b854459343b4fd0e7d1ea"
     }
+  },
+  "honestyNotes": {
+    "env": {
+      "systems_count": {
+        "text": "Conteggio dei sistemi di enclave iscritti in questo momento. Le tendenze usano la cronologia campionata; prima del primo campione la serie è vuota e la cronologia inizia da quel campione. Non è una percentuale di copertura né una conclusione di valutazione.",
+        "source_sha256": "69db030a51534b9f1c94b4fc22caa29a357b0ec4f5103a77832e90ae82f4f420"
+      },
+      "probe_enabled_count": {
+        "text": "Quanti sistemi iscritti hanno il probing attivo in questo momento. Le tendenze usano la cronologia campionata; vuote fino al primo campione. Il probing abilitato non è evidenza che un controllo sia passato.",
+        "source_sha256": "6b4019cc538d7e6452bba4d7e522f9a461163c02db6bc0e7aef58edcb84d3619"
+      },
+      "physical_vs_log": {
+        "text": "Suddivisione delle ultime righe di evidenza etichettate physical_host rispetto a log_derived. Le tendenze usano la cronologia campionata; vuote fino al primo campione. Composizione dell'evidenza raccolta soltanto — non un tasso di superamento.",
+        "source_sha256": "2855f98debf6941663aedc64b7d515611ce8065d6126f3bbbefb7e54e93d7710"
+      },
+      "punch_list_open": {
+        "text": "Rilievi aperti ed esiti parziali dall'ultima evidenza della flotta. Backlog di consegna per gli operatori — non un punteggio di rischio residuo. Le tendenze usano la cronologia campionata; vuote fino al primo campione.",
+        "source_sha256": "892e38b032e917ebc3e1f700df18c4531b2fbb56c67a8f4992a3738468d7531f"
+      },
+      "discovered_systems": {
+        "text": "Sistemi iscritti la cui identità proviene dalla discovery (import / scansione / directory). Le tendenze usano la cronologia campionata di quel conteggio di origine di iscrizione; vuote fino al primo campione — non inventare mai punti di preistoria.",
+        "source_sha256": "de19ba275f78d499fb3efa2f0526d1449bffa600d502c0b7de15f1102c865e6c"
+      }
+    },
+    "training": {
+      "framework_coverage": {
+        "text": "Coperto significa che esiste un documento di formazione e cita una clausola di quello standard. Non significa che qualcuno abbia letto il documento, e non è una valutazione di controllo. Le tendenze usano la cronologia campionata; vuote fino al primo campione.",
+        "source_sha256": "a8be8f3e73b4b91f364a40d87d643ac04e08d3ab20383238fef47a64d8ad5a15"
+      },
+      "uncovered_frameworks": {
+        "text": "Framework che obbligano alla sensibilizzazione della forza lavoro ma non hanno ancora un documento di copertura nella libreria. Un divario documentale — non un rilievo che il personale non sia formato. Le tendenze usano la cronologia campionata; vuote fino al primo campione.",
+        "source_sha256": "784464ec9f7d460d2ca6834bb60f8c8ae28c5bbd2684625a205de9d1d7481aa2"
+      }
+    },
+    "compliance": {
+      "pack_readiness": {
+        "text": "Conteggi delle famiglie del Centro report negli stati di consegna available, partial, planned o blocked. Prontezza dei collector di prodotto — mai un verdetto CMMC o FedRAMP. Le tendenze usano la cronologia campionata; vuote fino al primo campione.",
+        "source_sha256": "9beb070ca0de42316f2835009cf5f98bb8253d564e55ed2cd3c21c5ae8400f8c"
+      },
+      "poam_open": {
+        "text": "Conteggio delle righe POA&M in stato open, in_progress o deferred. Traccia il lavoro di rimedio registrato — non se l'esposizione è accettabile. Le tendenze usano la cronologia campionata; vuote fino al primo campione.",
+        "source_sha256": "5a896b5deb083d047b45798d2968c20f5eb14923a05d1ca423b64f19e8aacf4b"
+      },
+      "attestations_recorded": {
+        "text": "Conteggio delle righe in offline_compliance_attestations il cui attested_at cade nella finestra di 7/30/90 giorni selezionata (predefinito 30). Prova che sono stati scritti record di attestazione — non che ogni attestazione richiesta sia completata.",
+        "source_sha256": "a54857fb8f45e50b3e5423ad1825b8e6d061f9ba89707a729577c5494235ac68"
+      }
+    },
+    "pum": {
+      "violations_24h": {
+        "text": "Eventi di violazione della gestione dell'uso privilegiato registrati nelle ultime 24 ore a ogni campione. Le tendenze usano quella cronologia campionata sulla finestra 7/30/90 selezionata; vuote fino al primo campione. Non è un punteggio di gravità.",
+        "source_sha256": "fa97fb2f5cb07cc43edb78acfb4d18d6c15c5742f59f234b75f96d508ac3d0dd"
+      },
+      "endpoints_enrolled": {
+        "text": "Endpoint con un'assegnazione di policy PUM in questo momento. Le tendenze usano la cronologia campionata; vuote fino al primo campione. Solo conteggio di iscrizione — non qualità di enforcement.",
+        "source_sha256": "f9782cd71f65e67c68227b52dc200d793849ce54eec82bf92c9fb6ba0a12e5af"
+      }
+    },
+    "ir": {
+      "open_cases": {
+        "text": "Conteggio dei casi IR con stato open o processing il cui opened_at cade nella finestra di 7/30/90 giorni selezionata (predefinito 30). Backlog di carico da offline_ir_cases — non un giudizio che la risposta agli incidenti sia efficace. I grafici a linee non hanno cronologia giornaliera fino all'arrivo del campionatore di metriche; una serie vuota è esplicita, non una tendenza zero fabbricata.",
+        "source_sha256": "a91e296ab260af632c2660d7067801347d7cb3d18e92e1c86b64fbbb0322ca49"
+      },
+      "cases_opened_closed": {
+        "text": "Casi con opened_at o closed_at nella finestra di 7/30/90 giorni selezionata (predefinito 30), da offline_ir_cases. Throughput del lavoro sui casi registrato — non qualità della risposta né efficacia del controllo.",
+        "source_sha256": "7ade5f268580015310b250936cd9867ca900607fa7ef4c9eadd204b93f29b9fc"
+      }
+    },
+    "defense": {
+      "blocked_attempts": {
+        "text": "Accessi non riusciti e negati più richieste API bloccate nella finestra di 7/30/90 giorni selezionata. Conteggi solo dei tentativi negati — non un'affermazione che gli aggressori abbiano eseguito comandi o che sia stato catturato malware. Apre la pagina Attacchi bloccati.",
+        "source_sha256": "142c4df58a904c676ac11691195f2c9b92b506f8e5540446b4fdd8c680f23543"
+      }
+    },
+    "events": {
+      "by_type": {
+        "text": "Conteggi dal buffer eventi in-process in questo momento. Non è cronologia durevole né una tendenza 7/30/90 — la dimensione del buffer limita ciò che si vede.",
+        "source_sha256": "260d7582bad3557747bfacc83be9d06e2fef0f3134c76d6fefe9a4a79c6bb527"
+      }
+    }
+  },
+  "chartLabels": {
+    "ConfigChanged": {
+      "text": "Configurazione modificata",
+      "source_sha256": "89806bdbb952182b561250f335cd67d8714b298087dcb32e06038305fc01ad32"
+    },
+    "PasswordRecovered": {
+      "text": "Password recuperata",
+      "source_sha256": "75159a913fda61e88175c1bd8644a881006d5154bbf7136cef4d534e8201d956"
+    },
+    "AdminLogonSucceeded": {
+      "text": "Accesso amministratore riuscito",
+      "source_sha256": "a073eb97dffeb815ae90db602e3281b87a70c62d9e97d2526ca91dfba77331f8"
+    },
+    "ElevationCodeMinted": {
+      "text": "Codice di elevazione emesso",
+      "source_sha256": "122c0c6c1e9f4fe69bf20987e42011f4160744509598ffe02ae538fb6a73c86c"
+    }
   }
 }

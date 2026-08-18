@@ -528,5 +528,103 @@
       "text": "无剩余工作行。",
       "source_sha256": "e5c2a8eef1925db15b9670d470194971c1aad3e97d8b854459343b4fd0e7d1ea"
     }
+  },
+  "honestyNotes": {
+    "env": {
+      "systems_count": {
+        "text": "当前已注册飞地系统的数量。趋势线使用采样历史；首次采样前序列为空，历史从该采样开始。并非覆盖率百分比，也非评估结论。",
+        "source_sha256": "69db030a51534b9f1c94b4fc22caa29a357b0ec4f5103a77832e90ae82f4f420"
+      },
+      "probe_enabled_count": {
+        "text": "当前有多少已注册系统已开启探测。趋势线使用采样历史；在首次采样前为空。启用探测并非控制项已通过的证据。",
+        "source_sha256": "6b4019cc538d7e6452bba4d7e522f9a461163c02db6bc0e7aef58edcb84d3619"
+      },
+      "physical_vs_log": {
+        "text": "标记为 physical_host 与 log_derived 的最新证据行的构成。趋势线使用采样历史；在首次采样前为空。仅为所收集证据的构成 — 并非通过率。",
+        "source_sha256": "2855f98debf6941663aedc64b7d515611ce8065d6126f3bbbefb7e54e93d7710"
+      },
+      "punch_list_open": {
+        "text": "来自最新机群证据的未决发现与部分结果。面向操作员的交付积压 — 并非残余风险评分。趋势线使用采样历史；在首次采样前为空。",
+        "source_sha256": "892e38b032e917ebc3e1f700df18c4531b2fbb56c67a8f4992a3738468d7531f"
+      },
+      "discovered_systems": {
+        "text": "身份来自 discovery（导入 / 扫描 / 目录）的已注册系统。趋势线使用该注册来源计数的采样历史；在首次采样前为空 — 切勿虚构预历史点。",
+        "source_sha256": "de19ba275f78d499fb3efa2f0526d1449bffa600d502c0b7de15f1102c865e6c"
+      }
+    },
+    "training": {
+      "framework_coverage": {
+        "text": "Covered 表示存在引用该标准某条款的培训文档。并不表示有人已阅读该文档，也不是控制评估。趋势线使用采样历史；在首次采样前为空。",
+        "source_sha256": "a8be8f3e73b4b91f364a40d87d643ac04e08d3ab20383238fef47a64d8ad5a15"
+      },
+      "uncovered_frameworks": {
+        "text": "要求员工意识但库中尚无覆盖文档的框架。文档缺口 — 并非人员未受训的发现。趋势线使用采样历史；在首次采样前为空。",
+        "source_sha256": "784464ec9f7d460d2ca6834bb60f8c8ae28c5bbd2684625a205de9d1d7481aa2"
+      }
+    },
+    "compliance": {
+      "pack_readiness": {
+        "text": "处于 available、partial、planned 或 blocked 交付状态的 Report Center 系列计数。产品采集器的就绪程度 — 绝非 CMMC 或 FedRAMP 裁定。趋势线使用采样历史；在首次采样前为空。",
+        "source_sha256": "9beb070ca0de42316f2835009cf5f98bb8253d564e55ed2cd3c21c5ae8400f8c"
+      },
+      "poam_open": {
+        "text": "状态为 open、in_progress 或 deferred 的 POA&M 行数。跟踪已记录的整改工作 — 并非暴露是否可接受。趋势线使用采样历史；在首次采样前为空。",
+        "source_sha256": "5a896b5deb083d047b45798d2968c20f5eb14923a05d1ca423b64f19e8aacf4b"
+      },
+      "attestations_recorded": {
+        "text": "offline_compliance_attestations 中 attested_at 落在所选 7/30/90 天窗口（默认 30）内的行数。证明已写入证明记录 — 并非每项必需证明均已完成。",
+        "source_sha256": "a54857fb8f45e50b3e5423ad1825b8e6d061f9ba89707a729577c5494235ac68"
+      }
+    },
+    "pum": {
+      "violations_24h": {
+        "text": "每个采样点在过去 24 小时内记录的 privileged-use management 违规事件。趋势线在所选 7/30/90 窗口内使用该采样历史；在首次采样前为空。并非严重性评分。",
+        "source_sha256": "fa97fb2f5cb07cc43edb78acfb4d18d6c15c5742f59f234b75f96d508ac3d0dd"
+      },
+      "endpoints_enrolled": {
+        "text": "当前已分配 PUM 策略的端点。趋势线使用采样历史；在首次采样前为空。仅为注册计数 — 并非执行质量。",
+        "source_sha256": "f9782cd71f65e67c68227b52dc200d793849ce54eec82bf92c9fb6ba0a12e5af"
+      }
+    },
+    "ir": {
+      "open_cases": {
+        "text": "状态为 open 或 processing、且 opened_at 落在所选 7/30/90 天窗口（默认 30）内的 IR 案例数。来自 offline_ir_cases 的工作积压 — 并非事件响应有效的判断。在指标采样器就绪前，折线图无每日历史；空序列是明示的，而非捏造的零趋势。",
+        "source_sha256": "a91e296ab260af632c2660d7067801347d7cb3d18e92e1c86b64fbbb0322ca49"
+      },
+      "cases_opened_closed": {
+        "text": "来自 offline_ir_cases、opened_at 或 closed_at 落在所选 7/30/90 天窗口（默认 30）内的案例。已记录案例工作的吞吐量 — 并非响应质量或控制有效性。",
+        "source_sha256": "7ade5f268580015310b250936cd9867ca900607fa7ef4c9eadd204b93f29b9fc"
+      }
+    },
+    "defense": {
+      "blocked_attempts": {
+        "text": "所选 7/30/90 天窗口内失败与拒绝的登录以及被阻止的 API 请求。仅为被拒绝尝试的计数 — 并非声称攻击者执行了命令或捕获了恶意软件。打开“已阻止的攻击”页面。",
+        "source_sha256": "142c4df58a904c676ac11691195f2c9b92b506f8e5540446b4fdd8c680f23543"
+      }
+    },
+    "events": {
+      "by_type": {
+        "text": "当前进程内事件环形缓冲区中的计数。不是持久历史，也不是 7/30/90 趋势 — 缓冲区大小限制了您所见内容。",
+        "source_sha256": "260d7582bad3557747bfacc83be9d06e2fef0f3134c76d6fefe9a4a79c6bb527"
+      }
+    }
+  },
+  "chartLabels": {
+    "ConfigChanged": {
+      "text": "配置已更改",
+      "source_sha256": "89806bdbb952182b561250f335cd67d8714b298087dcb32e06038305fc01ad32"
+    },
+    "PasswordRecovered": {
+      "text": "已恢复密码",
+      "source_sha256": "75159a913fda61e88175c1bd8644a881006d5154bbf7136cef4d534e8201d956"
+    },
+    "AdminLogonSucceeded": {
+      "text": "管理员登录成功",
+      "source_sha256": "a073eb97dffeb815ae90db602e3281b87a70c62d9e97d2526ca91dfba77331f8"
+    },
+    "ElevationCodeMinted": {
+      "text": "已签发提升代码",
+      "source_sha256": "122c0c6c1e9f4fe69bf20987e42011f4160744509598ffe02ae538fb6a73c86c"
+    }
   }
 }
