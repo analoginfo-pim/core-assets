@@ -322,6 +322,30 @@
         "es"
       ],
       "notes": "Walk 2026-08-17: wrap home alerts and Customize panel in t(); DE draft in locales-ui/de/dashboard.json. Agent draft does not close. Tile titles from API still English fallback. Not Met. Tier 1 en-GB/zh-Hans absent."
+    },
+    {
+      "id": "spa.session-recordings-leftover-en",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "spa-chrome",
+      "title": "Session recordings leftover English chrome",
+      "added": "2026-08-17",
+      "updated": "2026-08-17",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/pages/SessionRecordingsPage.tsx",
+      "source_sha256": "453840eaf41f3e3687129650c97bfeeadc96f34792f6db27d9463d3d10da1eee",
+      "product_route": "/pam/sessions",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans"
+      ],
+      "draft_tags": [
+        "de"
+      ],
+      "notes": "Walk 2026-08-17: wrap decision chips in t(); DE draft Erlaubt/Verweigert. Header Allow/Deny leftover fixed. Agent draft does not close. Detail replay chrome deferred. Not Met. Tier 1 en-GB/zh-Hans absent."
     }
   ]
 }
