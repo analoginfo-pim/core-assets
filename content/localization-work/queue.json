@@ -395,24 +395,23 @@
       "id": "about.open-source-credits",
       "status": "open",
       "priority": "tier-1",
-      "kind": "legal-notice",
-      "title": "About Open Source Credits page",
+      "kind": "help-manual",
+      "title": "Open Source Credits complete disclosure",
       "added": "2026-08-18",
       "updated": "2026-08-18",
       "source_repo": "pim-offline-server",
-      "source_path": "ui/src/pages/about/AboutOpenSourceCreditsPage.tsx",
-      "source_sha256": "afa2e08b2095cef8b72202ae62dd0de7156e497bc6ee469e2e2a70be90fa0a52",
-      "product_route": "/about/open-source-credits",
+      "source_path": "legal/open-source-credits/inventory.json",
+      "source_sha256": "c4a0ba0a2cb2f708f1f0af42cee32a391c2408f5f2cfc74ae7bf0fe40be8992b",
+      "product_route": "",
       "required_tags": [
         "de",
         "fr",
         "es",
         "en-GB",
-        "zh-Hans",
-        "zh-TW"
+        "zh-Hans"
       ],
       "draft_tags": [],
-      "notes": "Must-localize legal/credits chrome. License bodies stay in the licensor language. Agent drafted de catalog keys; not translator-reviewed."
+      "notes": ""
     },
     {
       "id": "spa.known-default-credentials",
@@ -424,7 +423,7 @@
       "updated": "2026-08-18",
       "source_repo": "pim-offline-server",
       "source_path": "ui/src/pages/KnownDefaultCredentialsPage.tsx",
-      "source_sha256": "5790197879e01244c3e30818b8a0714420a30cbb971175ce968cc7a09b6a5bf8",
+      "source_sha256": "95c9cd5795ae4db1af5e2d8a0eae509c0ca48953479261923b1ad20bf8e78e98",
       "product_route": "/systems/known-default-credentials",
       "required_tags": [
         "de",
@@ -436,7 +435,7 @@
       "draft_tags": [
         "de"
       ],
-      "notes": "US English source plus DE draft for catalog page, page intro, and common.knownDefaults. Agent draft does not close. fr/es/en-GB/zh-Hans remain open. Not Met."
+      "notes": "US English source plus DE draft for catalog page, page intro, and common.knownDefaults. Agent draft does not close. fr/es/en-GB/zh-Hans remain open. Not Met. Source changed 2026-08-18 (hash 5790197879e0 → 95c9cd5795ae)."
     },
     {
       "id": "spa.main-page-de-missing-keys-20260818",
@@ -459,6 +458,28 @@
       ],
       "draft_tags": [],
       "notes": "Source changed 2026-08-18 (hash b0a9a4dea451 → 40ca95cd4d7a). Source changed 2026-08-18 (hash 40ca95cd4d7a → 60b0ecae8a40)."
+    },
+    {
+      "id": "spa.ip-scanner-redesign",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "spa-strings",
+      "title": "IP Scanner page redesign (Systems → Network Scan)",
+      "added": "2026-08-18",
+      "updated": "2026-08-18",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/i18n/locales/en/ot.json",
+      "source_sha256": "1fd505b218a0cf558770a9deb04b823dbbefeb611cc1b93d3b869cf74262288d",
+      "product_route": "/systems/network-scan",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans"
+      ],
+      "draft_tags": [],
+      "notes": ""
     }
   ]
 }

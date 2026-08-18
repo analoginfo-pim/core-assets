@@ -3712,11 +3712,13 @@
         "source_sha256": ""
       },
       "creditsTitle": "Open-Source-Hinweise",
-      "creditsIntro": "Drittanbieter- und Open-Source-Komponenten, die in AIC Server eingebunden sind. Jede Zeile nennt Projekt, Lizenz und Urheberrechtshinweis, soweit bekannt. Zeile aufklappen, um den Lizenztext zu lesen.",
+      "creditsIntro": "Jede Drittanbieter-Open-Source-Komponente, die in AIC Server eingebunden ist (Cargo-Produktionsgraph, npm-Produktionsgraph und eingebundene Assets). Jede Zeile nennt Projekt, Lizenz und Urheberrechtshinweis, soweit bekannt. Zeile aufklappen, um den Lizenztext zu lesen.",
       "creditsLoadFailed": "Das Open-Source-Hinweise-Inventar konnte nicht geladen werden.",
       "creditsLoading": "Open-Source-Hinweise werden geladen",
       "creditsStatusLabel": "Inventarstatus: {{status}}",
-      "creditsMeta": "{{count}} kuratierte Einträge. Erzeugt {{when}}. Cargo.lock-Pakete im Anhang: {{lockCount}}. Cargo.lock SHA-256: {{cargoSha}}. package-lock SHA-256: {{npmSha}}. Server-SBOM SHA-256: {{sbomSha}}.",
+      "creditsMeta": "{{count}} Drittanbieter-Einträge ({{withText}} mit Lizenztext). Erzeugt {{when}}. Cargo.lock-Pakete: {{lockCount}}. Cargo.lock SHA-256: {{cargoSha}}. package-lock SHA-256: {{npmSha}}. Server-SBOM SHA-256: {{sbomSha}}.",
+      "creditsBlocked": "{{n}} Paket(e) sind BLOCKED (keine geerntete Lizenzidentität und/oder kein Lizenztext). Sie bleiben in der Liste und werden nicht weggelassen.",
+      "creditsBlockedChip": "BLOCKED",
       "creditsUnresolved": "{{n}} direkte Cargo-Abhängigkeiten haben bei der Erzeugung keinen Lizenzstring aus dem lokalen Cargo-Registry-Cache erhalten (mit Hinweis aufgeführt).",
       "creditsFilter": "Komponenten filtern",
       "creditsFilterHelp": "Liste nach Projektname, Lizenz oder Urheberrechtstext eingrenzen.",
@@ -3724,8 +3726,11 @@
       "creditsDownloadAppendix": "Cargo.lock-Anhang herunterladen",
       "creditsDownloadAppendixHelp": "Den vollständigen Cargo.lock-Anhang mit Namen und Versionen als JSON herunterladen.",
       "creditsDownloadInventory": "Inventar-JSON herunterladen",
-      "creditsDownloadInventoryHelp": "Das kuratierte Partial-Inventar-JSON einschließlich Ehrlichkeitshinweisen herunterladen.",
-      "creditsShowing": "{{shown}} von {{total}} angezeigt",
+      "creditsDownloadInventoryHelp": "Das vollständige Inventar-JSON einschließlich Ehrlichkeitshinweisen herunterladen.",
+      "creditsDownloadBlocked": "BLOCKED-Pakete herunterladen",
+      "creditsDownloadBlockedHelp": "Die Liste der BLOCKED-Pakete als JSON herunterladen.",
+      "creditsShowing": "{{shown}} von {{total}} angezeigt (Seite {{page}} von {{pages}})",
+      "creditsPaginationAria": "Seiten der Open-Source-Hinweise",
       "creditsListAria": "Open-Source-Komponenten",
       "creditsLicenseUnknown": "Lizenz nicht ermittelt",
       "creditsEcosystem": "Ökosystem: {{value}}",
@@ -3734,7 +3739,7 @@
       "creditsLicenseLoading": "Lizenztext wird geladen…",
       "creditsLicenseLoadStatus": "Lizenztext konnte nicht geladen werden ({{status}}).",
       "creditsLicenseLoadFailed": "Der Lizenztext konnte nicht geladen werden.",
-      "creditsNoLicenseBody": "Für diesen Eintrag ist kein Lizenztext eingebettet. Der oben genannte SPDX- oder Lizenzname stammt aus den Paketmetadaten."
+      "creditsNoLicenseBody": "BLOCKED: Für dieses Paket konnte kein Lizenztext geerntet werden. Es bleibt aufgeführt; die Lizenz wurde nicht erfunden."
     },
     "incidents": {
       "colCase": {

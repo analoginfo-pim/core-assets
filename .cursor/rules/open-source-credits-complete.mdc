@@ -1,0 +1,48 @@
+---
+description: >-
+  Open Source Credits disclosures must list every incorporated third-party
+  OSS component with license identity and text — curated subsets are a defect.
+alwaysApply: true
+---
+
+# Open Source Credits must be complete (hard rule)
+
+Operator directive (Phil, 2026-08-18): **You must include ALL open source
+licenses in our disclosure.** Not a curated subset.
+
+## The rule
+
+> **Every shipping OSS disclosure (`/about/open-source-credits`,
+> `GET /api/admin/open-source-credits`, and the embedded inventory) must
+> list every third-party open-source component incorporated into AIC
+> Server: the full Cargo production graph (registry + git), the full npm
+> production graph, and incorporated assets (for example lipis/flag-icons).
+> Each entry must carry a license SPDX/name and the actual license text
+> (harvested or a stored copy of the licensor's published text). Status
+> may be Live only when every package has identity + text. Packages that
+> truly lack a harvestable license stay listed as BLOCKED — never silently
+> omitted, never invented.**
+
+## Required
+
+1. Regenerate with `core-assets/scripts/generate-open-source-credits.py`
+   against current `Cargo.lock` and `ui/package-lock.json` (run
+   `cargo fetch --locked` first when registry crates are missing locally).
+2. Harvest bodies from the Cargo registry / git checkouts, `node_modules`,
+   and in-tree LICENSE files — do not hand-type license text from memory.
+3. Page: searchable list; expandable license text; honesty banner; pagination
+   or virtualization is OK for large graphs.
+4. Mirror this rule to `core-assets/.cursor/rules/` in the same change set.
+
+## Forbidden
+
+- Curated-direct-only inventories, or "Partial because we only list directs"
+- Omitting transitive Cargo or npm production packages
+- Inventing SPDX ids or license bodies
+- Dropping packages that lack a license file instead of marking **BLOCKED**
+- Claiming Met / certified for the disclosure
+
+## Origin
+
+2026-08-18 — operator: include ALL open source licenses in disclosure;
+Partial curated list is not acceptable.
