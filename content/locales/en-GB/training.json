@@ -8,7 +8,7 @@
     "source_sha256": "a9be08253ae67bf02d16e2b2603a41377fd7f5022cead971bb4baac83ff9ea04"
   },
   "practical_exercise_exclusion": {
-    "text": "800-172 3.2.2e requires practical exercises on current threats, with feedback to participants and supervisors. This product does not run exercises, phishing simulations, or tabletops, and it reports no evidence for 3.2.2e.",
+    "text": "800-172 3.2.2e requires practical exercises on current threats, with feedback to participants and supervisors. This product does not run exercises, phishing simulations, or tabletops; and it reports no evidence for 3.2.2e.",
     "source_sha256": "87a098c9e195eecb07e71e199fa682f1e49635b06971c311d8ac9ce2655ac001"
   },
   "coverage_honesty_note": {
@@ -20,16 +20,16 @@
     "source_sha256": "36e95eca063d855727db2c629d6ceed8a9fff828ec07e2e74d3dec86e79da016"
   },
   "attestation_source_note": {
-    "text": "Every row in this release is operator_recorded: an administrator entered evidence of completion that happened out of band. No self-service signing surface exists, so no row was produced by the signer.",
+    "text": "Note: every row in this release is operator_recorded: an administrator entered evidence of completion that happened out of band. No self-service signing surface exists, so no row was produced by the signer.",
     "source_sha256": "865d786b5848105037f06f61237f726b82eb911a657874675391d56d2c67fc08"
   },
   "audience": {
     "all-personnel": {
-      "text": "All Personnel",
+      "text": "All personnel",
       "source_sha256": "86d27dd9e1b05f05f99d80f8474db8d21f7fc11751b1c856be5ee6dac6d53428"
     },
     "privileged-users": {
-      "text": "Privileged Users",
+      "text": "Privileged users",
       "source_sha256": "ee46f4edfd7e8dc25e86b9e1bca938a61e9e8a9b4d589cb0360417d17553880f"
     },
     "administrators": {
@@ -49,7 +49,7 @@
       "source_sha256": "e2b5066deb9843472073b474194329fd73bbe8be7482b33a744f1261697c6d5e"
     },
     "incident-responders": {
-      "text": "Incident Responders",
+      "text": "Incident responders",
       "source_sha256": "7229735c9ee630a23ec7172387a48884d5760659351baf26185064b5ebe8a014"
     }
   },
@@ -73,7 +73,7 @@
       "source_sha256": "f37c7238ea7e097f83032a497db618e7b085cb6ebcfba6664ce0d35c2af5f20b"
     },
     "ladder_note": {
-      "text": "A sent count is delivery attempts, not completions and not a control verdict.",
+      "text": "A sent count is delivery attempts, not completions, and not a control verdict.",
       "source_sha256": "1515a18f6090478c5614c78c44263208ec942948fa0c4e358d71ddfda996a6b4"
     },
     "welcome": {
@@ -82,7 +82,7 @@
         "source_sha256": "6644e8dc01cf72c8ff8abfd33a0ce358622263a477748a552f9e0ea4b141b2d1"
       },
       "body": {
-        "text": "Hello {full_name}. You have been assigned {program_name}. Please finish it by {due_date}. This message records what we asked you to read. It is not a grade. Ask your manager if you need help.",
+        "text": "Note: hello {full_name}. You have been assigned {program_name}. Please finish it by {due_date}. This message records what we asked you to read. It is not a grade. Ask your manager if you need help.",
         "source_sha256": "9062937cc546e75561cb60cb064ea90b8cc96dd8672deea1d49ef69d891226b8"
       }
     },
@@ -92,7 +92,7 @@
         "source_sha256": "cdb4f2fa4f1b84727268dda25673030cb5c0376021ab95809a3cbd7471411052"
       },
       "body": {
-        "text": "Hello {full_name}. {program_name} is due on {due_date}. Please finish it. This is a reminder, not a grade.",
+        "text": "Note: hello {full_name}. {program_name} is due on {due_date}. Please finish it. This is a reminder, not a grade.",
         "source_sha256": "4356efd319ed9e93c8cd2f44da1cfb17d77e182c7b0e0a48d3bb807bf81a3162"
       }
     },
@@ -102,7 +102,7 @@
         "source_sha256": "f3f830f40fa6e94505b8168ef2bbc7093c96618ee011fab9cf579283b7324f6d"
       },
       "body": {
-        "text": "Hello {full_name}. {program_name} is due today ({due_date}). Please finish it.",
+        "text": "Note: hello {full_name}. {program_name} is due today ({due_date}). Please finish it.",
         "source_sha256": "57f675215a96ffe13d3f61ceecce0858e68e7c04f8829b033bfc2ea4fa0037c9"
       }
     },
@@ -112,7 +112,7 @@
         "source_sha256": "8a11f65d250e5c6a4f881fc1920f74a6e48d97459184d8b4a35d452e336d5441"
       },
       "body": {
-        "text": "Hello {full_name}. {program_name} was due on {due_date}. It is now late. Please finish it or tell your manager.",
+        "text": "Note: hello {full_name}. {program_name} was due on {due_date}. It is now late. Please finish it or tell your manager.",
         "source_sha256": "e42b3239d4364fb6f1414c148e3b3f5e9bc02ac7da54e68e5eca2fe5a376c17e"
       }
     }
@@ -130,11 +130,11 @@
     },
     "spec-24-alignment-pack": {
       "title": {
-        "text": "Reading a Spec 24 Alignment Pack",
+        "text": "Reading a spec 24 alignment pack",
         "source_sha256": "57931c71c1912fcc7173e4f80eecb7b48c7a780b3a71dccd4896cae6fae988ca"
       },
       "purpose": {
-        "text": "Shows an auditor how to read this Spec 24 pack. The pack is not a licensed standard. Mapping is from public pages and may be wrong.",
+        "text": "Shows an auditor how to read this Spec 24 pack. The pack is not a licensed standard. Mapping is drawn from public pages and may be wrong.",
         "source_sha256": "da1d2540c7c215f95144c1db4d3b1be5dc626d7200eb698a0d7846e964c42e48"
       }
     },

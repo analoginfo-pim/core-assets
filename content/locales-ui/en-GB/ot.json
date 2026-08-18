@@ -4,27 +4,27 @@
     "source_sha256": "d4a33d5b78bccebe3f16843dc30e6c0f73b4eb6efb4e7114ddfebde7fa2c9954"
   },
   "discoverIntro": {
-    "text": "Scan configured networks to find OT targets. Results update inventory status on the Inventory page.",
+    "text": "Note: scan configured networks to find OT targets. Results update inventory status on the Inventory page.",
     "source_sha256": "c2c468ed5a09c494f0a140701f0e3b6a546c0dd474538b47bfdbf09bb91a71eb"
   },
   "discoverNoPermission": {
-    "text": "You need the View connection targets permission to open OT Discover.",
+    "text": "You require the View connection targets permission to open OT Discover.",
     "source_sha256": "4e85863f5771d993c7a80002144b0e0e9e5f1a268d6046fe989c328f2c4f14c1"
   },
   "connectNoPermission": {
-    "text": "You need the View connection targets permission to open OT Connect.",
+    "text": "You require the View connection targets permission to open OT Connect.",
     "source_sha256": "b2d9dfbf3abb24cb12c529e63d7986c25f6ddc21b9581226ceb5f52e412375dd"
   },
   "inventoryNoPermission": {
-    "text": "You need the View connection targets permission to open OT Inventory.",
+    "text": "You require the View connection targets permission to open OT Inventory.",
     "source_sha256": "f8b4e687e02a229da707b433316b5927e00febe384b991cdf620413038c8bafe"
   },
   "credentialsNoPermission": {
-    "text": "You need the View connection targets permission to open OT Credentials.",
+    "text": "You require the View connection targets permission to open OT Credentials.",
     "source_sha256": "26f6082c0be44f40bafe405d2b92c5032e6a9a143b55100e8f7992757eba89e4"
   },
   "sessionsNoPermission": {
-    "text": "You need the View connection targets permission to open OT Sessions.",
+    "text": "You require the View connection targets permission to open OT Sessions.",
     "source_sha256": "a91b21b8590ae6ec1a62f1d88a07dedcffd13b2f51d41e3e4aa3c95b180bd77a"
   },
   "inventoryTitle": {
@@ -32,7 +32,7 @@
     "source_sha256": "758f487fe8e9fcc59cec4694d95a9032224f967b29f39543a1fb04e2901b079e"
   },
   "inventoryIntro": {
-    "text": "Review discovered targets, read status chips, and open Configure for non-secret fields and rotation schedules.",
+    "text": "Review discovered targets, read status chips; and open Configure for non-secret fields and rotation schedules.",
     "source_sha256": "e6276c27c5bb1926a17de2a83047ed9892247da5b9ba28815ec497c81b8ca265"
   },
   "connectTitle": {
@@ -40,7 +40,7 @@
     "source_sha256": "1a2303ede07493acc7caaa7c737f3c52bcc9cf04372be19ed1b0af6b9f2c791e"
   },
   "connectIntro": {
-    "text": "Run Check connectivity (enables Connect) in the status banner before Connect becomes active on new targets. OT sessions carry PDU data — not SSH, RDP, or VNC desktops.",
+    "text": "Note: run Check connectivity (enables Connect) in the status banner before Connect becomes active on new targets. OT sessions carry PDU data — not SSH, RDP, or VNC desktops.",
     "source_sha256": "34aea5c9e3ffaf77a9e0c4db9f450272744f71979b3bc64a95b203d5123124db"
   },
   "credentialsTitle": {
@@ -48,7 +48,7 @@
     "source_sha256": "d48a617c7da5163c44f117b9b23d8c920e69b4aa83d7b6570d71a66f3a857183"
   },
   "credentialsIntro": {
-    "text": "Select a target, then rotate a password or request a logged break-glass reveal.",
+    "text": "Select a target, then rotate a password or request a logged break glass reveal.",
     "source_sha256": "2a18cc971d50befd1d5af778ff78cc69d304504ea9c10a183697a754c5efae95"
   },
   "sessionsTitle": {
@@ -56,7 +56,7 @@
     "source_sha256": "26cf51ff70fec3bbb07700b3c95f0b87b1fe05cc2520521d3d766b686faf2283"
   },
   "sessionsIntro": {
-    "text": "Review recorded OT protocol sessions as audit evidence. Open session for the PDU timeline.",
+    "text": "Note: review recorded OT protocol sessions as audit evidence. Open session for the PDU timeline.",
     "source_sha256": "c5ea2b4bf6a5139a7a6e861c6bd40a58ed469046642cb5d1e53bc50b18355f99"
   },
   "permissionsLoading": {
@@ -72,15 +72,15 @@
     "source_sha256": "46c541363b0253b1b7d736ca2ff004b6c8eb816f253c16bf2f154472152fb66d"
   },
   "statusHelpLive": {
-    "text": "Live means this target recently answered a discovery probe. This is not an assessment verdict.",
+    "text": "Live means this target recently answered a discovery probe. This remains not an assessment verdict.",
     "source_sha256": "1e5705a04b271357ea4394b6f4a6578e3947d78d1da569e7ed0697d899596094"
   },
   "statusHelpBlocked": {
-    "text": "BLOCKED means the last probe could not reach this target. Check reachability, then run discovery again.",
+    "text": "Note: bLOCKED means the last probe could not reach this target. Check reachability, then run discovery again.",
     "source_sha256": "0f468c61bd9f57749f91d567ba7eb8fd24abc4b04fa465ea7cf7c0882df581cf"
   },
   "statusHelpPartial": {
-    "text": "Partial means the target is listed but is not Live yet. Run discovery to update status.",
+    "text": "Note: partial means the target is listed but is not Live yet. Run discovery to update status.",
     "source_sha256": "d92ef9372324ec8049396c5178d5cb057d11b6137f761e43517299c65f27645a"
   },
   "inventoryRows": {
@@ -92,7 +92,7 @@
     "source_sha256": "387f355f83e2679c18a587ad4a913919e525160286023f5b0f05c6ef3840d807"
   },
   "checkConnectivity": {
-    "text": "Check connectivity",
+    "text": "Verify connectivity",
     "source_sha256": "2ce6af084aa8c1239148bf25a5696eceef2a27e0041cc09c4ac1f7ad6914ea91"
   },
   "connect": {
@@ -136,7 +136,7 @@
     "source_sha256": "fb6f7c93e6bf3dfac450d268bf57844ae92b9c93f7d027b07f715bfbc467d225"
   },
   "discoveryFinished": {
-    "text": "Discovery finished with status {{status}}",
+    "text": "Discovery finished with the status {{status}}",
     "source_sha256": "de359dc0ccf8d271d334355e29fe9d487e2b8a6c8d255659871473d4884b6d6f"
   },
   "discoveryAssets": {
@@ -144,7 +144,7 @@
     "source_sha256": "cfd7aa07f1c5c95703594844402ff2dc801b9217faa57fa6ef82475699fd6bcf"
   },
   "discoveryProbes": {
-    "text": "Probes succeeded: {{ok}}, failed: {{fail}}",
+    "text": "Probes succeeded: {{ok}}; failed: {{fail}}",
     "source_sha256": "b6a030ffc00ac3c9ce3adc8c5101d8f51f5dddeae4b38191ae4655f49ad8ae50"
   },
   "scanNetworks": {
@@ -168,7 +168,7 @@
     "source_sha256": "2a78025de6aae5e7ff88e5a951bb3a78ddd67388913529cf9e2dd9653e62b02d"
   },
   "oldPasswordEmpty": {
-    "text": "Leave the old password empty to use the stored password.",
+    "text": "Leave the old password empty to use the password currently stored.",
     "source_sha256": "12819f1f1eec1bff041c5c55304feeb6cad3b3428b9716f814513bf28045079c"
   },
   "protocolChipsTitle": {
@@ -176,7 +176,7 @@
     "source_sha256": "7ff13a1d3d411f1502899b85a10843751008bc1cd20d7cc7cb3d246e7b18930c"
   },
   "protocolChipsIntro": {
-    "text": "Supported OT protocols and their current connect readiness.",
+    "text": "Supported OT protocols and their current Connect readiness.",
     "source_sha256": "eea1759c662eac78dc98346e5b745627bd6cb9c616853b12c0990c16677ae7e4"
   },
   "checking": {
@@ -184,43 +184,43 @@
     "source_sha256": "ec963ffc911b840134fc738b41a8bb0493489c402a4a761efd36c16dea7d984b"
   },
   "checkConnectivityEnablesConnect": {
-    "text": "Check connectivity (enables Connect)",
+    "text": "Verify connectivity (enables Connect)",
     "source_sha256": "4e91cc9dce98bc7ec7df0ece73c944073191c645102aa6f77930c5eb0658d099"
   },
   "checkConnectivityAria": {
-    "text": "Check connectivity of all OT targets",
+    "text": "Verify connectivity of all OT targets",
     "source_sha256": "3267793c4dad5d7ab48bef23156ab0ed37b51aea18293834bd26bac5a4a776a9"
   },
   "inventoryHonesty": {
-    "text": "Inventory status: {{status}} · {{count}} assets. Connect uses last TCP probe of each dial port (availability only — not a live session proof).",
+    "text": "Note: inventory status: {{status}} · {{count}} assets. Connect uses last TCP probe of each dial port (availability only — not a live session proof).",
     "source_sha256": "f9d1740334d360d08c8a9fd0380566096034fdb4d770131d04d38bbda32d92ca"
   },
   "statusLiveDetail": {
-    "text": "Live means this target recently answered a discovery or protocol probe successfully.",
+    "text": "Live means this target recently answered a discovery or protocol probe with success.",
     "source_sha256": "d2cbaeaabd2fcc542cfd2636c99365a6423d9dbd9bf167f1e55cba556ff5ec24"
   },
   "statusLiveNext": {
-    "text": "Use Connect to open a session, or Configure to edit settings and schedules.",
+    "text": "Use Connect to open a session, or Configure to edit the settings and schedules.",
     "source_sha256": "6c02f6ef103f793f1edc3f804df6700e8a441f5d69d5c99e34308e6d02f5e305"
   },
   "statusBlockedDetail": {
-    "text": "BLOCKED means the last discovery or protocol probe could not reach this target.",
+    "text": "BLOCKED means the last discovery or protocol probe was unable to reach this target.",
     "source_sha256": "48906c5a92d1b1c65233b9a9ce4d85a6b5b913b63c4e8cc8b255803bceeb72de"
   },
   "statusBlockedNext": {
-    "text": "Confirm the host is reachable, then run Discover and retry Connect.",
+    "text": "Confirm that the host is reachable, then run Discover and retry Connect.",
     "source_sha256": "99b391421c950d99eb5603d365394c4c01d2705974d22b1b557b66cf61c5408f"
   },
   "statusPartialDetail": {
-    "text": "Partial means this target is in inventory but has not fully proved Live on a discovery or protocol probe yet. This is delivery status — not a compliance verdict.",
+    "text": "Note: partial means this target is in inventory but has not fully proved Live on a discovery or protocol probe yet. This is delivery status — not a compliance verdict.",
     "source_sha256": "ca3d0fffa899e037d14ae85de1ea8847ddd52a567c45fb37be0fcd682cb22cb4"
   },
   "statusPartialNext": {
-    "text": "Next: run Discover, then use Connect when the target is ready.",
+    "text": "Next: run Discover, then use Connect once the target is ready.",
     "source_sha256": "dbc7558af551d54abf8db6aa5d6b5ff46cbe1d66b5532d4e6acce072c5373da3"
   },
   "partialStatusHelp": {
-    "text": "Partial means a target is listed but has not fully proved Live on a discovery or protocol probe yet. Hover a Status chip for the next step. Status values describe delivery — they are not a compliance verdict.",
+    "text": "Note: partial means a target is listed but has not fully proved Live on a discovery or protocol probe yet. Hover a Status chip for the next step. Status values describe delivery — they are not a compliance verdict.",
     "source_sha256": "774a027ecc6479ffe9ca2bb9f844f89e4bd98a65026a6f9249bcc85cc99734f2"
   },
   "discoveryJobsLive": {
@@ -228,11 +228,11 @@
     "source_sha256": "590e5fa9296bcdb98515687c8b79da5b9ac9428dd82c0c97963e447f60974418"
   },
   "discoveryJobsIntro": {
-    "text": "Enter networks to scan, then run discovery. Results update inventory status. An optional schedule repeats the scan.",
+    "text": "Note: enter networks to scan, then run discovery. Results update inventory status. An optional schedule repeats the scan.",
     "source_sha256": "241ffca00cca9389b1221316ae088d71e489ae2f9f11cf4fddbbff63510ba831"
   },
   "scanNetworksHelper": {
-    "text": "One IPv4 network per line in CIDR form (for example 192.168.10.0/24). This run uses the first network. Leave empty for the configured default.",
+    "text": "Note: one IPv4 network per line in CIDR form (for example 192.168.10.0/24). This run uses the first network. Leave empty for the configured default.",
     "source_sha256": "9168bacc150026356779e5098684717649d1e8df2bc01fae1b89e8168f929362"
   },
   "startDiscoveryAria": {
@@ -256,7 +256,7 @@
     "source_sha256": "c59fd1d82db9ed7ea487bb38bea0fbc932efa29b46e9da57b9176f74888340ae"
   },
   "tryDefaultsAria": {
-    "text": "Try published default credentials on {{ip}}",
+    "text": "Try published default credentials on the {{ip}}",
     "source_sha256": "27df4593068f9cbb3a5b521c9f0202c8d7d6cd87789e78dcfc984e984fec92a3"
   },
   "discoveryJobAria": {
@@ -264,7 +264,7 @@
     "source_sha256": "6254f014b1861b00e62c8a3257a0b4848f97bb2b5f039708148424028d6fbbca"
   },
   "assetList": {
-    "text": "Asset List",
+    "text": "Asset list",
     "source_sha256": "2d1e900888c3bf10f2421cc60091abef931033b021f1c883926df0bd761ea3bc"
   },
   "assetListAria": {
@@ -284,7 +284,7 @@
     "source_sha256": "44f5e3fbec57be75ebfb2e42caf7f5ee1542f84748a0380b6f20238c4a257e1b"
   },
   "gridCommentHelp": {
-    "text": "Operator use-case note for this target. Hover to read the full text when truncated.",
+    "text": "Operator use-case note for the present target. Hover to read the full text when truncated.",
     "source_sha256": "509db25522eee76b0a0c87668063d986ed55c27fe53f3df65a73b5e05ecab6e8"
   },
   "gridProtocol": {
@@ -292,7 +292,7 @@
     "source_sha256": "cf0883343f4abef779b777c35764f86c9f1f4324e8b5490840245d02ad2f7c6f"
   },
   "gridProtocolHelp": {
-    "text": "OT protocol chip for this seat (Modbus, OPC UA, DNP3, and so on). Not IT SSH/RDP/VNC.",
+    "text": "OT protocol chip for this seat (Modbus, OPC UA, DNP3; and so on). Not IT SSH/RDP/VNC.",
     "source_sha256": "d36881bbec0afd3aaa07b96f6addaaa62b848a0afcfdadaf9c5fc9102038f2a4"
   },
   "gridReachability": {
@@ -300,7 +300,7 @@
     "source_sha256": "66f0f43287781c8eb41ea0324942f05449e9e864657497105bac41627a336bb4"
   },
   "gridReachabilityHelp": {
-    "text": "TCP check of the Connect dial port (host:port). Reachable enables the Connect control only — not a live session proof.",
+    "text": "Note: tCP check of the Connect dial port (host:port). Reachable enables the Connect control only — not a live session proof.",
     "source_sha256": "e888948942d4e8ed0f9edbe4c2a1199b8ef47e5d6879d3de139810539537e230"
   },
   "gridHost": {
@@ -308,7 +308,7 @@
     "source_sha256": "4a823118b9ba8baa2f47489c0716f52755368e3e3c2c26d60736ccfa1bb21b5e"
   },
   "gridHostHelp": {
-    "text": "Network endpoint as host:port for this OT target.",
+    "text": "Network endpoint as host:port for the this OT target.",
     "source_sha256": "a95a507d130b4ce264b1f6e931a0b2bea30241ea82cd9b18f937ece14011a9e4"
   },
   "gridStatus": {
@@ -316,7 +316,7 @@
     "source_sha256": "920e413c7d411b61ef3e8c63b1cb6ad058d5f95f8b481dbafe60248387d8c355"
   },
   "gridStatusHelp": {
-    "text": "Delivery status from inventory/discovery (Live, Partial, or BLOCKED). Never Met or certified.",
+    "text": "Note: delivery status from inventory/discovery (Live, Partial, or BLOCKED). Never Met or certified.",
     "source_sha256": "65dfddcf488ccfdef51cfeb1175afbb7d98a71132d18d52d9b477b177e34c5c6"
   },
   "gridActions": {
@@ -324,7 +324,7 @@
     "source_sha256": "ff8059dc6752afdd30d275932b1d5031a2ec854b387a8c57ecc6689915293a43"
   },
   "gridActionsHelp": {
-    "text": "Connect opens OT PDU Live. Configure edits non-secret target settings. Select picks a row for break-glass on Credentials.",
+    "text": "Note: connect opens OT PDU Live. Configure edits non-secret target settings. Select picks a row for break-glass on Credentials.",
     "source_sha256": "87698a99d9fdae279b853d407dd32ff5ad0f5087b8ff89d5e40ca29e18b63923"
   },
   "noComment": {
@@ -336,19 +336,19 @@
     "source_sha256": "a53dc5bedc0088ba02c9ded6e17afcbde3f68456a2f78a87b56c8dd56d890951"
   },
   "protocolTip": {
-    "text": "OT protocol: {{label}}. Connect opens an OT PDU session for this protocol — not an SSH/RDP/VNC canvas.",
+    "text": "OT protocol: {{label}}. Connect opens an OT PDU session for the present protocol — not an SSH/RDP/VNC canvas.",
     "source_sha256": "35a23009a6b71f14c31175d1d2f867a2543ccdfcf2baad8c53df066371e634d9"
   },
   "reachTip": {
-    "text": "{{dial}} is {{status}}.{{last}} Availability only — not Connect protocol-surface PASS.",
+    "text": "{{dial}} is {{status}}.{{last}} Availability only — this is not Connect protocol-surface PASS.",
     "source_sha256": "103fd43fdfabaa808a11ae1f5b34dc099ce2cad7e9d1f8e142172607ba2f93fa"
   },
   "lastChecked": {
-    "text": " Last checked {{when}}.",
+    "text": " Last verified {{when}}.",
     "source_sha256": "4de1e5c50f587a037dd626733bb8763efd9eb656dac068abff5d17788dc5325d"
   },
   "notCheckedYet": {
-    "text": " Not checked yet.",
+    "text": " Not verified yet.",
     "source_sha256": "f8c4f1c424909f3d25c18d25c27671f5ba69bcccf3fa61e8149a776716a13473"
   },
   "hostTip": {
@@ -360,19 +360,19 @@
     "source_sha256": "bd35bfaa68aa30daab97368ed8e57b44df3ffbb07e626cf6edfdccc17f09703b"
   },
   "connectReadyTitle": {
-    "text": "Connect / Open OT broker session → OT PDU Live timeline. Availability only until session proves connecting|connected.",
+    "text": "Note: connect / Open OT broker session → OT PDU Live timeline. Availability only until session proves connecting|connected.",
     "source_sha256": "33c0978278a599b297f44c24269fcfb378bc065c21312909f32dbc1c9f545942"
   },
   "connectUnknownTitle": {
-    "text": "Connect stays off until you run Check connectivity (status banner above). No probe has run for this target yet.",
+    "text": "Connect stays off until you run Check connectivity (status banner above). No probe has run for the present target yet.",
     "source_sha256": "9292ec3d1d63b163e309d49173c55dbc86360bab0fdecb23f0755523d22c9824"
   },
   "connectCheckingTitle": {
-    "text": "Connectivity probe in progress… Connect stays off until it finishes.",
+    "text": "Connectivity probe in progress… Connect remains off until it finishes.",
     "source_sha256": "3c34feb7d7eb55081e19734e05c0e9f13befe39ac864302b87b6c1b012cd8896"
   },
   "connectUnreachableTitle": {
-    "text": "Target dial port was not reachable on the last probe. Run Check connectivity again after fixing the network path.",
+    "text": "Note: target dial port was not reachable on the last probe. Run Check connectivity again after fixing the network path.",
     "source_sha256": "c15d7b752ccdc9157c17d324ade3dbd437e5457b8324d2dfc1d2504708ff3107"
   },
   "connectAriaReady": {
@@ -380,11 +380,11 @@
     "source_sha256": "920dee31b3bb1840573cd3f4eaa4c64c5570ad91518a3d07dc9179d1a37d71ed"
   },
   "connectAriaUnknown": {
-    "text": "Connect disabled — run Check connectivity before connecting to {{name}}",
+    "text": "Connect disabled — run Check connectivity before connecting to {{name}}.",
     "source_sha256": "829d1d636e1854b446e5c2866a1ae1bae99b794d8c7ddc6559825c3ec1a58a0d"
   },
   "connectAriaUnreachable": {
-    "text": "Connect disabled — {{name}} is not reachable on {{host}}:{{port}}",
+    "text": "Connect disabled — {{name}} is not reachable on {{host}}:{{port}}.",
     "source_sha256": "cf41a8276f8e8dae39cd84151df31bf05128d7880106ae40f6b76d7e753ebd84"
   },
   "configureAria": {

@@ -4,25 +4,19 @@ Partner-readable status for Phil and Robert. Updated after each milestone push t
 
 ## Latest
 
-**core-assets SHA:** `fa05cb7` (Wave D catalogs)
+**core-assets SHA:** *(pending commit — en-GB quality)*
 
-**Wave D complete** (`pl`, `tr`, `nl`, `sv`, `fi`, `ar`) vs current US English key set:
+**en-GB quality pass** (real UK register, not a US spelling overlay):
 
-| Tag | product-all missing | stale | Notes |
-| --- | ---: | ---: | --- |
-| pl | 0 | 0 | Formal Polish |
-| tr | 0 | 0 | Formal Turkish |
-| nl | 0 | 0 | Formal Dutch |
-| sv | 0 | 0 | Formal Swedish |
-| fi | 0 | 0 | Formal Finnish |
-| ar | 0 | 0 | Formal MSA; manifest `dir=rtl` (JSON only) |
+| Tag | product aic-server missing | stale | identical-to-en (all surfaces) | Notes |
+| --- | ---: | ---: | ---: | --- |
+| en-GB | 0 | 0 | 500 | Partial: remaining identical are mostly short shared chrome (OK/Cancel/Save) plus 3 long leaves that must stay (classification templates with `{organization_name}`, copyright). Placeholders intact; `source_sha256` unchanged. |
 
-`en_total` product-all **1006** — all six tags **0 / 0**. aic-server subset **536** also **0 / 0**.
-
-Wave A/B/C unchanged this run.
+Wave A–D tags unchanged this run (not retouched).
 
 ## History
 
+- *(this commit)* — en-GB UK quality rewrite across locales / locales-ui / gui / agent / recording
 - `fa05cb7` — Wave D pl/tr/nl/sv/fi/ar
 - `2087c30` / `9a24427` — Wave C ja/ko/pt-BR/it/he
 - `8b25375` — progress after Wave B
