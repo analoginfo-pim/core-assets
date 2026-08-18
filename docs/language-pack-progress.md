@@ -30,7 +30,9 @@ placeholder_broken 0** (present 536 / en_total 536).
 menu bar captions (`.rc` → pack keys + `apply_menu`), Server
 settings/elevation/asymmetric dialog help and status strings, Jump and
 DB Mgmt CLI About/Status/syslog-probe lines — all `en`+`de` in
-`i18n-native`. Other tags may omit new keys.
+`i18n-native`. Other tags may omit new keys. Follow-up: Server
+install/uninstall confirm + Load/Save failed lines; DB password-mismatch
+CLI. Beavis2 restaged PF/PD; packs API 18/18.
 
 **Configurator screens/help from pack keys:** `en` (+ `de`) expanded for
 AIC Server (`server_configurator.json` help/status/dialog keys), Jump and
