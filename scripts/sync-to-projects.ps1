@@ -327,6 +327,9 @@ $treeMap = [ordered]@{
     "content/locales" = @(
         "pim-offline-server/locales"
     )
+    "content/locales-ui" = @(
+        "pim-offline-server/locales/ui"
+    )
     "content/i18n-native" = @(
         "pim-app-config/crates/pim-app-config-i18n/bundles"
     )

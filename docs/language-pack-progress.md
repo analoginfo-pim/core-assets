@@ -4,19 +4,23 @@ Partner-readable status for Phil and Robert. Updated after each milestone push t
 
 ## Latest
 
-**core-assets SHA:** `7118aad` — en-GB UK quality
+**Product integration (Beavis2):** Wave A–D packs synced and staged; AIC Server
+packs API lists all 18 complete tags (`en` required). MSI harvest in
+`pim-installers` includes Server / Agent / Recording Features for every tag.
+Sync map now copies `content/locales-ui` → `pim-offline-server/locales/ui`.
 
-**en-GB quality pass** (real UK register from US English; not an alias of `en`):
+**core-assets catalog SHAs:** Wave C `9a24427`, Wave D `fa05cb7`, progress
+`c6053d8`; later en-GB UK quality on `main` (`7118aad` / `66ec69d`).
 
-| Tag | aic-server missing | stale | identical-to-en (all surfaces) | Notes |
-| --- | ---: | ---: | ---: | --- |
-| en-GB | 0 | 0 | 494 | **Partial:** ~512 leaves differ with UK register. Remaining identical: mostly short shared chrome (OK/Cancel/Save) and variety-neutral titles; **3 long** kept on purpose (classification templates with `{organization_name}`, copyright). Placeholders and `source_sha256` intact. |
+Complete selectable tags:
 
-Wave A–D other tags not retouched in this pass.
+`en`, `de`, `fr`, `es`, `en-GB`, `zh-Hans`, `zh-TW`, `ja`, `ko`, `pt-BR`,
+`it`, `he`, `pl`, `tr`, `nl`, `sv`, `fi`, `ar`
 
 ## History
 
-- (this push) — en-GB UK quality follow-up lexical pass
+- (this push) — sync locales-ui into server; product harvest / Beavis2 stage note
+- `66ec69d` / `7118aad` — en-GB UK quality follow-up lexical pass
 - `d4fe15f` / `1941fae` — en-GB UK quality rewrite
 - `fa05cb7` — Wave D pl/tr/nl/sv/fi/ar
 - `9a24427` — Wave C ja/ko/pt-BR/it/he
