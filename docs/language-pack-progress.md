@@ -4,43 +4,22 @@ Partner-readable status for Phil and Robert. Updated after each milestone push t
 
 ## Latest
 
-**en-GB UK quality finish:** remaining identical-to-US leaves rewritten to
-natural UK English where a distinct form exists (organisation/authorised
-lexicon, Contents vs Table of contents, Loading the dashboard, Your
-training is due soon, Look-back period, Notes for the export package,
-formal UK agent/status/configurator chrome). Win32 `&` accelerators kept
-where possible. Never appended "(UK)". Placeholders and `source_sha256`
-preserved from `en`.
+**NEW configurator keys filled (post-97159ae):** the 125 keys that landed
+in `en`+`de` only — Server `server_configurator.json` (40), Agent
+`messages.json` (52), Jump CLI (5), DB Mgmt CLI (28) — are now present
+for **fr, es, en-GB, zh-Hans, zh-TW, ja, ko, pt-BR, it, he, pl, tr, nl,
+sv, fi, ar**. Deep-merge only; existing leaves untouched. Leaf shape
+`{"text","source_sha256"}` matches `en`. Formal register; en-GB uses
+Enrolment / programme / dialogue / serialise where distinct. KEEP chrome
+kept for `AIC PIM/PAM`, field ids, and short `ok` / `fips_*` tokens.
 
-Honest identical-to-`en` recount (locales + locales-ui + native en-GB,
-including Jump/DB Mgmt): **52** total — **3** long intentional
-(`{organization_name}` banners + Copyright), KEEP chrome (OK / Cancel /
-Apply / Close / Save / Error / Warning / Browse… / &Apply / &Save), plus
-unavoidable variety-neutral short tokens and product proper nouns (CMMC,
-POA&M, MSP-run IGA, Level 1–3, scaffold titles, Live/Partial/BLOCKED,
-Yes/No, language names Deutsch/English/Français, AIC Jump Server / AIC
-Database Management Agent product strings, PKCS#11, asset path tokens).
-**Partial:** those remaining identical strings are intentional KEEP or
-variety-neutral — not unfinished UK copy.
+**Native audit (these four files):** every tag **missing 0 / stale 0**
+(same key counts as `en`: 335 / 164 / 8 / 31). Broader `audit --product
+all` still reports unrelated gaps (e.g. `db_mgmt_configurator.json` Tauri
+UI keys) outside this slice.
 
-`aic-server` audit: en-GB **missing 0 / stale 0 / orphan 0 /
-placeholder_broken 0** (present 536 / en_total 536).
-
-**Configurator hardcoded extract (menus / dialogs / CLI):** Agent Win32
-menu bar captions (`.rc` → pack keys + `apply_menu`), Server
-settings/elevation/asymmetric dialog help and status strings, Jump and
-DB Mgmt CLI About/Status/syslog-probe lines — all `en`+`de` in
-`i18n-native`. Other tags may omit new keys. Follow-up: Server
-install/uninstall confirm + Load/Save failed lines; DB password-mismatch
-CLI. Beavis2 restaged PF/PD; packs API 18/18.
-
-**Configurator screens/help from pack keys:** `en` (+ `de`) expanded for
-AIC Server (`server_configurator.json` help/status/dialog keys), Jump and
-DB Mgmt (full Tauri `ui.json` key sets), and Agent About
-(`config.about.*` in `pim-offline-agent` messages). Win32/Tauri loaders
-resolve via `pim-app-config-i18n` disk `.text` packs. Other tags may omit
-the new keys (incomplete product pack OK; do not claim selectable until
-complete).
+**en-GB UK quality finish** (prior): remaining intentional identical-to-
+US leaves documented earlier; not reopened here.
 
 Jump/DB MSI harvest (18 tags) remains as before.
 
