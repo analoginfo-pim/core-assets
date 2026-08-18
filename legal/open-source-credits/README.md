@@ -38,4 +38,4 @@ python scripts/generate-open-source-credits.py
 Then sync into `pim-offline-server` via this script (auto) or
 `scripts/sync-to-projects.ps1`.
 
-Inventory SHA-256: `b1890d51d94d1f519060a1460315ac71f3c2fc627cb06c6a6ed54d1cebdd1e75`
+Inventory SHA-256: `34802ccf2bda605d5631495325857e531d175759dee3a690b541fe77c456a223`
