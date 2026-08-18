@@ -26,6 +26,12 @@ variety-neutral — not unfinished UK copy.
 `aic-server` audit: en-GB **missing 0 / stale 0 / orphan 0 /
 placeholder_broken 0** (present 536 / en_total 536).
 
+**Configurator hardcoded extract (menus / dialogs / CLI):** Agent Win32
+menu bar captions (`.rc` → pack keys + `apply_menu`), Server
+settings/elevation/asymmetric dialog help and status strings, Jump and
+DB Mgmt CLI About/Status/syslog-probe lines — all `en`+`de` in
+`i18n-native`. Other tags may omit new keys.
+
 **Configurator screens/help from pack keys:** `en` (+ `de`) expanded for
 AIC Server (`server_configurator.json` help/status/dialog keys), Jump and
 DB Mgmt (full Tauri `ui.json` key sets), and Agent About
