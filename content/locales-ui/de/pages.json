@@ -3710,7 +3710,31 @@
       "eulaLoading": {
         "text": "EULA wird geladen",
         "source_sha256": ""
-      }
+      },
+      "creditsTitle": "Open-Source-Hinweise",
+      "creditsIntro": "Drittanbieter- und Open-Source-Komponenten, die in AIC Server eingebunden sind. Jede Zeile nennt Projekt, Lizenz und Urheberrechtshinweis, soweit bekannt. Zeile aufklappen, um den Lizenztext zu lesen.",
+      "creditsLoadFailed": "Das Open-Source-Hinweise-Inventar konnte nicht geladen werden.",
+      "creditsLoading": "Open-Source-Hinweise werden geladen",
+      "creditsStatusLabel": "Inventarstatus: {{status}}",
+      "creditsMeta": "{{count}} kuratierte Einträge. Erzeugt {{when}}. Cargo.lock-Pakete im Anhang: {{lockCount}}. Cargo.lock SHA-256: {{cargoSha}}. package-lock SHA-256: {{npmSha}}. Server-SBOM SHA-256: {{sbomSha}}.",
+      "creditsUnresolved": "{{n}} direkte Cargo-Abhängigkeiten haben bei der Erzeugung keinen Lizenzstring aus dem lokalen Cargo-Registry-Cache erhalten (mit Hinweis aufgeführt).",
+      "creditsFilter": "Komponenten filtern",
+      "creditsFilterHelp": "Liste nach Projektname, Lizenz oder Urheberrechtstext eingrenzen.",
+      "creditsFilterAria": "Open-Source-Hinweise nach Name oder Lizenz filtern",
+      "creditsDownloadAppendix": "Cargo.lock-Anhang herunterladen",
+      "creditsDownloadAppendixHelp": "Den vollständigen Cargo.lock-Anhang mit Namen und Versionen als JSON herunterladen.",
+      "creditsDownloadInventory": "Inventar-JSON herunterladen",
+      "creditsDownloadInventoryHelp": "Das kuratierte Partial-Inventar-JSON einschließlich Ehrlichkeitshinweisen herunterladen.",
+      "creditsShowing": "{{shown}} von {{total}} angezeigt",
+      "creditsListAria": "Open-Source-Komponenten",
+      "creditsLicenseUnknown": "Lizenz nicht ermittelt",
+      "creditsEcosystem": "Ökosystem: {{value}}",
+      "creditsSource": "Quelle: {{value}}",
+      "creditsLicenseTextAria": "Lizenztext für {{name}}",
+      "creditsLicenseLoading": "Lizenztext wird geladen…",
+      "creditsLicenseLoadStatus": "Lizenztext konnte nicht geladen werden ({{status}}).",
+      "creditsLicenseLoadFailed": "Der Lizenztext konnte nicht geladen werden.",
+      "creditsNoLicenseBody": "Für diesen Eintrag ist kein Lizenztext eingebettet. Der oben genannte SPDX- oder Lizenzname stammt aus den Paketmetadaten."
     },
     "incidents": {
       "colCase": {
@@ -12350,5 +12374,10 @@
         "source_sha256": ""
       }
     }
+  },
+  "about__open-source-credits": {
+    "title": "Open-Source-Hinweise",
+    "summary": "Teilinventar von Open-Source- und eingebundenen Drittanbieterkomponenten mit Lizenznamen und Lizenztexten. Status und Erzeugungsmethode stehen auf der Seite. Öffnen über Info & Lizenzierung.",
+    "helpAriaLabel": "Hilfe zu Open-Source-Hinweisen öffnen"
   }
 }
