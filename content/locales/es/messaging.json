@@ -1,48 +1,102 @@
 {
   "email": {
     "builtin.drift.alert": {
-      "subject": "[Desfase de reloj] {{endpoint.machine_name}} {{drift.seconds}}s",
-      "body": "El punto {{endpoint.machine_name}} ({{endpoint.machine_ip}}) informó un desfase de {{drift.seconds}} segundos a las {{event.timestamp}}.\nUmbral: {{endpoint.max_drift_seconds}}s."
+      "subject": {
+        "text": "[Desfase de reloj] {{endpoint.machine_name}} {{drift.seconds}}s",
+        "source_sha256": "74308b8abae075cb534ce50110d2f511a7a5ed153dd8a73337a6247943d46e8d"
+      },
+      "body": {
+        "text": "El punto {{endpoint.machine_name}} ({{endpoint.machine_ip}}) informó un desfase de {{drift.seconds}} segundos a las {{event.timestamp}}.\nUmbral: {{endpoint.max_drift_seconds}}s.",
+        "source_sha256": "7d6cdb9b90308a7d82d05e975f2fa573184a987cf12afe58a8817f314a437fcb"
+      }
     },
     "builtin.register.success": {
-      "subject": "[Punto registrado] {{endpoint.machine_name}}",
-      "body": "El punto {{endpoint.machine_name}} ({{endpoint.machine_ip}}) se registró a las {{event.timestamp}}.\nGrupo: {{endpoint.system_group_name}}."
+      "subject": {
+        "text": "[Punto registrado] {{endpoint.machine_name}}",
+        "source_sha256": "a4f7980ea33f0ce2d27b3623e1926d166f81dc3c744a8f5aadbc471d42d5354b"
+      },
+      "body": {
+        "text": "El punto {{endpoint.machine_name}} ({{endpoint.machine_ip}}) se registró a las {{event.timestamp}}.\nGrupo: {{endpoint.system_group_name}}.",
+        "source_sha256": "cf52344346f503975da6dbf8c9430ec9737da65fff30361222ae681d3d5da1f5"
+      }
     },
     "builtin.checkin.failure": {
-      "subject": "[Fallo de comprobación] {{endpoint.machine_name}}",
-      "body": "La comprobación de {{endpoint.machine_name}} falló a las {{event.timestamp}}.\nMotivo: {{event.reason}}."
+      "subject": {
+        "text": "[Fallo de comprobación] {{endpoint.machine_name}}",
+        "source_sha256": "b70f7379c3f78987dbb7b6b717af1ab956256b05522e25cdcf937b7d99867265"
+      },
+      "body": {
+        "text": "La comprobación de {{endpoint.machine_name}} falló a las {{event.timestamp}}.\nMotivo: {{event.reason}}.",
+        "source_sha256": "ad99349164d2d7fa15e6a846740d8351e55384d89069132b1209e27c55115ffa"
+      }
     },
     "builtin.wizard.issuance": {
-      "subject": "[Asistente] settings.json emitido para {{endpoint.machine_name}}",
-      "body": "El asistente emitió un archivo para {{endpoint.machine_name}} ({{wizard.usage_type}}) a las {{event.timestamp}}.\nEmitido por: {{wizard.issued_by}}."
+      "subject": {
+        "text": "[Asistente] settings.json emitido para {{endpoint.machine_name}}",
+        "source_sha256": "d0ceab185e8ade7c1e90daca6e2a107412374208f7594b487d7e80825d7b165a"
+      },
+      "body": {
+        "text": "El asistente emitió un archivo para {{endpoint.machine_name}} ({{wizard.usage_type}}) a las {{event.timestamp}}.\nEmitido por: {{wizard.issued_by}}.",
+        "source_sha256": "2ef3b3e657a5244da512abdf99c0f634a82a9e7d608bd5e531080576325892f3"
+      }
     },
     "builtin.elevation.code": {
-      "subject": "Código de elevación para {{endpoint.machine_name}}",
-      "body": "Se generó un código de elevación local para {{endpoint.machine_name}} a las {{event.timestamp}}.\nCódigo: {{elevation.code}}\nCaduca: {{elevation.expires_at}}."
+      "subject": {
+        "text": "Código de elevación para {{endpoint.machine_name}}",
+        "source_sha256": "9be575dc934eedbe66b41176009c8d4be8aeed4ee48eeec93d97406c467e5119"
+      },
+      "body": {
+        "text": "Se generó un código de elevación local para {{endpoint.machine_name}} a las {{event.timestamp}}.\nCódigo: {{elevation.code}}\nCaduca: {{elevation.expires_at}}.",
+        "source_sha256": "caf1c35fa15644ed0836f0be2d3a4bdd07035829279a2fd0653f797f29e3a540"
+      }
     },
     "builtin.password.recovery": {
-      "subject": "Contraseña rotada para {{endpoint.machine_name}}",
-      "body": "La contraseña de la cuenta local de {{endpoint.machine_name}} ({{endpoint.local_account_name}}) se rotó a las {{event.timestamp}}."
+      "subject": {
+        "text": "Contraseña rotada para {{endpoint.machine_name}}",
+        "source_sha256": "ef714f4bbe9a41fe57dae0271b462ea82b3441374827b3759a5164aa1c4484c8"
+      },
+      "body": {
+        "text": "La contraseña de la cuenta local de {{endpoint.machine_name}} ({{endpoint.local_account_name}}) se rotó a las {{event.timestamp}}.",
+        "source_sha256": "6d61f4a7484388d1c419746bf76a4ab0d9c9fdfe6a561a5210a301b95d5dd088"
+      }
     }
   },
   "sms": {
     "builtin.drift.alert.sms": {
-      "body": "Desfase {{drift.seconds}}s en {{endpoint.machine_name}} a las {{event.timestamp}}."
+      "body": {
+        "text": "Desfase {{drift.seconds}}s en {{endpoint.machine_name}} a las {{event.timestamp}}.",
+        "source_sha256": "f058a3627f851cd5f3d4907a0e6b4bf67da030526534a519588ec86d1b002f1f"
+      }
     },
     "builtin.register.success.sms": {
-      "body": "Registrado: {{endpoint.machine_name}} ({{endpoint.machine_ip}}) a las {{event.timestamp}}."
+      "body": {
+        "text": "Registrado: {{endpoint.machine_name}} ({{endpoint.machine_ip}}) a las {{event.timestamp}}.",
+        "source_sha256": "9c7f3f2141da1a36a110a06297befe8e380bf5e399de6156b795381ad334d4e7"
+      }
     },
     "builtin.checkin.failure.sms": {
-      "body": "Comprobación fallida para {{endpoint.machine_name}}: {{event.reason}}."
+      "body": {
+        "text": "Comprobación fallida para {{endpoint.machine_name}}: {{event.reason}}.",
+        "source_sha256": "63e9050f8067ec2d3f2f7e2626046ccf9ea4def892762203a684c1b993366d2f"
+      }
     },
     "builtin.wizard.issuance.sms": {
-      "body": "Ajustes emitidos para {{endpoint.machine_name}} ({{wizard.usage_type}})."
+      "body": {
+        "text": "Ajustes emitidos para {{endpoint.machine_name}} ({{wizard.usage_type}}).",
+        "source_sha256": "26a6a1d49db52b913188bab32bf9af6726bd6743523613a9693524097b1efa82"
+      }
     },
     "builtin.elevation.code.sms": {
-      "body": "Código de elevación para {{endpoint.machine_name}}: {{elevation.code}}, caduca {{elevation.expires_at}}."
+      "body": {
+        "text": "Código de elevación para {{endpoint.machine_name}}: {{elevation.code}}, caduca {{elevation.expires_at}}.",
+        "source_sha256": "8a62ce111971c7f985a12895c1cf4a161561e9d52b9fa37835bc9ac03e3688d7"
+      }
     },
     "builtin.password.recovery.sms": {
-      "body": "Contraseña rotada para {{endpoint.local_account_name}} en {{endpoint.machine_name}}."
+      "body": {
+        "text": "Contraseña rotada para {{endpoint.local_account_name}} en {{endpoint.machine_name}}.",
+        "source_sha256": "e4bbe21a32b4cb886cb79fc3ef7633f6050a57af435c8cd3deb4aab4317c51dd"
+      }
     }
   }
 }

@@ -1,44 +1,170 @@
 {
-  "title": "Bei AIC Server anmelden",
-  "subtitle": "Lokales Konto oder konfigurierter Identitätsanbieter. Kein Active Directory.",
-  "identityProvider": "Identitätsanbieter",
-  "username": "Benutzername",
-  "password": "Passwort",
-  "signIn": "Anmelden",
-  "signingIn": "Anmeldung läuft…",
-  "signInWithPasskey": "Mit Passkey anmelden",
-  "forgotPassword": "Lokales Kontopasswort vergessen",
-  "localAccounts": "Lokale Konten",
-  "enrollTotp": "Authenticator einrichten",
-  "back": "Zurück",
-  "continueWith": "Weiter mit {{name}}",
-  "continuePiv": "Weiter mit PIV/CAC",
-  "continueWindows": "Weiter mit Windows",
-  "pivHelp": "Hilfe: Anmeldung mit PIV- oder CAC-Smartcard",
-  "smartCardGroup": "Smartcard-Anmeldung",
-  "noFederation": "Kein föderierter IdP für die Anmeldung konfiguriert. OpenID Connect unter Zugriffskontrolle → Anbieter einrichten.",
-  "notConfigured": " (nicht konfiguriert)",
-  "pivMenu": "PIV/CAC-Smartcard",
-  "windowsMenu": "Windows Negotiate",
-  "demoCredentialsTitle": "Demo-Zugangsdaten",
-  "demoTableUser": "Benutzername",
-  "demoTablePassword": "Passwort",
-  "demoTableAction": "Aktion",
-  "demoFill": "Ausfüllen",
-  "totpCode": "Authenticator-Code",
-  "radiusCode": "RADIUS-Code",
-  "newPassword": "Neues Passwort",
-  "confirmPassword": "Passwort bestätigen",
-  "resetToken": "Reset-Token",
-  "mustChangePassword": "Sie müssen Ihr Passwort ändern, bevor Sie fortfahren.",
-  "resetRequestTitle": "Passwort zurücksetzen",
-  "resetConfirmTitle": "Neues Passwort festlegen",
-  "mfaResetRequestTitle": "MFA zurücksetzen",
-  "demoCredentialsAria": "Lab-Demo-Zugangsdaten (nicht in Produktion verwenden)",
-  "demoTableAria": "Lab-Demo-Benutzernamen und Passwörter",
-  "identityProviderAria": "Identitätsanbieter",
-  "providerNotConfigured": " (nicht konfiguriert)",
-  "signInWindowsAria": "Mit Windows Negotiate anmelden",
-  "waitingPasskey": "Warten auf Passkey…",
-  "fillDemoAria": "Demo-Zugangsdaten für {{user}} ausfüllen"
+  "title": {
+    "text": "Bei AIC Server anmelden",
+    "source_sha256": ""
+  },
+  "subtitle": {
+    "text": "Lokales Konto oder konfigurierter Identitätsanbieter. Kein Active Directory.",
+    "source_sha256": ""
+  },
+  "identityProvider": {
+    "text": "Identitätsanbieter",
+    "source_sha256": ""
+  },
+  "username": {
+    "text": "Benutzername",
+    "source_sha256": ""
+  },
+  "password": {
+    "text": "Passwort",
+    "source_sha256": ""
+  },
+  "signIn": {
+    "text": "Anmelden",
+    "source_sha256": ""
+  },
+  "signingIn": {
+    "text": "Anmeldung läuft…",
+    "source_sha256": ""
+  },
+  "signInWithPasskey": {
+    "text": "Mit Passkey anmelden",
+    "source_sha256": ""
+  },
+  "forgotPassword": {
+    "text": "Lokales Kontopasswort vergessen",
+    "source_sha256": ""
+  },
+  "localAccounts": {
+    "text": "Lokale Konten",
+    "source_sha256": ""
+  },
+  "enrollTotp": {
+    "text": "Authenticator einrichten",
+    "source_sha256": ""
+  },
+  "back": {
+    "text": "Zurück",
+    "source_sha256": ""
+  },
+  "continueWith": {
+    "text": "Weiter mit {{name}}",
+    "source_sha256": ""
+  },
+  "continuePiv": {
+    "text": "Weiter mit PIV/CAC",
+    "source_sha256": ""
+  },
+  "continueWindows": {
+    "text": "Weiter mit Windows",
+    "source_sha256": ""
+  },
+  "pivHelp": {
+    "text": "Hilfe: Anmeldung mit PIV- oder CAC-Smartcard",
+    "source_sha256": ""
+  },
+  "smartCardGroup": {
+    "text": "Smartcard-Anmeldung",
+    "source_sha256": ""
+  },
+  "noFederation": {
+    "text": "Kein föderierter IdP für die Anmeldung konfiguriert. OpenID Connect unter Zugriffskontrolle → Anbieter einrichten.",
+    "source_sha256": ""
+  },
+  "notConfigured": {
+    "text": " (nicht konfiguriert)",
+    "source_sha256": ""
+  },
+  "pivMenu": {
+    "text": "PIV/CAC-Smartcard",
+    "source_sha256": ""
+  },
+  "windowsMenu": {
+    "text": "Windows Negotiate",
+    "source_sha256": ""
+  },
+  "demoCredentialsTitle": {
+    "text": "Demo-Zugangsdaten",
+    "source_sha256": ""
+  },
+  "demoTableUser": {
+    "text": "Benutzername",
+    "source_sha256": ""
+  },
+  "demoTablePassword": {
+    "text": "Passwort",
+    "source_sha256": ""
+  },
+  "demoTableAction": {
+    "text": "Aktion",
+    "source_sha256": ""
+  },
+  "demoFill": {
+    "text": "Ausfüllen",
+    "source_sha256": ""
+  },
+  "totpCode": {
+    "text": "Authenticator-Code",
+    "source_sha256": ""
+  },
+  "radiusCode": {
+    "text": "RADIUS-Code",
+    "source_sha256": ""
+  },
+  "newPassword": {
+    "text": "Neues Passwort",
+    "source_sha256": ""
+  },
+  "confirmPassword": {
+    "text": "Passwort bestätigen",
+    "source_sha256": ""
+  },
+  "resetToken": {
+    "text": "Reset-Token",
+    "source_sha256": ""
+  },
+  "mustChangePassword": {
+    "text": "Sie müssen Ihr Passwort ändern, bevor Sie fortfahren.",
+    "source_sha256": ""
+  },
+  "resetRequestTitle": {
+    "text": "Passwort zurücksetzen",
+    "source_sha256": ""
+  },
+  "resetConfirmTitle": {
+    "text": "Neues Passwort festlegen",
+    "source_sha256": ""
+  },
+  "mfaResetRequestTitle": {
+    "text": "MFA zurücksetzen",
+    "source_sha256": ""
+  },
+  "demoCredentialsAria": {
+    "text": "Lab-Demo-Zugangsdaten (nicht in Produktion verwenden)",
+    "source_sha256": ""
+  },
+  "demoTableAria": {
+    "text": "Lab-Demo-Benutzernamen und Passwörter",
+    "source_sha256": ""
+  },
+  "identityProviderAria": {
+    "text": "Identitätsanbieter",
+    "source_sha256": ""
+  },
+  "providerNotConfigured": {
+    "text": " (nicht konfiguriert)",
+    "source_sha256": ""
+  },
+  "signInWindowsAria": {
+    "text": "Mit Windows Negotiate anmelden",
+    "source_sha256": ""
+  },
+  "waitingPasskey": {
+    "text": "Warten auf Passkey…",
+    "source_sha256": ""
+  },
+  "fillDemoAria": {
+    "text": "Demo-Zugangsdaten für {{user}} ausfüllen",
+    "source_sha256": ""
+  }
 }

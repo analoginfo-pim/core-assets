@@ -1,47 +1,149 @@
 {
   "chrome": {
-    "backToDocs": "Volver a la documentación",
-    "contents": "Contenido",
-    "chapters": "Capítulos",
-    "backToContents": "Volver al contenido",
-    "openInProduct": "Abrir en el producto",
-    "honestyAlert": "Manuales operativos de esta clase de documentación. Los capítulos describen lo que el producto hace hoy, en español claro. No son un plan de seguridad del sistema, un paquete FedRAMP ni una afirmación de certificación: asigne los controles en su carpeta a las evidencias que realmente recopile.",
-    "contentsAria": "Contenido de {{title}}",
-    "stepsAria": "Pasos de {{title}}",
-    "openChapterAria": "Abrir {{title}} en el producto",
-    "resourceManuals": "Manuales {{class}}",
-    "configLinks": "Dónde se hacen estos ajustes"
+    "backToDocs": {
+      "text": "Volver a la documentación",
+      "source_sha256": ""
+    },
+    "contents": {
+      "text": "Contenido",
+      "source_sha256": ""
+    },
+    "chapters": {
+      "text": "Capítulos",
+      "source_sha256": ""
+    },
+    "backToContents": {
+      "text": "Volver al contenido",
+      "source_sha256": ""
+    },
+    "openInProduct": {
+      "text": "Abrir en el producto",
+      "source_sha256": ""
+    },
+    "honestyAlert": {
+      "text": "Manuales operativos de esta clase de documentación. Los capítulos describen lo que el producto hace hoy, en español claro. No son un plan de seguridad del sistema, un paquete FedRAMP ni una afirmación de certificación: asigne los controles en su carpeta a las evidencias que realmente recopile.",
+      "source_sha256": ""
+    },
+    "contentsAria": {
+      "text": "Contenido de {{title}}",
+      "source_sha256": ""
+    },
+    "stepsAria": {
+      "text": "Pasos de {{title}}",
+      "source_sha256": ""
+    },
+    "openChapterAria": {
+      "text": "Abrir {{title}} en el producto",
+      "source_sha256": ""
+    },
+    "resourceManuals": {
+      "text": "Manuales {{class}}",
+      "source_sha256": ""
+    },
+    "configLinks": {
+      "text": "Dónde se hacen estos ajustes",
+      "source_sha256": ""
+    }
   },
   "landing": {
-    "title": "Documentación",
+    "title": {
+      "text": "Documentación",
+      "source_sha256": ""
+    },
     "auditor": {
-      "label": "Manuales del auditor",
-      "description": "Guía de configuración de auditores, más los capítulos de revisión de evidencias."
+      "label": {
+        "text": "Manuales del auditor",
+        "source_sha256": ""
+      },
+      "description": {
+        "text": "Guía de configuración de auditores, más los capítulos de revisión de evidencias.",
+        "source_sha256": ""
+      }
     }
   },
   "auditor": {
-    "title": "Manuales del auditor",
-    "intro": "Empiece por la Guía de configuración de auditores si va a asignar evaluadores. Los capítulos posteriores son guías de lectura para quienes revisan evidencias, carpetas y registros de auditoría sin privilegios de corrección. Las etiquetas de estado de la carpeta deben ser honestas (Implementado / Parcial / Planificado). Este producto no inventa afirmaciones de certificación FedRAMP, CMMC o FIPS."
+    "title": {
+      "text": "Manuales del auditor",
+      "source_sha256": ""
+    },
+    "intro": {
+      "text": "Empiece por la Guía de configuración de auditores si va a asignar evaluadores. Los capítulos posteriores son guías de lectura para quienes revisan evidencias, carpetas y registros de auditoría sin privilegios de corrección. Las etiquetas de estado de la carpeta deben ser honestas (Implementado / Parcial / Planificado). Este producto no inventa afirmaciones de certificación FedRAMP, CMMC o FIPS.",
+      "source_sha256": ""
+    }
   },
   "auditorSetup": {
-    "title": "Guía de configuración de auditores",
-    "summary": "Cómo asignar auditores en la misma página de inicio de sesión, qué grupos usar y dónde configurarlos.",
+    "title": {
+      "text": "Guía de configuración de auditores",
+      "source_sha256": ""
+    },
+    "summary": {
+      "text": "Cómo asignar auditores en la misma página de inicio de sesión, qué grupos usar y dónde configurarlos.",
+      "source_sha256": ""
+    },
     "body": [
-      "Todos inician sesión en la misma página. No hay un portal de auditor independiente. Los menús y los derechos provienen de los grupos que usted asigna. Esto coincide con el modelo Thoropass: un auditor revisa evidencias; un administrador de auditoría (responsable) también puede asignar a otros auditores. Los administradores de identidad crean las cuentas que no son de auditor. Esa no es una tarea de auditor.",
-      "Los enclaves de demostración incluyen tres cuentas iniciales para probar cada función. Cambie esas contraseñas antes de cualquier demostración compartida. Los enclaves de producción crean sus propias personas y las colocan en los grupos siguientes. Esta guía describe cómo se configura el producto. No es una afirmación de certificación."
+      {
+        "text": "Todos inician sesión en la misma página. No hay un portal de auditor independiente. Los menús y los derechos provienen de los grupos que usted asigna. Esto coincide con el modelo Thoropass: un auditor revisa evidencias; un administrador de auditoría (responsable) también puede asignar a otros auditores. Los administradores de identidad crean las cuentas que no son de auditor. Esa no es una tarea de auditor.",
+        "source_sha256": ""
+      },
+      {
+        "text": "Los enclaves de demostración incluyen tres cuentas iniciales para probar cada función. Cambie esas contraseñas antes de cualquier demostración compartida. Los enclaves de producción crean sus propias personas y las colocan en los grupos siguientes. Esta guía describe cómo se configura el producto. No es una afirmación de certificación.",
+        "source_sha256": ""
+      }
     ],
     "steps": [
-      "Abra Administración IAM local y cree o seleccione a la persona.",
-      "Añada a la persona a los grupos de su función en la tabla siguiente.",
-      "O inscríbala con el valor preestablecido de inscripción correspondiente.",
-      "Pídale que inicie sesión en la página de inicio de sesión habitual.",
-      "Abra Compromisos de auditoría para invitarla a un compromiso cuando su proceso use invitaciones."
+      {
+        "text": "Abra Administración IAM local y cree o seleccione a la persona.",
+        "source_sha256": ""
+      },
+      {
+        "text": "Añada a la persona a los grupos de su función en la tabla siguiente.",
+        "source_sha256": ""
+      },
+      {
+        "text": "O inscríbala con el valor preestablecido de inscripción correspondiente.",
+        "source_sha256": ""
+      },
+      {
+        "text": "Pídale que inicie sesión en la página de inicio de sesión habitual.",
+        "source_sha256": ""
+      },
+      {
+        "text": "Abra Compromisos de auditoría para invitarla a un compromiso cuando su proceso use invitaciones.",
+        "source_sha256": ""
+      }
     ],
-    "productLabel": "Abrir Administración IAM local",
+    "productLabel": {
+      "text": "Abrir Administración IAM local",
+      "source_sha256": ""
+    },
     "tables": {
       "jobs": {
-        "caption": "Funciones de auditor, grupos y límites",
-        "headers": ["Función", "Grupos", "Valor preestablecido de inscripción", "Puede", "No debe"],
+        "caption": {
+          "text": "Funciones de auditor, grupos y límites",
+          "source_sha256": ""
+        },
+        "headers": [
+          {
+            "text": "Función",
+            "source_sha256": ""
+          },
+          {
+            "text": "Grupos",
+            "source_sha256": ""
+          },
+          {
+            "text": "Valor preestablecido de inscripción",
+            "source_sha256": ""
+          },
+          {
+            "text": "Puede",
+            "source_sha256": ""
+          },
+          {
+            "text": "No debe",
+            "source_sha256": ""
+          }
+        ],
         "rows": [
           [
             "Observador de solo lectura",
@@ -67,8 +169,28 @@
         ]
       },
       "seeds": {
-        "caption": "Cuentas iniciales de demostración",
-        "headers": ["Nombre de usuario", "Función", "Grupos", "Notas"],
+        "caption": {
+          "text": "Cuentas iniciales de demostración",
+          "source_sha256": ""
+        },
+        "headers": [
+          {
+            "text": "Nombre de usuario",
+            "source_sha256": ""
+          },
+          {
+            "text": "Función",
+            "source_sha256": ""
+          },
+          {
+            "text": "Grupos",
+            "source_sha256": ""
+          },
+          {
+            "text": "Notas",
+            "source_sha256": ""
+          }
+        ],
         "rows": [
           [
             "readonly",
@@ -91,46 +213,150 @@
         ]
       },
       "screens": {
-        "caption": "Pantallas y quién puede usarlas",
-        "headers": ["Pantalla", "Solo lectura", "Auditor en ejercicio", "Responsable (administrador de auditoría)"],
+        "caption": {
+          "text": "Pantallas y quién puede usarlas",
+          "source_sha256": ""
+        },
+        "headers": [
+          {
+            "text": "Pantalla",
+            "source_sha256": ""
+          },
+          {
+            "text": "Solo lectura",
+            "source_sha256": ""
+          },
+          {
+            "text": "Auditor en ejercicio",
+            "source_sha256": ""
+          },
+          {
+            "text": "Responsable (administrador de auditoría)",
+            "source_sha256": ""
+          }
+        ],
         "rows": [
-          ["Iniciar sesión", "Sí", "Sí", "Sí"],
-          ["Carpeta de evaluación", "Ver", "Ver y escribir", "Ver y escribir"],
-          ["Centro de informes", "Ver y descargar", "Ver y descargar", "Ver y descargar"],
-          ["Compromisos de auditoría", "Ver si está invitado", "Revisar", "Revisar y administrar"],
-          ["Cumplimiento del estado actual", "Leer", "Leer", "Leer"],
-          ["Auditoría", "Leer", "Leer", "Leer"],
-          ["Administración IAM local", "No", "No", "Solo cuentas de clase auditor"],
-          ["Inscripción y control de acceso", "Leer la matriz", "Leer la matriz", "Leer la matriz"],
-          ["Configuración del servidor / Fix-It", "No", "No", "No"]
+          [
+            "Iniciar sesión",
+            "Sí",
+            "Sí",
+            "Sí"
+          ],
+          [
+            "Carpeta de evaluación",
+            "Ver",
+            "Ver y escribir",
+            "Ver y escribir"
+          ],
+          [
+            "Centro de informes",
+            "Ver y descargar",
+            "Ver y descargar",
+            "Ver y descargar"
+          ],
+          [
+            "Compromisos de auditoría",
+            "Ver si está invitado",
+            "Revisar",
+            "Revisar y administrar"
+          ],
+          [
+            "Cumplimiento del estado actual",
+            "Leer",
+            "Leer",
+            "Leer"
+          ],
+          [
+            "Auditoría",
+            "Leer",
+            "Leer",
+            "Leer"
+          ],
+          [
+            "Administración IAM local",
+            "No",
+            "No",
+            "Solo cuentas de clase auditor"
+          ],
+          [
+            "Inscripción y control de acceso",
+            "Leer la matriz",
+            "Leer la matriz",
+            "Leer la matriz"
+          ],
+          [
+            "Configuración del servidor / Fix-It",
+            "No",
+            "No",
+            "No"
+          ]
         ]
       }
     },
-    "configLinksTitle": "Dónde se hacen estos ajustes",
+    "configLinksTitle": {
+      "text": "Dónde se hacen estos ajustes",
+      "source_sha256": ""
+    },
     "configLinks": [
       {
-        "label": "Iniciar sesión",
-        "note": "La única página de inicio de sesión. Los auditores la usan como todos los demás."
+        "label": {
+          "text": "Iniciar sesión",
+          "source_sha256": ""
+        },
+        "note": {
+          "text": "La única página de inicio de sesión. Los auditores la usan como todos los demás.",
+          "source_sha256": ""
+        }
       },
       {
-        "label": "Administración IAM local",
-        "note": "Acceso e identidad → Directorio → Administración IAM local. Crear personas, asignar grupos y restablecer contraseñas de clase auditor (solo el responsable)."
+        "label": {
+          "text": "Administración IAM local",
+          "source_sha256": ""
+        },
+        "note": {
+          "text": "Acceso e identidad → Directorio → Administración IAM local. Crear personas, asignar grupos y restablecer contraseñas de clase auditor (solo el responsable).",
+          "source_sha256": ""
+        }
       },
       {
-        "label": "Inscripción y control de acceso",
-        "note": "Acceso e identidad → Directorio → Inscripción y control de acceso. Muestra los valores preestablecidos de inscripción (read-only-assessor, cmmc-assessor, lead-auditor)."
+        "label": {
+          "text": "Inscripción y control de acceso",
+          "source_sha256": ""
+        },
+        "note": {
+          "text": "Acceso e identidad → Directorio → Inscripción y control de acceso. Muestra los valores preestablecidos de inscripción (read-only-assessor, cmmc-assessor, lead-auditor).",
+          "source_sha256": ""
+        }
       },
       {
-        "label": "Compromisos de auditoría",
-        "note": "Cumplimiento → Compromisos de auditoría. Invitar auditores y administrar el compromiso."
+        "label": {
+          "text": "Compromisos de auditoría",
+          "source_sha256": ""
+        },
+        "note": {
+          "text": "Cumplimiento → Compromisos de auditoría. Invitar auditores y administrar el compromiso.",
+          "source_sha256": ""
+        }
       },
       {
-        "label": "Carpeta de evaluación",
-        "note": "Cumplimiento → Carpeta de evaluación. Redactar o revisar narrativas de control y evidencias."
+        "label": {
+          "text": "Carpeta de evaluación",
+          "source_sha256": ""
+        },
+        "note": {
+          "text": "Cumplimiento → Carpeta de evaluación. Redactar o revisar narrativas de control y evidencias.",
+          "source_sha256": ""
+        }
       },
       {
-        "label": "Manuales del auditor",
-        "note": "Documentación → Manuales del auditor. Esta guía y los capítulos de trabajo del evaluador."
+        "label": {
+          "text": "Manuales del auditor",
+          "source_sha256": ""
+        },
+        "note": {
+          "text": "Documentación → Manuales del auditor. Esta guía y los capítulos de trabajo del evaluador.",
+          "source_sha256": ""
+        }
       }
     ]
   }

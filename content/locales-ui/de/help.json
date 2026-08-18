@@ -1,103 +1,406 @@
 {
-  "actionSave": "Speichert die aktuellen Änderungen auf dem Server.",
-  "actionCancel": "Schließt ohne Speichern der Änderungen in diesem Dialog oder Formular.",
-  "actionDelete": "Entfernt diesen Eintrag nach Bestätigung dauerhaft. Audit-Verlauf kann frühere Ereignisse behalten.",
-  "actionCreate": "Öffnet das Formular zum Anlegen eines neuen Eintrags.",
-  "actionEdit": "Öffnet den Editor für diese Zeile.",
-  "actionLogin": "Sendet Ihre Anmeldedaten zur Prüfung an AIC Server.",
-  "actionBack": "Kehrt zum vorherigen Anmeldeschritt zurück ohne Speichern.",
-  "actionHelp": "Zeigt kurze Hilfe zu diesem Steuerelement.",
-  "loginUsername": "Ihr AIC-Server-Kontoname (lokales IAM oder föderiertes Subject). Wird mit Ihrem Passwort für diese Anmeldung verwendet.",
-  "loginPassword": "Passwort für dieses Konto. AIC Server zeigt den Wert nie; Fehlversuche werden protokolliert.",
-  "loginProvider": "Welcher Identitätspfad für diese Anmeldung gilt (lokales Passwort, PIV oder andere konfigurierte Anbieter).",
-  "loginTotpCode": "Sechsstelligen Code aus Ihrer Authenticator-App eingeben.",
-  "loginRadiusPasscode": "Einmalcode oder Antwort von Ihrem RADIUS-Token für den zweiten Anmeldeschritt.",
-  "loginNewPassword": "Neues Passwort wählen, das der auf dieser Seite gezeigten Organisationsrichtlinie entspricht.",
-  "loginConfirmPassword": "Dasselbe neue Passwort zur Bestätigung erneut eingeben.",
-  "loginResetToken": "Einmal-Token aus der Passwort-Reset-E-Mail. Hier einfügen, um ein neues Passwort zu setzen.",
-  "loginWebAuthn": "Mit registriertem Passkey oder Sicherheitsschlüssel anmelden.",
-  "loginOidcStart": "Weiterleitung zum konfigurierten OpenID-Connect-Anbieter für die Anmeldung.",
-  "loginPivStart": "Anmeldung mit PIV- oder CAC-Smartcard starten.",
-  "loginWindowsIa": "Anmeldung über Windows Negotiate (Integrierte Authentifizierung) starten.",
-  "loginDemoFill": "Demo-Benutzername und -Passwort in die Felder übernehmen.",
-  "loginForgotPassword": "Passwort-Reset per E-Mail anfordern, wenn konfiguriert.",
-  "loginTotpEnroll": "Authenticator-App für MFA einrichten.",
-  "loginUsePasskey": "Statt Passwort einen registrierten Passkey verwenden.",
-  "assessmentStandardSelect": "Bewertungsstandard wählen (CMMC, NIST SP 800-171, 800-172 oder 800-53).",
-  "assessmentLevelSelect": "Stufe oder Baseline für den gewählten Standard wählen.",
-  "cmmcHonestyBanner": "Diese Zahlen beschreiben Produktlieferung und erfasste Arbeit — kein Bewertungsurteil.",
-  "cmmcOpenFamily": "Aktuellen Compliance-Stand öffnen, um die benannte Arbeit für diese Familie fortzusetzen.",
-  "cmmcOpenPoam": "Maßnahmenplan (POA&M) öffnen, um diese Feststellung fortzusetzen.",
-  "cmmcOpenBinder": "Assessment-Binder öffnen, um prüfer-tauglichen Abschnittstext zu schreiben.",
-  "otRunDiscovery": "Startet einen OT-Erkennungsscan mit den oben eingegebenen Netzen.",
-  "otSaveDiscoverySchedule": "Speichert den automatischen Erkennungszeitplan und das Intervall.",
-  "otCheckConnectivity": "Prüft TCP-Erreichbarkeit je Ziel-Port. Verbinden bleibt deaktiviert, bis eine Probe erfolgreich ist.",
-  "otConnectAsset": "Öffnet eine OT-Protokollsitzung zu diesem Ziel und navigiert zur PDU-Timeline.",
-  "otConfigureAsset": "Öffnet die Zielkonfiguration für nicht-geheime Bestandsfelder und Rotationsplan.",
-  "otSelectAsset": "Wählt diese Zeile für Rotation oder Break-Glass auf der Seite Zugangsdaten.",
-  "otStartRotation": "Startet Passwortrotation und Vault-Propagation für das gewählte Ziel.",
-  "otBreakGlassReveal": "Fordert protokollierte einmalige Offenlegung des gespeicherten Passworts an.",
-  "otDismissReveal": "Schließt den Offenlegungsdialog. Das Passwort bleibt nicht auf dieser Seite.",
-  "otOpenSession": "Öffnet die OT-PDU-Live-Timeline für diese aufgezeichnete Sitzung.",
-  "otTryDefaults": "Versucht veröffentlichte Standardzugangsdaten auf diesem erkannten Host.",
-  "dashboardCustomize": "Kachelanordnung und Filter für Ihre persönliche Ansicht ändern.",
-  "dashboardPublish": "Speichert dieses Layout als Organisationsstandard für alle mit dashboard.view.",
-  "dashboardSavePersonal": "Speichert nur Ihr persönliches Layout in Ihrem Konto.",
-  "dashboardResetLayout": "Setzt das Layout auf den zuletzt geladenen Standard zurück.",
-  "binderInstanceSelect": "Binder-Instanz für diese Enclave-Bewertung wählen.",
-  "binderNewInstance": "Neue Binder-Instanz mit Standardabschnittsbaum anlegen.",
-  "binderRegenerateGaps": "Aktuelle Lücken aus dem Enclave-Compliance-Bericht neu in den Binder schreiben.",
-  "binderExportWord": "Binder als Word-Dokument exportieren.",
-  "binderExportPrint": "Binder für Druck oder PDF öffnen.",
-  "actionDisconnect": "Beendet die Live-PAM-Sitzung. Wenn Abmelden bei Trennen aktiv ist, wird die Konsolen-Sitzung serverseitig widerrufen und Sie kehren zum Anmeldebildschirm zurück.",
-  "pamLiveSessionDisconnectLogoff": "Wenn aktiv, meldet Trennen von einer Live-SSH-, RDP- oder VNC-Sitzung auch die Konsole ab und kehrt zum Anmeldebildschirm zurück (NIST AC-12). Der Server widerruft das Sitzungstoken — nicht nur eine Weiterleitung.",
-  "gdprRopaControllerName": "Rechtlicher Name des für diese Verarbeitung verantwortlichen Verantwortlichen.",
-  "gdprRopaControllerContact": "Kontaktdaten des Verantwortlichen (Privacy-Postfach oder DSB).",
-  "gdprRopaJointController": "Name eines gemeinsam Verantwortlichen, falls die Verarbeitung gemeinsam bestimmt wird.",
-  "gdprRopaJointControllerContact": "Kontaktdaten des gemeinsam Verantwortlichen.",
-  "gdprRopaProcessorName": "Name des Auftragsverarbeiters, der im Auftrag des Verantwortlichen handelt.",
-  "gdprRopaProcessorContact": "Kontaktdaten des Auftragsverarbeiters.",
-  "gdprRopaDpoName": "Name des Datenschutzbeauftragten, sofern bestellt.",
-  "gdprRopaDpoContact": "Kontaktdaten des Datenschutzbeauftragten.",
-  "gdprRopaTransfers": "Ob Daten außerhalb des EWR übermittelt werden und in welche Länder.",
-  "gdprRopaTransferSafeguards": "Schutzmaßnahmen für Drittlandübermittlungen.",
-  "gdprRopaReviewCycle": "Wie oft diese Registerzeile überprüft werden muss (Tage).",
-  "gdprDpiaArt353Triggers": "Welche Kriterien nach Artikel 35 Abs. 3 gelten, falls zutreffend.",
-  "gdprDpiaNecessity": "Erläutern Sie, ob die Verarbeitung erforderlich und angemessen ist.",
-  "gdprDpiaPriorConsultationNotes": "Vorherige Konsultation mit der Aufsichtsbehörde nach Artikel 36 dokumentieren.",
-  "gdprDpiaPriorConsultationAt": "Wann die vorherige Konsultation stattfand (UTC).",
-  "gdprDpiaDecision": "Endergebnis des DSFA-Workflows.",
-  "gdprDpiaDecisionReason": "Verständliche Begründung für das DSFA-Ergebnis.",
-  "gdprDsrVerifyIdentity": "Identitätsprüfung nach Artikel 12 Abs. 6 dokumentieren, bevor Sie personenbezogene Daten herausgeben.",
-  "gdprDsrVerifyMethod": "Wie die anfragende Person ihre Identität nachgewiesen hat.",
-  "gdprDsrVerifyEvidence": "Auf welche Nachweise Sie sich gestützt haben — im append-only-Ereignisprotokoll gespeichert.",
-  "gdprDsrRefuseVerification": "Dokumentieren, wenn die Identitätsprüfung fehlschlägt oder pausiert werden muss.",
-  "gdprDsrWorkforceLink": "Mit Workforce-Roster verknüpfen, wenn die anfragende Person im Scope ist; leer lassen für externe Betroffene.",
-  "gdprDpiaThresholdRequired": "Festhalten, ob Artikel 35 eine DSFA für diese Verarbeitung verlangt.",
-  "gdprDpiaPriorConsultationRequired": "Markieren, wenn Restrisiko eine vorherige Konsultation nach Artikel 36 erfordert.",
-  "actionSearch": "Startet die Suche für diese Liste oder setzt den Fokus darauf.",
-  "actionRefresh": "Lädt die Daten vom Server neu, damit die Liste den aktuellen Stand zeigt.",
-  "actionFilter": "Öffnet oder löscht Filter für diese Ansicht.",
-  "actionMore": "Öffnet weitere Aktionen für diese Zeile.",
-  "genericText": "Freitext für dieses Feld. Kurze, verständliche Formulierung verwenden.",
-  "actionLogout": "Beendet Ihre Konsolensitzung in diesem Browser.",
-  "actionConnect": "Öffnet eine Live-Sitzung zum gewählten Arbeitsplatz oder Verbindungspunkt.",
-  "actionRescan": "Führt die Probe oder den Scan für dieses Ziel erneut aus.",
-  "actionExport": "Exportiert die aktuelle Ansicht oder das Paket zum Download.",
-  "actionImport": "Importiert eine Datei oder ein Paket in diesen Bereich.",
-  "actionApprove": "Genehmigt diese ausstehende Anfrage.",
-  "actionDeny": "Lehnt diese ausstehende Anfrage ab.",
-  "actionSubmit": "Sendet diese Anfrage oder dieses Formular an den Server.",
-  "actionClearFilter": "Löscht den aktiven Listenfilter und zeigt wieder alle Zeilen.",
-  "actionWake": "Schaltet diesen Arbeitsplatz ein, damit Verbinden eine Sitzung öffnen kann.",
-  "actionOpenSession": "Öffnet den Viewer für eine bereits genehmigte aufgezeichnete Sitzung.",
-  "actionAcknowledge": "Bestätigt, dass Sie den Hinweis verstanden haben, und fährt fort.",
-  "actionRequestAccess": "Reicht eine Zugriffsanfrage zur Genehmigung ein.",
-  "licensingActivate": "Startet einen kurzen Assistenten: Standort-Token kopieren, auf der License-Management-Website aktivieren, dann das signierte Paket importieren.",
-  "licensingSiteToken": "Undurchsichtiges Standort-Token für AIC License Management. Es enthält keine Hostnamen oder IP-Adressen. Kopieren und auf der Aktivierungsseite einfügen.",
-  "licensingPackage": "Fügen Sie das signierte Lizenzpaket ein oder wählen Sie die empfangene Datei. Der Import ersetzt den Schlüssel auf diesem Server.",
-  "actionFileTransfer": "Öffnet die Dateikopie. Dateien gehen zuerst in einen Wartebereich auf dem Vermittler; sie liegen noch nicht auf dem entfernten Computer.",
-  "actionFileUpload": "Kopiert eine Datei in den Wartebereich des Vermittlers. Das legt die Datei nicht auf dem entfernten Computer ab.",
-  "actionFileDownload": "Lädt eine Datei aus dem Wartebereich des Vermittlers in diesen Browser. Das ist keine Kopie vom entfernten Computer, außer sie wurde zuvor dort abgeholt.",
-  "graphicsFileTransfer": "Öffnet die Dateikopie für diese grafische Sitzung. Dateien gehen zuerst in einen Wartebereich auf dem Vermittler; sie liegen noch nicht auf dem entfernten Computer."
+  "actionSave": {
+    "text": "Speichert die aktuellen Änderungen auf dem Server.",
+    "source_sha256": ""
+  },
+  "actionCancel": {
+    "text": "Schließt ohne Speichern der Änderungen in diesem Dialog oder Formular.",
+    "source_sha256": ""
+  },
+  "actionDelete": {
+    "text": "Entfernt diesen Eintrag nach Bestätigung dauerhaft. Audit-Verlauf kann frühere Ereignisse behalten.",
+    "source_sha256": ""
+  },
+  "actionCreate": {
+    "text": "Öffnet das Formular zum Anlegen eines neuen Eintrags.",
+    "source_sha256": ""
+  },
+  "actionEdit": {
+    "text": "Öffnet den Editor für diese Zeile.",
+    "source_sha256": ""
+  },
+  "actionLogin": {
+    "text": "Sendet Ihre Anmeldedaten zur Prüfung an AIC Server.",
+    "source_sha256": ""
+  },
+  "actionBack": {
+    "text": "Kehrt zum vorherigen Anmeldeschritt zurück ohne Speichern.",
+    "source_sha256": ""
+  },
+  "actionHelp": {
+    "text": "Zeigt kurze Hilfe zu diesem Steuerelement.",
+    "source_sha256": ""
+  },
+  "loginUsername": {
+    "text": "Ihr AIC-Server-Kontoname (lokales IAM oder föderiertes Subject). Wird mit Ihrem Passwort für diese Anmeldung verwendet.",
+    "source_sha256": ""
+  },
+  "loginPassword": {
+    "text": "Passwort für dieses Konto. AIC Server zeigt den Wert nie; Fehlversuche werden protokolliert.",
+    "source_sha256": ""
+  },
+  "loginProvider": {
+    "text": "Welcher Identitätspfad für diese Anmeldung gilt (lokales Passwort, PIV oder andere konfigurierte Anbieter).",
+    "source_sha256": ""
+  },
+  "loginTotpCode": {
+    "text": "Sechsstelligen Code aus Ihrer Authenticator-App eingeben.",
+    "source_sha256": ""
+  },
+  "loginRadiusPasscode": {
+    "text": "Einmalcode oder Antwort von Ihrem RADIUS-Token für den zweiten Anmeldeschritt.",
+    "source_sha256": ""
+  },
+  "loginNewPassword": {
+    "text": "Neues Passwort wählen, das der auf dieser Seite gezeigten Organisationsrichtlinie entspricht.",
+    "source_sha256": ""
+  },
+  "loginConfirmPassword": {
+    "text": "Dasselbe neue Passwort zur Bestätigung erneut eingeben.",
+    "source_sha256": ""
+  },
+  "loginResetToken": {
+    "text": "Einmal-Token aus der Passwort-Reset-E-Mail. Hier einfügen, um ein neues Passwort zu setzen.",
+    "source_sha256": ""
+  },
+  "loginWebAuthn": {
+    "text": "Mit registriertem Passkey oder Sicherheitsschlüssel anmelden.",
+    "source_sha256": ""
+  },
+  "loginOidcStart": {
+    "text": "Weiterleitung zum konfigurierten OpenID-Connect-Anbieter für die Anmeldung.",
+    "source_sha256": ""
+  },
+  "loginPivStart": {
+    "text": "Anmeldung mit PIV- oder CAC-Smartcard starten.",
+    "source_sha256": ""
+  },
+  "loginWindowsIa": {
+    "text": "Anmeldung über Windows Negotiate (Integrierte Authentifizierung) starten.",
+    "source_sha256": ""
+  },
+  "loginDemoFill": {
+    "text": "Demo-Benutzername und -Passwort in die Felder übernehmen.",
+    "source_sha256": ""
+  },
+  "loginForgotPassword": {
+    "text": "Passwort-Reset per E-Mail anfordern, wenn konfiguriert.",
+    "source_sha256": ""
+  },
+  "loginTotpEnroll": {
+    "text": "Authenticator-App für MFA einrichten.",
+    "source_sha256": ""
+  },
+  "loginUsePasskey": {
+    "text": "Statt Passwort einen registrierten Passkey verwenden.",
+    "source_sha256": ""
+  },
+  "assessmentStandardSelect": {
+    "text": "Bewertungsstandard wählen (CMMC, NIST SP 800-171, 800-172 oder 800-53).",
+    "source_sha256": ""
+  },
+  "assessmentLevelSelect": {
+    "text": "Stufe oder Baseline für den gewählten Standard wählen.",
+    "source_sha256": ""
+  },
+  "cmmcHonestyBanner": {
+    "text": "Diese Zahlen beschreiben Produktlieferung und erfasste Arbeit — kein Bewertungsurteil.",
+    "source_sha256": ""
+  },
+  "cmmcOpenFamily": {
+    "text": "Aktuellen Compliance-Stand öffnen, um die benannte Arbeit für diese Familie fortzusetzen.",
+    "source_sha256": ""
+  },
+  "cmmcOpenPoam": {
+    "text": "Maßnahmenplan (POA&M) öffnen, um diese Feststellung fortzusetzen.",
+    "source_sha256": ""
+  },
+  "cmmcOpenBinder": {
+    "text": "Assessment-Binder öffnen, um prüfer-tauglichen Abschnittstext zu schreiben.",
+    "source_sha256": ""
+  },
+  "otRunDiscovery": {
+    "text": "Startet einen OT-Erkennungsscan mit den oben eingegebenen Netzen.",
+    "source_sha256": ""
+  },
+  "otSaveDiscoverySchedule": {
+    "text": "Speichert den automatischen Erkennungszeitplan und das Intervall.",
+    "source_sha256": ""
+  },
+  "otCheckConnectivity": {
+    "text": "Prüft TCP-Erreichbarkeit je Ziel-Port. Verbinden bleibt deaktiviert, bis eine Probe erfolgreich ist.",
+    "source_sha256": ""
+  },
+  "otConnectAsset": {
+    "text": "Öffnet eine OT-Protokollsitzung zu diesem Ziel und navigiert zur PDU-Timeline.",
+    "source_sha256": ""
+  },
+  "otConfigureAsset": {
+    "text": "Öffnet die Zielkonfiguration für nicht-geheime Bestandsfelder und Rotationsplan.",
+    "source_sha256": ""
+  },
+  "otSelectAsset": {
+    "text": "Wählt diese Zeile für Rotation oder Break-Glass auf der Seite Zugangsdaten.",
+    "source_sha256": ""
+  },
+  "otStartRotation": {
+    "text": "Startet Passwortrotation und Vault-Propagation für das gewählte Ziel.",
+    "source_sha256": ""
+  },
+  "otBreakGlassReveal": {
+    "text": "Fordert protokollierte einmalige Offenlegung des gespeicherten Passworts an.",
+    "source_sha256": ""
+  },
+  "otDismissReveal": {
+    "text": "Schließt den Offenlegungsdialog. Das Passwort bleibt nicht auf dieser Seite.",
+    "source_sha256": ""
+  },
+  "otOpenSession": {
+    "text": "Öffnet die OT-PDU-Live-Timeline für diese aufgezeichnete Sitzung.",
+    "source_sha256": ""
+  },
+  "otTryDefaults": {
+    "text": "Versucht veröffentlichte Standardzugangsdaten auf diesem erkannten Host.",
+    "source_sha256": ""
+  },
+  "dashboardCustomize": {
+    "text": "Kachelanordnung und Filter für Ihre persönliche Ansicht ändern.",
+    "source_sha256": ""
+  },
+  "dashboardPublish": {
+    "text": "Speichert dieses Layout als Organisationsstandard für alle mit dashboard.view.",
+    "source_sha256": ""
+  },
+  "dashboardSavePersonal": {
+    "text": "Speichert nur Ihr persönliches Layout in Ihrem Konto.",
+    "source_sha256": ""
+  },
+  "dashboardResetLayout": {
+    "text": "Setzt das Layout auf den zuletzt geladenen Standard zurück.",
+    "source_sha256": ""
+  },
+  "binderInstanceSelect": {
+    "text": "Binder-Instanz für diese Enclave-Bewertung wählen.",
+    "source_sha256": ""
+  },
+  "binderNewInstance": {
+    "text": "Neue Binder-Instanz mit Standardabschnittsbaum anlegen.",
+    "source_sha256": ""
+  },
+  "binderRegenerateGaps": {
+    "text": "Aktuelle Lücken aus dem Enclave-Compliance-Bericht neu in den Binder schreiben.",
+    "source_sha256": ""
+  },
+  "binderExportWord": {
+    "text": "Binder als Word-Dokument exportieren.",
+    "source_sha256": ""
+  },
+  "binderExportPrint": {
+    "text": "Binder für Druck oder PDF öffnen.",
+    "source_sha256": ""
+  },
+  "actionDisconnect": {
+    "text": "Beendet die Live-PAM-Sitzung. Wenn Abmelden bei Trennen aktiv ist, wird die Konsolen-Sitzung serverseitig widerrufen und Sie kehren zum Anmeldebildschirm zurück.",
+    "source_sha256": ""
+  },
+  "pamLiveSessionDisconnectLogoff": {
+    "text": "Wenn aktiv, meldet Trennen von einer Live-SSH-, RDP- oder VNC-Sitzung auch die Konsole ab und kehrt zum Anmeldebildschirm zurück (NIST AC-12). Der Server widerruft das Sitzungstoken — nicht nur eine Weiterleitung.",
+    "source_sha256": ""
+  },
+  "gdprRopaControllerName": {
+    "text": "Rechtlicher Name des für diese Verarbeitung verantwortlichen Verantwortlichen.",
+    "source_sha256": ""
+  },
+  "gdprRopaControllerContact": {
+    "text": "Kontaktdaten des Verantwortlichen (Privacy-Postfach oder DSB).",
+    "source_sha256": ""
+  },
+  "gdprRopaJointController": {
+    "text": "Name eines gemeinsam Verantwortlichen, falls die Verarbeitung gemeinsam bestimmt wird.",
+    "source_sha256": ""
+  },
+  "gdprRopaJointControllerContact": {
+    "text": "Kontaktdaten des gemeinsam Verantwortlichen.",
+    "source_sha256": ""
+  },
+  "gdprRopaProcessorName": {
+    "text": "Name des Auftragsverarbeiters, der im Auftrag des Verantwortlichen handelt.",
+    "source_sha256": ""
+  },
+  "gdprRopaProcessorContact": {
+    "text": "Kontaktdaten des Auftragsverarbeiters.",
+    "source_sha256": ""
+  },
+  "gdprRopaDpoName": {
+    "text": "Name des Datenschutzbeauftragten, sofern bestellt.",
+    "source_sha256": ""
+  },
+  "gdprRopaDpoContact": {
+    "text": "Kontaktdaten des Datenschutzbeauftragten.",
+    "source_sha256": ""
+  },
+  "gdprRopaTransfers": {
+    "text": "Ob Daten außerhalb des EWR übermittelt werden und in welche Länder.",
+    "source_sha256": ""
+  },
+  "gdprRopaTransferSafeguards": {
+    "text": "Schutzmaßnahmen für Drittlandübermittlungen.",
+    "source_sha256": ""
+  },
+  "gdprRopaReviewCycle": {
+    "text": "Wie oft diese Registerzeile überprüft werden muss (Tage).",
+    "source_sha256": ""
+  },
+  "gdprDpiaArt353Triggers": {
+    "text": "Welche Kriterien nach Artikel 35 Abs. 3 gelten, falls zutreffend.",
+    "source_sha256": ""
+  },
+  "gdprDpiaNecessity": {
+    "text": "Erläutern Sie, ob die Verarbeitung erforderlich und angemessen ist.",
+    "source_sha256": ""
+  },
+  "gdprDpiaPriorConsultationNotes": {
+    "text": "Vorherige Konsultation mit der Aufsichtsbehörde nach Artikel 36 dokumentieren.",
+    "source_sha256": ""
+  },
+  "gdprDpiaPriorConsultationAt": {
+    "text": "Wann die vorherige Konsultation stattfand (UTC).",
+    "source_sha256": ""
+  },
+  "gdprDpiaDecision": {
+    "text": "Endergebnis des DSFA-Workflows.",
+    "source_sha256": ""
+  },
+  "gdprDpiaDecisionReason": {
+    "text": "Verständliche Begründung für das DSFA-Ergebnis.",
+    "source_sha256": ""
+  },
+  "gdprDsrVerifyIdentity": {
+    "text": "Identitätsprüfung nach Artikel 12 Abs. 6 dokumentieren, bevor Sie personenbezogene Daten herausgeben.",
+    "source_sha256": ""
+  },
+  "gdprDsrVerifyMethod": {
+    "text": "Wie die anfragende Person ihre Identität nachgewiesen hat.",
+    "source_sha256": ""
+  },
+  "gdprDsrVerifyEvidence": {
+    "text": "Auf welche Nachweise Sie sich gestützt haben — im append-only-Ereignisprotokoll gespeichert.",
+    "source_sha256": ""
+  },
+  "gdprDsrRefuseVerification": {
+    "text": "Dokumentieren, wenn die Identitätsprüfung fehlschlägt oder pausiert werden muss.",
+    "source_sha256": ""
+  },
+  "gdprDsrWorkforceLink": {
+    "text": "Mit Workforce-Roster verknüpfen, wenn die anfragende Person im Scope ist; leer lassen für externe Betroffene.",
+    "source_sha256": ""
+  },
+  "gdprDpiaThresholdRequired": {
+    "text": "Festhalten, ob Artikel 35 eine DSFA für diese Verarbeitung verlangt.",
+    "source_sha256": ""
+  },
+  "gdprDpiaPriorConsultationRequired": {
+    "text": "Markieren, wenn Restrisiko eine vorherige Konsultation nach Artikel 36 erfordert.",
+    "source_sha256": ""
+  },
+  "actionSearch": {
+    "text": "Startet die Suche für diese Liste oder setzt den Fokus darauf.",
+    "source_sha256": ""
+  },
+  "actionRefresh": {
+    "text": "Lädt die Daten vom Server neu, damit die Liste den aktuellen Stand zeigt.",
+    "source_sha256": ""
+  },
+  "actionFilter": {
+    "text": "Öffnet oder löscht Filter für diese Ansicht.",
+    "source_sha256": ""
+  },
+  "actionMore": {
+    "text": "Öffnet weitere Aktionen für diese Zeile.",
+    "source_sha256": ""
+  },
+  "genericText": {
+    "text": "Freitext für dieses Feld. Kurze, verständliche Formulierung verwenden.",
+    "source_sha256": ""
+  },
+  "actionLogout": {
+    "text": "Beendet Ihre Konsolensitzung in diesem Browser.",
+    "source_sha256": ""
+  },
+  "actionConnect": {
+    "text": "Öffnet eine Live-Sitzung zum gewählten Arbeitsplatz oder Verbindungspunkt.",
+    "source_sha256": ""
+  },
+  "actionRescan": {
+    "text": "Führt die Probe oder den Scan für dieses Ziel erneut aus.",
+    "source_sha256": ""
+  },
+  "actionExport": {
+    "text": "Exportiert die aktuelle Ansicht oder das Paket zum Download.",
+    "source_sha256": ""
+  },
+  "actionImport": {
+    "text": "Importiert eine Datei oder ein Paket in diesen Bereich.",
+    "source_sha256": ""
+  },
+  "actionApprove": {
+    "text": "Genehmigt diese ausstehende Anfrage.",
+    "source_sha256": ""
+  },
+  "actionDeny": {
+    "text": "Lehnt diese ausstehende Anfrage ab.",
+    "source_sha256": ""
+  },
+  "actionSubmit": {
+    "text": "Sendet diese Anfrage oder dieses Formular an den Server.",
+    "source_sha256": ""
+  },
+  "actionClearFilter": {
+    "text": "Löscht den aktiven Listenfilter und zeigt wieder alle Zeilen.",
+    "source_sha256": ""
+  },
+  "actionWake": {
+    "text": "Schaltet diesen Arbeitsplatz ein, damit Verbinden eine Sitzung öffnen kann.",
+    "source_sha256": ""
+  },
+  "actionOpenSession": {
+    "text": "Öffnet den Viewer für eine bereits genehmigte aufgezeichnete Sitzung.",
+    "source_sha256": ""
+  },
+  "actionAcknowledge": {
+    "text": "Bestätigt, dass Sie den Hinweis verstanden haben, und fährt fort.",
+    "source_sha256": ""
+  },
+  "actionRequestAccess": {
+    "text": "Reicht eine Zugriffsanfrage zur Genehmigung ein.",
+    "source_sha256": ""
+  },
+  "licensingActivate": {
+    "text": "Startet einen kurzen Assistenten: Standort-Token kopieren, auf der License-Management-Website aktivieren, dann das signierte Paket importieren.",
+    "source_sha256": ""
+  },
+  "licensingSiteToken": {
+    "text": "Undurchsichtiges Standort-Token für AIC License Management. Es enthält keine Hostnamen oder IP-Adressen. Kopieren und auf der Aktivierungsseite einfügen.",
+    "source_sha256": ""
+  },
+  "licensingPackage": {
+    "text": "Fügen Sie das signierte Lizenzpaket ein oder wählen Sie die empfangene Datei. Der Import ersetzt den Schlüssel auf diesem Server.",
+    "source_sha256": ""
+  },
+  "actionFileTransfer": {
+    "text": "Öffnet die Dateikopie. Dateien gehen zuerst in einen Wartebereich auf dem Vermittler; sie liegen noch nicht auf dem entfernten Computer.",
+    "source_sha256": ""
+  },
+  "actionFileUpload": {
+    "text": "Kopiert eine Datei in den Wartebereich des Vermittlers. Das legt die Datei nicht auf dem entfernten Computer ab.",
+    "source_sha256": ""
+  },
+  "actionFileDownload": {
+    "text": "Lädt eine Datei aus dem Wartebereich des Vermittlers in diesen Browser. Das ist keine Kopie vom entfernten Computer, außer sie wurde zuvor dort abgeholt.",
+    "source_sha256": ""
+  },
+  "graphicsFileTransfer": {
+    "text": "Öffnet die Dateikopie für diese grafische Sitzung. Dateien gehen zuerst in einen Wartebereich auf dem Vermittler; sie liegen noch nicht auf dem entfernten Computer.",
+    "source_sha256": ""
+  }
 }

@@ -1,22 +1,70 @@
 {
   "operator": {
-    "warning_disclosure_notice": "Este sistema es solo para uso autorizado de {organization_name}. El acceso no autorizado está prohibido. La actividad puede vigilarse. Contacto: {support_email} o {support_phone}.",
-    "elevation_warning_text": "Está pidiendo derechos elevados en {system_name}. El uso se limita a tareas aprobadas de {organization_name}. El mal uso puede tener consecuencias laborales o legales.",
-    "elevation_disclosure_text": "Al continuar, acepta el aviso de elevación de {organization_name} y usa los derechos elevados solo para tareas autorizadas. Informe incidentes en {incident_reporting_url}.",
-    "privacy_notice": "Los datos personales que procesa {system_name} siguen la política de privacidad de {organization_name}. Contacto: {privacy_officer_email}.",
-    "consent_banner_text": "Los usuarios autorizados de {system_name} aceptan la supervisión por seguridad y cumplimiento. Marca: {classification_marking}.",
-    "data_handling_notice": "Trate {classification_marking} y otra información controlada según la política de {organization_name} ({department_name}). No la comparta fuera de los canales autorizados.",
-    "general_comments": "Valor de programa compilado para {organization_name} ({department_name} / CAGE {cage_code}).",
-    "classification_banner": "{classification_marking} // {organization_name} — {system_name}",
-    "elevation_pre_submit_ack_prompt_text": "He leído el aviso y pido elevación para una tarea aprobada.",
-    "elevation_post_grant_notice_text": "La elevación se concedió y se registró. Use los derechos extra solo para la tarea aprobada y luego deténgase."
+    "warning_disclosure_notice": {
+      "text": "Este sistema es solo para uso autorizado de {organization_name}. El acceso no autorizado está prohibido. La actividad puede vigilarse. Contacto: {support_email} o {support_phone}.",
+      "source_sha256": "33e6bb3a231150f4fbaec6f8ccff0d9f48c5f971814c5a33fec8ee57c98a4c04"
+    },
+    "elevation_warning_text": {
+      "text": "Está pidiendo derechos elevados en {system_name}. El uso se limita a tareas aprobadas de {organization_name}. El mal uso puede tener consecuencias laborales o legales.",
+      "source_sha256": "d16bcf0a00836e9281829092cb23feef4966d890c60cddff51bd603b2ccb590f"
+    },
+    "elevation_disclosure_text": {
+      "text": "Al continuar, acepta el aviso de elevación de {organization_name} y usa los derechos elevados solo para tareas autorizadas. Informe incidentes en {incident_reporting_url}.",
+      "source_sha256": "8ec9be7f82a36c0a504ea218c10fa709acf077567a4e203af1035004ca04d786"
+    },
+    "privacy_notice": {
+      "text": "Los datos personales que procesa {system_name} siguen la política de privacidad de {organization_name}. Contacto: {privacy_officer_email}.",
+      "source_sha256": "62aa5b69817302d48a341e07c6bb756f920185aaab57a3016ca461b1966664f0"
+    },
+    "consent_banner_text": {
+      "text": "Los usuarios autorizados de {system_name} aceptan la supervisión por seguridad y cumplimiento. Marca: {classification_marking}.",
+      "source_sha256": "44673545f03b56be2f62632da22fe1a5dfbb49aadb96eaa08868f29715ac2d4f"
+    },
+    "data_handling_notice": {
+      "text": "Trate {classification_marking} y otra información controlada según la política de {organization_name} ({department_name}). No la comparta fuera de los canales autorizados.",
+      "source_sha256": "b667abdcbaab1cf24a7e3c8513822f92620bd3948f86a067c2a3b8d6570a6024"
+    },
+    "general_comments": {
+      "text": "Valor de programa compilado para {organization_name} ({department_name} / CAGE {cage_code}).",
+      "source_sha256": "070896037cfe4a5382909af50e063e5be4f98ca7d7d44122080b7f359e564879"
+    },
+    "classification_banner": {
+      "text": "{classification_marking} // {organization_name} — {system_name}",
+      "source_sha256": "68c2bdc2d565477036f297202954d0b9336a096c7da9a166b125b43cb13ce00c"
+    },
+    "elevation_pre_submit_ack_prompt_text": {
+      "text": "He leído el aviso y pido elevación para una tarea aprobada.",
+      "source_sha256": "ce2fbdb59e8e9705a5c0658b6f0432f8f49de2c13f3a8fd8895809cdf20eab73"
+    },
+    "elevation_post_grant_notice_text": {
+      "text": "La elevación se concedió y se registró. Use los derechos extra solo para la tarea aprobada y luego deténgase.",
+      "source_sha256": "8a7554c80c23c03590b7e2412a185b5b1e0ce7a5a0f06545238c9f178792b4b8"
+    }
   },
   "server": {
-    "classification_banner": "{classification_marking} // {organization_name} AIC Server Admin",
-    "admin_session_notice": "Está usando la consola de administración de AIC Server de {organization_name} ({system_name}). La actividad de la sesión puede auditarse. Contacto: {support_email}.",
-    "admin_login_notice": "Solo administradores autorizados. Este inicio de sesión es para {organization_name} ({department_name}, CAGE {cage_code}). El acceso no autorizado está prohibido.",
-    "privacy_notice": "Los datos personales de administradores se procesan para control de acceso y auditoría. Contacto: {privacy_officer_email}.",
-    "data_handling_notice": "La consola de administración puede incluir {classification_marking}. Siga las reglas de manejo de {organization_name}.",
-    "general_comments": "Valor de programa compilado para {organization_name}. Departamento: {department_name}."
+    "classification_banner": {
+      "text": "{classification_marking} // {organization_name} AIC Server Admin",
+      "source_sha256": "f7418194bbf2f7c7a712be8a3dcf53626ad6fbb44e8ee710a07687a4f9c2ae79"
+    },
+    "admin_session_notice": {
+      "text": "Está usando la consola de administración de AIC Server de {organization_name} ({system_name}). La actividad de la sesión puede auditarse. Contacto: {support_email}.",
+      "source_sha256": "f868543289a03b9dd602c6548b97ca0077d3c38b9e1b32e4b2ec47d9730e0f84"
+    },
+    "admin_login_notice": {
+      "text": "Solo administradores autorizados. Este inicio de sesión es para {organization_name} ({department_name}, CAGE {cage_code}). El acceso no autorizado está prohibido.",
+      "source_sha256": "5b5c5bfe3c5a18ccab1bbcdc55e2c70371de59cc6ef9556d230b5ab9db527c40"
+    },
+    "privacy_notice": {
+      "text": "Los datos personales de administradores se procesan para control de acceso y auditoría. Contacto: {privacy_officer_email}.",
+      "source_sha256": "6b4bb08ff0ffe5db01a8d29ea94bac5b9725b8c39a4cb238f26488cabbfc6da3"
+    },
+    "data_handling_notice": {
+      "text": "La consola de administración puede incluir {classification_marking}. Siga las reglas de manejo de {organization_name}.",
+      "source_sha256": "9e36da941445919f147547e8518f9959dc2e15260230ee1dfe1479800f0418c1"
+    },
+    "general_comments": {
+      "text": "Valor de programa compilado para {organization_name}. Departamento: {department_name}.",
+      "source_sha256": "515b054364184f2d75d3d4c6b59c52deb2223007f901f21d75e897b844182111"
+    }
   }
 }

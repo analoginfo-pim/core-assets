@@ -1,237 +1,918 @@
 {
   "accountSecurity": {
-    "title": "Kontosicherheit",
-    "totpLabel": "TOTP-Mehrfaktor:",
-    "enrolled": "Eingerichtet",
-    "notEnrolled": "Nicht eingerichtet",
-    "requiredByPolicy": "Laut Richtlinie erforderlich",
-    "mfaDisabled": "TOTP-Mehrfaktorauthentifizierung ist auf diesem Server deaktiviert.",
-    "unenrollHint": "Abmelden, um die Authenticator-App zu wechseln. Gerät verloren? Nutzen Sie „MFA zurücksetzen (E-Mail)“ auf der Anmeldeseite oder fragen Sie einen Administrator.",
-    "unenrollButton": "Meinen Authenticator abmelden",
-    "unenrollAria": "Meinen TOTP-Authenticator abmelden",
-    "confirmWarning": "TOTP-Authenticator entfernen? Bis Sie einen neuen einrichten, ist Ihr Konto nur durch das Passwort geschützt{{untilReenroll}}. Diese Aktion wird protokolliert.",
-    "untilReenroll": ", bis Sie sich erneut einrichten",
-    "currentCode": "Aktueller Authenticator-Code",
-    "currentCodeHelper": "Erforderlich, weil MFA laut Richtlinie vorgeschrieben ist.",
-    "removing": "Wird entfernt…",
-    "unenrollConfirm": "Abmelden",
-    "notEnrolledHint": "Kein Authenticator eingerichtet. Melden Sie sich ab und wieder an, um einen einzurichten.",
-    "removedSuccess": "Authenticator entfernt. Richten Sie bei der nächsten Anmeldung einen neuen ein.",
-    "requestFailed": "Anfrage fehlgeschlagen. Bitte erneut versuchen."
+    "title": {
+      "text": "Kontosicherheit",
+      "source_sha256": ""
+    },
+    "totpLabel": {
+      "text": "TOTP-Mehrfaktor:",
+      "source_sha256": ""
+    },
+    "enrolled": {
+      "text": "Eingerichtet",
+      "source_sha256": ""
+    },
+    "notEnrolled": {
+      "text": "Nicht eingerichtet",
+      "source_sha256": ""
+    },
+    "requiredByPolicy": {
+      "text": "Laut Richtlinie erforderlich",
+      "source_sha256": ""
+    },
+    "mfaDisabled": {
+      "text": "TOTP-Mehrfaktorauthentifizierung ist auf diesem Server deaktiviert.",
+      "source_sha256": ""
+    },
+    "unenrollHint": {
+      "text": "Abmelden, um die Authenticator-App zu wechseln. Gerät verloren? Nutzen Sie „MFA zurücksetzen (E-Mail)“ auf der Anmeldeseite oder fragen Sie einen Administrator.",
+      "source_sha256": ""
+    },
+    "unenrollButton": {
+      "text": "Meinen Authenticator abmelden",
+      "source_sha256": ""
+    },
+    "unenrollAria": {
+      "text": "Meinen TOTP-Authenticator abmelden",
+      "source_sha256": ""
+    },
+    "confirmWarning": {
+      "text": "TOTP-Authenticator entfernen? Bis Sie einen neuen einrichten, ist Ihr Konto nur durch das Passwort geschützt{{untilReenroll}}. Diese Aktion wird protokolliert.",
+      "source_sha256": ""
+    },
+    "untilReenroll": {
+      "text": ", bis Sie sich erneut einrichten",
+      "source_sha256": ""
+    },
+    "currentCode": {
+      "text": "Aktueller Authenticator-Code",
+      "source_sha256": ""
+    },
+    "currentCodeHelper": {
+      "text": "Erforderlich, weil MFA laut Richtlinie vorgeschrieben ist.",
+      "source_sha256": ""
+    },
+    "removing": {
+      "text": "Wird entfernt…",
+      "source_sha256": ""
+    },
+    "unenrollConfirm": {
+      "text": "Abmelden",
+      "source_sha256": ""
+    },
+    "notEnrolledHint": {
+      "text": "Kein Authenticator eingerichtet. Melden Sie sich ab und wieder an, um einen einzurichten.",
+      "source_sha256": ""
+    },
+    "removedSuccess": {
+      "text": "Authenticator entfernt. Richten Sie bei der nächsten Anmeldung einen neuen ein.",
+      "source_sha256": ""
+    },
+    "requestFailed": {
+      "text": "Anfrage fehlgeschlagen. Bitte erneut versuchen.",
+      "source_sha256": ""
+    }
   },
   "adminAuthHelp": {
-    "titleUnauthorized": "Administratoranfrage abgelehnt (401)",
-    "titleManual": "Administrator-API-Zugriff",
-    "unauthorizedBody": "Eine geschützte Route unter /api/admin/ hat 401 Unauthorized zurückgegeben. Wenn die IAM-Sitzungsauthentifizierung aktiv ist, ist Ihre Anmeldung meist abgelaufen — melden Sie sich erneut an. Ohne Sitzungsauthentifizierung stimmt das Administrator-Anmeldegeheimnis des Browsers nicht mit dem auf dem Server gespeicherten ADMIN_TOKEN überein (z. B. nach einem Datenbank-Reset oder wenn nur eine Seite des Paars geändert wurde). Nach dem Korrigieren des Tokens hart neu laden oder /login öffnen, um eine neue IAM-Sitzung aufzubauen.",
-    "quickFacts": "Kurzinfos:",
-    "oneNamePrimary": "Ein Name: ADMIN_TOKEN",
-    "oneNameSecondary": "Das Server-Manifestgeheimnis heißt ADMIN_TOKEN. Dieser Browser hängt es an jede Admin-Anfrage als HTTP-Header {{header}} (und X-Admin-Token für ältere Builds). Wert {{token}}, bis echte RBAC diesen Stub ersetzt. Es gibt keinen separaten Registrierungswert namens {{header}} — das ist nur der Draht-Headername.",
-    "whereSecretsPrimary": "Wo der Server Geheimnisse speichert (Windows)",
-    "whereSecretsSecondary": "Maschinenweite Einstellungen liegen unter {{settings}} (bevorzugt) oder {{settingsLegacy}} bei älteren Installationen. Geheimnisse wie ADMIN_TOKEN liegen unter {{secrets}} (bevorzugt) oder {{secretsLegacy}} als verschlüsselte Registrierungswerte. Dienste als LocalSystem lesen diese Schlüssel direkt. Windows Credential Manager wird nicht für Server- oder Agent-Laufzeitgeheimnisse genutzt — es ist benutzerbezogen und für Dienstkonten nicht verfügbar.",
-    "unixPrimary": "Unix / macOS",
-    "unixSecondary": "Einstellungen unter /etc/aic/ oder /Library/Application Support/com.analoginfo/; Geheimnisse über den Plattform-Keyring (Linux Secret Service / macOS Keychain), nicht als Klartextdateien.",
-    "iamPrimary": "IAM-Sitzungsauthentifizierung",
-    "iamSecondary": "Wenn IAM_SESSION_AUTH_ENABLED wahr ist, ist eine gültige Anmeldung (oder die gemeinsamen ADMIN_TOKEN-Header ohne gespeicherte Sitzung) erforderlich. Abgelaufene Sitzungstoken werden gelöscht und der Browser zu /login geschickt.",
-    "operatorsFooter": "Für Betreiber: siehe docs/SECURITY.md und pim-app-config/docs/CONFIGURATION_STORAGE.md (HKLM-/Keyring-Layout).",
-    "openSettings": "Einstellungen öffnen",
-    "signIn": "Anmelden",
-    "close": "Schließen"
+    "titleUnauthorized": {
+      "text": "Administratoranfrage abgelehnt (401)",
+      "source_sha256": ""
+    },
+    "titleManual": {
+      "text": "Administrator-API-Zugriff",
+      "source_sha256": ""
+    },
+    "unauthorizedBody": {
+      "text": "Eine geschützte Route unter /api/admin/ hat 401 Unauthorized zurückgegeben. Wenn die IAM-Sitzungsauthentifizierung aktiv ist, ist Ihre Anmeldung meist abgelaufen — melden Sie sich erneut an. Ohne Sitzungsauthentifizierung stimmt das Administrator-Anmeldegeheimnis des Browsers nicht mit dem auf dem Server gespeicherten ADMIN_TOKEN überein (z. B. nach einem Datenbank-Reset oder wenn nur eine Seite des Paars geändert wurde). Nach dem Korrigieren des Tokens hart neu laden oder /login öffnen, um eine neue IAM-Sitzung aufzubauen.",
+      "source_sha256": ""
+    },
+    "quickFacts": {
+      "text": "Kurzinfos:",
+      "source_sha256": ""
+    },
+    "oneNamePrimary": {
+      "text": "Ein Name: ADMIN_TOKEN",
+      "source_sha256": ""
+    },
+    "oneNameSecondary": {
+      "text": "Das Server-Manifestgeheimnis heißt ADMIN_TOKEN. Dieser Browser hängt es an jede Admin-Anfrage als HTTP-Header {{header}} (und X-Admin-Token für ältere Builds). Wert {{token}}, bis echte RBAC diesen Stub ersetzt. Es gibt keinen separaten Registrierungswert namens {{header}} — das ist nur der Draht-Headername.",
+      "source_sha256": ""
+    },
+    "whereSecretsPrimary": {
+      "text": "Wo der Server Geheimnisse speichert (Windows)",
+      "source_sha256": ""
+    },
+    "whereSecretsSecondary": {
+      "text": "Maschinenweite Einstellungen liegen unter {{settings}} (bevorzugt) oder {{settingsLegacy}} bei älteren Installationen. Geheimnisse wie ADMIN_TOKEN liegen unter {{secrets}} (bevorzugt) oder {{secretsLegacy}} als verschlüsselte Registrierungswerte. Dienste als LocalSystem lesen diese Schlüssel direkt. Windows Credential Manager wird nicht für Server- oder Agent-Laufzeitgeheimnisse genutzt — es ist benutzerbezogen und für Dienstkonten nicht verfügbar.",
+      "source_sha256": ""
+    },
+    "unixPrimary": {
+      "text": "Unix / macOS",
+      "source_sha256": ""
+    },
+    "unixSecondary": {
+      "text": "Einstellungen unter /etc/aic/ oder /Library/Application Support/com.analoginfo/; Geheimnisse über den Plattform-Keyring (Linux Secret Service / macOS Keychain), nicht als Klartextdateien.",
+      "source_sha256": ""
+    },
+    "iamPrimary": {
+      "text": "IAM-Sitzungsauthentifizierung",
+      "source_sha256": ""
+    },
+    "iamSecondary": {
+      "text": "Wenn IAM_SESSION_AUTH_ENABLED wahr ist, ist eine gültige Anmeldung (oder die gemeinsamen ADMIN_TOKEN-Header ohne gespeicherte Sitzung) erforderlich. Abgelaufene Sitzungstoken werden gelöscht und der Browser zu /login geschickt.",
+      "source_sha256": ""
+    },
+    "operatorsFooter": {
+      "text": "Für Betreiber: siehe docs/SECURITY.md und pim-app-config/docs/CONFIGURATION_STORAGE.md (HKLM-/Keyring-Layout).",
+      "source_sha256": ""
+    },
+    "openSettings": {
+      "text": "Einstellungen öffnen",
+      "source_sha256": ""
+    },
+    "signIn": {
+      "text": "Anmelden",
+      "source_sha256": ""
+    },
+    "close": {
+      "text": "Schließen",
+      "source_sha256": ""
+    }
   },
   "systemGroups": {
-    "systemDetails": "Systemdetails",
-    "editPasswordPolicy": "Gruppen-Kennwortrichtlinie bearbeiten",
-    "passwordRecovery": "Kennwortwiederherstellung",
-    "sendRecoveredAria": "Wiederhergestelltes Kennwort per E-Mail oder SMS senden",
-    "moveMachine": "Maschine in eine andere Gruppe verschieben",
-    "issuances": "Ausstellungen",
-    "copyToken": "Enrollment-Token kopieren",
-    "redownloadSettings": "settings.json erneut herunterladen",
-    "rotateCredential": "Zugangsdaten rotieren",
-    "revokeIssuance": "Diese Ausstellung widerrufen",
-    "revokeIssuanceTitle": "Ausstellung widerrufen?",
-    "importSettings": "settings.json-Dateien registrieren",
-    "removeImportFile": "Datei aus der Importliste entfernen",
-    "identityDetails": "Identitätsdetails (schreibgeschützt)",
-    "identityTemplate": "Identitätsvorlage",
-    "startOffset": "Startversatz (TT:HH:MM:SS)",
-    "editRowPolicy": "Zeilen-Kennwortrichtlinie bearbeiten",
-    "moveRowUp": "Zeile nach oben",
-    "moveRowDown": "Zeile nach unten",
-    "removeRow": "Zeile entfernen",
-    "findMachine": "Maschine in allen Gruppen suchen",
-    "editGroup": "Systemgruppe bearbeiten",
-    "deploymentTemplate": "Bereitstellungsvorlage",
-    "deleteGroup": "Systemgruppe löschen",
-    "createGroup": "Systemgruppe erstellen",
-    "deleteEndpoint": "Endpunkt löschen",
-    "groupConfig": "Gruppen-config.json",
-    "elevationCode": "Elevationscode",
-    "copyCode": "Code kopieren",
-    "groupFallback": "Gruppe",
-    "createElevationCode": "Elevationscode erstellen",
-    "targetGroup": "Zielgruppe",
-    "targetGroupHelperPick": "Aus Elevationsplattform-Richtlinie ({{platform}}) wählen oder einen benutzerdefinierten OS-Gruppennamen eingeben.",
-    "targetGroupHelperType": "OS-Gruppennamen eingeben (Plattformrichtlinie nicht geladen).",
-    "strategy": "Aktivierungscode-Strategie",
-    "strategyLetters": "Buchstaben",
-    "strategyDigits": "Ziffern",
-    "strategyFallback": "Eingebaute Standardliste wird verwendet.",
-    "strategyHint": "Der Agent prüft offline mit seiner konfigurierten elevation_strategy_id; dieselbe Strategie wählen, mit der der Endpunkt bereitgestellt wurde.",
-    "strategiesLoadFailed": "Aktivierungscode-Strategien konnten nicht geladen werden.",
-    "durationMinutes": "Dauer (Minuten)",
-    "justification": "Begründung (Ticket- oder Vorfall-ID)",
-    "justificationHelper": "Erforderlich, wenn die Richtlinie für sensible Zugriffsbegründungen auf dem Server aktiviert ist.",
-    "activateImmediately": "Sofort aktivieren",
-    "scheduledActivation": "Geplante Aktivierungszeit",
-    "elevationCodeLabel": "Elevationscode",
-    "generateCode": "Code erzeugen",
-    "generating": "Wird erzeugt…",
-    "createElevationTitle": "Elevationscode erstellen",
-    "usageType": "Nutzungstyp",
-    "usageConnected": "Verbunden (verwaltet)",
-    "usageOneShot": "Einmalige Bereitstellung",
-    "usageAirGapped": "Air-gapped (dauerhaft)",
-    "loadingTemplate": "Vorlage wird geladen…",
-    "defaultTtlHours": "Standard-TTL (Stunden)",
-    "defaultTtlHelper": "Wird verwendet, wenn der Assistent kein ttl_hours angibt.",
-    "templateSaved": "Bereitstellungsvorlage gespeichert",
-    "saveFailed": "Speichern fehlgeschlagen",
-    "noGroupSelected": "Keine Gruppe ausgewählt",
-    "seedDefaultIdentities": "Standardidentitäten auf neuen Endpunkten anlegen",
-    "explicit": "Explizit",
-    "wellKnown": "Bekannt",
-    "wellKnownAccount": "Bekanntes Konto",
-    "accountName": "Kontoname",
-    "inherit": "Vererben",
-    "industryStandard": "Branchenstandard",
-    "industryStandardHelper": "Regulatorisches oder Benchmark-Profil wählen, um die Kennwortrichtlinie dieser Identität vorzufüllen. Benutzerdefiniert wählen, um Felder ohne Ersetzen zu bearbeiten.",
-    "saveTemplate": "Vorlage speichern",
-    "saving": "Wird gespeichert…",
-    "identityTemplateSaved": "Identitätsvorlage gespeichert",
-    "identityTemplateSaveFailed": "Identitätsvorlage konnte nicht gespeichert werden",
-    "groupPasswordPolicy": "Gruppen-Kennwortrichtlinie",
-    "allStatuses": "Alle Status",
-    "statusActive": "Aktiv",
-    "statusSuperseded": "Ersetzt",
-    "statusRevoked": "Widerrufen",
-    "statusLabel": "Status",
-    "settingsIssuances": "Einstellungs-Ausstellungen",
-    "loadIssuancesFailed": "Ausstellungen konnten nicht geladen werden",
-    "downloadFailed": "Download fehlgeschlagen",
-    "regenerateFailed": "Neu erzeugen fehlgeschlagen",
-    "revokeFailed": "Widerruf fehlgeschlagen",
-    "tokenCopied": "Enrollment-Token in die Zwischenablage kopiert",
-    "clipboardWriteFailed": "Zwischenablage konnte nicht beschrieben werden",
-    "rotateConnectedOnly": "Zugangsdaten rotieren (nur ConnectedManaged)",
-    "rotateUnavailable": "Neu erzeugen für diese Zeile nicht verfügbar (nur aktive ConnectedManaged-Ausstellungen können rotiert werden)",
-    "revokeActiveOnly": "Nur aktive Ausstellungen können widerrufen werden",
-    "defaultSystemGroup": "Standard-Systemgruppe",
-    "defaultSystemGroupHelper": "Wird verwendet, wenn eine Datei system_group_id weglässt",
-    "markAirGapped": "Als air-gapped markieren (nur offline)",
-    "chipInFile": "In Datei",
-    "chipNeedsGroup": "Gruppe nötig",
-    "chipValid": "Gültig",
-    "chipYes": "Ja",
-    "chipNo": "Nein",
-    "importing": "Wird importiert…",
-    "importFiles": "{{count}} Datei importieren",
-    "importFilesPlural": "{{count}} Dateien importieren",
-    "noFilesToImport": "Keine Dateien zum Importieren",
-    "noValidFiles": "Keine gültigen Dateien zum Importieren",
-    "selectGroupForOmit": "Systemgruppe für Dateien ohne system_group_id wählen",
-    "importFailed": "Import fehlgeschlagen",
-    "unknownError": "Unbekannter Fehler aufgetreten",
-    "invalidJson": "Ungültiges JSON-Format",
-    "descriptionColon": "Beschreibung:",
-    "deleteGroupAndEndpoints": "Gruppe & Endpunkte löschen",
-    "deleteGroupOnly": "Gruppe löschen",
-    "passwordLength": "Kennwortlänge",
-    "inheritEmpty": "Leer lassen, um den effektiven Standard zu erben.",
-    "maxDriftSeconds": "Max. Abweichung (Sekunden)",
-    "secretUpdateFrequency": "Geheimnis-Aktualisierungsintervall (Stunden)",
-    "requireUppercase": "Großbuchstaben erforderlich",
-    "requireLowercase": "Kleinbuchstaben erforderlich",
-    "requireDigits": "Ziffern erforderlich",
-    "requireSpecial": "Sonderzeichen erforderlich",
-    "allowedSpecial": "Erlaubte Sonderzeichen",
-    "policyVersion": "Richtlinienversion",
-    "caCertPath": "CA-Zertifikat-Dateipfad",
-    "localAccountName": "Lokaler Kontoname",
-    "groupName": "Gruppenname",
-    "groupNameHelper": "Nur alphanumerisch, Bindestriche und Unterstriche (max. 64 Zeichen).",
-    "description": "Beschreibung",
-    "descriptionOptional": "Optional (max. 1024 Zeichen).",
-    "passwordCalculable": "Kennwort berechenbar",
-    "systemInformation": "Systeminformationen",
-    "machineName": "Maschinenname",
-    "machineId": "Maschinen-ID",
-    "identityInformation": "Identitätsinformationen",
-    "identityId": "Identitäts-ID",
-    "legacy": "Legacy",
-    "active": "Aktiv",
-    "inactive": "Inaktiv",
-    "createdAt": "Erstellt am",
-    "lastRotation": "Letzte Rotation",
-    "hashAlgorithm": "Hash-Algorithmus",
-    "passwordPolicy": "Kennwortrichtlinie",
-    "customPolicyChip": "Benutzerdefinierte Richtlinie für diese Identität",
-    "length": "Länge",
-    "rotationInterval": "Rotationsintervall",
-    "maxDriftS": "Max. Abweichung (s)",
-    "uppercase": "Großbuchstaben",
-    "lowercase": "Kleinbuchstaben",
-    "digits": "Ziffern",
-    "special": "Sonderzeichen",
-    "allowedSymbols": "Erlaubte Symbole",
-    "defaultSet": "Standardsatz",
-    "yes": "Ja",
-    "no": "Nein",
-    "machineNameField": "Maschinenname",
-    "noMachinesFound": "Keine Maschinen gefunden für „{{query}}“",
-    "adminTokenOptional": "Admin-Token (optional)",
-    "adminTokenHelper": "Für Tests leer lassen; in Produktion erforderlich",
-    "passwordHistory": "Kennwortverlauf",
-    "loadingPasswordHistory": "Kennwortverlauf wird geladen…",
-    "noPasswordHistory": "Kein Kennwortverlauf für diese Identität verfügbar.",
-    "chipCurrent": "Aktuell",
-    "chipPast": "Vergangen",
-    "chipFuture": "Zukünftig",
-    "chipSelected": "Ausgewählt",
-    "recovering": "Wird wiederhergestellt…",
-    "recover": "Wiederherstellen",
-    "basicInformation": "Grundinformationen",
-    "assignedName": "Zugewiesener Name",
-    "notAssigned": "Nicht zugewiesen",
-    "loadTemplateFailed": "Vorlage für diesen Nutzungstyp konnte nicht geladen werden.",
-    "statusExpired": "Abgelaufen",
-    "identityLabel": "Identität",
-    "neverConnected": "Nie verbunden",
-    "connected": "Verbunden",
-    "networkInformation": "Netzwerkinformationen",
-    "ipAddress": "IP-Adresse",
-    "macAddress": "MAC-Adresse",
-    "platformInformation": "Plattforminformationen",
-    "osPlatform": "OS-Plattform",
-    "osDetails": "OS-Details",
-    "organization": "Organisation",
-    "multiTenant": "Mandant",
-    "domain": "Domäne",
-    "systemGroup": "Systemgruppe",
-    "securityInformation": "Sicherheitsinformationen",
-    "secretKeyVersion": "Geheimschlüsselversion",
-    "hasEncryptedSecret": "Verschlüsseltes Geheimnis vorhanden",
-    "timestamps": "Zeitstempel",
-    "lastUpdated": "Zuletzt aktualisiert",
-    "lastCheckIn": "Letzter Check-in",
-    "na": "k. A.",
-    "unknown": "Unbekannt",
-    "none": "Keine"
+    "systemDetails": {
+      "text": "Systemdetails",
+      "source_sha256": ""
+    },
+    "editPasswordPolicy": {
+      "text": "Gruppen-Kennwortrichtlinie bearbeiten",
+      "source_sha256": ""
+    },
+    "passwordRecovery": {
+      "text": "Kennwortwiederherstellung",
+      "source_sha256": ""
+    },
+    "sendRecoveredAria": {
+      "text": "Wiederhergestelltes Kennwort per E-Mail oder SMS senden",
+      "source_sha256": ""
+    },
+    "moveMachine": {
+      "text": "Maschine in eine andere Gruppe verschieben",
+      "source_sha256": ""
+    },
+    "issuances": {
+      "text": "Ausstellungen",
+      "source_sha256": ""
+    },
+    "copyToken": {
+      "text": "Enrollment-Token kopieren",
+      "source_sha256": ""
+    },
+    "redownloadSettings": {
+      "text": "settings.json erneut herunterladen",
+      "source_sha256": ""
+    },
+    "rotateCredential": {
+      "text": "Zugangsdaten rotieren",
+      "source_sha256": ""
+    },
+    "revokeIssuance": {
+      "text": "Diese Ausstellung widerrufen",
+      "source_sha256": ""
+    },
+    "revokeIssuanceTitle": {
+      "text": "Ausstellung widerrufen?",
+      "source_sha256": ""
+    },
+    "importSettings": {
+      "text": "settings.json-Dateien registrieren",
+      "source_sha256": ""
+    },
+    "removeImportFile": {
+      "text": "Datei aus der Importliste entfernen",
+      "source_sha256": ""
+    },
+    "identityDetails": {
+      "text": "Identitätsdetails (schreibgeschützt)",
+      "source_sha256": ""
+    },
+    "identityTemplate": {
+      "text": "Identitätsvorlage",
+      "source_sha256": ""
+    },
+    "startOffset": {
+      "text": "Startversatz (TT:HH:MM:SS)",
+      "source_sha256": ""
+    },
+    "editRowPolicy": {
+      "text": "Zeilen-Kennwortrichtlinie bearbeiten",
+      "source_sha256": ""
+    },
+    "moveRowUp": {
+      "text": "Zeile nach oben",
+      "source_sha256": ""
+    },
+    "moveRowDown": {
+      "text": "Zeile nach unten",
+      "source_sha256": ""
+    },
+    "removeRow": {
+      "text": "Zeile entfernen",
+      "source_sha256": ""
+    },
+    "findMachine": {
+      "text": "Maschine in allen Gruppen suchen",
+      "source_sha256": ""
+    },
+    "editGroup": {
+      "text": "Systemgruppe bearbeiten",
+      "source_sha256": ""
+    },
+    "deploymentTemplate": {
+      "text": "Bereitstellungsvorlage",
+      "source_sha256": ""
+    },
+    "deleteGroup": {
+      "text": "Systemgruppe löschen",
+      "source_sha256": ""
+    },
+    "createGroup": {
+      "text": "Systemgruppe erstellen",
+      "source_sha256": ""
+    },
+    "deleteEndpoint": {
+      "text": "Endpunkt löschen",
+      "source_sha256": ""
+    },
+    "groupConfig": {
+      "text": "Gruppen-config.json",
+      "source_sha256": ""
+    },
+    "elevationCode": {
+      "text": "Elevationscode",
+      "source_sha256": ""
+    },
+    "copyCode": {
+      "text": "Code kopieren",
+      "source_sha256": ""
+    },
+    "groupFallback": {
+      "text": "Gruppe",
+      "source_sha256": ""
+    },
+    "createElevationCode": {
+      "text": "Elevationscode erstellen",
+      "source_sha256": ""
+    },
+    "targetGroup": {
+      "text": "Zielgruppe",
+      "source_sha256": ""
+    },
+    "targetGroupHelperPick": {
+      "text": "Aus Elevationsplattform-Richtlinie ({{platform}}) wählen oder einen benutzerdefinierten OS-Gruppennamen eingeben.",
+      "source_sha256": ""
+    },
+    "targetGroupHelperType": {
+      "text": "OS-Gruppennamen eingeben (Plattformrichtlinie nicht geladen).",
+      "source_sha256": ""
+    },
+    "strategy": {
+      "text": "Aktivierungscode-Strategie",
+      "source_sha256": ""
+    },
+    "strategyLetters": {
+      "text": "Buchstaben",
+      "source_sha256": ""
+    },
+    "strategyDigits": {
+      "text": "Ziffern",
+      "source_sha256": ""
+    },
+    "strategyFallback": {
+      "text": "Eingebaute Standardliste wird verwendet.",
+      "source_sha256": ""
+    },
+    "strategyHint": {
+      "text": "Der Agent prüft offline mit seiner konfigurierten elevation_strategy_id; dieselbe Strategie wählen, mit der der Endpunkt bereitgestellt wurde.",
+      "source_sha256": ""
+    },
+    "strategiesLoadFailed": {
+      "text": "Aktivierungscode-Strategien konnten nicht geladen werden.",
+      "source_sha256": ""
+    },
+    "durationMinutes": {
+      "text": "Dauer (Minuten)",
+      "source_sha256": ""
+    },
+    "justification": {
+      "text": "Begründung (Ticket- oder Vorfall-ID)",
+      "source_sha256": ""
+    },
+    "justificationHelper": {
+      "text": "Erforderlich, wenn die Richtlinie für sensible Zugriffsbegründungen auf dem Server aktiviert ist.",
+      "source_sha256": ""
+    },
+    "activateImmediately": {
+      "text": "Sofort aktivieren",
+      "source_sha256": ""
+    },
+    "scheduledActivation": {
+      "text": "Geplante Aktivierungszeit",
+      "source_sha256": ""
+    },
+    "elevationCodeLabel": {
+      "text": "Elevationscode",
+      "source_sha256": ""
+    },
+    "generateCode": {
+      "text": "Code erzeugen",
+      "source_sha256": ""
+    },
+    "generating": {
+      "text": "Wird erzeugt…",
+      "source_sha256": ""
+    },
+    "createElevationTitle": {
+      "text": "Elevationscode erstellen",
+      "source_sha256": ""
+    },
+    "usageType": {
+      "text": "Nutzungstyp",
+      "source_sha256": ""
+    },
+    "usageConnected": {
+      "text": "Verbunden (verwaltet)",
+      "source_sha256": ""
+    },
+    "usageOneShot": {
+      "text": "Einmalige Bereitstellung",
+      "source_sha256": ""
+    },
+    "usageAirGapped": {
+      "text": "Air-gapped (dauerhaft)",
+      "source_sha256": ""
+    },
+    "loadingTemplate": {
+      "text": "Vorlage wird geladen…",
+      "source_sha256": ""
+    },
+    "defaultTtlHours": {
+      "text": "Standard-TTL (Stunden)",
+      "source_sha256": ""
+    },
+    "defaultTtlHelper": {
+      "text": "Wird verwendet, wenn der Assistent kein ttl_hours angibt.",
+      "source_sha256": ""
+    },
+    "templateSaved": {
+      "text": "Bereitstellungsvorlage gespeichert",
+      "source_sha256": ""
+    },
+    "saveFailed": {
+      "text": "Speichern fehlgeschlagen",
+      "source_sha256": ""
+    },
+    "noGroupSelected": {
+      "text": "Keine Gruppe ausgewählt",
+      "source_sha256": ""
+    },
+    "seedDefaultIdentities": {
+      "text": "Standardidentitäten auf neuen Endpunkten anlegen",
+      "source_sha256": ""
+    },
+    "explicit": {
+      "text": "Explizit",
+      "source_sha256": ""
+    },
+    "wellKnown": {
+      "text": "Bekannt",
+      "source_sha256": ""
+    },
+    "wellKnownAccount": {
+      "text": "Bekanntes Konto",
+      "source_sha256": ""
+    },
+    "accountName": {
+      "text": "Kontoname",
+      "source_sha256": ""
+    },
+    "inherit": {
+      "text": "Vererben",
+      "source_sha256": ""
+    },
+    "industryStandard": {
+      "text": "Branchenstandard",
+      "source_sha256": ""
+    },
+    "industryStandardHelper": {
+      "text": "Regulatorisches oder Benchmark-Profil wählen, um die Kennwortrichtlinie dieser Identität vorzufüllen. Benutzerdefiniert wählen, um Felder ohne Ersetzen zu bearbeiten.",
+      "source_sha256": ""
+    },
+    "saveTemplate": {
+      "text": "Vorlage speichern",
+      "source_sha256": ""
+    },
+    "saving": {
+      "text": "Wird gespeichert…",
+      "source_sha256": ""
+    },
+    "identityTemplateSaved": {
+      "text": "Identitätsvorlage gespeichert",
+      "source_sha256": ""
+    },
+    "identityTemplateSaveFailed": {
+      "text": "Identitätsvorlage konnte nicht gespeichert werden",
+      "source_sha256": ""
+    },
+    "groupPasswordPolicy": {
+      "text": "Gruppen-Kennwortrichtlinie",
+      "source_sha256": ""
+    },
+    "allStatuses": {
+      "text": "Alle Status",
+      "source_sha256": ""
+    },
+    "statusActive": {
+      "text": "Aktiv",
+      "source_sha256": ""
+    },
+    "statusSuperseded": {
+      "text": "Ersetzt",
+      "source_sha256": ""
+    },
+    "statusRevoked": {
+      "text": "Widerrufen",
+      "source_sha256": ""
+    },
+    "statusLabel": {
+      "text": "Status",
+      "source_sha256": ""
+    },
+    "settingsIssuances": {
+      "text": "Einstellungs-Ausstellungen",
+      "source_sha256": ""
+    },
+    "loadIssuancesFailed": {
+      "text": "Ausstellungen konnten nicht geladen werden",
+      "source_sha256": ""
+    },
+    "downloadFailed": {
+      "text": "Download fehlgeschlagen",
+      "source_sha256": ""
+    },
+    "regenerateFailed": {
+      "text": "Neu erzeugen fehlgeschlagen",
+      "source_sha256": ""
+    },
+    "revokeFailed": {
+      "text": "Widerruf fehlgeschlagen",
+      "source_sha256": ""
+    },
+    "tokenCopied": {
+      "text": "Enrollment-Token in die Zwischenablage kopiert",
+      "source_sha256": ""
+    },
+    "clipboardWriteFailed": {
+      "text": "Zwischenablage konnte nicht beschrieben werden",
+      "source_sha256": ""
+    },
+    "rotateConnectedOnly": {
+      "text": "Zugangsdaten rotieren (nur ConnectedManaged)",
+      "source_sha256": ""
+    },
+    "rotateUnavailable": {
+      "text": "Neu erzeugen für diese Zeile nicht verfügbar (nur aktive ConnectedManaged-Ausstellungen können rotiert werden)",
+      "source_sha256": ""
+    },
+    "revokeActiveOnly": {
+      "text": "Nur aktive Ausstellungen können widerrufen werden",
+      "source_sha256": ""
+    },
+    "defaultSystemGroup": {
+      "text": "Standard-Systemgruppe",
+      "source_sha256": ""
+    },
+    "defaultSystemGroupHelper": {
+      "text": "Wird verwendet, wenn eine Datei system_group_id weglässt",
+      "source_sha256": ""
+    },
+    "markAirGapped": {
+      "text": "Als air-gapped markieren (nur offline)",
+      "source_sha256": ""
+    },
+    "chipInFile": {
+      "text": "In Datei",
+      "source_sha256": ""
+    },
+    "chipNeedsGroup": {
+      "text": "Gruppe nötig",
+      "source_sha256": ""
+    },
+    "chipValid": {
+      "text": "Gültig",
+      "source_sha256": ""
+    },
+    "chipYes": {
+      "text": "Ja",
+      "source_sha256": ""
+    },
+    "chipNo": {
+      "text": "Nein",
+      "source_sha256": ""
+    },
+    "importing": {
+      "text": "Wird importiert…",
+      "source_sha256": ""
+    },
+    "importFiles": {
+      "text": "{{count}} Datei importieren",
+      "source_sha256": ""
+    },
+    "importFilesPlural": {
+      "text": "{{count}} Dateien importieren",
+      "source_sha256": ""
+    },
+    "noFilesToImport": {
+      "text": "Keine Dateien zum Importieren",
+      "source_sha256": ""
+    },
+    "noValidFiles": {
+      "text": "Keine gültigen Dateien zum Importieren",
+      "source_sha256": ""
+    },
+    "selectGroupForOmit": {
+      "text": "Systemgruppe für Dateien ohne system_group_id wählen",
+      "source_sha256": ""
+    },
+    "importFailed": {
+      "text": "Import fehlgeschlagen",
+      "source_sha256": ""
+    },
+    "unknownError": {
+      "text": "Unbekannter Fehler aufgetreten",
+      "source_sha256": ""
+    },
+    "invalidJson": {
+      "text": "Ungültiges JSON-Format",
+      "source_sha256": ""
+    },
+    "descriptionColon": {
+      "text": "Beschreibung:",
+      "source_sha256": ""
+    },
+    "deleteGroupAndEndpoints": {
+      "text": "Gruppe & Endpunkte löschen",
+      "source_sha256": ""
+    },
+    "deleteGroupOnly": {
+      "text": "Gruppe löschen",
+      "source_sha256": ""
+    },
+    "passwordLength": {
+      "text": "Kennwortlänge",
+      "source_sha256": ""
+    },
+    "inheritEmpty": {
+      "text": "Leer lassen, um den effektiven Standard zu erben.",
+      "source_sha256": ""
+    },
+    "maxDriftSeconds": {
+      "text": "Max. Abweichung (Sekunden)",
+      "source_sha256": ""
+    },
+    "secretUpdateFrequency": {
+      "text": "Geheimnis-Aktualisierungsintervall (Stunden)",
+      "source_sha256": ""
+    },
+    "requireUppercase": {
+      "text": "Großbuchstaben erforderlich",
+      "source_sha256": ""
+    },
+    "requireLowercase": {
+      "text": "Kleinbuchstaben erforderlich",
+      "source_sha256": ""
+    },
+    "requireDigits": {
+      "text": "Ziffern erforderlich",
+      "source_sha256": ""
+    },
+    "requireSpecial": {
+      "text": "Sonderzeichen erforderlich",
+      "source_sha256": ""
+    },
+    "allowedSpecial": {
+      "text": "Erlaubte Sonderzeichen",
+      "source_sha256": ""
+    },
+    "policyVersion": {
+      "text": "Richtlinienversion",
+      "source_sha256": ""
+    },
+    "caCertPath": {
+      "text": "CA-Zertifikat-Dateipfad",
+      "source_sha256": ""
+    },
+    "localAccountName": {
+      "text": "Lokaler Kontoname",
+      "source_sha256": ""
+    },
+    "groupName": {
+      "text": "Gruppenname",
+      "source_sha256": ""
+    },
+    "groupNameHelper": {
+      "text": "Nur alphanumerisch, Bindestriche und Unterstriche (max. 64 Zeichen).",
+      "source_sha256": ""
+    },
+    "description": {
+      "text": "Beschreibung",
+      "source_sha256": ""
+    },
+    "descriptionOptional": {
+      "text": "Optional (max. 1024 Zeichen).",
+      "source_sha256": ""
+    },
+    "passwordCalculable": {
+      "text": "Kennwort berechenbar",
+      "source_sha256": ""
+    },
+    "systemInformation": {
+      "text": "Systeminformationen",
+      "source_sha256": ""
+    },
+    "machineName": {
+      "text": "Maschinenname",
+      "source_sha256": ""
+    },
+    "machineId": {
+      "text": "Maschinen-ID",
+      "source_sha256": ""
+    },
+    "identityInformation": {
+      "text": "Identitätsinformationen",
+      "source_sha256": ""
+    },
+    "identityId": {
+      "text": "Identitäts-ID",
+      "source_sha256": ""
+    },
+    "legacy": {
+      "text": "Legacy",
+      "source_sha256": ""
+    },
+    "active": {
+      "text": "Aktiv",
+      "source_sha256": ""
+    },
+    "inactive": {
+      "text": "Inaktiv",
+      "source_sha256": ""
+    },
+    "createdAt": {
+      "text": "Erstellt am",
+      "source_sha256": ""
+    },
+    "lastRotation": {
+      "text": "Letzte Rotation",
+      "source_sha256": ""
+    },
+    "hashAlgorithm": {
+      "text": "Hash-Algorithmus",
+      "source_sha256": ""
+    },
+    "passwordPolicy": {
+      "text": "Kennwortrichtlinie",
+      "source_sha256": ""
+    },
+    "customPolicyChip": {
+      "text": "Benutzerdefinierte Richtlinie für diese Identität",
+      "source_sha256": ""
+    },
+    "length": {
+      "text": "Länge",
+      "source_sha256": ""
+    },
+    "rotationInterval": {
+      "text": "Rotationsintervall",
+      "source_sha256": ""
+    },
+    "maxDriftS": {
+      "text": "Max. Abweichung (s)",
+      "source_sha256": ""
+    },
+    "uppercase": {
+      "text": "Großbuchstaben",
+      "source_sha256": ""
+    },
+    "lowercase": {
+      "text": "Kleinbuchstaben",
+      "source_sha256": ""
+    },
+    "digits": {
+      "text": "Ziffern",
+      "source_sha256": ""
+    },
+    "special": {
+      "text": "Sonderzeichen",
+      "source_sha256": ""
+    },
+    "allowedSymbols": {
+      "text": "Erlaubte Symbole",
+      "source_sha256": ""
+    },
+    "defaultSet": {
+      "text": "Standardsatz",
+      "source_sha256": ""
+    },
+    "yes": {
+      "text": "Ja",
+      "source_sha256": ""
+    },
+    "no": {
+      "text": "Nein",
+      "source_sha256": ""
+    },
+    "machineNameField": {
+      "text": "Maschinenname",
+      "source_sha256": ""
+    },
+    "noMachinesFound": {
+      "text": "Keine Maschinen gefunden für „{{query}}“",
+      "source_sha256": ""
+    },
+    "adminTokenOptional": {
+      "text": "Admin-Token (optional)",
+      "source_sha256": ""
+    },
+    "adminTokenHelper": {
+      "text": "Für Tests leer lassen; in Produktion erforderlich",
+      "source_sha256": ""
+    },
+    "passwordHistory": {
+      "text": "Kennwortverlauf",
+      "source_sha256": ""
+    },
+    "loadingPasswordHistory": {
+      "text": "Kennwortverlauf wird geladen…",
+      "source_sha256": ""
+    },
+    "noPasswordHistory": {
+      "text": "Kein Kennwortverlauf für diese Identität verfügbar.",
+      "source_sha256": ""
+    },
+    "chipCurrent": {
+      "text": "Aktuell",
+      "source_sha256": ""
+    },
+    "chipPast": {
+      "text": "Vergangen",
+      "source_sha256": ""
+    },
+    "chipFuture": {
+      "text": "Zukünftig",
+      "source_sha256": ""
+    },
+    "chipSelected": {
+      "text": "Ausgewählt",
+      "source_sha256": ""
+    },
+    "recovering": {
+      "text": "Wird wiederhergestellt…",
+      "source_sha256": ""
+    },
+    "recover": {
+      "text": "Wiederherstellen",
+      "source_sha256": ""
+    },
+    "basicInformation": {
+      "text": "Grundinformationen",
+      "source_sha256": ""
+    },
+    "assignedName": {
+      "text": "Zugewiesener Name",
+      "source_sha256": ""
+    },
+    "notAssigned": {
+      "text": "Nicht zugewiesen",
+      "source_sha256": ""
+    },
+    "loadTemplateFailed": {
+      "text": "Vorlage für diesen Nutzungstyp konnte nicht geladen werden.",
+      "source_sha256": ""
+    },
+    "statusExpired": {
+      "text": "Abgelaufen",
+      "source_sha256": ""
+    },
+    "identityLabel": {
+      "text": "Identität",
+      "source_sha256": ""
+    },
+    "neverConnected": {
+      "text": "Nie verbunden",
+      "source_sha256": ""
+    },
+    "connected": {
+      "text": "Verbunden",
+      "source_sha256": ""
+    },
+    "networkInformation": {
+      "text": "Netzwerkinformationen",
+      "source_sha256": ""
+    },
+    "ipAddress": {
+      "text": "IP-Adresse",
+      "source_sha256": ""
+    },
+    "macAddress": {
+      "text": "MAC-Adresse",
+      "source_sha256": ""
+    },
+    "platformInformation": {
+      "text": "Plattforminformationen",
+      "source_sha256": ""
+    },
+    "osPlatform": {
+      "text": "OS-Plattform",
+      "source_sha256": ""
+    },
+    "osDetails": {
+      "text": "OS-Details",
+      "source_sha256": ""
+    },
+    "organization": {
+      "text": "Organisation",
+      "source_sha256": ""
+    },
+    "multiTenant": {
+      "text": "Mandant",
+      "source_sha256": ""
+    },
+    "domain": {
+      "text": "Domäne",
+      "source_sha256": ""
+    },
+    "systemGroup": {
+      "text": "Systemgruppe",
+      "source_sha256": ""
+    },
+    "securityInformation": {
+      "text": "Sicherheitsinformationen",
+      "source_sha256": ""
+    },
+    "secretKeyVersion": {
+      "text": "Geheimschlüsselversion",
+      "source_sha256": ""
+    },
+    "hasEncryptedSecret": {
+      "text": "Verschlüsseltes Geheimnis vorhanden",
+      "source_sha256": ""
+    },
+    "timestamps": {
+      "text": "Zeitstempel",
+      "source_sha256": ""
+    },
+    "lastUpdated": {
+      "text": "Zuletzt aktualisiert",
+      "source_sha256": ""
+    },
+    "lastCheckIn": {
+      "text": "Letzter Check-in",
+      "source_sha256": ""
+    },
+    "na": {
+      "text": "k. A.",
+      "source_sha256": ""
+    },
+    "unknown": {
+      "text": "Unbekannt",
+      "source_sha256": ""
+    },
+    "none": {
+      "text": "Keine",
+      "source_sha256": ""
+    }
   },
   "outstandingApprovals": {
-    "title": "Ausstehende Genehmigungen",
-    "loadingAria": "Ausstehende Genehmigungen werden geladen",
-    "loadFailed": "Ausstehende Genehmigungen konnten nicht geladen werden.",
-    "closeAria": "Ausstehende Genehmigungen schließen",
-    "close": "Schließen"
+    "title": {
+      "text": "Ausstehende Genehmigungen",
+      "source_sha256": ""
+    },
+    "loadingAria": {
+      "text": "Ausstehende Genehmigungen werden geladen",
+      "source_sha256": ""
+    },
+    "loadFailed": {
+      "text": "Ausstehende Genehmigungen konnten nicht geladen werden.",
+      "source_sha256": ""
+    },
+    "closeAria": {
+      "text": "Ausstehende Genehmigungen schließen",
+      "source_sha256": ""
+    },
+    "close": {
+      "text": "Schließen",
+      "source_sha256": ""
+    }
   }
 }

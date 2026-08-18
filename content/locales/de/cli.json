@@ -1,20 +1,74 @@
 {
-  "cli.about": "AIC Server API-Server",
-  "cli.help.locale": "Anzeigesprache für CLI-Hilfe und Konsolenmeldungen (en, de). Ändert keine Audit-, Windows-Ereignisprotokoll- oder Syslog-Feldnamen.",
-  "cli.help.install_service": "Als Windows-Dienst (erhöhte Rechte) oder als systemd-Unit unter Linux (root) installieren.",
-  "cli.help.windows_service_account": "Nur Windows (mit --install-service): SCM-Anmeldekonto. Weglassen für LocalSystem. Kürzel: local-system, network-service, local-service; sonst DOMAIN\\User oder .\\User.",
-  "cli.help.windows_service_password": "Nur Windows (mit --install-service): Dienstkontopasswort für sc.exe password=. Im Prozess-Befehl sichtbar; weglassen für LocalSystem / NT AUTHORITY oder gMSA / konten ohne Passwort.",
-  "cli.help.uninstall_service": "Den mit --install-service installierten Windows-Dienst oder die Linux-systemd-Unit entfernen.",
-  "cli.help.start_service": "Den installierten Dienst starten (sc start / systemctl start).",
-  "cli.help.stop_service": "Den installierten Dienst stoppen (sc stop / systemctl stop).",
-  "cli.help.config_dir": "Sandbox-Einstellungsroot für Lab / WSL-Smoke (leitet AppConfig nach {dir}/pim-offline-server/ statt HKLM oder /etc). Explizit als Flag übergeben; keine Prozess-Umgebungsvariablen.",
-  "cli.cmd.run": "Den AIC-Server-Daemon im Vordergrund ausführen (systemd / Konsole).",
-  "cli.cmd.version": "Die Paketversion ausgeben (gleicher Inhalt wie --version / -V).",
-  "cli.cmd.readiness_report": "Einen prüferorientierten CMMC-L2-Enclave-Bereitschaftsbericht aus der Live-Server-Lage erzeugen (keine Geheimnisse).",
-  "cli.cmd.meter_usage": "Einen konservativen, datenschutzschonenden Nutzungs-Schnappschuss erfassen und über den gewählten Marketplace-Zähler senden (Standard: Offline-Dry-Run).",
-  "cli.help.meter_dry_run": "Den Offline-Dry-Run-Recorder erzwingen, auch wenn ein Cloud-Anbieter gewählt ist.",
-  "cli.help.meter_plan_only": "Plan und Cloud-Bereitschaftsmatrix ausgeben und beenden, ohne Schnappschuss oder Versand.",
-  "cli.help.readiness_format": "Ausgabeformat: json (maschinenlesbar) oder md (Markdown-Checkliste).",
-  "cli.msg.audit_english_only": "Audit-, Windows-Ereignisprotokoll- und Syslog-Nutzlasten bleiben US-Englisch (stabile Feldnamen und Ereignis-IDs).",
-  "cli.msg.api_codes_english": "API-Fehlercodes bleiben englisches snake_case; die Admin-SPA übersetzt Codes in die Anzeigesprache."
+  "cli.about": {
+    "text": "AIC Server API-Server",
+    "source_sha256": "9b5030c3213a388ab38ef5877e7c33e2615a5fcd5470d337c50caa4de93a8913"
+  },
+  "cli.help.locale": {
+    "text": "Anzeigesprache für CLI-Hilfe und Konsolenmeldungen (en, de). Ändert keine Audit-, Windows-Ereignisprotokoll- oder Syslog-Feldnamen.",
+    "source_sha256": "ea54d1c157ba10af11f561d11893e1ffd2f8b3d25d04dac1269ed4a04c856957"
+  },
+  "cli.help.install_service": {
+    "text": "Als Windows-Dienst (erhöhte Rechte) oder als systemd-Unit unter Linux (root) installieren.",
+    "source_sha256": "249d82c97f104b970b99e46f48b86fbc2c1f0c0df77ebdb32694b7f3bc1c14e1"
+  },
+  "cli.help.windows_service_account": {
+    "text": "Nur Windows (mit --install-service): SCM-Anmeldekonto. Weglassen für LocalSystem. Kürzel: local-system, network-service, local-service; sonst DOMAIN\\User oder .\\User.",
+    "source_sha256": "e0fed1684dbc18830e788315b20019a1369bbe3854455f453c889a92390816a8"
+  },
+  "cli.help.windows_service_password": {
+    "text": "Nur Windows (mit --install-service): Dienstkontopasswort für sc.exe password=. Im Prozess-Befehl sichtbar; weglassen für LocalSystem / NT AUTHORITY oder gMSA / konten ohne Passwort.",
+    "source_sha256": "73b64e34213ccfa565605dbed747ae5d361c58d99156ecf46756162d174b5c49"
+  },
+  "cli.help.uninstall_service": {
+    "text": "Den mit --install-service installierten Windows-Dienst oder die Linux-systemd-Unit entfernen.",
+    "source_sha256": "be40ce285d07cdcbe7a0d969efa253c4e5e44c815df8a7f8d8b9860d8418111c"
+  },
+  "cli.help.start_service": {
+    "text": "Den installierten Dienst starten (sc start / systemctl start).",
+    "source_sha256": "28af9fa1299c64e54773d467f2b511acf7a52437bb7236fa0a740210a7606566"
+  },
+  "cli.help.stop_service": {
+    "text": "Den installierten Dienst stoppen (sc stop / systemctl stop).",
+    "source_sha256": "df561725c8481a3282c25cb9292652101cf48e8c8bc8dd888fd259c56ece6918"
+  },
+  "cli.help.config_dir": {
+    "text": "Sandbox-Einstellungsroot für Lab / WSL-Smoke (leitet AppConfig nach {dir}/pim-offline-server/ statt HKLM oder /etc). Explizit als Flag übergeben; keine Prozess-Umgebungsvariablen.",
+    "source_sha256": "ce6051d6d4e9cf0fa5d458a2d45ddde022e1ebc5572a070b0c056b92d254c6f0"
+  },
+  "cli.cmd.run": {
+    "text": "Den AIC-Server-Daemon im Vordergrund ausführen (systemd / Konsole).",
+    "source_sha256": "2201ed894842e7f5544b809d4677947ea1441890a02b8cc0692d0b663bac1367"
+  },
+  "cli.cmd.version": {
+    "text": "Die Paketversion ausgeben (gleicher Inhalt wie --version / -V).",
+    "source_sha256": "cfcdba07c20fc6676ef1e1844875da1b8c6f5169b3de312f20ed58d86b3bda47"
+  },
+  "cli.cmd.readiness_report": {
+    "text": "Einen prüferorientierten CMMC-L2-Enclave-Bereitschaftsbericht aus der Live-Server-Lage erzeugen (keine Geheimnisse).",
+    "source_sha256": "a7a44f8f1b8034b087339f9ef23a440d934218337319954044e4c9f3febf615b"
+  },
+  "cli.cmd.meter_usage": {
+    "text": "Einen konservativen, datenschutzschonenden Nutzungs-Schnappschuss erfassen und über den gewählten Marketplace-Zähler senden (Standard: Offline-Dry-Run).",
+    "source_sha256": "1a95eaca40c24536837346566c713b525ce9e1f2f964a1fc6ec656ef43bea5b8"
+  },
+  "cli.help.meter_dry_run": {
+    "text": "Den Offline-Dry-Run-Recorder erzwingen, auch wenn ein Cloud-Anbieter gewählt ist.",
+    "source_sha256": "dc25e2bb9fe3f40cfc0bad627473069f031e15dc01779a894bc12b0bb7005d2a"
+  },
+  "cli.help.meter_plan_only": {
+    "text": "Plan und Cloud-Bereitschaftsmatrix ausgeben und beenden, ohne Schnappschuss oder Versand.",
+    "source_sha256": "f1d3aaf7ec84c2db856f9087084e38093fa3fcbc59fe9c35fdca1bfb315b64c9"
+  },
+  "cli.help.readiness_format": {
+    "text": "Ausgabeformat: json (maschinenlesbar) oder md (Markdown-Checkliste).",
+    "source_sha256": "56d3eaa8d6cdb6ae4fc7fa5a149d18008de1e1ab5c160768d22f73b51bfbcba9"
+  },
+  "cli.msg.audit_english_only": {
+    "text": "Audit-, Windows-Ereignisprotokoll- und Syslog-Nutzlasten bleiben US-Englisch (stabile Feldnamen und Ereignis-IDs).",
+    "source_sha256": "66dab701f9bec400fcd79c3d0ff49e9273833d0c7a09d8d327ab7425e69af831"
+  },
+  "cli.msg.api_codes_english": {
+    "text": "API-Fehlercodes bleiben englisches snake_case; die Admin-SPA übersetzt Codes in die Anzeigesprache.",
+    "source_sha256": "1fa569f0ad93f293d06b8054d186416e0842b691eff86bed1aad9dc4ef187ab3"
+  }
 }

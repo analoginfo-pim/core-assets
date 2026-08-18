@@ -1,133 +1,478 @@
 {
-  "floorNote": "NIST SP 800-53 Rev. 5 ist die untere Kontrollgrenze. CMMC / 800-171 / 800-172 sind Verpackungs-Overlays, die Enclave-Nachweise wiederverwenden.",
-  "switchEffect": "Ein Wechsel des Bewertungsstandards ordnet die Punch-List und Nachweisansicht diesem Overlay zu. Bereits gesammelte Enclave-Nachweise werden neu zugeordnet — nicht gelöscht.",
-  "testingAgainst": "Prüfung gegen:",
-  "assessmentStandard": "Bewertungsstandard",
-  "level": "Stufe",
-  "selectStandard": "Bewertungsstandard wählen",
-  "selectLevel": "Stufe wählen",
+  "floorNote": {
+    "text": "NIST SP 800-53 Rev. 5 ist die untere Kontrollgrenze. CMMC / 800-171 / 800-172 sind Verpackungs-Overlays, die Enclave-Nachweise wiederverwenden.",
+    "source_sha256": ""
+  },
+  "switchEffect": {
+    "text": "Ein Wechsel des Bewertungsstandards ordnet die Punch-List und Nachweisansicht diesem Overlay zu. Bereits gesammelte Enclave-Nachweise werden neu zugeordnet — nicht gelöscht.",
+    "source_sha256": ""
+  },
+  "testingAgainst": {
+    "text": "Prüfung gegen:",
+    "source_sha256": ""
+  },
+  "assessmentStandard": {
+    "text": "Bewertungsstandard",
+    "source_sha256": ""
+  },
+  "level": {
+    "text": "Stufe",
+    "source_sha256": ""
+  },
+  "selectStandard": {
+    "text": "Bewertungsstandard wählen",
+    "source_sha256": ""
+  },
+  "selectLevel": {
+    "text": "Stufe wählen",
+    "source_sha256": ""
+  },
   "standards": {
-    "cmmc": "CMMC",
-    "nist_800_171": "NIST SP 800-171",
-    "nist_800_172": "NIST SP 800-172",
-    "nist_800_53": "NIST SP 800-53 Rev. 5"
+    "cmmc": {
+      "text": "CMMC",
+      "source_sha256": ""
+    },
+    "nist_800_171": {
+      "text": "NIST SP 800-171",
+      "source_sha256": ""
+    },
+    "nist_800_172": {
+      "text": "NIST SP 800-172",
+      "source_sha256": ""
+    },
+    "nist_800_53": {
+      "text": "NIST SP 800-53 Rev. 5",
+      "source_sha256": ""
+    }
   },
   "levels": {
-    "cmmc_1": "Stufe 1",
-    "cmmc_2": "Stufe 2",
-    "cmmc_3": "Stufe 3",
-    "171_1": "Stufe 1 (Basis / FCI)",
-    "171_2": "Stufe 2",
-    "171_3": "Stufe 3",
-    "172_2": "Stufe 2",
-    "172_3": "Stufe 3",
-    "53_moderate": "Moderate",
-    "53_high": "High",
-    "171_1_suffix": " Basis / FCI"
+    "cmmc_1": {
+      "text": "Stufe 1",
+      "source_sha256": ""
+    },
+    "cmmc_2": {
+      "text": "Stufe 2",
+      "source_sha256": ""
+    },
+    "cmmc_3": {
+      "text": "Stufe 3",
+      "source_sha256": ""
+    },
+    "171_1": {
+      "text": "Stufe 1 (Basis / FCI)",
+      "source_sha256": ""
+    },
+    "171_2": {
+      "text": "Stufe 2",
+      "source_sha256": ""
+    },
+    "171_3": {
+      "text": "Stufe 3",
+      "source_sha256": ""
+    },
+    "172_2": {
+      "text": "Stufe 2",
+      "source_sha256": ""
+    },
+    "172_3": {
+      "text": "Stufe 3",
+      "source_sha256": ""
+    },
+    "53_moderate": {
+      "text": "Moderate",
+      "source_sha256": ""
+    },
+    "53_high": {
+      "text": "High",
+      "source_sha256": ""
+    },
+    "171_1_suffix": {
+      "text": " Basis / FCI",
+      "source_sha256": ""
+    }
   },
   "banners": {
-    "cmmc": "Ziel: CMMC Stufe {{level}} ({{overlay}})",
-    "nist_800_171": "Ziel: NIST SP 800-171 Stufe {{level}}{{suffix}}",
-    "nist_800_172": "Ziel: NIST SP 800-172 Stufe {{level}}",
-    "nist_800_53": "Ziel: NIST SP 800-53 Rev. 5 {{level}}"
+    "cmmc": {
+      "text": "Ziel: CMMC Stufe {{level}} ({{overlay}})",
+      "source_sha256": ""
+    },
+    "nist_800_171": {
+      "text": "Ziel: NIST SP 800-171 Stufe {{level}}{{suffix}}",
+      "source_sha256": ""
+    },
+    "nist_800_172": {
+      "text": "Ziel: NIST SP 800-172 Stufe {{level}}",
+      "source_sha256": ""
+    },
+    "nist_800_53": {
+      "text": "Ziel: NIST SP 800-53 Rev. 5 {{level}}",
+      "source_sha256": ""
+    }
   },
   "overlays": {
-    "cmmc_basic": "NIST SP 800-171 Basis / FCI",
-    "cmmc_full": "NIST SP 800-171",
-    "cmmc_enhanced": "NIST SP 800-171 + NIST SP 800-172"
+    "cmmc_basic": {
+      "text": "NIST SP 800-171 Basis / FCI",
+      "source_sha256": ""
+    },
+    "cmmc_full": {
+      "text": "NIST SP 800-171",
+      "source_sha256": ""
+    },
+    "cmmc_enhanced": {
+      "text": "NIST SP 800-171 + NIST SP 800-172",
+      "source_sha256": ""
+    }
   },
   "scopeLabels": {
-    "53_high": "800-53-High-Verpackung (inkl. Enhanced-Overlay)",
-    "53_moderate": "800-53-Moderate-Verpackung",
-    "172_2": "800-172 Stufe 2 Enhanced-Verpackung",
-    "172_3": "800-172 Stufe 3 Enhanced-Verpackung",
-    "171_1": "800-171 Stufe 1 (Basis / FCI) Verpackung",
-    "171_2": "800-171 Stufe 2 Verpackung (110 Praktiken)",
-    "171_3": "800-171 Stufe 3 Verpackung",
-    "cmmc_1": "CMMC Stufe 1 (Basis / FCI) Verpackung",
-    "cmmc_2": "CMMC Stufe 2 Verpackung (110 NIST SP 800-171 Praktiken)",
-    "cmmc_3": "CMMC Stufe 3 Verpackung (800-171 + ausgewählte 800-172)"
+    "53_high": {
+      "text": "800-53-High-Verpackung (inkl. Enhanced-Overlay)",
+      "source_sha256": ""
+    },
+    "53_moderate": {
+      "text": "800-53-Moderate-Verpackung",
+      "source_sha256": ""
+    },
+    "172_2": {
+      "text": "800-172 Stufe 2 Enhanced-Verpackung",
+      "source_sha256": ""
+    },
+    "172_3": {
+      "text": "800-172 Stufe 3 Enhanced-Verpackung",
+      "source_sha256": ""
+    },
+    "171_1": {
+      "text": "800-171 Stufe 1 (Basis / FCI) Verpackung",
+      "source_sha256": ""
+    },
+    "171_2": {
+      "text": "800-171 Stufe 2 Verpackung (110 Praktiken)",
+      "source_sha256": ""
+    },
+    "171_3": {
+      "text": "800-171 Stufe 3 Verpackung",
+      "source_sha256": ""
+    },
+    "cmmc_1": {
+      "text": "CMMC Stufe 1 (Basis / FCI) Verpackung",
+      "source_sha256": ""
+    },
+    "cmmc_2": {
+      "text": "CMMC Stufe 2 Verpackung (110 NIST SP 800-171 Praktiken)",
+      "source_sha256": ""
+    },
+    "cmmc_3": {
+      "text": "CMMC Stufe 3 Verpackung (800-171 + ausgewählte 800-172)",
+      "source_sha256": ""
+    }
   },
   "explanations": {
-    "cmmc": "CMMC (32 CFR 170) ist DoD-Bewertungsverpackung über NIST SP 800-171 (und ab Stufe 3 ausgewählte NIST SP 800-172-Anforderungen). Stufe 1: grundlegender FCI-Schutz; Stufe 2: 110 800-171-Praktiken für CUI; Stufe 3: erweiterte 800-172-Anforderungen. CMMC ersetzt nicht NIST SP 800-53 Rev. 5 als Design-Floor.",
-    "nist_800_171": "NIST SP 800-171 Rev. 2 definiert 110 Sicherheitsanforderungen in 14 Familien zum Schutz von CUI in nicht-föderalen Systemen. Stufe 2 entspricht dem 110-Praktiken-Set (häufig mit CMMC Stufe 2). Das Produktdesign folgt weiterhin NIST SP 800-53 Rev. 5; 800-171 ist Bewertungsverpackung darüber.",
-    "nist_800_172": "NIST SP 800-172 (Feb. 2021) ergänzt 35 erweiterte Anforderungen über 800-171. CMMC Stufe 3 wählt eine Teilmenge. Unbewiesene Enhanced-Claims bleiben Lücke oder unbekannt.",
-    "nist_800_53": "NIST SP 800-53 Rev. 5 ist der Kontroll-Design-Floor dieses Produkts (Moderate-Baseline, ggf. High). CMMC / 800-171 / 800-172 sind Overlays, die dieselben Enclave-Nachweise nutzen."
+    "cmmc": {
+      "text": "CMMC (32 CFR 170) ist DoD-Bewertungsverpackung über NIST SP 800-171 (und ab Stufe 3 ausgewählte NIST SP 800-172-Anforderungen). Stufe 1: grundlegender FCI-Schutz; Stufe 2: 110 800-171-Praktiken für CUI; Stufe 3: erweiterte 800-172-Anforderungen. CMMC ersetzt nicht NIST SP 800-53 Rev. 5 als Design-Floor.",
+      "source_sha256": ""
+    },
+    "nist_800_171": {
+      "text": "NIST SP 800-171 Rev. 2 definiert 110 Sicherheitsanforderungen in 14 Familien zum Schutz von CUI in nicht-föderalen Systemen. Stufe 2 entspricht dem 110-Praktiken-Set (häufig mit CMMC Stufe 2). Das Produktdesign folgt weiterhin NIST SP 800-53 Rev. 5; 800-171 ist Bewertungsverpackung darüber.",
+      "source_sha256": ""
+    },
+    "nist_800_172": {
+      "text": "NIST SP 800-172 (Feb. 2021) ergänzt 35 erweiterte Anforderungen über 800-171. CMMC Stufe 3 wählt eine Teilmenge. Unbewiesene Enhanced-Claims bleiben Lücke oder unbekannt.",
+      "source_sha256": ""
+    },
+    "nist_800_53": {
+      "text": "NIST SP 800-53 Rev. 5 ist der Kontroll-Design-Floor dieses Produkts (Moderate-Baseline, ggf. High). CMMC / 800-171 / 800-172 sind Overlays, die dieselben Enclave-Nachweise nutzen.",
+      "source_sha256": ""
+    }
   },
-  "cscRescanAll": "Alle neu scannen",
-  "cscRescanSelected": "Auswahl scannen",
-  "cscSystemGroup": "Systemgruppe",
-  "cscAddSystems": "Systeme hinzufügen",
-  "cscHonesty": "Diese Zahlen beschreiben Produktlieferung und erfasste Arbeit — kein Bewertungsurteil.",
-  "gridActions": "Aktionen",
-  "gridRescan": "Neu scannen",
-  "gridOpenReport": "Bericht öffnen",
-  "hideDetails": "Standarddetails ausblenden",
-  "showDetails": "Was dieser Standard bedeutet",
-  "whatSwitchingDoes": "Was ein Wechsel bewirkt",
+  "cscRescanAll": {
+    "text": "Alle neu scannen",
+    "source_sha256": ""
+  },
+  "cscRescanSelected": {
+    "text": "Auswahl scannen",
+    "source_sha256": ""
+  },
+  "cscSystemGroup": {
+    "text": "Systemgruppe",
+    "source_sha256": ""
+  },
+  "cscAddSystems": {
+    "text": "Systeme hinzufügen",
+    "source_sha256": ""
+  },
+  "cscHonesty": {
+    "text": "Diese Zahlen beschreiben Produktlieferung und erfasste Arbeit — kein Bewertungsurteil.",
+    "source_sha256": ""
+  },
+  "gridActions": {
+    "text": "Aktionen",
+    "source_sha256": ""
+  },
+  "gridRescan": {
+    "text": "Neu scannen",
+    "source_sha256": ""
+  },
+  "gridOpenReport": {
+    "text": "Bericht öffnen",
+    "source_sha256": ""
+  },
+  "hideDetails": {
+    "text": "Standarddetails ausblenden",
+    "source_sha256": ""
+  },
+  "showDetails": {
+    "text": "Was dieser Standard bedeutet",
+    "source_sha256": ""
+  },
+  "whatSwitchingDoes": {
+    "text": "Was ein Wechsel bewirkt",
+    "source_sha256": ""
+  },
   "csc": {
-    "pageTitle": "Aktueller Compliance-Stand",
-    "pageSubtitle": "Systemzustand, Befunde und erneutes Scannen für die gewählte Systemgruppe",
-    "evidenceBanner": "Nachweisorientierte Darstellung für Prüfer — Türkis markiert sekundäre Aktionen; kein falsch-grüner Score.",
-    "evidenceSurfaceAria": "Compliance-Nachweisoberfläche",
-    "machineGroup": "Systemgruppe",
-    "filterByGroupAria": "Nach Systemgruppe filtern",
-    "allGroups": "Alle Gruppen",
-    "defaultGroupSuffix": " (Standard)",
-    "machinesChip": "{{count}} System",
-    "machinesChip_plural": "{{count}} Systeme",
-    "findingsOpen": "{{count}} offene Befunde",
-    "rescanAll": "Alle scannen ({{count}})",
-    "rescanSelected": "Auswahl scannen ({{count}})",
-    "working": "Läuft…",
-    "addSystems": "Systeme hinzufügen",
-    "addSystemsAria": "Systeme per Netzwerkscan, Listenimport oder einzeln hinzufügen",
-    "syncInventory": "Bestand sync.",
-    "syncInventoryAria": "Bestand von Endpunkten synchronisieren",
-    "exportAuditorPack": "Prüferpaket",
-    "exportAuditorPackAria": "Prüferpaket als ZIP exportieren",
-    "gridMachine": "System",
-    "gridOs": "BS",
-    "gridAccess": "Zugriff",
-    "gridRoles": "Rollen",
-    "gridStig": "STIG",
-    "gridPosture": "Status",
-    "gridFindings": "Befunde",
-    "gridEvidence": "Nachweise",
-    "gridTopCategories": "Top-Kategorien",
-    "gridLastScan": "Letzter Scan",
-    "gridActions": "Aktionen",
-    "gridActionsButton": "Aktionen",
-    "gridNever": "Nie",
-    "menuRescan": "Neu scannen",
-    "menuRescanHint": "Sonden für dieses System erneut ausführen",
-    "menuOpenDetail": "Detail öffnen",
-    "menuOpenDetailHint": "Befunde, Fix-It-Einstellungen und Versuchsprotokoll",
-    "reportTitle": "Aktueller Compliance-Stand",
-    "alertPrefix": "Aus",
-    "alertSystems": "Systeme",
-    "alertGroups": "Systemgruppen",
-    "alertSuffix": "Befunde unten unter",
-    "alertEvidenceNotScore": "— Nachweise, kein Score.",
-    "machinesChip_one": "{{count}} System",
-    "machinesChip_other": "{{count}} Systeme",
-    "findingsOpenChip": "{{count}} offene Befunde",
-    "machinesChipAria": "{{count}} Systeme in der Ansicht",
-    "findingsOpenAria": "{{count}} offene Befunde unter {{packaging}}",
-    "physicalHostChip": "physischer Host {{count}}",
-    "physicalHostAria": "Nachweis physischer Host {{count}}",
-    "logDerivedChip": "protokollabgeleitet {{count}}",
-    "logDerivedAria": "Protokollabgeleiteter Nachweis {{count}}",
-    "fixItSelected": "Fix-It Auswahl",
-    "fixItSelectedCount": "Fix-It Auswahl ({{count}})",
-    "fixItSelectedAria": "Fix-It auf {{count}} ausgewählte Systeme mit Live-Auto-Apply anwenden",
-    "fixItSelectedUnavailableAria": "Fix-It Auswahl nicht verfügbar — wählen Sie Systeme mit Live-Auto-Apply-Sonden",
-    "selectionCaption": "{{count}} ausgewählt — Scan betrifft nur diese Zeilen ({{group}}).",
-    "fixItSelectedHint": " Fix-It Auswahl wendet die erste Live-Auto-Apply-Sonde auf das erste geeignete System an ({{count}} geeignet).",
-    "fixItSelectedNeedProbe": " Fix-It Auswahl benötigt mindestens eine Live-Auto-Apply-Sonde (Fix-It-Einstellungen in den Systemdetails aktivieren)."
+    "pageTitle": {
+      "text": "Aktueller Compliance-Stand",
+      "source_sha256": ""
+    },
+    "pageSubtitle": {
+      "text": "Systemzustand, Befunde und erneutes Scannen für die gewählte Systemgruppe",
+      "source_sha256": ""
+    },
+    "evidenceBanner": {
+      "text": "Nachweisorientierte Darstellung für Prüfer — Türkis markiert sekundäre Aktionen; kein falsch-grüner Score.",
+      "source_sha256": ""
+    },
+    "evidenceSurfaceAria": {
+      "text": "Compliance-Nachweisoberfläche",
+      "source_sha256": ""
+    },
+    "machineGroup": {
+      "text": "Systemgruppe",
+      "source_sha256": ""
+    },
+    "filterByGroupAria": {
+      "text": "Nach Systemgruppe filtern",
+      "source_sha256": ""
+    },
+    "allGroups": {
+      "text": "Alle Gruppen",
+      "source_sha256": ""
+    },
+    "defaultGroupSuffix": {
+      "text": " (Standard)",
+      "source_sha256": ""
+    },
+    "machinesChip": {
+      "text": "{{count}} System",
+      "source_sha256": ""
+    },
+    "machinesChip_plural": {
+      "text": "{{count}} Systeme",
+      "source_sha256": ""
+    },
+    "findingsOpen": {
+      "text": "{{count}} offene Befunde",
+      "source_sha256": ""
+    },
+    "rescanAll": {
+      "text": "Alle scannen ({{count}})",
+      "source_sha256": ""
+    },
+    "rescanSelected": {
+      "text": "Auswahl scannen ({{count}})",
+      "source_sha256": ""
+    },
+    "working": {
+      "text": "Läuft…",
+      "source_sha256": ""
+    },
+    "addSystems": {
+      "text": "Systeme hinzufügen",
+      "source_sha256": ""
+    },
+    "addSystemsAria": {
+      "text": "Systeme per Netzwerkscan, Listenimport oder einzeln hinzufügen",
+      "source_sha256": ""
+    },
+    "syncInventory": {
+      "text": "Bestand sync.",
+      "source_sha256": ""
+    },
+    "syncInventoryAria": {
+      "text": "Bestand von Endpunkten synchronisieren",
+      "source_sha256": ""
+    },
+    "exportAuditorPack": {
+      "text": "Prüferpaket",
+      "source_sha256": ""
+    },
+    "exportAuditorPackAria": {
+      "text": "Prüferpaket als ZIP exportieren",
+      "source_sha256": ""
+    },
+    "gridMachine": {
+      "text": "System",
+      "source_sha256": ""
+    },
+    "gridOs": {
+      "text": "BS",
+      "source_sha256": ""
+    },
+    "gridAccess": {
+      "text": "Zugriff",
+      "source_sha256": ""
+    },
+    "gridRoles": {
+      "text": "Rollen",
+      "source_sha256": ""
+    },
+    "gridStig": {
+      "text": "STIG",
+      "source_sha256": ""
+    },
+    "gridPosture": {
+      "text": "Status",
+      "source_sha256": ""
+    },
+    "gridFindings": {
+      "text": "Befunde",
+      "source_sha256": ""
+    },
+    "gridEvidence": {
+      "text": "Nachweise",
+      "source_sha256": ""
+    },
+    "gridTopCategories": {
+      "text": "Top-Kategorien",
+      "source_sha256": ""
+    },
+    "gridLastScan": {
+      "text": "Letzter Scan",
+      "source_sha256": ""
+    },
+    "gridActions": {
+      "text": "Aktionen",
+      "source_sha256": ""
+    },
+    "gridActionsButton": {
+      "text": "Aktionen",
+      "source_sha256": ""
+    },
+    "gridNever": {
+      "text": "Nie",
+      "source_sha256": ""
+    },
+    "menuRescan": {
+      "text": "Neu scannen",
+      "source_sha256": ""
+    },
+    "menuRescanHint": {
+      "text": "Sonden für dieses System erneut ausführen",
+      "source_sha256": ""
+    },
+    "menuOpenDetail": {
+      "text": "Detail öffnen",
+      "source_sha256": ""
+    },
+    "menuOpenDetailHint": {
+      "text": "Befunde, Fix-It-Einstellungen und Versuchsprotokoll",
+      "source_sha256": ""
+    },
+    "reportTitle": {
+      "text": "Aktueller Compliance-Stand",
+      "source_sha256": ""
+    },
+    "alertPrefix": {
+      "text": "Aus",
+      "source_sha256": ""
+    },
+    "alertSystems": {
+      "text": "Systeme",
+      "source_sha256": ""
+    },
+    "alertGroups": {
+      "text": "Systemgruppen",
+      "source_sha256": ""
+    },
+    "alertSuffix": {
+      "text": "Befunde unten unter",
+      "source_sha256": ""
+    },
+    "alertEvidenceNotScore": {
+      "text": "— Nachweise, kein Score.",
+      "source_sha256": ""
+    },
+    "machinesChip_one": {
+      "text": "{{count}} System",
+      "source_sha256": ""
+    },
+    "machinesChip_other": {
+      "text": "{{count}} Systeme",
+      "source_sha256": ""
+    },
+    "findingsOpenChip": {
+      "text": "{{count}} offene Befunde",
+      "source_sha256": ""
+    },
+    "machinesChipAria": {
+      "text": "{{count}} Systeme in der Ansicht",
+      "source_sha256": ""
+    },
+    "findingsOpenAria": {
+      "text": "{{count}} offene Befunde unter {{packaging}}",
+      "source_sha256": ""
+    },
+    "physicalHostChip": {
+      "text": "physischer Host {{count}}",
+      "source_sha256": ""
+    },
+    "physicalHostAria": {
+      "text": "Nachweis physischer Host {{count}}",
+      "source_sha256": ""
+    },
+    "logDerivedChip": {
+      "text": "protokollabgeleitet {{count}}",
+      "source_sha256": ""
+    },
+    "logDerivedAria": {
+      "text": "Protokollabgeleiteter Nachweis {{count}}",
+      "source_sha256": ""
+    },
+    "fixItSelected": {
+      "text": "Fix-It Auswahl",
+      "source_sha256": ""
+    },
+    "fixItSelectedCount": {
+      "text": "Fix-It Auswahl ({{count}})",
+      "source_sha256": ""
+    },
+    "fixItSelectedAria": {
+      "text": "Fix-It auf {{count}} ausgewählte Systeme mit Live-Auto-Apply anwenden",
+      "source_sha256": ""
+    },
+    "fixItSelectedUnavailableAria": {
+      "text": "Fix-It Auswahl nicht verfügbar — wählen Sie Systeme mit Live-Auto-Apply-Sonden",
+      "source_sha256": ""
+    },
+    "selectionCaption": {
+      "text": "{{count}} ausgewählt — Scan betrifft nur diese Zeilen ({{group}}).",
+      "source_sha256": ""
+    },
+    "fixItSelectedHint": {
+      "text": " Fix-It Auswahl wendet die erste Live-Auto-Apply-Sonde auf das erste geeignete System an ({{count}} geeignet).",
+      "source_sha256": ""
+    },
+    "fixItSelectedNeedProbe": {
+      "text": " Fix-It Auswahl benötigt mindestens eine Live-Auto-Apply-Sonde (Fix-It-Einstellungen in den Systemdetails aktivieren).",
+      "source_sha256": ""
+    }
   },
   "gdpr": {
-    "dsrClockNote": "Artikel 12 Abs. 3: Antwort innerhalb eines Monats nach Eingang. Bei komplexen Anfragen können Sie um zwei weitere Monate verlängern — begründen Sie dies vor dem ursprünglichen Fälligkeitsdatum. Artikel 12 Abs. 6: Identität prüfen, bevor Sie personenbezogene Daten herausgeben.",
-    "dsrNonWorkforceNote": "Kunden und Angehörige der Öffentlichkeit haben oft keinen Workforce-Roster-Eintrag. Verknüpfen Sie einen Roster-Eintrag, wenn einer existiert; andernfalls werden Name und E-Mail bei Eingang und erneut bei der Identitätsprüfung als Momentaufnahme gespeichert."
+    "dsrClockNote": {
+      "text": "Artikel 12 Abs. 3: Antwort innerhalb eines Monats nach Eingang. Bei komplexen Anfragen können Sie um zwei weitere Monate verlängern — begründen Sie dies vor dem ursprünglichen Fälligkeitsdatum. Artikel 12 Abs. 6: Identität prüfen, bevor Sie personenbezogene Daten herausgeben.",
+      "source_sha256": ""
+    },
+    "dsrNonWorkforceNote": {
+      "text": "Kunden und Angehörige der Öffentlichkeit haben oft keinen Workforce-Roster-Eintrag. Verknüpfen Sie einen Roster-Eintrag, wenn einer existiert; andernfalls werden Name und E-Mail bei Eingang und erneut bei der Identitätsprüfung als Momentaufnahme gespeichert.",
+      "source_sha256": ""
+    }
   }
 }

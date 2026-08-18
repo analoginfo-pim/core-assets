@@ -4,15 +4,14 @@ Partner-readable status for Phil and Robert. Updated after each milestone push t
 
 ## Latest
 
-**Milestone:** Plan 1 plumbing — manifest + Python tools (not yet hashed catalogs).
+**Milestone:** Catalog entry format + SHA-256 hash migration (in progress — see History for prior SHA).
 
-- Added `content/language-packs/manifest.json` (products, tags, tiers, flags, RTL).
-- Added `scripts/language-packs/language_packs.py` (`migrate`, `hash`, `mark-stale`, `audit`) — Python 3 stdlib only; thin `.sh` / `.ps1` wrappers.
-- Added `content/language-packs/glossary.en.json` (elevation, vault, rotation, checkout, session, enclave).
-- Catalogs still use legacy bare-string JSON until the next milestone runs `hash`.
-- Existing tags on disk: `en`, `de`, `es`, `fr` (partial). Planned tags not yet filled: `en-GB`, `zh-Hans`, `zh-TW`, Tier 2/3.
-- **SHA:** (set on push)
+- All existing JSON catalogs under `locales/`, `locales-ui/`, and `i18n-native/` use `{ "text", "source_sha256" }` leaves.
+- `language_packs.py hash` recomputed US English hashes; matching keys in `de` / `es` / `fr` stamped when empty.
+- **aic-server audit (after hash):** see `docs/language-pack-audit-aic-server.json`.
+- **Known gap:** German SPA catalogs contain many keys not yet in US English packs (`en` SPA still smaller than `de`). Those keys are orphans until English source rows land. Other languages will be filled from the current `en` key set only — English is never pasted as a “translation.”
+- Flags and Wave A–D pack fills are next.
 
 ## History
 
-(See git log on `main` for prior localization commits.)
+- `b6be41d` — manifest.json, glossary, Python tools + wrappers.

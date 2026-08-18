@@ -1,90 +1,336 @@
 {
-  "title": "Risikoregister",
-  "back": "Risikoregister",
-  "needPermission": "Sie brauchen die Berechtigung, das Risikoregister zu sehen.",
-  "loadFailed": "Dieses Risiko konnte nicht geladen werden.",
-  "loadingLabel": "Risikoregister",
-  "honesty": "Das Register erfasst Risikoentscheidungen: was identifiziert wurde, wie behandelt wird, wer akzeptiert hat und wann die Akzeptanz endet. Es sagt nicht, dass eine Kontrolle bestanden hat.",
-  "expiryNotice": "Eine abgelaufene Akzeptanz wird beim Lesen berechnet. Ein Zwölf-Stunden-Lauf sendet RiskAcceptanceLapsed einmal je Akzeptanz, deren gewährter Zeitraum endete. Das Ereignis meldet das Ablaufdatum. Es öffnet das Risiko nicht wieder, zieht die Akzeptanz nicht zurück und eskaliert nichts. Die Zustellung hängt von den Ereigniszielen ab, die ein Operator eingerichtet hat.",
-  "loadRegisterFailed": "Das Risikoregister konnte nicht geladen werden. Prüfen Sie die Ansichtsberechtigung und den Registerspeicher.",
-  "newRisk": "Neues Risiko",
-  "recorded": "Erfasst: {{count}}",
-  "identified": "Identifiziert: {{count}}",
-  "analyzing": "In Analyse: {{count}}",
-  "treatmentPlanned": "Behandlung geplant: {{count}}",
-  "monitoring": "Überwachung: {{count}}",
-  "accepted": "Akzeptiert: {{count}}",
-  "closed": "Geschlossen: {{count}}",
-  "reviewsOverdue": "Prüfungen überfällig: {{count}}",
-  "acceptancesExpired": "Akzeptanzen abgelaufen: {{count}}",
-  "filterStatus": "Status",
-  "filterSeverity": "Schweregrad",
-  "allStatuses": "Alle Status",
-  "allSeverities": "Alle Schweregrade",
-  "reviewsOverdueOnly": "Nur überfällige Prüfungen",
-  "expiredAcceptancesOnly": "Nur abgelaufene Akzeptanzen",
-  "loadingRegister": "Register wird geladen…",
-  "showingCount": "{{shown}} von {{total}} erfassten Risiken angezeigt.",
-  "emptyRegister": "Keine Risiken passen zu diesen Filtern. Ein leeres Register heißt, dass hier nichts erfasst wurde — nicht, dass es keine Exposition gibt.",
-  "colRisk": "Risiko",
-  "colSeverity": "Schweregrad",
-  "colStatus": "Status",
-  "colReview": "Prüfung",
-  "colAcceptance": "Akzeptanz",
-  "colOpen": "Öffnen",
-  "open": "Öffnen",
-  "openAria": "Risiko {{ref}} öffnen",
-  "severityAria": "Schweregrad {{severity}}, aus Wahrscheinlichkeit {{likelihood}} und Auswirkung {{impact}}",
-  "severityColHelp": "Aus der gespeicherten Wahrscheinlichkeit und Auswirkung unter der jetzt geltenden Bewertungsmatrix. Eine Zeile, deren Lesung sich seit der Erfassung geändert hat, sagt das unter dem Chip.",
-  "statusColHelp": "Was zuletzt über dieses Risiko entschieden wurde. Statuswerte sind erfasste Entscheidungen, kein Bewertungsergebnis.",
-  "reviewColHelp": "Wann dieses Risiko als Nächstes geprüft werden soll. Überfällig wird beim Lesen dieser Liste berechnet; nichts kündigt es an.",
-  "acceptanceColHelp": "Ob jemand dieses Risiko akzeptiert hat und bis wann. Eine abgelaufene Akzeptanz ist erloschen, und niemand wurde benachrichtigt.",
-  "toolbarTitle": "Risikoregister",
-  "toolbarSubtitle": "Erfasste Risikoentscheidungen — keine Aussage, dass eine Kontrolle bestanden hat",
-  "createTitle": "Ein Risiko erfassen",
-  "createScoringNote": "Der Schweregrad wird aus der gewählten Wahrscheinlichkeit und Auswirkung berechnet und nie gespeichert. Gespeichert wird die Version der Bewertungsmatrix zum Zeitpunkt der Erfassung, damit das Risiko später so gelesen werden kann, wie es entschieden wurde.",
-  "createRef": "Risikoreferenz",
-  "createRefHelp": "Ihre Kennung für dieses Risiko, eindeutig im Register.",
-  "createTitleField": "Titel",
-  "createDescription": "Beschreibung",
-  "createCategory": "Kategorie",
-  "createOwner": "Verantwortlich",
-  "createOwnerHelp": "Die Person, die für dieses Risiko verantwortlich ist.",
-  "createLikelihood": "Wahrscheinlichkeit",
-  "createImpact": "Auswirkung",
-  "createReviewDue": "Nächste Prüfung fällig",
-  "createReviewDueHelp": "Optional. Ein Risiko ohne Prüfungsdatum wird nie als überfällig gemeldet.",
-  "createCancel": "Abbrechen",
-  "createRecord": "Erfassen",
-  "toastRecorded": "Risiko erfasst",
-  "toastRecordFailed": "Dieses Risiko konnte nicht erfasst werden",
-  "review_none": "Keine Prüfung geplant",
-  "review_overdue": "Überfällig seit {{date}}",
-  "review_due": "Fällig {{date}}",
-  "acceptance_none": "Nicht akzeptiert",
-  "acceptance_expired": "Abgelaufen {{date}}",
-  "acceptance_until": "Akzeptiert bis {{date}}",
+  "title": {
+    "text": "Risikoregister",
+    "source_sha256": ""
+  },
+  "back": {
+    "text": "Risikoregister",
+    "source_sha256": ""
+  },
+  "needPermission": {
+    "text": "Sie brauchen die Berechtigung, das Risikoregister zu sehen.",
+    "source_sha256": ""
+  },
+  "loadFailed": {
+    "text": "Dieses Risiko konnte nicht geladen werden.",
+    "source_sha256": ""
+  },
+  "loadingLabel": {
+    "text": "Risikoregister",
+    "source_sha256": ""
+  },
+  "honesty": {
+    "text": "Das Register erfasst Risikoentscheidungen: was identifiziert wurde, wie behandelt wird, wer akzeptiert hat und wann die Akzeptanz endet. Es sagt nicht, dass eine Kontrolle bestanden hat.",
+    "source_sha256": ""
+  },
+  "expiryNotice": {
+    "text": "Eine abgelaufene Akzeptanz wird beim Lesen berechnet. Ein Zwölf-Stunden-Lauf sendet RiskAcceptanceLapsed einmal je Akzeptanz, deren gewährter Zeitraum endete. Das Ereignis meldet das Ablaufdatum. Es öffnet das Risiko nicht wieder, zieht die Akzeptanz nicht zurück und eskaliert nichts. Die Zustellung hängt von den Ereigniszielen ab, die ein Operator eingerichtet hat.",
+    "source_sha256": ""
+  },
+  "loadRegisterFailed": {
+    "text": "Das Risikoregister konnte nicht geladen werden. Prüfen Sie die Ansichtsberechtigung und den Registerspeicher.",
+    "source_sha256": ""
+  },
+  "newRisk": {
+    "text": "Neues Risiko",
+    "source_sha256": ""
+  },
+  "recorded": {
+    "text": "Erfasst: {{count}}",
+    "source_sha256": ""
+  },
+  "identified": {
+    "text": "Identifiziert: {{count}}",
+    "source_sha256": ""
+  },
+  "analyzing": {
+    "text": "In Analyse: {{count}}",
+    "source_sha256": ""
+  },
+  "treatmentPlanned": {
+    "text": "Behandlung geplant: {{count}}",
+    "source_sha256": ""
+  },
+  "monitoring": {
+    "text": "Überwachung: {{count}}",
+    "source_sha256": ""
+  },
+  "accepted": {
+    "text": "Akzeptiert: {{count}}",
+    "source_sha256": ""
+  },
+  "closed": {
+    "text": "Geschlossen: {{count}}",
+    "source_sha256": ""
+  },
+  "reviewsOverdue": {
+    "text": "Prüfungen überfällig: {{count}}",
+    "source_sha256": ""
+  },
+  "acceptancesExpired": {
+    "text": "Akzeptanzen abgelaufen: {{count}}",
+    "source_sha256": ""
+  },
+  "filterStatus": {
+    "text": "Status",
+    "source_sha256": ""
+  },
+  "filterSeverity": {
+    "text": "Schweregrad",
+    "source_sha256": ""
+  },
+  "allStatuses": {
+    "text": "Alle Status",
+    "source_sha256": ""
+  },
+  "allSeverities": {
+    "text": "Alle Schweregrade",
+    "source_sha256": ""
+  },
+  "reviewsOverdueOnly": {
+    "text": "Nur überfällige Prüfungen",
+    "source_sha256": ""
+  },
+  "expiredAcceptancesOnly": {
+    "text": "Nur abgelaufene Akzeptanzen",
+    "source_sha256": ""
+  },
+  "loadingRegister": {
+    "text": "Register wird geladen…",
+    "source_sha256": ""
+  },
+  "showingCount": {
+    "text": "{{shown}} von {{total}} erfassten Risiken angezeigt.",
+    "source_sha256": ""
+  },
+  "emptyRegister": {
+    "text": "Keine Risiken passen zu diesen Filtern. Ein leeres Register heißt, dass hier nichts erfasst wurde — nicht, dass es keine Exposition gibt.",
+    "source_sha256": ""
+  },
+  "colRisk": {
+    "text": "Risiko",
+    "source_sha256": ""
+  },
+  "colSeverity": {
+    "text": "Schweregrad",
+    "source_sha256": ""
+  },
+  "colStatus": {
+    "text": "Status",
+    "source_sha256": ""
+  },
+  "colReview": {
+    "text": "Prüfung",
+    "source_sha256": ""
+  },
+  "colAcceptance": {
+    "text": "Akzeptanz",
+    "source_sha256": ""
+  },
+  "colOpen": {
+    "text": "Öffnen",
+    "source_sha256": ""
+  },
+  "open": {
+    "text": "Öffnen",
+    "source_sha256": ""
+  },
+  "openAria": {
+    "text": "Risiko {{ref}} öffnen",
+    "source_sha256": ""
+  },
+  "severityAria": {
+    "text": "Schweregrad {{severity}}, aus Wahrscheinlichkeit {{likelihood}} und Auswirkung {{impact}}",
+    "source_sha256": ""
+  },
+  "severityColHelp": {
+    "text": "Aus der gespeicherten Wahrscheinlichkeit und Auswirkung unter der jetzt geltenden Bewertungsmatrix. Eine Zeile, deren Lesung sich seit der Erfassung geändert hat, sagt das unter dem Chip.",
+    "source_sha256": ""
+  },
+  "statusColHelp": {
+    "text": "Was zuletzt über dieses Risiko entschieden wurde. Statuswerte sind erfasste Entscheidungen, kein Bewertungsergebnis.",
+    "source_sha256": ""
+  },
+  "reviewColHelp": {
+    "text": "Wann dieses Risiko als Nächstes geprüft werden soll. Überfällig wird beim Lesen dieser Liste berechnet; nichts kündigt es an.",
+    "source_sha256": ""
+  },
+  "acceptanceColHelp": {
+    "text": "Ob jemand dieses Risiko akzeptiert hat und bis wann. Eine abgelaufene Akzeptanz ist erloschen, und niemand wurde benachrichtigt.",
+    "source_sha256": ""
+  },
+  "toolbarTitle": {
+    "text": "Risikoregister",
+    "source_sha256": ""
+  },
+  "toolbarSubtitle": {
+    "text": "Erfasste Risikoentscheidungen — keine Aussage, dass eine Kontrolle bestanden hat",
+    "source_sha256": ""
+  },
+  "createTitle": {
+    "text": "Ein Risiko erfassen",
+    "source_sha256": ""
+  },
+  "createScoringNote": {
+    "text": "Der Schweregrad wird aus der gewählten Wahrscheinlichkeit und Auswirkung berechnet und nie gespeichert. Gespeichert wird die Version der Bewertungsmatrix zum Zeitpunkt der Erfassung, damit das Risiko später so gelesen werden kann, wie es entschieden wurde.",
+    "source_sha256": ""
+  },
+  "createRef": {
+    "text": "Risikoreferenz",
+    "source_sha256": ""
+  },
+  "createRefHelp": {
+    "text": "Ihre Kennung für dieses Risiko, eindeutig im Register.",
+    "source_sha256": ""
+  },
+  "createTitleField": {
+    "text": "Titel",
+    "source_sha256": ""
+  },
+  "createDescription": {
+    "text": "Beschreibung",
+    "source_sha256": ""
+  },
+  "createCategory": {
+    "text": "Kategorie",
+    "source_sha256": ""
+  },
+  "createOwner": {
+    "text": "Verantwortlich",
+    "source_sha256": ""
+  },
+  "createOwnerHelp": {
+    "text": "Die Person, die für dieses Risiko verantwortlich ist.",
+    "source_sha256": ""
+  },
+  "createLikelihood": {
+    "text": "Wahrscheinlichkeit",
+    "source_sha256": ""
+  },
+  "createImpact": {
+    "text": "Auswirkung",
+    "source_sha256": ""
+  },
+  "createReviewDue": {
+    "text": "Nächste Prüfung fällig",
+    "source_sha256": ""
+  },
+  "createReviewDueHelp": {
+    "text": "Optional. Ein Risiko ohne Prüfungsdatum wird nie als überfällig gemeldet.",
+    "source_sha256": ""
+  },
+  "createCancel": {
+    "text": "Abbrechen",
+    "source_sha256": ""
+  },
+  "createRecord": {
+    "text": "Erfassen",
+    "source_sha256": ""
+  },
+  "toastRecorded": {
+    "text": "Risiko erfasst",
+    "source_sha256": ""
+  },
+  "toastRecordFailed": {
+    "text": "Dieses Risiko konnte nicht erfasst werden",
+    "source_sha256": ""
+  },
+  "review_none": {
+    "text": "Keine Prüfung geplant",
+    "source_sha256": ""
+  },
+  "review_overdue": {
+    "text": "Überfällig seit {{date}}",
+    "source_sha256": ""
+  },
+  "review_due": {
+    "text": "Fällig {{date}}",
+    "source_sha256": ""
+  },
+  "acceptance_none": {
+    "text": "Nicht akzeptiert",
+    "source_sha256": ""
+  },
+  "acceptance_expired": {
+    "text": "Abgelaufen {{date}}",
+    "source_sha256": ""
+  },
+  "acceptance_until": {
+    "text": "Akzeptiert bis {{date}}",
+    "source_sha256": ""
+  },
   "status": {
-    "identified": "Identifiziert",
-    "analyzing": "In Analyse",
-    "treatment_planned": "Behandlung geplant",
-    "monitoring": "Überwachung",
-    "accepted": "Akzeptiert",
-    "closed": "Geschlossen",
-    "open": "Offen",
-    "mitigating": "In Behebung"
+    "identified": {
+      "text": "Identifiziert",
+      "source_sha256": ""
+    },
+    "analyzing": {
+      "text": "In Analyse",
+      "source_sha256": ""
+    },
+    "treatment_planned": {
+      "text": "Behandlung geplant",
+      "source_sha256": ""
+    },
+    "monitoring": {
+      "text": "Überwachung",
+      "source_sha256": ""
+    },
+    "accepted": {
+      "text": "Akzeptiert",
+      "source_sha256": ""
+    },
+    "closed": {
+      "text": "Geschlossen",
+      "source_sha256": ""
+    },
+    "open": {
+      "text": "Offen",
+      "source_sha256": ""
+    },
+    "mitigating": {
+      "text": "In Behebung",
+      "source_sha256": ""
+    }
   },
   "treatment": {
-    "undecided": "Nicht entschieden",
-    "mitigate": "Mindern",
-    "accept": "Akzeptieren",
-    "avoid": "Vermeiden",
-    "transfer": "Übertragen"
+    "undecided": {
+      "text": "Nicht entschieden",
+      "source_sha256": ""
+    },
+    "mitigate": {
+      "text": "Mindern",
+      "source_sha256": ""
+    },
+    "accept": {
+      "text": "Akzeptieren",
+      "source_sha256": ""
+    },
+    "avoid": {
+      "text": "Vermeiden",
+      "source_sha256": ""
+    },
+    "transfer": {
+      "text": "Übertragen",
+      "source_sha256": ""
+    }
   },
   "level": {
-    "low": "Niedrig",
-    "moderate": "Mittel",
-    "high": "Hoch",
-    "critical": "Kritisch"
+    "low": {
+      "text": "Niedrig",
+      "source_sha256": ""
+    },
+    "moderate": {
+      "text": "Mittel",
+      "source_sha256": ""
+    },
+    "high": {
+      "text": "Hoch",
+      "source_sha256": ""
+    },
+    "critical": {
+      "text": "Kritisch",
+      "source_sha256": ""
+    }
   }
 }

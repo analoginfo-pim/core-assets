@@ -522,21 +522,30 @@ def cmd_audit(root: Path, product: str, out: Optional[Path]) -> int:
     return 0
 
 
-def build_parser() -> argparse.ArgumentParser:
-    p = argparse.ArgumentParser(description="AIC language pack tools (stdlib only)")
-    p.add_argument(
+def _add_root(sp: argparse.ArgumentParser) -> None:
+    sp.add_argument(
         "--root",
         type=Path,
         default=None,
         help="Repository root (default: parent of scripts/)",
     )
+
+
+def build_parser() -> argparse.ArgumentParser:
+    p = argparse.ArgumentParser(description="AIC language pack tools (stdlib only)")
+    _add_root(p)
     sub = p.add_subparsers(dest="command", required=True)
 
-    sub.add_parser("migrate", help="Convert bare string leaves to entry objects")
-    sub.add_parser("hash", help="Recompute en source_sha256; fill empty hashes elsewhere")
-    sub.add_parser("mark-stale", help="Exit 1 if any non-en key hash mismatches en")
+    for name, help_text in (
+        ("migrate", "Convert bare string leaves to entry objects"),
+        ("hash", "Recompute en source_sha256; fill empty hashes elsewhere"),
+        ("mark-stale", "Exit 1 if any non-en key hash mismatches en"),
+    ):
+        sp = sub.add_parser(name, help=help_text)
+        _add_root(sp)
 
     ap = sub.add_parser("audit", help="Missing / stale / orphan / placeholder report")
+    _add_root(ap)
     ap.add_argument("--product", default="aic-server", help="Product id or 'all'")
     ap.add_argument("--out", type=Path, default=None, help="Write JSON report path")
     return p

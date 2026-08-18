@@ -1,172 +1,682 @@
 {
-  "dashboard": "Übersicht",
-  "overview": "Übersicht",
-  "platform_overview": "Plattformübersicht",
-  "favorites": "Favoriten",
-  "reports_dashboards": "Berichte und Dashboards",
-  "my_workspace": "Mein Arbeitsbereich",
-  "my_workstations": "Meine Arbeitsplätze",
-  "remote_access": "Fernzugriff",
-  "secure_share": "Sicherer Austausch",
-  "active_grants": "Aktive Freigaben",
-  "my_incident_reports": "Meine Vorfallmeldungen",
-  "my_local_account": "Mein lokales Konto",
-  "access_identity": "Zugriff & Identität",
-  "directory": "Verzeichnis",
-  "local_iam_administration": "Lokale IAM-Verwaltung",
-  "enrollment_and_access_control": "Registrierung & Zugriffskontrolle",
-  "credentials": "Zugangsdaten",
-  "reveal_password": "Passwort anzeigen",
-  "managed_identities": "Verwaltete Identitäten",
-  "credential_vault": "Zugangsdaten-Tresor",
-  "endpoint_privilege": "Endpunkt-Berechtigung",
-  "applications": "Anwendungen",
-  "elevation_platform_applications": "Elevation-Plattform — Anwendungen",
-  "elevation_platform_who_may_elevate": "Elevation-Plattform — Wer darf erhöhen",
-  "privileged_user_management": "Privilegierte Benutzerverwaltung",
-  "token_elevation": "Token-Elevation",
-  "direct_elevation": "Direkte Elevation",
-  "proxied_access": "Vermittelter Zugriff",
-  "sessions": "Sitzungen",
-  "connection_points": "Verbindungspunkte",
-  "session_recordings": "Sitzungsaufzeichnungen",
-  "session_control": "Sitzungssteuerung",
-  "jump_capacity": "Jump & Kapazität",
-  "jump_fleet_load_balancing": "Jump-Flotte & Lastverteilung",
-  "recording_ops": "Aufzeichnungsbetrieb",
-  "recording_agents_health": "Aufzeichnungsagenten — Status",
-  "deploy_recording_agent": "Aufzeichnungsagent bereitstellen",
-  "rdp_ocr_metadata": "RDP-OCR / Metadaten",
-  "recording_storage": "Aufzeichnungsspeicher",
-  "policy": "Richtlinie",
-  "ssh_command_filtering": "SSH-Befehlsfilter",
-  "entitlements": "Berechtigungen",
-  "session_i_o_policy": "Sitzungs-E/A-Richtlinie",
-  "approvals": "Genehmigungen",
-  "approver_profile": "Genehmigerprofil",
-  "operational_technology": "Betriebstechnik (OT)",
-  "startup_wizard": "Start-Assistent",
-  "discovery_jobs": "Erkennungsjobs",
-  "inventory": "Bestand",
-  "connect": "Verbinden",
-  "rotation_jobs": "Rotationsjobs",
-  "sessions_evidence": "Sitzungen / Nachweise",
-  "systems": "Systeme",
-  "systems_list": "Systemliste",
-  "ip_scanner": "IP-Scanner",
-  "known_default_credentials": "Bekannte Standardzugangsdaten",
-  "system_groups": "Systemgruppen",
-  "vm_management": "VM-Verwaltung",
-  "multi_tenancy": "Mandantenfähigkeit",
-  "compliance_evidence": "Compliance & Nachweise",
-  "reports": "Berichte",
-  "report_center": "Berichtszentrum",
-  "report_templates": "Berichtsvorlagen",
-  "assessments": "Bewertungen",
-  "current_state_compliance": "Aktueller Compliance-Stand",
-  "control_coverage": "Kontrollabdeckung",
-  "document_lifecycle": "Dokumentenlebenszyklus",
-  "control_state_history": "Kontrollstatus-Verlauf",
-  "risk_register": "Risikoregister",
-  "policy_approvals": "Richtliniengenehmigungen",
-  "external_workstation_readiness": "Externe Arbeitsplatz-Bereitschaft",
-  "wa_probe_packs": "WA-Probe-Pakete",
-  "audit_engagements": "Prüfungsaufträge",
-  "assessment_binder": "Assessment-Binder",
-  "auditor_text_playbooks": "Prüfer-Text-Playbooks",
-  "data_flow_mapping": "Datenfluss-Mapping",
-  "probe_packs": "Probe-Pakete",
-  "poa_m": "Maßnahmenplan (POA&M)",
-  "control_catalog": "Kontrollkatalog",
-  "gdpr": "DSGVO",
-  "gdpr_processing_register": "DSGVO — Verarbeitungsverzeichnis",
-  "gdpr_impact_assessment": "DSGVO — Folgenabschätzung",
-  "gdpr_subject_rights": "DSGVO — Betroffenenrechte",
-  "records_of_processing": "Verarbeitungsverzeichnis",
-  "dpia": "DSFA",
-  "data_subject_rights": "Betroffenenrechte",
-  "audit_frameworks": "Prüfungs-Frameworks",
-  "training": "Schulung",
-  "training_and_awareness_packs": "Schulungs- & Awareness-Pakete",
-  "workforce_roster": "Mitarbeiterliste",
-  "training_programs": "Schulungsprogramme",
-  "attestation_ledger": "Attestierungsbuch",
-  "incidents": "Vorfälle",
-  "report_an_incident": "Vorfall melden",
-  "alert_groups": "Alarmgruppen",
-  "auditor_ir_evidence": "Prüfer-IR-Nachweise",
-  "enhanced_controls": "Erweiterte Kontrollen",
-  "audit_trail": "Prüfpfad",
-  "live_events": "Live-Ereignisse",
-  "audit_log": "Audit-Protokoll",
-  "event_sharing": "Ereignisfreigabe",
-  "syslog_forwarding": "Syslog-Weiterleitung",
-  "configuration": "Konfiguration",
-  "agent": "Agent",
-  "agent_overview": "Agent-Übersicht",
-  "settings_wizard": "Einstellungs-Assistent",
-  "bulk_provision": "Massenbereitstellung",
-  "agent_management": "Agent-Verwaltung",
-  "fleet_agent_versions": "Agent-Versionen (Flotte)",
-  "propagation_templates": "Propagationsvorlagen",
-  "manage_issuances": "Ausstellungen verwalten",
-  "import_settings_migration": "Einstellungen importieren (Migration)",
-  "identity_template": "Identitätsvorlage",
-  "operator_disclosures": "Betreiber-Hinweise",
-  "server": "Server",
-  "server_configuration": "Server-Konfiguration",
-  "company_profile": "Unternehmensprofil",
-  "branding_style": "Branding & Stil",
-  "initial_setup_wizard": "Ersteinrichtungs-Assistent",
-  "service_logs": "Dienstprotokolle",
-  "server_disclosures": "Server-Hinweise",
-  "messaging": "Nachrichten",
-  "message_templates": "Nachrichtenvorlagen",
-  "message_snippets": "Nachrichtenbausteine",
-  "email_settings": "E-Mail-Einstellungen",
-  "sms_settings": "SMS-Einstellungen",
-  "security": "Sicherheit",
-  "defense": "Blockierte Angriffe",
-  "blocked_attacks": "Blockierte Angriffe",
-  "access_control": "Zugriffskontrolle",
-  "session_timeout_and_logoff": "Sitzungs-Timeout & Abmeldung",
-  "encryption_settings": "Verschlüsselungseinstellungen",
-  "encryption_key_sets": "Verschlüsselungsschlüssel-Sätze",
-  "hsm_connections": "HSM-Verbindungen",
-  "demo_reset": "Demo zurücksetzen",
-  "lab_tools": "Lab-Werkzeuge",
-  "documentation": "Dokumentation",
-  "documentation_home": "Dokumentations-Start",
-  "user_manuals": "Benutzerhandbücher",
-  "auditor_manuals": "Auditor-Handbücher",
-  "auditor_setup_guide": "Leitfaden zur Auditor-Einrichtung",
-  "admin_manuals": "Admin-Handbücher",
-  "technical_documentation": "Technische Dokumentation",
-  "about_licensing": "Info & Lizenz",
-  "about": "Info",
-  "version_information": "Versionsinformationen",
-  "eula": "EULA",
-  "copyright": "Urheberrecht",
-  "license_and_billing": "Lizenz und Abrechnung",
-  "settings": "Einstellungen",
-  "getting_started": "Erste Schritte",
-  "discover": "Erkennung",
-  "operations_compliance": "Betriebs-Compliance",
-  "poam": "Maßnahmenplan (POA&M)",
-  "custom_report_templates": "Eigene Berichtsvorlagen",
-  "risk": "Risiko",
-  "auditor_playbooks": "Prüfer-Playbooks",
-  "training_awareness_packs": "Schulungs- & Awareness-Pakete",
-  "training_program": "Schulungsprogramm",
-  "my_incident_report": "Meine Vorfallmeldung",
-  "ir_case_deep_link": "IR-Fall",
-  "ir_alert_groups": "IR-Alarmgruppen",
-  "incident_detail": "Vorfalldetails",
-  "network_scan": "Netzwerkscan",
-  "legacy_endpoints": "Ältere Endpunkte",
-  "privileged_identities": "Privilegierte Identitäten",
-  "elevation_platform": "Elevation-Plattform",
-  "ot_inventory": "OT-Bestand",
-  "ot_target_configuration": "OT-Zielkonfiguration",
-  "ot_live_session": "OT-Live-Sitzung"
+  "dashboard": {
+    "text": "Übersicht",
+    "source_sha256": ""
+  },
+  "overview": {
+    "text": "Übersicht",
+    "source_sha256": ""
+  },
+  "platform_overview": {
+    "text": "Plattformübersicht",
+    "source_sha256": ""
+  },
+  "favorites": {
+    "text": "Favoriten",
+    "source_sha256": ""
+  },
+  "reports_dashboards": {
+    "text": "Berichte und Dashboards",
+    "source_sha256": ""
+  },
+  "my_workspace": {
+    "text": "Mein Arbeitsbereich",
+    "source_sha256": ""
+  },
+  "my_workstations": {
+    "text": "Meine Arbeitsplätze",
+    "source_sha256": ""
+  },
+  "remote_access": {
+    "text": "Fernzugriff",
+    "source_sha256": ""
+  },
+  "secure_share": {
+    "text": "Sicherer Austausch",
+    "source_sha256": ""
+  },
+  "active_grants": {
+    "text": "Aktive Freigaben",
+    "source_sha256": ""
+  },
+  "my_incident_reports": {
+    "text": "Meine Vorfallmeldungen",
+    "source_sha256": ""
+  },
+  "my_local_account": {
+    "text": "Mein lokales Konto",
+    "source_sha256": ""
+  },
+  "access_identity": {
+    "text": "Zugriff & Identität",
+    "source_sha256": ""
+  },
+  "directory": {
+    "text": "Verzeichnis",
+    "source_sha256": ""
+  },
+  "local_iam_administration": {
+    "text": "Lokale IAM-Verwaltung",
+    "source_sha256": ""
+  },
+  "enrollment_and_access_control": {
+    "text": "Registrierung & Zugriffskontrolle",
+    "source_sha256": ""
+  },
+  "credentials": {
+    "text": "Zugangsdaten",
+    "source_sha256": ""
+  },
+  "reveal_password": {
+    "text": "Passwort anzeigen",
+    "source_sha256": ""
+  },
+  "managed_identities": {
+    "text": "Verwaltete Identitäten",
+    "source_sha256": ""
+  },
+  "credential_vault": {
+    "text": "Zugangsdaten-Tresor",
+    "source_sha256": ""
+  },
+  "endpoint_privilege": {
+    "text": "Endpunkt-Berechtigung",
+    "source_sha256": ""
+  },
+  "applications": {
+    "text": "Anwendungen",
+    "source_sha256": ""
+  },
+  "elevation_platform_applications": {
+    "text": "Elevation-Plattform — Anwendungen",
+    "source_sha256": ""
+  },
+  "elevation_platform_who_may_elevate": {
+    "text": "Elevation-Plattform — Wer darf erhöhen",
+    "source_sha256": ""
+  },
+  "privileged_user_management": {
+    "text": "Privilegierte Benutzerverwaltung",
+    "source_sha256": ""
+  },
+  "token_elevation": {
+    "text": "Token-Elevation",
+    "source_sha256": ""
+  },
+  "direct_elevation": {
+    "text": "Direkte Elevation",
+    "source_sha256": ""
+  },
+  "proxied_access": {
+    "text": "Vermittelter Zugriff",
+    "source_sha256": ""
+  },
+  "sessions": {
+    "text": "Sitzungen",
+    "source_sha256": ""
+  },
+  "connection_points": {
+    "text": "Verbindungspunkte",
+    "source_sha256": ""
+  },
+  "session_recordings": {
+    "text": "Sitzungsaufzeichnungen",
+    "source_sha256": ""
+  },
+  "session_control": {
+    "text": "Sitzungssteuerung",
+    "source_sha256": ""
+  },
+  "jump_capacity": {
+    "text": "Jump & Kapazität",
+    "source_sha256": ""
+  },
+  "jump_fleet_load_balancing": {
+    "text": "Jump-Flotte & Lastverteilung",
+    "source_sha256": ""
+  },
+  "recording_ops": {
+    "text": "Aufzeichnungsbetrieb",
+    "source_sha256": ""
+  },
+  "recording_agents_health": {
+    "text": "Aufzeichnungsagenten — Status",
+    "source_sha256": ""
+  },
+  "deploy_recording_agent": {
+    "text": "Aufzeichnungsagent bereitstellen",
+    "source_sha256": ""
+  },
+  "rdp_ocr_metadata": {
+    "text": "RDP-OCR / Metadaten",
+    "source_sha256": ""
+  },
+  "recording_storage": {
+    "text": "Aufzeichnungsspeicher",
+    "source_sha256": ""
+  },
+  "policy": {
+    "text": "Richtlinie",
+    "source_sha256": ""
+  },
+  "ssh_command_filtering": {
+    "text": "SSH-Befehlsfilter",
+    "source_sha256": ""
+  },
+  "entitlements": {
+    "text": "Berechtigungen",
+    "source_sha256": ""
+  },
+  "session_i_o_policy": {
+    "text": "Sitzungs-E/A-Richtlinie",
+    "source_sha256": ""
+  },
+  "approvals": {
+    "text": "Genehmigungen",
+    "source_sha256": ""
+  },
+  "approver_profile": {
+    "text": "Genehmigerprofil",
+    "source_sha256": ""
+  },
+  "operational_technology": {
+    "text": "Betriebstechnik (OT)",
+    "source_sha256": ""
+  },
+  "startup_wizard": {
+    "text": "Start-Assistent",
+    "source_sha256": ""
+  },
+  "discovery_jobs": {
+    "text": "Erkennungsjobs",
+    "source_sha256": ""
+  },
+  "inventory": {
+    "text": "Bestand",
+    "source_sha256": ""
+  },
+  "connect": {
+    "text": "Verbinden",
+    "source_sha256": ""
+  },
+  "rotation_jobs": {
+    "text": "Rotationsjobs",
+    "source_sha256": ""
+  },
+  "sessions_evidence": {
+    "text": "Sitzungen / Nachweise",
+    "source_sha256": ""
+  },
+  "systems": {
+    "text": "Systeme",
+    "source_sha256": ""
+  },
+  "systems_list": {
+    "text": "Systemliste",
+    "source_sha256": ""
+  },
+  "ip_scanner": {
+    "text": "IP-Scanner",
+    "source_sha256": ""
+  },
+  "known_default_credentials": {
+    "text": "Bekannte Standardzugangsdaten",
+    "source_sha256": ""
+  },
+  "system_groups": {
+    "text": "Systemgruppen",
+    "source_sha256": ""
+  },
+  "vm_management": {
+    "text": "VM-Verwaltung",
+    "source_sha256": ""
+  },
+  "multi_tenancy": {
+    "text": "Mandantenfähigkeit",
+    "source_sha256": ""
+  },
+  "compliance_evidence": {
+    "text": "Compliance & Nachweise",
+    "source_sha256": ""
+  },
+  "reports": {
+    "text": "Berichte",
+    "source_sha256": ""
+  },
+  "report_center": {
+    "text": "Berichtszentrum",
+    "source_sha256": ""
+  },
+  "report_templates": {
+    "text": "Berichtsvorlagen",
+    "source_sha256": ""
+  },
+  "assessments": {
+    "text": "Bewertungen",
+    "source_sha256": ""
+  },
+  "current_state_compliance": {
+    "text": "Aktueller Compliance-Stand",
+    "source_sha256": ""
+  },
+  "control_coverage": {
+    "text": "Kontrollabdeckung",
+    "source_sha256": ""
+  },
+  "document_lifecycle": {
+    "text": "Dokumentenlebenszyklus",
+    "source_sha256": ""
+  },
+  "control_state_history": {
+    "text": "Kontrollstatus-Verlauf",
+    "source_sha256": ""
+  },
+  "risk_register": {
+    "text": "Risikoregister",
+    "source_sha256": ""
+  },
+  "policy_approvals": {
+    "text": "Richtliniengenehmigungen",
+    "source_sha256": ""
+  },
+  "external_workstation_readiness": {
+    "text": "Externe Arbeitsplatz-Bereitschaft",
+    "source_sha256": ""
+  },
+  "wa_probe_packs": {
+    "text": "WA-Probe-Pakete",
+    "source_sha256": ""
+  },
+  "audit_engagements": {
+    "text": "Prüfungsaufträge",
+    "source_sha256": ""
+  },
+  "assessment_binder": {
+    "text": "Assessment-Binder",
+    "source_sha256": ""
+  },
+  "auditor_text_playbooks": {
+    "text": "Prüfer-Text-Playbooks",
+    "source_sha256": ""
+  },
+  "data_flow_mapping": {
+    "text": "Datenfluss-Mapping",
+    "source_sha256": ""
+  },
+  "probe_packs": {
+    "text": "Probe-Pakete",
+    "source_sha256": ""
+  },
+  "poa_m": {
+    "text": "Maßnahmenplan (POA&M)",
+    "source_sha256": ""
+  },
+  "control_catalog": {
+    "text": "Kontrollkatalog",
+    "source_sha256": ""
+  },
+  "gdpr": {
+    "text": "DSGVO",
+    "source_sha256": ""
+  },
+  "gdpr_processing_register": {
+    "text": "DSGVO — Verarbeitungsverzeichnis",
+    "source_sha256": ""
+  },
+  "gdpr_impact_assessment": {
+    "text": "DSGVO — Folgenabschätzung",
+    "source_sha256": ""
+  },
+  "gdpr_subject_rights": {
+    "text": "DSGVO — Betroffenenrechte",
+    "source_sha256": ""
+  },
+  "records_of_processing": {
+    "text": "Verarbeitungsverzeichnis",
+    "source_sha256": ""
+  },
+  "dpia": {
+    "text": "DSFA",
+    "source_sha256": ""
+  },
+  "data_subject_rights": {
+    "text": "Betroffenenrechte",
+    "source_sha256": ""
+  },
+  "audit_frameworks": {
+    "text": "Prüfungs-Frameworks",
+    "source_sha256": ""
+  },
+  "training": {
+    "text": "Schulung",
+    "source_sha256": ""
+  },
+  "training_and_awareness_packs": {
+    "text": "Schulungs- & Awareness-Pakete",
+    "source_sha256": ""
+  },
+  "workforce_roster": {
+    "text": "Mitarbeiterliste",
+    "source_sha256": ""
+  },
+  "training_programs": {
+    "text": "Schulungsprogramme",
+    "source_sha256": ""
+  },
+  "attestation_ledger": {
+    "text": "Attestierungsbuch",
+    "source_sha256": ""
+  },
+  "incidents": {
+    "text": "Vorfälle",
+    "source_sha256": ""
+  },
+  "report_an_incident": {
+    "text": "Vorfall melden",
+    "source_sha256": ""
+  },
+  "alert_groups": {
+    "text": "Alarmgruppen",
+    "source_sha256": ""
+  },
+  "auditor_ir_evidence": {
+    "text": "Prüfer-IR-Nachweise",
+    "source_sha256": ""
+  },
+  "enhanced_controls": {
+    "text": "Erweiterte Kontrollen",
+    "source_sha256": ""
+  },
+  "audit_trail": {
+    "text": "Prüfpfad",
+    "source_sha256": ""
+  },
+  "live_events": {
+    "text": "Live-Ereignisse",
+    "source_sha256": ""
+  },
+  "audit_log": {
+    "text": "Audit-Protokoll",
+    "source_sha256": ""
+  },
+  "event_sharing": {
+    "text": "Ereignisfreigabe",
+    "source_sha256": ""
+  },
+  "syslog_forwarding": {
+    "text": "Syslog-Weiterleitung",
+    "source_sha256": ""
+  },
+  "configuration": {
+    "text": "Konfiguration",
+    "source_sha256": ""
+  },
+  "agent": {
+    "text": "Agent",
+    "source_sha256": ""
+  },
+  "agent_overview": {
+    "text": "Agent-Übersicht",
+    "source_sha256": ""
+  },
+  "settings_wizard": {
+    "text": "Einstellungs-Assistent",
+    "source_sha256": ""
+  },
+  "bulk_provision": {
+    "text": "Massenbereitstellung",
+    "source_sha256": ""
+  },
+  "agent_management": {
+    "text": "Agent-Verwaltung",
+    "source_sha256": ""
+  },
+  "fleet_agent_versions": {
+    "text": "Agent-Versionen (Flotte)",
+    "source_sha256": ""
+  },
+  "propagation_templates": {
+    "text": "Propagationsvorlagen",
+    "source_sha256": ""
+  },
+  "manage_issuances": {
+    "text": "Ausstellungen verwalten",
+    "source_sha256": ""
+  },
+  "import_settings_migration": {
+    "text": "Einstellungen importieren (Migration)",
+    "source_sha256": ""
+  },
+  "identity_template": {
+    "text": "Identitätsvorlage",
+    "source_sha256": ""
+  },
+  "operator_disclosures": {
+    "text": "Betreiber-Hinweise",
+    "source_sha256": ""
+  },
+  "server": {
+    "text": "Server",
+    "source_sha256": ""
+  },
+  "server_configuration": {
+    "text": "Server-Konfiguration",
+    "source_sha256": ""
+  },
+  "company_profile": {
+    "text": "Unternehmensprofil",
+    "source_sha256": ""
+  },
+  "branding_style": {
+    "text": "Branding & Stil",
+    "source_sha256": ""
+  },
+  "initial_setup_wizard": {
+    "text": "Ersteinrichtungs-Assistent",
+    "source_sha256": ""
+  },
+  "service_logs": {
+    "text": "Dienstprotokolle",
+    "source_sha256": ""
+  },
+  "server_disclosures": {
+    "text": "Server-Hinweise",
+    "source_sha256": ""
+  },
+  "messaging": {
+    "text": "Nachrichten",
+    "source_sha256": ""
+  },
+  "message_templates": {
+    "text": "Nachrichtenvorlagen",
+    "source_sha256": ""
+  },
+  "message_snippets": {
+    "text": "Nachrichtenbausteine",
+    "source_sha256": ""
+  },
+  "email_settings": {
+    "text": "E-Mail-Einstellungen",
+    "source_sha256": ""
+  },
+  "sms_settings": {
+    "text": "SMS-Einstellungen",
+    "source_sha256": ""
+  },
+  "security": {
+    "text": "Sicherheit",
+    "source_sha256": ""
+  },
+  "defense": {
+    "text": "Blockierte Angriffe",
+    "source_sha256": ""
+  },
+  "blocked_attacks": {
+    "text": "Blockierte Angriffe",
+    "source_sha256": ""
+  },
+  "access_control": {
+    "text": "Zugriffskontrolle",
+    "source_sha256": ""
+  },
+  "session_timeout_and_logoff": {
+    "text": "Sitzungs-Timeout & Abmeldung",
+    "source_sha256": ""
+  },
+  "encryption_settings": {
+    "text": "Verschlüsselungseinstellungen",
+    "source_sha256": ""
+  },
+  "encryption_key_sets": {
+    "text": "Verschlüsselungsschlüssel-Sätze",
+    "source_sha256": ""
+  },
+  "hsm_connections": {
+    "text": "HSM-Verbindungen",
+    "source_sha256": ""
+  },
+  "demo_reset": {
+    "text": "Demo zurücksetzen",
+    "source_sha256": ""
+  },
+  "lab_tools": {
+    "text": "Lab-Werkzeuge",
+    "source_sha256": ""
+  },
+  "documentation": {
+    "text": "Dokumentation",
+    "source_sha256": ""
+  },
+  "documentation_home": {
+    "text": "Dokumentations-Start",
+    "source_sha256": ""
+  },
+  "user_manuals": {
+    "text": "Benutzerhandbücher",
+    "source_sha256": ""
+  },
+  "auditor_manuals": {
+    "text": "Auditor-Handbücher",
+    "source_sha256": ""
+  },
+  "auditor_setup_guide": {
+    "text": "Leitfaden zur Auditor-Einrichtung",
+    "source_sha256": ""
+  },
+  "admin_manuals": {
+    "text": "Admin-Handbücher",
+    "source_sha256": ""
+  },
+  "technical_documentation": {
+    "text": "Technische Dokumentation",
+    "source_sha256": ""
+  },
+  "about_licensing": {
+    "text": "Info & Lizenz",
+    "source_sha256": ""
+  },
+  "about": {
+    "text": "Info",
+    "source_sha256": ""
+  },
+  "version_information": {
+    "text": "Versionsinformationen",
+    "source_sha256": ""
+  },
+  "eula": {
+    "text": "EULA",
+    "source_sha256": ""
+  },
+  "copyright": {
+    "text": "Urheberrecht",
+    "source_sha256": ""
+  },
+  "license_and_billing": {
+    "text": "Lizenz und Abrechnung",
+    "source_sha256": ""
+  },
+  "settings": {
+    "text": "Einstellungen",
+    "source_sha256": ""
+  },
+  "getting_started": {
+    "text": "Erste Schritte",
+    "source_sha256": ""
+  },
+  "discover": {
+    "text": "Erkennung",
+    "source_sha256": ""
+  },
+  "operations_compliance": {
+    "text": "Betriebs-Compliance",
+    "source_sha256": ""
+  },
+  "poam": {
+    "text": "Maßnahmenplan (POA&M)",
+    "source_sha256": ""
+  },
+  "custom_report_templates": {
+    "text": "Eigene Berichtsvorlagen",
+    "source_sha256": ""
+  },
+  "risk": {
+    "text": "Risiko",
+    "source_sha256": ""
+  },
+  "auditor_playbooks": {
+    "text": "Prüfer-Playbooks",
+    "source_sha256": ""
+  },
+  "training_awareness_packs": {
+    "text": "Schulungs- & Awareness-Pakete",
+    "source_sha256": ""
+  },
+  "training_program": {
+    "text": "Schulungsprogramm",
+    "source_sha256": ""
+  },
+  "my_incident_report": {
+    "text": "Meine Vorfallmeldung",
+    "source_sha256": ""
+  },
+  "ir_case_deep_link": {
+    "text": "IR-Fall",
+    "source_sha256": ""
+  },
+  "ir_alert_groups": {
+    "text": "IR-Alarmgruppen",
+    "source_sha256": ""
+  },
+  "incident_detail": {
+    "text": "Vorfalldetails",
+    "source_sha256": ""
+  },
+  "network_scan": {
+    "text": "Netzwerkscan",
+    "source_sha256": ""
+  },
+  "legacy_endpoints": {
+    "text": "Ältere Endpunkte",
+    "source_sha256": ""
+  },
+  "privileged_identities": {
+    "text": "Privilegierte Identitäten",
+    "source_sha256": ""
+  },
+  "elevation_platform": {
+    "text": "Elevation-Plattform",
+    "source_sha256": ""
+  },
+  "ot_inventory": {
+    "text": "OT-Bestand",
+    "source_sha256": ""
+  },
+  "ot_target_configuration": {
+    "text": "OT-Zielkonfiguration",
+    "source_sha256": ""
+  },
+  "ot_live_session": {
+    "text": "OT-Live-Sitzung",
+    "source_sha256": ""
+  }
 }

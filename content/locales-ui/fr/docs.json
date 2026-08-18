@@ -1,47 +1,149 @@
 {
   "chrome": {
-    "backToDocs": "Retour à la documentation",
-    "contents": "Sommaire",
-    "chapters": "Chapitres",
-    "backToContents": "Retour au sommaire",
-    "openInProduct": "Ouvrir dans le produit",
-    "honestyAlert": "Manuels opérationnels pour cette classe de documentation. Les chapitres décrivent ce que le produit fait aujourd'hui, en français clair. Ils ne constituent pas un plan de sécurité du système, un dossier FedRAMP ou une allégation de certification — associez les contrôles dans votre classeur aux preuves que vous collectez réellement.",
-    "contentsAria": "Sommaire de {{title}}",
-    "stepsAria": "Étapes de {{title}}",
-    "openChapterAria": "Ouvrir {{title}} dans le produit",
-    "resourceManuals": "Manuels {{class}}",
-    "configLinks": "Où effectuer ces réglages"
+    "backToDocs": {
+      "text": "Retour à la documentation",
+      "source_sha256": ""
+    },
+    "contents": {
+      "text": "Sommaire",
+      "source_sha256": ""
+    },
+    "chapters": {
+      "text": "Chapitres",
+      "source_sha256": ""
+    },
+    "backToContents": {
+      "text": "Retour au sommaire",
+      "source_sha256": ""
+    },
+    "openInProduct": {
+      "text": "Ouvrir dans le produit",
+      "source_sha256": ""
+    },
+    "honestyAlert": {
+      "text": "Manuels opérationnels pour cette classe de documentation. Les chapitres décrivent ce que le produit fait aujourd'hui, en français clair. Ils ne constituent pas un plan de sécurité du système, un dossier FedRAMP ou une allégation de certification — associez les contrôles dans votre classeur aux preuves que vous collectez réellement.",
+      "source_sha256": ""
+    },
+    "contentsAria": {
+      "text": "Sommaire de {{title}}",
+      "source_sha256": ""
+    },
+    "stepsAria": {
+      "text": "Étapes de {{title}}",
+      "source_sha256": ""
+    },
+    "openChapterAria": {
+      "text": "Ouvrir {{title}} dans le produit",
+      "source_sha256": ""
+    },
+    "resourceManuals": {
+      "text": "Manuels {{class}}",
+      "source_sha256": ""
+    },
+    "configLinks": {
+      "text": "Où effectuer ces réglages",
+      "source_sha256": ""
+    }
   },
   "landing": {
-    "title": "Documentation",
+    "title": {
+      "text": "Documentation",
+      "source_sha256": ""
+    },
     "auditor": {
-      "label": "Manuels auditeur",
-      "description": "Guide de configuration des auditeurs, plus les chapitres d'examen des preuves."
+      "label": {
+        "text": "Manuels auditeur",
+        "source_sha256": ""
+      },
+      "description": {
+        "text": "Guide de configuration des auditeurs, plus les chapitres d'examen des preuves.",
+        "source_sha256": ""
+      }
     }
   },
   "auditor": {
-    "title": "Manuels auditeur",
-    "intro": "Commencez par le guide de configuration des auditeurs si vous affectez des évaluateurs. Les chapitres suivants sont des guides de lecture pour les personnes qui examinent les preuves, les classeurs et les pistes d'audit sans droits de correction. Les libellés d'état du classeur doivent rester honnêtes (Mis en œuvre / Partiel / Planifié). Ce produit n'invente pas d'allégations de certification FedRAMP, CMMC ou FIPS."
+    "title": {
+      "text": "Manuels auditeur",
+      "source_sha256": ""
+    },
+    "intro": {
+      "text": "Commencez par le guide de configuration des auditeurs si vous affectez des évaluateurs. Les chapitres suivants sont des guides de lecture pour les personnes qui examinent les preuves, les classeurs et les pistes d'audit sans droits de correction. Les libellés d'état du classeur doivent rester honnêtes (Mis en œuvre / Partiel / Planifié). Ce produit n'invente pas d'allégations de certification FedRAMP, CMMC ou FIPS.",
+      "source_sha256": ""
+    }
   },
   "auditorSetup": {
-    "title": "Guide de configuration des auditeurs",
-    "summary": "Comment affecter des auditeurs sur la même page de connexion, quels groupes utiliser et où les configurer.",
+    "title": {
+      "text": "Guide de configuration des auditeurs",
+      "source_sha256": ""
+    },
+    "summary": {
+      "text": "Comment affecter des auditeurs sur la même page de connexion, quels groupes utiliser et où les configurer.",
+      "source_sha256": ""
+    },
     "body": [
-      "Tout le monde se connecte sur la même page de connexion. Il n'existe pas de portail auditeur distinct. Les menus et les droits viennent des groupes que vous attribuez. Cela correspond au modèle Thoropass : un auditeur examine les preuves ; un administrateur d'audit (responsable) peut aussi affecter d'autres auditeurs. Les administrateurs d'identité créent les comptes qui ne sont pas des auditeurs. Ce n'est pas une tâche d'auditeur.",
-      "Les enclaves de démonstration incluent trois comptes de départ pour essayer chaque rôle. Changez ces mots de passe avant toute démonstration partagée. Les enclaves de production créent leurs propres personnes et les placent dans les groupes ci-dessous. Ce guide décrit la configuration du produit. Ce n'est pas une allégation de certification."
+      {
+        "text": "Tout le monde se connecte sur la même page de connexion. Il n'existe pas de portail auditeur distinct. Les menus et les droits viennent des groupes que vous attribuez. Cela correspond au modèle Thoropass : un auditeur examine les preuves ; un administrateur d'audit (responsable) peut aussi affecter d'autres auditeurs. Les administrateurs d'identité créent les comptes qui ne sont pas des auditeurs. Ce n'est pas une tâche d'auditeur.",
+        "source_sha256": ""
+      },
+      {
+        "text": "Les enclaves de démonstration incluent trois comptes de départ pour essayer chaque rôle. Changez ces mots de passe avant toute démonstration partagée. Les enclaves de production créent leurs propres personnes et les placent dans les groupes ci-dessous. Ce guide décrit la configuration du produit. Ce n'est pas une allégation de certification.",
+        "source_sha256": ""
+      }
     ],
     "steps": [
-      "Ouvrez l'administration IAM locale et créez ou sélectionnez la personne.",
-      "Ajoutez la personne aux groupes correspondant à son rôle dans le tableau ci-dessous.",
-      "Ou inscrivez-la avec le préréglage d'inscription correspondant.",
-      "Demandez-lui de se connecter sur la page de connexion habituelle.",
-      "Ouvrez les missions d'audit pour l'inviter à une mission lorsque votre processus utilise des invitations."
+      {
+        "text": "Ouvrez l'administration IAM locale et créez ou sélectionnez la personne.",
+        "source_sha256": ""
+      },
+      {
+        "text": "Ajoutez la personne aux groupes correspondant à son rôle dans le tableau ci-dessous.",
+        "source_sha256": ""
+      },
+      {
+        "text": "Ou inscrivez-la avec le préréglage d'inscription correspondant.",
+        "source_sha256": ""
+      },
+      {
+        "text": "Demandez-lui de se connecter sur la page de connexion habituelle.",
+        "source_sha256": ""
+      },
+      {
+        "text": "Ouvrez les missions d'audit pour l'inviter à une mission lorsque votre processus utilise des invitations.",
+        "source_sha256": ""
+      }
     ],
-    "productLabel": "Ouvrir l'administration IAM locale",
+    "productLabel": {
+      "text": "Ouvrir l'administration IAM locale",
+      "source_sha256": ""
+    },
     "tables": {
       "jobs": {
-        "caption": "Rôles d'auditeur, groupes et limites",
-        "headers": ["Rôle", "Groupes", "Préréglage d'inscription", "Peut", "Ne doit pas"],
+        "caption": {
+          "text": "Rôles d'auditeur, groupes et limites",
+          "source_sha256": ""
+        },
+        "headers": [
+          {
+            "text": "Rôle",
+            "source_sha256": ""
+          },
+          {
+            "text": "Groupes",
+            "source_sha256": ""
+          },
+          {
+            "text": "Préréglage d'inscription",
+            "source_sha256": ""
+          },
+          {
+            "text": "Peut",
+            "source_sha256": ""
+          },
+          {
+            "text": "Ne doit pas",
+            "source_sha256": ""
+          }
+        ],
         "rows": [
           [
             "Observateur en lecture seule",
@@ -67,8 +169,28 @@
         ]
       },
       "seeds": {
-        "caption": "Comptes de départ pour la démonstration",
-        "headers": ["Nom d'utilisateur", "Rôle", "Groupes", "Notes"],
+        "caption": {
+          "text": "Comptes de départ pour la démonstration",
+          "source_sha256": ""
+        },
+        "headers": [
+          {
+            "text": "Nom d'utilisateur",
+            "source_sha256": ""
+          },
+          {
+            "text": "Rôle",
+            "source_sha256": ""
+          },
+          {
+            "text": "Groupes",
+            "source_sha256": ""
+          },
+          {
+            "text": "Notes",
+            "source_sha256": ""
+          }
+        ],
         "rows": [
           [
             "readonly",
@@ -91,46 +213,150 @@
         ]
       },
       "screens": {
-        "caption": "Écrans et qui peut les utiliser",
-        "headers": ["Écran", "Lecture seule", "Auditeur en activité", "Responsable (administrateur d'audit)"],
+        "caption": {
+          "text": "Écrans et qui peut les utiliser",
+          "source_sha256": ""
+        },
+        "headers": [
+          {
+            "text": "Écran",
+            "source_sha256": ""
+          },
+          {
+            "text": "Lecture seule",
+            "source_sha256": ""
+          },
+          {
+            "text": "Auditeur en activité",
+            "source_sha256": ""
+          },
+          {
+            "text": "Responsable (administrateur d'audit)",
+            "source_sha256": ""
+          }
+        ],
         "rows": [
-          ["Connexion", "Oui", "Oui", "Oui"],
-          ["Classeur d'évaluation", "Consultation", "Consultation et écriture", "Consultation et écriture"],
-          ["Centre de rapports", "Consultation et téléchargement", "Consultation et téléchargement", "Consultation et téléchargement"],
-          ["Missions d'audit", "Consultation si invité", "Examen", "Examen et gestion"],
-          ["Conformité de l'état actuel", "Lecture", "Lecture", "Lecture"],
-          ["Audit", "Lecture", "Lecture", "Lecture"],
-          ["Administration IAM locale", "Non", "Non", "Comptes de classe auditeur uniquement"],
-          ["Inscription et contrôle d'accès", "Lire la matrice", "Lire la matrice", "Lire la matrice"],
-          ["Paramètres serveur / Fix-It", "Non", "Non", "Non"]
+          [
+            "Connexion",
+            "Oui",
+            "Oui",
+            "Oui"
+          ],
+          [
+            "Classeur d'évaluation",
+            "Consultation",
+            "Consultation et écriture",
+            "Consultation et écriture"
+          ],
+          [
+            "Centre de rapports",
+            "Consultation et téléchargement",
+            "Consultation et téléchargement",
+            "Consultation et téléchargement"
+          ],
+          [
+            "Missions d'audit",
+            "Consultation si invité",
+            "Examen",
+            "Examen et gestion"
+          ],
+          [
+            "Conformité de l'état actuel",
+            "Lecture",
+            "Lecture",
+            "Lecture"
+          ],
+          [
+            "Audit",
+            "Lecture",
+            "Lecture",
+            "Lecture"
+          ],
+          [
+            "Administration IAM locale",
+            "Non",
+            "Non",
+            "Comptes de classe auditeur uniquement"
+          ],
+          [
+            "Inscription et contrôle d'accès",
+            "Lire la matrice",
+            "Lire la matrice",
+            "Lire la matrice"
+          ],
+          [
+            "Paramètres serveur / Fix-It",
+            "Non",
+            "Non",
+            "Non"
+          ]
         ]
       }
     },
-    "configLinksTitle": "Où effectuer ces réglages",
+    "configLinksTitle": {
+      "text": "Où effectuer ces réglages",
+      "source_sha256": ""
+    },
     "configLinks": [
       {
-        "label": "Connexion",
-        "note": "La seule page de connexion. Les auditeurs l'utilisent comme tout le monde."
+        "label": {
+          "text": "Connexion",
+          "source_sha256": ""
+        },
+        "note": {
+          "text": "La seule page de connexion. Les auditeurs l'utilisent comme tout le monde.",
+          "source_sha256": ""
+        }
       },
       {
-        "label": "Administration IAM locale",
-        "note": "Accès et identité → Annuaire → Administration IAM locale. Créer des personnes, attribuer des groupes et réinitialiser les mots de passe de classe auditeur (responsable uniquement)."
+        "label": {
+          "text": "Administration IAM locale",
+          "source_sha256": ""
+        },
+        "note": {
+          "text": "Accès et identité → Annuaire → Administration IAM locale. Créer des personnes, attribuer des groupes et réinitialiser les mots de passe de classe auditeur (responsable uniquement).",
+          "source_sha256": ""
+        }
       },
       {
-        "label": "Inscription et contrôle d'accès",
-        "note": "Accès et identité → Annuaire → Inscription et contrôle d'accès. Affiche les préréglages d'inscription (read-only-assessor, cmmc-assessor, lead-auditor)."
+        "label": {
+          "text": "Inscription et contrôle d'accès",
+          "source_sha256": ""
+        },
+        "note": {
+          "text": "Accès et identité → Annuaire → Inscription et contrôle d'accès. Affiche les préréglages d'inscription (read-only-assessor, cmmc-assessor, lead-auditor).",
+          "source_sha256": ""
+        }
       },
       {
-        "label": "Missions d'audit",
-        "note": "Conformité → Missions d'audit. Inviter des auditeurs et gérer la mission."
+        "label": {
+          "text": "Missions d'audit",
+          "source_sha256": ""
+        },
+        "note": {
+          "text": "Conformité → Missions d'audit. Inviter des auditeurs et gérer la mission.",
+          "source_sha256": ""
+        }
       },
       {
-        "label": "Classeur d'évaluation",
-        "note": "Conformité → Classeur d'évaluation. Rédiger ou examiner les récits de contrôle et les preuves."
+        "label": {
+          "text": "Classeur d'évaluation",
+          "source_sha256": ""
+        },
+        "note": {
+          "text": "Conformité → Classeur d'évaluation. Rédiger ou examiner les récits de contrôle et les preuves.",
+          "source_sha256": ""
+        }
       },
       {
-        "label": "Manuels auditeur",
-        "note": "Documentation → Manuels auditeur. Ce guide et les chapitres de travail de l'évaluateur."
+        "label": {
+          "text": "Manuels auditeur",
+          "source_sha256": ""
+        },
+        "note": {
+          "text": "Documentation → Manuels auditeur. Ce guide et les chapitres de travail de l'évaluateur.",
+          "source_sha256": ""
+        }
       }
     ]
   }
