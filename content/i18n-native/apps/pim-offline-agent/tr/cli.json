@@ -1,0 +1,18 @@
+{
+  "cli.about": {
+    "text": "AIC Aracısı — çevrimdışı hesap yükseltme ve şifre rotasyonu",
+    "source_sha256": "04035fdaec4f3aef455aea1f6d0ae260c70748ffd4f6961f42d5beb52405faf4"
+  },
+  "cli.long_about": {
+    "text": "AIC Aracısı (ikili: pim-çevrimdışı-ajan)\n\nAÇIKLAMA:\n    AIC Aracısı güvenli, çevrimdışı hesap yükseltme ve\n    web hizmeti entegrasyonu ile otomatik şifre rotasyonu. Şunun için tasarlandı:\n    FIPS uyumlu şifreleme gerektiren kurumsal ortamlar ve\n    kapsamlı denetim yolları.\n\nTEMEL ÖZELLİKLER:\n    - Geçici ayrıcalık artışı için zaman sınırlı yükseltme kodları\n    - Yapılandırılabilir politikalarla otomatik şifre rotasyonu\n    - Kapsamlı teşhis ve sağlık izleme\n    - JSON dışa aktarma yetenekleriyle tam denetim yolu\n    - Operasyonel görünürlük için Prometheus metrikleri\n    - Günlük rotasyonla yapılandırılmış kayıt tutma\n\nKULLANIMI:\n    Etkileşimli konsol (bağımsız değişken yok):\n        pim-çevrimdışı-acente\n        → ipucu: 'pim-offline-agent --help' seçeneğini deneyin (çıkış 2)\n\n    Daemon olarak çalıştır (açık veya TTY olmayan / sistemd çıplak başlangıç):\n        pim-çevrimdışı-ajan arka plan programı\n\n    Yükseklik kodu oluştur:\n        pim-çevrimdışı-acente yükseltmesi --show-code\n\n    Tanılamayı çalıştırın:\n        pim-çevrimdışı-ajan teşhisi\n\n    Etkileşimli olarak yapılandırın:\n        pim-çevrimdışı-ajan sihirbazı\n\n    Belirli bir komutla ilgili daha fazla yardım için:\n        pim-offline-agent <komut> --yardım\n\nDOKÜMANTASYON:\n    Tüm belgeler: README.md\n    Kurulum kılavuzu: INSTALLATION_GUIDE.md\n    İzleme kurulumu: MONITORING.md\n    Kabuk tamamlamaları: SHELL_COMPLETIONS_GUIDE.md",
+    "source_sha256": "763ba471d83fbc6ea7d4aef451a3d4fac8ff8b40af0dded046f7e75d2a4026ed"
+  },
+  "cli.help.locale": {
+    "text": "CLI yardımı ve konsol mesajları için operatör görüntüleme dili (en, de). Denetimi, Windows Olay Günlüğünü veya sistem günlüğü alan adlarını değiştirmez.",
+    "source_sha256": "ea54d1c157ba10af11f561d11893e1ffd2f8b3d25d04dac1269ed4a04c856957"
+  },
+  "cli.msg.audit_english_only": {
+    "text": "Denetim, Windows Olay Günlüğü ve sistem günlüğü verileri ABD İngilizcesi olarak kalır (kararlı alan adları ve olay kimlikleri).",
+    "source_sha256": "66dab701f9bec400fcd79c3d0ff49e9273833d0c7a09d8d327ab7425e69af831"
+  }
+}

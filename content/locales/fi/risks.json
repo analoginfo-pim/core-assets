@@ -1,0 +1,92 @@
+{
+  "lapse_acceptance": {
+    "text": "Tallennettu riskin hyväksyminen {ref} ({title}) päättyi {date}, {days} päivä(ä) sitten. Hyväksyminen kirjataan edelleen ja riski hyväksytään edelleen; se, joka on loppunut, on ajanjakso, joksi se myönnettiin. Mitään ei avattu uudelleen tai peruutettu tällä ilmoituksella.",
+    "source_sha256": "41a774c4bfa6ded0399df551e9e7f1efb33de17717f5065f050a61e8d38f527e"
+  },
+  "lapse_review": {
+    "text": "Riski {ref} ({title}) oli määrä arvioida {date}, {days} päivä(ä) sitten, ja sen tila on {status}. Sen jälkeen arvostelua ei ole tallennettu. Tämä raportoi tarkastelusta, jota ei ole tapahtunut; se ei kerro mitään siitä, onko altistuminen muuttunut.",
+    "source_sha256": "510fc8373d12b553fa51374ac1cf430a9578b8547a1b0fb51a131a2db6e2a907"
+  },
+  "lapse_summary": {
+    "text": "{total} riskirajat ylittyivät ilmoittamatta etukäteen; {enumerated} lähetettiin yksittäisinä tapahtumina ja {remainder} ei lueteltu. Täydellinen luettelo on riskirekisterissä suodatettuina vanhentuneen hyväksynnän ja myöhästyneen tarkistuksen perusteella.",
+    "source_sha256": "3d392cc7f24c117cc9367f264108089c9c0747359027d7489abcc46065ea5891"
+  },
+  "status": {
+    "open": {
+      "text": "Avata",
+      "source_sha256": "ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942"
+    },
+    "accepted": {
+      "text": "Hyväksytty",
+      "source_sha256": "a00fb0c50741f81bb51d35b4475a4357f8039aabd896a21036bc516839401595"
+    },
+    "closed": {
+      "text": "Suljettu",
+      "source_sha256": "c21ead0614e7e1b70edb3759e1d19ca1e12e6036980d10bfb73052fb1a018efa"
+    },
+    "mitigating": {
+      "text": "Lieventävä",
+      "source_sha256": "ac1eaa04ebd8e358e79c8850b0caed05f5315c51d2d2424a74961555d1275069"
+    }
+  },
+  "treatment": {
+    "mitigate": {
+      "text": "Lieventää",
+      "source_sha256": "c1415ca501d6e4059d206bfa7526a566d0b0afde1e98f509d5f4106decf9edee"
+    },
+    "accept": {
+      "text": "Hyväksyä",
+      "source_sha256": "89713b9c9c1b8f659c9f49db25e4a47886dd673fee248c3f650391f09a759cef"
+    },
+    "avoid": {
+      "text": "Välttää",
+      "source_sha256": "5cf9734d8a0f10f9b9a59ce6868eade9f947dc0eb6fd66c744067d06eb03d96b"
+    },
+    "transfer": {
+      "text": "Siirtää",
+      "source_sha256": "dde8bef78cbb720683fa1fe76bfb900592099ed4346ed995bcbc514e9aa67256"
+    }
+  },
+  "level": {
+    "low": {
+      "text": "Matala",
+      "source_sha256": "f793de205ead5ac302c4a1627829dea41f176b1068b993a32373fc869918374b"
+    },
+    "moderate": {
+      "text": "Kohtalainen",
+      "source_sha256": "5c42afc7a23018d32dcff346792b575bcdf63be118b98a61084b1afac32b93e9"
+    },
+    "high": {
+      "text": "Korkea",
+      "source_sha256": "c4ebc6d4a5832cd9415f906ad03661110c705a72381c8b8b145761d02e2dd23a"
+    },
+    "critical": {
+      "text": "Kriittinen",
+      "source_sha256": "427dd2969bd140bec3c1bcc7983da982f4815938cd4510ad0b2bad48ac5b55f9"
+    }
+  },
+  "review_none": {
+    "text": "Tarkastusta ei ole suunniteltu",
+    "source_sha256": "43b98dce119c47e36dbccbec0039e3242b51f153b122363b01d1c35fccac52a4"
+  },
+  "review_overdue": {
+    "text": "Myöhässä {date} jälkeen",
+    "source_sha256": "1b4d0812d6d9c9f09544e474bb40647456e232999c76b2440d3dbfffb9db0d80"
+  },
+  "review_due": {
+    "text": "Eräpäivä {date}",
+    "source_sha256": "48986e1336190d0aa3e9ac1cc838e1f530716ffbfaaa0426392065287690a7f2"
+  },
+  "acceptance_none": {
+    "text": "Ei hyväksytty",
+    "source_sha256": "8ba391628be0d7e1c0dde21aeff106331b47c80473ec47ac9e49931145581cc9"
+  },
+  "acceptance_expired": {
+    "text": "Vanhentunut {date}",
+    "source_sha256": "5bdf3f58581c4198f3036920b5412cff1401ec0d1e6d2e3224200070dc587400"
+  },
+  "acceptance_until": {
+    "text": "Hyväksytty {date} asti",
+    "source_sha256": "fb5dceec373fe4a4b351b33eac25266fee8502624d63adb39e9b2f9d0100b8f1"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "cli.about": {
+    "text": "AIC Agent — offline-tilin korotus ja salasanan kierto",
+    "source_sha256": "04035fdaec4f3aef455aea1f6d0ae260c70748ffd4f6961f42d5beb52405faf4"
+  },
+  "cli.long_about": {
+    "text": "AIC-agentti (binääri: pim-offline-agent)\n\nKUVAUS:\n    AIC Agent tarjoaa turvallisen offline-tilin korotuksen ja\n    automaattinen salasanan kierto verkkopalveluintegraatiolla. Suunniteltu\n    yritysympäristöt, jotka edellyttävät FIPS-yhteensopivaa salaustekniikkaa ja\n    kattavat kirjausketjut.\n\nYDIN OMINAISUUDET:\n    - Aikarajoitetut korkeuskoodit tilapäistä käyttöoikeuksien eskalointia varten\n    - Automaattinen salasanan kierto konfiguroitavilla käytännöillä\n    - Kattava diagnostiikka ja terveydentilan seuranta\n    - Täysi kirjausketju JSON-vientiominaisuuksilla\n    - Prometheus-mittarit toiminnan näkyvyyden parantamiseksi\n    - Strukturoitu puunkorjuu päivittäisellä kierrolla\n\nKÄYTTÖ:\n    Interaktiivinen konsoli (ei argumentteja):\n        pim-offline-agentti\n        → vinkki: kokeile 'pim-offline-agent --help' (poistuminen 2)\n\n    Suorita demonina (eksplisiittinen tai ei-TTY / systemd bare start):\n        pim-offline-agent daemon\n\n    Luo korkeuskoodi:\n        pim-offline-agent elevate --show-code\n\n    Suorita diagnostiikka:\n        pim-offline-agenttidiagnoosi\n\n    Määritä interaktiivisesti:\n        pim-offline-agent ohjattu toiminto\n\n    Jos haluat lisätietoja tietystä komennosta:\n        pim-offline-agent <komento> --help\n\nDOKUMENTOINTI:\n    Täydellinen dokumentaatio: README.md\n    Asennusopas: INSTALLATION_GUIDE.md\n    Valvonta-asetukset: MONITORING.md\n    Shellin täydennykset: SHELL_COMPLETIONS_GUIDE.md",
+    "source_sha256": "763ba471d83fbc6ea7d4aef451a3d4fac8ff8b40af0dded046f7e75d2a4026ed"
+  },
+  "cli.help.locale": {
+    "text": "Käyttäjän näyttökieli CLI-ohjeita ja konsoliviestejä varten (en, de). Ei muuta valvonta-, Windows-tapahtumaloki- tai syslog-kenttien nimiä.",
+    "source_sha256": "ea54d1c157ba10af11f561d11893e1ffd2f8b3d25d04dac1269ed4a04c856957"
+  },
+  "cli.msg.audit_english_only": {
+    "text": "Tarkastus-, Windows-tapahtumaloki- ja syslog-hyötykuormat pysyvät englanninkielisinä (vakaat kenttien nimet ja tapahtumatunnukset).",
+    "source_sha256": "66dab701f9bec400fcd79c3d0ff49e9273833d0c7a09d8d327ab7425e69af831"
+  }
+}

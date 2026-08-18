@@ -1,0 +1,18 @@
+{
+  "cli.about": {
+    "text": "Agent AIC — podnoszenie konta offline i rotacja haseł",
+    "source_sha256": "04035fdaec4f3aef455aea1f6d0ae260c70748ffd4f6961f42d5beb52405faf4"
+  },
+  "cli.long_about": {
+    "text": "Agent AIC (binarny: pim-offline-agent)\n\nOPIS:\n    Agent AIC zapewnia bezpieczne podnoszenie konta w trybie offline i\n    automatyczna rotacja haseł z integracją usług internetowych. Zaprojektowany dla\n    środowiska korporacyjne wymagające kryptografii zgodnej z FIPS i\n    kompleksowe ścieżki audytu.\n\nGŁÓWNE CECHY:\n    - Ograniczone czasowo kody podwyższające umożliwiające tymczasową eskalację uprawnień\n    - Automatyczna rotacja haseł z konfigurowalnymi zasadami\n    - Kompleksowa diagnostyka i monitorowanie stanu zdrowia\n    - Pełna ścieżka audytu z możliwością eksportu JSON\n    - Metryki Prometheusa zapewniające widoczność operacyjną\n    - Rejestrowanie strukturalne z codzienną rotacją\n\nZASTOSOWANIE:\n    Konsola interaktywna (bez argumentów):\n        pim-offline-agent\n        → wskazówka: spróbuj „pim-offline-agent --help” (wyjście 2)\n\n    Uruchom jako demon (jawnie lub bez TTY / systemowy start):\n        Demon agenta pim-offline\n\n    Wygeneruj kod elewacji:\n        pim-offline-agent podnieś --show-code\n\n    Uruchom diagnostykę:\n        diagnostyka agenta pim-offline\n\n    Skonfiguruj interaktywnie:\n        Kreator agenta pim-offline\n\n    Aby uzyskać dodatkową pomoc dotyczącą konkretnego polecenia:\n        pim-offline-agent <polecenie> --help\n\nDOKUMENTACJA:\n    Pełna dokumentacja: README.md\n    Instrukcja instalacji: INSTALLATION_GUIDE.md\n    Konfiguracja monitorowania: MONITORING.md\n    Uzupełnienia powłoki: SHELL_COMPLETIONS_GUIDE.md",
+    "source_sha256": "763ba471d83fbc6ea7d4aef451a3d4fac8ff8b40af0dded046f7e75d2a4026ed"
+  },
+  "cli.help.locale": {
+    "text": "Język wyświetlania operatora dla pomocy CLI i komunikatów konsoli (en, de). Nie zmienia nazw pól audytu, dziennika zdarzeń systemu Windows ani nazw pól dziennika syslog.",
+    "source_sha256": "ea54d1c157ba10af11f561d11893e1ffd2f8b3d25d04dac1269ed4a04c856957"
+  },
+  "cli.msg.audit_english_only": {
+    "text": "Pakiety audytu, dziennika zdarzeń systemu Windows i dziennika syslog pozostają w języku angielskim (stabilne nazwy pól i identyfikatory zdarzeń).",
+    "source_sha256": "66dab701f9bec400fcd79c3d0ff49e9273833d0c7a09d8d327ab7425e69af831"
+  }
+}

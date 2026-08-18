@@ -1,0 +1,18 @@
+{
+  "cli.about": {
+    "text": "AIC Agent - offline accountverhoging en wachtwoordroulatie",
+    "source_sha256": "04035fdaec4f3aef455aea1f6d0ae260c70748ffd4f6961f42d5beb52405faf4"
+  },
+  "cli.long_about": {
+    "text": "AIC Agent (binair: pim-offline-agent)\n\nBESCHRIJVING:\n    De AIC Agent biedt veilige, offline accountverhoging en\n    geautomatiseerde wachtwoordrotatie met webservice-integratie. Ontworpen voor\n    bedrijfsomgevingen die FIPS-compatibele cryptografie vereisen en\n    uitgebreide audittrails.\n\nKERNEIGENSCHAPPEN:\n    - Tijdgebonden bevoegdheidscodes voor tijdelijke escalatie van bevoegdheden\n    - Automatische wachtwoordroulatie met configureerbaar beleid\n    - Uitgebreide diagnostiek en gezondheidsmonitoring\n    - Volledig audittraject met JSON-exportmogelijkheden\n    - Prometheus-statistieken voor operationele zichtbaarheid\n    - Gestructureerde logboekregistratie met dagelijkse rotatie\n\nGEBRUIK:\n    Interactieve console (geen argumenten):\n        pim-offline-agent\n        → tip: Probeer 'pim-offline-agent --help' (afrit 2)\n\n    Uitvoeren als daemon (expliciet of niet-TTY / systemd blote start):\n        pim-offline-agent-daemon\n\n    Hoogtecode genereren:\n        pim-offline-agent verheffen --show-code\n\n    Diagnose uitvoeren:\n        pim-offline-agent diagnose\n\n    Interactief configureren:\n        pim-offline-agentwizard\n\n    Voor meer hulp bij een specifieke opdracht:\n        pim-offline-agent <opdracht> --help\n\nDOCUMENTATIE:\n    Volledige documentatie: README.md\n    Installatiehandleiding: INSTALLATION_GUIDE.md\n    Controle-instellingen: MONITORING.md\n    Shell-voltooiingen: SHELL_COMPLETIONS_GUIDE.md",
+    "source_sha256": "763ba471d83fbc6ea7d4aef451a3d4fac8ff8b40af0dded046f7e75d2a4026ed"
+  },
+  "cli.help.locale": {
+    "text": "Weergavetaal van operator voor CLI-help- en consoleberichten (en, de). Verandert de veldnamen van audit, Windows Event Log of syslog niet.",
+    "source_sha256": "ea54d1c157ba10af11f561d11893e1ffd2f8b3d25d04dac1269ed4a04c856957"
+  },
+  "cli.msg.audit_english_only": {
+    "text": "Audit-, Windows Event Log- en syslog-payloads blijven Amerikaans-Engels (stabiele veldnamen en gebeurtenis-ID's).",
+    "source_sha256": "66dab701f9bec400fcd79c3d0ff49e9273833d0c7a09d8d327ab7425e69af831"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "cli.about": {
+    "text": "AIC Agent — offlinekontohöjning och lösenordsrotation",
+    "source_sha256": "04035fdaec4f3aef455aea1f6d0ae260c70748ffd4f6961f42d5beb52405faf4"
+  },
+  "cli.long_about": {
+    "text": "AIC Agent (binary: pim-offline-agent)\n\nBESKRIVNING:\n    AIC-agenten tillhandahåller säker, offline-kontohöjning och\n    automatiserad lösenordsrotation med webbtjänstintegration. Designad för\n    företagsmiljöer som kräver FIPS-kompatibel kryptografi och\n    comprehensive audit trails.\n\nKÄRNFUNKTIONER:\n    - Tidsbegränsade höjdkoder för tillfällig privilegieskalering\n    - Automatisk lösenordsrotation med konfigurerbara policyer\n    - Omfattande diagnostik och hälsoövervakning\n    - Fullständig revisionsspår med JSON-exportfunktioner\n    - Prometheus-mått för operativ synlighet\n    - Structured logging with daily rotation\n\nANVÄNDNING:\n    Interaktiv konsol (inga argument):\n        pim-offline-agent\n        → tips: Testa 'pim-offline-agent --help' (utgång 2)\n\n    Kör som demon (explicit, eller icke-TTY/systemd bar start):\n        pim-offline-agent daemon\n\n    Generera höjdkod:\n        pim-offline-agent elevate --show-code\n\n    Kör diagnostik:\n        pim-offline-agent diagnos\n\n    Konfigurera interaktivt:\n        pim-offline-agent guiden\n\n    För mer hjälp med ett specifikt kommando:\n        pim-offline-agent <kommando> --hjälp\n\nDOKUMENTATION:\n    Fullständig dokumentation: README.md\n    Installationsguide: INSTALLATION_GUIDE.md\n    Övervakningsinställningar: MONITORING.md\n    Shell completions:   SHELL_COMPLETIONS_GUIDE.md",
+    "source_sha256": "763ba471d83fbc6ea7d4aef451a3d4fac8ff8b40af0dded046f7e75d2a4026ed"
+  },
+  "cli.help.locale": {
+    "text": "Operatörens displayspråk för CLI-hjälp och konsolmeddelanden (en, de). Ändrar inte gransknings-, Windows-händelselogg- eller syslogfältnamn.",
+    "source_sha256": "ea54d1c157ba10af11f561d11893e1ffd2f8b3d25d04dac1269ed4a04c856957"
+  },
+  "cli.msg.audit_english_only": {
+    "text": "Gransknings-, Windows-händelselogg- och syslognyttolaster förblir amerikansk engelska (stabila fältnamn och händelse-ID:n).",
+    "source_sha256": "66dab701f9bec400fcd79c3d0ff49e9273833d0c7a09d8d327ab7425e69af831"
+  }
+}

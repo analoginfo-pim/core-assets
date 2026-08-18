@@ -4,24 +4,24 @@ Partner-readable status for Phil and Robert. Updated after each milestone push t
 
 ## Latest
 
-**core-assets SHA:** `2087c30` (Wave C catalogs: `9a24427`)
+**Wave D complete** (`pl`, `tr`, `nl`, `sv`, `fi`, `ar`) vs current US English key set (product-all **1006** leaves; aic-server **536**).
 
-**Wave C complete** (`ja`, `ko`, `pt-BR`, `it`, `he`) vs current US English key set:
-
-| Tag | aic-server missing | stale | Notes |
+| Tag | product-all missing | stale | Notes |
 | --- | ---: | ---: | --- |
-| ja | 0 | 0 | Formal です/ます |
-| ko | 0 | 0 | Formal polite |
-| pt-BR | 0 | 0 | Brazilian formal |
-| it | 0 | 0 | Formal Lei |
-| he | 0 | 0 | Formal Hebrew; manifest `dir=rtl` |
+| pl | 0 | 0 | Formal Polish |
+| tr | 0 | 0 | Formal Turkish |
+| nl | 0 | 0 | Formal Dutch |
+| sv | 0 | 0 | Formal Swedish |
+| fi | 0 | 0 | Formal Finnish |
+| ar | 0 | 0 | Formal MSA; manifest `dir=rtl` (JSON only) |
 
-`en_total` aic-server **536**; product-all leaves **1006** (includes native gui/agent/recording) — all five tags **0 / 0**.
+`en_total` product-all **1006** — all six tags **0 / 0**. aic-server subset also **0 / 0** (536).
 
-**Not started:** Wave D (`pl`, `tr`, `nl`, `sv`, `fi`, `ar`).
+SHA will be stamped after this commit lands on `origin/main`.
 
 ## History
 
+- (this commit) — Wave D pl/tr/nl/sv/fi/ar
 - `2087c30` / `9a24427` — Wave C ja/ko/pt-BR/it/he
 - `8b25375` — progress after Wave B
 - `417f904` — Wave B en-GB / zh-Hans / zh-TW
