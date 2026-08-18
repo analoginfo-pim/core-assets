@@ -1,0 +1,18 @@
+{
+  "cli.about": {
+    "text": "AIC 에이전트 — 오프라인 계정 승격 및 비밀번호 교체",
+    "source_sha256": "04035fdaec4f3aef455aea1f6d0ae260c70748ffd4f6961f42d5beb52405faf4"
+  },
+  "cli.long_about": {
+    "text": "AIC 에이전트(바이너리: pim-offline-agent)\n\n설명:\n    AIC 에이전트는 안전한 오프라인 계정 승격 및\n    웹 서비스 통합으로 자동화된 비밀번호 교체. 다음을 위해 설계됨\n    FIPS 호환 암호화가 필요한 기업 환경 및\n    포괄적인 감사 추적.\n\n핵심 기능:\n    - 임시 권한 상승을 위한 시간 제한 상승 코드\n    - 구성 가능한 정책을 통한 자동 비밀번호 교체\n    - 종합적인 진단 및 상태 모니터링\n    - JSON 내보내기 기능을 갖춘 전체 감사 추적\n    - 운영 가시성을 위한 Prometheus 측정항목\n    - 매일 순환되는 구조화된 로깅\n\n사용법:\n    대화형 콘솔(인수 없음):\n        핌-오프라인-에이전트\n        → 팁: 'pim-offline-agent --help'(출구 2)를 사용해 보세요.\n\n    데몬으로 실행(명시적 또는 TTY가 아닌/시스템 베어 시작):\n        pim-오프라인-에이전트 데몬\n\n    고도 코드 생성:\n        pim-offline-agent elevate --쇼-코드\n\n    진단을 실행합니다.\n        pim-오프라인-에이전트 진단\n\n    대화형으로 구성:\n        pim-오프라인-에이전트 마법사\n\n    특정 명령에 대한 추가 도움말을 보려면 다음을 따르세요.\n        pim-offline-agent <명령> --help\n\n문서:\n    전체 문서: README.md\n    설치 가이드: INSTALLATION_GUIDE.md\n    모니터링 설정: MONITORING.md\n    셸 완성: SHELL_COMPLETIONS_GUIDE.md",
+    "source_sha256": "763ba471d83fbc6ea7d4aef451a3d4fac8ff8b40af0dded046f7e75d2a4026ed"
+  },
+  "cli.help.locale": {
+    "text": "CLI 도움말 및 콘솔 메시지에 대한 운영자 표시 언어(en, de). 감사, Windows 이벤트 로그 또는 syslog 필드 이름을 변경하지 않습니다.",
+    "source_sha256": "ea54d1c157ba10af11f561d11893e1ffd2f8b3d25d04dac1269ed4a04c856957"
+  },
+  "cli.msg.audit_english_only": {
+    "text": "감사, Windows 이벤트 로그 및 syslog 페이로드는 미국 영어(안정적인 필드 이름 및 이벤트 ID)로 유지됩니다.",
+    "source_sha256": "66dab701f9bec400fcd79c3d0ff49e9273833d0c7a09d8d327ab7425e69af831"
+  }
+}

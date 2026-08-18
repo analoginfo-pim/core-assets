@@ -1,0 +1,462 @@
+{
+  "discoverTitle": {
+    "text": "発見する",
+    "source_sha256": "d4a33d5b78bccebe3f16843dc30e6c0f73b4eb6efb4e7114ddfebde7fa2c9954"
+  },
+  "discoverIntro": {
+    "text": "構成されたネットワークをスキャンして OT ターゲットを見つけます。結果として、[在庫] ページの在庫ステータスが更新されます。",
+    "source_sha256": "c2c468ed5a09c494f0a140701f0e3b6a546c0dd474538b47bfdbf09bb91a71eb"
+  },
+  "discoverNoPermission": {
+    "text": "OT Discover を開くには、接続ターゲットの表示権限が必要です。",
+    "source_sha256": "4e85863f5771d993c7a80002144b0e0e9e5f1a268d6046fe989c328f2c4f14c1"
+  },
+  "connectNoPermission": {
+    "text": "OT Connect を開くには、接続ターゲットの表示権限が必要です。",
+    "source_sha256": "b2d9dfbf3abb24cb12c529e63d7986c25f6ddc21b9581226ceb5f52e412375dd"
+  },
+  "inventoryNoPermission": {
+    "text": "OT インベントリを開くには、接続ターゲットの表示権限が必要です。",
+    "source_sha256": "f8b4e687e02a229da707b433316b5927e00febe384b991cdf620413038c8bafe"
+  },
+  "credentialsNoPermission": {
+    "text": "OT 認証情報を開くには、接続ターゲットの表示権限が必要です。",
+    "source_sha256": "26f6082c0be44f40bafe405d2b92c5032e6a9a143b55100e8f7992757eba89e4"
+  },
+  "sessionsNoPermission": {
+    "text": "OT セッションを開くには、接続ターゲットの表示権限が必要です。",
+    "source_sha256": "a91b21b8590ae6ec1a62f1d88a07dedcffd13b2f51d41e3e4aa3c95b180bd77a"
+  },
+  "inventoryTitle": {
+    "text": "在庫",
+    "source_sha256": "758f487fe8e9fcc59cec4694d95a9032224f967b29f39543a1fb04e2901b079e"
+  },
+  "inventoryIntro": {
+    "text": "検出されたターゲットを確認し、ステータス チップを読み取り、非機密フィールドとローテーション スケジュールの設定を開きます。",
+    "source_sha256": "e6276c27c5bb1926a17de2a83047ed9892247da5b9ba28815ec497c81b8ca265"
+  },
+  "connectTitle": {
+    "text": "接続する",
+    "source_sha256": "1a2303ede07493acc7caaa7c737f3c52bcc9cf04372be19ed1b0af6b9f2c791e"
+  },
+  "connectIntro": {
+    "text": "新しいターゲットで接続がアクティブになる前に、ステータス バナーで接続の確認 (接続を有効にする) を実行します。 OT セッションは、SSH、RDP、または VNC デスクトップではなく、PDU データを伝送します。",
+    "source_sha256": "34aea5c9e3ffaf77a9e0c4db9f450272744f71979b3bc64a95b203d5123124db"
+  },
+  "credentialsTitle": {
+    "text": "資格",
+    "source_sha256": "d48a617c7da5163c44f117b9b23d8c920e69b4aa83d7b6570d71a66f3a857183"
+  },
+  "credentialsIntro": {
+    "text": "ターゲットを選択し、パスワードを更新するか、記録されたガラス破りの公開をリクエストします。",
+    "source_sha256": "2a18cc971d50befd1d5af778ff78cc69d304504ea9c10a183697a754c5efae95"
+  },
+  "sessionsTitle": {
+    "text": "セッション/証拠",
+    "source_sha256": "26cf51ff70fec3bbb07700b3c95f0b87b1fe05cc2520521d3d766b686faf2283"
+  },
+  "sessionsIntro": {
+    "text": "記録された OT プロトコル セッションを監査証拠として確認します。 PDU タイムラインのセッションを開きます。",
+    "source_sha256": "c5ea2b4bf6a5139a7a6e861c6bd40a58ed469046642cb5d1e53bc50b18355f99"
+  },
+  "permissionsLoading": {
+    "text": "権限を読み込み中…",
+    "source_sha256": "946f1570503ea779a81b7b96df07bf94f027ca09e663f1349e59624e60e155a1"
+  },
+  "runDiscovery": {
+    "text": "検出を実行する",
+    "source_sha256": "23e7f7cbb14fb0f37d996c1634562c95f0f243cadebe1a40a3ed8c97be530ad2"
+  },
+  "running": {
+    "text": "実行中…",
+    "source_sha256": "46c541363b0253b1b7d736ca2ff004b6c8eb816f253c16bf2f154472152fb66d"
+  },
+  "statusHelpLive": {
+    "text": "Live は、このターゲットが最近検出プローブに応答したことを意味します。これは評価の評決ではありません。",
+    "source_sha256": "1e5705a04b271357ea4394b6f4a6578e3947d78d1da569e7ed0697d899596094"
+  },
+  "statusHelpBlocked": {
+    "text": "BLOCKED は、最後のプローブがこのターゲットに到達できなかったことを意味します。到達可能性を確認してから、検出を再度実行します。",
+    "source_sha256": "0f468c61bd9f57749f91d567ba7eb8fd24abc4b04fa465ea7cf7c0882df581cf"
+  },
+  "statusHelpPartial": {
+    "text": "「部分的」とは、ターゲットはリストされていますが、まだライブではないことを意味します。検出を実行してステータスを更新します。",
+    "source_sha256": "d92ef9372324ec8049396c5178d5cb057d11b6137f761e43517299c65f27645a"
+  },
+  "inventoryRows": {
+    "text": "インベントリ行​​: {{count}}",
+    "source_sha256": "053d87c1af6e0319a08ef69da5fd22bc75f0b3cfe6a244949932f778eeb44401"
+  },
+  "saveSchedule": {
+    "text": "スケジュールの保存",
+    "source_sha256": "387f355f83e2679c18a587ad4a913919e525160286023f5b0f05c6ef3840d807"
+  },
+  "checkConnectivity": {
+    "text": "接続を確認する",
+    "source_sha256": "2ce6af084aa8c1239148bf25a5696eceef2a27e0041cc09c4ac1f7ad6914ea91"
+  },
+  "connect": {
+    "text": "接続する",
+    "source_sha256": "1a2303ede07493acc7caaa7c737f3c52bcc9cf04372be19ed1b0af6b9f2c791e"
+  },
+  "configure": {
+    "text": "設定する",
+    "source_sha256": "6defafa2caa65304173956e3fbc26b6947c50bc769c08c3da32c1032fa6519d4"
+  },
+  "rotate": {
+    "text": "回転",
+    "source_sha256": "c3613b1704f54c8bd38987e4e810ae6040935d048ac5bb0dd9c0bde269ecf739"
+  },
+  "breakGlass": {
+    "text": "ガラス破り",
+    "source_sha256": "0db7ad9bb75a328f4d137c39ff77bece1b0f49b3bbdf5ac261bb0d755373d77f"
+  },
+  "openSession": {
+    "text": "オープンセッション",
+    "source_sha256": "b205bb47f81a30968789eac28cefb848c4b849245d4d12f9311557c5f56ce770"
+  },
+  "tryDefaults": {
+    "text": "デフォルトの資格情報を試してください",
+    "source_sha256": "11d0e658c685f8bff562b1bdee99b7c1bd416adf133e2ba277b19654688208e0"
+  },
+  "statusPartial": {
+    "text": "部分的",
+    "source_sha256": "a4d50fb85403654840e078e3ffe72dffe37df3ae280c6d98f39a41d346c88a14"
+  },
+  "statusLive": {
+    "text": "ライブ",
+    "source_sha256": "b64ac05f17e64d037db81a98f51e2688216e292ae9748f979f04dfbac49fd7fc"
+  },
+  "statusBlocked": {
+    "text": "ブロックされました",
+    "source_sha256": "a1f4014f85aac4c098906327b4ec4b6e3fb1308984bbe3531130643dc22feb02"
+  },
+  "statusPlanned": {
+    "text": "計画済み",
+    "source_sha256": "fb6f7c93e6bf3dfac450d268bf57844ae92b9c93f7d027b07f715bfbc467d225"
+  },
+  "discoveryFinished": {
+    "text": "検出はステータス {{status}} で終了しました",
+    "source_sha256": "de359dc0ccf8d271d334355e29fe9d487e2b8a6c8d255659871473d4884b6d6f"
+  },
+  "discoveryAssets": {
+    "text": "{{count}} ターゲットが報告されました",
+    "source_sha256": "cfd7aa07f1c5c95703594844402ff2dc801b9217faa57fa6ef82475699fd6bcf"
+  },
+  "discoveryProbes": {
+    "text": "プローブ成功: {{ok}}、失敗: {{fail}}",
+    "source_sha256": "b6a030ffc00ac3c9ce3adc8c5101d8f51f5dddeae4b38191ae4655f49ad8ae50"
+  },
+  "scanNetworks": {
+    "text": "ネットワークのスキャン (CIDR)",
+    "source_sha256": "9080238f38bde8077ec49d71acda404627fa08475848f928d6b1b168b3bc045e"
+  },
+  "scheduleEnabled": {
+    "text": "スケジュールが有効です",
+    "source_sha256": "cb056f3fdc52a08358758b733bec233aaa7eae95113109be3141a4158d4e6333"
+  },
+  "scheduleInterval": {
+    "text": "間隔 (分)",
+    "source_sha256": "b8de8e60ad9e726a112e3d166937927b09b694c60f11109fb36c13243090f152"
+  },
+  "protocolsSupported": {
+    "text": "サポートされているプロトコル",
+    "source_sha256": "d2b7b1871060a08f8633b3c2586f58ff4c6bad3355e30840fd071888d23f92b8"
+  },
+  "selectAsset": {
+    "text": "選択",
+    "source_sha256": "2a78025de6aae5e7ff88e5a951bb3a78ddd67388913529cf9e2dd9653e62b02d"
+  },
+  "oldPasswordEmpty": {
+    "text": "保存されているパスワードを使用するには、古いパスワードを空のままにしておきます。",
+    "source_sha256": "12819f1f1eec1bff041c5c55304feeb6cad3b3428b9716f814513bf28045079c"
+  },
+  "protocolChipsTitle": {
+    "text": "プロトコルチップ",
+    "source_sha256": "7ff13a1d3d411f1502899b85a10843751008bc1cd20d7cc7cb3d246e7b18930c"
+  },
+  "protocolChipsIntro": {
+    "text": "サポートされている OT プロトコルとその現在の接続準備状況。",
+    "source_sha256": "eea1759c662eac78dc98346e5b745627bd6cb9c616853b12c0990c16677ae7e4"
+  },
+  "checking": {
+    "text": "チェック中…",
+    "source_sha256": "ec963ffc911b840134fc738b41a8bb0493489c402a4a761efd36c16dea7d984b"
+  },
+  "checkConnectivityEnablesConnect": {
+    "text": "接続を確認します (接続を有効にします)",
+    "source_sha256": "4e91cc9dce98bc7ec7df0ece73c944073191c645102aa6f77930c5eb0658d099"
+  },
+  "checkConnectivityAria": {
+    "text": "すべての OT ターゲットの接続を確認します",
+    "source_sha256": "3267793c4dad5d7ab48bef23156ab0ed37b51aea18293834bd26bac5a4a776a9"
+  },
+  "inventoryHonesty": {
+    "text": "在庫ステータス: {{status}} · {{count}} 資産。 Connect は、各ダイヤル ポートの最後の TCP プローブを使用します (可用性のみ。ライブ セッションの証明ではありません)。",
+    "source_sha256": "f9d1740334d360d08c8a9fd0380566096034fdb4d770131d04d38bbda32d92ca"
+  },
+  "statusLiveDetail": {
+    "text": "Live は、このターゲットが最近検出またはプロトコル プローブに正常に応答したことを意味します。",
+    "source_sha256": "d2cbaeaabd2fcc542cfd2636c99365a6423d9dbd9bf167f1e55cba556ff5ec24"
+  },
+  "statusLiveNext": {
+    "text": "「接続」を使用してセッションを開くか、「構成」を使用して設定とスケジュールを編集します。",
+    "source_sha256": "6c02f6ef103f793f1edc3f804df6700e8a441f5d69d5c99e34308e6d02f5e305"
+  },
+  "statusBlockedDetail": {
+    "text": "BLOCKED は、最後の検出またはプロトコル プローブがこのターゲットに到達できなかったことを意味します。",
+    "source_sha256": "48906c5a92d1b1c65233b9a9ce4d85a6b5b913b63c4e8cc8b255803bceeb72de"
+  },
+  "statusBlockedNext": {
+    "text": "ホストが到達可能であることを確認し、Discover を実行して接続を再試行します。",
+    "source_sha256": "99b391421c950d99eb5603d365394c4c01d2705974d22b1b557b66cf61c5408f"
+  },
+  "statusPartialDetail": {
+    "text": "「部分的」とは、このターゲットがインベントリ内にあるものの、検出またはプロトコル プローブでライブであることがまだ完全に証明されていないことを意味します。これは配信ステータスであり、コンプライアンスの判定ではありません。",
+    "source_sha256": "ca3d0fffa899e037d14ae85de1ea8847ddd52a567c45fb37be0fcd682cb22cb4"
+  },
+  "statusPartialNext": {
+    "text": "次に、Discover を実行し、ターゲットの準備ができたら Connect を使用します。",
+    "source_sha256": "dbc7558af551d54abf8db6aa5d6b5ff46cbe1d66b5532d4e6acce072c5373da3"
+  },
+  "partialStatusHelp": {
+    "text": "「部分的」とは、ターゲットがリストされているものの、ディスカバリーまたはプロトコル・プローブでライブであることがまだ完全に証明されていないことを意味します。次のステップに進むために、ステータス チップにカーソルを合わせます。ステータス値は配信を表します。ステータス値はコンプライアンスの判定ではありません。",
+    "source_sha256": "774a027ecc6479ffe9ca2bb9f844f89e4bd98a65026a6f9249bcc85cc99734f2"
+  },
+  "discoveryJobsLive": {
+    "text": "ディスカバリージョブ (ライブ)",
+    "source_sha256": "590e5fa9296bcdb98515687c8b79da5b9ac9428dd82c0c97963e447f60974418"
+  },
+  "discoveryJobsIntro": {
+    "text": "スキャンするネットワークを入力し、検出を実行します。結果は在庫状況を更新します。オプションのスケジュールでスキャンを繰り返します。",
+    "source_sha256": "241ffca00cca9389b1221316ae088d71e489ae2f9f11cf4fddbbff63510ba831"
+  },
+  "scanNetworksHelper": {
+    "text": "CIDR 形式の 1 行に 1 つの IPv4 ネットワーク (例: 192.168.10.0/24)。この実行では最初のネットワークを使用します。デフォルト設定の場合は空のままにします。",
+    "source_sha256": "9168bacc150026356779e5098684717649d1e8df2bc01fae1b89e8168f929362"
+  },
+  "startDiscoveryAria": {
+    "text": "OT 検出ジョブの開始",
+    "source_sha256": "af81d43288c5e311b97d926fe0c43f54959b7a6020c25d1d32e137676bb5634c"
+  },
+  "enableScheduleAria": {
+    "text": "OT 検出スケジュールを有効にする",
+    "source_sha256": "1807f8d18ae899adb66386339c95100e4e87bc65e278be33473ef1046b4e2b4e"
+  },
+  "intervalAria": {
+    "text": "OT 検出間隔 (分単位)",
+    "source_sha256": "f871eca3ba4ba3d65c263144cc1662ed0371b52d66b1dbbd119fb9ff87698942"
+  },
+  "scanNetworksAria": {
+    "text": "OTディスカバリスキャンネットワーク",
+    "source_sha256": "5ffa298a64699bd81c240f5ae66d0e7d8c594f36f32f4ecc5191a52ed58abcf2"
+  },
+  "sharedNetworkScan": {
+    "text": "共有ネットワークスキャン",
+    "source_sha256": "c59fd1d82db9ed7ea487bb38bea0fbc932efa29b46e9da57b9176f74888340ae"
+  },
+  "tryDefaultsAria": {
+    "text": "{{ip}} で公開されたデフォルトの認証情報を試してください",
+    "source_sha256": "27df4593068f9cbb3a5b521c9f0202c8d7d6cd87789e78dcfc984e984fec92a3"
+  },
+  "discoveryJobAria": {
+    "text": "ディスカバリージョブ {{status}}",
+    "source_sha256": "6254f014b1861b00e62c8a3257a0b4848f97bb2b5f039708148424028d6fbbca"
+  },
+  "assetList": {
+    "text": "アセットリスト",
+    "source_sha256": "2d1e900888c3bf10f2421cc60091abef931033b021f1c883926df0bd761ea3bc"
+  },
+  "assetListAria": {
+    "text": "OT資産リスト",
+    "source_sha256": "6443189130f62ab8499b1c511ae0c5c41ca00e6b10a9653f7609955263730cc9"
+  },
+  "gridAsset": {
+    "text": "資産",
+    "source_sha256": "80d298c9f240900f00b327f5b611dc41aa785788d6fd3edbe35812ca88f02e9a"
+  },
+  "gridAssetHelp": {
+    "text": "OT インベントリ ターゲットの表示名。",
+    "source_sha256": "cc5bc4fa3b18b4f2098c2cbbc8a3e5eddc5c0eabc0d7b4cd4257cdba55226fc4"
+  },
+  "gridComment": {
+    "text": "コメント",
+    "source_sha256": "44f5e3fbec57be75ebfb2e42caf7f5ee1542f84748a0380b6f20238c4a257e1b"
+  },
+  "gridCommentHelp": {
+    "text": "このターゲットのオペレーターの使用例のメモ。切り詰められている場合は、カーソルを合わせると全文が表示されます。",
+    "source_sha256": "509db25522eee76b0a0c87668063d986ed55c27fe53f3df65a73b5e05ecab6e8"
+  },
+  "gridProtocol": {
+    "text": "プロトコル",
+    "source_sha256": "cf0883343f4abef779b777c35764f86c9f1f4324e8b5490840245d02ad2f7c6f"
+  },
+  "gridProtocolHelp": {
+    "text": "このシートの OT プロトコル チップ (Modbus、OPC UA、DNP3 など)。 IT SSH/RDP/VNC ではありません。",
+    "source_sha256": "d36881bbec0afd3aaa07b96f6addaaa62b848a0afcfdadaf9c5fc9102038f2a4"
+  },
+  "gridReachability": {
+    "text": "到達可能性",
+    "source_sha256": "66f0f43287781c8eb41ea0324942f05449e9e864657497105bac41627a336bb4"
+  },
+  "gridReachabilityHelp": {
+    "text": "接続ダイヤル ポート (ホスト:ポート) の TCP チェック。 Reachable は Connect コントロールのみを有効にし、ライブ セッションの証明は有効にしません。",
+    "source_sha256": "e888948942d4e8ed0f9edbe4c2a1199b8ef47e5d6879d3de139810539537e230"
+  },
+  "gridHost": {
+    "text": "ホスト",
+    "source_sha256": "4a823118b9ba8baa2f47489c0716f52755368e3e3c2c26d60736ccfa1bb21b5e"
+  },
+  "gridHostHelp": {
+    "text": "この OT ターゲットのホスト:ポートとしてのネットワーク エンドポイント。",
+    "source_sha256": "a95a507d130b4ce264b1f6e931a0b2bea30241ea82cd9b18f937ece14011a9e4"
+  },
+  "gridStatus": {
+    "text": "状態",
+    "source_sha256": "920e413c7d411b61ef3e8c63b1cb6ad058d5f95f8b481dbafe60248387d8c355"
+  },
+  "gridStatusHelp": {
+    "text": "インベントリ/ディスカバリからの配信ステータス (ライブ、部分的、またはブロック済み)。満たされていない、または認定されていない。",
+    "source_sha256": "65dfddcf488ccfdef51cfeb1175afbb7d98a71132d18d52d9b477b177e34c5c6"
+  },
+  "gridActions": {
+    "text": "アクション",
+    "source_sha256": "ff8059dc6752afdd30d275932b1d5031a2ec854b387a8c57ecc6689915293a43"
+  },
+  "gridActionsHelp": {
+    "text": "接続すると、OT PDU Live が開きます。 「構成」では、非シークレットのターゲット設定を編集します。 [選択] は、資格情報のブレークグラスの行を選択します。",
+    "source_sha256": "87698a99d9fdae279b853d407dd32ff5ad0f5087b8ff89d5e40ca29e18b63923"
+  },
+  "noComment": {
+    "text": "ノーコメント",
+    "source_sha256": "f23d3d1c412726e40c3d9a4a6bb2092437b82dd25116402ebe0951ee46751016"
+  },
+  "commentAria": {
+    "text": "コメント: {{text}}",
+    "source_sha256": "a53dc5bedc0088ba02c9ded6e17afcbde3f68456a2f78a87b56c8dd56d890951"
+  },
+  "protocolTip": {
+    "text": "OT プロトコル: {{label}}。 Connect は、SSH/RDP/VNC キャンバスではなく、このプロトコルの OT PDU セッションを開きます。",
+    "source_sha256": "35a23009a6b71f14c31175d1d2f867a2543ccdfcf2baad8c53df066371e634d9"
+  },
+  "reachTip": {
+    "text": "{{dial}} は {{status}}.{{last}} 可用性のみです。接続プロトコル サーフェス PASS ではありません。",
+    "source_sha256": "103fd43fdfabaa808a11ae1f5b34dc099ce2cad7e9d1f8e142172607ba2f93fa"
+  },
+  "lastChecked": {
+    "text": "最後にチェックしたのは {{when}} です。",
+    "source_sha256": "4de1e5c50f587a037dd626733bb8763efd9eb656dac068abff5d17788dc5325d"
+  },
+  "notCheckedYet": {
+    "text": "まだチェックされていません。",
+    "source_sha256": "f8c4f1c424909f3d25c18d25c27671f5ba69bcccf3fa61e8149a776716a13473"
+  },
+  "hostTip": {
+    "text": "ダイヤルエンドポイント {{ep}}",
+    "source_sha256": "4b35e3cf163d53229ed36a85750610c618b1d03c07c2d25f3afd05958305c931"
+  },
+  "hostAria": {
+    "text": "ホスト{{ep}}",
+    "source_sha256": "bd35bfaa68aa30daab97368ed8e57b44df3ffbb07e626cf6edfdccc17f09703b"
+  },
+  "connectReadyTitle": {
+    "text": "OT ブローカー セッション → OT PDU ライブ タイムラインに接続/開きます。セッションが接続されていることが証明されるまでのみ利用可能です。",
+    "source_sha256": "33c0978278a599b297f44c24269fcfb378bc065c21312909f32dbc1c9f545942"
+  },
+  "connectUnknownTitle": {
+    "text": "[接続のチェック] (上のステータス バナー) を実行するまで、接続はオフのままです。このターゲットに対してはまだプローブが実行されていません。",
+    "source_sha256": "9292ec3d1d63b163e309d49173c55dbc86360bab0fdecb23f0755523d22c9824"
+  },
+  "connectCheckingTitle": {
+    "text": "接続プローブが進行中です…完了するまで接続はオフのままです。",
+    "source_sha256": "3c34feb7d7eb55081e19734e05c0e9f13befe39ac864302b87b6c1b012cd8896"
+  },
+  "connectUnreachableTitle": {
+    "text": "最後のプローブではターゲットのダイヤル ポートに到達できませんでした。ネットワーク パスを修正した後、接続のチェックを再度実行します。",
+    "source_sha256": "c15d7b752ccdc9157c17d324ade3dbd437e5457b8324d2dfc1d2504708ff3107"
+  },
+  "connectAriaReady": {
+    "text": "OT ブローカー セッションを {{name}} に接続します",
+    "source_sha256": "920dee31b3bb1840573cd3f4eaa4c64c5570ad91518a3d07dc9179d1a37d71ed"
+  },
+  "connectAriaUnknown": {
+    "text": "接続が無効です — {{name}} に接続する前に接続を確認してくださいを実行します",
+    "source_sha256": "829d1d636e1854b446e5c2866a1ae1bae99b794d8c7ddc6559825c3ec1a58a0d"
+  },
+  "connectAriaUnreachable": {
+    "text": "接続が無効です — {{name}} は {{host}}:{{port}} では到達できません",
+    "source_sha256": "cf41a8276f8e8dae39cd84151df31bf05128d7880106ae40f6b76d7e753ebd84"
+  },
+  "configureAria": {
+    "text": "OT ターゲット {{name}} を構成する",
+    "source_sha256": "3d4ade21a687e67883a45f658bda3824e82bba48a10ec16ca6691cc7a7a47f88"
+  },
+  "selectAria": {
+    "text": "認証情報として {{name}} を選択します",
+    "source_sha256": "d73955db3e8d4f17263479c31f2452c2300177b6dcd949fec228c4a08965e5ad"
+  },
+  "reachable": {
+    "text": "到達可能",
+    "source_sha256": "f94b5f3d38405630f6f454e19f4bf325bc6db314351cf9f3298a7d211a97df03"
+  },
+  "unreachable": {
+    "text": "到達不能",
+    "source_sha256": "abaa46adb4e13ab2e7202ad1480a4182fde02f70e2e8ac27eb8b8dd04dc3c427"
+  },
+  "unknown": {
+    "text": "未知",
+    "source_sha256": "b764cdc0eab7137467211272fa539f1260d1bf2e71bcf6ff3bdc960f5c16aa14"
+  },
+  "wizardTitle": {
+    "text": "スタートアップウィザード",
+    "source_sha256": "8f6f7902dad68c15069e69c37d098560bdbb138d9a7a7b6f0400200bafab2538"
+  },
+  "wizardIntro": {
+    "text": "OT 環境をセットアップします。ターゲットを見つけてレビューし、インベントリに登録します。ステータス値は配信の証拠 (Live、Partial、または BLOCKED) であり、評価の判定ではありません。",
+    "source_sha256": "52432ec2223583b33927e7a0e5d0624795fc43467647189e343bf6f1e38bda5e"
+  },
+  "wizardStepWelcome": {
+    "text": "いらっしゃいませ",
+    "source_sha256": "0e2226b5235f0ff94a276eb4d07a3bfea74b7e3b8b85e9efca6c18430f041bf8"
+  },
+  "wizardStepEnvironment": {
+    "text": "環境",
+    "source_sha256": "9e471951a1b4106e54be128a21112b02914fe98cc79b2c92b49ee80c5464487c"
+  },
+  "wizardStepDiscover": {
+    "text": "発見する",
+    "source_sha256": "d4a33d5b78bccebe3f16843dc30e6c0f73b4eb6efb4e7114ddfebde7fa2c9954"
+  },
+  "wizardStepReview": {
+    "text": "確認して登録する",
+    "source_sha256": "dedf19d7c91b9d9834c046760e0a0a164546cbb593579ed41b3da11b8c3d81dc"
+  },
+  "wizardStepSchedules": {
+    "text": "スケジュール",
+    "source_sha256": "221ff19c904c30d01c3458103b8d58f9e0eed89712013da6edc739744d0b3089"
+  },
+  "wizardStepDone": {
+    "text": "終わり",
+    "source_sha256": "11a6767d5674c7e45f7e00dc525762275b3a48491ad6045427d2609cc496c516"
+  },
+  "gridName": {
+    "text": "名前",
+    "source_sha256": "dcd1d5223f73b3a965c07e3ff5dbee3eedcfedb806686a05b9b3868a2c3d6d50"
+  },
+  "gridPort": {
+    "text": "ポート",
+    "source_sha256": "72e9a59f5a1d6289dbacb35df897d6c007c55a27e77018455c37e7b372668475"
+  },
+  "gridEnrolled": {
+    "text": "登録済み",
+    "source_sha256": "655e733ea6106d12ae2c68c0c4650c66a8908a192d6aaa60ecbc1e92fd4ee0f7"
+  },
+  "yes": {
+    "text": "はい",
+    "source_sha256": "85a39ab345d672ff8ca9b9c6876f3adcacf45ee7c1e2dbd2408fd338bd55e07e"
+  },
+  "no": {
+    "text": "いいえ",
+    "source_sha256": "1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da161c6099be3691d"
+  }
+}

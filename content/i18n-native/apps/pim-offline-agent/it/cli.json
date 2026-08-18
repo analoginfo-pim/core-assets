@@ -1,0 +1,18 @@
+{
+  "cli.about": {
+    "text": "Agente AIC: elevazione dell'account offline e rotazione della password",
+    "source_sha256": "04035fdaec4f3aef455aea1f6d0ae260c70748ffd4f6961f42d5beb52405faf4"
+  },
+  "cli.long_about": {
+    "text": "Agente AIC (binario: pim-offline-agent)\n\nDESCRIZIONE:\n    L'agente AIC fornisce elevazione degli account offline e sicura\n    rotazione automatizzata delle password con integrazione del servizio web. Progettato per\n    ambienti aziendali che richiedono crittografia conforme a FIPS e\n    piste di controllo complete.\n\nCARATTERISTICHE PRINCIPALI:\n    - Codici di elevazione limitati nel tempo per l'escalation temporanea dei privilegi\n    - Rotazione automatica delle password con policy configurabili\n    - Diagnostica completa e monitoraggio della salute\n    - Traccia di controllo completa con funzionalità di esportazione JSON\n    - Metriche Prometheus per la visibilità operativa\n    - Registrazione strutturata con rotazione giornaliera\n\nUTILIZZO:\n    Console interattiva (senza argomenti):\n        pim-offline-agente\n        → suggerimento: prova 'pim-offline-agent --help' (uscita 2)\n\n    Esegui come demone (esplicito o non TTY/systemd bare start):\n        demone pim-offline-agent\n\n    Genera codice elevazione:\n        pim-offline-agent elevate --show-code\n\n    Esegui la diagnostica:\n        diagnosi pim-offline-agent\n\n    Configura in modo interattivo:\n        procedura guidata pim-offline-agent\n\n    Per ulteriore assistenza su un comando specifico:\n        pim-offline-agent <comando> --help\n\nDOCUMENTAZIONE:\n    Documentazione completa: README.md\n    Guida all'installazione: INSTALLATION_GUIDE.md\n    Configurazione del monitoraggio: MONITORING.md\n    Completamenti della shell: SHELL_COMPLETIONS_GUIDE.md",
+    "source_sha256": "763ba471d83fbc6ea7d4aef451a3d4fac8ff8b40af0dded046f7e75d2a4026ed"
+  },
+  "cli.help.locale": {
+    "text": "Lingua di visualizzazione dell'operatore per la guida CLI e i messaggi della console (en, de). Non modifica i nomi dei campi di controllo, registro eventi di Windows o syslog.",
+    "source_sha256": "ea54d1c157ba10af11f561d11893e1ffd2f8b3d25d04dac1269ed4a04c856957"
+  },
+  "cli.msg.audit_english_only": {
+    "text": "I payload di controllo, registro eventi di Windows e syslog rimangono in inglese americano (nomi di campi e ID evento stabili).",
+    "source_sha256": "66dab701f9bec400fcd79c3d0ff49e9273833d0c7a09d8d327ab7425e69af831"
+  }
+}

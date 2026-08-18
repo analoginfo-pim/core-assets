@@ -1,0 +1,714 @@
+{
+  "honesty_banner": {
+    "text": "Preparado com AIC Server para ajudar a empacotar uma avaliação. Esta não é uma decisão do avaliador e nem uma autorização da agência. Lacunas e incógnitas permanecem listadas. O design de segurança segue NIST SP 800-53 Rev 5. A embalagem CMMC não reduz esse padrão. Um avaliador decidirá Atendido após análise das evidências. Este texto por si só não marca um controle Met.",
+    "source_sha256": "1ac7fd71d0f6d9fd1acbfdccc16128921d38675df982d918eeb9c2f2593ed8d8"
+  },
+  "architecture_boilerplate": {
+    "text": "Este fichário descreve o modelo de enclave fixo do AIC Server usado para empacotamento de avaliação.\n\nO plano de controle inclui login, acesso privilegiado, inventário, conformidade com o estado atual, fichário de avaliação, divulgações e compartilhamento seguro. As máquinas gerenciadas usam agentes quando inscritas. A descoberta sem agente é usada quando há suporte. Grupos de sistemas definem o escopo de amostragem. O Acesso Remoto/Conexão registra sessões do operador em estações de trabalho atribuídas.\n\nOs campos da organização (nome legal, CAGE, nome do enclave, MSP) preenchem esta instância. Eles não alteram o modelo do produto.\n\nAs implantações típicas são executadas em infraestrutura em nuvem (operada por AIC ou locatário do cliente). Modelos de parceiros locais podem ser aplicados. AIC geralmente não mantém acesso de login aos hosts dos clientes. O trabalho diário usa funções de produtos, justificativas e citações de evidências.\n\nCite verificações de conformidade ao vivo, inventário, grupos de sistemas, citações de compartilhamento seguro (somente títulos e ids - sem corpos de documentos CUI), gravações do Connect, status de criptografia, divulgações e novos testes. Não trate esta narrativa apenas como prova. Lab SoftHSM e senhas de demonstração não são reivindicações de produção.\n\nA embalagem de primeira passagem cobre os níveis 1 a 3 do CMMC e as necessidades relacionadas do NIST SP 800-171/800-172. O NIST SP 800-53 continua sendo o piso de projeto de segurança.\n\nOs SKUs de nuvem têm como alvo as posturas FedRAMP e Microsoft GCC High quando selecionadas. Este texto não reivindica um FedRAMP ATO atual. As linhas de aprovação do avaliador permanecem em branco nesta ferramenta. Um avaliador decidirá Atendido após análise das evidências. Este texto por si só não marca um controle Met.",
+    "source_sha256": "32cdadc1afd2e4ac684c77b6dcfbd783372848090674eca78492978d7fa40b1d"
+  },
+  "fedramp_gcc_high_notes": {
+    "text": "As ofertas de nuvem visam posturas de implantação elevada do FedRAMP e do GCC. Este fichário não afirma que uma Autorização para Operar (ATO) já tenha sido concedida.",
+    "source_sha256": "0ac89655115028a2cf2e0e37eac8d518f173b535bc3519e26a5a051d7dee66c9"
+  },
+  "iga_out_of_scope_label": {
+    "text": "Fora do escopo desta passagem de produto – o AIC Server não oferece ciclo de vida de identidade empresarial (IGA) nesta versão. Descreva abaixo como esse cliente lida com o provisionamento de joiner/mover/learr hoje.",
+    "source_sha256": "65ffea1d7ebedf79367f38dfaaf2b168eaec66232e94cd8307ae3c30489f9f32"
+  },
+  "operator_authored": {
+    "text": "Narrativa de autoria do operador",
+    "source_sha256": "557cb9504a8014eba49f959ec9dea4b26b4135a4af2ea52ba4d42a826770dffe"
+  },
+  "readiness_pending": {
+    "text": "A prontidão da seção será calculada na montagem do fichário.",
+    "source_sha256": "a9b77b918de7e2db264683958c50c726a422b0773cca2d43ee19bef8a1fb16b3"
+  },
+  "floor_note": {
+    "text": "NIST SP 800-53 Rev 5 é o piso de projeto de controle. CMMC/800-171/800-172 são sobreposições de embalagens que reutilizam evidências de enclave.",
+    "source_sha256": "e04f84c82aa26c1471f6df3d285c302cd4b2b28ccfbf63b7d5fe7107e242a6f9"
+  },
+  "switch_effect": {
+    "text": "Mudar o padrão de avaliação remapeia a visão da lista de pendências e das evidências para aquela sobreposição de embalagens (quais práticas/famílias de controle estão no escopo). As evidências do enclave já coletadas são reutilizadas e remapeadas - não são apagadas ou coletadas novamente.",
+    "source_sha256": "7bc8674c1ca449a8796a85d3ae46ebe37357d080999b9b5d94dfaa2e5beeb309"
+  },
+  "attestation_default": {
+    "text": "As informações neste pacote são precisas e completas, tanto quanto é do meu conhecimento.",
+    "source_sha256": "ff4a7bfbac7a9b65fbfd9cc7c0df033cb2288315ef718fbde75f13cdd88c0ece"
+  },
+  "please_fill_in": {
+    "text": "Por favor preencha",
+    "source_sha256": "09e204be703fc7a988fcc9c4eab8daaf2e6b6110e2bf365c7faaaa00558ce356"
+  },
+  "please_complete": {
+    "text": "Por favor complete",
+    "source_sha256": "609bf84d165995a29b83131f1e7da1c2e74d247ee395e5c0cfe538be54f05e1d"
+  },
+  "section_titles": {
+    "cover": {
+      "text": "Folha de rosto",
+      "source_sha256": "d0d3453323938541c0460a9227ce234fe7d8fcc3b5b2db5c86292baa0cfd3bdd"
+    },
+    "architecture": {
+      "text": "Arquitetura e modelo operacional",
+      "source_sha256": "2db68515694d5bf1e0987ad904222d95fa7447385dcd0ce6cbaedf47eba6f633"
+    },
+    "toc": {
+      "text": "Índice",
+      "source_sha256": "e331da0741fb6d0552bc27483ba0720778440c520b59be917613781679ede70f"
+    },
+    "scoping_l1": {
+      "text": "Escopo CMMC L1/FCI",
+      "source_sha256": "cc75aaa1465cb606b68ab7a20259cb5b08e06b590ab90660307ab3bd0d82cd37"
+    },
+    "scoping_l2": {
+      "text": "Escopo e limite CMMC L2/CUI",
+      "source_sha256": "d078f1ce25a8c34004b1b6e2b30dc5324dd9e2c707da25130e03d8cbf8e462a2"
+    },
+    "ssp": {
+      "text": "Narrativas do PES (800-171 práticas)",
+      "source_sha256": "679c07226e42af52516c8803f6c33a9d0cfc94a0002ed9b02cf3066c31252b89"
+    },
+    "objective_workbook": {
+      "text": "Pasta de trabalho objetiva (800-171A)",
+      "source_sha256": "2ebbc17c857e225006a4a32c2e03def6ad995d7641b6a17651e88acab524c2c7"
+    },
+    "enhanced_800_172": {
+      "text": "Requisitos aprimorados de 800-172/CMMC L3",
+      "source_sha256": "11ee3bc18236298621f9117ad07bb126babf791421b94a8531bbf4070a4eb97e"
+    },
+    "current_state_gaps": {
+      "text": "Conformidade e lacunas no estado atual",
+      "source_sha256": "12f5adc6634fd35148aabab5872dc9e9a25f59a0446e32abf24828d51547105c"
+    },
+    "external_workstation_readiness": {
+      "text": "Preparação de estação de trabalho externa (WA/ERASG)",
+      "source_sha256": "c0a845ae94f99df7fcecd20295082198e407f33b939005bf2637ec2eb056c1f8"
+    },
+    "iga_provisioning_narrative": {
+      "text": "IGA/provisionamento (fora do escopo - narrativa do cliente)",
+      "source_sha256": "7ce3abf401734f4d002e5da8683de077a5d212be7b8316a978df1a76e832dc37"
+    },
+    "evidence_index": {
+      "text": "Índice de evidências por prática",
+      "source_sha256": "01d90f3aac78ea81a8410a8006b5b2d2f56eced29354ac681a28462d4ad345eb"
+    },
+    "incident_response": {
+      "text": "Resposta a Incidentes",
+      "source_sha256": "c8550dd23d3a233b9b80cf07f55aef9e6f9dccdacfdc936d84c85910b25527f7"
+    },
+    "poam": {
+      "text": "POA&M",
+      "source_sha256": "dfadfc4960359b3c714b53ba0f15221009e273c227109462bba09ea421ac2e9e"
+    },
+    "sprs": {
+      "text": "Planilha de pontuação SPRS",
+      "source_sha256": "ba2a98f333dce06733a15ad7ffd076ca12af304ebed327681a49ad4ad3d33529"
+    },
+    "assessor_notes": {
+      "text": "Notas do avaliador e registro de entrevistas",
+      "source_sha256": "c97354e37060a4c750ae4bb9e21ec707313eddee13aaf302edafe787b5a709c8"
+    },
+    "export_package_notes": {
+      "text": "Exportar notas do pacote",
+      "source_sha256": "167b08acdb077d3b409fcc19b948e6fe5c001e27d7a2a6ebca6bec85511cfe16"
+    }
+  },
+  "iga": {
+    "customer_entra_ad": {
+      "label": {
+        "text": "AD gerenciado pelo cliente/diretório externo",
+        "source_sha256": "24052b3cd2b9c49b52aa127ab1cae82f0ac32408769b06b741e22fbb03675579"
+      },
+      "boilerplate": {
+        "text": "O provisionamento e o ciclo de vida da identidade para esse cliente são tratados no Active Directory gerenciado pelo cliente e/ou em um diretório OIDC externo fora do AIC Server. O participante/mover/saída, a associação ao grupo e o provisionamento orientado por RH são de propriedade da equipe do IdP do cliente. Este fichário cita apenas o contexto de acesso e endpoint; ele não opera um conector IGA.",
+        "source_sha256": "66a7a56ba5120ea0b3e86fb772cdf4f339bded4c19e7136ce9a79934fb33e35f"
+      }
+    },
+    "msp_run_iga": {
+      "label": {
+        "text": "IGA executado por MSP",
+        "source_sha256": "4741f2538fb6268ae20a89e343ce1b02747d62ad97f1c9be729121e057336b66"
+      },
+      "boilerplate": {
+        "text": "Um MSP opera o ciclo de vida IGA/identidade deste cliente (joiner-mover-leaver, revisões de acesso e provisionamento relacionado) fora do servidor AIC. O MSP documenta procedimentos e evidências de acordo com a ferramenta IGA escolhida pelo cliente. O AIC Server não fornece IGA empresarial nesta passagem de produto.",
+        "source_sha256": "cc86925fa5196a459e44845ef891857faeb529d0ad2f3ef5f392071f256cc5a6"
+      }
+    },
+    "deferred_robert": {
+      "label": {
+        "text": "Adiado para futura colaboração no ciclo de vida da identidade",
+        "source_sha256": "54eec9b34e79d40337e48ef5714d4b9af1c3b5f3df38579bf3dda59e3bd6ae0f"
+      },
+      "boilerplate": {
+        "text": "O provisionamento de IGA empresarial/ciclo de vida está fora do escopo desta passagem do produto AIC Server. Está previsto para colaboração futura com o núcleo do ciclo de vida da identidade. Até que esse trabalho chegue, esse cliente documenta como o provisionamento é tratado fora deste produto (IdP, MSP ou parceiro). Não trate esta seção como evidência de que a AIC realiza AIG hoje.",
+        "source_sha256": "5ecf29b1c023ac4c8e103ba2e357ae959b475ee54198e512508b069ba0ca2e34"
+      }
+    },
+    "partner_netthunder": {
+      "label": {
+        "text": "Provisionamento de parceiro/local",
+        "source_sha256": "6fe11b2f0579ea2d9f9433cce802157eeecb3b55badc2c23e4403d555d19e44b"
+      },
+      "boilerplate": {
+        "text": "O provisionamento de identidade local ou operado por parceiro aplica-se a este cliente. O parceiro nomeado opera integrações de diretório/provisionamento. O AIC Server não oferece IGA empresarial nesta passagem de produto; descreva aqui o processo administrado pelo parceiro e a localização das evidências.",
+        "source_sha256": "761b80282f76e6da6862b84261f736cac83d340bac555b4c9a6eba20c66cf149"
+      }
+    },
+    "none_na": {
+      "label": {
+        "text": "Nenhum/não aplicável",
+        "source_sha256": "99268e9638155968a89d5ecbb4ae998ddec309bae9c3f5b0a4e457feb83fced5"
+      },
+      "boilerplate": {
+        "text": "O provisionamento IGA/empresarial não é aplicável ao limite de avaliação para esta instância do fichário ou nenhum recurso IGA está no escopo. Os operadores devem confirmar isso com o OSP antes da exportação. Isto não é uma afirmação de que os controlos de provisionamento são TEM.",
+        "source_sha256": "f295f42c80f3b3edc75c5b02f2f38311c138bbdda4fd5181f6480938632fae67"
+      }
+    }
+  },
+  "profiles": {
+    "cmmc": {
+      "label": {
+        "text": "CMMC",
+        "source_sha256": "0ecd57c0c4a4e075944d57d01aedc7c6e7cd733d982f0aad4bf53678ab1a0fe9"
+      },
+      "explanation": {
+        "text": "CMMC (32 CFR 170) é um pacote de avaliação do DoD sobre o NIST SP 800-171 (e, no Nível 3, requisitos aprimorados selecionados do NIST SP 800-172). O nível 1 cobre a salvaguarda básica da FCI; O Nível 2 se alinha às práticas 110 800-171 Rev 2 para CUI; O nível 3 adiciona requisitos aprimorados de 800-172. O CMMC não substitui o piso de projeto de controle NIST SP 800-53 Rev 5 - ele empacota evidências de avaliação para uma revisão C3PAO/DoD.",
+        "source_sha256": "cceb486611a80d28672aafc4ca0f2e48a4052220b013af9c3078e586916ab1d3"
+      }
+    },
+    "nist_800_171": {
+      "label": {
+        "text": "NIST SP 800-171",
+        "source_sha256": "f4856a2f7a01e12a623398b039c99476d5205d6791886eca5cb0357ebaeb3953"
+      },
+      "explanation": {
+        "text": "O NIST SP 800-171 Rev 2 define 110 requisitos de segurança em 14 famílias para proteger CUI em sistemas não federais. As embalagens de nível 1 concentram-se em práticas básicas/orientadas para FCI; O Nível 2 é o conjunto completo de 110 práticas comumente combinado com o CMMC Nível 2; O enquadramento de nível 3 pode fazer referência a expectativas adicionais melhoradas. O projeto de controle do produto ainda segue o piso NIST SP 800-53 Rev 5; 800-171 é uma embalagem de avaliação naquele andar.",
+        "source_sha256": "8c49b236b9e9a09787b9b81bb1a4752d606cea1724793135b9b6b8ad31f5f42f"
+      }
+    },
+    "nist_800_172": {
+      "label": {
+        "text": "NIST SP 800-172",
+        "source_sha256": "d8c82bfcd76ff4b5cf43ca875aa422768965b436af851f30c37854a6a70f6eb0"
+      },
+      "explanation": {
+        "text": "NIST SP 800-172 (fevereiro de 2021) adiciona 35 requisitos de segurança aprimorados além de 800-171. O CMMC Nível 3 seleciona um subconjunto destes. Esta visão de embalagem enfatiza requisitos aprimorados juntamente com a evidência 800-171/CMMC subjacente. As reivindicações aprimoradas não comprovadas permanecem vazias ou desconhecidas - alternando aqui o escopo de filtros/remapeamentos; não inventa novas evidências de hospedeiro.",
+        "source_sha256": "6a040a57641ec670d2c9dc3c1f3a771fc2c1ecf7adb60bde6070e360b401f98e"
+      }
+    },
+    "nist_800_53": {
+      "label": {
+        "text": "NIST SP 800-53",
+        "source_sha256": "2c8cae03f30fab0b8a30bbea566d264a76f93797a963653e6711af0d98348719"
+      },
+      "explanation": {
+        "text": "NIST SP 800-53 Rev 5 é o piso de projeto de controle para este produto (linha de base moderada, com Alto quando selecionado). As famílias de controle (AC, AU, CM, IA, SC, SI e outras) organizam o catálogo. As linhas CMMC / 800-171 / 800-172 em outros lugares são sobreposições de embalagens de avaliação que reutilizam a mesma evidência de enclave - elas não são um substituto mais fino para o piso 800-53.",
+        "source_sha256": "3db2e0c83b144ffe6fd7d4c3b5693439fefe46ef0c3fb867f2a5973362767e6c"
+      }
+    },
+    "level_1": {
+      "text": "Level 1",
+      "source_sha256": "b75cf05d6d2aa22cbde9f59628a7cc6a5d70c52517333ed827bca8a397471084"
+    },
+    "level_2": {
+      "text": "Level 2",
+      "source_sha256": "29cc4eb6673b99798e951e9628bd33f356f4dd56f9dd49a97770cd5db93d7064"
+    },
+    "level_3": {
+      "text": "Level 3",
+      "source_sha256": "42b03421cde76b84ff90b7eb6cb1a2821ad6388bdb15b3d67cb73fd5c508da0b"
+    },
+    "level_1_fci": {
+      "text": "Nível 1 (básico/FCI)",
+      "source_sha256": "d4de2c6ecdd7133771460d1c7c7978693f56cf3fadc5831f640aa7bf36c2b1e9"
+    },
+    "moderate": {
+      "text": "Moderado",
+      "source_sha256": "5c42afc7a23018d32dcff346792b575bcdf63be118b98a61084b1afac32b93e9"
+    },
+    "high": {
+      "text": "Alto",
+      "source_sha256": "c4ebc6d4a5832cd9415f906ad03661110c705a72381c8b8b145761d02e2dd23a"
+    },
+    "banner_cmmc_1": {
+      "text": "Alvo: CMMC Nível 1 (NIST SP 800-171 básico/FCI)",
+      "source_sha256": "7ccc8b2315a8fffacbb7f03bc8feb65e39014e9aa1b76974645ca8da98958088"
+    },
+    "banner_cmmc_2": {
+      "text": "Alvo: CMMC Nível 2 (NIST SP 800-171)",
+      "source_sha256": "64fae23e33a07ce3e2287ed575fd0c2064c7e0532691472208da9b30dff310a3"
+    },
+    "banner_cmmc_3": {
+      "text": "Alvo: CMMC Nível 3 (NIST SP 800-171 + NIST SP 800-172)",
+      "source_sha256": "a22143e0d5ba63339461a6a45e1627f63fec45b7e26a9a558d2efe5b9447c048"
+    },
+    "banner_171_1": {
+      "text": "Alvo: NIST SP 800-171 Nível 1 (básico/FCI)",
+      "source_sha256": "279aa6e675aac269acee37e58c963712bac8aef1df9a5f6b82f8f57c4bdb9622"
+    },
+    "banner_171_2": {
+      "text": "Alvo: NIST SP 800-171 Nível 2",
+      "source_sha256": "6ebecf05780a4cdeacef8606d81903133e88defce223c0d280e2f6915037b38c"
+    },
+    "banner_171_3": {
+      "text": "Alvo: NIST SP 800-171 Nível 3",
+      "source_sha256": "01e50b93a0bbc415590ce48c985868c6b590c27583cd550650e637b7da18e794"
+    },
+    "banner_172_2": {
+      "text": "Alvo: NIST SP 800-172 Nível 2",
+      "source_sha256": "3db43e1620e3e8106abff4e55f86a42700e85341ec04ec858c2cbc00f17e7ce2"
+    },
+    "banner_172_3": {
+      "text": "Alvo: NIST SP 800-172 Nível 3",
+      "source_sha256": "d5b486126e23bbac4b4bcff9cdee73bce25e40cf8b7bb6ed54fddf0f469eee53"
+    },
+    "banner_53_moderate": {
+      "text": "Alvo: NIST SP 800-53 Moderado",
+      "source_sha256": "65bb60ad0bc2da597310ea0ce2dfa5147e18952419de52d7f7f986cc28f59d24"
+    },
+    "banner_53_high": {
+      "text": "Alvo: NIST SP 800-53 Alto",
+      "source_sha256": "1a3ca5621947d7a284aa63f51a80f1db5325b12373e76570a2a588fc138ad2f5"
+    }
+  },
+  "wizard": {
+    "cover_standard": {
+      "label": {
+        "text": "Folha de rosto - padrão",
+        "source_sha256": "7715b12ff0c010ba74d5503b71ebbc7d44499ff371b1e74eebecd1f809414010"
+      },
+      "description": {
+        "text": "Narrativa de cobertura de estoque para embalagens de avaliação.",
+        "source_sha256": "588cdbc9350d4fbc38f71f242dc22f10c9d94f89db9122aa118e6772ce102d76"
+      }
+    },
+    "architecture_standard": {
+      "label": {
+        "text": "Arquitetura - padrão",
+        "source_sha256": "721e29df7d31d52668077231aee8c8b2372fbb6137087264bc556f3f1082d4ba"
+      },
+      "description": {
+        "text": "Visão geral da arquitetura de estoque para o sistema avaliado.",
+        "source_sha256": "73e7f3287c77c660cf9952b372c9e2a4b4a57c1216ded96186d96ba9f5564d69"
+      }
+    },
+    "toc_standard": {
+      "label": {
+        "text": "Índice - padrão",
+        "source_sha256": "46aea99a2fba4185670feb583bfb294be73e0ce6a1725edfd71a1b061b4a3f8e"
+      },
+      "description": {
+        "text": "Nota opcional acima do índice criado automaticamente.",
+        "source_sha256": "0169b01fdc1eba7faa394397da198043925704d605d53b3f7b17d733868089cd"
+      }
+    },
+    "scoping_l1_placeholder": {
+      "label": {
+        "text": "Nível 1 / Escopo FCI - andaime",
+        "source_sha256": "25b599b014f3c9698a777a8cacf465f647fa4336a22695b0e6b742ae43c7171b"
+      },
+      "description": {
+        "text": "Espaço reservado para escopo de informações de contrato federal de nível 1.",
+        "source_sha256": "c4234a71ffcd040d8197157177733b93306e6e222111f42d3da21c0ebf1c8d2c"
+      }
+    },
+    "scoping_l2_standard": {
+      "label": {
+        "text": "Escopo nível 2/CUI - padrão",
+        "source_sha256": "23105cae7f57a6f5bac5455e1ce491928da2c150e2639b80a303f62e9af06fbf"
+      },
+      "description": {
+        "text": "Narrativa de escopo do limite CUI de ações.",
+        "source_sha256": "07bab10da8193d0c5dc50af736eb1050d2755fdc68dfc6ba7ba6e4d3131f6294"
+      }
+    },
+    "ssp_standard": {
+      "label": {
+        "text": "Plano de segurança do sistema - padrão",
+        "source_sha256": "26d09422766733ff04e8bf1ab1181e30e8ba12712270cb3624c8a8d5cde4dd8b"
+      },
+      "description": {
+        "text": "Narrativa do plano de segurança do sistema de ações.",
+        "source_sha256": "77569c542d73a62fbcb53e1a2c4f5e35ef6d1d6e057badc71b92c46468c0989f"
+      }
+    },
+    "objective_workbook_sampling": {
+      "label": {
+        "text": "Objetivos – notas de amostragem",
+        "source_sha256": "102796e540b2c4532e2fdafe635954a5c0742bb43622ebe10578e6b6afe04428"
+      },
+      "description": {
+        "text": "Notas de amostragem de estoque para a apostila objetiva.",
+        "source_sha256": "c7dbc94fad43b9756aab8a161029d6de101d9aaf96439b411947b9c940882739"
+      }
+    },
+    "enhanced_800_172_scaffold": {
+      "label": {
+        "text": "Requisitos aprimorados - andaime",
+        "source_sha256": "17c160a535f7aade584de321f196618016685a5d6e95155ba2dc4f62a8c12e75"
+      },
+      "description": {
+        "text": "Andaime quando o Nível 3/800-172 estiver no escopo.",
+        "source_sha256": "73f71129fead481207203f4d871c3d1c88cc60617935ba56c6f811e264c49972"
+      }
+    },
+    "gaps_remediation_plan": {
+      "label": {
+        "text": "Lacunas - plano de remediação",
+        "source_sha256": "5e7fc6f0fbfba9b1f3d3bb4b2c9acf3a29d6bb7f3e65ab4c693ad7c4de1094f7"
+      },
+      "description": {
+        "text": "Linguagem padrão para lacunas abertas com proprietários e datas.",
+        "source_sha256": "72d37218e1605635d3e7967e9a1eaa07b2e84381154e6c6f977f970b108aa10d"
+      }
+    },
+    "iga_deferred_robert": {
+      "label": {
+        "text": "Provisionamento de identidade – fora do escopo",
+        "source_sha256": "f744c736a88d1ce5e71e66369c0842f8c440b8459ca412c19d509ce5bd164f12"
+      },
+      "description": {
+        "text": "Nota de estoque fora do escopo para provisionamento de identidade corporativa.",
+        "source_sha256": "98941cae214d70abc34fbf88130f5db0c1c0cb5abb81de22671e09ee0f63c11f"
+      }
+    },
+    "evidence_index_standard": {
+      "label": {
+        "text": "Índice de evidências - padrão",
+        "source_sha256": "50c3878840d06f7ffd513974bb77de5df829dc138cb7add6b1540bbf7b15c46e"
+      },
+      "description": {
+        "text": "Enquadramento do índice de evidências apenas para citações de ações.",
+        "source_sha256": "c8ebc98475a013cfb4bbcc937c7a0b4a8e74f978a52666420434b2495080efa7"
+      }
+    },
+    "poam_risk_accepted_template": {
+      "label": {
+        "text": "POA&M - enquadramento de aceitação de risco",
+        "source_sha256": "630ce425c8fc88b3c9a7dbaa36a29a0ff49803686916d8b948fb20caefefeaff"
+      },
+      "description": {
+        "text": "Enquadramento da aceitação do risco do plano de ação das ações.",
+        "source_sha256": "bd8f1ee5b1b203a4876aa23e0299f1c701864e6458b89903ee98476af9fabd5d"
+      }
+    },
+    "sprs_standard": {
+      "label": {
+        "text": "Pontuação SPRS - padrão",
+        "source_sha256": "e5df350c3354915758351484e4edfe35dee494f40195473e02761b00c4de8477"
+      },
+      "description": {
+        "text": "Enquadramento de planilha SPRS de estoque.",
+        "source_sha256": "a3fe6323a8471205a51b98ee547080d2902657f1de00a82a4d37d1bdba184e45"
+      }
+    },
+    "assessor_notes_sampling": {
+      "label": {
+        "text": "Notas do avaliador - amostragem",
+        "source_sha256": "8a3e3b933ee3eae8bc5a8f730395c8890708dd6b843039faf6fdfbf283c91b3d"
+      },
+      "description": {
+        "text": "Notas de encerramento da amostragem de estoque.",
+        "source_sha256": "4676abb19fe9b9adadf473fccfdab36cd53df68f932bf04809c0acf5a8e626d2"
+      }
+    },
+    "export_package_notes_standard": {
+      "label": {
+        "text": "Notas do pacote de exportação - padrão",
+        "source_sha256": "cba650446f8416e54ac0c73b101f688644997b22aac3a346c2abbdadd138c282"
+      },
+      "description": {
+        "text": "Nota de honestidade de exportação de ações.",
+        "source_sha256": "d55e0ae71740f6a7bf43c9f9233bc9bf303f3320810f1c657e30f5fa27f9a182"
+      }
+    },
+    "architecture_shared_services": {
+      "label": {
+        "text": "Herança de serviços compartilhados",
+        "source_sha256": "03f6f01d6823289ac908ebc0adcb6f3bcc5ced7711c26858d0569ceb8450855f"
+      },
+      "description": {
+        "text": "Quando alguns controles vêm de um serviço compartilhado corporativo.",
+        "source_sha256": "ba4f1e0b96efc7bc781c09efb21803c0e311082646dcbb015d950403d3ff9219"
+      }
+    },
+    "ssp_customer_responsibility": {
+      "label": {
+        "text": "Plano de segurança do sistema – configuração do cliente necessária",
+        "source_sha256": "53283b23c7ca5013b189d58c750a49c2429e105050694d70594dfbae4d137620"
+      },
+      "description": {
+        "text": "Quando a organização precisa concluir a configuração além dos padrões do produto.",
+        "source_sha256": "6b64d613ac2d4d1b5d713e6513558e65a78c00d9a896aacbcbcfa2b0cf0a450e"
+      }
+    },
+    "assessor_notes_follow_up": {
+      "label": {
+        "text": "Notas do avaliador - acompanhamento necessário",
+        "source_sha256": "eb8976a564c1e005766611ce93198165088be88a3d4f366305656a8ff5bd65fb"
+      },
+      "description": {
+        "text": "Quando a amostragem necessita de resposta da organização antes do fechamento.",
+        "source_sha256": "d4490cb1dc43ed50c7071363e22d559e32549a27bb32d178c152d9fcf1fc23ce"
+      }
+    },
+    "finding_justified_compensating": {
+      "label": {
+        "text": "Justificado - controle compensatório",
+        "source_sha256": "b6598ec884a576f99b78c8d42836e4b20ad9978902feab5fbb8cefe5af67e8c0"
+      },
+      "description": {
+        "text": "Explique a descoberta sem esclarecê-la; cite o controle compensatório.",
+        "source_sha256": "24020b4433723d8a6bbd4ed7fee427e88a65fe0cc736ee66424d51ef819cdee7"
+      }
+    },
+    "finding_justified_inherited": {
+      "label": {
+        "text": "Justificado - serviço compartilhado herdado",
+        "source_sha256": "4974a5868bc9fea8876603be006bcd2f1a06426c5f5af097c4f1ddfec3abab8f"
+      },
+      "description": {
+        "text": "Quando a lacuna vem de um serviço corporativo compartilhado.",
+        "source_sha256": "5ab8afe6c8ca7166b5d32466f025959de691a95419739a51c7df11baa267168a"
+      }
+    },
+    "finding_risk_accepted_temporary": {
+      "label": {
+        "text": "Risco aceito - temporário com revisita",
+        "source_sha256": "cd0008e1189bc558bea980e653beb59b981c61444045d606d0a7f0fba8232519"
+      },
+      "description": {
+        "text": "A organização aceita o risco residual com o proprietário e a data de revisão.",
+        "source_sha256": "d18d49112c1d151af2253794bc43168f3c1cf60c665e6daa2f05d103c29fbf0b"
+      }
+    },
+    "finding_not_applicable_scope": {
+      "label": {
+        "text": "Não aplicável - fora do escopo avaliado",
+        "source_sha256": "7b0bf2b12d157d1c7d58f777621bbaaa404772d0fb7f29dbe8bb2ebf6e6666a4"
+      },
+      "description": {
+        "text": "A conclusão não se aplica ao limite do sistema CUI avaliado.",
+        "source_sha256": "3021a79906e300bdc55bb9fc6dc06333d911c71a6d635a63eee9b528772fd1c0"
+      }
+    },
+    "signoff_msp_prepared": {
+      "label": {
+        "text": "Pacote preparado para MSP",
+        "source_sha256": "02c5f7b5d77cbf1e2ce30eb499ebb747a2110c0009659805dbb07fa0bebba682"
+      },
+      "description": {
+        "text": "Preenchimentos preparados por/revisados ​​por para um pacote liderado por MSP. As linhas do avaliador permanecem em branco.",
+        "source_sha256": "e0ee2c7543f27ba3b8efcefbfa5d1027264e2b9428a9b67c5a5417bdc8dc0b4b"
+      }
+    },
+    "signoff_osa_prepared": {
+      "label": {
+        "text": "Pacote preparado pela organização",
+        "source_sha256": "4fa73f60e5be386d0107ef1fb4d528f8fa492cfe5d3ce37dfe9e4214e10972ad"
+      },
+      "description": {
+        "text": "Preenchimentos preparados e afirmando espaços reservados para nomes oficiais para autopreparação.",
+        "source_sha256": "310ac29daae527967372afd5f369e34558791d605b0ed90eab86389893b50550"
+      }
+    },
+    "signoff_attestation_conservative": {
+      "label": {
+        "text": "Texto de atestado – padrão conservador",
+        "source_sha256": "ba6cea3ba2b6b6d69ed31aca97afc28194d1d06630df9ddc297a7ef0496aa205"
+      },
+      "description": {
+        "text": "Substitui apenas o texto do atestado; deixa campos de nome para o operador.",
+        "source_sha256": "a46d16c024f77ed2059fea8b91c385dafe0f1c1c2b813ad1992806015c4922e0"
+      }
+    }
+  },
+  "playbooks": {
+    "generic": {
+      "title": {
+        "text": "Genérico (CMMC Nível 2/171)",
+        "source_sha256": "fdbb5570083ebf16f39f50dc07fe6563fd3e41627d2c5b6d7cacca51fc520b41"
+      },
+      "description": {
+        "text": "Respostas de seção padrão neutras e firmes para empacotamento CMMC Nível 2/NIST SP 800-171.",
+        "source_sha256": "c62ed3d56921ab4d36e1dc27e512c7c70dbe450986e5846899c2f8d40627a196"
+      }
+    },
+    "generic-cmmc-l1": {
+      "title": {
+        "text": "Genérico (CMMC Nível 1)",
+        "source_sha256": "2b7f73b898148e300f67c24e5ee4b3c57f27b4aa849b80c87ae7c01a120df584"
+      },
+      "description": {
+        "text": "Respostas de seção padrão neutras e firmes para empacotamento CMMC Nível 1/FCI.",
+        "source_sha256": "d1138d28dca953ed928a95ff0a1252b68913e2340969153dbe568514965e76ce"
+      }
+    },
+    "generic-cmmc-l2": {
+      "title": {
+        "text": "Genérico (CMMC Nível 2/171)",
+        "source_sha256": "fdbb5570083ebf16f39f50dc07fe6563fd3e41627d2c5b6d7cacca51fc520b41"
+      },
+      "description": {
+        "text": "Respostas de seção padrão neutras e firmes para empacotamento CMMC Nível 2/NIST SP 800-171.",
+        "source_sha256": "c62ed3d56921ab4d36e1dc27e512c7c70dbe450986e5846899c2f8d40627a196"
+      }
+    },
+    "generic-cmmc-l3": {
+      "title": {
+        "text": "Genérico (CMMC Nível 3)",
+        "source_sha256": "5eb2dcd757f825e1e261eb87e8a8bc6d77ea3a25a1d3ebc6d59cffb584abc39f"
+      },
+      "description": {
+        "text": "Respostas de seção padrão neutras e firmes para empacotamento CMMC Nível 3/800-172.",
+        "source_sha256": "c9de59f13271299b87516174c2a0a18d37813117e12b5a0c37cc647166a5d28c"
+      }
+    },
+    "generic-nist-800-171-l1": {
+      "title": {
+        "text": "Genérico (NIST SP 800-171 Nível 1)",
+        "source_sha256": "e6832ee289a0e0fd4efd48c1cb520128f5b23be894ebba15d455928fe69af3ff"
+      },
+      "description": {
+        "text": "Respostas de seção padrão neutras e firmes para empacotamento NIST SP 800-171 Nível 1.",
+        "source_sha256": "829b6762457d117dcfb31eb04ecc884cbb7de79e99a2f9b8fcf2f1fe2feaec24"
+      }
+    },
+    "generic-nist-800-171-l2": {
+      "title": {
+        "text": "Genérico (NIST SP 800-171 Nível 2)",
+        "source_sha256": "e76710dac2ce298e6578cafe569cfd2b2893c8b0d98460efe4b180e887b18636"
+      },
+      "description": {
+        "text": "Respostas de seção padrão neutras e firmes para empacotamento NIST SP 800-171 Nível 2.",
+        "source_sha256": "3e3d9d867efa34f06060a24462bd341733bf44c17d4118479f33b043a352d2ea"
+      }
+    },
+    "generic-nist-800-171-l3": {
+      "title": {
+        "text": "Genérico (NIST SP 800-171 Nível 3)",
+        "source_sha256": "4d2d120076ecb566da9c9e0859b384f1f7770ff870ea365ce0d4926bc866a48b"
+      },
+      "description": {
+        "text": "Respostas de seção padrão neutras e firmes para empacotamento NIST SP 800-171 Nível 3.",
+        "source_sha256": "647e74ed59d2aa97d1aa5d760061f518b2ecb7e8eb59da53a9181613d335ab87"
+      }
+    },
+    "generic-nist-800-172-l2": {
+      "title": {
+        "text": "Genérico (NIST SP 800-172 Nível 2)",
+        "source_sha256": "998b873c1e2b936acdb1efbff5b65be99d72e2eb211b4281decd2d7b3dcb840a"
+      },
+      "description": {
+        "text": "Respostas de seção padrão neutras e firmes para empacotamento NIST SP 800-172 Nível 2.",
+        "source_sha256": "ca7d12202726085fe29e442c60dde3196c1a67c165168272b112981b58dea753"
+      }
+    },
+    "generic-nist-800-172-l3": {
+      "title": {
+        "text": "Genérico (NIST SP 800-172 Nível 3)",
+        "source_sha256": "d23a1d190fca1a0e9c93115b47749a4bddbecffd7c4d85ce792036e1392a0606"
+      },
+      "description": {
+        "text": "Respostas de seção padrão neutras e firmes para empacotamento NIST SP 800-172 Nível 3.",
+        "source_sha256": "0dfe8b6e0c756b54f954f2a2a04732b1dda61fb393a494311a21a584c590f12f"
+      }
+    },
+    "generic-nist-800-53-moderate": {
+      "title": {
+        "text": "Genérico (NIST SP 800-53 Moderado)",
+        "source_sha256": "9a8316062f37343b868624a31e2ac1d3a4473efd01719ace8bcc33668dcc84bb"
+      },
+      "description": {
+        "text": "Respostas de seção padrão neutras e firmes para empacotamento moderado do NIST SP 800-53.",
+        "source_sha256": "08d63df26e9d272605cb3079c209b76702f1281fda60d8c383d0cbc49263e226"
+      }
+    },
+    "generic-nist-800-53-high": {
+      "title": {
+        "text": "Genérico (NIST SP 800-53 Alto)",
+        "source_sha256": "ca38f9726017c5c9bd2cd61af465b3f029543739de80cab95699d6fd503141c1"
+      },
+      "description": {
+        "text": "Respostas de seção padrão neutras e firmes para empacotamento NIST SP 800-53 High.",
+        "source_sha256": "8dc0398970b47e420b60b92ba5c9af744d8d86062eef1943146be030cb51412d"
+      }
+    },
+    "sample-audit-llp-cmmc-l2": {
+      "title": {
+        "text": "Exemplo de Auditoria LLP (CMMC Nível 2)",
+        "source_sha256": "8ec8c81909d326128ee2ea5a07a7ba97d4170bc6e30f323f6ee6352a041fe47c"
+      },
+      "description": {
+        "text": "Exemplo de clone firme do manual genérico CMMC Nível 2.",
+        "source_sha256": "b55f56186d6be2f3b10340549a3c795283d376b650839d709f10aad6a970bcf2"
+      }
+    },
+    "scaffold-pci": {
+      "title": {
+        "text": "Andaime (PCI)",
+        "source_sha256": "45c35563e93ad609d5255da0da5a266fec273a767436517b0fdba715490febdc"
+      },
+      "description": {
+        "text": "Catálogo incompleto honesto – as chaves da seção PCI ainda não estão no contorno do fichário.",
+        "source_sha256": "0af561890c028ef439071801e3a76b262091fcc02ca3ede08f5b8f49151919d0"
+      }
+    },
+    "scaffold-gdpr": {
+      "title": {
+        "text": "Andaime (GDPR)",
+        "source_sha256": "7031eb401397ac1d2480953fcb09338f319fe087065f30092ed5756b9c26c4b8"
+      },
+      "description": {
+        "text": "Catálogo incompleto honesto – as chaves da seção GDPR ainda não estão no resumo do fichário.",
+        "source_sha256": "4fb5493e1860cf9eeaf92fd0481f177803cda2adc6f34e0377059ceddd09a030"
+      }
+    },
+    "scaffold-california": {
+      "title": {
+        "text": "Andaime (Califórnia / CPRA)",
+        "source_sha256": "570b592e11f56b87870d9e4920d52e1db1440c9d46b0916541d8bb6c80288e32"
+      },
+      "description": {
+        "text": "Catálogo incompleto honesto – as chaves da seção de privacidade da Califórnia ainda não estão no resumo do fichário.",
+        "source_sha256": "fe00f76ded67fa0dff92372de4ca3ca18e32dc4bef5b9426f06972a366813e11"
+      }
+    },
+    "scaffold-spec-24": {
+      "title": {
+        "text": "Alinhamento Spec 24 / Spec 2400 (pacote de documentação pública)",
+        "source_sha256": "0f3b128e0b9f5accfb3384e8a993630aacc80a3814a9fdb59a57f63e345b1185"
+      },
+      "description": {
+        "text": "Este não é um padrão licenciado. O mapeamento é proveniente de documentação pública na Spec 24/ATA Spec 2400 e não há garantia de que esteja correto. Não é endossado ou apoiado por licenciadores da Spec 24.",
+        "source_sha256": "a1701022d019280f92d9862f5b459886fe41757eb10bd4293c9e469f023e4478"
+      },
+      "sections": {
+        "cover": {
+          "text": "<h2>Pacote de alinhamento Spec 24 / Spec 2400</h2><p>Preparado por {auditor_name} ({company}) em {date}.</p><p><strong>Isenção de responsabilidade.</strong> Este não é um padrão licenciado. O mapeamento é proveniente de documentação pública na Spec 24/ATA Spec 2400 e não há garantia de que esteja correto. Ele não é endossado ou apoiado por licenciadores Spec 24, Airlines for America ou pelo Programa ATA e-Business.</p>",
+          "source_sha256": "d1dfc80feb8c20f71885acca866f238f25893f1836b7cf3771c90d4f53289d22"
+        },
+        "architecture": {
+          "text": "<h2>Qual ​​a contribuição deste produto</h2><p>O texto de visão geral pública descreve a troca de uma aeronave ou configuração de componente permitida. Este fichário usa inventário, acesso privilegiado, relatórios de prova de configuração e registros de aprovação de treinamento. Não é uma prova de aeronavegabilidade da aeronave.</p>",
+          "source_sha256": "351de7199a8e0a1fb4186d42efdc4985267add758dcd0be4b519c27c90804263"
+        },
+        "current_state_gaps": {
+          "text": "<h2>Status de entrega honesto</h2><p>Ao vivo: acesso privilegiado e auditoria de sessão. Parcial: inventário de TI/TO versus arquivos de aeronaves. Ausente: análise de arquivo Spec 2400 e validação de posição de função. O mapeamento é proveniente apenas de documentação pública e não há garantia de que esteja correto.</p>",
+          "source_sha256": "480bf3f89ca70193503d9a46d130fd67f5c427a48ac03c6727a19783937a9af8"
+        },
+        "evidence_index": {
+          "text": "<h2>Índice de evidências</h2><p>Cite registros de prova de configuração, atividade privilegiada, inventário e atestado de treinamento. As chaves de tema são de autoria da AIC. Eles não são números de cláusula licenciados da Spec 2400.</p>",
+          "source_sha256": "834b3e0c7e75fe32ebf62555b3df13628285ebb2ba5b1e0943ac156f1a6d6bff"
+        },
+        "assessor_notes": {
+          "text": "<h2>Notas do avaliador</h2><p>Pergunte como as referências licenciadas da Spec 2400 são inseridas na guia mapeamentos de clientes. Não cole trechos licenciados da Spec 2400 nesta pasta.</p>",
+          "source_sha256": "f7639951882bb4fbd9770bf2781ff725d2129efe0fb2ed0d1d4cdaed48f2e34c"
+        },
+        "export_package_notes": {
+          "text": "<h2>Notas de exportação</h2><p>Inclua a isenção de responsabilidade da documentação pública em cada exportação. Não reivindique que o pacote valida os arquivos de configuração permitida da aeronave.</p>",
+          "source_sha256": "b9ac9c36bb0c73c89925b61093638288e230bec9af84e2ea72278613f5543a5d"
+        }
+      }
+    }
+  }
+}

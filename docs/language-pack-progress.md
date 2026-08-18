@@ -4,25 +4,27 @@ Partner-readable status for Phil and Robert. Updated after each milestone push t
 
 ## Latest
 
-**core-assets SHA:** `e9d0bcd` (main)
+**core-assets SHA:** *(pending push — Wave C)*
 
-**Done through Wave B** against current US English key set (`en_total` 536 for `aic-server`):
+**Wave C complete** (`ja`, `ko`, `pt-BR`, `it`, `he`) against full EN leaf set (`en_total` 1006 product-all; `aic-server` subset 536):
 
 | Tag | missing | stale | Notes |
 | --- | ---: | ---: | --- |
-| de | 16 | 0 | Large orphan set vs thinner `en` SPA |
-| fr | 0 | 0 | Wave A |
-| es | 0 | 0 | Wave A |
-| en-GB | 0 | 0 | Coverage complete; quality Partial (long strings often still US English) |
-| zh-Hans | 0 | 0 | Wave B |
-| zh-TW | 0 | 0 | Wave B; not converted from zh-Hans |
+| ja | 0 | 0 | Wave C; formal です/ます |
+| ko | 0 | 0 | Wave C; formal polite |
+| pt-BR | 0 | 0 | Wave C; Brazilian formal |
+| it | 0 | 0 | Wave C; Lei |
+| he | 0 | 0 | Wave C; formal Hebrew; RTL |
 
-Also on disk: manifest, glossary, Python hash/audit tools, MIT flags (18 tags), developer standard, handbook updates.
+Native `gui` / `agent` / `recording` included in the 1006 — 0 missing vs EN for all five tags. Audit: `docs/language-pack-audit-aic-server.json`.
 
-**Not started:** Wave C (`ja`, `ko`, `pt-BR`, `it`, `he`) and Wave D (`pl`, `tr`, `nl`, `sv`, `fi`, `ar`) — no `content/locales/<tag>` folders yet.
+Prior Wave A/B tags unchanged (de still 16 missing on thinner SPA; fr/es/en-GB/zh-Hans/zh-TW at 0/0 for aic-server).
+
+**Not started:** Wave D (`pl`, `tr`, `nl`, `sv`, `fi`, `ar`).
 
 ## History
 
+- *(this push)* — Wave C ja/ko/pt-BR/it/he full catalogs
 - `e9d0bcd` — thin EN stubs for Jump / DB Mgmt agents
 - `7bd001c` / `417f904` — Wave B en-GB / zh-Hans / zh-TW
 - `5f59b0d` — handbook, flags, developer standard

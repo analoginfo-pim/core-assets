@@ -1,0 +1,18 @@
+{
+  "cli.about": {
+    "text": "סוכן AIC - העלאת חשבון לא מקוון וסיבוב סיסמה",
+    "source_sha256": "04035fdaec4f3aef455aea1f6d0ae260c70748ffd4f6961f42d5beb52405faf4"
+  },
+  "cli.long_about": {
+    "text": "סוכן AIC (בינארי: pim-offline-agent)\n\nתיאור:\n    סוכן AIC מספק העלאת חשבון מאובטח ולא מקוון ו\n    סיבוב סיסמאות אוטומטי עם שילוב שירותי אינטרנט. מיועד ל\n    סביבות ארגוניות הדורשות קריפטוגרפיה תואמת FIPS ו\n    מסלולי ביקורת מקיפים.\n\nתכונות ליבה:\n    - קודי גובה מוגבלים בזמן להסלמה זמנית של הרשאות\n    - סיבוב סיסמה אוטומטי עם מדיניות ניתנת להגדרה\n    - אבחון מקיף וניטור בריאות\n    - מסלול ביקורת מלא עם יכולות ייצוא JSON\n    - מדדי פרומתאוס לנראות תפעולית\n    - כריתת עצים מובנית עם סיבוב יומי\n\nשימוש:\n    קונסולה אינטראקטיבית (ללא טיעונים):\n        pim-offline-agent\n        → טיפ: נסה את 'pim-offline-agent --help' (יציאה 2)\n\n    הפעל בתור דמון (התחלה מפורשת, או ללא TTY / מערכת הפעלה):\n        pim-offline-agent daemon\n\n    צור קוד גובה:\n        pim-offline-agent elevate --show-code\n\n    הפעל אבחון:\n        אבחון pim-offline-agent\n\n    הגדר באופן אינטראקטיבי:\n        אשף pim-offline-agent\n\n    לעזרה נוספת על פקודה ספציפית:\n        pim-offline-agent <command> --help\n\nתיעוד:\n    תיעוד מלא: README.md\n    מדריך התקנה: INSTALLATION_GUIDE.md\n    הגדרת ניטור: MONITORING.md\n    השלמות מעטפת: SHELL_COMPLETIONS_GUIDE.md",
+    "source_sha256": "763ba471d83fbc6ea7d4aef451a3d4fac8ff8b40af0dded046f7e75d2a4026ed"
+  },
+  "cli.help.locale": {
+    "text": "שפת תצוגת מפעיל עבור עזרה והודעות מסוף של CLI (en, de). לא משנה את שמות השדות של ביקורת, יומן אירועים של Windows או syslog.",
+    "source_sha256": "ea54d1c157ba10af11f561d11893e1ffd2f8b3d25d04dac1269ed4a04c856957"
+  },
+  "cli.msg.audit_english_only": {
+    "text": "מטענים של ביקורת, יומן אירועים של Windows ו-syslog נשארים באנגלית אמריקאית (שמות שדות יציבים ומזהי אירועים).",
+    "source_sha256": "66dab701f9bec400fcd79c3d0ff49e9273833d0c7a09d8d327ab7425e69af831"
+  }
+}

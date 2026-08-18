@@ -1,0 +1,74 @@
+{
+  "cli.about": {
+    "text": "AIC 서버 API 서버",
+    "source_sha256": "9b5030c3213a388ab38ef5877e7c33e2615a5fcd5470d337c50caa4de93a8913"
+  },
+  "cli.help.locale": {
+    "text": "CLI 도움말 및 콘솔 메시지에 대한 운영자 표시 언어(en, de). 감사, Windows 이벤트 로그 또는 syslog 필드 이름을 변경하지 않습니다.",
+    "source_sha256": "ea54d1c157ba10af11f561d11893e1ffd2f8b3d25d04dac1269ed4a04c856957"
+  },
+  "cli.help.install_service": {
+    "text": "Windows 서비스(상승) 또는 Linux(루트)의 시스템 장치로 설치합니다.",
+    "source_sha256": "249d82c97f104b970b99e46f48b86fbc2c1f0c0df77ebdb32694b7f3bc1c14e1"
+  },
+  "cli.help.windows_service_account": {
+    "text": "Windows 전용(--install-service 사용): SCM 로그온. LocalSystem은 생략합니다. 단축키: 로컬 시스템, 네트워크 서비스, 로컬 서비스; 그렇지 않으면 DOMAIN\\User 또는 .\\User.",
+    "source_sha256": "e0fed1684dbc18830e788315b20019a1369bbe3854455f453c889a92390816a8"
+  },
+  "cli.help.windows_service_password": {
+    "text": "Windows 전용(--install-service 사용): sc.exe 비밀번호에 대한 서비스 계정 비밀번호=. 프로세스 명령줄에 표시됩니다. LocalSystem/NT AUTHORITY 또는 gMSA/비밀번호 없는 계정의 경우 생략합니다.",
+    "source_sha256": "73b64e34213ccfa565605dbed747ae5d361c58d99156ecf46756162d174b5c49"
+  },
+  "cli.help.uninstall_service": {
+    "text": "--install-service로 설치된 Windows 서비스 또는 Linux 시스템 장치를 제거합니다.",
+    "source_sha256": "be40ce285d07cdcbe7a0d969efa253c4e5e44c815df8a7f8d8b9860d8418111c"
+  },
+  "cli.help.start_service": {
+    "text": "설치된 서비스를 시작합니다(sc start / systemctl start).",
+    "source_sha256": "28af9fa1299c64e54773d467f2b511acf7a52437bb7236fa0a740210a7606566"
+  },
+  "cli.help.stop_service": {
+    "text": "설치된 서비스를 중지합니다(sc stop / systemctl stop).",
+    "source_sha256": "df561725c8481a3282c25cb9292652101cf48e8c8bc8dd888fd259c56ece6918"
+  },
+  "cli.help.config_dir": {
+    "text": "연구실/WSL 연기에 대한 샌드박스 설정 루트(AppConfig를 HKLM 또는 /etc 대신 {dir}/pim-offline-server/로 라우팅) 이 플래그를 명시적으로 전달하세요. 프로세스 환경 변수가 없습니다.",
+    "source_sha256": "ce6051d6d4e9cf0fa5d458a2d45ddde022e1ebc5572a070b0c056b92d254c6f0"
+  },
+  "cli.cmd.run": {
+    "text": "포그라운드(systemd/콘솔)에서 AIC 서버 데몬을 실행합니다.",
+    "source_sha256": "2201ed894842e7f5544b809d4677947ea1441890a02b8cc0692d0b663bac1367"
+  },
+  "cli.cmd.version": {
+    "text": "패키지 버전을 인쇄합니다(--version / -V와 동일한 페이로드).",
+    "source_sha256": "cfcdba07c20fc6676ef1e1844875da1b8c6f5169b3de312f20ed58d86b3bda47"
+  },
+  "cli.cmd.readiness_report": {
+    "text": "라이브 서버 상태에서 평가된 평가자용 CMMC L2 엔클레이브 준비 보고서를 내보냅니다(비밀 없음).",
+    "source_sha256": "a7a44f8f1b8034b087339f9ef23a440d934218337319954044e4c9f3febf615b"
+  },
+  "cli.cmd.meter_usage": {
+    "text": "보수적이고 개인 정보가 보호되는 사용량 스냅샷을 수집하고 선택한 Marketplace 측정 공급자(기본값: 오프라인 테스트 실행 레코더)를 통해 전달합니다.",
+    "source_sha256": "1a95eaca40c24536837346566c713b525ce9e1f2f964a1fc6ec656ef43bea5b8"
+  },
+  "cli.help.meter_dry_run": {
+    "text": "클라우드 공급자가 선택된 경우에도 오프라인 테스트 실행 레코더를 강제 실행합니다.",
+    "source_sha256": "dc25e2bb9fe3f40cfc0bad627473069f031e15dc01779a894bc12b0bb7005d2a"
+  },
+  "cli.help.meter_plan_only": {
+    "text": "계획과 클라우드별 준비 매트릭스를 인쇄한 다음 스냅샷을 수집하거나 파견하지 않고 종료합니다.",
+    "source_sha256": "f1d3aaf7ec84c2db856f9087084e38093fa3fcbc59fe9c35fdca1bfb315b64c9"
+  },
+  "cli.help.readiness_format": {
+    "text": "출력 형식: json(기계 판독 가능) 또는 md(Markdown 체크리스트).",
+    "source_sha256": "56d3eaa8d6cdb6ae4fc7fa5a149d18008de1e1ab5c160768d22f73b51bfbcba9"
+  },
+  "cli.msg.audit_english_only": {
+    "text": "감사, Windows 이벤트 로그 및 syslog 페이로드는 미국 영어(안정적인 필드 이름 및 이벤트 ID)로 유지됩니다.",
+    "source_sha256": "66dab701f9bec400fcd79c3d0ff49e9273833d0c7a09d8d327ab7425e69af831"
+  },
+  "cli.msg.api_codes_english": {
+    "text": "API 오류 코드는 영어로 유지됩니다. snake_case; 관리자 SPA는 코드를 로케일 텍스트에 매핑합니다.",
+    "source_sha256": "1fa569f0ad93f293d06b8054d186416e0842b691eff86bed1aad9dc4ef187ab3"
+  }
+}

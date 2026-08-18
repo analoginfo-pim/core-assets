@@ -1,0 +1,214 @@
+{
+  "categories": {
+    "Operations": {
+      "text": "運営",
+      "source_sha256": "358cc201f87d9dc9defd3eac467a62fae720aa99a76be8b98e0fc9b3893a427d"
+    },
+    "Privileged Access": {
+      "text": "特権アクセス",
+      "source_sha256": "3d19a388ae68684eb49f46ec2d3b8f9fb6e2d5cc2067d3f2bf332b86608c6edd"
+    },
+    "Compliance Evidence": {
+      "text": "コンプライアンスの証拠",
+      "source_sha256": "2f455d2c48cb6e4ce6a05f0a0fc60e838d3c018047a829185a1c5ac50c321c6c"
+    }
+  },
+  "edit_guidance": {
+    "text": "出荷された定義 — 読み取り専用。クローンを作成してカスタマイズします。カタログエントリは不変のままです。クローンにはプレゼンテーション オーバーレイのみが保存されます (データ ソースとコレクターは出荷時に所有されたままになります)。監査証拠パッケージ用に JSON をエクスポートします。",
+    "source_sha256": "fc4a7905cd944ff1d34d7fc0606e8211b4afdc79b6134ef02b8515f374fb9957"
+  },
+  "aic.audit-activity.v1": {
+    "display_name": {
+      "text": "監査活動",
+      "source_sha256": "88b2385cda72da54eec3650164d283ce6189abd98cf2f8d2d320cd4ec42da724"
+    }
+  },
+  "aic.job-execution-outcomes.v1": {
+    "display_name": {
+      "text": "ジョブ実行の結果",
+      "source_sha256": "dac43caec0f15a6ca7bcd282e60c4ae2b11b18b2e37034c97c77cee43f78a686"
+    }
+  },
+  "aic.pam.failed-authentication-machines.v1": {
+    "display_name": {
+      "text": "認証に失敗したマシンのリスト",
+      "source_sha256": "32dee27a79fba3a1fc491460ddc7faec2bee5aecc71271e524b101d8f5fbb8fa"
+    }
+  },
+  "aic.pam.lost-communications-machines.v1": {
+    "display_name": {
+      "text": "通信が失われたマシンのリスト",
+      "source_sha256": "d5bac1d130d265601590b9b13a7a9ba5d84c00c54977f7f53c5866fb232f2594"
+    }
+  },
+  "aic.pam.privileged-session-activity.v1": {
+    "display_name": {
+      "text": "特権セッションアクティビティ",
+      "source_sha256": "92d246bb4278be0c8cda938e99a89bdc07c82e7c25e8e6c3ee1ec596700f79f4"
+    }
+  },
+  "aic.pam.password-rotation-overdue.v1": {
+    "display_name": {
+      "text": "パスワードの有効期限 / ローテーション期限切れ",
+      "source_sha256": "e9431074d33e42a425b40f75c1a95656a192fcaa2e12eb75570573afe5ef787c"
+    }
+  },
+  "aic.pam.failed-elevation-checkout.v1": {
+    "display_name": {
+      "text": "昇格/チェックアウトの失敗",
+      "source_sha256": "a9280f6f92dee727b61695150f618d868777cd0f48c54e9f6661438e88989d23"
+    }
+  },
+  "aic.pam.orphaned-local-admins.v1": {
+    "display_name": {
+      "text": "孤立した/ローカル管理者アカウント",
+      "source_sha256": "a140f3a47ca0084560ee030c8caac75b11da88dc18d6c7b144300bedb4bf365f"
+    }
+  },
+  "aic.pam.inactive-privileged-accounts.v1": {
+    "display_name": {
+      "text": "非アクティブな特権アカウント",
+      "source_sha256": "66c85b8aaa9e0c5969827ca543ce83b5740d7c917344b73b876bebddd1b1992a"
+    }
+  },
+  "aic.pam.stale-agent-heartbeat.v1": {
+    "display_name": {
+      "text": "最近のエージェント ハートビートがないシステム",
+      "source_sha256": "4b57d298268681db43904b6a88ac180bd8b37df0eae0b443a2ab1ccb55b1be86"
+    }
+  },
+  "aic.pam.denied-access-requests.v1": {
+    "display_name": {
+      "text": "拒否されたアクセス要求",
+      "source_sha256": "72d4a87e347be59a5492cc30e24956e16cc7621afad7db26079f17df871c36b8"
+    }
+  },
+  "aic.compliance.access-assignment.v1": {
+    "display_name": {
+      "text": "アクセスの割り当てと最小特権の例外",
+      "source_sha256": "3d7b807c41ad8174acca102ac6ae31548256844ab4491030917c5032bbc14499"
+    }
+  },
+  "aic.compliance.crypto-posture.v1": {
+    "display_name": {
+      "text": "暗号化および FIPS ポスチャ",
+      "source_sha256": "548ee0c3a337dc2af15498ac3c8062f69688b465ce4d77dad289064ca85cf5e2"
+    }
+  },
+  "aic.compliance.audit-coverage.v1": {
+    "display_name": {
+      "text": "監査範囲、保持、ギャッププルーフ",
+      "source_sha256": "2bb6b38fe652a8535bf7b1a2ff73e91319beb6227df3fd390dec9744bf3e9220"
+    }
+  },
+  "aic.compliance.service-build-provenance.v1": {
+    "display_name": {
+      "text": "サービスのビルドと署名付きバイナリの来歴",
+      "source_sha256": "7f24e4b0d7c6e9a4fea89307ae0917612944773d546f8147be1f6b3684ecb167"
+    }
+  },
+  "aic.compliance.configuration-proof.v1": {
+    "display_name": {
+      "text": "エンクレーブ構成の証明",
+      "source_sha256": "ab35d0fda14c0ac8ce03a77ca25cb95d8977fb30e0ba01b2c88008df22db9b07"
+    }
+  },
+  "aic.compliance.account-assurance.v1": {
+    "display_name": {
+      "text": "アカウント保証 (休眠、資格年齢、MFA)",
+      "source_sha256": "c270dc70584acef67644e49571a7e1fc50d1a6eefdaba404014b311fc975c0af"
+    }
+  },
+  "aic.compliance.privileged-activity.v1": {
+    "display_name": {
+      "text": "特権セッション、昇格、およびデュアル コントロール",
+      "source_sha256": "13383699183b5f58186309b6c8b6172f6326966820b316be965e021cace7ace7"
+    }
+  },
+  "aic.compliance.tls-certificate-posture.v1": {
+    "display_name": {
+      "text": "TLS と証明書の有効期限切れの状況",
+      "source_sha256": "d74f58f55b67650f9dda0fb5a87478dfe6ea4d831ac7f4959806317e12b9d1b4"
+    }
+  },
+  "aic.compliance.network-boundary.v1": {
+    "display_name": {
+      "text": "ネットワーク リスナーと承認された境界事実",
+      "source_sha256": "27fb6498e6f17215320dd6323d12ae91f16815d1b8bd0a6000c13a437304b89c"
+    }
+  },
+  "aic.compliance.findings-poam-sprs.v1": {
+    "display_name": {
+      "text": "調査結果、POA&M、および SPRS ワークシート",
+      "source_sha256": "7acbdc4f1fd0940cdc39d96699357e396159ec41fbf6040664e980ceeb7eb847"
+    }
+  },
+  "aic.compliance.cui-transfer-delivery.v1": {
+    "display_name": {
+      "text": "CUI の転送、エクスポート、配信、および拒否",
+      "source_sha256": "2f4692b0c93515804f897d0d88cf334935eb119a34799e825adc6b2d2184d24d"
+    }
+  },
+  "aic.compliance.incident-timeline.v1": {
+    "display_name": {
+      "text": "インシデント対応タイムライン",
+      "source_sha256": "30e9c96067777b71a92f23b535b2d004193ad18a580334c9911d9bf374157f98"
+    }
+  },
+  "aic.compliance.assessment-package.v1": {
+    "display_name": {
+      "text": "評価証拠パッケージ",
+      "source_sha256": "ad68848283a879e3a840a4f70ee4708803f67bd90b92301600bd13d1e4353bb3"
+    }
+  },
+  "aic.compliance.operational-proof.v1": {
+    "display_name": {
+      "text": "エンクレーブの運用上の証拠",
+      "source_sha256": "83ddea6c2e38775c407015a66389534f4fbbe351d87baedfcae754c756ed5546"
+    }
+  },
+  "aic.compliance.ssp.v1": {
+    "display_name": {
+      "text": "システムセキュリティ計画（制御の導入）",
+      "source_sha256": "27ec6488323c0fa38994bb81c8cc0c1fbd7f86c469e885c3b762ba59e615bc62"
+    }
+  },
+  "aic.compliance.objective-workbook.v1": {
+    "display_name": {
+      "text": "800-171A / 800-172A 評価目標ワークブック",
+      "source_sha256": "f0a1b2244d2ff073d1c3653a16652506e10928360c087593a14d6e2398d5ee70"
+    }
+  },
+  "aic.compliance.control-crosswalk.v1": {
+    "display_name": {
+      "text": "171 <-> 172 <-> 800-53 <-> CMMC 横断歩道",
+      "source_sha256": "fbd899077221aefc18893d2bd2eb8ef036fe48192cc24c5e36e6d20d313f285d"
+    }
+  },
+  "aic.compliance.backup-restore-exercise.v1": {
+    "display_name": {
+      "text": "運動の証拠をバックアップおよび復元する",
+      "source_sha256": "5eb479989c932e1dfe4fb5512b4a1e5eeea6c28ea70cda8294b4775a4c7c0977"
+    }
+  },
+  "aic.compliance.vulnerability-inventory.v1": {
+    "display_name": {
+      "text": "脆弱性とエンドポイントインベントリ",
+      "source_sha256": "2f5971904ee153bf0d74b9ec7b7ef29499ef8a7444f61345bf1f7d987000d045"
+    },
+    "gap": {
+      "text": "CVE/重大度セルは、オペレーターがスキャンをアップロードするまで not_scanned のままになります。 CM-8在庫のみ。この境界には自動 CVE スキャナーはありません。",
+      "source_sha256": "39b1775e9472e08394e41105e951a13e3a4d1958e66d3b6254697d8d85f080ed"
+    }
+  },
+  "aic.compliance.workstation-assurance.v1": {
+    "display_name": {
+      "text": "外部ワークステーションの準備状況 (WA 認証)",
+      "source_sha256": "8bd7201a2f84e5736142ceb39bdb39ee624b7a6770cdf45355fde8c9468871db"
+    },
+    "gap": {
+      "text": "C3PAO による決定ではありません。スキップと未評価のチェックは MET ではありません。エンクレーブ ホストではなく、クライアントのみを接続します (ERASG)。",
+      "source_sha256": "98f816d9e2040dcb59e799a396a1ca5e47a9adecd38bd2d0317b8fd2a9f4b4a8"
+    }
+  }
+}

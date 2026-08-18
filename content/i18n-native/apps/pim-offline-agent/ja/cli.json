@@ -1,0 +1,18 @@
+{
+  "cli.about": {
+    "text": "AIC エージェント — オフラインのアカウント昇格とパスワードのローテーション",
+    "source_sha256": "04035fdaec4f3aef455aea1f6d0ae260c70748ffd4f6961f42d5beb52405faf4"
+  },
+  "cli.long_about": {
+    "text": "AIC エージェント (バイナリ: pim-offline-agent)\n\n説明:\n    AIC エージェントは、安全なオフラインのアカウント昇格と\n    Web サービス統合による自動パスワードローテーション。のために設計されています\n    FIPS 準拠の暗号化を必要とするエンタープライズ環境と\n    包括的な監査証跡。\n\n主な機能:\n    - 一時的な権限昇格のための時間制限付き昇格コード\n    - 構成可能なポリシーによるパスワードの自動ローテーション\n    - 包括的な診断とヘルスモニタリング\n    - JSON エクスポート機能を備えた完全な監査証跡\n    - 運用可視化のための Prometheus メトリクス\n    - 毎日ローテーションする構造化されたロギング\n\n使用法:\n    対話型コンソール (引数なし):\n        pim-オフライン-エージェント\n        → ヒント: 「pim-offline-agent --help」を試してください (終了 2)\n\n    デーモンとして実行します (明示的、または非 TTY / systemd ベア起動):\n        pim-オフライン-エージェントデーモン\n\n    標高コードを生成します。\n        pim-offline-agent elevate --show-code\n\n    診断を実行します。\n        pim-オフライン-エージェントの診断\n\n    対話的に構成します。\n        pim-オフライン-エージェント ウィザード\n\n    特定のコマンドに関する詳細なヘルプが必要な場合:\n        pim-offline-agent <コマンド> --help\n\n文書:\n    完全なドキュメント: README.md\n    インストールガイド: INSTALLATION_GUIDE.md\n    モニタリング設定: MONITORING.md\n    シェル補完: SHELL_COMPLETIONS_GUIDE.md",
+    "source_sha256": "763ba471d83fbc6ea7d4aef451a3d4fac8ff8b40af0dded046f7e75d2a4026ed"
+  },
+  "cli.help.locale": {
+    "text": "CLI ヘルプおよびコンソール メッセージのオペレーター表示言語 (英語、ドイツ語)。監査、Windows イベント ログ、または syslog フィールド名は変更されません。",
+    "source_sha256": "ea54d1c157ba10af11f561d11893e1ffd2f8b3d25d04dac1269ed4a04c856957"
+  },
+  "cli.msg.audit_english_only": {
+    "text": "監査、Windows イベント ログ、および syslog ペイロードは米国英語のままです (安定したフィールド名とイベント ID)。",
+    "source_sha256": "66dab701f9bec400fcd79c3d0ff49e9273833d0c7a09d8d327ab7425e69af831"
+  }
+}

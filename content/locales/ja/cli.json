@@ -1,0 +1,74 @@
+{
+  "cli.about": {
+    "text": "AICサーバー APIサーバー",
+    "source_sha256": "9b5030c3213a388ab38ef5877e7c33e2615a5fcd5470d337c50caa4de93a8913"
+  },
+  "cli.help.locale": {
+    "text": "CLI ヘルプおよびコンソール メッセージのオペレーター表示言語 (英語、ドイツ語)。監査、Windows イベント ログ、または syslog フィールド名は変更されません。",
+    "source_sha256": "ea54d1c157ba10af11f561d11893e1ffd2f8b3d25d04dac1269ed4a04c856957"
+  },
+  "cli.help.install_service": {
+    "text": "Windows サービス (昇格) または Linux 上の systemd ユニット (ルート) としてインストールします。",
+    "source_sha256": "249d82c97f104b970b99e46f48b86fbc2c1f0c0df77ebdb32694b7f3bc1c14e1"
+  },
+  "cli.help.windows_service_account": {
+    "text": "Windows のみ (--install-service を使用): SCM ログオン。 LocalSystem の場合は省略します。ショートカット: ローカル システム、ネットワーク サービス、ローカル サービス。それ以外の場合は、DOMAIN\\User または .\\User。",
+    "source_sha256": "e0fed1684dbc18830e788315b20019a1369bbe3854455f453c889a92390816a8"
+  },
+  "cli.help.windows_service_password": {
+    "text": "Windows のみ (--install-service を使用): sc.exe のサービス アカウント パスワード =。プロセスのコマンドラインに表示されます。 LocalSystem / NT AUTHORITY または gMSA / no-password アカウントの場合は省略します。",
+    "source_sha256": "73b64e34213ccfa565605dbed747ae5d361c58d99156ecf46756162d174b5c49"
+  },
+  "cli.help.uninstall_service": {
+    "text": "--install-service によってインストールされた Windows サービスまたは Linux systemd ユニットを削除します。",
+    "source_sha256": "be40ce285d07cdcbe7a0d969efa253c4e5e44c815df8a7f8d8b9860d8418111c"
+  },
+  "cli.help.start_service": {
+    "text": "インストールしたサービスを起動します（sc start / systemctl start）。",
+    "source_sha256": "28af9fa1299c64e54773d467f2b511acf7a52437bb7236fa0a740210a7606566"
+  },
+  "cli.help.stop_service": {
+    "text": "インストールされているサービスを停止します（sc stop / systemctl stop）。",
+    "source_sha256": "df561725c8481a3282c25cb9292652101cf48e8c8bc8dd888fd259c56ece6918"
+  },
+  "cli.help.config_dir": {
+    "text": "ラボ/WSL スモークのサンドボックス設定ルート (AppConfig を HKLM や /etc ではなく {dir}/pim-offline-server/ にルーティングします)。このフラグを明示的に渡します。プロセス環境変数はありません。",
+    "source_sha256": "ce6051d6d4e9cf0fa5d458a2d45ddde022e1ebc5572a070b0c056b92d254c6f0"
+  },
+  "cli.cmd.run": {
+    "text": "AIC サーバー デーモンをフォアグラウンド (systemd / console) で実行します。",
+    "source_sha256": "2201ed894842e7f5544b809d4677947ea1441890a02b8cc0692d0b663bac1367"
+  },
+  "cli.cmd.version": {
+    "text": "パッケージのバージョンを出力します (--version / -V と同じペイロード)。",
+    "source_sha256": "cfcdba07c20fc6676ef1e1844875da1b8c6f5169b3de312f20ed58d86b3bda47"
+  },
+  "cli.cmd.readiness_report": {
+    "text": "ライブサーバーの状態から評価された評価者向けの CMMC L2 エンクレーブ準備状況レポートを発行します (シークレットなし)。",
+    "source_sha256": "a7a44f8f1b8034b087339f9ef23a440d934218337319954044e4c9f3febf615b"
+  },
+  "cli.cmd.meter_usage": {
+    "text": "控えめでプライバシーに配慮した使用状況のスナップショットを収集し、選択したマーケットプレイス測定プロバイダー (デフォルト: オフラインの予行演習レコーダー) を通じて送信します。",
+    "source_sha256": "1a95eaca40c24536837346566c713b525ce9e1f2f964a1fc6ec656ef43bea5b8"
+  },
+  "cli.help.meter_dry_run": {
+    "text": "クラウド プロバイダーが選択されている場合でも、オフラインのドライラン レコーダーを強制します。",
+    "source_sha256": "dc25e2bb9fe3f40cfc0bad627473069f031e15dc01779a894bc12b0bb7005d2a"
+  },
+  "cli.help.meter_plan_only": {
+    "text": "計画とクラウドごとの準備状況マトリックスを出力し、スナップショットの収集やディスパッチを行わずに終了します。",
+    "source_sha256": "f1d3aaf7ec84c2db856f9087084e38093fa3fcbc59fe9c35fdca1bfb315b64c9"
+  },
+  "cli.help.readiness_format": {
+    "text": "出力形式: json (機械可読) または md (マークダウン チェックリスト)。",
+    "source_sha256": "56d3eaa8d6cdb6ae4fc7fa5a149d18008de1e1ab5c160768d22f73b51bfbcba9"
+  },
+  "cli.msg.audit_english_only": {
+    "text": "監査、Windows イベント ログ、および syslog ペイロードは米国英語のままです (安定したフィールド名とイベント ID)。",
+    "source_sha256": "66dab701f9bec400fcd79c3d0ff49e9273833d0c7a09d8d327ab7425e69af831"
+  },
+  "cli.msg.api_codes_english": {
+    "text": "API エラー コードは英語のままです。管理 SPA はコードをロケール テキストにマップします。",
+    "source_sha256": "1fa569f0ad93f293d06b8054d186416e0842b691eff86bed1aad9dc4ef187ab3"
+  }
+}
