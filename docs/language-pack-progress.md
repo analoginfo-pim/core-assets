@@ -4,6 +4,20 @@ Partner-readable status for Phil and Robert. Updated after each milestone push t
 
 ## Latest
 
+**Consumer sync (`bd9378a`):** ran `scripts/sync-to-projects.ps1` on
+Beavis2. Mirrored `content/i18n-native` →
+`pim-app-config/crates/pim-app-config-i18n/bundles` (pushed as
+`pim-app-config` `e1d579b`). `content/locales` + `locales-ui` already matched
+`pim-offline-server/locales` (no consumer commit). Beavis2 disk overlay
+(no Server UI rebuild): robocopy into
+`C:\Program Files\AIC\PimServer\locales` and
+`C:\ProgramData\AIC\PimServer\locales` (+ `ui/`). `aic-server-service`
+left **Running**. Native configurator **binaries** still embed prior
+packs until a separate non-UI rebuild; JSON-on-disk overlay does not
+replace `include_str` bundles — **BLOCKED** for live Win32/Tauri string
+match without that rebuild. Did not touch picker UI worker files; left
+local dirty `gui/en/server_configurator.json` uncommitted.
+
 **NEW configurator keys filled (post-97159ae):** the 125 keys that landed
 in `en`+`de` only — Server `server_configurator.json` (40), Agent
 `messages.json` (52), Jump CLI (5), DB Mgmt CLI (28) — are now present
@@ -31,6 +45,8 @@ configurator key set):
 
 ## History
 
+- *(this note)* — sync-to-projects + Beavis2 locale overlay from `bd9378a`
+- `bd9378a` — fill NEW configurator keys for 16 tags
 - `97159ae` — hardcoded extract: Agent menus, Server dialogs, Jump/DB CLI (en+de)
 - `369b857` — en-GB quality finish; identical-to-en **52** (KEEP +
   variety-neutral + 3 long intentional); aic-server audit clean for en-GB
