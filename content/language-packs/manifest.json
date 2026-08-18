@@ -1,0 +1,399 @@
+{
+  "schema_version": 1,
+  "description": "AIC language packs in core-assets. Catalogs stay under locales/, locales-ui/, and i18n-native/. product tags select which trees an installer harvests.",
+  "products": [
+    {
+      "id": "aic-server",
+      "areas": [
+        "content/locales/<tag>/",
+        "content/locales-ui/<tag>/"
+      ],
+      "ships_with": "AIC Server MSI / admin SPA"
+    },
+    {
+      "id": "shared-gui-chrome",
+      "areas": [
+        "content/i18n-native/gui/<tag>/chrome.json"
+      ],
+      "ships_with": "Every Win32/Tauri configurator"
+    },
+    {
+      "id": "aic-server-configurator",
+      "areas": [
+        "content/i18n-native/gui/<tag>/server_configurator.json"
+      ],
+      "ships_with": "Server configurator Win32 + Tauri + CLI"
+    },
+    {
+      "id": "aic-agent",
+      "areas": [
+        "content/i18n-native/apps/pim-offline-agent/<tag>/"
+      ],
+      "ships_with": "Endpoint agent"
+    },
+    {
+      "id": "aic-agent-configurator",
+      "areas": [
+        "content/i18n-native/gui/<tag>/agent_configurator.json"
+      ],
+      "ships_with": "Agent configurator (native packs not complete yet)"
+    },
+    {
+      "id": "aic-jump-configurator",
+      "areas": [
+        "content/i18n-native/gui/<tag>/jump_configurator.json"
+      ],
+      "ships_with": "Jump configurator (native packs not complete yet)"
+    },
+    {
+      "id": "aic-db-mgmt-configurator",
+      "areas": [
+        "content/i18n-native/gui/<tag>/db_mgmt_configurator.json"
+      ],
+      "ships_with": "DB management configurator (native packs not complete yet)"
+    },
+    {
+      "id": "aic-recording-agent",
+      "areas": [
+        "content/i18n-native/apps/pim-offline-recording-agent/<tag>/"
+      ],
+      "ships_with": "Recording agent"
+    }
+  ],
+  "packs": [
+    {
+      "product": "aic-server",
+      "tag": "en",
+      "dir": "ltr",
+      "tier": 1,
+      "display": "English (USA)",
+      "display_native": "English (USA)",
+      "country": "US",
+      "flag": "content/language-packs/en/flag.svg",
+      "required_files": [
+        "content/locales/en/*.json",
+        "content/locales-ui/en/*.json"
+      ]
+    },
+    {
+      "product": "aic-server",
+      "tag": "en-GB",
+      "dir": "ltr",
+      "tier": 1,
+      "display": "English (UK)",
+      "display_native": "English (UK)",
+      "country": "GB",
+      "flag": "content/language-packs/en-GB/flag.svg",
+      "required_files": [
+        "content/locales/en-GB/*.json",
+        "content/locales-ui/en-GB/*.json"
+      ]
+    },
+    {
+      "product": "aic-server",
+      "tag": "de",
+      "dir": "ltr",
+      "tier": 1,
+      "display": "German",
+      "display_native": "Deutsch",
+      "country": "DE",
+      "flag": "content/language-packs/de/flag.svg",
+      "required_files": [
+        "content/locales/de/*.json",
+        "content/locales-ui/de/*.json"
+      ]
+    },
+    {
+      "product": "aic-server",
+      "tag": "fr",
+      "dir": "ltr",
+      "tier": 1,
+      "display": "French",
+      "display_native": "Français",
+      "country": "FR",
+      "flag": "content/language-packs/fr/flag.svg",
+      "required_files": [
+        "content/locales/fr/*.json",
+        "content/locales-ui/fr/*.json"
+      ]
+    },
+    {
+      "product": "aic-server",
+      "tag": "es",
+      "dir": "ltr",
+      "tier": 1,
+      "display": "Spanish",
+      "display_native": "Español",
+      "country": "ES",
+      "flag": "content/language-packs/es/flag.svg",
+      "required_files": [
+        "content/locales/es/*.json",
+        "content/locales-ui/es/*.json"
+      ]
+    },
+    {
+      "product": "aic-server",
+      "tag": "zh-Hans",
+      "dir": "ltr",
+      "tier": 1,
+      "display": "Chinese (Simplified)",
+      "display_native": "中文（简体）",
+      "country": "CN",
+      "flag": "content/language-packs/zh-Hans/flag.svg",
+      "required_files": [
+        "content/locales/zh-Hans/*.json",
+        "content/locales-ui/zh-Hans/*.json"
+      ]
+    },
+    {
+      "product": "aic-server",
+      "tag": "zh-TW",
+      "dir": "ltr",
+      "tier": 1,
+      "display": "Chinese (Taiwan)",
+      "display_native": "中文（台灣）",
+      "country": "TW",
+      "flag": "content/language-packs/zh-TW/flag.svg",
+      "required_files": [
+        "content/locales/zh-TW/*.json",
+        "content/locales-ui/zh-TW/*.json"
+      ]
+    },
+    {
+      "product": "aic-server",
+      "tag": "ja",
+      "dir": "ltr",
+      "tier": 2,
+      "display": "Japanese",
+      "display_native": "日本語",
+      "country": "JP",
+      "flag": "content/language-packs/ja/flag.svg",
+      "required_files": [
+        "content/locales/ja/*.json",
+        "content/locales-ui/ja/*.json"
+      ]
+    },
+    {
+      "product": "aic-server",
+      "tag": "ko",
+      "dir": "ltr",
+      "tier": 2,
+      "display": "Korean",
+      "display_native": "한국어",
+      "country": "KR",
+      "flag": "content/language-packs/ko/flag.svg",
+      "required_files": [
+        "content/locales/ko/*.json",
+        "content/locales-ui/ko/*.json"
+      ]
+    },
+    {
+      "product": "aic-server",
+      "tag": "pt-BR",
+      "dir": "ltr",
+      "tier": 2,
+      "display": "Portuguese (Brazil)",
+      "display_native": "Português (Brasil)",
+      "country": "BR",
+      "flag": "content/language-packs/pt-BR/flag.svg",
+      "required_files": [
+        "content/locales/pt-BR/*.json",
+        "content/locales-ui/pt-BR/*.json"
+      ]
+    },
+    {
+      "product": "aic-server",
+      "tag": "it",
+      "dir": "ltr",
+      "tier": 2,
+      "display": "Italian",
+      "display_native": "Italiano",
+      "country": "IT",
+      "flag": "content/language-packs/it/flag.svg",
+      "required_files": [
+        "content/locales/it/*.json",
+        "content/locales-ui/it/*.json"
+      ]
+    },
+    {
+      "product": "aic-server",
+      "tag": "he",
+      "dir": "rtl",
+      "tier": 2,
+      "display": "Hebrew",
+      "display_native": "עברית",
+      "country": "IL",
+      "flag": "content/language-packs/he/flag.svg",
+      "required_files": [
+        "content/locales/he/*.json",
+        "content/locales-ui/he/*.json"
+      ]
+    },
+    {
+      "product": "aic-server",
+      "tag": "pl",
+      "dir": "ltr",
+      "tier": 3,
+      "display": "Polish",
+      "display_native": "Polski",
+      "country": "PL",
+      "flag": "content/language-packs/pl/flag.svg",
+      "required_files": [
+        "content/locales/pl/*.json",
+        "content/locales-ui/pl/*.json"
+      ]
+    },
+    {
+      "product": "aic-server",
+      "tag": "tr",
+      "dir": "ltr",
+      "tier": 3,
+      "display": "Turkish",
+      "display_native": "Türkçe",
+      "country": "TR",
+      "flag": "content/language-packs/tr/flag.svg",
+      "required_files": [
+        "content/locales/tr/*.json",
+        "content/locales-ui/tr/*.json"
+      ]
+    },
+    {
+      "product": "aic-server",
+      "tag": "nl",
+      "dir": "ltr",
+      "tier": 3,
+      "display": "Dutch",
+      "display_native": "Nederlands",
+      "country": "NL",
+      "flag": "content/language-packs/nl/flag.svg",
+      "required_files": [
+        "content/locales/nl/*.json",
+        "content/locales-ui/nl/*.json"
+      ]
+    },
+    {
+      "product": "aic-server",
+      "tag": "sv",
+      "dir": "ltr",
+      "tier": 3,
+      "display": "Swedish",
+      "display_native": "Svenska",
+      "country": "SE",
+      "flag": "content/language-packs/sv/flag.svg",
+      "required_files": [
+        "content/locales/sv/*.json",
+        "content/locales-ui/sv/*.json"
+      ]
+    },
+    {
+      "product": "aic-server",
+      "tag": "fi",
+      "dir": "ltr",
+      "tier": 3,
+      "display": "Finnish",
+      "display_native": "Suomi",
+      "country": "FI",
+      "flag": "content/language-packs/fi/flag.svg",
+      "required_files": [
+        "content/locales/fi/*.json",
+        "content/locales-ui/fi/*.json"
+      ]
+    },
+    {
+      "product": "aic-server",
+      "tag": "ar",
+      "dir": "rtl",
+      "tier": 3,
+      "display": "Arabic (MSA)",
+      "display_native": "العربية",
+      "country": "SA",
+      "flag": "content/language-packs/ar/flag.svg",
+      "required_files": [
+        "content/locales/ar/*.json",
+        "content/locales-ui/ar/*.json"
+      ],
+      "notes": "Saudi Arabia flag is the MSA language convention, not a claim that MSA is Saudi-only."
+    },
+    {
+      "product": "shared-gui-chrome",
+      "tag": "en",
+      "dir": "ltr",
+      "tier": 1,
+      "display": "English (USA)",
+      "display_native": "English (USA)",
+      "country": "US",
+      "flag": "content/language-packs/en/flag.svg",
+      "required_files": [
+        "content/i18n-native/gui/en/chrome.json"
+      ]
+    },
+    {
+      "product": "aic-server-configurator",
+      "tag": "en",
+      "dir": "ltr",
+      "tier": 1,
+      "display": "English (USA)",
+      "display_native": "English (USA)",
+      "country": "US",
+      "flag": "content/language-packs/en/flag.svg",
+      "required_files": [
+        "content/i18n-native/gui/en/server_configurator.json"
+      ]
+    },
+    {
+      "product": "aic-agent",
+      "tag": "en",
+      "dir": "ltr",
+      "tier": 1,
+      "display": "English (USA)",
+      "display_native": "English (USA)",
+      "country": "US",
+      "flag": "content/language-packs/en/flag.svg",
+      "required_files": [
+        "content/i18n-native/apps/pim-offline-agent/en/*.json"
+      ]
+    },
+    {
+      "product": "aic-recording-agent",
+      "tag": "en",
+      "dir": "ltr",
+      "tier": 1,
+      "display": "English (USA)",
+      "display_native": "English (USA)",
+      "country": "US",
+      "flag": "content/language-packs/en/flag.svg",
+      "required_files": [
+        "content/i18n-native/apps/pim-offline-recording-agent/en/*.json"
+      ]
+    }
+  ],
+  "flag_country_map": {
+    "en": "us",
+    "en-GB": "gb",
+    "de": "de",
+    "fr": "fr",
+    "es": "es",
+    "zh-Hans": "cn",
+    "zh-TW": "tw",
+    "ja": "jp",
+    "ko": "kr",
+    "pt-BR": "br",
+    "it": "it",
+    "he": "il",
+    "pl": "pl",
+    "tr": "tr",
+    "nl": "nl",
+    "sv": "se",
+    "fi": "fi",
+    "ar": "sa"
+  },
+  "rules": {
+    "en_gb_not_alias": true,
+    "zh_tw_not_converted_from_zh_hans": true,
+    "no_english_fill_for_missing_keys": true,
+    "no_cyberark_missing_key_english_fallback": true,
+    "us_english_always_installed": true,
+    "official_cmmc_80053_bodies_stay_english": true,
+    "no_licensed_iso27001_body_translation": true
+  }
+}
