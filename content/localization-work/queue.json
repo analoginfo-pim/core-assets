@@ -272,6 +272,30 @@
         "de"
       ],
       "notes": "Walk 2026-08-17: chrome-only Messaging hub + Email Settings. Mailpit down so no send/inbox. Draft DE only. Encrypted-send dialogs deferred. Not Met. Tier 1 en-GB/zh-Hans absent. Source changed 2026-08-17 (hash fd5e2aa612c5 → 6f03bc01b372)."
+    },
+    {
+      "id": "spa.events-audit-log-leftover-en",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "leftover-chrome",
+      "title": "Events audit log leftover English chrome",
+      "added": "2026-08-17",
+      "updated": "2026-08-17",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/pages/EventsLogPage.tsx",
+      "source_sha256": "78ac08271a41de60d5ad1dd6559a40c0213d6ec8a273851d61c3b49dce23fd63",
+      "product_route": "/events/log",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans"
+      ],
+      "draft_tags": [
+        "de"
+      ],
+      "notes": "Walk 2026-08-17: leftover DE header and grid Export. Draft DE only. Timestamps lack display timezone. Native date picker stays US format on DE. Not AU complete. Not Met. Tier 1 en-GB/zh-Hans absent."
     }
   ]
 }
