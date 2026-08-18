@@ -175,7 +175,18 @@ at the top of this document.
 
 Apply the following language rules when translating. Catalog tags match
 `compliance-artifacts-must-localize.mdc` (Tier 1 mandatory: `en`, `en-GB`,
-`de`, `fr`, `es`, `zh-Hans`).
+`de`, `fr`, `es`, `zh-Hans`, `zh-TW`). Hebrew (`he`) is Tier 2 (RTL).
+
+**Language packs** live in `core-assets` (`content/locales/`,
+`content/locales-ui/`, `content/i18n-native/`), tagged by product in
+`content/language-packs/manifest.json`. Every leaf is
+`{ "text", "source_sha256" }` (SHA-256 of UTF-8 NFC of the US English
+`text`). Developer how-to:
+[`language-pack-developer-standard.md`](language-pack-developer-standard.md).
+
+**Picker:** when two or more packs are installed, show flag + display name +
+BCP-47 tag (`en`, `zh-TW`, …). Hide the flag when only one pack is installed.
+`en-GB` is not an alias of `en`. `zh-TW` is not a conversion of `zh-Hans`.
 
 ## 3.1 German (`de`)
 
@@ -195,6 +206,33 @@ Apply the following language rules when translating. Catalog tags match
 - Use neutral international Spanish.
 - Avoid country-specific idioms.
 - Use formal “usted”.
+
+## 3.3a English (UK) (`en-GB`) — Tier 1
+
+- Full translation from US English — not a spelling overlay and not an
+  alias of `en`.
+- UK spelling and legal phrasing where AIC authors the prose.
+- Official CMMC / NIST bodies stay in the authority language (typically
+  US-published English).
+
+## 3.3b Chinese Simplified (`zh-Hans`) — Tier 1
+
+- Mainland China; MLPS 2.0 vocabulary.
+- Flag / country: CN. Never use the Taiwan flag for this pack.
+
+## 3.3c Chinese (Taiwan) (`zh-TW`) — Tier 1
+
+- Taiwan Traditional Chinese. Canonical tag is **`zh-TW`** (not `zh-Hant`
+  as the folder name).
+- Translate from US English. **Never** convert characters from `zh-Hans`
+  and ship.
+- Flag / country: TW. Never use the PRC flag for this pack.
+
+## 3.3d Hebrew (`he`) — Tier 2
+
+- Israel defense and regulated industries.
+- Manifest `dir=rtl`. RTL layout is part of the pack.
+- Flag / country: IL.
 
 ## 3.4 Japanese (`ja`) — Tier 2
 

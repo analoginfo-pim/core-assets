@@ -63,8 +63,10 @@ Language tiers and the must-localize artifact list:
 | `de` | Formal Sie; correct compounds (Sitzungsaufzeichnung, Rollenüberprüfung); no English loanwords unless industry-standard |
 | `fr` | Formal vous; ANSSI cybersecurity terms; anglicisms only when required (session, audit) |
 | `es` | Neutral international Spanish; formal usted; no country idioms |
-| `zh-Hans` | Mainland China; MLPS 2.0 vocabulary |
-| `en-GB` | UK spelling/legal phrasing; do not alias to `en` |
+| `zh-Hans` | Mainland China; MLPS 2.0 vocabulary; flag CN |
+| `zh-TW` | Taiwan Traditional; translate from US English — never convert from zh-Hans; flag TW |
+| `en-GB` | Full UK pack from US English — not a spelling overlay; do not alias to `en` |
+| `he` | Hebrew; formal; RTL (`dir=rtl`); Israel defense; flag IL |
 | `ja` | Polite です/ます; Japanese IT/security terms; avoid katakana overuse |
 | `ko` | Formal polite; Korean cybersecurity standards |
 | `pt-BR` | Brazilian Portuguese; LGPD terminology |
