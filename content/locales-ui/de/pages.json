@@ -222,7 +222,7 @@
                                              "summary":  "Statische Prototypen für Administratorrichtlinie, angebotsbasiertes Minting, Workflow-Warteschlange und Agent-Mehrkanal-Elevate-UI."
                                          },
                     "messaging":  {
-                                      "title":  "Messaging",
+                                      "title":  "Nachrichten",
                                       "summary":  "E-Mail-Vorlagen, wiederverwendbare Bausteine und SMTP-Einstellungen für Operator-Benachrichtigungen."
                                   },
                     "systems__list":  {
@@ -2250,7 +2250,26 @@
                                      "mailgunTitle":  "Mailgun",
                                      "graphTitle":  "Microsoft 365 / Exchange Online (Graph mit moderner Authentifizierung)",
                                      "graphTenantId":  "Mandanten-ID",
-                                     "mailgunBaseUrl":  "API-Basis-URL"
+                                     "mailgunBaseUrl":  "API-Basis-URL",
+                                     "emailIntro":  "Wählen Sie ein E-Mail-Sendesystem (SMTP ist eine Option). Nutzen Sie Verbindung testen oder Authentifizierung testen für die Diagnose, dann Test senden, um eine Nachricht zuzustellen. Geheimnisse stehen nie im Schrittprotokoll.",
+                                     "emailStandardsTitle":  "Verschlüsselte E-Mail-Standards (CMMC / DoD)",
+                                     "emailStandardsAria":  "Katalog der verschlüsselten E-Mail-Standards",
+                                     "emailLoadFailed":  "SMTP-Einstellungen konnten nicht geladen werden: {{message}}",
+                                     "emailDiscard":  "Änderungen verwerfen",
+                                     "emailProbeHeading":  "Ergebnisse der Verbindungs- und Authentifizierungsprüfung",
+                                     "emailProbeNote":  "Prüfungen senden keine Post. Passwörter und Token stehen nie im Schrittprotokoll.",
+                                     "emailSmtpSaved":  "SMTP-Einstellungen gespeichert",
+                                     "emailProviderSaved":  "E-Mail-Anbieter-Einstellungen gespeichert",
+                                     "emailSaveFailed":  "Speichern fehlgeschlagen: {{message}}",
+                                     "tlsMode":  {
+                                                      "none":  "Kein TLS",
+                                                      "starttls":  "STARTTLS",
+                                                      "implicit":  "Implizites TLS"
+                                                  },
+                                     "authMethod":  {
+                                                         "none":  "Keine Authentifizierung",
+                                                         "basic":  "Basis (Benutzername + Passwort)"
+                                                     }
                                  },
                    "training":  {
                                     "programsTitle":  "Schulungsprogramme",
