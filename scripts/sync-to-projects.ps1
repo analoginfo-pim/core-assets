@@ -333,6 +333,11 @@ $treeMap = [ordered]@{
     "content/i18n-native" = @(
         "pim-app-config/crates/pim-app-config-i18n/bundles"
     )
+    # Open Source Credits inventory + license texts (About → Open Source Credits).
+    "legal/open-source-credits" = @(
+        "pim-offline-server/ui/public/legal/open-source-credits",
+        "pim-offline-server/assets/legal/open-source-credits"
+    )
 }
 
 # ---------------------------------------------------------------------------
@@ -461,5 +466,53 @@ Write-Host ""
 $summary = "Sync complete. Files: copied=$copied, already-in-sync=$skipped. " +
            "Trees: copied=$treeCopied, already-in-sync=$treeSkipped, empty=$treeEmpty."
 Write-Host $summary -ForegroundColor Cyan
+
+# ---------------------------------------------------------------------------
+# Language pack flags (MIT flag-icons) → pim-offline-server/locales/<tag>/flag.svg
+# Served as GET /locales/{tag}/flag.svg (same path the MSI and lab deploy stage).
+# ---------------------------------------------------------------------------
+$flagCopied = 0; $flagSkipped = 0
+$flagSrcRoot = Join-Path $repoRoot 'content\language-packs'
+$flagDestRoot = Join-Path $WorkspaceRoot 'pim-offline-server\locales'
+if ((Test-Path -LiteralPath $flagSrcRoot) -and (Test-Path -LiteralPath (Join-Path $WorkspaceRoot 'pim-offline-server'))) {
+    Get-ChildItem -LiteralPath $flagSrcRoot -Directory | ForEach-Object {
+        $flagSrc = Join-Path $_.FullName 'flag.svg'
+        if (-not (Test-Path -LiteralPath $flagSrc)) { return }
+        $destDir = Join-Path $flagDestRoot $_.Name
+        $dest = Join-Path $destDir 'flag.svg'
+        if (-not (Test-Path -LiteralPath $destDir)) {
+            if ($PSCmdlet.ShouldProcess($destDir, "mkdir")) {
+                New-Item -ItemType Directory -Force -Path $destDir | Out-Null
+            }
+        }
+        $needCopy = $true
+        if (Test-Path -LiteralPath $dest) {
+            $sh = (Get-FileHash $flagSrc -Algorithm SHA1).Hash
+            $dh = (Get-FileHash $dest -Algorithm SHA1).Hash
+            if ($sh -eq $dh) { $needCopy = $false; $flagSkipped++ }
+        }
+        if ($needCopy) {
+            if ($PSCmdlet.ShouldProcess($dest, "copy flag.svg")) {
+                Copy-Item -LiteralPath $flagSrc -Destination $dest -Force
+                $flagCopied++
+            }
+        }
+    }
+    Write-Host ("Language pack flags: copied=$flagCopied, already-in-sync=$flagSkipped -> pim-offline-server/locales/<tag>/flag.svg") -ForegroundColor Cyan
+    $licCandidates = @(
+        (Join-Path $repoRoot 'content\language-packs\LICENSE-flag-icons.txt'),
+        (Join-Path $repoRoot 'content\LICENSE-flag-icons.txt')
+    )
+    foreach ($lic in $licCandidates) {
+        if (Test-Path -LiteralPath $lic) {
+            $licDest = Join-Path $flagDestRoot 'LICENSE-flag-icons.txt'
+            if ($PSCmdlet.ShouldProcess($licDest, "copy LICENSE-flag-icons.txt")) {
+                Copy-Item -LiteralPath $lic -Destination $licDest -Force
+            }
+            break
+        }
+    }
+}
+
 Write-Host "Workspace root: $WorkspaceRoot"
 Write-Host "Source repo:    $repoRoot"

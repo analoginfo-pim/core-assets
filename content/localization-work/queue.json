@@ -368,6 +368,75 @@
       ],
       "draft_tags": [],
       "notes": "Walk 2026-08-17: wrap plane/OCR/unhealthy/health/accepting chrome in t(); DE draft. Agent draft does not close. Chrome-only Partial. Not Met. Tier 1 en-GB/zh-Hans absent."
+    },
+    {
+      "id": "spa.language-settings-chrome",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "help-manual",
+      "title": "Settings language packs and flag chrome",
+      "added": "2026-08-18",
+      "updated": "2026-08-18",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/i18n/locales/en/common.json",
+      "source_sha256": "d85466fa5a14e3a3b4a3c5d3708b7c577ecb099695dc6e62723a4a62abea8d0f",
+      "product_route": "",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans"
+      ],
+      "draft_tags": [],
+      "notes": ""
+    },
+    {
+      "id": "about.open-source-credits",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "legal-notice",
+      "title": "About Open Source Credits page",
+      "added": "2026-08-18",
+      "updated": "2026-08-18",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/pages/about/AboutOpenSourceCreditsPage.tsx",
+      "source_sha256": "afa2e08b2095cef8b72202ae62dd0de7156e497bc6ee469e2e2a70be90fa0a52",
+      "product_route": "/about/open-source-credits",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [],
+      "notes": "Must-localize legal/credits chrome. License bodies stay in the licensor language. Agent drafted de catalog keys; not translator-reviewed."
+    },
+    {
+      "id": "spa.known-default-credentials",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "spa-chrome",
+      "title": "Known Default Credentials catalog chrome",
+      "added": "2026-08-18",
+      "updated": "2026-08-18",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/pages/KnownDefaultCredentialsPage.tsx",
+      "source_sha256": "5790197879e01244c3e30818b8a0714420a30cbb971175ce968cc7a09b6a5bf8",
+      "product_route": "/systems/known-default-credentials",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans"
+      ],
+      "draft_tags": [
+        "de"
+      ],
+      "notes": "US English source plus DE draft for catalog page, page intro, and common.knownDefaults. Agent draft does not close. fr/es/en-GB/zh-Hans remain open. Not Met."
     }
   ]
 }

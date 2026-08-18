@@ -24,3 +24,8 @@ Canonical legal-text assets shipped with AIC products.
 - Old in-tree duplicates (e.g. `pim-offline-client/deployment/windows/License.rtf`,
   `pim-installers/staging/.../assets/EULA.rtf`) are now **build outputs**,
   not source. They are restaged from this directory by the build scripts.
+
+## Open Source Credits
+
+See `open-source-credits/README.md`. Canonical Partial inventory; regenerate with `python scripts/generate-open-source-credits.py`, then sync via `scripts/sync-to-projects.ps1`.
+
