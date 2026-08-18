@@ -74,6 +74,42 @@
         "de"
       ],
       "notes": "Draft DE landed for recording Vermittler, UUID aus lauter Nullen, and Strg key chords. fr/es/en-GB/zh-Hans remain open. Do not claim Tier 1 complete."
+    },
+    {
+      "id": "spa.report-center-leftover-en",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "chrome",
+      "title": "Report Center leftover English chrome",
+      "added": "2026-08-17",
+      "updated": "2026-08-17",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/pages/ReportCenterPage.tsx",
+      "source_sha256": "7cd2b139220c00095a1879179faf8dcd5ec4fec80a5a55803a8e063eca4d6445",
+      "product_route": "/reports",
+      "required_tags": [
+        "zh-Hans"
+      ],
+      "draft_tags": [],
+      "notes": "First-paint leftover English wrapped in t(); DE draft in locales-ui/de/pages.json. Agent draft does not close. Source changed 2026-08-17 (hash 0dc2a9247e4e → 7cd2b139220c)."
+    },
+    {
+      "id": "spa.control-state-history",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "chrome",
+      "title": "Control State History leftover English chrome",
+      "added": "2026-08-17",
+      "updated": "2026-08-17",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/pages/ControlStateHistoryPage.tsx",
+      "source_sha256": "7cd2b139220c00095a1879179faf8dcd5ec4fec80a5a55803a8e063eca4d6445",
+      "product_route": "/enclave/control-state-history",
+      "required_tags": [
+        "zh-Hans"
+      ],
+      "draft_tags": [],
+      "notes": "Page chrome wrapped in t(); DE draft in locales-ui/de/pages.json. Agent draft does not close. Source changed 2026-08-17 (hash b4e1c2a7359b → 7cd2b139220c)."
     }
   ]
 }
