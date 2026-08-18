@@ -4,29 +4,27 @@ Partner-readable status for Phil and Robert. Updated after each milestone push t
 
 ## Latest
 
-**core-assets SHA:** `9a24427` (main)
+**core-assets SHA:** `2087c30` (Wave C catalogs: `9a24427`)
 
-**Wave C complete** (`ja`, `ko`, `pt-BR`, `it`, `he`) against full EN leaf set (`en_total` 1006 product-all; `aic-server` subset 536):
+**Wave C complete** (`ja`, `ko`, `pt-BR`, `it`, `he`) vs current US English key set:
 
-| Tag | missing | stale | Notes |
+| Tag | aic-server missing | stale | Notes |
 | --- | ---: | ---: | --- |
-| ja | 0 | 0 | Wave C; formal です/ます |
-| ko | 0 | 0 | Wave C; formal polite |
-| pt-BR | 0 | 0 | Wave C; Brazilian formal |
-| it | 0 | 0 | Wave C; Lei |
-| he | 0 | 0 | Wave C; formal Hebrew; RTL |
+| ja | 0 | 0 | Formal です/ます |
+| ko | 0 | 0 | Formal polite |
+| pt-BR | 0 | 0 | Brazilian formal |
+| it | 0 | 0 | Formal Lei |
+| he | 0 | 0 | Formal Hebrew; manifest `dir=rtl` |
 
-Native `gui` / `agent` / `recording` included in the 1006 — 0 missing vs EN for all five tags. Audit: `docs/language-pack-audit-aic-server.json`.
-
-Prior Wave A/B tags unchanged (de still 16 missing on thinner SPA; fr/es/en-GB/zh-Hans/zh-TW at 0/0 for aic-server).
+`en_total` aic-server **536**; product-all leaves **1006** (includes native gui/agent/recording) — all five tags **0 / 0**.
 
 **Not started:** Wave D (`pl`, `tr`, `nl`, `sv`, `fi`, `ar`).
 
 ## History
 
-- `9a24427` — Wave C ja/ko/pt-BR/it/he full catalogs
-- `e9d0bcd` — thin EN stubs for Jump / DB Mgmt agents
-- `7bd001c` / `417f904` — Wave B en-GB / zh-Hans / zh-TW
+- `2087c30` / `9a24427` — Wave C ja/ko/pt-BR/it/he
+- `8b25375` — progress after Wave B
+- `417f904` — Wave B en-GB / zh-Hans / zh-TW
 - `5f59b0d` — handbook, flags, developer standard
 - `0f5d486` — Wave A fr/es
 - `fd368bf` — entry format + hash migration
