@@ -50,6 +50,7 @@ configurator key set):
 
 ## History
 
+- `97159ae` — hardcoded extract: Agent menus, Server dialogs, Jump/DB CLI (en+de)
 - `369b857` — en-GB quality finish; identical-to-en **52** (KEEP +
   variety-neutral + 3 long intentional); aic-server audit clean for en-GB
 - `d967120` — stamp configurator help-keys SHA `30a1460`
