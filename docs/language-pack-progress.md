@@ -13,15 +13,16 @@ never aliases to `en`**; **`zh-TW` / `zh-Hant` never alias to `zh-Hans`**;
 Consumers updated off `Locale::En/De/Fr` matches. Admin SPA
 LanguageSelector untouched. `aic-server-service` left **Running**.
 
-**Still need live EXE relink/deploy** (code compiles; Beavis2 install
-tree still runs prior binaries until restage): Agent service/configurator
-EXEs, Jump/DB Mgmt Tauri EXEs, Server configurator Win32/Tauri EXEs,
-and a full Server service binary deploy for Accept-Language/`i18n`
-changes. Classic Win32 dialog **GDI RTL** layout not wired (Tauri
-`dir` field is).
+**Live Beavis2 restage (2026-08-18):** debug rebuild + Program Files
+copy for Agent (`dc2905e`), Jump Tauri, DB Mgmt Tauri, Server Win32 +
+Tauri configurators, and AIC Server service (`fec50ab06`,
+`-SkipUiBuild`). `aic-server-service` / `aic-offline-agent-service`
+**Running**. Locale packs re-staged beside Agent/Jump/DB Mgmt EXEs.
+Classic Win32 **GDI RTL** still not wired.
 
 **Prior:** Beavis2 INSTALLFOLDER native `locales\` staging (disk packs
 on disk). Catalog fill `bd9378a` / prior bundle sync `e1d579b`.
+Locale crate `pim-app-config` `5f249f5`.
 
 **NEW configurator keys filled (post-97159ae):** the 125 keys that landed
 in `en`+`de` only — Server `server_configurator.json` (40), Agent
