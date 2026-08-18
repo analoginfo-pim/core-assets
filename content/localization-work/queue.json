@@ -85,13 +85,13 @@
       "updated": "2026-08-17",
       "source_repo": "pim-offline-server",
       "source_path": "ui/src/pages/ReportCenterPage.tsx",
-      "source_sha256": "7cd2b139220c00095a1879179faf8dcd5ec4fec80a5a55803a8e063eca4d6445",
+      "source_sha256": "a4d8f8da23bb1225c116c2099d2feaf44229ae311c8bd76d6f78d882a6181c6b",
       "product_route": "/reports",
       "required_tags": [
         "zh-Hans"
       ],
       "draft_tags": [],
-      "notes": "First-paint leftover English wrapped in t(); DE draft in locales-ui/de/pages.json. Agent draft does not close. Source changed 2026-08-17 (hash 0dc2a9247e4e → 7cd2b139220c)."
+      "notes": "First-paint leftover English wrapped in t(); DE draft in locales-ui/de/pages.json. Agent draft does not close. Source changed 2026-08-17 (hash 0dc2a9247e4e → 7cd2b139220c). Source changed 2026-08-17 (hash 7cd2b139220c → a4d8f8da23bb)."
     },
     {
       "id": "spa.control-state-history",
@@ -110,6 +110,26 @@
       ],
       "draft_tags": [],
       "notes": "Page chrome wrapped in t(); DE draft in locales-ui/de/pages.json. Agent draft does not close. Source changed 2026-08-17 (hash b4e1c2a7359b → 7cd2b139220c)."
+    },
+    {
+      "id": "spa.operations-compliance-leftover-en",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "chrome",
+      "title": "Operations Compliance leftover English chrome",
+      "added": "2026-08-17",
+      "updated": "2026-08-17",
+      "source_repo": "pim-defense-dashboard",
+      "source_path": "packages/dashboard/src/pages/OperationsCompliancePage.tsx",
+      "source_sha256": "65ecfd935f6500e0f84c32648601d57242c198b9a31911d6dab6b8f87639c40f",
+      "product_route": "/enclave/operations-compliance",
+      "required_tags": [
+        "zh-Hans"
+      ],
+      "draft_tags": [
+        "de"
+      ],
+      "notes": "Page chrome wrapped in chromeText(); DE draft in locales-ui/de/dashboard.json. Agent draft does not close."
     }
   ]
 }
