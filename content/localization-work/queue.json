@@ -130,6 +130,30 @@
         "de"
       ],
       "notes": "Page chrome wrapped in chromeText(); DE draft in locales-ui/de/dashboard.json. Agent draft does not close."
+    },
+    {
+      "id": "spa.risk-register-leftover-en",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "spa-chrome",
+      "title": "Risk Register leftover English chrome",
+      "added": "2026-08-17",
+      "updated": "2026-08-17",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/pages/RiskRegisterPage.tsx",
+      "source_sha256": "e7d2d8814fcdf7f5db01f714eeb8893fffca818956c54c5337a30f1198c570b2",
+      "product_route": "/enclave/risk-register",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans"
+      ],
+      "draft_tags": [
+        "de"
+      ],
+      "notes": "List-page leftover English wrapped in t(); DE draft in locales-ui/de/risks.json. Agent draft does not close. Detail page leftovers deferred."
     }
   ]
 }
