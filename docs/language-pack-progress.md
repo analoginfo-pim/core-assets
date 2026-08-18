@@ -4,22 +4,28 @@ Partner-readable status for Phil and Robert. Updated after each milestone push t
 
 ## Latest
 
-**Milestone:** Wave B — `en-GB`, `zh-Hans`, `zh-TW` vs current US English (`en_total` 536 for product `aic-server`).
+**core-assets SHA:** `e9d0bcd` (main)
 
-- Audit (`docs/language-pack-audit-aic-server.json`): **en-GB / zh-Hans / zh-TW each missing 0, stale 0** (present 536 / 536). Placeholder broken: 0.
-- Trees mirrored: `content/locales`, `content/locales-ui`, `content/i18n-native/gui/{chrome,server_configurator}`, agent + recording-agent catalogs (1006 leaves per tag including native).
-- **zh-Hans** / **zh-TW**: full packs; Taiwan Traditional authored separately (not converted from Simplified).
-- **en-GB**: key coverage complete; quality is **Partial** — many longer binder/dashboard strings still match US English (AI draft / light UK transform). Reviewer pass recommended for legal/disclosures and long help text.
-- fr/es untouched; Wave C not started. German still missing 16 dashboard defense keys + large orphan set.
+**Done through Wave B** against current US English key set (`en_total` 536 for `aic-server`):
 
-**Prior — Handbook + flags (`5f59b0d`):** developer standard, partner handbook, flag SVGs.
+| Tag | missing | stale | Notes |
+| --- | ---: | ---: | --- |
+| de | 16 | 0 | Large orphan set vs thinner `en` SPA |
+| fr | 0 | 0 | Wave A |
+| es | 0 | 0 | Wave A |
+| en-GB | 0 | 0 | Coverage complete; quality Partial (long strings often still US English) |
+| zh-Hans | 0 | 0 | Wave B |
+| zh-TW | 0 | 0 | Wave B; not converted from zh-Hans |
 
-**Prior — Wave A (`0f5d486`):** French and Spanish match current US English key set for aic-server.
+Also on disk: manifest, glossary, Python hash/audit tools, MIT flags (18 tags), developer standard, handbook updates.
+
+**Not started:** Wave C (`ja`, `ko`, `pt-BR`, `it`, `he`) and Wave D (`pl`, `tr`, `nl`, `sv`, `fi`, `ar`) — no `content/locales/<tag>` folders yet.
 
 ## History
 
-- (this push) — Wave B en-GB / zh-Hans / zh-TW aic-server 0/0 coverage
+- `e9d0bcd` — thin EN stubs for Jump / DB Mgmt agents
+- `7bd001c` / `417f904` — Wave B en-GB / zh-Hans / zh-TW
 - `5f59b0d` — handbook, flags, developer standard
-- `0f5d486` — Wave A fr/es complete vs en
+- `0f5d486` — Wave A fr/es
 - `fd368bf` — entry format + hash migration
 - `b6be41d` — manifest + language_packs.py
