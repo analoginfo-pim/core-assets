@@ -44,7 +44,7 @@ configurator key set):
 
 ## History
 
-- _(this commit)_ — en-GB quality finish; identical-to-en **52** (KEEP +
+- `369b857` — en-GB quality finish; identical-to-en **52** (KEEP +
   variety-neutral + 3 long intentional); aic-server audit clean for en-GB
 - `d967120` — stamp configurator help-keys SHA `30a1460`
 - `30a1460` — configurator screen/help keys (Server/Agent/Jump/DB) en+de
