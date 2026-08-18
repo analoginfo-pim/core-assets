@@ -296,6 +296,32 @@
         "de"
       ],
       "notes": "Walk 2026-08-17: leftover DE header and grid Export. Draft DE only. Timestamps lack display timezone. Native date picker stays US format on DE. Not AU complete. Not Met. Tier 1 en-GB/zh-Hans absent."
+    },
+    {
+      "id": "spa.dashboard-home-leftover-en",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "spa-chrome",
+      "title": "Dashboard home leftover English chrome",
+      "added": "2026-08-17",
+      "updated": "2026-08-17",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/pages/DashboardPage.tsx",
+      "source_sha256": "f9d49ba5baf88e0bfa5850c3e50b8cc26ecc60936a949bb948f7c92163e28e75",
+      "product_route": "/",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans"
+      ],
+      "draft_tags": [
+        "de",
+        "fr",
+        "es"
+      ],
+      "notes": "Walk 2026-08-17: wrap home alerts and Customize panel in t(); DE draft in locales-ui/de/dashboard.json. Agent draft does not close. Tile titles from API still English fallback. Not Met. Tier 1 en-GB/zh-Hans absent."
     }
   ]
 }
