@@ -4,6 +4,26 @@ Partner-readable status for Phil and Robert. Updated after each milestone push t
 
 ## Latest
 
+**Tauri Appearance language combo (System + 18 PACK_TAGS):** Server Tauri,
+Agent Tauri, Jump Config Tauri, and DB Mgmt Tauri now list the same language
+choices as Win32 — System default plus every [`PACK_TAGS`] entry via
+`locale_pref_choices_ui()` / `pack_display_label`. Cookie + `UI_LOCALE`
+identity fallback; `en-GB` never aliases to `en`; `zh-TW` never aliases to
+`zh-Hans`. `document.documentElement.dir` follows chrome `dir` (`rtl` for
+he/ar). Shared `locale-browser.js` uses `canonicalizePackTag` aligned with
+Rust. Jump/DB gained a minimal Appearance panel when none existed.
+
+**Live Beavis2 restage (Tauri, debug):** Program Files copies —
+`PimServer\pim-offline-server-configurator-tauri.exe`,
+`PimAgent\pim-offline-client-configurator-tauri.exe` (+ agent-named twin),
+`PimJumpServer\pim-jump-server-configurator-tauri.exe`,
+`DbMgmtAgent\pim-db-mgmt-agent-configurator-tauri.exe`.
+`aic-server-service` left **Running**.
+
+**Appearance language combo (18 packs) — Win32 (prior):** Server and Agent
+Win32 Appearance dialogs list **System default** plus every [`PACK_TAGS`]
+entry. Saving writes `UI_LOCALE` and re-runs RTL layout for he/ar.
+
 **Locale is a pack tag (no enum variants):** `pim-app-config-i18n`
 `Locale` is now `{ tag: &'static str }` over [`PACK_TAGS`] (18 tags).
 `parse_tag` / `canonicalize_pack_tag`: `en`/`en-US` → `en`; **`en-GB`
@@ -11,20 +31,7 @@ never aliases to `en`**; **`zh-TW` / `zh-Hant` never alias to `zh-Hans`**;
 `he`/`ar` expose `dir() == "rtl"`. Disk maps preferred; chrome uses
 `try_load_flat_catalog` (exact tag) then compiled `en`/`de`/`fr`.
 Consumers updated off `Locale::En/De/Fr` matches. Admin SPA
-LanguageSelector untouched. `aic-server-service` left **Running**.
-
-**Live Beavis2 restage (2026-08-18):** debug rebuild + Program Files
-copy for Agent (`dc2905e`), Jump Tauri, DB Mgmt Tauri, Server Win32 +
-Tauri configurators, and AIC Server service (`fec50ab06`,
-`-SkipUiBuild`). `aic-server-service` / `aic-offline-agent-service`
-**Running**. Locale packs re-staged beside Agent/Jump/DB Mgmt EXEs.
-
-**Appearance language combo (18 packs):** Server and Agent Win32
-Appearance dialogs list **System default** plus every [`PACK_TAGS`]
-entry (`en`, `en-GB`, `de`, … `he`, `ar`). Saving writes `UI_LOCALE`
-and re-runs `apply_rtl_layout` / process layout for he/ar. No
-`en-GB`→`en` or `zh-TW`→`zh-Hans`. Main + Help About still get
-`WS_EX_LAYOUTRTL` when the pack is RTL.
+LanguageSelector untouched.
 
 **Prior:** Beavis2 INSTALLFOLDER native `locales\` staging (disk packs
 on disk). Catalog fill `bd9378a` / prior bundle sync `e1d579b`.
@@ -57,7 +64,8 @@ configurator key set):
 
 ## History
 
-- *(this note)* — Appearance combo lists System + 18 PACK_TAGS (he/ar RTL)
+- *(this note)* — Tauri Appearance: System + 18 PACK_TAGS (Server/Agent/Jump/DB)
+- *(prior)* — Appearance combo lists System + 18 PACK_TAGS (he/ar RTL) Win32
 - *(prior)* — Win32 GDI RTL (he/ar) on Server/Agent main + Help About
 - *(prior)* — Beavis2 live debug restage (Agent/Jump/DB/Server + service)
 - `69f73e0` — Locale tag string + PACK_TAGS; consumers off En/De/Fr enum
