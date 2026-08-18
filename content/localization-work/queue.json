@@ -393,7 +393,7 @@
     },
     {
       "id": "about.open-source-credits",
-      "status": "open",
+      "status": "cancelled",
       "priority": "tier-1",
       "kind": "help-manual",
       "title": "Open Source Credits complete disclosure",
@@ -402,16 +402,10 @@
       "source_repo": "pim-offline-server",
       "source_path": "legal/open-source-credits/inventory.json",
       "source_sha256": "c4a0ba0a2cb2f708f1f0af42cee32a391c2408f5f2cfc74ae7bf0fe40be8992b",
-      "product_route": "",
-      "required_tags": [
-        "de",
-        "fr",
-        "es",
-        "en-GB",
-        "zh-Hans"
-      ],
+      "product_route": "/about/open-source-credits",
+      "required_tags": [],
       "draft_tags": [],
-      "notes": ""
+      "notes": "Cancelled 2026-08-18: Open Source Credits are US English only by design (licensor language / English disclosure). Not a must-localize surface. Completeness + lockfile regeneration is required (open-source-credits-complete.mdc); do not translate inventory, license bodies, or credits chrome."
     },
     {
       "id": "spa.known-default-credentials",
@@ -469,7 +463,7 @@
       "updated": "2026-08-18",
       "source_repo": "pim-offline-server",
       "source_path": "ui/src/i18n/locales/en/ot.json",
-      "source_sha256": "1fd505b218a0cf558770a9deb04b823dbbefeb611cc1b93d3b869cf74262288d",
+      "source_sha256": "e298c44b650f51d6e578fad18a2b7e5499fae1af546011705903bc4d82118cc5",
       "product_route": "/systems/network-scan",
       "required_tags": [
         "de",
@@ -479,7 +473,7 @@
         "zh-Hans"
       ],
       "draft_tags": [],
-      "notes": ""
+      "notes": "Source changed 2026-08-18 (hash 1fd505b218a0 → e298c44b650f)."
     }
   ]
 }

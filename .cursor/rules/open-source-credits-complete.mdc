@@ -1,7 +1,7 @@
 ---
 description: >-
-  Open Source Credits disclosures must list every incorporated third-party
-  OSS component with license identity and text — curated subsets are a defect.
+  Open Source Credits must be complete and regenerated from lockfiles on every
+  deploy/package — never localized; curated or stale snapshots are a defect.
 alwaysApply: true
 ---
 
@@ -9,6 +9,9 @@ alwaysApply: true
 
 Operator directive (Phil, 2026-08-18): **You must include ALL open source
 licenses in our disclosure.** Not a curated subset.
+
+Operator clarification (Phil, 2026-08-18): **Open Source Credits do not need
+to be localized. They do need to be complete and always up to date.**
 
 ## The rule
 
@@ -21,18 +24,37 @@ licenses in our disclosure.** Not a curated subset.
 > (harvested or a stored copy of the licensor's published text). Status
 > may be Live only when every package has identity + text. Packages that
 > truly lack a harvestable license stay listed as BLOCKED — never silently
-> omitted, never invented.**
+> omitted, never invented. The inventory is US English only (licensor
+> language / English disclosure). Do not localize the credits page,
+> inventory, license bodies, or copyright notices. Regenerate from current
+> lockfiles on every server deploy and MSI/package path so a lockfile
+> change cannot ship a stale list.**
 
 ## Required
 
 1. Regenerate with `core-assets/scripts/generate-open-source-credits.py`
-   against current `Cargo.lock` and `ui/package-lock.json` (run
-   `cargo fetch --locked` first when registry crates are missing locally).
+   against current `pim-offline-server/Cargo.lock` and
+   `ui/package-lock.json` (run `cargo fetch --locked` first when registry
+   crates are missing locally). Inputs also include incorporated assets
+   (flag-icons, etc.).
 2. Harvest bodies from the Cargo registry / git checkouts, `node_modules`,
    and in-tree LICENSE files — do not hand-type license text from memory.
-3. Page: searchable list; expandable license text; honesty banner; pagination
-   or virtualization is OK for large graphs.
-4. Mirror this rule to `core-assets/.cursor/rules/` in the same change set.
+3. **Always-current seam:** invoke regeneration (fail-closed on BLOCKED)
+   from `Deploy-OfflineServerDev.ps1` and the AIC Server MSI/package
+   path via `Invoke-OpenSourceCreditsRegen.ps1`. `pim-offline-server/build.rs`
+   refuses a stale inventory (lockfile SHA mismatch) so `cargo build`
+   cannot embed an old list. Do **not** add push-triggered CI
+   ([`ci-policy.mdc`](ci-policy.mdc)).
+4. Fail closed: `--require-live` / regen exit non-zero when any third-party
+   package lacks license identity or text. First-party path crates may stay
+   excluded when already documented in the generator.
+5. Honesty banner: inventory status + generation SHAs (Cargo.lock,
+   package-lock, companion SBOM when present) so an operator can confirm
+   the list matches this build.
+6. Page: searchable list; expandable license text; honesty banner;
+   pagination or virtualization is OK for large graphs. SPA locale may be
+   German (or any pack) while the credits page remains English — intentional.
+7. Mirror this rule to `core-assets/.cursor/rules/` in the same change set.
 
 ## Forbidden
 
@@ -40,9 +62,16 @@ licenses in our disclosure.** Not a curated subset.
 - Omitting transitive Cargo or npm production packages
 - Inventing SPDX ids or license bodies
 - Dropping packages that lack a license file instead of marking **BLOCKED**
+- Shipping a committed inventory whose lockfile SHAs do not match the
+  current `Cargo.lock` / `package-lock.json`
+- Silent deploy/package success when status is not Live (BLOCKED present)
+- Localizing credits chrome / inventory / license bodies, or enqueueing
+  must-localize work for this page
 - Claiming Met / certified for the disclosure
 
 ## Origin
 
 2026-08-18 — operator: include ALL open source licenses in disclosure;
-Partial curated list is not acceptable.
+Partial curated list is not acceptable. Same day: not localized; must
+regenerate from lockfiles on every deploy/package; stale snapshots are a
+defect.

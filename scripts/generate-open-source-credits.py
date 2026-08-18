@@ -17,10 +17,15 @@ Status is Live only when every entry has license identity + text.
 
 Usage (from core-assets repo root):
   python scripts/generate-open-source-credits.py
+  python scripts/generate-open-source-credits.py --require-live
+
+`--require-live` exits non-zero when any third-party entry is BLOCKED so
+deploy / MSI / build.rs fail closed (never ship an incomplete disclosure).
 """
 
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 import re
@@ -804,7 +809,20 @@ def sync_to_consumers() -> None:
         print(f"Synced -> {dest_root}")
 
 
-def main() -> int:
+def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
+    p = argparse.ArgumentParser(
+        description="Generate AIC Server Open Source Credits inventory (complete disclosure)."
+    )
+    p.add_argument(
+        "--require-live",
+        action="store_true",
+        help="Exit 2 when any third-party package is BLOCKED (fail-closed for deploy/MSI).",
+    )
+    return p.parse_args(argv)
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = parse_args(argv)
     if not SERVER.is_dir():
         print(f"ERROR: expected sibling pim-offline-server at {SERVER}", file=sys.stderr)
         return 1
@@ -1097,6 +1115,14 @@ Inventory SHA-256: `{sha256_text(inv_text)}`
             print(f"  ... and {len(blocked) - 50} more")
 
     sync_to_consumers()
+
+    if args.require_live and blocked:
+        print(
+            f"ERROR: --require-live refused {len(blocked)} BLOCKED package(s); "
+            "disclosure is incomplete (fail-closed).",
+            file=sys.stderr,
+        )
+        return 2
     return 0
 
 
