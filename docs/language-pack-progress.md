@@ -4,7 +4,7 @@ Partner-readable status for Phil and Robert. Updated after each milestone push t
 
 ## Latest
 
-**core-assets SHA:** *(pending push — Wave C)*
+**core-assets SHA:** `9a24427` (main)
 
 **Wave C complete** (`ja`, `ko`, `pt-BR`, `it`, `he`) against full EN leaf set (`en_total` 1006 product-all; `aic-server` subset 536):
 
@@ -24,7 +24,7 @@ Prior Wave A/B tags unchanged (de still 16 missing on thinner SPA; fr/es/en-GB/z
 
 ## History
 
-- *(this push)* — Wave C ja/ko/pt-BR/it/he full catalogs
+- `9a24427` — Wave C ja/ko/pt-BR/it/he full catalogs
 - `e9d0bcd` — thin EN stubs for Jump / DB Mgmt agents
 - `7bd001c` / `417f904` — Wave B en-GB / zh-Hans / zh-TW
 - `5f59b0d` — handbook, flags, developer standard
