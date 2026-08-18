@@ -4,7 +4,7 @@ Partner-readable status for Phil and Robert. Updated after each milestone push t
 
 ## Latest
 
-**core-assets SHA:** *(pending commit — en-GB quality)*
+**core-assets SHA:** `d4fe15f` (en-GB UK quality)
 
 **en-GB quality pass** (real UK register, not a US spelling overlay):
 
@@ -16,7 +16,7 @@ Wave A–D tags unchanged this run (not retouched).
 
 ## History
 
-- *(this commit)* — en-GB UK quality rewrite across locales / locales-ui / gui / agent / recording
+- `d4fe15f` — en-GB UK quality rewrite across locales / locales-ui / gui / agent / recording
 - `fa05cb7` — Wave D pl/tr/nl/sv/fi/ar
 - `2087c30` / `9a24427` — Wave C ja/ko/pt-BR/it/he
 - `8b25375` — progress after Wave B
