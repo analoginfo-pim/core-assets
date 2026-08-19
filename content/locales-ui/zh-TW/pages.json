@@ -1,16 +1,16 @@
 {
   "about__open-source-credits": {
     "helpAriaLabel": {
-      "text": "打開開源積分的幫助",
-      "source_sha256": "4bee1bb4f4a0ec90ad94bc691b5e28b3b3329118bbc45b70303d14f1d867957c"
+      "text": "開啟開源授權聲明說明",
+      "source_sha256": "d6d769c26609855a4b390b618df2d476721b860efd8359f2e3dcf4cbbaae352a"
     },
     "summary": {
-      "text": "第三方開源元件合併到 AIC 伺服器中，在取得時具有許可證識別和許可證文字。此頁面仍為美國英語。",
-      "source_sha256": "48f732653aba7891625a77efcb65237f0292ab94e4a32762602ae74abcc21591"
+      "text": "納入 AIC Server 的第三方開源元件清單，含授權識別與已擷取的授權全文。本頁內容維持美式英語。",
+      "source_sha256": "6ee8f219fe739c357050651b235bb3b1cb484e7e8e9debef543f28a087aad6e1"
     },
     "title": {
-      "text": "開源-Hinweise",
-      "source_sha256": "bee75d4a6ac7ca1eae580fbe747e9f0ff71e1e33ef3c74b845f3b540ec4635f6"
+      "text": "開源授權聲明",
+      "source_sha256": "ef6643daa45e6995014027fc62e5f589dd80019a418106bdc84035708a84c190"
     }
   },
   "chrome": {
@@ -358,8 +358,8 @@
         "source_sha256": "47e55b4aa0ded5d2c191f0614e50b4bcad2ff26426c9f302b0d96e83ccae4c04"
       },
       "knownActions": {
-        "text": "{{count}} 表示操作 — a 或 mehrere auswaehlen",
-        "source_sha256": "b81bab52fcf61d45a7ca638d290f176f0f56c1357604994ce9852f6ff5281c0b"
+        "text": "{{count}} 已知操作 — 選擇一個或多個",
+        "source_sha256": "11b0324430e1cc5871db96689a0938e05bc35d85d6a0c8d7d8f7a05e4c917839"
       },
       "loadingActions": {
         "text": "正在載入操作列表…",
@@ -558,11 +558,11 @@
         "source_sha256": "b8e0e6a04a6e50c70b2e451b5411bd8a85159266c66086d83724d38ea18b4351"
       },
       "basenameChip": {
-        "text": "basename: __PH0__",
+        "text": "basename：{{name}}",
         "source_sha256": "04ffdd058c5218e856cc176a2034a04ec57679d4afb6d9559fbad2c9925a35b9"
       },
       "canonicalLine": {
-        "text": "Canonical (normalized) command line",
+        "text": "正規化（標準化）命令列",
         "source_sha256": "f507da2ea6b1834004c7921d055e5730a4c7c6e48dcbfbb96f22cd7f89f126a5"
       },
       "colActions": {
@@ -578,7 +578,7 @@
         "source_sha256": "c611981fab983bc648368eb81240f5a5a1eff07f40aa4c9fd155600a98eeb6af"
       },
       "commandHelp": {
-        "text": "The command is canonicalized and evaluated, not executed.",
+        "text": "命令會被正規化並評估，不會執行。",
         "source_sha256": "ade2e7dccaba0d18a4d09f36e319f5e18d52f8429167c90b9d05de0d9e6968f0"
       },
       "commandRuleCount": {
@@ -594,7 +594,7 @@
         "source_sha256": "8d525e5f158b9afe05f3122af363ac67763bdc4e1395b46597b320c289766ce3"
       },
       "copyCanonical": {
-        "text": "Copy canonical command",
+        "text": "複製正規化命令",
         "source_sha256": "1b5ee39d4e5cb53879cc69a387696eb2777714a58fbc9e1bb06b6d0010f7efdd"
       },
       "copyCanonicalAria": {
@@ -602,7 +602,7 @@
         "source_sha256": "7db3789d3f523deb7bbdf24d69c473a0f6de23d6ef6080d6b32769572cef4485"
       },
       "currentCommandPolicy": {
-        "text": "Current global command policy",
+        "text": "目前的全域命令原則",
         "source_sha256": "f726a058dda093a9bf76efbae6ef706fc1e39f4ca1f33e5830a6eb6a74d9cbf3"
       },
       "currentLaunchPolicy": {
@@ -614,7 +614,7 @@
         "source_sha256": "2f234b9303c1c5e6ac42ea26e5f9edd4182ba21fc3b8bceaf02c3b3cf85de79d"
       },
       "decisionAllowAria": {
-        "text": "Decision: allow",
+        "text": "決定：允許",
         "source_sha256": "34fa44344339085b3ed0ca6ad0605454cd3ed281f3f5407aeb42d90b4f84d78f"
       },
       "decisionDenyAria": {
@@ -622,7 +622,7 @@
         "source_sha256": "cae73f69597ab7e6221c9097543a9742b617f39999ab3ee27450a9ef86b837a7"
       },
       "deny": {
-        "text": "deny",
+        "text": "拒絕",
         "source_sha256": "3026a0ca485e5831657ba0120fa8dd66b3425427bfb0a2be0db743e2305cc7c5"
       },
       "denyBaseline": {
@@ -734,7 +734,7 @@
         "source_sha256": "ed93b0a7c8ffd68b31fd33f0358db7e879b89644df7300d24631ecde947fdb81"
       },
       "machineScopeHelp": {
-        "text": "When set, uses that machine",
+        "text": "設定後，會套用到該機器",
         "source_sha256": "103d0a17f52ad5bf5a409c05cd4754be63fa6209f02164efcda2d5d125f7fd8d"
       },
       "machineScopeLaunchHelp": {
@@ -742,7 +742,7 @@
         "source_sha256": "103d0a17f52ad5bf5a409c05cd4754be63fa6209f02164efcda2d5d125f7fd8d"
       },
       "matched": {
-        "text": "Matched:",
+        "text": "符合：",
         "source_sha256": "919d2f9c7f828c3fd0eb949efd4d0a8d0a4be937e786fc4f3bd6b2f6437b097e"
       },
       "monitorOnly": {
@@ -762,7 +762,7 @@
         "source_sha256": "5eda2353152a8162cb0e1a77e3c6658cad49b5ecb37204886585b193f2daef26"
       },
       "pipelineTitle": {
-        "text": "Normalization pipeline",
+        "text": "正規化管線",
         "source_sha256": "0ede1e659129594a588fbc5b98a1084c7f07ae5c818e65b9448fcb870d144b42"
       },
       "policyChip": {
@@ -818,7 +818,7 @@
         "source_sha256": "1509f561f2416598629b886ad7d3c05a7e221e4e0675c84bbff4ee6d9e03913d"
       },
       "segmentN": {
-        "text": "Segment __PH0__",
+        "text": "區段 {{n}}",
         "source_sha256": "073b43c6919806cbef6159223349b2195d8abe493d45f5e9857b4cca79afc476"
       },
       "stage1Body": {
@@ -1018,8 +1018,8 @@
         "source_sha256": "67d4cebfcc12f43d3fcb223be469226f67bb5f0a614f5f823e0823cb283b1694"
       },
       "loadFailed": {
-        "text": "Firmenprofil konnte not geladen werden：{{message}}",
-        "source_sha256": "651e4ec418c7abdb17da884fb266558a7e49a743865eec8ea7e9c2604fe3c120"
+        "text": "無法載入公司資料：{{message}}",
+        "source_sha256": "b167707f1a101d4b32a3d65245c4fc2c29c974d87b0096d60dec39f440d59f90"
       },
       "loadingAria": {
         "text": "正在加載公司簡介",
@@ -1088,7 +1088,7 @@
         "source_sha256": "bb49869c7447c35730a4cf46802a4bd9e060640e3aade206276d3d3350cf7e8b"
       },
       "attest": {
-        "text": "Attest",
+        "text": "證明",
         "source_sha256": "c81da7e67a9d6ddbd62551ee5194d30eac129c20d20ec5e1219448f65297689e"
       },
       "attestAria": {
@@ -1124,7 +1124,7 @@
         "source_sha256": "6c8a9c0a4398f4a430ad69f92d8a8d7a8a99a6f280a7b1a214e96f86d44da927"
       },
       "cancelAddHelp": {
-        "text": "Closes the add connection point form without saving.",
+        "text": "關閉新增連線點表單且不儲存。",
         "source_sha256": "65f7eba168629c87fd5059effd43fa22e5cee523c503524ab6321c4733098e92"
       },
       "cancelCredential": {
@@ -1196,20 +1196,20 @@
         "source_sha256": "464c4ffd019e1e9691dcf0537c797353ef2b1c1d4833d3d463e5b74ae4547344"
       },
       "empty": {
-        "text": "Keine Verbindungspunkte。 Fuegen Sie SSH-、RDP- 或 VNC-Ziele hinzu。",
-        "source_sha256": "0019b584f26cea8b5b2fcef03c185ba325dce2b1e292783eabec5afe4aef71b2"
+        "text": "沒有連線點。請新增 SSH、RDP 或 VNC 目標。",
+        "source_sha256": "f31852a4d7f347209a794e8cafee499d07a81de9bee784ec21a4f7905b66412d"
       },
       "emptyHostFilter": {
         "text": "沒有與主機相符的連線點",
         "source_sha256": "f0ce0532d6e3dc89859faba7f6911f8550ef4d2695d8754f4c5ed565b2adad6b"
       },
       "emptyNone": {
-        "text": "尚未註冊連接點。在上面添加一个，然后设置其凭据并启动录制的会话。",
+        "text": "尚未註冊連線點。請先在上方新增一個，再設定其認證資料並啟動已錄製的工作階段。",
         "source_sha256": "afb3ba54f4d26829363d8e065b60796778bce8a4aa5110cee9e7bac67b05d904"
       },
       "everyRecorded": {
-        "text": "Jede geoeffnete Session wird standardmaessig aufgezeichnet",
-        "source_sha256": "98b6e250b9fd5d5b22fc0e06c1614f47e97fc45f3a3cbbbb1f215d1657327b38"
+        "text": "每次開啟的工作階段預設都會錄製",
+        "source_sha256": "440d802951e69dd32a6619c5ef60e2af6d00a933ec4258a43261867c54d8e34d"
       },
       "externalReadiness": {
         "text": "外部工作站準備狀況",
@@ -1228,7 +1228,7 @@
         "source_sha256": "1f3718585d7b60b66d319654b24f7b43351ceaa587cfbdbe8e740793d144cde3"
       },
       "intro": {
-        "text": "Registered SSH, RDP, and VNC connection points. Open session starts a new live viewer through the proxy.",
+        "text": "已註冊的 SSH、RDP 與 VNC 連線點。「開啟工作階段」會透過代理啟動新的即時檢視器。",
         "source_sha256": "04ae36038e9c619c628d13824e3552d71956e1d8826c1d73f0ca4e5bdd2fb13f"
       },
       "join": {
@@ -1288,16 +1288,16 @@
         "source_sha256": "011c0503890c7ed8db5e46a6f3a330f8d25a67a10a50d0fedff07c2e9a0d9345"
       },
       "launchingRdp": {
-        "text": "Launching recorded RDP session (this may take up to two minutes)â¦",
-        "source_sha256": "9afebe809011f28152d27548b26c55e0b66a4020084b601f2e209f131ea56d24"
+        "text": "正在啟動已錄製的 RDP 工作階段（最多可能需要兩分鐘）…",
+        "source_sha256": "746d023eb9a18df4483ad27bd0b85718609107010923bd45cfd4adf854dd7fbe"
       },
       "launchingSsh": {
-        "text": "Launching recorded SSH sessionâ¦",
-        "source_sha256": "f2b95c1a9248b9e44ed48fa80d7a0455e8e07d1c42d7d0adb840ce66671bc22f"
+        "text": "正在啟動已錄製的 SSH 工作階段…",
+        "source_sha256": "69727b1d58db0eea1c5309ae02c0b6f96d3ae132c5a1f06ef9acece86beac183"
       },
       "launchingVnc": {
-        "text": "Launching recorded VNC sessionâ¦",
-        "source_sha256": "160cd8a1c521fc61fef0971d6bf40450830d7e4032e69b3f1d4842c716257f46"
+        "text": "正在啟動已錄製的 VNC 工作階段…",
+        "source_sha256": "6049f8df477b8e05989a501f326b99681eee8d679b64c1097d1cb7524defb434"
       },
       "loadFailed": {
         "text": "無法載入連接點。確認管理令牌和伺服器版本。",
@@ -1320,7 +1320,7 @@
         "source_sha256": "db094892263a91f81bda83a49cab062958cd3739a6cad4b22a70a409241c01fa"
       },
       "noSupervisor": {
-        "text": "No supervisor yet",
+        "text": "尚無主管",
         "source_sha256": "d6b6f6d91b3472bc3d47c2cd0a434bdf49e0bf898ab44e7121bde486e4dc5380"
       },
       "notAttested": {
@@ -1348,7 +1348,7 @@
         "source_sha256": "ce9b3dbe309380a6ef086931e34ec3dec670fffd9fa192976c585ca3107057c7"
       },
       "openNeedCredential": {
-        "text": "Vault a credential before Open session",
+        "text": "開啟工作階段前請先將認證放入保管庫",
         "source_sha256": "ebbfba559c5ce57db1123a99cbb2566a19d2384f0c9139e13165aa842368454d"
       },
       "openNeedGrant": {
@@ -1416,7 +1416,7 @@
         "source_sha256": "a0bd7f8a2e54c12a878456b796ee5ed888618f0f15202506e48bd075e330807a"
       },
       "recordingModeHelper": {
-        "text": "Default Proxy: server records every interactive session. Target-local requires agent attestation.",
+        "text": "預設 Proxy：伺服器錄製每個互動式工作階段。目標本機模式需要代理程式證明。",
         "source_sha256": "a5b348712bf323b87df22a13a2225048e08cd4a3cef8110e6e54faf1d97d9ce3"
       },
       "recordingModeProxyItem": {
@@ -1452,7 +1452,7 @@
         "source_sha256": "8360b06889ea5b03fceb00e80dea609f2b8306b33ec7cf3baceea747cbb2bf1f"
       },
       "save": {
-        "text": "Save connection point",
+        "text": "儲存連線點",
         "source_sha256": "3a68c95b5ccf9a64ad06551a75f1e365d6ae31af487141cebafa27ca04da985f"
       },
       "saveAria": {
@@ -1481,8 +1481,8 @@
           "source_sha256": "247610f4dedd4ab7247d07dbda19c81ca9817f85820742cad49d407ffae9e4ed"
         },
         "waiting_for_supervisor": {
-          "text": "瓦特特 auf 主管",
-          "source_sha256": "fbc2c47c84309ea890b0420e9bb864fa753cffa4c5d5da55c14d669fcd966948"
+          "text": "等待主管",
+          "source_sha256": "250b6d7ff79136a5d8ec653f186753f0b0f4b0b651a3a1cc97646da745fec74b"
         }
       },
       "stateChip": {
@@ -1920,8 +1920,8 @@
         "source_sha256": "8c8834280587b4a2300411ad2ec9ac5e40a27f8c41a363fa7c0ffbb3170332c0"
       },
       "empty": {
-        "text": "Kein Tresorinhalt for diese Ansicht。",
-        "source_sha256": "a6d938a4b4f45a1f3fdcf439ba3fabc816549b6ad280f115e41e84e026a9103e"
+        "text": "此檢視沒有保管庫內容。",
+        "source_sha256": "1743ec6c1a7500929d58edcf3e433f13e2015b790f87419ae9185c991a34275a"
       },
       "gridAria": {
         "text": "憑證庫元數據",
@@ -2034,8 +2034,8 @@
         "source_sha256": "a79b1c5cafdb28771be934a20ea37f0b1545cf978e5fef994ebf3694628c2b82"
       },
       "noEndpoints": {
-        "text": "Keine Endpunkte verfuegbar。",
-        "source_sha256": "9f814c183aa29479a75db6c5f08fb349ace2be8e23de8a45497cd8d5e1e957e4"
+        "text": "沒有可用的端點。",
+        "source_sha256": "5d9a40aeffeeaf4fedc236ce9202734438cbb353a966eff58dfcd8c71bd92c75"
       },
       "noIp": {
         "text": "無IP",
@@ -2062,8 +2062,8 @@
         "source_sha256": "63219f205073799d6c47a789929922ed78d4c65ce0dd92a46a4d101ebb6e1ec3"
       },
       "selectEndpointHelper": {
-        "text": "Waehlen Sie a Maschine，um a Einmal-Elevationscode to erstellen。",
-        "source_sha256": "36794ca0380dc979fdd54a2341f2f363719143f5a3cc98b8ad31b2741b7c5a80"
+        "text": "選取一台機器以產生一次性提升代碼。",
+        "source_sha256": "eb3c1fccf2de857e75cd219351ae5424af1338a6b7ce1318e1cff950c72f6446"
       },
       "selectPlaceholder": {
         "text": "按名稱、IP 或 MAC 選擇",
@@ -2144,8 +2144,8 @@
         "source_sha256": "171c669aab018a3ccc7ec98c55d455c6c017d10b7dd7c69114ba8a1074876702"
       },
       "intro": {
-        "text": "这些规则决定一个人可以以更高的权限运行哪些应用程序。当有人请求提升一个应用程序时，端点会测量该文件，并且服务器会在此处查找匹配的规则。如果沒有規則匹配，則拒絕該請求。目錄檔：",
-        "source_sha256": "4c8509e9a4b01a1a3ffdd52c90dcfc6276ccaf0dcbdb4acc5f8685f2b1c4f96a"
+        "text": "這些規則決定一個人可以以更高權限執行哪些應用程式。當有人請求提升某個應用程式時，端點會量測該檔案，伺服器會在此處尋找相符的規則。若沒有規則相符，則拒絕該請求。目錄檔：",
+        "source_sha256": "cefcacd3cfaf271551d52a6d613515f9b08513068eb4f2d1265acdbb52ce3f9b"
       },
       "loadFailed": {
         "text": "无法加载规则列表。檢查伺服器是否正在運行並且您是否已登入。",
@@ -2452,8 +2452,8 @@
         "source_sha256": "8bb386374349357cef76722da282c7e69a7e03656dcd4a7ab03d98363de209b6"
       },
       "addedMany": {
-        "text": "{{count}} Seiten 到 Meine favoriten hinzugefuegt。",
-        "source_sha256": "0cc56a99c52ed192ce7e673d4717e7fa7cdbd4dd9c45f0596c13f03abb3565a6"
+        "text": "已將 {{count}} 個頁面加入我的收藏。",
+        "source_sha256": "df542fa5303c8d2c42e012dc12a6acb3916a58ad8abfb96278d9d968b519141e"
       },
       "addedOne": {
         "text": "頁面已新增至我的收藏夾。",
@@ -2468,16 +2468,16 @@
         "source_sha256": "ff83fc7012377e35988817d53d42f129d10688a9bb29008af92babdeb566218b"
       },
       "driftMandatory": {
-        "text": "Diese angehefteten Seiten sind jetzt Pflichtfavoriten 和 wurden in the oberen Bereich verschoben：{{keys}}。",
-        "source_sha256": "6ff26c46f5c38c48f0e3e03af8208516007d3656498ea514126d09236ee9f4b5"
+        "text": "這些釘選頁面現已成為必要收藏，並已移至上方區段：{{keys}}。",
+        "source_sha256": "4460056dab605ab617a4642783e48fd70328f0a85c598f8112d2e2ba98b882e3"
       },
       "driftUnknown": {
-        "text": "Einige angeheftete Seiten gehoeren not to diesem Server-Build: __PH0__. Sie werden uebersprungen, not geloescht.",
-        "source_sha256": "589a7b0cbda0d0cc84c7bc4a940072b840569a7eb1564b251064ead7342e9962"
+        "text": "部分釘選頁面不屬於此伺服器組建：__PH0__。已略過，並未刪除。",
+        "source_sha256": "b447e345e67baf3518eaf8498896e859fe8d68f0721ee1f4ad8874d6bc6ea40d"
       },
       "loadFailed": {
-        "text": "收藏 konnten 不是 geladen werden： {{error}}",
-        "source_sha256": "126dc6d246cc86d7a30aefe91d4e2c4f5ba4e462ed0704b4e425addda2159da0"
+        "text": "無法載入收藏：{{error}}",
+        "source_sha256": "74a04ad22512d41d294db35414b5333cb2d374ecfc3656bebc970dfb0037bd0f"
       },
       "mineDescription": {
         "text": "您固定的頁面。使用「新增收藏夾」來固定一張卡片，或使用卡片上的星號來將其刪除。",
@@ -2496,8 +2496,8 @@
         "source_sha256": "43157df8f9f413cd874239f4b9487d591d3041de2ff8e151c45ffc20f2a27232"
       },
       "removeAria": {
-        "text": "{{label}} aus Meine Favoriten loesen",
-        "source_sha256": "77d4ca57e2b992b86cb42c7e1fa2da7eec327e9bc10dc905f9b7b5ff10d79f4d"
+        "text": "從我的收藏移除 {{label}}",
+        "source_sha256": "45d21f1dc4c2c1e10d50a78f39650022d3cb19af472e849b78ce0cda5db654ff"
       },
       "removed": {
         "text": "頁面已從我的收藏夾中刪除。",
@@ -2660,12 +2660,12 @@
         "source_sha256": "464c4ffd019e1e9691dcf0537c797353ef2b1c1d4833d3d463e5b74ae4547344"
       },
       "emptyConnections": {
-        "text": "Keine HSM-Verbindungen 註冊。",
-        "source_sha256": "f3cf0147f0f858053fc08be42336f536b3c854ed3fe0421dacd6db1ab376e1c2"
+        "text": "尚未登錄 HSM 連線。",
+        "source_sha256": "2eb40bdfe58f4fabe44ed9a73c1df8b6601d58fba2d74047cf3ecefb9d625cef"
       },
       "emptyVendors": {
-        "text": "Keine Hersteller registriert.",
-        "source_sha256": "cdca8bf8b2f8c4ab19fcc51a63d2f451b770d6ed006d8da780fbeb1684f10720"
+        "text": "尚未登錄廠商。",
+        "source_sha256": "a0e3d3b0ccd727405c9c5694a43e7e1059c9f1047ce79da9dd64cb9b49aad65d"
       },
       "hsmType": {
         "text": "高速加工機類型",
@@ -2956,8 +2956,8 @@
         "source_sha256": "3541c5f14713a0848f35dee2fb6ba6eeef092dd7a4ae997609a39a36bf94aad8"
       },
       "empty": {
-        "text": "Keine verwalteten Identitaeten auf diesem Endpunkt。",
-        "source_sha256": "6d51e0dfca02271075f1c77f71809091b8ef4e673552ba2afe412ecdbd047e0b"
+        "text": "此端點上沒有託管身分。",
+        "source_sha256": "394358413e50d73d42cb4ed00e4837ae8ba2d3c2c779872a4be8172427855e3f"
       },
       "refresh": {
         "text": "重新整理",
@@ -2982,28 +2982,28 @@
         "source_sha256": "bf028e5740836cc89b3f5b5aab8e761e482750e32673198902ff3f3e5286ec5b"
       },
       "bannerHandler": {
-        "text": "在 <queue>Vorfallreaktions-Warteschlange</queue> 中編輯 Sie 票。 Konfigurieren Sie the Verteilung under <groups>IR-Alarmgruppen</groups>。 Auditoren pruefen Pakete unter <evidence>IR-Nachweise for Auditoren</evidence>。",
-        "source_sha256": "2f8b3fd0ce8c65b8e679b6fe579a3a37811e7465a534733a3af549dfec14937b"
+        "text": "編輯<queue>事件回應佇列</queue>中的票證。在<groups>IR警報組</groups>下配置分配。審核員依據 <evidence>IR 證據為審核員</evidence> 檢查包裹。",
+        "source_sha256": "9581e06172598e8ca7f0f3d251867612f90f0e8f828ec060bca9b6ad7792b932"
       },
       "bannerReporter": {
-        "text": "Verwenden Sie <report>Vorfall melden</report>，嗯一張通往 eroeffnen 的門票，verfolgen Sie the Status under <my>Meine Meldungen</my>。 Status-E-Mails 包含 Vorlagen ir.status.open / ir.status.processing / ir.status.close 和 verlinken ueber 的 rollenbezogene <code>/enclave/ir/cases/</code>-URL。",
-        "source_sha256": "c2c6879dba5e2b4465f7ba4d36d6fcdb1688cba025e305f43e1eee3ecb237b31"
+        "text": "使用<report>報告事件</report>開票，並在<my>我的報告</my>中追蹤狀態。狀態電子郵件使用範本 ir.status.open / ir.status.processing / ir.status.close 並透過特定於角色的 <code>/enclave/ir/cases/</code> URL 連結。",
+        "source_sha256": "99e583569d326fbc23763846986d799cf7a7f5e39904afb8c2ce058fa66c2748"
       },
       "blurbAdmin": {
         "text": "Konfigurieren Sie 電子郵件和 SMS 警報、所有門票和 stellen Sie sicher、dass Nachrichten Status-E-Mails 和 Melder sowie Gruppenalarme bei Eingang zustellen。",
         "source_sha256": "16b2152776f092a028f66a42e813bd6210830782ed690adf45b69ef845b15a65"
       },
       "blurbAuditor": {
-        "text": "Nur Lesen：finden Sie Vorfaelle、pruefen Sie the Sachverhalt 和 Zeitachse (wer/wann/Status) 以及 nutzen Sie IR-Nachweispakete，用於評估訂單中的 Pruefung。",
-        "source_sha256": "acf30d2e88db7f58a1a89e53268ac17648e990aab433f5d0f3c3df28a9ad0efa"
+        "text": "唯讀：尋找事件、查看事實和時間表（人員/時間/狀態）並使用 IR 證據包在評估資料夾中進行審核。",
+        "source_sha256": "1486aef2bba01d635b3cadcecb7277252879675c0ddd3c38b27705efa7bc7744"
       },
       "blurbHandler": {
-        "text": "Uebernehmen Sie the Warteschlange：分類 → Eindaemmung → Beseitigung → Wiederherstellung → Erkenntnisse → 關閉。 Statusanzeigen：Offen / In Bearbeitung / Geschlossen。 《Zeitachse》中的 Kommentare 和 Akteure stehen; Gruppenalarme gehen bei Uebergaengen heraus。",
-        "source_sha256": "8910d427974918c78d6a6070b9877cade850182837a6f9e62325aa7b208d1913"
+        "text": "采取队列：分类→遏制→补救→恢复→见解→关闭。狀態指示燈：開啟/進行中/關閉。评论和演员都在时间线中；组警报在转换期间响起。",
+        "source_sha256": "75cd660719c4f3edf230cdb19e15850686f18772b05b77dcd9870cb638b199f1"
       },
       "blurbReporter": {
-        "text": "Sie reichen a Meldung a (Offen)。死 IT 熊貝特 sie。請注意狀態電子郵件和 koennen Entdeckungskommentare hinzufuegen。 Nach the Close koennen Auditoren the Nachweise pruefen。",
-        "source_sha256": "f0052d66b2608cfa32cf5429a75e14b151af217e99df538a27ed6c60913ec2ff"
+        "text": "您提交報告 a（開啟）。 IT 處理它們。您將收到狀態電子郵件並可以新增發現評論。交易結束後，審計員可以檢查證據。",
+        "source_sha256": "f02dea8a1def7d469fb04bf645275d6a67f19c6415098a032fee87c3ee34ac6e"
       },
       "cancel": {
         "text": "取消",
@@ -3296,7 +3296,7 @@
         "source_sha256": "c377c0a9b029519b9c65588887d61608b01ab182c1ea58b45a576e7b1ed5b494"
       },
       "acceptingDrain": {
-        "text": "drain",
+        "text": "排空",
         "source_sha256": "510345478efc1edf0c921f97f5b314eb51b4a0347fd85f36845101d3beff1a1d"
       },
       "acceptingNo": {
@@ -3316,7 +3316,7 @@
         "source_sha256": "8a798890fe93817163b10b5f7bd2ca4d25d84c52739a645a889c173eee7d9d3d"
       },
       "activeHost": {
-        "text": "Active host: __PH0__ (__PH1__)__PH2__",
+        "text": "作用中主機：{{name}} ({{id}}){{suffix}}",
         "source_sha256": "fb8c85718c639fb3fea147c8c25e0457b2ba18d2d2e7630774649c02aa8a07a1"
       },
       "addHostHelp": {
@@ -3564,7 +3564,7 @@
         "source_sha256": "6b76aeb099be120560b5e3a57bc32053310954bcc34459f762ad43977ba25691"
       },
       "ocrPartialCoverage": {
-        "text": "今天，一个文本搜索引擎已上线。其他引擎尚不可用，因此將搜尋結果視為部分覆蓋。",
+        "text": "目前已接線一個文字搜尋引擎。其他引擎尚不可用，因此請將搜尋結果視為部分涵蓋。",
         "source_sha256": "f9eb09df07ff32f23b4aa76a4d94f333c0115acb8ece2cc3b4ce85edba8995bb"
       },
       "ocrReady": {
@@ -3584,11 +3584,11 @@
         "source_sha256": "dc2ee216b5687ecd8ced60c9a16c8e283bf74bada293bfde23b3e99e8f3ee68c"
       },
       "partialOneEngine": {
-        "text": "Partial â one engine only",
-        "source_sha256": "6d3d9ca0389969ee07e8ff2916899a7fc613b164f7167440c9fd1a82b53c22bb"
+        "text": "部分 — 僅一個引擎",
+        "source_sha256": "5ca0e292b220302b7437a70c1a61e13867c3f4032082878f64e7ba8a044056b3"
       },
       "placementWeight": {
-        "text": "Placement weight",
+        "text": "配置權重",
         "source_sha256": "45ee4e48be39bb4858fe3fa5c4949bd6be02125dea49c88428533eed215d2bab"
       },
       "planeEnabledNoHost": {
@@ -3684,7 +3684,7 @@
         "source_sha256": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d"
       },
       "save": {
-        "text": "Save",
+        "text": "儲存",
         "source_sha256": "1509f561f2416598629b886ad7d3c05a7e221e4e0675c84bbff4ee6d9e03913d"
       },
       "saveEndpoint": {
@@ -3720,7 +3720,7 @@
         "source_sha256": "c19cd4115869d0099b13c0a70599a082af5d7b8840145571badc37828e5db767"
       },
       "tooltipDrain": {
-        "text": "When draining, this node accepts no new sessions so existing ones can finish before maintenance.",
+        "text": "排空時，此節點不接受新工作階段，以便現有工作階段在維護前完成。",
         "source_sha256": "bf21aa1fc827d923711106376eae02bb2ecbfe30151a17db7b82117bfa704436"
       },
       "tooltipEnabled": {
@@ -3810,8 +3810,8 @@
         "source_sha256": "316d43c021472bb1e64fe9fdcb409b0097adb3acc6d0254c6b22853787330a0b"
       },
       "billingCadenceValue": {
-        "text": "Stuendlich（市場）·Laufzeitlizenz（vor Ort）",
-        "source_sha256": "3d97c2414c675215db97a331ea1fb1feaecb432e091ed1c13fd4c93551075c35"
+        "text": "按小時計費（市場）·定期許可證（現場）",
+        "source_sha256": "1042808a1ae9e789d546525e443b0675763bd53178d11288b3edba2dd92f79a4"
       },
       "billingPrivacy": {
         "text": "使用情況報告僅發送識別碼、元件名稱、經過的時間、日期和數量。它們不包括客戶工作負載資料。",
@@ -3908,8 +3908,8 @@
         "source_sha256": "920e413c7d411b61ef3e8c63b1cb6ad058d5f95f8b481dbafe60248387d8c355"
       },
       "colSummary": {
-        "text": "概括",
-        "source_sha256": "8e76a94ac8320d515375e625bef1829238b097ecbd33611b59eeefd4ffefebfb"
+        "text": "摘要",
+        "source_sha256": "21c04b2eeeb431f7722c4c144f95567e3bae94de9c743472072c84745d24367a"
       },
       "colUnitPrice": {
         "text": "單價（美元）",
@@ -4184,8 +4184,8 @@
             "source_sha256": "741935979f7b14dcf4efb647d53cf46415ac9ef5f38b816b05659e795029fb11"
           },
           "summary": {
-            "text": "Vorausbezahlte 或 Laufzeit 的私人 Berechtigung。",
-            "source_sha256": "3ebf0e18f8854ed4f1c232e843519b81d19eb0d9124fa897a1c00e9da5ebeade"
+            "text": "一個期限的預付或私人權利。",
+            "source_sha256": "5887454b6f1e2d195786fec6035881994fdb76bead500aa1ac609e82dc6de305"
           }
         },
         "endpoint_agent": {
@@ -4234,8 +4234,8 @@
             "source_sha256": "77fce12704b252977793735f5de205c95fda67b5c28a875817e43ec50d5d9011"
           },
           "summary": {
-            "text": "Berechtigte gegenueber dauerhaften privilegierten Rollenbindungen。",
-            "source_sha256": "23311111482664973c90e7689a3d5734a88b745a8aca658eaa6c86b853a750c4"
+            "text": "享有權利的角色關係與永久的特權角色關係。",
+            "source_sha256": "2a72ed91d7c3b05079163aa057bde67b74c7725b985546cf189417756f2a3c2f"
           }
         },
         "jump_capacity": {
@@ -4290,12 +4290,12 @@
         },
         "perpetual_maintenance": {
           "label": {
-            "text": "Dauerhaft 加 Wartung",
-            "source_sha256": "79efffd129ba4a582ed8e1d93dcdf741ae2ce34423dc3c6530a49076f0bf2f48"
+            "text": "永久加維護",
+            "source_sha256": "a5399081745104fc4aac077f613ad5db22ffad41bc2d0a39cde9b796fa3f9cf5"
           },
           "summary": {
-            "text": "功能；支援和更新 Fenster koennen getrennt enden。",
-            "source_sha256": "7a082f3751a5c14d1b7f5a0a43e566858494d35d2dea3c197f00875e4c09d1d9"
+            "text": "功能仍然存在；支援和更新視窗可以單獨結束。",
+            "source_sha256": "9af591e3c301c1cef80c7b92069e0d557d0f4537225a6737c1c13eee85933f46"
           }
         },
         "privileged_accounts": {
@@ -4344,8 +4344,8 @@
             "source_sha256": "09e20c5420b0306536852f304eed52be9bad5aafff132714d1550f74ca0187f9"
           },
           "summary": {
-            "text": "Wiederkehrende Laufzeit 與開始和結束資料。",
-            "source_sha256": "2b41733c0244ed3a61928a0a9d07460a943587efe1f9056b4d2765a395270a82"
+            "text": "具有開始日期和結束日期的循環期限。",
+            "source_sha256": "dd5bdcd54de0598a3384439a1ddd8d40ae772f484a5ee48c1ff9a537d95ee9de"
           }
         },
         "workstation_seat": {
@@ -5196,16 +5196,16 @@
       "encStd": {
         "aic_cui_passphrase": {
           "description": {
-            "text": "用於 CUI-Inhalte 的 PBKDF2-HMAC-SHA-256 (600000) + AES-256-GCM-Paket。僅狀態 SMTP 文字； CUI liegt nur 在 verschluesselten Anhang。",
-            "source_sha256": "dfe96062be0197df1376d04533302f94c345832ceddf0a171b46144e5ec09f9d"
+            "text": "用於 CUI 內容的 PBKDF2-HMAC-SHA-256 (600000) + AES-256-GCM 套件。僅狀態 SMTP 文字； CUI 僅位於加密附件中。",
+            "source_sha256": "ebe730d5d0de17c05ba03b82c687e082585493ef779849e182087726a84fe820"
           },
           "label": {
             "text": "AIC-CUI-密碼短語包",
             "source_sha256": "4d1b19bc8a117dcf2b68a2c5cb0683bc035bcf58bc7c2682f1214a221bfc02e4"
           },
           "notes": {
-            "text": "FIPS 140-3 ueber AWS-LC (CMVP #4759); NIST SP 800-132 KDF. Das ist the Modulgrenze — kein Anspruch, dass the gesamte Binaerdatei CMVP-zertifiziert ist.",
-            "source_sha256": "b1eebbc4963cf1a2d555c007756f7ef45b7f8492ac46edf14a45e753a2456ea2"
+            "text": "基於 AWS-LC 的 FIPS 140-3 (CMVP #4759)； NIST SP 800-132 KDF 這是模組限制 - 並不是聲稱整個二進位都經過 CMVP 認證。",
+            "source_sha256": "82e116de8f4f1054a8d40c1264a3fd4ee7d828f451b56079ee0b7a88b7136013"
           }
         },
         "microsoft_ome": {
@@ -5214,8 +5214,8 @@
             "source_sha256": "0b84eae7417199d70041cb16d85c20db7b8815ad8c262a224efe45a309a0d38f"
           },
           "label": {
-            "text": "Microsoft Graph，verschluesselter Anhang",
-            "source_sha256": "84b7187a81b0f93d6f29f42161f85f105fe80e2da348f1d5d83fae4b5b132f3c"
+            "text": "Microsoft Graph，加密附件",
+            "source_sha256": "9104f7005636190ac1d028c111d635421b5946cbdf9508fa6be35d6bfcc4ed6a"
           },
           "notes": {
             "text": "Erfordert 圖形應用程式配置。 Ehrliche Live-Teilmenge 用於線上交換傳輸。",
@@ -5238,8 +5238,8 @@
         },
         "secure_share_armored": {
           "description": {
-            "text": "Verpackt Inhalt in UniversalEnvelope ueber the Server-KeyManager, dann AIC-Sicheres-Teilen-ASCII-Panzerung for E-Mail. Entschluesselung braucht denselben Schluesselring.",
-            "source_sha256": "463d59c477bc1d83b09ae81d26909161d48503bf199b5f465886c916d4ce5c41"
+            "text": "透過 Server-KeyManager 將內容打包到 UniversalEnvelope 中，然後透過電子郵件的 AIC-Secure-Share-ASCII-Armoring 進行打包。解密需要相同的金鑰環。",
+            "source_sha256": "b6c042ee28983b9dc8b7be5541e64526c2d58b9cf09ffafd94131cc63ad327b1"
           },
           "label": {
             "text": "Sicheres Teilen, ASCII-gepanzert (KeyManager)",
@@ -5260,22 +5260,22 @@
             "source_sha256": "349a95c5977ea3eac223c6fb2ecef9220439dd7ae1cb46aa61204f53b87ec23a"
           },
           "notes": {
-            "text": "DoD-/Bundes-S/MIME-Muster (SC-12/13)； FIPS-Inhaltskrypto ueber AWS-LC。",
-            "source_sha256": "e289248cf2c8e98da918d3048c259f8602b6b8a14adaaf148042eb926daa82dc"
+            "text": "國防部/聯邦 S/MIME 模式 (SC-12/13)；透過 AWS-LC 進行 FIPS 內容加密。",
+            "source_sha256": "b548ebf39c746a6a79c7b78fc37a4e04e3ab6ef0d9c721333909f7382ae68850"
           }
         },
         "smtp_tls": {
           "description": {
-            "text": "Verschluesselt SMTP-Uebermittlungskanal。 Verschluesselt Nachrichteninhalt 不在 Empfaengerpostfach 中。 Erforderliche Untergrenze for jede CUI-bezogene Weiterleitung (SC-8)；與 einem Inhaltsstandard unten kombinieren。",
-            "source_sha256": "28c2c67974d85ae483d5bd6b40c733f8be23416e1ee0287abb1b5dbfc15adcc8"
+            "text": "加密 SMTP 傳送通道。加密不在收件者信箱中的郵件內容。每个 CUI 相关重定向所需的下限 (SC-8)；与下面的内容标准相结合。",
+            "source_sha256": "4732663ddbebb8710587c84f550b76c6c6d29b61dca95008f0168c99454539b8"
           },
           "label": {
             "text": "SMTP-TLS（STARTTLS/SMTPS）",
             "source_sha256": "a52448537ef89b886a4a829bcb7ed0c5eea6e85d257e3119dbded58247514e4a"
           },
           "notes": {
-            "text": "NIST SP 800-53 SC-8； CMMC SC.L2-3.13.8。 Unverschluessseltes SMTP nur 用於本地 Auffaenger auf diesem 主機。 Produktionsrelays muessen STARTTLS 或 implizites TLS nutzen。",
-            "source_sha256": "2b290b2a3a84a26def6d98ce57a7426f7b7d4ba122c2b7075c30e12f4391c494"
+            "text": "NIST SP 800-53 SC-8； CMMC SC.L2-3.13.8。未加密的 SMTP 僅適用於該主機上的本機擷取器。生產中繼必須使用 STARTTLS 或隱式 TLS。",
+            "source_sha256": "c6f3cbbafcdeb1a8c1d951e4c588860af5f32ac3ab6c4b0b3f902fbba783a38e"
           }
         }
       },
@@ -5388,8 +5388,8 @@
         "source_sha256": "294c35f080889a2cbd99f2e24b57a93abfda11b4d5a90725e67ccfbc836f6919"
       },
       "snippetsDeleteBody": {
-        "text": "“{{name}}” dauerhaft loeschen？",
-        "source_sha256": "ddcaa8f95f1ab1d4339e3f3899a673a0816be71b7fdb2ca1a8a44560b9cb34a2"
+        "text": "永久刪除“{{name}}”？",
+        "source_sha256": "f9f37e7e38cfec691a56134f88bc8d2ec91a93d6585eb6c3894d5c84cb729c2e"
       },
       "snippetsDeleteTitle": {
         "text": "刪除片段？",
@@ -5424,8 +5424,8 @@
         "source_sha256": "e2d0a54968ead24efc0dffa6ac78fc606dceec34a0f586177a74a54cc2272cf8"
       },
       "templatesDeleteBody": {
-        "text": "„__PH0__“ dauerhaft loeschen? Das kann not rueckgaengig gemacht werden. Kuenftige Ereignisse fallen auf the eingebaute Vorgabe zurueck.",
-        "source_sha256": "9c7d12dbc61d4d143516f6fc0f2b34daafd18269f449061ede5020547b0edd9a"
+        "text": "永久刪除“{{name}}”？此操作無法撤銷。未來的事件將回退到內建預設值。",
+        "source_sha256": "3d7d769e23f88c84a59e7ad26b5386847ed8fc5b436ce374980abb5b36aee0e7"
       },
       "templatesDeleteTitle": {
         "text": "Delete template?",
@@ -5436,8 +5436,8 @@
         "source_sha256": "bc01c3b84d87c753acd9892a6b8284a33a304be9313d9c373618cd38f5a133f4"
       },
       "templatesLoadFailed": {
-        "text": "Vorlagen konnten not geladen werden: {{message}}",
-        "source_sha256": "c1c6af2e096beaeda1dd8beaacca7583923a75f83f10efde80b30e58cba749f6"
+        "text": "無法載入範本：{{message}}",
+        "source_sha256": "a1bf69c1109878147b17161bb81b2dd50e7d217463e841eaa004113e4ae37a7b"
       },
       "templatesRefresh": {
         "text": "重新整理",
@@ -5534,12 +5534,12 @@
         "source_sha256": "652b24328719601a582104713a502833eb090301f72fbdaeccb4696aadc57859"
       },
       "autoSleepOverride": {
-        "text": "Schlaf：{{mins}} Minuten nach Sitzungsende（Ihre Ausnahme；Pool-Vorgabe {{pool}} Minuten）。行動：{{action}}。",
-        "source_sha256": "2cf54552b628f648855a6eaeaef2ecf4ca4032c934855abbfc7faaaac20b8303"
+        "text": "睡眠：工作階段結束後 {{mins}} 分鐘（您的例外；集區預設 {{pool}} 分鐘）。動作：{{action}}。",
+        "source_sha256": "cb7025d9b5bf059a36d7402e48c3ac7010474b2f5e841f424d35b27a7eda432e"
       },
       "autoSleepPool": {
-        "text": "Schlaf：{{mins}} Minuten nach Sitzungsende（礦池政策）。行動：{{action}}。 Sie koennen a personliche Ausnahme setzen。",
-        "source_sha256": "0148c5de72b333735a1342feb9247b5e473c29f23280c1b359a6f7a92a1fcc26"
+        "text": "睡眠：工作階段結束後 {{mins}} 分鐘（集區原則）。動作：{{action}}。您可以設定個人例外。",
+        "source_sha256": "96007a59659b266a8f92ed9da6c9283dca204eea0d10d090adedb29a02a8b4b7"
       },
       "autoSleepSoon": {
         "text": "很快就會自動睡眠 - 在睡眠結束之前，Connect 仍然有效。",
@@ -5602,7 +5602,7 @@
         "source_sha256": "09844467033a0c9704cd115122bb80a11bcac0e3113de2e3408bfd9bc6834aeb"
       },
       "connectOpenFailed": {
-        "text": "Connect could not open a live session for this workstation.",
+        "text": "連線無法為此工作站開啟即時工作階段。",
         "source_sha256": "b925f3f3366a43c7c98c529ab635d9f60e49da4d38cfd129674936cc7dd4749f"
       },
       "connectToTitle": {
@@ -5618,7 +5618,7 @@
         "source_sha256": "7180925540516eac24a981f1f9b15fc4e05c4d1fac064d7e81b2e97b702b19d7"
       },
       "emptyAssignHelp": {
-        "text": "Opens Local IAM Assets so you can assign a workstation to this principal.",
+        "text": "開啟本機 IAM 資產，即可將工作站指派給此主體。",
         "source_sha256": "4217d5775b5dc42d925b84c3330cbf565d9e699a965f8b710ea9600225428f14"
       },
       "emptyBody": {
@@ -5630,7 +5630,7 @@
         "source_sha256": "031a6697cb2e8b20513e69eeacdbc5326c0fd91c62cb08938760c6634499e2eb"
       },
       "enclaveRecordingProxy": {
-        "text": "Enclave recording proxy",
+        "text": "飛地錄製代理",
         "source_sha256": "efd1aa58f000a5b30d6488177e477e0318a24b785e853ebb7c030f500c1fc103"
       },
       "endKeepAwake": {
@@ -5710,7 +5710,7 @@
         "source_sha256": "32d434a3eef529d3308b99c6762987459b69a96facc265adc0516c53e705c43c"
       },
       "howToConnectBody": {
-        "text": "Connect enables only after a reachability check (session host TCP). Use Fix when Not reachable. Wake first if Wake required. Open session only if Connect finished but the viewer did not open. Sleep now / Keep awake are under Power & sleep.",
+        "text": "通過連線能力檢查（工作階段主機 TCP）後，「連線」才會啟用。狀態為「無法連線」時請使用「修復」。若需要喚醒，請先喚醒。僅在「連線」已完成但檢視器未開啟時，再使用「開啟工作階段」。",
         "source_sha256": "4f4a2115324ed17f4be24991d3483f92108995dfe9d257fa6976129b86aca514"
       },
       "howToConnectLabel": {
@@ -5754,7 +5754,7 @@
         "source_sha256": "24da7202415d450393bdf543fb0d825c0b25be97a2ec7b311de385025ca05897"
       },
       "keepAwakeReasonLabel": {
-        "text": "Reason (required)",
+        "text": "原因（必填）",
         "source_sha256": "d976f5d9cc7da4e8e01054401c49bb71e57663cf7f5733b8a677f101819f41b8"
       },
       "listLoadFailed": {
@@ -5830,16 +5830,16 @@
         "source_sha256": "776e8ff92253867e511ff7893b6c883057021049b9bfa7c2db80a201b4e01df4"
       },
       "poweredOffWakeFirst": {
-        "text": "該虛擬機器已關閉。使用喚醒（主要），等待狀態顯示“就緒”→“連接”，然後“連接”以開啟錄製的會話。",
-        "source_sha256": "ed948340155cbaa54f0c087748dbb7f154c3f78f3530f520e7c583b403f64681"
+        "text": "此虛擬機器已關閉電源。請先使用「喚醒」（主要），等到狀態顯示「就緒 — 連線」，再按「連線」開啟已錄製的工作階段。",
+        "source_sha256": "9650302343b503872f44bf528e4c5c5f8b8f0cce82da6989f52f2fddadfe13fb"
       },
       "proxySideRecorded": {
-        "text": "Proxy-seitig (vom Sitzungsvermittler aufgezeichnet)",
-        "source_sha256": "7a93d64ee4ad958b3bd6c1546dc6ef946b9047b0c60885c286ac4bd0cb3b06f5"
+        "text": "Proxy 端（由工作階段代理程式錄製）",
+        "source_sha256": "b86bee86babfa65e3c9454e4b24dd8611c70fe7d22c9573a04fa254b4ed4a5f0"
       },
       "readyConnect": {
-        "text": "Ready â Connect",
-        "source_sha256": "f75be6ffa5f46dbb4d364d9361644ba191f1db196108078e50905c467dfe61b5"
+        "text": "就緒 — 連線",
+        "source_sha256": "29da9e6d54111e5091094577b92ba1bdd7c8eb70f368dc00a21d9a9cb8358258"
       },
       "recordedByEnclave": {
         "text": "由 enclave 伺服器記錄",
@@ -5854,7 +5854,7 @@
         "source_sha256": "e3c904db78fdff1a1690eebeb3083eb379968aee399e6692387f60601c18b8a1"
       },
       "recordingAvailableAria": {
-        "text": "Recording available: __PH0__",
+        "text": "錄製可用：{{label}}",
         "source_sha256": "8173422548771e5b67b711816706cfcfe9445f40e212f177c04810296f81f561"
       },
       "recordingBody": {
@@ -5870,11 +5870,11 @@
         "source_sha256": "e42e5ca18f279607e196ff6c4c7b8f98f1d8b32b056fd0782ba636021574e4b6"
       },
       "recordingTitle": {
-        "text": "Every session here is recorded",
+        "text": "此處的每個工作階段都會錄製",
         "source_sha256": "0cea7bf9e816615aeb1091520a895163ed4d87fc53e6551bb8558e67ac323e9c"
       },
       "recordingUnavailableAria": {
-        "text": "Recording not available: __PH0__",
+        "text": "錄製不可用：{{label}}",
         "source_sha256": "c9a54098dd955f3fcf2fba320da0a8f45f552046d9148d90940a8f7e6ed59c25"
       },
       "refusalBody": {
@@ -5930,7 +5930,7 @@
         "source_sha256": "3444bc2e95634ff884dc04de14afffa39b2d7005b2e7bae83d00ab81f806d697"
       },
       "tryAgain": {
-        "text": "Try again",
+        "text": "再試一次",
         "source_sha256": "d8b8392e2c542950ca64867168e4ef87d4ad606882d5898f826b51c6d553988f"
       },
       "tzPacific": {
@@ -6008,8 +6008,8 @@
         "source_sha256": "22c0c8f2c4eebc80af182f0ebac14dd0d39398654c8f29351cad49d7602637b0"
       },
       "checkDefaultsAria": {
-        "text": "Veroeffentlichte Standardzugangsdaten auf {{ip}} pruefen",
-        "source_sha256": "27c5b25e4b3070b5739746bef559b3f408c98aab93a262618f94b051dfb4b8ea"
+        "text": "檢查已發布的 {{ip}} 的預設存取數據",
+        "source_sha256": "8f06df57cb8b62b6cb09bb250640d7a41319ad4deb9979184f86fd6682c201d9"
       },
       "checkDefaultsFailed": {
         "text": "制定標準組資料日期",
@@ -6020,8 +6020,8 @@
         "source_sha256": "2429516e80a749f0a578930f95165b44c378622a8404dd7a4d84a87b2bfab87e"
       },
       "trackPoam": {
-        "text": "In POA&M uebernehmen",
-        "source_sha256": "13431d0e75d89a08e1238dd99b828568e20961f20699b4c630a380d83d8ad188"
+        "text": "在 POA&M 中採用",
+        "source_sha256": "5552b6b8c189d85781a11f9dd556dabd6dfb874981109179fa4579821647f822"
       }
     },
     "otAsset": {
@@ -6122,8 +6122,8 @@
         "source_sha256": "7be75ced7162010929e317d93b3fcbcfe987b9e4eb86f12aa330a965d3e3ec01"
       },
       "empty": {
-        "text": "Keine Berechtigungen。",
-        "source_sha256": "fa8f96d4f9e96265ca9a4a65d6cc783a9fdfe1a2cbee3c4d68242e9f5f5de1e4"
+        "text": "沒有權限。",
+        "source_sha256": "a712b38f9f8993a6ad2bd45a0727ebff1146fb206912df826d8380e1283801c0"
       },
       "reportTitle": {
         "text": "貝雷希蒂貢根",
@@ -6152,11 +6152,11 @@
         "source_sha256": "76b622f57a0fc86e66759e22966c01ad1eac3080b2a76f70864cfa4991c89d0b"
       },
       "chipMonitorOnly": {
-        "text": "monitor-only commands",
+        "text": "僅監控命令",
         "source_sha256": "9137c5622ed9bb040d7acd6ceb7a8a10376a48a2da3ba4cc8670579492f85b24"
       },
       "chipNoAck": {
-        "text": "Open without ack",
+        "text": "未確認即開啟",
         "source_sha256": "fdfe3ed86fccd5543149fa49b69e3c155d9ccf04d6d022c812a434bfbffc850e"
       },
       "chipNoDisclosure": {
@@ -6212,7 +6212,7 @@
         "source_sha256": "7c88f9a1492cbec2564ad3e00beaf19635bae996b222b904815323372159c598"
       },
       "classificationBanner": {
-        "text": "Classification banner",
+        "text": "機密等級橫幅",
         "source_sha256": "ea43f5147b63d762baa0554a0a5bcfd71c6e176f55529011c713a5f0662e0118"
       },
       "commandPolicyBody": {
@@ -6284,16 +6284,16 @@
         "source_sha256": "b5c120b316c237a0deab3140267aebedba61947d3ae268d708a53d5be119e9fb"
       },
       "saving": {
-        "text": "Savingâ¦",
-        "source_sha256": "8254285d673bbc73963ed7810f4bc4b8a378dbf5803b7a650ce7ac5c00eaac3c"
+        "text": "儲存中…",
+        "source_sha256": "23e39291d6135814ed7c936e278974544b0df5fbf0eb0427b6700979b7472a93"
       },
       "sessionBrokerBody": {
-        "text": "伺服器 API 上的 {{count}} 會話票證。运营商可以检查票据和披露文本； mint 通过网络 ACL + geo + TI 承认 source_ip。",
+        "text": "伺服器 API 上有 {{count}} 張工作階段票證。操作員可檢視票證與揭露文字；核發會透過網路 ACL、地理位置與威脅情報承認 source_ip。",
         "source_sha256": "678f55e729f59b10cb3135336112c90676019623e8b823017b0c3a725bc5a388"
       },
       "sessionBrokerTitle": {
-        "text": "Phase D â Session broker",
-        "source_sha256": "24e9efd8bfbda1348447386478cb93eff0ac240c0680c4232d8e7d390b52a6e7"
+        "text": "階段 D — 工作階段代理",
+        "source_sha256": "060bf9b05ea7898f964003567253b2de195c61b94036f8e180e4b67d0ac71815"
       },
       "sessionPurpose": {
         "text": "會議目的",
@@ -6312,7 +6312,7 @@
         "source_sha256": "fb6f7c93e6bf3dfac450d268bf57844ae92b9c93f7d027b07f715bfbc467d225"
       },
       "testProgramLaunch": {
-        "text": "Test program launch",
+        "text": "測試程式啟動",
         "source_sha256": "62e003e88beb8a82483b6b6fdc72603431df258fbbf1344a07f3a5aef5aacd89"
       },
       "vncBody": {
@@ -6346,8 +6346,8 @@
         "source_sha256": "b58bd16905d210ddad9d1b562a7cbc34b21d106d91ea9aa7bb7fe2aa492d0ff0"
       },
       "empty": {
-        "text": "Keine PUM-Auswahl 的日期。",
-        "source_sha256": "3cfd7307d543fc0a6889ef0ad6db197240ae1e6dbf80b2c7f44c432e4fb4a3a7"
+        "text": "目前選擇沒有 PUM 資料。",
+        "source_sha256": "b4c57e8043298a3783e462b499c5ec2598c7580bfa587e62f6a9faf244d00526"
       },
       "exceptions": {
         "text": "奧斯納曼",
@@ -6384,7 +6384,7 @@
         "source_sha256": "e470df0538096dc86c8c06f62a124af9da4856d9a36acfe9d2d6ee949913c181"
       },
       "cancel": {
-        "text": "Cancel",
+        "text": "取消",
         "source_sha256": "19766ed6ccb2f4a32778eed80d1928d2c87a18d7c275ccb163ec6709d3eb2e27"
       },
       "cancelAria": {
@@ -6436,19 +6436,19 @@
         "source_sha256": "b536d2a626cee69631231405223bd4eabde097f2bc207c1f37e5a7d5f7f6ec1a"
       },
       "helpAvailable": {
-        "text": "Ein Sitzungskanal ist konfiguriert。將 oeffnet 連接到 aufgezeichnete 互動式會話，並為目前主機存在一個 Verbindungspunkt。",
-        "source_sha256": "98153619903bec58a61f8f432ba6c3f1843fa489cab0921747de5f4dc6d1d51d"
+        "text": "已設定工作階段通道。若此主機有連線點，「連線」會開啟已錄製的互動式工作階段。",
+        "source_sha256": "8423c28ac7495603db690e03288b23b5236e224a7e227078d0bee2aa37b0df16"
       },
       "helpNeedsApproval": {
-        "text": "Ein Sitzungskanal 存在；政策 verlangt zuerst agenehmigte Zugriffsanfrage。",
-        "source_sha256": "16a9eb3a5195866409d23f40de4c727ccf49e5b9c65c01efdb25e654f135d401"
+        "text": "已有工作階段通道；原則要求先取得核准的存取要求。",
+        "source_sha256": "6bef636126709532425a3310e96cfc59f768fa75441b58ec4288956d737df277"
       },
       "helpNotConfigured": {
-        "text": "Fuer dieses System ist noch kein Sitzungskanal konfiguriert. Das ist a Konfigurationsluecke, kein Error des Systems.",
-        "source_sha256": "dbbc058ee07c36caa657a75f131b91f2e676e36e8cdf8d73956857eec1abcf52"
+        "text": "此系統尚未設定工作階段通道。這是設定缺口，不是系統錯誤。",
+        "source_sha256": "6693eaec1991dbd10c3a21d29e6dfe080580428d70c2590b25aed8eec94907ad"
       },
       "intro": {
-        "text": "One list of every system you can reach. Connect opens an interactive recorded SSH/RDP/VNC session through the PAM session broker when a connection point exists for that host. Rows that need an approved access request show Request instead.",
+        "text": "列出您可連線的每個系統。當該主機有連線點時，「連線」會透過 PAM 工作階段代理開啟已錄製的互動式 SSH/RDP/VNC 工作階段。",
         "source_sha256": "4441e6948e016c869d31ce51a0be1d1dc418d9c4d9dc9665f38bfa4ac49deb22"
       },
       "liveOpen": {
@@ -6532,7 +6532,7 @@
         "source_sha256": "46bdbc7cbe1eb0fcd4a9173124317242b5489aedee6bf8da3b2501ba56d55eb5"
       },
       "recentAria": {
-        "text": "Open recent __PH0__",
+        "text": "開啟最近的 {{name}}",
         "source_sha256": "8548ffc6c958f25899dd25848a4e64d8b9025190333a26cdc447447404fb45e9"
       },
       "removeFavorite": {
@@ -7294,8 +7294,8 @@
         "source_sha256": "1ade60abe93f5cfce908a10bb2d1b474f024779843faba4bb1f2ef06f277d3c7"
       },
       "createItemTitle": {
-        "text": "標題",
-        "source_sha256": "7e8cd2056da73a7fefb6cd91f4e5d199d08d9058c517b9a2476b1b520324d674"
+        "text": "新建項目",
+        "source_sha256": "3a641ac58af42e48b9f9b7810e26d80c376cc6c0f22f803ba115132d8c022075"
       },
       "createNotes": {
         "text": "筆記",
@@ -7346,8 +7346,8 @@
         "source_sha256": "4ff140671613ca585173d87a19892346cdbdd14a41c7bd5d40769ebe0184322e"
       },
       "emptyView": {
-        "text": "dieser Ansicht 中的 Keine Elemente。 Nutzen Sie <strong>Neues Element</strong>，um a verschluessseltes Geheimnis，Notiz 或 Datei hinzuzufuegen。",
-        "source_sha256": "15b3efb8cb7fa63f82b63707ae7fb4fd9ca94e3504f63711fed65b7ff032e50d"
+        "text": "此視圖中沒有項目。使用 <strong>New Item</strong> 新增加密的秘密、註解或文件。",
+        "source_sha256": "4a57186195882aec06ed2f1b0a2b4c4160d12cc9e4efbe4605316851fc862646"
       },
       "existingAccess": {
         "text": "現有存取權限",
@@ -7550,8 +7550,8 @@
         "source_sha256": "b8414e7e712bcab65b229eab04ea248584afc5eaeafb26510145144bbcfd8cd2"
       },
       "vaultHint": {
-        "text": "Bevorzugen Sie <strong>Zugriff verwalten</strong> for Personen in diesem Enclave。 Exportierte Pakete sind AIC-UniversalEnvelope-JSON（不是 OpenPGP），用於 Sicherung 或帶有enselben Tresorschluesseln 的對等 AIC 伺服器。",
-        "source_sha256": "96e4ee01197b1e9eba17e1d84f1be534114c4b9aed3726c884161e6c2094fdaa"
+        "text": "對於此飛地中的人員，首選 <strong>管理存取</strong>。匯出的套件是用於備份的 AIC-UniversalEnvelope-JSON（不是 OpenPGP）或具有相同保管庫金鑰的對等 AIC 伺服器。",
+        "source_sha256": "2f42f96bd4e0fb17b9fc3b1d860664d318f70e1c45d04406f4775a43e324218d"
       }
     },
     "sessionControl": {
@@ -7560,7 +7560,7 @@
         "source_sha256": "0cabfb7afee12965425f93caa0536aa229fcd585ad076e2322b6f1bac58cc93e"
       },
       "actionFailedWithMsg": {
-        "text": "Session action failed: __PH0__",
+        "text": "工作階段動作失敗：{{message}}",
         "source_sha256": "502c99ded95e3f0ce386700c5955d3233bc29493b87c26ad8c5e9a24e8859e89"
       },
       "actions": {
@@ -7628,7 +7628,7 @@
         "source_sha256": "7f9e9b04f8b63d858c926499c2c71e8b11b11e467d8fa3b42300ca775c2d9d1a"
       },
       "outcomeStatus": {
-        "text": "Session __PH0__. Request __PH1__.",
+        "text": "工作階段 {{session}}。要求 {{request}}。",
         "source_sha256": "263fa258c40c20aa6e81abbb35299675ba3b15ed625becdde11b5c3a6163532f"
       },
       "pending": {
@@ -7644,7 +7644,7 @@
         "source_sha256": "cf0883343f4abef779b777c35764f86c9f1f4324e8b5490840245d02ad2f7c6f"
       },
       "reasonAuditNote": {
-        "text": "Every approval, denial, and termination requires a reason and produces a correlated audit event (pam_session_terminate for Kill/Terminate). Actor and target columns resolve lab principal / connection-point names when the store holds UUIDs.",
+        "text": "每次核准、拒絕與終止都需要原因，並產生相關稽核事件（Kill/Terminate 使用 pam_session_terminate）。行為者與目標欄會解析主體。",
         "source_sha256": "063b87588facb35b9bbb5bb7ef955a13be795019d6526329e94ade4bfa2c0a4f"
       },
       "reasonHelper": {
@@ -7660,7 +7660,7 @@
         "source_sha256": "7bd0be8d44a801baebfdf781ec0e58d7c7fdfca084e70eff926f71f2d32e920f"
       },
       "reportTitle": {
-        "text": "Session Control",
+        "text": "工作階段控制",
         "source_sha256": "25f4f0d5ccddecf2a4f192b81ad8082c84f243ab5065618c6eca38a28985eb0f"
       },
       "sessionStatus": {
@@ -7706,16 +7706,16 @@
         "source_sha256": "07f3adcfc2e1385b3069886c633a9f08136d347ae2644a5e907b1557eb53e196"
       },
       "clipboard_client_to_target": {
-        "text": "瀏覽器 zum Ziel",
-        "source_sha256": "9a5059940a134e9b957e00c3910d347d6f2b3716aec7eb8ba8d4e2b3c9051344"
+        "text": "瀏覽器到目標",
+        "source_sha256": "6bb0d6e1b678e0ce7f59dfa1a25987ce3e586fca6da96b53c29278a37540637d"
       },
       "clipboard_none": {
         "text": "韋爾韋格特",
         "source_sha256": "83ee93bd9f94039bbde3fbefbc4da41f686dd2416bbef91897b407cca9ead917"
       },
       "clipboard_target_to_client": {
-        "text": "Ziel zum Browser",
-        "source_sha256": "0f1f19cf8c027ad109fbb63b68baf9581c2bf1f3d6e9f67feabfa587f2d3454e"
+        "text": "目標到瀏覽器",
+        "source_sha256": "2b5793a9b16df387bb97f36c0608aea6c5c993ec3dbee7eb9eef6a3f8abc9f49"
       },
       "colActions": {
         "text": "行動",
@@ -7734,7 +7734,7 @@
         "source_sha256": "558ee61356bc957577b58fb06d7d937ceeb9f913fb57db91f8353006995389f2"
       },
       "colScope": {
-        "text": "Scope",
+        "text": "範圍",
         "source_sha256": "b073f6c68ef8721107fd9815b19b2c35ec111d526b75c2123d1111ba64424000"
       },
       "colSubject": {
@@ -7742,7 +7742,7 @@
         "source_sha256": "68971283841aecdf1da48428849b3b33164ec5c41d0f3c4d6cea624db5aff8f2"
       },
       "colUpdated": {
-        "text": "Updated",
+        "text": "已更新",
         "source_sha256": "3a5ecca188c0579c00ee24cf3cab21bd02c15a06f7a70cc8e0a8ff2381dcbbfd"
       },
       "connectionPoints": {
@@ -7802,7 +7802,7 @@
         "source_sha256": "d2a4b688c6123d157cb879f137f85c63f5460c05e7c4b80767bbbd1f5855fd66"
       },
       "loadFailed": {
-        "text": "Failed to load session I/O policies.",
+        "text": "無法載入工作階段 I/O 原則。",
         "source_sha256": "06a008f7927d0fdbf0f6ddb6c20a33bd61ba1d5741087260814a6c4aca4d91f2"
       },
       "newSessionNotice": {
@@ -7854,16 +7854,16 @@
         "source_sha256": "557048661d89e473f0733e15997e4f39722e084ee5c6b5e74351f35693151fbc"
       },
       "role_pam_requester": {
-        "text": "PAM-Antragsteller",
-        "source_sha256": "d5a353930f9c24f593659915a9c0186ddf9eeb68f8117b69a468f9251bf44fd8"
+        "text": "PAM 申請者",
+        "source_sha256": "59cf3b96898e3236d48b1f507fc8ad09aff045127d7cb1684b032f00c5adc14f"
       },
       "role_server_administrator": {
         "text": "伺服器管理員",
         "source_sha256": "9a6474c838b412dae0fb927472f1ef11702b00ccfbc4aaadc963b059d783359f"
       },
       "role_super_admin": {
-        "text": "Super-Administrator",
-        "source_sha256": "292c2a691dcd3a5e47f6b65f2a74984c1a22e283875b98ca012a4a648ec0a566"
+        "text": "超級管理員",
+        "source_sha256": "2c66d29b9003ab5d3932eac01e54a261cc0afb1f9cf938bf109a946f8acd7ff3"
       },
       "savePolicy": {
         "text": "保存政策",
@@ -7882,7 +7882,7 @@
         "source_sha256": "b16f23b5693a8b109de933bd1e5f1245e69f15c60a899752755c2810a029a93a"
       },
       "scopeGroup": {
-        "text": "IAM user group",
+        "text": "IAM 使用者群組",
         "source_sha256": "e5166642e71655aa26740876f26998c7e707960586d64b5100b2254379c4afa6"
       },
       "scopePrincipal": {
@@ -8482,6 +8482,270 @@
       "wizardPromoTitle": {
         "text": "初始設定嚮導",
         "source_sha256": "247e58e3191efebc183ca8b9fa31be303721ae5094816f90b7914af072e91e5f"
+      },
+      "displayTimezoneTitle": {
+        "text": "顯示時區",
+        "source_sha256": "116002a5d714c0c035e9d23fd8a9b19d1ec4b1dce52c6c71bcb240e6a75fcc31"
+      },
+      "displayTimezoneHelper": {
+        "text": "該程式中的每個時鐘都使用該區域，包括歷史記錄、報告和本機模式日誌。瞬時值儲存為 RFC 3339，因此計算保持正確。留空以遵循該主機的當地時間。區域或偏移始終顯示。",
+        "source_sha256": "c8d69961b3c4dc4fd723a4705389e87b558d70ee932cd1e2c051795cbc00220e"
+      },
+      "programTimezoneLabel": {
+        "text": "節目時區",
+        "source_sha256": "4b98da848d76ad7d7d85b59de88ebb38ccd92204e5e4ff2235a85d9d596cf15b"
+      },
+      "programTimezoneEmpty": {
+        "text": "使用該主機的當地時間",
+        "source_sha256": "998ad3672032532f5906832eeab927fd922faf2e7fcfef71446fc79e52db8869"
+      },
+      "programTimezoneHelper": {
+        "text": "IANA 區域，例如 America/Los_Angeles。主機時鐘後面為空。",
+        "source_sha256": "00ba0fcbc1bb1ce9af8625a7a0329dab46d5a1b7770b3c7aaaca12d9ed338c4e"
+      },
+      "saveTimezone": {
+        "text": "保存時區",
+        "source_sha256": "74125f8e005ffd9c6e92785f0e5a8d100a81ab323102677822c8e9409577a099"
+      },
+      "timezoneLoadError": {
+        "text": "無法載入顯示時區。確認您已登入。",
+        "source_sha256": "af0c296e6ed1aee0141dfd0568c422e6beef675d729e4ad7397b9ff4766d7e9b"
+      },
+      "timezoneSaveError": {
+        "text": "無法儲存顯示時區。",
+        "source_sha256": "a9c34b16c9313e5d7a6c6dfa8453f48887e3ee2742189bbce2b133fd800eaaa5"
+      },
+      "timezoneSaved": {
+        "text": "顯示已儲存的時區。整個程式的時鐘現在都使用此設定。",
+        "source_sha256": "b99dfa9fede05f128b3f382197c678ba68255392ea9d43e850a80200bfe2c59e"
+      },
+      "timezoneResolved": {
+        "text": "現在顯示為 {{timezone}} ({{offset}})。",
+        "source_sha256": "79a43e1bd7b4e1b00e1c2a5ac5fb3922359d60ae48e766096be85f3b9a2b1ca3"
+      },
+      "preferredIdpLabel": {
+        "text": "首選身分提供者",
+        "source_sha256": "b3cbc2981e09d22ab5bb9d84b4f049eb710d3dcce9b94dafe8556283e9b91aac"
+      },
+      "savePreferredIdp": {
+        "text": "保存首選提供者",
+        "source_sha256": "160226aea13847c2d30049fabe0ade90791432138250021213276520de140cd4"
+      },
+      "gridReportExportTitle": {
+        "text": "網格報告匯出",
+        "source_sha256": "d06423e237e7e8fb6e0d910b015f31353d18aa1662da7b695e2ff088f0938f8c"
+      },
+      "orgNameLabel": {
+        "text": "組織名稱（可選）",
+        "source_sha256": "9a57db18d8f8d935f1f8bedab9177212bbc878ed1f2ea35c1bbf88b18aabdeb8"
+      },
+      "confidentialityNoticeLabel": {
+        "text": "保密聲明",
+        "source_sha256": "e5068b01a06dff13b58b468be7883202942ccce586da28ee349b3464618c6ff9"
+      },
+      "saveReportExport": {
+        "text": "儲存報表匯出首選項",
+        "source_sha256": "9e572f4625bc43a099a08b11a982e7dd900cbfeb51816e139d64055b304e9307"
+      },
+      "saveSettings": {
+        "text": "儲存設定",
+        "source_sha256": "0b3ad5f16e9b9a45908498b206f885913bbc35366f4574ae22b4acc0f75e37f1"
+      },
+      "saving": {
+        "text": "儲存...",
+        "source_sha256": "d10a04b906f63fdde2beff7c7dd7484572987182d37c36695a04439b107ba7bf"
+      },
+      "saveSuccess": {
+        "text": "設定保存成功！",
+        "source_sha256": "695fc776308af63eed91ea341aab984e8724018e39937098279473046389581a"
+      },
+      "saveFailed": {
+        "text": "無法儲存設定。請再試一次。",
+        "source_sha256": "213ac76389eb56dc760a374b92336628459567ce0b56a4ed2ba32a5fcd673ebd"
+      },
+      "syslogEnable": {
+        "text": "啟用系統日誌轉發",
+        "source_sha256": "c717786a2746ebd76947119efa923d0883b068cf4dcc6cf381a1d6091a0b5b43"
+      },
+      "syslogCollectorHeading": {
+        "text": "集電極連接",
+        "source_sha256": "32ae8807e929f119a191b65af9515873751d6753b7201db88c0f1aa421e069ba"
+      },
+      "syslogHost": {
+        "text": "擷取器主機",
+        "source_sha256": "0665af9b90751a471295986790782b44d9b92a69b5cb75018c1a6d05d6db4da4"
+      },
+      "syslogHostHelper": {
+        "text": "系統日誌收集器的主機名稱或 IP",
+        "source_sha256": "db5690513e3e7df4a0314d50a9c3101805b85f41415b9a0200a28bedbcd50773"
+      },
+      "syslogPort": {
+        "text": "港口",
+        "source_sha256": "5cc1444ad44d1ec2f36ce3fb11e78cf721069b558f509632ff899ddb3392d4b9"
+      },
+      "syslogPortHelper": {
+        "text": "514 (UDP/TCP) / 6514（基於 TLS 的 TCP）",
+        "source_sha256": "b5040bd6d74a3c9fb27a7e749fb14debe38868c78db814f4059da0dac31539e1"
+      },
+      "syslogProtocol": {
+        "text": "協定",
+        "source_sha256": "34a9aeba21ca674c3ae6536d530b4bc4cde3c72e8ae189f4166d21a3fc42c08c"
+      },
+      "syslogFacility": {
+        "text": "設施",
+        "source_sha256": "f56a7a388dd9c8d8dc731997788da34260401485f605dba0be94126ad492cdfd"
+      },
+      "syslogFacilityHelper": {
+        "text": "RFC 5424 設施關鍵字",
+        "source_sha256": "a2edbdca8305e11233570af21c83246c1267b777ac77a357677b36730112e5b5"
+      },
+      "syslogTcpFraming": {
+        "text": "TCP 成幀",
+        "source_sha256": "180e1423cc7570efbfbc510189dc5f9dc742175caa2e610178d564c1373d107f"
+      },
+      "syslogTcpFramingHelper": {
+        "text": "TCP 上的記錄如何定界",
+        "source_sha256": "d959033e1c32c5be68ab84587a68c75177064481ae363038359d41ebde21379b"
+      },
+      "syslogAppName": {
+        "text": "應用程式名稱（ident）",
+        "source_sha256": "4855bc65dcdb3470a0eb98f0da12d34c8d00d368b4aadd5ca72cb081f0cc53c8"
+      },
+      "syslogAppNameHelper": {
+        "text": "RFC 5424 APP-NAME；空白則預設為服務名稱",
+        "source_sha256": "249098ccc1502644b73e0f1e8bf1a0d9c5eff80d47dea81fdae701f657e7c015"
+      },
+      "syslogTlsCa": {
+        "text": "TLS CA certificate path",
+        "source_sha256": "727f53530163eea3180ceb252757a1d773c464988d942f4c8c24b50b1353d0a2"
+      },
+      "syslogTlsSni": {
+        "text": "TLS 伺服器名稱 (SNI)",
+        "source_sha256": "fa982b7ec847eeb94cda75b2a169daf69d2afcee3fe317dac6fbfa58706ae146"
+      },
+      "syslogSave": {
+        "text": "儲存系統日誌設定",
+        "source_sha256": "f7fc7db92a74b543401af61ef938029a9b4db5c0078dfecec6696cd36e5d16b7"
+      },
+      "syslogTest": {
+        "text": "發送測試訊息",
+        "source_sha256": "f7245556d09599892209a4a7273118568ef58fdb4a9e80c064604fbb3fa156c9"
+      },
+      "brandingTitle": {
+        "text": "品牌與風格",
+        "source_sha256": "888d8c8486efcb290d211c1ec7fc6245f6d9e33b1934bd0907fe1031fc839938"
+      },
+      "brandingIntro": {
+        "text": "上傳自訂徽標，設定品牌名稱，並配置分類橫幅和通知顏色。",
+        "source_sha256": "137f9aa62930cfb09437d4eb04dc30d0f4fcada44db3c580c8be3fcbb1db3603"
+      },
+      "brandNameLabel": {
+        "text": "品牌名稱（標誌替代文字）",
+        "source_sha256": "0613b3ca33f000622790e6f96ccd6466b533db23f983ed2bdff7bbfd9f6ee853"
+      },
+      "logoUpload": {
+        "text": "上傳徽標",
+        "source_sha256": "d6339b96251350cba8222e8e1b81d0497332573f2539363bad4484349f980777"
+      },
+      "logoHelper": {
+        "text": "PNG 或 SVG，最大 512 KB。",
+        "source_sha256": "5615a303ddb95d2f96db5811cbe0544a0d7645ba3060634a920d2eaddd481c32"
+      },
+      "classificationBanner": {
+        "text": "機密等級橫幅",
+        "source_sha256": "1e990711af52cf7d7c602913a495a12a6ab354d8536c01785135dd2990eb8c2a"
+      },
+      "noticeRow": {
+        "text": "通知列",
+        "source_sha256": "0ad0f70f401160ea757bb78f7173f05b829e91810c596f3814e286e099d972cf"
+      },
+      "accentColor": {
+        "text": "強調色",
+        "source_sha256": "74fd117e899260bf595ac4e4309dbb6cee9ddf713b9f5cd22b4ab1b1daf8316b"
+      },
+      "saveBranding": {
+        "text": "儲存品牌設定",
+        "source_sha256": "626c24cc222feec1f477b0547714d2a0eb2a1b9563cb01795778972a978471b8"
+      },
+      "serviceLogsTimezoneLabel": {
+        "text": "日誌顯示時區",
+        "source_sha256": "629ba043a15b380ddfef34693b37418e3621e7c43602e4682f3fe6914bf850b1"
+      },
+      "preferredIdpHeading": {
+        "text": "慣用身分提供者",
+        "source_sha256": "2c19e8f102b66c1a006270c113e7ae3dab8502ed3002b0a0e809991d2b1e67fe"
+      },
+      "preferredIdpHelper": {
+        "text": "此瀏覽器在登入畫面的個人偏好。會覆寫全域預設（存取控制 → 提供者）。保留「使用全域預設」以遵循伺服器設定。",
+        "source_sha256": "affe9803d1b126a7875c1567aa5a1127896863837288a710294316f4b97105ec"
+      },
+      "preferredIdpSaved": {
+        "text": "已儲存此瀏覽器的慣用身分提供者。",
+        "source_sha256": "35bd9acab67d5a614f3d885a9fbc926a1850680601ac171dcc3f6e66e380f93a"
+      },
+      "useGlobalDefault": {
+        "text": "使用全域預設",
+        "source_sha256": "c89c214671b6ab1568abf3a078f6221c975415c6b1e28593e5c8e51e31890334"
+      },
+      "gridReportExportHelper": {
+        "text": "這些值會顯示在此瀏覽器管理員資料格匯出的 CSV、Excel 與 PDF 頂端。它們儲存在您的操作員帳戶本機，不會變更伺服器組態。",
+        "source_sha256": "646766f5be961c763729c84371be2b9114fc3fd74d2932a3b13afb55fc5659f0"
+      },
+      "reportExportSaved": {
+        "text": "已儲存報表匯出偏好。",
+        "source_sha256": "1903f022f39157b7a64dfc2f873d7c50d818b629c1c3b9f8c61815d43dfd418b"
+      },
+      "orgNameHelper": {
+        "text": "若有設定，會顯示為匯出報表的第一行。",
+        "source_sha256": "8a6724bca9193416be1ed01f42a2d21435f1367e2cac7e7a5e5acc0931ce0524"
+      },
+      "confidentialityHelper": {
+        "text": "例如：「公司機密 — 請勿散佈」",
+        "source_sha256": "9acb22eabc9e3da1e02abf968eb02b83f965cfceff2a2bd637edb0a23ef28d3e"
+      },
+      "openBranding": {
+        "text": "開啟品牌與樣式",
+        "source_sha256": "e12ceb9a43e17775756a05c89566145cef0cd8fe029785982f34d672d518797c"
+      },
+      "brandingSectionHelper": {
+        "text": "上傳自訂標誌，並設定登入頁與應用程式標頭的橫幅色彩。",
+        "source_sha256": "2d754145598e2048ade76ff427e4c46378573cd1e3dca9ecc06f37b57de8d35a"
+      },
+      "syslogSiemHeading": {
+        "text": "SIEM 輸出格式",
+        "source_sha256": "c22b5a02e110886fc9f5e19e86fae527c819dda42364baf4f184a7faae362040"
+      },
+      "syslogSiemFormat": {
+        "text": "SIEM 格式",
+        "source_sha256": "d2caacb5098b343ddc4858a0716356267c9da9e6f903e06af45413dda0658c76"
+      },
+      "syslogSiemFormatHelper": {
+        "text": "轉發事件的承載形狀（RFC 5424 JSON、CEF、LEEF 或純文字）",
+        "source_sha256": "6535f5e45efdd65c9178fb7ab41240f3359d5009a36c76cd91c5ba4472d5bb3e"
+      },
+      "syslogOptionalFields": {
+        "text": "預設選用欄位",
+        "source_sha256": "acc1a76499dab5f27431d26475a41bbb301bfae9602905386c617246d09391a2"
+      },
+      "syslogTlsHeading": {
+        "text": "TLS 設定",
+        "source_sha256": "acf804442dbe4951c616437b9016f20dd53a901599b954567e7167cde62f3b6c"
+      },
+      "logoUploadTitle": {
+        "text": "上傳產品標誌",
+        "source_sha256": "08ec95d13064b51f194c04680546eef7e55df89ae675af5f60a6f8006296f1db"
+      },
+      "logoDropHelper": {
+        "text": "PNG 或 SVG，最大 512 KB。拖放檔案或按 Enter 瀏覽。",
+        "source_sha256": "2ff8080854f5bf7213b0cff26796c2a58fad5bb304d38a828208ea41a649ef65"
+      },
+      "logoUrlOverride": {
+        "text": "標誌 URL 覆寫（選用）",
+        "source_sha256": "64b08a5acd3c052e8991abb405bd8de2191dcdc20287b30a670762ba32b6a925"
+      },
+      "styleHeading": {
+        "text": "橫幅與介面色彩",
+        "source_sha256": "72e05cf19a098d7f6eb22279408750f9ef12248d9fdcbd636ecea97acd032e67"
       }
     },
     "systemsList": {
@@ -8550,8 +8814,8 @@
         "source_sha256": "76670b82c88b156fa6e5b867cb91b56914027f790566992d5a04a9e9bd90bd14"
       },
       "empty": {
-        "text": "凱恩系統。 Endpunkte erscheinen nach 註冊或發現。",
-        "source_sha256": "42645689d96fbdbb72ade00a7a28233594233ab34e59b1594d5b27755ed908b9"
+        "text": "沒有系統。端點出現在註冊或發現之後。",
+        "source_sha256": "6243ea153985f7ea791540839684dc39ce735f0ad60b2110a4ec342eba5aab6b"
       },
       "exportAll": {
         "text": "全部導出",
@@ -8802,8 +9066,8 @@
         "source_sha256": "2ad90fdc15f9db2a4c8a36397519c315976e173d3ea9515f406c727bfcebcd99"
       },
       "appendOnlyNote": {
-        "text": "Dieses Verzeichnis ist nur anhaengbar, erzwungen durch a Datenbank-Trigger。 Es gibt keinen Weg，a Zeile 到 aendern 或 to loeschen：Eine Korrektur ist a neue Zeile，以及 Original bleibt sichtbar。",
-        "source_sha256": "f91a798ed9e96660f7cdf467c0d6db11fe38218b9e5ea8cd73d1b8d95314ae93"
+        "text": "此目錄只能附加，由資料庫觸發器強制執行。無法變更或刪除一行：更正是一條新行，原始行仍然可見。",
+        "source_sha256": "cae7ad4e83a695b44dcf87c15b8fa4db4d3f0f7c9584cb6dae56583712400c21"
       },
       "assignAssigned": {
         "text": "已分配",
@@ -8850,8 +9114,8 @@
         "source_sha256": "0e570ca6fabe24f94e52c1833f3ffd25567022beb826fa16891f3322051bc221"
       },
       "attestationIrreversible": {
-        "text": "Dieser Eintrag wird 與 Quelle of-the-Verwaltung-erfasst gespeichert 和 kann danach 而不是 geaendert 或 geloescht werden。 Das Verzeichnis ist nur anhaengbar, erzwungen durch a Datenbank-Trigger: Eine Korrektur ist a neue Zeile, and diese bleibt daneben sichtbar.",
-        "source_sha256": "b678e579d26f5babddac5662f8a9f78196c8384f7f2fb368e110c893abee341a"
+        "text": "該條目與管理來源一起儲存，之後無法變更或刪除。該目錄只能附加，由資料庫觸發器強制執行：更正是一個新行，並且它在旁邊仍然可見。",
+        "source_sha256": "08617b726ef42b9eb1bd01e7d0e3b67569610716a59f4e50448bdf9bea1b2355"
       },
       "attestationsAllPrograms": {
         "text": "所有節目",
@@ -8902,12 +9166,12 @@
         "source_sha256": "d61bf1b7be43bd07a2d65ec8916e980874c6f8deee445f544f235f77cf52c1ad"
       },
       "attestationsLoadError": {
-        "text": "Das Bestaetigungsverzeichnis konnte not geladen werden。",
-        "source_sha256": "aa12619c5ec172da36b0a3e8495daf95144575d051ef46e00dec39c722eb280f"
+        "text": "無法載入證明目錄。",
+        "source_sha256": "67d434c6a2585f3fd5cb5edcca0a6eab34c821e887874545063ae82ba65b210b"
       },
       "attestationsNoPermission": {
-        "text": "Sie brauchen the Berechtigung, Bestaetigungsverzeichnis anzuzeigen。",
-        "source_sha256": "fd5e4a5de607bcb61ad7b7f69707513a5fbdfac36d3114559c5ce0185f5a0531"
+        "text": "您需要查看確認目錄的權限。",
+        "source_sha256": "014385b0bf2563ed13f0eeb8bb23020ee0c3d9fc7c421337efd3384f4106b8ab"
       },
       "attestationsPerson": {
         "text": "人",
@@ -8926,8 +9190,8 @@
         "source_sha256": "aad5f94ab300dafc2e3f956f9557f533f144e49a837ae42ea76154481a9aa758"
       },
       "attestationsSubtitleLedger": {
-        "text": "Nur anhaengbare Unterschriften — keine Aussage、dass a Person geschult 或 zertifiziert ist",
-        "source_sha256": "fe3f619d6a75e67469ccabdb21a1a3bd6b369c334c5ae9512bda43e40d831a30"
+        "text": "僅可附加簽名 - 不聲明人員經過訓練或認證",
+        "source_sha256": "a5f02c80b32faccdec952351eed60b810a20d0f398246516dad65f6e8d25d24d"
       },
       "attestationsTitle": {
         "text": "培訓鑑證帳本",
@@ -8986,8 +9250,8 @@
         "source_sha256": "98d6c807261001992955b326d1c5ba7146ad2190fd1f6576d936ff5397c69ef2"
       },
       "coverageHonestyFallback": {
-        "text": "Abgedeckt heisst：在圖書館贈送一份文檔，這是克勞塞爾的規範。這是不可以的，請參閱文件說明帽，並且是 keine Kontrollbewertung。",
-        "source_sha256": "c1b07e66819e9ad7ab7ca87f400c44d67df5ca83bb2a4da0d12aa12e6b2d1225"
+        "text": "Covered means: In the library there is a document that mentions a clause of this standard. It does not mean that someone has read the document and it is not a control review.",
+        "source_sha256": "344fb30f3ebd8634a6e57e5b84c8963acd783d57943e5305a0a5cd70760ff36e"
       },
       "coverageInheritClause": {
         "text": "__PH0__ inherit a parent",
@@ -9094,28 +9358,28 @@
         "source_sha256": "19766ed6ccb2f4a32778eed80d1928d2c87a18d7c275ccb163ec6709d3eb2e27"
       },
       "detailChooseDocument": {
-        "text": "Waehlen Sie，用於 welches Dokument diese Unterschrift 鍍金。",
-        "source_sha256": "a277973f6d7cc1234aef8b9e599946e6fad6ca1f417e0caf68a5d03ca914c541"
+        "text": "選擇此簽名適用於哪個文件。",
+        "source_sha256": "d319df8ce2843443d6187c3faddf363a2369146f9cecf260a8271ece52597a99"
       },
       "detailClaimCompletion": {
-        "text": "Eine Abschlusszahl ist keine Kontrollbewertung； kein Nachweis 為 800-172 3.2.2e。",
-        "source_sha256": "84805691efa9436c3ad9ff4776d684392062c444493097a9291e53a68ef5f4b0"
+        "text": "最終數字並非控制等級；沒有 800-172 3.2.2e 的證據。",
+        "source_sha256": "08a9d3d137c253e1caf7e2b2814c86917534c19e9b77903843f5a05f771e928a"
       },
       "detailClaimNotBuilt": {
         "text": "Zugangssperre、Benotung 和 regelbasierte Einschreibung 不屬於 gebaut。",
         "source_sha256": "d462b02cbabc0e6cf919709fb57fc0f52ba4ecf83e0be0c8160e064e56f4d5a2"
       },
       "detailClaimOperator": {
-        "text": "Jede Bestaetigung hier ist of the Verwaltung erfasst — kein Portal for Lernende, keine Selbstbedienung。",
-        "source_sha256": "24fa2e4e4b370641ee5508c43383aba69cf2d32fd08a370e00215d56c4cd1295"
+        "text": "這裡的每一個確認都由管理部門記錄 - 沒有學習者門戶，沒有自助服務。",
+        "source_sha256": "93442f2137f8b0660ac34c241a960d5af8287c13d7112c3e903a44c1ad14c89f"
       },
       "detailClose": {
         "text": "關閉",
         "source_sha256": "7d9eb7acb13e24625c404401d8e88b2350e32162455885f18276cf802f7701ed"
       },
       "detailClosedTerminal": {
-        "text": "Geschlossen ist endgueltig；該程式不能在 werden 中使用。",
-        "source_sha256": "dfbe34e972aaf53a2c54ed08278f14969b1a4e45e51f4d08e021fb4c99e6ca57"
+        "text": "關閉即為最終結果；該程式無法重新開啟。",
+        "source_sha256": "8c0427b3d0042a922df515786dd0018b323db120588ba7ea0a24c2d55c67ff3f"
       },
       "detailCompletedOf": {
         "text": "Abgeschlossen {{done}} 的 {{total}} · {{rate}}",
@@ -9126,12 +9390,12 @@
         "source_sha256": "9bc66e0237b28fb01bcc391d7b091ca303ec519cb3369297f857a60734d16615"
       },
       "detailDeliveryAttempts": {
-        "text": "Zustellversuche — keine Abschluesse",
-        "source_sha256": "d1e3afa3cca26a9770310a0aa00d225b6183aeeee6328a0edc230e73a0fa8061"
+        "text": "交付嘗試 - 未完成",
+        "source_sha256": "a9823d331a1865ef631c638fba1f308daec90e42e7907465671b63f867bf5fcf"
       },
       "detailDeliveryRecord": {
-        "text": "Liefernachweis — keine Aussage，dass a Person geschult 或 geeignet ist",
-        "source_sha256": "5d41fefe692e6b301c97280c2009ba87aeea59f25ea55e8b1387fbc1dd55121c"
+        "text": "交付證明 - 並非人員受過訓練或適合的聲明",
+        "source_sha256": "878013408222bf60ef0c45ba088122d24b0fef6452d00a707b77bfd99dc44496"
       },
       "detailDueEverybody": {
         "text": "每個人的到期 {{date}}",
@@ -9146,8 +9410,8 @@
         "source_sha256": "e5548a76a3d55d79cc90e165b260786d0b1fd515e267bc2154c7f922ef2f249b"
       },
       "detailDueWhen": {
-        "text": "法利格{{when}}。 Sendelog auf dieser Seite 中的 Erinnerungsversuche stehen。",
-        "source_sha256": "31716f50bb866d8ae17351180ca10ac4a9945d43e33e0073f6c05edb8bdfa46a"
+        "text": "截止日期{{when}}。嘗試記住的內容位於此頁面的傳送日誌中。",
+        "source_sha256": "652ae1494138ba2c29f91d6fcbcb468748cadb51d866c554921ddea2b3c5989c"
       },
       "detailEnroll": {
         "text": "因施賴本",
@@ -9158,16 +9422,16 @@
         "source_sha256": "efd525391ccd0d02762e36de3699526782befc4e02315807d1540e147a803d01"
       },
       "detailEnrollHelp": {
-        "text": "Einschreibung 是冪等的：Wer in diesem Zyklus schon eingeschrieben ist，而不是 verdoppelt 和 Faelligkeitsdatum bleibt。 Nur aktive Verzeichnispersonen stehen hier。",
-        "source_sha256": "e2fb165e1b03af93f0e19850730a1306bff77595a0a5fe869cea9a1e31149f49"
+        "text": "註冊是冪等的：任何已經註冊到這個週期的人都不會加倍，並且截止日期將保持不變。此處僅列出 Active Directory 人員。",
+        "source_sha256": "5399a0c25d41b1c018e5f2e05cb524a4aa589c1899493b8fa8c6049a6e50ef9c"
       },
       "detailEnrollPeople": {
         "text": "招收人員",
         "source_sha256": "af28eb9efc5ce8832b4f855ed66a249d9d26e2377b40221b6282760cd270391d"
       },
       "detailEnrollToast": {
-        "text": "{{created}} eingeschrieben; {{already}} 位於 diesem Zyklus schon eingeschrieben 中。",
-        "source_sha256": "c5cfc2bb69bd5c3b941450891a61781a8547f091e719d08fff5dace8d83b3657"
+        "text": "{{created}} 已註冊； {{already}} 已參加此週期。",
+        "source_sha256": "00e8864085fabe3dd25e4c5a677eab430a6506aea172f8d1cf2647da306fc048"
       },
       "detailEnrolledPeople": {
         "text": "真實的人",
@@ -9186,8 +9450,8 @@
         "source_sha256": "ded0c2faad9a56b9f11248ed08ddc9d361ee353df813b72733124b120eda24c9"
       },
       "detailHashNote": {
-        "text": "Der Dokument-Hash wird vom Server aus the gehefteten Vorlage and the Einsetzwerten dieses Programms berechnet.但是，這不是 angegeben werden，而是 Verzeichnis genauen Bytes festhaelt，服務器 erzeugt 帽子。",
-        "source_sha256": "2fadd22539791ba0d2b5d00851267721f6487d1fb87d2cb98ace675dd4894556"
+        "text": "文檔哈希值由伺服器根據裝訂模板和該程式的插入值計算得出。此處不能指定，以便目錄記錄伺服器產生的確切位元組。",
+        "source_sha256": "915d97e89f219f9796682e8b4b28fdb98db4542c382045806496944985952fcf"
       },
       "detailInProgressN": {
         "text": "在阿爾貝特 {{count}}",
@@ -9198,32 +9462,32 @@
         "source_sha256": "46c7e62327355da791a2b699dc667c693892c6b8cb3bf361fd514d7e74484063"
       },
       "detailIntentHelp": {
-        "text": "Bleibt 伺服器標準，bis Sie ihn aendern。 Pro Zeile gespeichert，damit a spetere Aenderung keine alte Unterschrift umschreibt。",
-        "source_sha256": "94375c87b915043f5bab42ecb07f4d7ad1e01cef131f5f6424e555bbfa239dac"
+        "text": "伺服器保持預設狀態，直到您更改它。每行保存，以便以後的更改不會重寫舊簽名。",
+        "source_sha256": "071e220c2abeff7b6b497e4cd5be9f4cad42f63ead36348f20a258e2d4eb2814"
       },
       "detailKind": {
         "text": "藝術",
         "source_sha256": "75df3579c73089e317e5bf917f6b6cf1cb8d19f21ad70c15e70e431c3aa2a62a"
       },
       "detailLateNo": {
-        "text": "· verspaetete Abschluesse werden not akzeptiert",
-        "source_sha256": "b2336e90d99d5bf4b2d2dd382a6f7dc5f7861c554ca498b29c3a86f6ef533687"
+        "text": "· 逾期完成的作品將不被接受",
+        "source_sha256": "a46c789834ee1f909bd93441cde36e1c003c5fb5665e4428bc2707e246181f75"
       },
       "detailLateYes": {
         "text": "· 韋爾登 akzeptiert 的 verspaetete",
         "source_sha256": "9ba2d1d08d7ee4eb652616df79208fa007abace889d2f733f3f9b8627b49f463"
       },
       "detailNoAssignmentView": {
-        "text": "Sie koennen dieses Programm sehen，但不是，我們是 eingeschrieben ist； the braucht the Berechtigung, Aufgaben anzuzeigen。",
-        "source_sha256": "53669af7d3fb77831d67fc19d42d89c4776fb10abd2f1a9d3298c3c698f44f5d"
+        "text": "您可以看到該計劃，但看不到誰註冊了；需要查看任務的權限。",
+        "source_sha256": "a1ea5f0526c19ba64b4000ab42801378f76ce013caa50971d302ff2df22d9855"
       },
       "detailNoDocsPinned": {
-        "text": "Keine Dokumente an dieses Programm geheftet。",
-        "source_sha256": "2d3d60fe6b50dc33051ebd179c0a9d39e6afba3a183d614544bc06215d1de3dc"
+        "text": "該程式沒有附加任何文件。",
+        "source_sha256": "491e54cab010a7020501621aea88fdf7681278ebcf01a05902b228ff42e45351"
       },
       "detailNoDue": {
-        "text": "Kein Faelligkeitsdatum auf dieser Aufgabe。",
-        "source_sha256": "8c2a9491e78d6bfbaa30db3d6473f63eae34360af74511a4ade5c35b5115adb3"
+        "text": "此任務沒有截止日期。",
+        "source_sha256": "20c969b1a7d77d50ccb82cb94591d29792bda6263615c7b7d2af0b1d7d36a220"
       },
       "detailNoNameRecorded": {
         "text": "（名字為erfastt）",
@@ -9234,12 +9498,12 @@
         "source_sha256": "a6d7f98e0ee44cda8abe3bc6c0ceff0198393268d5f2aa835f4d39facc5f4b5b"
       },
       "detailNoReminders": {
-        "text": "Fuer dieses Programm wurden noch keine Erinnerungsversuche festgehalten。",
-        "source_sha256": "488ce7626a40ddc828da270a98062ec532434d60b8e58289440de80978c10508"
+        "text": "尚未記錄該程序的記憶嘗試。",
+        "source_sha256": "0e8bbaa83db4ca4f1e1c96a83f95ab254c4722014b72c1c6cafbdca8a2f70729"
       },
       "detailNobodyEnrolled": {
-        "text": "Noch nimand eingeschrieben。 Einschreibung ist namentlich, a Liste nach the anderen — es gibt keine Gruppenmitgliedschaft and keine Rule, the Neueinstellungen automatisch einschreibt.",
-        "source_sha256": "06c08e27aec6583da698c93777fadc92eb30ef004032416e6de1170bd46da350"
+        "text": "還沒有人報名。登記是點名，一次列出一份名單－沒有小組成員資格，也沒有自動登記新員工的規則。",
+        "source_sha256": "e6ef2f96312d448f89b25224680c3eb6eae25c5b42713d70526564609e191561"
       },
       "detailNowStatus": {
         "text": "程式設計師是jetzt {{status}}。",
@@ -9254,16 +9518,16 @@
         "source_sha256": "edbfc3dcbe849138276fa20715807a6cfd77532f7bed31c08a8e7c248c9121cb"
       },
       "detailOverdueDerived": {
-        "text": "Ueberfaellig wird zur Lesezeit aus the Faelligkeitsdatum abgeleitet。 Sendelog darunter 中的 Erinnerungsversuche stehen。",
-        "source_sha256": "b4ccd8df5586ab59ff9631b813fc72889b26bc50e2dcfdcb7eab7a20651d976d"
+        "text": "逾期是從閱讀時的到期日算起的。下面的傳輸日誌中列出了要記住的嘗試。",
+        "source_sha256": "d59ec8978e1e1c907515f836b744a13b7a8028f5b30b0a744f5ff6b61bfb19f7"
       },
       "detailOverdueN": {
         "text": "尤伯法利格 {{count}}",
         "source_sha256": "21acdce40c09886240768c5da71ae9a9b47f6dcdddf968760912a4221f68bcf4"
       },
       "detailOverdueNote": {
-        "text": "Ueberfaellig wird zur Lesezeit aus the Faelligkeitsdatum abgeleitet。 Sendelog darunter 中的 Erinnerungsversuche stehen。",
-        "source_sha256": "b4ccd8df5586ab59ff9631b813fc72889b26bc50e2dcfdcb7eab7a20651d976d"
+        "text": "逾期是從閱讀時的到期日算起的。下面的傳輸日誌中列出了要記住的嘗試。",
+        "source_sha256": "d59ec8978e1e1c907515f836b744a13b7a8028f5b30b0a744f5ff6b61bfb19f7"
       },
       "detailOverduePrefix": {
         "text": "逾期·",
@@ -9294,12 +9558,12 @@
         "source_sha256": "f13b186191f6bd08b75a2776457c58d38b867a2b445d6f6874cf7c25806969e1"
       },
       "detailRecordAttest": {
-        "text": "Namen dieser Person erfassen 中的說明 — 系統管理資訊的一部分",
-        "source_sha256": "8bd4d1a393ac69843ce3638150b3344f379eabfefcf917f95d0a696b2218cb9e"
+        "text": "Record confirmation in that person's name — a proof of a signature entered by the administration outside the system",
+        "source_sha256": "1c95217f765e36e8141cc49412f263b6ee6e1588a287bb7d2919116fd21ca753"
       },
       "detailRecordAttestDenied": {
-        "text": "Braucht Berechtigung、Bestaetigungen 到 erfassen",
-        "source_sha256": "ebd926c9f4f3ca465207e5c542ff5029e6ca126ca85f920b0a340e992745b152"
+        "text": "需要獲得許可才能捕獲確認訊息",
+        "source_sha256": "81c0d342d241c64cb3ad8671735e38bbdfca198fb689d0b64d65c3698951ca68"
       },
       "detailRecordAttestation": {
         "text": "最佳實踐",
@@ -9314,20 +9578,20 @@
         "source_sha256": "d6e010d13b1a876720f9e7c19bf997584bd1e166e4ea3bff9b420547a5597172"
       },
       "detailRecordedCompleted": {
-        "text": "艾爾法斯特。 Jedes Pflichtokument ist jetzt bestaetigt，也鍍金了 Aufgabe als abgeschlossen - ist a Liefernachweis，keine Aussage，dass the Person geschult ist。",
-        "source_sha256": "c38643ed134ae21c742399f0d39f0bf1b1c4480c01551866615b73e22c1854b9"
+        "text": "已記錄。現在，每個強制性文件都已確認，因此任務被視為已完成 - 這是交付證明，而不是人員接受過培訓的聲明。",
+        "source_sha256": "f1c2919094468fff88c21674c59e6af324c42abc785d7d077d77b82f4ba56eb9"
       },
       "detailRecordedOne": {
-        "text": "“{{title}}” eingetragen 的 Verwaltung erfasste Bestaetigung 的 Eine。",
-        "source_sha256": "993443a75e94a34f8feeb276f9148edf974860c4cc75402442671d83e82d4a81"
+        "text": "輸入主管機關記錄的「{{title}}」確認資訊。",
+        "source_sha256": "c972c666ef2c9e2ffefdccc42e61cd1e42d28c6b1e9c3524bbad596bc41298f6"
       },
       "detailRecording": {
         "text": "維爾德法斯特…",
         "source_sha256": "b935a656fd77abb707a5ad0ce28aefafa885a8619eaf8ae178bdd83987529989"
       },
       "detailRecur": {
-        "text": "· soll alle {{months}} Monate wiederholt werden (nichts oeffnet automatisch a neuen Zyklus)",
-        "source_sha256": "69d3706a64a1679d7dc7c2f49b9eb0862ee0e5e6e6ba93eb9c749d82c4fd776a"
+        "text": "· 應每 {{months}} 個月重複一次（不會自動開啟一個新周期）",
+        "source_sha256": "0ad80519375033821d523795877b2f649a1d2adb29a35b6538d64819f3867dd6"
       },
       "detailReminderLog": {
         "text": "錯誤訊息發送日誌",
@@ -9366,8 +9630,8 @@
         "source_sha256": "2de251e0c4e8f8190c239e46c29c60336b48cc6cd014297c11cdc92f6addc464"
       },
       "detailStatusFailed": {
-        "text": "Der Programmstatus konnte not geaendert werden",
-        "source_sha256": "8b697a06653ad1f167b398a6cba8b6cf386166e633103d1df2b3c8091710b06e"
+        "text": "無法更改程式狀態",
+        "source_sha256": "08ffbacb27f442cf9d83a2e9e8be0a6d9176967bd7658bef65c7ac04be85a979"
       },
       "detailSubtitle": {
         "text": "文件、註冊和每人交付狀態。",
@@ -9382,8 +9646,8 @@
         "source_sha256": "7574cdc934e7458726c1f7e0a649b867273aea309fae34dec68447a6030b7941"
       },
       "detailSweepHelp": {
-        "text": "Jeder Zustellversuch steht hier, auch fehlgeschlagene Mail。 Eine gesendete Zeile 是 Zustellversuch、kein Abschluss 和 keine Note。",
-        "source_sha256": "4e36253ae51de18094fad41283203c7e963181b0a1b73edbc790c19f2b9784a5"
+        "text": "這裡列出了每次發送嘗試，包括失敗的電子郵件。發送行是一次交付嘗試，沒有完成，也沒有成績。",
+        "source_sha256": "243a715c2db449fcff7072195308c78228ac58ef030f575f723260cdeb6cc636"
       },
       "detailSweepToast": {
         "text": "Erinnerungslauf: {{sent}} gesendet, {{failed}} fehlgeschlagen, {{suppressed}} unterdrueckt",
@@ -9394,8 +9658,8 @@
         "source_sha256": "8cf7c785659705eef3da82007d25cb36e04912f09ba04138e8c69b3aef70188e"
       },
       "detailTagged": {
-        "text": "Markiert {{tags}} — nur Markierungen； keine Kontrolle 鍍金 hierfuellt。",
-        "source_sha256": "a45cdabfa90f8e06df7d2d8c61c58c9eb8b006b1e8408a1571e57b85dfb0dd20"
+        "text": "標記為 {{tags}} — 僅標記；這裡不認為已完成任何控制。",
+        "source_sha256": "abb93c6576e6c4820189e7070d7dcdfa430ec0a91ba2900f31f65bac1c552bda"
       },
       "detailTitle": {
         "text": "學業計劃",
@@ -9406,8 +9670,8 @@
         "source_sha256": "bbf241055e483e9e21edbfc92fac216d16996e4b6754cc74a1b91d1ff11b083f"
       },
       "detailTypedNameHelp": {
-        "text": "Wird woertlich als getippte Unterschrift gespeichert。",
-        "source_sha256": "53c35ba120fd91fdcefd67b0db8542fc31f384c6a0b47c4c37eae63fc48f8dde"
+        "text": "逐字儲存為鍵入的簽名。",
+        "source_sha256": "5f8e29f61f0218cfd97f9a982a7e8d64c09fce9020a24e980fbcb676abd544c0"
       },
       "detailTypedNameRequired": {
         "text": "Geben Sie the Namen a，帶有 Person unterschrieben 帽子。 Eine Unterschrift 寫了一個unterzeichnende Person。",
@@ -9426,12 +9690,12 @@
         "source_sha256": "5d5f15c65cb8b8915e7db79fad5a05b4f9746bb604e671fc242290d2d8d92922"
       },
       "detailWaiveDenied": {
-        "text": "Braucht the Berechtigung, Aufgaben to verwalten",
-        "source_sha256": "d5eff419b4039885ab8b4b48eb47c33162ce3c34eeef1f56c5f6c154572d3787"
+        "text": "需要權限才能管理任務",
+        "source_sha256": "77432aacfd6b91190941e5a94e6598405a0821b2043d256d368ee750d8ac7a4c"
       },
       "detailWaiveFailed": {
-        "text": "Diese Aufgabe konnte not ausgesetzt werden",
-        "source_sha256": "7312de130fd43c8b4fc3d754be46f593c2a4743e999f992899a2dc2fefa3740a"
+        "text": "該任務無法暫停",
+        "source_sha256": "4c747f45b851eff957e36f84b7a35989bc20251b5767e40612be64c411c3a589"
       },
       "detailWaiveTitle": {
         "text": "奧夫加貝·奧塞岑",
@@ -9450,8 +9714,8 @@
         "source_sha256": "416b8d4d4f290ad1ec6116cd0e6d78ba9c8108b28e03f7f5c89d77549619e5cb"
       },
       "detailWaiverHelp": {
-        "text": "普夫利希特。 Eine unerklaerte offene Zeile ist the Erste，是一個 pruefende Person herauszieht。",
-        "source_sha256": "ccbeee261bc9d4bb9384a110e70814e0fa5139c83c9984e01b834a11230c5a9b"
+        "text": "責任。審查者首先拿出的就是一條無法解釋的開放線。",
+        "source_sha256": "dcad22b2075ad538a0f23b9a6e31b3eeef12b6a5443d4aabcf32207b85a265fc"
       },
       "detailWaiving": {
         "text": "電線奧格斯…",
@@ -9466,8 +9730,8 @@
         "source_sha256": "68fff05caaf4ff7a30affebc219fe533b7962e696f68e8873c501bb5f8a79ce1"
       },
       "detailWhenSignedHelp": {
-        "text": "Vergangenheit wird erwartet 中的 Ein Zeitpunkt。 Der Server lehnt a zukuenftigen ab。 Eingabe 採用 Ihrer Ortszeit，Speicherung 採用 UTC。",
-        "source_sha256": "c924a45141422b39405a81a00aca6f72a5dd490734014fdc2eb64159f882dae4"
+        "text": "預計過去的一個點。伺服器拒絕未來的一個。輸入您的當地時間，以 UTC 格式儲存。",
+        "source_sha256": "f48637fff071e27d12250995be82930d74c727e37071fc46d377b7070cda8a9f"
       },
       "documentsOrder": {
         "text": "文件，依閱讀順序",
@@ -9502,8 +9766,8 @@
         "source_sha256": "fce2a811cf6504ffa895ec4919ac643703eb1557a3f97df411e2b199818fb362"
       },
       "emptySignerFieldsNote": {
-        "text": "Quell-IP、User-Agent 和 Verweildauer 都在 jeder Zeile leer 中，我們將伺服器作為 unterzeichnende Person nie gesehen hat — er hat a Verwaltungskraft gesehen, the a Eintrag erfasst。 Sie sind Abichtlich leer, keine verlorenen Daten。",
-        "source_sha256": "04567a7f257401d1393e59b4a4631d0b7c88eca0ada37900783d27dce2d42cb1"
+        "text": "來源 IP、使用者代理程式和停留時間每行都是空白，因為伺服器從未看到該人簽署 - 它看到的是記錄條目的管理員。它們故意留空，沒有遺失資料。",
+        "source_sha256": "52f509e4c49b7f803623a1c418f582d48520503aa11426f20f0fb49177c337f9"
       },
       "frameworkTags": {
         "text": "框架標籤",
@@ -9514,8 +9778,8 @@
         "source_sha256": "25b7b264e5e436d6154b4d81958cd2d9f080e718a5f433b46a1a0267f3a85f70"
       },
       "honestyFallback": {
-        "text": "Abschlussdaten zeigen，dass a namentlich genannte Person a bestimmte Dokumentversion to einer bestimmten Zeit bestaetigt hat。 Sie sind keine Kontrollbewertung：Keine Prozentzahl hier sagt，dass a Kontrolle erfuellt ist 或 Zertifizierung vorliegt。",
-        "source_sha256": "ea1cbaaff9a257a44c0c1deb40c0468e8b7f10155308ca97cba5314fe7bfff91"
+        "text": "關閉資料顯示，一名指定人士在特定時間確認了特定文件版本。它們不是控制評估：此處沒有百分比表示已達到控制要求或已獲得認證。",
+        "source_sha256": "d044c867ed61e41c882341b6840ab25957baf48dffda13dff2d7b9b71d955712"
       },
       "honestyFull": {
         "text": "全文",
@@ -9526,8 +9790,8 @@
         "source_sha256": "ae5239ec63f28cd401ccd63e9f56e4ede8254a738a135ebcd33e844c18dd247f"
       },
       "intentDisplay": {
-        "text": "Ich habe dieses Dokument gelesen。 Ich verstehe，是 mir in meiner Arbeit verlangt 的 es。",
-        "source_sha256": "de07eb75d3e1dd584e960ec417555a6be56fa20dfb228631e15702f67535d407"
+        "text": "我已經閱讀了這份文件。我了解工作中對我的要求。",
+        "source_sha256": "8c45fb02ce51f81efe42e86aa20855b19606d09a46366cefeebb5a0c20c3c685"
       },
       "kindContractor": {
         "text": "奧夫特拉格內默",
@@ -9554,16 +9818,16 @@
         "source_sha256": "a4dd870ed7ad561a25a8ef8132c1b01178918757b9272501b1be67f3199df5fc"
       },
       "notBuiltNote": {
-        "text": "在 dieser 版本中，不是 gebaut：Zugangssperre、Benotung 和 gruppen- 或 regelbasierte Einschreibung。 Erinnerungsmail wird auf diesem Programm festgehalten (Willkommen, faellig, ueberfaellig)。 Eine gesendete Zeile ist a Zustellversuch, kein Abschluss。 Personen werden weiter namentlich eingeschrieben，列表中的其他人。",
-        "source_sha256": "87ed0ce991ab4df2dd56d76dae849a324f57292a4651211e31aedb60d521a6a1"
+        "text": "此版本中未內建：存取封鎖、分級以及基於群組或基於規則的註冊。該程式中記錄了提醒電子郵件（歡迎、到期、逾期）。發送的一行是一次傳送嘗試，而不是完成。人們繼續按姓名登記，一次列出一份名單。",
+        "source_sha256": "a4998f14574a784a244d9639ecc82ec3e1aecc7b034ab177bdf0df784fa7bfd2"
       },
       "notesOpenFull": {
         "text": "全面了解這些內容的含義。",
         "source_sha256": "50d4a8d1545b6437e7646d2e36703d78931cfd9518189cdfd1221ef1869c08fe"
       },
       "operatorRecordedFallback": {
-        "text": "傑德‧澤勒 (Jede Zeile) 是《管理法》的最新版本：Eine Verwaltungskraft hat the Nachweis einer Leistung eingetragen, the ausserhalb des Systems stattfand。 Es gibt keine Selbstbedienungs-Unterschrift，也稱為 keine Zeile the unterzeichnende Person self-erzeugt。",
-        "source_sha256": "2114892a43bed9ae8b25d8998c0f95b53c4379c7e29b591c89e378e14797b8d5"
+        "text": "此版本中的每一行均由管理部門記錄：管理員工已輸入系統外發生的服務的證據。沒有自助簽名，因此簽名者自己不會建立任何佇列。",
+        "source_sha256": "903709225b89e368353544ba839dd239b9eb82c1410051c0e0bb35d13ce4770c"
       },
       "packsAudienceAdmins": {
         "text": "管理員",
@@ -9738,8 +10002,8 @@
         "source_sha256": "32672cfda9caf315e06b1d0d333006b6a44720e9a3127b329b8e13c3050566e0"
       },
       "practicalExerciseFallback": {
-        "text": "NIST SP 800-172 3.2.2e verlangt praktische Uebungen to aktuellen Bedrohungen, with Rueckmeldung an Teilnehmende and Vorgesetzte. 3.2.2e 的 Dieses Produkt fuehrt keine Uebungen, keine Uebungen,as keine Uebiren, 片林Nachweis。",
-        "source_sha256": "1ff79f4e05a0c07e174e197e8611a35d50b6be5b79ed9c57827ea337182c2dc3"
+        "text": "NIST SP 800-172 3.2.2e 要求對當前威脅進行實際練習，並向參與者和主管提供回饋。本產品不進行任何練習、網路釣魚模擬或模擬遊戲，也不提供 3.2.2e 的證據。",
+        "source_sha256": "f0b89400a04df45367ab56c4fbc5f516d297be8e9f115f8e5438444d91372598"
       },
       "programsActive": {
         "text": "積極的",
@@ -9778,8 +10042,8 @@
         "source_sha256": "90920d93e2c7e6323a947c6edb0e31a9702002e329af32a67fea53f221983cb0"
       },
       "programsCompletionTitle": {
-        "text": "{{text}}。 {{note}} Ueberfaellig {{overdue}}，ausgesetzt {{waived}}，archivierte Personen ausgeschlossen {{archived}}。 Eine Abschlussprozentzahl 是一個 Lieferstatistik，keine Kontrollbewertung。",
-        "source_sha256": "cbce03de4463bf2e209cdd95c554a58995a6d9b7085dcf8fc4bb7f03db4c103b"
+        "text": "{{text}}。 {{note}} 逾期 {{overdue}}、暫停 {{waived}}、排除歸檔人員 {{archived}}。完成百分比是交付統計數據，而不是控制分數。",
+        "source_sha256": "81bd67c8a098871c32cf362ad0b2331c401e9423e5182acbc9ac30aca2dc6603"
       },
       "programsCreate": {
         "text": "創建程式",
@@ -9790,8 +10054,8 @@
         "source_sha256": "a3f455fcbd1e0cf318a819610e18fb3902b1dd816ed62211a5a5427c4550bed6"
       },
       "programsDeliveryNote": {
-        "text": "Liefernachweis — Abschlusszahlen sind keine Kontrollbewertung",
-        "source_sha256": "b58a403bd11750273568a5b46c9b4e4c0b43862840d4fb405192da04a9a50cbc"
+        "text": "交付證明－最終數據並非控制評估",
+        "source_sha256": "ab26000eee35c21b8da93ed4fcad44e59a3b3ad838ce786da578b771dc91008c"
       },
       "programsDescription": {
         "text": "描述",
@@ -9818,8 +10082,8 @@
         "source_sha256": "8f45e3ca0a96033ef463a39e03f695075fbf8914de4c70bf443ac40761fd830e"
       },
       "programsEmptyDocs": {
-        "text": "Noch keine Dokumente。 Ein Programm braucht mindestens eines。",
-        "source_sha256": "8a461c2540195c0edbc94095c3d9346472bbc0e25d563e44b85033e82ffc4d8b"
+        "text": "還沒有文件。一個程式至少需要一個。",
+        "source_sha256": "10a8a5bd9d76682f56c1d92eae2c0b393c122185c43d78d67942b4486012a5ed"
       },
       "programsExclusionClaim": {
         "text": "閱讀和認證不是一項實作活動；而是一項實作活動。沒有證據支持 800-172 3.2.2e。",
@@ -9830,8 +10094,8 @@
         "source_sha256": "0e0561c4498328a6cea55d931a517f3b911db67511342bebb370f704a9a0e380"
       },
       "programsLoadError": {
-        "text": "Schulungsprogramme konnten not geladen werden. Pruefen Sie the Berechtigung zum Anzeigen.",
-        "source_sha256": "0ff63d2ea80d755ef6c95700ec1e618adf4e43647a3d5077a3393900add2575f"
+        "text": "無法載入培訓計劃。檢查您的查看權限。",
+        "source_sha256": "5ef9c011aa3ef5a0d8693c142332ec946f9277e0c80ade8e884947d85c43171d"
       },
       "programsName": {
         "text": "節目名稱",
@@ -9854,8 +10118,8 @@
         "source_sha256": "e159b06187d369a0615f66ce577582b5c983d4ea59b3a62b702049f61753f0bf"
       },
       "programsReadingCompletion": {
-        "text": "Abschlusszahlen werden gelesen。",
-        "source_sha256": "bc0d4da8d4c7cfccd25424376792ea8033c9452895200cf5c1c8acb0513fcdd6"
+        "text": "讀取最終數字。",
+        "source_sha256": "0c61d3acd82415a17d6f7ce7bdffe6784a8b29406955208b2b6946e15102759d"
       },
       "programsReadingDocs": {
         "text": "Dokumentliste gelesen 的節目詳細資訊。",
@@ -9938,8 +10202,8 @@
         "source_sha256": "8148c7d2ebc9b13292aa55f54757e4c3a11cecdb821b7f4e42cb5b1b42a5718f"
       },
       "workforceArchivedToast": {
-        "text": "{{email}} 檔案。 Bestaetigungen bleiben erhalten 和 Person bleibt ausserhalb the Abschlussnenner。",
-        "source_sha256": "da2f7637690cb0ad296e61cd21a2cf8e84886e4fff0eb6339fa5bb552f62c5c3"
+        "text": "{{email}} 已存檔。確認訊息保持不變，該人仍處於最終分母之外。",
+        "source_sha256": "e1ae9b1effa97f19f14ae24e4914fad6be060ee72d2d9b6aef139ff6869a68d5"
       },
       "workforceColActions": {
         "text": "行動",
@@ -9982,8 +10246,8 @@
         "source_sha256": "93e8a1467556664fe711d6c55bef96741b3f60bc0c916cd69b1337892d3b47d7"
       },
       "workforceEditDenied": {
-        "text": "Braucht the Berechtigung、Verzeichnis to verwalten",
-        "source_sha256": "9f79d533a1291c47cc907ecf3674873c0898830e47cfa8090168f301f0fc2906"
+        "text": "需要管理目錄的權限",
+        "source_sha256": "0c7c17c31cafd7928ee30c6253a02714958739d8593cc543884f4460b5cbb66c"
       },
       "workforceEditTitle": {
         "text": "編輯名冊行",
@@ -9998,8 +10262,8 @@
         "source_sha256": "2fae6fb30b0d0077f771923d6d037d8e43c45e6078e2b3c31637a489c029cee5"
       },
       "workforceEmailHelpEdit": {
-        "text": "Die E-Mail kennzeichnet the Person 且 kann hier not geaendert werden。 Eine Adresse erneut hinzuzufuegen wird abgelehnt，而非 zusammengefuehrt。",
-        "source_sha256": "9d27688bd62416807faf2e36450e1d6ee04b7cf1e66d4f6752a3c47d55b10219"
+        "text": "電子郵件可識別此人，且無法在此變更。再次加入地址會被拒絕，不會默默合併。",
+        "source_sha256": "5fa2b814905222c1e8273e52f55c87d44bbeebfa5b1aa129442c1ea8944a8c70"
       },
       "workforceEmailHelpNew": {
         "text": "Eindeutig，unabhaengig Gross- 和 Kleinschreibung。 Eine vorhandene Adresse erneut hinzuzufuegen wird abgelehnt，該死的 Tippfehler 不 einer zweiten 人線。",
@@ -10038,8 +10302,8 @@
         "source_sha256": "af823c85049ee5f8be870f2b655bf940143d8965e9aa18f5cbc4113669ba5740"
       },
       "workforceHrRefHelp": {
-        "text": "Die Kennung dieser 人力資源系統中的人員 Aufzeichnung，該死的 Spaeterer 導入沒有電子郵件-Abgleich zusammengefuehrt werden kann。",
-        "source_sha256": "a008160b1ea479a373d711527f006b2cf6c4f4f8871dccc798afb9ca46c231a1"
+        "text": "人力資源系統中會記錄此人的 ID，以便日後匯入時無需電子郵件配對即可合併。",
+        "source_sha256": "e55b51eb658cee29aad9af24c1b4fefa42253b2ed88d7c6fc06f149b3a9f402f"
       },
       "workforceIntro": {
         "text": "人員訓練的對像是員工和承包商。",
@@ -10050,20 +10314,20 @@
         "source_sha256": "bb8ad709b126edfc814473095c4b303c586fe078cbe937b429a3cebcf98f2762"
       },
       "workforceLoadError": {
-        "text": "Das Verzeichnis konnte not geladen werden。 Pruefen Sie the Berechtigung zum Anzeigen。",
-        "source_sha256": "63e4e11b893423d0788d50d582c47ac3f4b7867f733e4ba04cef72186d0d8249"
+        "text": "無法載入該目錄。檢查您的查看權限。",
+        "source_sha256": "9c8235d7defa3872510c5ae6d6d13e156f18a716dbd46774252335814db282f0"
       },
       "workforceNoName": {
         "text": "（名字為erfastt）",
         "source_sha256": "26ab986f42ebcdba4c73c8597202466cf3e803de0db174bfd64f719beef34447"
       },
       "workforceNoOrg": {
-        "text": "Kein Arbeitgeber for diese Person erfastt。",
-        "source_sha256": "12d2fcb5c927854f2b88cfdf72fefbbed19e6f751c2eefbaf766749884e15017"
+        "text": "沒有記錄此人的雇主。",
+        "source_sha256": "41a5e954f8cdbc90a4453e47756b87af3cc5a48e5946ce83d2566740cf5e3d08"
       },
       "workforceNoPermission": {
-        "text": "Sie brauchen the Berechtigung, the Schulungsverzeichnis anzuzeigen。",
-        "source_sha256": "65313d8f0d6249eac2c87d72e7622001eb9e6d3a54192ab0db206d2151c5dec8"
+        "text": "您需要查看訓練目錄的權限。",
+        "source_sha256": "ffda92bd3ce1f8fb1f2267cea966b638e982d2d7a8b0600dbd3c17cd62d18fc6"
       },
       "workforceOnList": {
         "text": "在此列表中：{{count}}",
@@ -10078,8 +10342,8 @@
         "source_sha256": "8bcf7d4c4e90d8f42be9e5ab5062d407ffe2c05606016df691bec00e452c2fbf"
       },
       "workforceRestoredToast": {
-        "text": "{{email}} ins 活動 Verzeichnis zurueckgeholt。",
-        "source_sha256": "08ddb9f8631959d12052b9d3c1173d630555a4ff17275fd7897341424b496c02"
+        "text": "{{email}} 返回活動目錄。",
+        "source_sha256": "65fb90c3c24f50f4b54f4ae6829378da8736824ab506d883f1a8eb7199a3547d"
       },
       "workforceRosterStatus": {
         "text": "名冊狀態",
@@ -10090,20 +10354,20 @@
         "source_sha256": "35322b5bb5a218a15401cfa54d23b16459e9e1c616977526a4b37b6c87d30c50"
       },
       "workforceSaveFailed": {
-        "text": "Die Verzeichniszeile konnte not gespeichert werden",
-        "source_sha256": "63693b973e55fce7bfa4e55accfbf1f624beeeec067271e3530621f3f6220ba3"
+        "text": "無法儲存目錄行",
+        "source_sha256": "8f54287b4e61432d5dc8498f8365709a1a5d4fc436d6599a897d396eff99252a"
       },
       "workforceSaved": {
-        "text": "Verzeichniszeile 為 {{email}} gespeichert。",
-        "source_sha256": "5c06a040e16de6c90ed0a5d5b162da2ea26dbeeebff72a9f64a108325a9ac572"
+        "text": "已儲存 {{email}} 的目錄行。",
+        "source_sha256": "16f83206117773ba9dfaded74cd3b1888b90eee77dafe397e1c39515c8bf3d3d"
       },
       "workforceSaving": {
         "text": "節省…",
         "source_sha256": "8254285d673bbc73963ed7810f4bc4b8a378dbf5803b7a650ce7ac5c00eaac3c"
       },
       "workforceStatusFailed": {
-        "text": "Der Verzeichnisstatus konnte not geaendert werden",
-        "source_sha256": "0fae9b0ed6d4244ab8b3757175f0effd013da54ba91da699212b4cac7c88d3d1"
+        "text": "無法變更目錄狀態",
+        "source_sha256": "e991e93161001346617043fe64a53f726d67c1c2d308fa8a95896bd489ddb459"
       },
       "workforceSubtitleRoster": {
         "text": "Verzeichnis the Aufzeichnung — kein Abschluss- 或 Bewertungsanspruch",
@@ -10191,8 +10455,8 @@
           "source_sha256": "010fd695560ff8078cb04fc70ff8a21f905306fa297be57e397c3c4c68114abe"
         },
         {
-          "text": "Vollstaendige Identitaetsverwaltung auf the Seite Identitaeten。",
-          "source_sha256": "d52b7a5182b936138c94c2f3561141cfdc217c8d686506d41f05edd3d4379c28"
+          "text": "完整的身份管理保留在「身份」頁面上。",
+          "source_sha256": "d56febec1ac51410878586fae8a43e625187f96029b1c95386e41dc5dd704eda"
         }
       ]
     },
@@ -10211,12 +10475,12 @@
       },
       "bullets": [
         {
-          "text": "Verfuegbar for jeden angemeldeten lokalen User、einschliesslich Assessor- 和 Endbenutzer-Demo-Rollen。",
-          "source_sha256": "441500f297b296262e14b1db99f7236c034ec6b864e5f3dba93cccaab1356a0e"
+          "text": "可供任何登入的本機使用者使用，包括評估者和最終使用者演示角色。",
+          "source_sha256": "2c3cc262592fed69d991024289190f5c001643ed512495e8df102917cc4a18c3"
         },
         {
-          "text": "Passwort- 和 MFA-Aenderungen gelten nur 用於 diese Enclave-Identitaet。",
-          "source_sha256": "a4664420118d1574ab3f741ca917345b3ab7970e3e0fc4878f5ae30c6a5f0fdd"
+          "text": "密碼和 MFA 變更僅適用於該 enclave 身分。",
+          "source_sha256": "8bfcaf9527b64855929b40c373979ea98c2de25eb31d49bfe9f6a4828d2eafca"
         },
         {
           "text": "Zugriff & Identitaet 下的行政管理管理，由 Ihre Rolle the erlaubt 負責。",
@@ -10281,16 +10545,16 @@
       },
       "bullets": [
         {
-          "text": "Oeffnen ueber 合規性和 Nachweise → 評估 → 探針包。",
-          "source_sha256": "e21880cf77d51f3bcf652650aae6e104d71fa759209a409fc454d61cc7ba51d0"
+          "text": "透過合規性與證據 → 評估 → 樣品包開啟。",
+          "source_sha256": "ef581cf8348d96ed2c2b90e7261fd4110feb8792f2ad7423349ddfd12ff3a6d5"
         },
         {
           "text": "Fuer the Dashboard pro Maschine 合規性和 Nachweise → 評估 → Aktueller 合規性-Stand nutzen。",
           "source_sha256": "729c81dc7679114ea19ab01fe2d1a7163ca6875758f0e0548a47f4b7cecb9d5b"
         },
         {
-          "text": "Diese Seite zeigt Bereitschafts-/Pack-Karten for Operatoren、Skriptinterna brauchen，而非 Maschinenhierarchie。",
-          "source_sha256": "6f601dd3eea07377421f858fe9c30690252eb2be8224fe439d6501d7d8f9e148"
+          "text": "此頁面為需要腳本內部結構（而不是機器層次結構）的操作員顯示備用/包卡。",
+          "source_sha256": "9effd2d591e88cb44ededfb0c913071ff1f1f523a784145f64163cf05683f199"
         }
       ]
     },
@@ -10309,12 +10573,16 @@
       },
       "bullets": [
         {
-          "text": "Jede Praxis zeigt 800-53-Crosswalk。 Veroeffentlichter Kontrolltext — kein Bewertungsurteil。",
-          "source_sha256": "613037028f36414e37d59e97d7036a13a3cf47332a4a4b5513582d741858c66a"
+          "text": "從法規遵循與證據 → 評估 → 控制目錄開啟。",
+          "source_sha256": "f1237bc89fc67bd49b020160b25c1c5d43359841adf3c028d3b25d46968c3789"
         },
         {
-          "text": "第 3 階段 liefertdieselbe Form aus Postgres；高級目錄。",
-          "source_sha256": "ef73c34772e8c23e511b14dd85dcbdd282437f94e9811d89269ca08ca7522c78"
+          "text": "每項實務顯示其 800-53 對照。這是已發布的控制文字，不是評估裁決。",
+          "source_sha256": "ee2fbf15d3ac9985a2a1e4459ed0ffb3a44e6582c136f48df10013899794ec95"
+        },
+        {
+          "text": "ISO 附錄 A 識別碼僅保留簡短標題——授權控制本文不翻譯。",
+          "source_sha256": "2903f2a6887fa7f6e0c9c81c8514e2e3532228f54e17e3d5afc3f8ca866103ce"
         }
       ]
     },
@@ -10333,8 +10601,8 @@
       },
       "bullets": [
         {
-          "text": "框架 waehlen、um Anforderungen 和 Relevanzzahlen 到 durchsuchen。",
-          "source_sha256": "33a69de150c84bddfd3596dd7f834ffa60547050b1fbeeae3bee169b41f545dc"
+          "text": "選擇一個框架來搜尋需求和相關性數字。",
+          "source_sha256": "d26f38456f11b23ed55eca30c0d50a65b7e4aea00b528a951e85794dbed3ee96"
         },
         {
           "text": "Kundeneigene Verpflichtungen bleiben bei 組織。",
@@ -10361,8 +10629,8 @@
           "source_sha256": "4ae057de4425b523b3f1372a3f20bea6f100fc0dd3d3c27e62a4f0d78e31234e"
         },
         {
-          "text": "Der Workflow zeichnet Entscheidungen and Fristen auf — er ersetzt keine Rechtspruefung.",
-          "source_sha256": "10ee71d6bd9c82c2d8718759c5b98a15bfb65640e0b676d5ea74971b5bc597db"
+          "text": "工作流程記錄決策和截止日期 - 它不能取代法律審查。",
+          "source_sha256": "51a052fdf84bcad70cd2a9c826864c09e8c3d18d1505335fd93411316aba522d"
         },
         {
           "text": "產品狀態、評估結果。",
@@ -10389,8 +10657,8 @@
           "source_sha256": "9e992718dfba6740a037391da63931d28241862ba0394b708fb170d4f3b9d7fd"
         },
         {
-          "text": "Pruefzyklen 和 Export erzeugen Liefernachweise — keine GDPR-Konformitaet 或 Zertifizierung。",
-          "source_sha256": "cab1f91fe3369d499133e9ef953880afe579eb52c4f1bb7489831b89f4450be7"
+          "text": "測試週期和出口可產生交付證明 - 無 GDPR 合規性或認證。",
+          "source_sha256": "5d1393078378f9585c2da9997d78a4827c37baccaad6de23d77e095fa82fcd53"
         },
         {
           "text": "Unterscheiden Sie Verantwortlichen-Eintraege（第 30 條 Abs.1）或 Auftragsverarbeiter-Eintraegen（第 30 條 Abs.2）。",
@@ -10421,8 +10689,8 @@
           "source_sha256": "b3f0f51d3f74c940bf978970db5b2283b926cb980db5cdbcc8aba01793632bec"
         },
         {
-          "text": "在 dauerhaften Anforderungsdatensatz 中設定所有的 Offenlegungstext-Presets — keine automatisierte Datenfindung。",
-          "source_sha256": "e6f94baa6a59b6117c9e12664692dbfd7c6a5656f33b29e0a1869e985b805894"
+          "text": "用持久請求記錄取代純粹的揭露文字預設 - 沒有自動資料發現。",
+          "source_sha256": "c221479e4b46a44db309b3791c834599ff51e4dab1bd0b2a21cfbfac795fd196"
         }
       ]
     },
@@ -10441,8 +10709,8 @@
       },
       "bullets": [
         {
-          "text": "Oeffnen ueber 合規性和 Nachweise → 評估 → POA&M。",
-          "source_sha256": "c46b825284a6ca3958407fe992e8357e9345b1ef765d0b176ff34a7a59b52d07"
+          "text": "透過合規性與證據 → 評估 → POA&M 開啟。",
+          "source_sha256": "012342daaa37fe765ab85983563def351f75fd725da83f9dff440b74e2213a91"
         },
         {
           "text": "Anlegen 和編輯 Evidence-Request-Brechtigung； Anzeigen nutzt Berichtskatalog-Ansicht。",
@@ -10469,20 +10737,20 @@
       },
       "bullets": [
         {
-          "text": "Oeffnen ueber Sicherheit → Blockierte Angriffe、Favoriten 或 Start-Dashboard-Kachel。",
-          "source_sha256": "5f715162ee60766c667555d3a7a82cfc55abe96d80359816651fd22a69af78f0"
+          "text": "從「安全性」→「封鎖的攻擊」、「收藏夾」或「首頁」儀表板磁貼開啟。",
+          "source_sha256": "f9465e80ebdc435e10587f2c8db09048e9284eb937cbc56af4f442b91d5c2c5c"
         },
         {
           "text": "Zaehler sind nur abgelehnte 和 fehlgeschlagene Ereignisse。 Leere Quellen zeigen Fehlt。",
           "source_sha256": "0a50d588b8c65ee46e5284bf2aaade9689d4e1d880a2ea7a42d2b2ff29b00d7c"
         },
         {
-          "text": "Passwortbalken zeigen Klasse 和 Laenge。 Werte werden nie gespeichert 或 angezeigt。",
-          "source_sha256": "39587b44059edd27c6316abe3eb9b96c941620f59b21cac86de57abeba80b1b2"
+          "text": "密碼欄顯示類別和長度。值永遠不會儲存或顯示。",
+          "source_sha256": "aa3e31d3c2ff4ade09ad369990d43d39298c85bffc1044a919efaab370c2f34e"
         },
         {
-          "text": "登陸anklicken，嗯聽filtern。 Laenderfilter loeschen bleibt bei 1024 sichtbar。",
-          "source_sha256": "651ef975c0317692203caf9a5adf9cdf34b378be04b27c9fd312d04d5242e385"
+          "text": "按一下國家/地區可過濾清單。刪除國家/地區過濾器在 1024 處仍然可見。",
+          "source_sha256": "aabf007e0e8bca62648a9cca482ac4ae621b2fb7bc1a91a6d8e0f961db98d1db"
         }
       ]
     },
@@ -10627,16 +10895,20 @@
       },
       "bullets": [
         {
-          "text": "Instanz anlegen, aktuelle Luecken aus the Auditor-Bericht erzeugen, Begruendungen ergaenzen.",
-          "source_sha256": "182debcbe1112acba49d374250547aa4f71b7ed36846443187315ee253e59e72"
+          "text": "從法規遵循與證據 → 評估 → 評估活頁夾開啟（與報表中心、目前狀態法規遵循同一區段）。",
+          "source_sha256": "84bbe7db96e1fe93ab1429221e4e7eac081b7d7ae99b9ba45d67d82ea7091346"
         },
         {
-          "text": "Status-Chips sind lueckenorientiert — 不是 falsch-gruener 合規性分數。",
-          "source_sha256": "6b77f99970bb34dcf8cbe71924d34df7e779d81a15de5e7076eaf349f82c53bb"
+          "text": "建立實例、從稽核報告重新產生目前狀態缺口，並補充理由。",
+          "source_sha256": "2a9e2260257b0746c251210cbfa4b51b58c649115647cae07e42b1ce822a6b59"
         },
         {
-          "text": "匯出（Word、RTF、Arbeitsmappe、HTML、Druck/PDF）bleibt sichtbar；erfordert Binder-Export-Berechtigung。",
-          "source_sha256": "f37632e6d5313a907fda1e8529525efc7e95e0da447c956e51ed898ff9b83b01"
+          "text": "狀態晶片以缺口為導向——絕非虛假的綠色法規遵循分數。",
+          "source_sha256": "a6efdf26d3251274ba098a9143264f04435f7aef839f52d33cc43cb7f6747606"
+        },
+        {
+          "text": "匯出（Word、RTF、活頁簿、HTML、列印／PDF）維持可見；需要活頁夾匯出權限。",
+          "source_sha256": "7197994af91ff8016914dc9eb1bcd2b3d43286dc0eb48df5faede8482e27aea8"
         }
       ]
     },
@@ -10675,16 +10947,20 @@
       },
       "bullets": [
         {
-          "text": "在系統群組中重新掃描 alle 或 ausgewaehlte Maschinen。",
-          "source_sha256": "eb63c03b834b8302570c47aa65140c53c9b941e0ebfebd397d51391540157880"
+          "text": "從法規遵循與證據 → 評估 → 目前狀態法規遵循開啟。",
+          "source_sha256": "a3708c5b8d565d48441a44d2980b210145b2929fd42c484ebde8b5059e831fab"
         },
         {
-          "text": "Maschinenbestand kommt aus Systeme + Systemgruppen — 該網站旨在促進合規性。",
-          "source_sha256": "ce4f82568bb390b18fbe3588dc84b82867bc2855d618ba5ac65c66ecd37c289b"
+          "text": "在系統群組篩選中重新掃描全部（或選取）機器；每一列有重新掃描並連結至詳細報告。",
+          "source_sha256": "502d06f74926610accc85ea478bd0c36ee1e8ee8a873ff403fdf910bb763b5c7"
         },
         {
-          "text": "Legacy-URL /enclave/environment leitet hierher um。",
-          "source_sha256": "459f3aeaf489fb4ed9ef2044cc13785aa963cf4f21f3c980355e1d3935c7d79b"
+          "text": "機器清冊來自系統與系統群組——本頁僅為法規遵循摘要。",
+          "source_sha256": "a7841a95651aba099e72b2cb3200723c3e1d6cd3129c8d1d9e3079b01fedffe6"
+        },
+        {
+          "text": "舊網址 /enclave/environment 會重新導向至此。",
+          "source_sha256": "6b37e0efb7a56ee272eaa4494f51c1a430004402576fce5a37a521b2c4456fa1"
         }
       ]
     },
@@ -10707,12 +10983,12 @@
           "source_sha256": "52734a6fbcc8da98b60373ba3c061af3c6084b8dec6722a0a85df5f8043af76d"
         },
         {
-          "text": "掃描 aufzeichnen speichert aktuelle Zustellbeobachtung。漂移搶劫，Zustellung ist zurueckgefallen - 不是，dass a Kontrolle fehlgeschlagen ist。",
-          "source_sha256": "bc4d0d1528bd15556242a54ef579bdd7c2c4367d30c72bdb7338f53a5b2af710"
+          "text": "記錄掃描保存目前的交付觀察。漂移意味著交付落後了，而不是控制失敗了。",
+          "source_sha256": "7dbea99ddd5b72437e37168ad2d5db59d31e6840ab81035706abf49a64f56e43"
         },
         {
-          "text": "Oeffnen ueber 合規性和 Nachweise → 評估 → Kontrollstatus-Verlauf。",
-          "source_sha256": "3255fa83be90a86c998134899918ded4f1cc024d98d9f9a7a6182cbbc97222ca"
+          "text": "透過合規性與證據 → 評估 → 控制狀態歷史記錄開啟。",
+          "source_sha256": "fe8adf5f452f34b53217234b2aacb5c6a17e84611c8edfd70c6065cb2cc2d361"
         }
       ]
     },
@@ -10731,8 +11007,8 @@
       },
       "bullets": [
         {
-          "text": "Oeffnen ueber 合規性和 Nachweise → 評估 → Datenfluss-Mapping。",
-          "source_sha256": "4ee42695ea666e6c6edcd445bb73ac330fcb793faaf848bf1ed8e21b780239ab"
+          "text": "透過合規性與證據 → 評估 → 資料流映射開啟。",
+          "source_sha256": "13d6ed74090c63e2393191b8d096a06b9bb18492891f95a6d2f25559f9b5852a"
         },
         {
           "text": "Datenfluesse 和 Enclaves anlegen 和 Bearbeiten；圖解 zeigt Quelle 和 Ziel 與 Form（不是 allein Farbe）。",
@@ -10743,12 +11019,12 @@
           "source_sha256": "ef0c1ca949dd1105e7ae902d34f66d3159f2835307bb7ec9cb41096ff27a9662"
         },
         {
-          "text": "Dienst- 和 Firewall-Regelbearbeitung ist auf dieser Seite noch not verfuegbar。",
-          "source_sha256": "fcbde942d82383f00f5aae53504268a0494dab1868a11a080974a16597e18d08"
+          "text": "此頁面尚不支援服務和防火牆規則編輯。",
+          "source_sha256": "3881d97a2f43e8c69cb447b87be4f07d9bd8619855acb7dff1d9f39960c94578"
         },
         {
-          "text": "Wenn the Store not verfuegbar ist (Migration ausstehend), bleibt the Seite ehrlich statt Daten to erfinden.",
-          "source_sha256": "4c148f7c3160498a99bb5d7826601d46843a3d0ef1b68844cb872bd3ffdc90b8"
+          "text": "如果商店不可用（等待遷移），則網站將保持誠實而不是彌補資料。",
+          "source_sha256": "cb3323cb8dfe725d9eb04d12a028769c54b39193b6ad07e2e2c207a9dfc8d336"
         }
       ]
     },
@@ -10795,16 +11071,16 @@
           "source_sha256": "5f15993e234347ff609cdf7e43d44ee34b32d069020743b413bdfd07a14d914e"
         },
         {
-          "text": "Harte 錯誤（即 B. 惡意軟體/拒絕清單）不能免除； weiche Skips koennen a zeitlich begrenzten Waiver tragen.",
-          "source_sha256": "e228b4ec4d2273962334c48964219c1c3bdc88f962b029924a10abdb0dcc8ff1"
+          "text": "硬錯誤（例如惡意軟體/拒絕清單）無法免除；軟跳過可以帶來有時限的豁免。",
+          "source_sha256": "fe7bb61195714a6f35eee3e8b2b14f02e91b12e5802ac436de2b608d16767a79"
         },
         {
-          "text": "Oeffnen ueber Compliance & Nachweise → Assessments → Externe Arbeitsplatz-Bereitschaft. Unterschiedlich zum Aktuellen Compliance-Stand for Enclave-Hosts.",
-          "source_sha256": "f97f59c50069fb37cc58623a3c128f34992abf7ceb393a0b25ff7ba7a687b14e"
+          "text": "透過合規與證據 → 評估 → 外部工作場所準備情況開啟。與 Enclave 主機目前的合規等級不同。",
+          "source_sha256": "006f8d6dd278364cc2d6a09aa7b2c5a5fba59f6d00c1d2b9eab4098c50ab0df0"
         },
         {
-          "text": "評估下的探針包 → WA 探針包 veroeffentlichen，damit Agents serververoeffentlichte Pruefungen laden koennen。",
-          "source_sha256": "e374e812817f66a7a98a8d3ffe56f4f9d0804e52a37e8215fe8be176b0785227"
+          "text": "在評估 → WA 探針包下發布範例包，以便代理可以載入服務器發布的評估。",
+          "source_sha256": "29fe4d00ce7babd7819ad04d89d5d228717a81f1946017ecbb4167ecd81b2069"
         },
         {
           "text": "/enclave/workstation-assurance 的舊版書籤 leiten hierher um。",
@@ -10851,8 +11127,8 @@
       },
       "bullets": [
         {
-          "text": "Oeffnen ueber 合規性和 Nachweise → 評估 → Betriebs 合規性。",
-          "source_sha256": "293cda659a59362a3fc5ada5a13784fd99c52448830f35fb5057794b2f5d0699"
+          "text": "透過合規性與證據 → 評估 → 營運合規性開啟。",
+          "source_sha256": "f674132003afd6775797b11b4248f967ceb8b966965af5117cba6a1a0300d777"
         },
         {
           "text": "Status-Chips sind Live、Teilweise、Fehlt 或 Blockiert — nie Met。",
@@ -10891,8 +11167,8 @@
           "source_sha256": "4d43bbd134e2c620bb8d719b90c2becf6385565369319ccb2536a339c856de5a"
         },
         {
-          "text": "JIT-Direkte Elevation 下的管理員權限； PUM 無法自動安裝在 diesem Fenster 中。",
-          "source_sha256": "6a41cb61b521f3c0d001f8ebcba61a4b6545984a01010cb764c38509b79e9ecf"
+          "text": "JIT 管理員會員資格仍處於直接提升狀態； PUM 會阻止在此視窗中進行未經授權的安裝。",
+          "source_sha256": "f93389ceda536c2610b397cdf0d65878350f08891883447151f5959872b5cc86"
         }
       ]
     },
@@ -10915,16 +11191,16 @@
           "source_sha256": "bd9d23a791b8d23c9feb41e2e7e2f9cbc44f23955a3aab47ec39635191ee3b8a"
         },
         {
-          "text": "Pack-JSON hochladen、geparste Inhalte pruefen、dann Veroeffentlichen。 Das erste Pack aktiviert sich automatisch。",
-          "source_sha256": "9b34f7e522c36a8995786b0ae29ee9cc42616a4f15c9504d8af56c507c6fdd13"
+          "text": "上傳包 JSON，檢查解析的內容，然後發布。第一個包會自動啟動。",
+          "source_sha256": "5419f9c58aa1693a48d4556ba9ddc506dd20dd556b26bbabf7b29be9a8fbce4b"
         },
         {
           "text": "Spaetere Version aktivieren, wenn Sie bereit sind; stiller Push without Agent-Pull ist Geplant。",
           "source_sha256": "0cf084088617380b279413ac41b215eb4a1d6972fa51b1c0d51058c24ce320ca"
         },
         {
-          "text": "Oeffnen ueber Compliance & Nachweise → Assessments → WA Probe Packs.",
-          "source_sha256": "9aeecf10e1b7e7a56b91e55298ca8cc886c1c30e6a5ea1f92323305ff28a325c"
+          "text": "透過合規性與證據 → 評估 → WA 樣本包開啟。",
+          "source_sha256": "98c83c5a0be45ee1c8cf56e568abef34ee899d18cd5cfbb134b8c248f2db24c8"
         }
       ]
     },
@@ -10943,8 +11219,8 @@
       },
       "bullets": [
         {
-          "text": "書籤到 diesem Legacy-Pfad leiten 到 Externe Arbeitsplatz-Bereitschaft unter Compliance & Nachweise → 評估 um。",
-          "source_sha256": "7a431e77564d72e2a09b19ced10cdc8265d1915829b2ee7f5f1bfbc33fb76e03"
+          "text": "此舊路徑的書籤重新導向至「合規性與證據」→「評估」下的「外部工作場所準備」。",
+          "source_sha256": "5a52d3699bb547826824a4c8d7482f8e86e1c84de53502b66b95ee8991c7e1ff"
         }
       ]
     },
@@ -11005,8 +11281,8 @@
           "source_sha256": "ff820f63338134b15469580a6e92c2d37f7d2dc56ec87e78727567bfb7932c4b"
         },
         {
-          "text": "使用 Live-Ereignisfeed kombinieren 匯出 dieser Seite，um a Vorfallszeitlinie to rekonstruieren。",
-          "source_sha256": "f63101c9d29c5024a18296162708f9c4000f120b6b0d8390eaa128cad30cf86d"
+          "text": "將此頁面的匯出與即時事件來源結合以重建事件時間軸。",
+          "source_sha256": "6396d87c4b665300204e4596a84246d2a5bf5ebbe8089a6a1a52cac429a13265"
         }
       ]
     },
@@ -11021,16 +11297,16 @@
       },
       "bullets": [
         {
-          "text": "Diese Seite 的 Nah-Echtzeit-Ueberwachung 和 Fehlersuche nutzen。",
-          "source_sha256": "24c5a91beb905445f4c42b67b9a2c9c2122d4a6a374bcf7d3b099788d226057b"
+          "text": "使用此網站進行近乎即時的監控和故障排除。",
+          "source_sha256": "2328eb38255b13ce3c974165e5ccdf25a6f4aa783390c40c93bc9957b493ae99"
         },
         {
-          "text": "Fuer dauerhafte Audit-Nachweise (ATO、SOC 2、CMMC) 中的稽核日誌。",
-          "source_sha256": "c8ac93a467541a02b3630b8784c8175c5f07b05f46b854099969e8902821fac1"
+          "text": "對於永久審核證據（ATO、SOC 2、CMMC），請使用本節中的審核日誌。",
+          "source_sha256": "01517b7a2ff2536c0075dedc91c24d07f5c3eb878f7609fb10d6297c4cbf2938"
         },
         {
-          "text": "Webhook-Weiterleitung konfigurieren 和 alle Senken unter Ereignisweitergabe pruefen。",
-          "source_sha256": "26fc566eb50fa9c2c51b643e91ae8de30320e7a1010d0ba2bdeed70dc9eebd38"
+          "text": "設定 webhook 轉送並檢查事件轉送下的所有接收器。",
+          "source_sha256": "4af3f850a3728dd7fb832aa9151c9a2dfb60abbbd2991801cf4734dadf9eb502"
         }
       ]
     },
@@ -11064,8 +11340,8 @@
         "source_sha256": "48cc6c7a9e4dfb4a4c97b44f2146be09b7897590ddfed466937502d35f3ed9b0"
       },
       "summary": {
-        "text": "您的頁面位於一處。所需的收藏夹来自您的权限并且始终存在。我的最爱是您固定的页面；它们属于您的帐户，因此它们会跟随您访问任何浏览器。",
-        "source_sha256": "0f8d2dc710ccef72b1b185014e616ca15cf58ff2634e2102b40ad46b73eccbdd"
+        "text": "您的頁面集中於此。必要收藏來自您的權限且一律存在。我的收藏是您釘選的頁面；它們屬於您的帳戶，因此會跟著您在任何瀏覽器使用。",
+        "source_sha256": "0368b385d34a9e11bae17e2f31463406f26595147fa155eaaaca332eccf1b21e"
       },
       "title": {
         "text": "收藏夾",
@@ -11073,20 +11349,20 @@
       },
       "bullets": [
         {
-          "text": "Pflichtfavoriten lassen sich not entfernen — sie werden bei jedem Besuch aus Ihren Berechtigungen neu berechnet。",
-          "source_sha256": "0ec1dac08ed4476be874790e0ad056ba7584c1764d6c6398f736800b54c25507"
+          "text": "Required favorites cannot be removed — they are recomputed from your permissions on every visit.",
+          "source_sha256": "e6d9547a044b750aecbc56f43849118dd23d4a4aaed38835195e3b7bf11ebefe"
         },
         {
-          "text": "最喜歡的 hinzufuegen listet nur Seiten，Ihre Berechtigungen oeffnen duerfen。",
-          "source_sha256": "29d90510812b9b03bab2c14a17d8e47d367b71e922245f3470602c1d76c3c344"
+          "text": "新增收藏夾僅列出您的權限允許您開啟的頁面。",
+          "source_sha256": "2717244eb941357cb695ed3fbeaf142ed74dc36dad4bfe352fda98808fc47635"
         },
         {
-          "text": "Das Entfernen eines Pins archiviert ihn statt to loeschen, damit the Audit-Trail erhalten bleibt.",
-          "source_sha256": "ed4ca9739b35cc01123daa66e5016e9f040ce9ed24ef25260c228da2f357b741"
+          "text": "刪除 pin 會對其進行存檔，而不是刪除它，因此審核追蹤保持完整。",
+          "source_sha256": "fa160bf177854e0666f0a6a1567f518b27e933fcae3e111889eb05cf2abf6212"
         },
         {
-          "text": "Eine angeheftete Seite，一個新的伺服器而不是 mehr liefert，wird hier gemeldet 和 uebersprungen - nie still geloescht。",
-          "source_sha256": "a59a19dcdcf4aa0213df695782951d2efccd530406124e3dff340906b55e5f45"
+          "text": "較新的伺服器不再提供的固定頁面會在此處報告並跳過，而不會默默地刪除。",
+          "source_sha256": "3e547e6c1f279f8dabf6a311abe054d64695464a18e0e8b4ae0d4e2bd27c13ad"
         }
       ]
     },
@@ -11105,20 +11381,20 @@
       },
       "bullets": [
         {
-          "text": "與 Anzeigen oeffnen、dann Systeme & Identitaeten for Endpunkte 和 Konten nutzen 合作。",
-          "source_sha256": "a9d9cee88deb7679eb9e6e08db965ac1a73f158da59acecd3e29ea5b173000dc"
+          "text": "開啟 Group with View，然後使用端點和帳號的系統和身分。",
+          "source_sha256": "315dfbc9ae1676eac80236e7b2da9a0925ca2d76d58e68195e361b402c428e4c"
         },
         {
-          "text": "選項卡 Gruppeneinstellungen buendelt 政策、助理、語音和 Ausgabeaktionen。",
-          "source_sha256": "aaf8b87997400aaa3c494043249e0694a393e880bf8c758177d85228190bace0"
+          "text": "「群組設定」標籤捆綁了政策、精靈、範本和輸出操作。",
+          "source_sha256": "f8b88d93a54b21c3ffbec93b41c573ad67a547e63c7052285913705e31eae083"
         },
         {
-          "text": "Gruppenrichtlinie（清單中的 Zahnrad）為 Mitglieder 分配標準密碼，而不是 ueberschrieben。",
-          "source_sha256": "0f6e42aa05493cb0ead0d0edf7646bc59b1ef0725e49e0a307fb90bd92636943"
+          "text": "群組原則（清單中的 cog）是成員的預設密碼規則，除非被覆寫。",
+          "source_sha256": "8f4a37878f405cf4f77283ed7bd63484d88b39546c5b26db7df7d57f9d921b12"
         },
         {
-          "text": "Identitaetsvorlage definiert，welche Konten auf neuen Endpunkten geseedet werden。",
-          "source_sha256": "ac8b41a0e38fa12dee55d5f899ff3f283bfeac178f3fe4c63609b9807ad4ddef"
+          "text": "Identity template defines which accounts will be seeded on new endpoints.",
+          "source_sha256": "0fee3f291e7258c7e896de3afdcfb95bf7fb893ce9a3c59eb601da16e6faa232"
         }
       ]
     },
@@ -11133,20 +11409,20 @@
       },
       "bullets": [
         {
-          "text": "Zuerst a Endpunkt waehlen — 辨識並沉浸在 Maschine 說明中。",
-          "source_sha256": "6acb92c18c3c293f0f9b4924ccdd09cefe3fd5afc06c74cb28b8518ae3fee695"
+          "text": "首先選擇一個端點 - 身分始終僅限於一台機器。",
+          "source_sha256": "90cdaf65f321f7ab305a1b58f64e8fd0dd587b05f33b962103f1c8aca173d62c"
         },
         {
-          "text": "Tab Konten 用於 Identitaetsraster； Endpunktuebersicht zeigt Maschinenmetadaten 和 verwandte 連結。",
-          "source_sha256": "b36069759592d3e20e9f5c21465e6adfdf1c04363686089b9b7b8bdf71f51c15"
+          "text": "身分網格的選項卡帳戶；端點概述顯示機器元資料和相關連結。",
+          "source_sha256": "192414903172e7ce95f7220d19f9b0bf33f6b7c1b7d7144817f31dad18edc6fe"
         },
         {
           "text": "Zeile aufklappen (+) 用於 Anwendestatus、Fingerprint 和 Rotationsplan。",
           "source_sha256": "03248afbf4592fdd303d8aca99ef30c93d0da62e458d0addd6c6b0f4b3d0d965"
         },
         {
-          "text": "群組識別是自動的，我們可以透過 Endpunkte einer Group beitreten (wenn Seeding aktiv ist)。",
-          "source_sha256": "947f72f5e83b999b1a7ee4ca07cb30cfc2b928b54a2e802e60bc28bea476524d"
+          "text": "當新端點加入群組時（如果播種處於活動狀態），群組身分範本會自動建立行。",
+          "source_sha256": "c8e871d1269c50b681236f43dd359a9de75d2b9e5339fc0471fbfc6b2fa44017"
         }
       ]
     },
@@ -11169,8 +11445,8 @@
           "source_sha256": "e13e41785cf91e5d534472e54f94e37c199061946c6f7a6c70ac47074f6e92a5"
         },
         {
-          "text": "導入 aktuellen Schluessel。 Nutzen Sie for Verlaengerungen。",
-          "source_sha256": "15b028efc87d2c79986469cd32f1d198164a4fbecc022b09fcb2cc839696c419"
+          "text": "導入替換當前密鑰。使用 進行擴充。",
+          "source_sha256": "9289ac0ea583d50ba5b5e8aba6ba774210e058ed2c8ed492a9b4b83eb67bc8d6"
         },
         {
           "text": "Nutzung 和 Abrechnung sind Schaetzungen。 Das Marketplace-Angebot 設定了 abgerechneten Satz。",
@@ -11373,8 +11649,8 @@
           "source_sha256": "7dbbd3cb0abf477c68ac86b804db9af5fff7c72eeb04d38f64757cdbb0be2efc"
         },
         {
-          "text": "Zugriff braucht a stehende Berechtigung，一種主動的 JIT-Freigabe 或 Selbstgenehmigung。",
-          "source_sha256": "97687603094efd695a339947bb56b0a136ac4e0ce9979787f79f90343ec78ce0"
+          "text": "訪問需要長期許可、有效的 JIT 批准或自我批准。",
+          "source_sha256": "d8e9701760cfe137aa97da298bfe75f9d55b17b28deb4f96c6945b9048bed1b6"
         },
         {
           "text": "Jede geoeffnete 會話標準maessig aufgezeichnet（代理或ziel-lokal）。",
@@ -11397,12 +11673,12 @@
       },
       "bullets": [
         {
-          "text": "主題和 Zielwaehler nutzen IAM-Prinzipale、Rollen 和 Verbindungspunkte — keine rohen UUID-Felder。",
-          "source_sha256": "326de08f431ef2128bece9ec5b3c285d7b9e17efa6656f3ec006d76f40960d64"
+          "text": "主題和目標選擇器使用 IAM 主體、角色和連接點，而不是原始 UUID 欄位。",
+          "source_sha256": "3299a3e1a09e913192b65f1a89318cc583e21af4e8da60ab139d88e10643ef3b"
         },
         {
-          "text": "拒絕規則 ueberschreiben 允許，wenn beide passen。",
-          "source_sha256": "ba8d6c89c92ea4268f04969449293452625ec4e467b321e3a22701111b2127f8"
+          "text": "如果兩者匹配，則拒絕規則將覆蓋允許。",
+          "source_sha256": "fecd5997b233c6ea1c9fee62d3432890738cf879c4d28cdd9b7fcc88fa41dba4"
         }
       ]
     },
@@ -11429,12 +11705,12 @@
           "source_sha256": "2d01a6b0cd61371a94f5beb943f57d0827c06d34dc4c813136de8280841a2346"
         },
         {
-          "text": "Probe-Platzierung fuehrt a Dry-Run-Auswahl 與 geringster Last aus (oeffnet keine Benutzersitzung)。",
-          "source_sha256": "dfad522163cf4991d7dd3a30c9919a9e2ccb849362c8b3a616d1663942c6b92c"
+          "text": "探針放置以最輕的負載執行試運行選擇（不開啟使用者會話）。",
+          "source_sha256": "27610a4845ff41ec25d7f29e720341591c68009af0d04e4c7f1c71bddf8125cb"
         },
         {
-          "text": "SSH-Vermittlung ist unabhaengig — siehe Verbindungspunkte for SSH-/RDP-Ziele.",
-          "source_sha256": "2be1fb07750e3914851b5ed3c3bd4d168cf36f3cd42931cd6bd4d68d799966e0"
+          "text": "SSH 中介是獨立的 - 請參閱 SSH/RDP 目標的連接點。",
+          "source_sha256": "c96ce5000b26d32a2ffd223edb55c8fc6f36886040dc059c7c9dd6c375902f88"
         },
         {
           "text": "Operator-Leitfaden：文檔 → Admin-Handbuecher（跳轉/Sitzungs-Proxy）。",
@@ -11448,8 +11724,8 @@
         "source_sha256": "fcad10c98b51156d319bd4fb48ccbffdf92e40ce23c6ed2fd8b998f990ea0424"
       },
       "summary": {
-        "text": "Interaktiver aufgezeichneter Sitzungsviewer。 Trennen 或 Zurueck fuehrt zur Seite，屬於 Sie verbunden haben。",
-        "source_sha256": "8cf3f183dbfc26278beae76d46c56aafbee4e181ce35a16cfde9a6ec56bbd287"
+        "text": "互動式錄製會話檢視器。斷開連線或返回到您連線的頁面。",
+        "source_sha256": "d38249c0a919b8b2a527f1688e422843521230392c55b728ac5a543353ef0cd0"
       },
       "title": {
         "text": "現場加班會議",
@@ -11472,8 +11748,8 @@
         "source_sha256": "0c303678c87fd51464b5b6c511792034ba6b50f0e7835e4dcee17b0cab836b57"
       },
       "summary": {
-        "text": "Interaktiver aufgezeichneter Sitzungsviewer。 Trennen 或 Zurueck fuehrt zur Seite，屬於 Sie verbunden haben。",
-        "source_sha256": "8cf3f183dbfc26278beae76d46c56aafbee4e181ce35a16cfde9a6ec56bbd287"
+        "text": "互動式錄製會話檢視器。斷開連線或返回到您連線的頁面。",
+        "source_sha256": "d38249c0a919b8b2a527f1688e422843521230392c55b728ac5a543353ef0cd0"
       },
       "title": {
         "text": "即時 RDP 會話",
@@ -11496,8 +11772,8 @@
         "source_sha256": "249ae10fa87a430b4251c035a1b8b062d092d0eb7dfb1cc825bde3f738810200"
       },
       "summary": {
-        "text": "Interaktiver aufgezeichneter Sitzungsviewer。 Trennen 或 Zurueck fuehrt zur Seite，屬於 Sie verbunden haben。",
-        "source_sha256": "8cf3f183dbfc26278beae76d46c56aafbee4e181ce35a16cfde9a6ec56bbd287"
+        "text": "互動式錄製會話檢視器。斷開連線或返回到您連線的頁面。",
+        "source_sha256": "d38249c0a919b8b2a527f1688e422843521230392c55b728ac5a543353ef0cd0"
       },
       "title": {
         "text": "即時 SSH 會話",
@@ -11520,8 +11796,8 @@
         "source_sha256": "7010566fcbd9a99d4a5a84d8188df2a8ba162ecb6f2a4bd1e6b8e41491ba40a8"
       },
       "summary": {
-        "text": "Interaktiver aufgezeichneter Sitzungsviewer。 Trennen 或 Zurueck fuehrt zur Seite，屬於 Sie verbunden haben。",
-        "source_sha256": "8cf3f183dbfc26278beae76d46c56aafbee4e181ce35a16cfde9a6ec56bbd287"
+        "text": "互動式錄製會話檢視器。斷開連線或返回到您連線的頁面。",
+        "source_sha256": "d38249c0a919b8b2a527f1688e422843521230392c55b728ac5a543353ef0cd0"
       },
       "title": {
         "text": "即時 VNC 會話",
@@ -11553,8 +11829,8 @@
       },
       "bullets": [
         {
-          "text": "Neue Anfragen of Verbindungspunkten 或 Berechtigungen einreichen，wenn 政策 Genehmigung verlangt。",
-          "source_sha256": "68a6a4dff9d93e372167f0c5552cb7d0344c7899879b79b8bc3439fb076de564"
+          "text": "當策略需要批准時，提交新的連線點或權限請求。",
+          "source_sha256": "e60ef391f474b5565213f5331de54bf1507ef41a6e21f05e3dd3194d868b5790"
         },
         {
           "text": "功能增強後，請注意該功能。",
@@ -11581,8 +11857,8 @@
           "source_sha256": "062724c7503580798ea4d8f624c79ed8b36708467d5e7a1d86f82e247daaf7ea"
         },
         {
-          "text": "Vor Connect “Erreichbarkeit pruefen” 在 Statusbanner ausfuehren 中。",
-          "source_sha256": "40094fa0648b12b8f29df53f3bc18c4109e2049f5911b9973a8e5f83beb5ea69"
+          "text": "在連線之前，請執行狀態橫幅中的「檢查可用性」。",
+          "source_sha256": "87661ea503f926ce1cde8d0b4c93d239593ff385ea039ab947bd02dc2c130f2c"
         },
         {
           "text": "Mit gebundener Vault-Zugangsdaten 可以連接會話堅果。",
@@ -11605,8 +11881,8 @@
       },
       "bullets": [
         {
-          "text": "Altes Passwort leer lassen 為 gespeicherte Passwort。",
-          "source_sha256": "7be70ce38d38153274138bd60fb361dda166ae72adcc44245fce3e30e2f803ff"
+          "text": "將已儲存的密碼的舊密碼留空。",
+          "source_sha256": "4f6e70895a7b1ecf95629f6833d6f9d25a1c2f2b97a5006119eb3188b5eb9e50"
         },
         {
           "text": "Zeitplaene pro Ziel auf the jeweiligen Konfigurationsseite.",
@@ -11657,8 +11933,8 @@
           "source_sha256": "cc16bcc2efbda2cac14194f20637bcb52450b9239e04b054f77bfd32c383db7f"
         },
         {
-          "text": "Konfigurieren oeffnet not-geheime Zieleinstellungen。",
-          "source_sha256": "4cf8956a3ea54c99e0c15a9cb538df18eb446a12d0e3612bce25f156ecf5ae35"
+          "text": "配置打開緊急秘密目標設定。",
+          "source_sha256": "073d6259745549f57feb9e86578739236d60e162515535b48fbb9485f640d72d"
         }
       ]
     },
@@ -11677,8 +11953,8 @@
       },
       "bullets": [
         {
-          "text": "Altes Passwort leer lassen 為 gespeicherte Passwort。",
-          "source_sha256": "7be70ce38d38153274138bd60fb361dda166ae72adcc44245fce3e30e2f803ff"
+          "text": "將已儲存的密碼的舊密碼留空。",
+          "source_sha256": "4f6e70895a7b1ecf95629f6833d6f9d25a1c2f2b97a5006119eb3188b5eb9e50"
         },
         {
           "text": "Zeitplaene pro Ziel auf jeweiligen Konfigurationsseite。",
@@ -11797,12 +12073,12 @@
       },
       "bullets": [
         {
-          "text": "Anwenden-Transport waehlen：Lokaler 代理或遠端非代理本地提升 (WinRM)。",
-          "source_sha256": "8dc991028a1044ac1b11a9b0f344192226e1f783005a1791a518e39a29295f24"
+          "text": "選擇應用程式傳輸：本地代理或遠端非代理本地提升 (WinRM)。",
+          "source_sha256": "8e0714b83b2f5a3cde852046abbcae3893f22002d99c1f6bf70c890c99a8b79f"
         },
         {
-          "text": "Verzoegerung (Start wann) and Dauer (Laufzeit bis Auto-Widerruf) setzen.",
-          "source_sha256": "9a4ee4781ba551f778c18648f64bd4b540d8933a097e78f6799ec340adeb0b4c"
+          "text": "設定延遲（開始時間）和持續時間（直到自動撤銷的運行時間）。",
+          "source_sha256": "3f51532fae2966d34d094bda153bdd96b2d5ab592cb50a1b6f5af389a766281f"
         },
         {
           "text": "WinRM 公式是遠端非代理本地高程下的/高程。",
@@ -11839,12 +12115,12 @@
           "source_sha256": "4d00e91a6742ed747a4b107b3a8de34434b4a3536baf3ebb0f2dfdb636fc4e9f"
         },
         {
-          "text": "瀏覽器中的Favoriten 和Zuletzt verwendet werden nur。",
-          "source_sha256": "698a2f212eb111dd4b2c6744fa86ae3834bb4319b4aa298bd2ede95a2e2b71cb"
+          "text": "收藏夾和最近記錄僅保存在此瀏覽器中。",
+          "source_sha256": "9341cd556a6d588b549bf8255b0ab695440f9ba2ed533cf6ddd6b5a1a27ac244"
         },
         {
-          "text": "Wenn Sie nur Ihre zugewiesenen Arbeitsplaetze brauchen，nutzen Sie Meine Arbeitsplaetze。",
-          "source_sha256": "690aee3e2a2b42927a32c6f3e550edc611983b5a1a43f61df182398b9d06f437"
+          "text": "如果您只需要指派的工作站，請使用「我的工作站」。",
+          "source_sha256": "46d87deecd25436a13fa6fc48898466d40b337b6e1e840e1a0c0facb5a4f2b46"
         }
       ]
     },
@@ -11863,8 +12139,8 @@
       },
       "bullets": [
         {
-          "text": "Berichtszentrum (diese Seite)：目錄、Zeitplaene、Zustellung 和 Archive。",
-          "source_sha256": "9db980bc4329375f1af9759268dc5d0d902a9f6733a470091d5ce13fbb3f11ac"
+          "text": "報告中心（本頁）：目錄、時間表、交付和檔案。",
+          "source_sha256": "f63661a2fd34953157d7a6be984efe56715abde31d54cf0522f842f011826f09"
         },
         {
           "text": "評估 Binder：lebendiger CMMC-Enclave-Binder 與 Exportformaten（評估下）。",
@@ -11879,8 +12155,8 @@
           "source_sha256": "221b1d7199886325d73ad54bec040d3a2c73013809700a448ace25987de555c1"
         },
         {
-          "text": "Berichtsvorlagen (diese Berichtsgruppe) / 探針包（評估下）：Praesentationsoverlays 和 skriptierte Nachweise。",
-          "source_sha256": "4f436cc2b94d6e70ace28b55d60334b16c5bb7a9d2d85db04566bc3a61afbf04"
+          "text": "報告範本（此報告組）/樣本包（正在評估）：演示覆蓋和腳本化證據。",
+          "source_sha256": "a60e719a123a94ab0b149ac8399267f058ffa28a7a6a65e748700e7cdd9b8d39"
         },
         {
           "text": "目錄啟動 PDF、CSV 或 JSON-Laeufe，帶有典型過濾器和分類。",
@@ -11903,8 +12179,8 @@
       },
       "bullets": [
         {
-          "text": "Mitgeliefert = schreibgeschuetzt 與正常康特拉斯特; Hauptaktion ist Als benutzerdefinierte Vorlage klonen。",
-          "source_sha256": "4494af878c60a1a1221542f4d79d09ad9b610db73be317164ca3321cb754339e"
+          "text": "提供 = 寫入保護，對比度正常；主要操作是克隆為自訂模板。",
+          "source_sha256": "4f10674fa5698bf1bc2f58a50c5a459bd7cffa3b5d41395f1f0d2d088f01bc15"
         },
         {
           "text": "Eigene Overlays duerfen Beschriftungen/Spalten/Wortlaut aendern；達滕奎勒和收藏家 bleiben mitgeliefert。",
@@ -11967,16 +12243,16 @@
       },
       "bullets": [
         {
-          "text": "Nutzen Sie 在 Formate、Schluesselverwahrung 和 wann Teilen 與 Export 網站上的「So funktioniert the Verschluesselung」。",
-          "source_sha256": "5883e12b5e1d7c6ac1d980b21061e3e6e365c8c8a2e533c51bc39cd360ec65b6"
+          "text": "使用頁面上的「加密工作原理」來了解格式、金鑰保留以及何時共享與匯出。",
+          "source_sha256": "1f63d43301506897804d5ebeddc5c2048313064299992ce182833e53e2b87508"
         },
         {
-          "text": "CUI darf 不是 Klartext-Export verlassen — nur verschluesselter Austausch 或 ACL innerhalb des Enclave。",
-          "source_sha256": "31f8cd1a67632614de83eb29c91ffe8ee1265f445bf1d54d935d28589e6575e1"
+          "text": "CUI must not leave as a plain text export — only encrypted exchange or ACL within the enclave.",
+          "source_sha256": "753d85306813faafa2a2197e050594d735a802411a23b8ef6083b4598444ddc2"
         },
         {
-          "text": "Armored-Export ist dasselbe Paket with ASCII-Huelle for Paste-Kanaele, keine PGP-Nachricht with oeffentlichem Schluessel.",
-          "source_sha256": "0531989bd5e90fe9701fc3ce9a3b75a6b87c21f923e883823ad57b55f6c51edc"
+          "text": "裝甲匯出是與貼上頻道的 ASCII 信封相同的包，而不是帶有公鑰的 PGP 訊息。",
+          "source_sha256": "c9125d5bfce118adb82ce318ad1564eeab74c76caf7a9804cbee5d17d999e7fa"
         }
       ]
     },
@@ -11991,8 +12267,8 @@
       },
       "bullets": [
         {
-          "text": "配置 → Agent umfasst Einstellungsdateien、Bereitstellung 和 Vorgaben，在 ausgegebene Agent-Settings geschrieben werden 中。",
-          "source_sha256": "72ed8b03495daf26397c990a4b45167a4a745b941addc70180ea43f3c40ea91f"
+          "text": "配置 → 代理程式包括設定檔、部署和寫入輸出代理設定的預設值。",
+          "source_sha256": "7ded7f7d9a7b8c1aa51c895515635a4e5a0708adea619f15bd3f9f700520ed78"
         },
         {
           "text": "設定 → 伺服器 umfast TLS、Identitaetsanbieter、Krypto、訊息傳遞和伺服器管理。",
@@ -12003,8 +12279,8 @@
           "source_sha256": "765536f45af6709c1c359f4fdb97075ae84439a61c511d4ea56ab3510955e877"
         },
         {
-          "text": "Nutzen Sie the Schnellsuche (Strg+K)，直接啟動設定。",
-          "source_sha256": "91ceffdffb394e1bb884a4f95e338a62e0fd2a81ada328c584356ab27bcc4099"
+          "text": "使用快速搜尋（Ctrl+K）直接跳到任何設定頁面。",
+          "source_sha256": "41808f0860e992e5004fee3ad53d471e5ff89d6662472ae7d31ce8f823496359"
         }
       ]
     },
@@ -12037,8 +12313,8 @@
           "source_sha256": "e6ec1862d73434f4abc1f10cc5a9248d8fa0de26c45d26fe08279caa2c610215"
         },
         {
-          "text": "Push-Erreichbarkeit 是指並置的 Push-IPC pruefbar； entfernte Zeilen zeigen Selbstmeldung 或 not-of-diesem-Server。",
-          "source_sha256": "1cf52ccb94c37efe296496e2372840a75aa1c41923d045d4afa7123b22b96039"
+          "text": "只能檢查共置 Push-IPC 的推送可存取性；刪除的行顯示自我報告或不屬於此伺服器。",
+          "source_sha256": "169390cfe2baac5d2f64767f6406db7906e43c7016c5a578efaeaa6e12831f4a"
         },
         {
           "text": "與 Propagierung、Offenleungen、Recording-Agents 和 Passwortwiederherstellung bleiben auf the bestehenden Seiten 的深層連結。",
@@ -12065,8 +12341,8 @@
           "source_sha256": "3477e1d713a90c68a433b5925d8fdc617c9988627905cc762d070cc31fc3d561"
         },
         {
-          "text": "Der Tab Faehigkeiten verlinkt to Propagierung, Offenleungen, Recording-Agents and Passwortwiederherstellung unter Endpunkte — keine doppelten Workflows.",
-          "source_sha256": "efaa486393c47ce793a5a15631ea711379d8db6e90d866166d9844eede72e2b8"
+          "text": "「功能」標籤連結到「端點」下的「傳播」、「揭露」、「記錄代理」和「密碼恢復」——沒有重複的工作流程。",
+          "source_sha256": "93e226188e77ff9f22ec501c63ada2d608d748fe29941bfb2d11580fd95a05e8"
         },
         {
           "text": "Flotten-Agent-Versionen 是 Anreicherung the Systemliste 的一個固有的 schreibgeschuetzte Tabelle。",
@@ -12089,8 +12365,8 @@
       },
       "bullets": [
         {
-          "text": "Ablauf：Im Katalog bearbeiten & speichern → 安裝 Pushen → Identitaeten Binden → Am Agent testen。",
-          "source_sha256": "0b0b8da3300d732196298a612d1e257cbf7c2517d60494747e76219beb658a00"
+          "text": "流程：編輯並儲存在目錄中→推送安裝→綁定身分→在代理程式上測試。",
+          "source_sha256": "124fa5a7fd5a27e094212f35a7e655619038885eb28a79ea8d7fd487bda41e72"
         },
         {
           "text": "Phasen：预旋转（beruhigen）→ Passwortaenderung → 验证（后旋转）。在 Push 中測試 Agent-Kopie。",
@@ -12101,8 +12377,8 @@
           "source_sha256": "eee234ac056c4218c020f5a284bf7efa05582d82fc6297cf9dd5a433e93aa7d2"
         },
         {
-          "text": "Aus Standardvorlage anlegen 用於 Lab-Skelett、或 Identitaeten binden 和 dieser Seite Pushen。",
-          "source_sha256": "25b2c166b1b0a5c339108ed2a4753bf6d6816177622c4ad65c8b164f6250016c"
+          "text": "從實驗室框架的標準模板創建，或綁定身份並從此頁面推送。",
+          "source_sha256": "8776415fdd8478e6778d9f3e8d1e8073d916fc3fe68770a3f2439d64ca9c8018"
         },
         {
           "text": "Operator-Leitfaden：pim-offline-client/docs/PROPAGATION_SCRIPTS_LIFECYCLE.md",
@@ -12145,16 +12421,16 @@
       },
       "bullets": [
         {
-          "text": "Kanonischer Speicher sind Variablen the Offenlegungsvorlagen (gleiche Werte wie Operator-Offenlegungen → Vorlagenvariablen)。",
-          "source_sha256": "d736972f03dfb939bdfe1d6f5b3f2db5eb048b8ea0cfd4eb769c259887451735"
+          "text": "規範儲存是公開模板的變數（與運算子公開→模板變數的值相同）。",
+          "source_sha256": "5c9f740335cedd2b7c23b80995fb2dd6f851747990d31fc412964e22220f0dd8"
         },
         {
           "text": "標誌、Markenname 和 Bannerfarben liegen unter Branding & Stil。",
           "source_sha256": "30eab20865ed01a7c64ca5bea5eaf494c68b020c79d4d3ad9b9f5e46e6919e92"
         },
         {
-          "text": "Erweiterter Vorlagentext bleibt under Server-Offenlegungen / Operator-Offenlegungen。",
-          "source_sha256": "c4cde937687000eeeeb15d78d6f1ef2130eb8a5920733b019298fac0a6ce89bd"
+          "text": "擴展模板文字保留在伺服器披露/操作員披露下。",
+          "source_sha256": "d7768ba73b7a2fac0638947114661bd906576f6ed191cb1286f7bbded3cd40eb"
         }
       ]
     },
@@ -12173,8 +12449,8 @@
           "source_sha256": "55e5504e9db8b2c99e408df75eb4f2059bb4cf549776eabcf449c25e7e856481"
         },
         {
-          "text": "Eingebaute 或 gespeicherte 預設 anwenden、dann Mit Programm-Vorgaben wiederherstellen、um Operator-Ueberschreibungen 到 loeschen。",
-          "source_sha256": "e4cfe08e14284fae602b5b4ce6ac196d3bbc8b8e5cab9173aa28e6ed739f68d9"
+          "text": "套用內建或儲存的預設，然後使用程式預設恢復以刪除操作員覆蓋。",
+          "source_sha256": "3a7727b592012e5a6e782a6b2c01730d624f6a4c04a97054cdb7bc141199fbfd"
         },
         {
           "text": "Benannte Presets 與 Passwortrichtlinien-Presets verwaltet 分開。",
@@ -12203,20 +12479,20 @@
       },
       "bullets": [
         {
-          "text": "Tab Verbindungen listet registrierte HSM-Endpunkte and oeffnet PKCS#11-Slot-/Token-Pruefungen.",
-          "source_sha256": "af4f70060b5f93991b8dda072ffa5ee8a42b474a982cdfcb90da5c275ae7e069"
+          "text": "「連線」標籤列出了已註冊的 HSM 端點並開啟 PKCS#11 插槽/令牌檢查。",
+          "source_sha256": "88a9acaf8445a70fd001bf4419cf54f474623fbd8ad9934f8901675fc4721b07"
         },
         {
-          "text": "Tab Hersteller pflegt Metadaten，是 Verbindungen genutzt werden 的 Anlegen。",
-          "source_sha256": "6808ecffc390e329e819a57c13566f55ef540789a653b4d73eb3c5f0165f9371"
+          "text": "選項卡製造商維護創建連接時使用的元資料。",
+          "source_sha256": "e939aa1a7dcf94ca1fd687f8d88672d1bca7929e294fae083611faa0ad9cd290"
         },
         {
-          "text": "ORM 商店中的選項卡配置 bearbeitet modulweite HSM-Einstellungsschluessel。",
-          "source_sha256": "786e94a7ae791d4ba9f7e9076228761d599f7496153f7e2fc6c82fdfcbba1f19"
+          "text": "選項卡配置編輯 ORM 儲存中的模組範圍 HSM 設定鍵。",
+          "source_sha256": "4e2bc73c883855aee582aa3f76fe1863b9f093948ce91943201c758cfa99354d"
         },
         {
-          "text": "Die Seite Krypto-Anbieter 可以是一個 Verbindung waehlen，um PKCS11_MODULE_PATH 和 PKCS11_SLOT_ID vorzufuellen。",
-          "source_sha256": "7a5c14790180f892565de6b91d589608bb1a35a29645519cc4c41a68228fd082"
+          "text": "Crypto Provider 頁面可以選擇一個連線來預先填入 PKCS11_MODULE_PATH 和 PKCS11_SLOT_ID。",
+          "source_sha256": "322b43f8275658a632b4ee143b161d44f6c179245ca4a729d95a3ff69182e85d"
         }
       ]
     },
@@ -12295,16 +12571,16 @@
       },
       "bullets": [
         {
-          "text": "Operatoren 的 Verfuegbar、Servereinstellungen verwalten duerfen（超級使用者/所有者）。",
-          "source_sha256": "488c95239e0214923034475614fe7575322c4f20af76a096fb7c2f23e36ed7ad"
+          "text": "適用於有權管理伺服器設定的操作員（超級使用者/擁有者）。",
+          "source_sha256": "473864f4780baf18e553a2be8443744b6e3855afe3884d82459f8713ca3423b1"
         },
         {
-          "text": "Unternehmensidentitaet wird ueber dendlben Speicher Unternehmensprofile / Offenlegungsvariablen beitet。",
-          "source_sha256": "26ff64e1820ca4286f1c507916a6256fa47d67aed00a7ce2b9db476c54584e88"
+          "text": "公司身分是透過同一家商店的公司簡介/揭露變數進行編輯的。",
+          "source_sha256": "7ee792f18d6e199640a533dcb145be624cfe4bb1f514cacc6a480dfd3ea2497a"
         },
         {
-          "text": "可選 Schritte（電子郵件、Familiarisierungs-Seed） koennen uebersprungen werden； Lab-Seed 是實驗室開發的說明。",
-          "source_sha256": "8e1c11b71f92f392d234687b8e03aa6457c1d71ea279ed46b71133f8049b9690"
+          "text": "可以跳過可選步驟（電子郵件、熟悉種子）； Lab-Seed 僅限於 lab-dev。",
+          "source_sha256": "6bb428a11db41130cb23811f35ddce42c14c9c4b60c9bc1b637de69daad3fe25"
         }
       ]
     },
@@ -12347,8 +12623,8 @@
           "source_sha256": "ce9ec984af9c25da3262b03b7ca6bb695861dc739877b9f1ee01501443ad3ea2"
         },
         {
-          "text": "範圍內沒有代理 bleiben 的 Systeme 和 verbinden 通常 ueber eigenen Kanal。",
-          "source_sha256": "6431802bc3d6830db2d58da9dac533dba5ac7eba064e5cc1721d18052fdb2b45"
+          "text": "沒有代理的系統仍在範圍內，並且通常通過自己的通道進行連接。",
+          "source_sha256": "f03a220342afc00001bfac0f69b24f707824e99cc39c65568ebf7821ee5ec769"
         },
         {
           "text": "/endpoints 下的舊 URL 位於此處。",
@@ -12419,12 +12695,12 @@
       },
       "bullets": [
         {
-          "text": "Group aktivieren 中的“Standardidentitaeten seeden”，damit Vorlagenzeilen bei the Bereitstellung greifen。",
-          "source_sha256": "84a2975f4f1823eb6e2f9e5bb4c859d7700f996bb1c4f730232ef936845446d0"
+          "text": "在群組中啟用“種子預設身份”，以便模板行在部署期間生效。",
+          "source_sha256": "e9fae3286aa4195abca1b3df9dea088cdd19ae0ee0008638482701fd3bf42b03"
         },
         {
-          "text": "Passwortrichtlinie pro Zeile 可以作為 Group erben 或 ueberschreiben，wenn Erben ausgeschaltet ist。",
-          "source_sha256": "2a915f9bb609b2f8d8e7702ad3faa78ba7a79ce2f38d12255140b3270da4f8c9"
+          "text": "如果關閉繼承，則群組可以繼承或覆寫每行的密碼原則。",
+          "source_sha256": "84d042146c179d6c169432a6a62a9e062410371d9a3343e1faea3d4ada31d47f"
         }
       ]
     },
@@ -12471,8 +12747,8 @@
       },
       "bullets": [
         {
-          "text": "Erzeugt Settings、Agent ueber Konfigurator 或 import-settings importiert。",
-          "source_sha256": "7555e2289b341e877ba9332d6c52e11974d32243adbc9df5c8f0c41afb37852f"
+          "text": "建立代理透過配置器或導入設定導入的設定。",
+          "source_sha256": "7d4b0e00f3ad0cfde4d313f254dcc2ba64692dd5ff28ba9f7b73438432ffbd69"
         },
         {
           "text": "ConnectedManaged erwartet regelmaessigen 簽到； AirGapped 永久不是。",
@@ -12542,12 +12818,90 @@
     },
     "settings__access-control": {
       "summary": {
-        "text": "概括",
-        "source_sha256": "8e76a94ac8320d515375e625bef1829238b097ecbd33611b59eeefd4ffefebfb"
+        "text": "本機 IAM 主體、角色目錄、遠端存取 IP 規則、登入稽核與驗證探測。",
+        "source_sha256": "1685175f3d2b347d2c30a1091657f0d34b4bcd09faf2ce6f3d8701a5552d5783"
       },
       "title": {
-        "text": "標題",
-        "source_sha256": "7e8cd2056da73a7fefb6cd91f4e5d199d08d9058c517b9a2476b1b520324d674"
+        "text": "存取控制",
+        "source_sha256": "0ad711494961d4a69a2987374bb0b5e9849623c1ebec48b738dd0ba1fe8046a7"
+      },
+      "helpAriaLabel": {
+        "text": "開啟存取控制說明",
+        "source_sha256": "a5f9978e2730fe0479cba0883fdba7e552225b5adcbb6c5b847661b7835268d3"
+      }
+    },
+    "settings__general": {
+      "title": {
+        "text": "設定 — 一般",
+        "source_sha256": "18ca67c319b8243706f2e77bfd9b53cd7cf89e6f9fbedf42bbd9b57d25636a9d"
+      },
+      "summary": {
+        "text": "伺服器層級營運選項：對外 URL、預設多租戶、自動佈建行為、時鐘漂移門檻與管理 API 權杖。",
+        "source_sha256": "ee1cae6d8bb5da9dfb851749d0f02e484a068c565afd9f2700892c02cf5d485c"
+      },
+      "helpAriaLabel": {
+        "text": "開啟設定 — 一般說明",
+        "source_sha256": "a2a5ea98337e41e99da0dc662915996693e9dcb94b978eb948de324675dd0671"
+      },
+      "bullets": [
+        {
+          "text": "此處變更會影響每個多租戶，除非在群組、機器或身分層級覆寫。",
+          "source_sha256": "461a3ee208d2dd6119148e5a27184aa3c2780aa144ddb37c6fbb6e881d27c0d3"
+        }
+      ]
+    },
+    "settings__tls": {
+      "title": {
+        "text": "設定 — TLS",
+        "source_sha256": "bf40df49298c757d0bc5e65fab966030dfa1af7131c7d689fd3e6324a5c95552"
+      },
+      "summary": {
+        "text": "代理程式與系統管理連線使用的 HTTPS 接聽憑證與用戶端驗證選項。",
+        "source_sha256": "a48bc99d646904bce4307bc2db4578ef08e6ab7380f954adbfadd719e8eee554"
+      }
+    },
+    "settings__server": {
+      "title": {
+        "text": "設定 — 伺服器身分",
+        "source_sha256": "67ffb20b5342507a5237ef87a3495111ab2e8210b46c697151964998a527d230"
+      },
+      "summary": {
+        "text": "此伺服器如何向代理程式與操作員表明身分（顯示名稱、機器 GUID、公開 URL）。",
+        "source_sha256": "a56a86558ad5e5b2f04d9d0feeaaf1bb2e9fa620c28852229b0a1a494de2e3dd"
+      }
+    },
+    "settings__manifest": {
+      "title": {
+        "text": "設定 — 資訊清單",
+        "source_sha256": "8315462a9e43c6deb54bcda599928e48196431c0e86d9d3cd8cd1b4b3284ea01"
+      },
+      "summary": {
+        "text": "精靈執行時期讀取的應用程式組態索引鍵唯讀檢視。請使用設定工具 CLI 變更值。",
+        "source_sha256": "02bf92895902313629e0dbaaa76dc986b4cf1bb2dea3e766e3c0511744ab3127"
+      }
+    },
+    "settings__mitm": {
+      "title": {
+        "text": "設定 — MITM 代理",
+        "source_sha256": "6c741b2b09612ec02739b17eb3f1df010dbf9d1b24197b17478252a86a986677"
+      },
+      "summary": {
+        "text": "開發環境中用於偵錯代理程式流量的選用 mitmproxy 整合。生產環境請停用。",
+        "source_sha256": "95dd850f5eedfc310ad7c0b2c898893e2775aac71e9da7c90983289cbec479b9"
+      }
+    },
+    "about__open-source-credits": {
+      "title": {
+        "text": "開源授權聲明",
+        "source_sha256": "ef6643daa45e6995014027fc62e5f589dd80019a418106bdc84035708a84c190"
+      },
+      "summary": {
+        "text": "納入 AIC Server 的第三方開源元件清單，含授權識別與已擷取的授權全文。本頁內容維持美式英語。",
+        "source_sha256": "6ee8f219fe739c357050651b235bb3b1cb484e7e8e9debef543f28a087aad6e1"
+      },
+      "helpAriaLabel": {
+        "text": "開啟開源授權聲明說明",
+        "source_sha256": "d6d769c26609855a4b390b618df2d476721b860efd8359f2e3dcf4cbbaae352a"
       }
     }
   },

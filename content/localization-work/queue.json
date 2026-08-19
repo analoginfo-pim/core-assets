@@ -8,10 +8,10 @@
       "kind": "help-manual",
       "title": "Auditor Setup and Configuration Guide",
       "added": "2026-08-17",
-      "updated": "2026-08-17",
+      "updated": "2026-08-19",
       "source_repo": "pim-offline-server",
       "source_path": "ui/src/pages/docs/auditorSetupGuide.ts",
-      "source_sha256": "e3f8e805d1015229931c6b1d9a8bedfa3cb9e54636abaa4d5dfc9138b3176dee",
+      "source_sha256": "4560141b05548ca76bf2af819db417992592e47f3696de91011c937f4fe43814",
       "product_route": "/docs/auditor#chapter-setup",
       "required_tags": [
         "de",
@@ -25,7 +25,7 @@
         "fr",
         "es"
       ],
-      "notes": "New Help chapter for auditor RBAC tiers, seed accounts, and configuration links. Agent drafts exist for de/fr/es; they need professional review. en-GB and zh-Hans catalogs are missing — do not claim Tier 1 complete."
+      "notes": "New Help chapter for auditor RBAC tiers, seed accounts, and configuration links. Agent drafts exist for de/fr/es; they need professional review. en-GB and zh-Hans catalogs are missing — do not claim Tier 1 complete. Source changed 2026-08-19 (hash e3f8e805d101 → 4560141b0554)."
     },
     {
       "id": "spa.live-session-file-transfer",
@@ -58,10 +58,10 @@
       "kind": "help-manual",
       "title": "Live session leftover English (Proxy, zero UUID, key chords)",
       "added": "2026-08-17",
-      "updated": "2026-08-17",
+      "updated": "2026-08-19",
       "source_repo": "pim-offline-server",
       "source_path": "ui/src/i18n/locales/en/components.json",
-      "source_sha256": "36646aaa69e85328f3561cb1706ff8bcb564bbdf31ba08cc079b535ce8d63647",
+      "source_sha256": "61df3a7245971c538372be48af8128748d0a9eb2da85287f3d81f5c5a7d0c3e6",
       "product_route": "/pam/live",
       "required_tags": [
         "de",
@@ -73,7 +73,7 @@
       "draft_tags": [
         "de"
       ],
-      "notes": "Draft DE landed for recording Vermittler, UUID aus lauter Nullen, and Strg key chords. fr/es/en-GB/zh-Hans remain open. Do not claim Tier 1 complete."
+      "notes": "Draft DE landed for recording Vermittler, UUID aus lauter Nullen, and Strg key chords. fr/es/en-GB/zh-Hans remain open. Do not claim Tier 1 complete. Source changed 2026-08-19 (hash 36646aaa69e8 → 61df3a724597)."
     },
     {
       "id": "spa.report-center-leftover-en",
@@ -354,10 +354,10 @@
       "kind": "spa-chrome",
       "title": "Jump Fleet leftover English chrome",
       "added": "2026-08-17",
-      "updated": "2026-08-17",
+      "updated": "2026-08-19",
       "source_repo": "pim-offline-server",
       "source_path": "ui/src/pages/JumpFleetPage.tsx",
-      "source_sha256": "10edd9896c2e77b0f52198d767f06a6406c7c1ad317787de085396a06b47db4c",
+      "source_sha256": "a45c6b0b8f08e8c7f1e71ae90541af9ff76ec50759278cbefdc239590e46e689",
       "product_route": "/pam/jump-fleet",
       "required_tags": [
         "de",
@@ -367,7 +367,7 @@
         "zh-Hans"
       ],
       "draft_tags": [],
-      "notes": "Walk 2026-08-17: wrap plane/OCR/unhealthy/health/accepting chrome in t(); DE draft. Agent draft does not close. Chrome-only Partial. Not Met. Tier 1 en-GB/zh-Hans absent."
+      "notes": "Walk 2026-08-17: wrap plane/OCR/unhealthy/health/accepting chrome in t(); DE draft. Agent draft does not close. Chrome-only Partial. Not Met. Tier 1 en-GB/zh-Hans absent. Source changed 2026-08-19 (hash 10edd9896c2e → a45c6b0b8f08)."
     },
     {
       "id": "spa.language-settings-chrome",
@@ -545,6 +545,151 @@
       ],
       "draft_tags": [],
       "notes": "Agent draft: login/app-bar flag picker, html lang, zh-TW nav/common/help chrome. Reviewer must close; agent draft does not close."
+    },
+    {
+      "id": "settings.display-timezone",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "spa",
+      "title": "Settings display time zone and general form chrome",
+      "added": "2026-08-19",
+      "updated": "2026-08-19",
+      "source_repo": "pim-offline-server",
+      "source_path": "pim-offline-server/ui/src/pages/SettingsPage.tsx",
+      "source_sha256": "45044afcac69701c1d8ab0370469d8371012f980cfd70f142235f86b452fd27f",
+      "product_route": "/settings/general",
+      "required_tags": [
+        "en,de,es,fr,zh-TW,en-GB,zh-Hans"
+      ],
+      "draft_tags": [],
+      "notes": ""
+    },
+    {
+      "id": "settings.syslog-form",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "spa",
+      "title": "Settings syslog forwarding form chrome",
+      "added": "2026-08-19",
+      "updated": "2026-08-19",
+      "source_repo": "pim-offline-server",
+      "source_path": "pim-offline-server/ui/src/pages/SyslogForwardingPage.tsx",
+      "source_sha256": "64d539750c83c54de99025ce6a90fc6b368f159c3ff4cc5c7a9bf5699ce5482b",
+      "product_route": "/settings/syslog",
+      "required_tags": [
+        "en,de,es,fr,zh-TW,en-GB,zh-Hans"
+      ],
+      "draft_tags": [],
+      "notes": ""
+    },
+    {
+      "id": "settings.branding-form",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "spa",
+      "title": "Settings branding and style form chrome",
+      "added": "2026-08-19",
+      "updated": "2026-08-19",
+      "source_repo": "pim-offline-server",
+      "source_path": "pim-offline-server/ui/src/pages/BrandingSettingsPage.tsx",
+      "source_sha256": "b663aaf13bb20a14161ab61f53e065a6cc8d228075176b9a744be03fc804cd34",
+      "product_route": "/settings/branding",
+      "required_tags": [
+        "en,de,es,fr,zh-TW,en-GB,zh-Hans"
+      ],
+      "draft_tags": [],
+      "notes": ""
+    },
+    {
+      "id": "spa.pam-workstation-chrome-zh-tw",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "help-manual",
+      "title": "PAM / workstation chrome zh-TW (German cleanup + EN source)",
+      "added": "2026-08-19",
+      "updated": "2026-08-19",
+      "source_repo": "pim-offline-server",
+      "source_path": "pim-offline-server/ui/src/i18n/locales/en/pages.json",
+      "source_sha256": "b0c8d2da4ceccff29d67ee36169bd02062df0084a8387b90f7452189965a84e6",
+      "product_route": "/my-workstations",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [
+        "zh-TW"
+      ],
+      "notes": "Opus proved German leftovers and English in zh-TW PAM chrome. Agent draft zh-TW + EN German cleanup landed; Tier 1 review still required. Not Met."
+    },
+    {
+      "id": "zh-tw.compliance.control-titles",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "help-manual",
+      "title": "zh-TW NIST control short titles and compliance chrome",
+      "added": "2026-08-19",
+      "updated": "2026-08-19",
+      "source_repo": "pim-offline-server",
+      "source_path": "pim-offline-server/ui/src/i18n/locales/zh-TW/controls.json",
+      "source_sha256": "e7da64b32017ff600c3949c1a056221bab613f9416ba7a09df038581cba9ddea",
+      "product_route": "",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans"
+      ],
+      "draft_tags": [],
+      "notes": ""
+    },
+    {
+      "id": "zh-tw.compliance.risks-binder-catalog",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "help-manual",
+      "title": "zh-TW risks binder compliance catalog German rewrite",
+      "added": "2026-08-19",
+      "updated": "2026-08-19",
+      "source_repo": "pim-offline-server",
+      "source_path": "pim-offline-server/ui/src/i18n/locales/zh-TW/risks.json",
+      "source_sha256": "756cdc0a51ed0efa4b6df6e648dcf96caa617c9bf6b4254644c3061471bc9949",
+      "product_route": "",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans"
+      ],
+      "draft_tags": [],
+      "notes": ""
+    },
+    {
+      "id": "zh-tw.docs.auditor-setup-reshape",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "help-manual",
+      "title": "zh-TW Auditor Setup nested keys and jobs table",
+      "added": "2026-08-19",
+      "updated": "2026-08-19",
+      "source_repo": "pim-offline-server",
+      "source_path": "pim-offline-server/ui/src/pages/docs/auditorSetupGuide.ts",
+      "source_sha256": "4560141b05548ca76bf2af819db417992592e47f3696de91011c937f4fe43814",
+      "product_route": "",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans"
+      ],
+      "draft_tags": [],
+      "notes": ""
     }
   ]
 }
