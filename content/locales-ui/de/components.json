@@ -422,20 +422,20 @@
         "source_sha256": ""
       },
       "general_settings": {
-        "text": "Öffentliche URL, Multi-Tenant-Standard, Drift-Schwellen und Admin-Token.",
-        "source_sha256": ""
+        "text": "Beworbene URL, Standard-Multi-Tenant, Drift-Schwellenwerte und Admin-Token.",
+        "source_sha256": "a4ab535d6da4033d5d542dca160c1dc8491a96feb56c01ae7e917671f845a0b2"
       },
       "company_profile": {
-        "text": "Organisationsnamen und Supportkontakte für Hinweise.",
-        "source_sha256": ""
+        "text": "Organisationsnamen und Supportkontakte, die in Mitteilungen und Offenlegungen verwendet werden.",
+        "source_sha256": "13499cc1c9873851a660f4c6f8db191c59acc353e1583a8bd927533ea0b576d9"
       },
       "branding_style": {
-        "text": "Eigenes Logo für Anmeldeseite und Anwendungsleiste hochladen.",
-        "source_sha256": ""
+        "text": "Laden Sie ein benutzerdefiniertes Logo für die Anmeldeseite und den Anwendungsheader hoch.",
+        "source_sha256": "1d3f2cfe48ff85bbc65a1b7e44316dc397a51764dec795d57ac5fdca1309b683"
       },
       "initial_setup_wizard": {
-        "text": "Geführter Runbook für neue Enklaven: Firma, Compliance, Verschlüsselung, E-Mail.",
-        "source_sha256": ""
+        "text": "Geführtes Runbook für eine neue Enklave: Unternehmen, Compliance, Verschlüsselung, E-Mail.",
+        "source_sha256": "9d4959d824735bb7e529a30b23f32696dce6574b92772c0a6a70cfb2cf6c8b4c"
       },
       "defense": {
         "text": "Blockierte Versuche und Angriffsquellen-Heatmap für diesen Server.",
@@ -451,23 +451,23 @@
       },
       "tls_security": {
         "text": "HTTPS-Listener-Zertifikate und Client-Authentifizierung.",
-        "source_sha256": ""
+        "source_sha256": "a4c7dedd41d2b892564f26ad49db626dd875453be5d6512b9ec796253f216129"
       },
       "server_control": {
         "text": "Anzeigename, Maschinen-GUID und öffentliche URL-Identität.",
-        "source_sha256": ""
+        "source_sha256": "4012a3da6d47bed527e41f39f264145ad00f2632cefa15db179d14133b6ad92b"
       },
       "encryption_settings": {
         "text": "FIPS-Status, Anbieterkatalog, Sicherung und optionale HSM-Kopplung.",
         "source_sha256": ""
       },
       "encryption_key_sets": {
-        "text": "Serverstandard und benannte Schlüssel; nach Schlüsselwechsel neu verschlüsseln.",
-        "source_sha256": ""
+        "text": "Server-Standardschlüssel und benannte Schlüssel; Gruppendaten nach Schlüsseländerungen rotieren und neu verschlüsseln.",
+        "source_sha256": "8e0a185716c94d3d33628c4351067de47892b60e6d95d03db28b98cfa955c7dd"
       },
       "hsm_connections": {
-        "text": "PKCS#11-Anbieter und Verbindungsprofile für HSMs registrieren.",
-        "source_sha256": ""
+        "text": "Registrieren Sie PKCS#11-Anbieter und Verbindungsprofile.",
+        "source_sha256": "df9d4b6e99144dcd6da5781aa1b987c6e37c0f6787beff6c075bfdaf29628974"
       },
       "message_templates": {
         "text": "Wiederverwendbare Benachrichtigungstexte für Betreiber-E-Mails.",
@@ -490,8 +490,8 @@
         "source_sha256": ""
       },
       "app_manifest": {
-        "text": "Schreibgeschützte Ansicht der app-config-Schlüssel zur Laufzeit.",
-        "source_sha256": ""
+        "text": "Schreibgeschützte Ansicht der App-Konfigurationsschlüssel, die der Daemon zur Laufzeit liest.",
+        "source_sha256": "efb544a95e80eff11159a6c39fa4d7b31ab9fe6d339e4c8f243a76e26bea3d64"
       },
       "mitm_dev_only": {
         "text": "Optionale mitmproxy-Integration zum Debuggen von Agent-Verkehr im Lab.",
@@ -562,36 +562,40 @@
     },
     "intro": {
       "access": {
-        "text": "Kennwörter anzeigen, Elevationscodes ausstellen und verwaltete lokale Identitäten verwalten.",
-        "source_sha256": ""
+        "text": "Zugangs- und Identitätsoberflächen für diese Enklave.",
+        "source_sha256": "e6b41455e9a02357f4f15bf3446d6e193faadeb1939d9b11d789e27ef57447db"
       },
       "proxied": {
-        "text": "Interaktive Browser-SSH/RDP-Sitzungen öffnen und Zugriff steuern: Verbindungspunkte, Aufzeichnungen, Aufzeichnungsagenten, OCR-Metadaten, Speicherorte, Sitzungssteuerung, Zugangsdaten-Tresor und Zugriffsanfragen.",
-        "source_sha256": ""
+        "text": "Proxy-Sitzung und Einstiegspunkte für den Fernzugriff.",
+        "source_sha256": "38748bba3be6e9bc6ce4c32f4ef9ae52b494490cc25530a10f555328968824bd"
       },
       "ot": {
         "text": "Betriebstechnik: OT-Ziele erkennen und inventarisieren, Protokollsitzungen verbinden und Kennwortrotation sowie Break-Glass steuern.",
         "source_sha256": ""
       },
       "systems": {
-        "text": "Endpunkte inventarisieren, Systemgruppen organisieren und Mandantenfähigkeit verwalten. Agent-Einstellungen liegen unter Agent-Konfiguration.",
-        "source_sha256": ""
+        "text": "Systeminventur und zugehörige Bedienertools.",
+        "source_sha256": "30ec6d7d5d0ccb74d584e285bd53455544b05418dfae7fac96484d963fe24b86"
       },
       "auditing": {
-        "text": "Live-Ereignisse überwachen, Audit-Nachweise exportieren, IR-Fälle verwalten und Weiterleitungssenken konfigurieren.",
-        "source_sha256": ""
+        "text": "Prüfungs-, Beweismittel- und Prüferoberflächen.",
+        "source_sha256": "17303a8f90750881e43ea3d82409d8bd8512003718b2349c6894b71c7ef42b10"
       },
       "agent": {
-        "text": "Hier Einstellungsdateien ausstellen, eine Flotte bereitstellen oder Standards ändern.",
-        "source_sha256": ""
+        "text": "Beginnen Sie hier, um eine Einstellungsdatei auszugeben, eine Flotte bereitzustellen oder die Standardeinstellungen dieser Dateien zu ändern.",
+        "source_sha256": "29aa40223732ba72d8825dbaff8d1edfd7e59bd62a32e2bdc626ed9e70c241b7"
       },
       "lab": {
-        "text": "Schreibgeschützte Manifest-Ansicht, Lab-MITM-Proxy, RBAC-Testmodus und Demo-Daten. Nicht für Produktion.",
-        "source_sha256": ""
+        "text": "Schreibgeschützte Manifestprüfung, reiner Labor-MITM-Proxy, RBAC-Testmodus und Demo-Datendienstprogramme. Nicht für Produktionsbereitstellungen.",
+        "source_sha256": "7a1315f67090a680413d8987eed83bfd822fdf742c873ab0fb7a3be1e232b2f1"
       },
       "messaging": {
-        "text": "Vorlagen, Snippets, SMTP und SMS für Betreiber-Benachrichtigungen zu Zugangsdaten.",
-        "source_sha256": ""
+        "text": "Vorlagen, Snippets, SMTP- und SMS-Einstellungen für die Benachrichtigung über Betreiberanmeldeinformationen.",
+        "source_sha256": "beae51bbcb28d4977e2cdbb3a739475c7dcc820e1eb34bb32a57b24d273b4a78"
+      },
+      "platform": {
+        "text": "Konfiguration für diesen AIC-Serverprozess: Betriebseinstellungen, TLS, Identitätsanbieter, Kryptoanbieter und HSM-Verbindungen.",
+        "source_sha256": "3bd7c55da8e5a1d7a343a6c58fcb7721fe1a3a41e1902cac01a3d4059bbe8674"
       }
     }
   },
