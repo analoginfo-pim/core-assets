@@ -241,7 +241,7 @@
   },
   "grid": {
     "columns": {
-      "text": "專欄",
+      "text": "欄位",
       "source_sha256": "53aade77cd69a77bbb51bf8ca4e7ea8b282db75edce8883775e47042478d35b5"
     },
     "density": {
@@ -249,12 +249,36 @@
       "source_sha256": "77a283d69258c2ae985dc2343725d0af253da0fc1d87626966f7cefe4a3c7469"
     },
     "export": {
-      "text": "出口",
+      "text": "匯出",
       "source_sha256": "3664895579f0a7e68c4aa09c91316e20239bc74499010e6423ece40cad7c28f7"
     },
     "filters": {
-      "text": "過濾器",
+      "text": "篩選",
       "source_sha256": "546ebb8eb993ea561029d9febd84c363bdb09010bb2cb915a8287762b76b9a64"
+    },
+    "quickFilterPlaceholder": {
+      "text": "搜尋…",
+      "source_sha256": "7336265a0467a2551d6a88f1661d8c4397c71e6bd68e77882973e0eb52fb2de8"
+    },
+    "quickFilterLabel": {
+      "text": "搜尋",
+      "source_sha256": "49c266baaaa70981ea188fa714d5c40cf13830d786a861c9943ae0d26a7f3fe9"
+    },
+    "quickFilterAria": {
+      "text": "快速篩選 {{title}}",
+      "source_sha256": "03b7a7cf466128371758434ab7d83f42161515d84ff510d4028c2baa5495a98f"
+    },
+    "footerRowSelected": {
+      "text": "已選取 {{count}} 列",
+      "source_sha256": "bb59cf4b923e94cf7480901b47c8543b4f007412ce9688707bbd7fa3af4522c4"
+    },
+    "footerTotalRows": {
+      "text": "總列數：",
+      "source_sha256": "5cd54e390a871df7168298a3fd73c59a0ded407903378d9bba9bb8616e0cf483"
+    },
+    "footerTotalVisibleRows": {
+      "text": "{{visible}} / {{total}}",
+      "source_sha256": "4091963f2d8306d4e382493b35f363c20bd5b49dde4a785a774a53a3b71deb94"
     }
   },
   "chrome": {
@@ -376,5 +400,85 @@
   "blocked_attacks": {
     "text": "阻止攻擊",
     "source_sha256": "158d3c3ef5abfd9cf13b3894307ed3778a4d5eed818545635579dc7785c1e124"
+  },
+  "quickSearch": {
+    "placeholder": {
+      "text": "快速存取",
+      "source_sha256": "8b43b0cb1da1969f90509007d7d13cd797d273101267b086a9d05fb623057d7c"
+    },
+    "ariaLabel": {
+      "text": "快速存取：搜尋任務與機器",
+      "source_sha256": "96da3dfafff5740714441d8bf3fbb7d137cbf2045b3e5e3ba9fa66a8da3f3006"
+    },
+    "groupTasks": {
+      "text": "任務",
+      "source_sha256": "b3a60e61a5233d0506ac737405a2a45280349683cac68722f18d0b73eb495ef4"
+    },
+    "groupEndpoints": {
+      "text": "端點",
+      "source_sha256": "fce7fec2a58c8b49e4deba672461d849ec0df43da356de68d0cd8d47ce3eefa3"
+    },
+    "loading": {
+      "text": "載入中…",
+      "source_sha256": "ba3bbbe10d8bef66441c88536ce7b8e724e2829b59a3da658654f4961cd61ae5"
+    },
+    "noOptions": {
+      "text": "沒有符合的任務或端點",
+      "source_sha256": "990a58e3e4875ce167f0c3c397c2a869f380b2d26d7a2cc707eaad04148df504"
+    },
+    "typeToSearch": {
+      "text": "輸入以搜尋任務與機器",
+      "source_sha256": "5d521806f43bb474ad478c93b84f3171f71874ef907b983c98c22c496b89c178"
+    },
+    "open": {
+      "text": "開啟",
+      "source_sha256": "ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942"
+    },
+    "close": {
+      "text": "關閉",
+      "source_sha256": "7d9eb7acb13e24625c404401d8e88b2350e32162455885f18276cf802f7701ed"
+    },
+    "clear": {
+      "text": "清除",
+      "source_sha256": "83b12c2216efb4fdc924e1deb5182e905e4926ed0c1c324d467107f46d5a26a9"
+    },
+    "chooseAction": {
+      "text": "選擇動作",
+      "source_sha256": "769239f13d47a375e376b171a00d1da12502e103d8417218fb63967a9bcdd5d7"
+    },
+    "revealPassword": {
+      "text": "顯示密碼",
+      "source_sha256": "a791b1e11ff3dc0eb15a987b5705af2200db19423e9c6fbbf941abb5985df0d3"
+    },
+    "getElevationCode": {
+      "text": "取得提升代碼",
+      "source_sha256": "b4f6439b2caf5a1af346eeda380541c0818158f0c54e3261d977e8bf323d1dc0"
+    },
+    "manageIdentities": {
+      "text": "管理身分",
+      "source_sha256": "71efc1ca160d584c00ade40bb7807eeca916ef4cafeaeaeef577e752cc06474d"
+    },
+    "openEndpointsInventory": {
+      "text": "開啟端點清冊",
+      "source_sha256": "e2dc99b6eb34627dc4d7888be092377448a1f132ef8443f303d54c32e0d83bf0"
+    },
+    "generateConfigFile": {
+      "text": "產生設定檔",
+      "source_sha256": "82038be074cb3ce9e281ad4046ecb239182b29036a495d081bfd4dec3f07c15a"
+    },
+    "noIp": {
+      "text": "無IP",
+      "source_sha256": "c390326542f3eba1b4c9104bed61dfd768f6d246983c1972f79291c431371ba3"
+    },
+    "endpoint": {
+      "text": "端點",
+      "source_sha256": "3df9726c68ba76d6c8bb02b65e572df8dca251481bb6cb3c99c808b3f5087c13"
+    }
+  },
+  "actions": {
+    "close": {
+      "text": "關閉",
+      "source_sha256": "7d9eb7acb13e24625c404401d8e88b2350e32162455885f18276cf802f7701ed"
+    }
   }
 }
