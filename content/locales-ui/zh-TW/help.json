@@ -60,11 +60,11 @@
     "source_sha256": "6a6353a453e53e66304ba519804bc5b6a43d8240b5db8cafedcb559aecff18e1"
   },
   "accountBinding": {
-    "text": "Explicit: you name the local account (Administrator, root). Well-known: the agent maps a catalog key to the correct account for the OS.",
+    "text": "明確：您命名本機帳號（管理員、root）。眾所周知：代理程式將目錄金鑰對應到作業系統的正確帳戶。",
     "source_sha256": "5040472b1ee3e010653b96cf8c097f93f41b44df310d370dcc9cf480e17283e1"
   },
   "wellKnownAccount": {
-    "text": "代理程式在執行時間解析的目錄條目（例如 Windows 內建管理員）。选择适合平台的密钥。",
+    "text": "代理程式在執行時間解析的目錄條目（例如 Windows 內建管理員）。選擇適合平台的密鑰。",
     "source_sha256": "d40fb6b68f7843705d2dce84008f102d075a634852ffbd758d287484c3fbc9b1"
   },
   "accountName": {
@@ -116,7 +116,7 @@
     "source_sha256": "b901417b69dda9e3c7cdf0bf439d6dd3c18c083aed787af0eb66beb23b750ac3"
   },
   "systemGroupName": {
-    "text": "Optional group to place the endpoint in at registration. Group policy and identity templates apply from this group.",
+    "text": "用於在註冊時放置端點的可選組。群組原則和身分範本從該群組應用。",
     "source_sha256": "17419cfcb51659821c38ae224682894881b21bc1b01ec9b12454bc45470cc34b"
   },
   "groupName": {
@@ -124,7 +124,7 @@
     "source_sha256": "3363df28b67aa3625b9ee3caebcf50968d5cd9e6f258e88ab1adc98ed1e1101a"
   },
   "groupDescription": {
-    "text": "Optional operator note describing who or what this group is for (production servers, lab VMs, etc.).",
+    "text": "可選操作員註釋，描述該組的用途（生產伺服器、實驗室虛擬機等）。",
     "source_sha256": "0dfaa9e90669a033256a9e829d306dab719ce6375b0b02092cd89753fb18c5eb"
   },
   "wizardUsageType": {
@@ -204,7 +204,7 @@
     "source_sha256": "b16464928e3f74562cfcc2fd69b423962c7a4a9b401f7f1b93ec3795fa35def2"
   },
   "privilegeJobEndpoint": {
-    "text": "Endpoint whose offline agent runs the privilege execute handler over the admin pipe.",
+    "text": "其離線代理程式透過管理管道運行特權執行處理程序的端點。",
     "source_sha256": "8cc79a67037e0031e6812faf64a4ed8b3de6254e1500f14794b3a35ea90cbaef"
   },
   "privilegeJobMember": {
@@ -220,7 +220,7 @@
     "source_sha256": "99539e2d425643c44a80d37ccc7dbd9e3042d8e11328d08bcb57c14eff6f911d"
   },
   "privilegeJobDuration": {
-    "text": "Minutes the membership stays after apply; revoke runs when this window ends.",
+    "text": "申請後會員資格停留分鐘數； revoke 在此視窗結束時運行。",
     "source_sha256": "dd32babd79026b315fc8eadb23b9a446c4a9c80b03eae6dfc7ae939125284fdd"
   },
   "wizardMachineDns": {
@@ -244,11 +244,11 @@
     "source_sha256": "06d8569713bc0b3fd38aa7fbeb2e63084f82778390e675f8e993059e240f440c"
   },
   "loginProvider": {
-    "text": "Which identity path to use for this logon (local password, PIV, or other configured providers).",
+    "text": "用於此登入的身分路徑（本機密碼、PIV 或其他設定的提供者）。",
     "source_sha256": "4ece07972fdb0c1e9acac5779e67b1eb14f8570b8481c0cb0dc8e6b1366ba468"
   },
   "loginTotpCode": {
-    "text": "Six-digit code from your authenticator app for this account. Codes expire about every 30 seconds.",
+    "text": "來自您的身份驗證器應用程式的此帳戶的六位數代碼。代碼大約每 30 秒過期一次。",
     "source_sha256": "46216782c609d9be668bcbc5c92a825570e72a03feea2c6999320382f541ca2a"
   },
   "loginRadiusPasscode": {
@@ -256,7 +256,7 @@
     "source_sha256": "a7b5b3c958bcd118ed8e9556e124c1a7183c9e960a0f262fa7836f2e377d7ef6"
   },
   "loginNewPassword": {
-    "text": "Choose a new password that meets the organization password policy shown on this page.",
+    "text": "選擇符合此頁面上顯示的組織密碼原則的新密碼。",
     "source_sha256": "c2c797a959bc619b9a70279c0af362bdd0d2b4062a078995582071cecc35bc60"
   },
   "loginConfirmPassword": {
@@ -424,7 +424,7 @@
     "source_sha256": "acb64da2879b033e97906056e5bcef57f2bf6657c32193db7b1308c3d5fb7cab"
   },
   "adEvalDomain": {
-    "text": "Principal domain to evaluate against the trust policy for diagnostics.",
+    "text": "用於根據診斷信任策略進行評估的主域。",
     "source_sha256": "79500feb4dda69478f0d7fac588e4123b35fa583509615b5ffb1214e8cc716e3"
   },
   "adEvalGroups": {
@@ -448,7 +448,7 @@
     "source_sha256": "af9ccd82d0de4e5f5c47f85bf6d4d1d1954d4949b79802d5e8c99155d924dde7"
   },
   "logonPolicyName": {
-    "text": "Name of this logon policy. Principals and roles reference it by this label.",
+    "text": "此登入策略的名稱。校長和角色透過此標籤引用它。",
     "source_sha256": "b88dbe46d12742724617e7815677dc1dd7a0f1d493c84d51f4824588ee877e02"
   },
   "logonPolicyValue": {
@@ -592,7 +592,7 @@
     "source_sha256": "28ff301a5c20f89d877e9b6f15d4ad285a05c091be63ef789705557f9a08d39a"
   },
   "jumpDrainMode": {
-    "text": "When draining, this node accepts no new sessions so existing ones can finish before maintenance.",
+    "text": "排空時，節點不接受新會話，因此現有會話可以在維護之前完成。",
     "source_sha256": "bf21aa1fc827d923711106376eae02bb2ecbfe30151a17db7b82117bfa704436"
   },
   "jumpAcceptingSessions": {
@@ -860,7 +860,7 @@
     "source_sha256": "300e343e9cd332af74aa4a8ef0a15402bf7b1543f19b8756c0561944e2ff2e05"
   },
   "emailRecipientPgp": {
-    "text": "Recipient OpenPGP public key used to encrypt this message.",
+    "text": "用於加密此訊息的收件者 OpenPGP 公鑰。",
     "source_sha256": "e66e86ddb0caef25c7bcbea879b50e97a18d408c8507893d4458bc5122afb861"
   },
   "messagingProbeLog": {
@@ -880,7 +880,7 @@
     "source_sha256": "4ba926399cc23b521854d05210da344c872e40a384621cde0752ec73abfe0942"
   },
   "smsTwilioToken": {
-    "text": "Twilio auth token. Optional when an API Key SID and secret are set.",
+    "text": "Twilio 身份驗證令牌。設定 API 金鑰 SID 和金鑰時可選。",
     "source_sha256": "5ac0f594dd4764f644f693beee1d7b6360038d5cf2905324b73ff425415cfe2f"
   },
   "smsMessagebirdApiKey": {
@@ -952,7 +952,7 @@
     "source_sha256": "63474bda8b414b12d11a456423ebee41bb5ef7c8b23139cd55d8253a9b8e8ee0"
   },
   "auditWindowEnd": {
-    "text": "Last day of the assessment window (inclusive).",
+    "text": "評估窗口的最後一天（含）。",
     "source_sha256": "6b47b301acd5e22f86b4c0c242c59c0853bb3d3671afb1c6d5fff8fe690237d3"
   },
   "auditRequestUniqueId": {
@@ -1128,7 +1128,7 @@
     "source_sha256": "953b4f1cff392847e454c879dbbfa504a125f2517e781084155abc64fdd205ec"
   },
   "knownDefaultReloadSource": {
-    "text": "Reloads bundled dictionary rows from the shipped source file on this server.",
+    "text": "從此伺服器上提供的來源檔案重新載入捆綁的字典行。",
     "source_sha256": "fd67e63a669d34b56c55e69cdf6a090fa4e4833a001fa3fe201209693647ee5f"
   },
   "knownDefaultFetchLatest": {
@@ -1212,7 +1212,7 @@
     "source_sha256": "e7cf05b8447a4345270a3840f66b8b3bc0dbb92b37cb9df20791884aa28f11db"
   },
   "actionDownload": {
-    "text": "Downloads this file or export to your computer.",
+    "text": "下載此文件或匯出到您的電腦。",
     "source_sha256": "9c880fd2b1019f753c17b2e92bfc564894350a0930a079f2070f76b1826a8320"
   },
   "actionUpload": {
@@ -1312,7 +1312,7 @@
     "source_sha256": "bf4c1c056cd9427ea88c1266537b7866fb35646beee10cffa0d0ffa52eb6a09d"
   },
   "actionEnsure": {
-    "text": "Creates or repairs the AIC Server local Jump capacity endpoint.",
+    "text": "建立或修復 AIC Server 本機跳轉容量端點。",
     "source_sha256": "40c5418937d1c5767c64da016819567ec0cdbe9b7d159f0a104fdaaa4aa7c489"
   },
   "actionProbe": {
@@ -1432,7 +1432,7 @@
     "source_sha256": "f0a710bb0dbede47ff99cb542c52938b3af1734a7d12854bdd445a4c18f84c87"
   },
   "actionKeepAwake": {
-    "text": "Pauses auto-sleep while you run a long task. Requires an audited reason.",
+    "text": "當您運行長時間任務時暫停自動睡眠。需要經過審核的原因。",
     "source_sha256": "c58d0f2d36a66f7fa37eff09181b812c98ad3334c335dda63a987a7e8d72a7bb"
   },
   "actionClearKeepAwake": {
@@ -1796,7 +1796,7 @@
     "source_sha256": "9880b056f8395c709301c590e47fa549a1ea8ab5db38ffb57221b0f0a859a5cb"
   },
   "idpEnabled": {
-    "text": "When off, this identity provider is not offered on the logon page.",
+    "text": "關閉時，登入頁面上不會提供此身分提供者。",
     "source_sha256": "a270e2c386863e475d30e2d8272e86912ad0549e7a69b5d8d0065ed52a9dab3f"
   },
   "idpIsPrimary": {
@@ -2044,7 +2044,7 @@
     "source_sha256": "8bda80dde1af015446547295c84576971450d2765d548f7d47e4d4b424c2b52b"
   },
   "reportFilterField": {
-    "text": "Limits which audit rows are included in this report run.",
+    "text": "限制此報告運行中包含哪些審核行。",
     "source_sha256": "fa07c568abf8b670db080961b88276f3066646115c515137824b6c1ac0d62796"
   },
   "validateOnlyCheckbox": {
@@ -2060,7 +2060,7 @@
     "source_sha256": "862fa822ba560a82b41a900ccd254b804af67e19a1fdd76209ac174905bc2587"
   },
   "platformCheckbox": {
-    "text": "Includes this OS platform in the application rule.",
+    "text": "將此作業系統平台包含在應用程式規則中。",
     "source_sha256": "1348baa8b18823d9ff3a439dd3f39f3d796d8420926e66181aa052f63bfb255b"
   },
   "scheduleEnabledSwitch": {
@@ -2144,7 +2144,7 @@
     "source_sha256": "e4fcdff4d89d7d4cd101af219fec20e0771a01ca1eb57f4c4da26f51698592d4"
   },
   "binderRationaleWizard": {
-    "text": "Opens the guided rationale wizard for documenting this finding decision.",
+    "text": "開啟用於記錄此發現決定的指導性原理精靈。",
     "source_sha256": "2ae5bd66d84e923d7ec2d550631c6b039e12759c950e44c2b1b09a1f7182f57e"
   },
   "binderSaveFinding": {
@@ -2336,11 +2336,11 @@
     "source_sha256": "a3b81d74e8d21803653164db58ed1f28bd41cd50af118d516b54cdd6bb8e185c"
   },
   "serverIdentityPort": {
-    "text": "TCP port advertised in agent settings and enrollment URLs.",
+    "text": "TCP 連接埠在代理設定和註冊 URL 中公佈。",
     "source_sha256": "592d2da682b9b3be98b7fb6b801abc575fc218103d9d1514c15da38d32886aad"
   },
   "serverIdentityScheme": {
-    "text": "URL scheme (https or http) used in the advertised server identity.",
+    "text": "公佈的伺服器身分中使用的 URL 方案（https 或 http）。",
     "source_sha256": "1d8e4776d86a20b239d10b2aab8db4c0237e30a4b23259103d52a4798b30e152"
   },
   "serverIdentitySave": {
@@ -2360,7 +2360,7 @@
     "source_sha256": "70c39d2cfce2058fa9fab3705d76a638c6d8f43f4dce7457d70cb55b0c389737"
   },
   "messageTemplateRefresh": {
-    "text": "Reloads message templates from the server.",
+    "text": "從伺服器重新載入訊息模板。",
     "source_sha256": "9810f815977a6e82bc91cb95cd31a97e5e1b246db5bec45afc778f4b3e37216c"
   },
   "messageTemplateCreate": {
@@ -2372,7 +2372,7 @@
     "source_sha256": "ba52f4411a60b49955c0a0771e8f3bf8cf4bae62487b00a2c7d330239883c086"
   },
   "messageTemplateSave": {
-    "text": "Saves this message template body and metadata.",
+    "text": "儲存此訊息範本正文和元資料。",
     "source_sha256": "f3bd6df1a992539b62a6c3994065735be890a37edaa86372948f10cef96b1867"
   },
   "messageTemplateBuiltin": {
@@ -2400,7 +2400,7 @@
     "source_sha256": "a2a68b3dee01d9459773bd42f1495db538ad55886910b0811f38f386d341958c"
   },
   "policyApprovalOpen": {
-    "text": "Opens this policy document to record an approval decision.",
+    "text": "開啟此政策文件以記錄批准決定。",
     "source_sha256": "a273f1cdd125cda1a3e7789284d7bc5e5b59433c9dab813b533fca7fcbe15c90"
   },
   "policyDecisionVersion": {
@@ -2536,7 +2536,7 @@
     "source_sha256": "3e26c7bfde6814e85939e1582e9b70d7ebd02f6400d23273992d4ed2ce5a048d"
   },
   "actionBrowseFile": {
-    "text": "Opens the file picker to choose a file for upload.",
+    "text": "開啟檔案選擇器以選擇要上傳的檔案。",
     "source_sha256": "56189d9d8a09d001cef05d9040ce6eba46b1dc7308258811f24a59d84fe8a1f8"
   },
   "actionResetColors": {
@@ -2600,7 +2600,7 @@
     "source_sha256": "7349f51995cb760d6c0a851309c1a19c2f700d6852867b9604306ba08a32ac00"
   },
   "remoteElevationIdentity": {
-    "text": "Managed identity used for the scheduled remote local elevation.",
+    "text": "用於計劃的遠端本地提升的託管識別。",
     "source_sha256": "981edb26a804a8237d069994731d3bb17f93a4626eeeae9b4b0505f869663ecf"
   },
   "eventTypeInclude": {
@@ -2644,7 +2644,7 @@
     "source_sha256": "c486334f5523727d173c7f766a5d43d59160d47675e0a4f25950a8ac8c720102"
   },
   "machinePolicyLength": {
-    "text": "Minimum password length for identities on this machine.",
+    "text": "本機上身分的最小密碼長度。",
     "source_sha256": "e2da158889fccbfe841775c126eae777e200a491e80dacb45c7004579c2f27be"
   },
   "machinePolicySecretHours": {
@@ -2696,7 +2696,7 @@
     "source_sha256": "86996298b33341878555e0cb3fdd3cfd422eb8a5d05af703eb8065dc001abcd6"
   },
   "ipScannerIpRange": {
-    "text": "Enter an IPv4 or IPv6 address, CIDR, link-local with zone (fe80::1%12), or ipv6-neighbors. Wide IPv6 prefixes use discovery, not a full sweep.",
+    "text": "輸入 IPv4 或 IPv6 位址、CIDR、帶有區域的本地鏈路 (fe80::1%12) 或 ipv6-neighbors。寬 IPv6 前綴使用發現，而不是全面掃描。",
     "source_sha256": "2d19a09bfa37e198619b800837a67735b46a1d174d3652c1aff6936b3ccae50f"
   },
   "ipScannerAddTarget": {
@@ -2780,7 +2780,7 @@
     "source_sha256": "11b6ab50dd2710772b17a3075fd993aad78217aed51309594179bea42b86827d"
   },
   "ipScannerTargets": {
-    "text": "IPv4 or IPv6 address, CIDR, link-local with zone, or ipv6-neighbors — one target per chip.",
+    "text": "IPv4 或 IPv6 位址、CIDR、帶有區域的本地鏈路或 ipv6 鄰居 — 每個晶片一個目標。",
     "source_sha256": "13edd5d3598ebaa47ef0cbe9b304dadf07263c4c4563b9f13083729b48a771f4"
   },
   "ipScannerProfile": {
@@ -2872,7 +2872,7 @@
     "source_sha256": "6312b93bacac666aa2a8bd306b41cdf7463867f420379052ee562609c850b288"
   },
   "endpointOverviewAction": {
-    "text": "Opens or refreshes details for this endpoint in the resource hub.",
+    "text": "在資源中心開啟或刷新此端點的詳細資訊。",
     "source_sha256": "c3c28bcab62d0ad1dce8cf5287d52d14b4ea0fff88226fefab52b7fe4afd65d2"
   },
   "serverDisclosureChrome": {
@@ -2996,7 +2996,7 @@
     "source_sha256": "418a2962a771f87a05a43412faf6588f9e35d0d2135b91454fe2d2003735cfb1"
   },
   "defaultPwRequireSymbol": {
-    "text": "Require at least one symbol in the enclave default password policy.",
+    "text": "enclave 預設密碼原則中至少需要一個符號。",
     "source_sha256": "bee4ccb88c7fbeffe188d54d7e3733d107f485756beaff1a9e00718545d42063"
   },
   "defaultPwSave": {
@@ -3024,11 +3024,11 @@
     "source_sha256": "2ec28da0b20c2165b24cc181fa66908d13340ddf9296e6d98d8133a7675e0183"
   },
   "regulatoryStandard": {
-    "text": "Regulatory standard selected for this disclosure or assessment step.",
+    "text": "為此揭露或評估步驟所選擇的監管標準。",
     "source_sha256": "1c360620746d5a58e82c959e80d0346f8df4b0960e912b07e82332a2d1dc6a6c"
   },
   "settingsEnvelopeField": {
-    "text": "Value written into the settings envelope for this key.",
+    "text": "寫入該鍵的設定信封的值。",
     "source_sha256": "44904272571837c25a08d4e4af2929672634251b49c2e3c6f8f609381335557f"
   },
   "trainingFrameworkToggle": {
@@ -3688,7 +3688,7 @@
     "source_sha256": "ca6d5eb607896cc4addaa62db0a839dcc002432512668719e4a69aca38f78d75"
   },
   "gdprDpiaDpoAdvice": {
-    "text": "Record advice from the data protection officer when one is designated.",
+    "text": "當指定資料保護官員時，記錄其建議。",
     "source_sha256": "d73a214ec10cb28c2b3805057f1049d0260c1e21de3d2e67fd8297c430ef062c"
   },
   "gdprDpiaPriorConsultationNotes": {
@@ -3704,7 +3704,7 @@
     "source_sha256": "a9ea27916a8700b26c123927e2f1ef520f1c2be5bfc520e22fa8b8bc02af527e"
   },
   "gdprDpiaDecisionReason": {
-    "text": "Plain-language reason for the DPIA outcome.",
+    "text": "DPIA 結果的簡單語言原因。",
     "source_sha256": "5dcaddcd0e8c431b12e74431e5b66ae835e1666300d9ed5b60898931b0641905"
   },
   "gdprDsrIntake": {

@@ -29,16 +29,16 @@
       "source_sha256": "53ff0abe15f2c4e543857c8de59b2ebbb8e57019dc44a990f5e834c84eb27598"
     },
     "unenrollButton": {
-      "text": "Mein 驗證器 abmelden",
-      "source_sha256": "89d9ad8d722bfcf7274e6e9f7d14af59e5dd2c49307714c396bd1c5dd9d9165c"
+      "text": "登出我的身份驗證器",
+      "source_sha256": "2dff66f2a4e1b12ee444e3fd88b617b2e794a89c6e831174258384e7f3da8469"
     },
     "unenrollAria": {
-      "text": "Mein TOTP-驗證器 abmelden",
-      "source_sha256": "0b297a2d2a1866b3b3f80043dde4d6d06c622e1b51f73ef5c8fc031249399a18"
+      "text": "取消註冊我的 TOTP 驗證器",
+      "source_sha256": "64dea45a35e0dfd5def410acab225c5b291a83c92af3923c43b12e1e43d9c7d0"
     },
     "confirmWarning": {
-      "text": "TOTP-Authenticator entfernen？ Bis Sie a neuen einrichten, ist Ihr Konto nur durch Passwort geschuetzt{{untilReenroll}}.行動協議。",
-      "source_sha256": "d4ee2e3b614ee59e9274cacc0c79015be63ee21b1b77b2d9ed218e810b4ed864"
+      "text": "刪除 TOTP 驗證器？在您設定新帳戶之前，您的帳戶僅受密碼 {{untilReenroll}} 保護。此操作已記錄。",
+      "source_sha256": "c68c93ddf9e9b006218cfe6c6128992c1c95246fcaa336ef12a451aaf6cde518"
     },
     "untilReenroll": {
       "text": ", bis Sie sich erneut einrichten",
@@ -49,7 +49,7 @@
       "source_sha256": "d59097c01154ea86f0e8ddeab19fad35de537bde8c7dc06c0670b563282333ba"
     },
     "currentCodeHelper": {
-      "text": "Erforderlich, weil MFA laut Policy vorgeschrieben ist.",
+      "text": "Erforderlich，weil MFA laut 政策 vorgeschrieben ist。",
       "source_sha256": "e25733c470fa38b688b248dd590b1d414fd6ffe7a5c3a8ce72ead935a90b3404"
     },
     "removing": {
@@ -79,12 +79,12 @@
       "source_sha256": "aff72ace4c9c96e04f0608e70a43200d19caf51749482d0eb35ee05fd33fc48b"
     },
     "titleManual": {
-      "text": "管理員-API-Zugriff",
-      "source_sha256": "7e094f2abbccf42cf439b8d27deb8d8698234f53af1237dfb577cca6e9cd5982"
+      "text": "管理 API 存取",
+      "source_sha256": "94be4815a1a196e33b7e69b001dd6ba94265a8332e8b073584b9c1695762b165"
     },
     "unauthorizedBody": {
-      "text": "/api/admin/ 下的受保护路由返回 401 Unauthorized。如果 IAM 会话身份验证处于活动状态，则您的登录很可能已过期 - 请重新登录。如果沒有會話驗證，瀏覽器的管理員登入密碼與伺服器上儲存的 ADMIN_TOKEN 不符（例如，在資料庫重設後或僅變更了其中一側時）。更正令牌后，硬重新加载或打开 /login 以建立新的 IAM 会话。",
-      "source_sha256": "c209b1701bc6e6d44bf4afbf28b543b6244bcf01150ebb2456ac4b1d006ede94"
+      "text": "/api/admin/ 處的受保護路由回傳 401 Unauthorized。如果 IAM 會話驗證處於活動狀態，您的登入通常會過期 - 請重新登入。如果沒有會話驗證，瀏覽器的管理登入密碼與伺服器上儲存的 ADMIN_TOKEN 不符（例如，在資料庫重設後或僅變更了其中一側時）。更正令牌後，硬重新載入或開啟 /login 以建立新的 IAM 會話。",
+      "source_sha256": "041b6f1655b35a81efdfa78f4b5903983dbc1529d06562b716ad82826463df96"
     },
     "quickFacts": {
       "text": "庫茲資訊：",
@@ -123,8 +123,8 @@
       "source_sha256": "1af0cf9dd2a1a2a0c360ce20543882a516b42122b5b2dbd55b59a52ab1546dc1"
     },
     "operatorsFooter": {
-      "text": "Fuer Betreiber：siehe docs/SECURITY.md 和 pim-app-config/docs/CONFIGURATION_STORAGE.md（HKLM-/Keyring-Layout）。",
-      "source_sha256": "21921c85d55afd80b1619b42c10d42804f7d5571af3ec2e91c58e023c026070c"
+      "text": "對於操作員：請參閱 docs/SECURITY.md 和 pim-app-config/docs/CONFIGURATION_STORAGE.md （HKLM/Keyring 佈局）。",
+      "source_sha256": "be1698d02534b1c7ef91dd333276b084f9b619d78ce8fa210d883b9124687fbe"
     },
     "openSettings": {
       "text": "設定關閉",
@@ -193,7 +193,7 @@
       "source_sha256": "c1a478b9337b6f270db2b6ad763683392a3f22697bb75df6b965eff8c50d3747"
     },
     "identityDetails": {
-      "text": "Identitaetsdetails (schreibgeschuetzt)",
+      "text": "身分詳細資料 (schreibgeschuetzt)",
       "source_sha256": "ff6219a0c6b6bfeba65add809ea630b8064364a0bec957f47e132d42fe0511b9"
     },
     "identityTemplate": {
@@ -201,7 +201,7 @@
       "source_sha256": "06a2aec62b1a2c4867015e55bf7d9f1f12a127a105b918356f655ef69605f88b"
     },
     "startOffset": {
-      "text": "Startversatz (TT:HH:MM:SS)",
+      "text": "開始通用 (TT:HH:MM:SS)",
       "source_sha256": "ecd0097b5c46d57d3dc7eed7e0b6310a2e23bd8e0b8b279ca6ea78133429f2f4"
     },
     "editRowPolicy": {
@@ -405,8 +405,8 @@
       "source_sha256": "386bb590dbea2eee5d0a8c2f2df8a6327126da74c66e523bf41b19f338f0582f"
     },
     "industryStandardHelper": {
-      "text": "选择监管或基准配置文件以预填充此身份的密码策略。選擇自訂以編輯欄位而不替換。",
-      "source_sha256": "0529dddde92a1887d3a17533f9c0ae7f96ab1b7768ef679849c776f40afc9d7f"
+      "text": "選擇監管或基準設定檔以預先填入此身分的密碼原則。選擇自訂以編輯欄位而不替換。",
+      "source_sha256": "47298d2e7fe77dc7f7786e7b3da1f4f79d9595aa6b1f867e90e7da4d1e94937a"
     },
     "saveTemplate": {
       "text": "新聞之聲",
@@ -793,8 +793,8 @@
       "source_sha256": "0c79622bf63f9526dd0f769eef0e57c57b1368b6c7df2b7e6dcda49de17e42f4"
     },
     "notAssigned": {
-      "text": "Nicht zugewiesen",
-      "source_sha256": "da974576b029198a7bd22bca6b36836269bf3f0da5606bceb686022b6b475951"
+      "text": "未分配",
+      "source_sha256": "13075c2336114cd61689ea2ff249beb20052a0afbad7f0e4b8d68fb866e568e7"
     },
     "loadTemplateFailed": {
       "text": "無法載入此使用類型的範本。",
