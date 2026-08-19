@@ -1286,6 +1286,1070 @@
       "helpAriaLabel": {
         "text": "승인자 프로필 도움말 열기",
         "source_sha256": "a1fc8efb8ae8736fd586da0a14d0d0f9ae66b58569f6bf78d03ebb77eb42a77b"
+      },
+      "summary": {
+        "text": "승인자 할당, 승인자 그룹 및 보류 중인 승인 메일 또는 SMS에 대한 알림 채널입니다.",
+        "source_sha256": "29df2ef7db5bc841e8189e6682493eb8d4e794d4dc5a00bad5965c6e55bdb7cb"
+      },
+      "title": {
+        "text": "승인자 프로필",
+        "source_sha256": "cbf902bb140934715389cd7cfbcb4093fc566b2692ad62e9b6cc1c657e8a3a11"
+      }
+    },
+    "pam__connection-points": {
+      "bullets[0]": {
+        "text": "세션을 시작하면 프록시에서 새로운 Live-Viewer를 시작할 수 있습니다(kein Fortsetzen einer geschlossenen Session).",
+        "source_sha256": "7dbbd3cb0abf477c68ac86b804db9af5fff7c72eeb04d38f64757cdbb0be2efc"
+      },
+      "bullets[1]": {
+        "text": "Zugriff는 활동적인 JIT-Freigabe 또는 Selbstgenehmigung인 stehende Berechtigung을 braucht합니다.",
+        "source_sha256": "97687603094efd695a339947bb56b0a136ac4e0ce9979787f79f90343ec78ce0"
+      },
+      "bullets[2]": {
+        "text": "Jede geoeffnete 세션 표준maessig aufgezeichnet(프록시 또는 ziel-lokal).",
+        "source_sha256": "ebd643b9e61ad5066e970b7094898ea170f89a65540a46beb277f55d2c767ddd"
+      },
+      "helpAriaLabel": {
+        "text": "연결점에 대한 도움말 열기",
+        "source_sha256": "28bc8e6472c66e030c09e004ec5b42bda0fa380aec65efc0c6c9d14e08a015ad"
+      },
+      "summary": {
+        "text": "프록시 공개 세션 및 기록된 실행을 위해 SSH, RDP 및 VNC 대상을 등록했습니다. 저장된 자격 증명은 [저장됨]으로 마스크된 상태로 유지됩니다.",
+        "source_sha256": "71912185d406d65fe1b58d37acb9c64d91780e398f17d825cdc599bef59886f5"
+      },
+      "title": {
+        "text": "연결점",
+        "source_sha256": "8dfc7a66ba5359fbc461efcc21cdfd69bcfd3e2a03ceb75320e084cb096ab372"
+      }
+    },
+    "pam__entitlements": {
+      "bullets[0]": {
+        "text": "Subjekt- 및 Zielwaehler nutzen IAM-Prinzipale, Rollen 및 Verbindungspunkte — keine rohen UUID-Felder.",
+        "source_sha256": "326de08f431ef2128bece9ec5b3c285d7b9e17efa6656f3ec006d76f40960d64"
+      },
+      "bullets[1]": {
+        "text": "Deny-Rules ueberschreiben Allow, wenn beide passen.",
+        "source_sha256": "ba8d6c89c92ea4268f04969449293452625ec4e467b321e3a22701111b2127f8"
+      },
+      "helpAriaLabel": {
+        "text": "자격에 대한 도움말 열기",
+        "source_sha256": "e97c84dd756896cf3de0e9e3d54dc73cfd6d9ecd6450f1301f26a25290bfe154"
+      },
+      "summary": {
+        "text": "누가 어떤 연결 대상을 요청하거나 시작할 수 있는지 알려주는 상설 및 적시 정책 바인딩.",
+        "source_sha256": "c71ca6af94bf8c0acf741738d8ebbbbdffa6906611417dad7d479d2385b569f6"
+      },
+      "title": {
+        "text": "자격",
+        "source_sha256": "2cc79c9e300d3cb5cb811eea6c2c28a43151fba8bf3c7634be12213a89ffc399"
+      }
+    },
+    "pam__jump-fleet": {
+      "bullets[0]": {
+        "text": "메뉴: Proxy-Zugriff → Jump & Kapazitaet → Jump-Flotte & Lastverteilung.",
+        "source_sha256": "9bc50aef3491785df67a59fe0aa0bcff712d55a06c97553292cee83836482d76"
+      },
+      "bullets[1]": {
+        "text": "인턴은 Kapazitaetszeile aic-server-local 또는 aktualisiert sie를 확인합니다.",
+        "source_sha256": "2d01a6b0cd61371a94f5beb943f57d0827c06d34dc4c813136de8280841a2346"
+      },
+      "bullets[2]": {
+        "text": "Probe-Platzierung은 Geringster Last aus(oeffnet keine Benutzersitzung)를 사용하여 Dry-Run-Auswahl을 수행합니다.",
+        "source_sha256": "dfad522163cf4991d7dd3a30c9919a9e2ccb849362c8b3a616d1663942c6b92c"
+      },
+      "bullets[3]": {
+        "text": "SSH-Vermittlung ist unabhaengig — SSH-/RDP-Ziele용 Verbindungspunkte를 사용합니다.",
+        "source_sha256": "2be1fb07750e3914851b5ed3c3bd4d168cf36f3cd42931cd6bd4d68d799966e0"
+      },
+      "bullets[4]": {
+        "text": "Operator-Leitfaden: Dokumentation → Admin-Handbuecher(Jump / Sitzungs-Proxy).",
+        "source_sha256": "76a4a500fd965499b8a873d522a642949077adb072702d7338cdf58f0e033a12"
+      },
+      "helpAriaLabel": {
+        "text": "Jump Fleet 및 로드 밸런싱에 대한 도움말 열기",
+        "source_sha256": "b12323eeb4668ff9eb831e0d4736e2d81dbad135b771341cf16020af8236bef6"
+      },
+      "summary": {
+        "text": "외부 점프 호스트와 로컬 AIC 서버 엔드포인트 전반에 걸쳐 점프/녹화 프록시 용량을 구성합니다. 프로브 배치를 통한 테스트 배치 로드 밸런싱을 위해 호스트를 배수하거나 가중치를 부여합니다.",
+        "source_sha256": "6cab6d20b5e0a9667d8ea5382a1475a90ffbe255268df716e889c02ada56021b"
+      },
+      "title": {
+        "text": "점프 플릿 및 로드 밸런싱",
+        "source_sha256": "f89b99add7792a5f141bd0a839a5574dd21d40a079b12bc9c0e3ce721288c053"
+      }
+    },
+    "pam__live__ot": {
+      "bullets[0]": {
+        "text": "Die Aufzeichnung laeuft, bis the Session endet.",
+        "source_sha256": "79f4544505936e9e78b5f35d6d9f6709aa1232c16313c13e0964bf15681ea9d3"
+      },
+      "bullets[1]": {
+        "text": "Nach the Beenden ist a neues Connect / Oeffnen noetig — diese Seite setzt keinen geschlossenen Kanal fort.",
+        "source_sha256": "ee5ed0dfffcea8e2e3bff8165b45a79aab311b093b6c4296d0ac8ac60c2a02a3"
+      },
+      "helpAriaLabel": {
+        "text": "Live-OT-Session oeffnen 도움말",
+        "source_sha256": "fcad10c98b51156d319bd4fb48ccbffdf92e40ce23c6ed2fd8b998f990ea0424"
+      },
+      "summary": {
+        "text": "Interactive aufgezeichneter Sitzungsviewer. Sie verbunden haben의 Trennen 또는 Zurueck fuehrt zur Seite.",
+        "source_sha256": "8cf3f183dbfc26278beae76d46c56aafbee4e181ce35a16cfde9a6ec56bbd287"
+      },
+      "title": {
+        "text": "라이브 OT 세션",
+        "source_sha256": "8440d38cb4237d200544e57b3079e76e37e285dfe9be04bcee91466eb4117152"
+      }
+    },
+    "pam__live__rdp": {
+      "bullets[0]": {
+        "text": "Die Aufzeichnung laeuft, bis the Session endet.",
+        "source_sha256": "79f4544505936e9e78b5f35d6d9f6709aa1232c16313c13e0964bf15681ea9d3"
+      },
+      "bullets[1]": {
+        "text": "Nach the Beenden ist a neues Connect / Oeffnen noetig — diese Seite setzt keinen geschlossenen Kanal fort.",
+        "source_sha256": "ee5ed0dfffcea8e2e3bff8165b45a79aab311b093b6c4296d0ac8ac60c2a02a3"
+      },
+      "helpAriaLabel": {
+        "text": "Live-RDP-Session oeffnen 도움말",
+        "source_sha256": "0c303678c87fd51464b5b6c511792034ba6b50f0e7835e4dcee17b0cab836b57"
+      },
+      "summary": {
+        "text": "Interactive aufgezeichneter Sitzungsviewer. Sie verbunden haben의 Trennen 또는 Zurueck fuehrt zur Seite.",
+        "source_sha256": "8cf3f183dbfc26278beae76d46c56aafbee4e181ce35a16cfde9a6ec56bbd287"
+      },
+      "title": {
+        "text": "라이브 RDP 세션",
+        "source_sha256": "f92175ae9525df488a6da8a08e863b9f93370e2decd2a6302fa778a865e4d2c4"
+      }
+    },
+    "pam__live__ssh": {
+      "bullets[0]": {
+        "text": "Die Aufzeichnung laeuft, bis the Session endet.",
+        "source_sha256": "79f4544505936e9e78b5f35d6d9f6709aa1232c16313c13e0964bf15681ea9d3"
+      },
+      "bullets[1]": {
+        "text": "Nach the Beenden ist a neues Connect / Oeffnen noetig — diese Seite setzt keinen geschlossenen Kanal fort.",
+        "source_sha256": "ee5ed0dfffcea8e2e3bff8165b45a79aab311b093b6c4296d0ac8ac60c2a02a3"
+      },
+      "helpAriaLabel": {
+        "text": "Live-SSH-Session oeffnen 도움말",
+        "source_sha256": "249ae10fa87a430b4251c035a1b8b062d092d0eb7dfb1cc825bde3f738810200"
+      },
+      "summary": {
+        "text": "Interactive aufgezeichneter Sitzungsviewer. Sie verbunden haben의 Trennen 또는 Zurueck fuehrt zur Seite.",
+        "source_sha256": "8cf3f183dbfc26278beae76d46c56aafbee4e181ce35a16cfde9a6ec56bbd287"
+      },
+      "title": {
+        "text": "라이브 SSH 세션",
+        "source_sha256": "ea6200de21d17871e3ad620c5d9dbb49c244e883df7955b92a5031366ac4b9a4"
+      }
+    },
+    "pam__live__vnc": {
+      "bullets[0]": {
+        "text": "Die Aufzeichnung laeuft, bis the Session endet.",
+        "source_sha256": "79f4544505936e9e78b5f35d6d9f6709aa1232c16313c13e0964bf15681ea9d3"
+      },
+      "bullets[1]": {
+        "text": "Nach the Beenden ist a neues Connect / Oeffnen noetig — diese Seite setzt keinen geschlossenen Kanal fort.",
+        "source_sha256": "ee5ed0dfffcea8e2e3bff8165b45a79aab311b093b6c4296d0ac8ac60c2a02a3"
+      },
+      "helpAriaLabel": {
+        "text": "Live-VNC-Session oeffnen 도움말",
+        "source_sha256": "7010566fcbd9a99d4a5a84d8188df2a8ba162ecb6f2a4bd1e6b8e41491ba40a8"
+      },
+      "summary": {
+        "text": "Interactive aufgezeichneter Sitzungsviewer. Sie verbunden haben의 Trennen 또는 Zurueck fuehrt zur Seite.",
+        "source_sha256": "8cf3f183dbfc26278beae76d46c56aafbee4e181ce35a16cfde9a6ec56bbd287"
+      },
+      "title": {
+        "text": "라이브 VNC 세션",
+        "source_sha256": "5ffb66048c48c34cb96620fe515e9316e3a418063e4e5c3c51afd1bd39cfb5a0"
+      }
+    },
+    "pam__my-requests": {
+      "bullets[0]": {
+        "text": "Verbindungspunkten의 Neue Anfragen 또는 Berechtigungen einreichen, wenn 정책 Genehmigung verlangt.",
+        "source_sha256": "68a6a4dff9d93e372167f0c5552cb7d0344c7899879b79b8bc3439fb076de564"
+      },
+      "bullets[1]": {
+        "text": "Funktionstrennung verhindert, dass Sie eigene Anfragen genehmigen.",
+        "source_sha256": "36e99ac69a8725e7480d141953704f0ea426c3778b8e864df8073bc934dd5ae1"
+      },
+      "helpAriaLabel": {
+        "text": "활성 보조금에 대한 도움말 열기",
+        "source_sha256": "e72c7d02fc02ed414ab3973ceaad468755249ddf000c02db6bce5a5a034a918e"
+      },
+      "summary": {
+        "text": "귀하에게 할당된 상시 및 적시 액세스 권한이 부여됩니다. 세션이 끝나면 로그오프하세요.",
+        "source_sha256": "44dd46437a571372b72b2c7795f9e43e47fbb263c994794b5bdaeb5a710afcc9"
+      },
+      "title": {
+        "text": "활성 보조금",
+        "source_sha256": "41a811b782ad6a9059035ec7c48828bdc1d5623736c23b9c55d8d26595025456"
+      }
+    },
+    "pam__ot-connect": {
+      "bullets[0]": {
+        "text": "OT 세션은 SSH, RDP 또는 VNC 데스크탑과 같습니다.",
+        "source_sha256": "062724c7503580798ea4d8f624c79ed8b36708467d5e7a1d86f82e247daaf7ea"
+      },
+      "bullets[1]": {
+        "text": "Statusbanner ausfuehren에서 Connect \"Erreichbarkeit pruefen\"을 확인하세요.",
+        "source_sha256": "40094fa0648b12b8f29df53f3bc18c4109e2049f5911b9973a8e5f83beb5ea69"
+      },
+      "bullets[2]": {
+        "text": "Mit gebundener Vault-Zugangsdaten kann Connect sie for the Session nutzen.",
+        "source_sha256": "b800b2db1907a137a8234d42e97e66f4b4ef575ec4347f8dc95fa82c28665585"
+      },
+      "helpAriaLabel": {
+        "text": "OT Connect 도움말 열기",
+        "source_sha256": "dae893e7ef216c7a8fb3022e3d427adfba62d58692673c04db17c522a0b9b792"
+      },
+      "summary": {
+        "text": "자산 목록 연결 작업에서 OT 프로토콜 세션을 엽니다.",
+        "source_sha256": "f4e1e47e255ecb5c4e498fb240f0e9b71d99a3ad796fc2bab8dc7515d38042f8"
+      },
+      "title": {
+        "text": "연결하다",
+        "source_sha256": "1a2303ede07493acc7caaa7c737f3c52bcc9cf04372be19ed1b0af6b9f2c791e"
+      }
+    },
+    "pam__ot-credentials": {
+      "bullets[0]": {
+        "text": "Gespeicherte Passwort에 대한 Altes Passwort 자세히 보기.",
+        "source_sha256": "7be70ce38d38153274138bd60fb361dda166ae72adcc44245fce3e30e2f803ff"
+      },
+      "bullets[1]": {
+        "text": "Zeitplaene pro Ziel auf the jeweiligen Konfigurationsseite.",
+        "source_sha256": "31cebb6f6ab23dfa7253cc5bf7be9fbe11524eb4a4ee01b80b94e912e3a4176f"
+      },
+      "helpAriaLabel": {
+        "text": "OT 자격 증명에 대한 도움말 열기",
+        "source_sha256": "6a60d949389a35628d09bb7e7d366b442399e5ae32f9b7789f4ad2b7e0c36c56"
+      },
+      "summary": {
+        "text": "필요에 따라 OT 비밀번호를 교체하고 투명 공개를 요청하세요.",
+        "source_sha256": "f9980d2aeb0688ebc528f216b306d7952902b5f49ed9343e1ac66b4731531096"
+      },
+      "title": {
+        "text": "신임장",
+        "source_sha256": "d48a617c7da5163c44f117b9b23d8c920e69b4aa83d7b6570d71a66f3a857183"
+      }
+    },
+    "pam__ot-discovery": {
+      "bullets[0]": {
+        "text": "IPv4-CIDR-Netze eingeben, Sofortscan용 \"Erkennung starten\".",
+        "source_sha256": "80cbef4bb0507b343a653e7b2464d714d7ef58781370c36e296080c8320d3114"
+      },
+      "bullets[1]": {
+        "text": "도구 설명에서 Luecke 및 naechste 작업을 \"Teilweise\" 상태로 표시하세요.",
+        "source_sha256": "015f063c447d70a5fdc70b81a97e6da95f9b65eb05e69ee04fb53d799a079b7f"
+      },
+      "helpAriaLabel": {
+        "text": "OT Discover 도움말 열기",
+        "source_sha256": "0d908deeeee5811673d0d121505444625c0db2f0133e2c66b7afcd710af3655b"
+      },
+      "summary": {
+        "text": "스캔 네트워크를 설정하고, OT 검색 작업을 실행하고, 일정 활성화 및 간격을 편집하고, 자산을 검토합니다.",
+        "source_sha256": "9797dd303abfb8f5fad80803372404fb6d84488b51ff5e087de20f420645e5ee"
+      },
+      "title": {
+        "text": "발견하다",
+        "source_sha256": "d4a33d5b78bccebe3f16843dc30e6c0f73b4eb6efb4e7114ddfebde7fa2c9954"
+      }
+    },
+    "pam__ot-inventory": {
+      "bullets[0]": {
+        "text": "SSH, RDP 또는 VNC가 아닌 oeffnet을 OT-Protokollsitzung에 연결하세요.",
+        "source_sha256": "cc16bcc2efbda2cac14194f20637bcb52450b9239e04b054f77bfd32c383db7f"
+      },
+      "bullets[1]": {
+        "text": "Konfigurieren oeffnet not-geheime Zieleinstellungen.",
+        "source_sha256": "4cf8956a3ea54c99e0c15a9cb538df18eb446a12d0e3612bce25f156ecf5ae35"
+      },
+      "helpAriaLabel": {
+        "text": "OT 인벤토리에 대한 도움말 열기",
+        "source_sha256": "8f7a2e66ccb7e5548a6929237d4f3f7e94dbb72b059b3792e04dcb5bb0d21c4c"
+      },
+      "summary": {
+        "text": "OT 자산 목록. 부분적이란 아직 프로브에 존재하지 않음을 의미합니다. 다음 작업을 위해 상태 칩을 마우스로 가리키세요.",
+        "source_sha256": "9d1e2107b072cbb7f193545da432e729c611314c4c8b37b4a8b9b023587fa5a6"
+      },
+      "title": {
+        "text": "목록",
+        "source_sha256": "758f487fe8e9fcc59cec4694d95a9032224f967b29f39543a1fb04e2901b079e"
+      }
+    },
+    "pam__ot-rotation": {
+      "bullets[0]": {
+        "text": "Gespeicherte Passwort에 대한 Altes Passwort 자세히 보기.",
+        "source_sha256": "7be70ce38d38153274138bd60fb361dda166ae72adcc44245fce3e30e2f803ff"
+      },
+      "bullets[1]": {
+        "text": "Zeitplaene pro Ziel auf the jeweiligen Konfigurationsseite.",
+        "source_sha256": "31cebb6f6ab23dfa7253cc5bf7be9fbe11524eb4a4ee01b80b94e912e3a4176f"
+      },
+      "helpAriaLabel": {
+        "text": "OT 자격 증명에 대한 도움말 열기",
+        "source_sha256": "6a60d949389a35628d09bb7e7d366b442399e5ae32f9b7789f4ad2b7e0c36c56"
+      },
+      "summary": {
+        "text": "필요에 따라 OT 비밀번호를 교체합니다(자격 증명과 동일한 작업 공간).",
+        "source_sha256": "7a274327e9c695ed7a0f57d30f6d3a82c12031e6922b8c840f336666111b7359"
+      },
+      "title": {
+        "text": "신임장",
+        "source_sha256": "d48a617c7da5163c44f117b9b23d8c920e69b4aa83d7b6570d71a66f3a857183"
+      }
+    },
+    "pam__ot-sessions": {
+      "bullets[0]": {
+        "text": "타임라인을 위한 Sitzungszeile oeffnen.",
+        "source_sha256": "0fd0d29ce8acee545559479095240c1ecb43105e1969d872d912691e0b91b00f"
+      },
+      "bullets[1]": {
+        "text": "OT-Protokollsitzungen — keine SSH-, RDP- 또는 VNC-Aufzeichnungen.",
+        "source_sha256": "c24aa35ed9e6fd0fc9b4f226431eded59b775a0095596fa65c9a01149c114c59"
+      },
+      "helpAriaLabel": {
+        "text": "OT 세션에 대한 도움말 열기",
+        "source_sha256": "1343f91cfac9d8d8952e16b17ec6d57721e3a2055a228c77e38abf005dc75c03"
+      },
+      "summary": {
+        "text": "공개 OT 세션 및 세션 증거를 검토합니다.",
+        "source_sha256": "a48b11497240464d54dee92d43944d9b723acb1807c1d6d87d3114f1dc6d387e"
+      },
+      "title": {
+        "text": "세션/증거",
+        "source_sha256": "e1dc0bdde30ae558c4c233fdafc95c2e946e0b762d7217d59bee78b4c29245a2"
+      }
+    },
+    "pam__ot-startup-wizard": {
+      "bullets[0]": {
+        "text": "jedes akzeptierte 자산에 대해 schreibt Audit-Eintraege(ot_inventory_enroll)를 등록합니다.",
+        "source_sha256": "de5c40dab2c992585d19ec5abf90bdb910e40184552b4ddb6bf3b3f93664d908"
+      },
+      "bullets[1]": {
+        "text": "Status-Chips nutzen Live, Teilweise 또는 Blockiert — Liefernachweis, kein 규정 준수-Urteil.",
+        "source_sha256": "3a059029f49d5b47395f82c956b7e575adbadc494615dc55df2ee4ab745c1a94"
+      },
+      "helpAriaLabel": {
+        "text": "OT 시작 마법사 도움말 열기",
+        "source_sha256": "47ff8a6c5bd61a19f146d763ad3a848f04e9d3a242eb044d952518692f3816b4"
+      },
+      "summary": {
+        "text": "안내식 설정: 환경 이름 지정, 검색 실행, 대상 검토 및 인벤토리에 등록.",
+        "source_sha256": "1fe96afd2040036089256ee5df2a2825c04102985a10dd6238a94cb7db490b97"
+      },
+      "title": {
+        "text": "시작 마법사",
+        "source_sha256": "f0324c059c45638ca445decb1d6ff29699ae874adc031002ea85efde2f3f0398"
+      }
+    },
+    "pam__session-control": {
+      "bullets[0]": {
+        "text": "Jede Action은 Begruendung 문서를 작성하고 Audit-Ereignis를 작성합니다.",
+        "source_sha256": "1d8d6a10143a6a232f5887498453aac011f4c418a9364a6d2e04c364c57dc8bd"
+      },
+      "bullets[1]": {
+        "text": "Ausstehend- 및 Aktiv-Zaehler erscheinen은 배너 ueber the Raster에 있습니다.",
+        "source_sha256": "4093be59dc2aa59ccca3801d231e0d30eedbccdab2f74da55999895e503839bd"
+      },
+      "helpAriaLabel": {
+        "text": "세션 제어 도움말 열기",
+        "source_sha256": "ac5e6c5eea97afdd35b73df9b42d36b4059fd57b9161b560113ce88d61cefb25"
+      },
+      "summary": {
+        "text": "권한 있는 프록시 세션을 모니터링, 승인, 거부 및 종료합니다. 내 워크스테이션의 연결 또는 연결 지점의 열기와는 다릅니다.",
+        "source_sha256": "bb5c03d814a759217803a8b6d35c2028ee115a924a0c578eb48004a63394ffed"
+      },
+      "title": {
+        "text": "세션 제어",
+        "source_sha256": "25f4f0d5ccddecf2a4f192b81ad8082c84f243ab5065618c6eca38a28985eb0f"
+      }
+    },
+    "pam__sessions": {
+      "bullets[0]": {
+        "text": "Jede Zeile은 브라우저의 entschluesselt 및 gelesen wird인 einer Detailansicht에 링크되어 있습니다.",
+        "source_sha256": "f3448ea457b57b5d55380c82988750be5657c2065a43bd42f36d5e177afd0958"
+      },
+      "bullets[1]": {
+        "text": "Entscheidungs-Chips zeigen Erlaubt 또는 Verweigert zum Aufzeichnungszeitpunkt — kein 규정 준수-Urteil.",
+        "source_sha256": "ecb0c7950f44d76260a9fa087a9dcbbac25b27a41e4a08c90f06cd0c93135bb6"
+      },
+      "helpAriaLabel": {
+        "text": "세션 녹화에 대한 도움말 열기",
+        "source_sha256": "a77299490c116f80d81395566a17f825b7d9e06801969ef4fd295dfbeef026d1"
+      },
+      "summary": {
+        "text": "암호화된 프록시 세션 녹화(SSH asciicast, RDP MP4 및 관련 형식)를 찾아보고 재생할 수 있습니다.",
+        "source_sha256": "ce6de765f7137a8cde051df1e14b863383ec03465f50d00dc3745c208c84920c"
+      },
+      "title": {
+        "text": "세션 녹음",
+        "source_sha256": "2627b4d32c12839a86cabeab7d569787d5f0d34bef8c1827449f005b46f1c530"
+      }
+    },
+    "privilege-jobs": {
+      "bullets[0]": {
+        "text": "Anwenden-Transport waehlen: Lokaler 에이전트 또는 WinRM(원격 비 에이전트 로컬 권한 상승).",
+        "source_sha256": "8dc991028a1044ac1b11a9b0f344192226e1f783005a1791a518e39a29295f24"
+      },
+      "bullets[1]": {
+        "text": "Verzoegerung(Start Wann) 및 Dauer(Laufzeit bis Auto-Widerruf) setzen.",
+        "source_sha256": "9a4ee4781ba551f778c18648f64bd4b540d8933a097e78f6799ec340adeb0b4c"
+      },
+      "bullets[2]": {
+        "text": "WinRM 공식은 원격 비에이전트 로컬 권한 상승에 따라 /elevation에 적용됩니다.",
+        "source_sha256": "766741d901623c4d6999a74f3703487e858af6d3caffcd11f703c94ad7b7322b"
+      },
+      "helpAriaLabel": {
+        "text": "직접 고도에 대한 도움말 열기",
+        "source_sha256": "e8da4f6e9c74344246b8ad05c7d6822f05a2746ac96a6c59c5fd7828f44a1545"
+      },
+      "summary": {
+        "text": "로컬 에이전트 또는 원격 WinRM(에이전트가 아닌 로컬 권한 상승)을 통한 서버 시작 시간 제한 멤버십. 도메인 컨트롤러가 구성될 때까지 도메인 그룹 승격을 사용할 수 없습니다.",
+        "source_sha256": "368b45b440259001ed597200c56ff61b0ac62198845266bfd1a476099b93bf30"
+      },
+      "title": {
+        "text": "직접 고도",
+        "source_sha256": "a5a51f424e108e4e1ceed6da7ee172e65a89218c4cd5c6d144859cb119930471"
+      }
+    },
+    "proxied-access": {
+      "summary": {
+        "text": "SSH 및 RDP 세션 브로커링: 연결 지점, 녹음, 녹음 에이전트, OCR 메타데이터 파이프라인, 저장 위치, 세션 제어, 명령 거버넌스 및 액세스 요청 승인. Credential Vault는 액세스 및 신원에 따라 유지됩니다.",
+        "source_sha256": "b443097e8554014422d747976c403ce6ffc556f79f451f99e4acf5ca10e3575d"
+      },
+      "title": {
+        "text": "프록시 액세스",
+        "source_sha256": "ef5942ac2ea13500a9d637b4e078123c18e004de2b783f1c5516d2491afbe47b"
+      }
+    },
+    "remote-access": {
+      "bullets[0]": {
+        "text": "PAM-Verbindungspunkt zum 호스트 패스에 따라 aufgezeichnete 프록시 세션을 oeffnet에 연결합니다.",
+        "source_sha256": "4d00e91a6742ed747a4b107b3a8de34434b4a3536baf3ebb0f2dfdb636fc4e9f"
+      },
+      "bullets[1]": {
+        "text": "Favoriten 및 Zuletzt verwendet werden nur in diesem Browser gespeichert.",
+        "source_sha256": "698a2f212eb111dd4b2c6744fa86ae3834bb4319b4aa298bd2ede95a2e2b71cb"
+      },
+      "bullets[2]": {
+        "text": "Wenn Sie nur Ihre zugewiesenen Arbeitsplaetze brauchen, nutzen Sie Meine Arbeitsplaetze.",
+        "source_sha256": "690aee3e2a2b42927a32c6f3e550edc611983b5a1a43f61df182398b9d06f437"
+      },
+      "helpAriaLabel": {
+        "text": "원격 액세스 도움말 열기",
+        "source_sha256": "36b298664d66fb39c3a47ddab3c457d13dd274fc71f7adc2096d026ec9f876f1"
+      },
+      "summary": {
+        "text": "세션 채널이 있는 시스템의 운영자 연결 표면입니다. 연결 대상 권한이 필요합니다. 평가자와 최종 사용자는 대신 시스템 또는 내 워크스테이션을 사용합니다.",
+        "source_sha256": "5cd9402d9dfcd67bf17ad1e07ef105a830e59a2e6f8be8e8ec6a27372b23ea0f"
+      },
+      "title": {
+        "text": "원격 액세스",
+        "source_sha256": "7946a3c57900c0161ebb446d0e12581a1d471e1e756286511f16d2024bc8333c"
+      }
+    },
+    "reports": {
+      "bullets[0]": {
+        "text": "Berichtszentrum(diese Seite): Katalog, Zeitplaene, Zustellung 및 Archiv.",
+        "source_sha256": "9db980bc4329375f1af9759268dc5d0d902a9f6733a470091d5ce13fbb3f11ac"
+      },
+      "bullets[1]": {
+        "text": "평가 바인더: 내보내기 형식이 포함된 lebendiger CMMC-Enclave-Binder(평가 아래).",
+        "source_sha256": "187c074aea2155bae2bc2a919f82d28cff1b59ba5b70c20b757ebd73de35d079"
+      },
+      "bullets[2]": {
+        "text": "Aktueller Compliance-Stand: Posture and Feststellungen pro Maschine(평가에 따름).",
+        "source_sha256": "24048df995ba84348b71d3bd824629e58ba2f13b673ba0e132ada25a073f5863"
+      },
+      "bullets[3]": {
+        "text": "외부 Arbeitsplatz-Bereitschaft: ERASG-verbindende 클라이언트(평가, 레거시 북마크 워크스테이션 보증 leiten dorthin um).",
+        "source_sha256": "221b1d7199886325d73ad54bec040d3a2c73013809700a448ace25987de555c1"
+      },
+      "bullets[4]": {
+        "text": "Berichtsvorlagen(diese Berichtsgruppe) / 프로브 팩(평가 제외): Praesentationsoverlays 및 skriptierte Nachweise.",
+        "source_sha256": "4f436cc2b94d6e70ace28b55d60334b16c5bb7a9d2d85db04566bc3a61afbf04"
+      },
+      "bullets[5]": {
+        "text": "Katalogkarten은 일반적인 필터 및 분류 기능을 사용하여 PDF, CSV 또는 JSON-Laeufe를 시작합니다.",
+        "source_sha256": "1aedafd4177480b72be8b4373fbf3cc72d6f18071beeb9c28b52fd5a2d97cd5a"
+      },
+      "helpAriaLabel": {
+        "text": "보고서 센터 도움말 열기",
+        "source_sha256": "858e26b128ab5a240ba67207f7c877b78280f63592bb4f48426baf4e08e4606c"
+      },
+      "summary": {
+        "text": "규정 준수 및 증거 → 보고서에서 운영 및 규정 준수 증거를 확인하세요. 평가 바인더, 현재 상태 규정 준수 및 외부 워크스테이션 준비 상태는 규정 준수 및 증거 → 평가 아래에 있습니다.",
+        "source_sha256": "9016e5d1a992fe34f90fbe1027b9f98b3a411face7b8fa53d2cde6e637b53f91"
+      },
+      "title": {
+        "text": "신고센터",
+        "source_sha256": "77ecbfb06f1a609280278311cc52101ed3552be5670a1b26e4c17a7a6d17b475"
+      }
+    },
+    "reports__templates": {
+      "bullets[0]": {
+        "text": "Mitgeliefert = 정상 콘트라스트를 사용한 schreibgeschuetzt; Hauptaktion ist Als benutzerdefinierte Vorlage klonen.",
+        "source_sha256": "4494af878c60a1a1221542f4d79d09ad9b610db73be317164ca3321cb754339e"
+      },
+      "bullets[1]": {
+        "text": "Eigene Overlays duerfen Beschriftungen/Spalten/Wortlaut aendern; Datenquelle 및 수집가 bleiben mitgeliefert.",
+        "source_sha256": "408f2d0be0dfa883465c0cdf444984f68a447badae3806d38b24639bfddeebc5"
+      },
+      "bullets[2]": {
+        "text": "Drift-Hinweise erscheinen, wenn the Ursprungsversion the Mitlieferung fortschreitet; 일시 삭제 보관.",
+        "source_sha256": "074d64eb653a064b5f3ef181ad0db8f2398d89e4dde024943ea6061b0fd369d9"
+      },
+      "helpAriaLabel": {
+        "text": "보고서 템플릿에 대한 도움말 열기",
+        "source_sha256": "458a55ea83161c0710f3df5f3d619f566feb193450067e5606105caff4eaea99"
+      },
+      "summary": {
+        "text": "제공된 보고서 센터 정의(불변) 및 다중 테넌트 사용자 정의 프레젠테이션 오버레이.",
+        "source_sha256": "2eddd9577d6f583ee37969213311917e8d7360503ae1b251318b2bfc8d2c604a"
+      },
+      "title": {
+        "text": "보고서 템플릿",
+        "source_sha256": "6c355b0cbdc0818809744f3fb18507f8ab92d2afba980d04250d60c5406caea5"
+      }
+    },
+    "root": {
+      "bullets[0]": {
+        "text": "Fehlende Kacheln zeigen \"Noch not verfuegbar\" — nie a erfundene Null.",
+        "source_sha256": "97ba6285068005706f1e7f090c9f694836a1efed630ce0616c74455e7c6459d5"
+      },
+      "bullets[1]": {
+        "text": "Teilweise Kacheln은 kurzer Begruendung과 ​​함께 \"Teilweise\" 마커로도 사용됩니다.",
+        "source_sha256": "b4eac29e25d6c8dfb9e6eb3dd5bf29dd9ab336160e91de832853d90d1bb5b7b7"
+      },
+      "bullets[2]": {
+        "text": "Nach oben / Nach unten과 함께하는 Anpassen. Org-Vorgabe erfordert Dashboard.publish를 Veroeffentlichen으로 만드세요.",
+        "source_sha256": "6a45bdf5fd2a2ba99ef38f37fa5933393f30b6da7fc121a60870bf63fb642c69"
+      },
+      "bullets[3]": {
+        "text": "Aufgaben-Favoriten에 대한 바로가기 위치입니다.",
+        "source_sha256": "402d96fbe5b70c4820b1c4651a216948ac5bae94fac16ccf994599b0a2a5656b"
+      },
+      "bullets[4]": {
+        "text": "Ohne Dashboard.view werden Sie to Favoriten weitergeleitet.",
+        "source_sha256": "0c580564f7d2f4bb71c4ff588c5a852631fca225b9a431148702ea10086cb755"
+      },
+      "helpAriaLabel": {
+        "text": "대시보드 도움말 열기",
+        "source_sha256": "5471d553e22bc57b3a20fe8c63ec6964a0dc5078f99e12f85589ac93469eb4f1"
+      },
+      "summary": {
+        "text": "증거 범위, 위험 및 노출, 수행된 작업으로 그룹화된 실행 전달 타일입니다. 개수는 제품 배송만 설명하며, 적용 범위나 평가 결론은 설명하지 않습니다. 이제 작업 바로가기가 즐겨찾기에 표시됩니다.",
+        "source_sha256": "bb87867dc88fb681f41e026a8d85f842d6b19ed8e07331db6fbff72068ab7783"
+      },
+      "title": {
+        "text": "계기반",
+        "source_sha256": "67b696468610b879ed7f224dbf6b0861f27e39d20454cb9d7af1ec52d3e5eeaa"
+      }
+    },
+    "secure-share": {
+      "bullets[0]": {
+        "text": "Nutzen Sie \"So funktioniert the Verschluesselung\"은 Formate, Schluesselverwahrung 및 wann Teilen vs.",
+        "source_sha256": "5883e12b5e1d7c6ac1d980b21061e3e6e365c8c8a2e533c51bc39cd360ec65b6"
+      },
+      "bullets[1]": {
+        "text": "CUI darf는 Klartext-Export verlassen — nur verschluesselter Austausch 또는 ACL innerhalb des Enclave가 아닙니다.",
+        "source_sha256": "31f8cd1a67632614de83eb29c91ffe8ee1265f445bf1d54d935d28589e6575e1"
+      },
+      "bullets[2]": {
+        "text": "Armored-Export는 Paste-Kanaele용 ASCII-Huelle이 포함된 dasselbe Paket, oeffentlichem Schluessel이 포함된 keine PGP-Nachricht입니다.",
+        "source_sha256": "0531989bd5e90fe9701fc3ce9a3b75a6b87c21f923e883823ad57b55f6c51edc"
+      },
+      "helpAriaLabel": {
+        "text": "보안 공유 도움말 열기",
+        "source_sha256": "7aece7d2e8234a4581dd0070c616d00216b3826fd3373d0bd651bf2cb62703ed"
+      },
+      "summary": {
+        "text": "로그인, 메모, 파일을 위한 암호화된 저장소입니다. 관리 액세스 권한으로 이 Enclave 내부를 공유하세요. 내보낸 .json 패키지는 AIC UniversalEnvelope 암호화(OpenPGP 아님)를 사용합니다. 가져오기는 동일한 볼트 키를 보유하는 AIC 서버에서만 작동합니다.",
+        "source_sha256": "186154eb4445b7dc457dc78dbffa10e69a92b58b62e13a1835f216b9f6c80021"
+      },
+      "title": {
+        "text": "보안 공유",
+        "source_sha256": "c2b1d79f4ae639052940dccfcbb6d0146e3661b36ca208d1cae0b50b22a019f4"
+      }
+    },
+    "settings": {
+      "bullets[0]": {
+        "text": "구성 → 에이전트 umfasst Einstellungsdateien, Bereitstellung 및 Vorgaben, ausgegebene 에이전트 설정 geschrieben werden.",
+        "source_sha256": "72ed8b03495daf26397c990a4b45167a4a745b941addc70180ea43f3c40ea91f"
+      },
+      "bullets[1]": {
+        "text": "구성 → 서버 umfasst TLS, Identitaetsanbieter, Krypto, Messaging 및 Diesen Host용 서버 관리.",
+        "source_sha256": "17ca289d1c3bd4f3e0e24f9e80c166f698033a88ab8729e9d68876ee4d5bb184"
+      },
+      "bullets[2]": {
+        "text": "Unternehmensprofil haelt Organisationsnamen 및 Kontakte for Hinweise; Erstkonfigurations-Assistant fuehrt durch는 Ersteinrichtung des Enclave입니다.",
+        "source_sha256": "765536f45af6709c1c359f4fdb97075ae84439a61c511d4ea56ab3510955e877"
+      },
+      "bullets[3]": {
+        "text": "Nutzen Sie the Schnellsuche(Strg+K), um direkt to jeder Konfigurationsseite to springen.",
+        "source_sha256": "91ceffdffb394e1bb884a4f95e338a62e0fd2a81ada328c584356ab27bcc4099"
+      },
+      "summary": {
+        "text": "에이전트 기본값, 이 서버 플랫폼, 운영자 메시징 및 랩 전용 도구를 구성합니다.",
+        "source_sha256": "01d15594ca6f8a68464ce4781c5ed6be15cdee3e32f981ad5c0bd3f2e2547d61"
+      },
+      "title": {
+        "text": "구성",
+        "source_sha256": "b332c3492d5eb10a118eb6d8b0dcd689bc2477ce2ae16b303753b942b54377bc"
+      }
+    },
+    "settings__agent": {
+      "summary": {
+        "text": "에이전트 설정 파일, 플릿 프로비저닝 및 프로비저닝 시 모든 에이전트에 기록되는 프로그램 수준 기본값. 구성 → 에이전트에서 엽니다.",
+        "source_sha256": "44e503117c5e64ac4a3091aa6678df18d003c0daa22cc6dd77e0ffdc66230165"
+      },
+      "title": {
+        "text": "에이전트 개요",
+        "source_sha256": "0fc079dd3842137ea97966660fd6142ed41cda042955a4e72a7d49beeab58540"
+      }
+    },
+    "settings__agent__fleet-versions": {
+      "bullets[0]": {
+        "text": "Daten Teilweise / Live — zusammengesetzt aus /admin/systems 체크인-Anreicherung; Live-AppConfig-스냅샷이 중요합니다.",
+        "source_sha256": "e6ec1862d73434f4abc1f10cc5a9248d8fa0de26c45d26fe08279caa2c610215"
+      },
+      "bullets[1]": {
+        "text": "Push-Erreichbarkeit는 함께 배치된 Push-IPC pruefbar를 위한 nur입니다. entfernte Zeilen zeigen Selbstmeldung 또는 not-of-diesem-Server.",
+        "source_sha256": "1cf52ccb94c37efe296496e2372840a75aa1c41923d045d4afa7123b22b96039"
+      },
+      "bullets[2]": {
+        "text": "Propagierung, Offenlegungen, Recording-Agents 및 Passwortwiederherstellung bleiben auf the bestehenden Seiten에 대한 딥 링크입니다.",
+        "source_sha256": "1b65eade273f0ec61e1cff51590146609efa1b01ee257dca9c2e35be33a815bc"
+      },
+      "helpAriaLabel": {
+        "text": "Fleet 에이전트 버전에 대한 도움말 열기",
+        "source_sha256": "87701a8eb17979b49afae89f83745cdc6bb85d81a318edff78a9847d89874bb6"
+      },
+      "summary": {
+        "text": "읽기 전용 차량 테이블: 시스템 목록의 시스템, 에이전트 버전, 체크인 기간, 푸시 연결 가능성 및 런타임 경고.",
+        "source_sha256": "777c30a4cba73f9c925abbc4a8272f0bbb19be6f9c629d98b91ce4ff81521843"
+      },
+      "title": {
+        "text": "함대 에이전트 버전",
+        "source_sha256": "c418347b4ac585559970d35e3d5ac3c595675282a3840fbe2509e91136cd7e67"
+      }
+    },
+    "settings__agent__management": {
+      "bullets[0]": {
+        "text": "Getrennte / luftgekapte는 nutzen weiterhin lokale Tauri-, Win32- 또는 CLI-Konfiguratoren을 호스팅합니다.",
+        "source_sha256": "3477e1d713a90c68a433b5925d8fdc617c9988627905cc762d070cc31fc3d561"
+      },
+      "bullets[1]": {
+        "text": "Der Tab Faehigkeiten verlinkt to Propagierung, Offenlegungen, Recording-Agents and Passwortwiederherstellung unter Endpunkte — Keine doppelten Workflows.",
+        "source_sha256": "efaa486393c47ce793a5a15631ea711379d8db6e90d866166d9844eede72e2b8"
+      },
+      "bullets[2]": {
+        "text": "Flotten-Agent-Versionen은 고유한 schreibgeschuetzte Tabelle aus the Anreicherung the Systemliste입니다.",
+        "source_sha256": "6805793ae3e43db8b3afb0a2b376c40678136c76216459e25e2e92437bb38e3b"
+      },
+      "helpAriaLabel": {
+        "text": "에이전트 관리 도움말 열기",
+        "source_sha256": "e2319669afc10415c7ab09961733efeadc9afe33d0940b5d187a9a13deab6807"
+      },
+      "summary": {
+        "text": "연결된 등록 에이전트의 중앙 허브: 마지막 체크인 개요, 허용 목록에 있는 푸시 설정, 다시 로드/진단 및 기능 딥 링크.",
+        "source_sha256": "683d1f7685ca8f1fca6f7a89cbde84dca73f0fb744c09661f11ae24b0822789e"
+      },
+      "title": {
+        "text": "에이전트 관리",
+        "source_sha256": "1501a898a9d8652df45ba47b7c8de147664f3c2e79a597ef166336aaee930b72"
+      }
+    },
+    "settings__agent__propagation-templates": {
+      "bullets[0]": {
+        "text": "Ablauf: Im Katalog bearbeiten & speichern → Install pushen → Identitaeten binden → Am Agent testen.",
+        "source_sha256": "0b0b8da3300d732196298a612d1e257cbf7c2517d60494747e76219beb658a00"
+      },
+      "bullets[1]": {
+        "text": "Phasen: 사전 회전(beruhigen) → Passwortaenderung → 확인(post-rotate). Agent-Kopie가 푸시에 대해 테스트해 보세요.",
+        "source_sha256": "bb801bee89c44e6e814df5d669303e6b9db33ed1e4342a6a89ad24e1b649d1a8"
+      },
+      "bullets[2]": {
+        "text": "Lebenszyklusphasen의 Skripte laufen(사전 회전, usw 확인) — Sitzungsvermittlung(siehe Proxy-Zugriff)이 아닙니다.",
+        "source_sha256": "eee234ac056c4218c020f5a284bf7efa05582d82fc6297cf9dd5a433e93aa7d2"
+      },
+      "bullets[3]": {
+        "text": "Lab-Skelett 또는 Identitaeten binden 및 dieser Seite pushen의 Aus Standardvorlage anlegen.",
+        "source_sha256": "25b2c166b1b0a5c339108ed2a4753bf6d6816177622c4ad65c8b164f6250016c"
+      },
+      "bullets[4]": {
+        "text": "Operator-Leitfaden: pim-offline-client/docs/PROPAGATION_SCRIPTS_LIFECYCLE.md",
+        "source_sha256": "f13733282dcfc7d4629cbd149b7f00a0a6ef4d9e5e8d1914303ac78f7e61cfcb"
+      },
+      "helpAriaLabel": {
+        "text": "전파 템플릿에 대한 도움말 열기",
+        "source_sha256": "b8492eb974b668a72a6c9d61737dcedc54a20752c722f3ccbba85313961fe8fd"
+      },
+      "summary": {
+        "text": "사전/사후 순환 스크립트에 대한 전파 스크립트 카탈로그입니다. 연결된 에이전트에 스크립트 세트를 푸시하거나 에어갭 엔드포인트에 대해 내보냅니다.",
+        "source_sha256": "8cf89cc01b0dc3809000f3f13ec85e90b8beae2679947868b0f9e62fc2d8b5c1"
+      },
+      "title": {
+        "text": "전파 템플릿",
+        "source_sha256": "048324f714c8fd03e17a37f119a09e5107b896399e08878a2ef0883fd478a5f6"
+      }
+    },
+    "settings__branding": {
+      "bullets[0]": {
+        "text": "Klassifizierungs- 및 Anmelde-Chrome 및 Admin-Offenlegungsbannern의 Hinweisfarben gelten.",
+        "source_sha256": "feceef9f1c68dc2b877d5ed593ab034c7abc2fcc4e1645468a0306886c762de5"
+      },
+      "bullets[1]": {
+        "text": "Standardfarben folgen AIC-Navy 및 Stahlblau aus 핵심 자산(kein oranger Marken-Chrome).",
+        "source_sha256": "a21e72bc6281b219fe306e72407803c05d79fd5de15161bb4f71524185b646c1"
+      },
+      "bullets[2]": {
+        "text": "Server-Offenlegungen / Operator-Offenlegungen에 대한 Offenlegungen 블레이브의 배너 텍스트입니다.",
+        "source_sha256": "d0c10fa0270609c84f52c7117e070980e225522196f57955e19aa073bf1e90bd"
+      },
+      "summary": {
+        "text": "로그인 및 관리자를 위한 제품 로고, 브랜드 이름, 중앙 집중식 배너/크롬 색상.",
+        "source_sha256": "b056c687cdbb73357751b2dd586c1fdc2f1d5bc65db462e13225d72ff9c4f64a"
+      },
+      "title": {
+        "text": "브랜딩 및 스타일",
+        "source_sha256": "ee7daadb4c5926d0379e81db39692ecd9f295038cb705ca7b0255a1a2ffbb106"
+      }
+    },
+    "settings__company": {
+      "bullets[0]": {
+        "text": "Kanonischer Speicher sind Variablen the Offenlegungsvorlagen(gleiche Werte wie Operator-Offenlegungen → Vorlagenvariablen).",
+        "source_sha256": "d736972f03dfb939bdfe1d6f5b3f2db5eb048b8ea0cfd4eb769c259887451735"
+      },
+      "bullets[1]": {
+        "text": "로고, Markenname 및 Bannerfarben은 Branding 및 Stil에 속합니다.",
+        "source_sha256": "30eab20865ed01a7c64ca5bea5eaf494c68b020c79d4d3ad9b9f5e46e6919e92"
+      },
+      "bullets[2]": {
+        "text": "Server-Offenlegungen / Operator-Offenlegungen에 대한 Erweiterter Vorlagentext bleibt.",
+        "source_sha256": "c4cde937687000eeeeb15d78d6f1ef2130eb8a5920733b019298fac0a6ce89bd"
+      },
+      "summary": {
+        "text": "로그인 알림, 배너 및 상담원 공개 템플릿에 사용되는 조직 이름, 지원 연락처 및 분류 시스템 이름입니다.",
+        "source_sha256": "b1e5b0b6fdcf6886cfc24e13b7bd2ce7b6075db9e521c3aac74a502e26281c01"
+      },
+      "title": {
+        "text": "회사 프로필",
+        "source_sha256": "72e8825dea3b0030335bfaa60ef0cb0d432062b69ce6d0229f8a50dab34cdf08"
+      }
+    },
+    "settings__defaults__password": {
+      "bullets[0]": {
+        "text": "Laenge, Rotation, Zeichenregeln 및 erweiterte Generierungsfelder bearbeiten; PUT /api/offline/settings에 따라 음성을 지정합니다.",
+        "source_sha256": "55e5504e9db8b2c99e408df75eb4f2059bb4cf549776eabcf449c25e7e856481"
+      },
+      "bullets[1]": {
+        "text": "Eingebaute 또는 gespeicherte 사전 설정 anwenden, dann Mit Programm-Vorgaben wiederherstellen, um Operator-Ueberschreibungen to loeschen.",
+        "source_sha256": "e4cfe08e14284fae602b5b4ce6ac196d3bbc8b8e5cab9173aa28e6ed739f68d9"
+      },
+      "bullets[2]": {
+        "text": "사전 설정은 Passwortrichtlinien-Presets 버전과 별도로 별도로 제공됩니다.",
+        "source_sha256": "c1b092929b38149c35bac1c76e49d312d171e6752ea45227362073e5551acd2c"
+      },
+      "summary": {
+        "text": "프로그램 수준 비밀번호 정책은 전역 → 그룹 → 시스템 → ID 체인의 맨 아래에 기본값이 있습니다.",
+        "source_sha256": "7bfc72aac870ccdfd9c61395651bc4c2f45cea1151618e7e4efededbf7b7a3a1"
+      },
+      "title": {
+        "text": "기본값 - 비밀번호",
+        "source_sha256": "26c79bd1953b73617dfcfd2e15cf0064a635fb179be28c5c669b024513d476cc"
+      }
+    },
+    "settings__demo-reset": {
+      "summary": {
+        "text": "라이브 데모 데이터를 삭제하고 알려진 양호한 스냅샷을 다시 로드합니다. 선택적 일일 일정. 스냅샷이 없으면 참조 이미지 설정은 현재 데이터베이스를 한 번만 사용할 수 있는 기준으로 캡처합니다.",
+        "source_sha256": "11c6548dcb2eea04df852f10430fba320a6fb45c3e7996f5e794926a5a14141b"
+      },
+      "title": {
+        "text": "데모 재설정",
+        "source_sha256": "6eefd8fe554e8dd6952d68c39cb7cb5fda662c67b819d4797a636a99359ddc47"
+      }
+    },
+    "settings__hsm": {
+      "bullets[0]": {
+        "text": "Tab Verbindungen listet registrierte HSM-Endpunkte 및 oeffnet PKCS#11-Slot-/Token-Pruefungen.",
+        "source_sha256": "af4f70060b5f93991b8dda072ffa5ee8a42b474a982cdfcb90da5c275ae7e069"
+      },
+      "bullets[1]": {
+        "text": "Tab Hersteller pflegt Metadaten, Verbindungen genutzt werden의 beim Anlegen.",
+        "source_sha256": "6808ecffc390e329e819a57c13566f55ef540789a653b4d73eb3c5f0165f9371"
+      },
+      "bullets[2]": {
+        "text": "ORM-Store의 탭 구성 Bearbeitet modulweite HSM-Einstellungsschluessel.",
+        "source_sha256": "786e94a7ae791d4ba9f7e9076228761d599f7496153f7e2fc6c82fdfcbba1f19"
+      },
+      "bullets[3]": {
+        "text": "Die Seite Krypto-Anbieter kann a Verbindung waehlen, um PKCS11_MODULE_PATH 및 PKCS11_SLOT_ID vorzufuellen.",
+        "source_sha256": "7a5c14790180f892565de6b91d589608bb1a35a29645519cc4c41a68228fd082"
+      },
+      "summary": {
+        "text": "PKCS#11 하드웨어 보안 모듈에 대한 PKCS#11 공급업체 및 연결 프로필을 등록합니다.",
+        "source_sha256": "27bfcb7396b8bc37c02ac6053495a66991205e514bc3686fd7ec2e321df33cb1"
+      },
+      "title": {
+        "text": "HSM 연결",
+        "source_sha256": "76cda9fa67c316c6597d70a4fd609c517a085e5e347d00be17994248b37c2311"
+      }
+    },
+    "settings__lab": {
+      "summary": {
+        "text": "읽기 전용 매니페스트, 고급 진단, RBAC 테스트 모드, 고도 UI 모의 및 데모 데이터 유틸리티. 프로덕션 배포에는 적합하지 않습니다.",
+        "source_sha256": "414cb02650bd6b44fd4fefeece74d4027c629663ab3521b44ea4181b6016fb58"
+      },
+      "title": {
+        "text": "실험실 도구",
+        "source_sha256": "0d3f76e3c81a8c966e422f1e9c3ebcad46358281d01329af8a93a2fbcfb6a3c8"
+      }
+    },
+    "settings__lab__rbac": {
+      "summary": {
+        "text": "RBAC 테스트 모드에 대한 개발자 컨트롤. 소유자 액세스가 기본값입니다. 테스트 모드를 활성화하여 최소 권한 프로필을 시뮬레이션하고 모든 카탈로그 권한을 검사하세요.",
+        "source_sha256": "9d3052f36d5d7ee1dba7ca4ba3c78df668d361583e1fc338234d74cbee465aee"
+      },
+      "title": {
+        "text": "RBAC 연구실",
+        "source_sha256": "62ccab13a5b13b094bf38d537abaf65fd279468f3673e7cb1417a85e5a5826b4"
+      }
+    },
+    "settings__password-policy-presets": {
+      "summary": {
+        "text": "재사용 가능한 명명된 정책 번들 운영자는 기본값 또는 그룹/컴퓨터 대화 상자에서 적용할 수 있습니다.",
+        "source_sha256": "21b2b6612e3efa3393a14febca00dd7a8333e8e3a16e5d72d46f99f4687cc5c9"
+      },
+      "title": {
+        "text": "비밀번호 정책 사전 설정",
+        "source_sha256": "7a8e7f4ad1e10c55e800c33b90463abd402cd49d41e51ff6bfb8ee1c6c136786"
+      }
+    },
+    "settings__platform": {
+      "summary": {
+        "text": "이 AIC 서버의 작동 설정: 일반 옵션, TLS, ID 공급자, 암호화 및 HSM 연결.",
+        "source_sha256": "a6e2cad62b0f3980663edf115a62dd3deb280d888de19657915d8fe7018a06d3"
+      },
+      "title": {
+        "text": "서버 구성",
+        "source_sha256": "65f170073c221c60a4731e16818a9ef3c69cfdb2a3aa40e781453dfc32aa9ea7"
+      }
+    },
+    "settings__service-logs": {
+      "bullets[0]": {
+        "text": "stdout traegt 애플리케이션 추적; stderr traegt 패닉 및 기본 오류(Zeitstempel-Praefix 사용).",
+        "source_sha256": "7514d0ea044318a8cccdceeac12f05f740a0f5e85b4abffbe968caf22693977e"
+      },
+      "bullets[1]": {
+        "text": "Live-Tail pausieren, Windows-Dienst stoppt 사용; Tail neu laden, Sobald the Dienst wieder laeuft.",
+        "source_sha256": "3d7c952feb4a0d13210771ce0ad95dd2539761f2bf9d73e5942a0f792a8b1860"
+      },
+      "helpAriaLabel": {
+        "text": "서비스 로그 도움말 열기",
+        "source_sha256": "25ec724c76638645c765ae4718276343046e476213d7e9c2f39159bf10b35c86"
+      },
+      "summary": {
+        "text": "이 호스트 오프라인 서버 프로세스 stdout 및 stderr(Windows의 ProgramData 아래에 있는 SCM 캡처 서비스 로그 파일)의 라이브 테일입니다.",
+        "source_sha256": "7a92fa89ba38aa1e8e9a04c91187cd24d6f53711c901d3c16c550e5ce2f3faf3"
+      },
+      "title": {
+        "text": "설정 - 서비스 로그",
+        "source_sha256": "f75e03e991f0183a9f40da6fed32c3d41e0b6e167547827699810fb6528fe94a"
+      },
+      "bullets": {
+        "0": {
+          "text": "서비스 로그는 진단 및 운영에 도움이 됩니다.",
+          "source_sha256": "d2fa81cdce95dd15a833f11f8d6c6ea3f299bda3777cb2d206e5e980d6eb6eda"
+        },
+        "1": {
+          "text": "필터와 내보내기는 이 보기에 유지됩니다.",
+          "source_sha256": "13c22c8b9f45d9a38a9cd294906f70d924d07169a6b387875199afbbf8330405"
+        }
+      }
+    },
+    "settings__startup-wizard": {
+      "bullets[0]": {
+        "text": "Verfuegbar for Operatoren, Servereinstellungen verwalten duerfen(수퍼유저/소유자).",
+        "source_sha256": "488c95239e0214923034475614fe7575322c4f20af76a096fb7c2f23e36ed7ad"
+      },
+      "bullets[1]": {
+        "text": "Unternehmensidentitaet wird ueberdenselben Speicher Unternehmensprofil / Offenlegungsvariablen bearbeitet.",
+        "source_sha256": "26ff64e1820ca4286f1c507916a6256fa47d67aed00a7ce2b9db476c54584e88"
+      },
+      "bullets[2]": {
+        "text": "Optionale Schritte (이메일, Familiarisierungs-Seed) koennen uebersprungen werden; Lab-Seed는 lab-dev에 적합합니다.",
+        "source_sha256": "8e1c11b71f92f392d234687b8e03aa6457c1d71ea279ed46b71133f8049b9690"
+      },
+      "summary": {
+        "text": "새로운 AIC 서버 엔클레이브에 대한 다시 시작 가능한 안내 런북입니다. 진행 상황이 저장됩니다. 구성에서 세부 설정을 계속 사용할 수 있습니다.",
+        "source_sha256": "fb3c79a6b9c460be24cac6b44113e5f620bab3d47a8505d373ab726bf5a6bb6a"
+      },
+      "title": {
+        "text": "초기 설정 마법사",
+        "source_sha256": "3c8dfed504197047eba04c9fb673432d2a39d6e0c4bd2335d378ceba4be63648"
+      }
+    },
+    "settings__syslog": {
+      "summary": {
+        "text": "이 서버의 EPIM 이벤트를 원격 syslog 수집기(UDP, TCP 또는 TCP-TLS)로 전달합니다.",
+        "source_sha256": "1b5b4219f25c8ec6530ef3f3135f3e14d2486cef06192ef7ff4bd0d51504afba"
+      },
+      "title": {
+        "text": "Syslog 전달",
+        "source_sha256": "17340ebe93aa677f4f9461616ac003aa92add3850be05fde7c8a59f1b80965f1"
+      }
+    },
+    "systems": {
+      "summary": {
+        "text": "엔드포인트 인벤토리, 그룹화 및 다중 테넌시 경계.",
+        "source_sha256": "c1291379f77f5f29a49138a466d565d7685c72e54995abf82940ab3be165443a"
+      },
+      "title": {
+        "text": "시스템",
+        "source_sha256": "d9148b16c1107bd3b371165e897a11620fc58e6c9d274550488b73200616bdeb"
+      }
+    },
+    "systems__list": {
+      "bullets[0]": {
+        "text": "Agent-Zeilen ergaenzen Passworttation, Elevation 및 ziel-lokale Aufzeichnung.",
+        "source_sha256": "ce9ec984af9c25da3262b03b7ca6bb695861dc739877b9f1ee01501443ad3ea2"
+      },
+      "bullets[1]": {
+        "text": "범위에 에이전트 블레벤이 없고 종종 고유 채널에 연결되는 시스템입니다.",
+        "source_sha256": "6431802bc3d6830db2d58da9dac533dba5ac7eba064e5cc1721d18052fdb2b45"
+      },
+      "bullets[2]": {
+        "text": "/endpoints에 대한 레거시 URL은 다음과 같습니다.",
+        "source_sha256": "3e0b1ac10b8a63072e94f9fbdb378636a78861e6f8f6cd1ce23a2be33a0c81d1"
+      },
+      "helpAriaLabel": {
+        "text": "시스템 목록에 대한 도움말 열기",
+        "source_sha256": "aa87a5df54a2f456165fb77871f2c0b3c589e01315f6cf4db1251ba5fc7a8c15"
+      },
+      "summary": {
+        "text": "에이전트 유무에 관계없이 알려진 모든 시스템. 비밀번호 복구, 권한 상승 및 연결 채널에 대한 행을 엽니다.",
+        "source_sha256": "7f095cf4a05209a4b95f4467da5a03a0a6ab051268db6f7b07a761af56814567"
+      },
+      "title": {
+        "text": "시스템",
+        "source_sha256": "d9148b16c1107bd3b371165e897a11620fc58e6c9d274550488b73200616bdeb"
+      }
+    },
+    "tenants": {
+      "bullets[0]": {
+        "text": "다중 테넌트 지원 → Bootstrap-Geheimnis sofort kopieren; es wird nie wieder angezeigt.",
+        "source_sha256": "8199c1f6ee4d73b0e9056acabb1d53e048bf77edb7c365078f324fecb9efe3ec"
+      },
+      "bullets[1]": {
+        "text": "에이전트와 지원자는 Multi-Tenant-Datensatz에서 Tenant_guid를 참조합니다.",
+        "source_sha256": "dff7c95d8cbcece491a4328d805dc75a58029b185f36053ebe92c88da91dd266"
+      },
+      "bullets[2]": {
+        "text": "Standard-Assistantennutzung waehlt는 Operatoren의 Multi-Tenants vor에 대한 Ausgabetyp를 제공합니다.",
+        "source_sha256": "0bdd2fcde7877b9e6a2309a3f345bc317ec4f681dba573ca72a2e3a0e9f1dd3e"
+      },
+      "summary": {
+        "text": "이 서버의 논리적 고객 또는 조직입니다. 각 다중 테넌트는 에이전트 HMAC 인증에 사용되는 GUID와 일회성 부트스트랩 비밀을 얻습니다.",
+        "source_sha256": "2495bb0a47b10c6db678ac12cb0042184d0d5dbc98def4b6fa8736a14afea838"
+      },
+      "title": {
+        "text": "다중 테넌시",
+        "source_sha256": "91d3baf4ccfbd3570385afa7d72e5d1f0c39f9cca93526cb92cbeba8f8a725c5"
+      }
+    },
+    "training__packs": {
+      "bullets[0]": {
+        "text": "Tab Dokumente는 Bibliothek 및 Render-Formular입니다.",
+        "source_sha256": "190fce9fa8875c2603cc6c4b6c8b843c934f68ef5b501e3c8794c07183bb5748"
+      },
+      "bullets[1]": {
+        "text": "Standardsabdeckung zeigt, ob for jede registrierte Framework-Anforderung a Dokument exiert.",
+        "source_sha256": "430e205c9f574d59d3ed1131ff080a4f3544d0bea23a8a5b3931148adbfa07ac"
+      },
+      "bullets[2]": {
+        "text": "Geplante Programme, Zuweisung 및 Attestierung은 Oberflaechen을 분리합니다.",
+        "source_sha256": "c854df5ba9d9edd8ba9d8d09686e9e22607267aa816783c19f92cf7d3d8d582a"
+      },
+      "helpAriaLabel": {
+        "text": "교육 및 인식 팩에 대한 도움말 열기",
+        "source_sha256": "c415bfe5363fedf8ee541916503d7bc29d7ab1eb6745ac07ed34b698e70c794a"
+      },
+      "summary": {
+        "text": "사용자 정의하고 배포할 수 있는 편집 가능한 인식 소스 문서입니다. 문서 렌더링은 교육 제공이 아닙니다.",
+        "source_sha256": "9b41661529e4b8eaab0dc56bbbb9948f11f396067793a772505f6a4268387bb9"
+      },
+      "title": {
+        "text": "교육 및 인식 팩",
+        "source_sha256": "63fd5870ec17f5a42b74fdfb66f45edf3e07603145969059776670e1e2167eef"
+      }
+    },
+    "wizard__identity-template": {
+      "bullets[0]": {
+        "text": "그룹 활동의 \"Standardidentitaeten seeden\", damit Vorlagenzeilen bei the Bereitstellung greifen.",
+        "source_sha256": "84a2975f4f1823eb6e2f9e5bb4c859d7700f996bb1c4f730232ef936845446d0"
+      },
+      "bullets[1]": {
+        "text": "Passwortrichtlinie pro Zeile kann the Group erben 또는 ueberschreiben, wenn Erben ausgeschaltet ist.",
+        "source_sha256": "2a915f9bb609b2f8d8e7702ad3faa78ba7a79ce2f38d12255140b3270da4f8c9"
+      },
+      "summary": {
+        "text": "그룹의 ID 템플릿을 편집하는 바로 가기 - 해당 그룹의 새 끝점에 자동으로 생성되는 관리 계정입니다.",
+        "source_sha256": "da0d478386132483ed5635ec9fd6f9da453cf8ba87a698530a8dd1544ab205b3"
+      },
+      "title": {
+        "text": "ID 템플릿 마법사",
+        "source_sha256": "9be843743f6551c025b05d2502c3f321ee094210d9f39862c0bcf49debc14ebc"
+      }
+    },
+    "wizard__import": {
+      "bullets[0]": {
+        "text": "Fuer Migrationsruefung — Live-Anwenden nutzt Datei → Konfigurator 또는 import-settings-CLI의 설정.",
+        "source_sha256": "a4729b23485a7f32963cec7c69f66608c31db3da7412a60dd2f6a2af271999e8"
+      },
+      "summary": {
+        "text": "레거시 v2/v3 설정 JSON을 서버 저장소에 적용하지 않고 현재 가져오기 형식으로 검증하고 변환합니다.",
+        "source_sha256": "98f9d7cfa605928e8b1498dceb9cae802fa64e017160d0cb013d61a61fbd7e90"
+      },
+      "title": {
+        "text": "설정 가져오기(마이그레이션)",
+        "source_sha256": "1b2568610dfc5eeee1e3c6fc439a7ce2ed788eb687f3eab66e320d1859298fc6"
+      }
+    },
+    "wizard__issuances": {
+      "bullets[0]": {
+        "text": "설정 지원 nutzen, wenn Operatoren a Datei verlieren 또는 Tokens rotiert werden muessen을 사용합니다.",
+        "source_sha256": "2f26d98cc297135ed90246f487ffbb2df0f3707a73f470849bd2241cb72ead1b"
+      },
+      "summary": {
+        "text": "그룹에 대해 이미 발급된 등록 토큰 및 설정 패키지를 나열, 순환, 취소 및 다시 다운로드합니다.",
+        "source_sha256": "004e8f5b08533ba89463bc0eaf4b6cc8377545ff541ae9eaeff164834738c89f"
+      },
+      "title": {
+        "text": "발행물 관리",
+        "source_sha256": "54b148b3649680d5e41d56a26ab545b3309882a5c5636ef72dc6bb4f6e747211"
+      }
+    },
+    "wizard__settings": {
+      "bullets[0]": {
+        "text": "Erzeugt 설정, 에이전트 ueber Konfigurator 또는 가져오기 설정 importiert.",
+        "source_sha256": "7555e2289b341e877ba9332d6c52e11974d32243adbc9df5c8f0c41afb37852f"
+      },
+      "bullets[1]": {
+        "text": "ConnectedManaged 체크인; AirGapped영구적이지 않습니다.",
+        "source_sha256": "ce05b2e69394e8263e83e852760a3aba2ae513eb8a64d785346b954572338325"
+      },
+      "summary": {
+        "text": "등록 토큰으로 에이전트 설정 JSON을 발행합니다. 시스템 그룹을 선택한 다음 배포 유형, 템플릿 검토, 선택적 재정의, 미리 보기 및 생성을 진행합니다.",
+        "source_sha256": "c495a6a7c83924465b0bdbb0c44e64391d0a9ee0f9401d9b20d0492efcffd06f"
+      },
+      "title": {
+        "text": "설정 마법사",
+        "source_sha256": "c778789ea57c5fc98116a813e2a9f4215e783a1d99d8386c53eca0bc6669ac27"
       }
     }
   },
@@ -11403,6 +12467,16 @@
         "text": "교육 인력 명단",
         "source_sha256": "255f16b6b5a9b0f25c506f52adea3791377e816ed665dcdea1acb6058b9b8964"
       }
+    }
+  },
+  "delivery": {
+    "scaffolded": {
+      "text": "비계(내용은 다음과 같습니다)",
+      "source_sha256": "0ee5610347c687363fafffc087e665628abe089b889a604d9c7c836e20b87b8b"
+    },
+    "blocked_licensed_content": {
+      "text": "차단됨 - 라이선스가 부여된 콘텐츠가 포함되지 않음",
+      "source_sha256": "5811e218fdc9316c3637e261e826d4f7901cde5c891b8b738b5bd693a8ca671b"
     }
   }
 }
