@@ -8,32 +8,32 @@
     "source_sha256": "7e81d387600f4fd81d44fea37f26152cfd7476f74baa593c34ebd794c0171f92"
   },
   "needPermission": {
-    "text": "Sie brauchen the Berechtigung、the Risikoregister to sehen。",
-    "source_sha256": "aa210bb51311831fb0ee3caac5814c204f833780563b0014cd925ef2709c6fd8"
+    "text": "リスク登録を表示するには許可が必要です。",
+    "source_sha256": "a582ce78b9a6e1306d4af6c03ff6339b521c30b9ff407eb66803d8338e6ff832"
   },
   "loadFailed": {
-    "text": "Dieses Risiko konnte は、geladen werden ではありません。",
-    "source_sha256": "37bf64d2ea1a77d4c32dcdce3c3edc5e865a8722e6bca86b82c519a99de4cf70"
+    "text": "このリスクをロードできませんでした。",
+    "source_sha256": "de8962c97b1107b59ed2e138be903115115b63264abd1e3b58614c4b76dff868"
   },
   "loadingLabel": {
     "text": "リシコ登録",
     "source_sha256": "7e81d387600f4fd81d44fea37f26152cfd7476f74baa593c34ebd794c0171f92"
   },
   "honesty": {
-    "text": "Das Register erfasst Risikoentscheidungen: は、帽子をかぶっており、アクゼプタンツの終焉を望んでいるという認識でした。垂れ下がることはありません、Kontrolle のスタンドの帽子をかぶってください。",
-    "source_sha256": "dea83c3d13f9ae0d59f7f9ec35b32ca516751f5e5e1cc62bd7cb18d0bda9bdd7"
+    "text": "記録簿には、何が特定されたか、どのように扱われるか、誰がそれを受け入れたか、いつ受け入れが終了するかなど、リスクに関する決定が記録されます。規制が通過したとは言いません。",
+    "source_sha256": "98370ce5cdd2a345b2d924f30e3e0f966da28729181ec346665e8dc03fe0a21d"
   },
   "expiryNotice": {
-    "text": "Eine abgelaufene Akzeptanz wird beim Lesen berechnet。 Ein Zwoelf-Stunden-Lauf は、RiskAcceptanceLapsed einmal je Akzeptanz、deren gewaehrter Zeitraum endete を送信します。 Das Ereignis は Ablaufdatum を溶解しました。 Es oeffnet the Risiko not wieder、zieht the Akzeptanz not zurueck and eskaliert nichts。 Ereigniszielen ab の Die Zustellung haengt、オペレーター アインゲリヒテットの帽子。",
-    "source_sha256": "fef0a558751ff3e308bfe724dedd52b0bf8c60de9bb28b90b36edc23fa2a0635"
+    "text": "期限切れの受諾は読み取り時に計算されます。 12 時間の実行では、付与期間が終了した承認ごとに RiskAcceptanceLapsed が 1 回送信されます。イベントは有効期限を報告します。リスクを再び開放したり、受け入れを撤回したり、何かをエスカレーションしたりすることはありません。配信は、オペレーターが設定したイベントの宛先に応じて異なります。",
+    "source_sha256": "6d7cf5ce3cbd16c8d61d9a948fd87d5b15ffdb948a4ddd95d3554ca88beed178"
   },
   "loadRegisterFailed": {
-    "text": "Das Risikoregister konnte ではなく、geladen werden です。 Ansichtsberechtigung と Registerspeicher の Pruefen Sie。",
-    "source_sha256": "3709da8b2f0a61736b1bbe6f77125ff591e93b05d5925c67be4dbe7027f21ab2"
+    "text": "リスクレジスタをロードできませんでした。閲覧権限を確認し、ストレージを登録します。",
+    "source_sha256": "ba6f6c84358290be524df44625430a2cd66ba6ce32958f9144136b69489dab0e"
   },
   "newRisk": {
-    "text": "Neues Risiko",
-    "source_sha256": "193249010080c7a83c6ae6129c33e9188703563402e839ef025c5a6da332be3d"
+    "text": "新たなリスク",
+    "source_sha256": "417bdcf8a3d25d99dd18b506b1f4c1ee0c8a2c9c42d8575bafedc8aa3d23758f"
   },
   "recorded": {
     "text": "エルファスト: {{count}}",
@@ -104,8 +104,8 @@
     "source_sha256": "5da66fc5cc60fb700843ce7d7420d8ab1bb358e11dab10abed6aad3f2b97ac3c"
   },
   "emptyRegister": {
-    "text": "Keine Risiken が Diesen Filter に渡されます。 Ein leeres 登録強盗、ダス ハイア ニヒトス erfasst wurde — ではなく、ダス エス ケイン 博覧会のギブト。",
-    "source_sha256": "d82abf43f639e14ebce90f92ac07a5781caf440fc4d2bea67745ee001047924c"
+    "text": "これらのフィルターに適合するリスクはありません。空のレジスターは、ここに何も記録されていないことを意味し、露出がないことを意味します。",
+    "source_sha256": "13fac553039bf4062453a66736d37a77e36788132bf04446010237e6f94d80c3"
   },
   "colRisk": {
     "text": "リシコ",
@@ -148,12 +148,12 @@
     "source_sha256": "d50461f934b46e5005e2513ad69822279d6b6a53a110589ddedabc32ac8b03b5"
   },
   "statusColHelp": {
-    "text": "Was zuletzt ueber dieses Risiko entschieden wurde. Statuswerte sind erfasste Entscheidungen, kein Bewertungsergebnis.",
-    "source_sha256": "a32a0feb73274c10417de7c0044ab7fc37697d7f1e88d15fbadb2152415b3ded"
+    "text": "このリスクに関して最近決定されたこと。ステータス値は記録された決定であり、評価結果ではありません。",
+    "source_sha256": "d9fbc7430001dc38492f31c3b9413f2a2da795d7d817408341f42cc29877e965"
   },
   "reviewColHelp": {
-    "text": "ワンはリシコ・アルス・ネヒステス・ゲプルエフト・ヴェルデン・ソールで亡くなりました。 Ueberfaellig wird beim Lesen dieser Liste berechnet;ニヒト・ケンディグト・エス・アン。",
-    "source_sha256": "8f740c0fff3319acc876cd0a151096208839bba6b2bcb0339393813ba0cb589f"
+    "text": "次にこのリスクをいつ検査する必要がありますか?期限超過は、このリストを読み取るときに計算されます。何も発表しません。",
+    "source_sha256": "f01b9b6b031250ffd5a2282486dc6867f332736b872581be4b9d0f822ddc3d59"
   },
   "acceptanceColHelp": {
     "text": "オブ・ジェマンドはリシコ・アクゼプティエの帽子とビス・ワンを死ぬ。 Eine abgelaufene Akzeptanz ist erloschen、および niemand wurde benachrichtigt。",
@@ -164,24 +164,24 @@
     "source_sha256": "7e81d387600f4fd81d44fea37f26152cfd7476f74baa593c34ebd794c0171f92"
   },
   "toolbarSubtitle": {
-    "text": "Erfasste Risikoentscheidungen — keine Aussage、Dass a Kontrolle bestanden hat",
-    "source_sha256": "b47f46d07bd9d7c0b098b575a50371722f3c9b71a4ffd4c9442fffd2c47fb2da"
+    "text": "リスクに関する決定を把握 – コントロールが存在するという記述はない",
+    "source_sha256": "d05bf223147845f6ecede4e3d70d25052dd825003c18290429cd506ce4e825d8"
   },
   "createTitle": {
     "text": "アイン・リシコ・エルファッセン",
     "source_sha256": "1f932a5e8b141c8f71a8b3ee6382b48193c892d93996bdc2075a532e3631f9a0"
   },
   "createScoringNote": {
-    "text": "Der Schweregrad wird aus the gewaehlten Wahrscheinlichkeit と Auswirkung berechnet と nie gespeichert。 Gespeichert wird the Version the Bewertungsmatrix zum Zeitpunkt the Erfassung, damit the Risiko spaeter so gelesen werden kann, wie es entschieden wurde.",
-    "source_sha256": "40584d4068f7e729cd8dbff8383b055257cbc424efe799101b026e5c3c9a888d"
+    "text": "重大度は選択した確率と影響から計算され、保存されることはありません。記録時の評価マトリックスのバージョンは保存されるため、決定されたリスクを後で読み取ることができます。",
+    "source_sha256": "7dd559e1208fdfc4e9ae441efe8a6933fdbfad1ea7e1c391a896c5e401424280"
   },
   "createRef": {
     "text": "リシコレファレンツ",
     "source_sha256": "d12ecea9393094b8801476545360e8bc7a76ed1423a34b5f24edb80c0140f2e7"
   },
   "createRefHelp": {
-    "text": "Ihre Kennung は、Dieses Risiko に対して、登記上の eindeutig です。",
-    "source_sha256": "aabe344cc8fe2911d696fdf3b5501cfd4093d8c04da8f7fe23cd48a81e2423c8"
+    "text": "このリスクの識別子は、登録簿に明確に記載されています。",
+    "source_sha256": "e441a6f1801b5af9329a37693a12839319dc0109fec609e7ceacb66012762bf7"
   },
   "createTitleField": {
     "text": "タイトル",
@@ -200,8 +200,8 @@
     "source_sha256": "5c008fc563aa8d8645dd99a59f7ff76734bdc83ba43f0efb99fdf97128df7fc5"
   },
   "createOwnerHelp": {
-    "text": "Die person、for dies Risiko verantwortlich ist。",
-    "source_sha256": "070bc6e675b92667c7eb4e0a508b6f843bbf91c0f8ca96424dbad522e586bdcb"
+    "text": "このリスクの責任者。",
+    "source_sha256": "d5e27c7797192b80b800f821ac3cac90b92a5dde8af95fd030f2310c47db8af9"
   },
   "createLikelihood": {
     "text": "Wahrscheinlichkeit",
@@ -216,8 +216,8 @@
     "source_sha256": "8eeb037702e13e7862fc006ef504c5311ccf8f041535adfaa0c4db7a04c52853"
   },
   "createReviewDueHelp": {
-    "text": "オプション。 Ein Risiko には、Pruefungsdatum wird nie als ueberfaellig gemeldet がありません。",
-    "source_sha256": "abd47219a3972130550933b10fa01348eded3efe1272ce62778cab9b29be364f"
+    "text": "オプション。監査日のないリスクは期限切れとして報告されることはありません。",
+    "source_sha256": "dc3a7a22c56ca90462753e6a6042dbb2d62a19fa7a450562d09e1707b4084df8"
   },
   "createCancel": {
     "text": "キャンセル",
@@ -232,12 +232,12 @@
     "source_sha256": "6060bb368634e155515fb1fe28fe367d8a70cd9b9cd1e3567793f4b7ce2a79e0"
   },
   "toastRecordFailed": {
-    "text": "Dieses Risiko konnte は erfast werden ではありません",
-    "source_sha256": "0f031e62916afda4c8d2565ecc9baad36022fd231f429d8213a8cd8f455f55cb"
+    "text": "このリスクは記録できませんでした",
+    "source_sha256": "7172a624a24746f8e2c1a0872146af21e73dbbf5ecc6e1628c632a36ccd45578"
   },
   "review_none": {
-    "text": "Keine Pruefung ゲプラント",
-    "source_sha256": "3e70e83ae8974e3983584d857122563b2d53360d2b36554d7083f6ab310d9bfd"
+    "text": "試験の予定はありません",
+    "source_sha256": "6697329cb92af25301510c5576ff778e52963f1ce19de5db27f7c821adef8caf"
   },
   "review_overdue": {
     "text": "ウエバーフェリグ セイト {{date}}",
@@ -248,8 +248,8 @@
     "source_sha256": "9332209cb79aabf030a8e7939ebeb5e772455205da29f8edd4ca6995f3684bfc"
   },
   "acceptance_none": {
-    "text": "Nicht akzeptiert",
-    "source_sha256": "43cec249c014f177f064e8927171da7c1e50611cddbee05c255f386396f56366"
+    "text": "受け入れられません",
+    "source_sha256": "8ba391628be0d7e1c0dde21aeff106331b47c80473ec47ac9e49931145581cc9"
   },
   "acceptance_expired": {
     "text": "アブゲラウフェン {{date}}",
