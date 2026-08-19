@@ -327,8 +327,13 @@ $treeMap = [ordered]@{
     "content/locales" = @(
         "pim-offline-server/locales"
     )
+    # Admin-SPA UI catalogs: every namespace JSON under locales-ui/<tag>/ must
+    # land in BOTH the install-tree overlay (served as GET /locales/ui/...) and
+    # the Vite-bundled heal fallback (ui/src/i18n/locales). Do not filter to a
+    # subset of namespaces — truncated packs break controls/binder/risks/etc.
     "content/locales-ui" = @(
-        "pim-offline-server/locales/ui"
+        "pim-offline-server/locales/ui",
+        "pim-offline-server/ui/src/i18n/locales"
     )
     "content/i18n-native" = @(
         "pim-app-config/crates/pim-app-config-i18n/bundles"
@@ -466,6 +471,45 @@ Write-Host ""
 $summary = "Sync complete. Files: copied=$copied, already-in-sync=$skipped. " +
            "Trees: copied=$treeCopied, already-in-sync=$treeSkipped, empty=$treeEmpty."
 Write-Host $summary -ForegroundColor Cyan
+
+# ---------------------------------------------------------------------------
+# locales-ui completeness: every source namespace must exist in each consumer.
+# Truncated packs (e.g. 8 of 16) are a release defect — warn loudly.
+# ---------------------------------------------------------------------------
+$uiLocaleSrc = Join-Path $repoRoot 'content\locales-ui'
+$uiLocaleConsumers = @(
+    (Join-Path $WorkspaceRoot 'pim-offline-server\locales\ui'),
+    (Join-Path $WorkspaceRoot 'pim-offline-server\ui\src\i18n\locales')
+)
+if (Test-Path -LiteralPath $uiLocaleSrc) {
+    $uiGaps = New-Object System.Collections.Generic.List[string]
+    Get-ChildItem -LiteralPath $uiLocaleSrc -Directory | Where-Object { $_.Name -notlike '_*' } | ForEach-Object {
+        $tag = $_.Name
+        $srcNames = @(Get-ChildItem -LiteralPath $_.FullName -File -Filter '*.json' |
+            Where-Object { $_.Name -notlike '_*' } |
+            ForEach-Object { $_.Name })
+        foreach ($consumer in $uiLocaleConsumers) {
+            if (-not (Test-Path -LiteralPath $consumer)) { continue }
+            $destTag = Join-Path $consumer $tag
+            foreach ($name in $srcNames) {
+                $destFile = Join-Path $destTag $name
+                if (-not (Test-Path -LiteralPath $destFile)) {
+                    $relConsumer = $consumer.Substring($WorkspaceRoot.Length).TrimStart('\', '/')
+                    [void]$uiGaps.Add("$tag/$name missing under $relConsumer")
+                }
+            }
+        }
+    }
+    if ($uiGaps.Count -gt 0) {
+        Write-Warning ("locales-ui consumer gap ({0} file(s)). Re-run sync or copy missing namespaces:" -f $uiGaps.Count)
+        $uiGaps | Select-Object -First 40 | ForEach-Object { Write-Warning ("  {0}" -f $_) }
+        if ($uiGaps.Count -gt 40) {
+            Write-Warning ("  ... and {0} more" -f ($uiGaps.Count - 40))
+        }
+    } else {
+        Write-Host "locales-ui completeness: all source namespaces present in both consumers." -ForegroundColor DarkGreen
+    }
+}
 
 # ---------------------------------------------------------------------------
 # Language pack flags (MIT flag-icons) → pim-offline-server/locales/<tag>/flag.svg
