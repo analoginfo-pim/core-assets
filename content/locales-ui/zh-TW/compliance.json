@@ -1,11 +1,11 @@
 {
   "floorNote": {
-    "text": "NIST SP 800-53 Rev. 5 是 untere Kontrollgrenze。 CMMC / 800-171 / 800-172 sind Verpackungs-Overlays，Enclave-Nachweise wiederverwenden。",
-    "source_sha256": "0048952b2a6ac67f8ae95fdf95b7387804a8bd10a4aff7f798a5bdaced68c379"
+    "text": "NIST SP 800-53 Rev. 5 是控制下限。CMMC／800-171／800-172 是重複使用飛地證據的包裝疊加。",
+    "source_sha256": "229f489d9354d2f5a896f3961c694a801634467544d818707b05ef4224fb5792"
   },
   "switchEffect": {
-    "text": "Ein Wechsel des Bewertungsstandards ordnet the Punch-List and Nachweisansicht diesem Overlay to. Bereits gesammelte Enclave-Nachweise werden neu zugeordnet — not geloescht.",
-    "source_sha256": "a5ad0aa5f10c2149fddc42f72bc391f012566c40d0319d31d15f7e561541d7b2"
+    "text": "評估標準的變更將遺留問題清單和證據視圖指派給此覆蓋。已經收集的飛地證據將被重新分配——而不是刪除。",
+    "source_sha256": "3456cbdc251c35766d4166f55556c7d9ea13ca7948a0d1f6c13510a110cf89cc"
   },
   "testingAgainst": {
     "text": "普魯豐格根：",
@@ -59,8 +59,8 @@
       "source_sha256": "18ee0104e28ee7890b43c11dd531c53982c4746116912ad7131d1beeae6167bb"
     },
     "171_1": {
-      "text": "Stufe 1（基礎/FCI）",
-      "source_sha256": "9de046099b595684f20f4a526150c63e414f12dcc2d3aff36ecbebdcc0335318"
+      "text": "等級 1（基礎／FCI）",
+      "source_sha256": "1dfa42186a2485353fb600e05bd582861a9816b44f68e7cd2736ef7690214cc3"
     },
     "171_2": {
       "text": "斯托夫2",
@@ -93,20 +93,20 @@
   },
   "banners": {
     "cmmc": {
-      "text": "Ziel：CMMC Stufe {{level}} ({{overlay}})",
-      "source_sha256": "1ddb7d3548e1a0734ad69f40fdc5facc046a8c939579decbaffecd4a90ae7925"
+      "text": "目標：CMMC 等級 {{level}}（{{overlay}}）",
+      "source_sha256": "0e5c4695841388f14a836a6862347dc06563dcd232b64a337a8cdbebc795262d"
     },
     "nist_800_171": {
-      "text": "Ziel：NIST SP 800-171 Stufe {{level}}{{suffix}}",
-      "source_sha256": "ed686d4c103637bf3b2e4effe5ade6168649a7fb463b914171c28cd3e6abd4d2"
+      "text": "目標：NIST SP 800-171 等級 {{level}}{{suffix}}",
+      "source_sha256": "5616c4cb56b161d0dceb146df5b8b7e35bc58525ca52f2f60ce0e96c32ab2584"
     },
     "nist_800_172": {
-      "text": "Ziel: NIST SP 800-172 Stufe {{level}}",
-      "source_sha256": "d8431e497a3ae140a241a8589cee74aad3a49a0705f634ee9c7ebe99d586c24a"
+      "text": "目標：NIST SP 800-172 等級 {{level}}",
+      "source_sha256": "f9b55f67acea22dc9fe10af548671186d5de96c81529fde7bae55775aa5a69f5"
     },
     "nist_800_53": {
-      "text": "Ziel: NIST SP 800-53 Rev. 5 {{level}}",
-      "source_sha256": "f1cd5e2ca8074ee8645dd121129c88c7a7d3a2cb460f0a5faf3e953108d60503"
+      "text": "目標：NIST SP 800-53 Rev. 5 {{level}}",
+      "source_sha256": "72e30240b3f2e75561608eff445dd11f6d9cf5447342094f5afbeddfd9ae2eb6"
     }
   },
   "overlays": {
@@ -125,62 +125,62 @@
   },
   "scopeLabels": {
     "53_high": {
-      "text": "800-53-High-Verpackung (inkl. Enhanced-Overlay)",
-      "source_sha256": "3e3d08c38aafc991ac023d3f64a7b0a25b0e5b438c72cbd45ddc7d492dea39d6"
+      "text": "800-53 High 包裝（含強化疊加）",
+      "source_sha256": "71288cc6a651296cba0304b03d2822964762a3dd12b0da5f8319f1d05075af5e"
     },
     "53_moderate": {
       "text": "800-53-中等包裝",
       "source_sha256": "78865471f793210a2e33e301c9ece3510c214197be51b5e9fcf2bce4d23d8446"
     },
     "172_2": {
-      "text": "800-172 Stufe 2 增強版包裝",
-      "source_sha256": "3479c3c60a17e348a989e982829f8ac9474b4ed04f3cdc21f846ee92602a9ed0"
+      "text": "800-172 等級 2 強化包裝",
+      "source_sha256": "027bf34212a1109908614a2e2d559b4e6308d2fea5d89ee4c849a1c327fc5d40"
     },
     "172_3": {
-      "text": "800-172 Stufe 3 增強版包裝",
-      "source_sha256": "77f1a5568148cdef1cdfd3e44e0d0ef6f095ec27567a84a369e01e9e8bfb7f5f"
+      "text": "800-172 等級 3 強化包裝",
+      "source_sha256": "bc363f731a05af687327aec237dc4a5fe6ba0f29dc0724351efee925494d893c"
     },
     "171_1": {
-      "text": "800-171 Stufe 1（基礎/FCI）包裝",
-      "source_sha256": "497817529cf424d6acd6aaacb1c9b2ae1729f06beb75f2a0beba5f96261aff43"
+      "text": "800-171 等級 1（基礎／FCI）包裝",
+      "source_sha256": "961f663150dfc1ff897f6d844ffc54acd3bff7e25411606be52edca608eb90a9"
     },
     "171_2": {
-      "text": "800-171 Stufe 2 Verpackung (110 Praktiken)",
-      "source_sha256": "54ced70b4c0cafca4fef4a1e0f7340e5bcd61c2560863fa2cd29aa50383501fc"
+      "text": "800-171 等級 2 包裝（110 項實務）",
+      "source_sha256": "1f8ddcf0997c03b004e904217867b5f5c14bff86580ef917a395a046bd4cbd4c"
     },
     "171_3": {
-      "text": "800-171 Stufe 3 包裝",
-      "source_sha256": "e32696f7f49aa3f8fabceb56a330aec69b3e1814977a597d88f70066945122ab"
+      "text": "800-171 等級 3 包裝",
+      "source_sha256": "fc1618889b08a95c700120bc0273a6525ba1695b8f7faa251dee99f153d64747"
     },
     "cmmc_1": {
-      "text": "CMMC Stufe 1（基礎/FCI）包裝",
-      "source_sha256": "12cfeffabc593dfdf40ee1094fe5e230e80e94aef6ff4515361978b665289705"
+      "text": "CMMC 等級 1（基礎／FCI）包裝",
+      "source_sha256": "49148cfe65f75c981532196061fdfbbd521f2ce2878a229bb1903b6e8bb3ac1f"
     },
     "cmmc_2": {
-      "text": "CMMC Stufe 2 Verpackung (110 NIST SP 800-171 Praktiken)",
-      "source_sha256": "b52cef99e73c46f429deb7a9bea19727948ce9c84b5da9cd904ec1d8df6b5962"
+      "text": "CMMC 等級 2 包裝（110 項 NIST SP 800-171 實務）",
+      "source_sha256": "b53ea2be4da08e8532fe3598a8fad17cfa3385aa5b9936869e7979a9017e9987"
     },
     "cmmc_3": {
-      "text": "CMMC Stufe 3 Verpackung (800-171 + ausgewaehlte 800-172)",
-      "source_sha256": "4b1448bced21f56cc651950216c1104c9f028889058701d6a0095eed97751732"
+      "text": "CMMC 等級 3 包裝（800-171 + 選定的 800-172）",
+      "source_sha256": "2ade20df2c2b249a35473b347761ab9f62099013cb6257360f48469f92f92b60"
     }
   },
   "explanations": {
     "cmmc": {
-      "text": "CMMC (32 CFR 170) 是 DoD-Bewertungsverpackung ueber NIST SP 800-171（以及 ab Stufe 3 ausgewaehlte NIST SP 800-172-Anforderungen）。 Stufe 1：傳奇人物 FCI-Schutz； Stufe 2：110 800-171-Praktiken（CUI）；Stufe 3：erweiterte 800-172-Anforderungen。 CMMC ersetzt 不是 NIST SP 800-53 Rev. 5 和 Design-Floor。",
-      "source_sha256": "9048d9aaa7c9785f32b9e45b108b1397432ea15c86266b2b1f0184210785b51f"
+      "text": "CMMC (32 CFR 170) 是針對 NIST SP 800-171 的 DoD 評估套件（以及從 3 級選擇的 NIST SP 800-172 要求）。 1級：基本FCI保護； 2 級：110 800-171 CUI 實務；3 等級：進階800-172要求。 CMMC 不會取代 NIST SP 800-53 Rev. 5 作為設計平台。",
+      "source_sha256": "12fa8bfb2a27549bba2a565ec2ae39410954d2fa7c5076a00a7c8662f232ef9f"
     },
     "nist_800_171": {
-      "text": "NIST SP 800-171 Rev. 2 定義了非聯邦系統中 CUI 的 14 Familien zum Schutz 中的 110 Sicherheitsanforderungen。 Stufe 2 包含 110-Praktiken-Set（帶有 CMMC Stufe 2 的 haeufig）。產品設計符合 NIST SP 800-53 Rev. 5； 800-171 ist Bewertungsverpackung darueber。",
-      "source_sha256": "8e0a48fdc42e264eb540f431b8f9da065ea8cca69ef26381da083fecf5d7155b"
+      "text": "NIST SP 800-171 Rev. 2 定義了 14 個系列的 110 項安全要求，以保護緊急聯邦系統中的 CUI。 2 級對應於 110 次練習（通常為 CMMC 2 級）。產品設計繼續遵循 NIST SP 800-53 Rev. 5；800-171 是關於它的​​評論包裝。",
+      "source_sha256": "a7174627ccdd785a941798f23187552f041fc2f01b668ae86a976d58ad9701f6"
     },
     "nist_800_172": {
-      "text": "NIST SP 800-172 (Feb. 2021) ergaenzt 35 erweiterte Anforderungen ueber 800-171. CMMC Stufe 3 waehlt a Teilmenge. Unbewiesene Enhanced-Claims bleiben Luecke or unbekannt.",
-      "source_sha256": "cd5e5b2ddf30fe104b92ccda3f371fa8122f44b1670b438775916c12252e1764"
+      "text": "NIST SP 800-172（2021 年 2 月）在 800-171 的基礎上增加了 35 項擴展要求。 CMMC 等級 3 選擇一個子集。未經證實的增強聲明仍然存在差距或未知。",
+      "source_sha256": "f4473a5f6bbce799b100709d26187f8522c240e030e6b34dba01df1c33baed01"
     },
     "nist_800_53": {
-      "text": "NIST SP 800-53 Rev. 5 是 Kontroll-Design-Floor 模具產品（中等基線，ggf.高）。 CMMC / 800-171 / 800-172 sind 覆蓋物，柴油引擎 Enclave-Nachweise nutzen。",
-      "source_sha256": "384c1ab4a364b3f9888884a203cca7770cdc412ac1811bdf256bafd219a50c8c"
+      "text": "NIST SP 800-53 Rev. 5 是本產品的控制設計下限（中等基準，必要時為高）。CMMC／800-171／800-172 為包裝疊加。",
+      "source_sha256": "640825ee7103d223602ee7ce0cdada44c9979ae398f5d89526ca7e0e8397c507"
     }
   },
   "cscRescanAll": {
@@ -188,8 +188,8 @@
     "source_sha256": "26f6e4e3387caa3e54c282c8a442b19074300310c292290d3483d71b7a02c8e7"
   },
   "cscRescanSelected": {
-    "text": "Auswahl scannen",
-    "source_sha256": "0fb0526b6bc5b4e1c2cff72da494842729a8df1642a55986f2620267abea9cbb"
+    "text": "掃描選取項目",
+    "source_sha256": "71ce4524301f69b4e2ad72db6284da708650b8e6d1eecb3d0e713a6e9c342165"
   },
   "cscSystemGroup": {
     "text": "系統集團",
@@ -200,8 +200,8 @@
     "source_sha256": "68578a85d965b943f09fb6cc36fb80ff618ec11ea668834cca08577debb4639a"
   },
   "cscHonesty": {
-    "text": "Diese Zahlen beschreiben Produktlieferung 和 erfaste Arbeit — kein Bewertungsurteil。",
-    "source_sha256": "18868bd77ef2270050dcdea58b6e6afe6356b4a960ff4dad147cebd4cb71f18b"
+    "text": "這些數字描述了產品交付和記錄的工作，而不是估值判斷。",
+    "source_sha256": "5e4dbecd4f15442ef9f529d32eb7c4470de594889cbada0e16dd0fa866ccb07c"
   },
   "gridActions": {
     "text": "Actions",
@@ -220,12 +220,12 @@
     "source_sha256": "aaca331fbb3a117e222e712851d95ae78c711a94d691126958a505119f3d5aba"
   },
   "showDetails": {
-    "text": "是 dieser 標準 bedeutet",
-    "source_sha256": "03122870e402df04fd4dae22fed4bf7a8346fc32b7dc6c32c509d34c02ac9339"
+    "text": "該標準的含義",
+    "source_sha256": "b45892cd20d0a5c445d4d559c8644f0bdbc99f4840ae911c541cb060347bd0d6"
   },
   "whatSwitchingDoes": {
-    "text": "是個 Wechsel 迷惑的人",
-    "source_sha256": "00c311d2f5ea78eb7f83c116e9542b9c32cf8460828d890e950adae6425c7c98"
+    "text": "切換會造成什麼影響",
+    "source_sha256": "c319af29fd11e7e8f69b98f161d368da58266f89e5a655db734ab5df1c01d33c"
   },
   "csc": {
     "pageTitle": {
@@ -233,12 +233,12 @@
       "source_sha256": "4deee20c165da42a7bafabe58eb134c193382da9b1a15ed0d80bdc30b55907ae"
     },
     "pageSubtitle": {
-      "text": "Systemzustand、Befunde 與 erneutes Scannen 為 gewaehlte Systemgruppe",
-      "source_sha256": "89672dd1b22841a30fa823b9ac730cb09a0c53a31ab928624cf1cc68a743d456"
+      "text": "所選系統群組的機器態勢、發現事項與重新掃描",
+      "source_sha256": "1dd2042539d452f94d2bad6d2653f258523ffea4fde45cbff123633ddd079ae7"
     },
     "evidenceBanner": {
-      "text": "Pruefer 的 Nachweisorientierte Darstellung — Tuerkis markiert sekundaere Actions； kein falsch-gruener 分數。",
-      "source_sha256": "1c3409820a87fda6f0a91eaedff2714f089485bc65297c394a61233a20f16857"
+      "text": "以證據為先的評估者視圖——青綠色標示次要動作；絕非虛假的綠色分數。",
+      "source_sha256": "3b12dffd0860ef427c8562420f2951794da1f23117f28eb81559416798b631f0"
     },
     "evidenceSurfaceAria": {
       "text": "合規性-Nachweisoberflaeche",
@@ -269,8 +269,8 @@
       "source_sha256": "836b93fde3b374baaa2c52f98d8b28232e4f9751d0818891e17ea96136bbd488"
     },
     "findingsOpen": {
-      "text": "{{count}} 進攻 Befunde",
-      "source_sha256": "eb57024e444714b0f0978f950f2097c5ffbe8a57501f4191b2f5736e2edd1098"
+      "text": "{{count}} 項未結發現事項",
+      "source_sha256": "4c45f88813e445dad1114420638f7ee47228ca5cc404bf72591c2ab89159b742"
     },
     "rescanAll": {
       "text": "所有掃描 ({{count}})",
@@ -297,8 +297,8 @@
       "source_sha256": "82b802fef93debb31963992b6eb87fdba9a6b38e9a6d0bcc7bb5a2bee597c0a0"
     },
     "syncInventoryAria": {
-      "text": "Endpunkten 同步最佳樂隊",
-      "source_sha256": "b2013a0d52a0873d28e7027bf3953fcdbcbcab76df4dc862d429ddf7ad7b29c8"
+      "text": "同步端點清單",
+      "source_sha256": "2b6eca71c8411dfd1bd49d4497e9c01002212a62bdba2f58d011fa7f846ac2f8"
     },
     "exportAuditorPack": {
       "text": "普魯弗帕克特",
@@ -317,8 +317,8 @@
       "source_sha256": "1980e84621c5b257d1c0c0e2478d3b053ebca4c797c022876998a74fca6df69c"
     },
     "gridAccess": {
-      "text": "祖格里夫",
-      "source_sha256": "adda7f5261037734be5fdefd71edcc3d33af738fcac0db86be4b6d2a6350ae76"
+      "text": "存取",
+      "source_sha256": "ec5ba0abb717da87aab2655bd4b4a40f93f2a591a0ade63611c42925c49c17e9"
     },
     "gridRoles": {
       "text": "羅倫",
@@ -333,12 +333,12 @@
       "source_sha256": "920e413c7d411b61ef3e8c63b1cb6ad058d5f95f8b481dbafe60248387d8c355"
     },
     "gridFindings": {
-      "text": "Befunde",
-      "source_sha256": "c013ad9e5a133fee0086a0c3215b9f03d3ec7aeb5d1b8ad2a14800a88621c2c0"
+      "text": "發現事項",
+      "source_sha256": "e171c2ff25b55e5a2d63d081ec3a65e272d11afec9169a03822c970aac37e79e"
     },
     "gridEvidence": {
-      "text": "納赫維塞",
-      "source_sha256": "16569e17e690ebf3b5151b6501ea6a65ec2b3ffa18f666503029be8987d879bd"
+      "text": "證據",
+      "source_sha256": "03867aea70acaf4c5dce37a76cf5a04dab1716d6ff70bf03761c439daa8be984"
     },
     "gridTopCategories": {
       "text": "頂級類別",
@@ -365,16 +365,16 @@
       "source_sha256": "d98f477bd2749bc121d712bf6b33e7392969601ef309ea0e56a4e389ed368db0"
     },
     "menuRescanHint": {
-      "text": "Sonden for dieses System erneut ausfuehren",
-      "source_sha256": "fe12cb261f1aa9ca4733b2e9b470ced0a127faa54a0d8d7fab99ad01812a6842"
+      "text": "重新運行該系統的探測器",
+      "source_sha256": "3881b737f20ff4946e53b06278b1d83e1be4eb1d3d138bb1c2ecc827eccee6f4"
     },
     "menuOpenDetail": {
       "text": "詳細說明",
       "source_sha256": "2089d2ca49aa057b01181c072cfce2220a2fe23667087f2c8bb88b6999a33386"
     },
     "menuOpenDetailHint": {
-      "text": "Befunde、Fix-It-Settings 和 Versuchsprotokoll",
-      "source_sha256": "1743300c84627909f1a4b61fb8f9e11d292434c83d6dea1ff98f0effb80bae8a"
+      "text": "發現事項、Fix-It 設定與嘗試紀錄",
+      "source_sha256": "e21065b65f58d4b367b3a74c801d933595438f465cf5549ea00891b1339aa28b"
     },
     "reportTitle": {
       "text": "Aktueller 合規立場",
@@ -393,12 +393,12 @@
       "source_sha256": "ac750953cdd8d9360cbaa48d9bc85f54e637d9ad51933c5ea89068f0285ab866"
     },
     "alertSuffix": {
-      "text": "Befunde unten under",
-      "source_sha256": "a762ce58c94a178d902ab11395c4aa29dced6e09afdb54d492e4e5890e39f82b"
+      "text": "下方發現事項",
+      "source_sha256": "853242b5f14defce7cfc4e305bf43e7f01e6143eecbd2688d231414406088e87"
     },
     "alertEvidenceNotScore": {
-      "text": "——Nachweise，kein Score。",
-      "source_sha256": "95d9ec56690a48445ea21dfe7d7990d332e440fc15439606148ec428b2b31589"
+      "text": "——證據，不是分數。",
+      "source_sha256": "173f4c6ea613d86c38fc62ade43df898597ba2bea7a2489dcdc8f7007d462617"
     },
     "machinesChip_one": {
       "text": "{{count}}系統",
@@ -409,16 +409,16 @@
       "source_sha256": "836b93fde3b374baaa2c52f98d8b28232e4f9751d0818891e17ea96136bbd488"
     },
     "findingsOpenChip": {
-      "text": "{{count}} 進攻 Befunde",
-      "source_sha256": "eb57024e444714b0f0978f950f2097c5ffbe8a57501f4191b2f5736e2edd1098"
+      "text": "{{count}} 項未結發現事項",
+      "source_sha256": "4c45f88813e445dad1114420638f7ee47228ca5cc404bf72591c2ab89159b742"
     },
     "machinesChipAria": {
       "text": "{{count}} Ansicht 中的系統",
       "source_sha256": "f487079a07f09236b462d1678fde9a3aa92ae509b6dab312a1e6ac154ff30f74"
     },
     "findingsOpenAria": {
-      "text": "{{count}} offene Befunde unter {{packaging}}",
-      "source_sha256": "3bca540a7c12bf9666d902926895a6a8cd942088e67e312e9892b5901a7ba575"
+      "text": "{{packaging}} 下有 {{count}} 項未結發現事項",
+      "source_sha256": "185f1a645501dac05f575e02b3263c95ed2ba48a1ca0ec471b3fdb2f8288f3c7"
     },
     "physicalHostChip": {
       "text": "物理主機 {{count}}",
@@ -437,42 +437,42 @@
       "source_sha256": "db185a2c3d12dcbd165851d0e2030c0c043fbb02539a82f4cc693de9a6f1e3b6"
     },
     "fixItSelected": {
-      "text": "Fix-It Auswahl",
-      "source_sha256": "ff34026e844f60ce614cfa352a2f54fb4d850fbca8a4c842c4135e6eb1a0fff2"
+      "text": "Fix-It 選取",
+      "source_sha256": "c766fe7b6ffd7ff2f94fc9925c4a6fe7b9bbe111c22b0b845ce44edab0f5ff46"
     },
     "fixItSelectedCount": {
       "text": "修復奧斯瓦爾 ({{count}})",
       "source_sha256": "8368dc27819c38c384c5f6f7af468d3a2b7c70e6bc1b6ce3d3fc4b4b65ca2329"
     },
     "fixItSelectedAria": {
-      "text": "Fix-It auf {{count}} ausgewaehlte Systeme with Live-Auto-Apply anwenden",
-      "source_sha256": "6c8e97130a21bcc9ca1caca1e6ef5f9a834e3b30f3131c128e241c5275bdf85c"
+      "text": "對 {{count}} 個選取系統套用 Fix-It（即時自動套用）",
+      "source_sha256": "0ef115b18d8e60c65c0487282d5086d06c75d65c2aaeba60a546405dc3fe18b7"
     },
     "fixItSelectedUnavailableAria": {
-      "text": "Fix-It Auswahl not verfuegbar — waehlen Sie Systeme with Live-Auto-Apply-Sonden",
-      "source_sha256": "b40435d68f598e6576df987372a6c45a66a82c749604acb39751fe066d64fb39"
+      "text": "Fix-It 選擇不可用 — 選擇具有即時自動套用探針的系統",
+      "source_sha256": "38e1c6fad2b0424734e392b6bc4065ac2bf23a9c1226f79eecdf0ba0de6b128e"
     },
     "selectionCaption": {
       "text": "{{count}} ausgewaehlt — 掃描 zeilen ({{group}})。",
       "source_sha256": "40cc4628d1a18334e08f0a0a3a79efbb7af0727fd4335d7ebeebd1462d96323e"
     },
     "fixItSelectedHint": {
-      "text": "Fix-It Auswahl 是第一個即時自動應用探空儀，屬於第一個 geeignete 系統 ({{count}} geeignet)。",
-      "source_sha256": "4c4814065dbf4de35cf14fb1dbe61d6e6201edebf8b7651fe52ce5e24387731d"
+      "text": "Fix-It 選取會在第一個符合條件的系統上執行第一個即時自動套用探測（{{count}} 個符合）。",
+      "source_sha256": "3ac90f5ab6efecb2e84ba63f573f7b1c074e11aba88ae80119c9936e3281e004"
     },
     "fixItSelectedNeedProbe": {
-      "text": "Fix-It Auswahl benoetigt mindestens 是一個即時自動應用探空儀（系統詳細資料中的 Fix-It-Settings）。",
-      "source_sha256": "b8dacf354f5dce4de781138ea56492caafc51e2f9b44adb73c46bfda82671583"
+      "text": "Fix-It 選取至少需要一個即時自動套用探測（系統詳細資料中的 Fix-It 設定）。",
+      "source_sha256": "d8ab633252df66eb5976489173846d7d4972e68abe2e68c14907d7157bada893"
     }
   },
   "gdpr": {
     "dsrClockNote": {
-      "text": "第 12 條 Abs。 3：Antwort innerhalb eines Monats nach Eingang。 Bei complexen Anfragen koennen Sie um zwei weitere Monate verlaengern — begruenden Sie dies vor the urspruenglichen Faelligkeitsdatum。第 12 條 Abs。 6：身分識別，bevor Sie personenbezogene Daten herausgeben。",
-      "source_sha256": "1c5800c0185eb585be21878f4ddb54d92db5162dae698b8113e9b25fa4c3a416"
+      "text": "Article 12 Paragraph 3: Reply within one month of receipt. For complex requests, you can extend by two additional months - please give reasons for this before the original due date. Article 12 Paragraph 6: Verify identity before releasing personal data.",
+      "source_sha256": "048f9a27570bcaed90a8130c15d292ff9061a4b98585a5bddd91b439008b4537"
     },
     "dsrNonWorkforceNote": {
-      "text": "Kunden 和 Angehoerige 經常參與 Workforce-Roster-Eintrag。 Verknuepfen Sie a Roster-Eintrag, wenn einerexistiert; andernfalls werden 姓名和電子郵件位於 Eingang 和 Identitaetspruefung als Momentaufnahme gespeichert 中。",
-      "source_sha256": "1f188206cac498c30f122b2eaa7a521e7bd72beb9dca22289824d4bc03a7f36a"
+      "text": "客戶和公眾通常沒有員工名冊條目。連結到名冊條目（如果存在）；否則，姓名和電子郵件將在收到時儲存為快照，並在身分檢查期間再次儲存。",
+      "source_sha256": "7ba24d88f03ed653ce1f9484ec950e9b1038cc930ebd366424b281ebb9269e10"
     }
   }
 }

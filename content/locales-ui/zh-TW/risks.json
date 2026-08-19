@@ -8,8 +8,8 @@
     "source_sha256": "7e81d387600f4fd81d44fea37f26152cfd7476f74baa593c34ebd794c0171f92"
   },
   "needPermission": {
-    "text": "Sie brauchen the Berechtigung, the Risikoregister to sehen.",
-    "source_sha256": "aa210bb51311831fb0ee3caac5814c204f833780563b0014cd925ef2709c6fd8"
+    "text": "您需要權限才能檢視風險登錄。",
+    "source_sha256": "222f96e5bab452802c0257c5306035f4f50bb6ac220eabb89ad4d0bfcf0c088c"
   },
   "loadFailed": {
     "text": "Dieses Risiko konnte not geladen werden。",
@@ -20,16 +20,16 @@
     "source_sha256": "7e81d387600f4fd81d44fea37f26152cfd7476f74baa593c34ebd794c0171f92"
   },
   "honesty": {
-    "text": "Das Register erfasst Risikoentscheidungen：是 identifiziert wurde、wie behandelt wird、wer akzeptiert hat 和 wann the Akzeptanz endet。不，戴一頂 Kontrolle bestanden 帽子。",
-    "source_sha256": "dea83c3d13f9ae0d59f7f9ec35b32ca516751f5e5e1cc62bd7cb18d0bda9bdd7"
+    "text": "本登錄記錄風險決策：已識別的內容與處理方式。這不是評估裁決。",
+    "source_sha256": "2cfec43bb0ac7aad0ef729ba96a5dcc79aaf7332113d2771d7de639e6e9f3364"
   },
   "expiryNotice": {
-    "text": "Eine abgelaufene Akzeptanz wrd beim Lesen berechnet。在 Zwoelf-Stunden-Lauf 中，風險接受已失效，但風險接受時間已結束。 Das Ereignis 融合了 Ablaufdatum。 Es oeffnet the Risiko not wieder, zieht the Akzeptanz not zurueck and eskaliert nichts. Die Zustellung haengt of the Ereigniszielen ab，操作員 eingerichtet 帽。",
-    "source_sha256": "fef0a558751ff3e308bfe724dedd52b0bf8c60de9bb28b90b36edc23fa2a0635"
+    "text": "已過期的接受在讀取清單時計算。風險接受以十二小時週期檢視。",
+    "source_sha256": "d624de816ba77d540e7f796a7a367a8b80f6749ea0a493f24984e7145e7979d2"
   },
   "loadRegisterFailed": {
-    "text": "Das Risikoregister konnte not geladen werden。 Pruefen Sie Ansichtsberechtigung 和 Registerspeicher。",
-    "source_sha256": "3709da8b2f0a61736b1bbe6f77125ff591e93b05d5925c67be4dbe7027f21ab2"
+    "text": "無法載入風險登錄。請檢查檢視權限與登錄儲存。",
+    "source_sha256": "76ba3ea339fd2ce1352b438c3efcec350ef9f402f79d4e4c4a85429caf6cb9e9"
   },
   "newRisk": {
     "text": "新風險",
@@ -64,20 +64,20 @@
     "source_sha256": "13f7eb63bade24490c5a2f909398076f957d19aebb35063cd382be0f811a3ca6"
   },
   "reviewsOverdue": {
-    "text": "普魯芬根 ueberfaellig: {{count}}",
-    "source_sha256": "bdda0196e72ae85baf954037317ca9d0524e477b22d18e033f98177e25d23988"
+    "text": "逾期檢視：{{count}}",
+    "source_sha256": "7041f037cde743123f955d55383dfb3c4fba0a99e855d92af3949ceb3adc7069"
   },
   "acceptancesExpired": {
-    "text": "Akzeptanzen abgelaufen：{{count}}",
-    "source_sha256": "c8f07ad94c1c607b4457b4688ee82c4a3c626d3b9fa4937b3e82aea4072ae8c7"
+    "text": "已過期的接受：{{count}}",
+    "source_sha256": "5009c2306dcfb9223a54575a264be4ea7a159aacdb0c2831ab509ffaa65f6c66"
   },
   "filterStatus": {
     "text": "地位",
     "source_sha256": "920e413c7d411b61ef3e8c63b1cb6ad058d5f95f8b481dbafe60248387d8c355"
   },
   "filterSeverity": {
-    "text": "施韋勒格勒",
-    "source_sha256": "ff3601201e1f245556608affc3119487531b56fe5375e4fbba09fbccc1d01b21"
+    "text": "嚴重度",
+    "source_sha256": "5e9f98120dbe568255ee059f39671686982b113d4e917b6d6faf149918c81709"
   },
   "allStatuses": {
     "text": "所有狀態",
@@ -92,8 +92,8 @@
     "source_sha256": "e730f1fdda0daa7fde39b6b447e44a7ec7914ffc2f9447df95afb2452de89ab6"
   },
   "expiredAcceptancesOnly": {
-    "text": "努爾·阿布格勞芬·阿克澤普坦贊",
-    "source_sha256": "a16f2285c7b94159b875b94201abca9be1ba492947fe610289720a02d1324642"
+    "text": "僅顯示已過期的接受",
+    "source_sha256": "ebccb46a3b17d458d29ab0c377a1cb9f196ef73148764610dc7ea62a4eabd5d8"
   },
   "loadingRegister": {
     "text": "註冊線凝膠…",
@@ -104,16 +104,16 @@
     "source_sha256": "5da66fc5cc60fb700843ce7d7420d8ab1bb358e11dab10abed6aad3f2b97ac3c"
   },
   "emptyRegister": {
-    "text": "Keine Risiken passen to diesen Filter. Ein leeres Register heisst, dass hier nichts erfasst wurde — not, dass es keine Exposition gibt.",
-    "source_sha256": "d82abf43f639e14ebce90f92ac07a5781caf440fc4d2bea67745ee001047924c"
+    "text": "沒有風險符合此篩選條件。空白登錄表示此處尚未記錄任何項目，並不表示沒有曝險。",
+    "source_sha256": "c46a09e11322b2b7d904cb613eb89455802b7d4c3ad22fd5d32852b32334e1f4"
   },
   "colRisk": {
-    "text": "里西科",
-    "source_sha256": "7becb001cd7071dff5ec114209ec6b6f3041895610ce643cd614d056c9e05dce"
+    "text": "風險",
+    "source_sha256": "0711a8d636e4c068ae59fa80c03ad68e7bd9fe473c1f9248fd2cf3716e3fb715"
   },
   "colSeverity": {
-    "text": "施韋勒格勒",
-    "source_sha256": "ff3601201e1f245556608affc3119487531b56fe5375e4fbba09fbccc1d01b21"
+    "text": "嚴重度",
+    "source_sha256": "5e9f98120dbe568255ee059f39671686982b113d4e917b6d6faf149918c81709"
   },
   "colStatus": {
     "text": "地位",
@@ -124,56 +124,56 @@
     "source_sha256": "925e8dcc149107187707400ac6db533228b02bf66852913a41e8fa171fb8828e"
   },
   "colAcceptance": {
-    "text": "阿克澤普坦茲",
-    "source_sha256": "9056edf9669ac81f2890dc0fb03888d5b352f70e6c875f26569003f0ea68ab3f"
+    "text": "接受情形",
+    "source_sha256": "f190a5cb3aff17b0ee84f6ee258333d63a9cc71aa66c2e1788ebc3ae24a89b10"
   },
   "colOpen": {
-    "text": "厄夫寧",
-    "source_sha256": "830df0f253b59f5541af29908251e9a51ef40b943c14f4d8030a7682ac1511ae"
+    "text": "開啟",
+    "source_sha256": "ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942"
   },
   "open": {
-    "text": "厄夫寧",
-    "source_sha256": "830df0f253b59f5541af29908251e9a51ef40b943c14f4d8030a7682ac1511ae"
+    "text": "開啟",
+    "source_sha256": "ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942"
   },
   "openAria": {
-    "text": "里西科 {{ref}} 奧夫嫩",
-    "source_sha256": "df20fd619fae1f2d5c2e6fa9dba0444aa5d41167c12aa9bdec51afaed1849761"
+    "text": "開啟風險 {{ref}}",
+    "source_sha256": "b86192a3071dbb7c19f236c0d3d1b9f5ada27301857e9e8b0c944e04d218ba67"
   },
   "severityAria": {
-    "text": "Schweregrad {{severity}}、aus Wahrscheinlichkeit {{likelihood}} 和 Auswirkung {{impact}}",
-    "source_sha256": "60e0a934e26ca5510b344f60a648e0332b253e0e26f2d0e9b46cacb89ccea0e5"
+    "text": "嚴重度 {{severity}}，來自可能性 {{likelihood}} 與影響 {{impact}}",
+    "source_sha256": "4f1f6a2d09a72aec1cb6258f770cd81ca9d29a0d61a9b24bb1c93e139b710c48"
   },
   "severityColHelp": {
     "text": "Aus the gespeicherten Wahrscheinlichkeit and Auswirkung under the jetzt geltenden Bewertungsmatrix. Eine Zeile, deren Lesung sich seit the Erfassung geaendert hat, sag the under the Chip.",
     "source_sha256": "d50461f934b46e5005e2513ad69822279d6b6a53a110589ddedabc32ac8b03b5"
   },
   "statusColHelp": {
-    "text": "是 zuletzt ueber dieses Risiko entschieden wurde。 Statuswerte sind erfasste Entscheidungen, kein Bewertungsergebnis。",
-    "source_sha256": "a32a0feb73274c10417de7c0044ab7fc37697d7f1e88d15fbadb2152415b3ded"
+    "text": "此風險上次記錄決策的時間。狀態值是已記錄的決策，不是評估裁決。",
+    "source_sha256": "2788e4af9ffaddbb6a0e491ef66376fdfa5e76cd3bd45ef26fa50c77061a6651"
   },
   "reviewColHelp": {
-    "text": "Wann dieses Risiko als Naechstes geprueft werden soll。 Ueberfaellig wird beim Lesen dieser Liste berechnet;尼希茨庫恩迪格特群島",
-    "source_sha256": "8f740c0fff3319acc876cd0a151096208839bba6b2bcb0339393813ba0cb589f"
+    "text": "此風險下次應檢視的時間。逾期狀態在讀取此清單時計算。",
+    "source_sha256": "4f76cf8b77b2d4221e4671e4c57c8c3cdf3eb84d6cbd77f3baa036202ff9af81"
   },
   "acceptanceColHelp": {
-    "text": "Ob Jemand dieses Risiko akzeptiert hat and bis wann. Eine abgelaufene Akzeptanz ist erloschen, and niemand wurde benachrichtigt。",
-    "source_sha256": "5eca7467fbc5f0c67dda207f92d04587461d8092b9acbf838515e8bef28a6e5d"
+    "text": "是否有人接受此風險以及有效期限。已過期的接受在讀取清單時重新計算。",
+    "source_sha256": "7adc93942f3cbd8a2fe14cfeb5aa42ac78df567d8c953457c0b18be65458c533"
   },
   "toolbarTitle": {
     "text": "風險登記冊",
     "source_sha256": "7e81d387600f4fd81d44fea37f26152cfd7476f74baa593c34ebd794c0171f92"
   },
   "toolbarSubtitle": {
-    "text": "Erfasste Risikoentscheidungen — keine Aussage，戴上 Kontrolle bestanden 帽子",
-    "source_sha256": "b47f46d07bd9d7c0b098b575a50371722f3c9b71a4ffd4c9442fffd2c47fb2da"
+    "text": "已記錄的風險決策——不表示任何控制項已通過。",
+    "source_sha256": "ce9c2d6aa7866b1f5a5dece44fb200f160e709a6a6187b2aa6e31f553cbb7b5d"
   },
   "createTitle": {
-    "text": "艾因·里西科·埃爾法森",
-    "source_sha256": "1f932a5e8b141c8f71a8b3ee6382b48193c892d93996bdc2075a532e3631f9a0"
+    "text": "記錄風險",
+    "source_sha256": "04bf5762532b0de5fe49e4cd2803a65b021b94c930c30e4b3a27fc725bfb2267"
   },
   "createScoringNote": {
-    "text": "Der Schweregrad wird aus the gewaehlten Wahrscheinlichkeit and Auswirkung berechnet and nie gespeichert. Gespeichert wird the Version the Bewertungsmatrix zum Zeitpunkt the Erfassung, damit the Risiko spaeter so gelesen werden kann, wie es entschieden wurde.",
-    "source_sha256": "40584d4068f7e729cd8dbff8383b055257cbc424efe799101b026e5c3c9a888d"
+    "text": "嚴重度由所選的可能性與影響計算。",
+    "source_sha256": "ef823ee34f855b314bf5fad18fd3bd04b7a4c34b79a1bd3aa8c6cc0e4b613cef"
   },
   "createRef": {
     "text": "風險參考",
@@ -216,8 +216,8 @@
     "source_sha256": "8eeb037702e13e7862fc006ef504c5311ccf8f041535adfaa0c4db7a04c52853"
   },
   "createReviewDueHelp": {
-    "text": "選修的。如果沒有 Pruefungsdatum wird nie als ueberfaellig gemeldet，則 Ein Risiko。",
-    "source_sha256": "abd47219a3972130550933b10fa01348eded3efe1272ce62778cab9b29be364f"
+    "text": "選用。若未設定檢視日期，風險不會被回報為逾期。",
+    "source_sha256": "9f0875287c61f5e33298742b2d1d957e2ed7cfaa5ba82e1466b6b15eedd9812c"
   },
   "createCancel": {
     "text": "取消",
@@ -236,12 +236,12 @@
     "source_sha256": "0f031e62916afda4c8d2565ecc9baad36022fd231f429d8213a8cd8f455f55cb"
   },
   "review_none": {
-    "text": "Keine Pruefung geplant",
-    "source_sha256": "3e70e83ae8974e3983584d857122563b2d53360d2b36554d7083f6ab310d9bfd"
+    "text": "未排程檢視",
+    "source_sha256": "43b98dce119c47e36dbccbec0039e3242b51f153b122363b01d1c35fccac52a4"
   },
   "review_overdue": {
-    "text": "Ueberfaellig seit {{date}}",
-    "source_sha256": "0e99f48b330cc5a1888144b6929f8176263617af34b2ff3b0f293db542e168c2"
+    "text": "自 {{date}} 起逾期",
+    "source_sha256": "6d9e581a8ad01ead9ea102048ed06b79d5fb41a037f133a8e00b77139a542de2"
   },
   "review_due": {
     "text": "法利格 {{date}}",
@@ -317,20 +317,24 @@
   },
   "level": {
     "low": {
-      "text": "尼德里格",
-      "source_sha256": "ee12538381b9ba4258f9cfcb3c6197f66680a72d35e845a76a2b1d7acdd76c6a"
+      "text": "低",
+      "source_sha256": "f793de205ead5ac302c4a1627829dea41f176b1068b993a32373fc869918374b"
     },
     "moderate": {
       "text": "米特爾",
       "source_sha256": "6604277e642c958b99778c690e526c1126c19c7f3b0030590a4a0b92eac62d68"
     },
     "high": {
-      "text": "Hoch",
-      "source_sha256": "5f9d45fa2f0b9372a2083664c9f08707e3359fa85b5ce05971d4692bbf2434d1"
+      "text": "高",
+      "source_sha256": "c4ebc6d4a5832cd9415f906ad03661110c705a72381c8b8b145761d02e2dd23a"
     },
     "critical": {
-      "text": "克林蒂奇",
-      "source_sha256": "dd0c699e4d40d49ba0db2a3f76ccece1803f0e1eeac6da06055ced58fd16a6f8"
+      "text": "嚴重",
+      "source_sha256": "427dd2969bd140bec3c1bcc7983da982f4815938cd4510ad0b2bad48ac5b55f9"
+    },
+    "medium": {
+      "text": "中",
+      "source_sha256": "8e588cd187741f1cd76f5fab77b7208782a8c21d764ce7d7a4cf3ac4e0968873"
     }
   }
 }
