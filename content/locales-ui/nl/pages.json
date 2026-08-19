@@ -71,28 +71,26 @@
       }
     },
     "root": {
-      "bullets": [
-        {
-          "text": "Ontbrekende tegels tonen \"Nog niet beschikbaar\" — nooit een verzonnen nul.",
-          "source_sha256": "945a6ac23ca5db7eb374d90f3244c553a499d159100a0cad5f39b45279d21f17"
-        },
-        {
-          "text": "Gedeeltelijke tegels worden gemarkeerd als \"Gedeeltelijk\" met een eenvoudige toelichting.",
-          "source_sha256": "fd61988cb65ff1900dcb19623ad5f378c4707699c45af971eb7e2cd4f6971572"
-        },
-        {
-          "text": "Pas aan met Omhoog / Omlaag. Organisatiedefault publiceren vereist dashboard.publish; persoonlijk opslaan vereist dashboard.personalize.",
-          "source_sha256": "ed93d51a2d8fe95be8fa4f5d53187a952a0d3fbec97b23f05c6cc8b83d49a31c"
-        },
-        {
-          "text": "Mijn werkstations of Wachtwoord tonen staan onder Favorieten.",
-          "source_sha256": "89193a25b206956414b2a74329b269c4c161cf119fc2548531a8850c6a47e02f"
-        },
-        {
-          "text": "Zonder dashboard.view heeft deze pagina niets te tonen; u gaat naar Favorieten.",
-          "source_sha256": "be0c280be23979edd80969ca5452046ca2159abbce0e457710061fa4d1314d1a"
-        }
-      ],
+      "bullets[0]": {
+        "text": "Ontbrekende tegels tonen \"Nog niet beschikbaar\" — nooit een verzonnen nul.",
+        "source_sha256": "945a6ac23ca5db7eb374d90f3244c553a499d159100a0cad5f39b45279d21f17"
+      },
+      "bullets[1]": {
+        "text": "Gedeeltelijke tegels worden gemarkeerd als \"Gedeeltelijk\" met een eenvoudige toelichting.",
+        "source_sha256": "fd61988cb65ff1900dcb19623ad5f378c4707699c45af971eb7e2cd4f6971572"
+      },
+      "bullets[2]": {
+        "text": "Pas aan met Omhoog / Omlaag. Organisatiedefault publiceren vereist dashboard.publish; persoonlijk opslaan vereist dashboard.personalize.",
+        "source_sha256": "ed93d51a2d8fe95be8fa4f5d53187a952a0d3fbec97b23f05c6cc8b83d49a31c"
+      },
+      "bullets[3]": {
+        "text": "Mijn werkstations of Wachtwoord tonen staan onder Favorieten.",
+        "source_sha256": "89193a25b206956414b2a74329b269c4c161cf119fc2548531a8850c6a47e02f"
+      },
+      "bullets[4]": {
+        "text": "Zonder dashboard.view heeft deze pagina niets te tonen; u gaat naar Favorieten.",
+        "source_sha256": "be0c280be23979edd80969ca5452046ca2159abbce0e457710061fa4d1314d1a"
+      },
       "title": {
         "text": "Dashboard",
         "source_sha256": "67b696468610b879ed7f224dbf6b0861f27e39d20454cb9d7af1ec52d3e5eeaa"
@@ -223,6 +221,3252 @@
         "text": "Space- or comma-separated HTTPS URLs",
         "source_sha256": "c749254ad80d1858e5f019e254a916528294d192faa5b4170a44de48a2fe1643"
       }
+    },
+    "about": {
+      "adminConsole": {
+        "text": "Beheerdersconsole (deze browser-app)",
+        "source_sha256": "74fc18b861615c688c602fda8d0d85240ee87c36512f9b1dc8b1e6e67a969a2e"
+      },
+      "binaryBuilt": {
+        "text": "Binair gebouwd: {{value}}",
+        "source_sha256": "b00183ca164bd8c1a09ef96db1856cf9e04a05b267d2ba547a5d3ecabf41de9a"
+      },
+      "buildVersion": {
+        "text": "Build-versie: {{value}}",
+        "source_sha256": "3b1e57c94d5f4e52511b15d44c517001d1cd686c22cb35779977719bb03b47c3"
+      },
+      "copyrightFooter": {
+        "text": "Alle rechten voorbehouden. Het ongeoorloofd kopiëren of herdistribueren van deze software is verboden, behalve zoals toegestaan ​​door de Eindgebruikerslicentieovereenkomst of een schriftelijke Order.",
+        "source_sha256": "c57367fbb1c94a4f433f078d9154ba456ee7e6fe6be50f4bf60b1cf97d17a1a7"
+      },
+      "copyrightIntro": {
+        "text": "Het eigendom van AIC Server en gerelateerde producten blijft bij Analog Informatics Corporation en haar licentiegevers. Componenten van derden en open source-componenten behouden hun eigen kennisgevingen.",
+        "source_sha256": "91179199e910c60fbb9a342106dde4faba0f0f0568bcce3937359196b941df02"
+      },
+      "copyrightLoadFailed": {
+        "text": "Kan de copyrightmelding niet laden.",
+        "source_sha256": "fb37e796c900d4afed1a5aa22ab7e81cdf99d5a21586373cce5fac4844ad091a"
+      },
+      "copyrightLoadStatus": {
+        "text": "Kan auteursrechtmelding ({{status}}) niet laden.",
+        "source_sha256": "28fa8cfe871eda938b364984273cad64bb5e5bbe26614c27fec1155112156eed"
+      },
+      "copyrightLoading": {
+        "text": "Auteursrecht laden",
+        "source_sha256": "4ddbed1a6e9536c965f5e99e90c36f63bdeadd052c0a289e771492b03f9a2ab7"
+      },
+      "copyrightTitle": {
+        "text": "Copyright",
+        "source_sha256": "8dfc77ab4089e09d4397e12306086c19767ffd4bbf6e239240bde83fe537a4a7"
+      },
+      "creditsBlocked": {
+        "text": "{{n}} pakket(ten) zijn GEBLOKKEERD (geen geoogste licentie-identiteit en/of licentietekst). Ze blijven hieronder vermeld en worden niet weggelaten.",
+        "source_sha256": "eb07331585f8e16d967f02585bf6b92dc7ca76dd0eccc7a7606b9a01d3e3007a"
+      },
+      "creditsBlockedChip": {
+        "text": "GEBLOKKEERD",
+        "source_sha256": "a1f4014f85aac4c098906327b4ec4b6e3fb1308984bbe3531130643dc22feb02"
+      },
+      "creditsDownloadAppendix": {
+        "text": "Download de Cargo.lock-bijlage",
+        "source_sha256": "d07bf67e3cf8a3f1bb23731d655b1ef559a752b77f969cda0f082e14fd8d3167"
+      },
+      "creditsDownloadAppendixHelp": {
+        "text": "Download de volledige Cargo.lock-bijlage met namen en versies als JSON.",
+        "source_sha256": "4920b7989da9998b89ae756a109719b4b55fb7a8962ed8a0080b2ff2dffee33d"
+      },
+      "creditsDownloadBlocked": {
+        "text": "Download GEBLOKKEERDE pakketten",
+        "source_sha256": "04480fc5efe9607b3f97ad56f28b6b9dd38c17a0a3f3a0674fbdcf7327c63d5d"
+      },
+      "creditsDownloadBlockedHelp": {
+        "text": "Download de GEBLOKKEERDE pakketlijst als JSON.",
+        "source_sha256": "5cc38ed56ea01ef558fb4c021d694c0c40c80eb243592361bddd0d2ca82d4173"
+      },
+      "creditsDownloadInventory": {
+        "text": "Download inventaris-JSON",
+        "source_sha256": "f24ca62b27bbe6e48dc5529a52b5befdf0b7b3bcdc4787a7e22e6b5c20eb3445"
+      },
+      "creditsDownloadInventoryHelp": {
+        "text": "Download de volledige JSON-inventaris, inclusief metadata over eerlijkheid.",
+        "source_sha256": "e77c0361567ca425cf24da5ddf36cf60ab472e511c791bfe38e14a6e46017de1"
+      },
+      "creditsEcosystem": {
+        "text": "Ecosysteem: {{value}}",
+        "source_sha256": "1df69e48b0f7767e00d986d1e49c4505952e19de582b72a9f513fd2fb5ab50f9"
+      },
+      "creditsFilter": {
+        "text": "Componenten filteren",
+        "source_sha256": "58265281389e97c92cea3d49958b645f76f6d2c942c83eeb787e0e8b6eeacf9d"
+      },
+      "creditsFilterAria": {
+        "text": "Filter open source-credits op naam of licentie",
+        "source_sha256": "36bb26972b9d7df983d113efb30daeb5a24daaeb9adf4121a259ac27cffe3dd4"
+      },
+      "creditsFilterHelp": {
+        "text": "Verfijn de lijst op projectnaam, licentie of copyrighttekst.",
+        "source_sha256": "542808be97fac8256ba428d8cc83f3d5ed0b43af2e338d29d4c49122c5ddaa2f"
+      },
+      "creditsIntro": {
+        "text": "Elke open-sourcecomponent van derden die is opgenomen in AIC Server (vrachtproductiegrafiek, npm-productiegrafiek en ingebouwde activa). Elke rij noemt het project, de licentie en de copyrightkennisgeving, indien bekend. Vouw een rij uit om de licentietekst te lezen.",
+        "source_sha256": "c52c085bb1b4d48ad292f6a90c64460a54e5fc4a11cb261e0da63942ee025710"
+      },
+      "creditsLicenseLoadFailed": {
+        "text": "Kan de licentietekst niet laden.",
+        "source_sha256": "677dcdc218e9123d78794ea798eb3bc8b1f74e6a5d66bbf91dea8e83914e24d6"
+      },
+      "creditsLicenseLoadStatus": {
+        "text": "Kan licentietekst ({{status}}) niet laden.",
+        "source_sha256": "606a3efbe33a9a2d6ccb5b8aae3ffb5a445a345434789293db3d59edc4be8ba1"
+      },
+      "creditsLicenseLoading": {
+        "text": "Licentietekst laden…",
+        "source_sha256": "28c093b8cfa547ebf84ebc550501cb73a4be858f41492767880a8d6f85e8266a"
+      },
+      "creditsLicenseTextAria": {
+        "text": "Licentietekst voor {{name}}",
+        "source_sha256": "0c23d592540802a086768f9048b3ae603c5405880ff804702a585fa62be92d9c"
+      },
+      "creditsLicenseUnknown": {
+        "text": "Licentie niet opgelost",
+        "source_sha256": "9bec875ae2ec8565c0dc6ef69c0947c5a267800da7707cea8224b03d2ae2ac88"
+      },
+      "creditsListAria": {
+        "text": "Open source-componenten",
+        "source_sha256": "5e018a32e368588faa774372bd0f3df8681c72bd2bd617c981cfb32757459bd4"
+      },
+      "creditsLoadFailed": {
+        "text": "Kan de inventaris van open source-credits niet laden.",
+        "source_sha256": "13eb3abfc48143d9ae2e3620c5997d91c0bbee5a2b581d0675f4fd292e600ac5"
+      },
+      "creditsLoading": {
+        "text": "Open source-credits laden",
+        "source_sha256": "053277bb67c8b6d5914ee02e424496c8ba8758a7e953ea71ab7185997877dbf1"
+      },
+      "creditsMeta": {
+        "text": "__PH0__ third-party entries (__PH1__ with license text). Generated __PH2__. Cargo.lock packages: __PH3__. Cargo.lock SHA-256: __PH4__. package-lock SHA-256: __PH5__. Server SBOM SHA-256: __PH6__.",
+        "source_sha256": "37cbade557d95f3a067cffa03a1c36099fd44681678975f0b8fe75e114a29c1e"
+      },
+      "creditsNoLicenseBody": {
+        "text": "BLOCKED: no license body could be harvested for this package. It remains listed; the license was not invented.",
+        "source_sha256": "df364d3f4b017f029c2424ffdd7ac6f452ba2c0c510a6eddd1b3e512cf7120b8"
+      },
+      "creditsPaginationAria": {
+        "text": "Open-source creditspagina's",
+        "source_sha256": "3f1925a4c8859d54c55c3b7e1c07ef3c4851641d3265845e97b5d4932bfa518b"
+      },
+      "creditsShowing": {
+        "text": "Toont {{shown}} van {{total}} (pagina {{page}} van {{pages}})",
+        "source_sha256": "74159e5b199134f1a88b0e5ad432b3be404d0f16d5fc3caa86317c56bbc65cdd"
+      },
+      "creditsSource": {
+        "text": "Bron: {{value}}",
+        "source_sha256": "dc496e4e86925ba126dccb866b334a346b025cef54a84cc123da4d06d7aacd34"
+      },
+      "creditsStatusLabel": {
+        "text": "Voorraadstatus: {{status}}",
+        "source_sha256": "866d79376944b75a9b8f5b157de68b6464d3ef674a39842648e3d6cc27ad529d"
+      },
+      "creditsTitle": {
+        "text": "Open Source-credits",
+        "source_sha256": "20fc5ff5dce0659a8fd4cfc8f44ce18350d4345c8f0e0eec83a99b13f44cab7e"
+      },
+      "creditsUnresolved": {
+        "text": "{{n}} directe Cargo-afhankelijkheden hebben tijdens het genereren geen licentiereeks ontvangen van de lokale Cargo-registercache (vermeld met een opmerking).",
+        "source_sha256": "37b51ad737a0d1520507ac93d6b8b74a94b0cc73ebb5a0f156825d70c5601984"
+      },
+      "eulaIntro": {
+        "text": "Deze software wordt in licentie gegeven, niet verkocht. Lees de overeenkomst goed door. Als u AIC Server installeert of gebruikt, betekent dit dat u deze voorwaarden accepteert (en elke bestelling waarin aanvullende rechten worden vermeld).",
+        "source_sha256": "ce18626359b5d0448d8e235d778a51e370791b2db9bec8e53cbab3e201e6d567"
+      },
+      "eulaLoadFailed": {
+        "text": "Kan de licentieovereenkomst voor eindgebruikers niet laden.",
+        "source_sha256": "bcbc4db17708a3fa9f94d5a73b853c24641309cc8e3bb4d967c800491f023826"
+      },
+      "eulaLoadStatus": {
+        "text": "Kan EULA ({{status}}) niet laden.",
+        "source_sha256": "4231588b1783e750cee85b8df9bba4e17ec07785e2292d106720b625ead68d54"
+      },
+      "eulaLoading": {
+        "text": "EULA laden",
+        "source_sha256": "d58d42e95ec51b0e9fdaf2c5e70da5a0ddddb6b107e6e12932cdcf66c139526b"
+      },
+      "eulaTitle": {
+        "text": "End User License Agreement",
+        "source_sha256": "eedbed2a837bff42f2ef2428379e7308dcd01807d1508c350b3db646c560650f"
+      },
+      "fipsHonesty": {
+        "text": "Cryptografie in rust en op de draad maakt gebruik van de AWS-LC-module (CMVP #4759). Dat is de modulegrens – niet een claim dat het volledige binaire bestand van AIC Server CMVP-gecertificeerd is.",
+        "source_sha256": "be93af7bb68a33d04f891587a374823bf2e0fff820abc0f38c66f1cf17ae483b"
+      },
+      "gitSha": {
+        "text": "Git SHA: {{value}}",
+        "source_sha256": "5337d853b5b298d146eaaaef58201741c09072d15883c8a2a3e5d4846198096b"
+      },
+      "loadBuildFailed": {
+        "text": "Kan de serverbuildversie niet laden vanuit de service-logs API.",
+        "source_sha256": "a55c97bcc6d1147baaca96d7a556d03bb89c4f51ad4d585acc902fb243e2efd7"
+      },
+      "loadingBuild": {
+        "text": "Serverbuildversie laden…",
+        "source_sha256": "d6efae4ca48d8d172c32cacde94d876c5718f3ad7edcdf6983a1db882108877d"
+      },
+      "notReported": {
+        "text": "niet gerapporteerd",
+        "source_sha256": "2087cb5f8b6365490a647d14a3494bf2b96683a2a8437eddae03c623b628665b"
+      },
+      "packageLabel": {
+        "text": "Pakket: {{name}}",
+        "source_sha256": "3f98c914e262f5332b907d96c6e80a61c4ecab1b4d534910efcc86878b60b716"
+      },
+      "serverBinary": {
+        "text": "AIC Server binair",
+        "source_sha256": "0c9e304afd2801aad3cfdcb1651dec4abaea9b7e8c707446452f45663352e25b"
+      },
+      "uiVersion": {
+        "text": "UI-versie: {{version}}",
+        "source_sha256": "2b1d79950ed66a46c70bd3f1882aad395e9dfacf7817619d51635983e0207b57"
+      },
+      "versionIntro": {
+        "text": "Product- en build-ID's voor dit AIC Server-exemplaar. Gebruik deze waarden bij het openen van een ondersteuningsaanvraag.",
+        "source_sha256": "be9daf749e847e1a768b77b2756cb01f4eb2d4144a615f6f3661a9be06751993"
+      },
+      "versionTitle": {
+        "text": "Versie-informatie",
+        "source_sha256": "75a33f90fd5e4ae1f055102aef32f670d097009d5e986b612c36ab21d42f568f"
+      }
+    },
+    "auditLog": {
+      "apply": {
+        "text": "Toepassen",
+        "source_sha256": "31e392d1c0378beca611de66c0f4c71cba29159905cc54242d9bddee5b23d851"
+      },
+      "clear": {
+        "text": "Duidelijk",
+        "source_sha256": "83b12c2216efb4fdc924e1deb5182e905e4926ed0c1c324d467107f46d5a26a9"
+      },
+      "close": {
+        "text": "Dichtbij",
+        "source_sha256": "7d9eb7acb13e24625c404401d8e88b2350e32162455885f18276cf802f7701ed"
+      },
+      "colAction": {
+        "text": "Actie",
+        "source_sha256": "64cff1319d2fd2cbb7a1e84ccecf22c1cc07b24435cdb522f8c0aa525d6002a6"
+      },
+      "colClientIp": {
+        "text": "Client-IP",
+        "source_sha256": "eb3f1fe56719b4a13522bfecbb798d8344b499afc8a0675486aca1be19337a2a"
+      },
+      "colEndpoint": {
+        "text": "Eindpunt",
+        "source_sha256": "3df9726c68ba76d6c8bb02b65e572df8dca251481bb6cb3c99c808b3f5087c13"
+      },
+      "colError": {
+        "text": "Fout",
+        "source_sha256": "54a0e8c17ebb21a11f8a25b8042786ef7efe52441e6cc87e92c67e0c4c0c6e78"
+      },
+      "colOutcome": {
+        "text": "Resultaat",
+        "source_sha256": "4e80abb5b14656d4eed8fd93705fd4c774d7653b05162763770bd23f1755db1a"
+      },
+      "colTimestamp": {
+        "text": "Tijdstempel",
+        "source_sha256": "115a2cc92c1097ac4ebeb49698f5e22635a24ee1ef89722616f862ea43c5baba"
+      },
+      "colUser": {
+        "text": "Gebruiker",
+        "source_sha256": "b512d97e7cbf97c273e4db073bbb547aa65a84589227f8f3d9e4a72b9372a24d"
+      },
+      "detailsJson": {
+        "text": "Details (JSON)",
+        "source_sha256": "c2d9839e7a62810d2a60b8497de5a2826fa87f8a0b05e23fe74a027c46dfd873"
+      },
+      "detailsTitle": {
+        "text": "Auditlogboekinvoer",
+        "source_sha256": "49a0d1817db1ff0f7938130b38ad052b814a2546d0c41750b079b15b215aaae5"
+      },
+      "fieldAction": {
+        "text": "Actie",
+        "source_sha256": "64cff1319d2fd2cbb7a1e84ccecf22c1cc07b24435cdb522f8c0aa525d6002a6"
+      },
+      "fieldClientIp": {
+        "text": "Client-IP",
+        "source_sha256": "eb3f1fe56719b4a13522bfecbb798d8344b499afc8a0675486aca1be19337a2a"
+      },
+      "fieldEndpoint": {
+        "text": "Eindpunt",
+        "source_sha256": "3df9726c68ba76d6c8bb02b65e572df8dca251481bb6cb3c99c808b3f5087c13"
+      },
+      "fieldEndpointId": {
+        "text": "Eindpunt-ID",
+        "source_sha256": "29fc73502f7c2789bbcd1b4ad44f942904d1ec7dfbce1e94eecbc201b686ef32"
+      },
+      "fieldErrorMessage": {
+        "text": "Foutmelding",
+        "source_sha256": "a5dc35f1ff425f694c409eb7be5aa14b1f125a69716e046b369df7b5f4231a99"
+      },
+      "fieldOutcome": {
+        "text": "Resultaat",
+        "source_sha256": "4e80abb5b14656d4eed8fd93705fd4c774d7653b05162763770bd23f1755db1a"
+      },
+      "fieldTimestamp": {
+        "text": "Tijdstempel",
+        "source_sha256": "115a2cc92c1097ac4ebeb49698f5e22635a24ee1ef89722616f862ea43c5baba"
+      },
+      "fieldUser": {
+        "text": "Gebruiker",
+        "source_sha256": "b512d97e7cbf97c273e4db073bbb547aa65a84589227f8f3d9e4a72b9372a24d"
+      },
+      "fieldUserAgent": {
+        "text": "Gebruikersagent",
+        "source_sha256": "62e013458fd79bacdb6eac2e6d6914f8bd0865eab7f31e2a4c0aa227e1905024"
+      },
+      "fieldUserId": {
+        "text": "Gebruikers-ID",
+        "source_sha256": "7967e089a7b94464ee1b0c6d4b8271e99bcf36f9e5481e40a5eec5c5a5108d01"
+      },
+      "filterAction": {
+        "text": "Actie",
+        "source_sha256": "64cff1319d2fd2cbb7a1e84ccecf22c1cc07b24435cdb522f8c0aa525d6002a6"
+      },
+      "filterActionAria": {
+        "text": "Filter op een of meer acties",
+        "source_sha256": "1d70f275621ac85c6a61a016ddb7b580ea820018753896243293e268248b241f"
+      },
+      "filterEndpointId": {
+        "text": "Eindpunt-ID",
+        "source_sha256": "29fc73502f7c2789bbcd1b4ad44f942904d1ec7dfbce1e94eecbc201b686ef32"
+      },
+      "filterOutcome": {
+        "text": "Outcome",
+        "source_sha256": "4e80abb5b14656d4eed8fd93705fd4c774d7653b05162763770bd23f1755db1a"
+      },
+      "filterSearch": {
+        "text": "Zoekopdracht",
+        "source_sha256": "49c266baaaa70981ea188fa714d5c40cf13830d786a861c9943ae0d26a7f3fe9"
+      },
+      "filterSearchPlaceholder": {
+        "text": "actie / fout / details",
+        "source_sha256": "f2f39b28d3611ed59b0f23d7361101d92810dceffb29c899de2d5123abd75410"
+      },
+      "filterSince": {
+        "text": "Sinds",
+        "source_sha256": "98af1ed61831e6ab92bbb2a4d429344c8d0581c77d5c85311c5ed8a3207d2eea"
+      },
+      "filterUntil": {
+        "text": "Tot",
+        "source_sha256": "7caf856e8015823f6e194f9886fb55a4b49565f8bf81b0f2e54ea3d92e4dd096"
+      },
+      "filterUserId": {
+        "text": "Gebruikers-ID",
+        "source_sha256": "7967e089a7b94464ee1b0c6d4b8271e99bcf36f9e5481e40a5eec5c5a5108d01"
+      },
+      "filtersAria": {
+        "text": "Audit log filters",
+        "source_sha256": "47e55b4aa0ded5d2c191f0614e50b4bcad2ff26426c9f302b0d96e83ccae4c04"
+      },
+      "knownActions": {
+        "text": "{{count}} bekende acties — selecteer een of meer",
+        "source_sha256": "b007db875287032b562ef7c0d4a957b65d806ca25550b5aada3dd37eae1f1d06"
+      },
+      "loadingActions": {
+        "text": "Actielijst laden…",
+        "source_sha256": "3cb7b8334d0d2d7a11629845f7a95a04dfc4adb9be73677d1950e9e7e3d5b53b"
+      },
+      "noDetailsPayload": {
+        "text": "- (geen details payload)",
+        "source_sha256": "85c5224cd3e926806e8a0ee705c5912649ba2aa7ce42624ebac06862a066cc98"
+      },
+      "outcomeAll": {
+        "text": "Alle",
+        "source_sha256": "a52ace420f2175d08b1577a1bea5445e36801229c074ef9ed6c55a73401fd9c2"
+      },
+      "outcomeFailed": {
+        "text": "mislukt",
+        "source_sha256": "5d28a90f4498a81461efbaf6f628a19d9778390bb5c81a393dd936181cc3d826"
+      },
+      "outcomeFailedOption": {
+        "text": "Mislukt",
+        "source_sha256": "031a8f0f659df890dfd53c92e45295b0f14c997185bae46e168831e403b273f7"
+      },
+      "outcomeSuccess": {
+        "text": "succes",
+        "source_sha256": "aee408847d35e44e99430f0979c3357b85fe8dbb4535a494301198adbee85f27"
+      },
+      "outcomeSuccessOption": {
+        "text": "Succes",
+        "source_sha256": "c88a0b907419a70c27ab7c1f8e5fb54441a4d9c3567e4c928fa7b2091194aecf"
+      },
+      "refresh": {
+        "text": "Vernieuwen",
+        "source_sha256": "0e91610117029a62a478b7fa7df0b8598bebe3ab1e192d4b1882e310719c9671"
+      },
+      "refreshAria": {
+        "text": "Vernieuw het auditlogboek",
+        "source_sha256": "4689a841d3809ee7c5828d34e9e2307747a5b1961ad1ef0a26687a75bc7787e9"
+      },
+      "reportTitle": {
+        "text": "Auditlogboek",
+        "source_sha256": "47751f88edff89d56aeb5b1e46fb03a853bfcd96617f25195c752d5557902227"
+      },
+      "selectedActions": {
+        "text": "{{selected}} of {{total}} ausgewaehlt",
+        "source_sha256": "766089a48543b15a6b87b49d77049d545a1b499fff4d710057a7dd5ca35201c9"
+      },
+      "viewDetails": {
+        "text": "Bekijk details",
+        "source_sha256": "d1bf045bb524dae5b02c471c230958bcd1bf232d7a49367b1cdf977855a06b41"
+      },
+      "viewDetailsAria": {
+        "text": "Bekijk de details van de auditinvoer",
+        "source_sha256": "d587668a123b11914cffb1fe83a2dc4c37cf3ea88c2ef562fae27514a29a2546"
+      }
+    },
+    "authLockout": {
+      "adminHeading": {
+        "text": "Gedeeld beheerdertoken",
+        "source_sha256": "5cf28373687a2fc85524d803d645c98170165e62ab91e597252a4d9057218725"
+      },
+      "adminHelp": {
+        "text": "Telt mislukte gedeelde tokencontroles van één adres. Wanneer het aantal is bereikt, wordt dat adres gedurende de uitsluitingstijd geblokkeerd. Meerdere mensen op één console delen één adres.",
+        "source_sha256": "3bcba1b426480939e397fb0a0426c804b321c41e7070e71aadd011b953ad2803"
+      },
+      "enabled": {
+        "text": "Vergrendel een adres na te veel mislukte gedeelde tokencontroles",
+        "source_sha256": "3b09d2c369c7925153d392fd82ecd73bca45f81cbec1f7762eaeb6065ed0e223"
+      },
+      "enabledAria": {
+        "text": "Schakel vergrendeling van gedeelde tokens in",
+        "source_sha256": "932915a0108cd23c53dfd99892e17c107390e13b034daff8a16909ba711254a2"
+      },
+      "heading": {
+        "text": "Vergrendeling bij inloggen",
+        "source_sha256": "f9bef3a39de8cb0850225e55cbef450ade9f8579742aee5dd8223060ec9fc834"
+      },
+      "iamHeading": {
+        "text": "Inloggen met wachtwoord",
+        "source_sha256": "cbbb95be6cf545df0cb1d70314a7deab061d13d580b2f90a1435d75e9f0155a9"
+      },
+      "iamHelp": {
+        "text": "Een apart slot voor accounts op naam. Mislukt wachtwoord probeert dat account te vergrendelen. Veel mislukte pogingen vanaf één adres kunnen het adres ook vergrendelen.",
+        "source_sha256": "2ddceeed9859bb55c7e3890824231340f23b64ef96fd21a8dea071d13918599c"
+      },
+      "iamIpThreshold": {
+        "text": "Mislukte pogingen vanaf één adres",
+        "source_sha256": "7faff333e35069c8a7420c2177c3bb135041596653cd82f9e48ccaf341fa987e"
+      },
+      "iamIpThresholdAria": {
+        "text": "Mislukte wachtwoordpogingen vanaf één adres vóór waarschuwing of vergrendeling",
+        "source_sha256": "69c116eda67f120787128596ae2e91757e59a15b7c708b6fbf0b4744d7c2365a"
+      },
+      "iamIpThresholdHelp": {
+        "text": "Moet minimaal 1 zijn. Standaard 50.",
+        "source_sha256": "9bdd1e1fc4715d3e8c0c2ea82dc9a7303d742723ed1633175936af178735bce4"
+      },
+      "iamIpWindow": {
+        "text": "Venster voor adrestelling (seconden)",
+        "source_sha256": "39aeb5db4b15669ebec6cdfcc8c21becdaef87af735c95754ed997c839aa72e9"
+      },
+      "iamIpWindowAria": {
+        "text": "Address failure count window in seconds",
+        "source_sha256": "8fcb5d73c117ce04a9440b9dfb2b339f0db51ca40229c20e2192e19323de9d18"
+      },
+      "iamIpWindowHelp": {
+        "text": "30 tot 86400 seconden. Standaard 300.",
+        "source_sha256": "e255b707917044bdd371515a701e7fa63efe0f7731e169ad4402a8159e8af297"
+      },
+      "iamLockout": {
+        "text": "Tijd voor accountvergrendeling (seconden)",
+        "source_sha256": "5272c9213b0ebfa1f70addf4c1c9cad797e30d41eab2c48c061f1d1c4ffc5e71"
+      },
+      "iamLockoutAria": {
+        "text": "Accountvergrendelingstijd in seconden",
+        "source_sha256": "85b10a1a57468d31b506770f90914782d738e2aeb94650ca5e78542fdb3d0ac1"
+      },
+      "iamLockoutHelp": {
+        "text": "30 tot 86400 seconden. Standaard 300.",
+        "source_sha256": "e255b707917044bdd371515a701e7fa63efe0f7731e169ad4402a8159e8af297"
+      },
+      "iamThreshold": {
+        "text": "Mislukte wachtwoorden per account",
+        "source_sha256": "6b7debaff273b7f8ff12827c61302e74ad4c1205c1062542c4c09d5808421019"
+      },
+      "iamThresholdAria": {
+        "text": "Mislukte wachtwoordpogingen per account vóór uitsluiting",
+        "source_sha256": "2f92bd929a472a3384a42a4d7b902c59dfd5b9441f088068e4ddb9f659117f81"
+      },
+      "iamThresholdHelp": {
+        "text": "Moet minimaal 1 zijn. Standaard 5.",
+        "source_sha256": "af5ddaa1cf976fb1f9ef7ac477a0752240baf557cc6983ab3b29c37b685727ba"
+      },
+      "intro": {
+        "text": "Stopt met het raden van aanvallen na te veel mislukte aanmeldingen vanaf één netwerkadres. Deze instellingen zijn van toepassing op deze server. Schakel de vergrendeling alleen uit als u dat wilt.",
+        "source_sha256": "559a1cb3c4d9a148c0dab024ef8ef3deb05ef12a4cf73cd45e3263d8cd6a4eee"
+      },
+      "lockout": {
+        "text": "Vergrendelingstijd (seconden)",
+        "source_sha256": "47a3e5bd4e87a52c70587e0d4003156957811908e4e6bea59bae006b08ceaffe"
+      },
+      "lockoutAria": {
+        "text": "Vergrendelingstijd voor gedeelde tokens in seconden",
+        "source_sha256": "c7cd05d31bea0fbf4dc7d886b1db7bf5290a4bf95f8c20dbcb626c56d333b738"
+      },
+      "lockoutHelp": {
+        "text": "30 tot 86400 seconden. Standaard 300 (5 minuten).",
+        "source_sha256": "4e33f1349ea6f941eb6368e8281893b396d5ecddcf1c9a15a0c051d1b48d7138"
+      },
+      "save": {
+        "text": "Bewaar vergrendelingsinstellingen",
+        "source_sha256": "b01eae2ab62aa5ab40301631f5d5b1c3f384adefffcab56cba709b6b531a5467"
+      },
+      "saved": {
+        "text": "Opgeslagen. Nieuwe aantallen mislukte pogingen gebruiken deze cijfers. Een blokkering die al van kracht is, blijft geldig totdat deze vervalt.",
+        "source_sha256": "82878c7422480ade10c036067c9497eeaea73c9c838ea81f2a80bb376a0c3451"
+      },
+      "threshold": {
+        "text": "Mislukte pogingen vóór uitsluiting",
+        "source_sha256": "73c5c0385f996ebe340b71b6fdd3fb56a00e3aacd42f0a70dd17dcf61ed6c4a3"
+      },
+      "thresholdAria": {
+        "text": "Mislukte pogingen met gedeelde tokens vóór uitsluiting",
+        "source_sha256": "e1aab1338a4ed6a75ff2663ce40ccbeac615f1ce3e485866b53efefc098f5d40"
+      },
+      "thresholdHelp": {
+        "text": "Moet minimaal 1 zijn. Standaard 50.",
+        "source_sha256": "9bdd1e1fc4715d3e8c0c2ea82dc9a7303d742723ed1633175936af178735bce4"
+      },
+      "window": {
+        "text": "Telvenster (seconden)",
+        "source_sha256": "588498337bc639a70f5e397f3e206dcfc05c31b538f6a505c1cabb8d740be6e0"
+      },
+      "windowAria": {
+        "text": "Venster voor het tellen van mislukte gedeelde tokens in seconden",
+        "source_sha256": "bc70d2e75bc7479df71ce2f379e13a929e15ed297e7a5b67cdb15ae667130b62"
+      },
+      "windowHelp": {
+        "text": "30 tot 86400 seconden. Standaard 300 (5 minuten).",
+        "source_sha256": "4e33f1349ea6f941eb6368e8281893b396d5ecddcf1c9a15a0c051d1b48d7138"
+      }
+    },
+    "commandGovernance": {
+      "addRule": {
+        "text": "Regel toevoegen",
+        "source_sha256": "a27cff51a2e03e61e1d38d457614f71234feae9f59208fac2d398ff7613874c9"
+      },
+      "allow": {
+        "text": "toestaan",
+        "source_sha256": "410083735735a10e658a19edd1704e606c9dd112e225825b63fafeded766c8b9"
+      },
+      "allowListCount": {
+        "text": "{{count}} vermelding(en) op de toelatingslijst",
+        "source_sha256": "38d3dbf8348a370d47cfa2044522a2be65cc7c738ff30a50afb5d6d09c0c92ad"
+      },
+      "baselineAlways": {
+        "text": "De basislijnblokkeringslijst voor gevaarlijke commando's (systeemstroombeheer, vernietiging van schijven / bestandssystemen, fork-bommen, rm -rf / en dergelijke) wordt altijd afgedwongen en kan niet opnieuw worden ingeschakeld door een operator allow-regel.",
+        "source_sha256": "b8e0e6a04a6e50c70b2e451b5411bd8a85159266c66086d83724d38ea18b4351"
+      },
+      "basenameChip": {
+        "text": "basisnaam: {{name}}",
+        "source_sha256": "04ffdd058c5218e856cc176a2034a04ec57679d4afb6d9559fbad2c9925a35b9"
+      },
+      "canonicalLine": {
+        "text": "Canonieke (genormaliseerde) opdrachtregel",
+        "source_sha256": "f507da2ea6b1834004c7921d055e5730a4c7c6e48dcbfbb96f22cd7f89f126a5"
+      },
+      "colActions": {
+        "text": "Acties",
+        "source_sha256": "ff8059dc6752afdd30d275932b1d5031a2ec854b387a8c57ecc6689915293a43"
+      },
+      "colCommand": {
+        "text": "Commando",
+        "source_sha256": "713166971d730f81fcf8b757f2ea239d1a0360d9f74e8f5afe60fba97105879c"
+      },
+      "colPolicy": {
+        "text": "Beleid",
+        "source_sha256": "c611981fab983bc648368eb81240f5a5a1eff07f40aa4c9fd155600a98eeb6af"
+      },
+      "commandHelp": {
+        "text": "De opdracht wordt gecanoniseerd en geëvalueerd, niet uitgevoerd.",
+        "source_sha256": "ade2e7dccaba0d18a4d09f36e319f5e18d52f8429167c90b9d05de0d9e6968f0"
+      },
+      "commandRuleCount": {
+        "text": "{{count}} opdrachtregel(s)",
+        "source_sha256": "8167d79d86b866865800489b18a70f3741c8703b89abac67fab5869e62351464"
+      },
+      "commandToTest": {
+        "text": "Commando om te testen",
+        "source_sha256": "6739528faf0027c95bb7b41891353e6924064ad1149581461b35ae5c99edd1fa"
+      },
+      "copied": {
+        "text": "Gekopieerd",
+        "source_sha256": "8d525e5f158b9afe05f3122af363ac67763bdc4e1395b46597b320c289766ce3"
+      },
+      "copyCanonical": {
+        "text": "Kopieer canonieke opdracht",
+        "source_sha256": "1b5ee39d4e5cb53879cc69a387696eb2777714a58fbc9e1bb06b6d0010f7efdd"
+      },
+      "copyCanonicalAria": {
+        "text": "Kopieer canonieke opdracht naar klembord",
+        "source_sha256": "7db3789d3f523deb7bbdf24d69c473a0f6de23d6ef6080d6b32769572cef4485"
+      },
+      "currentCommandPolicy": {
+        "text": "Huidig ​​mondiaal commandobeleid",
+        "source_sha256": "f726a058dda093a9bf76efbae6ef706fc1e39f4ca1f33e5830a6eb6a74d9cbf3"
+      },
+      "currentLaunchPolicy": {
+        "text": "Huidig ​​mondiaal lanceringsbeleid",
+        "source_sha256": "9731715298c56b3bc0a1cf947b376e142d5976028a0c5bdfe6c4470098eed116"
+      },
+      "decision": {
+        "text": "Beslissing:",
+        "source_sha256": "2f234b9303c1c5e6ac42ea26e5f9edd4182ba21fc3b8bceaf02c3b3cf85de79d"
+      },
+      "decisionAllowAria": {
+        "text": "Besluit: toestaan",
+        "source_sha256": "34fa44344339085b3ed0ca6ad0605454cd3ed281f3f5407aeb42d90b4f84d78f"
+      },
+      "decisionDenyAria": {
+        "text": "Besluit: ontkennen",
+        "source_sha256": "cae73f69597ab7e6221c9097543a9742b617f39999ab3ee27450a9ef86b837a7"
+      },
+      "deny": {
+        "text": "ontkennen",
+        "source_sha256": "3026a0ca485e5831657ba0120fa8dd66b3425427bfb0a2be0db743e2305cc7c5"
+      },
+      "denyBaseline": {
+        "text": "Basislijn blokkeerlijst voor gevaarlijke commando's (altijd aan)",
+        "source_sha256": "bfb1102037f13ff230f0ab039e295be77533c7ca7e769d32ac30dc069f049452"
+      },
+      "denyFailClosed": {
+        "text": "Fail-closed toelatingslijst: er komt geen toestemmingsregel overeen",
+        "source_sha256": "bc19591f321fa217fb38e869cbecc6192a83ea74655a2cf07e6955a65492d1de"
+      },
+      "denyObfuscation": {
+        "text": "Verduistering / onparseerbaar (fail-closed)",
+        "source_sha256": "77517c7e48d6389dcd0ddf924d8a2a3d36d4d16da692a50594ab1ecbf66b2506"
+      },
+      "denyOperator": {
+        "text": "Operator weigeren regel",
+        "source_sha256": "9f02c8617eeda6f7147c42bb69b7599675dceadaa6f76889872c6581c881bc00"
+      },
+      "empty": {
+        "text": "Nog geen opdrachtfilters",
+        "source_sha256": "3e46494826442a0cd5485009b7c8131728460522e92344226ba02799dbfbb68b"
+      },
+      "enforceOff": {
+        "text": "afdwingen",
+        "source_sha256": "d422273afe96fab53892d553c4063c4a6150ccaa3356958e40012fb77b0faec6"
+      },
+      "enforceOn": {
+        "text": "afdwingen",
+        "source_sha256": "a7db5a06fbc23f4b9a7882f224b1005715e11119ffd3e13fc364f1da4be6ff9b"
+      },
+      "enforceOnKey": {
+        "text": "enforce_launch_allow_list",
+        "source_sha256": "523b7e50303c08a16f8302cfa2926b9754b1812035af91e42334e65271f0e9ca"
+      },
+      "enforcementOff": {
+        "text": "handhaving af",
+        "source_sha256": "1a4e805123872bfdc1298f8a5b5fa6299fd179cdb3fe1ef900465e1f6377ccff"
+      },
+      "evaluating": {
+        "text": "Evalueren…",
+        "source_sha256": "f46f4682a742e00452e5b0a3d4abb3bb61611e97b3df7a5afe07e33c2d3e153c"
+      },
+      "failClosedEnforced": {
+        "text": "fail-closed toelatingslijst afgedwongen",
+        "source_sha256": "b5501b187d098c02d88780eaa2b1c12767435ad2da7d778f312edb6437093772"
+      },
+      "failClosedInForce": {
+        "text": "fail-closed toelatingslijst van kracht",
+        "source_sha256": "68ef5b0807333df36d38b76b42521a64334f6b79a79c65b679cc41c681cc59f4"
+      },
+      "fieldArgv": {
+        "text": "argv",
+        "source_sha256": "5a6e537c2ba28ef19cad9f47cbb139af0bc071b53c3969479e06ff8868284e33"
+      },
+      "fieldDenyReason": {
+        "text": "Reden ontkennen",
+        "source_sha256": "9c4a7ce9fe3346fc0260df52f757b0d2eb1d75aca633bb453384cb22dbfed5ee"
+      },
+      "fieldDetail": {
+        "text": "Detail",
+        "source_sha256": "fb5f27d5457c464102286366ef3827b11923e7f3aa1faa7eea95249e36a39abf"
+      },
+      "fieldMatched": {
+        "text": "Komt overeen",
+        "source_sha256": "0d6346e060b47f1c3f9f98ac3d3c62aefccca331d4349625b6bb139c64fe16fa"
+      },
+      "fieldNormalized": {
+        "text": "Genormaliseerd",
+        "source_sha256": "6e62e3aea56b351cf45cef57df553d21ee6eb7af92614b2dce3400d82eeca4de"
+      },
+      "fieldObfuscation": {
+        "text": "Obfuscation",
+        "source_sha256": "04d69e0460eece5c0fc8b6319f83bbb532fa7b02162d17a1f8328f286ef9548e"
+      },
+      "fieldProgram": {
+        "text": "Programma",
+        "source_sha256": "90920d93e2c7e6323a947c6edb0e31a9702002e329af32a67fea53f221983cb0"
+      },
+      "fieldRaw": {
+        "text": "Rauw",
+        "source_sha256": "848123d14f84faa22d3dc567c6dec9dd70151f208eff68a1206ed28010ea2df4"
+      },
+      "fieldWrappers": {
+        "text": "Omhulsels verwijderd",
+        "source_sha256": "92e9c96cfb9ea9e0c135a8bf180099d28d32ffc0f2e207f676092fa15a4eb4f3"
+      },
+      "howIntro": {
+        "text": "Referentie: hoe de engine een commando canoniseert voordat het matcht. Gebruik het tabblad Testopdracht om echte lijnen uit te proberen. Benoemde regels komen overeen met de genormaliseerde vorm, nooit met de onbewerkte tekenreeks.",
+        "source_sha256": "0a50c03511b932bfec06c3172ebab9a44b39679e0035dd4f523919264a8811eb"
+      },
+      "intro": {
+        "text": "Bekijk welke regelsets van kracht zijn, bekijk en bewerk elke lijst (inclusief standaardinstellingen), herstel een verzonden lijst naar de fabrieksregels en inspecteer het auditlogboek voor geblokkeerde opdrachten.",
+        "source_sha256": "4803e69d849883ced3c2f4783a85a3acab8f496e08157c9f7b48c6dc0f0e45ad"
+      },
+      "launchIntroAfter": {
+        "text": "Eindpunt doden/weigeren handhaving (G2) blijft door agenten bemiddeld; dit oppervlak bewijst beleidsbeslissingen en controleert de preview.",
+        "source_sha256": "94a1e6c40070fd5849e2b4fce1b4834a3fb6acb844f6d36edd486c60664b03ab"
+      },
+      "launchIntroBefore": {
+        "text": "Veilige preview van een Windows-procesimage op basis van de acceptatielijst voor het starten van sessiecontrole. Het pad is",
+        "source_sha256": "64881876b086067aebbf1092c7f8d3ecba64dd41f78cffaa48615f240a8d0e97"
+      },
+      "machinePlaceholder": {
+        "text": "machine UUID — laat leeg voor mondiaal beleid",
+        "source_sha256": "60bb3e2110eef694d894aa6afbef8885b17c55b4e003e434375126b72b46a019"
+      },
+      "machineScope": {
+        "text": "Machineomvang (optioneel)",
+        "source_sha256": "ed93b0a7c8ffd68b31fd33f0358db7e879b89644df7300d24631ecde947fdb81"
+      },
+      "machineScopeHelp": {
+        "text": "Indien ingesteld, wordt die machine gebruikt",
+        "source_sha256": "103d0a17f52ad5bf5a409c05cd4754be63fa6209f02164efcda2d5d125f7fd8d"
+      },
+      "machineScopeLaunchHelp": {
+        "text": "Indien ingesteld, wordt die machine gebruikt",
+        "source_sha256": "103d0a17f52ad5bf5a409c05cd4754be63fa6209f02164efcda2d5d125f7fd8d"
+      },
+      "matched": {
+        "text": "Overeenkomend:",
+        "source_sha256": "919d2f9c7f828c3fd0eb949efd4d0a8d0a4be937e786fc4f3bd6b2f6437b097e"
+      },
+      "monitorOnly": {
+        "text": "alleen monitor (basislijn wordt nog steeds gehandhaafd)",
+        "source_sha256": "4ff5ea424bed5d2981df45e655ae6006762d7368c3a5486bef6edc64803ac9d3"
+      },
+      "neverExecuted": {
+        "text": "nooit geëxecuteerd",
+        "source_sha256": "4cb744a08586a376b416d59f87c853398af16764d4966779b513ec4c9fcbf1bb"
+      },
+      "obfuscated": {
+        "text": "versluierd",
+        "source_sha256": "c2796babb74438de1c6590f02fc2cdcea671bcf8782cb4e81c5c56581935301d"
+      },
+      "perSegment": {
+        "text": "Uitsplitsing per segment",
+        "source_sha256": "5eda2353152a8162cb0e1a77e3c6658cad49b5ecb37204886585b193f2daef26"
+      },
+      "pipelineTitle": {
+        "text": "Normalisatiepijplijn",
+        "source_sha256": "0ede1e659129594a588fbc5b98a1084c7f07ae5c818e65b9448fcb870d144b42"
+      },
+      "policyChip": {
+        "text": "beleid: {{source}}",
+        "source_sha256": "31eeb1d796c1ecc7c993be263850e69ea20382d3831a23b04ddbe12e306dd850"
+      },
+      "policyLoadFailed": {
+        "text": "Kan het huidige opdrachtbeleid niet laden.",
+        "source_sha256": "260f1bff15b3b7ff80b7f43bcf1ccaa7a2c783670215afe77f1f3c5f9ad64882"
+      },
+      "policySourceChip": {
+        "text": "beleidsbron: {{source}}",
+        "source_sha256": "db251f6eb68729e1fac7465d6b17b6b70006afefe84ee413fd295525f5e5c02a"
+      },
+      "previewFailed": {
+        "text": "Voorbeeld mislukt. Bevestig het beheerderstoken en de serverversie.",
+        "source_sha256": "aa3f9103c40d12231f03fd44f619ec099adff555fe9425ca1b91d5526f0c998e"
+      },
+      "processPath": {
+        "text": "Procespad of afbeeldingsnaam",
+        "source_sha256": "b0f66118e754d79fa846f34d9db07ddc07ed8369cd66c06f08805612c22bf8d2"
+      },
+      "processPathHelp": {
+        "text": "Basisnaam wordt hoofdletterongevoelig vergeleken met launch_allow_list.",
+        "source_sha256": "b6a2d6059d9fa09465a523f05c7d505a57b282d003dbc19efd386f9ccfc7c43a"
+      },
+      "reason": {
+        "text": "Reden:",
+        "source_sha256": "3425d10869214ddf41889b86984a4425eba4d3a4d95e1fbe4fb8c087725bbdee"
+      },
+      "reasonChip": {
+        "text": "reden: {{reason}}",
+        "source_sha256": "2c664a58fa56f148feae5fc8d043977b67bfe711f9ff702ac21b8c83fa1cd01f"
+      },
+      "redactAria": {
+        "text": "Bewerk de platte tekstopdracht uit het auditlogboek",
+        "source_sha256": "25fb5f4dd3465c86c39a79471b36ffd95e001c3233c6ffbc90745c44d07f4fc9"
+      },
+      "redactLabel": {
+        "text": "Bewerk de opdracht in platte tekst uit het auditlogboek (aanbevolen)",
+        "source_sha256": "166d0ad7ead0847c778f907d7011dffcd2c3c2b25c762d15363b62d2e866a860"
+      },
+      "refresh": {
+        "text": "Vernieuwen",
+        "source_sha256": "0e91610117029a62a478b7fa7df0b8598bebe3ab1e192d4b1882e310719c9671"
+      },
+      "reportTitle": {
+        "text": "SSH-opdrachtfiltering",
+        "source_sha256": "e13ac0b3b152fc9ada579a50b1ff385d6c004e06e43f27aa185440ec2ea1402c"
+      },
+      "save": {
+        "text": "Redden",
+        "source_sha256": "1509f561f2416598629b886ad7d3c05a7e221e4e0675c84bbff4ee6d9e03913d"
+      },
+      "segmentN": {
+        "text": "Segment {{n}}",
+        "source_sha256": "073b43c6919806cbef6159223349b2195d8abe493d45f5e9857b4cca79afc476"
+      },
+      "stage1Body": {
+        "text": "De regel is gesplitst in shell-operatoren (; && || | &). Elk segment wordt afzonderlijk geëvalueerd en het eerste geweigerde segment weigert de hele lijn, dus een geblokkeerde etappe kan niet op een toegestane etappe rijden.",
+        "source_sha256": "f2c13c40332192d6468d624e3cdcc7d2f20fcae37994ba5abe3545225343ed6b"
+      },
+      "stage1Title": {
+        "text": "1. Segmentsplitsing",
+        "source_sha256": "f4207ed12490ba62303cc9d0cab9f03f2506b13e6f25f5fcee408c6be4987564"
+      },
+      "stage2Body": {
+        "text": "Before tokenizing, the raw segment is scanned for command substitution $(...) and backticks, parameter expansion ${...}, process substitution <(...), and ANSI-C / hex / unicode escapes ($'...'). Any hit is denied immediately — the engine will not try to ",
+        "source_sha256": "e7a6124b1febe3418fa36abe9b712044b798994f4de7ac9ea5afb377b151f3c7"
+      },
+      "stage2Title": {
+        "text": "2. Detectie van verduistering (fail-closed)",
+        "source_sha256": "d5e07bbc14c580d3aefc2d136cb826429e6972c91176530d9a62ae27883a29be"
+      },
+      "stage3Body": {
+        "text": "Het segment wordt omgezet in een argumentvector met behulp van shell-achtige regels voor aanhalingstekens. Een niet-parseerbaar segment (onevenwichtige koersen, enz.) wordt als versluierd en ontkend behandeld.",
+        "source_sha256": "086c7caf9a94656510377e5268290cd6d9775c6fdeae74e915ff4f19f3364e9a"
+      },
+      "stage3Title": {
+        "text": "3. argv-tokenisatie",
+        "source_sha256": "5ca925d6117fd06f30339861c0116bc3aef01811b08ebba43e4ea445e39cacec"
+      },
+      "stage4Body": {
+        "text": "Leidende wrappers worden verwijderd zodat het beleid het echte innerlijke programma ziet: sudo (en zijn -u/-g opties), env (en zijn opties + VAR=val toewijzingen), de vlagloze wrappers nohup, nice, command, exec, time, setsid, stdbuf, ionice, timeout en een leidende backslash, en shells (bash, sh, dash, zsh, ash, ksh, csh, tcsh) - een shell met -c heeft de binnenste opdrachtreeks is opnieuw getokeniseerd (bijvoorbeeld bash -c",
+        "source_sha256": "49e491cfb31d4fb558dc67e5699840e909ae324621e87359581932389edb2f66"
+      },
+      "stage4Title": {
+        "text": "4. Strippen van wikkels (recursief)",
+        "source_sha256": "ef72bf777653c17ffcf17ff8c76734110a4224158aeeaf48a10fc222ce1bc653"
+      },
+      "stage5Body": {
+        "text": "Na het strippen wordt de argv gecontroleerd op evaluatie van dynamische invoer- en base64-decodeerpijplijnen. Deze worden geweigerd omdat ze het uiteindelijke commando voor statische inspectie verbergen.",
+        "source_sha256": "810b3dec4ad3e92bc0476572c005714db98716f8781a102ad1752a2558b2877e"
+      },
+      "stage5Title": {
+        "text": "5. Controle op verduistering op tokenniveau",
+        "source_sha256": "6ae5c0a35df9743a7085574c73f8c78cbeacb4c17acb8be83dd137330956a377"
+      },
+      "stage6Body": {
+        "text": "Elk token is in kleine letters geschreven en de argv wordt samengevoegd met enkele spaties om het canonieke commando te vormen; Er wordt ook een formulier met samengevouwen witruimte geproduceerd om trucs voor het splitsen van trefwoorden te omzeilen. Matching druist altijd in tegen deze canonieke vormen, nooit tegen de ruwe string.",
+        "source_sha256": "dfccecbef79466cc49f72499b88f566d95ac03bd192f52010f5a0be971e17a2d"
+      },
+      "stage6Title": {
+        "text": "6. Normalisatie van hoofdletters en witruimte",
+        "source_sha256": "7fdc0d1ee20bed8e33223f8429335984990806669b54f6677bfd47e4f4c27244"
+      },
+      "stage7Body": {
+        "text": "De altijd ingeschakelde basislijnblokkeringslijst voor gevaarlijke opdrachten wordt als eerste toegepast en kan nooit opnieuw worden ingeschakeld door een operator-toegestane regel (deny-wins). Vervolgens worden er deny-regels van de operator toegepast (deny wint altijd), en vervolgens (als een fail-closed allowlist wordt afgedwongen) wordt alles wat niet overeenkomt met een allow-regel geweigerd.",
+        "source_sha256": "fd95d274ec80c3e0010a06059c1e2686c05214ea0d33847d4af6ad2b9d0c6f1f"
+      },
+      "stage7Title": {
+        "text": "7. Beslissing (eerst basislijn, daarna beleid van exploitant)",
+        "source_sha256": "7326a9b528b6b6889b81b1ca5d49afab5aa978da7a4b05f35d435b47788d37b8"
+      },
+      "tabAttachments": {
+        "text": "Bijlagen",
+        "source_sha256": "634de114775082f002bb5cfdba0a28e768be807c798159c549e7bc930525b476"
+      },
+      "tabBlocked": {
+        "text": "Geblokkeerde opdrachten",
+        "source_sha256": "b6d4d66fce8e907e2400f4605c8f5640a174c4807d1589dae1b5ec8daf3f7f27"
+      },
+      "tabExtraRights": {
+        "text": "Extra rechten",
+        "source_sha256": "201be9558206008dc88b4082dd194db36c70d1843d423127431d6f72f92c7af6"
+      },
+      "tabHowItWorks": {
+        "text": "Hoe het werkt",
+        "source_sha256": "9c870aa6e5e93270170d5a81277ad3e623afe8d4efd186d3e28f3d2b646d52e6"
+      },
+      "tabInEffect": {
+        "text": "Van kracht",
+        "source_sha256": "4b67153d1c984913be3dbd354b0930e94b49c3bfd553a943dc6bc50f5832499d"
+      },
+      "tabManageSets": {
+        "text": "Beheer sets",
+        "source_sha256": "20cf4383656908f6f47651f60a41d18d99a223c21192488efa372838ddc92158"
+      },
+      "tabTestCommand": {
+        "text": "Testopdracht",
+        "source_sha256": "1211efb91c28ac4db15ab0ddbc27ce4e69670d522c012d8a922a1e9363ca9bf5"
+      },
+      "tabTestLaunch": {
+        "text": "Lancering van het testprogramma",
+        "source_sha256": "62e003e88beb8a82483b6b6fdc72603431df258fbbf1344a07f3a5aef5aacd89"
+      },
+      "tabsAria": {
+        "text": "SSH-opdrachtfiltersecties",
+        "source_sha256": "c519a1db3549f1497e757096b96e765db2abddc43e1c47e937c0e0ab2f8445d7"
+      },
+      "testACommand": {
+        "text": "Een opdracht testen",
+        "source_sha256": "c38b648d8e457c46c733971e93d8dac021981d2bc2ba92453ca008b3a9bd2df1"
+      },
+      "testIntroAfter": {
+        "text": "Zie Hoe het werkt voor de normalisatiefasen.",
+        "source_sha256": "fae8a59a727efe969bc2ccaa95c6f530c7a88d7f94cf97b8735bdf24697deeff"
+      },
+      "testIntroBefore": {
+        "text": "Veilige preview van elke opdrachtregel tegen de live handhavingspijplijn. De opdracht luidt",
+        "source_sha256": "f5fa37c2edfc1103b208386ee06393f882592d5ad64b91f5b0dad0bbe9df81b4"
+      },
+      "title": {
+        "text": "SSH-opdrachtfiltering",
+        "source_sha256": "e13ac0b3b152fc9ada579a50b1ff385d6c004e06e43f27aa185440ec2ea1402c"
+      },
+      "wouldAllow": {
+        "text": "Er is geen overeenkomst met de basislijn, deny of de fail-close-regel. Deze opdracht zou zijn toegestaan ​​onder het beleid {{source}}.",
+        "source_sha256": "750fbc4126bd2165a6e303c52462964bf2045bc6350415656b909f95db12f746"
+      },
+      "wrappersNone": {
+        "text": "geen",
+        "source_sha256": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe"
+      }
+    },
+    "commonPage": {
+      "cancel": {
+        "text": "Annuleren",
+        "source_sha256": "19766ed6ccb2f4a32778eed80d1928d2c87a18d7c275ccb163ec6709d3eb2e27"
+      },
+      "close": {
+        "text": "Dichtbij",
+        "source_sha256": "7d9eb7acb13e24625c404401d8e88b2350e32162455885f18276cf802f7701ed"
+      },
+      "connect": {
+        "text": "Verbinden",
+        "source_sha256": "1a2303ede07493acc7caaa7c737f3c52bcc9cf04372be19ed1b0af6b9f2c791e"
+      },
+      "create": {
+        "text": "Creëren",
+        "source_sha256": "4759498ac2a719c619e2c8cf8ee60af2d2407425e95d308eb208425b2a6d427a"
+      },
+      "delete": {
+        "text": "Verwijderen",
+        "source_sha256": "e2d0a54968ead24efc0dffa6ac78fc606dceec34a0f586177a74a54cc2272cf8"
+      },
+      "edit": {
+        "text": "Bewerking",
+        "source_sha256": "464c4ffd019e1e9691dcf0537c797353ef2b1c1d4833d3d463e5b74ae4547344"
+      },
+      "export": {
+        "text": "Exporteren",
+        "source_sha256": "3664895579f0a7e68c4aa09c91316e20239bc74499010e6423ece40cad7c28f7"
+      },
+      "filter": {
+        "text": "Filter",
+        "source_sha256": "638e249f4a15ebb84957da130701d138a6e06d88dceeaa2e6dcd91db70cc1381"
+      },
+      "import": {
+        "text": "Importeren",
+        "source_sha256": "2cff9baabf56ca002610e113bc94deb6ededddfc3c130365b6e88ed5195bf774"
+      },
+      "loading": {
+        "text": "Laden",
+        "source_sha256": "dc380888c4e2c7762212480ff86eb39150ec70b45009c33bc6adcbd0041384b1"
+      },
+      "noData": {
+        "text": "Geen gegevens",
+        "source_sha256": "3b41ba9c7cb8c5d6530c12eec5000c4e2ad0c48b2d4b9149a3ef6d2a23802819"
+      },
+      "noPermission": {
+        "text": "Geen toestemming",
+        "source_sha256": "201c89b2999b572141b348bb3abe821ac78fe29490be6efe431d6fc926275344"
+      },
+      "open": {
+        "text": "Oeffnen",
+        "source_sha256": "830df0f253b59f5541af29908251e9a51ef40b943c14f4d8030a7682ac1511ae"
+      },
+      "refresh": {
+        "text": "Vernieuwen",
+        "source_sha256": "0e91610117029a62a478b7fa7df0b8598bebe3ab1e192d4b1882e310719c9671"
+      },
+      "retry": {
+        "text": "Erneut versuchen",
+        "source_sha256": "948643cb59e8274f40500593ac6029afcf419fc434c870fb8177b5185e0a2e9b"
+      },
+      "save": {
+        "text": "Redden",
+        "source_sha256": "1509f561f2416598629b886ad7d3c05a7e221e4e0675c84bbff4ee6d9e03913d"
+      },
+      "search": {
+        "text": "Zoekopdracht",
+        "source_sha256": "49c266baaaa70981ea188fa714d5c40cf13830d786a861c9943ae0d26a7f3fe9"
+      },
+      "working": {
+        "text": "Werken",
+        "source_sha256": "a92f0449a9f7235bf69dc2e8ff7070bfae3f00ec8f8f26e5457a9beac53466ac"
+      }
+    },
+    "companyProfile": {
+      "intro": {
+        "text": "Organisatienamen en contactgegevens die worden gebruikt in aanmeldingsmeldingen, classificatiebanners en sjablonen voor openbaarmaking van agenten. Bewerk hier één keer; de Initiële installatiewizard en de Operator-informatie gebruiken dezelfde waarden.",
+        "source_sha256": "67d4cebfcc12f43d3fcb223be469226f67bb5f0a614f5f823e0823cb283b1694"
+      },
+      "loadFailed": {
+        "text": "Kan het bedrijfsprofiel niet laden: {{message}}",
+        "source_sha256": "74afe1e337607ef84865fd6da116676b1ae7b1fcbd68cf55d76df81be8db449e"
+      },
+      "loadingAria": {
+        "text": "Bedrijfsprofiel laden",
+        "source_sha256": "ac0cd8dd261e502b95328722d6eae52fb39540ee161161e3a8d2c61899f7173f"
+      }
+    },
+    "connectionPoints": {
+      "acceptableUse": {
+        "text": "Acceptabel gebruik",
+        "source_sha256": "9b41b2884b0e979dd0dd6e0b3240e182d0c1d3a2bb65fa35f66075a9891c6d3d"
+      },
+      "accessAutoApproved": {
+        "text": "Toegangsverzoek automatisch goedgekeurd (zelf goedgekeurde proxy-toegang). U kunt nu een sessie openen. Zie Mijn toegangsverzoeken.",
+        "source_sha256": "b6e0261a3c0fa3c1c3486f16992cc38b4080450faba4e38c449b07e7d9d1b325"
+      },
+      "accessSubmitted": {
+        "text": "Toegangsverzoek ingediend. Volg de status onder Mijn toegangsverzoeken.",
+        "source_sha256": "4c86841851e4eaebbff34ea559ea64347b607a35b35e5ad3d7573da2a8a5726d"
+      },
+      "acknowledgeOpen": {
+        "text": "Ik erken — Open sessie",
+        "source_sha256": "431cd4034a9783efaeb02d4e6896dfc89d0f93de52044024b31a348b48006180"
+      },
+      "acknowledgeTitle": {
+        "text": "Sessiegebruik bevestigen — {{name}}",
+        "source_sha256": "9785cfb5868949496985b7cfb9e6659c50aad3fd7961bee3d8d5c04a437be285"
+      },
+      "activeGrantsCount": {
+        "text": "Actieve subsidies voor {{count}} doel(en).",
+        "source_sha256": "d6328c2b8ee5e1702e6a7d205dcf28240c8ac39cedeafba841114e3b749aff7c"
+      },
+      "activeSessions": {
+        "text": "Actieve sessies (deelbaar)",
+        "source_sha256": "a782040f1186b5ba69f7a70525610bba2466db6d79f2a645b8d427826fc77762"
+      },
+      "activeSessionsEmpty": {
+        "text": "Er zijn momenteel geen deelbare interactieve sessies (gesloten of nooit gestart). Een geopende sessie op een verbindingspunt start een nieuwe livesessie.",
+        "source_sha256": "61c14994b95c42073dbe09528e1ca0294039a33b9d6fac043ea3fa182e4d49e8"
+      },
+      "activeSessionsIntro": {
+        "text": "Momenteel zijn er livesessies geopend voor Join/Kill. Wanneer deze lijst leeg is, gebruikt u Sessie openen op een verbindingspunt om een ​​nieuwe te starten.",
+        "source_sha256": "0032f6477f312fc2187c1a23f60863450492e0a24049843062f5671a9505b0c1"
+      },
+      "addAria": {
+        "text": "Verbindingspunt toevoegen",
+        "source_sha256": "9eacb21eae8d29c19f3ed1a66b23203718b5c3594796b710dd8729794a577af2"
+      },
+      "addConnectionPoint": {
+        "text": "Verbindingspunt toevoegen",
+        "source_sha256": "9eacb21eae8d29c19f3ed1a66b23203718b5c3594796b710dd8729794a577af2"
+      },
+      "addHelp": {
+        "text": "Opent het formulier om een ​​nieuw SSH-, RDP- of VNC-verbindingspunt te registreren.",
+        "source_sha256": "1d1b283488bc3115c3664b8f24aa7fc1bf985c873bc6c3864d8b0ff65c93d7af"
+      },
+      "addHost": {
+        "text": "Gastheer",
+        "source_sha256": "4a823118b9ba8baa2f47489c0716f52755368e3e3c2c26d60736ccfa1bb21b5e"
+      },
+      "addProtocol": {
+        "text": "Protocol",
+        "source_sha256": "cf0883343f4abef779b777c35764f86c9f1f4324e8b5490840245d02ad2f7c6f"
+      },
+      "addUpdate": {
+        "text": "Aansluitpunt toevoegen/bijwerken",
+        "source_sha256": "bb49869c7447c35730a4cf46802a4bd9e060640e3aade206276d3d3350cf7e8b"
+      },
+      "attest": {
+        "text": "Getuigen",
+        "source_sha256": "c81da7e67a9d6ddbd62551ee5194d30eac129c20d20ec5e1219448f65297689e"
+      },
+      "attestAria": {
+        "text": "Neem laboratoriumattest op voor doellokale opname op {{name}}",
+        "source_sha256": "164233cc1c2f3bbf5f56ba425b2c2e83bef5dd6753bec20b5d9a3f1668d789eb"
+      },
+      "attestFailed": {
+        "text": "Opnameattest mislukt",
+        "source_sha256": "d5bc87d63bb38c1c7b5c6d04f52924ff7d70b84ea4c855995bdc3cd48a3d3bba"
+      },
+      "attestRefresh": {
+        "text": "Attest vernieuwen",
+        "source_sha256": "d9cec1829b68d0eceac37856de3369d2e60aac51aa9f637648b2943fbab5e3f9"
+      },
+      "attested": {
+        "text": "Getuigd",
+        "source_sha256": "34d5af731bf275871ad586c4dee8faac430fa5a925030229772a8ed6fb8cf118"
+      },
+      "cancel": {
+        "text": "Cancel",
+        "source_sha256": "19766ed6ccb2f4a32778eed80d1928d2c87a18d7c275ccb163ec6709d3eb2e27"
+      },
+      "cancelAck": {
+        "text": "Sessiebevestiging annuleren",
+        "source_sha256": "8860e2b81cb7441be57ee91d41902c36141b2489c3fdf7f568fe8de8d6c5170a"
+      },
+      "cancelAdd": {
+        "text": "Annuleren",
+        "source_sha256": "19766ed6ccb2f4a32778eed80d1928d2c87a18d7c275ccb163ec6709d3eb2e27"
+      },
+      "cancelAddAria": {
+        "text": "Annuleer het toevoegen van een verbindingspunt",
+        "source_sha256": "6c8a9c0a4398f4a430ad69f92d8a8d7a8a99a6f280a7b1a214e96f86d44da927"
+      },
+      "cancelAddHelp": {
+        "text": "Sluit het formulier Aansluitpunt toevoegen zonder op te slaan.",
+        "source_sha256": "65f7eba168629c87fd5059effd43fa22e5cee523c503524ab6321c4733098e92"
+      },
+      "cancelCredential": {
+        "text": "Zugangsdaten worden afgekort",
+        "source_sha256": "3116e24f8092ee9d5b25298036a5593073bdacce14f8c965b8612d054256e6cd"
+      },
+      "cancelRequest": {
+        "text": "Anfrage abbrechen",
+        "source_sha256": "caf640d34f5e28c88ef4c8eff646da37786a54c2c07aef0d5a7f15ad03af5492"
+      },
+      "clearFilter": {
+        "text": "Filter wissen",
+        "source_sha256": "ba59e2d4a5e39a429243545387ca5f0d8036676763fb7179ea39b3a0e539b8b0"
+      },
+      "clearHostFilter": {
+        "text": "Clear host filter",
+        "source_sha256": "2bafc68dc3f05746c413d18ff84b94d4d66a8623543a9a6ce5d8ce64f359bc21"
+      },
+      "colAccount": {
+        "text": "Rekening",
+        "source_sha256": "7e1b0d5641f2640ce9a953ec231eea2c27a2a7633f7d3c273e5735e2b30c10b7"
+      },
+      "colActions": {
+        "text": "Acties",
+        "source_sha256": "ff8059dc6752afdd30d275932b1d5031a2ec854b387a8c57ecc6689915293a43"
+      },
+      "colCredential": {
+        "text": "Referentie",
+        "source_sha256": "b1c42b3ce118093bc656bf16e7b87e069403a18246d2ea36d3c667850cb5bda1"
+      },
+      "colEnabled": {
+        "text": "Ingeschakeld",
+        "source_sha256": "92c1cdfdf4cb9cf6fcca962f206de36fd5d60db1178bc9461052f8de703a0e06"
+      },
+      "colHost": {
+        "text": "Gastheer",
+        "source_sha256": "4a823118b9ba8baa2f47489c0716f52755368e3e3c2c26d60736ccfa1bb21b5e"
+      },
+      "colName": {
+        "text": "Naam",
+        "source_sha256": "dcd1d5223f73b3a965c07e3ff5dbee3eedcfedb806686a05b9b3868a2c3d6d50"
+      },
+      "colProtocol": {
+        "text": "Protocol",
+        "source_sha256": "cf0883343f4abef779b777c35764f86c9f1f4324e8b5490840245d02ad2f7c6f"
+      },
+      "colRecording": {
+        "text": "Opname",
+        "source_sha256": "80e8dd1a5a05f7071a7ff71bccab5ed94aef4ad940c86bee6d2034d458f3946c"
+      },
+      "confirmPassword": {
+        "text": "Bevestig wachtwoord",
+        "source_sha256": "5ac265f396a2c58687aad7b507b0561b9d47eed260ef8610c4fb4a83f504e03c"
+      },
+      "defaultAccount": {
+        "text": "Standaardaccount",
+        "source_sha256": "2bac024b345475583e105c7b56e9c6d5910d7307a14fe7237029692e366be38b"
+      },
+      "displayName": {
+        "text": "Weergavenaam",
+        "source_sha256": "2b7f6a84de917e387539dbe441ca22056e793d738e6c50db30c3f569e4448df3"
+      },
+      "durationSeconds": {
+        "text": "Duur (seconden)",
+        "source_sha256": "e4a69a7c7afacef86b406b642b1e8d7afd7948520ee6aad19458fe1907a9b365"
+      },
+      "edit": {
+        "text": "Bewerking",
+        "source_sha256": "464c4ffd019e1e9691dcf0537c797353ef2b1c1d4833d3d463e5b74ae4547344"
+      },
+      "empty": {
+        "text": "Geen aansluitpunten. Voeg SSH-, RDP- of VNC-doelen toe.",
+        "source_sha256": "f31852a4d7f347209a794e8cafee499d07a81de9bee784ec21a4f7905b66412d"
+      },
+      "emptyHostFilter": {
+        "text": "No connection points match host ",
+        "source_sha256": "f0ce0532d6e3dc89859faba7f6911f8550ef4d2695d8754f4c5ed565b2adad6b"
+      },
+      "emptyNone": {
+        "text": "Nog geen aansluitpunten geregistreerd. Voeg er hierboven één toe, stel vervolgens de inloggegevens in en start een opgenomen sessie.",
+        "source_sha256": "afb3ba54f4d26829363d8e065b60796778bce8a4aa5110cee9e7bac67b05d904"
+      },
+      "everyRecorded": {
+        "text": "Elke geopende sessie wordt standaard opgenomen",
+        "source_sha256": "440d802951e69dd32a6619c5ef60e2af6d00a933ec4258a43261867c54d8e34d"
+      },
+      "externalReadiness": {
+        "text": "Klaar voor extern werkstation",
+        "source_sha256": "21467ac0ec4cbeb2de94974d3eaa1794114b8ab30bb48db8ab146e5c0ead9646"
+      },
+      "gridAria": {
+        "text": "Verbindingspunten",
+        "source_sha256": "8dfc7a66ba5359fbc461efcc21cdfd69bcfd3e2a03ceb75320e084cb096ab372"
+      },
+      "hostFilter": {
+        "text": "Verbindingspunten weergeven die overeenkomen met de host",
+        "source_sha256": "8829d99d92defe01a862f5a1ee4de6d14b8a96c6db6265cb381e489f2a9a76ae"
+      },
+      "inputBlocked": {
+        "text": "Ingang geblokkeerd (gemodereerde start)",
+        "source_sha256": "1f3718585d7b60b66d319654b24f7b43351ceaa587cfbdbe8e740793d144cde3"
+      },
+      "intro": {
+        "text": "Geregistreerde SSH-, RDP- en VNC-verbindingspunten. Open sessie start een nieuwe live viewer via de proxy.",
+        "source_sha256": "04ae36038e9c619c628d13824e3552d71956e1d8826c1d73f0ca4e5bdd2fb13f"
+      },
+      "join": {
+        "text": "Meedoen",
+        "source_sha256": "fd30fe681b4b2d9e55f851cb34641f907401aa43e9d80f5b1e14ce714ef00497"
+      },
+      "joinAria": {
+        "text": "Neem deel aan de {{protocol}}-sessie als supervisor",
+        "source_sha256": "dcb95c4e15700a03acf6d3fe97777f56360b6c4dda3b3c69614f3f6f0f4498b2"
+      },
+      "joinDeadSession": {
+        "text": "{{msg}} (dode sessies worden verwijderd uit actieve sessies - gebruik Open sessie voor een nieuwe live sessie)",
+        "source_sha256": "80d559ca1c415594a10fff223673c2b74cc0b30545a57a69a657a4b7ce484b2e"
+      },
+      "joinFailed": {
+        "text": "Deelnemen aan livesessie mislukt",
+        "source_sha256": "6f858a007df7667433300019bc34949736a482145b5c08162a28922afb15dd48"
+      },
+      "joinHelp": {
+        "text": "Sluit je aan als supervisor (bekijken + doden)",
+        "source_sha256": "a3a826b82eeb53d866912b8f3c2ec7e118c34b95df169af6bfb77b9aafc25330"
+      },
+      "joinHelpEnded": {
+        "text": "Sessie beëindigd: kan niet deelnemen",
+        "source_sha256": "d3bb3950ae30df348e7acc6c58c5f431fcf97c26ce63d0b391c42ba7bcde24e1"
+      },
+      "joinNoSessionId": {
+        "text": "Join heeft geen live sessie-ID geretourneerd. Vernieuw actieve sessies en probeer Open sessie.",
+        "source_sha256": "4a1aa064447ca7a7c2c77e5a790f91a118cf45e9ccc5a99d328b57f336d0843f"
+      },
+      "joining": {
+        "text": "Deelnemen…",
+        "source_sha256": "6bbb89ee5d48b326c4066a28873dfb98ce786fc2343f3af7aed434acd4b8b505"
+      },
+      "justification": {
+        "text": "Zakelijke rechtvaardiging",
+        "source_sha256": "d3c568f05b34b4a246ea6dc4dc48e38c77f46185c10cfd343933784ff2e2c832"
+      },
+      "killAria": {
+        "text": "Beëindig {{protocol}} sessie voor alle deelnemers",
+        "source_sha256": "e3db4d42b9de61548acca0890e033fc4b6791cda2ea962212ef3682388ef76c4"
+      },
+      "killFailed": {
+        "text": "Kill-sessie mislukt",
+        "source_sha256": "cd9507afde1765c3dea3a9c1ced2e9fa37cf86b109a4ca4a0d77154c3c1ddeb6"
+      },
+      "killSession": {
+        "text": "Sessie doden",
+        "source_sha256": "52dca9b2f87c77f96560768fdf8e975299427b00a513acfc5686b579d676a928"
+      },
+      "killing": {
+        "text": "Doden…",
+        "source_sha256": "8b7319c8d03ac6782379ebef0e0e70a956341dcf13dc41e164352e58d1b5bd30"
+      },
+      "launchAria": {
+        "text": "Start de opgenomen {{protocol}}-sessie naar {{name}}",
+        "source_sha256": "011c0503890c7ed8db5e46a6f3a330f8d25a67a10a50d0fedff07c2e9a0d9345"
+      },
+      "launchingRdp": {
+        "text": "Opgenomen RDP-sessie starten (dit kan maximaal twee minuten duren)...",
+        "source_sha256": "746d023eb9a18df4483ad27bd0b85718609107010923bd45cfd4adf854dd7fbe"
+      },
+      "launchingSsh": {
+        "text": "Opgenomen SSH-sessie starten…",
+        "source_sha256": "69727b1d58db0eea1c5309ae02c0b6f96d3ae132c5a1f06ef9acece86beac183"
+      },
+      "launchingVnc": {
+        "text": "Opgenomen VNC-sessie starten…",
+        "source_sha256": "6049f8df477b8e05989a501f326b99681eee8d679b64c1097d1cb7524defb434"
+      },
+      "loadFailed": {
+        "text": "Kan verbindingspunten niet laden. Bevestig het beheerderstoken en de serverversie.",
+        "source_sha256": "3ee455999cd034370c7d1f88ef31d01a375c7aacd5bf355ba5ac15f49ccc99c0"
+      },
+      "no": {
+        "text": "Nee",
+        "source_sha256": "1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da161c6099be3691d"
+      },
+      "noAcceptableUse": {
+        "text": "Er is geen tekst voor acceptabel gebruik geconfigureerd.",
+        "source_sha256": "17301d418ca08323b0448f0c0bac22115ae849f468bfc77b95fd581497f098df"
+      },
+      "noActiveGrants": {
+        "text": "Er zijn momenteel geen actieve subsidies.",
+        "source_sha256": "d9bbc49b6fdf24bf27920e74f483a0c6cbd998c74a0bfdef89776eff0daa28e3"
+      },
+      "noPurpose": {
+        "text": "Er is geen sessiedoeltekst geconfigureerd.",
+        "source_sha256": "db094892263a91f81bda83a49cab062958cd3739a6cad4b22a70a409241c01fa"
+      },
+      "noSupervisor": {
+        "text": "Nog geen toezichthouder",
+        "source_sha256": "d6b6f6d91b3472bc3d47c2cd0a434bdf49e0bf898ab44e7121bde486e4dc5380"
+      },
+      "notAttested": {
+        "text": "Niet geattesteerd",
+        "source_sha256": "83c3cd05754a9925b5a8c35822d1428e8a4c2fac5cd59182ba06a0dfceaf87fc"
+      },
+      "notSet": {
+        "text": "niet ingesteld",
+        "source_sha256": "1aef939917215ce780284dd9047f170482753bbe40a0998b3decb2f02c2606ac"
+      },
+      "notes": {
+        "text": "Opmerkingen",
+        "source_sha256": "8a7525b1492fb84833f5c4a69b30f4bfbb134f9b666b61a2c1872d63d234c085"
+      },
+      "openAria": {
+        "text": "Open interactieve {{protocol}} sessie naar {{name}}",
+        "source_sha256": "2681d4482cb31b29b672131c407c1a95601ccc4d1e58bde691cd7951695f6e3b"
+      },
+      "openDisabled": {
+        "text": "Verbindingspunt is uitgeschakeld",
+        "source_sha256": "9074e26a87221509413ab2cf11c41dc6f04043d2086485349d633841698c7a96"
+      },
+      "openFailed": {
+        "text": "Open sessie mislukt",
+        "source_sha256": "ce9b3dbe309380a6ef086931e34ec3dec670fffd9fa192976c585ca3107057c7"
+      },
+      "openNeedCredential": {
+        "text": "Bewaar een referentie vóór de open sessie",
+        "source_sha256": "ebbfba559c5ce57db1123a99cbb2566a19d2384f0c9139e13165aa842368454d"
+      },
+      "openNeedGrant": {
+        "text": "Toegang aanvragen vereist: er is geen actieve subsidie ​​en u kunt zichzelf niet goedkeuren",
+        "source_sha256": "0c4358f8880991e537fd1ec9827100abd8129e08e310913cdcd6e1fb3250fe37"
+      },
+      "openSelfApprove": {
+        "text": "Open start een nieuwe livesessie; zelf de toegang tot pepermuntjes goedkeuren indien nodig",
+        "source_sha256": "64c2b2485c5598b22c32928a1164a0dd9b72156a1e9ef719d3f3ee1c307a21f6"
+      },
+      "openSession": {
+        "text": "Open sessie",
+        "source_sha256": "b205bb47f81a30968789eac28cefb848c4b849245d4d12f9311557c5f56ce770"
+      },
+      "openStarts": {
+        "text": "Open start een nieuwe livesessie voor dit doel",
+        "source_sha256": "9027745538f8542d0ac24d9b6cd1573973b8f6be0dba9b7451831cb4182f1c4b"
+      },
+      "opening": {
+        "text": "Opening…",
+        "source_sha256": "c926c2c50e65d5a5799f548604472ee8554b53c376e45be580b3a06a484d8fc0"
+      },
+      "operatorLine": {
+        "text": "Operator: {{operator}} Â· Deelnemers: {{count}} Â· Opname: {{mode}}",
+        "source_sha256": "3f1478697c55136a16505b949d61685810525b777823a9573ff5174f2727151a"
+      },
+      "password": {
+        "text": "Wachtwoord (alleen schrijven)",
+        "source_sha256": "5b724677c736b69152d1046ff06214f4fcb3d4b25369c15b4b33881bd5bed709"
+      },
+      "port": {
+        "text": "Haven",
+        "source_sha256": "72e9a59f5a1d6289dbacb35df897d6c007c55a27e77018455c37e7b372668475"
+      },
+      "purpose": {
+        "text": "Doel",
+        "source_sha256": "d4e8830a71c73edffe0115b8abad16b0b5cb2e121047c64cd01995203cfad062"
+      },
+      "readiness": {
+        "text": "Bereidheid",
+        "source_sha256": "d53d98c1774966ba468529b735a17d59131becf86e929e1f143bc7f057a73a03"
+      },
+      "readinessAria": {
+        "text": "Open Gereedheid extern werkstation",
+        "source_sha256": "0751302e6f10eacdab7e1aca308fecc716740a22604e9d74104a92c69e5c6e41"
+      },
+      "readinessHelp": {
+        "text": "Opent de gereedheid van een extern werkstation om zekerheidsblokkers op te heffen.",
+        "source_sha256": "2753b86189b7c8c4a6eec0156c7d49a9dd364b482aa5f4714b58d308de9bdb22"
+      },
+      "recordedLaunch": {
+        "text": "Opgenomen lancering",
+        "source_sha256": "1e9a92c493cc86f0d5e60f3f6bfd8a53a53382ae52faf29d4c5895b9c2e84fc0"
+      },
+      "recording": {
+        "text": "Opnemen…",
+        "source_sha256": "7ea93caac0f5c1c962460012ca3ebf778145c4c4fcda1a64ba95f10745bfec9c"
+      },
+      "recordingMode": {
+        "text": "Opnamemodus",
+        "source_sha256": "a0bd7f8a2e54c12a878456b796ee5ed888618f0f15202506e48bd075e330807a"
+      },
+      "recordingModeAria": {
+        "text": "Opnamemodus",
+        "source_sha256": "a0bd7f8a2e54c12a878456b796ee5ed888618f0f15202506e48bd075e330807a"
+      },
+      "recordingModeHelper": {
+        "text": "Standaardproxy: server registreert elke interactieve sessie. Voor Target-local is een agentattest vereist.",
+        "source_sha256": "a5b348712bf323b87df22a13a2225048e08cd4a3cef8110e6e54faf1d97d9ce3"
+      },
+      "recordingModeProxyItem": {
+        "text": "Proxy (standaard: alle sessies opgenomen)",
+        "source_sha256": "f7606a49411f544136a1bb4498aaa52ee9457ee963f8e0fddacd019da49e191d"
+      },
+      "recordingModeTargetLocalItem": {
+        "text": "Doellokaal (eindpunt/OS-opname)",
+        "source_sha256": "82859eba7b486f254448644bc026a5aecaf861e82d05eb6b945143947d9f66d2"
+      },
+      "recordingProxy": {
+        "text": "Proxy (standaard)",
+        "source_sha256": "fd7a31248ee937c8635a8d9faae6e509ff00d1258352a5dd7d896d3083075cb0"
+      },
+      "recordingTargetLocal": {
+        "text": "Doellokaal",
+        "source_sha256": "04788a2f6334c7268eeace3c78f468683280aaab894abdb0985beaa8212b4fd4"
+      },
+      "reportTitle": {
+        "text": "Verbindingspunten",
+        "source_sha256": "0f998476f2fb78df86bd994079ecb696ca0a94853fd9316dc324a608bc880b8b"
+      },
+      "requestAccess": {
+        "text": "Toegang aanvragen",
+        "source_sha256": "b06f1662da4a13362baa31f7c123d25e8565df0da5e01c131345ac71c6317915"
+      },
+      "requestAccessAria": {
+        "text": "Vraag toegang aan tot {{name}}",
+        "source_sha256": "b8b034115aa970db46a35cac79b2bd2d797bb94765afcb2c0f8942d875e22f0b"
+      },
+      "requestAccessBanner": {
+        "text": "Je hebt geen zelfgoedkeuring. Open sessie blijft uitgeschakeld totdat u een actieve vergunning heeft: gebruik Toegang aanvragen (workflow voor goedkeurder) voor elk doel dat deze nodig heeft.",
+        "source_sha256": "45fe33fa0cbe805425bb8039eb80aaf6d871000b826d9fee90528bbf863a0469"
+      },
+      "save": {
+        "text": "Aansluitpunt opslaan",
+        "source_sha256": "3a68c95b5ccf9a64ad06551a75f1e365d6ae31af487141cebafa27ca04da985f"
+      },
+      "saveAria": {
+        "text": "Aansluitpunt opslaan",
+        "source_sha256": "3a68c95b5ccf9a64ad06551a75f1e365d6ae31af487141cebafa27ca04da985f"
+      },
+      "selfApproveBanner": {
+        "text": "U kunt zelf proxy-toegang goedkeuren: Open sessie en Opgenomen lancering krijgen een kortstondige subsidie ​​als u er nog geen heeft. Gebruikers met dubbele controle zonder zelfgoedkeuring moeten eerst Toegang aanvragen gebruiken.",
+        "source_sha256": "57e32e8118d0b00db1b26164e8528404773c74105cc691368a50d2b630d9e618"
+      },
+      "sessionRecordedOpening": {
+        "text": "Sessie opgenomen — openingsopname {{id}}",
+        "source_sha256": "5a5be344a8106057567757f5203522dcde0a3aff972c425e2597d49c2542842c"
+      },
+      "setCredential": {
+        "text": "Referentie instellen",
+        "source_sha256": "3d66274541744b5cb1b4e5b794759b3de23d39b2d184b4243d83631130776bcd"
+      },
+      "setCredentialAria": {
+        "text": "Referentie instellen voor {{name}}",
+        "source_sha256": "262831209b086ed5c1bca1ba9af3daf3d7f3ed02e2468e37f03a06639a2c22fc"
+      },
+      "state": {
+        "live": {
+          "text": "live",
+          "source_sha256": "247610f4dedd4ab7247d07dbda19c81ca9817f85820742cad49d407ffae9e4ed"
+        },
+        "waiting_for_supervisor": {
+          "text": "Wachten op toezichthouder",
+          "source_sha256": "250b6d7ff79136a5d8ec653f186753f0b0f4b0b651a3a1cc97646da745fec74b"
+        }
+      },
+      "stateChip": {
+        "text": "State: __PH0__",
+        "source_sha256": "cdf97e373ae979b777065f0335ffbdb4d8bfdc3f1e9962a942e83360b6b77bc6"
+      },
+      "storeCredential": {
+        "text": "Bewaar referenties",
+        "source_sha256": "d750bb69c4476bfdf6a5db0def8495ba923be30d0c0774f9dcae1b784c644df3"
+      },
+      "stored": {
+        "text": "[stored]",
+        "source_sha256": "72c5c82629fd9492b9dd66d0b616b1a44926f30e89885d0cda187c1f73c8b4a5"
+      },
+      "submitRequest": {
+        "text": "Zugriffsanfrage verzonden",
+        "source_sha256": "55ae6b24fc9a2563c13a37eca84a0b7c909c1ccf446235659e17fac70f9abf3f"
+      },
+      "supervisorChip": {
+        "text": "Supervisor: __PH0__",
+        "source_sha256": "587f02be8489da52870489fa05b246becc4d354cb742c87da342140e8b7ee417"
+      },
+      "ticketRef": {
+        "text": "Ticketreferentie",
+        "source_sha256": "b9cef34e20f486fac64263ebb9c84d07dcc42f023445d74f3964541f580053ef"
+      },
+      "waAdmitBanner": {
+        "text": "When Workstation Assurance mode is mandatory, Open also requires a fresh assurance token from the Workstation Assurance Agent on the connecting PC.",
+        "source_sha256": "144e3e541e7a818b95bc4f8e4deaf1b0d199f3b392954c048425d93299036b36"
+      },
+      "yes": {
+        "text": "Ja",
+        "source_sha256": "85a39ab345d672ff8ca9b9c6876f3adcacf45ee7c1e2dbd2408fd338bd55e07e"
+      }
+    },
+    "controlCoverage": {
+      "colAlsoMapped": {
+        "text": "Also Mapped To",
+        "source_sha256": "b250345101bd1d5bad7ac8baf26e8fc0204c2e7a245eda4231773ee09b6dad26"
+      },
+      "colAssessment": {
+        "text": "Onderzoek",
+        "source_sha256": "7808eeeb45dfa074e21b1b6b1be5edfca205495c2b46df66ee1005e479948eaa"
+      },
+      "colBaseline": {
+        "text": "Basislijn",
+        "source_sha256": "cc9ea7f7c64e772c81eb80854c0e7db8f504943549c0675d893a983b8f545152"
+      },
+      "colControl": {
+        "text": "Controle",
+        "source_sha256": "32d7e82082479b8cb546187ff0af11e4915e4d17bc28e02dca7425288b79badd"
+      },
+      "colFamily": {
+        "text": "Familie",
+        "source_sha256": "bd2d677b2ed4381b48bb1d0841052c6d076e7d634d5052e85dcbe0b8a0dedd80"
+      },
+      "colMappedEvidence": {
+        "text": "In kaart gebracht bewijs",
+        "source_sha256": "530de18114988c95eae778fdc57406def4827afb270172233e4e1237efb58fc9"
+      },
+      "colOpenPoam": {
+        "text": "Open POA&M",
+        "source_sha256": "8609b74b88f3ff55c87eed725bb2c4979f5f908aac3f9a1101e449a93b599fed"
+      },
+      "colPractices": {
+        "text": "800-171 Practices",
+        "source_sha256": "06289eeae7eca332a0d15bd2acd789adc34c7f731ef31642de9b4af1e9741d13"
+      },
+      "colTitle": {
+        "text": "Titel",
+        "source_sha256": "7e8cd2056da73a7fefb6cd91f4e5d199d08d9058c517b9a2476b1b520324d674"
+      },
+      "familyAll": {
+        "text": "Alle",
+        "source_sha256": "a52ace420f2175d08b1577a1bea5445e36801229c074ef9ed6c55a73401fd9c2"
+      },
+      "honesty": {
+        "text": "De dekkingsaantallen tonen de levering van in kaart gebracht bewijsmateriaal en open POA&M-rijen. Ze zijn niet voldaan, conform, gecertificeerd of gereed voor beoordeling.",
+        "source_sha256": "536aa0ae367a7554345dad31f83e333fe140e2c29b84b7272974534fc689be25"
+      },
+      "loadFailed": {
+        "text": "Kan controledekking niet laden. Bevestig dat catalogusmigratie 003000059 is toegepast en dat u toestemming heeft om auditopdrachten te bekijken. Alleen leveringsweergave - geen Met-claim.",
+        "source_sha256": "814336dd29fd060e6aae30fe4ae2cb2fa6c759355e252cd8eca6971472f65256"
+      },
+      "reportSubtitle": {
+        "text": "Alleen leveringsbewijs, geen conformiteitsoordeel",
+        "source_sha256": "2ccb6dcb1efdfbdedbd40d7858c216df0b94e78e8c97b6f0681647cc1e1e0a4b"
+      },
+      "statControls": {
+        "text": "Bediening:",
+        "source_sha256": "87cdc0c8a42eb3bc311a02be6b07a1b4eaaf30062fd77072e5c3c18703a0ffa1"
+      },
+      "statHigh": {
+        "text": "Hoog:",
+        "source_sha256": "ce0b219307dff286a497a8dc6999be243f728619680ceb838aafda0d7bbcb312"
+      },
+      "statMapped": {
+        "text": "Met toewijzingen:",
+        "source_sha256": "8d7bd8b95104879aa93763a81988672e964dccc536297c078a95a3712011e52c"
+      },
+      "statModerate": {
+        "text": "Gematigd:",
+        "source_sha256": "ad030f3e1d3e69b59ebc98256b40faf70edbd3b11b286008de264333ae3e5184"
+      },
+      "statOpenPoam": {
+        "text": "POA&M openen:",
+        "source_sha256": "6247d30471616f0e2a5149d65188ea2460523c56197886976806545ed382722a"
+      },
+      "statUnmapped": {
+        "text": "Niet-toegewezen bewijskaarten:",
+        "source_sha256": "6ca0ad156f31df6da48fd9455883d073963eb2c0851576afcbfb97a13c316629"
+      },
+      "subtitle": {
+        "text": "Geprojecteerde catalogus met in kaart gebracht bewijsmateriaal en open POA&M. Alleen leveringsbewijs.",
+        "source_sha256": "b1bc60cce450c11f2c024fe35a47f90467361e6b8cb2dbb9fb5d73bca9e213c9"
+      },
+      "title": {
+        "text": "Controle dekking",
+        "source_sha256": "5e8056b4dbb586803fb8bd3f797af2bc9e3103a160c2e8e03f8c4b4a05dbe2d2"
+      }
+    },
+    "controlState": {
+      "close": {
+        "text": "Close",
+        "source_sha256": "7d9eb7acb13e24625c404401d8e88b2350e32162455885f18276cf802f7701ed"
+      },
+      "colChangedAt": {
+        "text": "Gewijzigd op",
+        "source_sha256": "1bf15043aec2816e7c81d3195e4a84f37a4666d5c28891bcd6a5881b6b204c25"
+      },
+      "colControl": {
+        "text": "Controle",
+        "source_sha256": "32d7e82082479b8cb546187ff0af11e4915e4d17bc28e02dca7425288b79badd"
+      },
+      "colDeliveryState": {
+        "text": "Leveringsstaat",
+        "source_sha256": "b8f7950f317f30cf492eba77fb704b2f2e35bbcbafe772adf9776b4587f847e9"
+      },
+      "colDriftReason": {
+        "text": "Drift Reden",
+        "source_sha256": "5264c853af309d579b229e43e6bd6e49cd61fce1eac36f4711ec8b47861988a5"
+      },
+      "colHistory": {
+        "text": "Geschiedenis",
+        "source_sha256": "0e769600933790607b2a13b33ddfade0fa17810eb62c3b28ee23e59516516491"
+      },
+      "colLatestEvidence": {
+        "text": "Laatste bewijs",
+        "source_sha256": "4d4a5bed6c2854def55b1df184b21d95b330d6434524ba436e91b05521baa96d"
+      },
+      "colMappedEvidence": {
+        "text": "In kaart gebracht bewijs",
+        "source_sha256": "530de18114988c95eae778fdc57406def4827afb270172233e4e1237efb58fc9"
+      },
+      "colObservedAt": {
+        "text": "Waargenomen bij",
+        "source_sha256": "7a732c237b9bb9267b5bdd001479e563f3767889a0c9c0a1076d2e8ce612236e"
+      },
+      "colObservedState": {
+        "text": "Waargenomen staat",
+        "source_sha256": "f8d9e722e9b02a616e2a536c7eb53ed96d5f5006a8198f20198bbf322789200c"
+      },
+      "colOpenPoam": {
+        "text": "Open POA&M",
+        "source_sha256": "8609b74b88f3ff55c87eed725bb2c4979f5f908aac3f9a1101e449a93b599fed"
+      },
+      "colPreviousState": {
+        "text": "Vorige staat",
+        "source_sha256": "b31e7822b203006e522b0f9b3bd31dfeb089b9f9619a71092ea32e6e7404f75f"
+      },
+      "colTitle": {
+        "text": "Title",
+        "source_sha256": "7e8cd2056da73a7fefb6cd91f4e5d199d08d9058c517b9a2476b1b520324d674"
+      },
+      "currentTitle": {
+        "text": "Huidige controlestatus",
+        "source_sha256": "e761d125e12839114232b16a9688c0ca152fbfe271462c415f57556cb3ff522f"
+      },
+      "deliveryHistory": {
+        "text": "Delivery History — __PH0__",
+        "source_sha256": "1122b2db08e9aaa7a800a9713833cfab0c799ec73f3a8add4039b525f945434c"
+      },
+      "driftChip": {
+        "text": "Drift",
+        "source_sha256": "8b4c82401c9c9ecefe4d2553ed57913ccd5bb1449705931f1318d32478f9da4a"
+      },
+      "driftCount": {
+        "text": "Afwijking in venster: {{count}}",
+        "source_sha256": "7fbc16e521d20761a8d378259f35db3b9608aad790353cd6caf169be2b917ab8"
+      },
+      "driftEmpty": {
+        "text": "Er zijn geen regressies geregistreerd in dit venster. Dat betekent dat er niets achteruit is gegaan in het record; het betekent niet dat enige controle aan de regels voldoet.",
+        "source_sha256": "6c57f7e68600884b2ddfa39028593a7a6923a04f4044fd9a45c9b0675d2ec730"
+      },
+      "driftHelp": {
+        "text": "Drift means a control",
+        "source_sha256": "3ff101d2e5e7c7ccfebb745aba07b1e3914e998a9e348cefdd7667147b9880d4"
+      },
+      "driftSubtitle": {
+        "text": "Alleen leveringsregressies – geen conformiteitsoordeel",
+        "source_sha256": "d61c5d2ec395887977c480dbb4e5ebf594a49ff92e76b6a84eecde9857d90fde"
+      },
+      "driftTitle": {
+        "text": "Controle staatsafwijking",
+        "source_sha256": "dac7c5e0c1000563b411370641dfdb05fda8c485bf1925c84627bb292833b34d"
+      },
+      "emptyNeverObserved": {
+        "text": "This control has never been observed, so there is no delivery history to show. Run a sweep to start its record.",
+        "source_sha256": "8ad826aca7fbb3f5c943ed6670aceda76e79f894a8e9db7a73f1265598e6ba16"
+      },
+      "emptyNoneInWindow": {
+        "text": "Deze controle is waargenomen, maar de leveringsstatus veranderde niet tijdens het geselecteerde venster.",
+        "source_sha256": "b9ebb3c73d07b7bfa3df1f234bf9757508cd60f5e6a1a98e08032799efb9edb1"
+      },
+      "filterAll": {
+        "text": "Alle staten",
+        "source_sha256": "f189411452ed2860ac837e01dde5e41285696039ad4dc3fd5b1373da564e1c76"
+      },
+      "firstObservation": {
+        "text": "Eerste geregistreerde waarneming.",
+        "source_sha256": "6413b3518b5bb11e6c9f028f9856ebb8268800ddceeed5f754f5ff8eec96d334"
+      },
+      "freshCount": {
+        "text": "In kaart gebracht, vers: {{count}}",
+        "source_sha256": "e94e0f3447fb82ec8fe445e592e431d046eaaf8c5c6b1762b28d51c71457fce6"
+      },
+      "gridSubtitle": {
+        "text": "Alleen levering van bewijsmateriaal en versheid – geen oordeel over naleving",
+        "source_sha256": "b57716b68d9aec18e0519b9d2df3744385b852cee363aeed294eec386390e3c5"
+      },
+      "historyLoadFailed": {
+        "text": "Kan dit besturingselement niet laden",
+        "source_sha256": "65ac0d13ddafba38a591edaa882192bf430ca493a64b8bf0410de745e905c5d4"
+      },
+      "honesty": {
+        "text": "De controlestatus beschrijft of er in kaart gebracht bewijsmateriaal is geleverd en hoe recent. Er staat niet dat er een controle is geslaagd.",
+        "source_sha256": "0d1af88e4f70b4c478999bf1ee3dade91ceae4640b0451c9e9f9afdc3c2f33f7"
+      },
+      "itemCounts": {
+        "text": "In kaart gebracht bewijsmateriaal: {{mapped}} Â· Open POA&M: {{poam}} Â· Laatste bewijsmateriaal: {{latest}}",
+        "source_sha256": "c8b04d2681588eaadcdf70bd3ba4ef0acaa27df6accdb81ca3199f439943bcaf"
+      },
+      "lastDays": {
+        "text": "Last __PH0__ days",
+        "source_sha256": "fc2746701094b10e6b2ee05d1c0e87535b0f605ffacb79853bedcbe1851b7570"
+      },
+      "loadFailed": {
+        "text": "Kan de controlestatus niet laden. Bevestig dat de controlestatusmigratie is toegepast en dat u toestemming heeft om te bekijken. Alleen leveringsweergave: er wordt geen oordeel geïmpliceerd.",
+        "source_sha256": "45dec0e191c4691c60349b1c8a82d6064516b25928580f6c2c8ce54f9b9af661"
+      },
+      "loadingHistory": {
+        "text": "Bezorggeschiedenis laden…",
+        "source_sha256": "bc2223f7383bac645ecc497a7e656d5bab9bb94df06891378e047c42485f877e"
+      },
+      "loadingLabel": {
+        "text": "staatsgeschiedenis controleren",
+        "source_sha256": "31a84d0b4a7f5b6f1cbb2485dcd311cd39c819965dceec112b56be1fcef23907"
+      },
+      "needPermission": {
+        "text": "U heeft toestemming nodig om de geschiedenis van de leveringsstatus per controle te bekijken.",
+        "source_sha256": "47edaf6651aa8ee67554c741d4f225c494d71e6f9bd9311053f474bba527be1f"
+      },
+      "previously": {
+        "text": "Voorheen {{state}}.",
+        "source_sha256": "4443cab06e66c285ddcd7212d94f52c49f4bf5d943799db5dde17aa4038fae63"
+      },
+      "provenanceNone": {
+        "text": "Er heeft nog geen controlestaatonderzoek plaatsgevonden, dus er is geen vastgelegde geschiedenis en geen trend om uit te tekenen. Voer een sweep uit om het record te starten.",
+        "source_sha256": "7e78075f91cdedd74b2374521647b6e476838dacf4e961f07f07fcf90467bcb2"
+      },
+      "provenanceStarted": {
+        "text": "De geschiedenis begint {{started}}; laatste sweep {{swept}}. Er wordt niets vóór die datum geregistreerd, dus er wordt geen trend voorbij die datum getrokken.",
+        "source_sha256": "dc0010dbe0a9ef95fd4dab967d14798d13cf8120d757d59a324910989ee52e49"
+      },
+      "recentDrift": {
+        "text": "Recente drift",
+        "source_sha256": "99d6282b3829acecc5e9f6515560e4cd175bb0a769beb5bc2bbd10a24c273fb5"
+      },
+      "shortMappedFresh": {
+        "text": "In kaart gebracht, vers",
+        "source_sha256": "73115da2935b039661f22b67da47004b1b05073af7055fcc35cdd4b6036d0a3a"
+      },
+      "shortMappedStale": {
+        "text": "In kaart gebracht, oud",
+        "source_sha256": "bb6fe9c5d24308bf76a1f71f8398695835d28f812f99fb6effba9029c70a676e"
+      },
+      "shortUnmapped": {
+        "text": "Niet in kaart gebracht",
+        "source_sha256": "13d61712646485a6d69adab6f81ea186aa56d6369a9f47cc0c419b32aaf6c851"
+      },
+      "showHistoryAria": {
+        "text": "Toon bezorggeschiedenis voor {{id}}",
+        "source_sha256": "3c64bb972b0c2bffcbe7cfb7fe3db37c8b83bcee7c8c6ad558bc5818c3053d46"
+      },
+      "staleCount": {
+        "text": "In kaart gebracht, oud: {{count}}",
+        "source_sha256": "5c47e054b64439b1751afb917995a1ce2d3bd34d417722099fafa9232480af8c"
+      },
+      "stateMappedFresh": {
+        "text": "In kaart gebracht – nieuw bewijs",
+        "source_sha256": "4aa9840d6c2cd59f47b9afaeb30e75c5a72e8c490a799f219ac021f3b986083f"
+      },
+      "stateMappedStale": {
+        "text": "In kaart gebracht - bewijsmateriaal verouderd",
+        "source_sha256": "833089dcc00154ba8a72f546193cda5b667a51df6590c96c202eac745a795294"
+      },
+      "stateUnmapped": {
+        "text": "Unmapped — no evidence delivered",
+        "source_sha256": "f7fbb812366d4819d114627841f2d48a278712f3897c70aee55412e260395c84"
+      },
+      "subtitle": {
+        "text": "Bewijslevering per controle en recentheid in de loop van de tijd, met regressies gemarkeerd als drift.",
+        "source_sha256": "2450d35683fcc9a7fe5d0e75c936654f2e78b5a300a5d56c1ac0786bc93bbad1"
+      },
+      "sweepFailed": {
+        "text": "Kan controlestatuscontrole niet uitvoeren",
+        "source_sha256": "ce542e99095075bf57038fdd8f04172b609fca075d6cfc7ba264692b95ad7177"
+      },
+      "sweepRecorded": {
+        "text": "Sweep opgenomen: {{examined}} controles onderzocht, {{transitions}} overgangen opgenomen, {{drift}} drift.",
+        "source_sha256": "6cbace929e9ebe4fd397b8fa125a2c0d28ea97e9eb53ce43e60445e61767b47f"
+      },
+      "sweepRun": {
+        "text": "Voer een sweep uit",
+        "source_sha256": "cbb96e51e34d36253a6558e144a9e78990ab32ffa99fe94c3fcb7bc520447e9e"
+      },
+      "sweepRunning": {
+        "text": "Sweep uitvoeren...",
+        "source_sha256": "5e20e20ac0ef5a65982e4981c8c93c9bbb346b6480b300426bbca25834f704f6"
+      },
+      "title": {
+        "text": "Controlestaatgeschiedenis",
+        "source_sha256": "a8853de7c2a8c8d7b9354d9b2593659d07ee57a04034810f96988468e11684be"
+      },
+      "tracked": {
+        "text": "Bijgehouden controles: {{count}}",
+        "source_sha256": "9063d249e399480e709288873347737637d56d7fa2dec1a9f8ec22776dd32caf"
+      },
+      "unmappedCount": {
+        "text": "Niet toegewezen: {{count}}",
+        "source_sha256": "92b36d09b3c81ff62d5c0a63b8b81aa1d5799b4f41420c970b8c45ad84bae98e"
+      },
+      "window": {
+        "text": "Raam",
+        "source_sha256": "19734a1b58cabc22cae1f88493289ee94f40ff2b350f7f1b9f7011ea84096916"
+      },
+      "windowLastDays": {
+        "text": "Periode: laatste {{days}} dagen.",
+        "source_sha256": "ca4085c0c190f67a8102d8c4f52ca2a75343150af1b55669c2c1b50f69de7588"
+      }
+    },
+    "credentialVault": {
+      "cancel": {
+        "text": "Annuleren",
+        "source_sha256": "19766ed6ccb2f4a32778eed80d1928d2c87a18d7c275ccb163ec6709d3eb2e27"
+      },
+      "colAccount": {
+        "text": "Rekening",
+        "source_sha256": "7e1b0d5641f2640ce9a953ec231eea2c27a2a7633f7d3c273e5735e2b30c10b7"
+      },
+      "colActions": {
+        "text": "Acties",
+        "source_sha256": "ff8059dc6752afdd30d275932b1d5031a2ec854b387a8c57ecc6689915293a43"
+      },
+      "colKeyAdapter": {
+        "text": "Key / adapter",
+        "source_sha256": "f842bab05d7a42d2d1e2a62b50a18b08c3f15948aec84ff12d4dd12e48d3fbfd"
+      },
+      "colLastRotation": {
+        "text": "Laatste rotatie (UTC)",
+        "source_sha256": "c84b8e8f5011593c8ab90d8d59c808524a8d361963585fd8a57e93953fdb5ec5"
+      },
+      "colName": {
+        "text": "Naam",
+        "source_sha256": "dcd1d5223f73b3a965c07e3ff5dbee3eedcfedb806686a05b9b3868a2c3d6d50"
+      },
+      "colOwner": {
+        "text": "Eigenaar",
+        "source_sha256": "4b1b8aa3608a26da451ae0630d75b60ab1bc2dd229c41a80838fc7993e835c46"
+      },
+      "colState": {
+        "text": "Staat",
+        "source_sha256": "a3b50c476732c7409d297c3d7d0e23569fee5e08318553ae76041ab5fe60582e"
+      },
+      "confirmHelper": {
+        "text": "Voer het geheim opnieuw in om te bevestigen (N17).",
+        "source_sha256": "b2c96bc54d84fd54f8ff1cba225d5f701ff0d6631f54c1a3e3adae6cc2081a26"
+      },
+      "confirmSecret": {
+        "text": "Bevestig nieuw geheim",
+        "source_sha256": "7efae7a662c5a3e78637bd933a819d725c771686aeaa8ea7f9fd1c1ccd34cf5e"
+      },
+      "connectionPoints": {
+        "text": "Verbindingspunten",
+        "source_sha256": "8dfc7a66ba5359fbc461efcc21cdfd69bcfd3e2a03ceb75320e084cb096ab372"
+      },
+      "createFrom": {
+        "text": "Maak inloggegevens van",
+        "source_sha256": "b7b04b45ab89454ad5354139b439b8a1dbd134d614f86128603722bd6d1cdf74"
+      },
+      "createFromSuffix": {
+        "text": ". Deze pagina beheert de bewaring, rotatie en verwijdering.",
+        "source_sha256": "c02c545373f50d52585571e6edaca4cc4a99c3808766c49bfcd49ce2089916d0"
+      },
+      "custodyTestFailed": {
+        "text": "Bewaringstest mislukt",
+        "source_sha256": "7f122d2bdd8e9e0ae828f85299be69904f0e7cb85866f8e1861ef505f79ba955"
+      },
+      "custodyTestFailedWithMsg": {
+        "text": "Bewaringstest mislukt: {{message}}",
+        "source_sha256": "d66549903a4f49b9df7c9af5f183671289816c8257fd10c10a216ba4a45174d7"
+      },
+      "custodyVerified": {
+        "text": "Bewaring geverifieerd via {{adapter}}. Vraag {{requestId}} aan.",
+        "source_sha256": "0364aebbcfaf93922220c0ec795e5124876026621d9c52b78e9fed1ec12a0ef3"
+      },
+      "delete": {
+        "text": "Verwijderen",
+        "source_sha256": "e2d0a54968ead24efc0dffa6ac78fc606dceec34a0f586177a74a54cc2272cf8"
+      },
+      "deleteConfirm": {
+        "text": "Versleutelde inloggegevens verwijderen",
+        "source_sha256": "387d235b9f800490b7c0bfaf8043e08b80f48abdb9d2706565e4633b4e86f98f"
+      },
+      "deleteFailed": {
+        "text": "Verwijderen is mislukt",
+        "source_sha256": "8727e2ba364c2c46192df0e1d0318d0cc82b0c1e6f7465e012ac59430254e170"
+      },
+      "deleteFailedWithMsg": {
+        "text": "Verwijderen mislukt: {{message}}",
+        "source_sha256": "ae8ee8cd8d2a6bde0b9cefd8d17e596cbef47effbeb07856f9ae0829513e99dd"
+      },
+      "deleted": {
+        "text": "Inloggegevens verwijderd. Vraag {{requestId}} aan.",
+        "source_sha256": "8c8834280587b4a2300411ad2ec9ac5e40a27f8c41a363fa7c0ffbb3170332c0"
+      },
+      "empty": {
+        "text": "Geen kluisinhoud voor deze weergave.",
+        "source_sha256": "87a4fdcafc7642f870d7d71b1e50e2c5a2fa7e0c4a5e8bf28e1026a7d780eb4f"
+      },
+      "gridAria": {
+        "text": "Metagegevens van de referentiekluis",
+        "source_sha256": "4bb33a735cff55123989cd60110c92ef8623c2075157a60cfc5104e8a42837a2"
+      },
+      "intro": {
+        "text": "Beheerde makelaarsreferenties gecodeerd met zelfbeschrijvende UniversalEnvelope-records. Geheimen worden nooit getoond; sessiemakelaars injecteren ze direct bij de lancering.",
+        "source_sha256": "3fcc0822f382bfe5751153355c5e7032e39205592e2ead9892930f2340cb998a"
+      },
+      "loadFailed": {
+        "text": "Kan metagegevens van de kluis niet laden.",
+        "source_sha256": "e60cf8b404e909e332828c7f73b53cb5f3ae0f0b119310b7ca75ca413a6f39ad"
+      },
+      "metaNote": {
+        "text": "Gecodeerde referentie-metagegevens; geheime waarden worden opzettelijk uitgesloten.",
+        "source_sha256": "d0b2d05c3bc078593fe27955c2a4c6acefa17a1a3909917aa209f09093523066"
+      },
+      "never": {
+        "text": "Nooit",
+        "source_sha256": "6300ef800bb884295b0b4b35682b75cecd7cc550d202db56d04a0643b8fb873f"
+      },
+      "newSecret": {
+        "text": "New secret",
+        "source_sha256": "1088a1c0fee8413168ba72a4375b588c379da8806dab1f8025cbd5089a9b4d80"
+      },
+      "newSecretHelper": {
+        "text": "Het geheim wordt één keer via het geverifieerde kanaal verzonden en wordt nooit geretourneerd.",
+        "source_sha256": "ab81b87063532cdf9c73f4a3004ba0b7b8ce547ce8a5092ef3a5c410589ede95"
+      },
+      "noCredentialSelected": {
+        "text": "Geen referentie geselecteerd",
+        "source_sha256": "df720804f4234d6ebc0f59f11117a400f40f9dbf1aa129cde9dd5bbfc2898976"
+      },
+      "notSpecified": {
+        "text": "Niet gespecificeerd",
+        "source_sha256": "dc12bec5d71f167b495f5a32ae80c61279373eef97fdc1b5584c3e6ae0a8209d"
+      },
+      "refresh": {
+        "text": "Vernieuwen",
+        "source_sha256": "0e91610117029a62a478b7fa7df0b8598bebe3ab1e192d4b1882e310719c9671"
+      },
+      "reportTitle": {
+        "text": "Referentiekluis",
+        "source_sha256": "bbf6a83734f4b820554a23f12a150906b5f4630ea26f051065f0b2e7a82642ee"
+      },
+      "reveal": {
+        "text": "Anzeigen",
+        "source_sha256": "ccb27f03f03ed86659485a95d9940964513549cc06cff298b8dae691cf3b6762"
+      },
+      "rotate": {
+        "text": "Draaien",
+        "source_sha256": "c3613b1704f54c8bd38987e4e810ae6040935d048ac5bb0dd9c0bde269ecf739"
+      },
+      "rotateTitle": {
+        "text": "Referentie roteren",
+        "source_sha256": "1e83fbd4c561d8b4d4e77579e1ea337a51f9386fcea8ba48442534f2c1418a05"
+      },
+      "rotated": {
+        "text": "Inloggegevens geroteerd en opnieuw gecodeerd met de actieve UniversalEnvelope-sleutel.",
+        "source_sha256": "6244e3fa13d8993a23749e675a412f9796a8ba4930ad485e27f01c333bf34b04"
+      },
+      "rotationFailed": {
+        "text": "Rotatie is mislukt",
+        "source_sha256": "2d3e7bd0f1bb60ab9487eeda2ec2c8cf08cb176539b0954d50b008ee5d9bf412"
+      },
+      "rotationFailedWithMsg": {
+        "text": "Rotatie mislukt: {{message}}",
+        "source_sha256": "ead199888001be3f7d3f90998408848d664dd1fe06ec158c9b5d9a3d519b4793"
+      },
+      "secretsMismatch": {
+        "text": "Geheimen komen niet overeen",
+        "source_sha256": "9911cb0e217aa3b05f0a2041d75c911bb8810555add667d1f724530dae54dd17"
+      },
+      "testCustody": {
+        "text": "Bewaring testen",
+        "source_sha256": "d1e5dfac6df257b3b21d185e479d9fd837129e7de80317205993d0d8877ee153"
+      },
+      "title": {
+        "text": "Referentiekluis",
+        "source_sha256": "bbf6a83734f4b820554a23f12a150906b5f4630ea26f051065f0b2e7a82642ee"
+      },
+      "unknown": {
+        "text": "Onbekend",
+        "source_sha256": "b764cdc0eab7137467211272fa539f1260d1bf2e71bcf6ff3bdc960f5c16aa14"
+      }
+    },
+    "elevation": {
+      "directElevation": {
+        "text": "Directe hoogte",
+        "source_sha256": "a5a51f424e108e4e1ceed6da7ee172e65a89218c4cd5c6d144859cb119930471"
+      },
+      "elevationConfigured": {
+        "text": "Hoogteconfiguratie",
+        "source_sha256": "0296f056b90ad93c1eaf81b17b19c43070f46aee1730ddf86fd5f68cf07bacb9"
+      },
+      "elevationNotConfigured": {
+        "text": "Hoogte niet geconfigureerd",
+        "source_sha256": "4f145f7636d6bb2f47b0a0f9b0180a5db43ce5d386b769e6bb6b34c68cfdd196"
+      },
+      "mintCode": {
+        "text": "Hoogtecode erstellen",
+        "source_sha256": "fdfc7849b07a1e944431caa27f37505d7cff7e527b6323e0fcb9fa4911ae9edd"
+      },
+      "mintPlatform": {
+        "text": "Mint-platformcodes",
+        "source_sha256": "01da225abdc06fc7c03683d28b5b305ad98f32f7117668c64b07522f6f400b5b"
+      },
+      "mintPlatformAria": {
+        "text": "Open het verhogingsplatform om Mode 1-3-codes te gebruiken",
+        "source_sha256": "7535bdc98002fac65db214b19d5aa68bcf83d5f7e4f04d8795add83385cac52d"
+      },
+      "noEndpoints": {
+        "text": "No endpoints available.",
+        "source_sha256": "f081ca10cfccef93a59b1c6e723f628d13b60ae7ff27943d558d573be82cbf96"
+      },
+      "noIp": {
+        "text": "no IP",
+        "source_sha256": "c390326542f3eba1b4c9104bed61dfd768f6d246983c1972f79291c431371ba3"
+      },
+      "path1BannerRest": {
+        "text": "munt hier een code; de eindpuntagent wisselt deze in voor lokale verhoging. Gebruik voor door de server geïnitieerde taken met agentpipe",
+        "source_sha256": "1d0182e6ec7d9d3a9337e059da83f941acd6d462df5b1704a13ebb9c99bc0743"
+      },
+      "path1BannerStrong": {
+        "text": "Pad 1 – Tokenverhoging (agent inwisselen):",
+        "source_sha256": "6f1d616935c25d196702db71d1639098541040a0479608df9ff3bf920fbac0cc"
+      },
+      "path1BannerWinrm": {
+        "text": ". Voor externe niet-agent lokale verhoging (WinRM toevoegen/intrekken, geen agent) gebruikt u het onderstaande paneel.",
+        "source_sha256": "f47f0669a0c6a31a72b1e0f025f04f7871964c784d223a87052157e4c6352d93"
+      },
+      "selectAria": {
+        "text": "Selecteer eindpunt voor hoogtecode",
+        "source_sha256": "62a0dccf815e4b7291f536e76a1d3eb30d45d1d9dc8ff50be7d3a0924b65592b"
+      },
+      "selectEndpoint": {
+        "text": "Selecteer eindpunt",
+        "source_sha256": "63219f205073799d6c47a789929922ed78d4c65ce0dd92a46a4d101ebb6e1ec3"
+      },
+      "selectEndpointHelper": {
+        "text": "Selecteer een machine om een ​​eenmalige verhogingscode te genereren.",
+        "source_sha256": "983ce7a4792308ca9a515afddd0e232e819f2ca7fe2fa2b864237de3316f8ac3"
+      },
+      "selectPlaceholder": {
+        "text": "Kies op naam, IP of MAC",
+        "source_sha256": "ff2eb9781f0e40a74ff920e4cbfebbbffbb9ff4d9005a9a088e27274ab226376"
+      },
+      "tokenBody": {
+        "text": "Genereer een klassieke activeringscode voor één geregistreerd eindpunt, of open het platformmuntoppervlak voor Modi 1-3 (TOTP v3, uitdaging/antwoord, ondertekende subsidie).",
+        "source_sha256": "cc2e629804b0400075bbf2365c3dd890034608cdc83ccb72360ace8ab95cdff9"
+      },
+      "tokenTitle": {
+        "text": "Tokenverhoging (agent inwisselen)",
+        "source_sha256": "3ac35c65cd65a2e04e5da470f7660c5b4c1413436910c18d865d615a5e862e8a"
+      },
+      "unknownPlatform": {
+        "text": "Onbekend",
+        "source_sha256": "b764cdc0eab7137467211272fa539f1260d1bf2e71bcf6ff3bdc960f5c16aa14"
+      }
+    },
+    "elevationApps": {
+      "addRule": {
+        "text": "Toepassingsregel toevoegen",
+        "source_sha256": "bd42a0f4559d4f0873036b2e7877e55b640be785cbe8e9c69c1f348151ac1fd4"
+      },
+      "addRuleAria": {
+        "text": "Toepassingsregel toevoegen",
+        "source_sha256": "bd42a0f4559d4f0873036b2e7877e55b640be785cbe8e9c69c1f348151ac1fd4"
+      },
+      "appGroups": {
+        "text": "Application groups",
+        "source_sha256": "9b9e7d1d731f4fb8c415d26facadcbbc74b6f9272fa768c51f2e4e19edb60d84"
+      },
+      "appRules": {
+        "text": "Toepassingsregels",
+        "source_sha256": "3acd6956c49afc525299ac69e327e9d98c340853b0bf2f0536f7833efaec2a04"
+      },
+      "approvals": {
+        "text": "Goedkeuringen",
+        "source_sha256": "2bfc3471571e5c008cb26bd839b0d4cbcb1132fc9d6c8206bb595fa26e83a45b"
+      },
+      "challenge": {
+        "text": "Uitdagingsreactie",
+        "source_sha256": "f2ee4f8ca2197d2ade1134146a2ae7c7bb612a59d30a43fe9abb513412697a47"
+      },
+      "discard": {
+        "text": "Wijzigingen negeren",
+        "source_sha256": "f9bfa3dc7c8fcdea10ec324b8f3a6876f76fc8f541aa41b2e1da20979064dc0b"
+      },
+      "editRule": {
+        "text": "Applicatieregel bewerken",
+        "source_sha256": "9ac63d1dc8bf16b4ca7f7d8910e0469ee86f6f907ec4e062483bba76cea97e17"
+      },
+      "emptyBody": {
+        "text": "Verzoeken om een ​​enkele aanvraag te verhogen worden geweigerd totdat ten minste één regel hier dit toestaat. Importeer de referentiecatalogus of voeg een regel toe en sla vervolgens de lijst op.",
+        "source_sha256": "bdeb331a99e477fe1b071a9be89ed2c09a4c0f017e794bf2e8e8664c372f5bb1"
+      },
+      "emptyTitle": {
+        "text": "Er mag nog geen aanvraag worden verhoogd",
+        "source_sha256": "2cdf70ccd2fd8fb0d6e558c509635a7085710773d443def2e1a7e0701d68cc0a"
+      },
+      "filterAria": {
+        "text": "Filter applicatieregels per platform",
+        "source_sha256": "bd3c5c153c8bc5284338ab32ca5dd413cbde5ec1dd5c7c4f43180c2994e0c9dd"
+      },
+      "importBundled": {
+        "text": "Gebundelde catalogus importeren",
+        "source_sha256": "a93996b71ba9f672e1fb0aacf924b9db86b69312290b5ec754a64543b36ef96f"
+      },
+      "importBundledAria": {
+        "text": "Referentie-applicatiecatalogus importeren",
+        "source_sha256": "976cc9b2a6ef80651e150c4c3d028a788a8d8bb8640e4bd550dc260a4a3ac7ef"
+      },
+      "importCsv": {
+        "text": "Klant-CSV importeren",
+        "source_sha256": "1addddcb9d097c6bb3621403b39b9b2dd1dad2bb2cdde9de7ab0ba4bdc7ae9a2"
+      },
+      "importCsvAria": {
+        "text": "Importeer klantgevoelige apps CSV",
+        "source_sha256": "171c669aab018a3ccc7ec98c55d455c6c017d10b7dd7c69114ba8a1074876702"
+      },
+      "intro": {
+        "text": "Deze regels bepalen welke applicaties een persoon met verhoogde rechten mag uitvoeren. Wanneer iemand vraagt ​​om één applicatie te verbeteren, meet het eindpunt het bestand en zoekt de server hier naar een overeenkomende regel. Als geen enkele regel overeenkomt, wordt het verzoek geweigerd. Catalogusbestand:",
+        "source_sha256": "4c8509e9a4b01a1a3ffdd52c90dcfc6276ccaf0dcbdb4acc5f8685f2b1c4f96a"
+      },
+      "loadFailed": {
+        "text": "De regellijst kan niet worden geladen. Controleer of de server actief is en of u bent aangemeld.",
+        "source_sha256": "8208f1fa8e23d4aa3f4745c4bea3a4eca56ed94c2696655756c32d4e981713ed"
+      },
+      "mintAria": {
+        "text": "Mint-elevatiecode",
+        "source_sha256": "452803488353b20e5ba24dc8e0b577b0537d2845227255d9b15130dccaa6a259"
+      },
+      "mintCode": {
+        "text": "Muntcode",
+        "source_sha256": "8c3e1469900bc3c5fa378dfe824bf9ff60ecd88ecbbf22afa8387ee28e845791"
+      },
+      "notSaved": {
+        "text": "Nog niet opgeslagen",
+        "source_sha256": "35c5fe43950d9ac1fce4a866345f834f82d67c4c95098f76df0660c42366df1a"
+      },
+      "platformTabsAria": {
+        "text": "Hoogteplatformsecties",
+        "source_sha256": "41e5f27e8757c4d730a65fd00250831359619ecaf343b073b3626d84ba042a29"
+      },
+      "policyLoadFailed": {
+        "text": "Kan beleid niet laden. Bevestig dat de server actief is en dat het admin-token is ingesteld.",
+        "source_sha256": "a861c1b7f4f6d7db16d0ce96985d21f82ec62c0b731c69101c3bca068bc87117"
+      },
+      "saveList": {
+        "text": "Regellijst opslaan",
+        "source_sha256": "9bbf6a236601069536ca4729d686905369c9c57ad2556add74bd4cf13396d6c3"
+      },
+      "saved": {
+        "text": "Regellijst opgeslagen",
+        "source_sha256": "287a7a3d2e4ff2c77fefee47a7903e55b919c7f7393377ef58ba47edbb249b90"
+      },
+      "sectionAria": {
+        "text": "Regels voor toepassingshoogte",
+        "source_sha256": "0cb33a8862e3a86263428186c972ef8b26e83cf85fee4c4d8cd6dc2a576c4346"
+      },
+      "signGrant": {
+        "text": "Teken subsidie",
+        "source_sha256": "8ec874d81c81432574f0b092e5ad18e1302df5235614784d86657d2cf0fd1793"
+      },
+      "tabAll": {
+        "text": "Alle platforms",
+        "source_sha256": "cba7d8eebe3b53e570273c5c89a2f2972ed06166100eab52d524700170b64fc2"
+      },
+      "tabAppGroups": {
+        "text": "Applicatiegroepen",
+        "source_sha256": "c6eeeb35a4e6d02fd897cc406164c4b171f447bef793baa0fd3b9f003a8caa04"
+      },
+      "tabApplications": {
+        "text": "Toepassingen",
+        "source_sha256": "98e33b0f3104fcf1b812ba2c679c0f15a94f583559b731d6580df2d8307d3edf"
+      },
+      "tabChallenge": {
+        "text": "Uitdagingsreactie (modus 2)",
+        "source_sha256": "2330f2bf32ca45b2906c97aab64c4875ae2a2b3ea1104ac8a2c245724cba8dc7"
+      },
+      "tabGrant": {
+        "text": "Tekensubsidie ​​(Modus 3)",
+        "source_sha256": "8247726a435be154f81b99957f28d16145b3dbada354eba57914929f84303b85"
+      },
+      "tabLinux": {
+        "text": "Linux",
+        "source_sha256": "4828e60247c1636f57b7446a314e7f599c12b53d40061cc851a1442004354fed"
+      },
+      "tabMacos": {
+        "text": "macOS",
+        "source_sha256": "aed6b7aa2a0511a9bbcaae2a10127a3139fc6494c57769b31b1a694c14483ce7"
+      },
+      "tabMint": {
+        "text": "Niet-verbonden tokens (modus 1)",
+        "source_sha256": "470fbeb7cde011d318150c0863f10d6c40d3d8b0d7a5b1336cbbc86ffa3c5baf"
+      },
+      "tabPolicy": {
+        "text": "Beleid",
+        "source_sha256": "c611981fab983bc648368eb81240f5a5a1eff07f40aa4c9fd155600a98eeb6af"
+      },
+      "tabWho": {
+        "text": "Wie mag verheffen",
+        "source_sha256": "604b111c4b9b29c812df3fc6f31168f8750350cd7ce4cf6e42166ea6f09f4b85"
+      },
+      "tabWindows": {
+        "text": "Ramen",
+        "source_sha256": "d598026a9cbc60505f138ce53ac78088d582100c196d0f70c7e2538d4a8d7e10"
+      },
+      "unixPrivilege": {
+        "text": "Unix-privilege",
+        "source_sha256": "5ddbf5ad83044db8fc82f456291843a1138bd51c43faf8b36a077a7ff5a2b9a1"
+      },
+      "whoMay": {
+        "text": "Wie mag zich verheffen",
+        "source_sha256": "3c6d743a8b6c4d778fe728aeadcd43a8addc2899300d10809a6dac52f3fbb245"
+      },
+      "workstationPrompt": {
+        "text": "Werkstationprompt",
+        "source_sha256": "647e99fbb544f4d11bf345cbeb1ab838eefb64385af86498bbc701eefa1f2381"
+      }
+    },
+    "endpointPrivilegeLanding": {
+      "intro": {
+        "text": "Bepaal welke mensen, groepen en systemen rechten kunnen inroepen voor welke applicaties, of deze apps standaard zijn toegestaan ​​of goedkeuring nodig hebben, en hoe agenten werken wanneer ze verbonden of niet verbonden zijn.",
+        "source_sha256": "e1dc8089df07e6672858d4a45201e33af9cd2af8d3601ca85880a98144bdee3a"
+      }
+    },
+    "enrollmentAccessControl": {
+      "auditBody": {
+        "text": "Filter gebeurtenissen → Recent (of SIEM) op deze gebeurtenistypen. Wachtwoord- en MFA-geheime waarden worden nooit vastgelegd: alleen uitkomst en doel-principal.",
+        "source_sha256": "2eac31454fd6d123c65dfa684dbcde979df6f1daa04e917acd7536b7321f5537"
+      },
+      "auditHeading": {
+        "text": "Controle-informatie (AU-2 / AU-3 / AU-9 / AU-12)",
+        "source_sha256": "78c9ad937ac2b861df3a6f4ffa8a4919aa7d261f1fb0fe50964025c05c2025ff"
+      },
+      "colAuditor": {
+        "text": "Accountant",
+        "source_sha256": "465b5967e292896bee2bbe8a67298bf1eec40ae84cf2ea96990cedcf87630442"
+      },
+      "colCapability": {
+        "text": "Vermogen",
+        "source_sha256": "5faf58a69db59058fbc0871ab221aafa5b026f81b13c71a40039bb1459171958"
+      },
+      "colEndUser": {
+        "text": "Eindgebruiker",
+        "source_sha256": "e19d611d6935f89e9df56af722731e62ddd5e2fab8a57ada59855cc94540b69a"
+      },
+      "colHelpdesk": {
+        "text": "Helpdesk",
+        "source_sha256": "3f1d2cfadda1b350ff1b4290b33fb0cda94d705ce84418b52b6bd5d7728f8768"
+      },
+      "colIdentityAdmin": {
+        "text": "Identiteitsbeheerder",
+        "source_sha256": "35d59c944107a6e3154421f1aa6eef4b8f29974bd7c90038dece349b0a6a7d95"
+      },
+      "colOwner": {
+        "text": "Eigenaar / superbeheerder",
+        "source_sha256": "9e0443e2314f6fd2772c50de853d63cf1444284b8dcfc16883f841ba39bf3d52"
+      },
+      "evidencePathsHeading": {
+        "text": "Bewijspaden",
+        "source_sha256": "faf06beee9fdd0b41416e822f565c2a499cbbfe0f9749cf657c382d9a65ab116"
+      },
+      "flowHeading": {
+        "text": "Inschrijvingsstroom",
+        "source_sha256": "cef5dc3c30e92adc6c24ef2b418ce4690c4e9b0c1797f6f8ca66f2801375ae9c"
+      },
+      "linkEnrollment": {
+        "text": "Lokale accountinschrijving",
+        "source_sha256": "a80d7e37aae1f09b314efbd43e1ca8a8ca89f37c45cd495a595756a3d26f37b0"
+      },
+      "linkEvents": {
+        "text": "Evenementen",
+        "source_sha256": "8d14f6e72de8f18ab1ee5c5330f00653c0c3ce099e63024454f80af97e72d333"
+      },
+      "linkMyAccount": {
+        "text": "Mijn lokale account",
+        "source_sha256": "d5d19b236d88ad58aeeb70067db66755d5018467acc03b193486cfc60f695169"
+      },
+      "loadFailed": {
+        "text": "Kan inschrijvingsmatrix niet laden.",
+        "source_sha256": "85c76980b9968b5b452dc3114433fb5dd0212e215fe5f4b5a584c5fc26fc7008"
+      },
+      "matrixAria": {
+        "text": "Inschrijvingsrollenmatrix",
+        "source_sha256": "6936c771940dc2171f2826a575559221cca86e336123520a8472cc2f3c091c8b"
+      },
+      "matrixHeading": {
+        "text": "Rollenmatrix – wie kan wat bewerken",
+        "source_sha256": "b9f692339cde933551633bd9975bbd668cda2a60e206a65335cc0b86979dc63c"
+      },
+      "relatedPages": {
+        "text": "Gerelateerde operatorpagina's:",
+        "source_sha256": "0234404d5829da4f49dbd87b98d74b6e2ab2554652c7868b62ee1d6871060857"
+      },
+      "selfEditHeading": {
+        "text": "Wat eindgebruikers zelf kunnen bewerken",
+        "source_sha256": "be2d86acd038820d6a39bfd53f39f8e79f5e0119ecf7afcdcbd95722e2ecf3be"
+      },
+      "summary": {
+        "text": "Hoe de inschrijving voor lokale accounts bij AIC Server werkt, wie welke velden mag bewerken en waar beoordelaars auditbewijs kunnen ophalen. Alleen lokale accounts en lokale groepen – niet Active Directory.",
+        "source_sha256": "872143f584b0713d2d96132fb510337720ec04d05f12cd49659afb3276dbe804"
+      },
+      "title": {
+        "text": "Inschrijving en toegangscontrole",
+        "source_sha256": "366f3c5ca261dc7ed6d2844582b2c49f5f9e0aaf33459e4807cfee3735234a74"
+      }
+    },
+    "eventsMonitoring": {
+      "allEventTypes": {
+        "text": "Alle soorten evenementen",
+        "source_sha256": "7dd1ff9de2fa0a998de92432da5229596a6087f9331c8d3f33f53a5d2fade622"
+      },
+      "apply": {
+        "text": "Toepassen",
+        "source_sha256": "31e392d1c0378beca611de66c0f4c71cba29159905cc54242d9bddee5b23d851"
+      },
+      "bufferedMany": {
+        "text": "{{count}} gebeurtenissen in de live ringbuffer (elke 30 s vernieuwen).",
+        "source_sha256": "6d5d6092fbe92a6a7c47dcf9ba10b35f2faaf5a2aac2f73a82d02d8ae5206146"
+      },
+      "bufferedOne": {
+        "text": "1 event in the live ring buffer (refreshes every 30 s).",
+        "source_sha256": "1ae435446479bfef78f3090aebe78a0250d55a2483bc3c08f6bf38e3cb371b6a"
+      },
+      "clear": {
+        "text": "Clear",
+        "source_sha256": "83b12c2216efb4fdc924e1deb5182e905e4926ed0c1c324d467107f46d5a26a9"
+      },
+      "colActor": {
+        "text": "Acteur",
+        "source_sha256": "449995c4fe8fab389053dac72d77798c094dd4a3b7b3cfe69c4d78d119308dce"
+      },
+      "colCategory": {
+        "text": "Categorie",
+        "source_sha256": "292c06f0045a45d044be282b132b7055ae224e18e02b523a451d8ea96fadfd24"
+      },
+      "colDescription": {
+        "text": "Beschrijving",
+        "source_sha256": "526e0087cc3f254d9f86f6c7d8e23d954c4dfda2b312efc29194ae8a860106ba"
+      },
+      "colSeverity": {
+        "text": "Ernst",
+        "source_sha256": "5e9f98120dbe568255ee059f39671686982b113d4e917b6d6faf149918c81709"
+      },
+      "colSource": {
+        "text": "Bron",
+        "source_sha256": "0e570ca6fabe24f94e52c1833f3ffd25567022beb826fa16891f3322051bc221"
+      },
+      "colTarget": {
+        "text": "Doel",
+        "source_sha256": "978354db0c00fc78c3a5524f462a73bc425df3fb2767e51a5f46352ae26ae6f9"
+      },
+      "colTime": {
+        "text": "Tijd",
+        "source_sha256": "33b93476cf597a3330653b66a658983d892ac264b5d6029a2dc642b9b1f30870"
+      },
+      "colType": {
+        "text": "Type",
+        "source_sha256": "baaddf70fb5d432b8bd948ef91d6f910124a6d138edae4d5f000c4610ddc8eae"
+      },
+      "configureSharing": {
+        "text": "Configureer het delen van evenementen",
+        "source_sha256": "941996a4a7ffaaf53d510c145b8c737fb8622fe2238bc991505c1d5842b6626b"
+      },
+      "eventSharingLink": {
+        "text": "Evenement delen",
+        "source_sha256": "d343b2b02251eb1d671077b50158d2dbca9939838624d85c85fa5dc7999b5b05"
+      },
+      "eventType": {
+        "text": "Type evenement",
+        "source_sha256": "70d81703598192c763c78f3b4ece88a576f08fb4c9aea37856acb36ebb5a809f"
+      },
+      "filtersAria": {
+        "text": "Filters voor het monitoren van gebeurtenissen",
+        "source_sha256": "664d1423a866ce97203fa37f5ae2ace69e32b947be5bfd9d40556c3d6d48310f"
+      },
+      "knownEventTypes": {
+        "text": "{{count}} bekende gebeurtenistypen",
+        "source_sha256": "b0cf26fac1590035c317645c6670df0fbaf842d38c72b5bb390f1e5665ceb7b0"
+      },
+      "loadFailed": {
+        "text": "Failed to load events: __PH0__",
+        "source_sha256": "693a35efa4ca1f507adf1ab1ca77af2d677e59b47ea4278ab06dec92b647ab05"
+      },
+      "loadingCatalog": {
+        "text": "Catalogus laden...",
+        "source_sha256": "f5b90251be2ba2dd073e24c937ead75483f053ac80c25ab3d034618b5fb7f449"
+      },
+      "noRows": {
+        "text": "Geen gebeurtenissen in de live-ringbuffer voor het huidige filter.",
+        "source_sha256": "0d65af4920b4a1c0532e435bbdcf7343a88aa4e8ff1c5ccf6e63eb92fafcb7ad"
+      },
+      "readOnlyNotePrefix": {
+        "text": "Deze rijen zijn alleen-lezen snapshots van de live-ringbuffer. Routing-, syslog- en sink-instellingen zijn van toepassing per gebeurtenistype",
+        "source_sha256": "49a0dd438880073dfc958b69169fb61f248a44b8a5d93d9f4feced99371c9ae3"
+      },
+      "readOnlyNoteSuffix": {
+        "text": ", niet op individuele historische gebeurtenissen.",
+        "source_sha256": "e107c6b9da99be0948b43fc5882eb1aaec5e7ca4f5119b7191f046f9b5bc14c4"
+      },
+      "refresh": {
+        "text": "Vernieuwen",
+        "source_sha256": "0e91610117029a62a478b7fa7df0b8598bebe3ab1e192d4b1882e310719c9671"
+      },
+      "refreshAria": {
+        "text": "Vernieuw evenementen",
+        "source_sha256": "27be213d992d52c5bee08daef68a519984130bac27fe9886ffa355e334aab6a4"
+      },
+      "refreshNow": {
+        "text": "Vernieuw nu",
+        "source_sha256": "1486770684670d9522448c4570f0cf4cd20503865e2f579d152f8e6b62c64c92"
+      },
+      "reportTitle": {
+        "text": "Evenementen",
+        "source_sha256": "8d14f6e72de8f18ab1ee5c5330f00653c0c3ce099e63024454f80af97e72d333"
+      },
+      "unknownError": {
+        "text": "onbekende fout",
+        "source_sha256": "3e4443e52275a9a092994d93853ea05b985abc67238b4b482c7b90b3a76e6098"
+      }
+    },
+    "favorites": {
+      "addFavorite": {
+        "text": "Favoriet toevoegen",
+        "source_sha256": "8bb386374349357cef76722da282c7e69a7e03656dcd4a7ab03d98363de209b6"
+      },
+      "addedMany": {
+        "text": "{{count}} pagina's toegevoegd aan Mijn favorieten.",
+        "source_sha256": "cf058a26825196220b7909683aa3448e374d53f0367c244da7cd9e13c1e167e2"
+      },
+      "addedOne": {
+        "text": "Pagina toegevoegd aan Mijn favorieten.",
+        "source_sha256": "135e3a35984f953c0027fba8489671b6b8817fdb5a7b270652274687cbd6ae0b"
+      },
+      "clearMyFavorites": {
+        "text": "Wis mijn favorieten",
+        "source_sha256": "6ffef126d8e42319b234086a3d67bcae7ed79ecdf48afef593c9563a09056f89"
+      },
+      "cleared": {
+        "text": "Mijn favorieten zijn gewist. Vereiste favorieten zijn ongewijzigd.",
+        "source_sha256": "ff83fc7012377e35988817d53d42f129d10688a9bb29008af92babdeb566218b"
+      },
+      "driftMandatory": {
+        "text": "Deze vastgezette pagina's zijn nu verplichte favorieten en zijn verplaatst naar het bovenste gedeelte: {{keys}}.",
+        "source_sha256": "42f6352b0f726c25c2e7f4468a0f5d19e5d79e8c000683bbf0e265f4cb9662fc"
+      },
+      "driftUnknown": {
+        "text": "Sommige vastgezette pagina's maken geen deel uit van deze serverbuild: __PH0__. Ze worden overgeslagen, niet verwijderd.",
+        "source_sha256": "b6825aa9c7ca544e26868d11ca890a6b998b872062557b8cec014f59f1d8d1c7"
+      },
+      "loadFailed": {
+        "text": "Kon favorieten niet laden: {{error}}",
+        "source_sha256": "b72a4b647286c4a46d0a54b189ae56bf6f006955fb4f930bb84ab7384a912804"
+      },
+      "mineDescription": {
+        "text": "Pagina's die je hebt vastgezet. Gebruik Favoriet toevoegen om er een vast te zetten, of de ster op een kaart om deze te verwijderen.",
+        "source_sha256": "d6c4511be87762c1ca7c974206941c0c7b87cd540a73f2e3b910cf3a7c4ed483"
+      },
+      "mineEmpty": {
+        "text": "Je hebt nog geen pagina's vastgezet. Kies Favoriet toevoegen om te starten.",
+        "source_sha256": "9d3df9eb874afdc45d76b4c82bf674ad7ebac01c4a7fc28250886fe6ca6de49e"
+      },
+      "mineTitle": {
+        "text": "Mijn favorieten",
+        "source_sha256": "fc70843f779d86a377a84422d20eb90d7b862e3bfef6e6c71146e243adef9f7c"
+      },
+      "noPermissionPin": {
+        "text": "Je hebt geen toestemming om die pagina te openen, dus deze kan niet worden vastgezet.",
+        "source_sha256": "43157df8f9f413cd874239f4b9487d591d3041de2ff8e151c45ffc20f2a27232"
+      },
+      "removeAria": {
+        "text": "Verwijder {{label}} uit Mijn favorieten",
+        "source_sha256": "6ff70bde302e1fc89457f3d3be2c85f5ab731404760f242e773812eeefc9e762"
+      },
+      "removed": {
+        "text": "Pagina verwijderd uit Mijn favorieten.",
+        "source_sha256": "674d4bf278bb75e6e4a1d69f41d576cf1668f41b717cfba061796a94d5bc1c6b"
+      },
+      "requestFailed": {
+        "text": "Verzoek mislukt",
+        "source_sha256": "cfce761befa84073c2ea0d29bc3f3d647c985faa02d80854eada5312a7cc24a1"
+      },
+      "requiredDescription": {
+        "text": "Ingesteld op basis van uw machtigingen. Deze zijn altijd aanwezig en kunnen niet worden verwijderd.",
+        "source_sha256": "58552c13c8c285c1779c13cbb947609a566dc3fd06384b43e7b2a4767c53b4f2"
+      },
+      "requiredEmpty": {
+        "text": "Er zijn nog geen vereiste favorieten voor uw rechten. Vraag hier aan uw beheerder of u er een verwachtte.",
+        "source_sha256": "c11c885fb00c1b4691a26c1ee6a21fdc0eeae72eb482b7376f92626008cad318"
+      },
+      "requiredTitle": {
+        "text": "Vereiste favorieten",
+        "source_sha256": "820b23a4e1ca84d6b396fbc2ba6e257f1b68492f589eb2f6a564580a9a5caf5e"
+      },
+      "saving": {
+        "text": "Favorieten opslaan…",
+        "source_sha256": "7cf9c6ca1e0d1d331d2ac336d602020ff30a0b41c59988a1a723d450f3eda14e"
+      }
+    },
+    "fleet": {
+      "empty": {
+        "text": "Geen ingeschreven agenten met agentaanwezigheid (rijen zonder agent zijn weggelaten).",
+        "source_sha256": "6de7411e844061e1ee3cf17e5961b7d7daa17a6edcbec036f1a7c277ab02e4f0"
+      },
+      "honesty": {
+        "text": "Gedeeltelijke / Live-gegevens. Rijen zijn afkomstig van de laatste verrijking bij het inchecken van agenten op de Systeemlijst. De push-bereikbaarheid kan alleen worden onderzocht voor op dezelfde locatie gelegen Push IPC; agenten op afstand tonen zelfrapportage of",
+        "source_sha256": "b06bc5d0f56c211ee8aec2d2cd05b0df8d4edee7ab7f5342b9ddfbec76988903"
+      },
+      "loadFailed": {
+        "text": "Kan de systeemlijst voor vlootversies niet laden. {{error}}",
+        "source_sha256": "c4aef554bf760cf9dc75f2da9f204275fed6ab7b2379a0b05a809ff72bc3535c"
+      },
+      "loading": {
+        "text": "Laden…",
+        "source_sha256": "ba3bbbe10d8bef66441c88536ce7b8e724e2829b59a3da658654f4961cd61ae5"
+      },
+      "related": {
+        "text": "Gerelateerde mogelijkheden",
+        "source_sha256": "023829c4a39ef0fa69b814aa76fb8d84145454e8458b5d1a080244b3b9750054"
+      },
+      "relatedAria": {
+        "text": "Gerelateerde agentcapaciteiten verschijnen",
+        "source_sha256": "165ef2671c866e3241001c39221351a30c316418dcc36dd3cb03a77154ebb77f"
+      },
+      "relatedHelp": {
+        "text": "Opent bestaande beheerdersoppervlakken; deze pagina implementeert ze niet opnieuw.",
+        "source_sha256": "899ae0be2939955ef0f9d612248940798c07c38a9ca25389d8f0191954608400"
+      },
+      "subtitle": {
+        "text": "Alleen-lezen versies en incheckleeftijd uit de Systeemlijst: geen live momentopname van AppConfig op afstand",
+        "source_sha256": "d2f90e99008bcd2454ce43f5927c6519587172ec7fe58192b964a9e9e16d5978"
+      },
+      "systemsHonesty": {
+        "text": "Systeemlijst eerlijkheid: {{honesty}}",
+        "source_sha256": "061d4824cf4576379df2beaa927a1580dd8e3fadec3a271e4e9a974359d85e9b"
+      },
+      "title": {
+        "text": "Vlootagentversies",
+        "source_sha256": "c418347b4ac585559970d35e3d5ac3c595675282a3840fbe2509e91136cd7e67"
+      },
+      "unknownError": {
+        "text": "Onbekende fout",
+        "source_sha256": "27c2ccd962c2b8dccb52fe3688ab236f186f7a41fd57d810478712048e9ad3f8"
+      }
+    },
+    "hsm": {
+      "addConnection": {
+        "text": "Verbinding toevoegen",
+        "source_sha256": "685f88ae3db24ee15edd7e342447d933e018a46d99e8878c21ce3065d93c21a9"
+      },
+      "addVendor": {
+        "text": "Leverancier toevoegen",
+        "source_sha256": "0c3176f83d39385058598d51f9e99f74194371e7bd2e841865020d12d2762992"
+      },
+      "checking": {
+        "text": "HSM-beheer-API controleren...",
+        "source_sha256": "df6d3430d58652b10dc2f0de16912c01e14e0dd0622f810bc8e960246401e2fb"
+      },
+      "checkingAria": {
+        "text": "Beschikbaarheid van de HSM API controleren",
+        "source_sha256": "3d8289cd6dc8384613db2e7aef9595b0fde02efcd1ca70aa8f6ab47abef20ba8"
+      },
+      "colActions": {
+        "text": "Acties",
+        "source_sha256": "ff8059dc6752afdd30d275932b1d5031a2ec854b387a8c57ecc6689915293a43"
+      },
+      "colDefault": {
+        "text": "Standaard",
+        "source_sha256": "21b111cbfe6e8fca2d181c43f53ad548b22e38aca955b9824706a504b0a07a2d"
+      },
+      "colEnvironment": {
+        "text": "Omgeving",
+        "source_sha256": "9e471951a1b4106e54be128a21112b02914fe98cc79b2c92b49ee80c5464487c"
+      },
+      "colHost": {
+        "text": "Gastheer",
+        "source_sha256": "4a823118b9ba8baa2f47489c0716f52755368e3e3c2c26d60736ccfa1bb21b5e"
+      },
+      "colId": {
+        "text": "Identiteitskaart",
+        "source_sha256": "3843971dcfdee5083e6289e1bbdbb003e538b5a8a668fc43ae4f19d415ac18a2"
+      },
+      "colName": {
+        "text": "Naam",
+        "source_sha256": "dcd1d5223f73b3a965c07e3ff5dbee3eedcfedb806686a05b9b3868a2c3d6d50"
+      },
+      "colPort": {
+        "text": "Haven",
+        "source_sha256": "72e9a59f5a1d6289dbacb35df897d6c007c55a27e77018455c37e7b372668475"
+      },
+      "colStatus": {
+        "text": "Status",
+        "source_sha256": "920e413c7d411b61ef3e8c63b1cb6ad058d5f95f8b481dbafe60248387d8c355"
+      },
+      "colType": {
+        "text": "Type",
+        "source_sha256": "baaddf70fb5d432b8bd948ef91d6f910124a6d138edae4d5f000c4610ddc8eae"
+      },
+      "colVendor": {
+        "text": "Leverancier",
+        "source_sha256": "f8aa82b42d07d108ed357335c9ac0d1a88cafb7292d61b30e0bdb224f20fd480"
+      },
+      "connectionName": {
+        "text": "Connection Name",
+        "source_sha256": "2ad208984340030e210c538b56e89b808ace2b86554be02f91f582adfa54c662"
+      },
+      "createVendor": {
+        "text": "Leverancier maken",
+        "source_sha256": "9bc5e6a3aa79ff0a620b4312d11193f980e54149c0e7b5958f6c395893555bf0"
+      },
+      "createVendorTitle": {
+        "text": "HSM-leverancier maken",
+        "source_sha256": "611ea8d46a422ed51400801fb863b2881820f54bd135181b2a6a03aa14bf07a6"
+      },
+      "creatingVendor": {
+        "text": "Creëren...",
+        "source_sha256": "def70944c9bb9c3b77129e6fc48cfcd043031a86ae747060a3e97985d254c4f2"
+      },
+      "defaultChip": {
+        "text": "Standaard",
+        "source_sha256": "21b111cbfe6e8fca2d181c43f53ad548b22e38aca955b9824706a504b0a07a2d"
+      },
+      "description": {
+        "text": "Beschrijving",
+        "source_sha256": "526e0087cc3f254d9f86f6c7d8e23d954c4dfda2b312efc29194ae8a860106ba"
+      },
+      "documentationUrl": {
+        "text": "Documentatie-URL",
+        "source_sha256": "33db6f919e9e2d29b7c2a38dfff9a5f610ef17612b7ceed5f432856c8dd87857"
+      },
+      "edit": {
+        "text": "Bewerking",
+        "source_sha256": "464c4ffd019e1e9691dcf0537c797353ef2b1c1d4833d3d463e5b74ae4547344"
+      },
+      "emptyConnections": {
+        "text": "Geen HSM-verbindingen geregistreerd.",
+        "source_sha256": "5defe3616a7634b29634c0c20395faaf6ac5a3e27b17f61ff052a52dfab3ee60"
+      },
+      "emptyVendors": {
+        "text": "Geen verkopers geregistreerd.",
+        "source_sha256": "0f12d21360145b7c12fa15acd45c863ee42eb238d1a9ad75d1178ca683254283"
+      },
+      "hsmType": {
+        "text": "HSM-type",
+        "source_sha256": "2dc24dc7c98c8e01702b71a0d280151f7174be3ac62424d38ca2e9b29665adab"
+      },
+      "hsmVendor": {
+        "text": "HSM-leverancier",
+        "source_sha256": "2db2a5be09c46e47473052021620054a95d9621cc89509f411eec2acff645750"
+      },
+      "manageHsm": {
+        "text": "HSM beheren",
+        "source_sha256": "717a7fe1632d7b55cc796fba92891305df60a7e0e042c4910a3dc80916bdb4eb"
+      },
+      "manageTabsAria": {
+        "text": "Beheer HSM-dialoogtabbladen",
+        "source_sha256": "cdc57cbbabf2ce59a423f0b9fc89080787dbf24071ae637ddcd4b7e49beec4c8"
+      },
+      "manageTitle": {
+        "text": "HSM beheren: {{name}}",
+        "source_sha256": "f52e5e0e1ef9b4dae7165ecd3bbd5ba30d098c8f5aaed0cafab503bc63c655be"
+      },
+      "notes": {
+        "text": "Opmerkingen",
+        "source_sha256": "8a7525b1492fb84833f5c4a69b30f4bfbb134f9b666b61a2c1872d63d234c085"
+      },
+      "pkcs11ConfigHelper": {
+        "text": "Pad naar configuratiebestand (bijvoorbeeld softhsm2.conf)",
+        "source_sha256": "3d03d90babacdffb3bb68ff13b8f3ab3ab495c6ef2a104413afa36cbf0b39201"
+      },
+      "pkcs11ConfigPath": {
+        "text": "PKCS#11 Config Path (Optional)",
+        "source_sha256": "592216508ba1c165d1ff7c4d7d4443ef5d5867017d449159a2aaa73f3cf8338c"
+      },
+      "pkcs11LibraryHelper": {
+        "text": "Pad naar PKCS#11-bibliotheek (.dll, .so of .dylib)",
+        "source_sha256": "8260d9fbf8c55b604d795573778efafdfde995c7a3cdb94f45c3b1d8aae18647"
+      },
+      "pkcs11LibraryPath": {
+        "text": "PKCS#11 Bibliotheekpad",
+        "source_sha256": "5f41fc867ae89baceb3e1af8fd7f7f347b987eaa634852a0bc321611875e3cff"
+      },
+      "refresh": {
+        "text": "Vernieuwen",
+        "source_sha256": "0e91610117029a62a478b7fa7df0b8598bebe3ab1e192d4b1882e310719c9671"
+      },
+      "searchConnections": {
+        "text": "Verbindingen zoeken...",
+        "source_sha256": "b6b1ad12871b6422b2b11e1a3e041c4bc26f6480455e0d935f4169e14bfd9343"
+      },
+      "searchConnectionsAria": {
+        "text": "HSM-verbindingen zoeken",
+        "source_sha256": "41c8bd446ba6b78672109ddafa6ea3f303d49f3bc08966b93de62f7c900c9f6f"
+      },
+      "searchVendors": {
+        "text": "Leveranciers zoeken...",
+        "source_sha256": "05d5bb668e81b22008c22c0a835610e85db435237cb07f732c9b33a1e08492f1"
+      },
+      "searchVendorsAria": {
+        "text": "Zoek naar HSM-leveranciers",
+        "source_sha256": "d80eaf6b746f29994de74783703a0681675b00750d84e82ccd1e19e32f78420b"
+      },
+      "setDefault": {
+        "text": "Als standaard instellen",
+        "source_sha256": "d09b4dd6265a220211fc2e0fc1fbe77a19e78a124bf6e916541a06712221381a"
+      },
+      "slotId": {
+        "text": "Slot-ID",
+        "source_sha256": "d9042bb4b3d60e71995ef1b8c3c51cb82314b75df8e403f481ff12537f6d63e4"
+      },
+      "slotIdHelper": {
+        "text": "HSM-slotnummer",
+        "source_sha256": "44623b0e9b7f7411ccecd3454638e3dabacde0edde946d63246816b4bf6f6760"
+      },
+      "statusActive": {
+        "text": "Actief",
+        "source_sha256": "92340695899bd2d86223e4a007620e0d6502fc0e08809773634c7e0743764a9c"
+      },
+      "statusError": {
+        "text": "Fout",
+        "source_sha256": "54a0e8c17ebb21a11f8a25b8042786ef7efe52441e6cc87e92c67e0c4c0c6e78"
+      },
+      "statusInactive": {
+        "text": "Inactief",
+        "source_sha256": "ac7c949f1211b7814bdd28a698e6c04e05e1a83f9f86e7ad43d2086d00e98afd"
+      },
+      "statusMaintenance": {
+        "text": "Onderhoud",
+        "source_sha256": "17ccfa5b681e3e7b293165981520187dfe2c3d5d610669735da1c9ea0421d55d"
+      },
+      "statusTesting": {
+        "text": "Testen",
+        "source_sha256": "e806a291cfc3e61f83b98d344ee57e3e8933cccece4fb45e1481f1f560e70eb1"
+      },
+      "statusUnknown": {
+        "text": "Onbekend",
+        "source_sha256": "b764cdc0eab7137467211272fa539f1260d1bf2e71bcf6ff3bdc960f5c16aa14"
+      },
+      "subtitle": {
+        "text": "Beheer hardwarebeveiligingsmoduleverbindingen, leveranciers en PKCS#11-module-instellingen",
+        "source_sha256": "360dc6fc3d27085d619be9d08a437712ede8a2d29e6a114e15c2c6a8c83b5299"
+      },
+      "supportContact": {
+        "text": "Ondersteuningscontact",
+        "source_sha256": "9f261eaebb4058003d2b6c2317fda6f8f1de30647644326ea3ea6097ef67cd7e"
+      },
+      "tabAdvanced": {
+        "text": "Geavanceerd",
+        "source_sha256": "9f088dbebd6c3c70a5ddbc2c943b11e4ca9acea5757b0b4f2b32479f0dbb747e"
+      },
+      "tabBasicInfo": {
+        "text": "Basisinformatie",
+        "source_sha256": "c6b6593221c5557339705dc8bee64e5a70c3006bae21aa6c931faef6646d9443"
+      },
+      "tabConfig": {
+        "text": "Configuratie",
+        "source_sha256": "87e89abb4c1c551fe08d355d097f18b8de78edca5f556997085681662fce8eed"
+      },
+      "tabConnection": {
+        "text": "Verbinding",
+        "source_sha256": "639a40e82b9a96f0cbeed5f006cf5634c8d1b990b3c83753c00a910fc268d2a6"
+      },
+      "tabConnections": {
+        "text": "Verbindingen",
+        "source_sha256": "dc273117482b4429ada500ecd2e0c75532454194892cb901ca64cc7df369fdf6"
+      },
+      "tabKeys": {
+        "text": "Keys",
+        "source_sha256": "f0d66a79c138e951c2f840fcd94ea9bdf399f745088a832a9ba49cf07f7125de"
+      },
+      "tabOperations": {
+        "text": "Operaties",
+        "source_sha256": "358cc201f87d9dc9defd3eac467a62fae720aa99a76be8b98e0fc9b3893a427d"
+      },
+      "tabSecurity": {
+        "text": "Beveiliging",
+        "source_sha256": "8f6fb4eb7f42c0e245e29e63f5b82cc3ba19852681d1ed9aed291f59cf75ec0e"
+      },
+      "tabSlotsTokens": {
+        "text": "Speelautomaten en tokens",
+        "source_sha256": "6614bbe2c833f63678ae94e3902b9ca5ad983bd975058072feeb9f203dc2e27b"
+      },
+      "tabVendors": {
+        "text": "Verkopers",
+        "source_sha256": "720b6017f2e9067c4a77d277075a684a7d0e8e4c2445a772b2d1f3ce28d30e6b"
+      },
+      "tabsAria": {
+        "text": "Tabbladen voor HSM-beheer",
+        "source_sha256": "717f290035c11db22a4c619475396ac722f9fd1532315afbe1846d81be68b7c6"
+      },
+      "test": {
+        "text": "Testen",
+        "source_sha256": "1a63a30def6226a111e225d3b6e44760a24ffe586b3894de4fc2bc026af53be2"
+      },
+      "testConnection": {
+        "text": "Verbinding testen",
+        "source_sha256": "5bcf311b19d80c5645ce05f5fd36fc449412a6571ceb229fd483e9c415865912"
+      },
+      "title": {
+        "text": "HSM-beheer",
+        "source_sha256": "85b9d921bcdfb4dcb86da43fe86f85dea5023ce963767c589fc0a5683be15e34"
+      },
+      "tokenLabel": {
+        "text": "Token-label",
+        "source_sha256": "13eb9a4201b0577871c77c90b2cbe9bb411c93d09e84b83ed0d8a0d988ecbbc6"
+      },
+      "tokenLabelHelper": {
+        "text": "Tokenlabel of partitienaam",
+        "source_sha256": "fdc52376398a40bda08779b54f25ca9f834eb3658bedb5042deadbc4ce80af94"
+      },
+      "useForCrypto": {
+        "text": "Gebruik voor cryptovaluta",
+        "source_sha256": "5f600cdb0f39ca96efe16e48b01714923f9ea7409744b773ba7c7ef3e2433f28"
+      },
+      "vendorName": {
+        "text": "Naam van leverancier",
+        "source_sha256": "bc6e75c53c5f6fc4ddc01b80ac770e56b0e14f84911296cc89f2667b4e86438e"
+      },
+      "vendorNamePlaceholder": {
+        "text": "bijvoorbeeld Thales, AWS, Utimaco",
+        "source_sha256": "d40556084d81cd5cbc8aaa4e5acbb8aac64aa546ebdc6c7a1cf129efa6e3b753"
+      },
+      "vendorSoftware": {
+        "text": "Software",
+        "source_sha256": "9b3289a385a5301eea0c04a06fde98bc542113ab4ed24c47c9b9771984869a31"
+      },
+      "vendorType": {
+        "text": "Leverancierstype",
+        "source_sha256": "db382a4dab6804704abdfd6fc5d9d4bbb970c46bea50c5102fa9e5399f4362ce"
+      },
+      "websiteUrl": {
+        "text": "Website-URL",
+        "source_sha256": "eb650fa1243ee6cab8fef01ec47950d21268c4a98106dcbdfe8c378078fc25a4"
+      }
+    },
+    "hypervisorConnections": {
+      "addConnection": {
+        "text": "Verbinding toevoegen",
+        "source_sha256": "685f88ae3db24ee15edd7e342447d933e018a46d99e8878c21ce3065d93c21a9"
+      },
+      "addTitle": {
+        "text": "Hypervisor-verbinding toevoegen",
+        "source_sha256": "c5c0f4c5c033c9c3f697b7eec5c6284efacbaa50cbce37488b7c33f509feb87a"
+      },
+      "displayName": {
+        "text": "Weergavenaam",
+        "source_sha256": "2b7f6a84de917e387539dbe441ca22056e793d738e6c50db30c3f569e4448df3"
+      },
+      "edit": {
+        "text": "Bewerking",
+        "source_sha256": "464c4ffd019e1e9691dcf0537c797353ef2b1c1d4833d3d463e5b74ae4547344"
+      },
+      "editTitle": {
+        "text": "Hypervisorverbinding bewerken",
+        "source_sha256": "0cd1fff2a129ea39a4e646c69ddba434dc7557e3bc19644609ac30f7fcb3ab6f"
+      },
+      "empty": {
+        "text": "Nog geen hypervisorverbindingen. Voeg een lokale Hyper-V- of Docker-verbinding toe, of een cloud-/on-prem-eindpunt voor productie.",
+        "source_sha256": "c876336f04be2b819dcbff3ce5fa003714e9af32a88da0930bc49769360efb43"
+      },
+      "enabled": {
+        "text": "Ingeschakeld",
+        "source_sha256": "92c1cdfdf4cb9cf6fcca962f206de36fd5d60db1178bc9461052f8de703a0e06"
+      },
+      "enumerate": {
+        "text": "Opsommen",
+        "source_sha256": "6d41343c8b282dbd52d9f571d06acebde5bab65b83e73f2a1ea7301442db7ce6"
+      },
+      "localPowerShell": {
+        "text": "Local PowerShell",
+        "source_sha256": "cc49db6a900ed3278857a7708cc5d654c77166e104cb570925e71fea3b352d71"
+      },
+      "openVmPools": {
+        "text": "Open VM pools",
+        "source_sha256": "3299dace2fa57245aedc3dda7803105e48936b74aa0275b0e15adbdfaaa951eb"
+      },
+      "provider": {
+        "text": "Aanbieder",
+        "source_sha256": "472590ae974d4c1f44b3780df0b152d9119f076c61bfb3e8cb6affd7889ac0a8"
+      },
+      "providerLine": {
+        "text": "Provider {{provider}} Â· host {{host}} Â· id {{id}}",
+        "source_sha256": "a3e1b754ebab3fa8bff0877292cfb9f4bf467b29ee5727b24405bdc420c08392"
+      },
+      "secretStored": {
+        "text": "Geheim opgeslagen",
+        "source_sha256": "dd218a0e044fd671826ded71af1d804780c4735416b1d146743d7af6cdf76801"
+      },
+      "summary": {
+        "text": "Register on-prem and cloud hypervisor endpoints (vSphere, Hyper-V, Proxmox, Nutanix, Citrix, oVirt, AWS, Azure, GCP). Lab live tests use Hyper-V and Docker on this host; production uses the same enumerate/map/policy flow for every provider.",
+        "source_sha256": "6f5efa5e8516f7bf5c4782cf55c50869cceda8c7bed4bfe27a206172d47a21ca"
+      },
+      "sync": {
+        "text": "Synchroniseren",
+        "source_sha256": "8d261a372fde1461cc4a5f53e938b337cfe335e2bd6d4e58d866ab97c5556052"
+      },
+      "test": {
+        "text": "Test",
+        "source_sha256": "532eaabd9574880dbf76b9b8cc00832c20a6ec113d682299550d7a6e0f345e25"
+      },
+      "timingLine": {
+        "text": "Wachttijd bij opstarten {{boot}}s Â· slaapstand na synchronisatie {{post}}m Â· inactief {{idle}}m Â· schema {{schedule}} Â· {{action}}",
+        "source_sha256": "e8304c361dae35d6db6609ed475759c1737f0789f8aa84a98b7167e31e773918"
+      },
+      "title": {
+        "text": "Hypervisor-verbindingen",
+        "source_sha256": "370c936ee0689946c3d2ae1cce8a0b902790e3ee4f982f5887b92c9352c70ef3"
+      }
+    },
+    "identities": {
+      "colAccount": {
+        "text": "Konto",
+        "source_sha256": "df8525011f618f54a41da2ac9e08cbf57c8f4674244d601d41f0fa18d54c19d2"
+      },
+      "colActions": {
+        "text": "Acties",
+        "source_sha256": "ff8059dc6752afdd30d275932b1d5031a2ec854b387a8c57ecc6689915293a43"
+      },
+      "colRotation": {
+        "text": "Rotatie",
+        "source_sha256": "57b5e2fc1bba18bb4f54084af57ffe86b3bb3d925c281043e84a05eb4b19317c"
+      },
+      "colStatus": {
+        "text": "Status",
+        "source_sha256": "920e413c7d411b61ef3e8c63b1cb6ad058d5f95f8b481dbafe60248387d8c355"
+      },
+      "create": {
+        "text": "Creëer identiteit",
+        "source_sha256": "3541c5f14713a0848f35dee2fb6ba6eeef092dd7a4ae997609a39a36bf94aad8"
+      },
+      "empty": {
+        "text": "Geen beheerde identiteiten op dit eindpunt.",
+        "source_sha256": "799dccc445f752ec1f91dbeda2ffd44e59a531f9d751fc6faef63af91d58b676"
+      },
+      "refresh": {
+        "text": "Vernieuwen",
+        "source_sha256": "0e91610117029a62a478b7fa7df0b8598bebe3ab1e192d4b1882e310719c9671"
+      },
+      "reportTitle": {
+        "text": "Identiteiten",
+        "source_sha256": "8d4d8fef65ea881d9f2b04af4b3de0161c7664bcbfd69753529446fc85845b4f"
+      },
+      "selectEndpoint": {
+        "text": "Kies eerst een eindpunt",
+        "source_sha256": "f55b380258c5f041db540bcb500e64ba68c3c23ec551ee24b76d5b284145458d"
+      }
+    },
+    "incidents": {
+      "backToQueue": {
+        "text": "Terug naar wachtrij",
+        "source_sha256": "8252ee08632798c3ce788460d23f0ba1dd000f553bf0f774d949231636b1fd77"
+      },
+      "bannerAuditor": {
+        "text": "Zoek cases in de <queue>Incident Response Queue</queue> of open <evidence>IR Evidence for Auditors</evidence> voor de kwestie. De beoordelingsmap blijft de thuisbasis van het compliancepakket.",
+        "source_sha256": "0c24346b5ae51af83c06c2677e507a58f7a428cf1a62fff6b996296006be018d"
+      },
+      "bannerHandler": {
+        "text": "Bewerk tickets in de <queue>Incidentresponswachtrij</queue>. Configureer de verdeling onder <groepen>IR-alarmgroepen</groepen>. Auditors controleren pakketten onder <evidence>IR-bewijs voor auditors</evidence>.",
+        "source_sha256": "3a5db407014f006f5aea0e65da0d2d4530fd06e1434957a3b4dea7b3f0386df9"
+      },
+      "bannerReporter": {
+        "text": "Gebruik <report>Report Incident</report> om een ​​ticket te openen en volg de status op <my>Mijn rapporten</my>. Status-e-mails gebruiken de sjablonen ir.status.open / ir.status.processing / ir.status.closed en linken via een rolspecifieke <code>/enclave/ir/cases/</code> URL.",
+        "source_sha256": "d17e9d45b87e974541072011f8d9afb620892aef1b90a071d66472a4a05310e0"
+      },
+      "blurbAdmin": {
+        "text": "Configureer e-mail- en sms-waarschuwingsgroepen, controleer alle tickets en zorg ervoor dat berichten status-e-mails aan verslaggevers en groepswaarschuwingen bezorgen wanneer ze worden ontvangen.",
+        "source_sha256": "9485bc4952b5daba597025db38b7fcd4825a9927e54de8dd51229cdc3a24a422"
+      },
+      "blurbAuditor": {
+        "text": "Alleen-lezen: vind incidenten, bekijk de feiten en tijdlijn (wie/wanneer/status) en gebruik IR-bewijspakketten voor de beoordeling in de beoordelingsmap.",
+        "source_sha256": "bc45e64fe2e495269868ba46ca68fb5b7a848e552369518553f02ad5ded1c5b8"
+      },
+      "blurbHandler": {
+        "text": "Neem de wachtrij: Triage → Containment → Sanering → Herstel → Inzichten → Sluiten. Statusindicatoren: Open / In uitvoering / Gesloten. Reacties en acteurs staan ​​in de tijdlijn; Groepsalarmen gaan af tijdens overgangen.",
+        "source_sha256": "3e46fd82e2218ad869c9edc06fe107abab477b6e96bef5d60202e8e2785a7082"
+      },
+      "blurbReporter": {
+        "text": "U dient een melding in a (Open). IT verwerkt ze. U ontvangt status-e-mails en kunt ontdekkingsopmerkingen toevoegen. Na de afsluiting kunnen auditors het bewijsmateriaal onderzoeken.",
+        "source_sha256": "3cafca1f08a51003c65762be7d96b94e9d095a7a9a7c356e1a713e570d03f08f"
+      },
+      "cancel": {
+        "text": "Annuleren",
+        "source_sha256": "19766ed6ccb2f4a32778eed80d1928d2c87a18d7c275ccb163ec6709d3eb2e27"
+      },
+      "colCase": {
+        "text": "Geval",
+        "source_sha256": "15f86e24ed25aed154934fb1f3275d9b33e1ebaa64350694ed8661a7d6fc0f21"
+      },
+      "colDescription": {
+        "text": "Beschrijving",
+        "source_sha256": "526e0087cc3f254d9f86f6c7d8e23d954c4dfda2b312efc29194ae8a860106ba"
+      },
+      "colDrill": {
+        "text": "Drill",
+        "source_sha256": "0e2113782a3d03737d95b49cf84a18e592a999904888a35f5d42ddbdeef3c5fb"
+      },
+      "colOpened": {
+        "text": "Geopend",
+        "source_sha256": "b19fb8d1b395b333251f40be2909ca37a0b0a007b3c4c4b34b726be71f715daa"
+      },
+      "colSeverity": {
+        "text": "Ernst",
+        "source_sha256": "5e9f98120dbe568255ee059f39671686982b113d4e917b6d6faf149918c81709"
+      },
+      "colStage": {
+        "text": "Fase",
+        "source_sha256": "de838855e4a6e04ea2f284b246a07a1126e7fcd151be9449e112006ad7db5c50"
+      },
+      "colStatus": {
+        "text": "Status",
+        "source_sha256": "920e413c7d411b61ef3e8c63b1cb6ad058d5f95f8b481dbafe60248387d8c355"
+      },
+      "colTitle": {
+        "text": "Titel",
+        "source_sha256": "7e8cd2056da73a7fefb6cd91f4e5d199d08d9058c517b9a2476b1b520324d674"
+      },
+      "descriptionAria": {
+        "text": "Beschrijving van incident",
+        "source_sha256": "521e33aecb985334ce7c25533f5850d5bc52d0995bb007ac93ae2bae98e74d59"
+      },
+      "descriptionHelper": {
+        "text": "Wat is er gebeurd, wanneer en welke systemen of mensen worden getroffen?",
+        "source_sha256": "08fbafdc27ec8e4fd455c69e3153e6f1119262ec8e8b22723ea286a0d10aa92e"
+      },
+      "diagramAriaCurrent": {
+        "text": "Huidige ticketfase: {{phase}}.",
+        "source_sha256": "ab71d41f8a60a8096834eee9fe16bbc1de26d9603f5f7d27a6be191782883e24"
+      },
+      "diagramAriaEmphasis": {
+        "text": "Emphasized for __PH0__: __PH1__.",
+        "source_sha256": "7a74b6f2c8c5710da0fc2338d5a251af3d657cdd08b411ec62e44e45b04be843"
+      },
+      "diagramAriaFlow": {
+        "text": "Stroom: {{steps}}.",
+        "source_sha256": "f53c9652cbbd56f033dc3339690d41f2ac2b6f7d792513921fc6d7ef0da0ca33"
+      },
+      "diagramCaption": {
+        "text": "Voor rolbenadrukte stappen wordt een gevuld blauw vakje gebruikt; andere stappen gebruiken een grijze omtrek. De huidige fase van het open ticket voegt een oranje driehoekige markering, een dikkere rand, een vetgedrukt label en het woord toe",
+        "source_sha256": "58bf89d643d36a6a3bd5186af7a9425b84bc834b676b5bf9ede62db3fafcc4ca"
+      },
+      "diagramCaptionCurrent": {
+        "text": "(huidige fase: {{phase}})",
+        "source_sha256": "96a474b70b5d54541febf935668ef706774ec31465d4a036ee792282c44ccece"
+      },
+      "diagramCurrent": {
+        "text": "Huidig",
+        "source_sha256": "e0d1b68224bf0b31ef16b206c65b5f8f6b89d18161f4a7cdcb8d0ac8d952549a"
+      },
+      "diagramRoleAdmin": {
+        "text": "Beheerder",
+        "source_sha256": "e7d3e769f3f593dadcb8634cc5b09fc90dd3a61c4a06a79cb0923662fe6fae6b"
+      },
+      "diagramRoleAuditor": {
+        "text": "Accountant",
+        "source_sha256": "465b5967e292896bee2bbe8a67298bf1eec40ae84cf2ea96990cedcf87630442"
+      },
+      "diagramRoleHandler": {
+        "text": "Beerbeiter",
+        "source_sha256": "c0f2f15055d2ce2d9eea8d65d4b2a71b7a33e804d4fc1ec8d48665e097ecd196"
+      },
+      "diagramRoleReporter": {
+        "text": "Melder",
+        "source_sha256": "be95084ad644661794f36aaf98c0b6d295a4125858167f253b74243a5ea4a743"
+      },
+      "diagramSvgTitle": {
+        "text": "IR-proces voor {{role}}",
+        "source_sha256": "0655d99cfa03e7046060fbcc3ac2ec94dd24159eb8f687f11f7e1a20aeadd038"
+      },
+      "diagramSvgTitleCurrent": {
+        "text": "IR-proces voor {{role}}; huidige fase {{phase}}",
+        "source_sha256": "e24542db9dc152e7289d13be62d860b8daf1e73f624f0c698372881c109bc897"
+      },
+      "diagramTitle": {
+        "text": "Incidentresponsproces ({{role}})",
+        "source_sha256": "bcb4ba3cce359cfe47ca32dfe7de6fa25e208ca011b5ee34fc0d0a5d78e86ab4"
+      },
+      "diagramTitleCurrent": {
+        "text": "Incidentresponsproces ({{role}}) — huidige fase: {{phase}}",
+        "source_sha256": "af7c7d7fc95f70f9a4e22ff4456736cda633697099a82b72358f3d18cead6408"
+      },
+      "dialogTitle": {
+        "text": "Open incident",
+        "source_sha256": "1fc6226b6383f5eab4956b6c3a1231c1f86e37787ac2e5095e689df89d096cb0"
+      },
+      "drillCase": {
+        "text": "Boor geval",
+        "source_sha256": "79e817955d4c31f840b5dafe9bbac1ac294a4652bdcea89b7ebea27be1721942"
+      },
+      "drillNo": {
+        "text": "Nee – operationeel",
+        "source_sha256": "df11e156dd2d1adffc76b71854531cb11f1c84bf84ad4e92f3d12e85092439c6"
+      },
+      "drillTabletop": {
+        "text": "Ja – tafelboormachine",
+        "source_sha256": "e0bfafac5ed6025a375615898cd00c750efd736500b49f1352e5e7829524fde8"
+      },
+      "drillYes": {
+        "text": "Ja",
+        "source_sha256": "85a39ab345d672ff8ca9b9c6876f3adcacf45ee7c1e2dbd2408fd338bd55e07e"
+      },
+      "honestyPartial": {
+        "text": "Incident Response is een gedeeltelijke core-enclave-wachtrij. Verslaggevers zien hun eigen gevallen. IT-, beheerders- en auditorrollen zien alle cases. Dit is geen compleet incidentenprogramma.",
+        "source_sha256": "f1d662e3a489bd35f829eb107236b135664e1586cf8d2e0ae28bff9e428a51c3"
+      },
+      "linkAlertGroups": {
+        "text": "IR-waarschuwingsgroepen",
+        "source_sha256": "8f188464df6c86750b4793c31e29e0c1f1187b7dd78df26a336c7100d650c335"
+      },
+      "linkAuditorEvidence": {
+        "text": "IR-bewijs van de auditor",
+        "source_sha256": "ffc8f7b7cff5229a79f1ceee9cc13f9ff11ce27c98f7c39cae088532c705412c"
+      },
+      "linkQueue": {
+        "text": "Wachtrij voor incidentrespons",
+        "source_sha256": "c35cc7f172f99a85ded1101d796fa6f5bb32c4358ce511f0d6ed73b4579c70b5"
+      },
+      "open": {
+        "text": "Open",
+        "source_sha256": "ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942"
+      },
+      "openIncident": {
+        "text": "Open incident",
+        "source_sha256": "540d00f06f7e5da754ff975746379a841fab2de4092f6e07d46f302b345e99a9"
+      },
+      "openIncidentAria": {
+        "text": "Open incident",
+        "source_sha256": "1fc6226b6383f5eab4956b6c3a1231c1f86e37787ac2e5095e689df89d096cb0"
+      },
+      "refresh": {
+        "text": "Vernieuwen",
+        "source_sha256": "0e91610117029a62a478b7fa7df0b8598bebe3ab1e192d4b1882e310719c9671"
+      },
+      "refreshAria": {
+        "text": "Ververs incidenten",
+        "source_sha256": "231250d2100c1521b69dd00a68a7f0fefd4294b0998fde36c33128a05f67bb7d"
+      },
+      "reportIncident": {
+        "text": "Meld een incident",
+        "source_sha256": "7b363600db47cea593ba50e50c4da8439b8cca858e2e0d3a901b9bf9686ecab4"
+      },
+      "reportIntro": {
+        "text": "Kernenclave Incident Response-inname (NIST IR-6). U ontvangt status-e-mails (Open / Verwerkt / Gesloten). Ernst S1/S2-rapporten worden geaccepteerd als S3 totdat een handler de kritiekheid bevestigt.",
+        "source_sha256": "cb9118145ebaf58bf659f3032d0d010984584b7762c5aebbe42699fdcef58e8e"
+      },
+      "scopeAll": {
+        "text": "Je ziet alle incidenten (IT/admin/auditor). Statusbadges: Open, Verwerken, Gesloten.",
+        "source_sha256": "558ae7645e368bbdc661c09f71825b264642ad62e5438aa976c77bf6b058dc16"
+      },
+      "scopeOwn": {
+        "text": "U ziet alleen incidenten die u heeft gemeld. Statusbadges: Open, Verwerken, Gesloten.",
+        "source_sha256": "a0e16e61220fccc6fa218d8b3b1bcb2131738eb0896e5d49ef7c488c9971b5b3"
+      },
+      "severityAll": {
+        "text": "Alle",
+        "source_sha256": "a52ace420f2175d08b1577a1bea5445e36801229c074ef9ed6c55a73401fd9c2"
+      },
+      "severityAria": {
+        "text": "Ernst van incidenten",
+        "source_sha256": "4c32cd4e24be9275ab1b4de3c2bac7463b0380b1fde27f8bf1bb7156793baa37"
+      },
+      "severityHelper": {
+        "text": "S1 is het meest urgent. S5 is het minst urgent. S1- en S2-rapporten blijven S3 totdat een handler dit bevestigt.",
+        "source_sha256": "e0f64026faffecd04ff0be18cd426a8cd01975399bb739d52c8a92faf6b0b672"
+      },
+      "sinkSyslogNoHost": {
+        "text": "Syslog-doorsturen is ingeschakeld, maar er is geen host ingesteld; extern doorsturen wordt overgeslagen.",
+        "source_sha256": "0f137c25450a59d9036f1218f5bf079ba0154f2c85ead0ce4aca6dff7325ac97"
+      },
+      "sinkSyslogOff": {
+        "text": "Syslog-doorsturen is uitgeschakeld. Case open schrijft nog steeds naar het auditarchief en probeert Windows Event Log op Windows.",
+        "source_sha256": "4d2b7744b53d4bef1a7d941d7a23bd40149aea409ba016cdf1dde33681e3b2e7"
+      },
+      "sinkSyslogOnly": {
+        "text": "Syslog is geconfigureerd. Het uitzenden van Windows-gebeurtenislogboeken is niet van toepassing op deze host.",
+        "source_sha256": "93b1688ed8991a187f69c4b38457009ea90ba307fb4b2241532afca4bbf8b36c"
+      },
+      "sinkWelAndSyslog": {
+        "text": "Er is geprobeerd een Windows-gebeurtenislogboek uit te zenden. Syslog-doorsturen is ingeschakeld en er is een host ingesteld. Case open is nog steeds een gedeeltelijke IR-wachtrij – geen volledige SIEM.",
+        "source_sha256": "47cb102c6f3930bb4032a65af4000770bd6e058d0bbacaddc26929929be28723"
+      },
+      "stageClose": {
+        "text": "Abschluss",
+        "source_sha256": "e472800abcc26350e1138ba50421746215261093cf805336075bec38e59413ce"
+      },
+      "stageContain": {
+        "text": "Eindaemmung",
+        "source_sha256": "429488b49b6ff33970084ad9ed52a08fd2e56fb72691cd939976f8c97ec03edc"
+      },
+      "stageDetect": {
+        "text": "Detecteer",
+        "source_sha256": "7f083fe98c9b6a01d7d39d234528854e4e3b9cd978765a23a84f2f80b1c6c44b"
+      },
+      "stageEradicate": {
+        "text": "Beseitigung",
+        "source_sha256": "bc0e98a1fc7415168c9cafc3dc3fdf57e71094fdd1aa7a4425276964fc6167c5"
+      },
+      "stageHelper": {
+        "text": "Fase 0 open: detecteren of triage",
+        "source_sha256": "dad005403e2e20654565a6b9185e4e70fec4ea655532bad146ab1028d896b7c4"
+      },
+      "stageLessons": {
+        "text": "Erkenntnisse",
+        "source_sha256": "39503b5af92d0450c4c7591df93f2ca67f36f5bb1f68842af4f975e5a7ca3d71"
+      },
+      "stageRecover": {
+        "text": "Wiederherstellong",
+        "source_sha256": "066f4c983410722e2e876fb75a79bbf70ba3595bcbd2368f691c71ac0797403e"
+      },
+      "stageTriage": {
+        "text": "Triage",
+        "source_sha256": "4ffbef3c08edfa3878c8357dbe3de3f11c3c74c594d8405f40243390f7f2d118"
+      },
+      "statusClosed": {
+        "text": "Gesloten",
+        "source_sha256": "c21ead0614e7e1b70edb3759e1d19ca1e12e6036980d10bfb73052fb1a018efa"
+      },
+      "statusOpen": {
+        "text": "Open",
+        "source_sha256": "ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942"
+      }
+    }
+  },
+  "about__open-source-credits": {
+    "helpAriaLabel": {
+      "text": "Open help voor Open Source Credits",
+      "source_sha256": "4bee1bb4f4a0ec90ad94bc691b5e28b3b3329118bbc45b70303d14f1d867957c"
+    },
+    "summary": {
+      "text": "Open-sourcecomponenten van derden opgenomen in AIC Server, met licentie-identiteit en licentietekst wanneer ze worden verzameld. Deze pagina blijft in Amerikaans Engels.",
+      "source_sha256": "48f732653aba7891625a77efcb65237f0292ab94e4a32762602ae74abcc21591"
+    },
+    "title": {
+      "text": "Open Source-credits",
+      "source_sha256": "20fc5ff5dce0659a8fd4cfc8f44ce18350d4345c8f0e0eec83a99b13f44cab7e"
     }
   }
 }

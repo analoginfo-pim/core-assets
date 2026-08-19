@@ -255,6 +255,30 @@
     "filters": {
       "text": "Filters",
       "source_sha256": "546ebb8eb993ea561029d9febd84c363bdb09010bb2cb915a8287762b76b9a64"
+    },
+    "quickFilterPlaceholder": {
+      "text": "Zoekopdracht…",
+      "source_sha256": "7336265a0467a2551d6a88f1661d8c4397c71e6bd68e77882973e0eb52fb2de8"
+    },
+    "quickFilterLabel": {
+      "text": "Zoekopdracht",
+      "source_sha256": "49c266baaaa70981ea188fa714d5c40cf13830d786a861c9943ae0d26a7f3fe9"
+    },
+    "quickFilterAria": {
+      "text": "Snelfilter {{title}}",
+      "source_sha256": "03b7a7cf466128371758434ab7d83f42161515d84ff510d4028c2baa5495a98f"
+    },
+    "footerRowSelected": {
+      "text": "{{count}} rijen geselecteerd",
+      "source_sha256": "bb59cf4b923e94cf7480901b47c8543b4f007412ce9688707bbd7fa3af4522c4"
+    },
+    "footerTotalRows": {
+      "text": "Totaal aantal rijen:",
+      "source_sha256": "5cd54e390a871df7168298a3fd73c59a0ded407903378d9bba9bb8616e0cf483"
+    },
+    "footerTotalVisibleRows": {
+      "text": "{{visible}} van {{total}}",
+      "source_sha256": "4091963f2d8306d4e382493b35f363c20bd5b49dde4a785a774a53a3b71deb94"
     }
   },
   "quickSearch": {
@@ -342,5 +366,125 @@
       "text": "Na herladen ontbreken een of meer tekenreeksen in een taalcatalogus. Tekenreeks-ID’s: {{ids}}. Dit is geen vertaling — de sleutel ontbreekt in het geleverde pakket.",
       "source_sha256": "ed69a6777ac09e90ab75ad0d0dd333b7224b53d23b035e7b9c081598f1cdafdf"
     }
+  },
+  "chrome": {
+    "sessionPolicy": {
+      "heading": {
+        "text": "Beleid voor aanmeldingssessies",
+        "source_sha256": "1aab45bb348d0ab3920f91bfdf8f624e46c8326ec83d3a2762daad7ebacd2cc6"
+      },
+      "intro": {
+        "text": "Beheert inactieve en absolute time-outs voor beheerdersaanmeldingssessies. Wijzigingen gelden voor nieuwe sessies.",
+        "source_sha256": "3fea93db11ba9dd9964451ec47f6f2fdffbd43a9ccd38e730aede3c5965021d8"
+      },
+      "openDedicated": {
+        "text": "Open de volledige sessiebeleidspagina",
+        "source_sha256": "3bd751be0e57e60418ef1e633b8b690b26faefcaec08abd2498e7da2e31f1c5c"
+      },
+      "requireIamAria": {
+        "text": "IAM-aanmelding vereisen",
+        "source_sha256": "6d18fa3cd5bcbd888d09ac5de941e97dc541658c3f74866589e3477eba3fd8b6"
+      },
+      "requireIam": {
+        "text": "IAM-aanmelding vereisen",
+        "source_sha256": "6d18fa3cd5bcbd888d09ac5de941e97dc541658c3f74866589e3477eba3fd8b6"
+      },
+      "absoluteTtl": {
+        "text": "Absolute sessieduur (minuten)",
+        "source_sha256": "5290a28ee1829186c3dea2f1ed848eda69a9f676b1a89e7f36eddde6fd85b476"
+      },
+      "absoluteTtlAria": {
+        "text": "Absolute sessieduur in minuten",
+        "source_sha256": "582593c1309f804adbc84dbe5e2d2166bb7a33a2845a3a9ba842e79f3e86bfba"
+      },
+      "idleTimeout": {
+        "text": "Time-out bij inactiviteit (minuten)",
+        "source_sha256": "4cc8718d8b78a91783e56f0b6c1a5e51b24a6d42815a6a30d207a8cf65088377"
+      },
+      "idleTimeoutAria": {
+        "text": "Time-out bij inactiviteit over minuten",
+        "source_sha256": "8a3fc712eb83fbfa35d30a723e69045c2f9439cf6445f147115dbcb469a8838c"
+      },
+      "absoluteMax": {
+        "text": "Maximale absolute levensduur (minuten)",
+        "source_sha256": "a9e5927435706906862d40f353d8d1ee4fb9e0945bfdd90b18f08e5f637e6d74"
+      },
+      "absoluteMaxAria": {
+        "text": "Maximale absolute levensduur in minuten",
+        "source_sha256": "0649ef8b5838130b9818c4f9d4a2532140c5c11a6678d6252b73a34463d9fd4a"
+      },
+      "refresh": {
+        "text": "Verleng de sessie over activiteit",
+        "source_sha256": "b2a3655c529fa7a2f9bd5441112637022126669849cdfe7e6e3f0602f61dad82"
+      },
+      "rotate": {
+        "text": "Token roteren bij vernieuwen",
+        "source_sha256": "4a835f628f39a0957133263df4c3bf349f997910507deccc016bf000cf333f21"
+      },
+      "multiTab": {
+        "text": "Sta meerdere browsertabbladen toe",
+        "source_sha256": "780a5054c52cc9fa082d8df357b89d19c984562a3cc45c90a9642c65e4cbc1f8"
+      },
+      "forceLogoff": {
+        "text": "Meld u af wanneer de sessie verloopt",
+        "source_sha256": "a2ff5e8b61d0ca31832acf186feca4ef523889c3e29a16f785daedf09232aeb5"
+      },
+      "httponly": {
+        "text": "Gebruik HttpOnly-cookie",
+        "source_sha256": "aa2dc5c13ad106f4b7303e133deb6e14e23bd4e305edc4397d76c6cd84d32853"
+      },
+      "pamDisconnectAria": {
+        "text": "Verbreek de PAM-sessies bij het afmelden",
+        "source_sha256": "f3f69e47b0ad6976cffdb0df8b6501a41e5569665258da43da8a22e7d64be7b9"
+      },
+      "pamDisconnect": {
+        "text": "Verbreek de PAM-sessies bij het afmelden",
+        "source_sha256": "f3f69e47b0ad6976cffdb0df8b6501a41e5569665258da43da8a22e7d64be7b9"
+      },
+      "clientStorage": {
+        "text": "Opslag van clientsessies",
+        "source_sha256": "6193945dcbaa893e8af95026210b36a4cedd9aac27b99a19d20118fd6740abc2"
+      },
+      "storageSession": {
+        "text": "sessieOpslag",
+        "source_sha256": "1d589af652bf6bb4ce8c96335c697952e111f91e55f6d479e229f34fe6b911ed"
+      },
+      "storageLocal": {
+        "text": "lokale opslag",
+        "source_sha256": "5ccee5ef26d411cb0f5d4f468d3edfe1feac9bd69411bad25095b25e3ef72734"
+      },
+      "multiTabNote": {
+        "text": "Meerdere tabbladen delen dezelfde aanmeldingssessie. Uitloggen op één tabblad maakt een einde aan alles.",
+        "source_sha256": "2db5840e461f5bf8010d816acea18c2527e2793b630658da047d3e2fa9ef1b9e"
+      },
+      "save": {
+        "text": "Sessiebeleid opslaan",
+        "source_sha256": "92fd2a90adcbc6fd4b9a649a0185175406d1a36e43fe22232a18eff2db77b5a0"
+      }
+    }
+  },
+  "technische_dokumentation": {
+    "text": "Technische documentatie",
+    "source_sha256": "d9e472f50948919b7de17f323845791003026e68cd5487bccb650edfbdff625d"
+  },
+  "general_settings": {
+    "text": "Algemene instellingen",
+    "source_sha256": "de322f87b5f5957b54dc467054983c18cbd04a213066155347d00d04b34215e2"
+  },
+  "tls_security": {
+    "text": "TLS en beveiliging",
+    "source_sha256": "cbf76f95e68a82d65fe5587d4424ff26b4ec338a079f03f6ac7d7b1b31c90395"
+  },
+  "server_control": {
+    "text": "Servercontrole",
+    "source_sha256": "1393a2603fa7d5128cc6d79cad71fad037e3d966202b2fed597bb900b25f41e2"
+  },
+  "technical_documentation": {
+    "text": "Technische documentatie",
+    "source_sha256": "d9e472f50948919b7de17f323845791003026e68cd5487bccb650edfbdff625d"
+  },
+  "blocked_attacks": {
+    "text": "Geblokkeerde aanvallen",
+    "source_sha256": "158d3c3ef5abfd9cf13b3894307ed3778a4d5eed818545635579dc7785c1e124"
   }
 }
