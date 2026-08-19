@@ -226,17 +226,26 @@ def split_crate_dirname(dirname: str) -> tuple[str, str] | None:
     (``major.minor…``). A left-first ``(.+?)-(\\d.*)`` wrongly splits
     ``md-5-0.10.6`` → ``md`` / ``5-0.10.6`` and ``utf-8-0.7.6`` → ``utf`` /
     ``8-0.7.6``, which leaves those crates BLOCKED in the disclosure.
+
+    Build metadata after ``+`` may itself contain hyphens
+    (``toml-1.1.4+spec-1.1.0``). Search for the name/version hyphen only in
+    the pre-``+`` segment so we never split inside ``+meta``.
     """
     # Require at least one dotted numeric component so ``5-0.10.6`` is rejected.
     ver_re = re.compile(r"^\d+\.\d+.*$")
-    for i in range(len(dirname) - 1, -1, -1):
-        if dirname[i] != "-":
+    plus = ""
+    base = dirname
+    if "+" in dirname:
+        base, meta = dirname.split("+", 1)
+        plus = "+" + meta
+    for i in range(len(base) - 1, -1, -1):
+        if base[i] != "-":
             continue
-        name, ver = dirname[:i], dirname[i + 1 :]
+        name, ver = base[:i], base[i + 1 :]
         if not name or not ver:
             continue
         if ver_re.match(ver):
-            return name, ver
+            return name, ver + plus
     return None
 
 
