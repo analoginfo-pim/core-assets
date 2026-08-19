@@ -46,5 +46,3847 @@
   "disconnected_tokens": {
     "text": "為中斷連線或離線提升簽發的權杖。",
     "source_sha256": "e6619f69c6778686d49a4bbdce6fa87782a2195323ac0e0a0f1fb07576ea80d9"
+  },
+  "tenantDisplayName": {
+    "text": "該組織的人類可讀標籤。創建後永久生效；代理程式透過 GUID（而不是此名稱）引用多租戶。",
+    "source_sha256": "d4a4f9a34b9b9dedccc49a2841a25cdbe64c78d2146fe813820fb0c3fe681f54"
+  },
+  "tenantAuthPolicy": {
+    "text": "離線代理程式如何對此多租戶進行身份驗證。目前僅支援 HMAC；伺服器使用引導程式金鑰驗證請求簽章。",
+    "source_sha256": "d62cdbd9ff7c72229aef3d4520b92b860ddb50dbb7055e1eccf9c2880f224630"
+  },
+  "identityId": {
+    "text": "該託管帳戶在端點上的穩定識別碼。使用 GUID 或簡短的唯一名稱；創建後無法更改。",
+    "source_sha256": "6a6353a453e53e66304ba519804bc5b6a43d8240b5db8cafedcb559aecff18e1"
+  },
+  "accountBinding": {
+    "text": "Explicit: you name the local account (Administrator, root). Well-known: the agent maps a catalog key to the correct account for the OS.",
+    "source_sha256": "5040472b1ee3e010653b96cf8c097f93f41b44df310d370dcc9cf480e17283e1"
+  },
+  "wellKnownAccount": {
+    "text": "代理程式在執行時間解析的目錄條目（例如 Windows 內建管理員）。选择适合平台的密钥。",
+    "source_sha256": "d40fb6b68f7843705d2dce84008f102d075a634852ffbd758d287484c3fbc9b1"
+  },
+  "accountName": {
+    "text": "端點作業系統上的確切本機帳號名稱。必須與代理程式將輪換的內容相符（管理員、root、svc-backup 等）。",
+    "source_sha256": "f517f4d6da3ed9885c7033d7fa3d10ed1ceba95c3a56251b3c23d49e028d50f3"
+  },
+  "identityDescription": {
+    "text": "操作員可選註釋（目的、所有者、票證）。不作為秘密發送給代理。",
+    "source_sha256": "6f521f2557bb607f222e0c806251ace047334908e8565114e9d8f32f589a9695"
+  },
+  "rotationStartOffset": {
+    "text": "此身分首次輪換前秘密鑄造時間的延遲 (DD:HH:MM:SS)。在群組內錯開密碼更改。",
+    "source_sha256": "71f4cd31315bed20c7734b52b7054881414270fb26969229f8d87ffc3b8dd4a6"
+  },
+  "rotationOffsetDays": {
+    "text": "延遲此身分在錨定後首次輪換的天數，因此群組中的身分不會同時輪換。",
+    "source_sha256": "5d38362ce9a60cc37de86102303669f3eeb727b98777fcb54c489b0577465449"
+  },
+  "rotationOffsetHours": {
+    "text": "輪換偏移天數以外的額外小時數 (0–23)。組合延遲會錯開密碼變更。",
+    "source_sha256": "c676ef612417d288b009dd0d4215aca8449c6b41134815199ddce47870e50bf9"
+  },
+  "rotationOffsetMinutes": {
+    "text": "轮换偏移天数和小时数之外的附加分钟 (0–59)。組合延遲會錯開密碼變更。",
+    "source_sha256": "c6854d33bad98d0c9f3e8e2b06f1f7641913027bd498011b1580d392fd11fc24"
+  },
+  "machineName": {
+    "text": "代理報告的主機名稱或標籤。用於清單和立面圖；應與操作員所識別的相符。",
+    "source_sha256": "07f4a65529d200594db6aa4eaba10b8af9a86e0f570c9491a2c473614b590cd5"
+  },
+  "macAddress": {
+    "text": "註冊時代理提供的硬體 MAC。格式 AA:BB:CC:DD:EE:FF 或帶有連字號。",
+    "source_sha256": "4af2a37b5479d25f42da28f6e19e362b52412e2d67ac5b01b2153578a8ea7b64"
+  },
+  "ipAddress": {
+    "text": "此端點的最後已知 IPv4 或 IPv6 位址。用於顯示和連接提示。",
+    "source_sha256": "eadd8ab747fea8f43a8f480405eda62986dc67539a42511e8eb4b258bc812366"
+  },
+  "platformType": {
+    "text": "作業系統家族。推動眾所周知的帳戶目錄和代理行為。",
+    "source_sha256": "3293f067b3a0b0fea79a62c1c8068710c656dba55acdb7a62190ceeb456bfdd7"
+  },
+  "tenantName": {
+    "text": "此端點所屬的多租用戶顯示名稱。必須匹配在多租戶（或伺服器預設值）下建立的多租戶。",
+    "source_sha256": "edabb2c905256180f11ab310d4a1671766a24bbe8bc3a088e4e66b61541d5ff5"
+  },
+  "domainName": {
+    "text": "當電腦加入網域時，Windows 或 LDAP 網域。對於獨立/工作組主機，留空。",
+    "source_sha256": "b901417b69dda9e3c7cdf0bf439d6dd3c18c083aed787af0eb66beb23b750ac3"
+  },
+  "systemGroupName": {
+    "text": "Optional group to place the endpoint in at registration. Group policy and identity templates apply from this group.",
+    "source_sha256": "17419cfcb51659821c38ae224682894881b21bc1b01ec9b12454bc45470cc34b"
+  },
+  "groupName": {
+    "text": "唯一的組鍵（字母、數字、連字號、底線）。端點從其群組繼承策略和範本。",
+    "source_sha256": "3363df28b67aa3625b9ee3caebcf50968d5cd9e6f258e88ab1adc98ed1e1101a"
+  },
+  "groupDescription": {
+    "text": "Optional operator note describing who or what this group is for (production servers, lab VMs, etc.).",
+    "source_sha256": "0dfaa9e90669a033256a9e829d306dab719ce6375b0b02092cd89753fb18c5eb"
+  },
+  "wizardUsageType": {
+    "text": "ConnectedManaged：線上同步。 OneShotProvisioning：單一引導檔案。 AirGappedPermanent：預計無需辦理登機手續。",
+    "source_sha256": "6e90549fff8e625acace1fc4831b6b6ac37e59a3cf9c5af44b25ea1c7f22431b"
+  },
+  "wizardTenant": {
+    "text": "引導密鑰和 GUID 嵌入到已發布的設定中的多租戶。如果清單為空，請先建立一個多租戶。",
+    "source_sha256": "e1a5805bcbc1a9167d637f24fd8fed7480a67002595c67ec24f250e46def42b7"
+  },
+  "wizardGroup": {
+    "text": "System group whose password policy, identity template, and elevation settings are copied into the issuance.",
+    "source_sha256": "f3bc2942ca8ffb5f37314aa958681bbd1766675e19f961f7893172f9b175d80b"
+  },
+  "passwordLength": {
+    "text": "產生的最小密碼長度 (8–128)。較長的值可以提高強度；一些舊版應用程式限制了可接受的長度。",
+    "source_sha256": "59fb86c7a519dcda2deb687150af2c8b14c73a6b1fc30be67f27fb32b7a4b948"
+  },
+  "rotationDays": {
+    "text": "使用此策略等級的身份距離下次規劃密碼輪換的天數。",
+    "source_sha256": "b44b8f26dd9853a5d72ae6353d12250d326947983e6d0ea42d8b4086c8a1c45b"
+  },
+  "maxDriftSeconds": {
+    "text": "在出現偏差警告之前，伺服器和代理之間允許的最大時鐘偏差（秒）。",
+    "source_sha256": "8363a230469326a47083b2a416d8f223b8f081e51a982d0380ec9b47f17482fb"
+  },
+  "secretUpdateFrequencyHours": {
+    "text": "連線時代理輪詢伺服器密碼更新的頻率。",
+    "source_sha256": "9630682f67ed5842b00e9eadfcd00471b97e555e45ed790090dfc10b17ab1b1f"
+  },
+  "allowedSpecialChars": {
+    "text": "產生的密碼中允許使用的字元。保留完整 ASCII 符號集的預設值，除非目標應用程式限制符號。",
+    "source_sha256": "4835117fa0ddab865ff5a879153d163ea493c50e48ba82c99caf1492c0f5e6ff"
+  },
+  "policyVersion": {
+    "text": "變更策略形狀時稽核追蹤的可選標籤（例如 v2-2026-q1）。",
+    "source_sha256": "0324ee98401e481f3e388df38ce85ef6a0bf0d0f21b968ce24137c9020027947"
+  },
+  "caFilePath": {
+    "text": "CA 捆綁包路徑嵌入到該群組中代理程式的已發佈設定中。對於加入網域的電腦或平台信任存儲，請將其留空。",
+    "source_sha256": "150e11d0b1af3aea9606b18bf59e85ed7f39960dc2597f9aa0df9b72dd0f9ade"
+  },
+  "localAccountName": {
+    "text": "產生的設定中的預設本機帳號名稱（管理員、root）。對於平台預設值，將其留空。",
+    "source_sha256": "6169f09188815f6b3de53e6c61c2171d875f47e6ec7fa396a21894a379c6b958"
+  },
+  "machinePolicyOverride": {
+    "text": "僅覆寫此端點的群組和全域預設值。每個欄位都是必需的 - 伺服器儲存完全解析的策略。",
+    "source_sha256": "af86c41d40563bbcb72449ded4f4ad8159446470ad49d352d74a3ba3d36104ce"
+  },
+  "seedDefaultIdentity": {
+    "text": "啟用後，當新端點加入群組時，會自動套用範本行。",
+    "source_sha256": "b2d0a4871b8c07682158e3a96236ed4a740b1563e9c7b4fdd70589f4f3a8f732"
+  },
+  "elevationTemplateEnabled": {
+    "text": "啟用後，為此群組發布的 settings.json 包含levation_secret，以便操作員可以建立海拔代碼。",
+    "source_sha256": "2e7e73c0f28897c38caa51fb96ee1c3d57373f17d6dc087193192501c1cd5c83"
+  },
+  "templatePolicyInherit": {
+    "text": "開啟時，該行使用群組密碼原則（編輯原則）。關閉以僅為從此行播種的身份定義規則。",
+    "source_sha256": "4a394e7e2414a21b729c70ec96cbc37eb82b67ca84970abff07155ff95ace8fc"
+  },
+  "elevationEndpoint": {
+    "text": "透過離線代理提升通道接受代碼的端點。",
+    "source_sha256": "c67179191f74b5f4311d948ec6c8241b08ebb29512135b5f01896e123ccdf813"
+  },
+  "elevationTargetGroup": {
+    "text": "在提升過程中加入作業系統群組。從此端點作業系統的提昇平台原則中進行選擇，或鍵入自訂群組名稱。",
+    "source_sha256": "e9371a9f0472b8eeccd421c0751ef464611e08a571cbc6fd13fe3a173d002f31"
+  },
+  "elevationDuration": {
+    "text": "啟動後海拔保持活動狀態的分鐘數 (1–480)。",
+    "source_sha256": "9a111f0d9e050b381a89c095a650cd9c158718ec61b2c9bfcea4c39cf85a0c29"
+  },
+  "elevationScheduled": {
+    "text": "Future activation time on the endpoint. Must be at least one minute from now.",
+    "source_sha256": "b16464928e3f74562cfcc2fd69b423962c7a4a9b401f7f1b93ec3795fa35def2"
+  },
+  "privilegeJobEndpoint": {
+    "text": "Endpoint whose offline agent runs the privilege execute handler over the admin pipe.",
+    "source_sha256": "8cc79a67037e0031e6812faf64a4ed8b3de6254e1500f14794b3a35ea90cbaef"
+  },
+  "privilegeJobMember": {
+    "text": "啟動時新增的合格帳戶（例如 DOMAIN\\\\user 或本機使用者名稱）。",
+    "source_sha256": "fe3884513a216df84beecb26b30f1e85ccafc78dee56368ca0fd58cd7d444ebb"
+  },
+  "privilegeJobTargetGroup": {
+    "text": "端點上的合格本機群組（例如 Windows 上的 BUILTIN\\\\Administrators）。",
+    "source_sha256": "25f2b56304c4efec061dc006818618acaf174023c3f17f684ad2a159334203a4"
+  },
+  "privilegeJobDelay": {
+    "text": "從現在到應用步驟符合條件的分鐘數（0 = 處理者聲明後立即）。",
+    "source_sha256": "99539e2d425643c44a80d37ccc7dbd9e3042d8e11328d08bcb57c14eff6f911d"
+  },
+  "privilegeJobDuration": {
+    "text": "Minutes the membership stays after apply; revoke runs when this window ends.",
+    "source_sha256": "dd32babd79026b315fc8eadb23b9a446c4a9c80b03eae6dfc7ae939125284fdd"
+  },
+  "wizardMachineDns": {
+    "text": "接收一次性或氣隙設定的單一電腦的主機名稱或 DNS 標籤。預分配端點 id。",
+    "source_sha256": "41b05ddff43a75ec965abef92da4185d68e14574f2d65010ea33bc8211a9dbad"
+  },
+  "wizardDescription": {
+    "text": "發行記錄上可選的操作員註釋（機票、所有者、地點）。",
+    "source_sha256": "73866759838299228602a92629d47b45d31a0f268647e6fd35ac8095fe0edbce"
+  },
+  "wizardTtlHours": {
+    "text": "距離註冊令牌過期還有幾個小時。將伺服器預設值留空。",
+    "source_sha256": "7ebf418f302686302fca357adad6fd9166f48c74ce8e74a14d65cb581a0108c5"
+  },
+  "loginUsername": {
+    "text": "您的 AIC 伺服器帳戶名稱（本機 IAM 或聯合主體）。與您的密碼一起用於此登入。",
+    "source_sha256": "686b46a167aa4b6f6809ed505004ced6169ce6ac76ba7cb60b850419fbd6d32a"
+  },
+  "loginPassword": {
+    "text": "該帳戶的密碼。 AIC Server從不顯示價值；失敗的嘗試會被審核。",
+    "source_sha256": "06d8569713bc0b3fd38aa7fbeb2e63084f82778390e675f8e993059e240f440c"
+  },
+  "loginProvider": {
+    "text": "Which identity path to use for this logon (local password, PIV, or other configured providers).",
+    "source_sha256": "4ece07972fdb0c1e9acac5779e67b1eb14f8570b8481c0cb0dc8e6b1366ba468"
+  },
+  "loginTotpCode": {
+    "text": "Six-digit code from your authenticator app for this account. Codes expire about every 30 seconds.",
+    "source_sha256": "46216782c609d9be668bcbc5c92a825570e72a03feea2c6999320382f541ca2a"
+  },
+  "loginRadiusPasscode": {
+    "text": "用於此登入第二步驟的一次性密碼或來自 RADIUS 令牌的回應。",
+    "source_sha256": "a7b5b3c958bcd118ed8e9556e124c1a7183c9e960a0f262fa7836f2e377d7ef6"
+  },
+  "loginNewPassword": {
+    "text": "Choose a new password that meets the organization password policy shown on this page.",
+    "source_sha256": "c2c797a959bc619b9a70279c0af362bdd0d2b4062a078995582071cecc35bc60"
+  },
+  "loginConfirmPassword": {
+    "text": "再次輸入相同的新密碼以確認沒有輸入錯誤。",
+    "source_sha256": "fe285f648bc82e96068223be372bdcd7d308e83cec734f6dcff5aa3bdcb95fbf"
+  },
+  "loginResetToken": {
+    "text": "來自您的密碼重設電子郵件的一次性令牌。將其貼到此處以設定新密碼。",
+    "source_sha256": "5af28c47fb36f5617285ae9faa75ede24b24a45d245ee65fcb8aa90bc1ddd8da"
+  },
+  "loginWebAuthn": {
+    "text": "使用註冊到該帳戶的安全金鑰或平台驗證器。",
+    "source_sha256": "60439b2d56b5150809c5041ed41d7ff2bf500b388a60a474e61455d64235f5e6"
+  },
+  "principalUsername": {
+    "text": "該委託人在本地 IAM 中的登入名稱。在該伺服器中必須是唯一的。",
+    "source_sha256": "53ff5a38b8d7ae43243815df1d46d56da52d2027063fd9f737b2064575013eea"
+  },
+  "principalDisplayName": {
+    "text": "清單和審核記錄中顯示的名稱。最好是業者認可的真實姓名。",
+    "source_sha256": "9ab7a0b3b399f92e2975aa883370471de8b4613432e07f7b6360a46a4ce5241d"
+  },
+  "principalEmail": {
+    "text": "Email used for reset links and notifications. Not used as the durable identity key.",
+    "source_sha256": "8ea356c636c0467ae87128aa08c6397e704854d9083f522a87e91f0f4e938922"
+  },
+  "principalRoles": {
+    "text": "在管理控制台中授予權限的角色。最小權限：僅指派此人需要的內容。",
+    "source_sha256": "c10e47d383ddb2ae2d1a19c88343b5e40272e621beaf541a6828f5cc53d3536f"
+  },
+  "principalEnabled": {
+    "text": "關閉時，該主體無法登入。停用而不是刪除以保留審核歷史記錄。",
+    "source_sha256": "c9fd8c7a44ea4b5f3ca2619a990cf666ee3d792e1f193693cab8296fc3007177"
+  },
+  "sessionIdleTimeout": {
+    "text": "控制台會話結束前不活動的分鐘數。較短的值可降低控制台無人值守的風險。",
+    "source_sha256": "6f5dfd884311eb816fdebf40660da987e7c84eb998cc3faa97bf461eb6ecd95f"
+  },
+  "sessionAbsoluteTimeout": {
+    "text": "無論活動如何，最長會話生命週期（以分鐘為單位）。強制定期重新驗證。",
+    "source_sha256": "2b2b85ef7dba3c5cafb936db3aa9d347843c83d50d41884f1e3298ba47edcb95"
+  },
+  "profileRecoveryPhone": {
+    "text": "E.164 格式的選用電話，用於管理員協助恢復此本機帳戶。",
+    "source_sha256": "469f49999f3eb86e14089c2238884b0d1a9886ca09269f2ecf62263b2c255159"
+  },
+  "profileUiTheme": {
+    "text": "整個網站的配色。保存在此用戶個人資料中，以便它在任何瀏覽器上跟隨您。",
+    "source_sha256": "54a36cfcdf12b094926b92854064306384f6628b1a6f4372c179aa41141653c7"
+  },
+  "profileDefenseSkin": {
+    "text": "僅用於攻擊/威脅報告頁面的配色方案。預設遵循站點方案。黑色是深色報告外觀。",
+    "source_sha256": "8c2c22a5f82d091634c21e0b48b66c9e4c2b7f3c608294aa65edab38e502a855"
+  },
+  "currentPassword": {
+    "text": "您目前的本機帳戶密碼。在更改帳戶之前需要證明您擁有該帳戶。",
+    "source_sha256": "4e89ca8fd65bdb7c0894366ee1a7357f1a71224e6a4ec5b13af9fdec7e883c63"
+  },
+  "elevationJustification": {
+    "text": "工單或事件 ID 解釋為什麼需要提升。當啟用敏感存取理由策略時需要。",
+    "source_sha256": "f630afa46e98bb5a950d4a8b80f8314e68d355744737e5149547213595b52be9"
+  },
+  "elevationStrategy": {
+    "text": "啟動碼的建構方式（字母、長度）。必須與配置端點代理程式的策略相符。",
+    "source_sha256": "eb3803c0f9548395d77fc6773dcbd272ac3713a9f4397f0b3decb917951b4080"
+  },
+  "encryptedSecret": {
+    "text": "代理程式的一次性加密引導程式金鑰。複製並安全保存；它不再顯示。",
+    "source_sha256": "a178273e8e225f2435d8cfef87c56168f575be65153dec611fd4d7a25423e67c"
+  },
+  "networkCidr": {
+    "text": "此允許或拒絕規則適用的 IPv4 或 IPv6 CIDR（例如 10.0.0.0/8）。",
+    "source_sha256": "abf6f6a936af0d372db074b18fb2d359384bc75db312c73924dd6a4d1b0eaf01"
+  },
+  "networkRuleNote": {
+    "text": "可選操作員註釋，說明此網路規則存在的原因（站點、VPN 池、票證）。",
+    "source_sha256": "d07a2b2289fcd0527802ba31009efafc166b98a3c4c43ccfc9c58ffe67ec357f"
+  },
+  "threatIntelCidr": {
+    "text": "在威脅情報決策中允許或抑制的網路範圍。使用 CIDR 表示法。",
+    "source_sha256": "4bd87b6f99cc9f3f1599bb5c310dbe9967463fed905ab33ff321b6f4baa16bba"
+  },
+  "threatIntelComment": {
+    "text": "操作員對此威脅情報覆蓋的說明。保持簡短且沒有秘密。",
+    "source_sha256": "c99dd565462cf7b3bf8d0341ddc03035834f242a48ce51b710f61e7b5f59eca5"
+  },
+  "bootstrapAdminUsername": {
+    "text": "在引導期間建立的第一個本機管理員的使用者名稱。在此伺服器上必須是唯一的。",
+    "source_sha256": "80a97af6634abe6784867aabdbb29eb832a68aea32c7598e59749a90ab41d2ae"
+  },
+  "bootstrapAdminPassword": {
+    "text": "引導管理員的初始密碼。首次登入後更改。",
+    "source_sha256": "639051e1d9bce1bfd4b6001ca9e47155b961d1d8961b83368ac2cd577696bdaf"
+  },
+  "bootstrapAdminEmail": {
+    "text": "引導管理員的恢復電子郵件。用於密碼重置連結。",
+    "source_sha256": "555d6039ba9b84beb830e47290a2b9ef4c229e2423dd60a08c201fa773dc4a9c"
+  },
+  "idpIssuerUrl": {
+    "text": "OpenID Connect 頒發者 URL。 Discovery 使用它來載入授權、令牌和 JWKS 端點。",
+    "source_sha256": "655d7e8ce5413f3906d229de7926068e2dc5cda0918904f9fac4133362d58a53"
+  },
+  "idpClientId": {
+    "text": "向該伺服器的身份提供者註冊的 OAuth / OIDC 用戶端 ID。",
+    "source_sha256": "4221f13528588aff027f10009243f9184c8f031f7fb97c5623c545d08323eee5"
+  },
+  "idpClientSecret": {
+    "text": "機密 OIDC 客戶的客戶機密。作為秘密存放；切勿貼在門票中。",
+    "source_sha256": "e551b309847b606bd42fe279aaf05380da9dcd019b8fc18d39e38055056a5475"
+  },
+  "idpDisplayName": {
+    "text": "標籤操作員在登入頁面上選擇此身分提供者時會看到。",
+    "source_sha256": "8e2f55f3b944b971232343f1fc1fc56c5fd8d3319f59b501a30c058e77fc8e77"
+  },
+  "adTrustDomain": {
+    "text": "此信任條目涵蓋的 Active Directory 網域或領域（例如 CORP.EXAMPLE）。",
+    "source_sha256": "0788114546dee232785706c61f19ec1756c40eac8c24178d9c7d66b9788c6086"
+  },
+  "adTrustHost": {
+    "text": "用於驗證此信任的目錄登入的網域控制站或 LDAP 主機。",
+    "source_sha256": "471454851e7c0a1d1d9ce289984b7a67a2c40647e9dfe71c20c14cbd25ac09e6"
+  },
+  "webAuthnCredentialName": {
+    "text": "此安全金鑰或平台驗證器的友善名稱，以便您可以區分裝置。",
+    "source_sha256": "3f3b06b8a4646c6a2648fcba9dba1d90128f8777f1b57a5a4479c15071efd75e"
+  },
+  "accessMapLabel": {
+    "text": "此存取映射條目的短標籤。顯示在地圖和審核清單中。",
+    "source_sha256": "7fdb109aa80159f07294189267c115de933b846b6256514a3d0894e696bbeb9c"
+  },
+  "mfaGraceMinutes": {
+    "text": "此策略再次需要 MFA 之前登入後的分鐘數。零意味著每個新會話。",
+    "source_sha256": "d90b2bb6b474ca91f28b44f2054fb63e41dc29e00fcc25f8e70504fcc9001755"
+  },
+  "localPwMinLength": {
+    "text": "此原則下本機 IAM 密碼的最小長度。",
+    "source_sha256": "fc43543a8d3c024e910762ad2d28fcdf16fdb50d07e2468042b93ac73eb3c095"
+  },
+  "localPwMaxAgeDays": {
+    "text": "本地密碼過期前的天數。零會關閉年齡到期。",
+    "source_sha256": "60bf7d84addb680b56fe9304454dd8c3515ac01d6b5d55c0b2a69028c0c7878d"
+  },
+  "localPwMinAgeDays": {
+    "text": "本地密碼變更之間的最短天數。防止歷史的快速循環。",
+    "source_sha256": "1ddacdf4dcfb9d71f040eb83e8d0b4282356727ad9ae5e78b69a632f43844212"
+  },
+  "localPwHistoryCount": {
+    "text": "有多少先前的本地密碼被記住且無法重複使用。",
+    "source_sha256": "6fe5639c43034a3cd8658211af8541f37262c341e04fb9d2d5e2cc98091a7864"
+  },
+  "totpIssuer": {
+    "text": "用於 TOTP 註冊的身份驗證器應用程式中顯示的名稱。空使用此伺服器主機名稱。",
+    "source_sha256": "fa1e9f1700e1ef97e19f34aa6f5a83327d4c6c0fd9087fff07b17287bb595372"
+  },
+  "adHomeDomain": {
+    "text": "此信任策略的主要 Active Directory DNS 網域（例如 contoso.local）。",
+    "source_sha256": "f1e35b0af278c15daa931ff37312f02434a6c42c64124b8320d900ec2f15817b"
+  },
+  "adFederatedDomains": {
+    "text": "允許登入的逗號分隔網域。來自這些領域的高額聲明受到抑制。",
+    "source_sha256": "3272e2f5cf7b51dc4a537501fe114e2a001bfe7bf95c098e32da9baa1f358c0e"
+  },
+  "adElevatedGroups": {
+    "text": "僅由主域聲明時授予提升角色的群組名稱或 SID。",
+    "source_sha256": "acb64da2879b033e97906056e5bcef57f2bf6657c32193db7b1308c3d5fb7cab"
+  },
+  "adEvalDomain": {
+    "text": "Principal domain to evaluate against the trust policy for diagnostics.",
+    "source_sha256": "79500feb4dda69478f0d7fac588e4123b35fa583509615b5ffb1214e8cc716e3"
+  },
+  "adEvalGroups": {
+    "text": "逗號分隔的群組，用於評估信任策略下的提升映射。",
+    "source_sha256": "7b4dcc8f82a49b0a0018bd7680c54598b9933b2e6c59123161f71f9c300eb611"
+  },
+  "countryAllowList": {
+    "text": "允許此地理存取規則的國家。清除籌碼即可刪除一個國家。",
+    "source_sha256": "e1772419816920e75f4f33e354dc1d6d2fbe504e92dfccd1214b002235298cf8"
+  },
+  "pivCertificatePem": {
+    "text": "PEM 形式的公共葉證書。私鑰被拒絕並且永遠不會儲存。",
+    "source_sha256": "d2d50bfb4fb158f0133ced74a3199c1f2c7df99f67602f90da1aef57c529acd9"
+  },
+  "connectivityHost": {
+    "text": "用於偵測此連線測試的主機名稱或 IP。不更改已儲存的提供者設定。",
+    "source_sha256": "3bf41c2edb75cbb8f7e5e9aff92545cfdada1b5bd52d02989c500ffb2c711c36"
+  },
+  "connectivityPort": {
+    "text": "用於探測此連線測試的 TCP 連接埠。",
+    "source_sha256": "af9ccd82d0de4e5f5c47f85bf6d4d1d1954d4949b79802d5e8c99155d924dde7"
+  },
+  "logonPolicyName": {
+    "text": "Name of this logon policy. Principals and roles reference it by this label.",
+    "source_sha256": "b88dbe46d12742724617e7815677dc1dd7a0f1d493c84d51f4824588ee877e02"
+  },
+  "logonPolicyValue": {
+    "text": "此登入策略設定的值。格式取決於行中顯示的設定鍵。",
+    "source_sha256": "57afae51685e02cf6d20384a5a2098d80b1c04dc12d661b3851f0d2eb07d310f"
+  },
+  "ipRuleCidr": {
+    "text": "CIDR 允許或拒絕從此規則進行控制台登入。",
+    "source_sha256": "be2b1334855b2d77a0ed96475ec3b0b171194f34b7d65cc6199fa059c75758f1"
+  },
+  "ipRuleComment": {
+    "text": "描述此 IP 規則適用於誰或什麼的可選註釋。",
+    "source_sha256": "4d67ebc85cc0e97109c49fe1b42804711d5ad8cf85a61cb0133d3a67baf58966"
+  },
+  "idpClaimFilterMode": {
+    "text": "How primary claims from this identity provider are filtered before role mapping.",
+    "source_sha256": "c1e05e9cbd883c20bd277c5352f9106921b6da58896583f791bc696187f7963b"
+  },
+  "idpRedirectUri": {
+    "text": "為此伺服器回呼向身分提供者註冊的 OAuth 重定向 URI。",
+    "source_sha256": "03cb6517c6ac0608879b1db2aa6bba5932ee1331f7151ba6a98b968b489b4420"
+  },
+  "idpScopes": {
+    "text": "登入時請求的以逗號分隔的 OIDC 範圍（例如 openid 設定檔電子郵件）。",
+    "source_sha256": "b01de7bc7d089ae21a30252abf10284df85ef7f7877d5c0b24d287999465ffba"
+  },
+  "idpClaimNames": {
+    "text": "用於來自此提供者的角色或群組映​​射的以逗號分隔的聲明名稱。",
+    "source_sha256": "d87a4a195f737bc18af8850e5cbc6e7f2f67c5bfb917546a2af51f1b085459a1"
+  },
+  "idpTrustedIssuer": {
+    "text": "受信任的發行者 URL 用於驗證來自該身分提供者的令牌。",
+    "source_sha256": "7a27f63a9b7a72ceb6729e52d1fb40aad2eb3069c18adcd95cbaa8f19978b73b"
+  },
+  "idpTrustClaimAllowlist": {
+    "text": "此受信任的發行者允許以逗號分隔的聲明。其他人則被忽略。",
+    "source_sha256": "eda27c79da0ef8802641f5593abe4d17ada7c36b5cbffdb0e0c964e69c03b8a0"
+  },
+  "idpKind": {
+    "text": "身分提供者類型（OIDC 或其他支援的聯合類型）。",
+    "source_sha256": "3f87fef61adfd56df2b739cc70fd2d337c39c222305fb1848972aa0badd8ee75"
+  },
+  "windowsSpn": {
+    "text": "用於 Windows 整合式驗證的 Kerberos 服務主體名稱。",
+    "source_sha256": "a8068e48c40fee644c124b0eb66fc478d422d2ee404bebe02f07e346292757cc"
+  },
+  "windowsMapAttribute": {
+    "text": "對應到本機主體使用者名稱的目錄屬性。",
+    "source_sha256": "697cec0b8d3bfcd4c09926efaba126459601ecfee6208c98c345d085b6f44c34"
+  },
+  "threatIntelEditValue": {
+    "text": "此威脅情報覆蓋條目的編輯值。",
+    "source_sha256": "98ff93c116afd140ee70ec3d6cd1d8e272fa703960eae4ea67c00002a9ecf13d"
+  },
+  "maxmindAccountId": {
+    "text": "Optional MaxMind account id override for geo IP lookups on this server.",
+    "source_sha256": "a610896a79f1758e3877b407a653fda5b52491fc35ec2ea0ef4f2e367d0e4119"
+  },
+  "maxmindLicenseKey": {
+    "text": "可選的 MaxMind 許可證金鑰覆蓋。作為秘密存放；切勿貼在門票中。",
+    "source_sha256": "d81eab3bccdb9edc17e15ce95eb1ea28c3f08058832c1df3042096af794b8ce7"
+  },
+  "fourEyesPrincipalId": {
+    "text": "需要第二人稱確認的委託人的 UUID。",
+    "source_sha256": "5d96bad10498ff2ac7fc7a37e9f7f9a6780537ab33ecefc8b44f99aa7dcc7778"
+  },
+  "fourEyesManagerEmail": {
+    "text": "必須確認的經理或第二人的電子郵件。",
+    "source_sha256": "7a81e8728214385171a9d63c819ff6910599f34d9d4f5c4578b5120df4f0a80b"
+  },
+  "fourEyesHours": {
+    "text": "如果未得到確認，四眼請求到期前的小時數。",
+    "source_sha256": "345860c998215fb90563f814e7c32cb0ab7520c8e1a323b15a41cc499b067cd0"
+  },
+  "fourEyesAckBy": {
+    "text": "完成確認的第二人的身分。",
+    "source_sha256": "0da4b86ea57f36faf9e30f55a9b9f5f821aa442f050aede42ee9ac6b2501197e"
+  },
+  "dryRunSourceIp": {
+    "text": "用於試運行存取映射評估的來源 IP。不改變實時規則。",
+    "source_sha256": "1f86e42b66c6646037b64ce15cf1503f2851f984a8bd00d692dc89a859304705"
+  },
+  "pamConnectionPointName": {
+    "text": "標籤操作員在開啟會話時會看到。更喜歡他們已經知道的機器或服務名稱。",
+    "source_sha256": "1ca129a40992b4224702486a43f130fd246c7fb234152fce33fd08f573f7f825"
+  },
+  "pamProtocol": {
+    "text": "此連接點的會話協定（SSH、RDP、VNC 或 OT）。必須與目標偵聽的內容相符。",
+    "source_sha256": "cabf923bd46e8a1dcfc3ef1d250f4a3c02d80358bcae7105a71276b7fc54085c"
+  },
+  "pamHost": {
+    "text": "跳轉或代理用於到達目標的主機名稱或 IP。必須從容量主機解析。",
+    "source_sha256": "b6beff17cf8c38943e48fb0b6cd624c493cdc8dcda62d6dc7d88ee6bd8ea98fe"
+  },
+  "pamPort": {
+    "text": "此協定的目標上的 TCP 連接埠。常見預設值：SSH 22、RDP 3389、VNC 5900。",
+    "source_sha256": "ac79ece36bf1979418177587756d993c6dae0b25dac641125ab1f9251621d8bc"
+  },
+  "pamSessionAccount": {
+    "text": "會話開啟時使用的作業系統帳戶名稱。對於專用 CUI 席位，這通常是分配的使用者的使用者名稱。",
+    "source_sha256": "f5b0adf0cef267e77b1a610a41b68e66542e714cf11a0a75467320cbc8e60dd6"
+  },
+  "pamCredential": {
+    "text": "哪個保管或託管憑證提供此 Open 的密碼或金鑰。",
+    "source_sha256": "69bc7b08c02ad5fe7f1f540252620c9dcaf4d94a0bb7d384942105611ab83dc1"
+  },
+  "myWorkstationConnect": {
+    "text": "使用配置的協定和帳戶開啟與此分配的工作站的互動式會話。",
+    "source_sha256": "49f1f9d62f5ff95d4ecb07435afcbffd327bee264094312599c6a572ab3cc177"
+  },
+  "myWorkstationPower": {
+    "text": "當電源控制可用於此席位時啟動或停止工作站 VM 或容器。",
+    "source_sha256": "13a00a13d58c3f42da5022cd163e4f5e15ee38b0b5804f82ba76eb972083003a"
+  },
+  "myWorkstationKeepAwakeReason": {
+    "text": "為長時間任務暫停自動睡眠的簡單語言原因。已審核；切勿輸入密碼或令牌。",
+    "source_sha256": "0ad7b34e309ade6c66d47c7d2a7c06195152541c655cb510758a72306c0570df"
+  },
+  "myWorkstationOpenSession": {
+    "text": "開啟 Connect 已授權的會話的記錄會話檢視器。",
+    "source_sha256": "755244d114f70220955b152ea4bf9706b69624a559b1abde9040d5ede6f13839"
+  },
+  "jumpFleetHost": {
+    "text": "代理互動會話的跳轉/會話容量主機。健康狀況和負載影響打開成功。",
+    "source_sha256": "673eb4f1a49fb256076beadfbf079e05cecb541a65371cfe7255f11772919765"
+  },
+  "jumpMaxSessions": {
+    "text": "在佇列平衡器優先選擇另一個節點之前，此容量主機應接受的最大同時會話數。",
+    "source_sha256": "dbb9335c286ebd890dad762980a6c3cf826f7211a33f62b9cbce65fb4e631f42"
+  },
+  "jumpNodeDisplayName": {
+    "text": "艦隊清單中此跳轉/容量節點的操作員標籤。",
+    "source_sha256": "8616d179acd30b05f51886307a29b333220f9c040d337e36a568b7be4d1b08e5"
+  },
+  "jumpNodeAddress": {
+    "text": "網路位址營運商和控制平面用於到達該容量主機。",
+    "source_sha256": "947dbbf55b6e2c7fab920c2976ed7ed8288b1f4dfde60a7f49561853938da896"
+  },
+  "jumpNodeWeight": {
+    "text": "此節點的相對負載平衡權重。健康時，較高的值會吸引更多新會話。",
+    "source_sha256": "28ff301a5c20f89d877e9b6f15d4ad285a05c091be63ef789705557f9a08d39a"
+  },
+  "jumpDrainMode": {
+    "text": "When draining, this node accepts no new sessions so existing ones can finish before maintenance.",
+    "source_sha256": "bf21aa1fc827d923711106376eae02bb2ecbfe30151a17db7b82117bfa704436"
+  },
+  "jumpAcceptingSessions": {
+    "text": "選取後，該節點接受新的互動式會話。",
+    "source_sha256": "c19cd4115869d0099b13c0a70599a082af5d7b8840145571badc37828e5db767"
+  },
+  "assignmentPrincipal": {
+    "text": "接收此工作站席位的登入校長。分配綁定人員記錄，而不是共享令牌。",
+    "source_sha256": "29d6e90a6ef077b4c910a3a31437cdaee4f39299233473e04107edc8b8016cad"
+  },
+  "assignmentWorkstation": {
+    "text": "指派給主體以供獨佔或共用使用的工作站或連結目標。",
+    "source_sha256": "c28836b8e58173d47b1d6fd14d4f813e2ce35c9d46ede2ad71db319306977ad6"
+  },
+  "assignmentNotes": {
+    "text": "關於此任務的可選操作員註釋（機票、座位用途）。這不是秘密。",
+    "source_sha256": "ef152b95acaf68d31fca3e2127ce51b9b2ef2c1b923f817cb87c88ae8d3829df"
+  },
+  "pamDenyReason": {
+    "text": "拒絕批准時所需的理由。儲存在稽核追蹤中，並在策略允許時向請求者顯示。",
+    "source_sha256": "dac1c586c679b94f50950216e129f18b00414b234379b8b35ec799d7503f876b"
+  },
+  "pamAccessJustification": {
+    "text": "為什麼您需要此存取權限。批准者和審核者閱讀本文；保持具體且非秘密。",
+    "source_sha256": "e49cbe77b75c802a8bd6ca373903139c3b4ce007ac1443ab7b0130cfb9c726b6"
+  },
+  "pamAccessDuration": {
+    "text": "批准的訪問應持續多長時間。較短的窗戶減少了站立的特權。",
+    "source_sha256": "a2b5886127a332315c3aaa1f159c1c6f229520b69564d3bcbc7be6cc6580cd47"
+  },
+  "pamAccessTicket": {
+    "text": "此存取請求的可選 ITSM 或票證 ID。幫助審核者和審核者相互關聯。",
+    "source_sha256": "a5c214360a5bf66b3252093d2bc3065c66090e02a656876097ffa9f428d16df2"
+  },
+  "pamCredentialConfirm": {
+    "text": "在靜態密封之前重新輸入相同的密碼進行確認。",
+    "source_sha256": "4f4f2b5754f699e2f4b2818e27ca8b68f7583254d15c405234c5f09de874ee1c"
+  },
+  "pamRecordingMode": {
+    "text": "代理程式記錄容量主機上的每個互動會話。目標本地需要端點證明。",
+    "source_sha256": "dc7562dadd18fd4ec1cb6da4632b7e701f8a2d2993e9d479bc5b136f8f46bcda"
+  },
+  "pamClipboardPolicy": {
+    "text": "在管理員配置的 I/O 上限內，允許此即時會話使用剪貼簿方向。",
+    "source_sha256": "f1e568d840ba72c3c0f89777ae7035e6eab6330d81b6490f060e6a0d30b98fe0"
+  },
+  "pamFileTransferPolicy": {
+    "text": "在管理員配置的 I/O 上限內允許此即時會話的檔案傳輸方向。",
+    "source_sha256": "ad6ac2fa0d2efbc5fba736586d24e9131b9368bcfdbef2a59f12db891f936c2c"
+  },
+  "pamKeyboardLayout": {
+    "text": "傳送到遠端會話以進行鍵入輸入的鍵盤佈局。",
+    "source_sha256": "c49bfc508d7edc408b02ab1826b7f46a1a49d098dbafb3e2ca9772f44914315b"
+  },
+  "pamSessionChatMessage": {
+    "text": "發送給此即時會話聊天中其他參與者的消息。",
+    "source_sha256": "9b0c211130e37bd01f8954a98a7eca34d89527ff1132afe2a24908b10b51e668"
+  },
+  "pamMonitorPicker": {
+    "text": "當會話有多個顯示器時顯示哪個遠端顯示器。",
+    "source_sha256": "64a1b9c4da1c06b2464728402159871b866fbe4654109cf5cd930eb689984abd"
+  },
+  "pamCredentialUsername": {
+    "text": "與此連接憑證一起儲存的使用者名稱。會話開啟時使用。",
+    "source_sha256": "6a4b577df6aa7022202f0d35c1772c04860d7f3e2d555bfe67946c1685c4819b"
+  },
+  "pamCredentialSecret": {
+    "text": "此憑證的密碼或私鑰資料。密封保存；揭露內容均經過審計。",
+    "source_sha256": "f6300d7da4a5f04827f470c4e2ca629e65333e76eced9eb85f49adb15d6f074b"
+  },
+  "remoteAccessSearch": {
+    "text": "Filters connection targets by name or host so you can open the one you need.",
+    "source_sha256": "b56cab03417d836ef622ba33fbcc5f7466ae565f900d4af670d0bf425814b792"
+  },
+  "commandSetName": {
+    "text": "該命令治理集的名稱。將集指派給目標或主體時顯示。",
+    "source_sha256": "68372e0b765e9f117c6b46d6e646f1de0a5f63a64e0a8a8f59d7367fa08d54d5"
+  },
+  "commandSetDescription": {
+    "text": "此指令集的用途（基線 SSH 允許清單、OT 拒絕清單等）。",
+    "source_sha256": "8df094a0f23105b5218dba698d22cece0cac7537c5a1b565393c85f6193a70bf"
+  },
+  "commandRulePattern": {
+    "text": "與提交的命令匹配的模式。精確或全域規則取決於設定模式。",
+    "source_sha256": "1324aaa6b3d8f8c7cab532eeb7984e1d234888736bdc7604b403ccd329dfad87"
+  },
+  "commandRuleExplanation": {
+    "text": "此規則允許或阻止命令的簡單語言原因。向操作員展示並進行審核。",
+    "source_sha256": "daf6969ec008d832956bd27e4ffb6d634ecc86e1e9ca5b990a0e495e0f5ebb4c"
+  },
+  "commandDefaultAction": {
+    "text": "當沒有規則匹配時會發生什麼：拒絕（允許清單）或允許（阻止清單）。拒絕是最低特權。",
+    "source_sha256": "064e0fc1c22e182d678f8e3d92271dd8f007d6d3ef86b28b84dddb972c3ba59f"
+  },
+  "commandRuleAction": {
+    "text": "此規則是否允許或拒絕符合命令。當規則發生衝突時，否認總是勝利。",
+    "source_sha256": "10433668bdae83c95f0356d5e5ab4d8d62ab3b66d27638eab7521bcfbce64847"
+  },
+  "commandRuleRisk": {
+    "text": "此規則的可選風險標籤（低/中/高）。幫助操作員檢查設備。",
+    "source_sha256": "8b0f0702069a7232bca1b7820e4379f13a70a34b3e92894e6b889c6e19b5ed48"
+  },
+  "commandRuleOverrideable": {
+    "text": "啟用後，批准的命令權限可能會覆蓋匹配命令的拒絕。",
+    "source_sha256": "b9611f00063744cda7473bc5702578eaad5be5febf2cf98f739423e6d380508f"
+  },
+  "commandAssignmentSet": {
+    "text": "命令治理設定為附加。其允許和拒絕模式適用於所選範圍。",
+    "source_sha256": "f4eeb4d8914dd8e3c6840dbb0aaf945074a73e6c36e69f637b3ef0f839ee108a"
+  },
+  "commandAssignmentScope": {
+    "text": "全域適用於所有連接點；單點範圍將集合限制為單一目標。",
+    "source_sha256": "8a09e6cf45fbde378463ecff7c379bc6bc6348fa7333740f01c575a8be972d0a"
+  },
+  "commandEntitlementSubjectKind": {
+    "text": "此附加命令權限是否授予一個委託人或 IAM 角色。",
+    "source_sha256": "c98b7fd041b35333691d1e99fd8d76efc2939500f6e1a12117b6958a2cf773c7"
+  },
+  "commandEntitlementPrincipal": {
+    "text": "獲得額外命令權利的校長。",
+    "source_sha256": "3d498104015f0062b45ba688f397230e319fed249dba66f4bdac7d2fbeaa15f4"
+  },
+  "commandEntitlementRole": {
+    "text": "接收所有成員的附加命令權利的 IAM 角色。",
+    "source_sha256": "e7c0f6016141e6b2df1c10c4d0dbc9dc6332351f9575e86dab515337d3da4b94"
+  },
+  "commandEntitlementScope": {
+    "text": "權利是否適用於所有連接點或一個命名點。",
+    "source_sha256": "e1aac6d51e6d85035c86065308115d42f396b933157197c9d2d725efa37a9fdf"
+  },
+  "commandEntitlementConnectionPoint": {
+    "text": "此權利生效的連線點。",
+    "source_sha256": "4ea5e9fa771a149e0487dfd7b8d0b4679f8647390a8655d1240768ba619b8ec2"
+  },
+  "commandEntitlementCommandSet": {
+    "text": "其允許模式作為此權利下的附加權限被授予的命令集。",
+    "source_sha256": "b8533063ec35c9e7bb1096aa37bfb6c2ac088246b39bf8df1a367462e3ab0fca"
+  },
+  "commandEntitlementAccessKind": {
+    "text": "站立保持活力； JIT 需要經批准的有時限的補助金。",
+    "source_sha256": "6cb758e0d52223f628d71d15ba2995ff5423eff6c15a362dba54ef6cfb4cecc4"
+  },
+  "commandEntitlementMaxDuration": {
+    "text": "此權利下 JIT 授權的最長生命週期（以秒為單位）。",
+    "source_sha256": "16fd9e68795c0e1691d45e0a527598df485a609e5c1a8cafe5a76d0961d48db9"
+  },
+  "commandEntitlementNotes": {
+    "text": "關於為什麼存在此權利的可選操作員註釋。這不是秘密。",
+    "source_sha256": "73d9c6ca63f04cf1f3a02c801ad3fcc7a63fb99b88ac210e8a9630bd5f4802f5"
+  },
+  "commandPreviewRaw": {
+    "text": "命令文本進行規範化和評估。伺服器永遠不會從此預覽中執行它。",
+    "source_sha256": "dd67b70387d29fde15f5c532391fe3943f6d5ad252e3420d5a5bc78aa33d8f2a"
+  },
+  "commandPreviewTarget": {
+    "text": "決定允許或拒絕預覽時使用的可選連接點。",
+    "source_sha256": "54eea9e312ad763f880e343b94e9002307fa204393d7008deb172a2a0dd7bc07"
+  },
+  "commandAssignmentTarget": {
+    "text": "此命令集適用的目標系統、主體或群組。",
+    "source_sha256": "6e1fd57d0d15debebfc8bdfac9f5a10ccf6dd51266bde53705dac285124a72fd"
+  },
+  "jumpEnrollmentTtl": {
+    "text": "此一次性 Jump 註冊代碼保持有效的小時數 (1–720)。越短越安全。",
+    "source_sha256": "34b29cb4e0538b149bf380631868d683a7277e2f3b0dc0073ce0f66d6d757df2"
+  },
+  "jumpEnrollmentDescription": {
+    "text": "可選註釋，以便您可以在審核記錄中區分註冊代碼。",
+    "source_sha256": "0dbf91c23e9d273fab88b9aff68d4bdfc994d6939398645b626e840d1c9177a6"
+  },
+  "jumpEnrollmentPool": {
+    "text": "用於加入主機的選用容量池。留空以使用預設池。",
+    "source_sha256": "a481b055868357f77352f94281a1d6d5adbc12497719ffea76571e3c53cada0a"
+  },
+  "jumpEnrollmentCode": {
+    "text": "一次性註冊明文。立即複製－無法再次尋找。",
+    "source_sha256": "0c7baa61387f28df1eaec3165c3a985bb6f3523898b3afd612245dab976b6deb"
+  },
+  "jumpBaseUrl": {
+    "text": "外部跳轉接受 URL（例如 http://10.55.0.12:9443）。 AIC 伺服器本地容量留空。",
+    "source_sha256": "578e8ba829d4100c2a55f54d8195c9521c6a510111f1d1c6777059ecab01b9fe"
+  },
+  "remoteAccessFavoritesOnly": {
+    "text": "僅顯示您在此瀏覽器中標記為收藏夾的系統。",
+    "source_sha256": "ab93d6fbe5cee48be6488a7a6558683dcee4028a936b2b053cd81c8524464a49"
+  },
+  "searchFilter": {
+    "text": "在您鍵入時過濾列表。匹配可見標籤和常用標識符；清除以顯示所有行。",
+    "source_sha256": "ef7cedd6dc3cd8c43225f946b7dd3f49ece3a6610951d1ad754c979cb0af3b41"
+  },
+  "quickFilter": {
+    "text": "該網格的快速過濾器。與搜尋相同：縮小可見行而不更改儲存的資料。",
+    "source_sha256": "9f42e4e3c75ab4d7e8903d3131693ceaded1fbb10ebc0a1596a1357817f29d67"
+  },
+  "genericFormField": {
+    "text": "輸入該欄位的值。將滑鼠懸停或聚焦以查看標籤和周圍部分的上下文。",
+    "source_sha256": "b0afe19f9653ab4db820491afb0a31a9ba122196dec7dffc09cdb39e75d671e9"
+  },
+  "genericCheckbox": {
+    "text": "為目前表單開啟或關閉此選項。",
+    "source_sha256": "cb2385efc470acf6a9713f22f3a0f0208405992164df61d05ac9f37e0304258e"
+  },
+  "genericToggle": {
+    "text": "啟用或停用此功能。附近的標籤描述了效果。",
+    "source_sha256": "3f9767bd662d3c0c86a45785f11523492610085cd447bd8b53c3711bcf444880"
+  },
+  "genericSelect": {
+    "text": "從清單中為此設定選擇一個選項。",
+    "source_sha256": "2bb194d13cf8f6c673dc16de34eb38228c8b66416183f278c6819e6c0b2be951"
+  },
+  "emailGraphTenantId": {
+    "text": "用於具有現代身份驗證的 Graph sendMail 的 Microsoft Entra (Azure AD) 租用戶 ID。",
+    "source_sha256": "38a94f06e2de5534e4613b05cbdf0497e9bdf3198b0151447f6cce516e2b5e85"
+  },
+  "emailGraphClientId": {
+    "text": "允許將郵件作為寄件者信箱傳送的應用程式註冊用戶端 ID。",
+    "source_sha256": "7f1af8ceb20439cbf5dad126e9bc00cbac20b8691406390c1d07d5fa70e8e761"
+  },
+  "emailGraphClientSecret": {
+    "text": "Graph 應用程式的用戶端金鑰。作為秘密存儲；輸入新值只是為了替換它。",
+    "source_sha256": "1128458770f09e5c323978ebb058158ab3abc92cf8a67d71e412899aa3f5b3a7"
+  },
+  "emailGraphFrom": {
+    "text": "Graph users/{UPN}/sendMail 路徑中使用的郵箱 UPN。",
+    "source_sha256": "db800ad0f4297b45f453e74df1e614daad986e70aa553119e14ad8c381145f5a"
+  },
+  "emailApiKey": {
+    "text": "該電子郵件提供者的 API 金鑰。作為秘密存放；切勿貼在門票中。",
+    "source_sha256": "9fb08135ba3ff2ab247ee317a54c931c64f9d4372d24db0920660580a81bcaa6"
+  },
+  "emailFromAddress": {
+    "text": "提供者將在出站訊息上使用的寄件者地址。",
+    "source_sha256": "f0cfc2be30ef5d781123079aae9379cd6d61f6885cd7d0c5ce1955ccdeef6f3e"
+  },
+  "emailMailgunDomain": {
+    "text": "為此組織配置的 Mailgun 傳送域。",
+    "source_sha256": "51cbcf51b86c355dfcfae7a9b64487ca6706d3578ee2f6d18f96bc77d7cbb84f"
+  },
+  "emailMailgunBase": {
+    "text": "Mailgun API 基本 URL（美國或歐盟）。使用與您的 Mailgun 帳戶相符的區域。",
+    "source_sha256": "653d697facde084575187a8ac982643c3eedaa676c8a402f30f7f7202286d6e6"
+  },
+  "emailSmtpHost": {
+    "text": "接受該組織的出站郵件的 SMTP 伺服器主機名稱。",
+    "source_sha256": "402efb05f4f34a75a5dee828e079972ccc06420cd0f46fc3186cfe55cbe1414f"
+  },
+  "emailSmtpPort": {
+    "text": "SMTP 的 TCP 連接埠（常用值：587 STARTTLS、465 TLS、25 中繼）。",
+    "source_sha256": "36a1a189957c0a654f115e391c7fbbe9360a351fa329aab6c4ee8ca4a1aa8a5a"
+  },
+  "emailSubject": {
+    "text": "此測試或加密訊息的主題行。",
+    "source_sha256": "fe8262ce95dff1899c28680b29a11a217c5f1af83b3bb2fe04c01b2f987e1042"
+  },
+  "emailCuiPlaintext": {
+    "text": "CUI 明文只放置在加密附件中，而不是放置在明文正文中。",
+    "source_sha256": "904c8e54f076fe40bb4fc306f8ebfbdc70ac43236db71e6b4e309563d92bbe53"
+  },
+  "emailPassphrase": {
+    "text": "包裝加密 CUI 負載的密碼短語。與接收者進行帶外共享。",
+    "source_sha256": "a464cb8d6ef1bed4504e59968c1edd3499221a822b34364794146b6875910be5"
+  },
+  "emailRecipientCert": {
+    "text": "用於加密此訊息的 PEM 形式的收件者 S/MIME 憑證。",
+    "source_sha256": "300e343e9cd332af74aa4a8ef0a15402bf7b1543f19b8756c0561944e2ff2e05"
+  },
+  "emailRecipientPgp": {
+    "text": "Recipient OpenPGP public key used to encrypt this message.",
+    "source_sha256": "e66e86ddb0caef25c7bcbea879b50e97a18d408c8507893d4458bc5122afb861"
+  },
+  "messagingProbeLog": {
+    "text": "上次連線或身份驗證探測的唯讀步驟日誌。秘密永遠不會被顯露出來。",
+    "source_sha256": "6477266304a1846d73860ea1928b514d960570d32700b23903f318685a1072c0"
+  },
+  "smsProvider": {
+    "text": "使用哪種 SMS 發送系統（Twilio、MessageBird、Vonage、Plivo、Telnyx 或 SNS）。",
+    "source_sha256": "fbb59b097afb994b89dc1bc747fd15e5c151794d7a070a099929843c25ab1f01"
+  },
+  "smsTwilioSid": {
+    "text": "此訊息傳遞項目的 Twilio 帳戶 SID。",
+    "source_sha256": "76d78906b381b3a0f16b2aa8ad308bebcc405947b1d6d5b899dffc6bd686d523"
+  },
+  "smsTwilioApiKeySid": {
+    "text": "Twilio API 金鑰 SID（對於最低權限而言，優於身份驗證令牌）。",
+    "source_sha256": "4ba926399cc23b521854d05210da344c872e40a384621cde0752ec73abfe0942"
+  },
+  "smsTwilioToken": {
+    "text": "Twilio auth token. Optional when an API Key SID and secret are set.",
+    "source_sha256": "5ac0f594dd4764f644f693beee1d7b6360038d5cf2905324b73ff425415cfe2f"
+  },
+  "smsMessagebirdApiKey": {
+    "text": "MessageBird AccessKey 用於驗證 API 呼叫。",
+    "source_sha256": "9a3fc433bb754d25932632f1a7763bf077370973da3421703919e21eb4f0e3d8"
+  },
+  "smsMessagebirdWorkspace": {
+    "text": "MessageBird Channels API 工作區 ID。",
+    "source_sha256": "dce8403611dba11d9f7d31f7f78cbb3b8aa74fce66c85a5345788eee52489b88"
+  },
+  "smsMessagebirdChannel": {
+    "text": "MessageBird Channels API 頻道 ID 用於外部 SMS。",
+    "source_sha256": "133600c04f31cc6a90a730b1e80511762aa2979857bef29ff0bc1d1593586a7a"
+  },
+  "smsVonageSecret": {
+    "text": "Vonage (Nexmo) API 金鑰與 API 金鑰配對。",
+    "source_sha256": "dd62fb912a79eedf72ce756d011de510f6ba9a5218bf8355b9611549eadaa00e"
+  },
+  "smsPlivoAuthId": {
+    "text": "此帳戶的 Plivo 驗證 ID。",
+    "source_sha256": "5b6ed7fb7dd735e5da7c506c367e3c8705bd387f05f04d480efa3070da8c8863"
+  },
+  "smsPlivoToken": {
+    "text": "Plivo 驗證令牌。作為秘密存儲。",
+    "source_sha256": "ff3eff9f6331f67397030557832362594261cf9a374ba09d892e5c5618db2c8d"
+  },
+  "smsTelnyxProfile": {
+    "text": "用於路由出站 SMS 的可選 Telnyx 訊息傳遞設定檔 ID。",
+    "source_sha256": "9ba57b315ed24f891cdb1a8a3c5b3cf297c09f971e5b7079326badd46cf2a8c8"
+  },
+  "smsSnsSecret": {
+    "text": "AWS SNS 秘密存取金鑰。作為秘密儲存；與存取密鑰 ID 配對。",
+    "source_sha256": "d44039514db28265c632088697e6fb2099d65db03b803d826d1e7f7b3f1e62ec"
+  },
+  "elevationOffer": {
+    "text": "為此端點建立程式碼時所使用的提升優惠（頻道和策略套件）。",
+    "source_sha256": "cfb276cab824921da50eeaa9c9781f68dcb6a2a879e4fec5dbb523cc4f5f2082"
+  },
+  "elevationChallengeId": {
+    "text": "代理傳回的質詢標識符。貼上它以計算響應。",
+    "source_sha256": "4c0781f2b6f37469f739db850d23d44c6045c48a3990df8595f9619b3b266fe6"
+  },
+  "elevationResponse": {
+    "text": "計算出的質詢回應貼上回高程客戶端。",
+    "source_sha256": "bd1995fc266c0d87a07415dcb783200223e6ea39c39adb3a6fc39a6d7e0ca094"
+  },
+  "auditEngagementName": {
+    "text": "此審計業務的顯示名稱。顯示在清單和活頁夾中。",
+    "source_sha256": "2b3eaba6a71126c12f247bfa64bc24c0d26bf30ca2a8ceb9432937d1ea4b0af6"
+  },
+  "auditFramework": {
+    "text": "此參與涵蓋的框架或評估部分（例如 CMMC 2 級）。",
+    "source_sha256": "13ca7068de62c605864f328bbb43bab7632a49ceceee1fba046e35a8f9fc7b7a"
+  },
+  "auditEngagementType": {
+    "text": "無論這是內部、客戶或外部公司的參與。",
+    "source_sha256": "1e83f747d891cd4ec397354e2615b84e04e08c422c32dd0447b7571d30854b25"
+  },
+  "auditFirm": {
+    "text": "與此參與相關的評估公司記錄。",
+    "source_sha256": "64b5ac7cc8600019cc39835d841151ebc08a2ed64e7c09aa63e78fb9d2c0de19"
+  },
+  "auditFirmName": {
+    "text": "要建立和附加的新評估公司的名稱。",
+    "source_sha256": "90196595318a6fc1c98d1e5b57fc75c82e4c46a84fe210b1acc69182cfc8f275"
+  },
+  "auditWindowStart": {
+    "text": "評估窗口的第一天（含）。",
+    "source_sha256": "63474bda8b414b12d11a456423ebee41bb5ef7c8b23139cd55d8253a9b8e8ee0"
+  },
+  "auditWindowEnd": {
+    "text": "Last day of the assessment window (inclusive).",
+    "source_sha256": "6b47b301acd5e22f86b4c0c242c59c0853bb3d3671afb1c6d5fff8fe690237d3"
+  },
+  "auditRequestUniqueId": {
+    "text": "此證據請求的穩定唯一 ID（通常來自評估者追蹤器）。",
+    "source_sha256": "e75543f6c0be0a8aa46832c493d63e49e5359ba774fd418726f9d8aaecc7f0a7"
+  },
+  "auditRequestDescription": {
+    "text": "評估員要求什麼證據或工件。",
+    "source_sha256": "3054a896dee29e8548bc3d02d860ac67847ad1bff16088e6abdb564354f20254"
+  },
+  "auditOwnerPrincipal": {
+    "text": "負責滿足此請求的主體 UUID。",
+    "source_sha256": "34f31d0c0957448e95d318f243f59a8aff73b4f64e36b4950ad20a95548e2f9c"
+  },
+  "auditFlagReason": {
+    "text": "為什麼此請求被標記為引起注意。儲存在審計追蹤中。",
+    "source_sha256": "2fcfd96f4c69266e2bce49e15314bb95f838f06d66395b93dd7a59f3c14dcfe9"
+  },
+  "auditEvidenceText": {
+    "text": "此請求所附的觀察或證據敘述。",
+    "source_sha256": "049bbdf6eae396f13a009b83c02217edd5146356242a245b60a29edca65726ac"
+  },
+  "auditCitationKind": {
+    "text": "引文類型（控制、程序、發現或其他來源）。",
+    "source_sha256": "dbd2dc04c8ad3b51c8747881d5fe64731f953ed7117ebfda3ff7ac99ab232059"
+  },
+  "auditCitationSource": {
+    "text": "引用來源的識別碼（控制 ID、文件 ID 或票證）。",
+    "source_sha256": "5e6998895d1eac2876079ca1be3863403fe75900fd8b0dbbcc5f827d9624fb8f"
+  },
+  "auditCitationSummary": {
+    "text": "在引用時捕獲的凍結觀察文本。",
+    "source_sha256": "c123443d7a2feac4a725799cea22ad79ea38bd0c0bc8125c41705a49a88f5d78"
+  },
+  "auditCommentThread": {
+    "text": "哪個討論線程收到此評論。",
+    "source_sha256": "5776b159f501a7541767da9c20fa615469dfe72e654267245c2ee82ce424549c"
+  },
+  "auditCommentBody": {
+    "text": "發佈到所選線程的評論文字。對參與參與者可見。",
+    "source_sha256": "0287dc5f69754b2d25da66b4194c0803806428aa740c2d18a9e72249cc51aca2"
+  },
+  "riskTitle": {
+    "text": "此風險的簡稱。顯示在登記冊和報表中。",
+    "source_sha256": "7961ddc885daa11a761d91461bf10d070b4aafcbb20a8ffcd27beebfdc50e8b4"
+  },
+  "riskCategory": {
+    "text": "用於對相關風險進行分組的類別（例如存取、變更、供應商）。",
+    "source_sha256": "9bd3500208c828042439edd8cbb2f45f7a6b6de48f9dbe490c385af948fbe7b2"
+  },
+  "riskLikelihood": {
+    "text": "治療前的固有可能性（1-5 或您的程序使用的量表）。",
+    "source_sha256": "e6d9c29ee5140437679dc241e7516c10c8c90c9021cf5450dd6f0d3289f81593"
+  },
+  "riskImpact": {
+    "text": "治療前的固有影響（1-5 或您的計劃使用的等級）。",
+    "source_sha256": "0aa3d03d73207c357e31b5de5e205dc2cbe699a313f4266654ee346151214752"
+  },
+  "riskTreatment": {
+    "text": "治療決定（緩解、接受、轉移、避免）。",
+    "source_sha256": "2853b30b1c90249ae54492a4e5ec82e2d4ff0352570cebb4de4c9773e8335e9b"
+  },
+  "riskTreatmentSummary": {
+    "text": "治療計劃和所有者的簡單語言摘要。",
+    "source_sha256": "06b93949456352ecb2d2a7dd8ad85f2e937cc8c62381a5858ab1811cee344681"
+  },
+  "riskResidualLikelihood": {
+    "text": "記錄的治療後剩餘的可能性。",
+    "source_sha256": "15bddef00a1085d2919c076e9da6fb10ae2863e06ffb1ac4f9022d6384d8fdc6"
+  },
+  "riskResidualImpact": {
+    "text": "記錄處理後剩餘的影響。",
+    "source_sha256": "8dbbd05570f2173b36a2e751740cbff3eb41331c828655b24a5486ad6e897e3c"
+  },
+  "riskNextReview": {
+    "text": "下一次正式風險審查的截止日期。",
+    "source_sha256": "b9ce9ed3e89984af2a459b6c4a23b9086f0612e711b3400c34ad24fdb0464eed"
+  },
+  "riskRationale": {
+    "text": "為什麼這個風險被接受、關閉或重新開放。審計追蹤所需。",
+    "source_sha256": "8be514fa04f1f6154fcbe1478b52cb1dc06ec3850e5e92d02c78055f6e5f634c"
+  },
+  "riskReopenStatus": {
+    "text": "重新開啟已關閉的風險時指派的狀態。",
+    "source_sha256": "53435314fc5c17f26b27805db6222efe8d4a1bf3bad7e078f894f5309696a4f3"
+  },
+  "riskControlRef": {
+    "text": "控製或保障與此風險相關的參考。",
+    "source_sha256": "d0274a05f227db3f128f1aac005c23037d575714c5ca19033069e2bdad2d9476"
+  },
+  "riskPoamId": {
+    "text": "與此風險相關的 POA&M 項目識別碼。",
+    "source_sha256": "20511cb42a17370a19452ef0ee48429f3c378d18eeda148f7c738c6215060cfa"
+  },
+  "eventsWebhookUrl": {
+    "text": "接收事件 Webhook 的 HTTPS URL。必須可以從此伺服器存取。",
+    "source_sha256": "334543bc3a255d3a58fe547d61e137e8c8cf9ccb963eccc5322aa3afaf2caad7"
+  },
+  "eventsBasicUser": {
+    "text": "對 Webhook 目標進行 HTTP 基本驗證的使用者名稱。",
+    "source_sha256": "4219aa93407bb70c741de3bd7cd41036d1ae7070d59100417bc20a3c47ce6631"
+  },
+  "eventsDdTags": {
+    "text": "Datadog ddtags 字串附加到轉送的事件。",
+    "source_sha256": "0c6beab3ad324f5bbcd5094398099fa4849f8ba9c3f1445aecf1d696aec80342"
+  },
+  "eventsDestName": {
+    "text": "此 HTTP 事件目標的運算子標籤。",
+    "source_sha256": "b5eb46ce73f64b32d5d76cfefdb24517a8e88080bf8461416a326d17744ea6dd"
+  },
+  "eventsTypeFilter": {
+    "text": "要轉發的以逗號分隔的事件類型名稱。留空以使用預設路由。",
+    "source_sha256": "35c615f5d719cef81517b2dff13d1f92671d867fafc5a6be01b7890d6a190ffb"
+  },
+  "knownDefaultFilterVendor": {
+    "text": "按供應商名稱過濾目錄行。",
+    "source_sha256": "d134e6db43f9b10f69a3512aa09d2ba318d0384bde5cb2a5dfc34cd7468ad63d"
+  },
+  "knownDefaultFilterPlatform": {
+    "text": "按平台或作業系統系列過濾目錄行。",
+    "source_sha256": "1040bd2be123cb0484f2a9991b99d3476f0ddf634c8cb02c285997fd3d40030e"
+  },
+  "knownDefaultSearchField": {
+    "text": "將目錄搜尋限制為一列（供應商、平台、作業系統、使用者名稱、發佈的密碼或服務）。",
+    "source_sha256": "1f4ac3d1d97a6940ccbc69ecd644d94bf72af8861fd6e768d4aa23ae1f955710"
+  },
+  "knownDefaultSearchQuery": {
+    "text": "套用於所選目錄欄位的搜尋文字。留空以列出每一行。",
+    "source_sha256": "4ec3f229dd270bf7ee13520bf7573d083d43dc7a9677f3388324a653a03868dc"
+  },
+  "knownDefaultMaskPasswords": {
+    "text": "啟用後，隱藏網格中已發布的工廠密碼。關閉以確認記錄的預設值。",
+    "source_sha256": "d71b449d8cbad53f8ae82ef5bb634825fe16106f2801d30dd144e6b21e09e6e9"
+  },
+  "knownDefaultCustomerCsv": {
+    "text": "客戶提供的要匯入的已知預設憑證行的 CSV。",
+    "source_sha256": "3a9c7592c38c22612d607ad68685e8b6736adac0fb1863741c2b4c5c8bc00333"
+  },
+  "knownDefaultGenPlatform": {
+    "text": "產生輪換密碼範例時使用的平台範例。",
+    "source_sha256": "c52879a4ca2116b2dc44c1c077ca23dd967ebce66aa8ccd3e7389535c4757e4e"
+  },
+  "knownDefaultProduct": {
+    "text": "此已知預設憑證行的產品或裝置名稱。",
+    "source_sha256": "1a4cd3b00ce4de314a2db0ca14ba823ed934fd748cf9e5e526364e9843c891d4"
+  },
+  "knownDefaultUsername": {
+    "text": "該產品通常附帶預設用戶名。",
+    "source_sha256": "bc0275e5095b95527e59001135807359cdc71fb3f804df7e64007d6a7f8302f7"
+  },
+  "knownDefaultPlatformPattern": {
+    "text": "此行適用於平台系列（linux、windows、network、bmc、ot_plc 或 *）。",
+    "source_sha256": "cfd88f1caf5af5f18879986c1998da491f81cb5c1c7eccf66c32ac2b872d5ff2"
+  },
+  "knownDefaultVendor": {
+    "text": "此出廠預設行的設備或軟體供應商名稱。",
+    "source_sha256": "de3498b40598a3889f76a4877cbbf0a8573c7e16d54cb06bcb3caa072a4b4d28"
+  },
+  "knownDefaultPublishedPassword": {
+    "text": "文件中的公共供應商預設密碼 - 不是即時端點機密。",
+    "source_sha256": "678328a2b51141f1be351a21ae44be0147369b11948a080a96fca2b898ea6513"
+  },
+  "knownDefaultBannerMatchHint": {
+    "text": "橫幅標記由 | 分隔用於匹配掃描簽章。",
+    "source_sha256": "99892d717603d82df3f40cc15ff72b65c89b4a7bbe7380bb902271157e283c7d"
+  },
+  "knownDefaultNotes": {
+    "text": "操作員關於此目錄行的註解。不作為秘密發送到端點。",
+    "source_sha256": "cab616d823db80655a172b1461d0103919938c14e0eb73004390444caf730e40"
+  },
+  "knownDefaultEnabled": {
+    "text": "關閉時，掃描器會忽略此目錄行。",
+    "source_sha256": "953b4f1cff392847e454c879dbbfa504a125f2517e781084155abc64fdd205ec"
+  },
+  "knownDefaultReloadSource": {
+    "text": "Reloads bundled dictionary rows from the shipped source file on this server.",
+    "source_sha256": "fd67e63a669d34b56c55e69cdf6a090fa4e4833a001fa3fe201209693647ee5f"
+  },
+  "knownDefaultFetchLatest": {
+    "text": "下載最新的可再發行來源並將行合併到目錄中。",
+    "source_sha256": "0785c7e3fa193c2eeee426653ce233d862c30f272dd6bf4a9064ed0f083bd1cd"
+  },
+  "settingsMitmProxyPort": {
+    "text": "此伺服器上可選診斷 MITM 代理程式的 TCP 連接埠。",
+    "source_sha256": "59c6bce8026492414d637d8b36feca5a074b8ce22ed875fca4bb66331a3974e7"
+  },
+  "settingsPreferredIdp": {
+    "text": "此瀏覽器在登入頁面上首選的身分提供者（按操作員儲存）。",
+    "source_sha256": "cdeca4554ed17e22b9cb42ab9b1b09b2d5d6cc99417c0d1cca77040affa5bb0a"
+  },
+  "otScanNetworks": {
+    "text": "在發現期間要掃描的 IPv4 網路。每行輸入一個 CIDR。第一個網路用於下一次運行。",
+    "source_sha256": "5834f4649a122340da8fe196ddd7122f64e6074c366edda5a68d92e020cc329a"
+  },
+  "otDiscoveryInterval": {
+    "text": "啟用計劃時自動發現掃描之間的分鐘數。",
+    "source_sha256": "b056281184da2820a3170c4a992c6df7def9a5740c824710f1d37873b8131e9f"
+  },
+  "otRotateTarget": {
+    "text": "密碼輪換協議系列（modbus 或 opcua）。選擇與資產相符的目標類型。",
+    "source_sha256": "220383db92e484891352e4b811c1e7e8698c9943bef9c0a746684b39a75df8b8"
+  },
+  "otRotateOldPassword": {
+    "text": "目標上的目前密碼。留空以使用已為此資產儲存的密碼。",
+    "source_sha256": "3bc2a0eb877e00bac5d848c1fbeccd405e0fc9e095d7832f59fdf0a6f8045d85"
+  },
+  "otRotateNewPassword": {
+    "text": "旋轉和保管庫傳播完成後應用於目標的新密碼。",
+    "source_sha256": "213300940e2783c85cbb2f3a7bf3f713e589f9bb61bfd604816051b9d9f81927"
+  },
+  "otBreakGlassReason": {
+    "text": "一次性密碼外洩的商業原因。需要審核；至少八個字元。",
+    "source_sha256": "e1f960ef75f5257da4cb83980df4e6615d62e19d912335e80971b4897c4992da"
+  },
+  "otBreakGlassPassword": {
+    "text": "一鍵洩漏密碼。如果需要，請複製，然後關閉 - 不儲存在瀏覽器中。",
+    "source_sha256": "9f7744d8b46400e24f696881bc9dd063a6aafc00d9604ed3ccacb30f32611963"
+  },
+  "actionSave": {
+    "text": "將當前變更儲存到伺服器。",
+    "source_sha256": "d0d1ee4349586ece84e1c06d921668fe7e84b03f6aaa9044892629b9cbe0da70"
+  },
+  "actionCancel": {
+    "text": "關閉而不儲存在此對話方塊或表單中所做的變更。",
+    "source_sha256": "ec753fe9b81d88029caa46c5ebee137fc0c29dce744a43a3694a739874211381"
+  },
+  "actionDelete": {
+    "text": "確認後永久刪除該項目。審核歷史記錄可能仍保留先前的事件。",
+    "source_sha256": "cf7d08fc86749607e1d794cb0c4b1a11bdc09415bfff9d84e099748c4420e8b8"
+  },
+  "actionCreate": {
+    "text": "開啟表單以建立新項目。",
+    "source_sha256": "bb87e18e94258f3d25f09bf899a306121126f025a469ade65528c29cc436ebf7"
+  },
+  "actionEdit": {
+    "text": "開啟該行的編輯器。",
+    "source_sha256": "066a054c10dff64dfeeb23634c42eda61a7d0f39bed3b3d62b7bd517e084130a"
+  },
+  "actionRefresh": {
+    "text": "從伺服器重新載入數據，以便清單顯示最新狀態。",
+    "source_sha256": "8948bb81eb8d7009d30e29def107049944502788c38f6cdcbdc3a2043f24c342"
+  },
+  "actionBack": {
+    "text": "返回上一頁或上一步。",
+    "source_sha256": "0b1f782a8f76b9c064bb2c25430699af7acd47fd28c2e07cc5c2daf72a4f5be2"
+  },
+  "actionNext": {
+    "text": "繼續執行此精靈或流程中的下一步。",
+    "source_sha256": "99831355a0773be581c72921bc2a383a1bb2c4cf25c3fa12d57b04bdfccec8b8"
+  },
+  "actionCopy": {
+    "text": "將此值複製到剪貼簿。",
+    "source_sha256": "173fdba46f17f05edaf02dd8e065a5c53f5ac3929b86aa3b509d8ca3375e4e9f"
+  },
+  "actionReveal": {
+    "text": "顯示或隱藏秘密值。披露經過審核。",
+    "source_sha256": "e7cf05b8447a4345270a3840f66b8b3bc0dbb92b37cb9df20791884aa28f11db"
+  },
+  "actionDownload": {
+    "text": "Downloads this file or export to your computer.",
+    "source_sha256": "9c880fd2b1019f753c17b2e92bfc564894350a0930a079f2070f76b1826a8320"
+  },
+  "actionUpload": {
+    "text": "選擇要上傳到伺服器的檔案。",
+    "source_sha256": "57e39b4b33f8abec5518160b82917a8a56c6ce2d0ba52cfc5cb1da0870ee995c"
+  },
+  "actionSearch": {
+    "text": "運行或集中搜尋此清單。",
+    "source_sha256": "41ee4952d93449e7584447a85b8202f6ee2f04fefa3fb715dbc1f8fc82b60d96"
+  },
+  "actionFilter": {
+    "text": "開啟或清除該視圖的篩選器。",
+    "source_sha256": "4734c41ec87a43257d2a291b053669e1d96f2b79f69d3f09f711a049f99d8f7d"
+  },
+  "actionMore": {
+    "text": "開啟該行的附加操作。",
+    "source_sha256": "e25f9103ea3ed4bcf99ee0d239c0168fdda3d272d4edca78df6d78c54c42b403"
+  },
+  "genericText": {
+    "text": "該欄位的純文字。使用面向操作員的簡潔措詞。",
+    "source_sha256": "3cb0e63587932d2cafefd33958e2ca757d261e972b3521ae0784afacbef83ef4"
+  },
+  "actionHelp": {
+    "text": "顯示此頁面或控制項的幫助。",
+    "source_sha256": "dd475d5bcee8d36980fde3473276414770d482cd03fdfc8c81944104870251a1"
+  },
+  "actionLogout": {
+    "text": "結束此瀏覽器上的控制台會話。",
+    "source_sha256": "905ad0db8071d988fd436425dd481acca3ad664cd1c3b9fec353a70d41819fef"
+  },
+  "demoLicenseBannerCancel": {
+    "text": "在此瀏覽器會話的其餘部分隱藏此演示許可證通知。",
+    "source_sha256": "1f50e67b7dd2e3cebe46868fcd9757906cfbbe9d8c7f5f02ad4d3c7da03341f7"
+  },
+  "demoLicenseBannerRequest": {
+    "text": "開啟斷開連線的許可以請求或安裝已購買的授權。",
+    "source_sha256": "b203dc8f6eb6faebb03f372d890a355700663a51485ce06b2fd9646ebe3578de"
+  },
+  "licensingActivate": {
+    "text": "啟動一個簡短的精靈：複製網站令牌，在許可證管理網站上激活，然後匯入簽署的套件。",
+    "source_sha256": "10b0bf6545a23edc95d82639450c654c54d5f98a1667fe5f4abfb9a43a50dfec"
+  },
+  "licensingSiteToken": {
+    "text": "用於 AIC 許可證管理的不透明站點令牌。它不包括主機名稱或 IP 位址。複製它，然後將其貼上到“激活”頁面上。",
+    "source_sha256": "85bd718791f0aa7c7b5234a7b11b7ba22462b302ac45222701985689a74262a3"
+  },
+  "licensingPackage": {
+    "text": "貼上簽名的許可證包或選擇您收到的文件。導入替換了該伺服器上的金鑰。",
+    "source_sha256": "6be29d169a471dfe879e2ad82868c632f684a6e162fd41aa87bb374173abbd22"
+  },
+  "actionLogin": {
+    "text": "使用此表單上的憑證讓您登入。",
+    "source_sha256": "68df5f081525b0fc36938a18388555e84b29a598bf26aef599dd177ba7ac58d2"
+  },
+  "actionConnect": {
+    "text": "開啟與選定工作站或連線點的即時會話。",
+    "source_sha256": "dc1793ece3a992889fbd11f7c0bcb2b148334c29768e5d161e9f802cdb6d7cbb"
+  },
+  "actionDisconnect": {
+    "text": "結束即時遠端會話並返回工作站清單。您保持登入 AIC 伺服器的狀態。遠端電腦可能保持登入狀態。",
+    "source_sha256": "e4f0a8f2bf9db05e57bd4997b4e5c43b30c6645d725cb9d99453f29d870171da"
+  },
+  "actionLogoffDisconnect": {
+    "text": "嘗試登出遠端計算機，然後關閉此視圖。您保持登入 AIC 伺服器的狀態。如果登出無法運行，則對話方塊會進行說明。",
+    "source_sha256": "05c7cb773b0edeb36af03f8736af27bf42001dc5f5fae681709bed6f6aee0aed"
+  },
+  "pamLiveSessionDisconnectLogoff": {
+    "text": "未使用。從即時 SSH、RDP 或 VNC 會話斷開連線始終返回到工作站列表，並保留 AIC 伺服器登入。",
+    "source_sha256": "4708f6cb7bd582d663da8a32eb732a04c1539db4a7e828294310a2237504a243"
+  },
+  "actionApprove": {
+    "text": "批准此待處理請求。",
+    "source_sha256": "caf86a6ca4f598a484fc75dba6abe13c547f3a9144b6b5881b28b83a64b51098"
+  },
+  "actionDeny": {
+    "text": "拒絕此待處理請求。",
+    "source_sha256": "8bf383d6d5761179e18e0c2ec55ef32592c0244d62d2740b353991e8be3cbc57"
+  },
+  "actionRescan": {
+    "text": "再次執行探測或掃描該目標。",
+    "source_sha256": "e117dbed5ef0c50a36d225de882042a9aa93bd99e9269e7644f8d1d35f78f184"
+  },
+  "actionExport": {
+    "text": "匯出目前視圖或套件以供下載。",
+    "source_sha256": "9117149138efbbc49710ce36271cbd5eda2832062dafb164a26b1fac20dff74a"
+  },
+  "actionImport": {
+    "text": "將文件或套件匯入到該區域。",
+    "source_sha256": "1f802e44b2baeb6f81bffbb34e84e80840d7a810aa127cfe7cc56f41afc3e0a5"
+  },
+  "actionTest": {
+    "text": "運行連接或驗證測試而不保存不相關的編輯。",
+    "source_sha256": "07e588e83cb02b49add39e8cbc32f71baf2274d1ca3ee1bc2344f05e0ca6c868"
+  },
+  "actionPush": {
+    "text": "將目前的跳轉配置推送到此外部容量主機。",
+    "source_sha256": "bf4c1c056cd9427ea88c1266537b7866fb35646beee10cffa0d0ffa52eb6a09d"
+  },
+  "actionEnsure": {
+    "text": "Creates or repairs the AIC Server local Jump capacity endpoint.",
+    "source_sha256": "40c5418937d1c5767c64da016819567ec0cdbe9b7d159f0a104fdaaa4aa7c489"
+  },
+  "actionProbe": {
+    "text": "運行放置或 OCR 探測，無需更改隊列成員資格。",
+    "source_sha256": "c4068d6d9bbabd8b7fa1672936d70813e7e3782ef52e7d8aeec742f4de5a37cc"
+  },
+  "actionMintToken": {
+    "text": "為新的 Jump 主機建立一次性註冊代碼。",
+    "source_sha256": "dde5ddb368694202f414e3cd80ea5a541f61d1a9e8b34c5a79fb998fcec57159"
+  },
+  "actionPlaneOn": {
+    "text": "啟用跳轉記錄平面，以便接受重定向。",
+    "source_sha256": "d1c69a28862a11441de57063f7d151b6918c4b92be17d6d50655c81e3e63fff9"
+  },
+  "actionPlaneOff": {
+    "text": "停用跳躍記錄平面。",
+    "source_sha256": "d5d652866187edff919ba761e2a50da3c4917db46939d9122a1c684d69518765"
+  },
+  "actionFavorite": {
+    "text": "在您的收藏夾清單中新增或刪除該系統。",
+    "source_sha256": "cbf62b7de6f03653e1fe953b9bd45b86dc6e4a0175b3be2a8f34fceef75cfa70"
+  },
+  "actionUnassign": {
+    "text": "從所選使用者中刪除此工作站分配。",
+    "source_sha256": "98c47bdcdc8167aa1059406ef167212ffaa3299b4def0af7256d4b9e4da0da75"
+  },
+  "actionGrantAll": {
+    "text": "將每個合格的最終使用者工作站指派給該主體。",
+    "source_sha256": "fff68cf287876f16863dfa389925db183b79ad40001af0722b983d87ed5fe6fb"
+  },
+  "actionAssign": {
+    "text": "使用此表單上的選擇建立作業。",
+    "source_sha256": "2e3a8f4e1228641d6f6dfc70cbca54014c068065ffbea25725829a79b36188e1"
+  },
+  "actionDrain": {
+    "text": "啟動或停止耗盡模式，以便節點停止接受新會話。",
+    "source_sha256": "c5b95dfcaaf9b521e9e9deebda0bbf40b1197e02b3d70ee5f049d8f4db1c2d93"
+  },
+  "actionJoin": {
+    "text": "加入現有的即時會話（查看和終止）作為主管。",
+    "source_sha256": "7b11510e10662ee68f5957a613cb21330f5f61019379599fc0898a57377252db"
+  },
+  "actionKill": {
+    "text": "終止所有參與者的此即時會話。",
+    "source_sha256": "f7969ab3d837edb42de27161b4b766a3482b2b8d87ddccaa39dd9aec3012c5bb"
+  },
+  "actionAttest": {
+    "text": "記錄或刷新目標本地記錄處於活動狀態的證明。",
+    "source_sha256": "df69868ac193278ded950bd09ebe31b8bdaeee2add60f712774823f3a88d60b8"
+  },
+  "actionClearFilter": {
+    "text": "清除活動清單過濾器並再次顯示所有行。",
+    "source_sha256": "5d378e9cb86a17c0860e9a8c17f0477e4cddfb1cd488aecab6bd0e7cbf67321c"
+  },
+  "actionSubmit": {
+    "text": "將此請求或表單提交到伺服器。",
+    "source_sha256": "f80ac3529006d1ff0513421d782c88eb5b1b7b753121b7be79b9c70608ea92ad"
+  },
+  "otTargetDisplayName": {
+    "text": "OT 庫存和連接清單中顯示的友善名稱。操作員看到這個標籤——而不僅僅是主機名稱。",
+    "source_sha256": "73c2fea3175a35aa717099f8b1083c80f45b55b2ebad967b9640c1782ae318aa"
+  },
+  "otTargetHost": {
+    "text": "伺服器用於發現偵測和連線撥號嘗試的 IPv4 位址或主機名稱。",
+    "source_sha256": "7787af782fb7482209839f713459f0ca70d2b6b12c50cd4a07a0a30f4c0ff1e4"
+  },
+  "otTargetPort": {
+    "text": "該目標上 OT 協定的 TCP 連接埠（例如 Modbus 502 或 OPC UA 4840）。",
+    "source_sha256": "afb63430ef7375cf50aedb6b0713e20a4a0fcaec5cf741ba7b336ef31602df03"
+  },
+  "otTargetVendor": {
+    "text": "操作員上下文的設備供應商名稱（例如西門子、羅克韋爾）。未發送至設備。",
+    "source_sha256": "e98bf7b5fd26e539e0bc1a50cb89e13a8a9590802bf52a77a1db93a73b8aa2c6"
+  },
+  "otTargetZone": {
+    "text": "Purdue 或網站區域標籤在清單檢視中將此目標分組。",
+    "source_sha256": "027cdbed06f7ce7200fa581d883d416d7082206d1ccc0fdd3e8a55f7be03b456"
+  },
+  "otRotationIntervalMinutes": {
+    "text": "在啟用計劃的情況下保存後輪換的頻率。至少 5 分鐘。下一次運行以 UTC 計算。",
+    "source_sha256": "28cd9f4e5529ec32dd6223aa3564fc7181195fae27cf49632aef5784bc966263"
+  },
+  "otRotationProtocolTarget": {
+    "text": "用於規劃輪調的協定作業路徑（Modbus TCP 或 OPC UA）。",
+    "source_sha256": "414751dbfe6cda431e61e05a39b045fd1fafc04b50f71a05a21067520e26ef57"
+  },
+  "otDiscoveryScanNetworks": {
+    "text": "CIDR 形式的每條線路一個 IPv4 網路。當您執行作業時，發現使用第一個網路。",
+    "source_sha256": "052a70d4eaeb9056d38dca4342f66deb224f915582841490ae4ae75286254f33"
+  },
+  "enclaveSystemVersion": {
+    "text": "此手動新增的系統的可選作業系統或韌體版本字串。",
+    "source_sha256": "9d8ffd3ce389a098fb83794cc5c55ec1ea94515c0e8a43461357a5a52eb19968"
+  },
+  "enclaveSystemNotes": {
+    "text": "關於該系統的可選操作員註釋（用途、位置、票證）。不用於自動化策略。",
+    "source_sha256": "98ebe3ec010bb924705c1272ddd338f62aec511d3c14ab5fc3f93b488ab167c8"
+  },
+  "otWizardScanNetworks": {
+    "text": "CIDR 形式的每條線路一個 IPv4 網路。當您啟動精靈掃描時，發現將使用第一個網路。",
+    "source_sha256": "7c1eebed82458eff2b9f07bec680019f48cfad0f13a48b56cb946e95cb7d7e6a"
+  },
+  "defaultPolicyVersion": {
+    "text": "版本標籤標記在根據這些預設值建立的新密碼原則行上。",
+    "source_sha256": "2951723378d7d80bc58f4fb1531577a308bb7b172d250a20f144baa00fab4e9b"
+  },
+  "actionStoreCredential": {
+    "text": "靜態密封輸入的憑證以供在 Open 時使用。",
+    "source_sha256": "4daa01b41177bd85534a07642b613e232e60e1d124c582a4615b5f2a871478fb"
+  },
+  "actionWake": {
+    "text": "開啟或喚醒此工作站，以便 Connect 可以開啟會話。",
+    "source_sha256": "fb00c1d5ff0d0071f5a46d876983a194e3ce65c4d691ef3c927303056a936b3c"
+  },
+  "actionSleep": {
+    "text": "立即將此工作站置於睡眠狀態（如果工作站處於活動狀態，則結束電源保持狀態）。",
+    "source_sha256": "f0a710bb0dbede47ff99cb542c52938b3af1734a7d12854bdd445a4c18f84c87"
+  },
+  "actionKeepAwake": {
+    "text": "Pauses auto-sleep while you run a long task. Requires an audited reason.",
+    "source_sha256": "c58d0f2d36a66f7fa37eff09181b812c98ad3334c335dda63a987a7e8d72a7bb"
+  },
+  "actionClearKeepAwake": {
+    "text": "結束保持喚醒狀態，以便再次套用正常的自動睡眠規則。",
+    "source_sha256": "cf2c79414b8478b7b80302f63a6a1194bb9c3b3ce18c6b9bc0923801f91e3cf2"
+  },
+  "actionRemediate": {
+    "text": "運行自動修復，為連接準備此席位。",
+    "source_sha256": "76a41684381ebd00b54625ddf5e771ecdf2e3c2637c5e7016334321cd554eabe"
+  },
+  "actionOpenSession": {
+    "text": "開啟已授權會話的錄製會話檢視器。",
+    "source_sha256": "dec3fcc9e26cdf607f19198a540b7cd07fca97cef957d75d206ad8de5f7ca5b8"
+  },
+  "actionTryAgain": {
+    "text": "重試上次失敗的載入或操作。",
+    "source_sha256": "556f087b46912d887acd556e013e6e1e3815432165c483d94eaa04f6bffe754c"
+  },
+  "actionClone": {
+    "text": "以新名稱建立此命令清單的副本。",
+    "source_sha256": "0b74b66e4d560b74a0b00e90dbd810c890cdb860b3905db7c6087c1d61d79fc7"
+  },
+  "actionView": {
+    "text": "打開此命令列表。發貨清單也可以在此處編輯。",
+    "source_sha256": "180259b350501da5073989393e50dcdd7d832a37534e2e226301bb3124fa2aca"
+  },
+  "actionRestoreDefault": {
+    "text": "用工廠規則取代此出貨清單。您對此清單的編輯將被丟棄。作業保留。",
+    "source_sha256": "5caf4a4207d1edf4d3625438289fe47bd1e364ccd9f72298a54017a94f881f25"
+  },
+  "actionAcknowledge": {
+    "text": "確認您瞭解該通知並繼續下一步。",
+    "source_sha256": "d4436b7fc0c8132e96f46b10d131192e2d036e79c0a7d86a97bff2fedc6ca903"
+  },
+  "actionRequestAccess": {
+    "text": "提交訪問請求以供批准。",
+    "source_sha256": "7161f23af662f8169dafaa614b3507f14a4ebde85763b8336c417932ba97cb43"
+  },
+  "actionSetCredential": {
+    "text": "設定或更新開啟此連線時所使用的憑證。",
+    "source_sha256": "296ba4800e1c1861fa6221d1f3f8c4384ae866ca9a2ee3ba008d9287b5eab9c5"
+  },
+  "actionClipboard": {
+    "text": "將會話剪貼簿內容複製到此瀏覽器。",
+    "source_sha256": "2c8b9ddba775564fc5cbb6629b1fe2aa2f7250416833a26d06388d6385479a97"
+  },
+  "actionFileTransfer": {
+    "text": "開啟文件複製面板。 Send 將檔案傳送到遠端電腦（SSH：SFTP 到帳戶主目錄中的 aic-transfer；Windows 遠端桌面：使用者設定檔 aic-transfer 資料夾）。 VNC 無法接收文件。",
+    "source_sha256": "a1256df16367813ab049f6e8720153a891d70f6cca9e16e5eaf9bc4f45969a85"
+  },
+  "actionSoftKeyboard": {
+    "text": "顯示遠端會話的螢幕鍵盤。",
+    "source_sha256": "7fce158cc24a242db03e1ee06b75c57536c1f0cd3a975223c83fc9ed9c9d99ce"
+  },
+  "actionChatSend": {
+    "text": "將此聊天訊息傳送給會話參與者。",
+    "source_sha256": "a8d4500a0d73ce0266d3454982e15afd94bced97f857054ed0585c323b07d60b"
+  },
+  "actionCtrlAltDel": {
+    "text": "將 Ctrl+Alt+Del 傳送到遠端圖形會話。",
+    "source_sha256": "54305d641107247f907d7de245df19083df593306110e052931ed09e88a866be"
+  },
+  "actionSoftKey": {
+    "text": "透過軟鍵盤將此鍵插入遠端會話中。",
+    "source_sha256": "731e72ce5856353d6a4fac5fc572bb10f9978f5473a14ced8ca8036b98e250d3"
+  },
+  "actionFileUpload": {
+    "text": "將文件傳送到遠端電腦。 SSH 使用 SFTP 進入帳戶 home 中的 aic-transfer。 Windows 遠端桌面使用使用者設定檔 aic-transfer 資料夾。 VNC 無法接收文件。發送失敗是一個錯誤，而不是成功。",
+    "source_sha256": "3cb9d9511ec7c4a6d5bacfce007e3d2215fd3273b2abc85246513dcd519ab754"
+  },
+  "actionFileDownload": {
+    "text": "下載成功傳送後此控制台保留的副本或先前擷取的檔案。這不是來自遠端電腦的即時拉取。",
+    "source_sha256": "c57134c51751815e93e0f8e6c0e7d23ab6a1de5b5a741b1b7d218cfeabd16019"
+  },
+  "actionEnable": {
+    "text": "啟用此項目以便它參與路由或策略。",
+    "source_sha256": "1adcddefd77ecfc3e9beace913deba592851e928bc0f8bce2c5ac28818df155c"
+  },
+  "actionElevate": {
+    "text": "開啟對話方塊以為此身分建立提升啟動碼。",
+    "source_sha256": "7aa0deac97686cc408a4de10f7c6f00c770735c720a7b3b78583d98592fa48b6"
+  },
+  "actionRecoverPassword": {
+    "text": "開啟此託管身分的密碼恢復/顯示。披露經過審核。",
+    "source_sha256": "10429b8aab00a1e7d63235fa07f0dc65ae944fc4b408042005b38e5be75173fd"
+  },
+  "actionDetails": {
+    "text": "開啟該項目的詳細資料視圖。",
+    "source_sha256": "1bdec3c989e7746e8342e0f5c40c66a1e75e6b24013ba9f0b3e3a071ea730ece"
+  },
+  "actionGenerate": {
+    "text": "使用此表單上的設定產生提升啟動代碼。",
+    "source_sha256": "c67c4f7a4b46fa7b91e39ef417872a72f6ae72bebebe2c36b61f609328361c0d"
+  },
+  "actionRegister": {
+    "text": "註冊此端點並傳回機器 ID 和加密金鑰。",
+    "source_sha256": "db39e3e94c2ebb45f25ca7f5d79691eb1566f0e16e6d68ceedad993b8c548bfb"
+  },
+  "actionDone": {
+    "text": "複製所需的任何機密後，關閉此成功視圖。",
+    "source_sha256": "d672f173f283dc56de8571db6765f564192b96cf5b07d8e2ddd776c23043118d"
+  },
+  "actionNotify": {
+    "text": "開啟此憑證或代碼的電子郵件或簡訊傳送。",
+    "source_sha256": "594c0dbbe927c1dfddaaf1c6aa999fa0e6f2a0aff85620ecc36ac091b281dc95"
+  },
+  "actionPhonetic": {
+    "text": "顯示或隱藏 NATO 語音拼寫，以便口頭讀回代碼。",
+    "source_sha256": "e5f80868f995de3e5bf6041115945d13ce70c423380548d700c196275b2fa507"
+  },
+  "actionCustomizePolicy": {
+    "text": "停止繼承群組或電腦原則並僅編輯此身分的密碼規則。",
+    "source_sha256": "b46691393b9305b577ccd4d028f61070f6a98841a284edc1a195e170f3d0962a"
+  },
+  "actionRevertPolicy": {
+    "text": "放棄自訂密碼規則並再次繼承群組或電腦原則。",
+    "source_sha256": "526e5508f7829a149cd17c617691d5363a0c35b15910643c80869a9ce9dadacb"
+  },
+  "actionResetMfa": {
+    "text": "確認後清除該委託人註冊的 MFA 因素。他们必须重新注册。",
+    "source_sha256": "9453fbd9dcab7d49b296617bb4ea9a43b3fc8c041075430df02f56fbfc42b300"
+  },
+  "actionRevoke": {
+    "text": "撤銷此憑證或會話，使其無法再使用。",
+    "source_sha256": "799216167d1da1e806b50e03204dba54d5154384a693e65fa89c844c43de1ecf"
+  },
+  "actionAddRule": {
+    "text": "向此命令集新增新的允許或拒絕規則。",
+    "source_sha256": "cbff74cb1a701e73a4c83ceebacbc9da0dc87ccf2a2ecba3598010ea290717b6"
+  },
+  "actionPreview": {
+    "text": "根據策略評估命令而不執行它。",
+    "source_sha256": "90df032eb92b96e8b7461dba254449a5f441aade324ce8b55999073c795fdfcc"
+  },
+  "actionManageSets": {
+    "text": "開啟用於建立、編輯或複製的命令治理規則集。",
+    "source_sha256": "9f95b6a528d5a0ee556d26c7990d757e2418e1a387ea8388722e9dee19a11ff4"
+  },
+  "actionManageAssignments": {
+    "text": "開啟連接點的命令集分配。",
+    "source_sha256": "3ac9c548f788f9125f41b00099863034ed5becab8b44c0b2ea42b660d1fa4b05"
+  },
+  "actionMoveUp": {
+    "text": "將此規則移到評估順序的前面。",
+    "source_sha256": "8ad228c314166fb7358693d17a796dbb5640631391988e75e957c35ebca45d90"
+  },
+  "actionMoveDown": {
+    "text": "將此規則按評估順序稍後移動。",
+    "source_sha256": "23443bbfb9c1becadea7d7cb3209a532f71ee869b0f8e9eb845581ac34d99821"
+  },
+  "actionEditPolicy": {
+    "text": "開啟該群組的密碼和輪換策略編輯器。",
+    "source_sha256": "56f8961b51aeda9d51e3676983f389c819c62fc527072ed2aa2564ec783368c6"
+  },
+  "actionInheritance": {
+    "text": "顯示有​​效策略以及每個設定來自哪個群組或預設值。",
+    "source_sha256": "e955a1d0edda8f8aa3059195b0fc090a31b69db3f5bb9386eaaf6656b855878d"
+  },
+  "actionViewConfig": {
+    "text": "顯示該群組中的代理程式將收到的 config.json。",
+    "source_sha256": "aa735ea240173258268c4dbb6c48ed83fb26b39775a39eb448c2fa49f0f8a32e"
+  },
+  "actionDeploymentTemplate": {
+    "text": "編輯該組中每種使用類型的部署範本預設值。",
+    "source_sha256": "5db5825dd4f0d666823385f1a521fe90e44a651ea6e79cbc0fa8379dc65701a0"
+  },
+  "actionSettingsWizard": {
+    "text": "執行設定精靈以為此群組中的端點建立 settings.json。",
+    "source_sha256": "64a466d14a94290f3d467ccd4e250889ab419f0ab8aebc22a579597f8d31d4b4"
+  },
+  "actionManageIssuances": {
+    "text": "列出、輪換、撤銷或重新下載該群組已發布的設定。",
+    "source_sha256": "625f08c74122b79d16c7a5219a8cf81b474c5fe9de9b3928a833d5473a9daa69"
+  },
+  "actionIdentityTemplate": {
+    "text": "編輯新端點加入此群組時所應用的託管識別範本。",
+    "source_sha256": "a63bbbfdb57fae1c7cdf0bdc92dbfe1aa772925c5a103b1d1e4ace06d4b6c3b8"
+  },
+  "actionMove": {
+    "text": "將此系統移到另一個系統群組。",
+    "source_sha256": "d2c36e1f34ecf8148b659e66daf80e6846f8c6ff1ed31ce0fe057d2173691cfd"
+  },
+  "actionConfirmDelete": {
+    "text": "輸入所需名稱後確認永久刪除。",
+    "source_sha256": "ece5c352e7c61bae0cd8f7d014a127383a9236ef5d8bb51404b489d610767432"
+  },
+  "actionResetField": {
+    "text": "將此欄位重設為預設值。",
+    "source_sha256": "761127478f228dcf6f430cb4d7292669b2c07da2adc64de3af81d88444008e7b"
+  },
+  "actionRecryptPreview": {
+    "text": "預覽在分配的密鑰集下對群組秘密進行重新加密，而無需寫入。",
+    "source_sha256": "1fdf1476e5485f7bd7f2825bdc14df58d7c850002d750f6b485070e88b0e1487"
+  },
+  "actionRecryptApply": {
+    "text": "在分配的密鑰集下重新加密群組秘密並寫入新的信封。",
+    "source_sha256": "940aedbfec20956b5b7d9b269c49af05a1ac0e4a4dfa51c27e9febb2846b3bfc"
+  },
+  "actionAssignKeySet": {
+    "text": "保存此群組用於包裝機密的加密金鑰集。",
+    "source_sha256": "c4759518ea0ef92ee969ede748e14bf0f27fd55e489890f6bb931e4004d7f133"
+  },
+  "loginDemoFill": {
+    "text": "使用此實驗室演示帳戶填寫登入表單。在點擊「登入」之前不會提交。",
+    "source_sha256": "ba6d5526c4592df53ef8b57bda82084e102b2322fb308ca7f4159530ca69fef2"
+  },
+  "loginForgotPassword": {
+    "text": "使用電子郵件或復原選項啟動本機帳戶密碼重設。",
+    "source_sha256": "537c04aa9644f699dd4be365b734e84f02568b6e460402d033df498978f7592a"
+  },
+  "loginTotpEnroll": {
+    "text": "為此帳戶開啟身份驗證器應用程式註冊。",
+    "source_sha256": "3005eed48914be4563bb70e873c05c0be88cd098ad0bb41bcd1ceea4bed55828"
+  },
+  "loginSkipEnroll": {
+    "text": "現在無需註冊 MFA 即可繼續。您可以稍後透過帳戶安全性進行註冊。",
+    "source_sha256": "0c57cb4fb232025a2de6668726b047b979fbaa98368d29ed2938453e92f86c1e"
+  },
+  "loginUsePasskey": {
+    "text": "使用註冊的金鑰或安全金鑰完成登入。",
+    "source_sha256": "2178efb0cde74bd1e916e9157119b6eb87783db9b44c68d65b17e8009757515f"
+  },
+  "loginOidcStart": {
+    "text": "重定向到選定的外部身分提供者以完成登入。",
+    "source_sha256": "e4f31501030fbcf6412a85e19980b06034a9002bcae4dc8655fad55e63d347dc"
+  },
+  "loginPivStart": {
+    "text": "啟動此瀏覽器的智慧卡 (PIV) 憑證登入。",
+    "source_sha256": "89058df282d9590f719015b3c6df9c0bd012c711ec41b1d016e6d0fd11b1b37b"
+  },
+  "loginWindowsIa": {
+    "text": "啟動此瀏覽器的 Windows 整合式身份驗證（協商）。",
+    "source_sha256": "3cd347aad5e6142912ac5629ad4f5841aef55dd1f335908f272adb63975b82d8"
+  },
+  "loginProviderSelect": {
+    "text": "用於此登入的身分路徑（本機密碼、PIV 或其他設定的提供者）。",
+    "source_sha256": "4ece07972fdb0c1e9acac5779e67b1eb14f8570b8481c0cb0dc8e6b1366ba468"
+  },
+  "sessionRefreshEnabled": {
+    "text": "啟用後，控制台可能會在絕對到期之前刷新會話承載。",
+    "source_sha256": "d0ee0c18c50be19f97c9958f72905ab3f8fec4f79631faf0af5c34922289d323"
+  },
+  "sessionRotateOnRefresh": {
+    "text": "啟用後，每次刷新都會發出一個新令牌，並且先前的承載會被拒絕。",
+    "source_sha256": "cea9bf47f845461b955f0a50b1b0a2d494487aeea2d3a5fbe6243c41a35de5d3"
+  },
+  "sessionAllowMultiTab": {
+    "text": "啟用後，可以透過 localStorage 在瀏覽器標籤之間共用相同會話。",
+    "source_sha256": "5354673228c6a98f0f0d035c9187289f25eb26eb0721c93bab7b2b40131078a3"
+  },
+  "sessionForceLogoff": {
+    "text": "強化註銷，防止註銷後後退按鈕和快取頁面的重複使用。",
+    "source_sha256": "d08860f3329d5d3aca6a77454f49afcb393773b34055ab37ea24ccd4a361c7fd"
+  },
+  "sessionHttpOnlyCookie": {
+    "text": "將會話儲存在 HttpOnly cookie 中，以便腳本無法讀取令牌。",
+    "source_sha256": "9e922eeac33fa3de0e0b32d7ecb02aba0b8a94c425f512109e53bd7e33a710ac"
+  },
+  "sessionClientStorage": {
+    "text": "當多選項卡共用關閉時，瀏覽器會儲存會話資料的位置。",
+    "source_sha256": "019812bbbd5a96c9fcabf79e9c82b4481bf05074fae646118322d8cf9a3bf0fb"
+  },
+  "threatIntelEnabled": {
+    "text": "開啟或關閉威脅情報查找以做出存取決策。",
+    "source_sha256": "a998d6ea1ea490177c462aa2af7c2d0662809967dea1586c5a6e2b7838446413"
+  },
+  "threatIntelFailClosed": {
+    "text": "啟用後，缺少英特爾結果會拒絕訪問而不是允許。",
+    "source_sha256": "72beafe32a28260d59c207fddfd04333522b55015637df7b69c3f36d59f7b41b"
+  },
+  "threatIntelProvider": {
+    "text": "哪個威脅情報提供者提供此伺服器的查找。",
+    "source_sha256": "ffd9c74ffbc309e6bd15e5c23122aeeb88327d6d27381e912f36204870dfd3e2"
+  },
+  "threatIntelBrowseFeed": {
+    "text": "提要顯示在下面的瀏覽清單中。",
+    "source_sha256": "41d0b36548219220c037b073367803a6084a6fec1c785bbe8fcc7b1ba2b0f09f"
+  },
+  "threatIntelImportFeed": {
+    "text": "接收導入指標的 Feed。",
+    "source_sha256": "ef78ab987acc4735a691974b8baecc3ca68e1e90fd0e269ac232007690c6134a"
+  },
+  "localPwRequireUpper": {
+    "text": "在本地 IAM 密碼中至少需要一個大寫字母。",
+    "source_sha256": "e44355e09cd33bbc766a0ad1f6d2464f6c12984a53623c69d4b8a1cc0131d529"
+  },
+  "localPwRequireLower": {
+    "text": "在本地 IAM 密碼中至少需要一個小寫字母。",
+    "source_sha256": "d02a7562d0e932497fd7aee2e7c4172082f68ca0fd248345e2711ab07a0ee9e0"
+  },
+  "localPwRequireDigit": {
+    "text": "要求本地 IAM 密碼至少包含一位數字。",
+    "source_sha256": "68917c2071862cd1b3933ec6c84980a822cb8b3f1dbf8d7384b7f6c828a6177d"
+  },
+  "localPwRequireSpecial": {
+    "text": "在本地 IAM 密碼中至少需要一個特殊字元。",
+    "source_sha256": "75da28b44c593671c43fd5be0b60f7d0d06d3d3b54933a55cb955958d817fb82"
+  },
+  "defaultIdpSelect": {
+    "text": "當操作員未在登入頁面上選擇身分提供者時所使用的身分提供者。",
+    "source_sha256": "76261c18cdc17725445a2e35e5bea8fbd924917a8699435a898b4b2b595ee81e"
+  },
+  "providerToggle": {
+    "text": "啟用或停用此驗證提供者以進行控制台登入。",
+    "source_sha256": "32022659a3968ca56b3e983c6b78227ae64d96967a69b7df828db7ef581f1855"
+  },
+  "windowsIaEnabled": {
+    "text": "允許控制台登入的 Windows 整合式驗證（協商）。",
+    "source_sha256": "91c89f98ef1e30656693d6ee535536cbe08e3528f98a79f54b2d2e4f33ab105f"
+  },
+  "windowsIaAllowNtlm": {
+    "text": "啟用後，NTLM 被接受作為 Windows IA 的後備方案。僅在可能時才首選 Kerberos。",
+    "source_sha256": "bca37c2c970c75a442198c574b9889960196083465ea95ff37e9cb9546394e55"
+  },
+  "accessMapDryRun": {
+    "text": "對來源 IP 運行存取映射評估，而不更改即時規則。",
+    "source_sha256": "dec7871f3504e94743ed8a664e43ec491ba1b39b1348793599e46105171db8ba"
+  },
+  "ipRuleKind": {
+    "text": "此規則是否允許或拒絕從 CIDR 進行控制台登入。",
+    "source_sha256": "775d462ddfb490b231218ef1d7f784630641cfeabc7dd861c0d1a1dd1c690134"
+  },
+  "ipRuleEnabled": {
+    "text": "關閉後，此 IP 規則將被忽略，直到您再次啟用它。",
+    "source_sha256": "b89cd2cecc6ad1505a126d75c764e7fe60f9b55479101144f0fb07fb31f3cac0"
+  },
+  "webAuthnRequireUv": {
+    "text": "WebAuthn 需要在驗證器上進行使用者驗證或 PIN。",
+    "source_sha256": "e4379662412244ff4bceea1971a070261d0d6aee611d4fb26e43968db81831e2"
+  },
+  "webAuthnRequired": {
+    "text": "需要先註冊金鑰，然後該主體才能完成登入。",
+    "source_sha256": "9f7a3a2767cc5bd9316d8d28b131236e3afae422436d975e0d26abbc611bbe14"
+  },
+  "webAuthnAllowPasswordless": {
+    "text": "當存在註冊時，允許僅使用密鑰登入而無需密碼。",
+    "source_sha256": "00721bb30bc775264e1f094ba00f00b146729968e9731de749ced2f1c4f3892d"
+  },
+  "accessMapGeoEnabled": {
+    "text": "開啟或關閉控制台登入的基於地理位置的存取規則。",
+    "source_sha256": "9c34d8edf0c5961cdc5c8b701918ce29f4ac8a14012ee3cc568eede835fc9c2d"
+  },
+  "accessMapTodEnabled": {
+    "text": "開啟或關閉控制台登入的每日時間存取規則。",
+    "source_sha256": "9666167cd4b14cb7d1929b56359d65309e8bc98b3f26fb67360ec6a91535c828"
+  },
+  "accessMapFourEyesNotify": {
+    "text": "啟用後，向經理發送四眼確認通知電子郵件。",
+    "source_sha256": "78246c1bd940da2becb68659ec90ee20454a5785993be5f8f812211c0b694ee2"
+  },
+  "mfaTotpEnabled": {
+    "text": "為本機 IAM 登入啟用 TOTP 多重驗證。",
+    "source_sha256": "bac75c6026bb538caad624a53f6fdd79d08494425f7772ec5b1afef5497bc830"
+  },
+  "mfaTotpRequired": {
+    "text": "啟用後，註冊用戶必須在密碼後輸入 TOTP 代碼。",
+    "source_sha256": "bf5de3a9e4ec141115f31bf7e10a4cedd1af2b8079d8e33098d33c7a26b050ad"
+  },
+  "idpDropUnlistedClaims": {
+    "text": "啟用後，未為此身分提供者列出的聲明將被忽略。",
+    "source_sha256": "9880b056f8395c709301c590e47fa549a1ea8ab5db38ffb57221b0f0a859a5cb"
+  },
+  "idpEnabled": {
+    "text": "When off, this identity provider is not offered on the logon page.",
+    "source_sha256": "a270e2c386863e475d30e2d8272e86912ad0549e7a69b5d8d0065ed52a9dab3f"
+  },
+  "idpIsPrimary": {
+    "text": "當配置多個身分提供者時，將此身分提供者標記為預設身分提供者。",
+    "source_sha256": "58029d445db758c6d5e4585b3e7199c01bfbe1d432c07e65b3cdd9c6ad3186b3"
+  },
+  "logonOutcomeFilter": {
+    "text": "按結果（成功、失敗或全部）過濾僅附加登入審核清單。",
+    "source_sha256": "3ac26b1705795d51ffc2c55c07f4c56f8c717cc3a683f2d90bd9bca0e124a453"
+  },
+  "logonPolicyBool": {
+    "text": "啟用或停用此佈林登入策略設定。",
+    "source_sha256": "ac8a8b3dc5f4a20b0a1b266b228ff94e502acf6b2193cc46215f68d3c7e0ef12"
+  },
+  "networkAclReverseDns": {
+    "text": "啟用時，網域 ACL 規則可以使用反向 DNS。優先選擇氣隙主機的 IP 匹配。",
+    "source_sha256": "20bf6c59fc40feebf7289662b064c0214974201a756248c85de785c10d1c61a0"
+  },
+  "networkAclRuleEnabled": {
+    "text": "關閉時，此網路 ACL 規則將被忽略，直到您再次啟用它。",
+    "source_sha256": "16a47b5a9d880e5120f8067242705fa1f1895e7aaec981d506b2a3bff8f806e8"
+  },
+  "principalInitialRole": {
+    "text": "在建立時指派給新主體的角色。最小特權：只選擇他們需要的。",
+    "source_sha256": "a77e75c0b5c7310889c64c34a45dc04deb83ecad5a8b0468e957079e032481ac"
+  },
+  "principalAddRole": {
+    "text": "除了已指派的任何角色之外，還要綁定到此主體的角色。",
+    "source_sha256": "cca5233279b3a1c4295e42a6b166bd00b79f109b645c1c10dfbc801bb0141f3f"
+  },
+  "identitiesEndpointSelect": {
+    "text": "您正在查看或編輯其本機身分的端點。身份的範圍始終限於一個端點。",
+    "source_sha256": "ab545349ed38ac836921ad28dbd82189978c1e0573b544c441f3f153a314e9fc"
+  },
+  "countryAllowPick": {
+    "text": "搜尋並選擇此地理允許或拒絕清單的國家。",
+    "source_sha256": "88ede33b9e0d4fde1ee796a249672b59445ea0a5d995b3027669b4dfec4c5c30"
+  },
+  "elevationActivateImmediately": {
+    "text": "啟用後，一旦客服人員接受代碼，就會套用海拔。",
+    "source_sha256": "5f593e1cc071669654aab17beddddc2097569a017bc5b26fe34a807cfe0f4b38"
+  },
+  "elevationTargetGroupSelect": {
+    "text": "在提升過程中加入作業系統群組。選擇一個目錄選項或輸入自訂名稱。",
+    "source_sha256": "e97c7fa2074c1ec4f91d4fde6dc238c8b3372634a537aa9626ca58e7456caad9"
+  },
+  "elevationStrategySelect": {
+    "text": "啟動碼是如何建構的。必須與端點代理程式使用的策略相符。",
+    "source_sha256": "06dc20d504b41885572ce1467081f7cd728c487bd2d11cd2780885732e4aca33"
+  },
+  "deploymentUsageType": {
+    "text": "您正在編輯其部署範本預設值的使用類型。",
+    "source_sha256": "43240c6bd702693aaf3a216b010a27154971a629e2613a31383a5a0f90138e30"
+  },
+  "importSettingsGroup": {
+    "text": "接收導入的設定和標識的系統組。",
+    "source_sha256": "9aa2ce034c0cde70c3c0936d855b0755bbaffeb1f3d425701cce26d940cafe61"
+  },
+  "importSettingsUsage": {
+    "text": "匯入的發行記錄上註明使用類型。",
+    "source_sha256": "63c3e7e33b110178f3d30c303dab60b803f4c0404a217e001a46924fde033f5c"
+  },
+  "importSettingsReplace": {
+    "text": "啟用後，端點上的匹配身分將被匯入取代。",
+    "source_sha256": "b8038fe2a59188178d282c95eb41c833e1dd15a8cb72184ee9b20d2ddbd6164d"
+  },
+  "issuanceFilter": {
+    "text": "按狀態或搜尋文字過濾發行清單。",
+    "source_sha256": "5bcff3825ab7568523f7089f0e6f08f5daaaf3295f92a95035a3a4625d91dd6b"
+  },
+  "issuanceStatusFilter": {
+    "text": "將清單限制為此狀態的發行。",
+    "source_sha256": "443843f65efad1d2f79f5668c1347c02db07ecbfd108fa67fff805536b0c9171"
+  },
+  "configJsonPreview": {
+    "text": "群組 config.json 的唯讀預覽。下載以儲存副本。",
+    "source_sha256": "d86789c9b9a57c30f3082852eecf90ee400739807580802f23a616790818761f"
+  },
+  "deleteConfirmName": {
+    "text": "輸入確切的電腦或群組名稱以啟用刪除按鈕。",
+    "source_sha256": "b302703b31c718098c92286c439dad343431d12267e2778ffae1fd14b8b7288f"
+  },
+  "globalSearchMachine": {
+    "text": "搜尋與所有群組中的電腦名稱相符的文字。",
+    "source_sha256": "c8d189e9d169a0ca51382b2b54c9ef5d7abcb238e5710729fb92d49cebfbb1b2"
+  },
+  "groupEncryptionKeySet": {
+    "text": "用於包裝該組中端點的金鑰集的金鑰集。",
+    "source_sha256": "35003650d969e7375fe1b920a991c730f034f4519d0829e6c25c57d880da7677"
+  },
+  "templateSeedDefault": {
+    "text": "啟用後，當新端點加入群組時，範本行會自動套用。",
+    "source_sha256": "4d33dcfae3f8da6868008c3e74ec7fe18e68165aa1856b757115db06e8b4e781"
+  },
+  "templateElevationEnabled": {
+    "text": "啟用後，發布的設定包括該組的levation_secret。",
+    "source_sha256": "fe0c08fe293132ed1241de7fa85d3f89fb57e3dd18be6d957fa944a44c06d2a1"
+  },
+  "gridSelectRow": {
+    "text": "選擇此行進行批次操作。",
+    "source_sha256": "3a7297146127ef2cdfa99d55528abc5a398eb63f2ab8ee99f90f9efafae92d72"
+  },
+  "gridOpenRow": {
+    "text": "開啟該行的詳細資訊視圖。",
+    "source_sha256": "503f30de045c49b34debfc52db434c3b09697d51c2ca29c54a62f405a7efda69"
+  },
+  "hsmEncrypt": {
+    "text": "使用 HSM 令牌上選定的 AES 金鑰加密明文。",
+    "source_sha256": "70d43ac2e33e2aceddbf7b9b0527faba62aec324d53896f79f13598bb57082f0"
+  },
+  "hsmDecrypt": {
+    "text": "使用 HSM 令牌上選定的 AES 金鑰解密密文。",
+    "source_sha256": "f3deb52a0fa8fe371926bfc410c6bebb56b6f5802503bf62598b2d12419bca7c"
+  },
+  "hsmInitPin": {
+    "text": "設定或變更所選 HSM 令牌上的 PIN。需要正確的目前 PIN 碼。",
+    "source_sha256": "97f46ce91531726ac65a3813c52308d7a5ca9998c120be36bcce175b622500c4"
+  },
+  "hsmUserPin": {
+    "text": "此 HSM 操作的令牌使用者 PIN。當為插槽配置時，可以使用儲存的 PIN。",
+    "source_sha256": "a7186f3feb248da6dd91e984b299cd93cec2487c8ba763c22536c21392c1b4c4"
+  },
+  "hsmKeyLabel": {
+    "text": "令牌上關鍵對象的標籤。必須與現有密鑰或新密鑰的名稱相符。",
+    "source_sha256": "c2ca2ba714d49816d0d8952d27ccc8ea29ad4cca56f3e30f2bbba117e08b97a1"
+  },
+  "hsmCryptoText": {
+    "text": "使用選定的 HSM 金鑰進行加密的明文或進行解密的 Base64 密文。",
+    "source_sha256": "2f40af4d8bcf2e46a88c5c64c3f7e3bd8fdb3b5d3c06f741141b28611c8a76fa"
+  },
+  "hsmSlotSelect": {
+    "text": "此 HSM 連接上的 PKCS#11 插槽。選擇包含您需要的密鑰的令牌。",
+    "source_sha256": "51c5525c06bc14e018f05ffd2c3ea1636e3386742e8b8e7f0e36a9c36e084f50"
+  },
+  "hsmVendorSelect": {
+    "text": "HSM 供應商簡介。驅動庫路徑預設值和功能查詢。",
+    "source_sha256": "4cd16bec355bfa6edc63c65e04f1c573b05aa8e36b3ccea2d1816e3419dc4c0a"
+  },
+  "hsmKeySizeSelect": {
+    "text": "在令牌上產生的密鑰的密鑰大小（以位元為單位）。",
+    "source_sha256": "e3ab54b7e40c5995df0490535156ddba444759aceb702711c2e011fff8f513a4"
+  },
+  "secretField": {
+    "text": "此表單的秘密值。揭露和變更均經過審核。",
+    "source_sha256": "360d4d7d084e3162203316a6b50d187b1dddcb1d865fff0d3741bc85599c0d2b"
+  },
+  "displayNameField": {
+    "text": "清單和詳細資訊頁面中顯示的人類可讀名稱。",
+    "source_sha256": "bc7ac272f8402fb2e37cf3454f312aa125ff67e1df56467a9a7b79af369f1c5c"
+  },
+  "notesField": {
+    "text": "可選操作員註釋。使用產品語言；不要將實驗室主機或帳戶食譜放在這裡。",
+    "source_sha256": "a2b5d5aa19efa868448977a695e0dafff57f34b7e7571c835ab7bd591c03065b"
+  },
+  "hostField": {
+    "text": "用於到達此目標的主機名稱或 IP 位址。",
+    "source_sha256": "06cd3c357d3777d8b15dd667c9e2bba28100d38db9f7086094dcab970726b98f"
+  },
+  "portField": {
+    "text": "用於存取此目標服務的 TCP 連接埠。",
+    "source_sha256": "5770aedf56e198a75a22d35074c6e60f1e468667630f5c7408a81cb60c0094b0"
+  },
+  "scheduleIntervalField": {
+    "text": "此計劃作業運行的頻率（分鐘、秒或進階模式開啟時的 cron）。",
+    "source_sha256": "605a7fadfdf030ce402f3bc2287e3144d736bf28036497fb62d451f08d97c840"
+  },
+  "pathField": {
+    "text": "此配置使用的檔案系統或模組路徑。",
+    "source_sha256": "d7a12c3ed68abea26009c51a58e4bb5f9e020186ac37cd2ade8531b80f774ea9"
+  },
+  "cloudField": {
+    "text": "此 HSM 或 KMS 連線的雲端提供者設定（區域、資源或帳戶 ID）。",
+    "source_sha256": "af1cbbd5c12ab08604e1a9a2d5a1864d39af7c5d02476085a5e0362bf6a30918"
+  },
+  "vendorField": {
+    "text": "該資產或連接的供應商或製造商標籤。",
+    "source_sha256": "e75f4b41c76d248cf56d2536e4661a6bb62d3e1139611538078f11882d28e1b1"
+  },
+  "hashField": {
+    "text": "用於驗證檔案完整性的內容哈希或摘要。",
+    "source_sha256": "8636ca7960b4615e67cb7e230e85cb91a5fd6c63784c341fc65a09c4114b59f8"
+  },
+  "brandColorField": {
+    "text": "報告輸出的品牌顏色 (#RRGGBB)。留空以使用預設主題。",
+    "source_sha256": "bb0a625ef88cf6fc4d393cbc966a922e11f2a77d9d6bb18aea65c1e0670555e5"
+  },
+  "customerNameField": {
+    "text": "客戶或組織名稱印在產生的報告封面上。",
+    "source_sha256": "669f2cf44aef3bcdf9d77620fcd157ef77d78239ee4f28c946f173adf99e8fd3"
+  },
+  "principalField": {
+    "text": "此操作適用於的身分或主體（帳戶、擁有者或成員）。",
+    "source_sha256": "a0089c80a3d4002471fe8bc0a20044207afcc40d2bac7ffb502a85439568aca2"
+  },
+  "dateField": {
+    "text": "此過濾器或生命週期規則的日期或時間邊界（UTC，除非另有標記）。",
+    "source_sha256": "d17f2b65ef12eeb78e95c54ebbbb3c18596443a5b19b8600e1b6136d2978710b"
+  },
+  "numericField": {
+    "text": "此設定的數字限制（行數、持續時間、嘗試次數或類似）。",
+    "source_sha256": "a9fec45b006d7bac4e2a1b1ca81ffc4637b8a76a222437928bf73e603f871c71"
+  },
+  "genericTextField": {
+    "text": "輸入該欄位的值。將滑鼠懸停或聚焦於周圍形式的上下文。",
+    "source_sha256": "3ebd361b27a16af0b1e99cab860250ca3d09abea6bd53f88b82c4e15a7e98be3"
+  },
+  "genericSwitch": {
+    "text": "為目前表單啟用或停用此行為。",
+    "source_sha256": "d55cb4151ff293e8bfa80797f0f0c82285c68ee1a0561cdf5b44a1f28bcedd48"
+  },
+  "genericAutocomplete": {
+    "text": "鍵入進行搜尋並從建議中選擇一個值。",
+    "source_sha256": "07104906d18e750e67ff8c5e12a71a5382994d2926530bed2fe82c86e0f56e23"
+  },
+  "genericControl": {
+    "text": "此表單的互動式控制項。儲存前填寫該欄位。",
+    "source_sha256": "b691ad0fd19063566bcede8db0b4cb77fe6fbd0c1fcb325cf6de8c026be6e52f"
+  },
+  "enclavePurposeSelect": {
+    "text": "新機器在 enclave 庫存中扮演什麼角色（CUI 工作站、PAM 席位等）。",
+    "source_sha256": "d86db8a4f4c51210549017260c413a81c8319d3928ae101c2d4c4c0244a6aa81"
+  },
+  "importFormatSelect": {
+    "text": "貼上的清單是 CSV 還是 JSON。",
+    "source_sha256": "f09a9943f3b01965554ed6b05217db3f391d5a87593116f861c9aa92e1731c8b"
+  },
+  "platformSelect": {
+    "text": "該機器或規則的作業系統系列。",
+    "source_sha256": "09778a6455f9cbaf37810960d13e47541ae45f0844231d442fbbbe66703ba33c"
+  },
+  "vmPoolSelect": {
+    "text": "此執行個體的虛擬機器池、容量角色或連線目標。",
+    "source_sha256": "acea7e2ed6def2ecf86a96a5212d10a4722a718acd58c73207e407862387b5ac"
+  },
+  "privilegeJobSelect": {
+    "text": "應用此權限啟動時所使用的群組範圍或傳輸。",
+    "source_sha256": "6a3da15a420f126829f273f743d5a99bac0d8aaad117f7598b9ce5f999cc4530"
+  },
+  "elevationMatchSelect": {
+    "text": "代理程式如何識別應用程式（發布者、路徑、雜湊或套件）。",
+    "source_sha256": "d544ef3a5a52c6245bae6b743237338098432552ed1d786c7e5cc200756cd6ef"
+  },
+  "cryptoProviderKind": {
+    "text": "哪個加密供應商支援新包裝（軟體、PKCS#11 HSM 或雲端 KMS）。",
+    "source_sha256": "8bda80dde1af015446547295c84576971450d2765d548f7d47e4d4b424c2b52b"
+  },
+  "reportFilterField": {
+    "text": "Limits which audit rows are included in this report run.",
+    "source_sha256": "fa07c568abf8b670db080961b88276f3066646115c515137824b6c1ac0d62796"
+  },
+  "validateOnlyCheckbox": {
+    "text": "啟用後，檢查清單中的錯誤而不添加系統。",
+    "source_sha256": "30bb37f47acb247ed316561aa49cf0dd2b8db2d6fa9fc678a28e8a072a29c770"
+  },
+  "requireApprovalCheckbox": {
+    "text": "啟用後，此啟動會在運行之前等待批准者。",
+    "source_sha256": "eff387343076c05db0c1c83022a3dfadf25741acd4751c7937d85fa161eb4179"
+  },
+  "forceLogoffCheckbox": {
+    "text": "啟用後，在權限撤銷後強制註銷，以便舊的群組成員身份結束。",
+    "source_sha256": "862fa822ba560a82b41a900ccd254b804af67e19a1fdd76209ac174905bc2587"
+  },
+  "platformCheckbox": {
+    "text": "Includes this OS platform in the application rule.",
+    "source_sha256": "1348baa8b18823d9ff3a439dd3f39f3d796d8420926e66181aa052f63bfb255b"
+  },
+  "scheduleEnabledSwitch": {
+    "text": "開啟或關閉計劃而不刪除間隔。",
+    "source_sha256": "98bd67083022911edc32ca0cf16bdd55a5f7f711109aa638dc929ded9422f178"
+  },
+  "propagateSwitch": {
+    "text": "啟用後，旋轉後將新密碼推送到裝置。",
+    "source_sha256": "e03d272dccd7e3ed7d1facd060a78d566447dfd699dac925dadbe2afe50b2dcd"
+  },
+  "elevateSwitch": {
+    "text": "允許此應用程式在匹配時以提升的權限運行。",
+    "source_sha256": "06251fc787e8302ee800ad609218ecc00717cdf3ab579c417012faebfc138e3f"
+  },
+  "allowChildProcessesSwitch": {
+    "text": "也允許該應用程式啟動的程式。",
+    "source_sha256": "48e85aaac50b81a4c60cdec3efaec0dfc3dd197145c3f1adb779b146ea03ef35"
+  },
+  "complianceRunnerSwitch": {
+    "text": "在此檢視中顯示或包含跨平台腳本化合規性檢查。",
+    "source_sha256": "f57c3fc77903f4b21b5ef0845d7e7d9dca51ea98250db3075147483908984058"
+  },
+  "settingsWizardUpdatePreview": {
+    "text": "使用目前精靈答案重新執行試運行預覽。秘密在生成之前一直處於隱藏狀態。",
+    "source_sha256": "5242dfe89997e7cf8b2e501ef9632147147c88513b8bdcd51cbeb2196c37699b"
+  },
+  "settingsWizardEnrollmentToken": {
+    "text": "代理的一次性註冊令牌。立即複製；離開此步驟後，它不會再次顯示。",
+    "source_sha256": "2f95ed8a641f4c5cdfb49c832646e5501b4bc206129968c3b8167c72f0eef05a"
+  },
+  "syslogOptionalFieldsSelect": {
+    "text": "可選的系統日誌擴充字段，包括超出所需設定的字段。僅對於預設值保留為空。",
+    "source_sha256": "1bced162d0e2938d297bc47d95c92c21778586d903515504d292b0b59e27b664"
+  },
+  "syslogPresetCorrelation": {
+    "text": "選擇關聯和多租戶可選系統日誌欄位。",
+    "source_sha256": "e51c6f9cf2285a871da7289809b98f37a7031c2c70b20ed4c8c45706cb1a7e0c"
+  },
+  "syslogPresetFull": {
+    "text": "選擇選用系統日誌欄位目錄中的每個欄位。",
+    "source_sha256": "352c98946380c658d4b82d9f3e642fe3db7cd94710fadb75f816f69027ff99e5"
+  },
+  "syslogPresetClear": {
+    "text": "清除所有可選的系統日誌欄位選擇。",
+    "source_sha256": "09ad43cd3f0661035e01cae6532be9f93def575a55953ef5f7e1a91ec2b8be04"
+  },
+  "syslogFieldCheckbox": {
+    "text": "選擇此選項後，會在出站訊息中包含此選用系統日誌欄位。",
+    "source_sha256": "afe860e3e719625c89b8253ddd7fbfdd0b1572d33497fc0ae8996b9eb59a78ff"
+  },
+  "hsmConfigKey": {
+    "text": "此 HSM 配置設定的唯一鍵名稱。創建後無法更改。",
+    "source_sha256": "796cc0edf79e3775f138c2e7f83411577d70e7ae7fe46a72e9e66dea449433d5"
+  },
+  "hsmConfigValue": {
+    "text": "為此 HSM 配置金鑰儲存的值。加密值靜態儲存時密封儲存。",
+    "source_sha256": "99c947ba3039fa99096361d61c6ea623b1fe851584297756f63fb162c2a4fbd7"
+  },
+  "hsmConfigCategory": {
+    "text": "用於對相關 HSM 配置設定進行分組的選用類別標籤。",
+    "source_sha256": "8dc0057d156d838207b83a01457b576118b04e94d18e7b9ac409ab1103072c54"
+  },
+  "hsmConfigDescription": {
+    "text": "此 HSM 配置設定控制的內容的簡短描述。",
+    "source_sha256": "7ce221d98bd817cbe37863923f4529cb8ba0fa94302b186aa111414d4a89e373"
+  },
+  "hsmConfigEncrypted": {
+    "text": "啟用後，該值將靜態加密儲存。",
+    "source_sha256": "70164b412753a03154325c5079854ca558cfb76ee0cc7dc9a9b184d0873c1f8a"
+  },
+  "binderOpenDetail": {
+    "text": "開啟此結果的相關合規性或庫存詳細資料。",
+    "source_sha256": "3c8193e0739ff10ef44112c0e77b3eb0ffe3ed49ab70c526fec9efed48c18f0a"
+  },
+  "binderStatusSelect": {
+    "text": "設定此活頁夾以尋找結果的狀態（開啟、關閉或放棄）。",
+    "source_sha256": "4369847fbdcab7f733cb44b70d08a8fcce3d73e3f7ed55f3e7db28ef38f748a5"
+  },
+  "binderEvidenceNotes": {
+    "text": "與此發現狀態一起記錄的操作員註釋或證據摘要。",
+    "source_sha256": "e4fcdff4d89d7d4cd101af219fec20e0771a01ca1eb57f4c4da26f51698592d4"
+  },
+  "binderRationaleWizard": {
+    "text": "Opens the guided rationale wizard for documenting this finding decision.",
+    "source_sha256": "2ae5bd66d84e923d7ec2d550631c6b039e12759c950e44c2b1b09a1f7182f57e"
+  },
+  "binderSaveFinding": {
+    "text": "儲存此活頁夾以尋找結果的狀態和註解。",
+    "source_sha256": "35833559df954bf4bd3b0ba32cb3e3075fd413f32f18a74950bbca402e29c712"
+  },
+  "binderApplyFix": {
+    "text": "開啟確認以在主機上針對此發現執行 Fix-It 修復。",
+    "source_sha256": "b0870d8fe9c76171d94f339aedb3af8b06134fc26de30176da8b41aa071051d7"
+  },
+  "binderConfirmFix": {
+    "text": "確認您了解 Fix-It 將變更主機配置。",
+    "source_sha256": "581e00bd3215be068ecf29613f6be5b44f5d72b6509238006a7ba8f685ec0cf9"
+  },
+  "binderRunFix": {
+    "text": "確認後運行 Fix-It 修復。",
+    "source_sha256": "c864adf1e16b125697c582aa316cf91021d246d96b36a6c3db080023b63901be"
+  },
+  "dashboardMoveTileUp": {
+    "text": "將此儀表板圖塊移到佈局順序中的前方。",
+    "source_sha256": "91221152f7ce401d547bd473b4cac5a551245aadecc8eb6349ce5bf41cda2ad2"
+  },
+  "dashboardMoveTileDown": {
+    "text": "將此儀表板圖塊移到佈局順序的後面。",
+    "source_sha256": "4b1f0cf045045a54315984a4a7bc74e2b74cb80458c188377306af135edef086"
+  },
+  "dashboardRemoveTile": {
+    "text": "從您的自訂儀表板佈局中刪除此圖塊。",
+    "source_sha256": "ab8ceb891b459b88b321e2bb00cf680bc579bc6d2131974cc384333b80c9a59b"
+  },
+  "dashboardTileTitle": {
+    "text": "此儀表板圖塊上顯示可選的標題疊加層。",
+    "source_sha256": "e39d1ebdeddf98ee81f6e687126c84e5eb34026cac8099f976fcef61e95e9cdb"
+  },
+  "dashboardTileSize": {
+    "text": "儀表板網格中此圖塊的寬度。",
+    "source_sha256": "c5a7641254f4e53532315c5150316f865138375b202862015018213c53c8fcee"
+  },
+  "dashboardAddTile": {
+    "text": "將目錄中的磁貼新增至儀表板佈局。",
+    "source_sha256": "3ea795c6130a243e2fda022930aeaa73e63e942f1d405dc28cd6651b8a82c8c4"
+  },
+  "dashboardSaveLayout": {
+    "text": "儲存您自訂的儀表板圖塊佈局。",
+    "source_sha256": "ae1762e1e6ce2a1bebe65d5a49caa7f893d5bb8d65cc608f269407be29fcc9a1"
+  },
+  "dashboardResetLayout": {
+    "text": "恢復預設的儀表板圖塊佈局。",
+    "source_sha256": "46f2e4efa243efa8014bd9049641a99218baae75b3d3cacecbeec10060b1e90d"
+  },
+  "secureShareGrantAccess": {
+    "text": "授予所選主體對此安全共享的臨時存取權限。",
+    "source_sha256": "e2aa9e23acab095be04fb2810a0ff9b87f6b86c2d5453b0f7a49a0d33033004e"
+  },
+  "secureShareRevokeAccess": {
+    "text": "撤銷此主體對安全共享的存取權限。",
+    "source_sha256": "77ca66a2c2e411b96a4ffe73b0046730974d25fb7e1c9658eb109361452705b9"
+  },
+  "secureSharePrincipal": {
+    "text": "接收或失去對此安全共享的存取權限的委託人。",
+    "source_sha256": "4320d6ec5d07dfb2c31d20a8386f3afe5bd16416aed1a03e2b65baf0d9e3c8da"
+  },
+  "secureShareExpires": {
+    "text": "當這筆補助金到期時。僅當共享策略允許開放式存取時才保留空白。",
+    "source_sha256": "d3da3d69a23aff30008fb14bc1dbb5ddb45d28656bda2c43e417b837c2045a08"
+  },
+  "reportTemplateName": {
+    "text": "此自訂報告範本的顯示名稱。",
+    "source_sha256": "ff5171270797ebd68a772aa8d1f8d51cb657b4172fcc7b24ec9185b1483e20dd"
+  },
+  "reportTemplateBody": {
+    "text": "產生報表時使用的範本主體或查詢定義。",
+    "source_sha256": "92dca636dff2d68d121faec5c8e28e0d8a9e141c264751360524c7eedfbdc4bd"
+  },
+  "reportTemplateSave": {
+    "text": "儲存對此自訂報告範本的變更。",
+    "source_sha256": "8ee6fd4d8449f96ef74b3532d0f22fe75eaa78684ae66dc6770a4e1a5d12b8d6"
+  },
+  "reportTemplateClone": {
+    "text": "建立此報告範本的可編輯副本。",
+    "source_sha256": "2e8c75ca8098e070600a2ab684500b8198495c87e5ae5bfd028d58b6432ba490"
+  },
+  "reportTemplateDelete": {
+    "text": "確認後刪除此自訂報告範本。",
+    "source_sha256": "c6f347ca41d3367d402c98545b5b0b1bda4018dbd76257a77999bd7705bfb606"
+  },
+  "graphicsFullscreen": {
+    "text": "切換遠端圖形視窗的全螢幕。",
+    "source_sha256": "d43e07c4bae4a6ec5532c994a91a1ca03ef33a04e3dde18856e29557f0ca732b"
+  },
+  "graphicsFitWindow": {
+    "text": "縮放遠端桌面以適合瀏覽器視窗。",
+    "source_sha256": "c1cf059bb6e5649a0537f332a27cbf895d5b0faf6b8c1157af7207b0fe78f8e6"
+  },
+  "graphicsSendCad": {
+    "text": "將 Ctrl+Alt+Del 傳送到遠端圖形會話。",
+    "source_sha256": "54305d641107247f907d7de245df19083df593306110e052931ed09e88a866be"
+  },
+  "graphicsClipboard": {
+    "text": "開啟此圖形會話的剪貼簿傳輸。",
+    "source_sha256": "bbb9045430fab663adc89aa3cd2c70b05cabcf18b9513fa435eb963cb94c2e71"
+  },
+  "graphicsFileTransfer": {
+    "text": "開啟此圖形會話的檔案複製面板。當協定可以接收文件時，發送將文件傳送到遠端電腦。 Windows 遠端桌面使用使用者設定檔 aic-transfer 資料夾。 VNC 無法接收文件。",
+    "source_sha256": "1bfcd710f9229dfd379a3ac160b9074b0cb669f0122af5f75a13d4a15ffe8fa7"
+  },
+  "graphicsSoftKeyboard": {
+    "text": "顯示遠端會話的螢幕鍵盤。",
+    "source_sha256": "542e617c82097fdbe5dda219808d54ebc82d45ef099461aaa8ff226c62fdde4d"
+  },
+  "graphicsDisconnect": {
+    "text": "結束此圖形會話並返回上一頁。",
+    "source_sha256": "3e4b129a29887f473dbcfc1e907a58d6ee0d232e77922201e6e83835be580849"
+  },
+  "graphicsQuality": {
+    "text": "調整此會話的顯示品質與頻寬。",
+    "source_sha256": "658113c7356e4204a9b50ca650fa8bdab822399995f6724dda9bc08787d1871e"
+  },
+  "hsmVendorName": {
+    "text": "此 HSM 供應商設定檔的顯示名稱。",
+    "source_sha256": "a8adf5a91b6378b99ee7678e8e3c61e2584e29ae7dd2f57042db4e26564151a3"
+  },
+  "hsmVendorLibrary": {
+    "text": "此供應商在該主機上使用的 PKCS#11 庫路徑。",
+    "source_sha256": "f1df5c4bf23689fa178d5b796299bd511da5695777ef6fbb567fa7631c00783e"
+  },
+  "hsmVendorSave": {
+    "text": "儲存 HSM 供應商設定檔。",
+    "source_sha256": "ee9718a461ea1d57abec7342d6e6088b064f26daf5bd492643ba2ae5cdb1c9c6"
+  },
+  "classificationMode": {
+    "text": "如何為此飛地強制執行分類標籤。",
+    "source_sha256": "72e6c1c09718966d313d73a600372671c4b6d513340e14371072599d2972a02c"
+  },
+  "classificationDefaultLabel": {
+    "text": "未設定時套用預設分類標籤。",
+    "source_sha256": "d96ea3d01b53a114af33abf9de4b74a2e07a79033f06890495553ea47a57e055"
+  },
+  "classificationSave": {
+    "text": "儲存分類策略設定。",
+    "source_sha256": "579f2b541a72c6b8545171af5759984041cba5fbc79923fb0a8e5ee9ab8a84b4"
+  },
+  "migrateSecretsSource": {
+    "text": "用於在遷移期間解密機密的來源金鑰集或提供者。",
+    "source_sha256": "a681425234f46d636f7784ac40b851fb219179815ee1e8a9f93ae4dd9bc8e322"
+  },
+  "migrateSecretsTarget": {
+    "text": "遷移後將包裝機密的目標金鑰集或提供者。",
+    "source_sha256": "2e0547c794db9ae0c7dd3e04c0553451c5f086bbdeb9b2d62a06a26e694f5284"
+  },
+  "migrateSecretsPreview": {
+    "text": "預覽哪些秘密將被重新包裝而無需編寫更改。",
+    "source_sha256": "3fab5c181cc3da91188e8f2d0bb03ac7a9b40215639e327102a0d058e6c6f6c6"
+  },
+  "migrateSecretsApply": {
+    "text": "在目標密鑰集下重新包裝秘密並寫入新的信封。",
+    "source_sha256": "1a62892be0790da8433f7a91fad7877664b8909c9376490c1a26cf650d1e6319"
+  },
+  "demoDataSeed": {
+    "text": "將演示裝置載入到實驗室資料庫。不適用於生產飛地。",
+    "source_sha256": "72ce2867bb45d0fc8df1e634e292b4a296253cfcefb81578058b7ab501b7026b"
+  },
+  "demoDataClear": {
+    "text": "刪除此頁面之前播種的示範裝置。",
+    "source_sha256": "0b09240e0990c331dcf0573303265f8aea732162057923ffedc70100bdc42782"
+  },
+  "demoDataConfirm": {
+    "text": "在運行之前確認破壞性演示資料操作。",
+    "source_sha256": "445f61615aef5cbbdcf48bf6f985e4ce189c837cf195457b6d5ef5dc51dd41cb"
+  },
+  "enrollmentTokenLabel": {
+    "text": "可選標籤，以便操作員稍後可以識別此註冊令牌。",
+    "source_sha256": "ca5c87340516051db602f2bc071e3744009551d5a75bdfbf8a5b4c528350a69a"
+  },
+  "enrollmentTokenTtl": {
+    "text": "此註冊令牌在過期前保持有效的時間。",
+    "source_sha256": "520ffcc1fdd9f9b7144557f4a240f7f1512d394fb1e3bdfe412dd82f4c124c59"
+  },
+  "enrollmentTokenMint": {
+    "text": "為加入此租戶的代理程式建立一次性註冊令牌。",
+    "source_sha256": "a931910636b54c0827462ff37171ebd73fe59ae7736dcd9356d5c10e0ce0d4bc"
+  },
+  "enrollmentTokenPlaintext": {
+    "text": "一次性註冊令牌明文。立即複製；它不再顯示。",
+    "source_sha256": "ee2752057ce69a0c88e8ad69956590d6340446334d42bef43257c60a1f98a45f"
+  },
+  "enrollmentTokenRevoke": {
+    "text": "撤銷此註冊令牌，以便新代理無法使用它。",
+    "source_sha256": "a3b81d74e8d21803653164db58ed1f28bd41cd50af118d516b54cdd6bb8e185c"
+  },
+  "serverIdentityPort": {
+    "text": "TCP port advertised in agent settings and enrollment URLs.",
+    "source_sha256": "592d2da682b9b3be98b7fb6b801abc575fc218103d9d1514c15da38d32886aad"
+  },
+  "serverIdentityScheme": {
+    "text": "URL scheme (https or http) used in the advertised server identity.",
+    "source_sha256": "1d8e4776d86a20b239d10b2aab8db4c0237e30a4b23259103d52a4798b30e152"
+  },
+  "serverIdentitySave": {
+    "text": "儲存設定和註冊中使用的公佈的伺服器標識。",
+    "source_sha256": "4a319bf62ef80d19c1f0b3a69ec45642915bae26fe0fc83663156b32888b9a22"
+  },
+  "serverIdentityReset": {
+    "text": "從上次儲存的值重新載入伺服器標識欄位。",
+    "source_sha256": "74c0de8e15ded782c9988576cb1cf718214da9b680d4a1bae48647f3863c0a36"
+  },
+  "serverIdentityProbe": {
+    "text": "測試所公佈 URL 的可及性，而不保存不相關的編輯。",
+    "source_sha256": "1f6fa082135622433be8ddeedaaa025c8497c165aff2049906051678ce125b63"
+  },
+  "serverIdentityResolvedUrl": {
+    "text": "從目前連接埠和方案只讀解析廣告 URL。",
+    "source_sha256": "70c39d2cfce2058fa9fab3705d76a638c6d8f43f4dce7457d70cb55b0c389737"
+  },
+  "messageTemplateRefresh": {
+    "text": "Reloads message templates from the server.",
+    "source_sha256": "9810f815977a6e82bc91cb95cd31a97e5e1b246db5bec45afc778f4b3e37216c"
+  },
+  "messageTemplateCreate": {
+    "text": "開啟表單以建立自訂訊息範本。",
+    "source_sha256": "5782052a86ce12c389159b6cb6bbf44506f843332948140782ffbbf508a91fc3"
+  },
+  "messageTemplateDelete": {
+    "text": "刪除此自訂訊息範本。內建模板無法刪除。",
+    "source_sha256": "ba52f4411a60b49955c0a0771e8f3bf8cf4bae62487b00a2c7d330239883c086"
+  },
+  "messageTemplateSave": {
+    "text": "Saves this message template body and metadata.",
+    "source_sha256": "f3bd6df1a992539b62a6c3994065735be890a37edaa86372948f10cef96b1867"
+  },
+  "messageTemplateBuiltin": {
+    "text": "內建模板是唯讀的，無法刪除。",
+    "source_sha256": "52bd22147a3ced999700797ef353b9b3166c97fd8480ce1e9ab9c003b1aeba31"
+  },
+  "waProbePublishSample": {
+    "text": "將範例工作站保障探針包發佈到伺服器目錄。",
+    "source_sha256": "727b1b3469f8f6535f886cbbf02b4581f9e220313b5f8f4aba87f985ae1375a2"
+  },
+  "waProbeUpload": {
+    "text": "將探針包 JSON 檔案上傳並發佈到伺服器目錄。",
+    "source_sha256": "88e7216170a3079e8238379d3965200299dfc442d67536c7346f0016979a513b"
+  },
+  "waProbeDownloadSample": {
+    "text": "下載範例探針包 JSON 以進行離線編輯。",
+    "source_sha256": "438e2f3bc4b25b74afd34aa99b49ed0ad750bfeddb3d9ce68aaf20ec703cc88c"
+  },
+  "waProbePackJson": {
+    "text": "探針包 JSON 預覽。發布將其寫入伺服器目錄。",
+    "source_sha256": "9f07d39caacdaa41106d14f795490782ecc10c1d0e13808ae0fd026cea7d0e58"
+  },
+  "waProbeActivate": {
+    "text": "使該探針包成為工作站保證的活動包。",
+    "source_sha256": "a2a68b3dee01d9459773bd42f1495db538ad55886910b0811f38f386d341958c"
+  },
+  "policyApprovalOpen": {
+    "text": "Opens this policy document to record an approval decision.",
+    "source_sha256": "a273f1cdd125cda1a3e7789284d7bc5e5b59433c9dab813b533fca7fcbe15c90"
+  },
+  "policyDecisionVersion": {
+    "text": "本批准決定適用的文件版本。",
+    "source_sha256": "5d8a5ed54b4a62edf4485ffede51b82420682124e45f82d24e1d56c4f8253978"
+  },
+  "policyDecisionOutcome": {
+    "text": "批准或拒絕所選主體範圍的此策略版本。",
+    "source_sha256": "2b212df045add750d049833b88fa39f00af5a3628097a0ad41a79ce62f450321"
+  },
+  "policyDecisionRationale": {
+    "text": "為什麼要做出這個決定。審計和活頁夾審查所需。",
+    "source_sha256": "84f4c0437c3c7370274d0379c0e1a9e656bfb4ecf280fdb459629614dc8263be"
+  },
+  "policyDecisionDate": {
+    "text": "決定被記錄為生效的 UTC 日期。",
+    "source_sha256": "7d42f69f42e276e12306ac774dd08c8ba4ef2368f9cba6f0bafec2a6be76ad1f"
+  },
+  "policyClassificationAssign": {
+    "text": "為選定的策略文件指派分類標籤。",
+    "source_sha256": "6ad36132f812b60d1e8625f5ed408793350b380324094a55c14d93e7977e6335"
+  },
+  "ocrEnqueueJob": {
+    "text": "將所選會話記錄的 OCR 處理排隊。",
+    "source_sha256": "1af7a9374f4c0c690fbe80da539b204b1d3717db4d66192679be1782389d4d71"
+  },
+  "ocrSearchText": {
+    "text": "在已處理的錄音中搜尋 OCR 文字。",
+    "source_sha256": "d88063df6ff44d4f1b0df892d6ac1f20f102a38675e6583fdf3e24d36b639728"
+  },
+  "ocrOpenRecording": {
+    "text": "開啟此 OCR 作業或命中的記錄詳細資料。",
+    "source_sha256": "cf12f609529bed1412d5f5c4133a012433e45287abe8eb870221bbcc99c0615e"
+  },
+  "ocrAssignMachine": {
+    "text": "指定或變更處理該記錄 OCR 的機器。",
+    "source_sha256": "8015018071797183d6bda2fb384ef66b2c20f009fbf6d1a57b267dea77948aca"
+  },
+  "ocrRecordingSelect": {
+    "text": "記錄按目標和開始時間排隊進行 OCR。",
+    "source_sha256": "d2214d9c92b466a48487442d7f4d8b948693d9353028bc661e13c9cdc46fac26"
+  },
+  "waFleetOpenDetail": {
+    "text": "打開該車隊行的工作站保障結果。",
+    "source_sha256": "6370cf61bfd564b8f8ca3ae182cbe4e668675ff2266847cd536519d1455e3e31"
+  },
+  "waFleetWaive": {
+    "text": "開啟此調查結果的豁免對話框。",
+    "source_sha256": "6a325aab96f7f5a4def522ee691d65d59fd0f663a2ab38bcccce1001266ae5c3"
+  },
+  "waFleetRevokeWaiver": {
+    "text": "撤銷主動棄權，以便調查結果再次公開。",
+    "source_sha256": "96bf9d40fa58625eb8a582e19280f16a466827510a20e8d53c26099e6d88a59c"
+  },
+  "waFleetRunScan": {
+    "text": "執行或刷新此工作站的保證掃描。",
+    "source_sha256": "13cae108c8e2da62d5411bbbde9d17bfa9b39b88f73f7deabf66eb0eb943bbbe"
+  },
+  "waiverApprover": {
+    "text": "授權此豁免的人的姓名。",
+    "source_sha256": "97dec938be56dee6b532e28317eaef3f07fb54c0b3f83d2118912ee2970b236d"
+  },
+  "waiverReason": {
+    "text": "為什麼這項發現被放棄以及持續多久。",
+    "source_sha256": "1dc8f0995d4039dd26bc4b68c0d0943b2a605149f3241e724a057c42c19cf867"
+  },
+  "waiverExpires": {
+    "text": "當該豁免到期時，必須重新審查調查結果。",
+    "source_sha256": "19e00dacff4be806f0db036e9ab5dbc15354d2bd74fd919215fe144b5d18020c"
+  },
+  "actionUnenrollTotp": {
+    "text": "刪除您的身份驗證器應用程式註冊。您必須重新註冊才能再次使用 TOTP。此操作經過審核。",
+    "source_sha256": "94c4f9501e21d3e8594a9fb1a51744fdd1785d13fd04c8121c66df5709a274d3"
+  },
+  "actionOpenSettings": {
+    "text": "開啟伺服器配置，在其中管理管理員機密和身份驗證設定。",
+    "source_sha256": "7318bc810306cce65979510316310c1b71e80035659aab94149ca1ec6cfce9ce"
+  },
+  "actionSignIn": {
+    "text": "前往登入頁面，以便您可以啟動控制台會話。",
+    "source_sha256": "5fe036ba97b0e760062e9f479bdeb642419423edd84b9e1c0a214293ceebf70f"
+  },
+  "actionToggleDetails": {
+    "text": "顯示或隱藏所選項目的附加說明。",
+    "source_sha256": "d8fb876700de849e2cad242ab11ada89782b615ea94b155147c61bb32fd2b73f"
+  },
+  "actionPublishNow": {
+    "text": "立即運行一個審核員層發布週期，無需等待計劃。",
+    "source_sha256": "79a361d6f8c98feeb5473556271abeb1c783600dd178320d70fd357bc4aba1b3"
+  },
+  "actionDrainOutbox": {
+    "text": "將審核員寄件箱中的待定評估員操作套用到操作層。",
+    "source_sha256": "e18117db1460c783c33eac6875c3efbf3f65317393c4a692a477004dff90fcf9"
+  },
+  "actionVerifyChain": {
+    "text": "檢查發布日誌哈希鍊是否完整（AU-9 完整性）。",
+    "source_sha256": "4585f3ecffed6ccdbbb3952da0d276bc59a47e5400fba27e59f552522c133394"
+  },
+  "actionInviteAuditor": {
+    "text": "建立邀請，以便外部審計師可以開啟此約定。",
+    "source_sha256": "70cffab919c4320ffc6034e7d3d7c2a783a2c68d26c3aaac4b653f05eef94879"
+  },
+  "actionRevokeAuditor": {
+    "text": "在您確認後，刪除該審核員對業務的存取權限。",
+    "source_sha256": "809e3fb8f6d04ba0f7e0118286877c4992ba926a477f1e7123734298fa3d2028"
+  },
+  "actionApplyPreset": {
+    "text": "將此框架或揭露預設應用於目前選擇。",
+    "source_sha256": "696d0c8ce843171ea4f2a95e6ed9c8da502b3be187adb472b67798dbed566675"
+  },
+  "actionClearAll": {
+    "text": "清除此清單中的每個選定項目。",
+    "source_sha256": "e84ca6635243582d1f95af676df628d9f228ccb5c8008457cea241b048d541c5"
+  },
+  "actionSelectAll": {
+    "text": "選擇此清單中的每個可用項目。",
+    "source_sha256": "092cf0d228a6d9908925374e005f8bd6dd1bdf09693b5ba9d929fdccf2b0034b"
+  },
+  "actionSendNotify": {
+    "text": "透過選定的電子郵件或簡訊管道發送憑證或代碼。",
+    "source_sha256": "b1ea5f844a1f2e679b4cd5fbd682f118ecb11eedf652ac2be0c20762ff7db388"
+  },
+  "actionScheduleElevation": {
+    "text": "使用選定的身分和視窗安排遠端非代理本地提升。",
+    "source_sha256": "fbe08e896914082f945597e3b755150a6bf8b945e3c64e6e2eda9eeae5cd1a5a"
+  },
+  "actionRunProbe": {
+    "text": "針對所選端點執行此診斷探測。",
+    "source_sha256": "cfbab0a9dfaff054088dd3b4848beff119590d07cf4ef2086990836a4b20d2f5"
+  },
+  "actionFillDemo": {
+    "text": "使用實驗室演示值填寫表單。在您確認之前不會提交。",
+    "source_sha256": "3e26c7bfde6814e85939e1582e9b70d7ebd02f6400d23273992d4ed2ce5a048d"
+  },
+  "actionBrowseFile": {
+    "text": "Opens the file picker to choose a file for upload.",
+    "source_sha256": "56189d9d8a09d001cef05d9040ce6eba46b1dc7308258811f24a59d84fe8a1f8"
+  },
+  "actionResetColors": {
+    "text": "將品牌顏色恢復為產品預設值。",
+    "source_sha256": "02aa1027e7b6c5f608cbb7b61d6d85174158621ae112843abbbfa3f481dac4ea"
+  },
+  "actionPreviewImport": {
+    "text": "預覽導入而不將更改寫入伺服器。",
+    "source_sha256": "6d5cd16d4e72ffe4a2a19f20d02ad26879a44749f4e557ce99e6b6ec3d5349d1"
+  },
+  "actionContinueWizard": {
+    "text": "繼續執行此精靈中的下一步。",
+    "source_sha256": "e2ab857b4d3caf9df67433f28add15bb1ca0a2c53c4ea13e0fe829af5adf3669"
+  },
+  "actionApplyDisclosureStandard": {
+    "text": "開啟嚮導以將監管揭露標準套用至這些欄位。",
+    "source_sha256": "410a7e1d15f99b10d95e59bdf2a0272cea5a95b64160ff24c8341ca58b94af87"
+  },
+  "actionPreviewResolved": {
+    "text": "顯示揭露訊息如何與目前的公司概況值相關。",
+    "source_sha256": "aa3c7ad6f6e14b0f018d8bddc29641a1ca82c1dd5f46759ee1fb269598dabd9f"
+  },
+  "actionCopyAll": {
+    "text": "將所有可見的解析文字複製到剪貼簿。",
+    "source_sha256": "7636900fc664c37f7ccf998338407ad2618eaa3b04e1bbd452894e069286037a"
+  },
+  "actionExpandHonesty": {
+    "text": "展開或折疊有關培訓和評估聲明的誠實聲明。",
+    "source_sha256": "819df9e97e20bf2f6fa1fbf67785149739d7a7d7b318452bfbd4a97e2c65afe5"
+  },
+  "dataGridRowAction": {
+    "text": "執行此行操作。將滑鼠懸停在該控制項的特定動詞上。",
+    "source_sha256": "a7e3c58602be84bdf8302baa74658f16d87a25178d9fdb1d3186ea9cae1605ca"
+  },
+  "assessmentStandardSelect": {
+    "text": "此視圖正在根據哪個評估包裝標準進行測試。",
+    "source_sha256": "e49d179d06f0e3aa0e53a6d61fc25771e931fd4cbad52261c8d7d1e5bd6b2155"
+  },
+  "assessmentLevelSelect": {
+    "text": "所選評估標準內的水平或基線。",
+    "source_sha256": "f900920050610a6f3757519baea87ca68280160a89409620626f64c97503ad56"
+  },
+  "inviteAuditorFirm": {
+    "text": "將獲得此邀請的參與存取權限的審計公司。",
+    "source_sha256": "8497ee06cbf4accfe4aeba13310aa005d4d3bbf08a74edc9d8fae4d5ac7781ae"
+  },
+  "inviteAuditorName": {
+    "text": "受邀審核員的全名。",
+    "source_sha256": "d4980a92198986cff9c395804e78d84754b3e4ffb9c21e52d4b7cc216810c180"
+  },
+  "notifyChannel": {
+    "text": "是否透過電子郵件或簡訊發送此通知。",
+    "source_sha256": "9fcc0e63c47207e5b5353f4c3e7068b55cea9c9535c1a2b040f6bc77cb78b192"
+  },
+  "notifyDestination": {
+    "text": "接收通知的電子郵件地址或電話號碼。",
+    "source_sha256": "96f939b81fa8cb58942f9863b959a4b33845b9a8e8dfeab59d7d418d12204595"
+  },
+  "notifyIncludeSecret": {
+    "text": "選取後，該訊息包含秘密值（仍隱藏在審核日誌中）。",
+    "source_sha256": "7349f51995cb760d6c0a851309c1a19c2f700d6852867b9604306ba08a32ac00"
+  },
+  "remoteElevationIdentity": {
+    "text": "Managed identity used for the scheduled remote local elevation.",
+    "source_sha256": "981edb26a804a8237d069994731d3bb17f93a4626eeeae9b4b0505f869663ecf"
+  },
+  "eventTypeInclude": {
+    "text": "選取後，此事件類型將包含在篩選器集。",
+    "source_sha256": "51bb90a2d207b9b3ee988cefea6f606e99ab27b003c80e9ec5ea589582173919"
+  },
+  "showPasswordToggle": {
+    "text": "在螢幕上顯示或隱藏恢復的密碼字元。",
+    "source_sha256": "e164b8fb3d21b7a1f2e090781e1897652a2ea3bf4d7320f0defcb4d88dc7bb5a"
+  },
+  "selectFieldStack": {
+    "text": "為此標記設定選擇一個值。",
+    "source_sha256": "aa6ca6da9be2ea39c1e169c527f6297fbb787e1b9c6e54a94c05e7e07c18aae6"
+  },
+  "iamToolbarAccount": {
+    "text": "為登入操作員開啟帳戶安全性或會話選項。",
+    "source_sha256": "933a8fe2f176c8119a189ec15b6cee490938c50dd1a088276f17fdbb75b2aa79"
+  },
+  "iamToolbarLogout": {
+    "text": "結束此瀏覽器上的控制台會話。",
+    "source_sha256": "905ad0db8071d988fd436425dd481acca3ad664cd1c3b9fec353a70d41819fef"
+  },
+  "ianaTimezone": {
+    "text": "用於調度和顯示的 IANA 時區（例如 America/New_York）。",
+    "source_sha256": "e3f38cce93dc47bd1be7d22c5c10417b2888008cde36c22770225b9d15f1b72c"
+  },
+  "identityPickSearch": {
+    "text": "按名稱或地址搜尋目錄標識以新增至此清單。",
+    "source_sha256": "a588f08af038e68e1631fd8ac75304cffef19362b1c63f9e655b8c369ff4d8ab"
+  },
+  "identityAdvancedUuid": {
+    "text": "啟用後，您可以貼上主要 UUID，而不是從搜尋中選擇。",
+    "source_sha256": "981f881988f7a6925f607d0504b2dc587a270851e7e3fc13b28b0ddaa4b6df83"
+  },
+  "identityUuidField": {
+    "text": "啟用進階條目時的主要 UUID。",
+    "source_sha256": "630a706994baa3425b0230a5f6d1ffdebd2fbee6a88de4eee251668280733793"
+  },
+  "labFillAccount": {
+    "text": "使用此實驗室測試帳戶填入登入欄位。在您登入之前不會提交。",
+    "source_sha256": "c486334f5523727d173c7f766a5d43d59160d47675e0a4f25950a8ac8c720102"
+  },
+  "machinePolicyLength": {
+    "text": "Minimum password length for identities on this machine.",
+    "source_sha256": "e2da158889fccbfe841775c126eae777e200a491e80dacb45c7004579c2f27be"
+  },
+  "machinePolicySecretHours": {
+    "text": "該電腦上的託管機密必須輪換的頻率（小時）。",
+    "source_sha256": "fed42bbc56ed62acdefec59b0b338438d0f8725fcf98e8379d18999412d74b9c"
+  },
+  "machinePolicyMaxDrift": {
+    "text": "本機允許的最大時鐘漂移（以秒為單位）。",
+    "source_sha256": "6bc91e8030e9dcfbec48a693a3bba61a032fcf86f02aaf4eabb55e5a0ad68acc"
+  },
+  "machinePolicyInherit": {
+    "text": "選取後，此設定將從群組或飛地預設值繼承。",
+    "source_sha256": "67916fbebde50f3f68fe85f98cbcfc64cd04686d5c5af29d5cd0e76126b42cb0"
+  },
+  "mainNavDocs": {
+    "text": "在新的瀏覽器標籤中開啟產品文件。",
+    "source_sha256": "a102de2a02634bb0168347a614118f9e2f87e42a85e96f6bc685fc34476c1692"
+  },
+  "mainNavAbout": {
+    "text": "開啟此控制台的關於和版權資訊。",
+    "source_sha256": "cb47cfc77ff505e9eb686f8267262217a5b219d74d0e5ff2b009583b43fc9d29"
+  },
+  "mainNavOpenSourceCredits": {
+    "text": "開啟完整的開源積分清單（每個合併的第三方元件的授權）。",
+    "source_sha256": "137f861df77d61c0b01a764676b898c0dcb55570b2d517dcbec4b5a3cf7c84bc"
+  },
+  "aboutCreditsFilter": {
+    "text": "按專案名稱、許可證或版權縮小開源學分清單。",
+    "source_sha256": "775f9f5103d1a72deb94a27ed490dd4419a8ec26cfbee8d8625e5e84547fb2f8"
+  },
+  "aboutCreditsDownloadAppendix": {
+    "text": "下載 JSON 格式的完整 Cargo.lock 名稱和版本附錄。",
+    "source_sha256": "37b98f1228a3cbb0967534585ecb5d0773c80d253336ef4a2e81739f6b78b1fb"
+  },
+  "aboutCreditsDownloadInventory": {
+    "text": "下載完整的開源積分清單 JSON，包括誠實元資料和產生 SHA。",
+    "source_sha256": "3f4a7659b0d83957dea18233fbecab679d5f2e9b055900972d21b5d02aa51062"
+  },
+  "aboutCreditsDownloadBlocked": {
+    "text": "Download the list of packages that are BLOCKED because no license text could be harvested.",
+    "source_sha256": "6413e73c0f2e11c7ebdd8dcb7c948232ee7c0709c52e3233d2bbe3afa900f860"
+  },
+  "aboutCreditsPagePrev": {
+    "text": "顯示開源信用條目的上一頁。",
+    "source_sha256": "340d08d68b80fc5f9239450e44423f86620512f41acb43cd4267fd316ab1669b"
+  },
+  "aboutCreditsPageNext": {
+    "text": "顯示下一頁開源信用條目。",
+    "source_sha256": "86996298b33341878555e0cb3fdd3cfd422eb8a5d05af703eb8065dc001abcd6"
+  },
+  "ipScannerIpRange": {
+    "text": "Enter an IPv4 or IPv6 address, CIDR, link-local with zone (fe80::1%12), or ipv6-neighbors. Wide IPv6 prefixes use discovery, not a full sweep.",
+    "source_sha256": "2d19a09bfa37e198619b800837a67735b46a1d174d3652c1aff6936b3ccae50f"
+  },
+  "ipScannerAddTarget": {
+    "text": "將草稿 IP 範圍或 CIDR 新增至掃描目標清單。",
+    "source_sha256": "feaf66dc6606d04c634194b51578ae0dea9f1f47b757892d72d6ec449eff37ca"
+  },
+  "ipScannerIpv6Neighbors": {
+    "text": "新增 ipv6-neighbors 發現目標（作業系統鄰居快取和連結本地）。不是全面的網路掃描。",
+    "source_sha256": "26af63518f9c123473b1335d785763bb8edd822cb8dab6ce1391d3b00022f59b"
+  },
+  "ipScannerProgressLog": {
+    "text": "顯示或隱藏協作掃描進度日誌。",
+    "source_sha256": "4e88a38be9bf0410f74a5ff712ba973e510dcc382b8e1d7958b8b5922225b68e"
+  },
+  "ipScannerUseNetwork": {
+    "text": "在掃描目標中包含或排除該本地網路。",
+    "source_sha256": "d8fabbde11e33883d62f78fd8856f7f7a23cfe9a9b38a99eac5ea7425c1d60ff"
+  },
+  "ipScannerSelectAllNetworks": {
+    "text": "選擇或清除本機網路清單中顯示的每個網路。",
+    "source_sha256": "3c7013ab1c7b902e1299682ceb93d9bd27c822053699f8333d86ddbe893bcb4c"
+  },
+  "demoEnclaveExtend": {
+    "text": "延長共享演示租約，使飛地的可用時間更長。",
+    "source_sha256": "3c27cf878fafaf48a2fb9c732b10da7443ab95a2f0264f69bf8f7df3cf5404f9"
+  },
+  "demoEnclaveEnd": {
+    "text": "結束共享演示租約並休眠飛地。",
+    "source_sha256": "f9740fb59b7aad860437d8e421c7a4a4e1e890c4bf548f90a0f05eab4d43bd84"
+  },
+  "demoEnclaveEndCancel": {
+    "text": "保留演示租約並關閉此確認。",
+    "source_sha256": "a1ca221a69e5fa04418883402e11038b0d8f00b82d3d20a76e71a24ae6bfc7b2"
+  },
+  "demoEnclaveEndConfirm": {
+    "text": "確認結束演示租賃。飛地處於休眠狀態，此操作無法撤銷。",
+    "source_sha256": "406df7c47739ae624eccb39550db0a3db3de22cdfbf2b98540086c04facc0dd1"
+  },
+  "elevationMockEndpoint": {
+    "text": "此高程模擬面板中顯示的示範端點名稱。",
+    "source_sha256": "180284e07ecff18abbce0ccda328fb2f6f5ab1d9d9102e097cc003deb41970de"
+  },
+  "elevationMockCode": {
+    "text": "此模擬面板的演示啟動或質詢代碼。",
+    "source_sha256": "5d7afebc2b06b1e35dab1425270f4450f694abdde218d9076d48d5c21dccd43e"
+  },
+  "elevationMintScope": {
+    "text": "鑄造海拔激活代碼（模擬）時提供的範圍。",
+    "source_sha256": "01b74c1d81db4e653560e5945f19721584f1b8e86c083a75001fe10a9641bf81"
+  },
+  "elevationPolicyMock": {
+    "text": "此模擬面板的演示高程策略欄位。",
+    "source_sha256": "e6e23298a11552e6a52292a0a3c6b7796bbaa54d326468876e7d939e9c5f748b"
+  },
+  "elevationQueueAction": {
+    "text": "排隊提升請求的模擬工作流程操作。",
+    "source_sha256": "c592d523e986f8db6781e09d8d9f33e8a188b9456f6e515738c6fddbc93aed4c"
+  },
+  "netscanStart": {
+    "text": "使用目前面板設定啟動網路發現掃描。",
+    "source_sha256": "9dd17a9704dea768b7b75f2162bdcb9d8bbbe437b8d703a01f0cdb73e897dc6f"
+  },
+  "netscanStop": {
+    "text": "停止正在進行的網路發現掃描。",
+    "source_sha256": "708dba6b9328315f2a1d981299fdaee376e090c57dfb153cb3732ed46deffceb"
+  },
+  "ipScannerStart": {
+    "text": "啟動並發 IP 範圍掃描。結果和日誌行在運行時流入。",
+    "source_sha256": "e96d1832ad35756d4b0965b12819d34b207bed7de482915099afb0f21487ecff"
+  },
+  "ipScannerStop": {
+    "text": "請求合作停車。工人們完成了他們已經開始的探測。",
+    "source_sha256": "88fb6e00ba7946f215ab32e700407290194f8ff57308883ba7626c874ef1196a"
+  },
+  "ipScannerWorkerCount": {
+    "text": "一次運行多少次 TCP 連線嘗試（預設 64，最多 500）。在慢速連結上降低此值。",
+    "source_sha256": "97be9dfc6a36beedf90601ef2b91dc5c83ba59d0a279235e7081e68bbc11e5b0"
+  },
+  "ipScannerCredentialCatalog": {
+    "text": "開啟掃描行上的檢查預設值所使用的已知預設憑證目錄。",
+    "source_sha256": "11b6ab50dd2710772b17a3075fd993aad78217aed51309594179bea42b86827d"
+  },
+  "ipScannerTargets": {
+    "text": "IPv4 or IPv6 address, CIDR, link-local with zone, or ipv6-neighbors — one target per chip.",
+    "source_sha256": "13edd5d3598ebaa47ef0cbe9b304dadf07263c4c4563b9f13083729b48a771f4"
+  },
+  "ipScannerProfile": {
+    "text": "設定要探測的 TCP 連接埠：快速、常見服務或您自己的清單。",
+    "source_sha256": "8225771d5d6a8f145b97ea7fbf6b55c06e65af5f0e73b34d49436d91655fb9cd"
+  },
+  "ipScannerCustomPorts": {
+    "text": "當設定檔為自訂時，以逗號分隔的連接埠。",
+    "source_sha256": "c598d42cf9f125f29e3ddf6cefaa6a926ade756c818fa280c78216279a6d008c"
+  },
+  "ipScannerLocalNetwork": {
+    "text": "從掃描目標中新增或刪除此適配器或虛擬化網路。",
+    "source_sha256": "297fa8bd3b4417d96583f7397c770fc434b4c5934cdddffdf54365416f04bdd2"
+  },
+  "ipScannerUseAllLocal": {
+    "text": "使用除環回之外的每個本機適配器網路填入目標框。",
+    "source_sha256": "380d8530e2b4c4675693ae5c10b5366dcf5c05f64c0e4d5c9b91a0405a8c453c"
+  },
+  "ipScannerUseVirt": {
+    "text": "使用 Docker、Hyper-V、WSL 和其他虛擬化範圍填滿目標方塊。",
+    "source_sha256": "79bb1f517f3f90ae63d0c7e33ad8bdf88c5eff67fdd610ed15384c538d288e03"
+  },
+  "ipScannerRefreshNetworks": {
+    "text": "從此伺服器重新載入適配器和庫存網路。",
+    "source_sha256": "723a073a97657537c8715efdbfcaa504ead4675bfe5f658d2d96fbf66ebafd14"
+  },
+  "ipScannerAnalyze": {
+    "text": "將完成的掃描主機與庫存進行比較並開啟狀態結果。",
+    "source_sha256": "c04ac0f5f35274fc6ad22453dcd1e1e234880f85f2dd389221c022f12c564fb9"
+  },
+  "ipScannerRowCheckDefaults": {
+    "text": "嘗試針對該主機從目錄中發布的工廠憑證。",
+    "source_sha256": "9b67a2c8e7b62e372f88903bee83eac6c26317ce95f8384da27259e871669c9d"
+  },
+  "notificationDismiss": {
+    "text": "從控制台橫幅中消除此通知。",
+    "source_sha256": "6ac48c428e4b65b92c25d28a8114d49fe2b1ea660d940b696608eda64e4bb41a"
+  },
+  "passwordPolicyAdvanced": {
+    "text": "此策略的高階密碼複雜性和歷史設定。",
+    "source_sha256": "a77932559feeadc4e1806cce919aa869230b18003da1b7b5bde6ddb73ddf85c4"
+  },
+  "passwordPolicyBasic": {
+    "text": "此策略的基本長度和字元類別要求。",
+    "source_sha256": "24783942045b34c5aad5c34495676864c3b7b8d1ae2240142cd1bcc0fce43de9"
+  },
+  "passwordPolicyInheritBool": {
+    "text": "啟用後，此佈林值將從父策略繼承而不是覆寫。",
+    "source_sha256": "d3b6fed78a11fb851f978399c7cc8f113fb22fd25cc966702f29a7f86e2a9c6c"
+  },
+  "passwordPolicyPreset": {
+    "text": "將指定的密碼策略預設套用至表單欄位。",
+    "source_sha256": "32c88eb1c9da6c6532a4b28ab6154626c8cb982390311cde0cb43b475ee1fd0f"
+  },
+  "passwordPolicyPresetPick": {
+    "text": "要載入到編輯器中的預設密碼原則。",
+    "source_sha256": "d57a9ce7071f6c1813bb216b7a8be5a8ff16f7fbdfae91f663754063a5114b6a"
+  },
+  "rotationInterval": {
+    "text": "根據此策略，密碼必須多久輪換一次。",
+    "source_sha256": "9b31fcfa0ef43b760fb0ab1e14ff909b8690777c95b4361a9a5c79dfeac51c89"
+  },
+  "phoneE164": {
+    "text": "E.164 格式的電話號碼（加上國家代碼，+ 後僅包含數字）。",
+    "source_sha256": "c8a3b26fd221ae53df6f94dffb1650ebb1180e7dd2f8cdb9982ba7e629e28239"
+  },
+  "agentEventTierOverride": {
+    "text": "覆寫此繼承範圍的代理事件轉送層。",
+    "source_sha256": "3021fa65e8e5f13e541641ac8e06c5c426ab5e041da734cea8711ec58baaa54a"
+  },
+  "groupPolicyInheritance": {
+    "text": "開啟或編輯群組級密碼原則繼承。",
+    "source_sha256": "7055d00a34cfe68bd5269e91a4d6772be022dfd9e8dc2fa8776642d696a23e85"
+  },
+  "machinePolicyInheritance": {
+    "text": "開啟或編輯電腦級密碼原則繼承。",
+    "source_sha256": "dc671a59aeb3b1d8455fa526197e7aed556364fd346c50e7f3fc34ed39d6ef3d"
+  },
+  "policyInheritanceTable": {
+    "text": "顯示哪個父級提供每個有效的策略設定。",
+    "source_sha256": "a77712fc80ba1e18346be3ca48407c44319dd1b147478085fcdbd4a5561d012a"
+  },
+  "privilegeJobDetail": {
+    "text": "顯示此特權作業運作的詳細資訊。",
+    "source_sha256": "dedeeb6fe91e37eb471c2738f0e6818c08eeca8e126932d1cbd853cb396bdbee"
+  },
+  "quickAccessSearch": {
+    "text": "按名稱搜尋控制台任務和計算機，然後開啟選定的操作。",
+    "source_sha256": "6312b93bacac666aa2a8bd306b41cdf7463867f420379052ee562609c850b288"
+  },
+  "endpointOverviewAction": {
+    "text": "Opens or refreshes details for this endpoint in the resource hub.",
+    "source_sha256": "c3c28bcab62d0ad1dce8cf5287d52d14b4ea0fff88226fefab52b7fe4afd65d2"
+  },
+  "serverDisclosureChrome": {
+    "text": "顯示或隱藏此視圖的伺服器公開鑲邊。",
+    "source_sha256": "3915960a92d2d8f0e4e3c65c61562b95b4e9c9d778eb87d2bc699de3c4854c1e"
+  },
+  "sshTerminalAction": {
+    "text": "控制嵌入式 SSH 終端會話。",
+    "source_sha256": "0267747e3813d878c73b53453ab1b1db96458ca7789f38b6258b67231393275f"
+  },
+  "vncPlayerAction": {
+    "text": "VNC 會話錄音播放器的控制。",
+    "source_sha256": "8701ab20a6138b740302afa6913622c5258390b27e7b87f22c755f7fe482838c"
+  },
+  "agentSyslogEnabled": {
+    "text": "開啟時，代理將事件轉送到已設定的系統日誌收集器。",
+    "source_sha256": "e1e69d46a033816d57737cd1e70147d7734da5e7ba833499346ba56e80ef4bd7"
+  },
+  "agentSyslogHost": {
+    "text": "遠端系統日誌收集器的主機名稱或位址。",
+    "source_sha256": "b46af73db808a261604d2d9198e47db3174d1d90fcb284824ac606463d816c99"
+  },
+  "agentSyslogProtocol": {
+    "text": "系統日誌的傳輸協定（UDP、TCP 或帶有 TLS 的 TCP）。",
+    "source_sha256": "6bc01d341cfc78aea9e4c22ed89e0e51e47cb34e926a3401aef2be0d93f5c047"
+  },
+  "agentSyslogFraming": {
+    "text": "TCP 系統日誌流的訊息幀。",
+    "source_sha256": "66bb8de9f775dee3c0a8f6f28723cb99636b996e63bf1f9fc4ca97f626a3b7d7"
+  },
+  "agentSyslogFormat": {
+    "text": "系統日誌訊息格式（RFC 5424 或相關）。",
+    "source_sha256": "b109852db5c27adad3a71120e3b1f7b2e60ad033ac2622a844649cf4dda07bc0"
+  },
+  "agentSyslogTlsVerify": {
+    "text": "開啟時，驗證系統日誌收集器 TLS 憑證。",
+    "source_sha256": "e69b41e697d242e5af54377d6f132112a8da4080406810c94dba639d623f5b9c"
+  },
+  "disclosureWizardField": {
+    "text": "應用揭露標準預設時使用的欄位值。",
+    "source_sha256": "a34e87755879e07f79fa2145c88df855b6fd34e115a71700d184f11b545a2e5d"
+  },
+  "brandingSave": {
+    "text": "將品牌顏色和上傳的資源保存到伺服器。",
+    "source_sha256": "9d6fa27e34f7f101ad04a3cb68142c5bc8e2ebae015d0f69e7ed7be5d5b366df"
+  },
+  "companyProfileSave": {
+    "text": "儲存揭露範本中使用的公司資料欄位。",
+    "source_sha256": "0d9d0ee7345dbafa7a2fd7b5bbb5c2d61989f34e411defa5a14d1864bf04df21"
+  },
+  "cryptoBackupExport": {
+    "text": "建立加密的加密備份以供下載。",
+    "source_sha256": "7207d73378ae000f429d0d85f703d3d894f654266bef20183eb8ebaf891e292c"
+  },
+  "cryptoBackupImport": {
+    "text": "從先前匯出的備份檔案中還原加密材料。",
+    "source_sha256": "cc854540343d91a60c813df0d6d8de2af7e75d45f3e6bead9971274071c3574a"
+  },
+  "cryptoBackupDryRun": {
+    "text": "選取後，匯入僅驗證備份而不寫入金鑰。",
+    "source_sha256": "4be786c94bef0c88a9e17f69f3efc3d9694ea5cf5c34548d9c1bed364d0ebe0a"
+  },
+  "cryptoMasterExport": {
+    "text": "在打破玻璃控制下導出軟體主加密金鑰。",
+    "source_sha256": "bf6b730cb291b29190e17e6232cb77a5d332bc66a1e299bb2930e86318601323"
+  },
+  "linkHsmAdapter": {
+    "text": "使用哪個 HSM 適配器連接來連結加密貨幣託管。",
+    "source_sha256": "80ea4544efdbc53a3b7e9f337dd242beb9d67b7992c5ed4a59205e9f934e983e"
+  },
+  "linkHsmActivate": {
+    "text": "啟用後，會在連結後啟動連結的 HSM 金鑰以進行新的換行。",
+    "source_sha256": "1a281c6b67cd3fd2c19e1d34f08005c3f9f6e6c48163fa913f610911150176df"
+  },
+  "localCryptoSetup": {
+    "text": "在此伺服器上建立或切換到本機軟體加密託管。",
+    "source_sha256": "61a85cff9982d94c62f827b3bc6fe1beba2ca580654eab7d8fbbec2f0c4232f0"
+  },
+  "maskedPassphrase": {
+    "text": "保護此匯出或匯入的密碼。角色在螢幕上被遮蓋。",
+    "source_sha256": "e080f24cabf6c1959ee6059df60c70e257e6fbf7406e8be66b44f7d8cb411f02"
+  },
+  "maskedPassphraseToggle": {
+    "text": "顯示或隱藏密碼字元。",
+    "source_sha256": "b6930287479d1d1fe423cdbba1819c0d7604251cd075e0c1494dfd898999f0fb"
+  },
+  "migrateFromHsm": {
+    "text": "運行或繼續將加密貨幣託管從 HSM 遷移到軟體。",
+    "source_sha256": "715533e725ee8ab91d7158ec8bbad8948d9b09b9c65489a237a0f8b44418a39d"
+  },
+  "moveToHsm": {
+    "text": "運行或繼續將加密貨幣託管從軟體遷移到 HSM。",
+    "source_sha256": "2ea98d0c95d4e0c06d34e21f5110439e33b6746f64bd31510d6874675ae54d80"
+  },
+  "cryptoMigrationTarget": {
+    "text": "此重新加密遷移的目標託管或金鑰環。",
+    "source_sha256": "3d7d3444c0dbca3e31db19b0cee5fd3070e3ead4015563a60ba088850e7e059d"
+  },
+  "cryptoVerifyRoundTrip": {
+    "text": "加密和解密樣本以驗證所選的保管路徑。",
+    "source_sha256": "2d4762b3ef88419d38930c7a22cf79dbd0965587f24c05cca7cf64f7df5f25b2"
+  },
+  "cryptoPreviewRewrap": {
+    "text": "計算無需寫入變更即可重新加密的行數。",
+    "source_sha256": "28ff71ad585a25899f729dd8c708292b2d9ed1caf3046080e9b04df8296d8367"
+  },
+  "cryptoRunRewrap": {
+    "text": "重新加密所選託管目標下儲存的機密。",
+    "source_sha256": "7dcd8a8fa067319a44d01286693e125c94a806d282166f5e6f6aff7d24606891"
+  },
+  "defaultPwRequireUpper": {
+    "text": "enclave 預設密碼原則中至少需要一個大寫字母。",
+    "source_sha256": "d853eb3f55204b654c0579d37db9118142af6a95d4841c320f33729e915bdb7a"
+  },
+  "defaultPwRequireLower": {
+    "text": "enclave 預設密碼原則中至少需要一個小寫字母。",
+    "source_sha256": "88252e11a0a2ad56465d1cb004eb3f45b1a093a848308aeb0b9be07fcc073884"
+  },
+  "defaultPwRequireDigit": {
+    "text": "enclave 預設密碼原則中至少需要一位數字。",
+    "source_sha256": "418a2962a771f87a05a43412faf6588f9e35d0d2135b91454fe2d2003735cfb1"
+  },
+  "defaultPwRequireSymbol": {
+    "text": "Require at least one symbol in the enclave default password policy.",
+    "source_sha256": "bee4ccb88c7fbeffe188d54d7e3733d107f485756beaff1a9e00718545d42063"
+  },
+  "defaultPwSave": {
+    "text": "儲存 enclave 預設密碼原則。",
+    "source_sha256": "ebecb2b2c350acc73c1208e629067f5f0505d94437099ef894395020e9759e80"
+  },
+  "complianceIndustry": {
+    "text": "行業包裝過去常常暗示預設披露。",
+    "source_sha256": "de29070442b75650e4b00fcb33ebf4d2c487c5fa8c8a12c4c7a0e2215c331f7d"
+  },
+  "complianceCmmcLevel": {
+    "text": "CMMC 等級包裝用於建議揭露預設值。",
+    "source_sha256": "6df4a0f7175c60dd91ea41a1453dc5a9f3c399920eafa8ed3911b894c2e489ed"
+  },
+  "complianceCustomNotes": {
+    "text": "與這些合規性包裝預設值一起儲存的可選註釋。",
+    "source_sha256": "08a94489b298d28e4256d8798e0beff103a285a7c8e20710953e4616d236397f"
+  },
+  "programDisclosureTemplate": {
+    "text": "此程式會揭露欄位的範本文字（支援可替換令牌）。",
+    "source_sha256": "c3d898bdb11a4827d59d56872afde1db89c5327038c685c99ab3eb8583a1e9d6"
+  },
+  "programDisclosureVariable": {
+    "text": "渲染公開模板時使用的可替換變數值。",
+    "source_sha256": "2ec28da0b20c2165b24cc181fa66908d13340ddf9296e6d98d8133a7675e0183"
+  },
+  "regulatoryStandard": {
+    "text": "Regulatory standard selected for this disclosure or assessment step.",
+    "source_sha256": "1c360620746d5a58e82c959e80d0346f8df4b0960e912b07e82332a2d1dc6a6c"
+  },
+  "settingsEnvelopeField": {
+    "text": "Value written into the settings envelope for this key.",
+    "source_sha256": "44904272571837c25a08d4e4af2929672634251b49c2e3c6f8f609381335557f"
+  },
+  "trainingFrameworkToggle": {
+    "text": "啟用後，該框架將包含在培訓覆蓋率報告中。",
+    "source_sha256": "6b8691a510b43513f4e6eae9818118c8c9677d1106ee33dab75fa98310fc2cd0"
+  },
+  "frameworkCoverageSwitch": {
+    "text": "在覆蓋範圍摘要中包含或排除此框架行。",
+    "source_sha256": "41b1847db597ef578a273bf0f483569f49320702a1eb0261275893f95b020c30"
+  },
+  "accountSecurityDialogCtrl3": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "accountSecurityDialogCtrl2": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "complianceAssessmentProfileSwitcherCtrl2": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "complianceAuditorSyncPanelCtrl2": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "complianceAuditorSyncPanelCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "complianceEngagementAuditorsPanelCtrl4": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "complianceEngagementAuditorsPanelCtrl3": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "complianceEngagementAuditorsPanelCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "complianceFrameworksComplianceFrameworksEditorCtrl7": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "complianceFrameworksComplianceFrameworksEditorCtrl6": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "credentialNotifyDialogCtrl3": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "credentialNotifyDialogCtrl2": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "credentialNotifyDialogCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "elevationRemoteNonAgentLocalElevationPanelCtrl4": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "elevationRemoteNonAgentLocalElevationPanelCtrl2": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "elevationRemoteNonAgentLocalElevationPanelCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "endpointsPushIpcProbeDialogCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "eventTypeFilterEventTypeFilterEditorCtrl5": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "eventTypeFilterEventTypeFilterEditorCtrl4": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "eventTypeFilterEventTypeFilterEditorCtrl3": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "formRecoveredPasswordDisplayCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "identityPickListCtrl3": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "identityPickListCtrl2": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "labTestAccountsPanelCtrl2": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "labTestAccountsPanelCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "machinePolicyDialogCtrl4": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "machinePolicyDialogCtrl3": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "machinePolicyDialogCtrl2": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "machinePolicyDialogCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "mocksElevationChallengeMockPanelCtrl3": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "mocksElevationChallengeMockPanelCtrl2": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "mocksElevationChallengeMockPanelCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "mocksElevationMintOfferMockPanelCtrl4": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "mocksElevationMintOfferMockPanelCtrl3": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "mocksElevationMintOfferMockPanelCtrl2": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "mocksElevationMintOfferMockPanelCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "mocksElevationPolicyMockPanelCtrl3": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "mocksElevationPolicyMockPanelCtrl2": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "mocksElevationPolicyMockPanelCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "mocksElevationWorkflowQueueMockCtrl4": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "mocksElevationWorkflowQueueMockCtrl3": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "mocksElevationWorkflowQueueMockCtrl2": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "mocksElevationWorkflowQueueMockCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "netscanNetworkScanPanelCtrl2": {
+    "text": "連接埠設定檔：快速（前 100 個）、常用服務或自訂逗號分隔清單。",
+    "source_sha256": "f7ff2df43d2ce7d0788d8aba25d2d79dbcb12e384e11900ea513fb620402e3f4"
+  },
+  "netscanNetworkScanPanelCtrl1": {
+    "text": "要掃描的 IPv4 目標 — 每行一個位址或 CIDR，最多 /16 寬。",
+    "source_sha256": "50faece63c2a1b84eb70056495fad5604bf86ca0375d2aed9d86760dee25d3db"
+  },
+  "passwordPolicyAdvancedPasswordPolicyFieldsCtrl4": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "passwordPolicyAdvancedPasswordPolicyFieldsCtrl3": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "passwordPolicyAdvancedPasswordPolicyFieldsCtrl2": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "passwordPolicyAdvancedPasswordPolicyFieldsCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "passwordPolicyBasicPasswordPolicyFieldsCtrl2": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "passwordPolicyBasicPasswordPolicyFieldsCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "passwordPolicyPasswordPolicyPresetDialogCtrl4": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "passwordPolicyPasswordPolicyPresetDialogCtrl3": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "passwordPolicyPasswordPolicyPresetDialogCtrl2": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "passwordPolicyPasswordPolicyPresetDialogCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "passwordPolicyRotationIntervalFieldsCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "phoneE164TextFieldCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "policyInheritanceGroupPolicyInheritanceDialogCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "policyInheritancePolicyInheritanceTableCtrl2": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "policyInheritancePolicyInheritanceTableCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "resourceHubEndpointOverviewPanelCtrl2": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "resourceHubEndpointOverviewPanelCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "sessionsSshTerminalViewportCtrl4": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "sessionsSshTerminalViewportCtrl3": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "sessionsSshTerminalViewportCtrl2": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "sessionsSshTerminalViewportCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "sessionsVncFramesPlayerCtrl2": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "sessionsVncFramesPlayerCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsAgentEventDefaultsFormCtrl7": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsAgentEventDefaultsFormCtrl6": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsAgentEventDefaultsFormCtrl5": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsAgentEventDefaultsFormCtrl4": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsAgentEventDefaultsFormCtrl3": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsAgentEventDefaultsFormCtrl2": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsAgentEventDefaultsFormCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsApplyDisclosureStandardWizardCtrl5": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsCryptoCryptoBackupToolsCtrl3": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsCryptoLinkHsmCryptoDialogCtrl4": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsCryptoLinkHsmCryptoDialogCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsCryptoLocalCryptoSetupDialogCtrl2": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsCryptoMaskedPassphraseFieldCtrl2": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsCryptoMaskedPassphraseFieldCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsCryptoMigrateFromHsmCustodyWizardCtrl6": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsCryptoMigrateFromHsmCustodyWizardCtrl2": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsCryptoMoveToHsmCustodyWizardCtrl6": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsCryptoMoveToHsmCustodyWizardCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsCryptoMigrationPanelCtrl4": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsCryptoMigrationPanelCtrl3": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsCryptoMigrationPanelCtrl2": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsCryptoMigrationPanelCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsDefaultPasswordPolicyFormCtrl5": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsDefaultPasswordPolicyFormCtrl4": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsDefaultPasswordPolicyFormCtrl3": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsDefaultPasswordPolicyFormCtrl2": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsDefaultPasswordPolicyFormCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsOperatorDisclosuresDefaultsFormCtrl6": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsOperatorDisclosuresDefaultsFormCtrl5": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsOperatorDisclosuresDefaultsFormCtrl4": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsOperatorDisclosuresDefaultsFormCtrl2": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsOperatorDisclosuresDefaultsFormCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsProgramDisclosureDefaultsPanelCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsRegulatoryStandardPickerCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsServerDisclosuresDefaultsFormCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "trainingFrameworkCoveragePanelCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "trainingTrainingHonestyBannerCtrl1": {
+    "text": "操作員控制台上此控制的目的幫助。",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsCryptoMigrateFromHsmConfirm": {
+    "text": "輸入確認短語以授權將加密貨幣託管從 HSM 移回軟體。",
+    "source_sha256": "bec317f018d737e90c234fbc3306a85454c5225502e4b97cc6d4127eaf120183"
+  },
+  "settingsCryptoMigrateFromHsmApply": {
+    "text": "確認後套用從 HSM 託管的遷移回軟體。這是經過審核的。",
+    "source_sha256": "cb2c97eb9b986cda6ab2af3104b58167c26f27d1ee05d7281584856a0aae1e56"
+  },
+  "defenseKpiCard": {
+    "text": "此度量的阻止或失敗事件的計數，或當來源在視窗中沒有行時不存在。",
+    "source_sha256": "5bcd306683e2edbea3b171ad45f80dfc2b46e44cb564867a32035b5bc0e09f8f"
+  },
+  "defenseWindow7": {
+    "text": "顯示過去 7 天內被封鎖的攻擊計數。",
+    "source_sha256": "c532676f174e5a19b8ce220853576775aa551f6496a7b0b778e0f1707ef325d7"
+  },
+  "defenseWindow30": {
+    "text": "顯示過去 30 天內被封鎖的攻擊計數。",
+    "source_sha256": "45acd19772200b2be82d0326d88f0a98746ef96cd3887a9df79ad2aab8da1b89"
+  },
+  "defenseWindow90": {
+    "text": "顯示過去 90 天內被封鎖的攻擊計數。",
+    "source_sha256": "85fa107ed3b2119996d1ff0c7a303dd5b2f6b228600d36bfc5b4e0b62a393a94"
+  },
+  "defenseSkinAic": {
+    "text": "在此儀表板上使用標準 AIC 管理顏色。",
+    "source_sha256": "5c02e5e4393d4c97b4d36f051d36dd6d69fd08c19c3745a16e0930f63907ab46"
+  },
+  "defenseSkinDark": {
+    "text": "僅在此儀表板上使用深色操作中心顏色。",
+    "source_sha256": "3e8739d7099c56b31744ba22a0591157d2583d99ec1d96d149edac1b604f0ad5"
+  },
+  "defenseExport": {
+    "text": "以 JSON 檔案形式下載此儀表板快照。從不包含密碼值。",
+    "source_sha256": "f0c96095e26d6461a41e72c3f2b00625724d3f41c0d1eb7506c4f642c28c2be2"
+  },
+  "defenseClearCountry": {
+    "text": "清除國家/地區過濾器並再次顯示所有被封鎖的事件。",
+    "source_sha256": "dea79faee9baea392983fb06ee78a0687d370305d0fc2f84eef5fa20a44b995f"
+  },
+  "defenseCountryRow": {
+    "text": "選擇這個國家來過濾技術卡和音量條。",
+    "source_sha256": "fbd972413e21a590125bd5ac3139e5c419e0d5d19a9d67ac6d7e85a69468bae3"
+  },
+  "defenseHeatMap": {
+    "text": "按國家/地區列出的受阻和失敗嘗試的世界地圖。排名表是可访问的来源。",
+    "source_sha256": "23766f8e4111351f0cdbb8820eea08bae39802f0a6cb8d4a8d74b44245ff3e5c"
+  },
+  "defenseOpenFamily": {
+    "text": "開啟該系列的當前狀態合規性。",
+    "source_sha256": "3b19be536aeb8ccdc0ca37479b219d4f25e584b8ca652d00383b1cbe20ab6e87"
+  },
+  "cmmcHonestyBanner": {
+    "text": "這些數字描述了產品交付和記錄的工作。它們不是評估結論。",
+    "source_sha256": "3421c9d54a1b550787715678393407e9c69b601af6bb86ff0c456665821a8401"
+  },
+  "cmmcOpenFamily": {
+    "text": "開啟目前狀態合規性以繼續為該家庭指定的工作。",
+    "source_sha256": "3af5066b0b91f57d03606768d1ee86773727c960b7e9219be388f6e1cd721939"
+  },
+  "cmmcOpenPoam": {
+    "text": "打開 POA&M 寄存器以繼續記錄這一發現。",
+    "source_sha256": "5ba29b0e67df860eee912793c1d9dabdac078327f1128df0416caa7a8f2a7be3"
+  },
+  "cmmcOpenBinder": {
+    "text": "打開評估活頁夾以編寫審核員可用的部分內容。",
+    "source_sha256": "f19c5dead064384efa5f64b62ea73bac2055ae7201235a1dbf354f7f57c8214e"
+  },
+  "otRunDiscovery": {
+    "text": "使用上面輸入的網路啟動 OT 發現掃描。",
+    "source_sha256": "e9e83f8e6a7eb28068d0043ff8a0dcc40e398ecde2ffbdc98ecd8602ec359026"
+  },
+  "otSaveDiscoverySchedule": {
+    "text": "儲存自動發現計劃和間隔。",
+    "source_sha256": "be04d87519efb639660d7dd1b6aae0efeb9e55d702a8a37ed126e082516e7e98"
+  },
+  "otCheckConnectivity": {
+    "text": "探測每個目標撥號連接埠上的 TCP 可達性。連線保持停用狀態，直到探測成功。",
+    "source_sha256": "081126c5b263f1cee1778436344796b772559b3b822d06b03131eeb99145444c"
+  },
+  "otConnectAsset": {
+    "text": "開啟至該目標的 OT 協定會話並導航至 PDU 時間軸。",
+    "source_sha256": "5ad2bc776122756b36fe159159d5c9a92885e4db0fc65283adf2a99470fc51c2"
+  },
+  "otConfigureAsset": {
+    "text": "開啟非秘密庫存欄位和輪換計畫的目標配置。",
+    "source_sha256": "488c241a470cbecb151a5d164b58b95ae83b218149545e9ad16756b868a4f40a"
+  },
+  "otSelectAsset": {
+    "text": "選擇此行以在「憑證」頁面上進行輪換或打破玻璃。",
+    "source_sha256": "e420b5129147091b6a843a777e6c7491db04883ab3340bdca53a3886a6a2e233"
+  },
+  "otStartRotation": {
+    "text": "為選定的目標啟動密碼輪替和保管庫傳播作業。",
+    "source_sha256": "c3ccf9fb2b98c1bd3206c132ff7b41e10786a1fd7e130b31b6ec80949e0fb117"
+  },
+  "otBreakGlassReveal": {
+    "text": "請求經過審核的一次性洩漏所選資產的儲存密碼。",
+    "source_sha256": "5364a57e0e108793746a0945ec25e989cab3bbd0bb0c4236cc415828d49171a9"
+  },
+  "otDismissReveal": {
+    "text": "關閉顯示對話框。密碼不會保存在此頁面上。",
+    "source_sha256": "d7586cf48797f452d870835475417458e4081fb81550da61ece09480444dd494"
+  },
+  "otOpenSession": {
+    "text": "開啟此錄製會話的 OT PDU Live 時間軸。",
+    "source_sha256": "f5d1abfe6d8ea918ccd529af8d131dfd9f8e6181dd4b0266f250de9a08c52283"
+  },
+  "otTryDefaults": {
+    "text": "嘗試在此發現的主機上發布預設憑證。",
+    "source_sha256": "e285826d6198aceebec32fd4c63da6598835e89c046397b5daf52c05a4ef04b7"
+  },
+  "gdprRopaKind": {
+    "text": "控制器行遵循第 30(1) 條；處理器行遵循第 30(2) 條。",
+    "source_sha256": "7bc5d00d7a864e73894b67f188538a24a87756666bc850ab84ae6eccc6e3c446"
+  },
+  "gdprRopaActivityName": {
+    "text": "暫存器中此處理活動的簡稱。",
+    "source_sha256": "95f4fad1d037ac1e8a9e645c0886d0fb392497d341b4d495856b8b148dbf583d"
+  },
+  "gdprRopaControllerName": {
+    "text": "負責此活動的控制者的法定名稱。",
+    "source_sha256": "9b4ceb3a435d8e16f5090603d57e0ba431cbaa84da38f537849e2e7439a6979a"
+  },
+  "gdprRopaControllerContact": {
+    "text": "控制者的聯絡方式（隱私收件匣或 DPO）。",
+    "source_sha256": "4f1964e239401b7569d8ec1aa4b485770b433e2a172e76146585261065cf9102"
+  },
+  "gdprRopaJointController": {
+    "text": "任何联合控制者的名稱（如果處理是共同決定的）。",
+    "source_sha256": "884ea6763a3e748b7841d3881a9f29886a4cf72ae853a3bf97ea373b8e395703"
+  },
+  "gdprRopaJointControllerContact": {
+    "text": "聯合控制人的聯絡方式。",
+    "source_sha256": "e404276d16308a1fdfadd88a7b5e8af15d7540c89e89676436142ef1839ad89b"
+  },
+  "gdprRopaProcessorName": {
+    "text": "依照控制器的指令執行操作的處理器的名稱。",
+    "source_sha256": "c2c44b8b84112fc3f8078757d6a1667c95a910b3322588e525a71fe8f0c8cac4"
+  },
+  "gdprRopaProcessorContact": {
+    "text": "處理者的聯絡方式。",
+    "source_sha256": "01c6d5919d69f3eaf3e16a0dd3fbc6ea8f10f096a02ba530c03f06c8c54a97d6"
+  },
+  "gdprRopaDpoName": {
+    "text": "指定資料保護官員時的姓名。",
+    "source_sha256": "fc4a3c0348f46ccaf8710cead3c4eec74921226df7d28d1343dc0ff838bb4e0b"
+  },
+  "gdprRopaDpoContact": {
+    "text": "資料保護官的聯絡方式。",
+    "source_sha256": "79b0bf7762fcc2d7ed477be2c749a9cbcbe1df343293c4256999d6aeab154e2a"
+  },
+  "gdprRopaPurposes": {
+    "text": "為什麼要為此活動處理個人資料。",
+    "source_sha256": "4ff395e24747fc659d0e3ffa66dda70713765ed49bd2deb7f204c16d8b5338ef"
+  },
+  "gdprRopaDataSubjects": {
+    "text": "資料的對像是誰（例如員工、客戶或訪客）。",
+    "source_sha256": "5c245dd01ac3aa4d6024ee6271ad5095c4476513014fb046ebd4528602a3911d"
+  },
+  "gdprRopaPersonalData": {
+    "text": "處理哪些類型的個人資料。",
+    "source_sha256": "9fc7efd29389ff6729b0a2e36743942c784fb2a695f0918940666fafad4d5f57"
+  },
+  "gdprRopaRecipients": {
+    "text": "誰接收資料（團隊、供應商或當局）。",
+    "source_sha256": "fd83d4af9c19e66fee70480d5f53d99a3d8dbe272b6cc90a390d30b4f323149b"
+  },
+  "gdprRopaTransfers": {
+    "text": "資料是否傳輸到歐洲經濟區以外以及傳輸到哪些國家。",
+    "source_sha256": "bd0b92f6515e2b844b05568e0d416f594c1d949f99ab9f81f8a4fae577615415"
+  },
+  "gdprRopaTransferSafeguards": {
+    "text": "第三國轉移依賴保障措施。",
+    "source_sha256": "b8cadde8b2915b28998939d8ce97c1ecd2b692ee41d1a6a155ea44ef454a40d0"
+  },
+  "gdprRopaRetention": {
+    "text": "每個類別的資料保留多長時間。",
+    "source_sha256": "29b734fdc86cadf76643883abed2d9d484108b18137cdf4dc25e443cbcfac234"
+  },
+  "gdprRopaSecurity": {
+    "text": "保護此處理的一般技術和組織措施。",
+    "source_sha256": "56485b8f82b6b4cb015aeba1cd152a0b7d83127a1f38fa5fbfe50854123ee6ee"
+  },
+  "gdprRopaReviewCycle": {
+    "text": "必須多久檢查一次該暫存器行（天）。",
+    "source_sha256": "ed14b5be2ebfb2c645fd7144dd996debc73029d8b0bc6265b42010d3271eb694"
+  },
+  "gdprRopaReview": {
+    "text": "記錄此暫存器行已按計劃進行審查。",
+    "source_sha256": "6be40977fbf3758f3aa0882147caffa33fec839a698a589f4ae5833f8ac92478"
+  },
+  "gdprRopaExport": {
+    "text": "下載 JSON 格式的活動暫存器以供監管機構審核。",
+    "source_sha256": "057ba68f1f3ffe9e5d7c72e8f093f837a24b39106341b5c91dcb44d6bdb282d0"
+  },
+  "gdprDpiaTitle": {
+    "text": "正在評估的加工操作的名稱。",
+    "source_sha256": "168cc6e5a5e58feede1d71a92fe6abf87586f11bc3def32f12b6af2805398d25"
+  },
+  "gdprDpiaStatus": {
+    "text": "此 DPIA 位於工作流程中的位置（閾值、評估、DPO 審核等）。",
+    "source_sha256": "845c8e5209edbeff58efeac2bf805672f8cf46edffc2be0dc82a2cf9ee9e3eae"
+  },
+  "gdprDpiaThreshold": {
+    "text": "解釋為什麼需要或不需要 DPIA。",
+    "source_sha256": "adb3c943f11c6d41771a2fae1dc38eb59c8f55f8c4272699e21708c4f02d1c86"
+  },
+  "gdprDpiaArt353Triggers": {
+    "text": "適用哪些第 35(3) 條標準（如果有）。",
+    "source_sha256": "8d0a8a736c4abc6d40d9985d8485bc173b1ff98843e0256d4ff86188cdffdec9"
+  },
+  "gdprDpiaProcessing": {
+    "text": "有系統地描述加工操作。",
+    "source_sha256": "302fe375a7268db8ac01b1854b6af2a4b11da5d14eb73f5f98db9650b84cedbe"
+  },
+  "gdprDpiaNecessity": {
+    "text": "解釋處理是否必要且適當。",
+    "source_sha256": "ae204da4c4d0e4f0120c5f9382a3d7e73f03c23289d8f1952f168c502017d504"
+  },
+  "gdprDpiaRisk": {
+    "text": "解釋人們的權利和自由所面臨的風險。",
+    "source_sha256": "f58e5252f99127bd80789495b432eeaecb9594c021c3ea57356a712291febeae"
+  },
+  "gdprDpiaMitigation": {
+    "text": "列出為減少或消除這些風險而選擇的措施。",
+    "source_sha256": "ca6d5eb607896cc4addaa62db0a839dcc002432512668719e4a69aca38f78d75"
+  },
+  "gdprDpiaDpoAdvice": {
+    "text": "Record advice from the data protection officer when one is designated.",
+    "source_sha256": "d73a214ec10cb28c2b3805057f1049d0260c1e21de3d2e67fd8297c430ef062c"
+  },
+  "gdprDpiaPriorConsultationNotes": {
+    "text": "依第 36 條向監理機關進行諮詢紀錄。",
+    "source_sha256": "9f944ca05cfedb38af0a3e78cd1c8e02db2419948d964375c10578e5cfa0af8b"
+  },
+  "gdprDpiaPriorConsultationAt": {
+    "text": "事先與當局協商時 (UTC)。",
+    "source_sha256": "458d7659d2896f4a4e060b23938f98953900f15a26a78799847265c74ddd9e9c"
+  },
+  "gdprDpiaDecision": {
+    "text": "DPIA 工作流程的最終結果。",
+    "source_sha256": "a9ea27916a8700b26c123927e2f1ef520f1c2be5bfc520e22fa8b8bc02af527e"
+  },
+  "gdprDpiaDecisionReason": {
+    "text": "Plain-language reason for the DPIA outcome.",
+    "source_sha256": "5dcaddcd0e8c431b12e74431e5b66ae835e1666300d9ed5b60898931b0641905"
+  },
+  "gdprDsrIntake": {
+    "text": "開啟一個新的資料主體請求並啟動一個月的回應時鐘。",
+    "source_sha256": "f1e212e80a1a212723693fc90cbca915980c02a59f3d522fad46b0657cc919e4"
+  },
+  "gdprDsrRight": {
+    "text": "該人要求使用第三章中的哪一項權利。",
+    "source_sha256": "96842e69880abc4f9b5912f3eee0e7f2a62b7c5d93668d03179e458b9d8a6cc1"
+  },
+  "gdprDsrStatus": {
+    "text": "該請求處於接收、驗證、履行或結束階段。",
+    "source_sha256": "a0d544eba8677ed66c67b2b3f3fb54c186bb8b121a54cb5705dc3a26b4142b52"
+  },
+  "gdprDsrVerifyIdentity": {
+    "text": "在移交個人資料之前記錄第 12 條第(6)款的身份驗證。",
+    "source_sha256": "30f601b751759591bf3e7d8062b411f4877c993b63ba10ce065dd399393ddc4d"
+  },
+  "gdprDsrVerifyMethod": {
+    "text": "請求者如何證明自己的身分（身分檢查、帳戶質詢等）。",
+    "source_sha256": "fef3a9bb5e92ff88b7a26d9aa2eb33901e5c024263f0fbedfcf614ce68862e11"
+  },
+  "gdprDsrVerifyEvidence": {
+    "text": "您所依賴的證據 - 保存在僅附加事件分類帳中。",
+    "source_sha256": "54af8a8214bb98f6f700c638f7be12b6b7a146b1ce3c299415d6c8c79590dd57"
+  },
+  "gdprDsrRefuseVerification": {
+    "text": "驗證失敗或必須暫停時進行記錄 - 因拒絕而關閉請求。",
+    "source_sha256": "0df5b15e4cfd1b7a5a538d9a3c96b14f98638cbc116b2889ea2f3ca8cee2034b"
+  },
+  "gdprDsrWorkforceLink": {
+    "text": "當請求者在範圍內時連結到勞動力名冊行；對於外部資料主體留空。",
+    "source_sha256": "85708970619c07c6d2c4d27ca7d02e50dd8857c976f266ce0654c661b8429dd7"
+  },
+  "gdprDpiaThresholdRequired": {
+    "text": "記錄第 35 條是否要求進行 DPIA 進行此處理。",
+    "source_sha256": "31a84ba5a19ae2270a31045c06ffc5fcce11be0aeddd1e8ec4957759bd7a5def"
+  },
+  "gdprDpiaPriorConsultationRequired": {
+    "text": "標記何時剩餘高風險需要第 36 條事先協商。",
+    "source_sha256": "8ef35b4ef330c68e8219f867bf4d23638faed9164c84ebf3e7ad20dd7c29de9b"
+  },
+  "gdprDsrLocated": {
+    "text": "在哪裡找到相關數據以及哪些系統保存這些數據。",
+    "source_sha256": "a8dc8dc7649fefbc58b42fc658dc19227b1e65b0a1ce810239187882aa9efa27"
+  },
+  "gdprDsrDelivery": {
+    "text": "實際為請求者發送或完成的內容。",
+    "source_sha256": "6103655e7bc5bdd79049b4a28fb05bba72b3a10c6d0f0a5c01edd72891f68e94"
+  },
+  "gdprDsrDecision": {
+    "text": "最終決定和簡單易懂的理由，包括所依賴的任何豁免。",
+    "source_sha256": "725db5bfab4336423cd78c4c1b0e48ce0b46e11700020b405ed6774fee8b9457"
+  },
+  "gdprDsrExtend": {
+    "text": "當請求複雜時，記錄兩個月的延期並說明原因。",
+    "source_sha256": "d7c96086615ca697044ee91d0c9c530b228967e75368ed4b22fa2a498b91926c"
+  },
+  "admin_handb_cher": {
+    "text": "管理員handb cher",
+    "source_sha256": "34958fe3da83fa00ade65c8a61c4b98e6074c60d7321b503d8d582d3d7d2434d"
+  },
+  "agent_event_forwarding": {
+    "text": "代理事件轉發",
+    "source_sha256": "5bf5f9091d2ebf26b604ef8901092e5a1b5c69897980f2ecf9e07627276a58c0"
+  },
+  "app_manifest": {
+    "text": "應用程式清單",
+    "source_sha256": "2a8bbfeec93646c2a529c376b70edaf22477abf342e0e32110a090adff81438f"
+  },
+  "auditor_handb_cher": {
+    "text": "審計員漢德謝爾",
+    "source_sha256": "95a16a957ec14cfcc89a2975b4d3faa1b010028938303b6d3f4279fc86e81f1d"
+  },
+  "compliance": {
+    "text": "遵守",
+    "source_sha256": "29a3e14798aa2363dc0ca5d6cf18f3a0cf9003c8824cf66fde7804867e8ceee9"
+  },
+  "create_settings_file": {
+    "text": "建立設定文件",
+    "source_sha256": "5920e8e00a53eeeac13ea4a410cade58dfcdb287d8f6bf3e1ca078e981300350"
+  },
+  "demo_data": {
+    "text": "示範數據",
+    "source_sha256": "634aa1550f61ea77c5456b4a233b0307387e6254d28e968b7364d1e7929211ba"
+  },
+  "elevation_mocks": {
+    "text": "海拔模擬",
+    "source_sha256": "5ef035e6bf40366c02b6ea02336800d4cc00f2733cc75f3fcae5891d31efcb4a"
+  },
+  "elevation_policy": {
+    "text": "海拔政策",
+    "source_sha256": "1815abd2f0c9a5d15d18dd8077a244ecfe3f0f58cb6b2af142eaf96b06381367"
+  },
+  "events": {
+    "text": "事件",
+    "source_sha256": "862417b9e7c3720bcb3263cd873b09892d787823b6f9a0f453e42824c5a4d4b6"
+  },
+  "general_settings": {
+    "text": "常規設定",
+    "source_sha256": "e841642bc62a5919ca8c4249b7515884a9c2776d2418d9204b0299aba9552e0c"
+  },
+  "generate_config_file": {
+    "text": "產生設定檔",
+    "source_sha256": "c069f3235161221bc3816bce8cc3f82d2f65790c0d658a73c9fada1e975fa057"
+  },
+  "get_an_elevation_code": {
+    "text": "取得海拔代碼",
+    "source_sha256": "475eba9bcaf58ca62238383b4dc3ff7d845a0506c8ab784b1dc231700a86a539"
+  },
+  "group_defaults": {
+    "text": "群組預設值",
+    "source_sha256": "847a4d97cd9e65d0305d99efab8cba3c6197385be4ffb0ebbf4ce30367846cc2"
+  },
+  "identifierColumns": {
+    "Annex A": {
+      "text": "識別符列.附件 A",
+      "source_sha256": "5c7998e5ce20bfdef5ddb24c083504781b509ee5f8bc5c014a1950514d410499"
+    }
+  },
+  "identity_defaults": {
+    "text": "身分預設值",
+    "source_sha256": "61f048084cbaa89c45bd2fa0c3ffe2877455a539cf48c9e80519e0d523eafa56"
+  },
+  "import_settings_files": {
+    "text": "導入設定文件",
+    "source_sha256": "59a92a3939c1b20b86bd537efff4d6670a5d8c4926eb2d0b4c96814dda61306a"
+  },
+  "lab_advanced": {
+    "text": "實驗室高階",
+    "source_sha256": "ca4cf26eac68c70b64bc6ab249ba545ac2a1ed68d42ca760d626a54a7ff85477"
+  },
+  "local_user_groups": {
+    "text": "本機用戶群組",
+    "source_sha256": "14c8c5142afc24634a1fd19e655e11e0799d311c78f19ab8514f60526845fcdd"
+  },
+  "mitm_dev_only": {
+    "text": "僅限中間人開發",
+    "source_sha256": "360e2a62efcd1cf1a72525e5d65b9ea7f623504c77e4762e07eed437676e5955"
+  },
+  "password_defaults": {
+    "text": "密碼預設值",
+    "source_sha256": "c22cb7cea4f0720f4d205396ff9bffdb33b2e0e49d5570f32505b66c3747ef61"
+  },
+  "password_policy_presets": {
+    "text": "密碼策略預設",
+    "source_sha256": "ba4a03da1ddbb86dcb91cde02da48e2e0e36d889d99399057050f749351fe97c"
+  },
+  "rbac_lab": {
+    "text": "RBAC實驗室",
+    "source_sha256": "9b4f33cd518a6459c15eeb0e5f34f9168783ab32d4ca521f4d2e591d5e768bcf"
+  },
+  "reveal_a_password": {
+    "text": "洩漏密碼",
+    "source_sha256": "5c4bb420ea928a4e98c28200045b4fe8e1c0c94435bf493538704130d7450427"
+  },
+  "server_control": {
+    "text": "伺服器控制",
+    "source_sha256": "b12eb54b4f44d73c1b97234c772b937e85e2430fe07776c0255e27d9fe00d85c"
+  },
+  "technische_dokumentation": {
+    "text": "技術文獻",
+    "source_sha256": "8e69d6d1106ec623f17724f8840f1c0dae2c62b9ca57b39d82a9e206568f0535"
+  },
+  "tls_security": {
+    "text": "安全性",
+    "source_sha256": "8ff3a8dcfbf15f57e9968cb0cf2e8d040863317687b59b81b14f61297438eb99"
+  },
+  "unix_privilege": {
+    "text": "UNIX特權",
+    "source_sha256": "313651f14b14cfe7f28b3d65f3a61c24c50a52dbae554850b73c074876c7a031"
+  },
+  "user_handb_cher": {
+    "text": "用戶handb cher",
+    "source_sha256": "2756ead6491abbc53e00df1d297627852808959eb76f795599983df6e76c71bc"
+  },
+  "workstation_assignments": {
+    "text": "工作站分配",
+    "source_sha256": "805f4fdab3f1110dca8e786f433849fb1fb6a6c0d983ed030a3666703b586f6f"
+  },
+  "workstation_prompt": {
+    "text": "工作站提示",
+    "source_sha256": "7238ea3f0d4f568be2187e202f32180ca56fbd50ab391b2a67e93d7848b7f458"
   }
 }
