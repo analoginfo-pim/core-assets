@@ -641,6 +641,240 @@
     "NetworkScanJobStart": {
       "text": "بدأ عمل فحص الشبكة",
       "source_sha256": "32f0b8d6498cdfe51a8f781dca6ace12aaac0f87b373961ae86df09066be33a1"
+    },
+    "available": {
+      "text": "متاح",
+      "source_sha256": "e674447337e83c1346f6122ed69f35bf5526e2a11842b2f2b788f3fb67d714ca"
+    },
+    "blocked": {
+      "text": "محظور",
+      "source_sha256": "18f2a0947f9d6523991b29b450307f22773f57d65f7efb98d48a167df04d6b1d"
+    },
+    "closed": {
+      "text": "مغلق",
+      "source_sha256": "c21ead0614e7e1b70edb3759e1d19ca1e12e6036980d10bfb73052fb1a018efa"
+    },
+    "covered": {
+      "text": "مغطاة",
+      "source_sha256": "da69bf500ed87251c00ce3f0ba81a58c0351cd352f9777a910e2776615baa3f4"
+    },
+    "failed": {
+      "text": "فشل",
+      "source_sha256": "031a8f0f659df890dfd53c92e45295b0f14c997185bae46e168831e403b273f7"
+    },
+    "log_derived": {
+      "text": "مشتقة من السجل",
+      "source_sha256": "72198d18fa10f1cfb7a848b40f0b5430911586740c3ba8741bf187b43f26e2e7"
+    },
+    "opened": {
+      "text": "مفتوح",
+      "source_sha256": "b19fb8d1b395b333251f40be2909ca37a0b0a007b3c4c4b34b726be71f715daa"
+    },
+    "physical_host": {
+      "text": "المضيف الجسدي",
+      "source_sha256": "6e68f5e4d3d9082f59e013a34c9bed2753cb03bbffd3bf65c20ff1a15dcbe312"
+    },
+    "uncovered": {
+      "text": "مكشوفة",
+      "source_sha256": "2e5ea64bd7730f71f6a50541030109a889c1d8e85c3e9d7aa595c5b5d0b24bc2"
+    }
+  },
+  "chartCurrentCount": {
+    "text": "العدد الحالي",
+    "source_sha256": "f03cb301db23ffc4446eb5d9e5f39d1fa5e1ba1e73dff4bde2773be83ad7d8ed"
+  },
+  "empty": {
+    "collectorFailed": {
+      "text": "فشل جامع البيانات. لا يتم عرض أي رقم لأن الصفر الذي تم تخمينه سيكون مضللاً.",
+      "source_sha256": "cafe33d183aa707e7a2b4a4d663826d79b2703fb57f954bbbfe9b1179c26c8c0"
+    },
+    "deliveryStatusAbsent": {
+      "text": "مصدر البيانات هذا غير متصل بعد. لا يوجد شيء يمكن الاعتماد عليه.",
+      "source_sha256": "3c7865262b16ee47e68890123811af0a77595b747fe93f56c9e682ab11193c93"
+    },
+    "noData": {
+      "text": "لا توجد بيانات متاحة لهذا المربع.",
+      "source_sha256": "f0b1afc56e9f5c98a42efc6dc5762a0a29d178e719b0cbd7b73326a7ec630bc7"
+    },
+    "partialSnapshotOnly": {
+      "text": "التسليم الجزئي — المخزن المؤقت الحالي فقط، ولا يوجد سجل دائم.",
+      "source_sha256": "084285491884209d96b9a5a403ac885fa3a931b2838bb98fb7658e0466580ffd"
+    }
+  },
+  "tileDeepLinkHint": {
+    "text": "{{action}} — عدد عمليات التسليم فقط، وليست نتيجة تقييم.",
+    "source_sha256": "0344daf8ba4644346f4dab89d7d6736b023f8673d9a45816f587e6082a77e525"
+  },
+  "tilePartial": {
+    "text": "جزئي",
+    "source_sha256": "a4d50fb85403654840e078e3ffe72dffe37df3ae280c6d98f39a41d346c88a14"
+  },
+  "tiles": {
+    "compliance": {
+      "attestations_recorded": {
+        "text": "تم تسجيل الشهادات",
+        "source_sha256": "7c13425dd8d7177d4ad70e858c2afc01edc5d6b1fe36ad3e0ea382b238223c46"
+      },
+      "pack_readiness": {
+        "text": "جاهزية العبوة",
+        "source_sha256": "77c41ec25b0e67f63b5a67fea12714a5f14bade3c2fe52f20762abd191ae11e0"
+      },
+      "poam_open": {
+        "text": "افتح عناصر POA&M",
+        "source_sha256": "cb492b36eee28f487a68a747a29ad26e1679817a5c1c2df5390c37cac8f50c8d"
+      }
+    },
+    "defense": {
+      "blocked_attempts": {
+        "text": "الهجمات المحظورة",
+        "source_sha256": "d2994427d1062d247c0d0e3861c229864f724416b13a9dc372ec0e4a63160b9d"
+      }
+    },
+    "env": {
+      "discovered_systems": {
+        "text": "الأنظمة المكتشفة",
+        "source_sha256": "f603fc62f77c7a8ca50292e672799d27b42f308a517364e400554dd2d35c2e7f"
+      },
+      "physical_vs_log": {
+        "text": "المادية مقابل المشتقة من السجل",
+        "source_sha256": "feeaa34ec0b235c8e7eaf1029bd779a571cc39d50bba010f0c55e862a21700e1"
+      },
+      "probe_enabled_count": {
+        "text": "الأنظمة مع تمكين التحقيق",
+        "source_sha256": "19499cfbe67f6ab9c11b0b455ef6b86cb4a0bd747d3c58288a200f1d68e11cf3"
+      },
+      "punch_list_open": {
+        "text": "فتح عناصر القائمة المثقوبة",
+        "source_sha256": "dc358afe24c02eec250f5a726b0051e5c0385f9613485d38f6d8c6c138e87e1c"
+      },
+      "systems_count": {
+        "text": "الأنظمة في الجيب",
+        "source_sha256": "124b7af177337948bcb43d3c1d2ffb84e2cd2b4b646272358330b8349cbeb1cd"
+      }
+    },
+    "events": {
+      "by_type": {
+        "text": "الأحداث حسب النوع",
+        "source_sha256": "d3444a6107996dced07158c4a770e1d3c99aac84dc844386fb512b189a448061"
+      }
+    },
+    "ir": {
+      "cases_opened_closed": {
+        "text": "الحالات المفتوحة/المغلقة",
+        "source_sha256": "c61f60ece477ed514f74c50d80161dae116d1a1fee9788158292d9fdcdf8a3d6"
+      },
+      "open_cases": {
+        "text": "الحالات المفتوحة",
+        "source_sha256": "575f540cf90675574bb4e1f2dfcba67d41c25c0f0d34245cc6eff3e9c57c7afe"
+      }
+    },
+    "pum": {
+      "endpoints_enrolled": {
+        "text": "تم تسجيل نقاط نهاية PUM",
+        "source_sha256": "f485461b8fec947c1d0ecb24fb423ef03075c4a52ea679fce84205728ad0ae25"
+      },
+      "violations_24h": {
+        "text": "انتهاكات PUM (24 ساعة)",
+        "source_sha256": "82aa9c8f88c450b040c70b71564696eb35f5bc54835799a34b18764e3d2e9f35"
+      }
+    },
+    "training": {
+      "framework_coverage": {
+        "text": "تغطية إطار التدريب",
+        "source_sha256": "16393c204c632069e6f81f71ab03a8c200365a23367957197c47f958ef05b0f6"
+      },
+      "uncovered_frameworks": {
+        "text": "الأطر المكشوفة",
+        "source_sha256": "423f49c9f554ac6af15d3a9397be872f80b6b7ee1fc3248a136ea589bea78aae"
+      }
+    }
+  },
+  "windowDefault": {
+    "text": "النافذة: 7 / 30 / 90 يومًا عندما تكون البيانات متاحة.",
+    "source_sha256": "69150119161cbef5e35d43b4d28a61ee2e0a88f1ed044db45dd122c16d945104"
+  },
+  "windowSnapshot": {
+    "text": "الحالة الحالية (لقطة — لا توجد نافذة للتاريخ).",
+    "source_sha256": "ce8c376dc106b57947e29d9ea25f1599702476f51d0edeaeda34f6e55074d404"
+  },
+  "tileLinkActions": {
+    "compliance": {
+      "attestations_recorded": {
+        "text": "تم تسجيل الشهادات المفتوحة",
+        "source_sha256": "e80cbd7e898fc97ebe7d995a1fa66cba2e7dd9ca21203d6998e34b6e9ea6a2c9"
+      },
+      "pack_readiness": {
+        "text": "جاهزية العبوة المفتوحة",
+        "source_sha256": "e21db65b055bd8dbcf118f6cebefc56bbd868a3d7900611464c93ddf5ad2882f"
+      },
+      "poam_open": {
+        "text": "افتح عناصر POA&M",
+        "source_sha256": "cb492b36eee28f487a68a747a29ad26e1679817a5c1c2df5390c37cac8f50c8d"
+      }
+    },
+    "defense": {
+      "blocked_attempts": {
+        "text": "فتح الهجمات المحظورة",
+        "source_sha256": "cbcf0b65f1d4d9f474850b42b561d8acd823ea434f5991cacbb04dcd1b8e9c5f"
+      }
+    },
+    "env": {
+      "discovered_systems": {
+        "text": "فتح الأنظمة المكتشفة",
+        "source_sha256": "0d9cf732bc993e7547957d686f1826c75fdcbeb3f36f5ba333331a140d92e4ad"
+      },
+      "physical_vs_log": {
+        "text": "فتح المادية مقابل المشتقة من السجل",
+        "source_sha256": "65b718a75cb54cdcf608c64981b234e0e2713600b27a7a6745d935cd4e5a83fc"
+      },
+      "probe_enabled_count": {
+        "text": "الأنظمة المفتوحة مع تمكين المسبار",
+        "source_sha256": "92999130453c60ebc557afbc552606e87520f8831fff2a6392a3ba43904f0f8c"
+      },
+      "punch_list_open": {
+        "text": "فتح عناصر القائمة المثقوبة",
+        "source_sha256": "dc358afe24c02eec250f5a726b0051e5c0385f9613485d38f6d8c6c138e87e1c"
+      },
+      "systems_count": {
+        "text": "الأنظمة المفتوحة في الجيب",
+        "source_sha256": "20fedf7cc750c5483d27db89813fd398dd396fbf3bc412d3d93d78864533370d"
+      }
+    },
+    "events": {
+      "by_type": {
+        "text": "فتح الأحداث حسب النوع",
+        "source_sha256": "171c82e1b532334e67f8cd7f9aee20bf0a002c31c8437be54a0b311b0bf60590"
+      }
+    },
+    "ir": {
+      "cases_opened_closed": {
+        "text": "الحالات المفتوحة المفتوحة/المغلقة",
+        "source_sha256": "87e0033b868512e1b1c45c6ea76b1ee393cae3a5b0641053c43813d1f4fa86bd"
+      },
+      "open_cases": {
+        "text": "فتح الحالات المفتوحة",
+        "source_sha256": "fe3bd3c9ac2f92ff1740b5cd3a62e89f997f2fe56a07d8dd94e2a9aa82285535"
+      }
+    },
+    "pum": {
+      "endpoints_enrolled": {
+        "text": "فتح نقاط النهاية PUM المسجلة",
+        "source_sha256": "bd0cb06d1f80643b3f4d370e22b2de8630309c715ec6181267a4e4ab7d53377b"
+      },
+      "violations_24h": {
+        "text": "انتهاكات PUM المفتوحة (24 ساعة)",
+        "source_sha256": "a0c8c4b232763561341ad5cc12dabc8c6bdddb9c6d6ee1a5b2c2aa46990b188b"
+      }
+    },
+    "training": {
+      "framework_coverage": {
+        "text": "تغطية إطار التدريب المفتوح",
+        "source_sha256": "e0817b390e0f54a6fc058fc7cdb5bd6c6c281a2c07ee01a0c9356a92816fb7f2"
+      },
+      "uncovered_frameworks": {
+        "text": "فتح الأطر المكشوفة",
+        "source_sha256": "711d75d399eea4438d870d89263e37ab28f9713e6053369026e470515b6bd50f"
+      }
     }
   }
 }

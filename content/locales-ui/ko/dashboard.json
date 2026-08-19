@@ -675,7 +675,7 @@
       "source_sha256": "6e68f5e4d3d9082f59e013a34c9bed2753cb03bbffd3bf65c20ff1a15dcbe312"
     },
     "uncovered": {
-      "text": "Uncovered",
+      "text": "발견됨",
       "source_sha256": "2e5ea64bd7730f71f6a50541030109a889c1d8e85c3e9d7aa595c5b5d0b24bc2"
     }
   },
@@ -693,7 +693,7 @@
       "source_sha256": "3c7865262b16ee47e68890123811af0a77595b747fe93f56c9e682ab11193c93"
     },
     "noData": {
-      "text": "No data is available for this tile.",
+      "text": "이 타일에 대한 데이터가 없습니다.",
       "source_sha256": "f0b1afc56e9f5c98a42efc6dc5762a0a29d178e719b0cbd7b73326a7ec630bc7"
     },
     "partialSnapshotOnly": {
@@ -706,13 +706,13 @@
     "source_sha256": "0344daf8ba4644346f4dab89d7d6736b023f8673d9a45816f587e6082a77e525"
   },
   "tilePartial": {
-    "text": "Partial",
+    "text": "부분",
     "source_sha256": "a4d50fb85403654840e078e3ffe72dffe37df3ae280c6d98f39a41d346c88a14"
   },
   "tiles": {
     "compliance": {
       "attestations_recorded": {
-        "text": "Attestations recorded",
+        "text": "기록된 증명",
         "source_sha256": "7c13425dd8d7177d4ad70e858c2afc01edc5d6b1fe36ad3e0ea382b238223c46"
       },
       "pack_readiness": {
@@ -744,7 +744,7 @@
         "source_sha256": "19499cfbe67f6ab9c11b0b455ef6b86cb4a0bd747d3c58288a200f1d68e11cf3"
       },
       "punch_list_open": {
-        "text": "Open punch-list items",
+        "text": "펀치리스트 항목 열기",
         "source_sha256": "dc358afe24c02eec250f5a726b0051e5c0385f9613485d38f6d8c6c138e87e1c"
       },
       "systems_count": {
@@ -796,5 +796,85 @@
   "windowSnapshot": {
     "text": "현재 상태(스냅샷 - 기록 창이 없음)",
     "source_sha256": "ce8c376dc106b57947e29d9ea25f1599702476f51d0edeaeda34f6e55074d404"
+  },
+  "tileLinkActions": {
+    "compliance": {
+      "attestations_recorded": {
+        "text": "공개 증명이 기록되었습니다.",
+        "source_sha256": "e80cbd7e898fc97ebe7d995a1fa66cba2e7dd9ca21203d6998e34b6e9ea6a2c9"
+      },
+      "pack_readiness": {
+        "text": "오픈팩 준비",
+        "source_sha256": "e21db65b055bd8dbcf118f6cebefc56bbd868a3d7900611464c93ddf5ad2882f"
+      },
+      "poam_open": {
+        "text": "POA&M 항목 열기",
+        "source_sha256": "cb492b36eee28f487a68a747a29ad26e1679817a5c1c2df5390c37cac8f50c8d"
+      }
+    },
+    "defense": {
+      "blocked_attempts": {
+        "text": "차단된 공격 공개",
+        "source_sha256": "cbcf0b65f1d4d9f474850b42b561d8acd823ea434f5991cacbb04dcd1b8e9c5f"
+      }
+    },
+    "env": {
+      "discovered_systems": {
+        "text": "검색된 시스템 열기",
+        "source_sha256": "0d9cf732bc993e7547957d686f1826c75fdcbeb3f36f5ba333331a140d92e4ad"
+      },
+      "physical_vs_log": {
+        "text": "개방형 물리적 vs 로그 파생",
+        "source_sha256": "65b718a75cb54cdcf608c64981b234e0e2713600b27a7a6745d935cd4e5a83fc"
+      },
+      "probe_enabled_count": {
+        "text": "프로브가 활성화된 개방형 시스템",
+        "source_sha256": "92999130453c60ebc557afbc552606e87520f8831fff2a6392a3ba43904f0f8c"
+      },
+      "punch_list_open": {
+        "text": "펀치리스트 항목 열기",
+        "source_sha256": "dc358afe24c02eec250f5a726b0051e5c0385f9613485d38f6d8c6c138e87e1c"
+      },
+      "systems_count": {
+        "text": "엔클레이브의 개방형 시스템",
+        "source_sha256": "20fedf7cc750c5483d27db89813fd398dd396fbf3bc412d3d93d78864533370d"
+      }
+    },
+    "events": {
+      "by_type": {
+        "text": "유형별 오픈 이벤트",
+        "source_sha256": "171c82e1b532334e67f8cd7f9aee20bf0a002c31c8437be54a0b311b0bf60590"
+      }
+    },
+    "ir": {
+      "cases_opened_closed": {
+        "text": "오픈 케이스 열림 / 닫힘",
+        "source_sha256": "87e0033b868512e1b1c45c6ea76b1ee393cae3a5b0641053c43813d1f4fa86bd"
+      },
+      "open_cases": {
+        "text": "열린 케이스 열기",
+        "source_sha256": "fe3bd3c9ac2f92ff1740b5cd3a62e89f997f2fe56a07d8dd94e2a9aa82285535"
+      }
+    },
+    "pum": {
+      "endpoints_enrolled": {
+        "text": "등록된 공개 PUM 엔드포인트",
+        "source_sha256": "bd0cb06d1f80643b3f4d370e22b2de8630309c715ec6181267a4e4ab7d53377b"
+      },
+      "violations_24h": {
+        "text": "공개 PUM 위반(24시간)",
+        "source_sha256": "a0c8c4b232763561341ad5cc12dabc8c6bdddb9c6d6ee1a5b2c2aa46990b188b"
+      }
+    },
+    "training": {
+      "framework_coverage": {
+        "text": "개방형 교육 프레임워크 적용 범위",
+        "source_sha256": "e0817b390e0f54a6fc058fc7cdb5bd6c6c281a2c07ee01a0c9356a92816fb7f2"
+      },
+      "uncovered_frameworks": {
+        "text": "발견되지 않은 프레임워크 열기",
+        "source_sha256": "711d75d399eea4438d870d89263e37ab28f9713e6053369026e470515b6bd50f"
+      }
+    }
   }
 }

@@ -1,0 +1,478 @@
+{
+  "floorNote": {
+    "text": "NIST SP 800-53 Rev. 5는 Untere Kontrollgrenze입니다. CMMC / 800-171 / 800-172 sind Verpackungs-Overlays, Enclave-Nachweise wiederverwenden.",
+    "source_sha256": "0048952b2a6ac67f8ae95fdf95b7387804a8bd10a4aff7f798a5bdaced68c379"
+  },
+  "switchEffect": {
+    "text": "Ein Wechsel des Bewertungsstandards는 Punch-List 및 Nachweisansicht diesem Overlay를 지정합니다. Bereits gesammelte Enclave-Nachweise werden neu zugeordnet — geloescht가 아닙니다.",
+    "source_sha256": "a5ad0aa5f10c2149fddc42f72bc391f012566c40d0319d31d15f7e561541d7b2"
+  },
+  "testingAgainst": {
+    "text": "확인하세요:",
+    "source_sha256": "428c9849156dde3fc2057a5d87946b41e45b9adc1b40504d381aa674963e0504"
+  },
+  "assessmentStandard": {
+    "text": "Bewertungsstandard",
+    "source_sha256": "90313ebc5c800e45d5851c81eb12c0a912f55b7489aa0ca442d98f5314fb0aab"
+  },
+  "level": {
+    "text": "슈투페",
+    "source_sha256": "ea8e2fb2f63cd05a91930f18aede5aa5068d0df42234772365bc75f27476d588"
+  },
+  "selectStandard": {
+    "text": "Bewertungsstandard waehlen",
+    "source_sha256": "7c6f8a39815cd3fa82bc937085b0a38f5fe08f16fe92607b062d18fbf108e6ec"
+  },
+  "selectLevel": {
+    "text": "슈투페 웨렌",
+    "source_sha256": "cd1ad85c7bdbc19d599c07c6f9b807421d08487b636c86b6f9a6f157d5cbece3"
+  },
+  "standards": {
+    "cmmc": {
+      "text": "CMMC",
+      "source_sha256": "0ecd57c0c4a4e075944d57d01aedc7c6e7cd733d982f0aad4bf53678ab1a0fe9"
+    },
+    "nist_800_171": {
+      "text": "NIST SP 800-171",
+      "source_sha256": "f4856a2f7a01e12a623398b039c99476d5205d6791886eca5cb0357ebaeb3953"
+    },
+    "nist_800_172": {
+      "text": "NIST SP 800-172",
+      "source_sha256": "d8c82bfcd76ff4b5cf43ca875aa422768965b436af851f30c37854a6a70f6eb0"
+    },
+    "nist_800_53": {
+      "text": "NIST SP 800-53 개정판 5",
+      "source_sha256": "4944a7b79cdc43658679db8b6c0a9abbca98253978b87bfeea1a21095e896e3d"
+    }
+  },
+  "levels": {
+    "cmmc_1": {
+      "text": "스튜페 1",
+      "source_sha256": "c36bd22cd0aa7eae6f54434fae745aa7e13fe71def21947a0d625d9ae7080b96"
+    },
+    "cmmc_2": {
+      "text": "스튜페 2",
+      "source_sha256": "9116d13387919cb8fd8e54758f9222103858c94349e03bb3b901ee78d2cc8a2d"
+    },
+    "cmmc_3": {
+      "text": "스튜페 3",
+      "source_sha256": "18ee0104e28ee7890b43c11dd531c53982c4746116912ad7131d1beeae6167bb"
+    },
+    "171_1": {
+      "text": "Stufe 1(기초/FCI)",
+      "source_sha256": "9de046099b595684f20f4a526150c63e414f12dcc2d3aff36ecbebdcc0335318"
+    },
+    "171_2": {
+      "text": "스튜페 2",
+      "source_sha256": "9116d13387919cb8fd8e54758f9222103858c94349e03bb3b901ee78d2cc8a2d"
+    },
+    "171_3": {
+      "text": "스튜페 3",
+      "source_sha256": "18ee0104e28ee7890b43c11dd531c53982c4746116912ad7131d1beeae6167bb"
+    },
+    "172_2": {
+      "text": "스튜페 2",
+      "source_sha256": "9116d13387919cb8fd8e54758f9222103858c94349e03bb3b901ee78d2cc8a2d"
+    },
+    "172_3": {
+      "text": "스튜페 3",
+      "source_sha256": "18ee0104e28ee7890b43c11dd531c53982c4746116912ad7131d1beeae6167bb"
+    },
+    "53_moderate": {
+      "text": "보통의",
+      "source_sha256": "5c42afc7a23018d32dcff346792b575bcdf63be118b98a61084b1afac32b93e9"
+    },
+    "53_high": {
+      "text": "높은",
+      "source_sha256": "c4ebc6d4a5832cd9415f906ad03661110c705a72381c8b8b145761d02e2dd23a"
+    },
+    "171_1_suffix": {
+      "text": "기초 / FCI",
+      "source_sha256": "b0733b58d6c1d8a7c5e2a4467c9ea5d76c604d4d4911f84039695cd9e88b943f"
+    }
+  },
+  "banners": {
+    "cmmc": {
+      "text": "지엘: CMMC Stufe {{level}} ({{overlay}})",
+      "source_sha256": "1ddb7d3548e1a0734ad69f40fdc5facc046a8c939579decbaffecd4a90ae7925"
+    },
+    "nist_800_171": {
+      "text": "Ziel: NIST SP 800-171 Stufe {{level}}{{suffix}}",
+      "source_sha256": "ed686d4c103637bf3b2e4effe5ade6168649a7fb463b914171c28cd3e6abd4d2"
+    },
+    "nist_800_172": {
+      "text": "Ziel: NIST SP 800-172 Stufe {{level}}",
+      "source_sha256": "d8431e497a3ae140a241a8589cee74aad3a49a0705f634ee9c7ebe99d586c24a"
+    },
+    "nist_800_53": {
+      "text": "Ziel: NIST SP 800-53 개정판 5 {{level}}",
+      "source_sha256": "f1cd5e2ca8074ee8645dd121129c88c7a7d3a2cb460f0a5faf3e953108d60503"
+    }
+  },
+  "overlays": {
+    "cmmc_basic": {
+      "text": "NIST SP 800-171 기반/FCI",
+      "source_sha256": "8f71ce008ab75cb820bc5756137fa3ce5094dd45240e7b5589023fe07422b96d"
+    },
+    "cmmc_full": {
+      "text": "NIST SP 800-171",
+      "source_sha256": "f4856a2f7a01e12a623398b039c99476d5205d6791886eca5cb0357ebaeb3953"
+    },
+    "cmmc_enhanced": {
+      "text": "NIST SP 800-171 + NIST SP 800-172",
+      "source_sha256": "ad905e4f7bdd4de770b4985c57032cc1c971fe9253b1461d16112b6bd6b07d97"
+    }
+  },
+  "scopeLabels": {
+    "53_high": {
+      "text": "800-53-High-Verpackung(Incl. Enhanced-Overlay)",
+      "source_sha256": "3e3d08c38aafc991ac023d3f64a7b0a25b0e5b438c72cbd45ddc7d492dea39d6"
+    },
+    "53_moderate": {
+      "text": "800-53-보통-Verpackung",
+      "source_sha256": "78865471f793210a2e33e301c9ece3510c214197be51b5e9fcf2bce4d23d8446"
+    },
+    "172_2": {
+      "text": "800-172 Stufe 2 강화 버전",
+      "source_sha256": "3479c3c60a17e348a989e982829f8ac9474b4ed04f3cdc21f846ee92602a9ed0"
+    },
+    "172_3": {
+      "text": "800-172 Stufe 3 강화 버전",
+      "source_sha256": "77f1a5568148cdef1cdfd3e44e0d0ef6f095ec27567a84a369e01e9e8bfb7f5f"
+    },
+    "171_1": {
+      "text": "800-171 Stufe 1(기본/FCI) Verpackung",
+      "source_sha256": "497817529cf424d6acd6aaacb1c9b2ae1729f06beb75f2a0beba5f96261aff43"
+    },
+    "171_2": {
+      "text": "800-171 Stufe 2 Verpackung (110 Praktiken)",
+      "source_sha256": "54ced70b4c0cafca4fef4a1e0f7340e5bcd61c2560863fa2cd29aa50383501fc"
+    },
+    "171_3": {
+      "text": "800-171 Stufe 3 Verpackung",
+      "source_sha256": "e32696f7f49aa3f8fabceb56a330aec69b3e1814977a597d88f70066945122ab"
+    },
+    "cmmc_1": {
+      "text": "CMMC Stufe 1(기본/FCI) 버전",
+      "source_sha256": "12cfeffabc593dfdf40ee1094fe5e230e80e94aef6ff4515361978b665289705"
+    },
+    "cmmc_2": {
+      "text": "CMMC Stufe 2 Verpackung(110 NIST SP 800-171 Praktiken)",
+      "source_sha256": "b52cef99e73c46f429deb7a9bea19727948ce9c84b5da9cd904ec1d8df6b5962"
+    },
+    "cmmc_3": {
+      "text": "CMMC Stufe 3 Verpackung(800-171 + ausgewaehlte 800-172)",
+      "source_sha256": "4b1448bced21f56cc651950216c1104c9f028889058701d6a0095eed97751732"
+    }
+  },
+  "explanations": {
+    "cmmc": {
+      "text": "CMMC(32 CFR 170) ist DoD-Bewertungsverpackung ueber NIST SP 800-171(및 ab Stufe 3 ausgewaehlte NIST SP 800-172-Anforderungen). Stufe 1: grundlegender FCI-Schutz; Stufe 2: CUI의 경우 110 800-171-Praktiken; Stufe 3: erweiterte 800-172-Anforderungen. CMMC는 NIST SP 800-53 Rev. 5가 아닌 Design-Floor로 대체됩니다.",
+      "source_sha256": "9048d9aaa7c9785f32b9e45b108b1397432ea15c86266b2b1f0184210785b51f"
+    },
+    "nist_800_171": {
+      "text": "NIST SP 800-171 Rev. 2는 110 Sicherheitsanforderungen을 14 Familien zum Schutz of CUI in not-foederalen Systemen으로 정의했습니다. Stufe 2는 110-Praktiken-Set(CMMC Stufe 2를 갖춘 haeufig)를 제공합니다. Das Produktdesign folgt weiterhin NIST SP 800-53 Rev. 5; 800-171 ist Bewertungsverpackung darueber.",
+      "source_sha256": "8e0a48fdc42e264eb540f431b8f9da065ea8cca69ef26381da083fecf5d7155b"
+    },
+    "nist_800_172": {
+      "text": "NIST SP 800-172(2021년 2월) ergaenzt 35 erweiterte Anforderungen ueber 800-171. CMMC Stufe 3는 세부 작업을 수행했습니다. Unbewiesene Enhanced-Claims bleiben Luecke 또는 unbekannt.",
+      "source_sha256": "cd5e5b2ddf30fe104b92ccda3f371fa8122f44b1670b438775916c12252e1764"
+    },
+    "nist_800_53": {
+      "text": "NIST SP 800-53 Rev. 5는 Kontroll-Design-Floor Dieses Produkts(보통-기준선, ggf. 높음)입니다. CMMC / 800-171 / 800-172 sind 오버레이, Dieselben Enclave-Nachweise nutzen.",
+      "source_sha256": "384c1ab4a364b3f9888884a203cca7770cdc412ac1811bdf256bafd219a50c8c"
+    }
+  },
+  "cscRescanAll": {
+    "text": "Alle neu scannen",
+    "source_sha256": "26f6e4e3387caa3e54c282c8a442b19074300310c292290d3483d71b7a02c8e7"
+  },
+  "cscRescanSelected": {
+    "text": "오스왈 스캐넨",
+    "source_sha256": "0fb0526b6bc5b4e1c2cff72da494842729a8df1642a55986f2620267abea9cbb"
+  },
+  "cscSystemGroup": {
+    "text": "시스템 그룹",
+    "source_sha256": "6a81fb592aadad01e3e79137e36a91b158537de82f59f3e4c34cfd97e9b0346d"
+  },
+  "cscAddSystems": {
+    "text": "시스템 힌즈후겐",
+    "source_sha256": "68578a85d965b943f09fb6cc36fb80ff618ec11ea668834cca08577debb4639a"
+  },
+  "cscHonesty": {
+    "text": "Diese Zahlen beschreiben Produktlieferung 및 erfasste Arbeit — kein Bewertungsurteil.",
+    "source_sha256": "18868bd77ef2270050dcdea58b6e6afe6356b4a960ff4dad147cebd4cb71f18b"
+  },
+  "gridActions": {
+    "text": "행위",
+    "source_sha256": "ff8059dc6752afdd30d275932b1d5031a2ec854b387a8c57ecc6689915293a43"
+  },
+  "gridRescan": {
+    "text": "Neu scannen",
+    "source_sha256": "d98f477bd2749bc121d712bf6b33e7392969601ef309ea0e56a4e389ed368db0"
+  },
+  "gridOpenReport": {
+    "text": "베리히트 외프넨",
+    "source_sha256": "a5030c760a0b24ed36f6759a53bb1faa2da14bd408b34b63621785991d570455"
+  },
+  "hideDetails": {
+    "text": "표준 세부정보",
+    "source_sha256": "aaca331fbb3a117e222e712851d95ae78c711a94d691126958a505119f3d5aba"
+  },
+  "showDetails": {
+    "text": "다이저 스탠다드 베드였나요?",
+    "source_sha256": "03122870e402df04fd4dae22fed4bf7a8346fc32b7dc6c32c509d34c02ac9339"
+  },
+  "whatSwitchingDoes": {
+    "text": "Wechsel이 당황했나요?",
+    "source_sha256": "00c311d2f5ea78eb7f83c116e9542b9c32cf8460828d890e950adae6425c7c98"
+  },
+  "csc": {
+    "pageTitle": {
+      "text": "Aktueller 규정 준수 스탠드",
+      "source_sha256": "4deee20c165da42a7bafabe58eb134c193382da9b1a15ed0d80bdc30b55907ae"
+    },
+    "pageSubtitle": {
+      "text": "Gewaehlte Systemgruppe를 위한 Systemzustand, Befunde 및 Erneutes Scannen",
+      "source_sha256": "89672dd1b22841a30fa823b9ac730cb09a0c53a31ab928624cf1cc68a743d456"
+    },
+    "evidenceBanner": {
+      "text": "Pruefer를 위한 Nachweisorientierte Darstellung — Tuerkis markiert sekundaere 작업; kein falsch-gruener 점수.",
+      "source_sha256": "1c3409820a87fda6f0a91eaedff2714f089485bc65297c394a61233a20f16857"
+    },
+    "evidenceSurfaceAria": {
+      "text": "규정 준수-Nachweisoberflaeche",
+      "source_sha256": "3b7e128538b00a38472868a7b8d7168208195d692733b2cc8883158b26c89a7c"
+    },
+    "machineGroup": {
+      "text": "시스템 그룹",
+      "source_sha256": "6a81fb592aadad01e3e79137e36a91b158537de82f59f3e4c34cfd97e9b0346d"
+    },
+    "filterByGroupAria": {
+      "text": "Nach Systemgruppe 필터",
+      "source_sha256": "bad75c19dcb2fce7b2a9e0c9a581da2ac0d45976b1dc572a320a5b259c7b1a2c"
+    },
+    "allGroups": {
+      "text": "모든 그룹",
+      "source_sha256": "ca2f3a3600db555ce3e9e80da3b8531fa4adae300a2324fcec1a53818e793f9c"
+    },
+    "defaultGroupSuffix": {
+      "text": "(기준)",
+      "source_sha256": "0b08a3d4d6a934df0e432dad7ab4d429fb0cd7d2252c0c2e56c9596d83a4754b"
+    },
+    "machinesChip": {
+      "text": "{{count}} 시스템",
+      "source_sha256": "5206d088d0bc6e54b62ff5fb5e0c1feffec5ef268ce024880b70d9b0ca0b1937"
+    },
+    "machinesChip_plural": {
+      "text": "{{count}} 시스템",
+      "source_sha256": "836b93fde3b374baaa2c52f98d8b28232e4f9751d0818891e17ea96136bbd488"
+    },
+    "findingsOpen": {
+      "text": "{{count}} 공격 베푼데",
+      "source_sha256": "eb57024e444714b0f0978f950f2097c5ffbe8a57501f4191b2f5736e2edd1098"
+    },
+    "rescanAll": {
+      "text": "모두 스캔넨({{count}})",
+      "source_sha256": "1031368e7a457dea01df4ade24afe12a334f3be2c9f30044fe620ed910df6238"
+    },
+    "rescanSelected": {
+      "text": "아우스왈 스캐넨({{count}})",
+      "source_sha256": "e1f4dd937f5871dbe0516a4ece10ab61bb7b4b224b8abba2276c5924df72f6ea"
+    },
+    "working": {
+      "text": "뢰프트…",
+      "source_sha256": "c76103c2fad31bf17593602cafcb7fd19e197119414b7250d2ba90d5c13d210e"
+    },
+    "addSystems": {
+      "text": "시스템 힌즈후겐",
+      "source_sha256": "68578a85d965b943f09fb6cc36fb80ff618ec11ea668834cca08577debb4639a"
+    },
+    "addSystemsAria": {
+      "text": "Netzwerkscan, Listenimport 또는 einzeln hinzufuegen별 시스템",
+      "source_sha256": "2499fd99aca36c9ef9d4b8e15e35b0875d38a4d8625d440a66d77bc49c2fea87"
+    },
+    "syncInventory": {
+      "text": "베스트앤싱크.",
+      "source_sha256": "82b802fef93debb31963992b6eb87fdba9a6b38e9a6d0bcc7bb5a2bee597c0a0"
+    },
+    "syncInventoryAria": {
+      "text": "Endpunkten syncronisieren의 베스트앤드",
+      "source_sha256": "b2013a0d52a0873d28e7027bf3953fcdbcbcab76df4dc862d429ddf7ad7b29c8"
+    },
+    "exportAuditorPack": {
+      "text": "프루퍼파켓",
+      "source_sha256": "5734674aae23da025db6263e0bac0735bb127f97c641bc17888401086476b2bc"
+    },
+    "exportAuditorPackAria": {
+      "text": "Prueferpaket 및 ZIP 내보내기",
+      "source_sha256": "722f004261919a6aa37feaef073216364c57a6ef96d2c26875ff483c43d81e11"
+    },
+    "gridMachine": {
+      "text": "체계",
+      "source_sha256": "6725e7bbcd28f3a8a586fa34bf191fd72dde8b61756932cd3237c17a6f196f1a"
+    },
+    "gridOs": {
+      "text": "학사",
+      "source_sha256": "1980e84621c5b257d1c0c0e2478d3b053ebca4c797c022876998a74fca6df69c"
+    },
+    "gridAccess": {
+      "text": "주그리프",
+      "source_sha256": "adda7f5261037734be5fdefd71edcc3d33af738fcac0db86be4b6d2a6350ae76"
+    },
+    "gridRoles": {
+      "text": "롤렌",
+      "source_sha256": "74fa1b2d740dc4da5d48cd47613cf926b8435bf39fc9cf42417d4652d25c62a6"
+    },
+    "gridStig": {
+      "text": "스티그",
+      "source_sha256": "8498b781f7849eb83a0c56d66dc49f0ea2bf5d863bc3a86f4d2d245bd7d45b94"
+    },
+    "gridPosture": {
+      "text": "상태",
+      "source_sha256": "920e413c7d411b61ef3e8c63b1cb6ad058d5f95f8b481dbafe60248387d8c355"
+    },
+    "gridFindings": {
+      "text": "베펀데",
+      "source_sha256": "c013ad9e5a133fee0086a0c3215b9f03d3ec7aeb5d1b8ad2a14800a88621c2c0"
+    },
+    "gridEvidence": {
+      "text": "나흐바이제",
+      "source_sha256": "16569e17e690ebf3b5151b6501ea6a65ec2b3ffa18f666503029be8987d879bd"
+    },
+    "gridTopCategories": {
+      "text": "상위 카테고리",
+      "source_sha256": "2aac5f7eeb30faf76e0a72a119493bef2b217cf3d1711cf034b353bc82194713"
+    },
+    "gridLastScan": {
+      "text": "레터 스캔",
+      "source_sha256": "1702bf1378190e21485803a97f8fb72a727c5382e25effcb4448fb0384b013bf"
+    },
+    "gridActions": {
+      "text": "행위",
+      "source_sha256": "ff8059dc6752afdd30d275932b1d5031a2ec854b387a8c57ecc6689915293a43"
+    },
+    "gridActionsButton": {
+      "text": "행위",
+      "source_sha256": "ff8059dc6752afdd30d275932b1d5031a2ec854b387a8c57ecc6689915293a43"
+    },
+    "gridNever": {
+      "text": "니에",
+      "source_sha256": "c38811a58a4b777b2810ebbba51832194686cb5d13c3827f74645722e418e22e"
+    },
+    "menuRescan": {
+      "text": "노이 스캐넨",
+      "source_sha256": "d98f477bd2749bc121d712bf6b33e7392969601ef309ea0e56a4e389ed368db0"
+    },
+    "menuRescanHint": {
+      "text": "Dieses 시스템을 위한 Sonden erneut ausfuehren",
+      "source_sha256": "fe12cb261f1aa9ca4733b2e9b470ced0a127faa54a0d8d7fab99ad01812a6842"
+    },
+    "menuOpenDetail": {
+      "text": "세부 사항",
+      "source_sha256": "2089d2ca49aa057b01181c072cfce2220a2fe23667087f2c8bb88b6999a33386"
+    },
+    "menuOpenDetailHint": {
+      "text": "Befunde, Fix-It-Settings 및 Versuchsprotokoll",
+      "source_sha256": "1743300c84627909f1a4b61fb8f9e11d292434c83d6dea1ff98f0effb80bae8a"
+    },
+    "reportTitle": {
+      "text": "Aktueller 규정 준수 스탠드",
+      "source_sha256": "4deee20c165da42a7bafabe58eb134c193382da9b1a15ed0d80bdc30b55907ae"
+    },
+    "alertPrefix": {
+      "text": "호주",
+      "source_sha256": "f0ce94502ed90ac3253eeb12f85f320eeb87b7c2d2be0a1a56f540b5603ead1b"
+    },
+    "alertSystems": {
+      "text": "시스템",
+      "source_sha256": "504596546375608e34df68b90b4fb4087663ea22cd814f7e72cc000503c1607c"
+    },
+    "alertGroups": {
+      "text": "시스템그룹",
+      "source_sha256": "ac750953cdd8d9360cbaa48d9bc85f54e637d9ad51933c5ea89068f0285ab866"
+    },
+    "alertSuffix": {
+      "text": "Befunde unten unter",
+      "source_sha256": "a762ce58c94a178d902ab11395c4aa29dced6e09afdb54d492e4e5890e39f82b"
+    },
+    "alertEvidenceNotScore": {
+      "text": "— Nachweise, Kein Score.",
+      "source_sha256": "95d9ec56690a48445ea21dfe7d7990d332e440fc15439606148ec428b2b31589"
+    },
+    "machinesChip_one": {
+      "text": "{{count}} 시스템",
+      "source_sha256": "5206d088d0bc6e54b62ff5fb5e0c1feffec5ef268ce024880b70d9b0ca0b1937"
+    },
+    "machinesChip_other": {
+      "text": "{{count}} 시스템",
+      "source_sha256": "836b93fde3b374baaa2c52f98d8b28232e4f9751d0818891e17ea96136bbd488"
+    },
+    "findingsOpenChip": {
+      "text": "{{count}} 공격 베푼데",
+      "source_sha256": "eb57024e444714b0f0978f950f2097c5ffbe8a57501f4191b2f5736e2edd1098"
+    },
+    "machinesChipAria": {
+      "text": "{{count}} Ansicht의 시스템",
+      "source_sha256": "f487079a07f09236b462d1678fde9a3aa92ae509b6dab312a1e6ac154ff30f74"
+    },
+    "findingsOpenAria": {
+      "text": "__PH0__ offene Befunde unter __PH1__",
+      "source_sha256": "3bca540a7c12bf9666d902926895a6a8cd942088e67e312e9892b5901a7ba575"
+    },
+    "physicalHostChip": {
+      "text": "물리쳐 호스트 {{count}}",
+      "source_sha256": "8ba393c1b8ea9a16dd30ff5c56a62b4e9fc8b45af470fc7b9faa37b9f30cbb14"
+    },
+    "physicalHostAria": {
+      "text": "Nachweis 피지셔 호스트 {{count}}",
+      "source_sha256": "2c90b7832287db2e6bf67780aab0f861bc350b71f6e4de74fc98bd9cf0966821"
+    },
+    "logDerivedChip": {
+      "text": "프로토콜랩겔라이트 {{count}}",
+      "source_sha256": "de40ecedd01b83f99cb5bc5d669b942e0707056c892c785f745f103aab9525bc"
+    },
+    "logDerivedAria": {
+      "text": "프로토콜랩겔레이테터 나흐바이스 {{count}}",
+      "source_sha256": "db185a2c3d12dcbd165851d0e2030c0c043fbb02539a82f4cc693de9a6f1e3b6"
+    },
+    "fixItSelected": {
+      "text": "수리-It Auswahl",
+      "source_sha256": "ff34026e844f60ce614cfa352a2f54fb4d850fbca8a4c842c4135e6eb1a0fff2"
+    },
+    "fixItSelectedCount": {
+      "text": "Fix-It Auswahl({{count}})",
+      "source_sha256": "8368dc27819c38c384c5f6f7af468d3a2b7c70e6bc1b6ce3d3fc4b4b65ca2329"
+    },
+    "fixItSelectedAria": {
+      "text": "Fix-It auf {{count}} ausgewaehlte Systeme with Live-Auto-Apply anwenden",
+      "source_sha256": "6c8e97130a21bcc9ca1caca1e6ef5f9a834e3b30f3131c128e241c5275bdf85c"
+    },
+    "fixItSelectedUnavailableAria": {
+      "text": "Verfuegbar가 아닌 Fix-It Auswahl — Live-Auto-Apply-Sonden을 갖춘 waehlen Sie Systeme",
+      "source_sha256": "b40435d68f598e6576df987372a6c45a66a82c749604acb39751fe066d64fb39"
+    },
+    "selectionCaption": {
+      "text": "{{count}} ausgewaehlt — 스캔 betrifft nur diese Zeilen({{group}}).",
+      "source_sha256": "40cc4628d1a18334e08f0a0a3a79efbb7af0727fd4335d7ebeebd1462d96323e"
+    },
+    "fixItSelectedHint": {
+      "text": "Fix-It Auswahl은 최초의 geeignete 시스템({{count}} geeignet)에서 최초의 Live-Auto-Apply-Sonde를 사용했습니다.",
+      "source_sha256": "4c4814065dbf4de35cf14fb1dbe61d6e6201edebf8b7651fe52ce5e24387731d"
+    },
+    "fixItSelectedNeedProbe": {
+      "text": "Fix-It Auswahl benoetigt는 Live-Auto-Apply-Sonde(시스템 세부 정보 활동의 Fix-It-Settings)를 염두에 두고 있습니다.",
+      "source_sha256": "b8dacf354f5dce4de781138ea56492caafc51e2f9b44adb73c46bfda82671583"
+    }
+  },
+  "gdpr": {
+    "dsrClockNote": {
+      "text": "기사 12 복근. 3: Antwort innerhalb eines Monats nach Eingang. Bei komplexen Anfragen koennen Sie um zwei weitere Monate verlaengern — begruenden Sie는 urspruenglichen Faelligkeitsdatum에서 사망합니다. 기사 12 복근. 6: Identitaet pruefen, bevor Sie personenbezogene Daten herausgeben.",
+      "source_sha256": "1c5800c0185eb585be21878f4ddb54d92db5162dae698b8113e9b25fa4c3a416"
+    },
+    "dsrNonWorkforceNote": {
+      "text": "Kunden과 Angehoerige는 Oeffentlichkeit haben oft keinen Workforce-Roster-Eintrag입니다. Verknuepfen Sie a Roster-Eintrag, wenn einer exigeniert; andernfalls werden 이름 및 이메일 bei Eingang 및 erneut bei the Identitaetspruefung als Momentaufnahme gespeichert.",
+      "source_sha256": "1f188206cac498c30f122b2eaa7a521e7bd72beb9dca22289824d4bc03a7f36a"
+    }
+  }
+}
