@@ -220,11 +220,24 @@ def parse_cargo_lock(lock_path: Path) -> list[dict]:
 
 
 def split_crate_dirname(dirname: str) -> tuple[str, str] | None:
-    """Split ``name-1.2.3`` / ``name-1.2.3+meta`` (first hyphen before a digit)."""
-    m = re.match(r"^(.+?)-(\d.*)$", dirname)
-    if not m:
-        return None
-    return m.group(1), m.group(2)
+    """Split ``name-1.2.3`` / ``name-1.2.3+meta`` (crates.io registry dirname).
+
+    Prefer the *rightmost* hyphen whose suffix looks like a Cargo semver
+    (``major.minor…``). A left-first ``(.+?)-(\\d.*)`` wrongly splits
+    ``md-5-0.10.6`` → ``md`` / ``5-0.10.6`` and ``utf-8-0.7.6`` → ``utf`` /
+    ``8-0.7.6``, which leaves those crates BLOCKED in the disclosure.
+    """
+    # Require at least one dotted numeric component so ``5-0.10.6`` is rejected.
+    ver_re = re.compile(r"^\d+\.\d+.*$")
+    for i in range(len(dirname) - 1, -1, -1):
+        if dirname[i] != "-":
+            continue
+        name, ver = dirname[:i], dirname[i + 1 :]
+        if not name or not ver:
+            continue
+        if ver_re.match(ver):
+            return name, ver
+    return None
 
 
 def build_registry_index(reg_roots: list[Path]) -> dict[tuple[str, str], Path]:

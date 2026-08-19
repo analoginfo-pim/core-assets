@@ -13,8 +13,8 @@
       "source_sha256": "dbac85c110f4370c8869273ad90e98e31a4563bf4b077d7bc9d55eb285256b07"
     },
     "notEnrolled": {
-      "text": "Nicht eingerichtet",
-      "source_sha256": "2fed0df55aacc2a56daf8743f6d36d0eb6677ddf28c00c3162071e193e099eb7"
+      "text": "לא מוגדר",
+      "source_sha256": "94b768af74236a6780055999a95a6db3486c2252347f643bf057d2a746a8163e"
     },
     "requiredByPolicy": {
       "text": "לאוט מדיניות erforderlich",
@@ -29,16 +29,16 @@
       "source_sha256": "b4fe6ad172e2ff2f7f02e361d17f7353e5a61cca90a501a2d8418264d1f477ad"
     },
     "unenrollButton": {
-      "text": "מיינן Authenticator abmelden",
-      "source_sha256": "89d9ad8d722bfcf7274e6e9f7d14af59e5dd2c49307714c396bd1c5dd9d9165c"
+      "text": "בטל את הרישום של המאמת שלי",
+      "source_sha256": "2dff66f2a4e1b12ee444e3fd88b617b2e794a89c6e831174258384e7f3da8469"
     },
     "unenrollAria": {
-      "text": "מיינן TOTP-Authenticator abmelden",
-      "source_sha256": "0b297a2d2a1866b3b3f80043dde4d6d06c622e1b51f73ef5c8fc031249399a18"
+      "text": "בטל את הרישום של מאמת ה-TOTP שלי",
+      "source_sha256": "64dea45a35e0dfd5def410acab225c5b291a83c92af3923c43b12e1e43d9c7d0"
     },
     "confirmWarning": {
-      "text": "TOTP-Authenticator enfernen? Bis Sie a neuen einrichten, ist Ihr Konto nurch the Passwort geschuetzt{{untilReenroll}}. זו פעולה כתובה.",
-      "source_sha256": "d4ee2e3b614ee59e9274cacc0c79015be63ee21b1b77b2d9ed218e810b4ed864"
+      "text": "להסיר את מאמת ה-TOTP? עד שתגדיר חשבון חדש, החשבון שלך מוגן רק על ידי הסיסמה{{untilReenroll}}. פעולה זו מתועדת.",
+      "source_sha256": "c68c93ddf9e9b006218cfe6c6128992c1c95246fcaa336ef12a451aaf6cde518"
     },
     "untilReenroll": {
       "text": ", bis Sie sich erneut einrichten",
@@ -79,12 +79,12 @@
       "source_sha256": "aff72ace4c9c96e04f0608e70a43200d19caf51749482d0eb35ee05fd33fc48b"
     },
     "titleManual": {
-      "text": "Administrator-API-Zugriff",
-      "source_sha256": "7e094f2abbccf42cf439b8d27deb8d8698234f53af1237dfb577cca6e9cd5982"
+      "text": "גישה ל-API של מנהל מערכת",
+      "source_sha256": "94be4815a1a196e33b7e69b001dd6ba94265a8332e8b073584b9c1695762b165"
     },
     "unauthorizedBody": {
-      "text": "Eine geschuetzte Route unter /api/admin/ hat 401 Zurueckgegeben לא מורשה. Wenn the IAM-Sitzungsauthentifizierung aktiv ist, ist Ihre Sign-in meist abgelaufen — melden Sie sich erneut an. Ohne Sitzungsauthentifizierung stimmt את ה-Administrator-Anmeldegeheimnis des Browsers לא עם השרת ספeicherten ADMIN_TOKEN ueberein (z. B. nach einem Datenbank-Reset or wenn nur a Seite des Paars geaendert wurde). Nach the Korrigieren des Tokens hart neu laden or /login oeffnen, um a neue IAM-Session aufzubauen.",
-      "source_sha256": "86b2f15818cdc9d35d6494986c9a88ec1482df5161f99214c7baeb261feea36d"
+      "text": "נתיב מוגן ב-/api/admin/ החזיר 401 לא מורשה. אם אימות הפעלת IAM פעיל, פג תוקף ההתחברות שלך - היכנס שוב. ללא אימות הפעלה, סוד הכניסה האדמיניסטרטיבי של הדפדפן אינו תואם ל-ADMIN_TOKEN המאוחסן בשרת (למשל לאחר איפוס מסד נתונים או כאשר רק צד אחד של הזוג שונה). לאחר תיקון האסימון, טען מחדש חזק או פתח את /התחברות כדי ליצור הפעלה חדשה של IAM.",
+      "source_sha256": "041b6f1655b35a81efdfa78f4b5903983dbc1529d06562b716ad82826463df96"
     },
     "quickFacts": {
       "text": "קורזין:",
@@ -95,8 +95,8 @@
       "source_sha256": "6a42766ea0badc1cf03bb537cfbfb7e0b24e47bf0ff161e97d93ce1f93902022"
     },
     "oneNameSecondary": {
-      "text": "Das Server-Manifestgeheimnis hesst ADMIN_TOKEN. הדפדפן הזה הוא מנהל מערכת כ-HTTP-Header {{header}} (ו-X-Admin-Token עבור Aeltere Builds). Wert {{token}}, bis echte RBAC diesen Stub ersetzt. Es gibt keinen separaten Registrierungswert namens {{header}} - שם הכותרת הוא Draht.",
-      "source_sha256": "df1b4b1c08a9851f37953077abe6bebdef1b64d8377876b090959581adb6a89d"
+      "text": "סוד המניפסט של השרת נקרא ADMIN_TOKEN. דפדפן זה מוסיף אותו לכל בקשת מנהל בתור כותרת HTTP {{header}} (ואסימון X-Admin עבור רכיבי בנייה ישנים יותר). ערך {{token}} עד ש-RBAC אמיתי יחליף את הבדל הזה. אין ערך רישום נפרד בשם {{header}} - זה רק שם כותרת החוט.",
+      "source_sha256": "4f48f0046f99ef619410e3f0fdf81033c69619ac329d68e9f800e21427dc7db0"
     },
     "whereSecretsPrimary": {
       "text": "Wo the Server Geheimnisse speichert (Windows)",
@@ -123,8 +123,8 @@
       "source_sha256": "ed79e51dfec47ae9476ee58786336c2b198ee4c3d1ffc6b825ec5e7ef1eadb2c"
     },
     "operatorsFooter": {
-      "text": "Fuer Betreiber: siehe docs/SECURITY.md ו-pim-app-config/docs/CONFIGURATION_STORAGE.md (HKLM-/Keyring-Layout).",
-      "source_sha256": "21921c85d55afd80b1619b42c10d42804f7d5571af3ec2e91c58e023c026070c"
+      "text": "For operators: see docs/SECURITY.md and pim-app-config/docs/CONFIGURATION_STORAGE.md (HKLM/Keyring layout).",
+      "source_sha256": "be1698d02534b1c7ef91dd333276b084f9b619d78ce8fa210d883b9124687fbe"
     },
     "openSettings": {
       "text": "הגדרות offnen",
@@ -233,16 +233,16 @@
       "source_sha256": "d99e40772ec629efd80dfa249fd0002bce70486bfe067c661d5fa1e4a604d97d"
     },
     "deleteGroup": {
-      "text": "Systemgruppe loeschen",
-      "source_sha256": "ef653ff5e4e21ccf6fd7b22c0b58a1dae1bbb2fb8946f215b4e96a653dc09eab"
+      "text": "מחק קבוצת מערכת",
+      "source_sha256": "3ba0f6e10dd6c899adc900a0726fb7e2aa25026e1254dcca5ec9a57075302466"
     },
     "createGroup": {
       "text": "Systemgruppe erstellen",
       "source_sha256": "27670287048498e7e52703f6f543f01948d7adab0ffd6267b8250292a3823555"
     },
     "deleteEndpoint": {
-      "text": "Endpunkt loeschen",
-      "source_sha256": "b26826997bc26409bd0443160a89eefaa0e8145677a5efd0ef1250dc557c1e7a"
+      "text": "מחק את נקודת הקצה",
+      "source_sha256": "6772d678942a3f79776df86f48c559f8977500622071105c2ec1584d50633940"
     },
     "groupConfig": {
       "text": "Groups-config.json",
@@ -269,8 +269,8 @@
       "source_sha256": "59887edaf7745fb18ba86a79230208cd2c2fd431b31ff9f3326b536f87918be6"
     },
     "targetGroupHelperPick": {
-      "text": "Aus Elevationsplattform-Policy ({{platform}}) waehlen או משתמשzerdefinierten OS-Gruppennamen eingeben.",
-      "source_sha256": "6a306e79a353517550711ec9e2ec233414e185a3135056dcf1c13d485b472b5d"
+      "text": "בחר מתוך מדיניות פלטפורמת גובה ({{platform}}) או הזן שם קבוצת מערכת הפעלה מותאמת אישית.",
+      "source_sha256": "ffe920c9a587a86e5cd708a2f730502e1507d00bf42d5ca33c2fd034d8cf6b25"
     },
     "targetGroupHelperType": {
       "text": "OS-Gruppennamen eingeben (Plattformrichtlinie not geladen).",
@@ -293,8 +293,8 @@
       "source_sha256": "7ed4f77602dcfc60e93a7c46ec49f34e73d2ba72b045cc95f0935d79afe9ac73"
     },
     "strategyHint": {
-      "text": "Der Agent prueft במצב לא מקוון עם seiner configurierten elevation_strategy_id; dieselbe Strategie waehlen, with the Endpunkt bereitgestellt wurde.",
-      "source_sha256": "6edf9654725b2f5e074ab98c7e232df03a7bdc4cd69f5e10e018fd07ec522a94"
+      "text": "הסוכן בודק במצב לא מקוון עם elevation_strategy_id המוגדר שלו; בחר באותה אסטרטגיה ששימשה לפריסת נקודת הקצה.",
+      "source_sha256": "b4129dc20f76b3f7cf78e7bc891c8ea7df7ad9b1fba63d2e22a643eb47d4a9f1"
     },
     "strategiesLoadFailed": {
       "text": "Aktivierungscode-Strategien konnten not geladen werden.",
@@ -373,8 +373,8 @@
       "source_sha256": "8dc9cb1fdc3dd16424809c9da05cb58672a42169bf54487f8339749d56873c21"
     },
     "noGroupSelected": {
-      "text": "קבוצת Keine ausgewaehlt",
-      "source_sha256": "5ef05ebc49914ff3fc816d28f6ffe700e3ab971eb47e521310a26478559cf546"
+      "text": "לא נבחרה קבוצה",
+      "source_sha256": "d3ffc10982c9566be975bc62c641afa5721131096b56bc218a7ff332eb84538b"
     },
     "seedDefaultIdentities": {
       "text": "Standardidentitaeten auf neuen Endpunkten anlegen",
@@ -405,12 +405,12 @@
       "source_sha256": "386bb590dbea2eee5d0a8c2f2df8a6327126da74c66e523bf41b19f338f0582f"
     },
     "industryStandardHelper": {
-      "text": "Regulatorisches או Benchmark-Profil waehlen, um the Kennwortrichtlinie dieser Identitaet vorzufuellen. Benutzerdefiniert waehlen, um Felder without Ersetzen to bearbeiten.",
-      "source_sha256": "e85bdf6c2c5fe1cca65498e9ce629413efa5904b58bf816b6b3f2897e499e3b6"
+      "text": "בחר בפרופיל רגולטורי או בנצ'מרק כדי לאכלס מראש את מדיניות הסיסמאות של זהות זו. בחר מותאם אישית כדי לערוך שדות מבלי להחליף.",
+      "source_sha256": "47298d2e7fe77dc7f7786e7b3da1f4f79d9595aa6b1f867e90e7da4d1e94937a"
     },
     "saveTemplate": {
-      "text": "Vorlage speichern",
-      "source_sha256": "c5505bb9de3b8bbd03cfc2f778ea34630d1a9ddefb1cf5c7dc993c9d502a2720"
+      "text": "שמור תבנית",
+      "source_sha256": "ba071e525111390ebc417e6d3db43586eb03160885b12626334d82f8dfdd033a"
     },
     "saving": {
       "text": "Wird gespeichert…",
@@ -421,8 +421,8 @@
       "source_sha256": "e129ed4588a2bb7531d38be03243677ededa4f2d8402d897f2f92a8391e84d36"
     },
     "identityTemplateSaveFailed": {
-      "text": "Identitaetsvorlage konnte not gespeichert werden",
-      "source_sha256": "9936980378f2cd6cd531ef433ae806046daca318bdd8bd83f394f3e085c8a283"
+      "text": "לא ניתן לשמור את תבנית הזהות",
+      "source_sha256": "5026a59f98ee2955f419adc6d38336b854790a8ab4d3bb463aae8cd2998967c6"
     },
     "groupPasswordPolicy": {
       "text": "קבוצות-Kennwortrichtlinie",
@@ -473,20 +473,20 @@
       "source_sha256": "8aea902c8c4b87888604a0f206bebb05aa84013615238a76f7eeb5b2f4e9b352"
     },
     "clipboardWriteFailed": {
-      "text": "Zwischenablage konnte not beschrieben werden",
-      "source_sha256": "aaae26ac8efa9c3fc34a56ed8e1b7285b919e77e19b29e267b7a4d1d9e5d03f3"
+      "text": "לא ניתן היה לכתוב ללוח",
+      "source_sha256": "3d40cc43664cc3f2120a21d49a293eb653fd6ac2463a57b39685e6f948c682ab"
     },
     "rotateConnectedOnly": {
       "text": "Zugangsdaten rotieren (nur ConnectedManaged)",
       "source_sha256": "d776b86c3874fee2570baa6f5d163473216cd93407a5dd0e45add74c54c943a4"
     },
     "rotateUnavailable": {
-      "text": "Neu erzeugen for diese Zeile not verfuegbar (nur active ConnectedManaged-Ausstellungen koennen rotiert were)",
-      "source_sha256": "839933a4437630767fb1dbea06d92fb7ec87e6e5f81ac898106bad0016a0b853"
+      "text": "יצירה מחדש אינה זמינה עבור שורה זו (ניתן לסובב רק תערוכות פעילות ConnectedManaged)",
+      "source_sha256": "345f26a90c4ced3f932f39ba352c479734e1bf48f1a54439b41f67dcb14c3e46"
     },
     "revokeActiveOnly": {
-      "text": "Nur aktive Ausstellungen koennen widerrufen werden",
-      "source_sha256": "908720cbfc7b32de3b218f7a98c8225f12d07bae49a1926ad59270b7d0d2ca6f"
+      "text": "ניתן לבטל רק תערוכות פעילות",
+      "source_sha256": "2d0e583028cccae97ea85acfaed7c35f28ed256f1c4b3b14fbfa8fac59c51630"
     },
     "defaultSystemGroup": {
       "text": "Standard-Systemgruppe",
@@ -533,16 +533,16 @@
       "source_sha256": "871e4f33fd215d70cced8c9149ff91c6fb7fd890d089732913e0923dfebc58a5"
     },
     "noFilesToImport": {
-      "text": "Keine Dateien zum Import",
-      "source_sha256": "5ba87db07093d5bfa5d7d1a3924a718b6a1da081ef3b13ac750c8b1c75404ad8"
+      "text": "אין קבצים לייבא",
+      "source_sha256": "3aa0e8bca4f4cd12ae2c1a5dd0cd0d808705804afaeda4644a870cfc2143dc1e"
     },
     "noValidFiles": {
-      "text": "Keine gueltigen Dateien zum Import",
-      "source_sha256": "c11abffd277d0716a3b411dac974c8c0800a1e9ff621e9e7e946cf098ec81a58"
+      "text": "אין קבצים חוקיים לייבא",
+      "source_sha256": "fba4d7eef91889649a3964a1c1f36c16ddaa56ef7e719b587a44b96751836a1a"
     },
     "selectGroupForOmit": {
-      "text": "Systemgruppe for Files ללא system_group_id waehlen",
-      "source_sha256": "7f1366e7b79e33bde1da7a788e07241d18f536ce90677a1589a3f39cbb3a0c6a"
+      "text": "בחר קבוצת מערכת עבור קבצים ללא system_group_id",
+      "source_sha256": "0c1dfeea9356397ce6861b53fd47f573ca0126dcb61a69685e7af0d7604b6853"
     },
     "importFailed": {
       "text": "ייבוא ​​fehlgeschlagen",
@@ -561,8 +561,8 @@
       "source_sha256": "0cf2814604b4c9ad9139ebf7792b197fa2072052a8d17467bb33abc6bdce7be4"
     },
     "deleteGroupAndEndpoints": {
-      "text": "Group & Endpunkte loeschen",
-      "source_sha256": "be6bf07eb88347a4adc5717738464a5be95d16985d1691492da61832197d8375"
+      "text": "מחק קבוצה ונקודות קצה",
+      "source_sha256": "856399d58fd7c2ac6125b5849114c7a0ebf9df87e70890efec2a3f678141c341"
     },
     "deleteGroupOnly": {
       "text": "קבוצת לושן",
@@ -737,16 +737,16 @@
       "source_sha256": "720cb8d70ae324209d8f9d578bdf97edd6a40491edf84d0321535acd7ab77b23"
     },
     "noMachinesFound": {
-      "text": "Keine Maschinen gefunden for \"{{query}}\"",
-      "source_sha256": "611477b0025ace78393e0d1dcaa38b6290acd4900afae34c016ae81762db2a12"
+      "text": "לא נמצאו מכונות עבור \"{{query}}\"",
+      "source_sha256": "02d943644ea2d29bff9e2ae8dfb3db81db0beeac9f52a0b35b00a0883ac11787"
     },
     "adminTokenOptional": {
       "text": "Admin-Token (אופציונלי)",
       "source_sha256": "ae8a075ffb944e6d2995ad4aa7b07827b37fe67392d866428c89029ae5684326"
     },
     "adminTokenHelper": {
-      "text": "Fuer Tests leer lassen; ב-Production erforderlich",
-      "source_sha256": "da53aa30b43d2c09fef618f11a93b2cc8631e897ee6eaee12c3318af76197430"
+      "text": "השאר ריק לבדיקה; נדרש בייצור",
+      "source_sha256": "c196498edebd2a37d09227f8d9aa5011cc5544b098f8fb9067c79b3f9e828e3c"
     },
     "passwordHistory": {
       "text": "Kennwortverlauf",
@@ -793,12 +793,12 @@
       "source_sha256": "0c79622bf63f9526dd0f769eef0e57c57b1368b6c7df2b7e6dcda49de17e42f4"
     },
     "notAssigned": {
-      "text": "Nicht zugewiesen",
-      "source_sha256": "da974576b029198a7bd22bca6b36836269bf3f0da5606bceb686022b6b475951"
+      "text": "לא מוקצה",
+      "source_sha256": "13075c2336114cd61689ea2ff249beb20052a0afbad7f0e4b8d68fb866e568e7"
     },
     "loadTemplateFailed": {
-      "text": "Vorlage for diesen Nutzungstyp konnte not geladen werden.",
-      "source_sha256": "041683d618ab928d737709d548c212d23de5184d5eedcbb06745da2f3e50ac50"
+      "text": "לא ניתן היה לטעון תבנית עבור סוג שימוש זה.",
+      "source_sha256": "cb3af5ba617de9225c2c2b15d498cb9eca2da9db46a413ff3d3d6f6e2ded6f17"
     },
     "statusExpired": {
       "text": "אבגלאופן",

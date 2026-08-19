@@ -135,20 +135,23 @@
         "text": "חשוף סיסמה",
         "source_sha256": "a791b1e11ff3dc0eb15a987b5705af2200db19423e9c6fbbf941abb5985df0d3"
       },
-      "bullets": [
-        {
-          "text": "Erfordert aktivierte Passwortwiederherstellung unter Vorgaben → Sonstiges and passende Autorisierung.",
-          "source_sha256": "2f582a86171d1efe6d366717f7ff09444aaac44bcc469ad35a4c7de6f00e12b3"
-        },
-        {
-          "text": "Historischen Slot 0 for the erste rotierte Passwort nutzen; leer lassen for the aktuellen Wert.",
-          "source_sha256": "010fd695560ff8078cb04fc70ff8a21f905306fa297be57e397c3c4c68114abe"
-        },
-        {
-          "text": "Vollstaendige Identitaetsverwaltung bleibt auf the Seite Identitaeten.",
-          "source_sha256": "d52b7a5182b936138c94c2f3561141cfdc217c8d686506d41f05edd3d4379c28"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Erfordert aktivierte Passwortwiederherstellung unter Vorgaben → Sonstiges and passende Autorisierung.",
+            "source_sha256": "2f582a86171d1efe6d366717f7ff09444aaac44bcc469ad35a4c7de6f00e12b3"
+          },
+          {
+            "text": "Historischen Slot 0 for the erste rotierte Passwort nutzen; leer lassen for the aktuellen Wert.",
+            "source_sha256": "010fd695560ff8078cb04fc70ff8a21f905306fa297be57e397c3c4c68114abe"
+          },
+          {
+            "text": "Vollstaendige Identitaetsverwaltung bleibt auf the Seite Identitaeten.",
+            "source_sha256": "d52b7a5182b936138c94c2f3561141cfdc217c8d686506d41f05edd3d4379c28"
+          }
+        ],
+        "source_sha256": "9c84963b963294010436039f19b8a6e1824e834dc1ad3f76c9a11b3c490badc2"
+      }
     },
     "account__profile": {
       "helpAriaLabel": {
@@ -163,20 +166,23 @@
         "text": "החשבון המקומי שלי",
         "source_sha256": "4b02ed30fdbe8b9c847fb9a03fa77e9f85f91ecf9c4396e71739735fc5a7204b"
       },
-      "bullets": [
-        {
-          "text": "Verfuegbar for jeden angemeldeten lokalen User, einschliesslich Assessor- and Endbenutzer-Demo-Rollen.",
-          "source_sha256": "441500f297b296262e14b1db99f7236c034ec6b864e5f3dba93cccaab1356a0e"
-        },
-        {
-          "text": "Passwort-ו-MFA-Aenderungen gelten nur for diese Enclave-Identitaet.",
-          "source_sha256": "a4664420118d1574ab3f741ca917345b3ab7970e3e0fc4878f5ae30c6a5f0fdd"
-        },
-        {
-          "text": "Benutzerverwaltung אדמיניסטרטיבי שוכן מתחת ל-Zugriff & Identitaet, כאשר Ihre Rolle the erlaubt.",
-          "source_sha256": "e3aeb95b8ce7cdeabc7d07944b4facd30a53ff69737f5bef914a5e9613e678ab"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Verfuegbar for jeden angemeldeten lokalen User, einschliesslich Assessor- and Endbenutzer-Demo-Rollen.",
+            "source_sha256": "441500f297b296262e14b1db99f7236c034ec6b864e5f3dba93cccaab1356a0e"
+          },
+          {
+            "text": "Passwort-ו-MFA-Aenderungen gelten nur for diese Enclave-Identitaet.",
+            "source_sha256": "a4664420118d1574ab3f741ca917345b3ab7970e3e0fc4878f5ae30c6a5f0fdd"
+          },
+          {
+            "text": "Benutzerverwaltung אדמיניסטרטיבי שוכן מתחת ל-Zugriff & Identitaet, כאשר Ihre Rolle the erlaubt.",
+            "source_sha256": "e3aeb95b8ce7cdeabc7d07944b4facd30a53ff69737f5bef914a5e9613e678ab"
+          }
+        ],
+        "source_sha256": "1785f1304fb4e745b2065eca36fe80c2c0a32e8d256eed9460b42435d75246de"
+      }
     },
     "admin__vm": {
       "helpAriaLabel": {
@@ -191,24 +197,27 @@
         "text": "ניהול VM",
         "source_sha256": "5c87211fa47d03de278b8bd0ea236a42dc9e68888c81f8a5968938f5e09ce44a"
       },
-      "bullets": [
-        {
-          "text": "Tab Verbindungen - Anbieter registrieren, Testen, Aufzaehlen, Synchronisieren.",
-          "source_sha256": "ab089cf277d721daa4cd5cf3ae71ed6d4f6e0b35c208737ba15038e15c285433"
-        },
-        {
-          "text": "טאב בריכות - Gaeste zuordnen, Verbindungsziele verknuepfen, Lab-Canaries steuern.",
-          "source_sha256": "1a360903ee28aaeca605ca0ae0908fb9d174a1df0bc516a20f99e9e4e4a20a05"
-        },
-        {
-          "text": "Jump-Flottenkapazitaet ו-Probe-Platzierung liegen unter Proxy-Zugriff → Jump & Kapazitaet → Jump-Flotte & Lastverteilung (/pam/jump-fleet).",
-          "source_sha256": "9ed20e63fb1cbd911847306982e5330a133ebecc48e7793fd7bb4d162e44a147"
-        },
-        {
-          "text": "מדור קודם /admin/hypervisors ו-/admin/vm-pools leiten hierher um.",
-          "source_sha256": "d53c314e2f0b4a8a298e1474644963640e519e93d3917ce58e90b859614fea38"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Tab Verbindungen - Anbieter registrieren, Testen, Aufzaehlen, Synchronisieren.",
+            "source_sha256": "ab089cf277d721daa4cd5cf3ae71ed6d4f6e0b35c208737ba15038e15c285433"
+          },
+          {
+            "text": "טאב בריכות - Gaeste zuordnen, Verbindungsziele verknuepfen, Lab-Canaries steuern.",
+            "source_sha256": "1a360903ee28aaeca605ca0ae0908fb9d174a1df0bc516a20f99e9e4e4a20a05"
+          },
+          {
+            "text": "Jump-Flottenkapazitaet ו-Probe-Platzierung liegen unter Proxy-Zugriff → Jump & Kapazitaet → Jump-Flotte & Lastverteilung (/pam/jump-fleet).",
+            "source_sha256": "9ed20e63fb1cbd911847306982e5330a133ebecc48e7793fd7bb4d162e44a147"
+          },
+          {
+            "text": "מדור קודם /admin/hypervisors ו-/admin/vm-pools leiten hierher um.",
+            "source_sha256": "d53c314e2f0b4a8a298e1474644963640e519e93d3917ce58e90b859614fea38"
+          }
+        ],
+        "source_sha256": "e6d965e086994fb4f3155c76c75b450227581db49eb06bdb0e130eb3c2ba7162"
+      }
     },
     "auditing": {
       "summary": {
@@ -233,20 +242,23 @@
         "text": "חבילות בדיקה",
         "source_sha256": "0546ee7ca99b001f50f6d19a5da522f2b9ac12f02387826d188d97e8099c01d0"
       },
-      "bullets": [
-        {
-          "text": "Oeffnen ueber Compliance & Nachweise → Assessments → Probe Packs.",
-          "source_sha256": "e21880cf77d51f3bcf652650aae6e104d71fa759209a409fc454d61cc7ba51d0"
-        },
-        {
-          "text": "Fuer the Dashboard pro Maschine Compliance & Nachweise → Assessments → Aktueller Compliance-Stand nutzen.",
-          "source_sha256": "729c81dc7679114ea19ab01fe2d1a7163ca6875758f0e0548a47f4b7cecb9d5b"
-        },
-        {
-          "text": "Diese Seite zeigt Bereitschafts-/Pack-Karten for Operatoren, the Skriptinterna brauchen - לא Maschinenhierarchie.",
-          "source_sha256": "6f601dd3eea07377421f858fe9c30690252eb2be8224fe439d6501d7d8f9e148"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Oeffnen ueber Compliance & Nachweise → Assessments → Probe Packs.",
+            "source_sha256": "e21880cf77d51f3bcf652650aae6e104d71fa759209a409fc454d61cc7ba51d0"
+          },
+          {
+            "text": "Fuer the Dashboard pro Maschine Compliance & Nachweise → Assessments → Aktueller Compliance-Stand nutzen.",
+            "source_sha256": "729c81dc7679114ea19ab01fe2d1a7163ca6875758f0e0548a47f4b7cecb9d5b"
+          },
+          {
+            "text": "Diese Seite zeigt Bereitschafts-/Pack-Karten for Operatoren, the Skriptinterna brauchen - לא Maschinenhierarchie.",
+            "source_sha256": "6f601dd3eea07377421f858fe9c30690252eb2be8224fe439d6501d7d8f9e148"
+          }
+        ],
+        "source_sha256": "00d3afb190ff2cbafa4291d52a0f139c3c9daeb6716224ca434238e8c173a724"
+      }
     },
     "compliance__catalog": {
       "helpAriaLabel": {
@@ -261,16 +273,19 @@
         "text": "קטלוג בקרה",
         "source_sha256": "31d80b8f41778b7abb0e92b2c2fb0cccb93a78625f60fd78c8fb94e102dfc9b6"
       },
-      "bullets": [
-        {
-          "text": "Jede Praxis zeigt את 800-53-Crosswalk. Veroffentlichter Kontrolltext — kein Bewertungsurteil.",
-          "source_sha256": "613037028f36414e37d59e97d7036a13a3cf47332a4a4b5513582d741858c66a"
-        },
-        {
-          "text": "Phase 3 liefert dieselbe Form aus Postgres; Heute kompilierte Katalogquelle.",
-          "source_sha256": "ef73c34772e8c23e511b14dd85dcbdd282437f94e9811d89269ca08ca7522c78"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Jede Praxis zeigt את 800-53-Crosswalk. Veroffentlichter Kontrolltext — kein Bewertungsurteil.",
+            "source_sha256": "613037028f36414e37d59e97d7036a13a3cf47332a4a4b5513582d741858c66a"
+          },
+          {
+            "text": "Phase 3 liefert dieselbe Form aus Postgres; Heute kompilierte Katalogquelle.",
+            "source_sha256": "ef73c34772e8c23e511b14dd85dcbdd282437f94e9811d89269ca08ca7522c78"
+          }
+        ],
+        "source_sha256": "9583164b37cf564e4851b07c9cd980c4311fd9d71b7e94bcd5c5b25cf1ba97c9"
+      }
     },
     "compliance__frameworks": {
       "helpAriaLabel": {
@@ -285,16 +300,19 @@
         "text": "מסגרות ביקורת",
         "source_sha256": "b50639ec1e78fab2beabd27b8915d90635d97c1b1d27f149cb9d3417540fbe9d"
       },
-      "bullets": [
-        {
-          "text": "מסגרת waehlen, um Anforderungen ו-Relevanzzahlen to durchsuchen.",
-          "source_sha256": "33a69de150c84bddfd3596dd7f834ffa60547050b1fbeeae3bee169b41f545dc"
-        },
-        {
-          "text": "Kundeneigene Verpflichtungen bleiben bei הארגון.",
-          "source_sha256": "618cf89d3517659f0fdd89845893d8bd85bfaae47e6071100faa4f61462bc47c"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "מסגרת waehlen, um Anforderungen ו-Relevanzzahlen to durchsuchen.",
+            "source_sha256": "33a69de150c84bddfd3596dd7f834ffa60547050b1fbeeae3bee169b41f545dc"
+          },
+          {
+            "text": "Kundeneigene Verpflichtungen bleiben bei הארגון.",
+            "source_sha256": "618cf89d3517659f0fdd89845893d8bd85bfaae47e6071100faa4f61462bc47c"
+          }
+        ],
+        "source_sha256": "6cae746411b558984572f070dd4be0fa90ef6b592d802e5e5d99a115f6727c3d"
+      }
     },
     "compliance__gdpr__dpia": {
       "helpAriaLabel": {
@@ -309,20 +327,23 @@
         "text": "הערכת השפעה על הגנת נתונים (סעיף 35)",
         "source_sha256": "12d0d93136bf78d8d1ddbed169c17b339f5b66112d7c06ad79242ad17b2dfc40"
       },
-      "bullets": [
-        {
-          "text": "Jede DPIA עם abgedeckten Verarbeitungstaetigkeiten verknuepfen.",
-          "source_sha256": "4ae057de4425b523b3f1372a3f20bea6f100fc0dd3d3c27e62a4f0d78e31234e"
-        },
-        {
-          "text": "Der Workflow zeichnet Entscheidungen and Fristen auf — ersetzt keine Rechtspruefung.",
-          "source_sha256": "10ee71d6bd9c82c2d8718759c5b98a15bfb65640e0b676d5ea74971b5bc597db"
-        },
-        {
-          "text": "Statusfelder beschreiben Produktlieferung, kein Assessment-Urteil.",
-          "source_sha256": "480071fb23efb4a2deb1c7a1aafc15fec3b3ef4d74c760a3982b4a79b1dfae78"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Jede DPIA עם abgedeckten Verarbeitungstaetigkeiten verknuepfen.",
+            "source_sha256": "4ae057de4425b523b3f1372a3f20bea6f100fc0dd3d3c27e62a4f0d78e31234e"
+          },
+          {
+            "text": "Der Workflow zeichnet Entscheidungen and Fristen auf — ersetzt keine Rechtspruefung.",
+            "source_sha256": "10ee71d6bd9c82c2d8718759c5b98a15bfb65640e0b676d5ea74971b5bc597db"
+          },
+          {
+            "text": "Statusfelder beschreiben Produktlieferung, kein Assessment-Urteil.",
+            "source_sha256": "480071fb23efb4a2deb1c7a1aafc15fec3b3ef4d74c760a3982b4a79b1dfae78"
+          }
+        ],
+        "source_sha256": "6e9becc6eb453b65c3b134a385cf94dd381fede6f70e1ecadc5bb593125c097c"
+      }
     },
     "compliance__gdpr__ropa": {
       "helpAriaLabel": {
@@ -337,20 +358,23 @@
         "text": "רישומי עיבוד (סעיף 30)",
         "source_sha256": "7c8eb2c3a54daedd4fdeea08d9a67f77650931eed3973998272544001a12ac6f"
       },
-      "bullets": [
-        {
-          "text": "בדוק, כאשר GDPR הוא התקן הפעיל של תאימות.",
-          "source_sha256": "9e992718dfba6740a037391da63931d28241862ba0394b708fb170d4f3b9d7fd"
-        },
-        {
-          "text": "Pruefzyklen and Export erzeugen Liefernachweise — keine GDPR-Konformitaet או Zertifizierung.",
-          "source_sha256": "cab1f91fe3369d499133e9ef953880afe579eb52c4f1bb7489831b89f4450be7"
-        },
-        {
-          "text": "Unterscheiden Sie Verantwortlichen-Eintraege (Art. 30 Abs. 1) of Auftragsverarbeiter-Eintraegen (Art. 30 Abs. 2).",
-          "source_sha256": "dda5146a078925d5b373f6e12308d5a224234c8f7267a1dfd52c94db6b72794e"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "בדוק, כאשר GDPR הוא התקן הפעיל של תאימות.",
+            "source_sha256": "9e992718dfba6740a037391da63931d28241862ba0394b708fb170d4f3b9d7fd"
+          },
+          {
+            "text": "Pruefzyklen and Export erzeugen Liefernachweise — keine GDPR-Konformitaet או Zertifizierung.",
+            "source_sha256": "cab1f91fe3369d499133e9ef953880afe579eb52c4f1bb7489831b89f4450be7"
+          },
+          {
+            "text": "Unterscheiden Sie Verantwortlichen-Eintraege (Art. 30 Abs. 1) of Auftragsverarbeiter-Eintraegen (Art. 30 Abs. 2).",
+            "source_sha256": "dda5146a078925d5b373f6e12308d5a224234c8f7267a1dfd52c94db6b72794e"
+          }
+        ],
+        "source_sha256": "333906a6238dfdeb4be7aab5adbfd9348fca44adb227b126b45f40e5befc1e35"
+      }
     },
     "compliance__gdpr__subject-rights": {
       "helpAriaLabel": {
@@ -365,20 +389,23 @@
         "text": "זכויות נשוא המידע (פרק III)",
         "source_sha256": "d9420d90d87a45b10a90a9710918f4541572da2552ec8d810b5e54e6d38cca0a"
       },
-      "bullets": [
-        {
-          "text": "Standardmaessig a Monat ab Eingang; Verlaengerungen um bis to zwei weitere Monate with Begruendung erfassen.",
-          "source_sha256": "533ad73f1700eb6de581123b87f709c35e7b4f273b8b844eea4922ea9be8d9a7"
-        },
-        {
-          "text": "Identitaetspruefung, gefundene Daten, Entscheidung, Ausnahme and Geliefertes nachverfolgen.",
-          "source_sha256": "b3f0f51d3f74c940bf978970db5b2283b926cb980db5cdbcc8aba01793632bec"
-        },
-        {
-          "text": "Ersetzt reine Offenlegungstext-Presets durch a dauerhaften Anforderungsdatensatz — keine automatisierte Datenfindung.",
-          "source_sha256": "e6f94baa6a59b6117c9e12664692dbfd7c6a5656f33b29e0a1869e985b805894"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Standardmaessig a Monat ab Eingang; Verlaengerungen um bis to zwei weitere Monate with Begruendung erfassen.",
+            "source_sha256": "533ad73f1700eb6de581123b87f709c35e7b4f273b8b844eea4922ea9be8d9a7"
+          },
+          {
+            "text": "Identitaetspruefung, gefundene Daten, Entscheidung, Ausnahme and Geliefertes nachverfolgen.",
+            "source_sha256": "b3f0f51d3f74c940bf978970db5b2283b926cb980db5cdbcc8aba01793632bec"
+          },
+          {
+            "text": "Ersetzt reine Offenlegungstext-Presets durch a dauerhaften Anforderungsdatensatz — keine automatisierte Datenfindung.",
+            "source_sha256": "e6f94baa6a59b6117c9e12664692dbfd7c6a5656f33b29e0a1869e985b805894"
+          }
+        ],
+        "source_sha256": "04d8858dd7cea14bd2ec2c81defbfac1f46d1772ebe78e1542b027247bedc3f8"
+      }
     },
     "compliance__poam": {
       "helpAriaLabel": {
@@ -393,20 +420,23 @@
         "text": "POA&M",
         "source_sha256": "dfadfc4960359b3c714b53ba0f15221009e273c227109462bba09ea421ac2e9e"
       },
-      "bullets": [
-        {
-          "text": "Oeffnen ueber Compliance & Nachweise → הערכות → POA&M.",
-          "source_sha256": "c46b825284a6ca3958407fe992e8357e9345b1ef765d0b176ff34a7a59b52d07"
-        },
-        {
-          "text": "Anlegen and Edit erfordern Evidence-Request-Berechtigung; Anzeigen nutzt Berichtskatalog-Ansicht.",
-          "source_sha256": "ccb7bd2528d639833a89276a52bd6dc7b92fe7a4ce8219318f46109cb9a48923"
-        },
-        {
-          "text": "סטטוס וסיכון סינד נור Lebenszyklusfelder - לא Met, konform או zertifiziert.",
-          "source_sha256": "16a3a05b98c22f6997910ed09ef98bf1ff423b0125e0038fda51f8affa417319"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Oeffnen ueber Compliance & Nachweise → הערכות → POA&M.",
+            "source_sha256": "c46b825284a6ca3958407fe992e8357e9345b1ef765d0b176ff34a7a59b52d07"
+          },
+          {
+            "text": "Anlegen and Edit erfordern Evidence-Request-Berechtigung; Anzeigen nutzt Berichtskatalog-Ansicht.",
+            "source_sha256": "ccb7bd2528d639833a89276a52bd6dc7b92fe7a4ce8219318f46109cb9a48923"
+          },
+          {
+            "text": "סטטוס וסיכון סינד נור Lebenszyklusfelder - לא Met, konform או zertifiziert.",
+            "source_sha256": "16a3a05b98c22f6997910ed09ef98bf1ff423b0125e0038fda51f8affa417319"
+          }
+        ],
+        "source_sha256": "d19e457a3d70141a8c9797b1d20a74dcbb6d1803e794835d23a5d145ee04753c"
+      }
     },
     "defense": {
       "helpAriaLabel": {
@@ -421,24 +451,27 @@
         "text": "דיווח על תקיפה / איום",
         "source_sha256": "a58767c5953b04ee9a72d3923fd596c543b986cd9d9a7b99ba21037b996ea2e0"
       },
-      "bullets": [
-        {
-          "text": "Oeffnen ueber Sicherheit → Blockierte Angriffe, Favoriten או Start-Dashboard-Kachel.",
-          "source_sha256": "5f715162ee60766c667555d3a7a82cfc55abe96d80359816651fd22a69af78f0"
-        },
-        {
-          "text": "Zaehler sind nur abgelehnte and fehlgeschlagene Ereignisse. Leere Quellen zeigen Fehlt.",
-          "source_sha256": "0a50d588b8c65ee46e5284bf2aaade9689d4e1d880a2ea7a42d2b2ff29b00d7c"
-        },
-        {
-          "text": "Passwortbalken zeigen Klasse and Laenge. Werte werden nie gespeichert or angezeigt.",
-          "source_sha256": "39587b44059edd27c6316abe3eb9b96c941620f59b21cac86de57abeba80b1b2"
-        },
-        {
-          "text": "Land anklicken, um האזינו למסנן. Laenderfilter loeschen bleibt bei 1024 sichtbar.",
-          "source_sha256": "651ef975c0317692203caf9a5adf9cdf34b378be04b27c9fd312d04d5242e385"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Oeffnen ueber Sicherheit → Blockierte Angriffe, Favoriten או Start-Dashboard-Kachel.",
+            "source_sha256": "5f715162ee60766c667555d3a7a82cfc55abe96d80359816651fd22a69af78f0"
+          },
+          {
+            "text": "Zaehler sind nur abgelehnte and fehlgeschlagene Ereignisse. Leere Quellen zeigen Fehlt.",
+            "source_sha256": "0a50d588b8c65ee46e5284bf2aaade9689d4e1d880a2ea7a42d2b2ff29b00d7c"
+          },
+          {
+            "text": "Passwortbalken zeigen Klasse and Laenge. Werte werden nie gespeichert or angezeigt.",
+            "source_sha256": "39587b44059edd27c6316abe3eb9b96c941620f59b21cac86de57abeba80b1b2"
+          },
+          {
+            "text": "Land anklicken, um האזינו למסנן. Laenderfilter loeschen bleibt bei 1024 sichtbar.",
+            "source_sha256": "651ef975c0317692203caf9a5adf9cdf34b378be04b27c9fd312d04d5242e385"
+          }
+        ],
+        "source_sha256": "e1da7ec379d614acda54847b30dc4aa119e305f914a041589605904fcf9c387d"
+      }
     },
     "demo-data": {
       "summary": {
@@ -463,20 +496,23 @@
         "text": "בית תיעוד",
         "source_sha256": "b53bb6e7da8c43d9ad12d264fd73c4acbbdaef5f43428b7f23a4915b40943cff"
       },
-      "bullets": [
-        {
-          "text": "Benutzerhandbuecher: Group Dokumentationsbenutzer (`rbac.offline.docs.user.view`).",
-          "source_sha256": "036f2dca5ac534335f2e61d28cfa0b7d53b14fcc9d110bd72805afc35fb6d8d0"
-        },
-        {
-          "text": "Auditor-Handbuecher / Admin-Handbuecher: jeweilige Auditor- ו-Admin-Rollenrechte.",
-          "source_sha256": "78dcd0b91c2bb1285355b4e6041d518b15073ea6d40a18e9cc16cc0baa16cce4"
-        },
-        {
-          "text": "מסמכים טכניים: `rbac.offline.docs.technical.view` (+ wiederverwendbar `rbac.offline.developer.tools`).",
-          "source_sha256": "0b93ce0cafb2963a700062f273355dfa8db9bd99dca2885c9d2eabc8975a2669"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Benutzerhandbuecher: Group Dokumentationsbenutzer (`rbac.offline.docs.user.view`).",
+            "source_sha256": "036f2dca5ac534335f2e61d28cfa0b7d53b14fcc9d110bd72805afc35fb6d8d0"
+          },
+          {
+            "text": "Auditor-Handbuecher / Admin-Handbuecher: jeweilige Auditor- ו-Admin-Rollenrechte.",
+            "source_sha256": "78dcd0b91c2bb1285355b4e6041d518b15073ea6d40a18e9cc16cc0baa16cce4"
+          },
+          {
+            "text": "מסמכים טכניים: `rbac.offline.docs.technical.view` (+ wiederverwendbar `rbac.offline.developer.tools`).",
+            "source_sha256": "0b93ce0cafb2963a700062f273355dfa8db9bd99dca2885c9d2eabc8975a2669"
+          }
+        ],
+        "source_sha256": "6243472048922340d0ab8f2c272a52663a2ce93e02737c3bfcace77ab468bc37"
+      }
     },
     "docs__admin": {
       "summary": {
@@ -551,20 +587,23 @@
         "text": "גובה אסימון",
         "source_sha256": "52795a799180a89b2254f9fdd1052a7bf030b3024bd71ec4c4cb37d451b048b1"
       },
-      "bullets": [
-        {
-          "text": "Fuer Token-Mint Mus Elevation בהגדרות או מיובא הגדרות מוגדרות.",
-          "source_sha256": "48bfdd323c21e7c5a11ff4e2e094ebaeba266ba0623f05836529b3443b750312"
-        },
-        {
-          "text": "Remote Non-Agent Local Elevation nutzt WinRM - לא ה-Agent-Pipe - ורחב יותר באופן אוטומטי.",
-          "source_sha256": "a28aa7ba02f9a8d87cb908be8a6bb5ecbf041ac1a6c51fe8e830c398b4228e84"
-        },
-        {
-          "text": "Direkte Elevation listet serverinitiierte משרות עבור Agent- ו-WinRM-Transport.",
-          "source_sha256": "b1f29cf65404c8f230fea291af6ad42c6b04c56b2567e7c344c05a6881308dae"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Fuer Token-Mint Mus Elevation בהגדרות או מיובא הגדרות מוגדרות.",
+            "source_sha256": "48bfdd323c21e7c5a11ff4e2e094ebaeba266ba0623f05836529b3443b750312"
+          },
+          {
+            "text": "Remote Non-Agent Local Elevation nutzt WinRM - לא ה-Agent-Pipe - ורחב יותר באופן אוטומטי.",
+            "source_sha256": "a28aa7ba02f9a8d87cb908be8a6bb5ecbf041ac1a6c51fe8e830c398b4228e84"
+          },
+          {
+            "text": "Direkte Elevation listet serverinitiierte משרות עבור Agent- ו-WinRM-Transport.",
+            "source_sha256": "b1f29cf65404c8f230fea291af6ad42c6b04c56b2567e7c344c05a6881308dae"
+          }
+        ],
+        "source_sha256": "02de5977b35dc3deedabc0b371d25286d93896cbc63530dd73cab7cbe9fe7f95"
+      }
     },
     "enclave__auditor-binder": {
       "helpAriaLabel": {
@@ -579,20 +618,23 @@
         "text": "קלסר הערכה",
         "source_sha256": "edce73881ba543a19ed06b9eaee2c7998fb127db9bf6232dc805423bed35f519"
       },
-      "bullets": [
-        {
-          "text": "Instanz anlegen, aktuelle Luecken aus the Auditor-Bericht erzeugen, Begruendungen ergaenzen.",
-          "source_sha256": "182debcbe1112acba49d374250547aa4f71b7ed36846443187315ee253e59e72"
-        },
-        {
-          "text": "Status-Chips sind lueckenorientiert — לא שגיאה-gruener Compliance-Score.",
-          "source_sha256": "6b77f99970bb34dcf8cbe71924d34df7e779d81a15de5e7076eaf349f82c53bb"
-        },
-        {
-          "text": "ייצוא (Word, RTF, Arbeitsmappe, HTML, Druck/PDF) bleibt sichtbar; erfordert Binder-Export-Berechtigung.",
-          "source_sha256": "f37632e6d5313a907fda1e8529525efc7e95e0da447c956e51ed898ff9b83b01"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Instanz anlegen, aktuelle Luecken aus the Auditor-Bericht erzeugen, Begruendungen ergaenzen.",
+            "source_sha256": "182debcbe1112acba49d374250547aa4f71b7ed36846443187315ee253e59e72"
+          },
+          {
+            "text": "Status-Chips sind lueckenorientiert — לא שגיאה-gruener Compliance-Score.",
+            "source_sha256": "6b77f99970bb34dcf8cbe71924d34df7e779d81a15de5e7076eaf349f82c53bb"
+          },
+          {
+            "text": "ייצוא (Word, RTF, Arbeitsmappe, HTML, Druck/PDF) bleibt sichtbar; erfordert Binder-Export-Berechtigung.",
+            "source_sha256": "f37632e6d5313a907fda1e8529525efc7e95e0da447c956e51ed898ff9b83b01"
+          }
+        ],
+        "source_sha256": "43f2493078dac46a16116deafe2c85cdfb091e94eeaf958bc04a8f3996085e81"
+      }
     },
     "enclave__auditor-binder__playbooks": {
       "helpAriaLabel": {
@@ -607,12 +649,15 @@
         "text": "ספרי טקסט למבקר",
         "source_sha256": "e148e3954565ff17659ce8cdb53f8bb3eacb9feaeb9e54fbc730b728e2366e29"
       },
-      "bullets": [
-        {
-          "text": "ספרי משחק מתדלקים הערכה-קלסר-אבשניט; Live-Zahlen kommen weiterhin zur Renderzeit aus the Instanz.",
-          "source_sha256": "568deb9a3b1821a79a13285920ae69082630931c81fb316b2ff86e4f994d7ffc"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "ספרי משחק מתדלקים הערכה-קלסר-אבשניט; Live-Zahlen kommen weiterhin zur Renderzeit aus the Instanz.",
+            "source_sha256": "568deb9a3b1821a79a13285920ae69082630931c81fb316b2ff86e4f994d7ffc"
+          }
+        ],
+        "source_sha256": "cc9e75ed05291dd409e0798a30feb1286b3275527b022c06105d85ec1da2b743"
+      }
     },
     "enclave__compliance": {
       "helpAriaLabel": {
@@ -627,20 +672,23 @@
         "text": "תאימות המדינה הנוכחית",
         "source_sha256": "da5e4759c452cc21dc10cea951de8032d207f64d9b6805dd4e4f6d8710680932"
       },
-      "bullets": [
-        {
-          "text": "סרוק מחדש עבור alle or ausgewaehlte Maschinen ב-Systemgruppe.",
-          "source_sha256": "eb63c03b834b8302570c47aa65140c53c9b941e0ebfebd397d51391540157880"
-        },
-        {
-          "text": "Maschinenbestand kommt aus Systeme + Systemgruppen - האתר הזה נועד ל-Comliance-Zusammenfassung.",
-          "source_sha256": "ce4f82568bb390b18fbe3588dc84b82867bc2855d618ba5ac65c66ecd37c289b"
-        },
-        {
-          "text": "מדור קודם כתובות אתרים /enclave/environment נמצאות כאן.",
-          "source_sha256": "459f3aeaf489fb4ed9ef2044cc13785aa963cf4f21f3c980355e1d3935c7d79b"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "סרוק מחדש עבור alle or ausgewaehlte Maschinen ב-Systemgruppe.",
+            "source_sha256": "eb63c03b834b8302570c47aa65140c53c9b941e0ebfebd397d51391540157880"
+          },
+          {
+            "text": "Maschinenbestand kommt aus Systeme + Systemgruppen - האתר הזה נועד ל-Comliance-Zusammenfassung.",
+            "source_sha256": "ce4f82568bb390b18fbe3588dc84b82867bc2855d618ba5ac65c66ecd37c289b"
+          },
+          {
+            "text": "מדור קודם כתובות אתרים /enclave/environment נמצאות כאן.",
+            "source_sha256": "459f3aeaf489fb4ed9ef2044cc13785aa963cf4f21f3c980355e1d3935c7d79b"
+          }
+        ],
+        "source_sha256": "5ecc9e349e67ef361e14c9522c900c0b05773f4548db0c3d0cd58e7c2a23e8e2"
+      }
     },
     "enclave__control-state-history": {
       "helpAriaLabel": {
@@ -655,20 +703,23 @@
         "text": "היסטוריית מדינות בקרה",
         "source_sha256": "a8853de7c2a8c8d7b9354d9b2593659d07ee57a04034810f96988468e11684be"
       },
-      "bullets": [
-        {
-          "text": "Kontrolle ו-Title sind getrennte Spalten. Die Kontrollspalte sortiert nach Katalog-ID (AC-2 vor AC-11).",
-          "source_sha256": "52734a6fbcc8da98b60373ba3c061af3c6084b8dec6722a0a85df5f8043af76d"
-        },
-        {
-          "text": "Sweep aufzeichnen speichert the aktuelle Zustellbeobachtung. Drift heisst, the Zustellung ist zurueckgefallen - לא, dass a Kontrolle fehlgeschlagen ist.",
-          "source_sha256": "bc4d0d1528bd15556242a54ef579bdd7c2c4367d30c72bdb7338f53a5b2af710"
-        },
-        {
-          "text": "Oeffnen ueber Compliance & Nachweise → הערכות → Kontrollstatus-Verlauf.",
-          "source_sha256": "3255fa83be90a86c998134899918ded4f1cc024d98d9f9a7a6182cbbc97222ca"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Kontrolle ו-Title sind getrennte Spalten. Die Kontrollspalte sortiert nach Katalog-ID (AC-2 vor AC-11).",
+            "source_sha256": "52734a6fbcc8da98b60373ba3c061af3c6084b8dec6722a0a85df5f8043af76d"
+          },
+          {
+            "text": "Sweep aufzeichnen speichert the aktuelle Zustellbeobachtung. Drift heisst, the Zustellung ist zurueckgefallen - לא, dass a Kontrolle fehlgeschlagen ist.",
+            "source_sha256": "bc4d0d1528bd15556242a54ef579bdd7c2c4367d30c72bdb7338f53a5b2af710"
+          },
+          {
+            "text": "Oeffnen ueber Compliance & Nachweise → הערכות → Kontrollstatus-Verlauf.",
+            "source_sha256": "3255fa83be90a86c998134899918ded4f1cc024d98d9f9a7a6182cbbc97222ca"
+          }
+        ],
+        "source_sha256": "bd3623dc19f369381de7ab42a14bf94a806db6351bfcd3d9bf2cceb9f6c095b2"
+      }
     },
     "enclave__data-flows": {
       "helpAriaLabel": {
@@ -683,28 +734,31 @@
         "text": "מיפוי זרימת נתונים",
         "source_sha256": "86ad3e7787e15e868074d07f3528dd2cd5c33c10b92cab3d37824e0a9277d2ca"
       },
-      "bullets": [
-        {
-          "text": "Oeffnen ueber Compliance & Nachweise → הערכות → Datenfluss-Mapping.",
-          "source_sha256": "4ee42695ea666e6c6edcd445bb73ac330fcb793faaf848bf1ed8e21b780239ab"
-        },
-        {
-          "text": "Datenfluesse ומובלעות anlegen and bearbeiten; את Diagramm zeigt Quelle ו-Ziel with Form (לא allein Farbe).",
-          "source_sha256": "82640df9a465d1ee5ebfba217c26665f9b2d39cccc3955b31770e926d0d625d0"
-        },
-        {
-          "text": "Abgeleitete Kontrollen ו Risikoniveaus berechnet את השרת ו zeigt sie schreibgeschuetzt.",
-          "source_sha256": "ef0c1ca949dd1105e7ae902d34f66d3159f2835307bb7ec9cb41096ff27a9662"
-        },
-        {
-          "text": "Dienst- and Firewall-Regelbearbeitung ist auf dieser Seite noch not verfuegbar.",
-          "source_sha256": "fcbde942d82383f00f5aae53504268a0494dab1868a11a080974a16597e18d08"
-        },
-        {
-          "text": "Wenn the Store not verfuegbar ist (Migration ausstehend), bleibt the Seite ehrlich statt Daten to erfinden.",
-          "source_sha256": "4c148f7c3160498a99bb5d7826601d46843a3d0ef1b68844cb872bd3ffdc90b8"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Oeffnen ueber Compliance & Nachweise → הערכות → Datenfluss-Mapping.",
+            "source_sha256": "4ee42695ea666e6c6edcd445bb73ac330fcb793faaf848bf1ed8e21b780239ab"
+          },
+          {
+            "text": "Datenfluesse ומובלעות anlegen and bearbeiten; את Diagramm zeigt Quelle ו-Ziel with Form (לא allein Farbe).",
+            "source_sha256": "82640df9a465d1ee5ebfba217c26665f9b2d39cccc3955b31770e926d0d625d0"
+          },
+          {
+            "text": "Abgeleitete Kontrollen ו Risikoniveaus berechnet את השרת ו zeigt sie schreibgeschuetzt.",
+            "source_sha256": "ef0c1ca949dd1105e7ae902d34f66d3159f2835307bb7ec9cb41096ff27a9662"
+          },
+          {
+            "text": "Dienst- and Firewall-Regelbearbeitung ist auf dieser Seite noch not verfuegbar.",
+            "source_sha256": "fcbde942d82383f00f5aae53504268a0494dab1868a11a080974a16597e18d08"
+          },
+          {
+            "text": "Wenn the Store not verfuegbar ist (Migration ausstehend), bleibt the Seite ehrlich statt Daten to erfinden.",
+            "source_sha256": "4c148f7c3160498a99bb5d7826601d46843a3d0ef1b68844cb872bd3ffdc90b8"
+          }
+        ],
+        "source_sha256": "337d768d24913334c2c4e894e9fbb67d08a479d3ed611a691937272d865f6d6a"
+      }
     },
     "enclave__environment": {
       "helpAriaLabel": {
@@ -719,12 +773,15 @@
         "text": "תאימות המדינה הנוכחית",
         "source_sha256": "da5e4759c452cc21dc10cea951de8032d207f64d9b6805dd4e4f6d8710680932"
       },
-      "bullets": [
-        {
-          "text": "Compliance & Nachweise → Assessments → Aktueller Compliance-Stand for Maschinen-Posture and Feststellungen nutzen.",
-          "source_sha256": "15db798aede97f1730679bfc8c4f65a476b665e916bc399c5d48db32bbb686e6"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Compliance & Nachweise → Assessments → Aktueller Compliance-Stand for Maschinen-Posture and Feststellungen nutzen.",
+            "source_sha256": "15db798aede97f1730679bfc8c4f65a476b665e916bc399c5d48db32bbb686e6"
+          }
+        ],
+        "source_sha256": "46c91a52eceb1a40405d6c58c0e1d78645287b455a91ded66f45f4ab991a4ab3"
+      }
     },
     "enclave__external-workstation-readiness": {
       "helpAriaLabel": {
@@ -739,32 +796,35 @@
         "text": "מוכנות לתחנת עבודה חיצונית",
         "source_sha256": "fb3dfc78252dad564fab3e376158782ce5aef902a23589f562ed1cc50de50826"
       },
-      "bullets": [
-        {
-          "text": "ERASG = External Remote Access Systems Group - מחשבים אישיים חיצוניים, ה-VDI- או aehnlichen Stream nutzen.",
-          "source_sha256": "c55f9038d97757e4513c4b439d43871b8940c9192d2b9c4c649e01985256cc72"
-        },
-        {
-          "text": "Listet registrierte Bereitschafts-Agents, letzte Attest-Feststellungen, offene דילוגים ו-Operator-Wiivers.",
-          "source_sha256": "5f15993e234347ff609cdf7e43d44ee34b32d069020743b413bdfd07a14d914e"
-        },
-        {
-          "text": "Harte Error (z. B. Malware / Deny-Liste) sind not waiverbar; weiche Skips koennen a zeitlich begrenzten Waiver tragen.",
-          "source_sha256": "e228b4ec4d2273962334c48964219c1c3bdc88f962b029924a10abdb0dcc8ff1"
-        },
-        {
-          "text": "Oeffnen ueber Compliance & Nachweise → הערכות → Externe Arbeitsplatz-Bereitschaft. Unterschiedlich zum Aktuellen Compliance-Stand for Enclave-Hosts.",
-          "source_sha256": "f97f59c50069fb37cc58623a3c128f34992abf7ceb393a0b25ff7ba7a687b14e"
-        },
-        {
-          "text": "Probe-Packs unter Assessments → WA Probe Packs veroffentlichen, damit Agents serververoefentlichte Pruefungen laden koennen.",
-          "source_sha256": "e374e812817f66a7a98a8d3ffe56f4f9d0804e52a37e8215fe8be176b0785227"
-        },
-        {
-          "text": "Legacy-Bookmarks to /enclave/workstation-assurance leiten hierher um.",
-          "source_sha256": "890336d414aa4725420ca2353a7bf02b5bbadfafcdbad3dd43998752f5111f8b"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "ERASG = External Remote Access Systems Group - מחשבים אישיים חיצוניים, ה-VDI- או aehnlichen Stream nutzen.",
+            "source_sha256": "c55f9038d97757e4513c4b439d43871b8940c9192d2b9c4c649e01985256cc72"
+          },
+          {
+            "text": "Listet registrierte Bereitschafts-Agents, letzte Attest-Feststellungen, offene דילוגים ו-Operator-Wiivers.",
+            "source_sha256": "5f15993e234347ff609cdf7e43d44ee34b32d069020743b413bdfd07a14d914e"
+          },
+          {
+            "text": "Harte Error (z. B. Malware / Deny-Liste) sind not waiverbar; weiche Skips koennen a zeitlich begrenzten Waiver tragen.",
+            "source_sha256": "e228b4ec4d2273962334c48964219c1c3bdc88f962b029924a10abdb0dcc8ff1"
+          },
+          {
+            "text": "Oeffnen ueber Compliance & Nachweise → הערכות → Externe Arbeitsplatz-Bereitschaft. Unterschiedlich zum Aktuellen Compliance-Stand for Enclave-Hosts.",
+            "source_sha256": "f97f59c50069fb37cc58623a3c128f34992abf7ceb393a0b25ff7ba7a687b14e"
+          },
+          {
+            "text": "Probe-Packs unter Assessments → WA Probe Packs veroffentlichen, damit Agents serververoefentlichte Pruefungen laden koennen.",
+            "source_sha256": "e374e812817f66a7a98a8d3ffe56f4f9d0804e52a37e8215fe8be176b0785227"
+          },
+          {
+            "text": "Legacy-Bookmarks to /enclave/workstation-assurance leiten hierher um.",
+            "source_sha256": "890336d414aa4725420ca2353a7bf02b5bbadfafcdbad3dd43998752f5111f8b"
+          }
+        ],
+        "source_sha256": "470bd030414f8daa4d4e5e3bcbaa44b4dcd24d5fc739f5dedc124d1ec971854e"
+      }
     },
     "enclave__incidents": {
       "helpAriaLabel": {
@@ -779,16 +839,19 @@
         "text": "תקריות",
         "source_sha256": "bfe868931580fb3b173163169fae3cc3ff3efe150b5167ebe94ac9f0ab34c651"
       },
-      "bullets": [
-        {
-          "text": "Neue Vorfaelle unter Vorfall melden ב-Comliance & Nachweise → Vorfaelle erfassen.",
-          "source_sha256": "ab76eb2241c9e1c4214254e3fe4e56a36843e5b715395db9a45d03e18c11bf59"
-        },
-        {
-          "text": "Status beschreibt Lieferung - לא Met או zertifiziert.",
-          "source_sha256": "635658f36f906ee6ab708d45527fa3267ba6c0a5a61908e9c5c5753e030f9387"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Neue Vorfaelle unter Vorfall melden ב-Comliance & Nachweise → Vorfaelle erfassen.",
+            "source_sha256": "ab76eb2241c9e1c4214254e3fe4e56a36843e5b715395db9a45d03e18c11bf59"
+          },
+          {
+            "text": "Status beschreibt Lieferung - לא Met או zertifiziert.",
+            "source_sha256": "635658f36f906ee6ab708d45527fa3267ba6c0a5a61908e9c5c5753e030f9387"
+          }
+        ],
+        "source_sha256": "7f5a9d392145e0aadd0391ec59d830a14e09a62e631baf59c7035743695a6711"
+      }
     },
     "enclave__operations-compliance": {
       "helpAriaLabel": {
@@ -803,24 +866,27 @@
         "text": "תאימות תפעול",
         "source_sha256": "19e48d68265654dad403962eede1db709616d812c6cf33b5d190f699dbe851f2"
       },
-      "bullets": [
-        {
-          "text": "Oeffnen ueber Compliance & Nachweise → הערכות → Betriebs-Compliance.",
-          "source_sha256": "293cda659a59362a3fc5ada5a13784fd99c52448830f35fb5057794b2f5d0699"
-        },
-        {
-          "text": "צ'יפס סטטוס של Live, Teilweise, Fehlt או Blockiert - nie Met.",
-          "source_sha256": "c5da7e908d0725c9aa87b9e95042603dca5a5e0f1d15aab7a0075345eac2a642"
-        },
-        {
-          "text": "Jede Luecke nennt the noch offene Arbeit and verlinkt zum Aktuellen Compliance-Stand.",
-          "source_sha256": "39f1cfce6864324040d4a0388c4a5ca479ce8ae20ec3530086a15a1edc9fdfd6"
-        },
-        {
-          "text": "Geschwisterseite zum Aktuellen Compliance-Stand, kein Ersatz.",
-          "source_sha256": "830b81fbb4af840221c0c668434c8e628e806451317bd099df9f14b86df62ffe"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Oeffnen ueber Compliance & Nachweise → הערכות → Betriebs-Compliance.",
+            "source_sha256": "293cda659a59362a3fc5ada5a13784fd99c52448830f35fb5057794b2f5d0699"
+          },
+          {
+            "text": "צ'יפס סטטוס של Live, Teilweise, Fehlt או Blockiert - nie Met.",
+            "source_sha256": "c5da7e908d0725c9aa87b9e95042603dca5a5e0f1d15aab7a0075345eac2a642"
+          },
+          {
+            "text": "Jede Luecke nennt the noch offene Arbeit and verlinkt zum Aktuellen Compliance-Stand.",
+            "source_sha256": "39f1cfce6864324040d4a0388c4a5ca479ce8ae20ec3530086a15a1edc9fdfd6"
+          },
+          {
+            "text": "Geschwisterseite zum Aktuellen Compliance-Stand, kein Ersatz.",
+            "source_sha256": "830b81fbb4af840221c0c668434c8e628e806451317bd099df9f14b86df62ffe"
+          }
+        ],
+        "source_sha256": "b7deb3a7adbd5d3e117bf20f4e30119162447584fd1c0171de136886b310bd49"
+      }
     },
     "enclave__pum": {
       "helpAriaLabel": {
@@ -835,20 +901,23 @@
         "text": "ניהול משתמשים מועדף",
         "source_sha256": "851834aead10975057c46f5450c4bfa9cbd4e9120baa4da8969c8a46a96aa72b"
       },
-      "bullets": [
-        {
-          "text": "הגדרה של חבילה ו-Endpunkt או קבוצה; סוכנים וונדן אן ודיווח SHA-256.",
-          "source_sha256": "f46648c72be83ae1e180f7552fac5888001c151836ba2bdfdf80f224483082c7"
-        },
-        {
-          "text": "Verstoesse zeigen AppLocker-/WDAC-Blocks — זרימות עבודה עבור TemporaryAllowRule-Ausnahmen nutzen.",
-          "source_sha256": "4d43bbd134e2c620bb8d719b90c2becf6385565369319ccb2536a339c856de5a"
-        },
-        {
-          "text": "JIT-Administratorenmitgliedschaft bleibt unter Direkte Elevation; PUM חסום התקנת ההתקנה בחלון זה.",
-          "source_sha256": "6a41cb61b521f3c0d001f8ebcba61a4b6545984a01010cb764c38509b79e9ecf"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "הגדרה של חבילה ו-Endpunkt או קבוצה; סוכנים וונדן אן ודיווח SHA-256.",
+            "source_sha256": "f46648c72be83ae1e180f7552fac5888001c151836ba2bdfdf80f224483082c7"
+          },
+          {
+            "text": "Verstoesse zeigen AppLocker-/WDAC-Blocks — זרימות עבודה עבור TemporaryAllowRule-Ausnahmen nutzen.",
+            "source_sha256": "4d43bbd134e2c620bb8d719b90c2becf6385565369319ccb2536a339c856de5a"
+          },
+          {
+            "text": "JIT-Administratorenmitgliedschaft bleibt unter Direkte Elevation; PUM חסום התקנת ההתקנה בחלון זה.",
+            "source_sha256": "6a41cb61b521f3c0d001f8ebcba61a4b6545984a01010cb764c38509b79e9ecf"
+          }
+        ],
+        "source_sha256": "293f0e5813892c9c614b6c85d112e83eb0ce52c74cf451b51b835f6b0ffc9df1"
+      }
     },
     "enclave__wa-probe-packs": {
       "helpAriaLabel": {
@@ -863,24 +932,27 @@
         "text": "חבילות בדיקה של WA",
         "source_sha256": "c93bf3b8be405b6596d117af2dbc0917d0934a145daccc81c3315ab8e64042bc"
       },
-      "bullets": [
-        {
-          "text": "לאחר הפעלת חבילת סוכנים יש גרסה רגילה.",
-          "source_sha256": "bd9d23a791b8d23c9feb41e2e7e2f9cbc44f23955a3aab47ec39635191ee3b8a"
-        },
-        {
-          "text": "חבילת JSON, חבילת תכולת פריטים, ולאחר מכן Veroffentlichen. Das erste Pack פעיל באופן אוטומטי.",
-          "source_sha256": "9b34f7e522c36a8995786b0ae29ee9cc42616a4f15c9504d8af56c507c6fdd13"
-        },
-        {
-          "text": "Spaetere Version aktivieren, wenn Sie bereit sind; stiller Push ללא Agent-Pull ist Geplant.",
-          "source_sha256": "0cf084088617380b279413ac41b215eb4a1d6972fa51b1c0d51058c24ce320ca"
-        },
-        {
-          "text": "Oeffnen ueber Compliance & Nachweise → Assessments → WA Probe Packs.",
-          "source_sha256": "9aeecf10e1b7e7a56b91e55298ca8cc886c1c30e6a5ea1f92323305ff28a325c"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "לאחר הפעלת חבילת סוכנים יש גרסה רגילה.",
+            "source_sha256": "bd9d23a791b8d23c9feb41e2e7e2f9cbc44f23955a3aab47ec39635191ee3b8a"
+          },
+          {
+            "text": "חבילת JSON, חבילת תכולת פריטים, ולאחר מכן Veroffentlichen. Das erste Pack פעיל באופן אוטומטי.",
+            "source_sha256": "9b34f7e522c36a8995786b0ae29ee9cc42616a4f15c9504d8af56c507c6fdd13"
+          },
+          {
+            "text": "Spaetere Version aktivieren, wenn Sie bereit sind; stiller Push ללא Agent-Pull ist Geplant.",
+            "source_sha256": "0cf084088617380b279413ac41b215eb4a1d6972fa51b1c0d51058c24ce320ca"
+          },
+          {
+            "text": "Oeffnen ueber Compliance & Nachweise → Assessments → WA Probe Packs.",
+            "source_sha256": "9aeecf10e1b7e7a56b91e55298ca8cc886c1c30e6a5ea1f92323305ff28a325c"
+          }
+        ],
+        "source_sha256": "a9c69433d1d6b71989070ab4b8d756da281b654dea0944cf0b63ae0ed1d0e840"
+      }
     },
     "enclave__workstation-assurance": {
       "helpAriaLabel": {
@@ -895,12 +967,15 @@
         "text": "מוכנות לתחנת עבודה חיצונית",
         "source_sha256": "fb3dfc78252dad564fab3e376158782ce5aef902a23589f562ed1cc50de50826"
       },
-      "bullets": [
-        {
-          "text": "סימניות ל-diesem Legacy-Pfad leiten to Externe Arbeitsplatz-Bereitschaft unter Compliance & Nachweise → Assessments um.",
-          "source_sha256": "7a431e77564d72e2a09b19ced10cdc8265d1915829b2ee7f5f1bfbc33fb76e03"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "סימניות ל-diesem Legacy-Pfad leiten to Externe Arbeitsplatz-Bereitschaft unter Compliance & Nachweise → Assessments um.",
+            "source_sha256": "7a431e77564d72e2a09b19ced10cdc8265d1915829b2ee7f5f1bfbc33fb76e03"
+          }
+        ],
+        "source_sha256": "f3a6206486983b8a4ebba84d0442b7650752211a32425be3ae5035396152a6d6"
+      }
     },
     "endpoint-privilege": {
       "helpAriaLabel": {
@@ -915,20 +990,23 @@
         "text": "הרשאת נקודת קצה",
         "source_sha256": "f4bb514769304a816dc46987df62db260032f1d2fbd3e37717771f7e003c5bd0"
       },
-      "bullets": [
-        {
-          "text": "Tab Anwendungen מפרט את האפליקציות הנבונות יותר בקטלוג עם Dauerregeln.",
-          "source_sha256": "c8bd86d071ca96bbabfc73e61f2e9a07f28d862e74a71dc8651db45a358e15d9"
-        },
-        {
-          "text": "Wer elevieren darf bindet IAM-User and Anwendungsregeln.",
-          "source_sha256": "693bdaf21f00ee000592c226290d34476ab4cc11bfa9b0668cc1fc4931bf1d7a"
-        },
-        {
-          "text": "Token-Elevation erstellt Einmalcodes; Direkte Elevation fuehrt serverinitiierte Jobs aus.",
-          "source_sha256": "f8f212b14a2ea4a135d669d0fc3f9e8fb3c8641ac3250d3ce9ec8e3169852525"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Tab Anwendungen מפרט את האפליקציות הנבונות יותר בקטלוג עם Dauerregeln.",
+            "source_sha256": "c8bd86d071ca96bbabfc73e61f2e9a07f28d862e74a71dc8651db45a358e15d9"
+          },
+          {
+            "text": "Wer elevieren darf bindet IAM-User and Anwendungsregeln.",
+            "source_sha256": "693bdaf21f00ee000592c226290d34476ab4cc11bfa9b0668cc1fc4931bf1d7a"
+          },
+          {
+            "text": "Token-Elevation erstellt Einmalcodes; Direkte Elevation fuehrt serverinitiierte Jobs aus.",
+            "source_sha256": "f8f212b14a2ea4a135d669d0fc3f9e8fb3c8641ac3250d3ce9ec8e3169852525"
+          }
+        ],
+        "source_sha256": "d8479991e9e1528585f6022dfca73054f3f438a8cc1501d07ce624e52a72c000"
+      }
     },
     "endpoints": {
       "summary": {
@@ -949,20 +1027,23 @@
         "text": "יומן ביקורת",
         "source_sha256": "47751f88edff89d56aeb5b1e46fb03a853bfcd96617f25195c752d5557902227"
       },
-      "bullets": [
-        {
-          "text": "Every row stays immutable — unlike live events, nothing here is lost to ring-buffer pressure.",
-          "source_sha256": "4ef83e416ec214922f7aff03a6d460b4790dd0cd2e592269578a8eb5f52f4067"
-        },
-        {
-          "text": "Windows hosts also mirror selected admin actions into the operational event log.",
-          "source_sha256": "97c7e2c149863ecfea997ae35cd30a3c5b552ae3b86d6b799f4d60e752cf2a3e"
-        },
-        {
-          "text": "ייצוא של dieser Seite עם Live-Ereignisfeed kombinieren, um a Vorfallszeitlinie to rekonstruieren.",
-          "source_sha256": "f63101c9d29c5024a18296162708f9c4000f120b6b0d8390eaa128cad30cf86d"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Every row stays immutable — unlike live events, nothing here is lost to ring-buffer pressure.",
+            "source_sha256": "4ef83e416ec214922f7aff03a6d460b4790dd0cd2e592269578a8eb5f52f4067"
+          },
+          {
+            "text": "Windows hosts also mirror selected admin actions into the operational event log.",
+            "source_sha256": "97c7e2c149863ecfea997ae35cd30a3c5b552ae3b86d6b799f4d60e752cf2a3e"
+          },
+          {
+            "text": "ייצוא של dieser Seite עם Live-Ereignisfeed kombinieren, um a Vorfallszeitlinie to rekonstruieren.",
+            "source_sha256": "f63101c9d29c5024a18296162708f9c4000f120b6b0d8390eaa128cad30cf86d"
+          }
+        ],
+        "source_sha256": "dcf92615b4158d6ed98679289e1db63dce23c163a7979c3e9069f6690ede23e4"
+      }
     },
     "events__monitoring": {
       "summary": {
@@ -973,20 +1054,23 @@
         "text": "אירועים",
         "source_sha256": "8d14f6e72de8f18ab1ee5c5330f00653c0c3ce099e63024454f80af97e72d333"
       },
-      "bullets": [
-        {
-          "text": "Diese Seite for Nah-Echtzeit-Ueberwachung ו-Fehlersuche nutzen.",
-          "source_sha256": "24c5a91beb905445f4c42b67b9a2c9c2122d4a6a374bcf7d3b099788d226057b"
-        },
-        {
-          "text": "Fuer dauerhafte Audit-Nachweise (ATO, SOC 2, CMMC) the Audit-Log in diesem Abschnitt nutzen.",
-          "source_sha256": "c8ac93a467541a02b3630b8784c8175c5f07b05f46b854099969e8902821fac1"
-        },
-        {
-          "text": "Webhook-Weiterleitung configurieren and alle Senken unter Ereignisweitergabe pruefen.",
-          "source_sha256": "26fc566eb50fa9c2c51b643e91ae8de30320e7a1010d0ba2bdeed70dc9eebd38"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Diese Seite for Nah-Echtzeit-Ueberwachung ו-Fehlersuche nutzen.",
+            "source_sha256": "24c5a91beb905445f4c42b67b9a2c9c2122d4a6a374bcf7d3b099788d226057b"
+          },
+          {
+            "text": "Fuer dauerhafte Audit-Nachweise (ATO, SOC 2, CMMC) the Audit-Log in diesem Abschnitt nutzen.",
+            "source_sha256": "c8ac93a467541a02b3630b8784c8175c5f07b05f46b854099969e8902821fac1"
+          },
+          {
+            "text": "Webhook-Weiterleitung configurieren and alle Senken unter Ereignisweitergabe pruefen.",
+            "source_sha256": "26fc566eb50fa9c2c51b643e91ae8de30320e7a1010d0ba2bdeed70dc9eebd38"
+          }
+        ],
+        "source_sha256": "49f27f3e58c1a777440d2411ee1f350df2480d98a10f99b9b6848a3b18536d9d"
+      }
     },
     "events__sharing": {
       "summary": {
@@ -997,20 +1081,23 @@
         "text": "שיתוף אירועים",
         "source_sha256": "d343b2b02251eb1d671077b50158d2dbca9939838624d85c85fa5dc7999b5b05"
       },
-      "bullets": [
-        {
-          "text": "Eingebaute Senken zeigt the Plattform-Senkenstatus; Syslog-Settings מפעיל את Collector-Transport.",
-          "source_sha256": "c84973830597e392c898fab5693d79c6a60214be08ef8632f78eb6029026fee6"
-        },
-        {
-          "text": "HTTP-Ziele הוא Multicast-CRUD (Splunk HEC, Datadog, ServiceNow, Jira, generischer Webhook) בתוספת יחידת Legacy-EVENTS_WEBHOOK_*-Panel.",
-          "source_sha256": "9b6086db00aeb1c3eea492fbd682e84a290d48537c20adcaad880672a7b038ff"
-        },
-        {
-          "text": "ניתוב פרו Ereignis bearbeitet Senken-Schalter pro Ereignistyp; נכשל/נסה שוב-תיבת דואר יוצא רשימה prozesslokale Zustellfehler.",
-          "source_sha256": "4bec2d6d67d8f3f365f55da81fc94cc820285a2f65cebae474ae7d9404801148"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Eingebaute Senken zeigt the Plattform-Senkenstatus; Syslog-Settings מפעיל את Collector-Transport.",
+            "source_sha256": "c84973830597e392c898fab5693d79c6a60214be08ef8632f78eb6029026fee6"
+          },
+          {
+            "text": "HTTP-Ziele הוא Multicast-CRUD (Splunk HEC, Datadog, ServiceNow, Jira, generischer Webhook) בתוספת יחידת Legacy-EVENTS_WEBHOOK_*-Panel.",
+            "source_sha256": "9b6086db00aeb1c3eea492fbd682e84a290d48537c20adcaad880672a7b038ff"
+          },
+          {
+            "text": "ניתוב פרו Ereignis bearbeitet Senken-Schalter pro Ereignistyp; נכשל/נסה שוב-תיבת דואר יוצא רשימה prozesslokale Zustellfehler.",
+            "source_sha256": "4bec2d6d67d8f3f365f55da81fc94cc820285a2f65cebae474ae7d9404801148"
+          }
+        ],
+        "source_sha256": "c058dc2bf78a806720eaa1a841d32624519fb32a464b50fd576bacae9161206c"
+      }
     },
     "favorites": {
       "helpAriaLabel": {
@@ -1025,24 +1112,27 @@
         "text": "מועדפים",
         "source_sha256": "7a1f2a83aca9a0819f244d5b4a7a0e7f6b779eb709dd4744136b22e724dbb10b"
       },
-      "bullets": [
-        {
-          "text": "Pflichtfavoriten lassen sich not entfernen — sie werden bei jedem Besuch aus Ihren Berechtigungen neu berechnet.",
-          "source_sha256": "0ec1dac08ed4476be874790e0ad056ba7584c1764d6c6398f736800b54c25507"
-        },
-        {
-          "text": "Favorit hinzufuegen listet nur Seiten, the Ihre Berechtigungen oeffnen duerfen.",
-          "source_sha256": "29d90510812b9b03bab2c14a17d8e47d367b71e922245f3470602c1d76c3c344"
-        },
-        {
-          "text": "Das Entfernen eines Pins archiviert ihn statt to loeschen, damit the Audit-Trail erhalten bleibt.",
-          "source_sha256": "ed4ca9739b35cc01123daa66e5016e9f040ce9ed24ef25260c228da2f357b741"
-        },
-        {
-          "text": "Eine angeheftete Seite, the a neuerer Server not mehr loveert, wird hier gemeldet and uebersprungen - nie still geloescht.",
-          "source_sha256": "a59a19dcdcf4aa0213df695782951d2efccd530406124e3dff340906b55e5f45"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Pflichtfavoriten lassen sich not entfernen — sie werden bei jedem Besuch aus Ihren Berechtigungen neu berechnet.",
+            "source_sha256": "0ec1dac08ed4476be874790e0ad056ba7584c1764d6c6398f736800b54c25507"
+          },
+          {
+            "text": "Favorit hinzufuegen listet nur Seiten, the Ihre Berechtigungen oeffnen duerfen.",
+            "source_sha256": "29d90510812b9b03bab2c14a17d8e47d367b71e922245f3470602c1d76c3c344"
+          },
+          {
+            "text": "Das Entfernen eines Pins archiviert ihn statt to loeschen, damit the Audit-Trail erhalten bleibt.",
+            "source_sha256": "ed4ca9739b35cc01123daa66e5016e9f040ce9ed24ef25260c228da2f357b741"
+          },
+          {
+            "text": "Eine angeheftete Seite, the a neuerer Server not mehr loveert, wird hier gemeldet and uebersprungen - nie still geloescht.",
+            "source_sha256": "a59a19dcdcf4aa0213df695782951d2efccd530406124e3dff340906b55e5f45"
+          }
+        ],
+        "source_sha256": "bd71aeee27acb0f2a8a621abe680204b9efc6e6d11130a2cd1dca696e37ae880"
+      }
     },
     "groups": {
       "helpAriaLabel": {
@@ -1057,24 +1147,27 @@
         "text": "קבוצות מערכת",
         "source_sha256": "9dfd95f6c8759a9f181255c57bccf7a010ca1b2692d943d8b274b7a906bbc3ac"
       },
-      "bullets": [
-        {
-          "text": "קבוצה עם Anzeigen oeffnen, dann Systeme & Identitaeten for Endpunkte ו-Konten nutzen.",
-          "source_sha256": "a9d9cee88deb7679eb9e6e08db965ac1a73f158da59acecd3e29ea5b173000dc"
-        },
-        {
-          "text": "Tab Gruppeneinstellungen buendelt מדיניות, Assistent, Vorlage ו Ausgabeaktionen.",
-          "source_sha256": "aaf8b87997400aaa3c494043249e0694a393e880bf8c758177d85228190bace0"
-        },
-        {
-          "text": "Gruppenrichtlinie (Zahnrad ב Liste) sind Standard-Passwortregeln for Mitglieder, sofern not ueberschrieben.",
-          "source_sha256": "0f6e42aa05493cb0ead0d0edf7646bc59b1ef0725e49e0a307fb90bd92636943"
-        },
-        {
-          "text": "Identitaetsvorlage definiert, welche Konten auf neuen Endpunkten geseedet werden.",
-          "source_sha256": "ac8b41a0e38fa12dee55d5f899ff3f283bfeac178f3fe4c63609b9807ad4ddef"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "קבוצה עם Anzeigen oeffnen, dann Systeme & Identitaeten for Endpunkte ו-Konten nutzen.",
+            "source_sha256": "a9d9cee88deb7679eb9e6e08db965ac1a73f158da59acecd3e29ea5b173000dc"
+          },
+          {
+            "text": "Tab Gruppeneinstellungen buendelt מדיניות, Assistent, Vorlage ו Ausgabeaktionen.",
+            "source_sha256": "aaf8b87997400aaa3c494043249e0694a393e880bf8c758177d85228190bace0"
+          },
+          {
+            "text": "Gruppenrichtlinie (Zahnrad ב Liste) sind Standard-Passwortregeln for Mitglieder, sofern not ueberschrieben.",
+            "source_sha256": "0f6e42aa05493cb0ead0d0edf7646bc59b1ef0725e49e0a307fb90bd92636943"
+          },
+          {
+            "text": "Identitaetsvorlage definiert, welche Konten auf neuen Endpunkten geseedet werden.",
+            "source_sha256": "ac8b41a0e38fa12dee55d5f899ff3f283bfeac178f3fe4c63609b9807ad4ddef"
+          }
+        ],
+        "source_sha256": "6cf114a7f5a78d8d3c616fcba4bedcd5fb3d7265453d0ac3a9c23a2264343cf9"
+      }
     },
     "identities": {
       "summary": {
@@ -1085,24 +1178,27 @@
         "text": "זהויות",
         "source_sha256": "8d4d8fef65ea881d9f2b04af4b3de0161c7664bcbfd69753529446fc85845b4f"
       },
-      "bullets": [
-        {
-          "text": "Zuerst a Endpunkt waehlen — Identitaeten sind immer auf a Maschine beschraenkt.",
-          "source_sha256": "6acb92c18c3c293f0f9b4924ccdd09cefe3fd5afc06c74cb28b8518ae3fee695"
-        },
-        {
-          "text": "Tab Konten עבור Identitaetsraster; Endpunktuebersicht zeigt Maschinenmetadaten ו verwandte קישורים.",
-          "source_sha256": "b36069759592d3e20e9f5c21465e6adfdf1c04363686089b9b7b8bdf71f51c15"
-        },
-        {
-          "text": "Zeile aufklappen (+) עבור Anwendestatus, טביעת אצבע ו- Rotationssplan.",
-          "source_sha256": "03248afbf4592fdd303d8aca99ef30c93d0da62e458d0addd6c6b0f4b3d0d965"
-        },
-        {
-          "text": "Groups-Identitaetsvorlagen legen Zeilen אוטומטית an, wenn neue Endpunkte einer Group beitreten (wenn Seeding aktiv ist).",
-          "source_sha256": "947f72f5e83b999b1a7ee4ca07cb30cfc2b928b54a2e802e60bc28bea476524d"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Zuerst a Endpunkt waehlen — Identitaeten sind immer auf a Maschine beschraenkt.",
+            "source_sha256": "6acb92c18c3c293f0f9b4924ccdd09cefe3fd5afc06c74cb28b8518ae3fee695"
+          },
+          {
+            "text": "Tab Konten עבור Identitaetsraster; Endpunktuebersicht zeigt Maschinenmetadaten ו verwandte קישורים.",
+            "source_sha256": "b36069759592d3e20e9f5c21465e6adfdf1c04363686089b9b7b8bdf71f51c15"
+          },
+          {
+            "text": "Zeile aufklappen (+) עבור Anwendestatus, טביעת אצבע ו- Rotationssplan.",
+            "source_sha256": "03248afbf4592fdd303d8aca99ef30c93d0da62e458d0addd6c6b0f4b3d0d965"
+          },
+          {
+            "text": "Groups-Identitaetsvorlagen legen Zeilen אוטומטית an, wenn neue Endpunkte einer Group beitreten (wenn Seeding aktiv ist).",
+            "source_sha256": "947f72f5e83b999b1a7ee4ca07cb30cfc2b928b54a2e802e60bc28bea476524d"
+          }
+        ],
+        "source_sha256": "cb3b75700505e523dd68858e4e472b275c1f9c41b40c4abfb7b23a44e3a9f372"
+      }
     },
     "licensing": {
       "helpAriaLabel": {
@@ -1117,24 +1213,27 @@
         "text": "רישיון וחיוב",
         "source_sha256": "7b1d769c2e04a874c13481b74a183c1edcc67fbf8c8ed6a070ce0894992b2dac"
       },
-      "bullets": [
-        {
-          "text": "הפעל להעתיק את Standort-Token, Sie auf the License-Management-Website einfuegen.",
-          "source_sha256": "e13e41785cf91e5d534472e54f94e37c199061946c6f7a6c70ac47074f6e92a5"
-        },
-        {
-          "text": "Import ersetzt the aktuellen Schluessel. Nutzen Sie the for Verlaengerungen.",
-          "source_sha256": "15b028efc87d2c79986469cd32f1d198164a4fbecc022b09fcb2cc839696c419"
-        },
-        {
-          "text": "Nutzung ו-Abrechnung sind Schaetzungen. Das Marketplace-Angebot setzt the abgerechneten Satz.",
-          "source_sha256": "29b249dfe156ae6ecb8f81979de3ecb769acd03a89b1c5f81c22b89609613a45"
-        },
-        {
-          "text": "ניהול רישיונות הוא אתר אינטרנט של AIC. Kauf and Finanzhinweise Liegen Dort.",
-          "source_sha256": "3b4dd894a176f63ad77bcd29f51d03c8cd4288a502fe71b1c6e46bccde992d82"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "הפעל להעתיק את Standort-Token, Sie auf the License-Management-Website einfuegen.",
+            "source_sha256": "e13e41785cf91e5d534472e54f94e37c199061946c6f7a6c70ac47074f6e92a5"
+          },
+          {
+            "text": "Import ersetzt the aktuellen Schluessel. Nutzen Sie the for Verlaengerungen.",
+            "source_sha256": "15b028efc87d2c79986469cd32f1d198164a4fbecc022b09fcb2cc839696c419"
+          },
+          {
+            "text": "Nutzung ו-Abrechnung sind Schaetzungen. Das Marketplace-Angebot setzt the abgerechneten Satz.",
+            "source_sha256": "29b249dfe156ae6ecb8f81979de3ecb769acd03a89b1c5f81c22b89609613a45"
+          },
+          {
+            "text": "ניהול רישיונות הוא אתר אינטרנט של AIC. Kauf and Finanzhinweise Liegen Dort.",
+            "source_sha256": "3b4dd894a176f63ad77bcd29f51d03c8cd4288a502fe71b1c6e46bccde992d82"
+          }
+        ],
+        "source_sha256": "1c01deb31bc23d431a0263a7dea9bde1b4899267d62778831e550049f6c5bfa4"
+      }
     },
     "messaging": {
       "summary": {
@@ -1199,32 +1298,35 @@
         "text": "תחנות העבודה שלי",
         "source_sha256": "e3db656595c3544e0b46f541b738966356460a89f8232128de7056d78176f4ff"
       },
-      "bullets": [
-        {
-          "text": "חבר אוטומאטי להפעלה מודעת (Sie bestetigen the Aufzeichnung) ו-oeffnet dann the Desktop-Viewer.",
-          "source_sha256": "575b30c5357400e06be5614337aa558dc3e26ed8cd8462df7c8ef217218a1339"
-        },
-        {
-          "text": "מושב oeffnen erscheint nur, wenn Connect abgeschlossen wurde, the Viewer aber not navigiert hat.",
-          "source_sha256": "176c54f094d318febd6bdbc766c782e0db0b8eadb98486e635796261967bd597"
-        },
-        {
-          "text": "Aufwecken erforderlich / Wird aufgeweckt… — VM zuerst starten; Connect bleibt deaktiviert bis Bereit — Connect.",
-          "source_sha256": "7d3ba4ced062a82eae0f19fb5939ba40f18c7f470e4f7f910f39a00d4e16256e"
-        },
-        {
-          "text": "Aufzeichnungs-Proxy erforderlich — Connect bleibt blockiert, bis the Enclave a Aufzeichnung platzieren kann.",
-          "source_sha256": "81d133a47ec62ab703637d5573159d61af275ed0c818367bdf0561d13d5ffe12"
-        },
-        {
-          "text": "Energie & Ruhezustand (Jetzt Schlafen / Wachhalten) יש שניות לחיבור / Aufwecken.",
-          "source_sha256": "b36863287943a96f8ca340a141700a9b7c13d73ee98990c1fdd2dbb1489e9d90"
-        },
-        {
-          "text": "Sie brauchen nie the Arbeitsplatz-Passwort — the Enclave meldet Sie an.",
-          "source_sha256": "162254eb9d7a6e7cc8208e3e3f6b531139a6f186d93087dc933b566fc9ddbe81"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "חבר אוטומאטי להפעלה מודעת (Sie bestetigen the Aufzeichnung) ו-oeffnet dann the Desktop-Viewer.",
+            "source_sha256": "575b30c5357400e06be5614337aa558dc3e26ed8cd8462df7c8ef217218a1339"
+          },
+          {
+            "text": "מושב oeffnen erscheint nur, wenn Connect abgeschlossen wurde, the Viewer aber not navigiert hat.",
+            "source_sha256": "176c54f094d318febd6bdbc766c782e0db0b8eadb98486e635796261967bd597"
+          },
+          {
+            "text": "Aufwecken erforderlich / Wird aufgeweckt… — VM zuerst starten; Connect bleibt deaktiviert bis Bereit — Connect.",
+            "source_sha256": "7d3ba4ced062a82eae0f19fb5939ba40f18c7f470e4f7f910f39a00d4e16256e"
+          },
+          {
+            "text": "Aufzeichnungs-Proxy erforderlich — Connect bleibt blockiert, bis the Enclave a Aufzeichnung platzieren kann.",
+            "source_sha256": "81d133a47ec62ab703637d5573159d61af275ed0c818367bdf0561d13d5ffe12"
+          },
+          {
+            "text": "Energie & Ruhezustand (Jetzt Schlafen / Wachhalten) יש שניות לחיבור / Aufwecken.",
+            "source_sha256": "b36863287943a96f8ca340a141700a9b7c13d73ee98990c1fdd2dbb1489e9d90"
+          },
+          {
+            "text": "Sie brauchen nie the Arbeitsplatz-Passwort — the Enclave meldet Sie an.",
+            "source_sha256": "162254eb9d7a6e7cc8208e3e3f6b531139a6f186d93087dc933b566fc9ddbe81"
+          }
+        ],
+        "source_sha256": "4220132a1a0984ffdc231bb015112c471bfaeb94edb60d662534cb806e1dca06"
+      }
     },
     "ot": {
       "helpAriaLabel": {
@@ -1239,16 +1341,19 @@
         "text": "טכנולוגיה תפעולית",
         "source_sha256": "90655f621c2d73f2014c6d54725037b46f79f92acf6f94b32587b8ac2928644a"
       },
-      "bullets": [
-        {
-          "text": "Startup-Wizard fuehrt durch Erkennung והירשם ל-Walteten Beststand.",
-          "source_sha256": "fabb70b7f6642dcb74b1017f35d58b3891ac75836955bb66d9986a241fa9c051"
-        },
-        {
-          "text": "Erkennung scannt Ziele; Bestand Listet נכסים עם סטטוס ופעולות.",
-          "source_sha256": "c7441b3aaa38c5aa498082affde2fb308374ab0a4400a1b3a177f483de8bd117"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Startup-Wizard fuehrt durch Erkennung והירשם ל-Walteten Beststand.",
+            "source_sha256": "fabb70b7f6642dcb74b1017f35d58b3891ac75836955bb66d9986a241fa9c051"
+          },
+          {
+            "text": "Erkennung scannt Ziele; Bestand Listet נכסים עם סטטוס ופעולות.",
+            "source_sha256": "c7441b3aaa38c5aa498082affde2fb308374ab0a4400a1b3a177f483de8bd117"
+          }
+        ],
+        "source_sha256": "8a1a7c70fc3c737a6c52f7530f9c4a20bb53b412d4af058387ccec323acec52c"
+      }
     },
     "pam": {
       "summary": {
@@ -1273,16 +1378,19 @@
         "text": "אישורים",
         "source_sha256": "2bfc3471571e5c008cb26bd839b0d4cbcb1132fc9d6c8206bb595fa26e83a45b"
       },
-      "bullets": [
-        {
-          "text": "Funktionstrennung verhindert, dass Sie eigene Anfragen genehmigen.",
-          "source_sha256": "36e99ac69a8725e7480d141953704f0ea426c3778b8e864df8073bc934dd5ae1"
-        },
-        {
-          "text": "הכחשה-מנצחת-מדיניות יכולה להיות אנפראג'ה, כאשר היא יכולה לג'נחמיגר.",
-          "source_sha256": "c0bdc894dac20cf912fb865099767416a3469dbf1e85924326291b44dbec7df5"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Funktionstrennung verhindert, dass Sie eigene Anfragen genehmigen.",
+            "source_sha256": "36e99ac69a8725e7480d141953704f0ea426c3778b8e864df8073bc934dd5ae1"
+          },
+          {
+            "text": "הכחשה-מנצחת-מדיניות יכולה להיות אנפראג'ה, כאשר היא יכולה לג'נחמיגר.",
+            "source_sha256": "c0bdc894dac20cf912fb865099767416a3469dbf1e85924326291b44dbec7df5"
+          }
+        ],
+        "source_sha256": "a2e5a36bf1b47721198232448b26ffe8f8328a85f32b7857d35366a300f02fe4"
+      }
     },
     "pam__approver-profile": {
       "helpAriaLabel": {
@@ -1297,16 +1405,19 @@
         "text": "פרופיל המאשר",
         "source_sha256": "cbf902bb140934715389cd7cfbcb4093fc566b2692ad62e9b6cc1c657e8a3a11"
       },
-      "bullets": [
-        {
-          "text": "E-Mail and Telefon aktuell halten, damit Genehmigungsbenachrichtigungen Sie erreichen.",
-          "source_sha256": "e16b3a0d7083775b200e5ee830df955817ec9efa14db6d2fe7a02781ddd2377a"
-        },
-        {
-          "text": "Erreichbarkeit בבדיקת Tab Mein Benachrichtigungsprofil.",
-          "source_sha256": "2c8bd189f328b8cb482e51ca74bbf4a712d7cd98ada1ea133435b978c352bf49"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "E-Mail and Telefon aktuell halten, damit Genehmigungsbenachrichtigungen Sie erreichen.",
+            "source_sha256": "e16b3a0d7083775b200e5ee830df955817ec9efa14db6d2fe7a02781ddd2377a"
+          },
+          {
+            "text": "Erreichbarkeit בבדיקת Tab Mein Benachrichtigungsprofil.",
+            "source_sha256": "2c8bd189f328b8cb482e51ca74bbf4a712d7cd98ada1ea133435b978c352bf49"
+          }
+        ],
+        "source_sha256": "3f0b08291e78401cd842aa3f3e3bd511d5a191c214d0a680c312eaa0c717652f"
+      }
     },
     "pam__connection-points": {
       "helpAriaLabel": {
@@ -1321,20 +1432,23 @@
         "text": "נקודות חיבור",
         "source_sha256": "8dfc7a66ba5359fbc461efcc21cdfd69bcfd3e2a03ceb75320e084cb096ab372"
       },
-      "bullets": [
-        {
-          "text": "Session oeffnen החלה Neuen Live-Viewer ueber את ה-Proxy (kein Fortsetzen einer geschlossenen Session).",
-          "source_sha256": "7dbbd3cb0abf477c68ac86b804db9af5fff7c72eeb04d38f64757cdbb0be2efc"
-        },
-        {
-          "text": "Zugriff needs a stehende Berechtigung, a active JIT-Freigabe או Selbstgenehmigung.",
-          "source_sha256": "97687603094efd695a339947bb56b0a136ac4e0ce9979787f79f90343ec78ce0"
-        },
-        {
-          "text": "Jede geoeffnete Session wird standardmaessig aufgezeichnet (פרוקסי או ziel-lokal).",
-          "source_sha256": "ebd643b9e61ad5066e970b7094898ea170f89a65540a46beb277f55d2c767ddd"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Session oeffnen החלה Neuen Live-Viewer ueber את ה-Proxy (kein Fortsetzen einer geschlossenen Session).",
+            "source_sha256": "7dbbd3cb0abf477c68ac86b804db9af5fff7c72eeb04d38f64757cdbb0be2efc"
+          },
+          {
+            "text": "Zugriff needs a stehende Berechtigung, a active JIT-Freigabe או Selbstgenehmigung.",
+            "source_sha256": "97687603094efd695a339947bb56b0a136ac4e0ce9979787f79f90343ec78ce0"
+          },
+          {
+            "text": "Jede geoeffnete Session wird standardmaessig aufgezeichnet (פרוקסי או ziel-lokal).",
+            "source_sha256": "ebd643b9e61ad5066e970b7094898ea170f89a65540a46beb277f55d2c767ddd"
+          }
+        ],
+        "source_sha256": "f9d3e3c472a910d4ca3859d3d3f8d9646d280180431b3bb600997eda47f4e70a"
+      }
     },
     "pam__entitlements": {
       "helpAriaLabel": {
@@ -1349,16 +1463,19 @@
         "text": "זכויות",
         "source_sha256": "2cc79c9e300d3cb5cb811eea6c2c28a43151fba8bf3c7634be12213a89ffc399"
       },
-      "bullets": [
-        {
-          "text": "Subjekt- and Zielwaehler nutzen IAM-Prinzipale, Rollen and Verbindungspunkte — keine rohen UUID-Felder.",
-          "source_sha256": "326de08f431ef2128bece9ec5b3c285d7b9e17efa6656f3ec006d76f40960d64"
-        },
-        {
-          "text": "הכחיש-כללים ueberschreiben אפשר, wenn beide passa.",
-          "source_sha256": "ba8d6c89c92ea4268f04969449293452625ec4e467b321e3a22701111b2127f8"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Subjekt- and Zielwaehler nutzen IAM-Prinzipale, Rollen and Verbindungspunkte — keine rohen UUID-Felder.",
+            "source_sha256": "326de08f431ef2128bece9ec5b3c285d7b9e17efa6656f3ec006d76f40960d64"
+          },
+          {
+            "text": "הכחיש-כללים ueberschreiben אפשר, wenn beide passa.",
+            "source_sha256": "ba8d6c89c92ea4268f04969449293452625ec4e467b321e3a22701111b2127f8"
+          }
+        ],
+        "source_sha256": "e472205248a0587873543a4de8099e9280cbd82009ead1b95d2256b595a3f425"
+      }
     },
     "pam__jump-fleet": {
       "helpAriaLabel": {
@@ -1373,28 +1490,31 @@
         "text": "צי קפיצה ואיזון עומסים",
         "source_sha256": "f89b99add7792a5f141bd0a839a5574dd21d40a079b12bc9c0e3ce721288c053"
       },
-      "bullets": [
-        {
-          "text": "תפריט: Proxy-Zugriff → Jump & Kapazitaet → Jump-Flotte & Lastverteilung.",
-          "source_sha256": "9bc50aef3491785df67a59fe0aa0bcff712d55a06c97553292cee83836482d76"
-        },
-        {
-          "text": "Intern sicherstellen legt את Kapazitaetszeile aic-שרת-מקומי או אקטואליזירט sie.",
-          "source_sha256": "2d01a6b0cd61371a94f5beb943f57d0827c06d34dc4c813136de8280841a2346"
-        },
-        {
-          "text": "Probe-Platzierung fuehrt a Dry-Run-Auswahl עם geringster Last aus (oeffnet keine Benutzersitzung).",
-          "source_sha256": "dfad522163cf4991d7dd3a30c9919a9e2ccb849362c8b3a616d1663942c6b92c"
-        },
-        {
-          "text": "SSH-Vermittlung ist unabhaengig - siehe Verbindungspunkte for SSH-/RDP-Ziele.",
-          "source_sha256": "2be1fb07750e3914851b5ed3c3bd4d168cf36f3cd42931cd6bd4d68d799966e0"
-        },
-        {
-          "text": "Operator-Leitfaden: תיעוד → Admin-Handbuecher (Jump / Sitzungs-Proxy).",
-          "source_sha256": "76a4a500fd965499b8a873d522a642949077adb072702d7338cdf58f0e033a12"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "תפריט: Proxy-Zugriff → Jump & Kapazitaet → Jump-Flotte & Lastverteilung.",
+            "source_sha256": "9bc50aef3491785df67a59fe0aa0bcff712d55a06c97553292cee83836482d76"
+          },
+          {
+            "text": "Intern sicherstellen legt את Kapazitaetszeile aic-שרת-מקומי או אקטואליזירט sie.",
+            "source_sha256": "2d01a6b0cd61371a94f5beb943f57d0827c06d34dc4c813136de8280841a2346"
+          },
+          {
+            "text": "Probe-Platzierung fuehrt a Dry-Run-Auswahl עם geringster Last aus (oeffnet keine Benutzersitzung).",
+            "source_sha256": "dfad522163cf4991d7dd3a30c9919a9e2ccb849362c8b3a616d1663942c6b92c"
+          },
+          {
+            "text": "SSH-Vermittlung ist unabhaengig - siehe Verbindungspunkte for SSH-/RDP-Ziele.",
+            "source_sha256": "2be1fb07750e3914851b5ed3c3bd4d168cf36f3cd42931cd6bd4d68d799966e0"
+          },
+          {
+            "text": "Operator-Leitfaden: תיעוד → Admin-Handbuecher (Jump / Sitzungs-Proxy).",
+            "source_sha256": "76a4a500fd965499b8a873d522a642949077adb072702d7338cdf58f0e033a12"
+          }
+        ],
+        "source_sha256": "c74b62b5a54a852ed1efd932f7acc847887824d1d3f75dde612260ecdacf0246"
+      }
     },
     "pam__live__ot": {
       "helpAriaLabel": {
@@ -1409,16 +1529,19 @@
         "text": "Live-OT-Session",
         "source_sha256": "8440d38cb4237d200544e57b3079e76e37e285dfe9be04bcee91466eb4117152"
       },
-      "bullets": [
-        {
-          "text": "Die Aufzeichnung laeuft, bis the Session endet.",
-          "source_sha256": "79f4544505936e9e78b5f35d6d9f6709aa1232c16313c13e0964bf15681ea9d3"
-        },
-        {
-          "text": "Nach the Beenden ist a neues Connect / Oeffnen noetig — diese Seite setzt keinen geschlossenen Kanal fort.",
-          "source_sha256": "ee5ed0dfffcea8e2e3bff8165b45a79aab311b093b6c4296d0ac8ac60c2a02a3"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Die Aufzeichnung laeuft, bis the Session endet.",
+            "source_sha256": "79f4544505936e9e78b5f35d6d9f6709aa1232c16313c13e0964bf15681ea9d3"
+          },
+          {
+            "text": "Nach the Beenden ist a neues Connect / Oeffnen noetig — diese Seite setzt keinen geschlossenen Kanal fort.",
+            "source_sha256": "ee5ed0dfffcea8e2e3bff8165b45a79aab311b093b6c4296d0ac8ac60c2a02a3"
+          }
+        ],
+        "source_sha256": "07e7cc61533b28e5d2c4c816dd9f543c3de16313ebdd1fee6b7914a2cacebeae"
+      }
     },
     "pam__live__rdp": {
       "helpAriaLabel": {
@@ -1433,16 +1556,19 @@
         "text": "Live-RDP-Session",
         "source_sha256": "f92175ae9525df488a6da8a08e863b9f93370e2decd2a6302fa778a865e4d2c4"
       },
-      "bullets": [
-        {
-          "text": "Die Aufzeichnung laeuft, bis the Session endet.",
-          "source_sha256": "79f4544505936e9e78b5f35d6d9f6709aa1232c16313c13e0964bf15681ea9d3"
-        },
-        {
-          "text": "Nach the Beenden ist a neues Connect / Oeffnen noetig — diese Seite setzt keinen geschlossenen Kanal fort.",
-          "source_sha256": "ee5ed0dfffcea8e2e3bff8165b45a79aab311b093b6c4296d0ac8ac60c2a02a3"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Die Aufzeichnung laeuft, bis the Session endet.",
+            "source_sha256": "79f4544505936e9e78b5f35d6d9f6709aa1232c16313c13e0964bf15681ea9d3"
+          },
+          {
+            "text": "Nach the Beenden ist a neues Connect / Oeffnen noetig — diese Seite setzt keinen geschlossenen Kanal fort.",
+            "source_sha256": "ee5ed0dfffcea8e2e3bff8165b45a79aab311b093b6c4296d0ac8ac60c2a02a3"
+          }
+        ],
+        "source_sha256": "07e7cc61533b28e5d2c4c816dd9f543c3de16313ebdd1fee6b7914a2cacebeae"
+      }
     },
     "pam__live__ssh": {
       "helpAriaLabel": {
@@ -1457,16 +1583,19 @@
         "text": "Live-SSH-Session",
         "source_sha256": "ea6200de21d17871e3ad620c5d9dbb49c244e883df7955b92a5031366ac4b9a4"
       },
-      "bullets": [
-        {
-          "text": "Die Aufzeichnung laeuft, bis the Session endet.",
-          "source_sha256": "79f4544505936e9e78b5f35d6d9f6709aa1232c16313c13e0964bf15681ea9d3"
-        },
-        {
-          "text": "Nach the Beenden ist a neues Connect / Oeffnen noetig — diese Seite setzt keinen geschlossenen Kanal fort.",
-          "source_sha256": "ee5ed0dfffcea8e2e3bff8165b45a79aab311b093b6c4296d0ac8ac60c2a02a3"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Die Aufzeichnung laeuft, bis the Session endet.",
+            "source_sha256": "79f4544505936e9e78b5f35d6d9f6709aa1232c16313c13e0964bf15681ea9d3"
+          },
+          {
+            "text": "Nach the Beenden ist a neues Connect / Oeffnen noetig — diese Seite setzt keinen geschlossenen Kanal fort.",
+            "source_sha256": "ee5ed0dfffcea8e2e3bff8165b45a79aab311b093b6c4296d0ac8ac60c2a02a3"
+          }
+        ],
+        "source_sha256": "07e7cc61533b28e5d2c4c816dd9f543c3de16313ebdd1fee6b7914a2cacebeae"
+      }
     },
     "pam__live__vnc": {
       "helpAriaLabel": {
@@ -1481,16 +1610,19 @@
         "text": "Live-VNC-Session",
         "source_sha256": "5ffb66048c48c34cb96620fe515e9316e3a418063e4e5c3c51afd1bd39cfb5a0"
       },
-      "bullets": [
-        {
-          "text": "Die Aufzeichnung laeuft, bis the Session endet.",
-          "source_sha256": "79f4544505936e9e78b5f35d6d9f6709aa1232c16313c13e0964bf15681ea9d3"
-        },
-        {
-          "text": "Nach the Beenden ist a neues Connect / Oeffnen noetig — diese Seite setzt keinen geschlossenen Kanal fort.",
-          "source_sha256": "ee5ed0dfffcea8e2e3bff8165b45a79aab311b093b6c4296d0ac8ac60c2a02a3"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Die Aufzeichnung laeuft, bis the Session endet.",
+            "source_sha256": "79f4544505936e9e78b5f35d6d9f6709aa1232c16313c13e0964bf15681ea9d3"
+          },
+          {
+            "text": "Nach the Beenden ist a neues Connect / Oeffnen noetig — diese Seite setzt keinen geschlossenen Kanal fort.",
+            "source_sha256": "ee5ed0dfffcea8e2e3bff8165b45a79aab311b093b6c4296d0ac8ac60c2a02a3"
+          }
+        ],
+        "source_sha256": "07e7cc61533b28e5d2c4c816dd9f543c3de16313ebdd1fee6b7914a2cacebeae"
+      }
     },
     "pam__my-requests": {
       "helpAriaLabel": {
@@ -1505,16 +1637,19 @@
         "text": "מענקים פעילים",
         "source_sha256": "41a811b782ad6a9059035ec7c48828bdc1d5623736c23b9c55d8d26595025456"
       },
-      "bullets": [
-        {
-          "text": "Neue Anfragen of Verbindungspunkten או Berechtigungen einreichen, wenn the Policy Genehmigung verlangt.",
-          "source_sha256": "68a6a4dff9d93e372167f0c5552cb7d0344c7899879b79b8bc3439fb076de564"
-        },
-        {
-          "text": "Funktionstrennung verhindert, dass Sie eigene Anfragen genehmigen.",
-          "source_sha256": "36e99ac69a8725e7480d141953704f0ea426c3778b8e864df8073bc934dd5ae1"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Neue Anfragen of Verbindungspunkten או Berechtigungen einreichen, wenn the Policy Genehmigung verlangt.",
+            "source_sha256": "68a6a4dff9d93e372167f0c5552cb7d0344c7899879b79b8bc3439fb076de564"
+          },
+          {
+            "text": "Funktionstrennung verhindert, dass Sie eigene Anfragen genehmigen.",
+            "source_sha256": "36e99ac69a8725e7480d141953704f0ea426c3778b8e864df8073bc934dd5ae1"
+          }
+        ],
+        "source_sha256": "077dc61f2fc6da591fb4968a7abc195d4c312b1c5e30589bc11db072247dc70a"
+      }
     },
     "pam__ot-connect": {
       "helpAriaLabel": {
@@ -1529,20 +1664,23 @@
         "text": "לְחַבֵּר",
         "source_sha256": "1a2303ede07493acc7caaa7c737f3c52bcc9cf04372be19ed1b0af6b9f2c791e"
       },
-      "bullets": [
-        {
-          "text": "OT-Sessions מציינים מחשבי SSH-, RDP- או VNC-Desktops.",
-          "source_sha256": "062724c7503580798ea4d8f624c79ed8b36708467d5e7a1d86f82e247daaf7ea"
-        },
-        {
-          "text": "Vor the Connect \"Erreichbarkeit pruefen\" ב-Statusbanner ausfuehren.",
-          "source_sha256": "40094fa0648b12b8f29df53f3bc18c4109e2049f5911b9973a8e5f83beb5ea69"
-        },
-        {
-          "text": "Mit gebundener Vault-Zugangsdaten kann Connect sie for the Session nutzen.",
-          "source_sha256": "b800b2db1907a137a8234d42e97e66f4b4ef575ec4347f8dc95fa82c28665585"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "OT-Sessions מציינים מחשבי SSH-, RDP- או VNC-Desktops.",
+            "source_sha256": "062724c7503580798ea4d8f624c79ed8b36708467d5e7a1d86f82e247daaf7ea"
+          },
+          {
+            "text": "Vor the Connect \"Erreichbarkeit pruefen\" ב-Statusbanner ausfuehren.",
+            "source_sha256": "40094fa0648b12b8f29df53f3bc18c4109e2049f5911b9973a8e5f83beb5ea69"
+          },
+          {
+            "text": "Mit gebundener Vault-Zugangsdaten kann Connect sie for the Session nutzen.",
+            "source_sha256": "b800b2db1907a137a8234d42e97e66f4b4ef575ec4347f8dc95fa82c28665585"
+          }
+        ],
+        "source_sha256": "43c02b3c92ffbd67ab22eaea552b3cea8845dfea5180b35ceada7ae32bc9ad5d"
+      }
     },
     "pam__ot-credentials": {
       "helpAriaLabel": {
@@ -1557,16 +1695,19 @@
         "text": "אישורים",
         "source_sha256": "d48a617c7da5163c44f117b9b23d8c920e69b4aa83d7b6570d71a66f3a857183"
       },
-      "bullets": [
-        {
-          "text": "Altes Passwort leer lassen for the gespeicherte Passwort.",
-          "source_sha256": "7be70ce38d38153274138bd60fb361dda166ae72adcc44245fce3e30e2f803ff"
-        },
-        {
-          "text": "Zeitplaene pro Ziel auf the jeweiligen Konfigurationsseite.",
-          "source_sha256": "31cebb6f6ab23dfa7253cc5bf7be9fbe11524eb4a4ee01b80b94e912e3a4176f"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Altes Passwort leer lassen for the gespeicherte Passwort.",
+            "source_sha256": "7be70ce38d38153274138bd60fb361dda166ae72adcc44245fce3e30e2f803ff"
+          },
+          {
+            "text": "Zeitplaene pro Ziel auf the jeweiligen Konfigurationsseite.",
+            "source_sha256": "31cebb6f6ab23dfa7253cc5bf7be9fbe11524eb4a4ee01b80b94e912e3a4176f"
+          }
+        ],
+        "source_sha256": "af784985513b41a3ebbbd7153c029f6a73dbc4c11209eabb9d5070d0c196b6d9"
+      }
     },
     "pam__ot-discovery": {
       "helpAriaLabel": {
@@ -1581,16 +1722,19 @@
         "text": "לְגַלוֹת",
         "source_sha256": "d4a33d5b78bccebe3f16843dc30e6c0f73b4eb6efb4e7114ddfebde7fa2c9954"
       },
-      "bullets": [
-        {
-          "text": "IPv4-CIDR-Netze eingeben, dann \"Erkennung starten\" עבור Sofortscan.",
-          "source_sha256": "80cbef4bb0507b343a653e7b2464d714d7ef58781370c36e296080c8320d3114"
-        },
-        {
-          "text": "סטטוס \"Teilweise\" יוצר את פעולת Luecke and naechste ב-Tip Tooltip.",
-          "source_sha256": "015f063c447d70a5fdc70b81a97e6da95f9b65eb05e69ee04fb53d799a079b7f"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "IPv4-CIDR-Netze eingeben, dann \"Erkennung starten\" עבור Sofortscan.",
+            "source_sha256": "80cbef4bb0507b343a653e7b2464d714d7ef58781370c36e296080c8320d3114"
+          },
+          {
+            "text": "סטטוס \"Teilweise\" יוצר את פעולת Luecke and naechste ב-Tip Tooltip.",
+            "source_sha256": "015f063c447d70a5fdc70b81a97e6da95f9b65eb05e69ee04fb53d799a079b7f"
+          }
+        ],
+        "source_sha256": "7b6202a503e65b4ac12de7716df7e80d32e1a5ab64699833abc17f5aa0de7747"
+      }
     },
     "pam__ot-inventory": {
       "helpAriaLabel": {
@@ -1605,16 +1749,19 @@
         "text": "מְלַאי",
         "source_sha256": "758f487fe8e9fcc59cec4694d95a9032224f967b29f39543a1fb04e2901b079e"
       },
-      "bullets": [
-        {
-          "text": "חבר effnet ל-OT-Protokollsitzung - לא SSH, RDP או VNC.",
-          "source_sha256": "cc16bcc2efbda2cac14194f20637bcb52450b9239e04b054f77bfd32c383db7f"
-        },
-        {
-          "text": "Configurieren effnet not-geheime Zieleinstellungen.",
-          "source_sha256": "4cf8956a3ea54c99e0c15a9cb538df18eb446a12d0e3612bce25f156ecf5ae35"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "חבר effnet ל-OT-Protokollsitzung - לא SSH, RDP או VNC.",
+            "source_sha256": "cc16bcc2efbda2cac14194f20637bcb52450b9239e04b054f77bfd32c383db7f"
+          },
+          {
+            "text": "Configurieren effnet not-geheime Zieleinstellungen.",
+            "source_sha256": "4cf8956a3ea54c99e0c15a9cb538df18eb446a12d0e3612bce25f156ecf5ae35"
+          }
+        ],
+        "source_sha256": "a21b998bbf7f966204b4133ffb2b03b378b6066439c0c2b49da15394b25d253f"
+      }
     },
     "pam__ot-rotation": {
       "helpAriaLabel": {
@@ -1629,16 +1776,19 @@
         "text": "אישורים",
         "source_sha256": "d48a617c7da5163c44f117b9b23d8c920e69b4aa83d7b6570d71a66f3a857183"
       },
-      "bullets": [
-        {
-          "text": "Altes Passwort leer lassen for the gespeicherte Passwort.",
-          "source_sha256": "7be70ce38d38153274138bd60fb361dda166ae72adcc44245fce3e30e2f803ff"
-        },
-        {
-          "text": "Zeitplaene pro Ziel auf the jeweiligen Konfigurationsseite.",
-          "source_sha256": "31cebb6f6ab23dfa7253cc5bf7be9fbe11524eb4a4ee01b80b94e912e3a4176f"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Altes Passwort leer lassen for the gespeicherte Passwort.",
+            "source_sha256": "7be70ce38d38153274138bd60fb361dda166ae72adcc44245fce3e30e2f803ff"
+          },
+          {
+            "text": "Zeitplaene pro Ziel auf the jeweiligen Konfigurationsseite.",
+            "source_sha256": "31cebb6f6ab23dfa7253cc5bf7be9fbe11524eb4a4ee01b80b94e912e3a4176f"
+          }
+        ],
+        "source_sha256": "af784985513b41a3ebbbd7153c029f6a73dbc4c11209eabb9d5070d0c196b6d9"
+      }
     },
     "pam__ot-sessions": {
       "helpAriaLabel": {
@@ -1653,16 +1803,19 @@
         "text": "הפעלות / עדויות",
         "source_sha256": "e1dc0bdde30ae558c4c233fdafc95c2e946e0b762d7217d59bee78b4c29245a2"
       },
-      "bullets": [
-        {
-          "text": "Sitzungszeile oeffnen עבור ציר הזמן.",
-          "source_sha256": "0fd0d29ce8acee545559479095240c1ecb43105e1969d872d912691e0b91b00f"
-        },
-        {
-          "text": "OT-Protokollsitzungen - keine SSH-, RDP- או VNC-Aufzeichnungen.",
-          "source_sha256": "c24aa35ed9e6fd0fc9b4f226431eded59b775a0095596fa65c9a01149c114c59"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Sitzungszeile oeffnen עבור ציר הזמן.",
+            "source_sha256": "0fd0d29ce8acee545559479095240c1ecb43105e1969d872d912691e0b91b00f"
+          },
+          {
+            "text": "OT-Protokollsitzungen - keine SSH-, RDP- או VNC-Aufzeichnungen.",
+            "source_sha256": "c24aa35ed9e6fd0fc9b4f226431eded59b775a0095596fa65c9a01149c114c59"
+          }
+        ],
+        "source_sha256": "cf3e61ba6d7b6b220bb21b46fae46fbf79e2b60685c28d2f7cd5a19a6e82457d"
+      }
     },
     "pam__ot-startup-wizard": {
       "helpAriaLabel": {
@@ -1677,16 +1830,19 @@
         "text": "אשף ההפעלה",
         "source_sha256": "f0324c059c45638ca445decb1d6ff29699ae874adc031002ea85efde2f3f0398"
       },
-      "bullets": [
-        {
-          "text": "הרשמה schreibt Audit-Eintraege (ot_inventory_enroll) עבור jedes akzeptierte Asset.",
-          "source_sha256": "de5c40dab2c992585d19ec5abf90bdb910e40184552b4ddb6bf3b3f93664d908"
-        },
-        {
-          "text": "Status-Chips nutzen Live, Teilweise או Blockiert — Liefernachweis, kein Compliance-Urteil.",
-          "source_sha256": "3a059029f49d5b47395f82c956b7e575adbadc494615dc55df2ee4ab745c1a94"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "הרשמה schreibt Audit-Eintraege (ot_inventory_enroll) עבור jedes akzeptierte Asset.",
+            "source_sha256": "de5c40dab2c992585d19ec5abf90bdb910e40184552b4ddb6bf3b3f93664d908"
+          },
+          {
+            "text": "Status-Chips nutzen Live, Teilweise או Blockiert — Liefernachweis, kein Compliance-Urteil.",
+            "source_sha256": "3a059029f49d5b47395f82c956b7e575adbadc494615dc55df2ee4ab745c1a94"
+          }
+        ],
+        "source_sha256": "09635cb117751bd3fbd97e409ec6718e7f4f99d2dd78dc84eb89c9565970b17b"
+      }
     },
     "pam__session-control": {
       "helpAriaLabel": {
@@ -1701,16 +1857,19 @@
         "text": "בקרת הפעלה",
         "source_sha256": "25f4f0d5ccddecf2a4f192b81ad8082c84f243ab5065618c6eca38a28985eb0f"
       },
-      "bullets": [
-        {
-          "text": "Jede Action erfordert a documentierte Begruendung and schreibt a Audit-Ereignis.",
-          "source_sha256": "1d8d6a10143a6a232f5887498453aac011f4c418a9364a6d2e04c364c57dc8bd"
-        },
-        {
-          "text": "Ausstehend- ו-Aktiv-Zaehler erscheinen ב-Banner ueber the Raster.",
-          "source_sha256": "4093be59dc2aa59ccca3801d231e0d30eedbccdab2f74da55999895e503839bd"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Jede Action erfordert a documentierte Begruendung and schreibt a Audit-Ereignis.",
+            "source_sha256": "1d8d6a10143a6a232f5887498453aac011f4c418a9364a6d2e04c364c57dc8bd"
+          },
+          {
+            "text": "Ausstehend- ו-Aktiv-Zaehler erscheinen ב-Banner ueber the Raster.",
+            "source_sha256": "4093be59dc2aa59ccca3801d231e0d30eedbccdab2f74da55999895e503839bd"
+          }
+        ],
+        "source_sha256": "d302b0a1966be3d118679dc956837ff83c139b285760f54758967d839f5a8455"
+      }
     },
     "pam__sessions": {
       "helpAriaLabel": {
@@ -1725,16 +1884,19 @@
         "text": "הקלטות מושב",
         "source_sha256": "2627b4d32c12839a86cabeab7d569787d5f0d34bef8c1827449f005b46f1c530"
       },
-      "bullets": [
-        {
-          "text": "Jede Zeile verlinkt to einer Detailansicht, the in the Browser entschluesselt and gelesen wird.",
-          "source_sha256": "f3448ea457b57b5d55380c82988750be5657c2065a43bd42f36d5e177afd0958"
-        },
-        {
-          "text": "Entscheidungs-Chips zeigen Erlaubt או Verweigert zum Aufzeichnungszeitpunkt — kein Compliance-Urteil.",
-          "source_sha256": "ecb0c7950f44d76260a9fa087a9dcbbac25b27a41e4a08c90f06cd0c93135bb6"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Jede Zeile verlinkt to einer Detailansicht, the in the Browser entschluesselt and gelesen wird.",
+            "source_sha256": "f3448ea457b57b5d55380c82988750be5657c2065a43bd42f36d5e177afd0958"
+          },
+          {
+            "text": "Entscheidungs-Chips zeigen Erlaubt או Verweigert zum Aufzeichnungszeitpunkt — kein Compliance-Urteil.",
+            "source_sha256": "ecb0c7950f44d76260a9fa087a9dcbbac25b27a41e4a08c90f06cd0c93135bb6"
+          }
+        ],
+        "source_sha256": "32b041bf55a90fe0d10c09e02cd325d99ce5b1f746774144e0933e7551d2a3cc"
+      }
     },
     "privilege-jobs": {
       "helpAriaLabel": {
@@ -1749,20 +1911,23 @@
         "text": "גובה ישיר",
         "source_sha256": "a5a51f424e108e4e1ceed6da7ee172e65a89218c4cd5c6d144859cb119930471"
       },
-      "bullets": [
-        {
-          "text": "Anwenden-Transport waehlen: Localer Agent או Remote Non-Agent Local Elevation (WinRM).",
-          "source_sha256": "8dc991028a1044ac1b11a9b0f344192226e1f783005a1791a518e39a29295f24"
-        },
-        {
-          "text": "Verzoegerung (Start wann) ו-Dauer (Laufzeit bis Auto-Widerruf) setzen.",
-          "source_sha256": "9a4ee4781ba551f778c18648f64bd4b540d8933a097e78f6799ec340adeb0b4c"
-        },
-        {
-          "text": "WinRM-Formular נמצא ב-/elevation ב-Remote Non-Agent Local Elevation.",
-          "source_sha256": "766741d901623c4d6999a74f3703487e858af6d3caffcd11f703c94ad7b7322b"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Anwenden-Transport waehlen: Localer Agent או Remote Non-Agent Local Elevation (WinRM).",
+            "source_sha256": "8dc991028a1044ac1b11a9b0f344192226e1f783005a1791a518e39a29295f24"
+          },
+          {
+            "text": "Verzoegerung (Start wann) ו-Dauer (Laufzeit bis Auto-Widerruf) setzen.",
+            "source_sha256": "9a4ee4781ba551f778c18648f64bd4b540d8933a097e78f6799ec340adeb0b4c"
+          },
+          {
+            "text": "WinRM-Formular נמצא ב-/elevation ב-Remote Non-Agent Local Elevation.",
+            "source_sha256": "766741d901623c4d6999a74f3703487e858af6d3caffcd11f703c94ad7b7322b"
+          }
+        ],
+        "source_sha256": "af47eb7c73864956b2ecafa488b2e04d6c0a5a493d6a2f32b76626e343c32d7c"
+      }
     },
     "proxied-access": {
       "summary": {
@@ -1787,20 +1952,23 @@
         "text": "גישה מרחוק",
         "source_sha256": "7946a3c57900c0161ebb446d0e12581a1d471e1e756286511f16d2024bc8333c"
       },
-      "bullets": [
-        {
-          "text": "חבר effnet ל-Proxy-Session, כאשר עבר PAM-Verbindungspunkt zum Host.",
-          "source_sha256": "4d00e91a6742ed747a4b107b3a8de34434b4a3536baf3ebb0f2dfdb636fc4e9f"
-        },
-        {
-          "text": "Favoriten and Zuletzt verwendet werden nur in diesem Browser gespeichert.",
-          "source_sha256": "698a2f212eb111dd4b2c6744fa86ae3834bb4319b4aa298bd2ede95a2e2b71cb"
-        },
-        {
-          "text": "Wenn Sie nur Ihre zugewiesenen Arbeitsplaetze brauchen, nutzen Sie Meine Arbeitsplaetze.",
-          "source_sha256": "690aee3e2a2b42927a32c6f3e550edc611983b5a1a43f61df182398b9d06f437"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "חבר effnet ל-Proxy-Session, כאשר עבר PAM-Verbindungspunkt zum Host.",
+            "source_sha256": "4d00e91a6742ed747a4b107b3a8de34434b4a3536baf3ebb0f2dfdb636fc4e9f"
+          },
+          {
+            "text": "Favoriten and Zuletzt verwendet werden nur in diesem Browser gespeichert.",
+            "source_sha256": "698a2f212eb111dd4b2c6744fa86ae3834bb4319b4aa298bd2ede95a2e2b71cb"
+          },
+          {
+            "text": "Wenn Sie nur Ihre zugewiesenen Arbeitsplaetze brauchen, nutzen Sie Meine Arbeitsplaetze.",
+            "source_sha256": "690aee3e2a2b42927a32c6f3e550edc611983b5a1a43f61df182398b9d06f437"
+          }
+        ],
+        "source_sha256": "66dfbeb5d9b481a7db5d243b82f45f12667fe0e8dde7e2bfab3b9c9ffe7332c3"
+      }
     },
     "reports": {
       "helpAriaLabel": {
@@ -1815,32 +1983,35 @@
         "text": "מרכז הדוחות",
         "source_sha256": "77ecbfb06f1a609280278311cc52101ed3552be5670a1b26e4c17a7a6d17b475"
       },
-      "bullets": [
-        {
-          "text": "Berichtszentrum (diese Seite): Katalog, Zeitplaene, Zustellung and Archiv.",
-          "source_sha256": "9db980bc4329375f1af9759268dc5d0d902a9f6733a470091d5ce13fbb3f11ac"
-        },
-        {
-          "text": "Assessment-Binder: lebendiger CMMC-Enclave-Binder עם Exportformaten (תחת הערכות).",
-          "source_sha256": "187c074aea2155bae2bc2a919f82d28cff1b59ba5b70c20b757ebd73de35d079"
-        },
-        {
-          "text": "Aktueller Compliance-Stand: Posture and Feststellungen pro Maschine (לאחר הערכות).",
-          "source_sha256": "24048df995ba84348b71d3bd824629e58ba2f13b673ba0e132ada25a073f5863"
-        },
-        {
-          "text": "Externe Arbeitsplatz-Bereitschaft: ERASG-verbindende לקוחות (לאחר הערכות; Legacy-Bookmarks workstation-assurance leiten dorthin um).",
-          "source_sha256": "221b1d7199886325d73ad54bec040d3a2c73013809700a448ace25987de555c1"
-        },
-        {
-          "text": "Berichtsvorlagen (diese Berichtsgruppe) / Probe-Packs (לאחר הערכות): Praesentationsoverlays and skriptierte Nachweise.",
-          "source_sha256": "4f436cc2b94d6e70ace28b55d60334b16c5bb7a9d2d85db04566bc3a61afbf04"
-        },
-        {
-          "text": "Katalogkarten להתחיל PDF-, CSV- או JSON-Laeufe עם פילטר ו-Klassifizierung.",
-          "source_sha256": "1aedafd4177480b72be8b4373fbf3cc72d6f18071beeb9c28b52fd5a2d97cd5a"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Berichtszentrum (diese Seite): Katalog, Zeitplaene, Zustellung and Archiv.",
+            "source_sha256": "9db980bc4329375f1af9759268dc5d0d902a9f6733a470091d5ce13fbb3f11ac"
+          },
+          {
+            "text": "Assessment-Binder: lebendiger CMMC-Enclave-Binder עם Exportformaten (תחת הערכות).",
+            "source_sha256": "187c074aea2155bae2bc2a919f82d28cff1b59ba5b70c20b757ebd73de35d079"
+          },
+          {
+            "text": "Aktueller Compliance-Stand: Posture and Feststellungen pro Maschine (לאחר הערכות).",
+            "source_sha256": "24048df995ba84348b71d3bd824629e58ba2f13b673ba0e132ada25a073f5863"
+          },
+          {
+            "text": "Externe Arbeitsplatz-Bereitschaft: ERASG-verbindende לקוחות (לאחר הערכות; Legacy-Bookmarks workstation-assurance leiten dorthin um).",
+            "source_sha256": "221b1d7199886325d73ad54bec040d3a2c73013809700a448ace25987de555c1"
+          },
+          {
+            "text": "Berichtsvorlagen (diese Berichtsgruppe) / Probe-Packs (לאחר הערכות): Praesentationsoverlays and skriptierte Nachweise.",
+            "source_sha256": "4f436cc2b94d6e70ace28b55d60334b16c5bb7a9d2d85db04566bc3a61afbf04"
+          },
+          {
+            "text": "Katalogkarten להתחיל PDF-, CSV- או JSON-Laeufe עם פילטר ו-Klassifizierung.",
+            "source_sha256": "1aedafd4177480b72be8b4373fbf3cc72d6f18071beeb9c28b52fd5a2d97cd5a"
+          }
+        ],
+        "source_sha256": "44bc8fa68db537c2d6da5d70ee4f57ed852d87ca0843e10702bf189eca1262ed"
+      }
     },
     "reports__templates": {
       "helpAriaLabel": {
@@ -1855,20 +2026,23 @@
         "text": "תבניות דיווח",
         "source_sha256": "6c355b0cbdc0818809744f3fb18507f8ab92d2afba980d04250d60c5406caea5"
       },
-      "bullets": [
-        {
-          "text": "Mitgeliefert = schreibgeschuetzt with normalem Kontrast; Hauptaktion ist Als benutzerdefinierte Vorlage klonen.",
-          "source_sha256": "4494af878c60a1a1221542f4d79d09ad9b610db73be317164ca3321cb754339e"
-        },
-        {
-          "text": "Eigene Overlays duerfen Beschriftungen/Spalten/Wortlaut aendern; Datenquelle and Collector bleiben mitgeliefert.",
-          "source_sha256": "408f2d0be0dfa883465c0cdf444984f68a447badae3806d38b24639bfddeebc5"
-        },
-        {
-          "text": "Drift-Hinweise erscheinen, wann the Ursprungsversion the Mitlieferung fortschreitet; Archiv nur Soft-Delete.",
-          "source_sha256": "074d64eb653a064b5f3ef181ad0db8f2398d89e4dde024943ea6061b0fd369d9"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Mitgeliefert = schreibgeschuetzt with normalem Kontrast; Hauptaktion ist Als benutzerdefinierte Vorlage klonen.",
+            "source_sha256": "4494af878c60a1a1221542f4d79d09ad9b610db73be317164ca3321cb754339e"
+          },
+          {
+            "text": "Eigene Overlays duerfen Beschriftungen/Spalten/Wortlaut aendern; Datenquelle and Collector bleiben mitgeliefert.",
+            "source_sha256": "408f2d0be0dfa883465c0cdf444984f68a447badae3806d38b24639bfddeebc5"
+          },
+          {
+            "text": "Drift-Hinweise erscheinen, wann the Ursprungsversion the Mitlieferung fortschreitet; Archiv nur Soft-Delete.",
+            "source_sha256": "074d64eb653a064b5f3ef181ad0db8f2398d89e4dde024943ea6061b0fd369d9"
+          }
+        ],
+        "source_sha256": "ea14ec61af229b753c55599ec3f5844e8befaf22e2c1ab7feaca71089d691c0f"
+      }
     },
     "root": {
       "helpAriaLabel": {
@@ -1883,28 +2057,31 @@
         "text": "לוּחַ מַחווָנִים",
         "source_sha256": "67b696468610b879ed7f224dbf6b0861f27e39d20454cb9d7af1ec52d3e5eeaa"
       },
-      "bullets": [
-        {
-          "text": "אריחים חסרים מציגים \"עדיין לא זמין\" — לעולם לא אפס מומצא.",
-          "source_sha256": "945a6ac23ca5db7eb374d90f3244c553a499d159100a0cad5f39b45279d21f17"
-        },
-        {
-          "text": "אריחים חלקיים מסומנים כ\"חלקי\" עם סיבה בשפה פשוטה.",
-          "source_sha256": "fd61988cb65ff1900dcb19623ad5f378c4707699c45af971eb7e2cd4f6971572"
-        },
-        {
-          "text": "התאמה אישית באמצעות הזזה למעלה / למטה. פרסום ברירת המחדל של הארגון דורש dashboard.publish; שמירה אישית דורשת dashboard.personalize.",
-          "source_sha256": "ed93d51a2d8fe95be8fa4f5d53187a952a0d3fbec97b23f05c6cc8b83d49a31c"
-        },
-        {
-          "text": "תחנות העבודה שלי או הצגת סיסמה נמצאות במועדפים.",
-          "source_sha256": "89193a25b206956414b2a74329b269c4c161cf119fc2548531a8850c6a47e02f"
-        },
-        {
-          "text": "בלי dashboard.view לדף זה אין מה להציג, ולכן תועברו למועדפים.",
-          "source_sha256": "be0c280be23979edd80969ca5452046ca2159abbce0e457710061fa4d1314d1a"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "אריחים חסרים מציגים \"עדיין לא זמין\" — לעולם לא אפס מומצא.",
+            "source_sha256": "945a6ac23ca5db7eb374d90f3244c553a499d159100a0cad5f39b45279d21f17"
+          },
+          {
+            "text": "אריחים חלקיים מסומנים כ\"חלקי\" עם סיבה בשפה פשוטה.",
+            "source_sha256": "fd61988cb65ff1900dcb19623ad5f378c4707699c45af971eb7e2cd4f6971572"
+          },
+          {
+            "text": "התאמה אישית באמצעות הזזה למעלה / למטה. פרסום ברירת המחדל של הארגון דורש dashboard.publish; שמירה אישית דורשת dashboard.personalize.",
+            "source_sha256": "ed93d51a2d8fe95be8fa4f5d53187a952a0d3fbec97b23f05c6cc8b83d49a31c"
+          },
+          {
+            "text": "תחנות העבודה שלי או הצגת סיסמה נמצאות במועדפים.",
+            "source_sha256": "89193a25b206956414b2a74329b269c4c161cf119fc2548531a8850c6a47e02f"
+          },
+          {
+            "text": "בלי dashboard.view לדף זה אין מה להציג, ולכן תועברו למועדפים.",
+            "source_sha256": "be0c280be23979edd80969ca5452046ca2159abbce0e457710061fa4d1314d1a"
+          }
+        ],
+        "source_sha256": "38106a5929b5c0b8270db7bd9801aa8ab363d6929d8f2746bd95506a852e95e0"
+      }
     },
     "secure-share": {
       "helpAriaLabel": {
@@ -1919,20 +2096,23 @@
         "text": "שיתוף מאובטח",
         "source_sha256": "c2b1d79f4ae639052940dccfcbb6d0146e3661b36ca208d1cae0b50b22a019f4"
       },
-      "bullets": [
-        {
-          "text": "Nutzen Sie \"So funktioniert the Verschluesselung\" על האתר עבור Formate, Schluesselverwahrung ו-wann Teilen vs. Export.",
-          "source_sha256": "5883e12b5e1d7c6ac1d980b21061e3e6e365c8c8a2e533c51bc39cd360ec65b6"
-        },
-        {
-          "text": "CUI darf not als Klartext-Export verlassen — nur verschluesselter Austausch או ACL innerhalb des Enclave.",
-          "source_sha256": "31f8cd1a67632614de83eb29c91ffe8ee1265f445bf1d54d935d28589e6575e1"
-        },
-        {
-          "text": "יצוא משוריין הוא חבילה עם ASCII-Huelle עבור Paste-Kanaele, keine PGP-Nachricht עם oeffentlichem Schluessel.",
-          "source_sha256": "0531989bd5e90fe9701fc3ce9a3b75a6b87c21f923e883823ad57b55f6c51edc"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Nutzen Sie \"So funktioniert the Verschluesselung\" על האתר עבור Formate, Schluesselverwahrung ו-wann Teilen vs. Export.",
+            "source_sha256": "5883e12b5e1d7c6ac1d980b21061e3e6e365c8c8a2e533c51bc39cd360ec65b6"
+          },
+          {
+            "text": "CUI darf not als Klartext-Export verlassen — nur verschluesselter Austausch או ACL innerhalb des Enclave.",
+            "source_sha256": "31f8cd1a67632614de83eb29c91ffe8ee1265f445bf1d54d935d28589e6575e1"
+          },
+          {
+            "text": "יצוא משוריין הוא חבילה עם ASCII-Huelle עבור Paste-Kanaele, keine PGP-Nachricht עם oeffentlichem Schluessel.",
+            "source_sha256": "0531989bd5e90fe9701fc3ce9a3b75a6b87c21f923e883823ad57b55f6c51edc"
+          }
+        ],
+        "source_sha256": "413ec5b2ccffe4bb84707f6494e04460f9b2b3d522a611d2cd8fc2522f1e40d0"
+      }
     },
     "settings": {
       "summary": {
@@ -1943,24 +2123,27 @@
         "text": "תְצוּרָה",
         "source_sha256": "b332c3492d5eb10a118eb6d8b0dcd689bc2477ce2ae16b303753b942b54377bc"
       },
-      "bullets": [
-        {
-          "text": "תצורה ← Agent umfasst Einstellungsdateien, Bereitstellung ו- Vorgaben, the in ausgegebene Agent-Settings geschrieben werden.",
-          "source_sha256": "72ed8b03495daf26397c990a4b45167a4a745b941addc70180ea43f3c40ea91f"
-        },
-        {
-          "text": "תצורה → Server umfasst TLS, Identitaetsanbieter, Krypto, Messaging and Serversteuerung for diesen Host.",
-          "source_sha256": "17ca289d1c3bd4f3e0e24f9e80c166f698033a88ab8729e9d68876ee4d5bb184"
-        },
-        {
-          "text": "Unternehmensprofil haelt Organisationsnamen ו-Kontakte for Hinweise; ה-Erstkonfigurations-Assistent fuehrt במהלך Ersteinrichtung des Enclave.",
-          "source_sha256": "765536f45af6709c1c359f4fdb97075ae84439a61c511d4ea56ab3510955e877"
-        },
-        {
-          "text": "Nutzen Sie the Schnellsuche (Strg+K), um direkt to jeder Konfigurationsseite to springen.",
-          "source_sha256": "91ceffdffb394e1bb884a4f95e338a62e0fd2a81ada328c584356ab27bcc4099"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "תצורה ← Agent umfasst Einstellungsdateien, Bereitstellung ו- Vorgaben, the in ausgegebene Agent-Settings geschrieben werden.",
+            "source_sha256": "72ed8b03495daf26397c990a4b45167a4a745b941addc70180ea43f3c40ea91f"
+          },
+          {
+            "text": "תצורה → Server umfasst TLS, Identitaetsanbieter, Krypto, Messaging and Serversteuerung for diesen Host.",
+            "source_sha256": "17ca289d1c3bd4f3e0e24f9e80c166f698033a88ab8729e9d68876ee4d5bb184"
+          },
+          {
+            "text": "Unternehmensprofil haelt Organisationsnamen ו-Kontakte for Hinweise; ה-Erstkonfigurations-Assistent fuehrt במהלך Ersteinrichtung des Enclave.",
+            "source_sha256": "765536f45af6709c1c359f4fdb97075ae84439a61c511d4ea56ab3510955e877"
+          },
+          {
+            "text": "Nutzen Sie the Schnellsuche (Strg+K), um direkt to jeder Konfigurationsseite to springen.",
+            "source_sha256": "91ceffdffb394e1bb884a4f95e338a62e0fd2a81ada328c584356ab27bcc4099"
+          }
+        ],
+        "source_sha256": "88c4cf855e106766bc739601447fa87494d3bdbd76ccea20d6a960ef9f731dae"
+      }
     },
     "settings__agent": {
       "summary": {
@@ -1985,20 +2168,23 @@
         "text": "גרסאות סוכן צי",
         "source_sha256": "c418347b4ac585559970d35e3d5ac3c595675282a3840fbe2509e91136cd7e67"
       },
-      "bullets": [
-        {
-          "text": "Daten Teilweise / Live — zusammengesetzt aus /admin/systems צ'ק-אין-Anreicherung; kein Live-AppConfig-Snapshot.",
-          "source_sha256": "e6ec1862d73434f4abc1f10cc5a9248d8fa0de26c45d26fe08279caa2c610215"
-        },
-        {
-          "text": "Push-Erreichbarkeit ist nur for Push-IPC pruefbar משותף; entfernte Zeilen zeigen Selbstmeldung או not-of-diesem-Server.",
-          "source_sha256": "1cf52ccb94c37efe296496e2372840a75aa1c41923d045d4afa7123b22b96039"
-        },
-        {
-          "text": "קישורים עמוקים ל-Propagierung, Offenlegungen, Recording-Agents ו- Passwortwiederherstellung bleiben auf the bestehenden Seiten.",
-          "source_sha256": "1b65eade273f0ec61e1cff51590146609efa1b01ee257dca9c2e35be33a815bc"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Daten Teilweise / Live — zusammengesetzt aus /admin/systems צ'ק-אין-Anreicherung; kein Live-AppConfig-Snapshot.",
+            "source_sha256": "e6ec1862d73434f4abc1f10cc5a9248d8fa0de26c45d26fe08279caa2c610215"
+          },
+          {
+            "text": "Push-Erreichbarkeit ist nur for Push-IPC pruefbar משותף; entfernte Zeilen zeigen Selbstmeldung או not-of-diesem-Server.",
+            "source_sha256": "1cf52ccb94c37efe296496e2372840a75aa1c41923d045d4afa7123b22b96039"
+          },
+          {
+            "text": "קישורים עמוקים ל-Propagierung, Offenlegungen, Recording-Agents ו- Passwortwiederherstellung bleiben auf the bestehenden Seiten.",
+            "source_sha256": "1b65eade273f0ec61e1cff51590146609efa1b01ee257dca9c2e35be33a815bc"
+          }
+        ],
+        "source_sha256": "02bb1e0d07bec9663256f8bfa84ef3d99e94ef8c4d2c00ba8e62276f353e7a67"
+      }
     },
     "settings__agent__management": {
       "helpAriaLabel": {
@@ -2013,20 +2199,23 @@
         "text": "ניהול סוכנים",
         "source_sha256": "1501a898a9d8652df45ba47b7c8de147664f3c2e79a597ef166336aaee930b72"
       },
-      "bullets": [
-        {
-          "text": "Getrennte / luftgekapte מארח nutzen weiterhin lokale Tauri-, Win32- או CLI-Konfiguratoren.",
-          "source_sha256": "3477e1d713a90c68a433b5925d8fdc617c9988627905cc762d070cc31fc3d561"
-        },
-        {
-          "text": "Der Tab Faehigkeiten verlinkt to Propagierung, Offenlegungen, Recording-Agents ו- Passwortwiederherstellung unter Endpunkte — keine doppelten Workflows.",
-          "source_sha256": "efaa486393c47ce793a5a15631ea711379d8db6e90d866166d9844eede72e2b8"
-        },
-        {
-          "text": "Flotten-Agent-Versionen ist a eigene schreibgeschuetzte Tabelle aus the Anreicherung the Systemliste.",
-          "source_sha256": "6805793ae3e43db8b3afb0a2b376c40678136c76216459e25e2e92437bb38e3b"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Getrennte / luftgekapte מארח nutzen weiterhin lokale Tauri-, Win32- או CLI-Konfiguratoren.",
+            "source_sha256": "3477e1d713a90c68a433b5925d8fdc617c9988627905cc762d070cc31fc3d561"
+          },
+          {
+            "text": "Der Tab Faehigkeiten verlinkt to Propagierung, Offenlegungen, Recording-Agents ו- Passwortwiederherstellung unter Endpunkte — keine doppelten Workflows.",
+            "source_sha256": "efaa486393c47ce793a5a15631ea711379d8db6e90d866166d9844eede72e2b8"
+          },
+          {
+            "text": "Flotten-Agent-Versionen ist a eigene schreibgeschuetzte Tabelle aus the Anreicherung the Systemliste.",
+            "source_sha256": "6805793ae3e43db8b3afb0a2b376c40678136c76216459e25e2e92437bb38e3b"
+          }
+        ],
+        "source_sha256": "b1ae115ab88e57644eb43e149879d6282920f6961b24c6ecd956502c4eaaf19a"
+      }
     },
     "settings__agent__propagation-templates": {
       "helpAriaLabel": {
@@ -2041,28 +2230,31 @@
         "text": "תבניות ריבוי",
         "source_sha256": "048324f714c8fd03e17a37f119a09e5107b896399e08878a2ef0883fd478a5f6"
       },
-      "bullets": [
-        {
-          "text": "Ablauf: Im Katalog bearbeiten & speichern → Install pushen → Identitaeten binden → Am Agent test.",
-          "source_sha256": "0b0b8da3300d732196298a612d1e257cbf7c2517d60494747e76219beb658a00"
-        },
-        {
-          "text": "שלב: לפני סיבוב (beruhigen) ← Passwortaenderung ← אימות (לאחר סיבוב). בדוק את הסוכן-קופי עוד הדחיפה.",
-          "source_sha256": "bb801bee89c44e6e814df5d669303e6b9db33ed1e4342a6a89ad24e1b649d1a8"
-        },
-        {
-          "text": "Skripte laufen in Lebenszyklusphasen (סובב מראש, ודא usw.) - לא bei the Sitzungsvermittlung (siehe Proxy-Zugriff).",
-          "source_sha256": "eee234ac056c4218c020f5a284bf7efa05582d82fc6297cf9dd5a433e93aa7d2"
-        },
-        {
-          "text": "Aus Standardvorlage anlegen for Lab-Skelett, או Identitaeten binden and of dieser Seite pushen.",
-          "source_sha256": "25b2c166b1b0a5c339108ed2a4753bf6d6816177622c4ad65c8b164f6250016c"
-        },
-        {
-          "text": "Operator-Leitfaden: pim-offline-client/docs/PROPAGATION_SCRIPTS_LIFECYCLE.md",
-          "source_sha256": "f13733282dcfc7d4629cbd149b7f00a0a6ef4d9e5e8d1914303ac78f7e61cfcb"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Ablauf: Im Katalog bearbeiten & speichern → Install pushen → Identitaeten binden → Am Agent test.",
+            "source_sha256": "0b0b8da3300d732196298a612d1e257cbf7c2517d60494747e76219beb658a00"
+          },
+          {
+            "text": "שלב: לפני סיבוב (beruhigen) ← Passwortaenderung ← אימות (לאחר סיבוב). בדוק את הסוכן-קופי עוד הדחיפה.",
+            "source_sha256": "bb801bee89c44e6e814df5d669303e6b9db33ed1e4342a6a89ad24e1b649d1a8"
+          },
+          {
+            "text": "Skripte laufen in Lebenszyklusphasen (סובב מראש, ודא usw.) - לא bei the Sitzungsvermittlung (siehe Proxy-Zugriff).",
+            "source_sha256": "eee234ac056c4218c020f5a284bf7efa05582d82fc6297cf9dd5a433e93aa7d2"
+          },
+          {
+            "text": "Aus Standardvorlage anlegen for Lab-Skelett, או Identitaeten binden and of dieser Seite pushen.",
+            "source_sha256": "25b2c166b1b0a5c339108ed2a4753bf6d6816177622c4ad65c8b164f6250016c"
+          },
+          {
+            "text": "Operator-Leitfaden: pim-offline-client/docs/PROPAGATION_SCRIPTS_LIFECYCLE.md",
+            "source_sha256": "f13733282dcfc7d4629cbd149b7f00a0a6ef4d9e5e8d1914303ac78f7e61cfcb"
+          }
+        ],
+        "source_sha256": "3428e73e4c9c66ed581f61a2532ae3bd8f6d9124819be4cff35b530ee9e436be"
+      }
     },
     "settings__branding": {
       "summary": {
@@ -2073,20 +2265,23 @@
         "text": "מיתוג וסגנון",
         "source_sha256": "ee7daadb4c5926d0379e81db39692ecd9f295038cb705ca7b0255a1a2ffbb106"
       },
-      "bullets": [
-        {
-          "text": "Klassifizierungs- and Hinweisfarben gelten auf the Anmelde-Chrome ו-Admin-Offenlegungsbannern.",
-          "source_sha256": "feceef9f1c68dc2b877d5ed593ab034c7abc2fcc4e1645468a0306886c762de5"
-        },
-        {
-          "text": "Standardfarben folgen AIC-Navy ו-Stahlblau aus נכסי ליבה (קאין oranger Marken-Chrome).",
-          "source_sha256": "a21e72bc6281b219fe306e72407803c05d79fd5de15161bb4f71524185b646c1"
-        },
-        {
-          "text": "טקסט הבאנר את ההתקפות ניתנות לשרת-Offenlegungen / Operator-Offenlegungen.",
-          "source_sha256": "d0c10fa0270609c84f52c7117e070980e225522196f57955e19aa073bf1e90bd"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Klassifizierungs- and Hinweisfarben gelten auf the Anmelde-Chrome ו-Admin-Offenlegungsbannern.",
+            "source_sha256": "feceef9f1c68dc2b877d5ed593ab034c7abc2fcc4e1645468a0306886c762de5"
+          },
+          {
+            "text": "Standardfarben folgen AIC-Navy ו-Stahlblau aus נכסי ליבה (קאין oranger Marken-Chrome).",
+            "source_sha256": "a21e72bc6281b219fe306e72407803c05d79fd5de15161bb4f71524185b646c1"
+          },
+          {
+            "text": "טקסט הבאנר את ההתקפות ניתנות לשרת-Offenlegungen / Operator-Offenlegungen.",
+            "source_sha256": "d0c10fa0270609c84f52c7117e070980e225522196f57955e19aa073bf1e90bd"
+          }
+        ],
+        "source_sha256": "9d99f1f0aa40404c4133a0b67ed9b122e8fb0f086adebfd17bc1c2c5fbcda593"
+      }
     },
     "settings__company": {
       "summary": {
@@ -2097,20 +2292,23 @@
         "text": "פרופיל החברה",
         "source_sha256": "72e8825dea3b0030335bfaa60ef0cb0d432062b69ce6d0229f8a50dab34cdf08"
       },
-      "bullets": [
-        {
-          "text": "Kanonischer Speicher sind Variablen את Offenlegungsvorlagen (gleiche Werte wie Operator-Offenlegungen → Vorlagenvariablen).",
-          "source_sha256": "d736972f03dfb939bdfe1d6f5b3f2db5eb048b8ea0cfd4eb769c259887451735"
-        },
-        {
-          "text": "לוגו, Markenname ו- Bannerfarben liegen unter Branding & Stil.",
-          "source_sha256": "30eab20865ed01a7c64ca5bea5eaf494c68b020c79d4d3ad9b9f5e46e6919e92"
-        },
-        {
-          "text": "Erweiterter Vorlagentext bleibt unter Server-Offenlegungen / Operator-Offenlegungen.",
-          "source_sha256": "c4cde937687000eeeeb15d78d6f1ef2130eb8a5920733b019298fac0a6ce89bd"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Kanonischer Speicher sind Variablen את Offenlegungsvorlagen (gleiche Werte wie Operator-Offenlegungen → Vorlagenvariablen).",
+            "source_sha256": "d736972f03dfb939bdfe1d6f5b3f2db5eb048b8ea0cfd4eb769c259887451735"
+          },
+          {
+            "text": "לוגו, Markenname ו- Bannerfarben liegen unter Branding & Stil.",
+            "source_sha256": "30eab20865ed01a7c64ca5bea5eaf494c68b020c79d4d3ad9b9f5e46e6919e92"
+          },
+          {
+            "text": "Erweiterter Vorlagentext bleibt unter Server-Offenlegungen / Operator-Offenlegungen.",
+            "source_sha256": "c4cde937687000eeeeb15d78d6f1ef2130eb8a5920733b019298fac0a6ce89bd"
+          }
+        ],
+        "source_sha256": "d664860528db02f1c03bc3b98d0ae624e92d9f021b8c454ac00a3c5fd01549a4"
+      }
     },
     "settings__defaults__password": {
       "summary": {
@@ -2121,20 +2319,23 @@
         "text": "ברירת מחדל - סיסמה",
         "source_sha256": "26c79bd1953b73617dfcfd2e15cf0064a635fb179be28c5c669b024513d476cc"
       },
-      "bullets": [
-        {
-          "text": "Laenge, Rotation, Zeichenregeln ו-erweiterte Generierungsfelder bearbeiten; speichern לכל PUT /api/offline/settings.",
-          "source_sha256": "55e5504e9db8b2c99e408df75eb4f2059bb4cf549776eabcf449c25e7e856481"
-        },
-        {
-          "text": "Eingebaute or gespeicherte Presets anwenden, dann Mit Programm-Vorgaben wiederherstellen, um Operator-Ueberschreibungen to loeschen.",
-          "source_sha256": "e4cfe08e14284fae602b5b4ce6ac196d3bbc8b8e5cab9173aa28e6ed739f68d9"
-        },
-        {
-          "text": "הגדרות קבועות מראש נפרדות לפי הגדרות מוכנות מראש.",
-          "source_sha256": "c1b092929b38149c35bac1c76e49d312d171e6752ea45227362073e5551acd2c"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Laenge, Rotation, Zeichenregeln ו-erweiterte Generierungsfelder bearbeiten; speichern לכל PUT /api/offline/settings.",
+            "source_sha256": "55e5504e9db8b2c99e408df75eb4f2059bb4cf549776eabcf449c25e7e856481"
+          },
+          {
+            "text": "Eingebaute or gespeicherte Presets anwenden, dann Mit Programm-Vorgaben wiederherstellen, um Operator-Ueberschreibungen to loeschen.",
+            "source_sha256": "e4cfe08e14284fae602b5b4ce6ac196d3bbc8b8e5cab9173aa28e6ed739f68d9"
+          },
+          {
+            "text": "הגדרות קבועות מראש נפרדות לפי הגדרות מוכנות מראש.",
+            "source_sha256": "c1b092929b38149c35bac1c76e49d312d171e6752ea45227362073e5551acd2c"
+          }
+        ],
+        "source_sha256": "a65dc06fbdf05448a0a1f59082617279213df3cd09b88a81da1da00fbbb2d003"
+      }
     },
     "settings__demo-reset": {
       "summary": {
@@ -2155,24 +2356,27 @@
         "text": "חיבורי HSM",
         "source_sha256": "76cda9fa67c316c6597d70a4fd609c517a085e5e347d00be17994248b37c2311"
       },
-      "bullets": [
-        {
-          "text": "Tab Verbindungen listet registrierte HSM-Endpunkte ו-oeffnet PKCS#11-Slot-/Token-Pruefungen.",
-          "source_sha256": "af4f70060b5f93991b8dda072ffa5ee8a42b474a982cdfcb90da5c275ae7e069"
-        },
-        {
-          "text": "Tab Hersteller pflegt Metadaten, the beim Anlegen of Verbindungen genutzt werden.",
-          "source_sha256": "6808ecffc390e329e819a57c13566f55ef540789a653b4d73eb3c5f0165f9371"
-        },
-        {
-          "text": "תצורת כרטיסיות מודפסת HSM-Einstellungsschluessel ב-ORM-Store.",
-          "source_sha256": "786e94a7ae791d4ba9f7e9076228761d599f7496153f7e2fc6c82fdfcbba1f19"
-        },
-        {
-          "text": "Die Seite Krypto-Anbieter kann a Verbindung waehlen, um PKCS11_MODULE_PATH ו-PKCS11_SLOT_ID vorzufuellen.",
-          "source_sha256": "7a5c14790180f892565de6b91d589608bb1a35a29645519cc4c41a68228fd082"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Tab Verbindungen listet registrierte HSM-Endpunkte ו-oeffnet PKCS#11-Slot-/Token-Pruefungen.",
+            "source_sha256": "af4f70060b5f93991b8dda072ffa5ee8a42b474a982cdfcb90da5c275ae7e069"
+          },
+          {
+            "text": "Tab Hersteller pflegt Metadaten, the beim Anlegen of Verbindungen genutzt werden.",
+            "source_sha256": "6808ecffc390e329e819a57c13566f55ef540789a653b4d73eb3c5f0165f9371"
+          },
+          {
+            "text": "תצורת כרטיסיות מודפסת HSM-Einstellungsschluessel ב-ORM-Store.",
+            "source_sha256": "786e94a7ae791d4ba9f7e9076228761d599f7496153f7e2fc6c82fdfcbba1f19"
+          },
+          {
+            "text": "Die Seite Krypto-Anbieter kann a Verbindung waehlen, um PKCS11_MODULE_PATH ו-PKCS11_SLOT_ID vorzufuellen.",
+            "source_sha256": "7a5c14790180f892565de6b91d589608bb1a35a29645519cc4c41a68228fd082"
+          }
+        ],
+        "source_sha256": "4dae5f2fa1fe9c7d891e37fe06c151de6cd4955a8e8ed03330f2061b5b51daeb"
+      }
     },
     "settings__lab": {
       "summary": {
@@ -2227,16 +2431,19 @@
         "text": "הגדרות — יומני שירות",
         "source_sha256": "f75e03e991f0183a9f40da6fed32c3d41e0b6e167547827699810fb6528fe94a"
       },
-      "bullets": [
-        {
-          "text": "סטדout traegt Application-Tracing; stderr traegt פאניקה ושגיאה מקורית (עם Zeitstempel-Praefix).",
-          "source_sha256": "7514d0ea044318a8cccdceeac12f05f740a0f5e85b4abffbe968caf22693977e"
-        },
-        {
-          "text": "Live-Tail הפסקה, עם הפסקת Windows-Dienst; זנב ניו עמוס, מברך את Dienst wieder laeuft.",
-          "source_sha256": "3d7c952feb4a0d13210771ce0ad95dd2539761f2bf9d73e5942a0f792a8b1860"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "סטדout traegt Application-Tracing; stderr traegt פאניקה ושגיאה מקורית (עם Zeitstempel-Praefix).",
+            "source_sha256": "7514d0ea044318a8cccdceeac12f05f740a0f5e85b4abffbe968caf22693977e"
+          },
+          {
+            "text": "Live-Tail הפסקה, עם הפסקת Windows-Dienst; זנב ניו עמוס, מברך את Dienst wieder laeuft.",
+            "source_sha256": "3d7c952feb4a0d13210771ce0ad95dd2539761f2bf9d73e5942a0f792a8b1860"
+          }
+        ],
+        "source_sha256": "9475a05b9852dc159edebe841a7b97c0aaff7d749da977af143971ca68a29ff6"
+      }
     },
     "settings__startup-wizard": {
       "summary": {
@@ -2247,20 +2454,23 @@
         "text": "אשף ההתקנה הראשונית",
         "source_sha256": "3c8dfed504197047eba04c9fb673432d2a39d6e0c4bd2335d378ceba4be63648"
       },
-      "bullets": [
-        {
-          "text": "Verfuegbar עבור Operatoren, Servereinstellungen verwalten duerfen (Superuser / בעלים).",
-          "source_sha256": "488c95239e0214923034475614fe7575322c4f20af76a096fb7c2f23e36ed7ad"
-        },
-        {
-          "text": "Unternehmensidentitaet wird ueber denselben Speicher Unternehmensprofil / Offenlegungsvariablen bearbeitet.",
-          "source_sha256": "26ff64e1820ca4286f1c507916a6256fa47d67aed00a7ce2b9db476c54584e88"
-        },
-        {
-          "text": "אופציונלי Schritte (דואר אלקטרוני, Familiarisierungs-Seed) koennen uebersprungen werden; Lab-Seed ist auf lab-dev beschraenkt.",
-          "source_sha256": "8e1c11b71f92f392d234687b8e03aa6457c1d71ea279ed46b71133f8049b9690"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Verfuegbar עבור Operatoren, Servereinstellungen verwalten duerfen (Superuser / בעלים).",
+            "source_sha256": "488c95239e0214923034475614fe7575322c4f20af76a096fb7c2f23e36ed7ad"
+          },
+          {
+            "text": "Unternehmensidentitaet wird ueber denselben Speicher Unternehmensprofil / Offenlegungsvariablen bearbeitet.",
+            "source_sha256": "26ff64e1820ca4286f1c507916a6256fa47d67aed00a7ce2b9db476c54584e88"
+          },
+          {
+            "text": "אופציונלי Schritte (דואר אלקטרוני, Familiarisierungs-Seed) koennen uebersprungen werden; Lab-Seed ist auf lab-dev beschraenkt.",
+            "source_sha256": "8e1c11b71f92f392d234687b8e03aa6457c1d71ea279ed46b71133f8049b9690"
+          }
+        ],
+        "source_sha256": "76e69e2dabbc7eb583b1a7a61968a53071df81264a545afba5d0893441d00d7b"
+      }
     },
     "settings__syslog": {
       "summary": {
@@ -2295,20 +2505,23 @@
         "text": "מערכות",
         "source_sha256": "d9148b16c1107bd3b371165e897a11620fc58e6c9d274550488b73200616bdeb"
       },
-      "bullets": [
-        {
-          "text": "Agent-Zeilen ergaenzen Passwortrotation, Elevation ו-ziel-lokale Aufzeichnung.",
-          "source_sha256": "ce9ec984af9c25da3262b03b7ca6bb695861dc739877b9f1ee01501443ad3ea2"
-        },
-        {
-          "text": "מערכת ללא סוכן bleiben ב-scope ומחברת לעתים קרובות את ה-eigenen Kanal.",
-          "source_sha256": "6431802bc3d6830db2d58da9dac533dba5ac7eba064e5cc1721d18052fdb2b45"
-        },
-        {
-          "text": "כתובות אתרים מדור קודם מתחת ל-/endpoints נמצאות כאן.",
-          "source_sha256": "3e0b1ac10b8a63072e94f9fbdb378636a78861e6f8f6cd1ce23a2be33a0c81d1"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Agent-Zeilen ergaenzen Passwortrotation, Elevation ו-ziel-lokale Aufzeichnung.",
+            "source_sha256": "ce9ec984af9c25da3262b03b7ca6bb695861dc739877b9f1ee01501443ad3ea2"
+          },
+          {
+            "text": "מערכת ללא סוכן bleiben ב-scope ומחברת לעתים קרובות את ה-eigenen Kanal.",
+            "source_sha256": "6431802bc3d6830db2d58da9dac533dba5ac7eba064e5cc1721d18052fdb2b45"
+          },
+          {
+            "text": "כתובות אתרים מדור קודם מתחת ל-/endpoints נמצאות כאן.",
+            "source_sha256": "3e0b1ac10b8a63072e94f9fbdb378636a78861e6f8f6cd1ce23a2be33a0c81d1"
+          }
+        ],
+        "source_sha256": "7c9b220211525a8770923150b11cb1520795bc1c5ffc85e54c61316c00642190"
+      }
     },
     "tenants": {
       "summary": {
@@ -2319,20 +2532,23 @@
         "text": "ריבוי שכירות",
         "source_sha256": "91d3baf4ccfbd3570385afa7d72e5d1f0c39f9cca93526cb92cbeba8f8a725c5"
       },
-      "bullets": [
-        {
-          "text": "Multi-Tenant anlegen → Bootstrap-Geheimnis sofort kopieren; es wird nie wieder angezeigt.",
-          "source_sha256": "8199c1f6ee4d73b0e9056acabb1d53e048bf77edb7c365078f324fecb9efe3ec"
-        },
-        {
-          "text": "סוכנים ו-Assistentenausgabe referenzieren tenant_guid aus the Multi-Tenant-Datensatz.",
-          "source_sha256": "dff7c95d8cbcece491a4328d805dc75a58029b185f36053ebe92c88da91dd266"
-        },
-        {
-          "text": "Standard-Assistentennutzung waehlt את Ausgabetyp for Operatoren dieses Multi-Tenants vor.",
-          "source_sha256": "0bdd2fcde7877b9e6a2309a3f345bc317ec4f681dba573ca72a2e3a0e9f1dd3e"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Multi-Tenant anlegen → Bootstrap-Geheimnis sofort kopieren; es wird nie wieder angezeigt.",
+            "source_sha256": "8199c1f6ee4d73b0e9056acabb1d53e048bf77edb7c365078f324fecb9efe3ec"
+          },
+          {
+            "text": "סוכנים ו-Assistentenausgabe referenzieren tenant_guid aus the Multi-Tenant-Datensatz.",
+            "source_sha256": "dff7c95d8cbcece491a4328d805dc75a58029b185f36053ebe92c88da91dd266"
+          },
+          {
+            "text": "Standard-Assistentennutzung waehlt את Ausgabetyp for Operatoren dieses Multi-Tenants vor.",
+            "source_sha256": "0bdd2fcde7877b9e6a2309a3f345bc317ec4f681dba573ca72a2e3a0e9f1dd3e"
+          }
+        ],
+        "source_sha256": "20c2f65ea89f0e78ba8e805a349d0e85c0c3dcffb5502be94e883e9130884de3"
+      }
     },
     "training__packs": {
       "helpAriaLabel": {
@@ -2347,20 +2563,23 @@
         "text": "חבילות הדרכה ומודעות",
         "source_sha256": "63fd5870ec17f5a42b74fdfb66f45edf3e07603145969059776670e1e2167eef"
       },
-      "bullets": [
-        {
-          "text": "Tab Dokumente הוא Bibliothek ו-Render-Formular.",
-          "source_sha256": "190fce9fa8875c2603cc6c4b6c8b843c934f68ef5b501e3c8794c07183bb5748"
-        },
-        {
-          "text": "Standards coverage shows whether a document exists for each registered framework requirement.",
-          "source_sha256": "0242e8bccf398aacf24c50e2ec3db05cddc6d75bf1ca1f49fce4d0e8c5a39dce"
-        },
-        {
-          "text": "Planned programs, assignment, and attestation are separate surfaces.",
-          "source_sha256": "4766838981d40ea7ac09029ecb34a1750d9342e46753037df9e6b3f370265c24"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Tab Dokumente הוא Bibliothek ו-Render-Formular.",
+            "source_sha256": "190fce9fa8875c2603cc6c4b6c8b843c934f68ef5b501e3c8794c07183bb5748"
+          },
+          {
+            "text": "Standards coverage shows whether a document exists for each registered framework requirement.",
+            "source_sha256": "0242e8bccf398aacf24c50e2ec3db05cddc6d75bf1ca1f49fce4d0e8c5a39dce"
+          },
+          {
+            "text": "Planned programs, assignment, and attestation are separate surfaces.",
+            "source_sha256": "4766838981d40ea7ac09029ecb34a1750d9342e46753037df9e6b3f370265c24"
+          }
+        ],
+        "source_sha256": "99451bc29072a72ee801ef15b5fde8277b184edd6fe7c628f6905ec163a37386"
+      }
     },
     "wizard__identity-template": {
       "summary": {
@@ -2371,16 +2590,19 @@
         "text": "אשף תבנית זהות",
         "source_sha256": "9be843743f6551c025b05d2502c3f321ee094210d9f39862c0bcf49debc14ebc"
       },
-      "bullets": [
-        {
-          "text": "\"Standardidentitaeten seeden\" בקבוצה פעילה, damit Vorlagenzeilen bei the Bereitstellung greifen.",
-          "source_sha256": "84a2975f4f1823eb6e2f9e5bb4c859d7700f996bb1c4f730232ef936845446d0"
-        },
-        {
-          "text": "Passwortrichtlinie pro Zeile kann the Group erben or ueberschreiben, wenn Erben ausgeschaltet ist.",
-          "source_sha256": "2a915f9bb609b2f8d8e7702ad3faa78ba7a79ce2f38d12255140b3270da4f8c9"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "\"Standardidentitaeten seeden\" בקבוצה פעילה, damit Vorlagenzeilen bei the Bereitstellung greifen.",
+            "source_sha256": "84a2975f4f1823eb6e2f9e5bb4c859d7700f996bb1c4f730232ef936845446d0"
+          },
+          {
+            "text": "Passwortrichtlinie pro Zeile kann the Group erben or ueberschreiben, wenn Erben ausgeschaltet ist.",
+            "source_sha256": "2a915f9bb609b2f8d8e7702ad3faa78ba7a79ce2f38d12255140b3270da4f8c9"
+          }
+        ],
+        "source_sha256": "a39ea6d90074de4842c7b2dd80ae5c698679a0b8eb559f11047681ae3bcb8cfc"
+      }
     },
     "wizard__import": {
       "summary": {
@@ -2391,12 +2613,15 @@
         "text": "הגדרות ייבוא ​​(הגירה)",
         "source_sha256": "1b2568610dfc5eeee1e3c6fc439a7ce2ed788eb687f3eab66e320d1859298fc6"
       },
-      "bullets": [
-        {
-          "text": "Fuer Migrationspruefung — Live-Anwenden nutzt File ← הגדרות חוזרות ב-Configurator או ב- Import-Settings-CLI.",
-          "source_sha256": "a4729b23485a7f32963cec7c69f66608c31db3da7412a60dd2f6a2af271999e8"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "Fuer Migrationspruefung — Live-Anwenden nutzt File ← הגדרות חוזרות ב-Configurator או ב- Import-Settings-CLI.",
+            "source_sha256": "a4729b23485a7f32963cec7c69f66608c31db3da7412a60dd2f6a2af271999e8"
+          }
+        ],
+        "source_sha256": "5890db2538839a2c385533701a0588ad24974b1b16f4c828a91c75d188573c0f"
+      }
     },
     "wizard__issuances": {
       "summary": {
@@ -2407,12 +2632,15 @@
         "text": "ניהול הנפקות",
         "source_sha256": "54b148b3649680d5e41d56a26ab545b3309882a5c5636ef72dc6bb4f6e747211"
       },
-      "bullets": [
-        {
-          "text": "לאחר הגדרות-העזרה, כאשר מפעילים קובץ או אסימונים מסודרים.",
-          "source_sha256": "2f26d98cc297135ed90246f487ffbb2df0f3707a73f470849bd2241cb72ead1b"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "לאחר הגדרות-העזרה, כאשר מפעילים קובץ או אסימונים מסודרים.",
+            "source_sha256": "2f26d98cc297135ed90246f487ffbb2df0f3707a73f470849bd2241cb72ead1b"
+          }
+        ],
+        "source_sha256": "e8b7663b3aa3fe29d4199c47c9fbccbbbd4a97fb1ed657cf14ce8869d80e2b74"
+      }
     },
     "wizard__settings": {
       "summary": {
@@ -2423,16 +2651,19 @@
         "text": "אשף ההגדרות",
         "source_sha256": "c778789ea57c5fc98116a813e2a9f4215e783a1d99d8386c53eca0bc6669ac27"
       },
-      "bullets": [
-        {
-          "text": "ההגדרות, ה- Agent ueber Konfigurator או הגדרות הייבוא ​​יובאו.",
-          "source_sha256": "7555e2289b341e877ba9332d6c52e11974d32243adbc9df5c8f0c41afb37852f"
-        },
-        {
-          "text": "ConnectedManaged erwartet regelmaessigen צ'ק-אין; AirGappedPermanent לא.",
-          "source_sha256": "ce05b2e69394e8263e83e852760a3aba2ae513eb8a64d785346b954572338325"
-        }
-      ]
+      "bullets": {
+        "text": [
+          {
+            "text": "ההגדרות, ה- Agent ueber Konfigurator או הגדרות הייבוא ​​יובאו.",
+            "source_sha256": "7555e2289b341e877ba9332d6c52e11974d32243adbc9df5c8f0c41afb37852f"
+          },
+          {
+            "text": "ConnectedManaged erwartet regelmaessigen צ'ק-אין; AirGappedPermanent לא.",
+            "source_sha256": "ce05b2e69394e8263e83e852760a3aba2ae513eb8a64d785346b954572338325"
+          }
+        ],
+        "source_sha256": "0ad9b45d91928af67e9e882eb752b3044b74c223838846cfa424fb5cebec7e29"
+      }
     }
   },
   "about__open-source-credits": {
@@ -3724,8 +3955,8 @@
         "source_sha256": "011c0503890c7ed8db5e46a6f3a330f8d25a67a10a50d0fedff07c2e9a0d9345"
       },
       "launchingRdp": {
-        "text": "הפעלת הפעלת RDP מוקלטת (זה עשוי להימשך עד שתי דקות)â¦",
-        "source_sha256": "9afebe809011f28152d27548b26c55e0b66a4020084b601f2e209f131ea56d24"
+        "text": "מפעיל הפעלה מוקלטת של RDP (זה עשוי להימשך עד שתי דקות)...",
+        "source_sha256": "746d023eb9a18df4483ad27bd0b85718609107010923bd45cfd4adf854dd7fbe"
       },
       "launchingSsh": {
         "text": "הפעלת SSH מוקלטת...",
@@ -4246,8 +4477,8 @@
         "source_sha256": "cbb96e51e34d36253a6558e144a9e78990ab32ffa99fe94c3fcb7bc520447e9e"
       },
       "sweepRunning": {
-        "text": "Running Sweepâ¦",
-        "source_sha256": "5b03b0c9cbb3b27093cf685777762115a252732a0c48ed10620ebdf0e22bfa31"
+        "text": "הפעלת סוויפ...",
+        "source_sha256": "5e20e20ac0ef5a65982e4981c8c93c9bbb346b6480b300426bbca25834f704f6"
       },
       "title": {
         "text": "היסטוריית מדינות בקרה",
@@ -5016,8 +5247,8 @@
         "source_sha256": "0c3176f83d39385058598d51f9e99f74194371e7bd2e841865020d12d2762992"
       },
       "checking": {
-        "text": "בודק את ממשק ה-API של HSM adminâ¦",
-        "source_sha256": "2d53b8c30b8268ab7feb8dd222d6a55442f23cbc8c2bca2c36b480a9cbe2641b"
+        "text": "בודק ממשק API של HSM...",
+        "source_sha256": "df6d3430d58652b10dc2f0de16912c01e14e0dd0622f810bc8e960246401e2fb"
       },
       "checkingAria": {
         "text": "בדיקת זמינות HSM API",
@@ -5992,8 +6223,8 @@
         "source_sha256": "2a3c29b5783ff0fbaeb5508890b782f0a78106fdb0254b2d9c32d341a36b7149"
       },
       "ocrLoading": {
-        "text": "טוען מצב צינור OCRâ¦",
-        "source_sha256": "5746d6889912d90bfa889ec6d280caf69c96fb087c04624c1b5e1608816a1d95"
+        "text": "טוען סטטוס צינור OCR...",
+        "source_sha256": "c80a2eca4405345aec87dee00e97281f0a1fea29de83dc363bcb666860f8cb27"
       },
       "ocrNotReady": {
         "text": "לא מוכן",
@@ -6576,8 +6807,8 @@
       "model": {
         "a2a_clients": {
           "label": {
-            "text": "Nicht-menschliche / A2A-Clients",
-            "source_sha256": "4381f210d68e7784518a10c31c828d1a40852d4b8c409716f2d18f5849805c42"
+            "text": "לקוחות שאינם אנושיים/A2A",
+            "source_sha256": "6f397c33dc9c6060922beea16a6d0ab79cd3b0c1add984f81546c5937c53025e"
           },
           "summary": {
             "text": "Anwendung-to-Anwendung-Geheimnis-Clients.",
@@ -6756,8 +6987,8 @@
         },
         "secrets_api_tier": {
           "label": {
-            "text": "Geheimnis-API-Stufe",
-            "source_sha256": "1ab97432df57c54996c42e42e552532bd063f0240f06dbcd3b82bbcbc3c47c92"
+            "text": "רמת API סודי",
+            "source_sha256": "ecb86600e64e01285daed29c41ccb0f7e051f58c43f3f871073a19e16909736a"
           },
           "summary": {
             "text": "Monatliche Geheimnis-API-Vorgaenge als weiche או harte Obergrenze.",
@@ -6770,8 +7001,8 @@
             "source_sha256": "ba808cf7b176c48981d5c3e7d688e385cdbb55f23bbe948bb4c191c3e54e7861"
           },
           "summary": {
-            "text": "Controller-Fingerabdruck, dann Import des signierten Pakets.",
-            "source_sha256": "a7a8f45217c559772df0859035275ecd6c3fcec1c2cbf0d91a8520059760d338"
+            "text": "טביעת אצבע של הבקר, ולאחר מכן ייבא חבילה חתומה.",
+            "source_sha256": "a14d27d3ef68a37e96dd43282d50214a0608eb99b3d18d307c5f02742f4b4eca"
           }
         },
         "subscription_term": {
@@ -7439,8 +7670,8 @@
           "source_sha256": "8b0311a8239578c554052dfcedaa2aa64a68a36b6979edaf2f3409d667088d05"
         },
         "none": {
-          "text": "Keine Authentifizierung",
-          "source_sha256": "b56a35e90e026855db5ea28ef7265ce32265e3cf5a7be9ae55137fb84ee95300"
+          "text": "אין אימות",
+          "source_sha256": "cf205c33359a82fcbac1dff901d9022413fa5b9c21745ba387e09454c65c9737"
         }
       },
       "colActions": {
@@ -8130,8 +8361,8 @@
         "source_sha256": "65d035a4240af373f7678fd8c71dd3ebedde03279329ac702d11bc7190447968"
       },
       "checkingReachability": {
-        "text": "בדיקת נגישות מארח הפגישה לפני הפעלת Connectâ¦",
-        "source_sha256": "2910cac08c8bbf70ebeabafa6e8ef2ca5807364c0c11c7b3f768ac2ea9f664c6"
+        "text": "בודק את הנגישות של מארח ההפעלה לפני הפעלת Connect...",
+        "source_sha256": "8675e001f01b32f597e0124b5a8d6a6dc4f74d0f38156816ff52226ed1dc98b5"
       },
       "checkingShort": {
         "text": "בודק...",
@@ -8386,8 +8617,8 @@
         "source_sha256": "ed948340155cbaa54f0c087748dbb7f154c3f78f3530f520e7c583b403f64681"
       },
       "proxySideRecorded": {
-        "text": "Proxy-seitig (vom Sitzungsvermittler aufgezeichnet)",
-        "source_sha256": "7a93d64ee4ad958b3bd6c1546dc6ef946b9047b0c60885c286ac4bd0cb3b06f5"
+        "text": "צד פרוקסי (תועד על ידי מתווך הפגישה)",
+        "source_sha256": "b86bee86babfa65e3c9454e4b24dd8611c70fe7d22c9573a04fa254b4ed4a5f0"
       },
       "readyConnect": {
         "text": "מוכן â התחבר",
@@ -8674,12 +8905,12 @@
         "source_sha256": "7be75ced7162010929e317d93b3fcbcfe987b9e4eb86f12aa330a965d3e3ec01"
       },
       "empty": {
-        "text": "Keine Berechtigungen.",
-        "source_sha256": "fa8f96d4f9e96265ca9a4a65d6cc783a9fdfe1a2cbee3c4d68242e9f5f5de1e4"
+        "text": "אין הרשאות.",
+        "source_sha256": "fbe77cb97633d135f0faedeb04b3c82d878803e204b6ba5f60fb365ca8db097d"
       },
       "reportTitle": {
-        "text": "Berechtigungen",
-        "source_sha256": "036b749f611832b51c8514e668b82324c32a2c9365ded81c870a40fa67c0ef07"
+        "text": "הרשאות",
+        "source_sha256": "abccc78cc93c07931feccfbd0665c003373b48334fd8d4cf5c6d0c714e68f26e"
       }
     },
     "pamPlatform": {
@@ -8886,8 +9117,8 @@
         "source_sha256": "ff8059dc6752afdd30d275932b1d5031a2ec854b387a8c57ecc6689915293a43"
       },
       "colEndpoint": {
-        "text": "Endpunkt",
-        "source_sha256": "fb86696e7b1cdc620ed308d41bb96f28c7ed629fa0582556d98ef82e4c421c15"
+        "text": "נקודת סיום",
+        "source_sha256": "b3d5d3c94cda8374af004ba99a6930441e17e43eb010587a551a6efbdb8d6700"
       },
       "colHash": {
         "text": "בְּלִיל",
@@ -9048,8 +9279,8 @@
         "source_sha256": "f01cabe53b73354c0df215a618cb6a68b699f1b58b0f088c58bcc70eba544f15"
       },
       "openingStatus": {
-        "text": "פותח הפעלה אינטראקטיבית {{label}} ל{{host}}â¦",
-        "source_sha256": "7292b5b9c32db0074306023951a18e34a2cd6f1d388720c688c7cb3e02851d6e"
+        "text": "פותח הפעלה אינטראקטיבית {{label}} ל{{host}}...",
+        "source_sha256": "cd819e9ca391acb19349e7e25e5b14f36b153500dee9a98420476bc3c628754d"
       },
       "points": {
         "text": "נקודות חיבור",
@@ -9638,12 +9869,12 @@
         "source_sha256": "b42a67f70bcd53a812410f7fec974b2ace44c64560674a1dc0f8c03fa86e916e"
       },
       "templatesClone": {
-        "text": "Als eigene Vorlage klonen",
-        "source_sha256": "49cd375428479515149c96d417b4602ad67450d4d67dc9806bd2cd7b44666a4c"
+        "text": "שכפול כתבנית משלך",
+        "source_sha256": "7bac6e368b3ade22bd59fdaea10d4564f0ae36b0b4645eb4da4a0df9668fe30d"
       },
       "templatesEmpty": {
-        "text": "Keine Berichtsvorlagen.",
-        "source_sha256": "f25f983b013f9276e7494362f81bef22063d2c2c0447c8be6416d0b51956d1cc"
+        "text": "אין תבניות דוח.",
+        "source_sha256": "ca6a55ffa9263167ee9a4da6b8bc98d50788a04c99c220f12666eeec94ed8a07"
       },
       "templatesFilterHelp": {
         "text": "סנן קטלוג שנשלח לעומת שכבות-על מותאמות אישית מרובות דיירים. סחף פירושה שגרסת המקור שנשלחה הועברה â סקירה לפני יצירת ייצוא ההערכה הבא.",
@@ -10266,8 +10497,8 @@
         "source_sha256": "83ee93bd9f94039bbde3fbefbc4da41f686dd2416bbef91897b407cca9ead917"
       },
       "clipboard_target_to_client": {
-        "text": "Ziel zum Browser",
-        "source_sha256": "0f1f19cf8c027ad109fbb63b68baf9581c2bf1f3d6e9f67feabfa587f2d3454e"
+        "text": "כוון לדפדפן",
+        "source_sha256": "2b5793a9b16df387bb97f36c0608aea6c5c993ec3dbee7eb9eef6a3f8abc9f49"
       },
       "colActions": {
         "text": "פעולות",
@@ -10406,8 +10637,8 @@
         "source_sha256": "557048661d89e473f0733e15997e4f39722e084ee5c6b5e74351f35693151fbc"
       },
       "role_pam_requester": {
-        "text": "PAM-Antragsteller",
-        "source_sha256": "d5a353930f9c24f593659915a9c0186ddf9eeb68f8117b69a468f9251bf44fd8"
+        "text": "מבקש PAM",
+        "source_sha256": "59cf3b96898e3236d48b1f507fc8ad09aff045127d7cb1684b032f00c5adc14f"
       },
       "role_server_administrator": {
         "text": "מנהל שרת",
@@ -11718,8 +11949,8 @@
         "source_sha256": "af28eb9efc5ce8832b4f855ed66a249d9d26e2377b40221b6282760cd270391d"
       },
       "detailEnrollToast": {
-        "text": "{{created}} eingeschrieben; {{already}} waren in diesem Zyklus schon eingeschrieben.",
-        "source_sha256": "c5cfc2bb69bd5c3b941450891a61781a8547f091e719d08fff5dace8d83b3657"
+        "text": "{{created}} נרשם; {{already}} כבר נרשמו למחזור זה.",
+        "source_sha256": "d674a8e92db6a87db26e1247643eb75d83ddcb06dd099ce0e2b41afbc2bf81f1"
       },
       "detailEnrolledPeople": {
         "text": "Enrolled people",
