@@ -40,7 +40,7 @@
         "source_sha256": "fb37e796c900d4afed1a5aa22ab7e81cdf99d5a21586373cce5fac4844ad091a"
       },
       "copyrightLoadStatus": {
-        "text": "Could not load copyright notice ({{status}}).",
+        "text": "著作権表示 ({{status}}) を読み込めませんでした。",
         "source_sha256": "28fa8cfe871eda938b364984273cad64bb5e5bbe26614c27fec1155112156eed"
       },
       "copyrightLoading": {
@@ -100,7 +100,7 @@
         "source_sha256": "542808be97fac8256ba428d8cc83f3d5ed0b43af2e338d29d4c49122c5ddaa2f"
       },
       "creditsIntro": {
-        "text": "Every third-party open-source component incorporated into AIC Server (Cargo production graph, npm production graph, and incorporated assets). Each row names the project, license, and copyright notice when known. Expand a row to read the license text.",
+        "text": "AIC Server に組み込まれたすべてのサードパーティのオープンソース コンポーネント (貨物生産グラフ、npm 生産グラフ、および組み込まれた資産)。各行には、プロジェクト、ライセンス、および著作権表示 (わかっている場合) の名前が付けられます。行を展開してライセンスのテキストを読みます。",
         "source_sha256": "c52c085bb1b4d48ad292f6a90c64460a54e5fc4a11cb261e0da63942ee025710"
       },
       "creditsLicenseLoadFailed": {
@@ -108,7 +108,7 @@
         "source_sha256": "677dcdc218e9123d78794ea798eb3bc8b1f74e6a5d66bbf91dea8e83914e24d6"
       },
       "creditsLicenseLoadStatus": {
-        "text": "Could not load license text ({{status}}).",
+        "text": "ライセンス テキスト ({{status}}) をロードできませんでした。",
         "source_sha256": "606a3efbe33a9a2d6ccb5b8aae3ffb5a445a345434789293db3d59edc4be8ba1"
       },
       "creditsLicenseLoading": {
@@ -140,7 +140,7 @@
         "source_sha256": "37cbade557d95f3a067cffa03a1c36099fd44681678975f0b8fe75e114a29c1e"
       },
       "creditsNoLicenseBody": {
-        "text": "BLOCKED: no license body could be harvested for this package. It remains listed; the license was not invented.",
+        "text": "ブロックされました: このパッケージのライセンス本体を収集できませんでした。それはリストに残ったままです。ライセンスは発明されたものではありません。",
         "source_sha256": "df364d3f4b017f029c2424ffdd7ac6f452ba2c0c510a6eddd1b3e512cf7120b8"
       },
       "creditsPaginationAria": {
@@ -148,7 +148,7 @@
         "source_sha256": "3f1925a4c8859d54c55c3b7e1c07ef3c4851641d3265845e97b5d4932bfa518b"
       },
       "creditsShowing": {
-        "text": "Showing {{shown}} of {{total}} (page {{page}} of {{pages}})",
+        "text": "{{shown}}/{{total}} ({{pages}}/{{page}} ページ) を表示中",
         "source_sha256": "74159e5b199134f1a88b0e5ad432b3be404d0f16d5fc3caa86317c56bbc65cdd"
       },
       "creditsSource": {
@@ -200,7 +200,7 @@
         "source_sha256": "a55c97bcc6d1147baaca96d7a556d03bb89c4f51ad4d585acc902fb243e2efd7"
       },
       "loadingBuild": {
-        "text": "Loading server build version…",
+        "text": "サーバーのビルド バージョンを読み込んでいます…",
         "source_sha256": "d6efae4ca48d8d172c32cacde94d876c5718f3ad7edcdf6983a1db882108877d"
       },
       "notReported": {
@@ -464,7 +464,7 @@
         "source_sha256": "8fcb5d73c117ce04a9440b9dfb2b339f0db51ca40229c20e2192e19323de9d18"
       },
       "iamIpWindowHelp": {
-        "text": "30 to 86400 seconds. Default 300.",
+        "text": "30 ～ 86400 秒。デフォルトは 300。",
         "source_sha256": "e255b707917044bdd371515a701e7fa63efe0f7731e169ad4402a8159e8af297"
       },
       "iamLockout": {
@@ -492,7 +492,7 @@
         "source_sha256": "af5ddaa1cf976fb1f9ef7ac477a0752240baf557cc6983ab3b29c37b685727ba"
       },
       "intro": {
-        "text": "Stops guessing attacks after too many failed sign-ins from one network address. These settings apply to this server. Turn lockout off only when you mean to.",
+        "text": "1 つのネットワーク アドレスからのサインインの失敗が多すぎると、推測攻撃を停止します。これらの設定はこのサーバーに適用されます。意図した場合にのみロックアウトをオフにしてください。",
         "source_sha256": "559a1cb3c4d9a148c0dab024ef8ef3deb05ef12a4cf73cd45e3263d8cd6a4eee"
       },
       "lockout": {
@@ -520,7 +520,7 @@
         "source_sha256": "73c5c0385f996ebe340b71b6fdd3fb56a00e3aacd42f0a70dd17dcf61ed6c4a3"
       },
       "thresholdAria": {
-        "text": "Failed shared-token tries before lockout",
+        "text": "ロックアウト前の共有トークン試行の失敗",
         "source_sha256": "e1aab1338a4ed6a75ff2663ce40ccbeac615f1ce3e485866b53efefc098f5d40"
       },
       "thresholdHelp": {
@@ -550,7 +550,7 @@
         "source_sha256": "410083735735a10e658a19edd1704e606c9dd112e225825b63fafeded766c8b9"
       },
       "allowListCount": {
-        "text": "{{count}} allow-list entry(ies)",
+        "text": "{{count}} 許可リスト エントリ",
         "source_sha256": "38d3dbf8348a370d47cfa2044522a2be65cc7c738ff30a50afb5d6d09c0c92ad"
       },
       "baselineAlways": {
@@ -602,7 +602,7 @@
         "source_sha256": "7db3789d3f523deb7bbdf24d69c473a0f6de23d6ef6080d6b32769572cef4485"
       },
       "currentCommandPolicy": {
-        "text": "Current global command policy",
+        "text": "現在のグローバル コマンド ポリシー",
         "source_sha256": "f726a058dda093a9bf76efbae6ef706fc1e39f4ca1f33e5830a6eb6a74d9cbf3"
       },
       "currentLaunchPolicy": {
@@ -718,7 +718,7 @@
         "source_sha256": "4803e69d849883ced3c2f4783a85a3acab8f496e08157c9f7b48c6dc0f0e45ad"
       },
       "launchIntroAfter": {
-        "text": "Endpoint kill/deny enforcement (G2) remains agent-mediated; this surface proves policy decisions and audits the preview.",
+        "text": "エンドポイントの強制終了/拒否の強制 (G2) は引き続きエージェント仲介です。この表面はポリシーの決定を証明し、プレビューを監査します。",
         "source_sha256": "94a1e6c40070fd5849e2b4fce1b4834a3fb6acb844f6d36edd486c60664b03ab"
       },
       "launchIntroBefore": {
@@ -870,7 +870,7 @@
         "source_sha256": "7fdc0d1ee20bed8e33223f8429335984990806669b54f6677bfd47e4f4c27244"
       },
       "stage7Body": {
-        "text": "The always-on baseline dangerous-command blocklist is applied first and can never be re-enabled by an operator allow rule (deny-wins). Then operator deny rules (deny always wins), then — if a fail-closed allowlist is enforced — anything not matched by an allow rule is denied.",
+        "text": "常時オンのベースライン危険コマンド ブロックリストが最初に適用され、オペレーター許可ルール (拒否勝利) によって再度有効にすることはできません。次に、演算子拒否ルール (常に拒否が優先) が適用され、フェールクローズ許可リストが適用されている場合、許可ルールに一致しないものはすべて拒否されます。",
         "source_sha256": "fd95d274ec80c3e0010a06059c1e2686c05214ea0d33847d4af6ad2b9d0c6f1f"
       },
       "stage7Title": {
@@ -1092,7 +1092,7 @@
         "source_sha256": "c81da7e67a9d6ddbd62551ee5194d30eac129c20d20ec5e1219448f65297689e"
       },
       "attestAria": {
-        "text": "Record lab attestation for target-local recording on {{name}}",
+        "text": "{{name}} でのターゲット ローカル記録のラボ認証を記録します",
         "source_sha256": "164233cc1c2f3bbf5f56ba425b2c2e83bef5dd6753bec20b5d9a3f1668d789eb"
       },
       "attestFailed": {
@@ -1120,7 +1120,7 @@
         "source_sha256": "19766ed6ccb2f4a32778eed80d1928d2c87a18d7c275ccb163ec6709d3eb2e27"
       },
       "cancelAddAria": {
-        "text": "Cancel add connection point",
+        "text": "接続ポイントの追加をキャンセルします",
         "source_sha256": "6c8a9c0a4398f4a430ad69f92d8a8d7a8a99a6f280a7b1a214e96f86d44da927"
       },
       "cancelAddHelp": {
@@ -1200,7 +1200,7 @@
         "source_sha256": "f31852a4d7f347209a794e8cafee499d07a81de9bee784ec21a4f7905b66412d"
       },
       "emptyHostFilter": {
-        "text": "No connection points match host ",
+        "text": "ホストに一致する接続ポイントがありません",
         "source_sha256": "f0ce0532d6e3dc89859faba7f6911f8550ef4d2695d8754f4c5ed565b2adad6b"
       },
       "emptyNone": {
@@ -1236,7 +1236,7 @@
         "source_sha256": "fd30fe681b4b2d9e55f851cb34641f907401aa43e9d80f5b1e14ce714ef00497"
       },
       "joinAria": {
-        "text": "Join {{protocol}} session as supervisor",
+        "text": "スーパーバイザとして {{protocol}} セッションに参加します",
         "source_sha256": "dcb95c4e15700a03acf6d3fe97777f56360b6c4dda3b3c69614f3f6f0f4498b2"
       },
       "joinDeadSession": {
@@ -1444,7 +1444,7 @@
         "source_sha256": "b06f1662da4a13362baa31f7c123d25e8565df0da5e01c131345ac71c6317915"
       },
       "requestAccessAria": {
-        "text": "Request access to {{name}}",
+        "text": "{{name}} へのアクセスをリクエストする",
         "source_sha256": "b8b034115aa970db46a35cac79b2bd2d797bb94765afcb2c0f8942d875e22f0b"
       },
       "requestAccessBanner": {
@@ -1568,7 +1568,7 @@
         "source_sha256": "effbdc6cf352bf420703af0a5849791e4ce853332bf7ffe0f9b3a9299c7c0f19"
       },
       "reportSubtitle": {
-        "text": "Delivery evidence only — not a compliance verdict",
+        "text": "納品証拠のみ - コンプライアンス判定ではない",
         "source_sha256": "2ccb6dcb1efdfbdedbd40d7858c216df0b94e78e8c97b6f0681647cc1e1e0a4b"
       },
       "statControls": {
@@ -1670,7 +1670,7 @@
         "source_sha256": "8b4c82401c9c9ecefe4d2553ed57913ccd5bb1449705931f1318d32478f9da4a"
       },
       "driftCount": {
-        "text": "Drift in window: {{count}}",
+        "text": "ウィンドウ内のドリフト: {{count}}",
         "source_sha256": "7fbc16e521d20761a8d378259f35db3b9608aad790353cd6caf169be2b917ab8"
       },
       "driftEmpty": {
@@ -1682,7 +1682,7 @@
         "source_sha256": "3ff101d2e5e7c7ccfebb745aba07b1e3914e998a9e348cefdd7667147b9880d4"
       },
       "driftSubtitle": {
-        "text": "Delivery regressions only — not a compliance verdict",
+        "text": "配信の回帰のみ - コンプライアンスの判定ではない",
         "source_sha256": "d61c5d2ec395887977c480dbb4e5ebf594a49ff92e76b6a84eecde9857d90fde"
       },
       "driftTitle": {
@@ -1830,7 +1830,7 @@
         "source_sha256": "19734a1b58cabc22cae1f88493289ee94f40ff2b350f7f1b9f7011ea84096916"
       },
       "windowLastDays": {
-        "text": "Window: last {{days}} days.",
+        "text": "期間: 過去 {{days}} 日間。",
         "source_sha256": "ca4085c0c190f67a8102d8c4f52ca2a75343150af1b55669c2c1b50f69de7588"
       }
     },
@@ -1988,7 +1988,7 @@
         "source_sha256": "2d3e7bd0f1bb60ab9487eeda2ec2c8cf08cb176539b0954d50b008ee5d9bf412"
       },
       "rotationFailedWithMsg": {
-        "text": "Rotation failed: {{message}}",
+        "text": "回転に失敗しました: {{message}}",
         "source_sha256": "ead199888001be3f7d3f90998408848d664dd1fe06ec158c9b5d9a3d519b4793"
       },
       "secretsMismatch": {
@@ -2140,7 +2140,7 @@
         "source_sha256": "1addddcb9d097c6bb3621403b39b9b2dd1dad2bb2cdde9de7ab0ba4bdc7ae9a2"
       },
       "importCsvAria": {
-        "text": "Import customer sensitive apps CSV",
+        "text": "顧客に依存するアプリの CSV をインポートする",
         "source_sha256": "171c669aab018a3ccc7ec98c55d455c6c017d10b7dd7c69114ba8a1074876702"
       },
       "intro": {
@@ -2148,7 +2148,7 @@
         "source_sha256": "4c8509e9a4b01a1a3ffdd52c90dcfc6276ccaf0dcbdb4acc5f8685f2b1c4f96a"
       },
       "loadFailed": {
-        "text": "The rule list could not be loaded. Check that the server is running and that you are signed in.",
+        "text": "ルールリストをロードできませんでした。サーバーが実行中であり、サインインしていることを確認してください。",
         "source_sha256": "8208f1fa8e23d4aa3f4745c4bea3a4eca56ed94c2696655756c32d4e981713ed"
       },
       "mintAria": {
@@ -2456,7 +2456,7 @@
         "source_sha256": "0cc56a99c52ed192ce7e673d4717e7fa7cdbd4dd9c45f0596c13f03abb3565a6"
       },
       "addedOne": {
-        "text": "Page added to My Favorites.",
+        "text": "ページがお気に入りに追加されました。",
         "source_sha256": "135e3a35984f953c0027fba8489671b6b8817fdb5a7b270652274687cbd6ae0b"
       },
       "clearMyFavorites": {
@@ -2484,7 +2484,7 @@
         "source_sha256": "d6c4511be87762c1ca7c974206941c0c7b87cd540a73f2e3b910cf3a7c4ed483"
       },
       "mineEmpty": {
-        "text": "You have not pinned any pages yet. Choose Add Favorite to start.",
+        "text": "まだページを固定していません。 [お気に入りの追加] を選択して開始します。",
         "source_sha256": "9d3df9eb874afdc45d76b4c82bf674ad7ebac01c4a7fc28250886fe6ca6de49e"
       },
       "mineTitle": {
@@ -2550,7 +2550,7 @@
         "source_sha256": "165ef2671c866e3241001c39221351a30c316418dcc36dd3cb03a77154ebb77f"
       },
       "relatedHelp": {
-        "text": "Opens existing admin surfaces — this page does not re-implement them.",
+        "text": "既存の管理画面を開きます。このページはそれらを再実装しません。",
         "source_sha256": "899ae0be2939955ef0f9d612248940798c07c38a9ca25389d8f0191954608400"
       },
       "subtitle": {
@@ -2584,7 +2584,7 @@
         "source_sha256": "2d53b8c30b8268ab7feb8dd222d6a55442f23cbc8c2bca2c36b480a9cbe2641b"
       },
       "checkingAria": {
-        "text": "Checking HSM API availability",
+        "text": "HSM API の可用性を確認する",
         "source_sha256": "3d8289cd6dc8384613db2e7aef9595b0fde02efcd1ca70aa8f6ab47abef20ba8"
       },
       "colActions": {
@@ -2882,7 +2882,7 @@
         "source_sha256": "0cd1fff2a129ea39a4e646c69ddba434dc7557e3bc19644609ac30f7fcb3ab6f"
       },
       "empty": {
-        "text": "No hypervisor connections yet. Add a local Hyper-V or Docker connection, or a cloud / on-prem endpoint for production.",
+        "text": "ハイパーバイザー接続はまだありません。ローカルの Hyper-V または Docker 接続、または実稼働用のクラウド/オンプレミスのエンドポイントを追加します。",
         "source_sha256": "c876336f04be2b819dcbff3ce5fa003714e9af32a88da0930bc49769360efb43"
       },
       "enabled": {
@@ -3102,7 +3102,7 @@
         "source_sha256": "bcb4ba3cce359cfe47ca32dfe7de6fa25e208ca011b5ee34fc0d0a5d78e86ab4"
       },
       "diagramTitleCurrent": {
-        "text": "Incident Response process ({{role}}) — current phase: {{phase}}",
+        "text": "インシデント対応プロセス ({{role}}) — 現在のフェーズ: {{phase}}",
         "source_sha256": "af7c7d7fc95f70f9a4e22ff4456736cda633697099a82b72358f3d18cead6408"
       },
       "dialogTitle": {
@@ -3222,7 +3222,7 @@
         "source_sha256": "bc0e98a1fc7415168c9cafc3dc3fdf57e71094fdd1aa7a4425276964fc6167c5"
       },
       "stageHelper": {
-        "text": "Phase 0 open: Detect or Triage",
+        "text": "フェーズ 0 オープン: 検出またはトリアージ",
         "source_sha256": "dad005403e2e20654565a6b9185e4e70fec4ea655532bad146ab1028d896b7c4"
       },
       "stageLessons": {
@@ -3736,11 +3736,11 @@
         "source_sha256": "31ee71dbc84c53cf5c65dbc3780a61ea4d2eda7accb34bcfa7f32dfa3905a202"
       },
       "turnOffPlane": {
-        "text": "Turn off jump recording plane",
+        "text": "ジャンプ記録プレーンをオフにする",
         "source_sha256": "9ca7bc1f3b77a880c8506b7da30cce97da5569ffa36c8e5d56a7a0e54c8c7272"
       },
       "turnOnPlane": {
-        "text": "Turn on jump recording plane",
+        "text": "ジャンプ記録プレーンをオンにする",
         "source_sha256": "bc3e12da8102993b007a6bd6dde4d04990941c40557a527436025da5900093c9"
       },
       "unhealthyHostLead": {
@@ -4036,7 +4036,7 @@
         "source_sha256": "038d4ed4b83230ba5503279146b300adda960c14c831b4d4469998019404a5b7"
       },
       "importFailed": {
-        "text": "License import failed. Check the package and try again.",
+        "text": "ライセンスのインポートに失敗しました。パッケージを確認して、もう一度試してください。",
         "source_sha256": "b0bec4fb6ad7d1ba45abbb3a3bac5425d5a4523f83973a3af89378dfd09665fb"
       },
       "importNeedsPermission": {
@@ -4048,7 +4048,7 @@
         "source_sha256": "5660423aa2bebb10d02cce4b86133462256cc259cae6e4b2222d0bbee490cb48"
       },
       "importStep1Body": {
-        "text": "Paste the signed package or choose the file you received. Import replaces the key now on this server.",
+        "text": "署名されたパッケージを貼り付けるか、受け取ったファイルを選択します。インポートにより、このサーバー上のキーが置き換えられます。",
         "source_sha256": "4361a224b4781787ffc98a91e66d22a8a46250ddde01197098d40cf629be8479"
       },
       "importStep2Body": {
@@ -4538,7 +4538,7 @@
     },
     "localEnrollment": {
       "accountNow": {
-        "text": "Account {{username}} is now {{status}}.",
+        "text": "アカウント {{username}} は {{status}} になりました。",
         "source_sha256": "fe46cfb6ee89901f7413d86b6afa2171b64c106ac64484bf897d62624027d21e"
       },
       "accountStatus": {
@@ -4622,7 +4622,7 @@
         "source_sha256": "da404deb110f7cc92a5b2c85c8e8ab103bd48837cf300f8387d13d54f3adea65"
       },
       "dialogSubtitle": {
-        "text": "Local account enrollment — Secure Share, roles, recovery contact",
+        "text": "ローカル アカウントの登録 - 安全な共有、役割、回復連絡先",
         "source_sha256": "c44527e8e56750ed4c0a2c85c1e8a08ca57f12a37a8f4afda34342c833dd70cb"
       },
       "dialogTitle": {
@@ -4730,7 +4730,7 @@
         "source_sha256": "b2a591fafa0ce8432f02745242df9f9006ec46e2528ece3de475e094e4688555"
       },
       "phoneInvalid": {
-        "text": "Geben Sie a gueltige Telefonnummer in the E.164-Format a (Beispiel: +15551234567).",
+        "text": "E.164 形式の電話番号を取得します (Beispiel: +15551234567)。",
         "source_sha256": "146e2fdbebcc868265ec569f85cf27fce85a24ed30037ddff44084ddc103a702"
       },
       "profileAndAccess": {
@@ -4750,7 +4750,7 @@
         "source_sha256": "35e41faf666a60eb6598b6b8462da285f104bb1a02832cdbe1c6cbbdb6b57b5e"
       },
       "recoveryEmailRequired": {
-        "text": "Recovery email is required.",
+        "text": "回復メールが必要です。",
         "source_sha256": "57f71b5e3010a41f72268e117e6a5077d3b122d3407fa4431cb8849d6e943ec8"
       },
       "recoveryPhone": {
@@ -4854,7 +4854,7 @@
         "source_sha256": "e3b89e9d33f88e523083d8b4436adcc3726c89e97fd3179a2e102d765d1b16ed"
       },
       "usernameHelper": {
-        "text": "Local login name — not a domain account.",
+        "text": "ローカルのログイン名 - ドメイン アカウントではありません。",
         "source_sha256": "3c53eb05d0719a2cd6ee2230cccfde28046d65711625885e35cd9341f83feb1e"
       },
       "usernameRequired": {
@@ -4900,7 +4900,7 @@
         "source_sha256": "4f577fa4ccb361b931537acde3c77241768b379317e2428e28b5ac9d980a84da"
       },
       "chipAuditor": {
-        "text": "Auditor — reports/binder write, Secure Share consume, audit read",
+        "text": "監査人 - レポート/バインダーの書き込み、セキュア共有の消費、監査の読み取り",
         "source_sha256": "e4571778fc7577443f6ec0e5186f22189373ebe33c6050ffadd966165cc5e42e"
       },
       "chipEnclaveUser": {
@@ -4932,7 +4932,7 @@
         "source_sha256": "e2d0a54968ead24efc0dffa6ac78fc606dceec34a0f586177a74a54cc2272cf8"
       },
       "deniedPrefix": {
-        "text": "You do not have permission to manage local users. Ask a Super Administrator, an Identity Administrator, or a Lead Auditor (auditor-class accounts only). Assessor documentation:",
+        "text": "ローカル ユーザーを管理する権限がありません。スーパー管理者、アイデンティティ管理者、または主任監査人 (監査人クラスのアカウントのみ) に問い合わせてください。評価者のドキュメント:",
         "source_sha256": "2cb07aedd12e71f8f77c989dd2caf84d95fe4ff811e6560bcea19f07ae2909ad"
       },
       "deniedSummary": {
@@ -4944,7 +4944,7 @@
         "source_sha256": "366f3c5ca261dc7ed6d2844582b2c49f5f9e0aaf33459e4807cfee3735234a74"
       },
       "helpAriaLabel": {
-        "text": "Open help for Local IAM administration",
+        "text": "ローカル IAM 管理のヘルプを開く",
         "source_sha256": "d0b9fa117f84a059df99a4d1a7471867e63b1989c01ce5abf225b383405c117e"
       },
       "localGroup": {
@@ -5060,7 +5060,7 @@
         "source_sha256": "d37cf0494422dd406cebc25b8a4f697bae2fcc6a9917bd0fe19282d63b4932af"
       },
       "emailIntro": {
-        "text": "Choose an email send system (SMTP is one option). Use Test connectivity / authentication for step-by-step diagnostics, then Test send to deliver a message. Secrets are never written to the step log.",
+        "text": "電子メール送信システムを選択します (SMTP はオプションの 1 つです)。ステップバイステップの診断には「接続/認証のテスト」を使用し、メッセージを配信するには「送信のテスト」を使用します。シークレットがステップ ログに書き込まれることはありません。",
         "source_sha256": "22186e4551538012df33794c39a08a80928eb5f0641a48b7fade262a07a17187"
       },
       "emailLoadFailed": {
@@ -5084,7 +5084,7 @@
         "source_sha256": "72e9a59f5a1d6289dbacb35df897d6c007c55a27e77018455c37e7b372668475"
       },
       "emailPortHelper": {
-        "text": "587 (STARTTLS) / 465 (Implicit) / 25 (None)",
+        "text": "587 (STARTTLS) / 465 (暗黙的) / 25 (なし)",
         "source_sha256": "b291d7120fd6e234c1a18c7015e9180419bbf442352abca24033fd72719a5cc4"
       },
       "emailProbeHeading": {
@@ -5124,7 +5124,7 @@
         "source_sha256": "62e9e14986b3a757c923938ce168217c3c8bb83038c91fee162f391e7ee92055"
       },
       "emailSaveFailed": {
-        "text": "Save failed: {{message}}",
+        "text": "保存に失敗しました: {{message}}",
         "source_sha256": "1081c9d5d20e90f8ddeea79ea0e9a6baf353b05f25c5f962c74eb8b3c0762981"
       },
       "emailSendEncrypted": {
@@ -5218,17 +5218,17 @@
             "source_sha256": "84b7187a81b0f93d6f29f42161f85f105fe80e2da348f1d5d83fae4b5b132f3c"
           },
           "notes": {
-            "text": "Requires Graph app configuration. Honest Live subset for Exchange Online transport.",
+            "text": "Graph アプリの構成が必要です。 Exchange Online トランスポート用の 正直な Live サブセット。",
             "source_sha256": "1182cbddf17269844a95726066b51e6a527478e2b302fd05df00caab116c95a6"
           }
         },
         "openpgp_rfc9580": {
           "description": {
-            "text": "PKESK v3 + SEIPDv1 (AES-256-CFB) with AWS-LC only — no ring. Accepts OpenPGP or PEM keys.",
+            "text": "PKESK v3 + SEIPDv1 (AES-256-CFB) AWS-LC のみ - リングなし。 OpenPGP または PEM キーを受け入れます。",
             "source_sha256": "b1e8274a5c8f7af65dd6da8d535ee05483663109544f0e674e01a830887e4eff"
           },
           "label": {
-            "text": "OpenPGP (RFC 9580 subset)",
+            "text": "OpenPGP (RFC 9580 サブセット)",
             "source_sha256": "ff15f3a6ab70999043d7f23e2dc7a5d339be00498f9045519cddd2eedb8cc0b9"
           },
           "notes": {
@@ -5246,13 +5246,13 @@
             "source_sha256": "a5beb77dff0b745f54570e7c8e08ba63defd91d02b21cd391375dbc4db85e36d"
           },
           "notes": {
-            "text": "Dual-live KeyManager (AWS-LC + HSM); AC-16 markings in package metadata.",
+            "text": "デュアルライブ KeyManager (AWS-LC + HSM);パッケージメタデータ内の AC-16 マーキング。",
             "source_sha256": "e6b34623d4864c5d8500db305bc529f7147ffba65e1dceeb897591dc00950e77"
           }
         },
         "smime_enveloped": {
           "description": {
-            "text": "RFC 5652 CMS EnvelopedData as application/pkcs7-mime: AES-256-CBC content encryption and RSA PKCS#1 key transport.",
+            "text": "RFC 5652 CMS EnvelopedData as application/pkcs7-mime: AES-256-CBC コンテンツ暗号化と RSA PKCS#1 キー トランスポート。",
             "source_sha256": "a9bf034da05932b2e5c6129c1e14670d573a1a2746863fe9cbe6e3b2730cbcbc"
           },
           "label": {
@@ -5466,7 +5466,7 @@
         "source_sha256": "b79296f1d39e5cc9c6b177210c04546596e13538719140c0f540d62b99fd9d87"
       },
       "dialogEditTemplateTitle": {
-        "text": "Edit Template — {{name}}",
+        "text": "テンプレートの編集 — {{name}}",
         "source_sha256": "527f316a5cb4bd7b111489f806de7f1fdad96de59cbd71a51ef05c27337bbd07"
       },
       "dialogCreateSnippetTitle": {
@@ -5490,7 +5490,7 @@
         "source_sha256": "b41952dfad6a611574b87a30bbb117f86b266424bae945c57100aa4aa43096e9"
       },
       "dialogSnippetNameHelper": {
-        "text": "Reference from templates as {snippet:name}",
+        "text": "{snippet:name} としてテンプレートから参照",
         "source_sha256": "7c2cac1d4abb933d07384ec2e8eb25da5fa1ba7eb8327fe76d3aa10d174ae552"
       },
       "dialogGroup": {
@@ -5514,11 +5514,11 @@
         "source_sha256": "f6f4688ff23d50c67053963c251fa0ce64a925cf283537cf066b1f362cb9b778"
       },
       "dialogEncryptedEmailTitle": {
-        "text": "Send encrypted email (CUI)",
+        "text": "暗号化された電子メールを送信する (CUI)",
         "source_sha256": "0e6b73eac42d5b38b50786ac9fbaa0c6239c2e5ee6a87beaf8697bf1b13d5291"
       },
       "dialogEncryptedEmailBody": {
-        "text": "Clear CUI never rides in the message body. Choose a Live standard; the sensitive payload becomes an encrypted attachment. Microsoft Graph OME delivers that attachment via Graph sendMail — it is not Azure Purview IRM.",
+        "text": "Clear CUI がメッセージ本文に乗り込むことはありません。 Live スタンダードを選択します。機密ペイロードは暗号化された添付ファイルになります。 Microsoft Graph OME は、その添付ファイルを Graph sendMail 経由で配信します。これは Azure Purview IRM ではありません。",
         "source_sha256": "54b94c8be32dcb143b4350ec6c119700cc24abbaff1af3dde532538cf160e126"
       },
       "dialogEncryptedEmailRecipient": {
@@ -5526,7 +5526,7 @@
         "source_sha256": "51fac985e95345d90b3c8a69f5e60003cbbd47a06efdcf0270d76be85b408657"
       },
       "dialogEncryptedEmailRecipientHelper": {
-        "text": "e.g. you@example.com or your configured SMTP sink",
+        "text": "例えばyou@example.com または設定された SMTP シンク",
         "source_sha256": "9d879f269db276fb21b50b695d828b507ddea578b929e639350c74f387a8103c"
       },
       "dialogEncryptedEmailStandard": {
@@ -5538,11 +5538,11 @@
         "source_sha256": "68971283841aecdf1da48428849b3b33164ec5c41d0f3c4d6cea624db5aff8f2"
       },
       "dialogEncryptedEmailPlaintext": {
-        "text": "CUI plaintext (attachment only)",
+        "text": "CUI 平文 (添付ファイルのみ)",
         "source_sha256": "fdde27dba5ff9faff1706b7b40256d7110c988f5000ac471c8f052b9e91bc18c"
       },
       "dialogEncryptedEmailPlaintextHelper": {
-        "text": "Never pasted into the SMTP body when marking is CUI",
+        "text": "マーキングが CUI の場合は SMTP 本文に貼り付けられません",
         "source_sha256": "a21087901759d9dd6d6ba47d07691561a9e9b60da639e9a822dc6cd5080b75f3"
       },
       "dialogEncryptedEmailStatusBody": {
@@ -5550,7 +5550,7 @@
         "source_sha256": "0d9e466a65b09e419eb384c11643bb5fa66644a23035907c1d9aee56863ab858"
       },
       "dialogEncryptedEmailStatusHelper": {
-        "text": "Optional. Leave blank for the default status-only notice.",
+        "text": "オプション。デフォルトのステータスのみの通知の場合は空白のままにします。",
         "source_sha256": "ff094ec9bdadd94ab8d154fdecaa3368938b64bf05d9005e2cf9f54f6520f08d"
       },
       "dialogEncryptedEmailPassphrase": {
@@ -5566,15 +5566,15 @@
         "source_sha256": "7cde746219b59803d412ee27b6de148bfec1482ca8b3a06f8e4b4c7d07376184"
       },
       "dialogTestSmsBody": {
-        "text": "Uses the saved SMS provider. Save settings first. Optional media URLs enable MMS when the provider supports it.",
+        "text": "保存された SMS プロバイダーを使用します。まず設定を保存します。プロバイダーが MMS をサポートしている場合、オプションのメディア URL により MMS が有効になります。",
         "source_sha256": "af4b28e23155ad1fee112fa420ca1cd784c1e22b2d433b32f95c71aaf646eac1"
       },
       "dialogTestSmsMedia": {
-        "text": "MMS media URLs (optional)",
+        "text": "MMS メディア URL (オプション)",
         "source_sha256": "51f57eb5f91d1e4196d74b8fd0e1caf39e83acc2425e409f0925f37b4f2974e9"
       },
       "dialogTestSmsMediaHelper": {
-        "text": "Space- or comma-separated HTTPS URLs",
+        "text": "スペースまたはカンマで区切られた HTTPS URL",
         "source_sha256": "c749254ad80d1858e5f019e254a916528294d192faa5b4170a44de48a2fe1643"
       }
     },
@@ -5642,7 +5642,7 @@
         "source_sha256": "16cb4baa32af5cc7fed02f78f7ac21b2fc00d0a2cd71617a0c1b3588f1a308ab"
       },
       "authorizingSession": {
-        "text": "Authorizing a recorded session on {{name}}.",
+        "text": "{{name}} での記録されたセッションを承認します。",
         "source_sha256": "455daa76f2529c68c98b32638177a41951c57b0fcbec58b97f82d4302f4d109e"
       },
       "autoSleepIn": {
@@ -5670,7 +5670,7 @@
         "source_sha256": "0b98122378447780dd8018ecf63b4aa2d7f22c7a76490846413811d4adbc9912"
       },
       "cannotConnectAria": {
-        "text": "Cannot connect to {{name}}: {{label}}. {{detail}}",
+        "text": "{{name}}: {{label}} に接続できません。 {{detail}}",
         "source_sha256": "5bff3c27884627063223e8c869d67b22513721382b32b557a5237add54bf427b"
       },
       "cannotConnectCheckingAria": {
@@ -5678,7 +5678,7 @@
         "source_sha256": "5c3d2a8904f49e86fff027e2511771550afcbbef0f5e3dbede0da0d91058aa30"
       },
       "cannotConnectHelp": {
-        "text": "Cannot connect: {{label}}. {{detail}}",
+        "text": "接続できません: {{label}}。 {{detail}}",
         "source_sha256": "7bc19bd5036fea9877cccb18833bcc6cb9fd1970981dc043d0bc658f70b366c1"
       },
       "cannotConnectUnreachableAria": {
@@ -5726,11 +5726,11 @@
         "source_sha256": "4c02f5c5466b0c4c336e448a2777e67313c3708277eb1ac162ee7fd65fef5105"
       },
       "emptyAdminHint": {
-        "text": "As an enclave administrator, assign a workstation to this principal under Local IAM → Assets (session account must match the Remote Access connection target default account).",
+        "text": "エンクレーブ管理者として、[ローカル IAM] → [資産] でワークステーションをこのプリンシパルに割り当てます (セッション アカウントはリモート アクセス接続ターゲットのデフォルト アカウントと一致する必要があります)。",
         "source_sha256": "8421590adc45234e8247dcf37ec79a5469953f31a8986768d17bc5da747a5014"
       },
       "emptyAskAdmin": {
-        "text": "Ask your enclave administrator to assign a workstation to your account under Local IAM → Assets. Requesting access from this page is not available yet.",
+        "text": "エンクレーブ管理者に、[ローカル IAM] → [資産] でアカウントにワークステーションを割り当てるよう依頼してください。このページからのアクセスのリクエストはまだ利用できません。",
         "source_sha256": "b19aaedfce5fd29100dc97d82cb5eab549bb148418df3d533a8a1ddb877d12b4"
       },
       "emptyAssignHelp": {
@@ -5742,7 +5742,7 @@
         "source_sha256": "7c174e1107137ae47fb4826428b12d07bc21aaed32d2e467fbe72d5c6c6c996d"
       },
       "emptyTitle": {
-        "text": "No workstations are assigned to you yet",
+        "text": "まだワークステーションが割り当てられていません",
         "source_sha256": "031a6697cb2e8b20513e69eeacdbc5326c0fd91c62cb08938760c6634499e2eb"
       },
       "enclaveRecordingProxy": {
@@ -5774,7 +5774,7 @@
         "source_sha256": "d70757dc7f3272b84defae2ff880e9d17054ccd38f472636f36a02ccdb88c94a"
       },
       "giveReasonToAdmin": {
-        "text": "If you cannot make that change yourself, give this reason to your enclave administrator so they can complete the steps above.",
+        "text": "自分で変更できない場合は、エンクレーブ管理者にその理由を伝えて、上記の手順を完了できるようにしてください。",
         "source_sha256": "c56049fc3881f40c72cd2c0f7cac1faa86c950c3a45107da35549c4e3d336cc6"
       },
       "goesOffDaily": {
@@ -5802,7 +5802,7 @@
         "source_sha256": "3c3163d4381c76c4cf71cf5a2a9819b39492a4ce40f730be7196ab20a467a27f"
       },
       "helpOpenVmManagement": {
-        "text": "Opens VM management so an administrator can fix power or capacity for this seat.",
+        "text": "VM 管理を開くと、管理者はこのシートの電力または容量を修正できます。",
         "source_sha256": "48e27d5dd413c101556cf90412c9eb55dcf516b8fcfc1b28b79e153580a3e1e4"
       },
       "helpUnreachable": {
@@ -5846,7 +5846,7 @@
         "source_sha256": "4eb39d36fd72a55a4169bc0a72c5f0553c4da57d98912cf28ff60e2a5577db1b"
       },
       "keepAwakeAria": {
-        "text": "Keep {{name}} awake for a long task",
+        "text": "長いタスクのために{{name}}を起きたままにしてください",
         "source_sha256": "a54c671eb71809f77127b054c6bdff920043b58132b9639a2765d732b1081b0d"
       },
       "keepAwakeDialogBody": {
@@ -5878,7 +5878,7 @@
         "source_sha256": "5bccb7020b46a72702f99cc22c7c3e00243b796ddcff96f8be77d207d425aaab"
       },
       "loadingWorkstations": {
-        "text": "Loading your workstations…",
+        "text": "ワークステーションをロード中…",
         "source_sha256": "2e026ba24fc1b84c1dcd4d6ed40e4395d38d472e359ae29122426914651cba8f"
       },
       "longRunningWork": {
@@ -5886,7 +5886,7 @@
         "source_sha256": "05eb135f48c08b20380fa1ec5edb62237424c2158e0c6d3f4c64a4c714ab71b5"
       },
       "nextStepFallback": {
-        "text": "Complete the missing connection configuration so Connect can open a recorded session.",
+        "text": "Connect が記録されたセッションを開くことができるように、欠落している接続構成を完了します。",
         "source_sha256": "6a7b7b2854c4d22479d9a7e043ad47399b61ca1ec3ecc0a6d9cfde79cb643776"
       },
       "noPasswordNeeded": {
@@ -5922,7 +5922,7 @@
         "source_sha256": "b205bb47f81a30968789eac28cefb848c4b849245d4d12f9311557c5f56ce770"
       },
       "openSessionAria": {
-        "text": "Open recorded session on {{name}}",
+        "text": "{{name}} の録画セッションを開く",
         "source_sha256": "a4b15d6b3723383a3c9e23f769abe5c6df58e3ede5f37c15753f690b2f85d0bb"
       },
       "openSessionJumpMissing": {
@@ -5958,7 +5958,7 @@
         "source_sha256": "f75be6ffa5f46dbb4d364d9361644ba191f1db196108078e50905c467dfe61b5"
       },
       "recordedByEnclave": {
-        "text": "Recorded by the enclave server",
+        "text": "エンクレーブサーバーによって記録される",
         "source_sha256": "5186814bbc0f439774ce15eaab95121023aa629f628227dca178eb1402e6a7a2"
       },
       "recordedOnWorkstation": {
@@ -5970,7 +5970,7 @@
         "source_sha256": "e3c904db78fdff1a1690eebeb3083eb379968aee399e6692387f60601c18b8a1"
       },
       "recordingAvailableAria": {
-        "text": "Recording available: {{label}}",
+        "text": "録音可能: {{label}}",
         "source_sha256": "8173422548771e5b67b711816706cfcfe9445f40e212f177c04810296f81f561"
       },
       "recordingBody": {
@@ -6010,11 +6010,11 @@
         "source_sha256": "8254285d673bbc73963ed7810f4bc4b8a378dbf5803b7a650ce7ac5c00eaac3c"
       },
       "seatNotReachable": {
-        "text": "Connect blocked — seat not reachable",
+        "text": "接続がブロックされました — 座席に到達できません",
         "source_sha256": "d7d052e8a716016afb350b6943c2112a6a9a2dc13d30fc0ad64bb56e3644dca5"
       },
       "sessionAuthorizedOn": {
-        "text": "Session authorized on {{name}}. {{placement}}.",
+        "text": "{{name}} にセッションが承認されました。 {{placement}}。",
         "source_sha256": "a76349f30d479c641c0b3e8a1f46ce75a26f4f8db4cf23049abf55a6ca55d6fe"
       },
       "sessionRecordedBody": {
@@ -6158,7 +6158,7 @@
         "source_sha256": "b227a038322afd9f26684321ed230c830b628e20bf0ca6802c3696eeee9d7630"
       },
       "scheduleHelp": {
-        "text": "Turn scheduling on, set how often passwords rotate, then save. Times use UTC. Use Run Now to rotate once without waiting for the next scheduled time.",
+        "text": "スケジュールをオンにし、パスワードをローテーションする頻度を設定して保存します。時間は UTC を使用します。 「今すぐ実行」を使用すると、次のスケジュールされた時刻を待たずに 1 回ローテーションできます。",
         "source_sha256": "d420735b62e46aff4f5d71798de4e41512787464079a2aad8079be24b5b1cdac"
       },
       "scheduleTitle": {
@@ -6252,11 +6252,11 @@
         "source_sha256": "9b41b2884b0e979dd0dd6e0b3240e182d0c1d3a2bb65fa35f66075a9891c6d3d"
       },
       "chipAckRequired": {
-        "text": "ack required before Open",
+        "text": "開く前に確認応答が必要です",
         "source_sha256": "56b7b625a661b96490c3f12fe87ba2d4299ca87347414147d47156784551a225"
       },
       "chipDisclosureConfigured": {
-        "text": "session disclosure configured",
+        "text": "セッション公開が設定されています",
         "source_sha256": "887f956a09c0990c19f58e52410d41f430965e34c93f27664f5e838c001a1450"
       },
       "chipEnforceCommandDeny": {
@@ -6404,7 +6404,7 @@
         "source_sha256": "8254285d673bbc73963ed7810f4bc4b8a378dbf5803b7a650ce7ac5c00eaac3c"
       },
       "sessionBrokerBody": {
-        "text": "{{count}} session ticket(s) on the server API. Operators can inspect tickets and disclosure text; mint admits source_ip via Network ACL + geo + TI.",
+        "text": "サーバー API 上の {{count}} セッション チケット。オペレーターはチケットと開示テキストを検査できます。 mint は、ネットワーク ACL + geo + TI を介して source_ip を許可します。",
         "source_sha256": "678f55e729f59b10cb3135336112c90676019623e8b823017b0c3a725bc5a388"
       },
       "sessionBrokerTitle": {
@@ -6436,7 +6436,7 @@
         "source_sha256": "70d0b0757e191e7c65ed0ba3e1d7f4176dd432fbd064f09a4d0b565501b5efd2"
       },
       "vncTitle": {
-        "text": "VNC Open → usable session",
+        "text": "VNC オープン → 使用可能なセッション",
         "source_sha256": "df6409e56439c973b05cda90629e8051ea22ebfdca772ec3e33e3ac8650b7432"
       }
     },
@@ -6516,7 +6516,7 @@
         "source_sha256": "78c0d5091786eefaa9ade640cd757dac64f65aa6f77e9c1883cd7c5a0c0f2273"
       },
       "chooseTitle": {
-        "text": "Choose session for {{name}}",
+        "text": "{{name}} のセッションを選択してください",
         "source_sha256": "cfcf88edbe1f531ecf4ec239267c0d60d45cb19b021148ffee42f0d990728f8d"
       },
       "colActions": {
@@ -7062,7 +7062,7 @@
         "source_sha256": "c59aa617c1f5f383855552e3411ada9758ba63885f20badeb4387a7c03d9ef5f"
       },
       "runBulkTitle": {
-        "text": "Run {{count}} selected reports",
+        "text": "選択した {{count}} レポートを実行します",
         "source_sha256": "e9354a41f571f8ada637d2dab432f5cf789c5525d8ad274bed79bfae95473652"
       },
       "runDialogSubtitle": {
@@ -7106,7 +7106,7 @@
         "source_sha256": "e1ad30dfb0f538089075c1f559fd9236b503d8098f64053d05a91ae0b4d7d638"
       },
       "scheduleCuiAlert": {
-        "text": "CUI and classified reports cannot be sent as clear email attachments. Use status-only notification or approved encrypted-package delivery.",
+        "text": "CUI および機密レポートは、平文の電子メール添付ファイルとして送信できません。ステータスのみの通知または承認された暗号化パッケージ配信を使用します。",
         "source_sha256": "73fed37531aeee64503906cf46f569a48ab6d0cafc091f928bf64e888e8e524f"
       },
       "scheduleCuiNotice": {
@@ -7126,7 +7126,7 @@
         "source_sha256": "5621631c9cef9b3220352295a0d97b5ef27ae2bd27d11b7f70f5d07b1c2482d3"
       },
       "scheduleUnclassNotice": {
-        "text": "Unclassified clear attachments are allowed only when the recipient policy permits. Schedules persist in PostgreSQL.",
+        "text": "未分類のクリア添付ファイルは、受信者のポリシーで許可されている場合にのみ許可されます。スケジュールは PostgreSQL に保持されます。",
         "source_sha256": "c9b0fcf7e2a199bbc17c142bc7ec12dd77c95076d3638721d85b4bf827e54e4c"
       },
       "schedulesFilterAria": {
@@ -7284,7 +7284,7 @@
         "source_sha256": "c12f995c9116bdea921733ab8fca3cdfa8016f8239dc255835cd82c9bc58e03e"
       },
       "passwordPolicy": {
-        "text": "Password policy: {{summary}}",
+        "text": "パスワードポリシー: {{summary}}",
         "source_sha256": "51c065491f241a184043b82d84016387c4c85b224f4554875684fcd9669e6317"
       },
       "recoveryFailed": {
@@ -7502,7 +7502,7 @@
         "source_sha256": "8d276af824aef37f6882ed6224a8a5533a86c3803ce2c06d8f7d69856215e669"
       },
       "groupsIntro": {
-        "text": "Collaboration groups let you share vault items with many principals at once. Membership changes re-wrap group-shared ciphertext. Requires Secure Share share permission.",
+        "text": "コラボレーション グループを使用すると、Vault アイテムを一度に多くのプリンシパルと共有できます。メンバーシップを変更すると、グループ共有暗号文が再ラップされます。 Secure Share の共有権限が必要です。",
         "source_sha256": "88addcbb50a288e4c888b3b13f7fe75928e9c7eb415f6ebe76635e068a6e8026"
       },
       "groupsTitle": {
@@ -7562,15 +7562,15 @@
         "source_sha256": "44269ea744639d6868e34c6f6b5818e44f6dbbbeb9a48a0569313695acde8374"
       },
       "permissionsNewGrants": {
-        "text": "Permissions for new grants",
+        "text": "新しい助成金の許可",
         "source_sha256": "5b2134063274d2c3e7ee483b809ce1f44074e9f1a1c981985dc2d68a18f99dd5"
       },
       "pickGroup": {
-        "text": "Pick a group to share with",
+        "text": "共有するグループを選択してください",
         "source_sha256": "afd64affcac60b7c2d73bfb45a07c4f4ff7e824f84f49f97cd818a84cd62b9af"
       },
       "pickUser": {
-        "text": "Pick a user to share with",
+        "text": "共有するユーザーを選択してください",
         "source_sha256": "6259e5567367addfec51ecf2b09c4e9d40cf53e0298ca18352e882186bdbd383"
       },
       "railAll": {
@@ -7582,7 +7582,7 @@
         "source_sha256": "22574222a2306c8b79d5f93a43a8553ed822ec8abd37ea7a476c3bcc4bfd69ed"
       },
       "railAria": {
-        "text": "Secure Share vault filters",
+        "text": "Secure Share ボルトフィルター",
         "source_sha256": "c006920438da88b07d6e8068419c417ce5b4d3caf4def5288590f4a20cb56446"
       },
       "railCaption": {
@@ -7806,7 +7806,7 @@
     },
     "sessionIoPolicy": {
       "adjustableAria": {
-        "text": "Allow operator to adjust within ceiling",
+        "text": "オペレーターが天井内で調整できるようにする",
         "source_sha256": "472f18a637d0884b44b9c6c089a23e98c7a9c56c91d89124b6eedd8cb3f461f6"
       },
       "adjustableLabel": {
@@ -7914,7 +7914,7 @@
         "source_sha256": "b7e8cec32c42979836b8b4e454f2a76e48264c39adc0978ec9962f655216972d"
       },
       "intro": {
-        "text": "Set clipboard and file-transfer ceilings for live sessions (Interactive RDP / SSH / VNC). Resolution order: principal → group → role → tenant → fail-closed deny. Configure here — the live session page reflects the effective policy.",
+        "text": "ライブ セッションのクリップボードとファイル転送の上限を設定します (インタラクティブ RDP / SSH / VNC)。解決順序: プリンシパル → グループ → ロール → テナント → フェールクローズ拒否。ここで設定します。ライブ セッション ページには有効なポリシーが反映されます。",
         "source_sha256": "83478ee5c17ecb6da4f815e19897480c5afa50631f610138b79c07ebaffd6c89"
       },
       "loadFailed": {
@@ -8040,7 +8040,7 @@
         "source_sha256": "23558fa562e19e53eb586a935fe88264c857e8b047eee8c47f39580b3505e0ba"
       },
       "absoluteTtlAria": {
-        "text": "Absolute session TTL seconds",
+        "text": "絶対セッション TTL 秒",
         "source_sha256": "748291f364383d5057f8f413bddbdb3c78d49e2153f8ec8a0f60fc8f71493dd1"
       },
       "clientStorage": {
@@ -8060,7 +8060,7 @@
         "source_sha256": "79f441a04ad0ced730f0330524a0aad78c760a659c8a092ce5b933bffa9f8cac"
       },
       "idleTimeout": {
-        "text": "Idle timeout (seconds, 0=off)",
+        "text": "アイドルタイムアウト (秒、0=オフ)",
         "source_sha256": "241fac45445a11d76ac8f43b1b89993e6f410dcaa54ad05b3b511daa048d174b"
       },
       "idleTimeoutAria": {
@@ -8092,7 +8092,7 @@
         "source_sha256": "d87fcdd760559d0297f8c8489a23263235f865e7fbb2dedaf1149979db4a7b37"
       },
       "requireIam": {
-        "text": "Require IAM session authentication (disable silent Admin-Token UI)",
+        "text": "IAM セッション認証を要求する (サイレント Admin-Token UI を無効にする)",
         "source_sha256": "e38c06747b130b9941de6878211287a1c6cfd0421558767273ea2d24c3d13800"
       },
       "requireIamAria": {
@@ -8112,7 +8112,7 @@
         "source_sha256": "6a845d273403eb57ea4a3d6b1798c61e9de3f9a7872c439ac5a9df49956e40cc"
       },
       "storageLocal": {
-        "text": "local (shared across tabs; duplicate-tab kick if hardening on)",
+        "text": "ローカル (タブ間で共有; 強化された場合は重複タブキック)",
         "source_sha256": "01d536dd7dde881e5ce1da14108d3fc64257a28d46aebcad4b4f9a4aa07c15d3"
       },
       "storageSession": {
@@ -8138,7 +8138,7 @@
         "source_sha256": "24d73d1d13216ab100eaefcde04d2e5717f5defcc0fb402bcef61df6e45349ac"
       },
       "chipOcrPartial": {
-        "text": "Partial — VNC OCR search",
+        "text": "部分的 — VNC OCR 検索",
         "source_sha256": "f6f458370d96003727abe3d69a1e2f1efca2181c1e73eb03fbcc7550ddee2705"
       },
       "chipSshRdpLive": {
@@ -8146,7 +8146,7 @@
         "source_sha256": "e5a92cbf8d5e56279a7a0ec8eb71b73d92cc399b4dcd85a56f34f8d99572c306"
       },
       "chipVncLive": {
-        "text": "VNC graphical replay Live",
+        "text": "VNC グラフィカル リプレイ ライブ",
         "source_sha256": "4987a1bb7f9f15aef14cb6ef9b7eba5927bdcfcbb96d0e0a57ddd5369a89b82f"
       },
       "colAccount": {
@@ -8238,7 +8238,7 @@
         "source_sha256": "c0e76978304a9d1cd87b10d930e883750b47a5ddc9200137ae2af17ec6761ea7"
       },
       "loadFailed": {
-        "text": "Failed to load session recordings. Confirm admin token and server version.",
+        "text": "セッション記録のロードに失敗しました。管理者トークンとサーバーのバージョンを確認します。",
         "source_sha256": "a213db9c03161decde9dc562853f8f4239dec3f1a5a49a1482b0461fe52e61bb"
       },
       "open": {
@@ -8250,7 +8250,7 @@
         "source_sha256": "d8186afa6a7c81e722b4b0dce66648387fb69766c6fd97641e81a98950a003bd"
       },
       "planeProxy": {
-        "text": "Recording: session proxy",
+        "text": "録音: セッションプロキシ",
         "source_sha256": "ac167ad1536989318494df1135fa1b59b3346ea3f4a29f71d3a1bba2b3eb709b"
       },
       "planeTargetLocal": {
@@ -8278,7 +8278,7 @@
         "source_sha256": "0e91610117029a62a478b7fa7df0b8598bebe3ab1e192d4b1882e310719c9671"
       },
       "replayIntro": {
-        "text": "Decrypt-to-read is authorized and audited. The plaintext is streamed to your browser for playback and never re-stored. This is evidence replay — not Connect / Open session.",
+        "text": "復号化して読み取ることは許可され、監査されます。プレーンテキストは再生のためにブラウザにストリーミングされ、再保存されることはありません。これは証拠の再生であり、セッションの接続/オープンではありません。",
         "source_sha256": "736a7fcb0bdb6f43f3b78c9236755cf4caa9f4593a7b1751539d7719df3fd5c8"
       },
       "replayTitle": {
@@ -8320,7 +8320,7 @@
         "source_sha256": "93ceb67d7fb59103aa58048d8ea1ecd54babd068ab64bcf2366bca295f983ef3"
       },
       "certPresentTlsOff": {
-        "text": "Warning: Certificate is present but TLS is not enabled. Enable TLS to activate HTTPS.",
+        "text": "警告: 証明書は存在しますが、TLS が有効になっていません。 TLS を有効にして HTTPS を有効にします。",
         "source_sha256": "572de3d7e5d95c6c52d1bdae40e05d5bc4dfae5a8831b2ca3dcf5fad1197744a"
       },
       "certificateStatus": {
@@ -8384,11 +8384,11 @@
         "source_sha256": "6d84e89f8f48d070b8343d4b290920f3a42b517d9b2aa1f7d69106757227e384"
       },
       "mitmTitle": {
-        "text": "MITM Proxy Control (Development Only)",
+        "text": "MITM プロキシ制御 (開発のみ)",
         "source_sha256": "348ef77eed9d28ed00b9fea076513f28ed959b5b4d9bd9d17a04be4ffca1c82e"
       },
       "noCertFiles": {
-        "text": "No certificate files found. Generate a self-signed certificate or upload your own via the certificate management API.",
+        "text": "証明書ファイルが見つかりません。自己署名証明書を生成するか、証明書管理 API を介して独自の証明書をアップロードします。",
         "source_sha256": "0886db5deb1ffccd26489fcf53fa3feb4dd3140b135086faa0d9cf0bf6f4213a"
       },
       "noCertificate": {
@@ -8420,7 +8420,7 @@
         "source_sha256": "304f35e36fe2f230c093b90fa4b0a727981eba0545ad7f757edad6a959c2055f"
       },
       "portConnectivityBody": {
-        "text": "Test which ports are responding. Only the active protocol port will be online.",
+        "text": "どのポートが応答しているかをテストします。アクティブなプロトコル ポートのみがオンラインになります。",
         "source_sha256": "f4aabaffd351115defc26728c812d5ac94a839bc2d9400e9bd1e6b3156e01ed8"
       },
       "portConnectivityTest": {
@@ -8444,7 +8444,7 @@
         "source_sha256": "d2b5a453127a0e1948c7c632ee44954d14abb950bc504f6c12d638bc422ae512"
       },
       "proxyPortHelper": {
-        "text": "Port where proxy listens for requests",
+        "text": "プロキシがリクエストをリッスンするポート",
         "source_sha256": "8dcc517ba0843bd13888d73862733e2385e10ba1a141a718e70c72677a1347e6"
       },
       "refresh": {
@@ -8824,7 +8824,7 @@
         "source_sha256": "7385351086395bf5a664f9a34eddd555d4d3847364fb098ac412845e29f4b01d"
       },
       "dialogEditTitle": {
-        "text": "Edit Multi-Tenant — {{name}}",
+        "text": "マルチテナントの編集 — {{name}}",
         "source_sha256": "3b35746fe53afd2312af9b4fe5f1293bc8e2fafb79fdfcff63a5d41d6d96892a"
       },
       "displayName": {
@@ -8840,7 +8840,7 @@
         "source_sha256": "a58c4eaf7c7053e7b79130a97f3359a2f5a58b5312a6a0021edc315af65ca99c"
       },
       "emptyState": {
-        "text": "No multi-tenant records yet. Create a multi-tenant to receive a one-time bootstrap secret for agent enrollment. After creation, select the row to mint enrollment tokens from this page.",
+        "text": "マルチテナントの記録はまだありません。マルチテナントを作成して、エージェント登録用のワンタイム ブートストラップ シークレットを受け取ります。作成後、このページから登録トークンを作成する行を選択します。",
         "source_sha256": "4b721bfefc5b1d41e85decd6f39ea8c842e1b9716736dc47cebc60db04427984"
       },
       "enrollmentHint": {
@@ -8994,11 +8994,11 @@
         "source_sha256": "ccfe9f3486cdfe7d3a0f39b47fd44bd10fe862ec4591f744abecdbf838255e5d"
       },
       "attestationsEmailHelp": {
-        "text": "Matched case-insensitively by the server. Press Enter or Search.",
+        "text": "サーバーによって大文字と小文字が区別されずに照合されます。 Enter キーまたは検索を押します。",
         "source_sha256": "bcea8f37ada6903cb6eb1cd6d189400fa8936d06cf0f979aa9713614bceb1116"
       },
       "attestationsEmpty": {
-        "text": "No attestations match this filter. An empty ledger is an absence of evidence, not evidence that training did not happen — and not evidence that it did.",
+        "text": "このフィルターに一致する証明書はありません。空の台帳は証拠がないことを意味し、トレーニングが行われていないという証拠ではなく、トレーニングが行われたという証拠でもありません。",
         "source_sha256": "449dc82140aac52c68ef6681c669380ae644aca52e5271ffca469817c517bb6c"
       },
       "attestationsEmptyFieldsClaim": {
@@ -9046,7 +9046,7 @@
         "source_sha256": "f4b8a40fa1e671084a4cb8b7bc6a258da7164febc14aa194e03f2f9c80d6b1cd"
       },
       "attestationsTitle": {
-        "text": "Training Attestation Ledger",
+        "text": "トレーニング証明書台帳",
         "source_sha256": "1f1510a0b320fc83e849e1446690d984b2c7b8043d1a87741caee65da3d9a30d"
       },
       "catalogForbidden": {
@@ -9062,7 +9062,7 @@
         "source_sha256": "6c9ca7aa064428d5b5a0c2d07bec187cc67156b7db8b3ed65d58eeec888c5807"
       },
       "controlTagsHelper": {
-        "text": "Comma separated, e.g. AT.L2-3.2.1.",
+        "text": "カンマ区切り、例: AT.L2-3.2.1。",
         "source_sha256": "6b044c69169bba396417bc972acdb184d84bf0c6b34891725b205ef682d355e7"
       },
       "coverageAdopts": {
@@ -9182,11 +9182,11 @@
         "source_sha256": "0e09c5c368f27d7dec684f09b4e3c050001829316562231293344e239a3b43a7"
       },
       "detailArchivedExcluded": {
-        "text": "Archived people excluded {{count}}",
+        "text": "アーカイブされた人々は除外されました {{count}}",
         "source_sha256": "df97b69edc9c746b3f5db546c4b3b6cf2000cdfba2e1ff460cbe2a38cf31ee21"
       },
       "detailArchivedExcludedTitle": {
-        "text": " — archived, not in the completion denominator",
+        "text": "— アーカイブされてお​​り、完了分母には含まれていません",
         "source_sha256": "66e7280f07a0c864e84779efd5209b199c61f9fb636835639da086ee495e3691"
       },
       "detailAssignedN": {
@@ -9502,7 +9502,7 @@
         "source_sha256": "ce3c4ff922fee35bc57af0754f15e838f6220a32e14d74e9e68eeeac4c791562"
       },
       "detailSweepToast": {
-        "text": "Reminder sweep: {{sent}} sent, {{failed}} failed, {{suppressed}} suppressed",
+        "text": "リマインダー スイープ: {{sent}} 送信、{{failed}} 失敗、{{suppressed}} 抑制",
         "source_sha256": "8d3eef54a7e3c2bd1f482321d52c074da0a5574b693a4230f84cebbf6d7a7c53"
       },
       "detailSweeping": {
@@ -9518,7 +9518,7 @@
         "source_sha256": "bd5d34b740225f6431cf61f45808701a4d403cb52da8a132e7262d49ed099d26"
       },
       "detailTypedName": {
-        "text": "Name the person typed when signing",
+        "text": "署名時に入力した人の名前",
         "source_sha256": "c8fa388558a311c2db511ab6fdcd12fcae34e311cb3f493fa8bf0c1b9dae8bce"
       },
       "detailTypedNameHelp": {
@@ -9526,7 +9526,7 @@
         "source_sha256": "53c35ba120fd91fdcefd67b0db8542fc31f384c6a0b47c4c37eae63fc48f8dde"
       },
       "detailTypedNameRequired": {
-        "text": "Enter the name the person typed when signing. A signature needs a signing person.",
+        "text": "署名時に入力した名前を入力します。署名には署名者が必要です。",
         "source_sha256": "82410baf44651de074eb0743f60df76861397a279aff1d66938e55c89d39b20a"
       },
       "detailUnknown": {
@@ -9534,11 +9534,11 @@
         "source_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
       },
       "detailWaive": {
-        "text": "Waive with a documented reason. A waiver is a recorded gap, not completion.",
+        "text": "文書化された理由を示して放棄します。権利放棄は記録されたギャップであり、完了ではありません。",
         "source_sha256": "ca0c83a88b92204694489188faa5273754676dfd7a381a702b57bcaefeac0166"
       },
       "detailWaiveBody": {
-        "text": "A waiver is a recorded gap, not completion. It stays in the denominator of every completion rate and outside the numerator, so waiving cannot improve a percentage.",
+        "text": "権利放棄は記録されたギャップであり、完了ではありません。すべての完了率の分母にとどまり、分子の外にあるため、放棄してもパーセンテージを向上させることはできません。",
         "source_sha256": "25dd1a544545f11dd0d1b5b63dd03e45d85d5293ea62740a7e7327e8296a4f97"
       },
       "detailWaiveDenied": {
@@ -9558,11 +9558,11 @@
         "source_sha256": "b933e28ad48fb34d7f44724238ef98148e05d93affe74f9a2f9428dfa6f81dcd"
       },
       "detailWaivedToast": {
-        "text": "Waived for {{email}}. A waiver is a recorded gap: it stays in the denominator and outside the numerator.",
+        "text": "{{email}} は免除されました。権利放棄は記録されたギャップです。それは分母の中に留まり、分子の外側に留まります。",
         "source_sha256": "9ff3677991c05d632baa82c923d189e4a9389941ffdbf5f75e8b942b04e2185e"
       },
       "detailWaiverGap": {
-        "text": "A waiver is a recorded gap, not completion: {{reason}}",
+        "text": "権利放棄は記録されたギャップであり、完了ではありません: {{reason}}",
         "source_sha256": "1902e95a817a35b79667e62b13a58876f6d2477795341598d05507879789e8b5"
       },
       "detailWaiverHelp": {
@@ -9574,7 +9574,7 @@
         "source_sha256": "69513329fb8011bce5a57068efef362d2f7562fb949ae304b1fee3817647f522"
       },
       "detailWhenRequired": {
-        "text": "Enter when the person signed.",
+        "text": "本人が署名したときを入力します。",
         "source_sha256": "9c904c344bd872cd40e4646af6a5a89b071b4411879e3ff35177298b3fca1192"
       },
       "detailWhenSigned": {
@@ -9626,7 +9626,7 @@
         "source_sha256": "57acdc921a3e3b9d11c865acf75349603ca05df545cfef38ec464c4443a9f095"
       },
       "frameworkTagsHelper": {
-        "text": "Comma separated, e.g. cmmc-l2, 800-171r3. Tags only — no control is marked met.",
+        "text": "カンマ区切り、例: cmmc-l2、800-171r3。タグのみ - 満たされているとマークされているコントロールはありません。",
         "source_sha256": "6459934cb161650d6afddb2809f32a61080068ed9a2628c295674dbac0a540c9"
       },
       "honestyFallback": {

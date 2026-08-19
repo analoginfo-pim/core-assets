@@ -112,7 +112,7 @@
     "source_sha256": "edabb2c905256180f11ab310d4a1671766a24bbe8bc3a088e4e66b61541d5ff5"
   },
   "domainName": {
-    "text": "Windows or LDAP domain when the machine is domain-joined. Leave empty for standalone/workgroup hosts.",
+    "text": "マシンがドメインに参加している場合は、Windows または LDAP ドメイン。スタンドアロン/ワークグループ ホストの場合は空のままにします。",
     "source_sha256": "b901417b69dda9e3c7cdf0bf439d6dd3c18c083aed787af0eb66beb23b750ac3"
   },
   "systemGroupName": {
@@ -432,7 +432,7 @@
     "source_sha256": "7b4dcc8f82a49b0a0018bd7680c54598b9933b2e6c59123161f71f9c300eb611"
   },
   "countryAllowList": {
-    "text": "Countries allowed for this geo access rule. Clear the chips to remove a country.",
+    "text": "この地理アクセス ルールが許可される国。チップをクリアして国を削除します。",
     "source_sha256": "e1772419816920e75f4f33e354dc1d6d2fbe504e92dfccd1214b002235298cf8"
   },
   "pivCertificatePem": {
@@ -444,7 +444,7 @@
     "source_sha256": "3bf41c2edb75cbb8f7e5e9aff92545cfdada1b5bd52d02989c500ffb2c711c36"
   },
   "connectivityPort": {
-    "text": "TCP port to probe for this connectivity test.",
+    "text": "この接続テストのためにプローブする TCP ポート。",
     "source_sha256": "af9ccd82d0de4e5f5c47f85bf6d4d1d1954d4949b79802d5e8c99155d924dde7"
   },
   "logonPolicyName": {
@@ -464,7 +464,7 @@
     "source_sha256": "4d67ebc85cc0e97109c49fe1b42804711d5ad8cf85a61cb0133d3a67baf58966"
   },
   "idpClaimFilterMode": {
-    "text": "How primary claims from this identity provider are filtered before role mapping.",
+    "text": "ロール マッピングの前に、この ID プロバイダーからのプライマリ クレームをフィルター処理する方法。",
     "source_sha256": "c1e05e9cbd883c20bd277c5352f9106921b6da58896583f791bc696187f7963b"
   },
   "idpRedirectUri": {
@@ -540,7 +540,7 @@
     "source_sha256": "cabf923bd46e8a1dcfc3ef1d250f4a3c02d80358bcae7105a71276b7fc54085c"
   },
   "pamHost": {
-    "text": "Hostname or IP the jump or proxy uses to reach the target. Must resolve from the capacity host.",
+    "text": "ジャンプまたはプロキシがターゲットに到達するために使用するホスト名または IP。キャパシティ ホストから解決する必要があります。",
     "source_sha256": "b6beff17cf8c38943e48fb0b6cd624c493cdc8dcda62d6dc7d88ee6bd8ea98fe"
   },
   "pamPort": {
@@ -556,7 +556,7 @@
     "source_sha256": "69bc7b08c02ad5fe7f1f540252620c9dcaf4d94a0bb7d384942105611ab83dc1"
   },
   "myWorkstationConnect": {
-    "text": "Opens an interactive session to this assigned workstation using the configured protocol and account.",
+    "text": "構成されたプロトコルとアカウントを使用して、この割り当てられたワークステーションへの対話型セッションを開きます。",
     "source_sha256": "49f1f9d62f5ff95d4ecb07435afcbffd327bee264094312599c6a572ab3cc177"
   },
   "myWorkstationPower": {
@@ -612,7 +612,7 @@
     "source_sha256": "ef152b95acaf68d31fca3e2127ce51b9b2ef2c1b923f817cb87c88ae8d3829df"
   },
   "pamDenyReason": {
-    "text": "Required reason when denying an approval. Stored in the audit trail and shown to the requester when policy allows.",
+    "text": "承認を拒否する場合に必要な理由。監査証跡に保存され、ポリシーが許可する場合に要求者に表示されます。",
     "source_sha256": "dac1c586c679b94f50950216e129f18b00414b234379b8b35ec799d7503f876b"
   },
   "pamAccessJustification": {
@@ -772,7 +772,7 @@
     "source_sha256": "0c7baa61387f28df1eaec3165c3a985bb6f3523898b3afd612245dab976b6deb"
   },
   "jumpBaseUrl": {
-    "text": "External Jump accept URL (for example http://10.55.0.12:9443). Leave empty for AIC Server local capacity.",
+    "text": "外部ジャンプ受け入れ URL (例: http://10.55.0.12:9443)。 AIC Server ローカル容量については空のままにしておきます。",
     "source_sha256": "578e8ba829d4100c2a55f54d8195c9521c6a510111f1d1c6777059ecab01b9fe"
   },
   "remoteAccessFavoritesOnly": {
@@ -936,7 +936,7 @@
     "source_sha256": "13ca7068de62c605864f328bbb43bab7632a49ceceee1fba046e35a8f9fc7b7a"
   },
   "auditEngagementType": {
-    "text": "Whether this is an internal, customer, or external-firm engagement.",
+    "text": "これが社内、顧客、または社外との関わりであっても。",
     "source_sha256": "1e83f747d891cd4ec397354e2615b84e04e08c422c32dd0447b7571d30854b25"
   },
   "auditFirm": {
@@ -1176,7 +1176,7 @@
     "source_sha256": "d0d1ee4349586ece84e1c06d921668fe7e84b03f6aaa9044892629b9cbe0da70"
   },
   "actionCancel": {
-    "text": "Closes without saving changes made in this dialog or form.",
+    "text": "このダイアログまたはフォームで行われた変更を保存せずに閉じます。",
     "source_sha256": "ec753fe9b81d88029caa46c5ebee137fc0c29dce744a43a3694a739874211381"
   },
   "actionDelete": {
@@ -1192,7 +1192,7 @@
     "source_sha256": "066a054c10dff64dfeeb23634c42eda61a7d0f39bed3b3d62b7bd517e084130a"
   },
   "actionRefresh": {
-    "text": "Reloads data from the server so the list shows the latest state.",
+    "text": "サーバーからデータを再ロードして、リストに最新の状態を表示します。",
     "source_sha256": "8948bb81eb8d7009d30e29def107049944502788c38f6cdcbdc3a2043f24c342"
   },
   "actionBack": {
@@ -1328,7 +1328,7 @@
     "source_sha256": "d1c69a28862a11441de57063f7d151b6918c4b92be17d6d50655c81e3e63fff9"
   },
   "actionPlaneOff": {
-    "text": "Disables the jump recording plane.",
+    "text": "ジャンプ記録プレーンを無効にします。",
     "source_sha256": "d5d652866187edff919ba761e2a50da3c4917db46939d9122a1c684d69518765"
   },
   "actionFavorite": {
@@ -1352,7 +1352,7 @@
     "source_sha256": "c5b95dfcaaf9b521e9e9deebda0bbf40b1197e02b3d70ee5f049d8f4db1c2d93"
   },
   "actionJoin": {
-    "text": "Joins an existing live session as a supervisor (view and Kill).",
+    "text": "既存のライブ セッションにスーパーバイザーとして参加します (表示および強制終了)。",
     "source_sha256": "7b11510e10662ee68f5957a613cb21330f5f61019379599fc0898a57377252db"
   },
   "actionKill": {
@@ -1468,7 +1468,7 @@
     "source_sha256": "d4436b7fc0c8132e96f46b10d131192e2d036e79c0a7d86a97bff2fedc6ca903"
   },
   "actionRequestAccess": {
-    "text": "Submits an access request for approval.",
+    "text": "承認を得るためにアクセス要求を送信します。",
     "source_sha256": "7161f23af662f8169dafaa614b3507f14a4ebde85763b8336c417932ba97cb43"
   },
   "actionSetCredential": {
@@ -1488,7 +1488,7 @@
     "source_sha256": "7fce158cc24a242db03e1ee06b75c57536c1f0cd3a975223c83fc9ed9c9d99ce"
   },
   "actionChatSend": {
-    "text": "Sends this chat message to session participants.",
+    "text": "このチャット メッセージをセッション参加者に送信します。",
     "source_sha256": "a8d4500a0d73ce0266d3454982e15afd94bced97f857054ed0585c323b07d60b"
   },
   "actionCtrlAltDel": {
@@ -1508,7 +1508,7 @@
     "source_sha256": "c57134c51751815e93e0f8e6c0e7d23ab6a1de5b5a741b1b7d218cfeabd16019"
   },
   "actionEnable": {
-    "text": "Enables this item so it participates in routing or policy.",
+    "text": "この項目を有効にして、ルーティングまたはポリシーに参加させます。",
     "source_sha256": "1adcddefd77ecfc3e9beace913deba592851e928bc0f8bce2c5ac28818df155c"
   },
   "actionElevate": {
@@ -1564,7 +1564,7 @@
     "source_sha256": "cbff74cb1a701e73a4c83ceebacbc9da0dc87ccf2a2ecba3598010ea290717b6"
   },
   "actionPreview": {
-    "text": "Evaluates the command against policy without executing it.",
+    "text": "コマンドを実行せずに、ポリシーに対してコマンドを評価します。",
     "source_sha256": "90df032eb92b96e8b7461dba254449a5f441aade324ce8b55999073c795fdfcc"
   },
   "actionManageSets": {
@@ -1588,7 +1588,7 @@
     "source_sha256": "56f8961b51aeda9d51e3676983f389c819c62fc527072ed2aa2564ec783368c6"
   },
   "actionInheritance": {
-    "text": "Shows effective policy and which group or default each setting comes from.",
+    "text": "有効なポリシーと、各設定がどのグループまたはデフォルトに由来するかを示します。",
     "source_sha256": "e955a1d0edda8f8aa3059195b0fc090a31b69db3f5bb9386eaaf6656b855878d"
   },
   "actionViewConfig": {
@@ -1744,7 +1744,7 @@
     "source_sha256": "91c89f98ef1e30656693d6ee535536cbe08e3528f98a79f54b2d2e4f33ab105f"
   },
   "windowsIaAllowNtlm": {
-    "text": "When on, NTLM is accepted as a fallback for Windows IA. Prefer Kerberos only when possible.",
+    "text": "オンの場合、NTLM は Windows IA のフォールバックとして受け入れられます。可能な場合のみ Kerberos を使用してください。",
     "source_sha256": "bca37c2c970c75a442198c574b9889960196083465ea95ff37e9cb9546394e55"
   },
   "accessMapDryRun": {
@@ -1768,7 +1768,7 @@
     "source_sha256": "9f7a3a2767cc5bd9316d8d28b131236e3afae422436d975e0d26abbc611bbe14"
   },
   "webAuthnAllowPasswordless": {
-    "text": "Allow passkey-only logon without a password when enrollment exists.",
+    "text": "登録が存在する場合、パスワードを使用しないパスキーのみのログオンを許可します。",
     "source_sha256": "00721bb30bc775264e1f094ba00f00b146729968e9731de749ced2f1c4f3892d"
   },
   "accessMapGeoEnabled": {
@@ -1800,7 +1800,7 @@
     "source_sha256": "a270e2c386863e475d30e2d8272e86912ad0549e7a69b5d8d0065ed52a9dab3f"
   },
   "idpIsPrimary": {
-    "text": "Marks this identity provider as the default when more than one is configured.",
+    "text": "複数の ID プロバイダーが構成されている場合、この ID プロバイダーをデフォルトとしてマークします。",
     "source_sha256": "58029d445db758c6d5e4585b3e7199c01bfbe1d432c07e65b3cdd9c6ad3186b3"
   },
   "logonOutcomeFilter": {
@@ -1860,7 +1860,7 @@
     "source_sha256": "63c3e7e33b110178f3d30c303dab60b803f4c0404a217e001a46924fde033f5c"
   },
   "importSettingsReplace": {
-    "text": "When on, matching identities on the endpoint are replaced by the import.",
+    "text": "オンにすると、エンドポイント上の一致する ID がインポートによって置き換えられます。",
     "source_sha256": "b8038fe2a59188178d282c95eb41c833e1dd15a8cb72184ee9b20d2ddbd6164d"
   },
   "issuanceFilter": {
@@ -1888,7 +1888,7 @@
     "source_sha256": "35003650d969e7375fe1b920a991c730f034f4519d0829e6c25c57d880da7677"
   },
   "templateSeedDefault": {
-    "text": "When enabled, template rows apply automatically when new endpoints join this group.",
+    "text": "有効にすると、新しいエンドポイントがこのグループに参加すると、テンプレート行が自動的に適用されます。",
     "source_sha256": "4d33dcfae3f8da6868008c3e74ec7fe18e68165aa1856b757115db06e8b4e781"
   },
   "templateElevationEnabled": {
@@ -1916,7 +1916,7 @@
     "source_sha256": "97f46ce91531726ac65a3813c52308d7a5ca9998c120be36bcce175b622500c4"
   },
   "hsmUserPin": {
-    "text": "Token user PIN for this HSM operation. Stored PINs may be used when configured for the slot.",
+    "text": "この HSM 操作のトークン ユーザー PIN。保存された PIN は、スロットに設定されている場合に使用できます。",
     "source_sha256": "a7186f3feb248da6dd91e984b299cd93cec2487c8ba763c22536c21392c1b4c4"
   },
   "hsmKeyLabel": {
@@ -2056,7 +2056,7 @@
     "source_sha256": "eff387343076c05db0c1c83022a3dfadf25741acd4751c7937d85fa161eb4179"
   },
   "forceLogoffCheckbox": {
-    "text": "When on, forces a logoff after privilege revoke so the old group membership ends.",
+    "text": "オンにすると、特権の取り消し後に強制的にログオフされ、古いグループのメンバーシップが終了します。",
     "source_sha256": "862fa822ba560a82b41a900ccd254b804af67e19a1fdd76209ac174905bc2587"
   },
   "platformCheckbox": {
@@ -2080,7 +2080,7 @@
     "source_sha256": "48e85aaac50b81a4c60cdec3efaec0dfc3dd197145c3f1adb779b146ea03ef35"
   },
   "complianceRunnerSwitch": {
-    "text": "Shows or includes cross-platform scripted compliance checks in this view.",
+    "text": "このビューにクロスプラットフォームのスクリプト化されたコンプライアンス チェックを表示または含めます。",
     "source_sha256": "f57c3fc77903f4b21b5ef0845d7e7d9dca51ea98250db3075147483908984058"
   },
   "settingsWizardUpdatePreview": {
@@ -2168,7 +2168,7 @@
     "source_sha256": "91221152f7ce401d547bd473b4cac5a551245aadecc8eb6349ce5bf41cda2ad2"
   },
   "dashboardMoveTileDown": {
-    "text": "Moves this dashboard tile later in the layout order.",
+    "text": "このダッシュボード タイルをレイアウト順序の後ろに移動します。",
     "source_sha256": "4b1f0cf045045a54315984a4a7bc74e2b74cb80458c188377306af135edef086"
   },
   "dashboardRemoveTile": {
@@ -2208,7 +2208,7 @@
     "source_sha256": "4320d6ec5d07dfb2c31d20a8386f3afe5bd16416aed1a03e2b65baf0d9e3c8da"
   },
   "secureShareExpires": {
-    "text": "When this grant expires. Leave blank only if the share policy allows open-ended access.",
+    "text": "この補助金の有効期限が切れたとき。共有ポリシーで無制限のアクセスが許可されている場合のみ、空白のままにします。",
     "source_sha256": "d3da3d69a23aff30008fb14bc1dbb5ddb45d28656bda2c43e417b837c2045a08"
   },
   "reportTemplateName": {
@@ -2216,7 +2216,7 @@
     "source_sha256": "ff5171270797ebd68a772aa8d1f8d51cb657b4172fcc7b24ec9185b1483e20dd"
   },
   "reportTemplateBody": {
-    "text": "Template body or query definition used when generating the report.",
+    "text": "レポートの生成時に使用されるテンプレートの本文またはクエリ定義。",
     "source_sha256": "92dca636dff2d68d121faec5c8e28e0d8a9e141c264751360524c7eedfbdc4bd"
   },
   "reportTemplateSave": {
@@ -2384,7 +2384,7 @@
     "source_sha256": "727b1b3469f8f6535f886cbbf02b4581f9e220313b5f8f4aba87f985ae1375a2"
   },
   "waProbeUpload": {
-    "text": "Uploads and publishes a probe pack JSON file to the server catalog.",
+    "text": "プローブ パック JSON ファイルをサーバー カタログにアップロードして公開します。",
     "source_sha256": "88e7216170a3079e8238379d3965200299dfc442d67536c7346f0016979a513b"
   },
   "waProbeDownloadSample": {
@@ -2436,7 +2436,7 @@
     "source_sha256": "cf12f609529bed1412d5f5c4133a012433e45287abe8eb870221bbcc99c0615e"
   },
   "ocrAssignMachine": {
-    "text": "Assigns or changes which machine processes OCR for this recording.",
+    "text": "この記録に対して OCR を処理するマシンを割り当てるか変更します。",
     "source_sha256": "8015018071797183d6bda2fb384ef66b2c20f009fbf6d1a57b267dea77948aca"
   },
   "ocrRecordingSelect": {
@@ -2532,7 +2532,7 @@
     "source_sha256": "cfbab0a9dfaff054088dd3b4848beff119590d07cf4ef2086990836a4b20d2f5"
   },
   "actionFillDemo": {
-    "text": "Fills the form with lab demo values. Does not submit until you confirm.",
+    "text": "フォームにラボのデモ値を入力します。確認するまで送信しません。",
     "source_sha256": "3e26c7bfde6814e85939e1582e9b70d7ebd02f6400d23273992d4ed2ce5a048d"
   },
   "actionBrowseFile": {
@@ -2544,7 +2544,7 @@
     "source_sha256": "02aa1027e7b6c5f608cbb7b61d6d85174158621ae112843abbbfa3f481dac4ea"
   },
   "actionPreviewImport": {
-    "text": "Previews the import without writing changes to the server.",
+    "text": "サーバーに変更を書き込まずにインポートをプレビューします。",
     "source_sha256": "6d5cd16d4e72ffe4a2a19f20d02ad26879a44749f4e557ce99e6b6ec3d5349d1"
   },
   "actionContinueWizard": {
@@ -2560,11 +2560,11 @@
     "source_sha256": "aa3c7ad6f6e14b0f018d8bddc29641a1ca82c1dd5f46759ee1fb269598dabd9f"
   },
   "actionCopyAll": {
-    "text": "Copies all visible resolved text to the clipboard.",
+    "text": "表示されているすべての解決済みテキストをクリップボードにコピーします。",
     "source_sha256": "7636900fc664c37f7ccf998338407ad2618eaa3b04e1bbd452894e069286037a"
   },
   "actionExpandHonesty": {
-    "text": "Expands or collapses the honesty notice about training and assessment claims.",
+    "text": "トレーニングおよび評価の請求に関する正直さに関する通知を展開または折りたたみます。",
     "source_sha256": "819df9e97e20bf2f6fa1fbf67785149739d7a7d7b318452bfbd4a97e2c65afe5"
   },
   "dataGridRowAction": {
@@ -2616,7 +2616,7 @@
     "source_sha256": "aa6ca6da9be2ea39c1e169c527f6297fbb787e1b9c6e54a94c05e7e07c18aae6"
   },
   "iamToolbarAccount": {
-    "text": "Opens account security or session options for the signed-in operator.",
+    "text": "サインインしているオペレーターのアカウント セキュリティまたはセッション オプションを開きます。",
     "source_sha256": "933a8fe2f176c8119a189ec15b6cee490938c50dd1a088276f17fdbb75b2aa79"
   },
   "iamToolbarLogout": {
@@ -2704,7 +2704,7 @@
     "source_sha256": "feaf66dc6606d04c634194b51578ae0dea9f1f47b757892d72d6ec449eff37ca"
   },
   "ipScannerIpv6Neighbors": {
-    "text": "Adds the ipv6-neighbors discovery target (OS neighbor cache and link-local). Not a full network sweep.",
+    "text": "ipv6 ネイバー検出ターゲット (OS ネイバー キャッシュおよびリンク ローカル) を追加します。完全なネットワークスイープではありません。",
     "source_sha256": "26af63518f9c123473b1335d785763bb8edd822cb8dab6ce1391d3b00022f59b"
   },
   "ipScannerProgressLog": {
@@ -2752,7 +2752,7 @@
     "source_sha256": "e6e23298a11552e6a52292a0a3c6b7796bbaa54d326468876e7d939e9c5f748b"
   },
   "elevationQueueAction": {
-    "text": "Mock workflow action for a queued elevation request.",
+    "text": "キューに入れられた昇格リクエストのワークフロー アクションを模擬します。",
     "source_sha256": "c592d523e986f8db6781e09d8d9f33e8a188b9456f6e515738c6fddbc93aed4c"
   },
   "netscanStart": {
@@ -2772,7 +2772,7 @@
     "source_sha256": "88fb6e00ba7946f215ab32e700407290194f8ff57308883ba7626c874ef1196a"
   },
   "ipScannerWorkerCount": {
-    "text": "How many TCP connect attempts run at once (default 64, max 500). Lower this on slow links.",
+    "text": "一度に実行する TCP 接続試行の数 (デフォルトは 64、最大 500)。低速リンクではこれを下げます。",
     "source_sha256": "97be9dfc6a36beedf90601ef2b91dc5c83ba59d0a279235e7081e68bbc11e5b0"
   },
   "ipScannerCredentialCatalog": {
@@ -2888,7 +2888,7 @@
     "source_sha256": "8701ab20a6138b740302afa6913622c5258390b27e7b87f22c755f7fe482838c"
   },
   "agentSyslogEnabled": {
-    "text": "When on, the agent forwards events to the configured syslog collector.",
+    "text": "オンの場合、エージェントは設定された syslog コレクターにイベントを転送します。",
     "source_sha256": "e1e69d46a033816d57737cd1e70147d7734da5e7ba833499346ba56e80ef4bd7"
   },
   "agentSyslogHost": {
@@ -2936,7 +2936,7 @@
     "source_sha256": "4be786c94bef0c88a9e17f69f3efc3d9694ea5cf5c34548d9c1bed364d0ebe0a"
   },
   "cryptoMasterExport": {
-    "text": "Exports the software master encryption key under break-glass controls.",
+    "text": "非常に厳しい制御の下でソフトウェア マスター暗号化キーをエクスポートします。",
     "source_sha256": "bf6b730cb291b29190e17e6232cb77a5d332bc66a1e299bb2930e86318601323"
   },
   "linkHsmAdapter": {
@@ -3016,7 +3016,7 @@
     "source_sha256": "08a94489b298d28e4256d8798e0beff103a285a7c8e20710953e4616d236397f"
   },
   "programDisclosureTemplate": {
-    "text": "Template text for this program disclosure field (supports replaceable tokens).",
+    "text": "このプログラム開示フィールドのテンプレート テキスト (置換可能なトークンをサポート)。",
     "source_sha256": "c3d898bdb11a4827d59d56872afde1db89c5327038c685c99ab3eb8583a1e9d6"
   },
   "programDisclosureVariable": {
@@ -3096,7 +3096,7 @@
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "elevationRemoteNonAgentLocalElevationPanelCtrl2": {
-    "text": "Purpose help for this control on the operator console.",
+    "text": "オペレーターコンソール上のこのコントロールの目的ヘルプ。",
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "elevationRemoteNonAgentLocalElevationPanelCtrl1": {
@@ -3112,7 +3112,7 @@
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "eventTypeFilterEventTypeFilterEditorCtrl4": {
-    "text": "Purpose help for this control on the operator console.",
+    "text": "オペレーターコンソール上のこのコントロールの目的ヘルプ。",
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "eventTypeFilterEventTypeFilterEditorCtrl3": {
@@ -3124,11 +3124,11 @@
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "identityPickListCtrl3": {
-    "text": "Purpose help for this control on the operator console.",
+    "text": "オペレーターコンソール上のこのコントロールの目的ヘルプ。",
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "identityPickListCtrl2": {
-    "text": "Purpose help for this control on the operator console.",
+    "text": "オペレーターコンソール上のこのコントロールの目的ヘルプ。",
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "labTestAccountsPanelCtrl2": {
@@ -3180,7 +3180,7 @@
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "mocksElevationMintOfferMockPanelCtrl1": {
-    "text": "Purpose help for this control on the operator console.",
+    "text": "オペレーターコンソール上のこのコントロールの目的ヘルプ。",
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "mocksElevationPolicyMockPanelCtrl3": {
@@ -3456,7 +3456,7 @@
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "trainingTrainingHonestyBannerCtrl1": {
-    "text": "Purpose help for this control on the operator console.",
+    "text": "オペレーターコンソール上のこのコントロールの目的ヘルプ。",
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "settingsCryptoMigrateFromHsmConfirm": {
@@ -3504,7 +3504,7 @@
     "source_sha256": "fbd972413e21a590125bd5ac3139e5c419e0d5d19a9d67ac6d7e85a69468bae3"
   },
   "defenseHeatMap": {
-    "text": "World map of blocked and failed attempts by country. The ranked table is the accessible source.",
+    "text": "国ごとにブロックされた試行と失敗した試行の世界地図。ランク付けされたテーブルはアクセス可能なソースです。",
     "source_sha256": "23766f8e4111351f0cdbb8820eea08bae39802f0a6cb8d4a8d74b44245ff3e5c"
   },
   "defenseOpenFamily": {
@@ -3512,11 +3512,11 @@
     "source_sha256": "3b19be536aeb8ccdc0ca37479b219d4f25e584b8ca652d00383b1cbe20ab6e87"
   },
   "cmmcHonestyBanner": {
-    "text": "These numbers describe product delivery and recorded work. They are not an assessment verdict.",
+    "text": "これらの数値は、製品の納品と記録された作業を表します。それらは評価の評決ではありません。",
     "source_sha256": "3421c9d54a1b550787715678393407e9c69b601af6bb86ff0c456665821a8401"
   },
   "cmmcOpenFamily": {
-    "text": "Open Current State Compliance to continue the named work for this family.",
+    "text": "このファミリーの指定された作業を続行するには、「現状のコンプライアンス」を開いてください。",
     "source_sha256": "3af5066b0b91f57d03606768d1ee86773727c960b7e9219be388f6e1cd721939"
   },
   "cmmcOpenPoam": {
@@ -3528,7 +3528,7 @@
     "source_sha256": "f19c5dead064384efa5f64b62ea73bac2055ae7201235a1dbf354f7f57c8214e"
   },
   "otRunDiscovery": {
-    "text": "Starts an OT discovery scan using the networks entered above.",
+    "text": "上で入力したネットワークを使用して OT 検出スキャンを開始します。",
     "source_sha256": "e9e83f8e6a7eb28068d0043ff8a0dcc40e398ecde2ffbdc98ecd8602ec359026"
   },
   "otSaveDiscoverySchedule": {
@@ -3600,7 +3600,7 @@
     "source_sha256": "c2c44b8b84112fc3f8078757d6a1667c95a910b3322588e525a71fe8f0c8cac4"
   },
   "gdprRopaProcessorContact": {
-    "text": "Contact details for the processor.",
+    "text": "処理者の連絡先詳細。",
     "source_sha256": "01c6d5919d69f3eaf3e16a0dd3fbc6ea8f10f096a02ba530c03f06c8c54a97d6"
   },
   "gdprRopaDpoName": {
@@ -3648,7 +3648,7 @@
     "source_sha256": "ed14b5be2ebfb2c645fd7144dd996debc73029d8b0bc6265b42010d3271eb694"
   },
   "gdprRopaReview": {
-    "text": "Record that this register row was reviewed on schedule.",
+    "text": "このレジスタ行がスケジュールどおりにレビューされたことを記録します。",
     "source_sha256": "6be40977fbf3758f3aa0882147caffa33fec839a698a589f4ae5833f8ac92478"
   },
   "gdprRopaExport": {
@@ -3736,7 +3736,7 @@
     "source_sha256": "0df5b15e4cfd1b7a5a538d9a3c96b14f98638cbc116b2889ea2f3ca8cee2034b"
   },
   "gdprDsrWorkforceLink": {
-    "text": "Link to a workforce roster row when the requester is in scope; leave empty for external data subjects.",
+    "text": "要求者が範囲内にある場合は、従業員名簿行にリンクします。外部データ主体の場合は空のままにします。",
     "source_sha256": "85708970619c07c6d2c4d27ca7d02e50dd8857c976f266ce0654c661b8429dd7"
   },
   "gdprDpiaThresholdRequired": {
