@@ -1,0 +1,918 @@
+{
+  "accountSecurity": {
+    "title": {
+      "text": "本体论",
+      "source_sha256": "1487a13732076802730bc96f0ea0eabb1f66f51ac90dc8f8b1a7df52467a47ff"
+    },
+    "totpLabel": {
+      "text": "TOTP-Mehrfaktor：",
+      "source_sha256": "7606d2924fca5cbf8280140dfc5e20885da3140cf07fefe23cd4e94840dbb709"
+    },
+    "enrolled": {
+      "text": "整体性",
+      "source_sha256": "dbac85c110f4370c8869273ad90e98e31a4563bf4b077d7bc9d55eb285256b07"
+    },
+    "notEnrolled": {
+      "text": "不存在的事实",
+      "source_sha256": "2fed0df55aacc2a56daf8743f6d36d0eb6677ddf28c00c3162071e193e099eb7"
+    },
+    "requiredByPolicy": {
+      "text": "劳特政策",
+      "source_sha256": "76fcf9302cec2946fb3272c495d55736b939206292adde7373a4e5e434fb411f"
+    },
+    "mfaDisabled": {
+      "text": "TOTP-Mehrfaktorauthentifizierung ist auf diesem Server deaktiviert.",
+      "source_sha256": "212f85bb729d269101abab16156e34865346d35a1bf7b56769507c0287ff299a"
+    },
+    "unenrollHint": {
+      "text": "将身份验证器应用程序注销到 wechseln。杰拉特·维洛伦？ Nutzen Sie “MFA zuruecksetzen（电子邮件）” auf Anmeldeseite 或 fragen Sie 管理员。",
+      "source_sha256": "b4fe6ad172e2ff2f7f02e361d17f7353e5a61cca90a501a2d8418264d1f477ad"
+    },
+    "unenrollButton": {
+      "text": "Mein 身份验证器 abmelden",
+      "source_sha256": "89d9ad8d722bfcf7274e6e9f7d14af59e5dd2c49307714c396bd1c5dd9d9165c"
+    },
+    "unenrollAria": {
+      "text": "Meinen TOTP-Authenticator abmelden",
+      "source_sha256": "0b297a2d2a1866b3b3f80043dde4d6d06c622e1b51f73ef5c8fc031249399a18"
+    },
+    "confirmWarning": {
+      "text": "TOTP-Authenticator entfernen？ Bis Sie a neuen einrichten, ist Ihr Konto nur durch Passwort geschuetzt{{untilReenroll}}.行动协议。",
+      "source_sha256": "d4ee2e3b614ee59e9274cacc0c79015be63ee21b1b77b2d9ed218e810b4ed864"
+    },
+    "untilReenroll": {
+      "text": ", bis Sie sich erneut einrichten",
+      "source_sha256": "dcee2d34cffa5c2c4633cc8fab21fe693673fbdf182fc546f2ae2d75537ed2e0"
+    },
+    "currentCode": {
+      "text": "Aktueller 验证码",
+      "source_sha256": "d59097c01154ea86f0e8ddeab19fad35de537bde8c7dc06c0670b563282333ba"
+    },
+    "currentCodeHelper": {
+      "text": "Erforderlich，weil MFA laut 政策 vorgeschrieben ist。",
+      "source_sha256": "e25733c470fa38b688b248dd590b1d414fd6ffe7a5c3a8ce72ead935a90b3404"
+    },
+    "removing": {
+      "text": "电线进入…",
+      "source_sha256": "b879e84efc5672734eeab8cc707fbe0a6a36a317f741a4a82b7f49f3c3ac50d1"
+    },
+    "unenrollConfirm": {
+      "text": "登出",
+      "source_sha256": "48f0d3d397d49f135f116d947a805b49f084f637154a8e9913e7233a11dc16a0"
+    },
+    "notEnrolledHint": {
+      "text": "Kein 身份验证器。 Melden Sie sich ab and wieder an, um a einzurichten。",
+      "source_sha256": "d2f0330cdd8facaeefae2fa797e0a3ac47cdfb5a27e2c6d93f9a42bf4e9321fc"
+    },
+    "removedSuccess": {
+      "text": "验证器进入。 Richten Sie bei the naechsten 重新登录。",
+      "source_sha256": "eabb80667a3cbb867a961707629ec5233e056dc41354f297323b47c32cb67fa2"
+    },
+    "requestFailed": {
+      "text": "Anfrage fehlgeschlagen。 Bitte erneut versuchen。",
+      "source_sha256": "f211610e79ee3803df271304fe20091c633e6129e14ee052912dfb538afe0b78"
+    }
+  },
+  "adminAuthHelp": {
+    "titleUnauthorized": {
+      "text": "管理员权限 (401)",
+      "source_sha256": "aff72ace4c9c96e04f0608e70a43200d19caf51749482d0eb35ee05fd33fc48b"
+    },
+    "titleManual": {
+      "text": "管理员-API-Zugriff",
+      "source_sha256": "7e094f2abbccf42cf439b8d27deb8d8698234f53af1237dfb577cca6e9cd5982"
+    },
+    "unauthorizedBody": {
+      "text": "Eine geschuetzte Route unter /api/admin/ hat 401 未经授权 zurueckgegeben。 IAM-Sitzungsauthentifizierung aktiv ist, ist Ihre Sign-in meist abgelaufen — melden Sie sich erneut an。请注意浏览器管理员的身份验证不使用服务器上的 ADMIN_TOKEN ueberein（z. B. nach einem Datenbank-Reset 或 wenn nur a Seite des Paars geaendert wurde）。 Nach the Korrigieren des Tokens hart neu laden or /login oeffnen, um a neue IAM-Session aufzubauen.",
+      "source_sha256": "86b2f15818cdc9d35d6494986c9a88ec1482df5161f99214c7baeb261feea36d"
+    },
+    "quickFacts": {
+      "text": "库兹信息：",
+      "source_sha256": "b4f3ee1eec63195b67a0f0c04ad39d32b3d6914dabab6c2dd0e996d9883dd1bc"
+    },
+    "oneNamePrimary": {
+      "text": "Ein名称：ADMIN_TOKEN",
+      "source_sha256": "6a42766ea0badc1cf03bb537cfbfb7e0b24e47bf0ff161e97d93ce1f93902022"
+    },
+    "oneNameSecondary": {
+      "text": "服务器清单包含 ADMIN_TOKEN。 Dieser 浏览器具有一个 jede Admin-Anfrage 和 HTTP-Header {{header}}（以及用于 aeltere 版本的 X-Admin-Token）。 Wert {{token}}，是 RBAC 的缩写。 Es gibt keinen alone Registrierungswert namens {{header}} — 是 Draht-Headername 的名称。",
+      "source_sha256": "df1b4b1c08a9851f37953077abe6bebdef1b64d8377876b090959581adb6a89d"
+    },
+    "whereSecretsPrimary": {
+      "text": "服务器 Geheimnisse speichert (Windows)",
+      "source_sha256": "ba2eefc31e3b7c2dd8e9ff8799704ebf5339d403d147ede46a2c289d617658aa"
+    },
+    "whereSecretsSecondary": {
+      "text": "Maschinenweite 设置位于 {{settings}} (bevorzugt) 或 {{settingsLegacy}} bei aelteren Installationen 下。 Geheimnisse wie ADMIN_TOKEN liegen under {{secrets}} (bevorzugt) 或 {{secretsLegacy}} als verschluesselte Registrierungswerte。 LocalSystem 是由 Schluessel 直接指定的。 Windows 凭据管理器不适用于服务器或代理Laufzeitgeheimnisse genutzt — es ist benutzerbezogen 并且适用于Dienstkonten 而非verfuegbar。",
+      "source_sha256": "0180a3a98eadcb44616957fbea4693cedd8796aa422cccb994d4a7c97d5a162b"
+    },
+    "unixPrimary": {
+      "text": "Unix/macOS",
+      "source_sha256": "eb22bccdb665389d79d6499dbc2f811c9995bc910b503f319caa453492fe5a84"
+    },
+    "unixSecondary": {
+      "text": "/etc/aic/ 或 /Library/Application Support/com.analoginfo/ 下的设置； Geheimnisse ueber the Plattform-Keyring (Linux Secret Service / macOS Keychain)，而不是 Klartextdateien。",
+      "source_sha256": "85f4f0ce310d449dc6381e75d16df35ff7e8a511b3d0d3f8f571f4f300318985"
+    },
+    "iamPrimary": {
+      "text": "IAM-身份验证",
+      "source_sha256": "bdc9c9abf4cb87bcb0fb6ac8c3e8f8f8e7bfbe4877f23c09b0018fed1ec59cbb"
+    },
+    "iamSecondary": {
+      "text": "Wenn IAM_SESSION_AUTH_ENABLED wahr ist, ist a gueltige Sign-in (or the gemeinsamen ADMIN_TOKEN-Header without gespeicherte Session) erforderlich. Abgelaufene Sitzungstoken werden geloescht 和浏览器 /login geschickt。",
+      "source_sha256": "ed79e51dfec47ae9476ee58786336c2b198ee4c3d1ffc6b825ec5e7ef1eadb2c"
+    },
+    "operatorsFooter": {
+      "text": "Fuer Betreiber：siehe docs/SECURITY.md 和 pim-app-config/docs/CONFIGURATION_STORAGE.md（HKLM-/Keyring-Layout）。",
+      "source_sha256": "21921c85d55afd80b1619b42c10d42804f7d5571af3ec2e91c58e023c026070c"
+    },
+    "openSettings": {
+      "text": "设置关闭",
+      "source_sha256": "536a45abc1445fa1d69b13c1592b880a3b7ededca3d0ba42b048527e4bfc4ae3"
+    },
+    "signIn": {
+      "text": "Anmelden",
+      "source_sha256": "a329a32263a460ff8d4bdf4640fd793b5dd91c99362e0ab4fb061d56883b098f"
+    },
+    "close": {
+      "text": "关闭",
+      "source_sha256": "7d9eb7acb13e24625c404401d8e88b2350e32162455885f18276cf802f7701ed"
+    }
+  },
+  "systemGroups": {
+    "systemDetails": {
+      "text": "系统详情",
+      "source_sha256": "f75e88c835fff7c34bfd8a6b2314151d92a5a296387e893a0afd6f19e1c72a88"
+    },
+    "editPasswordPolicy": {
+      "text": "团体-Kennwortrichtlinie bearbeiten",
+      "source_sha256": "727f7940af98c93c91335dc380687d84597c7c48257a46497f6c52cb4693eac7"
+    },
+    "passwordRecovery": {
+      "text": "肯尼沃特维德赫斯特林",
+      "source_sha256": "cc48b74c6caa2d18a0ef5a5805af01e93ac71b0ff378def38a5ba1d927f86a7f"
+    },
+    "sendRecoveredAria": {
+      "text": "通过电子邮件或短信发送 Wiederhergestelltes Kennwort",
+      "source_sha256": "145f05d5e40bcba9bd17cdd0ec6c4e3f3682ddc92dcb6828a3b81d33018f3fa5"
+    },
+    "moveMachine": {
+      "text": "Maschine in a andere Group verschieben",
+      "source_sha256": "3d57809d49d6de8398686396c1078cfb6a8de0c5191a30e4c6a29d6fcce04fb9"
+    },
+    "issuances": {
+      "text": "奥斯泰伦根",
+      "source_sha256": "3e07cb6e2871cbc14405dafd40b2d7e30740032d8684c6203bf4e06c8ba74938"
+    },
+    "copyToken": {
+      "text": "注册-Token kopieren",
+      "source_sha256": "ff62f5dce1d5a00880e2f98ac3161c89a2a35fd06831d6b6062fd24088151609"
+    },
+    "redownloadSettings": {
+      "text": "settings.json erneut herunterladen",
+      "source_sha256": "7a7a22c7d56eb05bc0cb08f0710f5175662b64f8edb957f1821bedb9afa4b55b"
+    },
+    "rotateCredential": {
+      "text": "罗蒂伦资料",
+      "source_sha256": "72ef3e9654cd04f3366fd7a5ac7755ffd51189199d9fcd307a5882950155dc93"
+    },
+    "revokeIssuance": {
+      "text": "更宽范围的限制",
+      "source_sha256": "71f2f90b42da7ea59b66135f26d98982a5e5a431fbf5b80d18a4d9bff23361d4"
+    },
+    "revokeIssuanceTitle": {
+      "text": "Ausstellung widerrufen?",
+      "source_sha256": "8ce4cd0f1db49777f7a1dd25bc631992fd0d67413ee2cbf74d5ed8315f42352a"
+    },
+    "importSettings": {
+      "text": "settings.json-Dateien registrieren",
+      "source_sha256": "4072659528f293ae3d6933d18704e6707cb5b4d7364d2c73c3862e052f130c91"
+    },
+    "removeImportFile": {
+      "text": "进口清单的日期",
+      "source_sha256": "c1a478b9337b6f270db2b6ad763683392a3f22697bb75df6b965eff8c50d3747"
+    },
+    "identityDetails": {
+      "text": "身份详细信息 (schreibgeschuetzt)",
+      "source_sha256": "ff6219a0c6b6bfeba65add809ea630b8064364a0bec957f47e132d42fe0511b9"
+    },
+    "identityTemplate": {
+      "text": "身份认同",
+      "source_sha256": "06a2aec62b1a2c4867015e55bf7d9f1f12a127a105b918356f655ef69605f88b"
+    },
+    "startOffset": {
+      "text": "开始通用 (TT:HH:MM:SS)",
+      "source_sha256": "ecd0097b5c46d57d3dc7eed7e0b6310a2e23bd8e0b8b279ca6ea78133429f2f4"
+    },
+    "editRowPolicy": {
+      "text": "泽林-肯尼沃特里赫特林尼熊贝滕",
+      "source_sha256": "64a1d27eb2b44e43cee2a29886aaf5e3d2b27187a80aadcd09ea151165b7ddaa"
+    },
+    "moveRowUp": {
+      "text": "泽勒·纳赫·奥本",
+      "source_sha256": "fc7cc48718727768d4e4124314aa01d9e300e2e24abc6ea813a571a44c1c5aa5"
+    },
+    "moveRowDown": {
+      "text": "一切都结束了",
+      "source_sha256": "e2eccf13de43d640ae987b5e00b80b4b84350ca9fa10aa07b7ce03980a4e034a"
+    },
+    "removeRow": {
+      "text": "泽伊勒·恩特芬恩",
+      "source_sha256": "ee42feb489d8ae913cc3ee94459692bbebb3c78a9b20dca8c6e388def993e244"
+    },
+    "findMachine": {
+      "text": "艾伦集团的机器",
+      "source_sha256": "ea75d40f9b780fceecb80bcd8d015d36270c2f233700d4604423ffa3dbf756f8"
+    },
+    "editGroup": {
+      "text": "熊贝腾系统集团",
+      "source_sha256": "7373dd9317d633f2f66c4a6ab740df82295df208b258edf97312862677bb4f98"
+    },
+    "deploymentTemplate": {
+      "text": "判决书",
+      "source_sha256": "d99e40772ec629efd80dfa249fd0002bce70486bfe067c661d5fa1e4a604d97d"
+    },
+    "deleteGroup": {
+      "text": "勒申系统集团",
+      "source_sha256": "ef653ff5e4e21ccf6fd7b22c0b58a1dae1bbb2fb8946f215b4e96a653dc09eab"
+    },
+    "createGroup": {
+      "text": "埃斯特伦系统集团",
+      "source_sha256": "27670287048498e7e52703f6f543f01948d7adab0ffd6267b8250292a3823555"
+    },
+    "deleteEndpoint": {
+      "text": "终结点",
+      "source_sha256": "b26826997bc26409bd0443160a89eefaa0e8145677a5efd0ef1250dc557c1e7a"
+    },
+    "groupConfig": {
+      "text": "Groups-config.json",
+      "source_sha256": "690b88a7419979a970ed5a09d63777b0478610c3c3124f96cfe8f1481e2fd252"
+    },
+    "elevationCode": {
+      "text": "海拔代码",
+      "source_sha256": "de69ad31792a1930f0a719a09ce0b42561668a72dd1eb6b6faf8fd5a7849e882"
+    },
+    "copyCode": {
+      "text": "科皮伦代码",
+      "source_sha256": "2ed99c26c545d4d132ade09ebeb4700018c0423f511d308e91631d0324538ac8"
+    },
+    "groupFallback": {
+      "text": "团体",
+      "source_sha256": "34ca0e76608842ff3e7d924a455a396a82f471052c15e3f2ed7f090ac702e5c1"
+    },
+    "createElevationCode": {
+      "text": "埃斯泰伦海拔代码",
+      "source_sha256": "fdfc7849b07a1e944431caa27f37505d7cff7e527b6323e0fcb9fa4911ae9edd"
+    },
+    "targetGroup": {
+      "text": "齐尔集团",
+      "source_sha256": "59887edaf7745fb18ba86a79230208cd2c2fd431b31ff9f3326b536f87918be6"
+    },
+    "targetGroupHelperPick": {
+      "text": "Aus Elevationsplattform-Policy ({{platform}}) waehlen 或 benutzerdefinierten OS-Gruppennamen eingeben。",
+      "source_sha256": "6a306e79a353517550711ec9e2ec233414e185a3135056dcf1c13d485b472b5d"
+    },
+    "targetGroupHelperType": {
+      "text": "OS-Gruppennamen eingeben (Plattformrichtlinie not geladen).",
+      "source_sha256": "008c3993f00404600a0a545cf371d2e9e988129eac959cec13812d617a965f47"
+    },
+    "strategy": {
+      "text": "活动代码策略",
+      "source_sha256": "c8ca3e1fd1eb7c6b86334b5d4cb3bde6e4376c9ba730a7ae41bc6849c2b5d1b9"
+    },
+    "strategyLetters": {
+      "text": "Buchstaben",
+      "source_sha256": "0b5041be41b01e968a26f752f2d69e54715729c5167293ee0ff6c50786a8d13f"
+    },
+    "strategyDigits": {
+      "text": "齐弗恩",
+      "source_sha256": "507f2e07382d8082c6e5eac20bd0b08e9281bd8dbb6d40467425596b8b91bae4"
+    },
+    "strategyFallback": {
+      "text": "Eingebaute Standardliste wird verwendet。",
+      "source_sha256": "7ed4f77602dcfc60e93a7c46ec49f34e73d2ba72b045cc95f0935d79afe9ac73"
+    },
+    "strategyHint": {
+      "text": "Der Agent 使用 Seiner konfiguriertenlevation_strategy_id 离线；柴油策略 waehlen，与 Endpunkt bereitgestellt wurde。",
+      "source_sha256": "6edf9654725b2f5e074ab98c7e232df03a7bdc4cd69f5e10e018fd07ec522a94"
+    },
+    "strategiesLoadFailed": {
+      "text": "活动代码-战略不是立即生效的。",
+      "source_sha256": "0d78552b3f34df7d3f44b2b8ae56e8bff3902bc0766e10b83941587a12b93879"
+    },
+    "durationMinutes": {
+      "text": "道尔 (分钟)",
+      "source_sha256": "99a6d467e2701085072ae6a2709bf4e0e284fa401c929171eac40bb31ede7023"
+    },
+    "justification": {
+      "text": "Begruendung（票证或 Vorfall-ID）",
+      "source_sha256": "5d950fef31126040e287eb6d5d4115687f5357326b854b90092072af2f83c00c"
+    },
+    "justificationHelper": {
+      "text": "Erforderlich，请参阅服务器活动中明智的 Zugriffsbegruendungen 的策略。",
+      "source_sha256": "be1ace05bcce2ed6607b6914ed17470547172bc2f4456cf6cc93b36694e606aa"
+    },
+    "activateImmediately": {
+      "text": "软性活动",
+      "source_sha256": "f63271ec729b5f5e536e66e954ab66394eedaebef991e49c173c776e784e56a3"
+    },
+    "scheduledActivation": {
+      "text": "活动期间",
+      "source_sha256": "69bb321ed9797e40944cf30cd9e4cd7e558620d93521fe37b976596f2f91b86a"
+    },
+    "elevationCodeLabel": {
+      "text": "海拔代码",
+      "source_sha256": "de69ad31792a1930f0a719a09ce0b42561668a72dd1eb6b6faf8fd5a7849e882"
+    },
+    "generateCode": {
+      "text": "代码 erzeugen",
+      "source_sha256": "b3ac6b2f0ff7a5729d40ddc19ad8ed3dcf36670004a6c147008e65d645e1ffb9"
+    },
+    "generating": {
+      "text": "Wird erzeugt…",
+      "source_sha256": "e6e5f0fa290d1a6660466194b7fc9f9d5faa64e6b0c4767c3d703444299059c3"
+    },
+    "createElevationTitle": {
+      "text": "Elevationscode erstellen",
+      "source_sha256": "fdfc7849b07a1e944431caa27f37505d7cff7e527b6323e0fcb9fa4911ae9edd"
+    },
+    "usageType": {
+      "text": "努宗格",
+      "source_sha256": "93bacdee384936d97b02f194f6f48b5c2ecf249071a2cb5bd71e338b3ee93421"
+    },
+    "usageConnected": {
+      "text": "整体 (verwaltet)",
+      "source_sha256": "a374643b3f1b05ee343502861d5d93b7054fa3cd3f737f0299893b096263a79e"
+    },
+    "usageOneShot": {
+      "text": "行为证明",
+      "source_sha256": "0362a90aa18f9889bd14ba3a3850afc66a7fb701dc1c6096c5dcd20ead1251aa"
+    },
+    "usageAirGapped": {
+      "text": "气隙 (dauerhaft)",
+      "source_sha256": "b47b40ddbae1ac21bf48a7b573e858d47822400f9c960f24ebda7eb238a8e4ec"
+    },
+    "loadingTemplate": {
+      "text": "福尔拉格·维德凝胶…",
+      "source_sha256": "4a8ed6eaa15a4f472d7c9e1aefaf09f88c3c8e81d3174120a4905a2e03d701e3"
+    },
+    "defaultTtlHours": {
+      "text": "标准-TTL (Stunden)",
+      "source_sha256": "0649a6b24182e72a08041dde06daa7e2773b324565cb442d45ec1d9b47a33233"
+    },
+    "defaultTtlHelper": {
+      "text": "Wird verwendet，wenn 助理 kein ttl_hours angibt。",
+      "source_sha256": "5c8f2dd0556bf14ffbe371c7b7d20b3362efcdf61252549036f9be2aa8e89bd0"
+    },
+    "templateSaved": {
+      "text": "危险情况报告",
+      "source_sha256": "2d01362b9c7bd9c7632220df1f402bddafbbdf93d60cbf5794c3a094b4931219"
+    },
+    "saveFailed": {
+      "text": "拯救菲尔格斯拉根",
+      "source_sha256": "8dc9cb1fdc3dd16424809c9da05cb58672a42169bf54487f8339749d56873c21"
+    },
+    "noGroupSelected": {
+      "text": "凯因集团管理",
+      "source_sha256": "5ef05ebc49914ff3fc816d28f6ffe700e3ab971eb47e521310a26478559cf546"
+    },
+    "seedDefaultIdentities": {
+      "text": "新消息的标准识别",
+      "source_sha256": "dfa722f8d065d1dffa3d3d64a34b4e289b07f6d96a31fce229eb988523a08ff4"
+    },
+    "explicit": {
+      "text": "显式",
+      "source_sha256": "73691015bd0a63b3af62e99fc050edfeb5acd94298775e5657bd6f2beb321876"
+    },
+    "wellKnown": {
+      "text": "贝坎特",
+      "source_sha256": "0f8dd7a3658f302d40f0da33a1fbc23a4f93c328239701de352762444f9ec029"
+    },
+    "wellKnownAccount": {
+      "text": "贝肯特斯孔托",
+      "source_sha256": "45bc0119712c32c7b48f2c93d09456a217aa5cc37018d90f000359bf419af9b9"
+    },
+    "accountName": {
+      "text": "琴名",
+      "source_sha256": "29f555468f427e15858996303c51e395d12c1aaa4558ec7e35a79f6bb54c266b"
+    },
+    "inherit": {
+      "text": "维勒本",
+      "source_sha256": "b4c9f20792cfa6dab5b29b9bf9018c6a60cb040ba530393501e7f7ae7141bedc"
+    },
+    "industryStandard": {
+      "text": "布兰肯标准",
+      "source_sha256": "386bb590dbea2eee5d0a8c2f2df8a6327126da74c66e523bf41b19f338f0582f"
+    },
+    "industryStandardHelper": {
+      "text": "Regulatorisches 或 Benchmark-Profil waehlen，是 Kennwortrichtlinie dieser Identitaet vorzufuellen。 Benutzerdefiniert waehlen, um Felder without Ersetzen to bearbeiten.",
+      "source_sha256": "e85bdf6c2c5fe1cca65498e9ce629413efa5904b58bf816b6b3f2897e499e3b6"
+    },
+    "saveTemplate": {
+      "text": "Vorlage speichern",
+      "source_sha256": "c5505bb9de3b8bbd03cfc2f778ea34630d1a9ddefb1cf5c7dc993c9d502a2720"
+    },
+    "saving": {
+      "text": "维尔德·格斯佩歇特…",
+      "source_sha256": "915ceeb27637953b9576bc64f8e8c88a8af76d2cf477fe2cb7f23119c4d12dd5"
+    },
+    "identityTemplateSaved": {
+      "text": "身份认同",
+      "source_sha256": "e129ed4588a2bb7531d38be03243677ededa4f2d8402d897f2f92a8391e84d36"
+    },
+    "identityTemplateSaveFailed": {
+      "text": "身份识别与行为无关",
+      "source_sha256": "9936980378f2cd6cd531ef433ae806046daca318bdd8bd83f394f3e085c8a283"
+    },
+    "groupPasswordPolicy": {
+      "text": "团体-Kennwortrichtlinie",
+      "source_sha256": "9e5b212e46dbfe1cab9461a97d4fa45b191119deea4b8facd5d87146bd3c9763"
+    },
+    "allStatuses": {
+      "text": "所有状态",
+      "source_sha256": "23ee74c4a81bad302d83b06a3e95cf6f9833f41fbfed14f5b76036f4c3e07aea"
+    },
+    "statusActive": {
+      "text": "活动",
+      "source_sha256": "8163454f378f0814a0911afc75bb63814643a45803a0460003800e1c6b9be636"
+    },
+    "statusSuperseded": {
+      "text": "埃塞茨特",
+      "source_sha256": "d234c69d23155c7b68288af7df7fc4bae7f705de440bd8d6ad642fecf91b919c"
+    },
+    "statusRevoked": {
+      "text": "维德鲁芬",
+      "source_sha256": "d1a9bdb8adc5263af7e5c95eb4b91317a36a9e30568370014a2d0348625faabb"
+    },
+    "statusLabel": {
+      "text": "地位",
+      "source_sha256": "920e413c7d411b61ef3e8c63b1cb6ad058d5f95f8b481dbafe60248387d8c355"
+    },
+    "settingsIssuances": {
+      "text": "解释-解释",
+      "source_sha256": "ac2d953477be5979f81603a1c301bd0640cca14efdc1bb44941e9d9f8ea43d9d"
+    },
+    "loadIssuancesFailed": {
+      "text": "Ausstellungen konnten not geladen werden",
+      "source_sha256": "8592129935217824e0f9050cdb648ceec9c6a28bb84b677d024fae1802abf34d"
+    },
+    "downloadFailed": {
+      "text": "下载fehlgeschlagen",
+      "source_sha256": "e29111b10e59b51d5ddb80163e4a1f3abf408687b605c273eb93374cf075ee79"
+    },
+    "regenerateFailed": {
+      "text": "新的行为",
+      "source_sha256": "c7d0edb442381f99e8f7625fd0692fe9b75f85462b8549e1cb5f8456e9ea8835"
+    },
+    "revokeFailed": {
+      "text": "广泛的社会责任",
+      "source_sha256": "01dc64c70623ad820838443daba28114d01ad9b33d025a25c08f8550291beb24"
+    },
+    "tokenCopied": {
+      "text": "Zwischenablage kopiert 中的注册令牌",
+      "source_sha256": "8aea902c8c4b87888604a0f206bebb05aa84013615238a76f7eeb5b2f4e9b352"
+    },
+    "clipboardWriteFailed": {
+      "text": "Zwischenablage konnte not beschrieben werden",
+      "source_sha256": "aaae26ac8efa9c3fc34a56ed8e1b7285b919e77e19b29e267b7a4d1d9e5d03f3"
+    },
+    "rotateConnectedOnly": {
+      "text": "Zugangsdaten rotieren (nur ConnectedManaged)",
+      "source_sha256": "d776b86c3874fee2570baa6f5d163473216cd93407a5dd0e45add74c54c943a4"
+    },
+    "rotateUnavailable": {
+      "text": "Neu erzeugen for diese Zeile not verfuegbar (nur aktive ConnectedManaged-Ausstellungen koennen rotiert werden)",
+      "source_sha256": "839933a4437630767fb1dbea06d92fb7ec87e6e5f81ac898106bad0016a0b853"
+    },
+    "revokeActiveOnly": {
+      "text": "Nur aktive Ausstellungen koennen Widerrufen werden",
+      "source_sha256": "908720cbfc7b32de3b218f7a98c8225f12d07bae49a1926ad59270b7d0d2ca6f"
+    },
+    "defaultSystemGroup": {
+      "text": "标准系统集团",
+      "source_sha256": "368f7d04806d3b93725a4b0f5634a4072cdce665eaa5123c87a0822b42fbb96a"
+    },
+    "defaultSystemGroupHelper": {
+      "text": "Wird verwendet，wenn a Datei system_group_id weglaesst",
+      "source_sha256": "bccd62187c989ab0ddab310661412b5f986a4eb1fe986cdfad9c792d0ae487d6"
+    },
+    "markAirGapped": {
+      "text": "Als 气隙 Markieren（nur 离线）",
+      "source_sha256": "264780293b41e5eb82f434858780de1ffdaaf6d214d775e043bdce00d2d01365"
+    },
+    "chipInFile": {
+      "text": "在达亭",
+      "source_sha256": "68df8d68515575886275e9a51ae317a0149bc00d1e1f7b6f445c832aa0500d9e"
+    },
+    "chipNeedsGroup": {
+      "text": "集团诺蒂格",
+      "source_sha256": "936337cdcb9e28578a1e92f0d989c10f3723221f96305059b99bbdaffd355500"
+    },
+    "chipValid": {
+      "text": "盖尔蒂格",
+      "source_sha256": "0e0833c343c4af138127dd69650bdfd207a2f8da78acc5a979335ff5a35fb81a"
+    },
+    "chipYes": {
+      "text": "是的",
+      "source_sha256": "85a39ab345d672ff8ca9b9c6876f3adcacf45ee7c1e2dbd2408fd338bd55e07e"
+    },
+    "chipNo": {
+      "text": "不",
+      "source_sha256": "1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da161c6099be3691d"
+    },
+    "importing": {
+      "text": "非常重要…",
+      "source_sha256": "9f052773097ff125c8b53b876eae2e241b9ab284389163326fe8afb3a7ef904f"
+    },
+    "importFiles": {
+      "text": "{{count}} 进口日期",
+      "source_sha256": "f5df1169bb751ddb2b0a6ba75f7a33fd2206cfaf0e5d42d48ac114645b96595e"
+    },
+    "importFilesPlural": {
+      "text": "{{count}} 日期进口",
+      "source_sha256": "871e4f33fd215d70cced8c9149ff91c6fb7fd890d089732913e0923dfebc58a5"
+    },
+    "noFilesToImport": {
+      "text": "基本数据导入",
+      "source_sha256": "5ba87db07093d5bfa5d7d1a3924a718b6a1da081ef3b13ac750c8b1c75404ad8"
+    },
+    "noValidFiles": {
+      "text": "进口数据",
+      "source_sha256": "c11abffd277d0716a3b411dac974c8c0800a1e9ff621e9e7e946cf098ec81a58"
+    },
+    "selectGroupForOmit": {
+      "text": "没有 system_group_id 的 Dateien 的 Systemgruppe waehlen",
+      "source_sha256": "7f1366e7b79e33bde1da7a788e07241d18f536ce90677a1589a3f39cbb3a0c6a"
+    },
+    "importFailed": {
+      "text": "进口酒精",
+      "source_sha256": "943a42b10aba0931b882ea8c85c67b4e310d83c72cc2eafca6aff06c9f02a2b1"
+    },
+    "unknownError": {
+      "text": "错误提示",
+      "source_sha256": "e7a0ff855a9b4b4a3a8914eb7137671d86e69c0270ff48b6b7a6f403413ff80e"
+    },
+    "invalidJson": {
+      "text": "Ungueltiges JSON 格式",
+      "source_sha256": "ce9594f58a7c00c816d7b58feea5c617606d15ad771641d6e8e2cb39cdd80780"
+    },
+    "descriptionColon": {
+      "text": "描述：",
+      "source_sha256": "0cf2814604b4c9ad9139ebf7792b197fa2072052a8d17467bb33abc6bdce7be4"
+    },
+    "deleteGroupAndEndpoints": {
+      "text": "集团与 Endpunkte loeschen",
+      "source_sha256": "be6bf07eb88347a4adc5717738464a5be95d16985d1691492da61832197d8375"
+    },
+    "deleteGroupOnly": {
+      "text": "勒申集团",
+      "source_sha256": "3323b396a699996e4d7c6f549c230749b72172e54ae9cf6995dd43cfa12db02f"
+    },
+    "passwordLength": {
+      "text": "肯沃特兰格",
+      "source_sha256": "6ff27061fe2bd1b0e48efd056d5923b58cffe92bd142260b640b9c13a9a2187e"
+    },
+    "inheritEmpty": {
+      "text": "Leer lassen，嗯，erben 的有效标准。",
+      "source_sha256": "819c58e18df9cd1a83954d8798de762ad86fe300fbb29ffea546077cd147541d"
+    },
+    "maxDriftSeconds": {
+      "text": "最大限度。 Abweichung（塞昆登）",
+      "source_sha256": "cef65f353e8e9eebc42d0ed1d8cb9ba88fbb10421fdec286b81f6a15d8f3a7fd"
+    },
+    "secretUpdateFrequency": {
+      "text": "Geheimnis-Aktualisierungsintervall (Stunden)",
+      "source_sha256": "e5aa10b4753b948abb23ce426fce0dd649f4f522732a038cb387d2e1d5d6bed5"
+    },
+    "requireUppercase": {
+      "text": "总书本",
+      "source_sha256": "c426589c4bf8f1928f6f04cc95786dfe10504caa17651e2ef50dff8de4105986"
+    },
+    "requireLowercase": {
+      "text": "普通书本",
+      "source_sha256": "c6351baf92aa86fa19083f826bca5c4f4911f125b941d8f5f7199cee03ed2c54"
+    },
+    "requireDigits": {
+      "text": "齐弗恩·厄福德利希",
+      "source_sha256": "5a9d774eaa781e87b317c45563754b87956ab754886815d4cbfb650a63f9aa49"
+    },
+    "requireSpecial": {
+      "text": "特殊情况",
+      "source_sha256": "e89157a6983a30292aa449e79696097725381bda037ec6c8b645493599c783b4"
+    },
+    "allowedSpecial": {
+      "text": "特殊时期",
+      "source_sha256": "6b1e77a6f8f605c252ffba3fb30e019ad7921ec3f36ebc638fc77470294d8d8b"
+    },
+    "policyVersion": {
+      "text": "里希特林尼版本",
+      "source_sha256": "2d6d3c7924dd6bd246eb1436a496f2d155cb683d31a74762317dc86a7c039d7c"
+    },
+    "caCertPath": {
+      "text": "CA-证书-日期",
+      "source_sha256": "bce49bdd0533c483e58e675aef044cf862c61a8480df1440bae26f9ae9f1bdec"
+    },
+    "localAccountName": {
+      "text": "Lokaler Kontoname",
+      "source_sha256": "4ca9f990f653fe56e85860de0df7b06a0e0b43844dfbea938a84f172cc394811"
+    },
+    "groupName": {
+      "text": "集团名称",
+      "source_sha256": "1f155d97469ee1fadd1d71fc18d9fbed070ec2b7d5d6f1f5a7b1e59f192882cf"
+    },
+    "groupNameHelper": {
+      "text": "Nur alphanumerisch、Bindestriche 和 Unterstriche（最多 64 Zeichen）。",
+      "source_sha256": "d1985bdf095f3986ca2f599fdcb3db06e2775e162759bb79b8d8abca0ba52eb6"
+    },
+    "description": {
+      "text": "描述",
+      "source_sha256": "526e0087cc3f254d9f86f6c7d8e23d954c4dfda2b312efc29194ae8a860106ba"
+    },
+    "descriptionOptional": {
+      "text": "可选（最多 1024 Zeichen）。",
+      "source_sha256": "5a94f4c0abee5d166293dc75b2b96a63a064849d626077ba74633ac93edf7608"
+    },
+    "passwordCalculable": {
+      "text": "狗尾草",
+      "source_sha256": "37ccc5e1500cbdef7f27143cc5a2f7ba8bfb927caf67e0a0bec3441c4cd18495"
+    },
+    "systemInformation": {
+      "text": "系统信息en",
+      "source_sha256": "d3230dab2854d5ba0f73d3c621bcf9aff4ee193a0192d0face3fd106592ec327"
+    },
+    "machineName": {
+      "text": "机械名称",
+      "source_sha256": "720cb8d70ae324209d8f9d578bdf97edd6a40491edf84d0321535acd7ab77b23"
+    },
+    "machineId": {
+      "text": "机械ID",
+      "source_sha256": "bdfa8820b7721524f04c92890ddd8cb24b8fb2c589606948f51950c3e4be8659"
+    },
+    "identityInformation": {
+      "text": "身份信息",
+      "source_sha256": "315db9e8449b87b77ca061b2e07a77e473c2359bf12e02a336a8194abcde3ea9"
+    },
+    "identityId": {
+      "text": "身份识别码",
+      "source_sha256": "f8f1562714e94a8925c9c7fe3e971537dafaa5f6991d519dedbb9528595c7574"
+    },
+    "legacy": {
+      "text": "遗产",
+      "source_sha256": "1432897a6136de54f3a8bfcc9f9fa87ead45c109731e5769a6e94887d555ce5b"
+    },
+    "active": {
+      "text": "Aktiv",
+      "source_sha256": "8163454f378f0814a0911afc75bb63814643a45803a0460003800e1c6b9be636"
+    },
+    "inactive": {
+      "text": "无能",
+      "source_sha256": "bf7c9171cb4911c763abd6e6d52bf72fd829d7357b0e801071d3971490981951"
+    },
+    "createdAt": {
+      "text": "Erstellt am",
+      "source_sha256": "94114e0ea7e52eef052200504c8ac0007c7bc98cc8da41a9643a5320f7ef1cce"
+    },
+    "lastRotation": {
+      "text": "莱特兹旋转",
+      "source_sha256": "ec164be7e0638380c91334b8100c3878e18c225b6be2f50e6fffd69a3cdc7536"
+    },
+    "hashAlgorithm": {
+      "text": "哈希算法",
+      "source_sha256": "8e7cc36cf51824a8933d288c4520ee5200b228265dc6c84d0940782782bcbeac"
+    },
+    "passwordPolicy": {
+      "text": "肯沃特里希特林尼",
+      "source_sha256": "70b3741e1c5e67091e20aa5a50889d50f1b063606c141dd19515ea5f118dbdc4"
+    },
+    "customPolicyChip": {
+      "text": "Benutzerdefinierte 身份识别政策",
+      "source_sha256": "fae71ecda0b3f1b90c1d7fc59e8b2700eb359341d191bfa84a97766d7c754b92"
+    },
+    "length": {
+      "text": "兰格",
+      "source_sha256": "465ec7cb514ab1d25c1b9dcb44d390a37be182dfe8b76dd9a34eb46d2d3cfafe"
+    },
+    "rotationInterval": {
+      "text": "旋转间隔",
+      "source_sha256": "3a93e5abc997563a441dcb8055e231b783f0c5af2c0bb2cd39e848208f7c07e6"
+    },
+    "maxDriftS": {
+      "text": "最大限度。阿维中 (s)",
+      "source_sha256": "749a997d7b615ee2f06b1816e25107822fde525514162e3f7542dcbd28d73e3d"
+    },
+    "uppercase": {
+      "text": "总书本",
+      "source_sha256": "21a56245fd3a5f7a64420247b88029c9fcd2a2cdae39f427763c8ec9bfba5386"
+    },
+    "lowercase": {
+      "text": "小书本",
+      "source_sha256": "de00d0269042f92948a035dba8e97b3ecf983f4e8d09389bedefaf98e0d8798a"
+    },
+    "digits": {
+      "text": "齐弗恩",
+      "source_sha256": "507f2e07382d8082c6e5eac20bd0b08e9281bd8dbb6d40467425596b8b91bae4"
+    },
+    "special": {
+      "text": "特殊时期",
+      "source_sha256": "426a8f6c8951ae9662134dc171f5f13e415f8f54a8cb113cb569cfea0dcefe40"
+    },
+    "allowedSymbols": {
+      "text": "厄劳布特·符号",
+      "source_sha256": "9a72f6984e97bc2376a8feb8f7c17108dbf1b461a970689554b14aae1a0cc8b0"
+    },
+    "defaultSet": {
+      "text": "标准卫星",
+      "source_sha256": "e87c663bb4ef83642636ea81f62f85d8b7e84722ef8f1543773043514ad6a679"
+    },
+    "yes": {
+      "text": "Yes",
+      "source_sha256": "85a39ab345d672ff8ca9b9c6876f3adcacf45ee7c1e2dbd2408fd338bd55e07e"
+    },
+    "no": {
+      "text": "No",
+      "source_sha256": "1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da161c6099be3691d"
+    },
+    "machineNameField": {
+      "text": "Maschinenname",
+      "source_sha256": "720cb8d70ae324209d8f9d578bdf97edd6a40491edf84d0321535acd7ab77b23"
+    },
+    "noMachinesFound": {
+      "text": "„{{query}}“ 的 Keine Maschinen gefunden",
+      "source_sha256": "611477b0025ace78393e0d1dcaa38b6290acd4900afae34c016ae81762db2a12"
+    },
+    "adminTokenOptional": {
+      "text": "管理员令牌（可选）",
+      "source_sha256": "ae8a075ffb944e6d2995ad4aa7b07827b37fe67392d866428c89029ae5684326"
+    },
+    "adminTokenHelper": {
+      "text": "富尔测试 leer lassen；生产中",
+      "source_sha256": "da53aa30b43d2c09fef618f11a93b2cc8631e897ee6eaee12c3318af76197430"
+    },
+    "passwordHistory": {
+      "text": "肯尼沃特维尔劳夫",
+      "source_sha256": "95d6a32f334c6c76e89bc56e30e050bc227b45405ee0cc8b3410ab0d6584c74c"
+    },
+    "loadingPasswordHistory": {
+      "text": "Kennwortverlauf wird geladen…",
+      "source_sha256": "4e345168c5c334b02567a30e2f9866267b4686b869c4a698ee6be9fbeccf48d3"
+    },
+    "noPasswordHistory": {
+      "text": "Kein Kennwortverlauf for diese Identitaet verfuegbar。",
+      "source_sha256": "fc47c632c99aa20f9fb949e3c85e4b0e895cffc38cffb94e691cf247d5bbab4a"
+    },
+    "chipCurrent": {
+      "text": "现在",
+      "source_sha256": "f4d865ae1b77220880738db8d0b4b45e625de3aefd318703ecaad5d7006f9dd6"
+    },
+    "chipPast": {
+      "text": "费尔甘根",
+      "source_sha256": "ec4b9c84d4e53b31b1e812ca994792b9cb3e6047a0a5298ab5e560c41f898a94"
+    },
+    "chipFuture": {
+      "text": "祖库恩夫蒂格",
+      "source_sha256": "568303caa923c9e12f3199d14f7ce7531634e91b87a0730b23f233d9f61b38c9"
+    },
+    "chipSelected": {
+      "text": "奥斯格瓦赫特",
+      "source_sha256": "3eaf5da150e205d3cc95ebf68ccfaa897db746c11daca0e5687e31a35643ee98"
+    },
+    "recovering": {
+      "text": "维德·维德赫格斯特尔特…",
+      "source_sha256": "8cdf6eeff0c9d4ddafd81aef97df629c555886a4b994a0643ab55b79501b0b19"
+    },
+    "recover": {
+      "text": "维德赫斯特伦",
+      "source_sha256": "ab99a15c6bcda97945b0611d5ae255f88207719004370e9dab12d062646b765d"
+    },
+    "basicInformation": {
+      "text": "基本信息",
+      "source_sha256": "41ddf7293f449876457318615def0ab87dd09116d77e0f83d3e661f7890029f8"
+    },
+    "assignedName": {
+      "text": "祖格维森名称",
+      "source_sha256": "0c79622bf63f9526dd0f769eef0e57c57b1368b6c7df2b7e6dcda49de17e42f4"
+    },
+    "notAssigned": {
+      "text": "尼希特·祖格维森",
+      "source_sha256": "da974576b029198a7bd22bca6b36836269bf3f0da5606bceb686022b6b475951"
+    },
+    "loadTemplateFailed": {
+      "text": "Vorlage for diesen Nutzungstyp konnte not geladen werden。",
+      "source_sha256": "041683d618ab928d737709d548c212d23de5184d5eedcbb06745da2f3e50ac50"
+    },
+    "statusExpired": {
+      "text": "阿布盖劳芬",
+      "source_sha256": "8e93f2e8507d3d5cb6b27abd6b768799ae552f65258bd18a7864449bd25006f3"
+    },
+    "identityLabel": {
+      "text": "Identitaet",
+      "source_sha256": "82fe524b7679be0427e0f83a134c05752297d97079f38a7ee38b55af80c9e125"
+    },
+    "neverConnected": {
+      "text": "涅·凡登",
+      "source_sha256": "e30cdfb9075e495b1999cb0b5ce444fa39e65c7f5b736bf2929b8cc70b94ef8f"
+    },
+    "connected": {
+      "text": "Verbunden",
+      "source_sha256": "0338189c985eee9c190291f07c97fdd16bff676256302cf45690b80bb6fcbb9a"
+    },
+    "networkInformation": {
+      "text": "网络信息",
+      "source_sha256": "58140306f4e6e2599f29007c933668bdb19e0d445d9eb1c5e1e4dacc7f1f7927"
+    },
+    "ipAddress": {
+      "text": "IP-Adresse",
+      "source_sha256": "9654ff3be5be1da0bd6fa04fd886cf3874d1571cddf1cf48da5fa519fa930b8e"
+    },
+    "macAddress": {
+      "text": "MAC地址",
+      "source_sha256": "975a89de712e0e82bac85868ac6462ca9ea9989bdcfb7c1ede8dbf4c6add12fc"
+    },
+    "platformInformation": {
+      "text": "平台信息en",
+      "source_sha256": "3c65fb72918b13eba97ecfba6680c5fe3a9a542acd645e059e7034ebcf1054f1"
+    },
+    "osPlatform": {
+      "text": "操作系统平台",
+      "source_sha256": "a0ce19ef184c0f8d9194c99a180ee7d64860dfaba0832158af99c950a123ca65"
+    },
+    "osDetails": {
+      "text": "操作系统详细信息",
+      "source_sha256": "78008eb6d2d9a2b1052044676563569c1ae0d3f82787055bc45de9b7854aa664"
+    },
+    "organization": {
+      "text": "组织",
+      "source_sha256": "350be3643ce78043f7c268bdcee1df0bd01bc04f4eb83a62beb66e76c6e776a7"
+    },
+    "multiTenant": {
+      "text": "曼丹特",
+      "source_sha256": "9837fb6af947b2f590f0d9301a00c28b7f65a934a4e3cde4bbad8294e3d94020"
+    },
+    "domain": {
+      "text": "多马内",
+      "source_sha256": "f436e7ac8248bf4fc97267193fc49c3abb93a21c694476b346820aad2cfb172b"
+    },
+    "systemGroup": {
+      "text": "系统集团",
+      "source_sha256": "6a81fb592aadad01e3e79137e36a91b158537de82f59f3e4c34cfd97e9b0346d"
+    },
+    "securityInformation": {
+      "text": "安全信息",
+      "source_sha256": "651ba165ae0f8229d7e0047715cf225d69607cd89aad27a98c99eca754b93995"
+    },
+    "secretKeyVersion": {
+      "text": "Geheimschluesselversion",
+      "source_sha256": "35f4c446289d5b9f040f109736578f0ca0b56c568b10d319e3f7761c44af23e4"
+    },
+    "hasEncryptedSecret": {
+      "text": "前言",
+      "source_sha256": "470a5d7aa5e8b8b9710d3bc5cbb8b7329b1e8283f4944e223c82cb85303450f0"
+    },
+    "timestamps": {
+      "text": "Zeitstempel",
+      "source_sha256": "0721d29d97fbf8992e96cf7702d1f305381de9c8b20379f5ac920df24cfda555"
+    },
+    "lastUpdated": {
+      "text": "实际行动",
+      "source_sha256": "5d82dcbd38d081599808df9dec0f196f091ebb193ad96016b3090a3045976f26"
+    },
+    "lastCheckIn": {
+      "text": "莱特茨特签到",
+      "source_sha256": "39d860478a6e6aac95c13242f74bfcd6a28af7d3edb7a66cdb5c49eb7e25f87c"
+    },
+    "na": {
+      "text": "k.一个。",
+      "source_sha256": "4b86dcfa52080c5c8a2db49b2062d48e175a4e42f67aa227a0eb261485ff87bf"
+    },
+    "unknown": {
+      "text": "温贝坎特",
+      "source_sha256": "276ffa1fb4f970104fc7873c371e0af2c6b10b8375e7104b6ca3708c487163f0"
+    },
+    "none": {
+      "text": "凯因",
+      "source_sha256": "8a572015c49b2071ebcf52dde28b20d61ba0559b2410e83d41a0a1a14184bf90"
+    }
+  },
+  "outstandingApprovals": {
+    "title": {
+      "text": "奥斯汀基因",
+      "source_sha256": "d71bfc512802e7ea1cf58043c9cee7151cb09c7effa6b375d01f82c81268b681"
+    },
+    "loadingAria": {
+      "text": "警告 警告",
+      "source_sha256": "4ff6222993181a676488db0698dadd2646a68493cf3264d7bbd56d53af27000a"
+    },
+    "loadFailed": {
+      "text": "Ausstehende Genehmigungen konnten not geladen werden。",
+      "source_sha256": "0a06b9c260c577549cf1b165312c7714c97828597231abddda48b92048fda6c5"
+    },
+    "closeAria": {
+      "text": "奥斯汀根赫米根根施利森",
+      "source_sha256": "ef560cff478c67ff0f43b57d9061b8a0a31fe2042732d2c8abe9de11d236a696"
+    },
+    "close": {
+      "text": "关闭",
+      "source_sha256": "7d9eb7acb13e24625c404401d8e88b2350e32162455885f18276cf802f7701ed"
+    }
+  }
+}
