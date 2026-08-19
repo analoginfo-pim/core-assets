@@ -3452,8 +3452,8 @@
         "source_sha256": "521d32b7dd6eed5deff1efb6e70ec4176672894a478150f6ea9bf67aa64340ba"
       },
       "disablePlane": {
-        "text": "Ebene ausschalten",
-        "source_sha256": "a582d751d14f5b06e2b295b870550c3dbafb8f616d1b81819e2278e4dd92e719"
+        "text": "Disable plane",
+        "source_sha256": "8e1eeee250b1bf91c5dd975dd8d723a0cd6798dea18a36d256b714695ffcb438"
       },
       "displayName": {
         "text": "Display name",
@@ -3488,8 +3488,8 @@
         "source_sha256": "6bb2acf1f617fa1bc0dd51d36174c9f8a4e84ac8a60cc22ae4fc4e82f5fc81ad"
       },
       "enablePlane": {
-        "text": "Ebene einschalten",
-        "source_sha256": "3eb58324cc81481d465df9f168341d72768b0cc91ae1c49dafb72a542e9f35fe"
+        "text": "Enable plane",
+        "source_sha256": "da30f9bf47265d470952ad7e247676215cbe9079da95bbf698b6560eb56cf948"
       },
       "enabled": {
         "text": "Enabled",
@@ -3512,32 +3512,32 @@
         "source_sha256": "2359c2735fed553e83c04401ea79d365c6e3802b6d24b2cb928ac3fe150e40a5"
       },
       "gridAria": {
-        "text": "Jump-Flotte and Kapazitaet",
-        "source_sha256": "f8504f69d97fe2976063d20b3e754db82fc8633668ad6fa4f8f9be0e202e0ab7"
+        "text": "Jump fleet and capacity",
+        "source_sha256": "66333e460cb79f242eef128d02784ea8303dd1ed2f69ce6aa5059cab7a451647"
       },
       "healthAria": {
         "text": "Health {{health}}",
         "source_sha256": "4342f9119d346eb522ad581d7956637ce79546b5df450f01979b772fda3085eb"
       },
       "healthDisabled": {
-        "text": "deaktiviert",
-        "source_sha256": "10f33e562ffac7d76a6c0b41d5029092e851cc6217e8e24a8448c441b1cbb861"
+        "text": "disabled",
+        "source_sha256": "17eb3c0168d0d7b21ede5481150f17233427d89833ec121b4dbc4fb96cfab71e"
       },
       "healthHealthy": {
-        "text": "gesund",
-        "source_sha256": "35c86777491b25c55e49aecf036dace29f83c45b3a6c0fc40ad79975f7fd72bd"
+        "text": "healthy",
+        "source_sha256": "87695fdac81728b9d7f2d4a1335c2632bb5e6ba1bed21d2dff0254fba31c7d5b"
       },
       "healthStale": {
-        "text": "veraltet",
-        "source_sha256": "ab2cbd984c9ffd81a220ec2bdb5b4315645be43c68afe142cc21904564984a8b"
+        "text": "stale",
+        "source_sha256": "a03f2386ae06b21109577020844df367857b72c2fcce384c1896fed98a89c82b"
       },
       "healthUnhealthy": {
-        "text": "ungesund",
-        "source_sha256": "603131d0f81190afa36ceba268b8668d001aca8c870f29dfff585d626153bf28"
+        "text": "unhealthy",
+        "source_sha256": "85826072c3d4c3a4be8b8e4f205e19547d3f6fce81173d14779812a69b978ae2"
       },
       "healthUnknown": {
-        "text": "unbekannt",
-        "source_sha256": "a418e69e9fbe3f5ee539498f036d24184da4562539491ddb884e1c6e47778c60"
+        "text": "unknown",
+        "source_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
       },
       "howLbWorksBody": {
         "text": "New sessions pick the least-loaded accepting host with capacity headroom (external Jump PAWs and the local aic-server-local row). Drain or disable a host to remove it from placement. SSH/RDP brokering stays on Connection points — this surface is Jump / recording-proxy capacity only.",
@@ -3754,6 +3754,14 @@
       "vmPoolsLink": {
         "text": "Systems → VM management → VM pools",
         "source_sha256": "091a9998f4e7df3e9829244560e3fefcd9a188922e03aa3047e93b0145cdd2d2"
+      },
+      "kind_aic_server_local": {
+        "text": "AIC Server (local)",
+        "source_sha256": "e1d499205e770b7147cbfe9177bde0c4ab2b46651eff947a3f1d78511ed1fa0a"
+      },
+      "kind_external_jump": {
+        "text": "External Jump host",
+        "source_sha256": "e9c2416fceea84fe55f9b90047a9cfd63da4fc6fb97b1876a9f5e457d4f956eb"
       }
     },
     "licensing": {
@@ -7818,16 +7826,16 @@
         "source_sha256": "e2b0a4fe7adbfd603e88aed6d6ecc4d9cea02c486832d911aa838db046ab8601"
       },
       "clipboard_bidirectional": {
-        "text": "Beide Richtungen",
-        "source_sha256": "07f3adcfc2e1385b3069886c633a9f08136d347ae2644a5e907b1557eb53e196"
+        "text": "Both directions",
+        "source_sha256": "f2aefdbf0128155cef2116a78f902d088104c9e32ac774bd1df24a259c2dc7f5"
       },
       "clipboard_client_to_target": {
         "text": "Browser to target",
         "source_sha256": "6bb0d6e1b678e0ce7f59dfa1a25987ce3e586fca6da96b53c29278a37540637d"
       },
       "clipboard_none": {
-        "text": "Verweigert",
-        "source_sha256": "83ee93bd9f94039bbde3fbefbc4da41f686dd2416bbef91897b407cca9ead917"
+        "text": "Denied",
+        "source_sha256": "da404deb110f7cc92a5b2c85c8e8ab103bd48837cf300f8387d13d54f3adea65"
       },
       "clipboard_target_to_client": {
         "text": "Target to browser",
@@ -7882,20 +7890,20 @@
         "source_sha256": "ecb42e10270b152b4333a34c6dc8cc438ecae9a1c776ae9d2e16bdf8bce9c7e6"
       },
       "fileTransfer_bidirectional": {
-        "text": "Beide Richtungen",
-        "source_sha256": "07f3adcfc2e1385b3069886c633a9f08136d347ae2644a5e907b1557eb53e196"
+        "text": "Both directions",
+        "source_sha256": "f2aefdbf0128155cef2116a78f902d088104c9e32ac774bd1df24a259c2dc7f5"
       },
       "fileTransfer_deny": {
-        "text": "Verweigert",
-        "source_sha256": "83ee93bd9f94039bbde3fbefbc4da41f686dd2416bbef91897b407cca9ead917"
+        "text": "Denied",
+        "source_sha256": "da404deb110f7cc92a5b2c85c8e8ab103bd48837cf300f8387d13d54f3adea65"
       },
       "fileTransfer_download_only": {
-        "text": "Nur Herunterladen",
-        "source_sha256": "4ec1f5ff26e888657e9d68f823acdda2fca381a47dcd46eddee6bfe7a4b88ab5"
+        "text": "Download only",
+        "source_sha256": "31fbbe754b9e00855261a7a8180e7e92e5de5267b1c0dcae1e5582898d71c00d"
       },
       "fileTransfer_upload_only": {
-        "text": "Nur Hochladen",
-        "source_sha256": "d5d04b3dac7321cfa27e81a3d10e3eb7c0ec844ccb3f3616a3cc1ca4d6bdda73"
+        "text": "Upload only",
+        "source_sha256": "571691f310a6590386df81a2932b2855cbbe0520cc603d9c90b2357d13b14580"
       },
       "formHeading": {
         "text": "Add or replace policy",
@@ -7954,28 +7962,28 @@
         "source_sha256": "465b5967e292896bee2bbe8a67298bf1eec40ae84cf2ea96990cedcf87630442"
       },
       "role_credential_operator": {
-        "text": "Zugangsdaten-Operator",
-        "source_sha256": "e8a4fa572bd077df397f46621283c2d03d5c27a314deb26a8671bd56afbcad95"
+        "text": "Credential Operator",
+        "source_sha256": "d5f9e266f6b5809547a5b6c318f5645095efbcab17087e7712214fa30f1620e2"
       },
       "role_developer": {
         "text": "Developer",
         "source_sha256": "3fb7b39416f1d067268747fc214494d759d2609f863ace1a8a76705618d5c80b"
       },
       "role_enclave_user": {
-        "text": "Enclave-User",
-        "source_sha256": "3fb3a79ca3a319aa8a31c9b510264189e3f518e2c51d204401b86e0d1dbe7395"
+        "text": "Enclave User",
+        "source_sha256": "86b2d5ddd69a1af0400571da6f8de4e986ba74d0089f670366ff32a76ee046b0"
       },
       "role_pam_approver": {
-        "text": "PAM-Genehmiger",
-        "source_sha256": "557048661d89e473f0733e15997e4f39722e084ee5c6b5e74351f35693151fbc"
+        "text": "PAM Approver",
+        "source_sha256": "4e9adcb7733641aeb77fa7e4b5c8445fe54cc2f8560c271565311c0a582d5fea"
       },
       "role_pam_requester": {
         "text": "PAM requester",
         "source_sha256": "59cf3b96898e3236d48b1f507fc8ad09aff045127d7cb1684b032f00c5adc14f"
       },
       "role_server_administrator": {
-        "text": "Serveradministrator",
-        "source_sha256": "9a6474c838b412dae0fb927472f1ef11702b00ccfbc4aaadc963b059d783359f"
+        "text": "Server Administrator",
+        "source_sha256": "3a6383efa8fe76377d1732319e3739365defeda054c48a4d3a9dcdd13f8ecbc1"
       },
       "role_super_admin": {
         "text": "Super administrator",
@@ -11799,24 +11807,24 @@
       "bullets": {
         "text": [
           {
-            "text": "Connect autorisiert a aufgezeichnete Session (Sie bestaetigen the Aufzeichnung) and oeffnet dann the Desktop-Viewer.",
-            "source_sha256": "575b30c5357400e06be5614337aa558dc3e26ed8cd8462df7c8ef217218a1339"
+            "text": "Connect authorizes a recorded session (you confirm recording) and then opens the desktop viewer.",
+            "source_sha256": "15453e6a8cb7fd00285a4c2eece98b49cb7adf0bebca783cda1f09846bcf9c2a"
           },
           {
             "text": "Open session appears only when Connect finished but the viewer did not navigate.",
             "source_sha256": "eff074be67c2277d0b3f2651b665be7253add28333d7372b8e617e6d6aff2431"
           },
           {
-            "text": "Aufwecken erforderlich / Wird aufgeweckt… — VM zuerst starten; Connect bleibt deaktiviert bis Bereit — Connect.",
-            "source_sha256": "7d3ba4ced062a82eae0f19fb5939ba40f18c7f470e4f7f910f39a00d4e16256e"
+            "text": "Wake required / Waking… — start the VM first; Connect stays disabled until Ready — Connect.",
+            "source_sha256": "4c42bda755266e51876575b7f65bbeed110ef807590d5544a494d87a9b90df77"
           },
           {
-            "text": "Aufzeichnungs-Proxy erforderlich — Connect bleibt blockiert, bis the Enclave a Aufzeichnung platzieren kann.",
-            "source_sha256": "81d133a47ec62ab703637d5573159d61af275ed0c818367bdf0561d13d5ffe12"
+            "text": "Recording proxy required — Connect stays blocked until the enclave can place a recording.",
+            "source_sha256": "d455263944d2cdef159712f483f9f50d467f40a847ebbdc412fc8b56c2697e43"
           },
           {
-            "text": "Energie & Ruhezustand (Jetzt schlafen / Wachhalten) ist sekundaer to Connect / Aufwecken.",
-            "source_sha256": "b36863287943a96f8ca340a141700a9b7c13d73ee98990c1fdd2dbb1489e9d90"
+            "text": "Power and sleep (Sleep now / Keep awake) is secondary to Connect / Wake.",
+            "source_sha256": "2550f714e06933ddbd876ee4045854c3a0d0efb9486b111d8442e7f2ea2e6d08"
           },
           {
             "text": "You never need the workstation password — the enclave signs you in.",
@@ -11879,12 +11887,12 @@
       "bullets": {
         "text": [
           {
-            "text": "Funktionstrennung verhindert, dass Sie eigene Anfragen genehmigen.",
-            "source_sha256": "36e99ac69a8725e7480d141953704f0ea426c3778b8e864df8073bc934dd5ae1"
+            "text": "Separation of duties prevents you from approving your own requests.",
+            "source_sha256": "bff31e1b1d3fcb339d65b201cc918e4900f3dd19daa61537ca6bcbe958297c8e"
           },
           {
-            "text": "Deny-wins-Policy kann the Anfrage beenden, wenn a Genehmiger ablehnt.",
-            "source_sha256": "c0bdc894dac20cf912fb865099767416a3469dbf1e85924326291b44dbec7df5"
+            "text": "A deny-wins policy can end the request when an approver declines.",
+            "source_sha256": "0e572ff9f90d9834833764c56eecbd167722743c25e1f2f8f11cfab3d031250b"
           }
         ],
         "source_sha256": "782578f73889a95f5cb38e43ee37dc09f366868ec70fcb7de122b526f91302c5"
@@ -11906,8 +11914,8 @@
       "bullets": {
         "text": [
           {
-            "text": "E-Mail and Telefon aktuell halten, damit Genehmigungsbenachrichtigungen Sie erreichen.",
-            "source_sha256": "e16b3a0d7083775b200e5ee830df955817ec9efa14db6d2fe7a02781ddd2377a"
+            "text": "Keep email and phone current so approval notifications can reach you.",
+            "source_sha256": "9ecffb068cd4e8f24e4705ade11b7b84a2b68361b99e84b755af32f1102fc5d5"
           },
           {
             "text": "Erreichbarkeit in the Tab Mein Benachrichtigungsprofil testen.",
@@ -11941,8 +11949,8 @@
             "source_sha256": "7511d413d36d1b9fed38d4b8281339860ae0cad2a039fdffa2d6a00ce8ced20c"
           },
           {
-            "text": "Jede geoeffnete Session wird standardmaessig aufgezeichnet (Proxy or ziel-lokal).",
-            "source_sha256": "ebd643b9e61ad5066e970b7094898ea170f89a65540a46beb277f55d2c767ddd"
+            "text": "Every opened session is recorded by default (proxy or target-local).",
+            "source_sha256": "f69b30fc951755024b946a9bbfb98a1f457ed8754eba95a630e86bbf22b8a0d3"
           }
         ],
         "source_sha256": "381860fc6f55babcb4ffc718eab5ac92d34a0bad77c6be216cc6ed84d38be172"
@@ -11995,8 +12003,8 @@
             "source_sha256": "0263b91f43f4ea8e984b378775146515dc663a139ea2a6591bfeea7fb3db59c6"
           },
           {
-            "text": "Intern sicherstellen legt the Kapazitaetszeile aic-server-local an or aktualisiert sie.",
-            "source_sha256": "2d01a6b0cd61371a94f5beb943f57d0827c06d34dc4c813136de8280841a2346"
+            "text": "Ensure internal creates or updates the aic-server-local capacity row.",
+            "source_sha256": "9a4782421b1c8dfd36d287252ff5abd5a258a849343982bd5bcc0be5f9cc3f73"
           },
           {
             "text": "Probe placement performs a dry run selection with lightest load (does not open a user session).",
@@ -12024,14 +12032,14 @@
         "source_sha256": "a8a5d564e478d031fa187464dd632d77f853389e40464b262dcf6501f85c0941"
       },
       "title": {
-        "text": "Live-OT-Session",
-        "source_sha256": "8440d38cb4237d200544e57b3079e76e37e285dfe9be04bcee91466eb4117152"
+        "text": "Live OT session",
+        "source_sha256": "a540305f3945a426d6739d4be1d30d08794bc63caa520c968d48846aedbee41a"
       },
       "bullets": {
         "text": [
           {
-            "text": "Die Aufzeichnung laeuft, bis the Session endet.",
-            "source_sha256": "79f4544505936e9e78b5f35d6d9f6709aa1232c16313c13e0964bf15681ea9d3"
+            "text": "Recording continues until the session ends.",
+            "source_sha256": "7e7a7fa6c3bb954cd6c048d2605b90d620ecb447b8b5616df7a33d0dac733426"
           },
           {
             "text": "After exiting, a new connect/open is required - this page does not continue a closed channel.",
@@ -12051,14 +12059,14 @@
         "source_sha256": "a8a5d564e478d031fa187464dd632d77f853389e40464b262dcf6501f85c0941"
       },
       "title": {
-        "text": "Live-RDP-Session",
-        "source_sha256": "f92175ae9525df488a6da8a08e863b9f93370e2decd2a6302fa778a865e4d2c4"
+        "text": "Live RDP session",
+        "source_sha256": "7965a291e0debb4c1186772e34f13d1622be27de0cc6d5fb096c72a6312399c2"
       },
       "bullets": {
         "text": [
           {
-            "text": "Die Aufzeichnung laeuft, bis the Session endet.",
-            "source_sha256": "79f4544505936e9e78b5f35d6d9f6709aa1232c16313c13e0964bf15681ea9d3"
+            "text": "Recording continues until the session ends.",
+            "source_sha256": "7e7a7fa6c3bb954cd6c048d2605b90d620ecb447b8b5616df7a33d0dac733426"
           },
           {
             "text": "After exiting, a new connect/open is required - this page does not continue a closed channel.",
@@ -12078,14 +12086,14 @@
         "source_sha256": "a8a5d564e478d031fa187464dd632d77f853389e40464b262dcf6501f85c0941"
       },
       "title": {
-        "text": "Live-SSH-Session",
-        "source_sha256": "ea6200de21d17871e3ad620c5d9dbb49c244e883df7955b92a5031366ac4b9a4"
+        "text": "Live SSH session",
+        "source_sha256": "088548b1fda8f27dbc9ef802add0a3e83c2ae1a886c1b3a02c24aaa938176a56"
       },
       "bullets": {
         "text": [
           {
-            "text": "Die Aufzeichnung laeuft, bis the Session endet.",
-            "source_sha256": "79f4544505936e9e78b5f35d6d9f6709aa1232c16313c13e0964bf15681ea9d3"
+            "text": "Recording continues until the session ends.",
+            "source_sha256": "7e7a7fa6c3bb954cd6c048d2605b90d620ecb447b8b5616df7a33d0dac733426"
           },
           {
             "text": "After exiting, a new connect/open is required - this page does not continue a closed channel.",
@@ -12105,14 +12113,14 @@
         "source_sha256": "a8a5d564e478d031fa187464dd632d77f853389e40464b262dcf6501f85c0941"
       },
       "title": {
-        "text": "Live-VNC-Session",
-        "source_sha256": "5ffb66048c48c34cb96620fe515e9316e3a418063e4e5c3c51afd1bd39cfb5a0"
+        "text": "Live VNC session",
+        "source_sha256": "dd0a7b3b9a44eb69724ec7e04e2a0d70576a5882d46bfd1f8387841267a65252"
       },
       "bullets": {
         "text": [
           {
-            "text": "Die Aufzeichnung laeuft, bis the Session endet.",
-            "source_sha256": "79f4544505936e9e78b5f35d6d9f6709aa1232c16313c13e0964bf15681ea9d3"
+            "text": "Recording continues until the session ends.",
+            "source_sha256": "7e7a7fa6c3bb954cd6c048d2605b90d620ecb447b8b5616df7a33d0dac733426"
           },
           {
             "text": "After exiting, a new connect/open is required - this page does not continue a closed channel.",
@@ -12142,8 +12150,8 @@
             "source_sha256": "d4e20b8bd9e3c7322159127ea8e6506df405afa681281c827983a863d63aee53"
           },
           {
-            "text": "Funktionstrennung verhindert, dass Sie eigene Anfragen genehmigen.",
-            "source_sha256": "36e99ac69a8725e7480d141953704f0ea426c3778b8e864df8073bc934dd5ae1"
+            "text": "Separation of duties prevents you from approving your own requests.",
+            "source_sha256": "bff31e1b1d3fcb339d65b201cc918e4900f3dd19daa61537ca6bcbe958297c8e"
           }
         ],
         "source_sha256": "0a237ae9ce5193e7ca1488e98b30cdf5a7d5559735b275a53f14695d367d45f6"
@@ -12173,8 +12181,8 @@
             "source_sha256": "8c8063f745ac15f3b534a39ca7856ff1e4ec75983efa3686d91511a2cae1b07b"
           },
           {
-            "text": "Mit gebundener Vault-Zugangsdaten kann Connect sie for the Session nutzen.",
-            "source_sha256": "b800b2db1907a137a8234d42e97e66f4b4ef575ec4347f8dc95fa82c28665585"
+            "text": "With bound vault credentials, Connect can use them for the session.",
+            "source_sha256": "9a89d1c5f56e6be347e1aed9ee416f9dfc567696552208842d22f002e04db7b5"
           }
         ],
         "source_sha256": "5f61bf568420a2fb0507f793942f7a2d0645b3b5911d47387d54829f8f33a285"
@@ -12250,8 +12258,8 @@
       "bullets": {
         "text": [
           {
-            "text": "Connect oeffnet a OT-Protokollsitzung — not SSH, RDP or VNC.",
-            "source_sha256": "cc16bcc2efbda2cac14194f20637bcb52450b9239e04b054f77bfd32c383db7f"
+            "text": "Connect opens an OT protocol session — not SSH, RDP, or VNC.",
+            "source_sha256": "640fcb82a76e51000a9807f34e997c61f81891a3296d14b64704dab5e03d7658"
           },
           {
             "text": "Configure opens emergency secret target settings.",
@@ -12385,12 +12393,12 @@
       "bullets": {
         "text": [
           {
-            "text": "Jede Zeile verlinkt to einer Detailansicht, the in the Browser entschluesselt and gelesen wird.",
-            "source_sha256": "f3448ea457b57b5d55380c82988750be5657c2065a43bd42f36d5e177afd0958"
+            "text": "Each row links to a detail view that is decrypted and read in the browser.",
+            "source_sha256": "df2c4a21f9cf22869115b1d2fcd0e510313c99f54e3e42f1920d421b199dfa60"
           },
           {
-            "text": "Entscheidungs-Chips zeigen Erlaubt or Verweigert zum Aufzeichnungszeitpunkt — kein Compliance-Urteil.",
-            "source_sha256": "ecb0c7950f44d76260a9fa087a9dcbbac25b27a41e4a08c90f06cd0c93135bb6"
+            "text": "Decision chips show Allowed or Denied at recording time — not a compliance verdict.",
+            "source_sha256": "8fff41f3dab44952869ad741137f2c24eb6fd03997c0fe4d48960253be0fdb37"
           }
         ],
         "source_sha256": "edb5e999f25aff2eeccdb8f389004d6aee9df9e057dcc748c14f9c00b71cf87f"
@@ -12453,8 +12461,8 @@
       "bullets": {
         "text": [
           {
-            "text": "Connect oeffnet a aufgezeichnete Proxy-Session, wenn a PAM-Verbindungspunkt zum Host passt.",
-            "source_sha256": "4d00e91a6742ed747a4b107b3a8de34434b4a3536baf3ebb0f2dfdb636fc4e9f"
+            "text": "Connect opens a recorded proxy session when a PAM connection point matches the host.",
+            "source_sha256": "088eb8168b6ca9711cd4bad660749df63cddb609e75fb78d1f63e79b182c3682"
           },
           {
             "text": "Favorites and Recents are only saved in this browser.",
