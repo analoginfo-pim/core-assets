@@ -1,10 +1,10 @@
 {
   "floorNote": {
-    "text": "NIST SP 800-53 Rev. 5 is the control design floor. CMMC / 800-171 / 800-172 are packaging overlays that reuse enclave evidence.",
+    "text": "NIST SP 800-53 Rev. 5 on ohjauksen suunnittelukerros. CMMC / 800-171 / 800-172 ovat pakkauspäällyskuvia, jotka käyttävät uudelleen erillistodisteita.",
     "source_sha256": "4bc5812cc7e52766fe0a68db6e0bceb55d8790fae70f4de2182f3ba2387588fe"
   },
   "switchEffect": {
-    "text": "A change in the evaluation standard assigns the punch list and evidence view to this overlay. Already collected enclave evidence is reassigned — not deleted.",
+    "text": "Arviointistandardin muutos määrittää tähän peittokuvaan leimausluettelon ja todistenäkymän. Jo kerätyt erillistodisteet siirretään - ei poisteta.",
     "source_sha256": "8801656908fee85cbb49c2a798543c8fbba569467240321701ff193d5e389ba7"
   },
   "testingAgainst": {
@@ -20,7 +20,7 @@
     "source_sha256": "1709305c9fa966d14f56f0da3c3614bbc10adcf53d72f90341bb96d24afcfca3"
   },
   "selectStandard": {
-    "text": "Select assessment standard",
+    "text": "Valitse arviointistandardi",
     "source_sha256": "6f5d4086c4d121b774955a4abac21491ba962f75abf560abc42b5011d5a20058"
   },
   "selectLevel": {
@@ -93,15 +93,15 @@
   },
   "banners": {
     "cmmc": {
-      "text": "Target: CMMC level {{level}} ({{overlay}})",
+      "text": "Tavoite: CMMC taso {{level}} ({{overlay}})",
       "source_sha256": "033188adb2ce3e9cc303ff0ad3bcdf65b91f398523634c594dc79fae141bf091"
     },
     "nist_800_171": {
-      "text": "Goal: NIST SP 800-171 Level {{level}}{{suffix}}",
+      "text": "Tavoite: NIST SP 800-171 Taso {{level}}{{suffix}}",
       "source_sha256": "4afb89f7f23af0af23aa770331088e32534be920ce3c9c470c86b9994221cbc6"
     },
     "nist_800_172": {
-      "text": "Goal: NIST SP 800-172 Level {{level}}",
+      "text": "Tavoite: NIST SP 800-172 taso {{level}}",
       "source_sha256": "eb3be520388a5c4511c6370a9afb4b49af8cde65f8d543e14d9e7b8b7b84bd30"
     },
     "nist_800_53": {
@@ -125,7 +125,7 @@
   },
   "scopeLabels": {
     "53_high": {
-      "text": "800-53-High-Verpackung (inkl. Enhanced-Overlay)",
+      "text": "800-53-High-Verpackung (sisältää Enhanced-Overlay)",
       "source_sha256": "3e3d08c38aafc991ac023d3f64a7b0a25b0e5b438c72cbd45ddc7d492dea39d6"
     },
     "53_moderate": {
@@ -133,53 +133,53 @@
       "source_sha256": "78865471f793210a2e33e301c9ece3510c214197be51b5e9fcf2bce4d23d8446"
     },
     "172_2": {
-      "text": "800-172 Stage 2 Enhanced packaging",
+      "text": "800-172 Vaihe 2 Parannettu pakkaus",
       "source_sha256": "9aef14938fa0cc65180735cca5bf21f53327e558d4417ee3a51288f587ea5f72"
     },
     "172_3": {
-      "text": "800-172 Level 3 Enhanced packaging",
+      "text": "800-172 Taso 3 Parannettu pakkaus",
       "source_sha256": "df0c01d0639c340d4c693e380b49f8f4c7ded6c7e6ab937a97b3b4e705418378"
     },
     "171_1": {
-      "text": "800-171 Level 1 (Basic / FCI) packaging",
+      "text": "800-171 Level 1 (Basic / FCI) pakkaus",
       "source_sha256": "05c2f309f3aa74f1da9bf8559b80524aef0b3dcf2ebc94c0634867ea81e75b1a"
     },
     "171_2": {
-      "text": "800-171 Level 2 Packaging (110 Practices)",
+      "text": "800-171, tason 2 pakkaus (110 harjoitusta)",
       "source_sha256": "9365e7269269477197a093d43feb5ab3051e8af79bb60d98b468bb35cbe917a1"
     },
     "171_3": {
-      "text": "800-171 Level 3 packaging",
+      "text": "800-171 Tason 3 pakkaus",
       "source_sha256": "fc1618889b08a95c700120bc0273a6525ba1695b8f7faa251dee99f153d64747"
     },
     "cmmc_1": {
-      "text": "CMMC Level 1 (Basic / FCI) packaging",
+      "text": "CMMC Tason 1 (Perus / FCI) pakkaus",
       "source_sha256": "0468860455c362a22c7175c1394f965a63f591d7695f1d6f5450d3442923d0d9"
     },
     "cmmc_2": {
-      "text": "CMMC Level 2 Packaging (110 NIST SP 800-171 Practices)",
+      "text": "CMMC Tason 2 pakkaus (110 NIST SP 800-171 -käytännöt)",
       "source_sha256": "5f08bf6b89cf06df8466f6891feda2d4f04ab7424e3cb4c8219360fc091ea0ce"
     },
     "cmmc_3": {
-      "text": "CMMC Level 3 packaging (800-171 + selected 800-172)",
+      "text": "CMMC Tason 3 pakkaus (800-171 + valittu 800-172)",
       "source_sha256": "2ade20df2c2b249a35473b347761ab9f62099013cb6257360f48469f92f92b60"
     }
   },
   "explanations": {
     "cmmc": {
-      "text": "CMMC (32 CFR 170) is DoD assessment packaging over NIST SP 800-171 (and from Level 3 selected NIST SP 800-172 requirements). Level 1: basic FCI protection; Level 2: 110 800-171 Practices for CUI; Level 3: advanced 800-172 requirements. CMMC does not replace NIST SP 800-53 Rev. 5 as a design floor.",
+      "text": "CMMC (32 CFR 170) on DoD-arviointipakkaus yli NIST SP 800-171:n (ja tasolta 3 valitut NIST SP 800-172 -vaatimukset). Taso 1: FCI-perussuojaus; Taso 2: 110 800-171 CUI-käytännöt; Taso 3: lisävaatimukset 800-172. CMMC ei korvaa NIST SP 800-53 Rev. 5:tä suunnittelulattiana.",
       "source_sha256": "3cea730a3ae235201a8504ac9ae141ff29b230ec2a3a419403ef10435c0eb359"
     },
     "nist_800_171": {
-      "text": "NIST SP 800-171 Rev. 2 defines 110 security requirements in 14 families to protect CUI in non-federal systems. Level 2 corresponds to the 110 practice set (often with CMMC Level 2). The product design continues to follow NIST SP 800-53 Rev. 5; 800-171 is rating packaging about it.",
+      "text": "NIST SP 800-171 Rev. 2 määrittelee 110 turvavaatimusta 14 perheessä CUI:n suojaamiseksi muissa kuin liittovaltion järjestelmissä. Taso 2 vastaa 110 harjoitussarjaa (usein CMMC Tasolla 2). Tuotesuunnittelussa noudatetaan edelleen NIST SP 800-53 Rev. 5; 800-171 arvioi pakkausta siitä.",
       "source_sha256": "7444d4520ad2ca1b06c2a66b03de41c54453fda41b6caafded746961a926df92"
     },
     "nist_800_172": {
-      "text": "NIST SP 800-172 (Feb. 2021) adds 35 expanded requirements beyond 800-171. CMMC Stage 3 selects a subset. Unproven enhanced claims remain gaps or unknown.",
+      "text": "NIST SP 800-172 (helmikuu 2021) lisää 35 laajennettua vaatimusta 800-171:n lisäksi. CMMC Vaihe 3 valitsee osajoukon. Todistamattomat tehostetut väitteet ovat puutteita tai tuntemattomia.",
       "source_sha256": "65cf5967ecbb7d0b43d05a9c9a41be2f749dcf6c080cd5e6957f01e5dff8a584"
     },
     "nist_800_53": {
-      "text": "NIST SP 800-53 Rev. 5 is the control design floor of this product (Moderate Baseline, High if applicable). CMMC / 800-171 / 800-172 are overlays that use the same enclave evidence.",
+      "text": "NIST SP 800-53 Rev. 5 on tämän tuotteen ohjaussuunnittelun pohja (Moderate Baseline, High, jos mahdollista). CMMC / 800-171 / 800-172 ovat peittokuvia, jotka käyttävät samaa erillistodistetta.",
       "source_sha256": "78e5f81c2759de85921f435bb9e498c40affd56902849f322ff4b11839669ef2"
     }
   },
@@ -216,11 +216,11 @@
     "source_sha256": "ea7e47778b32977fbba3119b5dd3de86307c8487ad4854d1a5e896dfaafeddfb"
   },
   "hideDetails": {
-    "text": "Standarddetails ausblenden",
+    "text": "Standarditiedot ausblenden",
     "source_sha256": "aaca331fbb3a117e222e712851d95ae78c711a94d691126958a505119f3d5aba"
   },
   "showDetails": {
-    "text": "Was dieser Standard bedeutet",
+    "text": "Oli dieser Standard bedeutet",
     "source_sha256": "03122870e402df04fd4dae22fed4bf7a8346fc32b7dc6c32c509d34c02ac9339"
   },
   "whatSwitchingDoes": {
@@ -229,19 +229,19 @@
   },
   "csc": {
     "pageTitle": {
-      "text": "Aktueller Compliance-Stand",
-      "source_sha256": "4deee20c165da42a7bafabe58eb134c193382da9b1a15ed0d80bdc30b55907ae"
+      "text": "Nykyinen vaatimustenmukaisuustila",
+      "source_sha256": "7079c428ffd920f1a06209e5d04bd28dce2e33a225a209d2e83f9c6d850e0952"
     },
     "pageSubtitle": {
-      "text": "Systemzustand, Befunde and erneutes Scannen for the gewaehlte Systemgruppe",
+      "text": "Systemzustand, Befunde ja erneutes Scannen gewaehlte Systemgruppelle",
       "source_sha256": "89672dd1b22841a30fa823b9ac730cb09a0c53a31ab928624cf1cc68a743d456"
     },
     "evidenceBanner": {
-      "text": "Evidence-oriented representation for examiners — turquoise marks secondary actions; no false green score.",
+      "text": "Todisteisiin perustuva esitys tutkijoille – turkoosi merkitsee toissijaisia ​​toimia; ei vääriä vihreitä pisteitä.",
       "source_sha256": "e26142974be82f5cf35741730393e05f9e845fbf093db63d5a3eaf934c62bd61"
     },
     "evidenceSurfaceAria": {
-      "text": "Compliance evidence surface",
+      "text": "Vaatimustenmukaisuustodistus pinnalla",
       "source_sha256": "75977897ac8c1c0b18bc7b177d935cfe3af559e1025e8bdaf60bbf354ed3a941"
     },
     "machineGroup": {
@@ -249,7 +249,7 @@
       "source_sha256": "6a81fb592aadad01e3e79137e36a91b158537de82f59f3e4c34cfd97e9b0346d"
     },
     "filterByGroupAria": {
-      "text": "Nach Systemgruppe filtern",
+      "text": "Nach Systemgruppe suodatin",
       "source_sha256": "bad75c19dcb2fce7b2a9e0c9a581da2ac0d45976b1dc572a320a5b259c7b1a2c"
     },
     "allGroups": {
@@ -273,7 +273,7 @@
       "source_sha256": "eb57024e444714b0f0978f950f2097c5ffbe8a57501f4191b2f5736e2edd1098"
     },
     "rescanAll": {
-      "text": "Alle scannen ({{count}})",
+      "text": "Kaikki skannatut ({{count}})",
       "source_sha256": "1031368e7a457dea01df4ade24afe12a334f3be2c9f30044fe620ed910df6238"
     },
     "rescanSelected": {
@@ -289,7 +289,7 @@
       "source_sha256": "5331fa4e198937d9cbc16d282242601017f70c79e8c0070f369412e2f047d029"
     },
     "addSystemsAria": {
-      "text": "Add systems by network scan, list import, or one at a time",
+      "text": "Lisää järjestelmiä verkkoskannauksen, luettelon tuonnin tai yksi kerrallaan",
       "source_sha256": "9cfafef061c84b7b9f982daf8471f4d051a8bb71fad310efff591c885d76763e"
     },
     "syncInventory": {
@@ -305,7 +305,7 @@
       "source_sha256": "5734674aae23da025db6263e0bac0735bb127f97c641bc17888401086476b2bc"
     },
     "exportAuditorPackAria": {
-      "text": "Prueferpaket als ZIP exportieren",
+      "text": "Prueferpaket als ZIP vientiä varten",
       "source_sha256": "722f004261919a6aa37feaef073216364c57a6ef96d2c26875ff483c43d81e11"
     },
     "gridMachine": {
@@ -373,12 +373,12 @@
       "source_sha256": "4ab8e7a5acc7597339914606baa362d0067b4e2ea3b9553a8bf743b78453e803"
     },
     "menuOpenDetailHint": {
-      "text": "Befunde, Fix-It-Settings and Versuchsprotokoll",
+      "text": "Befunde, Fix-It-Settings ja Versuchsprotokoll",
       "source_sha256": "1743300c84627909f1a4b61fb8f9e11d292434c83d6dea1ff98f0effb80bae8a"
     },
     "reportTitle": {
-      "text": "Aktueller Compliance-Stand",
-      "source_sha256": "4deee20c165da42a7bafabe58eb134c193382da9b1a15ed0d80bdc30b55907ae"
+      "text": "Nykyinen vaatimustenmukaisuustila",
+      "source_sha256": "7079c428ffd920f1a06209e5d04bd28dce2e33a225a209d2e83f9c6d850e0952"
     },
     "alertPrefix": {
       "text": "Aus",
@@ -397,7 +397,7 @@
       "source_sha256": "a762ce58c94a178d902ab11395c4aa29dced6e09afdb54d492e4e5890e39f82b"
     },
     "alertEvidenceNotScore": {
-      "text": "— Evidence, not a score.",
+      "text": "– Todisteet, ei pisteet.",
       "source_sha256": "bf6ba8a5ccbf9f55a001640fbfc6fe65a79ad75ba81636fea42e4c8cd56d42ea"
     },
     "machinesChip_one": {
@@ -413,7 +413,7 @@
       "source_sha256": "eb57024e444714b0f0978f950f2097c5ffbe8a57501f4191b2f5736e2edd1098"
     },
     "machinesChipAria": {
-      "text": "{{count}} Systeme in the Ansicht",
+      "text": "{{count}} Systeme Ansichtissa",
       "source_sha256": "f487079a07f09236b462d1678fde9a3aa92ae509b6dab312a1e6ac154ff30f74"
     },
     "findingsOpenAria": {
@@ -421,11 +421,11 @@
       "source_sha256": "3bca540a7c12bf9666d902926895a6a8cd942088e67e312e9892b5901a7ba575"
     },
     "physicalHostChip": {
-      "text": "physischer Host {{count}}",
+      "text": "physischer isäntä {{count}}",
       "source_sha256": "8ba393c1b8ea9a16dd30ff5c56a62b4e9fc8b45af470fc7b9faa37b9f30cbb14"
     },
     "physicalHostAria": {
-      "text": "Physical host evidence {{count}}",
+      "text": "Fyysinen isäntätodistus {{count}}",
       "source_sha256": "bcc5140f55af4050383051fcc639f4b008a370435c77a3ce64473187b78e4f3e"
     },
     "logDerivedChip": {
@@ -433,7 +433,7 @@
       "source_sha256": "de40ecedd01b83f99cb5bc5d669b942e0707056c892c785f745f103aab9525bc"
     },
     "logDerivedAria": {
-      "text": "Log-derived evidence {{count}}",
+      "text": "Lokipohjaiset todisteet {{count}}",
       "source_sha256": "52c795589d34b904f6b10401a50fabf32406e7ce2734d845faaa3de4a60322ee"
     },
     "fixItSelected": {
@@ -445,11 +445,11 @@
       "source_sha256": "8368dc27819c38c384c5f6f7af468d3a2b7c70e6bc1b6ce3d3fc4b4b65ca2329"
     },
     "fixItSelectedAria": {
-      "text": "Fix-It auf {{count}} ausgewaehlte Systeme with Live-Auto-Apply anwenden",
+      "text": "Fix-It auf {{count}} ausgewaehlte Systeme Live-Auto-Apply anwendenilla",
       "source_sha256": "6c8e97130a21bcc9ca1caca1e6ef5f9a834e3b30f3131c128e241c5275bdf85c"
     },
     "fixItSelectedUnavailableAria": {
-      "text": "Fix-It selection not available — select systems with Live Auto-Apply probes",
+      "text": "Fix-It -valinta ei ole käytettävissä — valitse järjestelmät, joissa on Live Auto-Apply -anturit",
       "source_sha256": "3c5cfc0eb7dd93bde023966aec342befc1dab9b3754e1205e0be29285a4f22a9"
     },
     "selectionCaption": {
@@ -457,21 +457,21 @@
       "source_sha256": "40cc4628d1a18334e08f0a0a3a79efbb7af0727fd4335d7ebeebd1462d96323e"
     },
     "fixItSelectedHint": {
-      "text": " Fix-It Auswahl wendet the erste Live-Auto-Apply-Sonde auf the erste geeignete System an ({{count}} geeignet).",
+      "text": "Fix-It Auswahl wendet erste Live-Auto-Apply-Sonde auf erste geeignete System an ({{count}} geeignet).",
       "source_sha256": "4c4814065dbf4de35cf14fb1dbe61d6e6201edebf8b7651fe52ce5e24387731d"
     },
     "fixItSelectedNeedProbe": {
-      "text": " Fix-It Auswahl benoetigt mindestens a Live-Auto-Apply-Sonde (Fix-It-Settings in the Systemdetails aktivieren).",
+      "text": "Fix-It Auswahl benoetigt mindestens Live-Auto-Apply-Sonde (Fix-It-Settings Systemdetails aktivieren).",
       "source_sha256": "b8dacf354f5dce4de781138ea56492caafc51e2f9b44adb73c46bfda82671583"
     }
   },
   "gdpr": {
     "dsrClockNote": {
-      "text": "Article 12 Paragraph 3: Reply within one month of receipt. For complex requests, you can extend for an additional two months — justify this before the original due date. Article 12 Paragraph 6: Verify identity before releasing personal data.",
+      "text": "12 artikla 3 kohta: Vastaa kuukauden kuluessa vastaanottamisesta. Monimutkaisissa pyynnöissä voit jatkaa kahdella kuukaudella – perustele tämä ennen alkuperäistä eräpäivää. 12 artiklan 6 kohta: Varmista henkilöllisyytesi ennen henkilötietojen luovuttamista.",
       "source_sha256": "501a57d0643532adfd9cd69da4c919bc8ee365c07bbd33885071b78ebf6c6993"
     },
     "dsrNonWorkforceNote": {
-      "text": "Customers and members of the public often do not have a workforce roster entry. Link to a roster entry if one exists; Otherwise, the name and email will be saved as a snapshot upon receipt and again during the identity check.",
+      "text": "Asiakkailla ja yleisöllä ei useinkaan ole työvoimaluetteloa. Linkki listamerkintään, jos sellainen on olemassa; Muussa tapauksessa nimi ja sähköpostiosoite tallennetaan tilannekuvana vastaanoton yhteydessä ja uudelleen henkilöllisyyden tarkistuksen aikana.",
       "source_sha256": "a796297fbead179adbfdde0f052fdcafa9d485e8b5499c2d4cfc35017fc1c3fa"
     }
   }

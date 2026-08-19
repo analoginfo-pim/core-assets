@@ -8,11 +8,11 @@
     "source_sha256": "1ce6332ee4dc6c3234fd6fcdf603bea5e195372a00cb52a300d1aa405dd9f51e"
   },
   "needPermission": {
-    "text": "You need permission to view the Risk Register.",
+    "text": "Tarvitset luvan nähdäksesi riskirekisterin.",
     "source_sha256": "a582ce78b9a6e1306d4af6c03ff6339b521c30b9ff407eb66803d8338e6ff832"
   },
   "loadFailed": {
-    "text": "This risk could not be loaded.",
+    "text": "Tätä riskiä ei voitu ladata.",
     "source_sha256": "de8962c97b1107b59ed2e138be903115115b63264abd1e3b58614c4b76dff868"
   },
   "loadingLabel": {
@@ -20,15 +20,15 @@
     "source_sha256": "1ce6332ee4dc6c3234fd6fcdf603bea5e195372a00cb52a300d1aa405dd9f51e"
   },
   "honesty": {
-    "text": "The register records risk decisions: what was identified, how it is treated, who accepted it, and when acceptance ends. It does not say that a control has passed.",
+    "text": "Rekisteriin tallennetaan riskipäätökset: mitä tunnistettiin, miten sitä käsitellään, kuka sen hyväksyi ja milloin hyväksyminen päättyy. Se ei tarkoita, että valvonta olisi mennyt läpi.",
     "source_sha256": "98370ce5cdd2a345b2d924f30e3e0f966da28729181ec346665e8dc03fe0a21d"
   },
   "expiryNotice": {
-    "text": "An expired acceptance is calculated upon reading. A 12-hour run sends RiskAcceptanceLapsed once for each acceptance whose granted period ended. The event reports the expiration date. It doesn't reopen risk, pull back acceptance, or escalate anything. Delivery depends on the event destinations an operator has set up.",
+    "text": "Vanhentunut hyväksyntä lasketaan lukemisen jälkeen. 12 tunnin ajo lähettää RiskAcceptanceLapsed kerran jokaisesta hyväksynnästä, jonka myönnetty ajanjakso on päättynyt. Tapahtuma ilmoittaa vanhenemispäivän. Se ei avaa riskiä uudelleen, peruuta hyväksyntää tai eskaloi mitään. Toimitus riippuu operaattorin asettamista tapahtumakohteista.",
     "source_sha256": "6d7cf5ce3cbd16c8d61d9a948fd87d5b15ffdb948a4ddd95d3554ca88beed178"
   },
   "loadRegisterFailed": {
-    "text": "The Risk Register could not be loaded. Check view permission and register storage.",
+    "text": "Riskirekisteriä ei voitu ladata. Tarkista katseluoikeudet ja rekisteröi tallennustila.",
     "source_sha256": "ba6f6c84358290be524df44625430a2cd66ba6ce32958f9144136b69489dab0e"
   },
   "newRisk": {
@@ -48,7 +48,7 @@
     "source_sha256": "0a347973ca0b4c5f732d75dbd55ab1eb28ff91eec41e368d86d6222b4150a99f"
   },
   "treatmentPlanned": {
-    "text": "Treatment planned: {{count}}",
+    "text": "Suunniteltu hoito: {{count}}",
     "source_sha256": "503ae74cca5adab95fff9809ad9e598085a5562877f72609cdb534edb06b4b91"
   },
   "monitoring": {
@@ -64,11 +64,11 @@
     "source_sha256": "cf4f8095270e90dd4a510a0042fbf22ae628636798ffef66177f13d18e25574f"
   },
   "reviewsOverdue": {
-    "text": "Reviews overdue: {{count}}",
+    "text": "Arvostelut myöhässä: {{count}}",
     "source_sha256": "7041f037cde743123f955d55383dfb3c4fba0a99e855d92af3949ceb3adc7069"
   },
   "acceptancesExpired": {
-    "text": "Acceptances expired: {{count}}",
+    "text": "Hyväksynnät vanhentuneet: {{count}}",
     "source_sha256": "5009c2306dcfb9223a54575a264be4ea7a159aacdb0c2831ab509ffaa65f6c66"
   },
   "filterStatus": {
@@ -100,11 +100,11 @@
     "source_sha256": "40dc32754b8e89ac9e32ed47adfab03e94cbf68caf7e5ebc44fdf62135774b31"
   },
   "showingCount": {
-    "text": "{{shown}} of {{total}} erfassten Risiken angezeigt.",
+    "text": "{{shown}} / {{total}} erfassten Risiken angezeigt.",
     "source_sha256": "5da66fc5cc60fb700843ce7d7420d8ab1bb358e11dab10abed6aad3f2b97ac3c"
   },
   "emptyRegister": {
-    "text": "No risks fit these filters. An empty register means that nothing was recorded here — not that there is no exposure.",
+    "text": "Näihin suodattimiin ei sovi mitään riskejä. Tyhjä rekisteri tarkoittaa, että tänne ei tallennettu mitään – ei sitä, etteikö altistusta ole.",
     "source_sha256": "13fac553039bf4062453a66736d37a77e36788132bf04446010237e6f94d80c3"
   },
   "colRisk": {
@@ -140,23 +140,23 @@
     "source_sha256": "b86192a3071dbb7c19f236c0d3d1b9f5ada27301857e9e8b0c944e04d218ba67"
   },
   "severityAria": {
-    "text": "Schweregrad {{severity}}, aus Wahrscheinlichkeit {{likelihood}} and Auswirkung {{impact}}",
+    "text": "Schweregrad {{severity}}, aus Wahrscheinlichkeit {{likelihood}} ja Auswirkung {{impact}}",
     "source_sha256": "60e0a934e26ca5510b344f60a648e0332b253e0e26f2d0e9b46cacb89ccea0e5"
   },
   "severityColHelp": {
-    "text": "Aus the gespeicherten Wahrscheinlichkeit and Auswirkung unter the jetzt geltenden Bewertungsmatrix. Eine Zeile, deren Lesung sich seit the Erfassung geaendert hat, sagt the unter the Chip.",
+    "text": "Aus the gespeicherten Wahrscheinlichkeit ja Auswirkung unter the jetzt geltenden Bewertungsmatrix. Eine Zeile, Lesung sich seit Erfassung geaendert hattu, sagt unter Chip.",
     "source_sha256": "d50461f934b46e5005e2513ad69822279d6b6a53a110589ddedabc32ac8b03b5"
   },
   "statusColHelp": {
-    "text": "What was recently decided about this risk. Status values ​​are recorded decisions, not an evaluation result.",
+    "text": "Mitä tästä riskistä äskettäin päätettiin. Statusarvot ovat tallennettuja päätöksiä, eivät arviointitulosta.",
     "source_sha256": "d9fbc7430001dc38492f31c3b9413f2a2da795d7d817408341f42cc29877e965"
   },
   "reviewColHelp": {
-    "text": "When should this risk be examined next? Overdue is calculated when reading this list; nothing announces it.",
+    "text": "Milloin tätä riskiä tulisi tarkastella seuraavaksi? Myöhässä lasketaan tätä luetteloa luettaessa; mikään ei julista sitä.",
     "source_sha256": "f01b9b6b031250ffd5a2282486dc6867f332736b872581be4b9d0f822ddc3d59"
   },
   "acceptanceColHelp": {
-    "text": "Whether someone has accepted this risk and until when. An expired acceptance has expired and no one has been notified.",
+    "text": "Onko joku hyväksynyt tämän riskin ja mihin asti. Vanhentunut hyväksyntä on vanhentunut, eikä kenellekään ole ilmoitettu.",
     "source_sha256": "61ef7eab6b7bec77a16590dce6d5e04927d405a278eb8122c3adffecd1f95e4c"
   },
   "toolbarTitle": {
@@ -164,7 +164,7 @@
     "source_sha256": "7e81d387600f4fd81d44fea37f26152cfd7476f74baa593c34ebd794c0171f92"
   },
   "toolbarSubtitle": {
-    "text": "Captured risk decisions — no statement that control existed",
+    "text": "Vangitut riskipäätökset – ei väitettä hallinnan olemassaolosta",
     "source_sha256": "d05bf223147845f6ecede4e3d70d25052dd825003c18290429cd506ce4e825d8"
   },
   "createTitle": {
@@ -172,7 +172,7 @@
     "source_sha256": "c362bb511892bcf41ea54cac3837dbbe798e5556252581c937da47e8e90a52ca"
   },
   "createScoringNote": {
-    "text": "The severity is calculated from the selected probability and impact and is never saved. The version of the assessment matrix at the time of recording is saved so that the risk can later be read as it was decided.",
+    "text": "Vakavuus lasketaan valitun todennäköisyyden ja vaikutuksen perusteella, eikä sitä koskaan tallenneta. Arviointimatriisin tallennushetken versio tallennetaan, jotta riski voidaan myöhemmin lukea niin kuin on päätetty.",
     "source_sha256": "7dd559e1208fdfc4e9ae441efe8a6933fdbfad1ea7e1c391a896c5e401424280"
   },
   "createRef": {
@@ -180,7 +180,7 @@
     "source_sha256": "d12ecea9393094b8801476545360e8bc7a76ed1423a34b5f24edb80c0140f2e7"
   },
   "createRefHelp": {
-    "text": "Your identifier for this risk, clearly in the register.",
+    "text": "Tämän riskin tunniste, selkeästi rekisterissä.",
     "source_sha256": "e441a6f1801b5af9329a37693a12839319dc0109fec609e7ceacb66012762bf7"
   },
   "createTitleField": {
@@ -200,7 +200,7 @@
     "source_sha256": "5c008fc563aa8d8645dd99a59f7ff76734bdc83ba43f0efb99fdf97128df7fc5"
   },
   "createOwnerHelp": {
-    "text": "The person responsible for this risk.",
+    "text": "Tästä riskistä vastuussa oleva henkilö.",
     "source_sha256": "d5e27c7797192b80b800f821ac3cac90b92a5dde8af95fd030f2310c47db8af9"
   },
   "createLikelihood": {
@@ -216,7 +216,7 @@
     "source_sha256": "a2639a95145b32215db5272d41e1e81edabdd5523e9f0ac2975f1823f4a4dc38"
   },
   "createReviewDueHelp": {
-    "text": "Optional. A risk without an audit date is never reported as overdue.",
+    "text": "Valinnainen. Riskiä ilman tarkastuspäivää ei koskaan raportoida erääntyneeksi.",
     "source_sha256": "dc3a7a22c56ca90462753e6a6042dbb2d62a19fa7a450562d09e1707b4084df8"
   },
   "createCancel": {
@@ -232,7 +232,7 @@
     "source_sha256": "eb6d9e024e62902bf31463a989bfcce1a38de98b343f945f0b654e18d2ea67a9"
   },
   "toastRecordFailed": {
-    "text": "This risk could not be recorded",
+    "text": "Tätä riskiä ei voitu kirjata",
     "source_sha256": "7172a624a24746f8e2c1a0872146af21e73dbbf5ecc6e1628c632a36ccd45578"
   },
   "review_none": {

@@ -71,28 +71,31 @@
       }
     },
     "root": {
-      "bullets": [
-        {
-          "text": "Puuttuvat ruudut näyttävät \"Ei vielä saatavilla\" — ei koskaan keksittyä nollaa.",
-          "source_sha256": "945a6ac23ca5db7eb374d90f3244c553a499d159100a0cad5f39b45279d21f17"
-        },
-        {
-          "text": "Osittaiset ruudut merkitään \"Osittainen\"-tilaan selkokielisellä syyllä.",
-          "source_sha256": "fd61988cb65ff1900dcb19623ad5f378c4707699c45af971eb7e2cd4f6971572"
-        },
-        {
-          "text": "Mukauta Siirrä ylös / Siirrä alas -toiminnoilla. Organisaation oletuksen julkaisu edellyttää dashboard.publish; henkilökohtainen tallennus edellyttää dashboard.personalize.",
-          "source_sha256": "ed93d51a2d8fe95be8fa4f5d53187a952a0d3fbec97b23f05c6cc8b83d49a31c"
-        },
-        {
-          "text": "Omat työasemat tai Salasanan näyttö ovat Suosikeissa.",
-          "source_sha256": "89193a25b206956414b2a74329b269c4c161cf119fc2548531a8850c6a47e02f"
-        },
-        {
-          "text": "Ilman dashboard.view-oikeutta tällä sivulla ei ole näytettävää, joten sinut ohjataan Suosikkeihin.",
-          "source_sha256": "be0c280be23979edd80969ca5452046ca2159abbce0e457710061fa4d1314d1a"
-        }
-      ],
+      "bullets": {
+        "text": [
+          {
+            "text": "Puuttuvat ruudut näyttävät \"Ei vielä saatavilla\" — ei koskaan keksittyä nollaa.",
+            "source_sha256": "945a6ac23ca5db7eb374d90f3244c553a499d159100a0cad5f39b45279d21f17"
+          },
+          {
+            "text": "Osittaiset ruudut merkitään \"Osittainen\"-tilaan selkokielisellä syyllä.",
+            "source_sha256": "fd61988cb65ff1900dcb19623ad5f378c4707699c45af971eb7e2cd4f6971572"
+          },
+          {
+            "text": "Mukauta Siirrä ylös / Siirrä alas -toiminnoilla. Organisaation oletuksen julkaisu edellyttää dashboard.publish; henkilökohtainen tallennus edellyttää dashboard.personalize.",
+            "source_sha256": "ed93d51a2d8fe95be8fa4f5d53187a952a0d3fbec97b23f05c6cc8b83d49a31c"
+          },
+          {
+            "text": "Omat työasemat tai Salasanan näyttö ovat Suosikeissa.",
+            "source_sha256": "89193a25b206956414b2a74329b269c4c161cf119fc2548531a8850c6a47e02f"
+          },
+          {
+            "text": "Ilman dashboard.view-oikeutta tällä sivulla ei ole näytettävää, joten sinut ohjataan Suosikkeihin.",
+            "source_sha256": "be0c280be23979edd80969ca5452046ca2159abbce0e457710061fa4d1314d1a"
+          }
+        ],
+        "source_sha256": "cf3d9f6ef9ed8272db4c16aa5eb3c69aa957c89ad4ea7af5ed3bd344e0725f4b"
+      },
       "title": {
         "text": "Koontinäyttö",
         "source_sha256": "67b696468610b879ed7f224dbf6b0861f27e39d20454cb9d7af1ec52d3e5eeaa"
@@ -112,7 +115,7 @@
         "source_sha256": "b79296f1d39e5cc9c6b177210c04546596e13538719140c0f540d62b99fd9d87"
       },
       "dialogEditTemplateTitle": {
-        "text": "Edit Template — {{name}}",
+        "text": "Muokkaa mallia — {{name}}",
         "source_sha256": "527f316a5cb4bd7b111489f806de7f1fdad96de59cbd71a51ef05c27337bbd07"
       },
       "dialogCreateSnippetTitle": {
@@ -136,7 +139,7 @@
         "source_sha256": "b41952dfad6a611574b87a30bbb117f86b266424bae945c57100aa4aa43096e9"
       },
       "dialogSnippetNameHelper": {
-        "text": "Reference from templates as {snippet:name}",
+        "text": "Viittaus malleista muodossa {snippet:name}",
         "source_sha256": "7c2cac1d4abb933d07384ec2e8eb25da5fa1ba7eb8327fe76d3aa10d174ae552"
       },
       "dialogGroup": {
@@ -160,11 +163,11 @@
         "source_sha256": "f6f4688ff23d50c67053963c251fa0ce64a925cf283537cf066b1f362cb9b778"
       },
       "dialogEncryptedEmailTitle": {
-        "text": "Send encrypted email (CUI)",
+        "text": "Lähetä salattu sähköposti (CUI)",
         "source_sha256": "0e6b73eac42d5b38b50786ac9fbaa0c6239c2e5ee6a87beaf8697bf1b13d5291"
       },
       "dialogEncryptedEmailBody": {
-        "text": "Clear CUI never rides in the message body. Choose a Live standard; the sensitive payload becomes an encrypted attachment. Microsoft Graph OME delivers that attachment via Graph sendMail — it is not Azure Purview IRM.",
+        "text": "Selkeä CUI ei koskaan kulje viestin rungossa. Valitse Live-standardi; herkästä hyötykuormasta tulee salattu liite. Microsoft Graph OME toimittaa liitteen Graph sendMailin kautta – se ei ole Azure Purview IRM.",
         "source_sha256": "54b94c8be32dcb143b4350ec6c119700cc24abbaff1af3dde532538cf160e126"
       },
       "dialogEncryptedEmailRecipient": {
@@ -172,7 +175,7 @@
         "source_sha256": "51fac985e95345d90b3c8a69f5e60003cbbd47a06efdcf0270d76be85b408657"
       },
       "dialogEncryptedEmailRecipientHelper": {
-        "text": "e.g. you@example.com or your configured SMTP sink",
+        "text": "esim. sinä@example.com tai määritetty SMTP-allas",
         "source_sha256": "9d879f269db276fb21b50b695d828b507ddea578b929e639350c74f387a8103c"
       },
       "dialogEncryptedEmailStandard": {
@@ -184,11 +187,11 @@
         "source_sha256": "68971283841aecdf1da48428849b3b33164ec5c41d0f3c4d6cea624db5aff8f2"
       },
       "dialogEncryptedEmailPlaintext": {
-        "text": "CUI plaintext (attachment only)",
+        "text": "CUI-selkoteksti (vain liite)",
         "source_sha256": "fdde27dba5ff9faff1706b7b40256d7110c988f5000ac471c8f052b9e91bc18c"
       },
       "dialogEncryptedEmailPlaintextHelper": {
-        "text": "Never pasted into the SMTP body when marking is CUI",
+        "text": "Ei koskaan liitetty SMTP-runkoon, kun merkintä on CUI",
         "source_sha256": "a21087901759d9dd6d6ba47d07691561a9e9b60da639e9a822dc6cd5080b75f3"
       },
       "dialogEncryptedEmailStatusBody": {
@@ -196,7 +199,7 @@
         "source_sha256": "0d9e466a65b09e419eb384c11643bb5fa66644a23035907c1d9aee56863ab858"
       },
       "dialogEncryptedEmailStatusHelper": {
-        "text": "Optional. Leave blank for the default status-only notice.",
+        "text": "Valinnainen. Jätä tyhjäksi vain tila -oletusilmoituksessa.",
         "source_sha256": "ff094ec9bdadd94ab8d154fdecaa3368938b64bf05d9005e2cf9f54f6520f08d"
       },
       "dialogEncryptedEmailPassphrase": {
@@ -212,7 +215,7 @@
         "source_sha256": "7cde746219b59803d412ee27b6de148bfec1482ca8b3a06f8e4b4c7d07376184"
       },
       "dialogTestSmsBody": {
-        "text": "Uses the saved SMS provider. Save settings first. Optional media URLs enable MMS when the provider supports it.",
+        "text": "Käyttää tallennettua tekstiviestipalveluntarjoajaa. Tallenna asetukset ensin. Valinnaiset media-URL-osoitteet mahdollistavat MMS:n, kun palveluntarjoaja tukee sitä.",
         "source_sha256": "af4b28e23155ad1fee112fa420ca1cd784c1e22b2d433b32f95c71aaf646eac1"
       },
       "dialogTestSmsMedia": {
@@ -220,7 +223,7 @@
         "source_sha256": "51f57eb5f91d1e4196d74b8fd0e1caf39e83acc2425e409f0925f37b4f2974e9"
       },
       "dialogTestSmsMediaHelper": {
-        "text": "Space- or comma-separated HTTPS URLs",
+        "text": "Välilyönnillä tai pilkuilla erotetut HTTPS-URL-osoitteet",
         "source_sha256": "c749254ad80d1858e5f019e254a916528294d192faa5b4170a44de48a2fe1643"
       }
     }
