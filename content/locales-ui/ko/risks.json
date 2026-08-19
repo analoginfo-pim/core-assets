@@ -1,35 +1,35 @@
 {
   "title": {
-    "text": "Risikoregister",
-    "source_sha256": "7e81d387600f4fd81d44fea37f26152cfd7476f74baa593c34ebd794c0171f92"
+    "text": "위험 등록부",
+    "source_sha256": "1ce6332ee4dc6c3234fd6fcdf603bea5e195372a00cb52a300d1aa405dd9f51e"
   },
   "back": {
     "text": "리시코레지스터",
     "source_sha256": "7e81d387600f4fd81d44fea37f26152cfd7476f74baa593c34ebd794c0171f92"
   },
   "needPermission": {
-    "text": "Sie brauchen the Berechtigung, the Risikoregister to sehen.",
-    "source_sha256": "aa210bb51311831fb0ee3caac5814c204f833780563b0014cd925ef2709c6fd8"
+    "text": "위험 등록부를 보려면 권한이 필요합니다.",
+    "source_sha256": "a582ce78b9a6e1306d4af6c03ff6339b521c30b9ff407eb66803d8338e6ff832"
   },
   "loadFailed": {
-    "text": "Dieses Risiko konnte는 geladen werden이 아닙니다.",
-    "source_sha256": "37bf64d2ea1a77d4c32dcdce3c3edc5e865a8722e6bca86b82c519a99de4cf70"
+    "text": "이 위험 요소를 로드할 수 없습니다.",
+    "source_sha256": "de8962c97b1107b59ed2e138be903115115b63264abd1e3b58614c4b76dff868"
   },
   "loadingLabel": {
     "text": "리시코레지스터",
     "source_sha256": "7e81d387600f4fd81d44fea37f26152cfd7476f74baa593c34ebd794c0171f92"
   },
   "honesty": {
-    "text": "Das Register erfasst Risikoentscheidungen: identifiziert wurde, wie behandelt wird, wer akzeptiert hat and wann the Akzeptanz endet를 등록했습니다. 하지만 Kontrolle 최고의 모자를 써보세요.",
-    "source_sha256": "dea83c3d13f9ae0d59f7f9ec35b32ca516751f5e5e1cc62bd7cb18d0bda9bdd7"
+    "text": "등록부에는 식별된 내용, 처리 방법, 수락한 사람, 수락 종료 시기 등 위험 결정이 기록됩니다. 통제가 통과되었다고 말하는 것은 아닙니다.",
+    "source_sha256": "98370ce5cdd2a345b2d924f30e3e0f966da28729181ec346665e8dc03fe0a21d"
   },
   "expiryNotice": {
-    "text": "Eine abgelaufene Akzeptanz wird beim Lesen berechnet. Ein Zwoelf-Stunden-Lauf sendet RiskAcceptanceLapsed einmal je Akzeptanz, deren gewaehrter Zeitraum endete. Das Ereignis는 Ablaufdatum을 융합했습니다. Es oeffnet the Risiko not wieder, zieht the Akzeptanz not zurueck and eskaliert nichts. Ereigniszielen ab의 Die Zustellung haengt, a Operator eingerichtet 모자.",
-    "source_sha256": "fef0a558751ff3e308bfe724dedd52b0bf8c60de9bb28b90b36edc23fa2a0635"
+    "text": "만료된 승인은 읽으면 계산됩니다. 12시간 동안 실행하면 승인 기간이 종료된 승인마다 RiskAcceptanceLapsed가 한 번씩 전송됩니다. 이벤트는 만료 날짜를 보고합니다. 위험을 재개하거나 승인을 취소하거나 에스컬레이션하지 않습니다. 배송은 운영자가 설정한 이벤트 목적지에 따라 달라집니다.",
+    "source_sha256": "6d7cf5ce3cbd16c8d61d9a948fd87d5b15ffdb948a4ddd95d3554ca88beed178"
   },
   "loadRegisterFailed": {
-    "text": "Das Risikoregister는 geladen werden이 아닙니다. Pruefen Sie Ansichtsberechtigung 및 Registerspeicher.",
-    "source_sha256": "3709da8b2f0a61736b1bbe6f77125ff591e93b05d5925c67be4dbe7027f21ab2"
+    "text": "위험 등록부를 로드할 수 없습니다. 보기 권한을 확인하고 저장 공간을 등록하세요.",
+    "source_sha256": "ba6f6c84358290be524df44625430a2cd66ba6ce32958f9144136b69489dab0e"
   },
   "newRisk": {
     "text": "노이에스 리시코",
@@ -48,8 +48,8 @@
     "source_sha256": "6f9b3e70485af49405660e242dfe0eaa0b78d62a49eaa4b0b7ce8dac001c47b4"
   },
   "treatmentPlanned": {
-    "text": "Behandlung 식물: {{count}}",
-    "source_sha256": "6e4aaee7dd57adbb2a4dfbd8d86bda3c16f78f66f3ff6937832788feae5c0ff6"
+    "text": "치료 계획: {{count}}",
+    "source_sha256": "503ae74cca5adab95fff9809ad9e598085a5562877f72609cdb534edb06b4b91"
   },
   "monitoring": {
     "text": "Ueberwachung: {{count}}",
@@ -60,12 +60,12 @@
     "source_sha256": "2d32151bbe16176846a7ed2bdbeb833e09364e72d16b430b95ce582eca082371"
   },
   "closed": {
-    "text": "Geschlossen: {{count}}",
-    "source_sha256": "13f7eb63bade24490c5a2f909398076f957d19aebb35063cd382be0f811a3ca6"
+    "text": "휴무일: {{count}}",
+    "source_sha256": "cf4f8095270e90dd4a510a0042fbf22ae628636798ffef66177f13d18e25574f"
   },
   "reviewsOverdue": {
-    "text": "Pruefungen ueberfaellig: {{count}}",
-    "source_sha256": "bdda0196e72ae85baf954037317ca9d0524e477b22d18e033f98177e25d23988"
+    "text": "리뷰 기한이 지났습니다: {{count}}",
+    "source_sha256": "7041f037cde743123f955d55383dfb3c4fba0a99e855d92af3949ceb3adc7069"
   },
   "acceptancesExpired": {
     "text": "악젭탄젠 압겔라우펜: {{count}}",
@@ -104,8 +104,8 @@
     "source_sha256": "5da66fc5cc60fb700843ce7d7420d8ab1bb358e11dab10abed6aad3f2b97ac3c"
   },
   "emptyRegister": {
-    "text": "Keine Risiken이 Diesen Filter로 넘어갔습니다. Ein leeres Register heisst, dass hier nichts erfasst wurde — not, dass es keine Exposition gibt.",
-    "source_sha256": "d82abf43f639e14ebce90f92ac07a5781caf440fc4d2bea67745ee001047924c"
+    "text": "이러한 필터에 맞는 위험은 없습니다. 빈 레지스터는 여기에 아무것도 기록되지 않았음을 의미하며 노출이 없다는 의미는 아닙니다.",
+    "source_sha256": "13fac553039bf4062453a66736d37a77e36788132bf04446010237e6f94d80c3"
   },
   "colRisk": {
     "text": "리시코",
@@ -148,40 +148,40 @@
     "source_sha256": "d50461f934b46e5005e2513ad69822279d6b6a53a110589ddedabc32ac8b03b5"
   },
   "statusColHelp": {
-    "text": "zuletzt ueber dieses Risiko entschieden wurde였습니다. Statuswerte sind erfasste Entscheidungen, kein Bewertungsergebnis.",
-    "source_sha256": "a32a0feb73274c10417de7c0044ab7fc37697d7f1e88d15fbadb2152415b3ded"
+    "text": "이 위험에 대해 최근 결정된 사항은 무엇입니까? 상태 값은 평가 결과가 아닌 기록된 결정입니다.",
+    "source_sha256": "d9fbc7430001dc38492f31c3b9413f2a2da795d7d817408341f42cc29877e965"
   },
   "reviewColHelp": {
-    "text": "Wann은 Risiko를 Naechstes geprueft werden soll로 사망합니다. Ueberfaellig wird beim Lesen dieser Liste berechnet; nichts kuendigt es an.",
-    "source_sha256": "8f740c0fff3319acc876cd0a151096208839bba6b2bcb0339393813ba0cb589f"
+    "text": "다음에 이 위험을 언제 조사해야 합니까? 이 목록을 읽을 때 연체 금액이 계산됩니다. 아무것도 발표하지 않습니다.",
+    "source_sha256": "f01b9b6b031250ffd5a2282486dc6867f332736b872581be4b9d0f822ddc3d59"
   },
   "acceptanceColHelp": {
-    "text": "Ob jemand는 Risiko akzeptiert 모자와 bis wann을 죽습니다. Eine abgelaufene Akzeptanz ist erloschen 및 niemand wurde benachrichtigt.",
-    "source_sha256": "5eca7467fbc5f0c67dda207f92d04587461d8092b9acbf838515e8bef28a6e5d"
+    "text": "누군가가 이 위험을 감수했는지 여부와 그 시기는 언제까지입니까? 만료된 수락이 만료되었으며 아무에게도 통보되지 않았습니다.",
+    "source_sha256": "61ef7eab6b7bec77a16590dce6d5e04927d405a278eb8122c3adffecd1f95e4c"
   },
   "toolbarTitle": {
     "text": "리시코레지스터",
     "source_sha256": "7e81d387600f4fd81d44fea37f26152cfd7476f74baa593c34ebd794c0171f92"
   },
   "toolbarSubtitle": {
-    "text": "Erfasste Risikoentscheidungen — keine Aussage, dass a Kontrolle bestanden 모자",
-    "source_sha256": "b47f46d07bd9d7c0b098b575a50371722f3c9b71a4ffd4c9442fffd2c47fb2da"
+    "text": "포착된 위험 결정 - 통제가 존재한다는 진술이 없습니다.",
+    "source_sha256": "d05bf223147845f6ecede4e3d70d25052dd825003c18290429cd506ce4e825d8"
   },
   "createTitle": {
-    "text": "Ein Risiko erfassen",
-    "source_sha256": "1f932a5e8b141c8f71a8b3ee6382b48193c892d93996bdc2075a532e3631f9a0"
+    "text": "위험 포착",
+    "source_sha256": "c362bb511892bcf41ea54cac3837dbbe798e5556252581c937da47e8e90a52ca"
   },
   "createScoringNote": {
-    "text": "Der Schweregrad는 gewaehlten Wahrscheinlichkeit 및 Auswirkung berechnet 및 nie gespeichert와 연결되어 있습니다. Gespeichert는 버전을 Bewertungsmatrix zum Zeitpunkt the Erfassung으로 지정하고 Risiko spaeter를 damit하여 gelesen werden kann, wie es entschieden wurde로 설정했습니다.",
-    "source_sha256": "40584d4068f7e729cd8dbff8383b055257cbc424efe799101b026e5c3c9a888d"
+    "text": "심각도는 선택한 확률과 영향을 기준으로 계산되며 저장되지 않습니다. 기록 당시의 평가 매트릭스 버전은 나중에 결정된 대로 위험을 읽을 수 있도록 저장됩니다.",
+    "source_sha256": "7dd559e1208fdfc4e9ae441efe8a6933fdbfad1ea7e1c391a896c5e401424280"
   },
   "createRef": {
     "text": "리시코레퍼렌즈",
     "source_sha256": "d12ecea9393094b8801476545360e8bc7a76ed1423a34b5f24edb80c0140f2e7"
   },
   "createRefHelp": {
-    "text": "Ihre Kennung for dieses Risiko, eindeutig in the Register.",
-    "source_sha256": "aabe344cc8fe2911d696fdf3b5501cfd4093d8c04da8f7fe23cd48a81e2423c8"
+    "text": "이 위험에 대한 귀하의 식별자는 기록부에 명확하게 표시되어 있습니다.",
+    "source_sha256": "e441a6f1801b5af9329a37693a12839319dc0109fec609e7ceacb66012762bf7"
   },
   "createTitleField": {
     "text": "제목",
@@ -200,8 +200,8 @@
     "source_sha256": "5c008fc563aa8d8645dd99a59f7ff76734bdc83ba43f0efb99fdf97128df7fc5"
   },
   "createOwnerHelp": {
-    "text": "Die Person은 Risiko verantwortlich ist를 위한 것입니다.",
-    "source_sha256": "070bc6e675b92667c7eb4e0a508b6f843bbf91c0f8ca96424dbad522e586bdcb"
+    "text": "이 위험에 책임이 있는 사람입니다.",
+    "source_sha256": "d5e27c7797192b80b800f821ac3cac90b92a5dde8af95fd030f2310c47db8af9"
   },
   "createLikelihood": {
     "text": "Wahrscheinlichkeit",
@@ -216,8 +216,8 @@
     "source_sha256": "8eeb037702e13e7862fc006ef504c5311ccf8f041535adfaa0c4db7a04c52853"
   },
   "createReviewDueHelp": {
-    "text": "선택 과목. Pruefungsdatum wird nie als ueberfaellig gemeldet가 없는 Ein Risiko.",
-    "source_sha256": "abd47219a3972130550933b10fa01348eded3efe1272ce62778cab9b29be364f"
+    "text": "선택 과목. 감사 날짜가 없는 위험은 기한이 지난 것으로 보고되지 않습니다.",
+    "source_sha256": "dc3a7a22c56ca90462753e6a6042dbb2d62a19fa7a450562d09e1707b4084df8"
   },
   "createCancel": {
     "text": "취소",
@@ -232,24 +232,24 @@
     "source_sha256": "6060bb368634e155515fb1fe28fe367d8a70cd9b9cd1e3567793f4b7ce2a79e0"
   },
   "toastRecordFailed": {
-    "text": "Dieses Risiko konnte not erfasst werden",
-    "source_sha256": "0f031e62916afda4c8d2565ecc9baad36022fd231f429d8213a8cd8f455f55cb"
+    "text": "이 위험은 기록될 수 없습니다.",
+    "source_sha256": "7172a624a24746f8e2c1a0872146af21e73dbbf5ecc6e1628c632a36ccd45578"
   },
   "review_none": {
-    "text": "Keine Pruefung 게플랜트",
-    "source_sha256": "3e70e83ae8974e3983584d857122563b2d53360d2b36554d7083f6ab310d9bfd"
+    "text": "시험 계획 없음",
+    "source_sha256": "6697329cb92af25301510c5576ff778e52963f1ce19de5db27f7c821adef8caf"
   },
   "review_overdue": {
-    "text": "Ueberfaellig seit __PH0__",
-    "source_sha256": "0e99f48b330cc5a1888144b6929f8176263617af34b2ff3b0f293db542e168c2"
+    "text": "{{date}} 이후 연체됨",
+    "source_sha256": "6d9e581a8ad01ead9ea102048ed06b79d5fb41a037f133a8e00b77139a542de2"
   },
   "review_due": {
-    "text": "Faellig __PH0__",
-    "source_sha256": "9332209cb79aabf030a8e7939ebeb5e772455205da29f8edd4ca6995f3684bfc"
+    "text": "마감일 {{date}}",
+    "source_sha256": "2f2619c3612712fabdc512f4f5f8f71cb94bf36c527d1db413633de70cce313c"
   },
   "acceptance_none": {
-    "text": "Nicht Akzeptiert",
-    "source_sha256": "43cec249c014f177f064e8927171da7c1e50611cddbee05c255f386396f56366"
+    "text": "허용되지 않음",
+    "source_sha256": "8ba391628be0d7e1c0dde21aeff106331b47c80473ec47ac9e49931145581cc9"
   },
   "acceptance_expired": {
     "text": "아브겔라우펜 {{date}}",
@@ -269,16 +269,16 @@
       "source_sha256": "7eaa5decf74606c0758f168731c5cfed2e9b0834ca69f9302986d6fa199befe4"
     },
     "treatment_planned": {
-      "text": "Behandlung geplant",
-      "source_sha256": "dc66b352f492ef6093648c3c5fa69c41a1f87e2365e13fd05aec9b24fa0454bb"
+      "text": "치료 예정",
+      "source_sha256": "0cd667f4b62c3e589bd2fd894fd2ead84f9da239696df4977428207d19b3a1c5"
     },
     "monitoring": {
       "text": "우에버와충",
       "source_sha256": "4f0bf49903efb3d68718df7c207bb6a01d6b4dabf606b99b92d2488969ded27c"
     },
     "accepted": {
-      "text": "Akzeptiert",
-      "source_sha256": "98da380314730615869f5db613a4adf5c691b57d27cfb0c82d861fccd7805f85"
+      "text": "수락됨",
+      "source_sha256": "a00fb0c50741f81bb51d35b4475a4357f8039aabd896a21036bc516839401595"
     },
     "closed": {
       "text": "게슐로센",
