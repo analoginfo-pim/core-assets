@@ -165,11 +165,101 @@
         "headers[4]": {
           "text": "Darf not",
           "source_sha256": "955fa5e13150d9ec54821a091dc6bf66daabc20392e0b535cef1d3f8ed7cb3ce"
+        },
+        "headers": {
+          "0": {
+            "text": "Emploi",
+            "source_sha256": "ad617a0fdd57e3f4b8ebb27f6f60470bc4468aadec290db57e612f751767745d"
+          },
+          "1": {
+            "text": "Groupes",
+            "source_sha256": "39bbb719fa2b9d2251039cbf2cd072e1120a414278263e2f11d99af0236c4262"
+          },
+          "2": {
+            "text": "Préréglage d'inscription",
+            "source_sha256": "a17f139a800b40ba79072e64cadb7a194d4e9c53938806d6fadf9a67b4b995e8"
+          },
+          "3": {
+            "text": "Peut faire",
+            "source_sha256": "2de2c8f7e0f142fc595dfc3b82b8ce30841e6a9ca3a7560742c1e10823786b41"
+          },
+          "4": {
+            "text": "Il ne faut pas",
+            "source_sha256": "718e628f3829d259821ebdd30c7c5f43d0d99378ee8a120e16df2b366a601b70"
+          }
+        },
+        "rows": {
+          "0": {
+            "0": {
+              "text": "Observateur en lecture seule",
+              "source_sha256": "124a075178664d2ee91ff8fc4b9105d0836a437049fc24111597b6155b208eda"
+            },
+            "1": {
+              "text": "Évaluateurs en lecture seule et utilisateurs de la documentation",
+              "source_sha256": "b9850db67366f8e12d47aca92555920fcb1fb9c5627a1f58254c67feecf2ca1d"
+            },
+            "2": {
+              "text": "évaluateur en lecture seule",
+              "source_sha256": "78218efaecc299d8937a7ccb02b5218dcbb87b5817793e358b7e009245532e47"
+            },
+            "3": {
+              "text": "Voir le classeur d'évaluation et les rapports",
+              "source_sha256": "9d46e9a523253882459bbfe2fcdb69c3dc2e943f89f6a3334fad58bd3ad446ec"
+            },
+            "4": {
+              "text": "Écrivez le contenu du classeur, corrigez-le ou gérez les identités",
+              "source_sha256": "82fd8376cc83606a3a7e1fd9e5c91a5b8331dbdd60447019613ac890b785f017"
+            }
+          },
+          "1": {
+            "0": {
+              "text": "Auditeur en activité (Auditeur)",
+              "source_sha256": "944d1f7fee040102f42afef4a10b48a4992a6f40fefbaa0e98a0ec7c941cc6ab"
+            },
+            "1": {
+              "text": "CMMC Évaluateurs, équipe d’évaluation et utilisateurs de la documentation",
+              "source_sha256": "b48d7428c73de6aa422f5de2de8d6eef73c438fec280ac7916831ee0a9494838"
+            },
+            "2": {
+              "text": "cmmc-évaluateur",
+              "source_sha256": "6613533426ca2300e9c63eeb209573f98c115704d96509ebe7fd95e42560526d"
+            },
+            "3": {
+              "text": "Rédiger le contenu du classeur, réviser les engagements, gérer les risques",
+              "source_sha256": "e6d4700c06f8b2c0571430eeef7a57778c7c1a0f7093b3c898f6f4cd37c28549"
+            },
+            "4": {
+              "text": "Créez des comptes, réinitialisez les mots de passe, réparez-le ou acceptez le risque résiduel",
+              "source_sha256": "7ed48f8d001148d1a523e82d8e19089fa9bd91d315a39d408e194ffd0fb238e4"
+            }
+          },
+          "2": {
+            "0": {
+              "text": "Auditeur principal (administrateur d'audit)",
+              "source_sha256": "ad327d82e6d729f67843d72b3dc5d3820b11479f40abd170d786e44a537595f1"
+            },
+            "1": {
+              "text": "Auditeurs principaux, évaluateurs CMMC, équipe d'évaluation et utilisateurs de la documentation",
+              "source_sha256": "5f38ef6b0333ece489762dd38e800f99608fddcfa85dfd6d07cdca9721b00d28"
+            },
+            "2": {
+              "text": "auditeur principal",
+              "source_sha256": "4012403d359f568308ee40454e0f6062e277496074f12d38353777ac7e185f51"
+            },
+            "3": {
+              "text": "Identique à un auditeur actif, en plus de créer des comptes de classe auditeur, de les ajouter aux groupes d'auditeurs, de réinitialiser uniquement ces mots de passe et de gérer les missions.",
+              "source_sha256": "a7c2351fa40bcbee672810e7cb7fa60ada50db21e8dabc927841136e12c822f6"
+            },
+            "4": {
+              "text": "Réinitialisez les mots de passe administrateur, accordez Super Admin, gérez les fournisseurs d'identité ou réparez-le",
+              "source_sha256": "8e7a60df7c9f329660a9a05c3c3d20c7f9f5daf7e7689e3ea4dfa2d631296a3c"
+            }
+          }
         }
       },
       "seeds": {
         "caption": {
-          "text": "Startkonten for Demonstrationen",
+          "text": "Startkonten pour les démonstrations",
           "source_sha256": "9905bc2f948fc6e8cef528c7ddc50fda78927ecf44b142fb4701ff316bc504de"
         },
         "headers[0]": {
@@ -187,11 +277,29 @@
         "headers[3]": {
           "text": "Hinweise",
           "source_sha256": "b791a5686bab4aa0cd0b84e981e03bcb5ab29d49b0d012f8f44a42337f982ade"
+        },
+        "headers": {
+          "0": {
+            "text": "Nom d'utilisateur",
+            "source_sha256": "e3b89e9d33f88e523083d8b4436adcc3726c89e97fd3179a2e102d765d1b16ed"
+          },
+          "1": {
+            "text": "Aufgabe",
+            "source_sha256": "5683517b480b8f352080960014ea795c39c58419f1f8215833e780d358cd6665"
+          },
+          "2": {
+            "text": "Groupes",
+            "source_sha256": "39bbb719fa2b9d2251039cbf2cd072e1120a414278263e2f11d99af0236c4262"
+          },
+          "3": {
+            "text": "Notes",
+            "source_sha256": "b791a5686bab4aa0cd0b84e981e03bcb5ab29d49b0d012f8f44a42337f982ade"
+          }
         }
       },
       "screens": {
         "caption": {
-          "text": "Bildschirme and wer sie nutzen darf",
+          "text": "Bildschirme et wer sie nutzen darf",
           "source_sha256": "8dffc3971109f2fd4bf63e7683bc96ae214f1285117783f69696eb689159859f"
         },
         "headers[0]": {
@@ -209,6 +317,24 @@
         "headers[3]": {
           "text": "Leitung (Audit-Admin)",
           "source_sha256": "ca42fdc257ecfbf81cfe91bb5e42c26a43377bec368b14764d54351383729520"
+        },
+        "headers": {
+          "0": {
+            "text": "Images",
+            "source_sha256": "13cae19164935e0c192979c5511e086a260c2b1a611b080882fc3b62a0380506"
+          },
+          "1": {
+            "text": "Nur-Lesen",
+            "source_sha256": "bfb9000c57167b252f23af44e3a04bb894b5e6b0440f0d79c582e51cbbbce955"
+          },
+          "2": {
+            "text": "Auditeur en activité",
+            "source_sha256": "58d435f21971d98b40f82858d61661e4d363036d489343ae3c08ada7777e8b6d"
+          },
+          "3": {
+            "text": "Leitung (Audit-Admin)",
+            "source_sha256": "ca42fdc257ecfbf81cfe91bb5e42c26a43377bec368b14764d54351383729520"
+          }
         }
       }
     },
@@ -275,6 +401,100 @@
         "text": "Dokumentation → Auditor-Handbuecher. Dieser Leitfaden and the Kapitel for the Assessorarbeit.",
         "source_sha256": "b9e89deab82e7bffc02e6f434542ad9354d5e780cf9fb5af3c3b314eb1e85cf1"
       }
+    },
+    "body": {
+      "0": {
+        "text": "Tout le monde se connecte à la même page de connexion. Il n’existe pas de portail distinct pour les examinateurs. Les menus et les droits proviennent des groupes que vous attribuez. Cela correspond au modèle Thoropass : un examinateur examine les preuves ; Un administrateur d'audit (direction) peut également désigner d'autres auditeurs. Les administrateurs d'identité créent des comptes qui ne sont pas des validateurs. Ce n’est pas le travail d’un auditeur.",
+        "source_sha256": "fe5e718998d34e73aa396601781f548f4960cd864828836427de532b71065800"
+      },
+      "1": {
+        "text": "Les environnements de démonstration incluent trois comptes de départ afin que vous puissiez essayer chaque tâche. Changez ces mots de passe avant chaque démonstration commune. Les environnements de production créent leurs propres personnes et les affectent aux groupes ci-dessous. Ce guide décrit comment configurer le produit. Il ne s'agit pas d'une demande de certification.",
+        "source_sha256": "1588afb7ee4753cff6b34d99ceefde61744ca5619bac1eeca60450567c82b543"
+      }
+    },
+    "steps": {
+      "0": {
+        "text": "Ouvrez l'administration IAM locale et créez ou sélectionnez la personne.",
+        "source_sha256": "74218568bb6ab85a4b766f47fd67f5f6305e83c891be656af67ebc4a184cd5e4"
+      },
+      "1": {
+        "text": "Ajoutez la personne aux groupes pour son rôle dans le tableau ci-dessous.",
+        "source_sha256": "c75affe5a031cfc47080a36a211f60ebb0423186e0a0e503eb6229980cc7b63c"
+      },
+      "2": {
+        "text": "Ou créez-les avec le modèle d'inscription correspondant.",
+        "source_sha256": "9281b903b18c034652f3534705f6f04b8921fbeb93198a075f6a3de15337defd"
+      },
+      "3": {
+        "text": "Demandez-leur de se connecter sur la page de connexion normale.",
+        "source_sha256": "5a27cb5dc45e04d33afb3cfa2d7680de83d371992c8588992c5ce0e9aff2a44e"
+      },
+      "4": {
+        "text": "Ouvrez des missions d'audit pour les inviter à une mission si votre processus utilise des invitations.",
+        "source_sha256": "9e0f6ab2c160dd38a32b7c59a1eb55fe45e24e07e6e3710362667be62d1ace8b"
+      }
+    },
+    "configLinks": {
+      "0": {
+        "label": {
+          "text": "Registre",
+          "source_sha256": "bb7234ec12451361e6f35bcbe76de58e4350657fe60d1b96ace0947f59194083"
+        },
+        "note": {
+          "text": "La seule page de connexion. Les auditeurs utilisent ce site comme tout le monde.",
+          "source_sha256": "7c1772680987eb0810879683657437c5ca711dca2eb24ad4b44bfdd1d75c4754"
+        }
+      },
+      "1": {
+        "label": {
+          "text": "Gestion IAM locale",
+          "source_sha256": "996527dea286c5955c0e95ef37c3a5be2e6cf9b772b74f3df13f167ce4fd2040"
+        },
+        "note": {
+          "text": "Accès et identité → Annuaire → Gestion IAM locale. Créez des personnes, attribuez des groupes et réinitialisez les mots de passe liés aux auditeurs (ligne uniquement).",
+          "source_sha256": "9fec7d41b1ecc877bdbc95218fd2220dfcb81730be30f0719906f0e3aa95b907"
+        }
+      },
+      "2": {
+        "label": {
+          "text": "Einschreibung et Zugriffskontrolle",
+          "source_sha256": "2fd02dace2cb256f9260feb7e51309d8160f06046f526609060fe702defecb8a"
+        },
+        "note": {
+          "text": "Accès et identité → Annuaire → Inscription et contrôle d'accès. Affiche les conditions d'inscription (évaluateur en lecture seule, évaluateur cmmc, auditeur principal).",
+          "source_sha256": "182512ee39ef91dc376dd76adb5d4b99c82cbe71ff84211e6e899c3b1d2eb1fd"
+        }
+      },
+      "3": {
+        "label": {
+          "text": "Missions d'audit",
+          "source_sha256": "dfcaba173519aee109c924095aa988b1a5824cad0057d441b2459f513227e23a"
+        },
+        "note": {
+          "text": "Conformité → Missions d'audit. Invitez les auditeurs et gérez la mission.",
+          "source_sha256": "69da63cd0def7a2239d62539bd4ee0140396fbf4b4cecfd4cbaeb588c505d6c5"
+        }
+      },
+      "4": {
+        "label": {
+          "text": "Classeur d'évaluation",
+          "source_sha256": "edce73881ba543a19ed06b9eaee2c7998fb127db9bf6232dc805423bed35f519"
+        },
+        "note": {
+          "text": "Conformité → Dossier d'évaluation. Rédiger ou réviser les récits de contrôle et les preuves.",
+          "source_sha256": "2c3766e276c7ceb65823e60fef8c3f696b83ae8a15b98085b5bcaa9bcc368bfb"
+        }
+      },
+      "5": {
+        "label": {
+          "text": "Manuels d'audit",
+          "source_sha256": "6623ff55741761694cc60ea3e767301b9c1d248b65de5f46d388d0c9a1d9ab56"
+        },
+        "note": {
+          "text": "Documentation → Manuel de l'auditeur. Ce guide et le chapitre sur le travail des évaluateurs.",
+          "source_sha256": "218f342d87adcb72b661780061dfce0382379c7c642c9a66df95da067d50faa7"
+        }
+      }
     }
   },
   "user": {
@@ -317,7 +537,7 @@
           "source_sha256": "7567a3b116cef57725e22990ed16699950e95ad15cd5b4546488b844d96acc05"
         },
         "steps[3]": {
-          "text": "Lassen Sie the Browser-Tab geoeffnet, waehrend the Session startet. Close Sie ihn erst nach the Trennen.",
+          "text": "Utilisez l'onglet Navigateur pour démarrer la session. Fermez-le d'abord après le train.",
           "source_sha256": "5b0f4c1d183230872859ea82d34f3c2080af5711f9896f59957b770c92b23a0d"
         },
         "steps[4]": {
@@ -437,11 +657,11 @@
           "source_sha256": "d05c77462d93a1a041ea1c9641f0746d9e9dc65c2dcacd03dd17c081dd8dc449"
         },
         "summary": {
-          "text": "Energiezustand, erneutes Connect and the Vorgehen, wenn a Host schlaeft.",
+          "text": "Energiezustand, erneutes Connect et Vorgehen, wenn a Host schlaeft.",
           "source_sha256": "63ad9e4dc69ae289f371f92f94bdacb0850c8d67ee1e6427b1ecbd3a2e899a90"
         },
         "body[0]": {
-          "text": "Ein- and Aufwecksteuerungen gelten nur for Ihnen zugewiesene Maschinen. Schlafende or offline Zustaende sind normal, wenn a Host ausgeschaltet ist. Warten Sie auf the Aufwecken or fragen Sie a Admin, bevor Sie wiederholt neu versuchen.",
+          "text": "Ein- et Aufwecksteuerungen gelten nur for Ihnen zugewiesene Maschinen. Schlafende ou Offline Zustaende semblent normaux, lorsqu'un hôte est ausgeschaltet. Warten Sie auf the Aufwecken ou fragen Sie a Admin, avant que vous ne veniez versuchen.",
           "source_sha256": "6e28429879e643758984cfeef03e390323e0d1dc426116ccb50f7ae46de528a8"
         },
         "body[1]": {
@@ -453,11 +673,11 @@
           "source_sha256": "d9cfdc2286aab81d1a9b91c9cc67d5566f4175ad4e81826bcaa4dd5e982afe68"
         },
         "steps[1]": {
-          "text": "Zeigt the Status schlafend or offline, warten Sie kurz and fragen Sie a Admin, wenn the Zustand bleibt.",
+          "text": "Afficher le statut ou hors ligne, vous assurer que vous êtes en ligne et que vous êtes un administrateur, lorsque le support est affiché.",
           "source_sha256": "21814b8d8777ec791e56538b597e3b6112064bda0950ace12d72a2532b41bed4"
         },
         "steps[2]": {
-          "text": "Beenden Sie the Session in the Vermittler, wenn Sie fertig sind.",
+          "text": "Vous avez la session dans le Vermittler, quand vous êtes fertig sind.",
           "source_sha256": "a928a0f0864148c7651b10d817e1b6de5993f53276851ad7033906be1409dbc4"
         },
         "steps[3]": {
@@ -559,7 +779,7 @@
       },
       "secure-share": {
         "title": {
-          "text": "Sicheres Teilen for Endbenutzer",
+          "text": "Sicheres Teilen pour Endbenutzer",
           "source_sha256": "5c1f7312ba9b044f4b5b92a0f0b6258c293a033a68abba7cc1f7808cbbefa06f"
         },
         "summary": {
@@ -583,7 +803,7 @@
           "source_sha256": "79922d18824ef760c8b8133e6e8e136453483f6c848f38206277dd60546490eb"
         },
         "steps[2]": {
-          "text": "Loading Sie nur herunter, wenn the Paket es erlaubt.",
+          "text": "Loading Sie nur herunter, whenn the Paket es erlaubt.",
           "source_sha256": "4cc1e31fea7a6a51974f80a72769a486c791184e8be45fb7e5ef998aecd6fc6b"
         },
         "steps[3]": {
@@ -827,7 +1047,7 @@
           "source_sha256": "276713d39c04da4fc54416eeea69a59b59e0166401981fd08d07975469370c07"
         },
         "steps[0]": {
-          "text": "Notieren Sie URL, Uhrzeit (with Zeitzone) and Fehlertext.",
+          "text": "Notieren Sie URL, Uhrzeit (avec Zeitzone) et Fehlertext.",
           "source_sha256": "3477401d201dce8a786c09d9f961c6aaa9046ffa129bb26922073f94b56dc33d"
         },
         "steps[1]": {
@@ -969,7 +1189,7 @@
           "source_sha256": "3cca9d9d54aedee15fae19d8c6249bea19687b27ecf3c14e3780185253175cd6"
         },
         "steps[2]": {
-          "text": "Fuellen Sie Steuerungsnarrative with ehrlichem Status (Umgesetzt / Teilweise / Geplant).",
+          "text": "Fuellen Sie Steuerungsnarrative avec ehrlichem Status (Umgesetzt / Teilweise / Geplant).",
           "source_sha256": "749cf7779132a19e3f652c401dce7f82658c8aab985b515ea7d822b1276b2b75"
         },
         "steps[3]": {
@@ -1105,11 +1325,11 @@
           "source_sha256": "2dd392e651620f8489fdca0f845f7fdf131f75f8353397e578ac5f2c4d569a93"
         },
         "steps[0]": {
-          "text": "Filter Sie the Katalog nach the benoetigten Berichtsfamilie.",
+          "text": "Filtrez le catalogue selon la famille d'accueil concernée.",
           "source_sha256": "c0f1e32684c0480798e9f1daa5a10ea1a03b12d56329e5b5a0e36004023fc7bd"
         },
         "steps[1]": {
-          "text": "Fuehren Sie the Bericht aus and laden Sie the of Ihrer Organisation erlaubte Paket herunter.",
+          "text": "Fuehren Sie the Bericht aus and laden Sie the of Ihrer Organization erlaubte Paket herunter.",
           "source_sha256": "dc82e8ab6a7d56f9b8f1822df0253bed8f44b776495d6f1efcaed6044326a80c"
         },
         "steps[2]": {
@@ -1117,7 +1337,7 @@
           "source_sha256": "b69b267f69a8882b7526297a1d1def147d87f8834b2593452540a20076c874e0"
         },
         "steps[3]": {
-          "text": "Eskalieren Sie fehlende Operatoraktionen, statt selbst to beheben.",
+          "text": "Eskalieren Sie fehlende Operatoraktionen, statt self to beheben.",
           "source_sha256": "ab93a9fb83becdf12fa674e4c81c0a300f0415071c8aa923fdd0efeff601a108"
         },
         "productLabel": {
@@ -1235,11 +1455,11 @@
           "source_sha256": "30fe2e4d0f33738239a332b48a0e745f729a3e896a9d5204921354a56b592482"
         },
         "steps[1]": {
-          "text": "Filter Sie auf the gepruefte Population.",
+          "text": "Filtrez votre population concernée.",
           "source_sha256": "36ed28a3b9c16d59c42a48f9de4c2639152488468e63c15e2c849063e75eefe4"
         },
         "steps[2]": {
-          "text": "Behandeln Sie Erneut scannen / Fix-It als Operatoraktionen.",
+          "text": "Behandeln Sie Erneut scannen / Fix-It et Operatoraktionen.",
           "source_sha256": "563a4d5ecf290c3c3296a93c80bd49bd7559b97ee359ba5df06c64793831b118"
         },
         "steps[3]": {
@@ -1341,7 +1561,7 @@
       },
       "audit-review": {
         "title": {
-          "text": "Audit and Alarme (nur lesen)",
+          "text": "Audit et Alarme (nur lesen)",
           "source_sha256": "56a1e53bbfb7d5c525176b6f0fe8d20a553d7b06552ca26a9c6ebca1456e281a"
         },
         "summary": {
@@ -1487,11 +1707,11 @@
           "source_sha256": "d67c927473fa350f35081e53519dfc4217435f30d7cfd08a4658641c5fb8b583"
         },
         "steps[1]": {
-          "text": "Lesen Sie the Ehrlichkeitshinweis, bevor Sie a Zeile zitieren. Er nennt the Produktgrenze.",
+          "text": "Lisez les Ehrlichkeitshinweis, avant de vous rendre à Zeile zitieren. Er nennt the Produktgrenze.",
           "source_sha256": "d91195c4bbb4a155895d4d7c309a77ae75031f9cb9d8f8ec6db488f8e8709c96"
         },
         "steps[2]": {
-          "text": "Behandeln Sie Blockiert-Zeilen als Organisationsarbeit Ihrer Organisation, not als Produktdefekte.",
+          "text": "Behandeln Sie Blockiert-Zeilen als Organisationsarbeit Ihrer Organisation, pas comme Produktdefekte.",
           "source_sha256": "c70180bc448ca81eea2430d2a600512f1ce7f34c2c3a8e539670d5f9ae17d91f"
         },
         "steps[3]": {
@@ -1611,7 +1831,7 @@
       },
       "export-hygiene": {
         "title": {
-          "text": "Export- and Teilungsregeln",
+          "text": "Exportation et Teilungsregeln",
           "source_sha256": "945ebfda1e2be13d9456a412779af7b253bd3fe1ee9ddacd236ebe3d89800c91"
         },
         "summary": {
@@ -1769,15 +1989,15 @@
           "source_sha256": "afe7699accc12b93e091294a7536e12d4b1b6519c5f3f58929f548a2ae47c3fb"
         },
         "steps[2]": {
-          "text": "Setzen Sie the Unternehmensprofil, bevor Sie Agenteneinstellungen exportieren.",
+          "text": "Définissez le profil d'entreprise avant d'exporter des produits d'agents.",
           "source_sha256": "c2c3d3d93bfa13bca672f4df5eab009123bb99242c8da292c6fec45193737ce3"
         },
         "steps[3]": {
-          "text": "Bestaetigen Sie, dass COMPLIANCE_PROFILE and ADMIN_AUTH_MODE the Einsatzabsicht entsprechen.",
+          "text": "Bestaetigen Sie, dass COMPLIANCE_PROFILE et ADMIN_AUTH_MODE l'Einsatzabsicht entsprechen.",
           "source_sha256": "64a30d77497ab17ab20f10d4f65fea924029fb0849b5c4ede667b166befe8d2d"
         },
         "steps[4]": {
-          "text": "Bestaetigen Sie nach dienstrelevanten Aenderungen, dass aic-offline-server-service RUNNING ist and runtime-status.json aktuell ist.",
+          "text": "Meilleurs conseils pour les services pertinents, tels que aic-offline-server-service RUNNING et runtime-status.json activés.",
           "source_sha256": "fe010858d036edcd1121492c3e86aa87c1cb22342d0a04d7c038e142516bcbef"
         },
         "productLabel": {
@@ -1913,7 +2133,7 @@
           "source_sha256": "69ec5fab5862578438a464f39310956886c01483258f8bdb9aa30457fbc0bd27"
         },
         "steps[2]": {
-          "text": "Erzeugen Sie Enrollment-Token unter Systeme → Mandantenfaehigkeit, wenn Sie Token-Bootstrap nutzen.",
+          "text": "Erzeugen Sie Enrollment-Token unter Systeme → Mandantenfaehigkeit, when Sie Token-Bootstrap nutzen.",
           "source_sha256": "a72776cbaa39549281844b5390e22e13c85cc77d7216d8ae17e2b9ffa85e8ff4"
         },
         "steps[3]": {
@@ -1921,7 +2141,7 @@
           "source_sha256": "0848c784405cc62dca60cf75c1605c89a2ad31b34c7d5dfb8fb457ef5f7696d0"
         },
         "steps[4]": {
-          "text": "Rotieren Sie ADMIN_TOKEN vor geteilten Demos.",
+          "text": "Rotieren Sie ADMIN_TOKEN pour obtenir des démos.",
           "source_sha256": "08d5f442ac16daffb80fd2cda8f069394df26060580bc9ab9ca48c0ae715ff0f"
         },
         "productLabel": {
@@ -2037,11 +2257,11 @@
           "source_sha256": "1757181923d604ae8c29d2186c7d226b75f096ef27eb50f0de03681c3956b76a"
         },
         "summary": {
-          "text": "Agentenvorgaben, Offenlegungen and Bereitstellungsablaeufe unter Konfiguration → Agent.",
+          "text": "Agentenvorgaben, Offenlegungen et Bereitstellungsablaeufe sous Configuration → Agent.",
           "source_sha256": "58df4af8c0f45fe34ca613d002816dc82f6a997c67c4c5d7a8ba7d63e81616e8"
         },
         "body[0]": {
-          "text": "Export or uebertragen Sie Agenteneinstellungen erst, wenn the Unternehmensoffenlegungen vollstaendig sind. Pruefen Sie nach the Installation the Agent-Check-in and the Gesundheit unter Systeme → Systemliste.",
+          "text": "Exportez ou uebertragen Sie Agenteneinstellungen d'abord, lorsque les Unternehmensoffenlegungen vollstaendig sind. Vérifiez après l'installation, l'enregistrement de l'agent et la liste des systèmes → Liste des systèmes.",
           "source_sha256": "adcb38115aaa6d932a7114fcc1c17940c64bb6104dad4dfc4ea34aa372d6354b"
         },
         "body[1]": {
@@ -2049,11 +2269,11 @@
           "source_sha256": "cff9f9beb4cbc6d1fd34d41d2ad56f4921e1bcd734d58e32fe8da7384c4a2303"
         },
         "steps[0]": {
-          "text": "Export or uebertragen Sie Settings of Konfiguration → Agent, nachdem the Unternehmensoffenlegungen vollstaendig sind.",
+          "text": "Exportez ou transférez les paramètres de configuration → Agent, jusqu'à ce que les instructions d'installation soient terminées.",
           "source_sha256": "05504c31f7891389b17ec403360cdc93e7b52ea2d0418f7e21c03c799f80088f"
         },
         "steps[1]": {
-          "text": "Pruefen Sie nach the Installation the Agent-Check-in and the Gesundheit the Systemliste.",
+          "text": "Vérifiez après l'installation, l'enregistrement de l'agent et la liste système.",
           "source_sha256": "a2c44839bae1d6328bbc7671be194c34698b224687a895a88318434ea46011fc"
         },
         "steps[2]": {
@@ -2065,7 +2285,7 @@
           "source_sha256": "2e6134cdc3e958d2305f6a74fd5b1831f5d26f657ef5e16a01588f8aba492537"
         },
         "steps[4]": {
-          "text": "Bestaetigen Sie Elevation-Pipe and elevation_configured, bevor Sie Elevation-Codes erzeugen.",
+          "text": "Choisissez Elevation-Pipe et Elevation_configured, avant d'utiliser les Elevation-Codes.",
           "source_sha256": "d8b1ac754c08f89d2c0d9e4c1a798a33d1debe955e1e5bf4718da076cb797b92"
         },
         "productLabel": {
@@ -2177,11 +2397,11 @@
       },
       "messaging": {
         "title": {
-          "text": "Messaging and Wiederherstellungsbenachrichtigung",
+          "text": "Messagerie et Wiederherstellungsbenachrichtigung",
           "source_sha256": "b2db4a7085ac2cd594a8a6178d237ac805652d1e7acbb57cdbff8e0e48db869a"
         },
         "summary": {
-          "text": "E-Mail- / SMS-Anbieter for Wiederherstellung and Operatoralarme.",
+          "text": "E-Mail- / SMS-Anbieter pour Wiederherstellung et Operatoralarme.",
           "source_sha256": "1475fd47a80d26b34394dbda3230f55f09efdbfd14371a68bf3044a02f6fc3bd"
         },
         "body[0]": {
@@ -2303,7 +2523,7 @@
       },
       "credentials-elevation": {
         "title": {
-          "text": "Zugangsdaten and Elevation",
+          "text": "Zugangsdaten et élévation",
           "source_sha256": "7f057416430f1fe036484cb5f5e6d61c6b6dd2aef42400e0689f759369a8a302"
         },
         "summary": {
@@ -2475,11 +2695,11 @@
           "source_sha256": "1f5386e65c8c31cd7e3c1df323c43cc74f7a23a745224f0ac25475719599de13"
         },
         "steps[2]": {
-          "text": "Bestaetigen Sie Recording-Agenten — Gesundheit and Recording-Speicher, bevor Sie aufgezeichnete Sessions verlangen.",
+          "text": "Bestaetigen Sie Recording-Agenten — Gesundheit and Recording-Speicher, avant que vous n'aufgezeichnete Sessions verlangen.",
           "source_sha256": "14bab5ea3cd8e41c7ff3688f22a9f7b618532b8b57ca7ca76758cfb40b1a3172"
         },
         "steps[3]": {
-          "text": "Binden Sie SSH-Befehlsfilterung, wenn Sie Befehlssteuerung brauchen. Ueben Sie in einer Live-Session a Erlauben and a Ablehnen.",
+          "text": "Binden Sie SSH-Befehlsfilterung, whenn Sie Befehlssteuerung brauchen. Participez à une session live à Erlauben et à Ablehnen.",
           "source_sha256": "bd8ccfc457de6b38c55a9159619ebb187e06f71e32705c69fce55d979686b8cb"
         },
         "steps[4]": {
@@ -2645,7 +2865,7 @@
           "source_sha256": "12ae0e9d4c81e3fdb76277acefc51016f94a0ddf7f52a1ae9149ebed92ced64a"
         },
         "steps[4]": {
-          "text": "Konfigurieren Sie Syslog-Weiterleitung nur, wenn Sie a Collector haben. Pruefen Sie the Zustellung getrennt vom Seitenladen.",
+          "text": "Configurez le Syslog-Weiterleitung maintenant, lorsque vous êtes un collecteur. Pruefen Sie the Zustellung getrennt vom Seitenladen.",
           "source_sha256": "790bc004eb5ea39bb275aeb9f148e5ebe85d0169027659d980345eeb0b29580c"
         },
         "productLabel": {
@@ -2771,11 +2991,11 @@
       },
       "enhanced-controls": {
         "title": {
-          "text": "Uebungen to erweiterten Steuerungen",
+          "text": "Uebungen à erweiterten Steuerungen",
           "source_sha256": "ca52815ba68890decbb44481ea58e1e49ba393b2f2b6972ed122720eef81d31c"
         },
         "summary": {
-          "text": "Hunt-Detektoren, CIRT-Uebungen and Stempel erweiterter Steuerungen ausfuehren.",
+          "text": "Hunt-Detektoren, CIRT-Uebungen et Stempel erweiterter Steuerungen ausfuehren.",
           "source_sha256": "3802aeab1adf568b2a00bb7c69b99af1b80d16886a63cc16beeda07595129941"
         },
         "body[0]": {
@@ -2791,11 +3011,11 @@
           "source_sha256": "b5c69982a9f1aceb8df145ef9595200b2ec8b6ee9ef3807b6c79024dcd8af4f7"
         },
         "steps[1]": {
-          "text": "Setzen Sie the Bereitstellungsfenster, bevor Sie a CIRT-Uebung aufzeichnen.",
+          "text": "Réglez la fenêtre d'information sur la sécurité avant de vous rendre au CIRT-Uebung aufzeichnen.",
           "source_sha256": "8b3d971fe9275afc98694085e35f9960462d5f74b2a0608a850e7fb319a18a49"
         },
         "steps[2]": {
-          "text": "Fuehren Sie Hunt-Detektoren aus, dann CIRT-Uebung aufzeichnen, dann Benachrichtigung / SIEM-Stempel ueben.",
+          "text": "Fuehren Sie Hunt-Detektoren aus, puis CIRT-Uebung aufzeichnen, puis Benachrichtigung / SIEM-Stempel ueben.",
           "source_sha256": "4fc22202a55b1f759425beb61cf30eb757163ece20173ff1d11cec368a75ac42"
         },
         "steps[3]": {
@@ -3061,7 +3281,7 @@
           "source_sha256": "e7d5f2a977c7df4dfdec6c72bb9fdc12c3530137718ade73d8aeead542d21202"
         },
         "steps[0]": {
-          "text": "Bestaetigen Sie nach the Bereitstellung HTTPS-Gesundheit and Admin-Session.",
+          "text": "Vous pourrez également accéder à la gestion HTTPS-Gesundheit et à la session d'administration.",
           "source_sha256": "02495b3d91b83dc9182b63a507132fbe3eabc443e0a3ca0220b8f6642eaca10b"
         },
         "steps[1]": {
@@ -3077,7 +3297,7 @@
           "source_sha256": "754d3f177f252a231b3c6680f21806ca854d0e4990f2c364d530ea8037887ec4"
         },
         "steps[4]": {
-          "text": "Lassen Sie a zerstoerende Datenbankinitialisierung niemals without the Wiederherstellungsschritt.",
+          "text": "Lassen Sie a zerstoerende Datenbankinitialisierung niemals sans le Wiederherstellungsschritt.",
           "source_sha256": "966c6ae20783ee8845240eafc2d9d2a83fab2f212682e20b5437d10659099efb"
         },
         "productLabel": {
@@ -3241,7 +3461,7 @@
       "source_sha256": "00e0c99808624c4d9d7c954b06b1ea40d9f893b9ed08cc3d9fa1df60c43d5b85"
     },
     "howTo[2]": {
-      "text": "Agent-Drahtrouten erwarten HMAC-Header, wenn Agenten signieren. Unsigniert wird nur akzeptiert, solange AGENT_HMAC_ENFORCE_MODE=dual_mode gilt.",
+      "text": "Agent-Drahtroten erwarten HMAC-Header, wenn Agenten signieren. Unsigniert wird nur akzeptiert, solange AGENT_HMAC_ENFORCE_MODE=dual_mode doré.",
       "source_sha256": "39646376bd78b7c28e590bab1cb648c621129254820461a2e00ae5d22fbf07db"
     },
     "howTo[3]": {
@@ -3273,7 +3493,7 @@
       "source_sha256": "d841a6545e7f784bf7a21f6b5bfe0f069fb9651a701279cbba4232f06bcb39f6"
     },
     "downloadOpenApi": {
-      "text": "OpenAPI-JSON herunterladen",
+      "text": "OpenAPI-JSON à télécharger",
       "source_sha256": "d6b98770f09a01bb95be1ff165a8703ab71baa2605657107fa2337a7b6af5d1c"
     },
     "viewRaw": {
@@ -3285,42 +3505,42 @@
       "source_sha256": "b1a413e0885799b0c30faa7c403607e72abc21abf35cec5980713e3758e678d7"
     },
     "loaded": {
-      "text": "OpenAPI-Dokument geladen ({{count}} Zeichen).",
+      "text": "Document OpenAPI gelé ({{count}} Zeichen).",
       "source_sha256": "5d567a28ed0277e3db3ecaec1cf42d24e1d31ecaf727344f52e7f020faa91ee8"
     },
     "howTo": {
       "0": {
-        "text": "Open Swagger UI to try authenticated routes with your current session cookie or admin token header as documented in the security schemes.",
+        "text": "Ouvrez l'interface utilisateur Swagger pour essayer des itinéraires authentifiés avec votre cookie de session actuel ou votre en-tête de jeton d'administrateur, comme indiqué dans les schémas de sécurité.",
         "source_sha256": "455a79a02f04ad7248d8a5a02c779031cd1005fe3176120a1bc5fe76ab37220c"
       },
       "1": {
-        "text": "Download OpenAPI JSON for offline review or client generation; re-fetch after each server deploy that touches routes.",
+        "text": "Téléchargez OpenAPI JSON pour une révision hors ligne ou une génération de clients ; récupérez après chaque déploiement de serveur qui touche les routes.",
         "source_sha256": "97e4fb65711ff740df64cd1e0222d6460f283cb2ea8941b7c193fb721fcb36b3"
       },
       "2": {
-        "text": "Agent wire routes expect HMAC headers when agents sign; unsigned is still accepted only while AGENT_HMAC_ENFORCE_MODE=dual_mode.",
+        "text": "Les routes filaires des agents attendent des en-têtes HMAC lorsque les agents signent ; non signé est toujours accepté uniquement lorsque AGENT_HMAC_ENFORCE_MODE=dual_mode.",
         "source_sha256": "b6119999574f9244c951c36c3281995c78bde67a5c217d49a6d419e4720cb411"
       },
       "3": {
-        "text": "Startup wizard admin routes are under /api/admin/startup-wizard; Messaging email save paths remain /api/offline/messaging/email*.",
+        "text": "Les routes d'administration de l'assistant de démarrage se trouvent sous /api/admin/startup-wizard ; Les chemins de sauvegarde des e-mails de messagerie restent /api/offline/messaging/email*.",
         "source_sha256": "0cb2e44ab491db274f7001a79df736c7cb55d2b5ff6f22c6bb39472be8ae93b1"
       },
       "4": {
-        "text": "Prefer docs under /docs/admin for operator runbooks; this page is for API consumers and developers.",
+        "text": "Préférez les documents sous /docs/admin pour les runbooks des opérateurs ; cette page est destinée aux consommateurs et aux développeurs d'API.",
         "source_sha256": "a2402179d7a2342edbfb8bc4b6885613e20b28b4aa2297015f257c402e530b98"
       }
     },
     "limits": {
       "0": {
-        "text": "OpenAPI coverage tracks declared routes; a missing operation in the UI is not proven by downloading this file alone.",
+        "text": "La couverture OpenAPI suit les itinéraires déclarés ; une opération manquante dans l'interface utilisateur n'est pas prouvée par le seul téléchargement de ce fichier.",
         "source_sha256": "a7cece47cc7c818cb4f7ef46df31be252842e7c5d63e733b90f048d227b24f93"
       },
       "1": {
-        "text": "Examples may omit lab-only or feature-gated routes until they are declared in the OpenAPI set.",
+        "text": "Les exemples peuvent omettre les routes réservées au laboratoire ou limitées aux fonctionnalités jusqu'à ce qu'elles soient déclarées dans l'ensemble OpenAPI.",
         "source_sha256": "87cf0af998043d5e1bc94f4b1175f8b2322309104816d728a1db981f129d7141"
       },
       "2": {
-        "text": "This page is not a certification package — keep SSP evidence in the Assessment Binder.",
+        "text": "Cette page n'est pas un dossier de certification : conservez les preuves du PAS dans le classeur d'évaluation.",
         "source_sha256": "da732f454edd8d9203e41694e233b4b03cbd71c73872ed9525621aa3d217911a"
       }
     }
@@ -3355,7 +3575,7 @@
       "source_sha256": "be0c95a901c176c3503761eaff2351166bd5b5638d8aa63b07b40322e1ec8d43"
     },
     "loading": {
-      "text": "Swagger UI wird geladen…",
+      "text": "Swagger UI est gelé…",
       "source_sha256": "e4b0195f3e7bdfca83e1b52cb3dc1794d737c5ca72763cc423ee3b4a6f88aa76"
     },
     "hostAria": {
@@ -3425,7 +3645,7 @@
       "source_sha256": "635d04f5ed8e7dfa1eac4757092e65c251df516dd67c73fe8d0e73583dd7b2b6"
     },
     "capped": {
-      "text": " (Seitenliste auf 500 begrenzt)",
+      "text": "(Seitenliste auf 500 begrenzt)",
       "source_sha256": "5d2515a909748541745222b9f43e46e2385961eab8248ab06921a904b943f6b6"
     },
     "opsAria": {
@@ -3433,7 +3653,7 @@
       "source_sha256": "0b7dda89fb22e5aa19876b40eb2b1602ac1dd0baf9fb4402a05f7c0dd26610ea"
     },
     "listCapped": {
-      "text": "Liste auf 500 Zeilen for the Seite begrenzt. Verengen Sie the Filter or laden Sie JSON for the vollstaendige Dokument herunter.",
+      "text": "Liste auf 500 Zeilen pour la page begrenzt. Utilisez le filtre ou chargez le JSON pour un accès complet aux documents.",
       "source_sha256": "b6c089c846d08b34ece04a1a0b65674f4d8413bb0081a6c6941fbcac011df441"
     },
     "rawAria": {

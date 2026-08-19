@@ -98,11 +98,11 @@
         "source_sha256": "1aab45bb348d0ab3920f91bfdf8f624e46c8326ec83d3a2762daad7ebacd2cc6"
       },
       "intro": {
-        "text": "Controls idle and absolute timeouts for admin logon sessions. Changes apply to new sessions.",
+        "text": "Contrôle les délais d'inactivité et absolus pour les sessions de connexion administrateur. Les modifications s'appliquent aux nouvelles sessions.",
         "source_sha256": "3fea93db11ba9dd9964451ec47f6f2fdffbd43a9ccd38e730aede3c5965021d8"
       },
       "openDedicated": {
-        "text": "Open full session policy page",
+        "text": "Ouvrir la page des règles de session complète",
         "source_sha256": "3bd751be0e57e60418ef1e633b8b690b26faefcaec08abd2498e7da2e31f1c5c"
       },
       "requireIamAria": {
@@ -114,11 +114,11 @@
         "source_sha256": "6d18fa3cd5bcbd888d09ac5de941e97dc541658c3f74866589e3477eba3fd8b6"
       },
       "absoluteTtl": {
-        "text": "Absolute session lifetime (minutes)",
+        "text": "Durée de vie absolue de la session (minutes)",
         "source_sha256": "5290a28ee1829186c3dea2f1ed848eda69a9f676b1a89e7f36eddde6fd85b476"
       },
       "absoluteTtlAria": {
-        "text": "Absolute session lifetime in minutes",
+        "text": "Durée de vie absolue de la session en minutes",
         "source_sha256": "582593c1309f804adbc84dbe5e2d2166bb7a33a2845a3a9ba842e79f3e86bfba"
       },
       "idleTimeout": {
@@ -130,15 +130,15 @@
         "source_sha256": "8a3fc712eb83fbfa35d30a723e69045c2f9439cf6445f147115dbcb469a8838c"
       },
       "absoluteMax": {
-        "text": "Maximum absolute lifetime (minutes)",
+        "text": "Durée de vie absolue maximale (minutes)",
         "source_sha256": "a9e5927435706906862d40f353d8d1ee4fb9e0945bfdd90b18f08e5f637e6d74"
       },
       "absoluteMaxAria": {
-        "text": "Maximum absolute lifetime in minutes",
+        "text": "Durée de vie absolue maximale en minutes",
         "source_sha256": "0649ef8b5838130b9818c4f9d4a2532140c5c11a6678d6252b73a34463d9fd4a"
       },
       "refresh": {
-        "text": "Extend session on activity",
+        "text": "Prolonger la session sur l'activité",
         "source_sha256": "b2a3655c529fa7a2f9bd5441112637022126669849cdfe7e6e3f0602f61dad82"
       },
       "rotate": {
@@ -146,11 +146,11 @@
         "source_sha256": "4a835f628f39a0957133263df4c3bf349f997910507deccc016bf000cf333f21"
       },
       "multiTab": {
-        "text": "Allow multiple browser tabs",
+        "text": "Autoriser plusieurs onglets de navigateur",
         "source_sha256": "780a5054c52cc9fa082d8df357b89d19c984562a3cc45c90a9642c65e4cbc1f8"
       },
       "forceLogoff": {
-        "text": "Log off when session expires",
+        "text": "Se déconnecter à l'expiration de la session",
         "source_sha256": "a2ff5e8b61d0ca31832acf186feca4ef523889c3e29a16f785daedf09232aeb5"
       },
       "httponly": {
@@ -158,11 +158,11 @@
         "source_sha256": "aa2dc5c13ad106f4b7303e133deb6e14e23bd4e305edc4397d76c6cd84d32853"
       },
       "pamDisconnectAria": {
-        "text": "Disconnect PAM sessions on logoff",
+        "text": "Déconnecter les sessions PAM à la déconnexion",
         "source_sha256": "f3f69e47b0ad6976cffdb0df8b6501a41e5569665258da43da8a22e7d64be7b9"
       },
       "pamDisconnect": {
-        "text": "Disconnect PAM sessions on logoff",
+        "text": "Déconnecter les sessions PAM à la déconnexion",
         "source_sha256": "f3f69e47b0ad6976cffdb0df8b6501a41e5569665258da43da8a22e7d64be7b9"
       },
       "clientStorage": {
@@ -178,7 +178,7 @@
         "source_sha256": "5ccee5ef26d411cb0f5d4f468d3edfe1feac9bd69411bad25095b25e3ef72734"
       },
       "multiTabNote": {
-        "text": "Multiple tabs share the same logon session. Logoff in one tab ends all.",
+        "text": "Plusieurs onglets partagent la même session de connexion. La déconnexion dans un onglet met fin à tout.",
         "source_sha256": "2db5840e461f5bf8010d816acea18c2527e2793b630658da047d3e2fa9ef1b9e"
       },
       "save": {
@@ -739,6 +739,10 @@
     "quickFilterPlaceholder": {
       "text": "Rechercher…",
       "source_sha256": "7336265a0467a2551d6a88f1661d8c4397c71e6bd68e77882973e0eb52fb2de8"
+    },
+    "footerRowSelected": {
+      "text": "{{count}} lignes sélectionnées",
+      "source_sha256": "bb59cf4b923e94cf7480901b47c8543b4f007412ce9688707bbd7fa3af4522c4"
     }
   },
   "iamToolbar": {
@@ -1209,7 +1213,7 @@
       "source_sha256": "71efc1ca160d584c00ade40bb7807eeca916ef4cafeaeaeef577e752cc06474d"
     },
     "openEndpointsInventory": {
-      "text": "Open endpoints inventory",
+      "text": "Inventaire des points de terminaison ouverts",
       "source_sha256": "e2dc99b6eb34627dc4d7888be092377448a1f132ef8443f303d54c32e0d83bf0"
     },
     "generateConfigFile": {
