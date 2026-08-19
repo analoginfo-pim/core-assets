@@ -4150,8 +4150,8 @@
         },
         "auditor_seats": {
           "label": {
-            "text": "Pruefer- / Engagement-Sitze",
-            "source_sha256": "6441f3225384a52897a6b311b427d9383ceb29aabbd33d25fed68babc03b912f"
+            "text": "Auditor / engagement seats",
+            "source_sha256": "65ff88aacddd72a5d9f00e675e23e52a91f6f60e503586d33febc6d8e3173e79"
           },
           "summary": {
             "text": "Binder-Instanzen o gleichzeitige Pruefersitze.",
@@ -4264,8 +4264,8 @@
             "source_sha256": "4965edda015d00632e1d12d0b1e7da1b6e2d75356a51beda9f7497f9a4a35337"
           },
           "summary": {
-            "text": "Módulo de producto (PAM, Pruefer, HSM, Jump-Lastausgleich y más).",
-            "source_sha256": "4f9b681ba4f032ea9588f740fb1bc2be8af311947ef833cc44477db59711c40f"
+            "text": "Módulos de producto (PAM, auditor, HSM, equilibrio de carga de salto y más).",
+            "source_sha256": "43b14dcb13a76022d6311a8ee23536107f54666f15a058b09bf01accb0bf26b4"
           }
         },
         "msp_pool": {
@@ -10402,8 +10402,8 @@
         "source_sha256": "9ad3072e2c46a75d77cca266b5c7048a569d23671b3d46615d2b6857800fb143"
       },
       "workforceEmployingOrgHelp": {
-        "text": "Pruefer fragen bei Auftragnehmern nach the Unternehmen, the sie beschaeftigt. Tragen Sie es for jeden Auftragnehmer a.",
-        "source_sha256": "202641ec62b6e3a4f6ed10209ae89844a25905a69c81dc644bd05a0cc007cce6"
+        "text": "Los auditores preguntan a los contratistas qué empresa los emplea. Introdúzcalo para cada contratista.",
+        "source_sha256": "811215b3d6169f3c3c8ecacc8cc8a41adc656a1d21c4844925c352a829408e74"
       },
       "workforceEmpty": {
         "text": "No hay nadie en la lista de este filtro. Una lista vacía no es un récord de finalización: no se ha asignado nada ni se ha confirmado nada.",
@@ -10628,8 +10628,8 @@
             "source_sha256": "2f582a86171d1efe6d366717f7ff09444aaac44bcc469ad35a4c7de6f00e12b3"
           },
           {
-            "text": "Historischen Slot 0 for the erste rotierte Passwort nutzen; leer lassen for the aktuellen Wert.",
-            "source_sha256": "010fd695560ff8078cb04fc70ff8a21f905306fa297be57e397c3c4c68114abe"
+            "text": "Use historical slot 0 for the first rotated password; leave empty for the current value.",
+            "source_sha256": "471e5dbf88fcf436bb3ea458f90dc2c43e1bad03bc5e7f40be22571e0a65cca3"
           },
           {
             "text": "Vollstaendige Identitaetsverwaltung bleibt auf the Seite Identitaeten.",
@@ -10694,8 +10694,8 @@
             "source_sha256": "1a360903ee28aaeca605ca0ae0908fb9d174a1df0bc516a20f99e9e4e4a20a05"
           },
           {
-            "text": "Jump-Flottenkapazitaet and Probe-Platzierung liegen unter Proxy-Zugriff → Jump & Kapazitaet → Jump-Flotte & Lastverteilung (/pam/jump-fleet).",
-            "source_sha256": "9ed20e63fb1cbd911847306982e5330a133ebecc48e7793fd7bb4d162e44a147"
+            "text": "La capacidad de la flota de salto y la ubicación de la sonda se encuentran en Acceso proxy → Salto y capacidad → Flota de salto y equilibrio de carga (/pam/jump-fleet).",
+            "source_sha256": "af76a041056e6cffc4661c3a629750cc5e7261d0ebee1d24545764c63b3edf33"
           },
           {
             "text": "Legacy /admin/hypervisors and /admin/vm-pools leiten hierher um.",
@@ -11076,8 +11076,8 @@
       "bullets": {
         "text": [
           {
-            "text": "Fuer Token-Mint muss Elevation in the Configuración or importierten Configuración konfiguriert sein.",
-            "source_sha256": "822b0328e4cbb47c1b945726d23ee03faebe0cc2179b0ccc22b4afa5b36a3a08"
+            "text": "Para token mint, la elevación debe configurarse en Configuración o en configuraciones importadas.",
+            "source_sha256": "ef32cf249215cd8266bd99c4789477701dd14fba82546693662264487c75abf6"
           },
           {
             "text": "Remote Non-Agent Local Elevation nutzt WinRM — not the Agent-Pipe — and widerruft danach automatisch.",
@@ -11390,8 +11390,8 @@
       "bullets": {
         "text": [
           {
-            "text": "Konfiguration pinnt a Pack an a Endpunkt or a Group; Agents wenden an and melden SHA-256.",
-            "source_sha256": "f46648c72be83ae1e180f7552fac5888001c151836ba2bdfdf80f224483082c7"
+            "text": "La configuración fija un paquete a un punto final o a un grupo; Los agentes lo aplican e informan SHA-256.",
+            "source_sha256": "7ac1f8d37dd282d882217373e8055738e3a5e06852c08c9c2de549be019572a2"
           },
           {
             "text": "Verstoesse zeigen AppLocker-/WDAC-Blocks — Workflows for TemporaryAllowRule-Ausnahmen nutzen.",
@@ -11807,8 +11807,8 @@
             "source_sha256": "d28158f4fb418d56ac653b5c3c65e6f6574fde9138b3c16eb81f572dff4b92b8"
           },
           {
-            "text": "Sie brauchen nie the Arbeitsplatz-Passwort — the Enclave meldet Sie an.",
-            "source_sha256": "162254eb9d7a6e7cc8208e3e3f6b531139a6f186d93087dc933b566fc9ddbe81"
+            "text": "You never need the workstation password — the enclave signs you in.",
+            "source_sha256": "c503eef6a2174635313c35df816bfe9b2aa686ae20a7349cb6169e3f8e00b077"
           }
         ],
         "source_sha256": "2c525cf3efadd2bb96b5c8803b8a8473f422e971d7e0cfd0043e3c9239598219"
@@ -11979,8 +11979,8 @@
       "bullets": {
         "text": [
           {
-            "text": "Menue: Proxy-Zugriff → Jump & Kapazitaet → Jump-Flotte & Lastverteilung.",
-            "source_sha256": "9bc50aef3491785df67a59fe0aa0bcff712d55a06c97553292cee83836482d76"
+            "text": "Menú: Acceso proxy → Salto y capacidad → Salto de flota y equilibrio de carga.",
+            "source_sha256": "6ec5f00fb703c049ff224660b4db2d810a8484c7cc87a715660fa5c217f48823"
           },
           {
             "text": "Intern sicherstellen legt the Kapazitaetszeile aic-server-local an or aktualisiert sie.",
@@ -12727,8 +12727,8 @@
             "source_sha256": "bb801bee89c44e6e814df5d669303e6b9db33ed1e4342a6a89ad24e1b649d1a8"
           },
           {
-            "text": "Skripte laufen in Lebenszyklusphasen (pre-rotate, verify usw.) — not bei the Sitzungsvermittlung (siehe Proxy-Zugriff).",
-            "source_sha256": "eee234ac056c4218c020f5a284bf7efa05582d82fc6297cf9dd5a433e93aa7d2"
+            "text": "Los scripts se ejecutan en fases del ciclo de vida (pre-rotación, verificación, etc.), no en la intermediación de sesiones (consulte Acceso proxy).",
+            "source_sha256": "e8bffa8851c28aba06320e1508a25f509631e0eec5cc0018e3886c2fb12e5331"
           },
           {
             "text": "Aus Standardvorlage anlegen for the Lab-Skelett, or Identitaeten binden and of dieser Seite pushen.",
@@ -12808,8 +12808,8 @@
       "bullets": {
         "text": [
           {
-            "text": "Laenge, Rotation, Zeichenregeln and erweiterte Generierungsfelder bearbeiten; speichern per PUT /api/offline/settings.",
-            "source_sha256": "55e5504e9db8b2c99e408df75eb4f2059bb4cf549776eabcf449c25e7e856481"
+            "text": "Edit length, rotation, character rules, and advanced generation fields; save with PUT /api/offline/settings.",
+            "source_sha256": "c917d2f6c0ff198433f2b10e65da3c80059e0a2a3c28143189d144bd423c1431"
           },
           {
             "text": "Eingebaute or gespeicherte Presets anwenden, dann Mit Programm-Vorgaben wiederherstellen, um Operator-Ueberschreibungen to loeschen.",

@@ -141,8 +141,8 @@
             "source_sha256": ""
           },
           {
-            "text": "Sie brauchen nie das Arbeitsplatz-Passwort — der Enclave meldet Sie an.",
-            "source_sha256": ""
+            "text": "Sie benötigen nie das Workstation-Passwort – die Enklave meldet Sie an.",
+            "source_sha256": "fb83dd778aaebe3fa36573e2f43fccfa65119d3c623877370dd98ff9d02eeb38"
           }
         ],
         "source_sha256": "ef4277cbb680ddcfff75f8e904368ba393d258a8683d61164d1fd90ff9da6bf8"
@@ -504,8 +504,8 @@
             "source_sha256": ""
           },
           {
-            "text": "Skripte laufen in Lebenszyklusphasen (pre-rotate, verify usw.) — nicht bei der Sitzungsvermittlung (siehe Proxy-Zugriff).",
-            "source_sha256": ""
+            "text": "Skripte werden in Lebenszyklusphasen ausgeführt (Vorrotation, Überprüfung usw.) – nicht bei der Sitzungsvermittlung (siehe Proxy-Zugriff).",
+            "source_sha256": "d473ec1c30f87b02bf93024273556259e127d8cc04a854ece7eb17f130c14a03"
           },
           {
             "text": "Aus Standardvorlage anlegen für das Lab-Skelett, oder Identitäten binden und von dieser Seite pushen.",
@@ -737,8 +737,8 @@
             "source_sha256": ""
           },
           {
-            "text": "Jump-Flottenkapazität und Probe-Platzierung liegen unter Proxy-Zugriff → Jump & Kapazität → Jump-Flotte & Lastverteilung (/pam/jump-fleet).",
-            "source_sha256": ""
+            "text": "Sprungflottenkapazität und Sondenplatzierung finden Sie unter Proxy-Zugriff → Sprung & Kapazität → Sprungflotte & Lastausgleich (/pam/jump-fleet).",
+            "source_sha256": "56b946c50ce3d79fbd4857edc7b8d3192c80bb36da9b293aa8aaafbfd2f2498b"
           },
           {
             "text": "Legacy /admin/hypervisors und /admin/vm-pools leiten hierher um.",
@@ -1016,8 +1016,8 @@
       "bullets": {
         "text": [
           {
-            "text": "Menü: Proxy-Zugriff → Jump & Kapazität → Jump-Flotte & Lastverteilung.",
-            "source_sha256": ""
+            "text": "Menü: Proxy-Zugriff → Jump & Kapazität → Jump-Flotte & Lastausgleich.",
+            "source_sha256": "33de21a615a6494bbdc6cda6cb2d9960db028e10d824d212e87d81d6d06fad48"
           },
           {
             "text": "Intern sicherstellen legt die Kapazitätszeile aic-server-local an oder aktualisiert sie.",
@@ -1162,8 +1162,8 @@
             "source_sha256": ""
           },
           {
-            "text": "Historischen Slot 0 für das erste rotierte Passwort nutzen; leer lassen für den aktuellen Wert.",
-            "source_sha256": ""
+            "text": "Verwenden Sie den historischen Slot 0 für das erste rotierte Passwort. Für den aktuellen Wert leer lassen.",
+            "source_sha256": "08e28b8145701fd9ad80e412b6c3850e11da45a03e3a122a9779e94d5b56c8f5"
           },
           {
             "text": "Vollständige Identitätsverwaltung bleibt auf der Seite Identitäten.",
@@ -1189,8 +1189,8 @@
       "bullets": {
         "text": [
           {
-            "text": "Für Token-Mint muss Elevation in den Einstellungen oder importierten Einstellungen konfiguriert sein.",
-            "source_sha256": ""
+            "text": "Für die Token-Mint muss die Höhe in den Einstellungen oder in den importierten Einstellungen konfiguriert werden.",
+            "source_sha256": "37520fe590728b573a8a12a09a4957109e95518cb352d4a55b830e47a6baee1a"
           },
           {
             "text": "Remote Non-Agent Local Elevation nutzt WinRM — nicht die Agent-Pipe — und widerruft danach automatisch.",
@@ -1251,8 +1251,8 @@
       "bullets": {
         "text": [
           {
-            "text": "Konfiguration pinnt ein Pack an einen Endpunkt oder eine Gruppe; Agents wenden an und melden SHA-256.",
-            "source_sha256": ""
+            "text": "Die Konfiguration heftet ein Paket an einen Endpunkt oder eine Gruppe. Agenten wenden es an und melden SHA-256.",
+            "source_sha256": "0953168fa41285506353b6366cd27933107bf2e2ea18bbb8b136b802be37f193"
           },
           {
             "text": "Verstöße zeigen AppLocker-/WDAC-Blocks — Workflows für TemporaryAllowRule-Ausnahmen nutzen.",
@@ -1483,8 +1483,8 @@
       "bullets": {
         "text": [
           {
-            "text": "Länge, Rotation, Zeichenregeln und erweiterte Generierungsfelder bearbeiten; speichern per PUT /api/offline/settings.",
-            "source_sha256": ""
+            "text": "Bearbeiten Sie Länge, Drehung, Zeichenregeln und erweiterte Generierungsfelder. Speichern mit PUT /api/offline/settings.",
+            "source_sha256": "b20a18cf20c72e4f0c504b780d0043179198eceb759bf30508f4433a9e36f9e6"
           },
           {
             "text": "Eingebaute oder gespeicherte Presets anwenden, dann Mit Programm-Vorgaben wiederherstellen, um Operator-Überschreibungen zu löschen.",
@@ -3431,8 +3431,8 @@
             "source_sha256": ""
           },
           "summary": {
-            "text": "Produktmodule (PAM, Prüfer, HSM, Jump-Lastausgleich und weitere).",
-            "source_sha256": ""
+            "text": "Produktmodule (PAM, Auditor, HSM, Jump Load Balancing und mehr).",
+            "source_sha256": "60b4ff4eb0dd1d51e922d68315319ad0a2f613d434812c5107c2f1c7b575c9a3"
           }
         },
         "subscription_term": {
@@ -3567,8 +3567,8 @@
         },
         "auditor_seats": {
           "label": {
-            "text": "Prüfer- / Engagement-Sitze",
-            "source_sha256": ""
+            "text": "Auditoren-/Engagementmandate",
+            "source_sha256": "f3982482e22a57f3b5961a6f1ab898592cecc4ae0936731b3d334f2276bc079a"
           },
           "summary": {
             "text": "Binder-Instanzen oder gleichzeitige Prüfersitze.",
@@ -9727,8 +9727,8 @@
         "source_sha256": ""
       },
       "workforceEmployingOrgHelp": {
-        "text": "Prüfer fragen bei Auftragnehmern nach dem Unternehmen, das sie beschäftigt. Tragen Sie es für jeden Auftragnehmer ein.",
-        "source_sha256": ""
+        "text": "Prüfer fragen Auftragnehmer, welches Unternehmen sie beschäftigt. Geben Sie es für jeden Auftragnehmer ein.",
+        "source_sha256": "95acc263f7c55ce33076e7b9e0c7a51db98689b7c4908f892ce435580141b75b"
       },
       "workforceJobTitle": {
         "text": "Stellenbezeichnung",
