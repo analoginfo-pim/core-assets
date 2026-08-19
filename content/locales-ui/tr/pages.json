@@ -1116,8 +1116,8 @@
         "source_sha256": "67d4cebfcc12f43d3fcb223be469226f67bb5f0a614f5f823e0823cb283b1694"
       },
       "loadFailed": {
-        "text": "Firmenprofil bağlantısı şu şekilde değil: {{message}}",
-        "source_sha256": "651e4ec418c7abdb17da884fb266558a7e49a743865eec8ea7e9c2604fe3c120"
+        "text": "Şirket profili yüklenemedi: {{message}}",
+        "source_sha256": "74afe1e337607ef84865fd6da116676b1ae7b1fcbd68cf55d76df81be8db449e"
       },
       "loadingAria": {
         "text": "Şirket profili yükleniyor",
@@ -1294,8 +1294,8 @@
         "source_sha256": "464c4ffd019e1e9691dcf0537c797353ef2b1c1d4833d3d463e5b74ae4547344"
       },
       "empty": {
-        "text": "Keine Verbindungspunkte. SSH-, RDP- veya VNC'yi kullanın.",
-        "source_sha256": "0019b584f26cea8b5b2fcef03c185ba325dce2b1e292783eabec5afe4aef71b2"
+        "text": "Bağlantı noktası yok. SSH, RDP veya VNC hedeflerini ekleyin.",
+        "source_sha256": "f31852a4d7f347209a794e8cafee499d07a81de9bee784ec21a4f7905b66412d"
       },
       "emptyHostFilter": {
         "text": "No connection points match host ",
@@ -1852,7 +1852,7 @@
         "source_sha256": "7e78075f91cdedd74b2374521647b6e476838dacf4e961f07f07fcf90467bcb2"
       },
       "provenanceStarted": {
-        "text": "History begins __PH0__; last sweep __PH1__. Nothing before that date is recorded, so no trend is drawn back past it.",
+        "text": "Tarih başlıyor {{started}}; son tarama {{swept}}. Bu tarihten önce hiçbir şey kaydedilmediğinden hiçbir trend bu tarihin ötesine geçemez.",
         "source_sha256": "dc0010dbe0a9ef95fd4dab967d14798d13cf8120d757d59a324910989ee52e49"
       },
       "recentDrift": {
@@ -1916,7 +1916,7 @@
         "source_sha256": "a8853de7c2a8c8d7b9354d9b2593659d07ee57a04034810f96988468e11684be"
       },
       "tracked": {
-        "text": "Tracked controls: __PH0__",
+        "text": "İzlenen kontroller: {{count}}",
         "source_sha256": "9063d249e399480e709288873347737637d56d7fa2dec1a9f8ec22776dd32caf"
       },
       "unmappedCount": {
@@ -2132,8 +2132,8 @@
         "source_sha256": "a79b1c5cafdb28771be934a20ea37f0b1545cf978e5fef994ebf3694628c2b82"
       },
       "noEndpoints": {
-        "text": "Keine Endpunkte verfuegbar.",
-        "source_sha256": "9f814c183aa29479a75db6c5f08fb349ace2be8e23de8a45497cd8d5e1e957e4"
+        "text": "Kullanılabilir uç nokta yok.",
+        "source_sha256": "f081ca10cfccef93a59b1c6e723f628d13b60ae7ff27943d558d573be82cbf96"
       },
       "noIp": {
         "text": "IP yok",
@@ -2670,8 +2670,8 @@
     },
     "hsm": {
       "addConnection": {
-        "text": "Verbindung hinzufuegen",
-        "source_sha256": "b8d51f714618819d0a494ca363307776c997b715d8e642a5c93bacf56d46a1d4"
+        "text": "Bağlantı ekle",
+        "source_sha256": "685f88ae3db24ee15edd7e342447d933e018a46d99e8878c21ce3065d93c21a9"
       },
       "addVendor": {
         "text": "Satıcı Ekle",
@@ -2758,12 +2758,12 @@
         "source_sha256": "464c4ffd019e1e9691dcf0537c797353ef2b1c1d4833d3d463e5b74ae4547344"
       },
       "emptyConnections": {
-        "text": "Keine HSM-Verbindungen kaydı.",
-        "source_sha256": "f3cf0147f0f858053fc08be42336f536b3c854ed3fe0421dacd6db1ab376e1c2"
+        "text": "Kayıtlı HSM bağlantısı yok.",
+        "source_sha256": "5defe3616a7634b29634c0c20395faaf6ac5a3e27b17f61ff052a52dfab3ee60"
       },
       "emptyVendors": {
-        "text": "Keine Hersteller'in kaydı.",
-        "source_sha256": "cdca8bf8b2f8c4ab19fcc51a63d2f451b770d6ed006d8da780fbeb1684f10720"
+        "text": "Kayıtlı satıcı yok.",
+        "source_sha256": "0f12d21360145b7c12fa15acd45c863ee42eb238d1a9ad75d1178ca683254283"
       },
       "hsmType": {
         "text": "HSM Tipi",
@@ -3054,8 +3054,8 @@
         "source_sha256": "3541c5f14713a0848f35dee2fb6ba6eeef092dd7a4ae997609a39a36bf94aad8"
       },
       "empty": {
-        "text": "Bu, Endpunkt'ın kimlik bilgilerini doğruladı.",
-        "source_sha256": "6d51e0dfca02271075f1c77f71809091b8ef4e673552ba2afe412ecdbd047e0b"
+        "text": "Bu uç noktada yönetilen kimlik yok.",
+        "source_sha256": "799dccc445f752ec1f91dbeda2ffd44e59a531f9d751fc6faef63af91d58b676"
       },
       "refresh": {
         "text": "Yenile",
@@ -3066,8 +3066,8 @@
         "source_sha256": "c24659fd396cbf4c9c3c8378223e66eda76a3d66f4f03a2684426f864abb1074"
       },
       "selectEndpoint": {
-        "text": "Zuerst ve Endpunkt waehlen",
-        "source_sha256": "fc5887b275f8f3e155431dcc552c53504c9d69297e0338dbea6ae3c2b6fb8e56"
+        "text": "İlk önce bir bitiş noktası seçin",
+        "source_sha256": "f55b380258c5f041db540bcb500e64ba68c3c23ec551ee24b76d5b284145458d"
       }
     },
     "incidents": {
@@ -3076,8 +3076,8 @@
         "source_sha256": "8252ee08632798c3ce788460d23f0ba1dd000f553bf0f774d949231636b1fd77"
       },
       "bannerAuditor": {
-        "text": "<queue>Vorfallreaktions-Warteschlange</queue>'de Sie Faelle'i arayın veya Sachverhalt için <evidence>IR-Nachweise for Auditoren</evidence>'i arayın. Der Assessment-Ordner, Heimat des Compliance-Pakets'e rapor verdi.",
-        "source_sha256": "bf028e5740836cc89b3f5b5aab8e761e482750e32673198902ff3f3e5286ec5b"
+        "text": "<queue>Olay Müdahale Kuyruğu</queue>'da vakaları arayın veya konuyla ilgili <evidence>Denetçiler için IR Kanıtı</evidence>'ı açın. Değerlendirme klasörü uyumluluk paketinin merkezi olmaya devam ediyor.",
+        "source_sha256": "0c24346b5ae51af83c06c2677e507a58f7a428cf1a62fff6b996296006be018d"
       },
       "bannerHandler": {
         "text": "<queue>Vorfallreaktions-Warteschlange</queue>'de Sie Biletlerini düzenleyin. Yapılandırmayı <groups>IR-Alarmgrupları</groups> altında yapılandırın. Denetçi Paketi <evidence>Denetleyiciler için IR-Nachweise</evidence> altında.",
@@ -3096,8 +3096,8 @@
         "source_sha256": "acf30d2e88db7f58a1a89e53268ac17648e990aab433f5d0f3c3df28a9ad0efa"
       },
       "blurbHandler": {
-        "text": "Uebernehmen Warteschlange'ı seçin: Triyaj → Eindaemmung → Beseitigung → Wiederherstellung → Erkenntnisse → Close. Durum: Suçlu / Bearbeitung / Geschlossen. Zeitachse'de Kommentare ve Akteure stehen; Gruppenalarme gehen bei Uebergaengen heraus.",
-        "source_sha256": "8910d427974918c78d6a6070b9877cade850182837a6f9e62325aa7b208d1913"
+        "text": "Sıraya girin: Triyaj → Sınırlama → İyileştirme → Kurtarma → Analizler → Kapat. Durum göstergeleri: Açık / Devam ediyor / Kapalı. Yorumlar ve aktörler zaman çizelgesinde; Geçişler sırasında grup alarmları çalar.",
+        "source_sha256": "3e46fd82e2218ad869c9edc06fe107abab477b6e96bef5d60202e8e2785a7082"
       },
       "blurbReporter": {
         "text": "Sie reichen a Meldung a (Hücum). Ölmelisin. Durum E-Postalarını ve iletişim bilgilerini girin. Close the Close, Auditoren'in en iyileri arasında yer alıyor.",
@@ -3348,8 +3348,8 @@
         "source_sha256": "c8e3e92a62ecf1811c7f4d5ec6efb3244e1bba785c5152b6cfac1af8eecbe2ae"
       },
       "stepAuditorEvidence": {
-        "text": "Denetçi-Nachweis",
-        "source_sha256": "67c67b20563c36904ccd15cfa497991247d07a22c1032ed375dba28153a8d199"
+        "text": "Denetçi kanıtı",
+        "source_sha256": "47f26ada6d4c114e9597931a58bac879dbe435cb88196a3240f03fa0a74e8758"
       },
       "stepClose": {
         "text": "Kapalı",
@@ -4207,8 +4207,8 @@
           "source_sha256": "3b0bcb8baca8306df9c7bcb5b5b73967339bb2921ece8b50532a70ce34df045a"
         },
         "perpetual": {
-          "text": "Dauerhaft",
-          "source_sha256": "361a56ae2c1aa3efc2beddc75715e8aaf145ce0fcb5a7f8be00f93ab5a8a6303"
+          "text": "Kalıcı olarak",
+          "source_sha256": "d06138e2477e7e71ef148478e28bf0c43ff19aa827ad7c9ec714cb4e9d5607e2"
         },
         "subscription": {
           "text": "Fesih",
@@ -4238,8 +4238,8 @@
       "model": {
         "a2a_clients": {
           "label": {
-            "text": "Nicht-menschliche / A2A-İstemciler",
-            "source_sha256": "4381f210d68e7784518a10c31c828d1a40852d4b8c409716f2d18f5849805c42"
+            "text": "İnsan Dışı/A2A İstemcileri",
+            "source_sha256": "6f397c33dc9c6060922beea16a6d0ab79cd3b0c1add984f81546c5937c53025e"
           },
           "summary": {
             "text": "Anwendung-to-Anwendung-Geheimnis-Müşterileri.",
@@ -4282,14 +4282,14 @@
             "source_sha256": "741935979f7b14dcf4efb647d53cf46415ac9ef5f38b816b05659e795029fb11"
           },
           "summary": {
-            "text": "Bir Laufzeit için Vorausbezahlte veya özel Berechtigung.",
-            "source_sha256": "3ebf0e18f8854ed4f1c232e843519b81d19eb0d9124fa897a1c00e9da5ebeade"
+            "text": "Bir dönem için ön ödemeli veya özel hak.",
+            "source_sha256": "f11dc3a6d04c5725114a93c683d7ef3fbaa23d172eb197e30b42cdc40b8dbcd7"
           }
         },
         "endpoint_agent": {
           "label": {
-            "text": "Endpunkt / Ajan",
-            "source_sha256": "fafdaf1c23d976204dfb96b1edb699187177805bda8724c08622aecf6eb747c7"
+            "text": "Uç Nokta/Aracı",
+            "source_sha256": "46b0f488ba56fe6db124f9bae5f35b52511c6eb6f5cb9838f4db8046c7095c95"
           },
           "summary": {
             "text": "Verwaltete Agent-Registrierung için Kapazitaet.",
@@ -4418,8 +4418,8 @@
         },
         "secrets_api_tier": {
           "label": {
-            "text": "Geheimnis-API-Stufe",
-            "source_sha256": "1ab97432df57c54996c42e42e552532bd063f0240f06dbcd3b82bbcbc3c47c92"
+            "text": "Gizli API düzeyi",
+            "source_sha256": "ecb86600e64e01285daed29c41ccb0f7e051f58c43f3f871073a19e16909736a"
           },
           "summary": {
             "text": "Monatliche Geheimnis-API-Vorgaenge als weiche veya harte Obergrenze.",
@@ -4438,8 +4438,8 @@
         },
         "subscription_term": {
           "label": {
-            "text": "Abonnementlaufzeit",
-            "source_sha256": "09e20c5420b0306536852f304eed52be9bad5aafff132714d1550f74ca0187f9"
+            "text": "Abonelik süresi",
+            "source_sha256": "0400571a6345387fe7a3113c5da1b0c4200938027be19004372d3b673b434cfc"
           },
           "summary": {
             "text": "Başlangıç ​​ve Bitiş Verileri ile Wiederkehrende Laufzeit.",
@@ -4523,12 +4523,12 @@
           "source_sha256": "1c47a9734b27dcd7009399a51e22226e7516c0429a81038923e82a7c95c597e9"
         },
         "none": {
-          "text": "Keine",
-          "source_sha256": "8a572015c49b2071ebcf52dde28b20d61ba0559b2410e83d41a0a1a14184bf90"
+          "text": "HAYIR",
+          "source_sha256": "1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da161c6099be3691d"
         },
         "not_configured": {
-          "text": "Nicht yapılandırma",
-          "source_sha256": "875bfe5313e77d300c8b076a16fb6a5d00d8230c49b80efa3227205d0bf2345f"
+          "text": "Yapılandırılmadı",
+          "source_sha256": "dd1841d295024256e8884cb898d863cb17333ef927fefae59368238e401c6ef0"
         },
         "ok": {
           "text": "TAMAM",
@@ -4601,8 +4601,8 @@
           "source_sha256": "137c75eedd34080462a2cf987f2e186d8623059dbd4b3399e72e2d0f0a2608e6"
         },
         "none": {
-          "text": "Keine",
-          "source_sha256": "8a572015c49b2071ebcf52dde28b20d61ba0559b2410e83d41a0a1a14184bf90"
+          "text": "HAYIR",
+          "source_sha256": "1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da161c6099be3691d"
         },
         "replay_or_clone": {
           "text": "Wiederholung veya Klon",
@@ -4613,8 +4613,8 @@
           "source_sha256": "c313179992b9e3e3ec9672094645ff5ba2d2880a25c398b71bb095857948350b"
         },
         "unlicensed_feature": {
-          "text": "Nicht Lizenzierte Funktion",
-          "source_sha256": "575fb41033e06e436317817be34e4fb2b4efe146fedbef69062af9a6277bc007"
+          "text": "Lisanssız özellik",
+          "source_sha256": "f0bdc6aafacae55ae56e59f3a20a5dde963eb054081182b40263018895289ea6"
         }
       },
       "tokenCopied": {
@@ -5101,8 +5101,8 @@
           "source_sha256": "8b0311a8239578c554052dfcedaa2aa64a68a36b6979edaf2f3409d667088d05"
         },
         "none": {
-          "text": "Keine Kimlik Doğrulaması",
-          "source_sha256": "b56a35e90e026855db5ea28ef7265ce32265e3cf5a7be9ae55137fb84ee95300"
+          "text": "Kimlik doğrulama yok",
+          "source_sha256": "cf205c33359a82fcbac1dff901d9022413fa5b9c21745ba387e09454c65c9737"
         }
       },
       "colActions": {
@@ -5482,12 +5482,12 @@
         "source_sha256": "4eda97952b0113d9a097fdc40f58622299c36076b47654bf9827c6b148e70364"
       },
       "snippetsDelete": {
-        "text": "Parçacık loeschen",
-        "source_sha256": "294c35f080889a2cbd99f2e24b57a93abfda11b4d5a90725e67ccfbc836f6919"
+        "text": "Snippet'i sil",
+        "source_sha256": "9ab0158f4242d7a1b116ddab6a504d628058cf2393ceea91cfe889a999e592f7"
       },
       "snippetsDeleteBody": {
-        "text": "“{{name}}“ dauerhaft loeschen?",
-        "source_sha256": "ddcaa8f95f1ab1d4339e3f3899a673a0816be71b7fdb2ca1a8a44560b9cb34a2"
+        "text": "“{{name}}” kalıcı olarak silinsin mi?",
+        "source_sha256": "6df9924cc91b8bd00e7461896b88fad752b4b2a15ed3b4b966606aafd7dd468a"
       },
       "snippetsDeleteTitle": {
         "text": "Parça silinsin mi?",
@@ -5522,8 +5522,8 @@
         "source_sha256": "e2d0a54968ead24efc0dffa6ac78fc606dceec34a0f586177a74a54cc2272cf8"
       },
       "templatesDeleteBody": {
-        "text": "“{{name}}“ dauerhaft loeschen? Das kann, büyük bir gemacht werden olamaz. Kuenftige Ereignisse, Vorgabe zurueck'in karşısında düştü.",
-        "source_sha256": "9c7d12dbc61d4d143516f6fc0f2b34daafd18269f449061ede5020547b0edd9a"
+        "text": "“{{name}}” kalıcı olarak silinsin mi? Bu geri alınamaz. Gelecekteki olaylar yerleşik varsayılana geri döner.",
+        "source_sha256": "8c316882a1ef35d45647d489c2c52a96209c2f9ce5cb4a5ca83f9fb7f7b712a5"
       },
       "templatesDeleteTitle": {
         "text": "Şablon silinsin mi?",
