@@ -2027,6 +2027,42 @@
     "loaded": {
       "text": "OpenAPI-Dokument geladen ({{count}} Zeichen).",
       "source_sha256": "5d567a28ed0277e3db3ecaec1cf42d24e1d31ecaf727344f52e7f020faa91ee8"
+    },
+    "howTo": {
+      "0": {
+        "text": "Open Swagger UI to try authenticated routes with your current session cookie or admin token header as documented in the security schemes.",
+        "source_sha256": "455a79a02f04ad7248d8a5a02c779031cd1005fe3176120a1bc5fe76ab37220c"
+      },
+      "1": {
+        "text": "Download OpenAPI JSON for offline review or client generation; re-fetch after each server deploy that touches routes.",
+        "source_sha256": "97e4fb65711ff740df64cd1e0222d6460f283cb2ea8941b7c193fb721fcb36b3"
+      },
+      "2": {
+        "text": "Agent wire routes expect HMAC headers when agents sign; unsigned is still accepted only while AGENT_HMAC_ENFORCE_MODE=dual_mode.",
+        "source_sha256": "b6119999574f9244c951c36c3281995c78bde67a5c217d49a6d419e4720cb411"
+      },
+      "3": {
+        "text": "Startup wizard admin routes are under /api/admin/startup-wizard; Messaging email save paths remain /api/offline/messaging/email*.",
+        "source_sha256": "0cb2e44ab491db274f7001a79df736c7cb55d2b5ff6f22c6bb39472be8ae93b1"
+      },
+      "4": {
+        "text": "Prefer docs under /docs/admin for operator runbooks; this page is for API consumers and developers.",
+        "source_sha256": "a2402179d7a2342edbfb8bc4b6885613e20b28b4aa2297015f257c402e530b98"
+      }
+    },
+    "limits": {
+      "0": {
+        "text": "OpenAPI coverage tracks declared routes; a missing operation in the UI is not proven by downloading this file alone.",
+        "source_sha256": "a7cece47cc7c818cb4f7ef46df31be252842e7c5d63e733b90f048d227b24f93"
+      },
+      "1": {
+        "text": "Examples may omit lab-only or feature-gated routes until they are declared in the OpenAPI set.",
+        "source_sha256": "87cf0af998043d5e1bc94f4b1175f8b2322309104816d728a1db981f129d7141"
+      },
+      "2": {
+        "text": "This page is not a certification package — keep SSP evidence in the Assessment Binder.",
+        "source_sha256": "da732f454edd8d9203e41694e233b4b03cbd71c73872ed9525621aa3d217911a"
+      }
     }
   },
   "swagger": {
@@ -2148,5 +2184,9 @@
       "text": "without Tag",
       "source_sha256": "9887940c171a51baaf7b862a9894c103bc39fdd50337e0150c07ddc62a4aa2a0"
     }
+  },
+  "technische_dokumentation": {
+    "text": "Technical Documentation",
+    "source_sha256": "d9e472f50948919b7de17f323845791003026e68cd5487bccb650edfbdff625d"
   }
 }

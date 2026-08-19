@@ -1383,46 +1383,46 @@
       "text": "So nutzen Sie diese Klasse",
       "source_sha256": ""
     },
-    "howTo": [
-      {
-        "text": "Öffnen Sie Swagger UI, um authentifizierte Routen mit Ihrem aktuellen Sitzungscookie oder Admin-Token-Header zu prüfen, wie in den Sicherheitsschemata dokumentiert.",
-        "source_sha256": ""
+    "howTo": {
+      "0": {
+        "text": "Open Swagger UI to try authenticated routes with your current session cookie or admin token header as documented in the security schemes.",
+        "source_sha256": "455a79a02f04ad7248d8a5a02c779031cd1005fe3176120a1bc5fe76ab37220c"
       },
-      {
-        "text": "Laden Sie OpenAPI-JSON für die Offline-Prüfung oder Client-Erzeugung herunter. Holen Sie es nach jeder Serverbereitstellung erneut, die Routen ändert.",
-        "source_sha256": ""
+      "1": {
+        "text": "Download OpenAPI JSON for offline review or client generation; re-fetch after each server deploy that touches routes.",
+        "source_sha256": "97e4fb65711ff740df64cd1e0222d6460f283cb2ea8941b7c193fb721fcb36b3"
       },
-      {
-        "text": "Agent-Drahtrouten erwarten HMAC-Header, wenn Agenten signieren. Unsigniert wird nur akzeptiert, solange AGENT_HMAC_ENFORCE_MODE=dual_mode gilt.",
-        "source_sha256": ""
+      "2": {
+        "text": "Agent wire routes expect HMAC headers when agents sign; unsigned is still accepted only while AGENT_HMAC_ENFORCE_MODE=dual_mode.",
+        "source_sha256": "b6119999574f9244c951c36c3281995c78bde67a5c217d49a6d419e4720cb411"
       },
-      {
-        "text": "Admin-Routen des Startassistenten liegen unter /api/admin/startup-wizard. Speicherpfade für Messaging-E-Mail bleiben /api/offline/messaging/email*.",
-        "source_sha256": ""
+      "3": {
+        "text": "Startup wizard admin routes are under /api/admin/startup-wizard; Messaging email save paths remain /api/offline/messaging/email*.",
+        "source_sha256": "0cb2e44ab491db274f7001a79df736c7cb55d2b5ff6f22c6bb39472be8ae93b1"
       },
-      {
-        "text": "Bevorzugen Sie Docs unter /docs/admin für Operator-Runbooks. Diese Seite richtet sich an API-Nutzer und Entwickler.",
-        "source_sha256": ""
+      "4": {
+        "text": "Prefer docs under /docs/admin for operator runbooks; this page is for API consumers and developers.",
+        "source_sha256": "a2402179d7a2342edbfb8bc4b6885613e20b28b4aa2297015f257c402e530b98"
       }
-    ],
+    },
     "limitsTitle": {
       "text": "Ehrliche Grenzen",
       "source_sha256": ""
     },
-    "limits": [
-      {
-        "text": "Die OpenAPI-Abdeckung folgt deklarierten Routen. Eine fehlende Operation in der UI ist nicht allein durch das Herunterladen dieser Datei bewiesen.",
-        "source_sha256": ""
+    "limits": {
+      "0": {
+        "text": "OpenAPI coverage tracks declared routes; a missing operation in the UI is not proven by downloading this file alone.",
+        "source_sha256": "a7cece47cc7c818cb4f7ef46df31be252842e7c5d63e733b90f048d227b24f93"
       },
-      {
-        "text": "Dual-Mode-Agent-HMAC ist eine Einlaufhaltung, keine Behauptung, dass jeder Agent bereits signiert.",
-        "source_sha256": ""
+      "1": {
+        "text": "Examples may omit lab-only or feature-gated routes until they are declared in the OpenAPI set.",
+        "source_sha256": "87cf0af998043d5e1bc94f4b1175f8b2322309104816d728a1db981f129d7141"
       },
-      {
-        "text": "Behandeln Sie erfolgreiche Swagger-Aufrufe nicht als Nachweis eines abgeschlossenen ATO — halten Sie diese Arbeit im Assessment-Binder und in Ihrem SSP-Prozess.",
-        "source_sha256": ""
+      "2": {
+        "text": "This page is not a certification package — keep SSP evidence in the Assessment Binder.",
+        "source_sha256": "da732f454edd8d9203e41694e233b4b03cbd71c73872ed9525621aa3d217911a"
       }
-    ],
+    },
     "swaggerUi": {
       "text": "Swagger UI",
       "source_sha256": ""
@@ -1563,5 +1563,9 @@
       "text": "ohne Tag",
       "source_sha256": ""
     }
+  },
+  "technische_dokumentation": {
+    "text": "Technische Dokumentation",
+    "source_sha256": "ac81875d0a3603868b276e6cf4e6231f9e1f339f29e6875d07f31d99a7458baf"
   }
 }
