@@ -168,17 +168,8 @@ def main() -> int:
         elif key.startswith("grid."):
             text = harvested.get(key) or GRID_EN.get(key) or title_from_key(key)
             by_ns["common"][key] = text
-        elif key in NAVISH or key in (
-            "app_manifest",
-            "demo_data",
-            "elevation_mocks",
-            "general_settings",
-            "mitm_dev_only",
-            "rbac_lab",
-            "server_control",
-            "tls_security",
-        ):
-            # These appear as bare keys — often nav or docs. Put in both nav + components.
+        elif "." not in key:
+            # Bare keys (nav / docs chrome) — put in both nav + components.
             text = NAVISH.get(key, title_from_key(key))
             by_ns["nav"][key] = text
             by_ns["components"][key] = text

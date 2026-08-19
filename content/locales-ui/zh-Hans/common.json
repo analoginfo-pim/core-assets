@@ -238,5 +238,143 @@
       "text": "注销",
       "source_sha256": "97eeef04e09601e058486c43d9647031f1ded6ed64d9042e9f8704e2c41d42ed"
     }
+  },
+  "chrome": {
+    "sessionPolicy": {
+      "heading": {
+        "text": "登录会话策略",
+        "source_sha256": "1aab45bb348d0ab3920f91bfdf8f624e46c8326ec83d3a2762daad7ebacd2cc6"
+      },
+      "intro": {
+        "text": "控制管理员登录会话的空闲和绝对超时。更改适用于新会话。",
+        "source_sha256": "3fea93db11ba9dd9964451ec47f6f2fdffbd43a9ccd38e730aede3c5965021d8"
+      },
+      "openDedicated": {
+        "text": "打开完整会话策略页面",
+        "source_sha256": "3bd751be0e57e60418ef1e633b8b690b26faefcaec08abd2498e7da2e31f1c5c"
+      },
+      "requireIamAria": {
+        "text": "需要 IAM 登录",
+        "source_sha256": "6d18fa3cd5bcbd888d09ac5de941e97dc541658c3f74866589e3477eba3fd8b6"
+      },
+      "requireIam": {
+        "text": "需要 IAM 登录",
+        "source_sha256": "6d18fa3cd5bcbd888d09ac5de941e97dc541658c3f74866589e3477eba3fd8b6"
+      },
+      "absoluteTtl": {
+        "text": "绝对会话生命周期（分钟）",
+        "source_sha256": "5290a28ee1829186c3dea2f1ed848eda69a9f676b1a89e7f36eddde6fd85b476"
+      },
+      "absoluteTtlAria": {
+        "text": "绝对会话生命周期（以分钟为单位）",
+        "source_sha256": "582593c1309f804adbc84dbe5e2d2166bb7a33a2845a3a9ba842e79f3e86bfba"
+      },
+      "idleTimeout": {
+        "text": "空闲超时（分钟）",
+        "source_sha256": "4cc8718d8b78a91783e56f0b6c1a5e51b24a6d42815a6a30d207a8cf65088377"
+      },
+      "idleTimeoutAria": {
+        "text": "空闲超时（分钟）",
+        "source_sha256": "8a3fc712eb83fbfa35d30a723e69045c2f9439cf6445f147115dbcb469a8838c"
+      },
+      "absoluteMax": {
+        "text": "最大绝对寿命（分钟）",
+        "source_sha256": "a9e5927435706906862d40f353d8d1ee4fb9e0945bfdd90b18f08e5f637e6d74"
+      },
+      "absoluteMaxAria": {
+        "text": "最大绝对寿命（分钟）",
+        "source_sha256": "0649ef8b5838130b9818c4f9d4a2532140c5c11a6678d6252b73a34463d9fd4a"
+      },
+      "refresh": {
+        "text": "延长活动时间",
+        "source_sha256": "b2a3655c529fa7a2f9bd5441112637022126669849cdfe7e6e3f0602f61dad82"
+      },
+      "rotate": {
+        "text": "刷新时旋转令牌",
+        "source_sha256": "4a835f628f39a0957133263df4c3bf349f997910507deccc016bf000cf333f21"
+      },
+      "multiTab": {
+        "text": "允许多个浏览器选项卡",
+        "source_sha256": "780a5054c52cc9fa082d8df357b89d19c984562a3cc45c90a9642c65e4cbc1f8"
+      },
+      "forceLogoff": {
+        "text": "会话过期时注销",
+        "source_sha256": "a2ff5e8b61d0ca31832acf186feca4ef523889c3e29a16f785daedf09232aeb5"
+      },
+      "httponly": {
+        "text": "使用 HttpOnly cookie",
+        "source_sha256": "aa2dc5c13ad106f4b7303e133deb6e14e23bd4e305edc4397d76c6cd84d32853"
+      },
+      "pamDisconnectAria": {
+        "text": "注销时断开 PAM 会话连接",
+        "source_sha256": "f3f69e47b0ad6976cffdb0df8b6501a41e5569665258da43da8a22e7d64be7b9"
+      },
+      "pamDisconnect": {
+        "text": "注销时断开 PAM 会话连接",
+        "source_sha256": "f3f69e47b0ad6976cffdb0df8b6501a41e5569665258da43da8a22e7d64be7b9"
+      },
+      "clientStorage": {
+        "text": "客户端会话存储",
+        "source_sha256": "6193945dcbaa893e8af95026210b36a4cedd9aac27b99a19d20118fd6740abc2"
+      },
+      "storageSession": {
+        "text": "会话存储",
+        "source_sha256": "1d589af652bf6bb4ce8c96335c697952e111f91e55f6d479e229f34fe6b911ed"
+      },
+      "storageLocal": {
+        "text": "本地存储",
+        "source_sha256": "5ccee5ef26d411cb0f5d4f468d3edfe1feac9bd69411bad25095b25e3ef72734"
+      },
+      "multiTabNote": {
+        "text": "多个选项卡共享同一个登录会话。在一个选项卡中注销即可结束所有操作。",
+        "source_sha256": "2db5840e461f5bf8010d816acea18c2527e2793b630658da047d3e2fa9ef1b9e"
+      },
+      "save": {
+        "text": "保存会话策略",
+        "source_sha256": "92fd2a90adcbc6fd4b9a649a0185175406d1a36e43fe22232a18eff2db77b5a0"
+      }
+    }
+  },
+  "technische_dokumentation": {
+    "text": "技术文档",
+    "source_sha256": "d9e472f50948919b7de17f323845791003026e68cd5487bccb650edfbdff625d"
+  },
+  "general_settings": {
+    "text": "常规设置",
+    "source_sha256": "de322f87b5f5957b54dc467054983c18cbd04a213066155347d00d04b34215e2"
+  },
+  "tls_security": {
+    "text": "TLS 和安全性",
+    "source_sha256": "cbf76f95e68a82d65fe5587d4424ff26b4ec338a079f03f6ac7d7b1b31c90395"
+  },
+  "server_control": {
+    "text": "服务器控制",
+    "source_sha256": "1393a2603fa7d5128cc6d79cad71fad037e3d966202b2fed597bb900b25f41e2"
+  },
+  "technical_documentation": {
+    "text": "技术文档",
+    "source_sha256": "d9e472f50948919b7de17f323845791003026e68cd5487bccb650edfbdff625d"
+  },
+  "blocked_attacks": {
+    "text": "阻止攻击",
+    "source_sha256": "158d3c3ef5abfd9cf13b3894307ed3778a4d5eed818545635579dc7785c1e124"
+  },
+  "grid": {
+    "columns": {
+      "text": "专栏",
+      "source_sha256": "53aade77cd69a77bbb51bf8ca4e7ea8b282db75edce8883775e47042478d35b5"
+    },
+    "density": {
+      "text": "密度",
+      "source_sha256": "77a283d69258c2ae985dc2343725d0af253da0fc1d87626966f7cefe4a3c7469"
+    },
+    "export": {
+      "text": "出口",
+      "source_sha256": "3664895579f0a7e68c4aa09c91316e20239bc74499010e6423ece40cad7c28f7"
+    },
+    "filters": {
+      "text": "过滤器",
+      "source_sha256": "546ebb8eb993ea561029d9febd84c363bdb09010bb2cb915a8287762b76b9a64"
+    }
   }
 }

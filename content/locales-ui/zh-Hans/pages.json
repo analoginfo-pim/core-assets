@@ -11332,7 +11332,1141 @@
       "helpAriaLabel": {
         "text": "打开审批者个人资料的帮助",
         "source_sha256": "a1fc8efb8ae8736fd586da0a14d0d0f9ae66b58569f6bf78d03ebb77eb42a77b"
+      },
+      "summary": {
+        "text": "审批者分配、审批者组以及待审批邮件或 SMS 的通知渠道。",
+        "source_sha256": "29df2ef7db5bc841e8189e6682493eb8d4e794d4dc5a00bad5965c6e55bdb7cb"
+      },
+      "title": {
+        "text": "审批人资料",
+        "source_sha256": "cbf902bb140934715389cd7cfbcb4093fc566b2692ad62e9b6cc1c657e8a3a11"
       }
+    },
+    "pam__connection-points": {
+      "bullets[0]": {
+        "text": "会话可以启动一个新的 Live-Viewer 和代理（kein Fortsetzen einer geschlossenen Session）。",
+        "source_sha256": "7dbbd3cb0abf477c68ac86b804db9af5fff7c72eeb04d38f64757cdbb0be2efc"
+      },
+      "bullets[1]": {
+        "text": "Zugriff braucht a stehende Berechtigung，一种主动的 JIT-Freigabe 或 Selbstgenehmigung。",
+        "source_sha256": "97687603094efd695a339947bb56b0a136ac4e0ce9979787f79f90343ec78ce0"
+      },
+      "bullets[2]": {
+        "text": "Jede geoeffnete 会话标准maessig aufgezeichnet（代理或ziel-lokal）。",
+        "source_sha256": "ebd643b9e61ad5066e970b7094898ea170f89a65540a46beb277f55d2c767ddd"
+      },
+      "helpAriaLabel": {
+        "text": "打开连接点帮助",
+        "source_sha256": "28bc8e6472c66e030c09e004ec5b42bda0fa380aec65efc0c6c9d14e08a015ad"
+      },
+      "summary": {
+        "text": "注册 SSH、RDP 和 VNC 目标以用于代理打开会话并记录启动。保管凭证仍被隐藏为[已存储]。",
+        "source_sha256": "71912185d406d65fe1b58d37acb9c64d91780e398f17d825cdc599bef59886f5"
+      },
+      "title": {
+        "text": "连接点",
+        "source_sha256": "8dfc7a66ba5359fbc461efcc21cdfd69bcfd3e2a03ceb75320e084cb096ab372"
+      }
+    },
+    "pam__entitlements": {
+      "bullets[0]": {
+        "text": "主题和 Zielwaehler nutzen IAM-Prinzipale、Rollen 和 Verbindungspunkte — keine rohen UUID-Felder。",
+        "source_sha256": "326de08f431ef2128bece9ec5b3c285d7b9e17efa6656f3ec006d76f40960d64"
+      },
+      "bullets[1]": {
+        "text": "拒绝规则 ueberschreiben 允许，wenn beide passen。",
+        "source_sha256": "ba8d6c89c92ea4268f04969449293452625ec4e467b321e3a22701111b2127f8"
+      },
+      "helpAriaLabel": {
+        "text": "打开权利帮助",
+        "source_sha256": "e97c84dd756896cf3de0e9e3d54dc73cfd6d9ecd6450f1301f26a25290bfe154"
+      },
+      "summary": {
+        "text": "常设和即时策略绑定表明谁可以请求或启动哪个连接目标。",
+        "source_sha256": "c71ca6af94bf8c0acf741738d8ebbbbdffa6906611417dad7d479d2385b569f6"
+      },
+      "title": {
+        "text": "权利",
+        "source_sha256": "2cc79c9e300d3cb5cb811eea6c2c28a43151fba8bf3c7634be12213a89ffc399"
+      }
+    },
+    "pam__jump-fleet": {
+      "bullets[0]": {
+        "text": "菜单：Proxy-Zugriff → Jump & Kapazitaet → Jump-Flotte & Lastverteilung。",
+        "source_sha256": "9bc50aef3491785df67a59fe0aa0bcff712d55a06c97553292cee83836482d76"
+      },
+      "bullets[1]": {
+        "text": "实习生 sicherstellen 负责 Kapazitaetszeile aic-server-local 或 aktualisiert sie。",
+        "source_sha256": "2d01a6b0cd61371a94f5beb943f57d0827c06d34dc4c813136de8280841a2346"
+      },
+      "bullets[2]": {
+        "text": "Probe-Platzierung fuehrt a Dry-Run-Auswahl 与 geringster Last aus (oeffnet keine Benutzersitzung)。",
+        "source_sha256": "dfad522163cf4991d7dd3a30c9919a9e2ccb849362c8b3a616d1663942c6b92c"
+      },
+      "bullets[3]": {
+        "text": "SSH-Vermittlung ist unabhaengig — siehe Verbindungspunkte for SSH-/RDP-Ziele。",
+        "source_sha256": "2be1fb07750e3914851b5ed3c3bd4d168cf36f3cd42931cd6bd4d68d799966e0"
+      },
+      "bullets[4]": {
+        "text": "Operator-Leitfaden：文档 → Admin-Handbuecher（跳转/Sitzungs-Proxy）。",
+        "source_sha256": "76a4a500fd965499b8a873d522a642949077adb072702d7338cdf58f0e033a12"
+      },
+      "helpAriaLabel": {
+        "text": "打开 Jump Fleet 和负载平衡的帮助",
+        "source_sha256": "b12323eeb4668ff9eb831e0d4736e2d81dbad135b771341cf16020af8236bef6"
+      },
+      "summary": {
+        "text": "配置跨外部 Jump 主机和本地 AIC 服务器端点的 Jump/记录代理容量。使用探针放置进行测试放置；排水或权重主机以实现负载平衡。",
+        "source_sha256": "6cab6d20b5e0a9667d8ea5382a1475a90ffbe255268df716e889c02ada56021b"
+      },
+      "title": {
+        "text": "跳跃舰队和负载平衡",
+        "source_sha256": "f89b99add7792a5f141bd0a839a5574dd21d40a079b12bc9c0e3ce721288c053"
+      }
+    },
+    "pam__live__ot": {
+      "bullets[0]": {
+        "text": "Die Aufzeichnung laeuft，bis 会议结束。",
+        "source_sha256": "79f4544505936e9e78b5f35d6d9f6709aa1232c16313c13e0964bf15681ea9d3"
+      },
+      "bullets[1]": {
+        "text": "Nach the Beenden ist a neues Connect / Oeffnen noetig — diese Seite setzt keinen geschlossenen Kanal fort.",
+        "source_sha256": "ee5ed0dfffcea8e2e3bff8165b45a79aab311b093b6c4296d0ac8ac60c2a02a3"
+      },
+      "helpAriaLabel": {
+        "text": "帮助 zur Live-OT-Session 关闭",
+        "source_sha256": "fcad10c98b51156d319bd4fb48ccbffdf92e40ce23c6ed2fd8b998f990ea0424"
+      },
+      "summary": {
+        "text": "Interaktiver aufgezeichneter Sitzungsviewer。 Trennen 或 Zurueck fuehrt zur Seite，属于 Sie verbunden haben。",
+        "source_sha256": "8cf3f183dbfc26278beae76d46c56aafbee4e181ce35a16cfde9a6ec56bbd287"
+      },
+      "title": {
+        "text": "现场加班会议",
+        "source_sha256": "8440d38cb4237d200544e57b3079e76e37e285dfe9be04bcee91466eb4117152"
+      }
+    },
+    "pam__live__rdp": {
+      "bullets[0]": {
+        "text": "Die Aufzeichnung laeuft，bis 会议结束。",
+        "source_sha256": "79f4544505936e9e78b5f35d6d9f6709aa1232c16313c13e0964bf15681ea9d3"
+      },
+      "bullets[1]": {
+        "text": "Nach the Beenden 是一个新的 Connect / Oeffnen noetig — 位于运河堡垒附近。",
+        "source_sha256": "ee5ed0dfffcea8e2e3bff8165b45a79aab311b093b6c4296d0ac8ac60c2a02a3"
+      },
+      "helpAriaLabel": {
+        "text": "帮助 zur Live-RDP-Session 关闭",
+        "source_sha256": "0c303678c87fd51464b5b6c511792034ba6b50f0e7835e4dcee17b0cab836b57"
+      },
+      "summary": {
+        "text": "Interaktiver aufgezeichneter Sitzungsviewer。 Trennen 或 Zurueck fuehrt zur Seite，属于 Sie verbunden haben。",
+        "source_sha256": "8cf3f183dbfc26278beae76d46c56aafbee4e181ce35a16cfde9a6ec56bbd287"
+      },
+      "title": {
+        "text": "Live-RDP-Session",
+        "source_sha256": "f92175ae9525df488a6da8a08e863b9f93370e2decd2a6302fa778a865e4d2c4"
+      }
+    },
+    "pam__live__ssh": {
+      "bullets[0]": {
+        "text": "Die Aufzeichnung laeuft，bis 会议结束。",
+        "source_sha256": "79f4544505936e9e78b5f35d6d9f6709aa1232c16313c13e0964bf15681ea9d3"
+      },
+      "bullets[1]": {
+        "text": "Nach the Beenden 是一个新的 Connect / Oeffnen noetig — 位于运河堡垒附近。",
+        "source_sha256": "ee5ed0dfffcea8e2e3bff8165b45a79aab311b093b6c4296d0ac8ac60c2a02a3"
+      },
+      "helpAriaLabel": {
+        "text": "Live-SSH-Session 帮助",
+        "source_sha256": "249ae10fa87a430b4251c035a1b8b062d092d0eb7dfb1cc825bde3f738810200"
+      },
+      "summary": {
+        "text": "Interaktiver aufgezeichneter Sitzungsviewer。 Trennen 或 Zurueck fuehrt zur Seite，属于 Sie verbunden haben。",
+        "source_sha256": "8cf3f183dbfc26278beae76d46c56aafbee4e181ce35a16cfde9a6ec56bbd287"
+      },
+      "title": {
+        "text": "实时 SSH 会话",
+        "source_sha256": "ea6200de21d17871e3ad620c5d9dbb49c244e883df7955b92a5031366ac4b9a4"
+      }
+    },
+    "pam__live__vnc": {
+      "bullets[0]": {
+        "text": "Die Aufzeichnung laeuft，bis 会议结束。",
+        "source_sha256": "79f4544505936e9e78b5f35d6d9f6709aa1232c16313c13e0964bf15681ea9d3"
+      },
+      "bullets[1]": {
+        "text": "Nach the Beenden 是一个新的 Connect / Oeffnen noetig — 位于运河堡垒附近。",
+        "source_sha256": "ee5ed0dfffcea8e2e3bff8165b45a79aab311b093b6c4296d0ac8ac60c2a02a3"
+      },
+      "helpAriaLabel": {
+        "text": "Live-VNC-Session 帮助",
+        "source_sha256": "7010566fcbd9a99d4a5a84d8188df2a8ba162ecb6f2a4bd1e6b8e41491ba40a8"
+      },
+      "summary": {
+        "text": "Interaktiver aufgezeichneter Sitzungsviewer. Trennen or Zurueck fuehrt zur Seite, of the Sie verbunden haben.",
+        "source_sha256": "8cf3f183dbfc26278beae76d46c56aafbee4e181ce35a16cfde9a6ec56bbd287"
+      },
+      "title": {
+        "text": "实时 VNC 会话",
+        "source_sha256": "5ffb66048c48c34cb96620fe515e9316e3a418063e4e5c3c51afd1bd39cfb5a0"
+      }
+    },
+    "pam__my-requests": {
+      "bullets[0]": {
+        "text": "Neue Anfragen of Verbindungspunkten 或 Berechtigungen einreichen，wenn 政策 Genehmigung verlangt。",
+        "source_sha256": "68a6a4dff9d93e372167f0c5552cb7d0344c7899879b79b8bc3439fb076de564"
+      },
+      "bullets[1]": {
+        "text": "功能增强后，请注意该功能。",
+        "source_sha256": "36e99ac69a8725e7480d141953704f0ea426c3778b8e864df8073bc934dd5ae1"
+      },
+      "helpAriaLabel": {
+        "text": "打开主动资助的帮助",
+        "source_sha256": "e72c7d02fc02ed414ab3973ceaad468755249ddf000c02db6bce5a5a034a918e"
+      },
+      "summary": {
+        "text": "Standing and just-in-time access grants assigned to you. Sign off when finished with a session.",
+        "source_sha256": "44dd46437a571372b72b2c7795f9e43e47fbb263c994794b5bdaeb5a710afcc9"
+      },
+      "title": {
+        "text": "积极资助",
+        "source_sha256": "41a811b782ad6a9059035ec7c48828bdc1d5623736c23b9c55d8d26595025456"
+      }
+    },
+    "pam__ot-connect": {
+      "bullets[0]": {
+        "text": "OT 会话可支持 SSH、RDP 或 VNC 桌面。",
+        "source_sha256": "062724c7503580798ea4d8f624c79ed8b36708467d5e7a1d86f82e247daaf7ea"
+      },
+      "bullets[1]": {
+        "text": "Vor the Connect „Erreichbarkeit pruefen“ in the Statusbanner ausfuehren.",
+        "source_sha256": "40094fa0648b12b8f29df53f3bc18c4109e2049f5911b9973a8e5f83beb5ea69"
+      },
+      "bullets[2]": {
+        "text": "Mit gebundener Vault-Zugangsdaten 可以连接会话坚果。",
+        "source_sha256": "b800b2db1907a137a8234d42e97e66f4b4ef575ec4347f8dc95fa82c28665585"
+      },
+      "helpAriaLabel": {
+        "text": "打开 OT Connect 帮助",
+        "source_sha256": "dae893e7ef216c7a8fb3022e3d427adfba62d58692673c04db17c522a0b9b792"
+      },
+      "summary": {
+        "text": "从资产列表连接操作中打开 OT 协议会话。",
+        "source_sha256": "f4e1e47e255ecb5c4e498fb240f0e9b71d99a3ad796fc2bab8dc7515d38042f8"
+      },
+      "title": {
+        "text": "连接",
+        "source_sha256": "1a2303ede07493acc7caaa7c737f3c52bcc9cf04372be19ed1b0af6b9f2c791e"
+      }
+    },
+    "pam__ot-credentials": {
+      "bullets[0]": {
+        "text": "Altes Passwort leer lassen 为 gespeicherte Passwort。",
+        "source_sha256": "7be70ce38d38153274138bd60fb361dda166ae72adcc44245fce3e30e2f803ff"
+      },
+      "bullets[1]": {
+        "text": "Zeitplaene pro Ziel auf jeweiligen Konfigurationsseite。",
+        "source_sha256": "31cebb6f6ab23dfa7253cc5bf7be9fbe11524eb4a4ee01b80b94e912e3a4176f"
+      },
+      "helpAriaLabel": {
+        "text": "Open help for OT Credentials",
+        "source_sha256": "6a60d949389a35628d09bb7e7d366b442399e5ae32f9b7789f4ad2b7e0c36c56"
+      },
+      "summary": {
+        "text": "Rotate OT passwords on demand and request break-glass reveal.",
+        "source_sha256": "f9980d2aeb0688ebc528f216b306d7952902b5f49ed9343e1ac66b4731531096"
+      },
+      "title": {
+        "text": "Credentials",
+        "source_sha256": "d48a617c7da5163c44f117b9b23d8c920e69b4aa83d7b6570d71a66f3a857183"
+      }
+    },
+    "pam__ot-discovery": {
+      "bullets[0]": {
+        "text": "IPv4-CIDR-Netze eingeben，为 Sofortscan 提供“Erkennung starten”。",
+        "source_sha256": "80cbef4bb0507b343a653e7b2464d714d7ef58781370c36e296080c8320d3114"
+      },
+      "bullets[1]": {
+        "text": "Status „Teilweise“ erklaert the Luecke and naechste Action in the Tooltip.",
+        "source_sha256": "015f063c447d70a5fdc70b81a97e6da95f9b65eb05e69ee04fb53d799a079b7f"
+      },
+      "helpAriaLabel": {
+        "text": "打开 OT Discover 帮助",
+        "source_sha256": "0d908deeeee5811673d0d121505444625c0db2f0133e2c66b7afcd710af3655b"
+      },
+      "summary": {
+        "text": "设置扫描网络、运行 OT 发现作业、编辑计划启用和间隔以及审查资产。",
+        "source_sha256": "9797dd303abfb8f5fad80803372404fb6d84488b51ff5e087de20f420645e5ee"
+      },
+      "title": {
+        "text": "发现",
+        "source_sha256": "d4a33d5b78bccebe3f16843dc30e6c0f73b4eb6efb4e7114ddfebde7fa2c9954"
+      }
+    },
+    "pam__ot-inventory": {
+      "bullets[0]": {
+        "text": "将 oeffnet 连接到 OT 协议 — 不是 SSH、RDP 或 VNC。",
+        "source_sha256": "cc16bcc2efbda2cac14194f20637bcb52450b9239e04b054f77bfd32c383db7f"
+      },
+      "bullets[1]": {
+        "text": "Konfigurieren oeffnet not-geheime Zieleinstellungen。",
+        "source_sha256": "4cf8956a3ea54c99e0c15a9cb538df18eb446a12d0e3612bce25f156ecf5ae35"
+      },
+      "helpAriaLabel": {
+        "text": "打开 OT 库存帮助",
+        "source_sha256": "8f7a2e66ccb7e5548a6929237d4f3f7e94dbb72b059b3792e04dcb5bb0d21c4c"
+      },
+      "summary": {
+        "text": "OT 资产列表。部分意味着尚未在探测器上运行 - 将状态芯片悬停以进行下一步操作。",
+        "source_sha256": "9d1e2107b072cbb7f193545da432e729c611314c4c8b37b4a8b9b023587fa5a6"
+      },
+      "title": {
+        "text": "存货",
+        "source_sha256": "758f487fe8e9fcc59cec4694d95a9032224f967b29f39543a1fb04e2901b079e"
+      }
+    },
+    "pam__ot-rotation": {
+      "bullets[0]": {
+        "text": "Altes Passwort leer lassen 为 gespeicherte Passwort。",
+        "source_sha256": "7be70ce38d38153274138bd60fb361dda166ae72adcc44245fce3e30e2f803ff"
+      },
+      "bullets[1]": {
+        "text": "Zeitplaene pro Ziel auf jeweiligen Konfigurationsseite。",
+        "source_sha256": "31cebb6f6ab23dfa7253cc5bf7be9fbe11524eb4a4ee01b80b94e912e3a4176f"
+      },
+      "helpAriaLabel": {
+        "text": "打开 OT 凭证帮助",
+        "source_sha256": "6a60d949389a35628d09bb7e7d366b442399e5ae32f9b7789f4ad2b7e0c36c56"
+      },
+      "summary": {
+        "text": "Rotate OT passwords on demand (same workspace as Credentials).",
+        "source_sha256": "7a274327e9c695ed7a0f57d30f6d3a82c12031e6922b8c840f336666111b7359"
+      },
+      "title": {
+        "text": "证书",
+        "source_sha256": "d48a617c7da5163c44f117b9b23d8c920e69b4aa83d7b6570d71a66f3a857183"
+      }
+    },
+    "pam__ot-sessions": {
+      "bullets[0]": {
+        "text": "时间线的 Sitzungszeile oeffnen。",
+        "source_sha256": "0fd0d29ce8acee545559479095240c1ecb43105e1969d872d912691e0b91b00f"
+      },
+      "bullets[1]": {
+        "text": "OT-Protokollsitzungen — 主要的 SSH-、RDP- 或 VNC-Aufzeichnungen。",
+        "source_sha256": "c24aa35ed9e6fd0fc9b4f226431eded59b775a0095596fa65c9a01149c114c59"
+      },
+      "helpAriaLabel": {
+        "text": "打开 OT 会话的帮助",
+        "source_sha256": "1343f91cfac9d8d8952e16b17ec6d57721e3a2055a228c77e38abf005dc75c03"
+      },
+      "summary": {
+        "text": "审查公开 OT 会议和会议证据。",
+        "source_sha256": "a48b11497240464d54dee92d43944d9b723acb1807c1d6d87d3114f1dc6d387e"
+      },
+      "title": {
+        "text": "会议/证据",
+        "source_sha256": "e1dc0bdde30ae558c4c233fdafc95c2e946e0b762d7217d59bee78b4c29245a2"
+      }
+    },
+    "pam__ot-startup-wizard": {
+      "bullets[0]": {
+        "text": "为 jedes akzeptierte 资产注册 schreibt Audit-Eintraege (ot_inventory_enroll)。",
+        "source_sha256": "de5c40dab2c992585d19ec5abf90bdb910e40184552b4ddb6bf3b3f93664d908"
+      },
+      "bullets[1]": {
+        "text": "Status-Chips nutzen Live、Teilweise 或 Blockiert — Liefernachweis、kein Compliance-Urteil。",
+        "source_sha256": "3a059029f49d5b47395f82c956b7e575adbadc494615dc55df2ee4ab745c1a94"
+      },
+      "helpAriaLabel": {
+        "text": "打开 OT 启动向导的帮助",
+        "source_sha256": "47ff8a6c5bd61a19f146d763ad3a848f04e9d3a242eb044d952518692f3816b4"
+      },
+      "summary": {
+        "text": "引导式设置：命名环境、运行发现、检查目标并将其注册到清单中。",
+        "source_sha256": "1fe96afd2040036089256ee5df2a2825c04102985a10dd6238a94cb7db490b97"
+      },
+      "title": {
+        "text": "启动向导",
+        "source_sha256": "f0324c059c45638ca445decb1d6ff29699ae874adc031002ea85efde2f3f0398"
+      }
+    },
+    "pam__session-control": {
+      "bullets[0]": {
+        "text": "Jede Action 会提供文档并记录审计事实。",
+        "source_sha256": "1d8d6a10143a6a232f5887498453aac011f4c418a9364a6d2e04c364c57dc8bd"
+      },
+      "bullets[1]": {
+        "text": "横幅上的 Ausstehend- 和 Aktiv-Zaehler erscheinen 光栅。",
+        "source_sha256": "4093be59dc2aa59ccca3801d231e0d30eedbccdab2f74da55999895e503839bd"
+      },
+      "helpAriaLabel": {
+        "text": "打开会话控制帮助",
+        "source_sha256": "ac5e6c5eea97afdd35b73df9b42d36b4059fd57b9161b560113ce88d61cefb25"
+      },
+      "summary": {
+        "text": "监视、批准、拒绝和终止特权代理会话。与“在我的工作站上连接”或“在连接点上打开”不同。",
+        "source_sha256": "bb5c03d814a759217803a8b6d35c2028ee115a924a0c578eb48004a63394ffed"
+      },
+      "title": {
+        "text": "会话控制",
+        "source_sha256": "25f4f0d5ccddecf2a4f192b81ad8082c84f243ab5065618c6eca38a28985eb0f"
+      }
+    },
+    "pam__sessions": {
+      "bullets[0]": {
+        "text": "Jede Zeile 已链接至 einer Detailansicht，在浏览器中查看和查看。",
+        "source_sha256": "f3448ea457b57b5d55380c82988750be5657c2065a43bd42f36d5e177afd0958"
+      },
+      "bullets[1]": {
+        "text": "Entscheidungs-Chips zeigen Erlaubt 或 Verweigert zum Aufzeichnungszeitpunkt — kein 合规性-Urteil。",
+        "source_sha256": "ecb0c7950f44d76260a9fa087a9dcbbac25b27a41e4a08c90f06cd0c93135bb6"
+      },
+      "helpAriaLabel": {
+        "text": "打开会话录音的帮助",
+        "source_sha256": "a77299490c116f80d81395566a17f825b7d9e06801969ef4fd295dfbeef026d1"
+      },
+      "summary": {
+        "text": "浏览和重播加密的代理会话录音（SSH asciicast、RDP MP4 和相关格式）。",
+        "source_sha256": "ce6de765f7137a8cde051df1e14b863383ec03465f50d00dc3745c208c84920c"
+      },
+      "title": {
+        "text": "会议录音",
+        "source_sha256": "2627b4d32c12839a86cabeab7d569787d5f0d34bef8c1827449f005b46f1c530"
+      }
+    },
+    "privilege-jobs": {
+      "bullets[0]": {
+        "text": "Anwenden-Transport waehlen：Lokaler 代理或远程非代理本地提升 (WinRM)。",
+        "source_sha256": "8dc991028a1044ac1b11a9b0f344192226e1f783005a1791a518e39a29295f24"
+      },
+      "bullets[1]": {
+        "text": "Verzoegerung (Start wann) 和 Dauer (Laufzeit bis Auto-Widerruf) setzen。",
+        "source_sha256": "9a4ee4781ba551f778c18648f64bd4b540d8933a097e78f6799ec340adeb0b4c"
+      },
+      "bullets[2]": {
+        "text": "WinRM 公式是远程非代理本地高程下的/高程。",
+        "source_sha256": "766741d901623c4d6999a74f3703487e858af6d3caffcd11f703c94ad7b7322b"
+      },
+      "helpAriaLabel": {
+        "text": "打开直接高程帮助",
+        "source_sha256": "e8da4f6e9c74344246b8ad05c7d6822f05a2746ac96a6c59c5fd7828f44a1545"
+      },
+      "summary": {
+        "text": "服务器通过本地代理或远程非代理本地提升 (WinRM) 启动有时限的成员身份。在配置域控制器之前，域组提升保持不可用。",
+        "source_sha256": "368b45b440259001ed597200c56ff61b0ac62198845266bfd1a476099b93bf30"
+      },
+      "title": {
+        "text": "直接高程",
+        "source_sha256": "a5a51f424e108e4e1ceed6da7ee172e65a89218c4cd5c6d144859cb119930471"
+      }
+    },
+    "proxied-access": {
+      "summary": {
+        "text": "SSH and RDP session brokering: connection points, recordings, recording agents, OCR metadata pipeline, storage locations, session control, command governance, and access request approvals. Credential Vault lives under Access & Identity.",
+        "source_sha256": "b443097e8554014422d747976c403ce6ffc556f79f451f99e4acf5ca10e3575d"
+      },
+      "title": {
+        "text": "代理访问",
+        "source_sha256": "ef5942ac2ea13500a9d637b4e078123c18e004de2b783f1c5516d2491afbe47b"
+      }
+    },
+    "remote-access": {
+      "bullets[0]": {
+        "text": "将 oeffnet 连接到 aufgezeichnete 代理会话，并使用 PAM-Verbindungspunkt zum Host passt。",
+        "source_sha256": "4d00e91a6742ed747a4b107b3a8de34434b4a3536baf3ebb0f2dfdb636fc4e9f"
+      },
+      "bullets[1]": {
+        "text": "浏览器中的Favoriten 和Zuletzt verwendet werden nur。",
+        "source_sha256": "698a2f212eb111dd4b2c6744fa86ae3834bb4319b4aa298bd2ede95a2e2b71cb"
+      },
+      "bullets[2]": {
+        "text": "Wenn Sie nur Ihre zugewiesenen Arbeitsplaetze brauchen，nutzen Sie Meine Arbeitsplaetze。",
+        "source_sha256": "690aee3e2a2b42927a32c6f3e550edc611983b5a1a43f61df182398b9d06f437"
+      },
+      "helpAriaLabel": {
+        "text": "打开远程访问帮助",
+        "source_sha256": "36b298664d66fb39c3a47ddab3c457d13dd274fc71f7adc2096d026ec9f876f1"
+      },
+      "summary": {
+        "text": "具有会话通道的系统的操作员连接表面。需要连接目标权限；评估员和最终用户改用系统或我的工作站。",
+        "source_sha256": "5cd9402d9dfcd67bf17ad1e07ef105a830e59a2e6f8be8e8ec6a27372b23ea0f"
+      },
+      "title": {
+        "text": "远程访问",
+        "source_sha256": "7946a3c57900c0161ebb446d0e12581a1d471e1e756286511f16d2024bc8333c"
+      }
+    },
+    "reports": {
+      "bullets[0]": {
+        "text": "Berichtszentrum (diese Seite)：目录、Zeitplaene、Zustellung 和 Archive。",
+        "source_sha256": "9db980bc4329375f1af9759268dc5d0d902a9f6733a470091d5ce13fbb3f11ac"
+      },
+      "bullets[1]": {
+        "text": "评估 Binder：lebendiger CMMC-Enclave-Binder 与 Exportformaten（评估下）。",
+        "source_sha256": "187c074aea2155bae2bc2a919f82d28cff1b59ba5b70c20b757ebd73de35d079"
+      },
+      "bullets[2]": {
+        "text": "Aktueller Compliance-Stand: Posture and Feststellungen pro Maschine (unter Assessments).",
+        "source_sha256": "24048df995ba84348b71d3bd824629e58ba2f13b673ba0e132ada25a073f5863"
+      },
+      "bullets[3]": {
+        "text": "Externe Arbeitsplatz-Bereitschaft: ERASG-verbindende Clients (unter Assessments; Legacy-Bookmarks workstation-assurance leiten dorthin um).",
+        "source_sha256": "221b1d7199886325d73ad54bec040d3a2c73013809700a448ace25987de555c1"
+      },
+      "bullets[4]": {
+        "text": "Berichtsvorlagen (diese Berichtsgruppe) / 探针包（评估下）：Praesentationsoverlays 和 skriptierte Nachweise。",
+        "source_sha256": "4f436cc2b94d6e70ace28b55d60334b16c5bb7a9d2d85db04566bc3a61afbf04"
+      },
+      "bullets[5]": {
+        "text": "目录启动 PDF、CSV 或 JSON-Laeufe，带有典型过滤器和分类。",
+        "source_sha256": "1aedafd4177480b72be8b4373fbf3cc72d6f18071beeb9c28b52fd5a2d97cd5a"
+      },
+      "helpAriaLabel": {
+        "text": "打开报告中心的帮助",
+        "source_sha256": "858e26b128ab5a240ba67207f7c877b78280f63592bb4f48426baf4e08e4606c"
+      },
+      "summary": {
+        "text": "在“合规性与证据”→“报告”下查看运营和合规性证据。评估活页夹、当前状态合规性和外部工作站准备情况位于合规性和证据 → 评估下。",
+        "source_sha256": "9016e5d1a992fe34f90fbe1027b9f98b3a411face7b8fa53d2cde6e637b53f91"
+      },
+      "title": {
+        "text": "举报中心",
+        "source_sha256": "77ecbfb06f1a609280278311cc52101ed3552be5670a1b26e4c17a7a6d17b475"
+      }
+    },
+    "reports__templates": {
+      "bullets[0]": {
+        "text": "Mitgeliefert = schreibgeschuetzt 与正常康特拉斯特; Hauptaktion ist Als benutzerdefinierte Vorlage klonen。",
+        "source_sha256": "4494af878c60a1a1221542f4d79d09ad9b610db73be317164ca3321cb754339e"
+      },
+      "bullets[1]": {
+        "text": "Eigene Overlays duerfen Beschriftungen/Spalten/Wortlaut aendern；达滕奎勒和收藏家 bleiben mitgeliefert。",
+        "source_sha256": "408f2d0be0dfa883465c0cdf444984f68a447badae3806d38b24639bfddeebc5"
+      },
+      "bullets[2]": {
+        "text": "Drift-Hinweise erscheinen，来自 Ursprungsversion 的 Mitlieferung fortschreitet；归档nur 软删除。",
+        "source_sha256": "074d64eb653a064b5f3ef181ad0db8f2398d89e4dde024943ea6061b0fd369d9"
+      },
+      "helpAriaLabel": {
+        "text": "打开报告模板的帮助",
+        "source_sha256": "458a55ea83161c0710f3df5f3d619f566feb193450067e5606105caff4eaea99"
+      },
+      "summary": {
+        "text": "提供报告中心定义（不可变）和多租户自定义演示覆盖。",
+        "source_sha256": "2eddd9577d6f583ee37969213311917e8d7360503ae1b251318b2bfc8d2c604a"
+      },
+      "title": {
+        "text": "Report Templates",
+        "source_sha256": "6c355b0cbdc0818809744f3fb18507f8ab92d2afba980d04250d60c5406caea5"
+      }
+    },
+    "root": {
+      "bullets[0]": {
+        "text": "Fehlende Kacheln zeigen “Noch not verfuegbar” — nie a erfundene Null。",
+        "source_sha256": "97ba6285068005706f1e7f090c9f694836a1efed630ce0616c74455e7c6459d5"
+      },
+      "bullets[1]": {
+        "text": "Teilweise Kacheln 与 kurzer Begruendung 一起作为“Teilweise”标记。",
+        "source_sha256": "b4eac29e25d6c8dfb9e6eb3dd5bf29dd9ab336160e91de832853d90d1bb5b7b7"
+      },
+      "bullets[2]": {
+        "text": "Anpassen 与 Nach oben / Nach unten。 Veroeffentlichen Org-Vorgabe erfordert 仪表板.publish。",
+        "source_sha256": "6a45bdf5fd2a2ba99ef38f37fa5933393f30b6da7fc121a60870bf63fb642c69"
+      },
+      "bullets[3]": {
+        "text": "Aufgaben-列根至法沃里滕的捷径。",
+        "source_sha256": "402d96fbe5b70c4820b1c4651a216948ac5bae94fac16ccf994599b0a2a5656b"
+      },
+      "bullets[4]": {
+        "text": "Ohne 仪表板.查看 werden Sie 到 favoriten weitergeleitet。",
+        "source_sha256": "0c580564f7d2f4bb71c4ff588c5a852631fca225b9a431148702ea10086cb755"
+      },
+      "helpAriaLabel": {
+        "text": "打开仪表板帮助",
+        "source_sha256": "5471d553e22bc57b3a20fe8c63ec6964a0dc5078f99e12f85589ac93469eb4f1"
+      },
+      "summary": {
+        "text": "执行交付图块分为证据覆盖范围、风险和暴露以及已执行的工作。计数仅描述产品交付，而不是覆盖率百分比，也不是评估结论。任务快捷方式现在位于收藏夹中。",
+        "source_sha256": "bb87867dc88fb681f41e026a8d85f842d6b19ed8e07331db6fbff72068ab7783"
+      },
+      "title": {
+        "text": "仪表板",
+        "source_sha256": "67b696468610b879ed7f224dbf6b0861f27e39d20454cb9d7af1ec52d3e5eeaa"
+      }
+    },
+    "secure-share": {
+      "bullets[0]": {
+        "text": "Nutzen Sie 在 Formate、Schluesselverwahrung 和 wann Teilen 与 Export 网站上的“So funktioniert the Verschluesselung”。",
+        "source_sha256": "5883e12b5e1d7c6ac1d980b21061e3e6e365c8c8a2e533c51bc39cd360ec65b6"
+      },
+      "bullets[1]": {
+        "text": "CUI darf 不是 Klartext-Export verlassen — nur verschluesselter Austausch 或 ACL innerhalb des Enclave。",
+        "source_sha256": "31f8cd1a67632614de83eb29c91ffe8ee1265f445bf1d54d935d28589e6575e1"
+      },
+      "bullets[2]": {
+        "text": "Armored-Export ist dasselbe Paket with ASCII-Huelle for Paste-Kanaele, keine PGP-Nachricht with oeffentlichem Schluessel.",
+        "source_sha256": "0531989bd5e90fe9701fc3ce9a3b75a6b87c21f923e883823ad57b55f6c51edc"
+      },
+      "helpAriaLabel": {
+        "text": "打开安全共享的帮助",
+        "source_sha256": "7aece7d2e8234a4581dd0070c616d00216b3826fd3373d0bd651bf2cb62703ed"
+      },
+      "summary": {
+        "text": "用于登录、笔记和文件的加密保管库。通过管理访问权限共享此飞地内的内容。导出的 .json 包使用 AIC UniversalEnvelope 加密（不是 OpenPGP）；导入仅适用于拥有相同保管库密钥的 AIC 服务器。",
+        "source_sha256": "186154eb4445b7dc457dc78dbffa10e69a92b58b62e13a1835f216b9f6c80021"
+      },
+      "title": {
+        "text": "安全共享",
+        "source_sha256": "c2b1d79f4ae639052940dccfcbb6d0146e3661b36ca208d1cae0b50b22a019f4"
+      }
+    },
+    "settings": {
+      "bullets[0]": {
+        "text": "配置 → Agent umfasst Einstellungsdateien、Bereitstellung 和 Vorgaben，在 ausgegebene Agent-Settings geschrieben werden 中。",
+        "source_sha256": "72ed8b03495daf26397c990a4b45167a4a745b941addc70180ea43f3c40ea91f"
+      },
+      "bullets[1]": {
+        "text": "配置 → 服务器 umfast TLS、Identitaetsanbieter、Krypto、消息传递和服务器管理。",
+        "source_sha256": "17ca289d1c3bd4f3e0e24f9e80c166f698033a88ab8729e9d68876ee4d5bb184"
+      },
+      "bullets[2]": {
+        "text": "Unternehmensprofil haelt Organizationsnamen 和 Kontakte for Hinweise；飞地的 Ersteinrichtung 中的 Erstconfigurations-Assistant fuehrt。",
+        "source_sha256": "765536f45af6709c1c359f4fdb97075ae84439a61c511d4ea56ab3510955e877"
+      },
+      "bullets[3]": {
+        "text": "Nutzen Sie the Schnellsuche (Strg+K)，直接启动配置。",
+        "source_sha256": "91ceffdffb394e1bb884a4f95e338a62e0fd2a81ada328c584356ab27bcc4099"
+      },
+      "summary": {
+        "text": "Configure agent defaults, this server platform, operator messaging, and lab-only tools.",
+        "source_sha256": "01d15594ca6f8a68464ce4781c5ed6be15cdee3e32f981ad5c0bd3f2e2547d61"
+      },
+      "title": {
+        "text": "Configuration",
+        "source_sha256": "b332c3492d5eb10a118eb6d8b0dcd689bc2477ce2ae16b303753b942b54377bc"
+      }
+    },
+    "settings__agent": {
+      "summary": {
+        "text": "Agent settings files, fleet provisioning, and the program-level defaults written into every agent at provision time. Open from Configuration → Agent.",
+        "source_sha256": "44e503117c5e64ac4a3091aa6678df18d003c0daa22cc6dd77e0ffdc66230165"
+      },
+      "title": {
+        "text": "代理概览",
+        "source_sha256": "0fc079dd3842137ea97966660fd6142ed41cda042955a4e72a7d49beeab58540"
+      }
+    },
+    "settings__agent__fleet-versions": {
+      "bullets[0]": {
+        "text": "Daten Teilweise / Live — zusammengesetzt aus /admin/systems Check-in-Anreicherung； kein Live-AppConfig-Snapshot。",
+        "source_sha256": "e6ec1862d73434f4abc1f10cc5a9248d8fa0de26c45d26fe08279caa2c610215"
+      },
+      "bullets[1]": {
+        "text": "Push-Erreichbarkeit 是指并置的 Push-IPC pruefbar； entfernte Zeilen zeigen Selbstmeldung 或 not-of-diesem-Server。",
+        "source_sha256": "1cf52ccb94c37efe296496e2372840a75aa1c41923d045d4afa7123b22b96039"
+      },
+      "bullets[2]": {
+        "text": "Deep-Links to Propagierung, Offenlegungen, Recording-Agents and Passwortwiederherstellung bleiben auf the bestehenden Seiten.",
+        "source_sha256": "1b65eade273f0ec61e1cff51590146609efa1b01ee257dca9c2e35be33a815bc"
+      },
+      "helpAriaLabel": {
+        "text": "打开舰队代理版本的帮助",
+        "source_sha256": "87701a8eb17979b49afae89f83745cdc6bb85d81a318edff78a9847d89874bb6"
+      },
+      "summary": {
+        "text": "只读机群表：机器、代理版本、签入年龄、推送可达性和系统列表中的运行时警告。",
+        "source_sha256": "777c30a4cba73f9c925abbc4a8272f0bbb19be6f9c629d98b91ce4ff81521843"
+      },
+      "title": {
+        "text": "车队代理版本",
+        "source_sha256": "c418347b4ac585559970d35e3d5ac3c595675282a3840fbe2509e91136cd7e67"
+      }
+    },
+    "settings__agent__management": {
+      "bullets[0]": {
+        "text": "Getrennte / luftgekapte 托管 Tauri-、Win32- 或 CLI-Konfiguratoren 的坚果味。",
+        "source_sha256": "3477e1d713a90c68a433b5925d8fdc617c9988627905cc762d070cc31fc3d561"
+      },
+      "bullets[1]": {
+        "text": "Der Tab Faehigkeiten verlinkt to Propagierung, Offenlegungen, Recording-Agents and Passwortwiederherstellung unter Endpunkte — keine doppelten Workflows.",
+        "source_sha256": "efaa486393c47ce793a5a15631ea711379d8db6e90d866166d9844eede72e2b8"
+      },
+      "bullets[2]": {
+        "text": "Flotten-Agent-Versionen ist a eigene schreibgeschuetzte Tabelle aus the Anreicherung the Systemliste.",
+        "source_sha256": "6805793ae3e43db8b3afb0a2b376c40678136c76216459e25e2e92437bb38e3b"
+      },
+      "helpAriaLabel": {
+        "text": "打开代理管理帮助",
+        "source_sha256": "e2319669afc10415c7ab09961733efeadc9afe33d0940b5d187a9a13deab6807"
+      },
+      "summary": {
+        "text": "Central hub for connected enrolled agents: last check-in overview, allowlisted Push settings, Reload/diagnostics, and capability deep-links.",
+        "source_sha256": "683d1f7685ca8f1fca6f7a89cbde84dca73f0fb744c09661f11ae24b0822789e"
+      },
+      "title": {
+        "text": "代理管理",
+        "source_sha256": "1501a898a9d8652df45ba47b7c8de147664f3c2e79a597ef166336aaee930b72"
+      }
+    },
+    "settings__agent__propagation-templates": {
+      "bullets[0]": {
+        "text": "Ablauf：Im Katalog bearbeiten & speichern → 安装 Pushen → Identitaeten Binden → Am Agent testen。",
+        "source_sha256": "0b0b8da3300d732196298a612d1e257cbf7c2517d60494747e76219beb658a00"
+      },
+      "bullets[1]": {
+        "text": "Phasen：预旋转（beruhigen）→ Passwortaenderung → 验证（后旋转）。在 Push 中测试 Agent-Kopie。",
+        "source_sha256": "bb801bee89c44e6e814df5d669303e6b9db33ed1e4342a6a89ad24e1b649d1a8"
+      },
+      "bullets[2]": {
+        "text": "Lebenszyklusphasen 中的 Skripte laufen（预旋转，验证 usw。） — 不是 Sitzungsvermittlung（siehe Proxy-Zugriff）。",
+        "source_sha256": "eee234ac056c4218c020f5a284bf7efa05582d82fc6297cf9dd5a433e93aa7d2"
+      },
+      "bullets[3]": {
+        "text": "Aus Standardvorlage anlegen 用于 Lab-Skelett、或 Identitaeten binden 和 dieser Seite Pushen。",
+        "source_sha256": "25b2c166b1b0a5c339108ed2a4753bf6d6816177622c4ad65c8b164f6250016c"
+      },
+      "bullets[4]": {
+        "text": "Operator-Leitfaden：pim-offline-client/docs/PROPAGATION_SCRIPTS_LIFECYCLE.md",
+        "source_sha256": "f13733282dcfc7d4629cbd149b7f00a0a6ef4d9e5e8d1914303ac78f7e61cfcb"
+      },
+      "helpAriaLabel": {
+        "text": "Open help for Propagation Templates",
+        "source_sha256": "b8492eb974b668a72a6c9d61737dcedc54a20752c722f3ccbba85313961fe8fd"
+      },
+      "summary": {
+        "text": "Propagation script catalog for pre/post rotation scripts. Push script sets to connected agents or export for air-gapped endpoints.",
+        "source_sha256": "8cf89cc01b0dc3809000f3f13ec85e90b8beae2679947868b0f9e62fc2d8b5c1"
+      },
+      "title": {
+        "text": "传播模板",
+        "source_sha256": "048324f714c8fd03e17a37f119a09e5107b896399e08878a2ef0883fd478a5f6"
+      }
+    },
+    "settings__branding": {
+      "bullets[0]": {
+        "text": "Anmelde-Chrome 和 Admin-Offenlegungsbannern 上的 Klassifizierungs- 和 Hinweisfarben gelten。",
+        "source_sha256": "feceef9f1c68dc2b877d5ed593ab034c7abc2fcc4e1645468a0306886c762de5"
+      },
+      "bullets[1]": {
+        "text": "Standardfarben folgen AIC-Navy 和 Stahlblau aus 核心资产 (kein oranger Marken-Chrome)。",
+        "source_sha256": "a21e72bc6281b219fe306e72407803c05d79fd5de15161bb4f71524185b646c1"
+      },
+      "bullets[2]": {
+        "text": "Bannertext 的Offenlegungen bleibt 在服务器Offenlegungen / Operator-Offenlegungen 下。",
+        "source_sha256": "d0c10fa0270609c84f52c7117e070980e225522196f57955e19aa073bf1e90bd"
+      },
+      "summary": {
+        "text": "产品徽标、品牌名称和用于登录和管理的集中横幅/镀铬颜色。",
+        "source_sha256": "b056c687cdbb73357751b2dd586c1fdc2f1d5bc65db462e13225d72ff9c4f64a"
+      },
+      "title": {
+        "text": "品牌与风格",
+        "source_sha256": "ee7daadb4c5926d0379e81db39692ecd9f295038cb705ca7b0255a1a2ffbb106"
+      }
+    },
+    "settings__company": {
+      "bullets[0]": {
+        "text": "Kanonischer Speicher sind Variablen the Offenlegungsvorlagen (gleiche Werte wie Operator-Offenlegungen → Vorlagenvariablen).",
+        "source_sha256": "d736972f03dfb939bdfe1d6f5b3f2db5eb048b8ea0cfd4eb769c259887451735"
+      },
+      "bullets[1]": {
+        "text": "徽标、Markenname 和 Bannerfarben liegen unter Branding & Stil。",
+        "source_sha256": "30eab20865ed01a7c64ca5bea5eaf494c68b020c79d4d3ad9b9f5e46e6919e92"
+      },
+      "bullets[2]": {
+        "text": "Erweiterter Vorlagentext bleibt under Server-Offenlegungen / Operator-Offenlegungen。",
+        "source_sha256": "c4cde937687000eeeeb15d78d6f1ef2130eb8a5920733b019298fac0a6ce89bd"
+      },
+      "summary": {
+        "text": "登录通知、横幅和代理披露模板使用的组织名称、支持联系人和分类系统命名。",
+        "source_sha256": "b1e5b0b6fdcf6886cfc24e13b7bd2ce7b6075db9e521c3aac74a502e26281c01"
+      },
+      "title": {
+        "text": "Company Profile",
+        "source_sha256": "72e8825dea3b0030335bfaa60ef0cb0d432062b69ce6d0229f8a50dab34cdf08"
+      }
+    },
+    "settings__defaults__password": {
+      "bullets[0]": {
+        "text": "Laenge、旋转、Zeichenregeln 和 erweiterte Generierungsfelder bearbeiten； speichern per PUT /api/offline/settings。",
+        "source_sha256": "55e5504e9db8b2c99e408df75eb4f2059bb4cf549776eabcf449c25e7e856481"
+      },
+      "bullets[1]": {
+        "text": "Eingebaute or gespeicherte Presets anwenden, dann Mit Programm-Vorgaben wiederherstellen, um Operator-Ueberschreibungen to loeschen.",
+        "source_sha256": "e4cfe08e14284fae602b5b4ce6ac196d3bbc8b8e5cab9173aa28e6ed739f68d9"
+      },
+      "bullets[2]": {
+        "text": "Benannte Presets 与 Passwortrichtlinien-Presets verwaltet 分开。",
+        "source_sha256": "c1b092929b38149c35bac1c76e49d312d171e6752ea45227362073e5551acd2c"
+      },
+      "summary": {
+        "text": "程序级密码策略默认位于全局→组→机器→身份链的底部。",
+        "source_sha256": "7bfc72aac870ccdfd9c61395651bc4c2f45cea1151618e7e4efededbf7b7a3a1"
+      },
+      "title": {
+        "text": "默认值 — 密码",
+        "source_sha256": "26c79bd1953b73617dfcfd2e15cf0064a635fb179be28c5c669b024513d476cc"
+      }
+    },
+    "settings__demo-reset": {
+      "summary": {
+        "text": "丢弃实时演示数据并重新加载已知良好的快照。可选的每日时间表。当不存在快照时，设置参考图像将捕获当前数据库作为一次性基线。",
+        "source_sha256": "11c6548dcb2eea04df852f10430fba320a6fb45c3e7996f5e794926a5a14141b"
+      },
+      "title": {
+        "text": "演示重置",
+        "source_sha256": "6eefd8fe554e8dd6952d68c39cb7cb5fda662c67b819d4797a636a99359ddc47"
+      }
+    },
+    "settings__hsm": {
+      "bullets[0]": {
+        "text": "Tab Verbindungen listet registrierte HSM-Endpunkte 和 oeffnet PKCS#11-Slot-/Token-Pruefungen。",
+        "source_sha256": "af4f70060b5f93991b8dda072ffa5ee8a42b474a982cdfcb90da5c275ae7e069"
+      },
+      "bullets[1]": {
+        "text": "Tab Hersteller pflegt Metadaten, the beim Anlegen of Verbindungen genutzt werden.",
+        "source_sha256": "6808ecffc390e329e819a57c13566f55ef540789a653b4d73eb3c5f0165f9371"
+      },
+      "bullets[2]": {
+        "text": "ORM 商店中的选项卡配置 bearbeitet modulweite HSM-Einstellungsschluessel。",
+        "source_sha256": "786e94a7ae791d4ba9f7e9076228761d599f7496153f7e2fc6c82fdfcbba1f19"
+      },
+      "bullets[3]": {
+        "text": "Die Seite Krypto-Anbieter kann a Verbindung waehlen, um PKCS11_MODULE_PATH and PKCS11_SLOT_ID vorzufuellen.",
+        "source_sha256": "7a5c14790180f892565de6b91d589608bb1a35a29645519cc4c41a68228fd082"
+      },
+      "summary": {
+        "text": "注册 PKCS#11 供应商和 PKCS#11 硬件安全模块的连接配置文件。",
+        "source_sha256": "27bfcb7396b8bc37c02ac6053495a66991205e514bc3686fd7ec2e321df33cb1"
+      },
+      "title": {
+        "text": "HSM Connections",
+        "source_sha256": "76cda9fa67c316c6597d70a4fd609c517a085e5e347d00be17994248b37c2311"
+      }
+    },
+    "settings__lab": {
+      "summary": {
+        "text": "只读清单、高级诊断、RBAC 测试模式、海拔 UI 模拟和演示数据实用程序。不适用于生产部署。",
+        "source_sha256": "414cb02650bd6b44fd4fefeece74d4027c629663ab3521b44ea4181b6016fb58"
+      },
+      "title": {
+        "text": "实验室工具",
+        "source_sha256": "0d3f76e3c81a8c966e422f1e9c3ebcad46358281d01329af8a93a2fbcfb6a3c8"
+      }
+    },
+    "settings__lab__rbac": {
+      "summary": {
+        "text": "开发人员控制 RBAC 测试模式。默认为所有者访问权限；启用测试模式来模拟最低权限配置文件并检查每个目录权限。",
+        "source_sha256": "9d3052f36d5d7ee1dba7ca4ba3c78df668d361583e1fc338234d74cbee465aee"
+      },
+      "title": {
+        "text": "RBAC实验室",
+        "source_sha256": "62ccab13a5b13b094bf38d537abaf65fd279468f3673e7cb1417a85e5a5826b4"
+      }
+    },
+    "settings__password-policy-presets": {
+      "summary": {
+        "text": "可重复使用的命名策略包操作员可以从默认值或组/计算机对话框中应用。",
+        "source_sha256": "21b2b6612e3efa3393a14febca00dd7a8333e8e3a16e5d72d46f99f4687cc5c9"
+      },
+      "title": {
+        "text": "密码策略预设",
+        "source_sha256": "7a8e7f4ad1e10c55e800c33b90463abd402cd49d41e51ff6bfb8ee1c6c136786"
+      }
+    },
+    "settings__platform": {
+      "summary": {
+        "text": "Operational settings for this AIC Server: general options, TLS, identity providers, crypto, and HSM connections.",
+        "source_sha256": "a6e2cad62b0f3980663edf115a62dd3deb280d888de19657915d8fe7018a06d3"
+      },
+      "title": {
+        "text": "服务器配置",
+        "source_sha256": "65f170073c221c60a4731e16818a9ef3c69cfdb2a3aa40e781453dfc32aa9ea7"
+      }
+    },
+    "settings__service-logs": {
+      "bullets[0]": {
+        "text": "stdout traegt Application-Tracing; stderr traegt Panics and native Error (with Zeitstempel-Praefix).",
+        "source_sha256": "7514d0ea044318a8cccdceeac12f05f740a0f5e85b4abffbe968caf22693977e"
+      },
+      "bullets[1]": {
+        "text": "Live-Tail pausieren, wenn the Windows-Dienst stoppt; Tail neu laden, sobald the Dienst wieder laeuft.",
+        "source_sha256": "3d7c952feb4a0d13210771ce0ad95dd2539761f2bf9d73e5942a0f792a8b1860"
+      },
+      "helpAriaLabel": {
+        "text": "打开服务日志的帮助",
+        "source_sha256": "25ec724c76638645c765ae4718276343046e476213d7e9c2f39159bf10b35c86"
+      },
+      "summary": {
+        "text": "该主机脱机服务器进程 stdout 和 stderr 的实时尾部（Windows 上 ProgramData 下的 SCM 捕获的服务日志文件）。",
+        "source_sha256": "7a92fa89ba38aa1e8e9a04c91187cd24d6f53711c901d3c16c550e5ce2f3faf3"
+      },
+      "title": {
+        "text": "设置——服务日志",
+        "source_sha256": "f75e03e991f0183a9f40da6fed32c3d41e0b6e167547827699810fb6528fe94a"
+      },
+      "bullets": {
+        "0": {
+          "text": "服务日志有助于诊断和操作。",
+          "source_sha256": "d2fa81cdce95dd15a833f11f8d6c6ea3f299bda3777cb2d206e5e980d6eb6eda"
+        },
+        "1": {
+          "text": "过滤器和导出保留在此视图上。",
+          "source_sha256": "13c22c8b9f45d9a38a9cd294906f70d924d07169a6b387875199afbbf8330405"
+        }
+      }
+    },
+    "settings__startup-wizard": {
+      "bullets[0]": {
+        "text": "Operatoren 的 Verfuegbar、Servereinstellungen verwalten duerfen（超级用户/所有者）。",
+        "source_sha256": "488c95239e0214923034475614fe7575322c4f20af76a096fb7c2f23e36ed7ad"
+      },
+      "bullets[1]": {
+        "text": "Unternehmensidentitaet wird ueber dendlben Speicher Unternehmensprofile / Offenlegungsvariablen beitet。",
+        "source_sha256": "26ff64e1820ca4286f1c507916a6256fa47d67aed00a7ce2b9db476c54584e88"
+      },
+      "bullets[2]": {
+        "text": "可选 Schritte（电子邮件、Familiarisierungs-Seed） koennen uebersprungen werden； Lab-Seed 是实验室开发的说明。",
+        "source_sha256": "8e1c11b71f92f392d234687b8e03aa6457c1d71ea279ed46b71133f8049b9690"
+      },
+      "summary": {
+        "text": "新 AIC 服务器飞地的可重新启动指导运行手册。进度已保存；深层设置在“配置”下仍然可用。",
+        "source_sha256": "fb3c79a6b9c460be24cac6b44113e5f620bab3d47a8505d373ab726bf5a6bb6a"
+      },
+      "title": {
+        "text": "初始设置向导",
+        "source_sha256": "3c8dfed504197047eba04c9fb673432d2a39d6e0c4bd2335d378ceba4be63648"
+      }
+    },
+    "settings__syslog": {
+      "summary": {
+        "text": "Forward EPIM events from this server to a remote syslog collector (UDP, TCP, or TCP-TLS).",
+        "source_sha256": "1b5b4219f25c8ec6530ef3f3135f3e14d2486cef06192ef7ff4bd0d51504afba"
+      },
+      "title": {
+        "text": "Syslog Forwarding",
+        "source_sha256": "17340ebe93aa677f4f9461616ac003aa92add3850be05fde7c8a59f1b80965f1"
+      }
+    },
+    "systems": {
+      "summary": {
+        "text": "端点清单、分组和多租户边界。",
+        "source_sha256": "c1291379f77f5f29a49138a466d565d7685c72e54995abf82940ab3be165443a"
+      },
+      "title": {
+        "text": "系统",
+        "source_sha256": "d9148b16c1107bd3b371165e897a11620fc58e6c9d274550488b73200616bdeb"
+      }
+    },
+    "systems__list": {
+      "bullets[0]": {
+        "text": "Agent-Zeilen ergaenzen Passwortrotation、Elevation 和 ziel-lokale Aufzeichnung。",
+        "source_sha256": "ce9ec984af9c25da3262b03b7ca6bb695861dc739877b9f1ee01501443ad3ea2"
+      },
+      "bullets[1]": {
+        "text": "范围内没有代理 bleiben 的 Systeme 和 verbinden 通常 ueber eigenen Kanal。",
+        "source_sha256": "6431802bc3d6830db2d58da9dac533dba5ac7eba064e5cc1721d18052fdb2b45"
+      },
+      "bullets[2]": {
+        "text": "Legacy-URLs unter /endpoints leiten hierher um.",
+        "source_sha256": "3e0b1ac10b8a63072e94f9fbdb378636a78861e6f8f6cd1ce23a2be33a0c81d1"
+      },
+      "helpAriaLabel": {
+        "text": "打开系统列表的帮助",
+        "source_sha256": "aa87a5df54a2f456165fb77871f2c0b3c589e01315f6cf4db1251ba5fc7a8c15"
+      },
+      "summary": {
+        "text": "Every known system, with or without an agent. Open a row for password recovery, elevation, and connection channels.",
+        "source_sha256": "7f095cf4a05209a4b95f4467da5a03a0a6ab051268db6f7b07a761af56814567"
+      },
+      "title": {
+        "text": "系统",
+        "source_sha256": "d9148b16c1107bd3b371165e897a11620fc58e6c9d274550488b73200616bdeb"
+      }
+    },
+    "tenants": {
+      "bullets[0]": {
+        "text": "多租户模式 → Bootstrap-Geheimnis sofort kopieren； es wird nie wieder angezeigt。",
+        "source_sha256": "8199c1f6ee4d73b0e9056acabb1d53e048bf77edb7c365078f324fecb9efe3ec"
+      },
+      "bullets[1]": {
+        "text": "Agents and Assistentenausgabe referenzieren tenant_guid aus the Multi-Tenant-Datensatz.",
+        "source_sha256": "dff7c95d8cbcece491a4328d805dc75a58029b185f36053ebe92c88da91dd266"
+      },
+      "bullets[2]": {
+        "text": "标准辅助是多租户运营商的 Ausgabetyp。",
+        "source_sha256": "0bdd2fcde7877b9e6a2309a3f345bc317ec4f681dba573ca72a2e3a0e9f1dd3e"
+      },
+      "summary": {
+        "text": "此服务器上的逻辑客户或组织。每个多租户都会获得一个 GUID 和一个用于代理 HMAC 身份验证的一次性引导密钥。",
+        "source_sha256": "2495bb0a47b10c6db678ac12cb0042184d0d5dbc98def4b6fa8736a14afea838"
+      },
+      "title": {
+        "text": "多租户",
+        "source_sha256": "91d3baf4ccfbd3570385afa7d72e5d1f0c39f9cca93526cb92cbeba8f8a725c5"
+      }
+    },
+    "training__packs": {
+      "bullets[0]": {
+        "text": "Tab Dokumente ist Bibliothek 和 Render-Formular。",
+        "source_sha256": "190fce9fa8875c2603cc6c4b6c8b843c934f68ef5b501e3c8794c07183bb5748"
+      },
+      "bullets[1]": {
+        "text": "标准是标准，用于注册框架-Anforderung a Documentiert。",
+        "source_sha256": "430e205c9f574d59d3ed1131ff080a4f3544d0bea23a8a5b3931148adbfa07ac"
+      },
+      "bullets[2]": {
+        "text": "Geplante 计划、Zuweisung 和 Attestierung 将 Oberflaechen 分开。",
+        "source_sha256": "c854df5ba9d9edd8ba9d8d09686e9e22607267aa816783c19f92cf7d3d8d582a"
+      },
+      "helpAriaLabel": {
+        "text": "打开培训和意识包的帮助",
+        "source_sha256": "c415bfe5363fedf8ee541916503d7bc29d7ab1eb6745ac07ed34b698e70c794a"
+      },
+      "summary": {
+        "text": "您自定义和分发的可编辑意识源文档。渲染文档不是培训交付。",
+        "source_sha256": "9b41661529e4b8eaab0dc56bbbb9948f11f396067793a772505f6a4268387bb9"
+      },
+      "title": {
+        "text": "培训和意识包",
+        "source_sha256": "63fd5870ec17f5a42b74fdfb66f45edf3e07603145969059776670e1e2167eef"
+      }
+    },
+    "wizard__identity-template": {
+      "bullets[0]": {
+        "text": "Group aktivieren 中的“Standardidentitaeten seeden”，damit Vorlagenzeilen bei the Bereitstellung greifen。",
+        "source_sha256": "84a2975f4f1823eb6e2f9e5bb4c859d7700f996bb1c4f730232ef936845446d0"
+      },
+      "bullets[1]": {
+        "text": "Passwortrichtlinie pro Zeile 可以作为 Group erben 或 ueberschreiben，wenn Erben ausgeschaltet ist。",
+        "source_sha256": "2a915f9bb609b2f8d8e7702ad3faa78ba7a79ce2f38d12255140b3270da4f8c9"
+      },
+      "summary": {
+        "text": "编辑组身份模板的快捷方式 - 在该组中的新端点上自动创建托管帐户。",
+        "source_sha256": "da0d478386132483ed5635ec9fd6f9da453cf8ba87a698530a8dd1544ab205b3"
+      },
+      "title": {
+        "text": "身份模板向导",
+        "source_sha256": "9be843743f6551c025b05d2502c3f321ee094210d9f39862c0bcf49debc14ebc"
+      }
+    },
+    "wizard__import": {
+      "bullets[0]": {
+        "text": "Fuer Migrationspruefung — Live-Anwenden nutzt Datei → Settings anwenden in the Konfigurator or the import-settings-CLI.",
+        "source_sha256": "a4729b23485a7f32963cec7c69f66608c31db3da7412a60dd2f6a2af271999e8"
+      },
+      "summary": {
+        "text": "Validate and translate legacy v2/v3 settings JSON into the current import format without applying it to the server store.",
+        "source_sha256": "98f9d7cfa605928e8b1498dceb9cae802fa64e017160d0cb013d61a61fbd7e90"
+      },
+      "title": {
+        "text": "导入设置（迁移）",
+        "source_sha256": "1b2568610dfc5eeee1e3c6fc439a7ce2ed788eb687f3eab66e320d1859298fc6"
+      }
+    },
+    "wizard__issuances": {
+      "bullets[0]": {
+        "text": "Nach the Settings-Assistenten nutzen, wenn Operatoren a Datei verlieren or Tokens rotiert werden muessen.",
+        "source_sha256": "2f26d98cc297135ed90246f487ffbb2df0f3707a73f470849bd2241cb72ead1b"
+      },
+      "summary": {
+        "text": "列出、轮换、撤销和重新下载已为组颁发的注册令牌和设置包。",
+        "source_sha256": "004e8f5b08533ba89463bc0eaf4b6cc8377545ff541ae9eaeff164834738c89f"
+      },
+      "title": {
+        "text": "管理发行",
+        "source_sha256": "54b148b3649680d5e41d56a26ab545b3309882a5c5636ef72dc6bb4f6e747211"
+      }
+    },
+    "wizard__settings": {
+      "bullets[0]": {
+        "text": "Erzeugt Settings、Agent ueber Konfigurator 或 import-settings importiert。",
+        "source_sha256": "7555e2289b341e877ba9332d6c52e11974d32243adbc9df5c8f0c41afb37852f"
+      },
+      "bullets[1]": {
+        "text": "ConnectedManaged erwartet regelmaessigen 签到； AirGapped 永久不是。",
+        "source_sha256": "ce05b2e69394e8263e83e852760a3aba2ae513eb8a64d785346b954572338325"
+      },
+      "summary": {
+        "text": "使用注册令牌发出代理设置 JSON。选择一个系统组，然后逐步完成部署类型、模板审查、可选覆盖、预览和生成。",
+        "source_sha256": "c495a6a7c83924465b0bdbb0c44e64391d0a9ee0f9401d9b20d0492efcffd06f"
+      },
+      "title": {
+        "text": "设置向导",
+        "source_sha256": "c778789ea57c5fc98116a813e2a9f4215e783a1d99d8386c53eca0bc6669ac27"
+      }
+    },
+    "settings__crypto": {
+      "summary": {
+        "text": "静态密钥的加密设置。",
+        "source_sha256": "c8bb096da40e46578f19aa81941b3943e6b11cb856c15b5ea82e45550f2a9b76"
+      },
+      "title": {
+        "text": "加密",
+        "source_sha256": "82f4e719a19ce7e573734543f366f55117e4048116b3892adcd1831fb1775d8f"
+      }
+    },
+    "settings__crypto__key-sets": {
+      "summary": {
+        "text": "用于静态加密的密钥集。",
+        "source_sha256": "a5a9b11e0dd531eba3ff9a4cba748112a105acb82851acb1a40ff804a8f1d83d"
+      },
+      "title": {
+        "text": "按键设置",
+        "source_sha256": "747f9353141f0b922ceddeac13c8f74f26061411bca18c1ea3e23a492984edff"
+      }
+    },
+    "settings__defaults__disclosures": {
+      "summary": {
+        "text": "最终用户的默认披露文本。",
+        "source_sha256": "c1797f0a4f9c43c6be6a88f22906902a95df44c8b9853413d84c22dc88b7118d"
+      },
+      "title": {
+        "text": "披露",
+        "source_sha256": "6fd148a14be1d00a1b0d91f099374f670a06f1dc964758d465a72d2ef3980457"
+      }
+    },
+    "settings__defaults__server-disclosures": {
+      "summary": {
+        "text": "服务器端公开默认值。",
+        "source_sha256": "1f693d5508c67ff9ef09b25809073f01915d261eb341b34752f08d6b818b78f3"
+      },
+      "title": {
+        "text": "服务器泄露",
+        "source_sha256": "b58f4640a44477eac992ab13a6739fa5778fd61050669e83d5d9662578ce3ed6"
+      }
+    },
+    "settings__session-policy": {
+      "summary": {
+        "text": "空闲和绝对会话生命周期策略。",
+        "source_sha256": "0a0ef5554a531c9dbf379ea98a542ac0641306deb242612bcaaac9014e77fc64"
+      },
+      "title": {
+        "text": "会话策略",
+        "source_sha256": "39bf442d465f3a5f77a82ebc6e72ee97091885a789a80eaaabd0c8027bd654ef"
+      }
+    },
+    "systems__known-default-credentials": {
+      "summary": {
+        "text": "已知的默认凭据目录。",
+        "source_sha256": "0cd811eba7d364ba330fb7c60993691a1ed644cce0c93b6bd50374ba6ed0035f"
+      },
+      "title": {
+        "text": "已知的默认凭据",
+        "source_sha256": "20c39738f6f812f70ba7e0e72416dc2cf92587931363057a1b03fbf6f87b6ddf"
+      }
+    }
+  },
+  "delivery": {
+    "scaffolded": {
+      "text": "支架（内容如下）",
+      "source_sha256": "0ee5610347c687363fafffc087e665628abe089b889a604d9c7c836e20b87b8b"
+    },
+    "blocked_licensed_content": {
+      "text": "已阻止 — 未嵌入许可内容",
+      "source_sha256": "5811e218fdc9316c3637e261e826d4f7901cde5c891b8b738b5bd693a8ca671b"
     }
   }
 }

@@ -478,6 +478,66 @@
       "vm_management": {
         "text": "VM管理",
         "source_sha256": "d6358bc70728181e46b19e790afa165cb5df6d2acd0357461682053b272f0431"
+      },
+      "agent_event_forwarding": {
+        "text": "エージェントイベントの転送",
+        "source_sha256": "e1090fc88e59a3839e0140fd3a281bfbbd17b539d52368f482361ffbf16719c2"
+      },
+      "agent_management": {
+        "text": "エージェント管理",
+        "source_sha256": "1501a898a9d8652df45ba47b7c8de147664f3c2e79a597ef166336aaee930b72"
+      },
+      "bulk_provision": {
+        "text": "一括提供",
+        "source_sha256": "133d0af633a21ac310efc2c2273bfe23f8461f4efaa72a38a2c2db28e553fcea"
+      },
+      "create_settings_file": {
+        "text": "設定ファイルの作成",
+        "source_sha256": "50bd780d0d903ddfa9aedadf4a45e1de1be54912bdb07a35f53015217bd8339b"
+      },
+      "fleet_agent_versions": {
+        "text": "フリートエージェントのバージョン",
+        "source_sha256": "abc1d82b276555a7d67dd5cd188b17c515ae337cb9f6eeb97b5cb5c5de8f8b66"
+      },
+      "group_defaults": {
+        "text": "グループのデフォルト",
+        "source_sha256": "b1749f27b3cc969355592356e6e5b02d51bb285fbdf74ca50ae7ff55f9e5c0d3"
+      },
+      "identity_defaults": {
+        "text": "アイデンティティのデフォルト",
+        "source_sha256": "b266228e8616a3c2cf124739871ec4d047bfd9cff78df818ca475aa769e0930f"
+      },
+      "identity_template": {
+        "text": "アイデンティティテンプレート",
+        "source_sha256": "4a77c3278ee865a7e068e7a69925ce402418608309dddb291513aa01a36e6d91"
+      },
+      "import_settings_files": {
+        "text": "設定ファイルのインポート",
+        "source_sha256": "893c066e02cf5dde841cc589fbdcf056c336a7782f9f69e99d1f593ca99bfb3b"
+      },
+      "manage_issuances": {
+        "text": "発行の管理",
+        "source_sha256": "80e915152218998b3c67f39cc5b030a4bee00b18693f1e92f9f83593f7647cc5"
+      },
+      "operator_disclosures": {
+        "text": "事業者の開示",
+        "source_sha256": "489a651104986505d0d463e12797be67570e84d47a53a93ed0cf400c265e977b"
+      },
+      "password_defaults": {
+        "text": "パスワードのデフォルト",
+        "source_sha256": "f38e94e1182809a407e496f1b5da2be3ac9ed637a236cf127b29e9d878c7099c"
+      },
+      "password_policy_presets": {
+        "text": "パスワードポリシーのプリセット",
+        "source_sha256": "7a8e7f4ad1e10c55e800c33b90463abd402cd49d41e51ff6bfb8ee1c6c136786"
+      },
+      "propagation_templates": {
+        "text": "伝播テンプレート",
+        "source_sha256": "048324f714c8fd03e17a37f119a09e5107b896399e08878a2ef0883fd478a5f6"
+      },
+      "server_disclosures": {
+        "text": "サーバーの開示",
+        "source_sha256": "33c20751c2f32e95da1ace42aecc6cdce90a5780828479eea52f26958b002e3d"
       }
     },
     "group": {
@@ -552,6 +612,10 @@
       "systems": {
         "text": "システム、グループ、認証情報、およびインベントリ。",
         "source_sha256": "997cd266a01afead48b7daab5400b70061243e35907e8170ce32fcf28f24a403"
+      },
+      "agent": {
+        "text": "エージェント",
+        "source_sha256": "11b39c93777e8f1f3983bdba7c72b22fe68cfea20c677e9de53e17cb7dbfb19f"
       }
     }
   },
@@ -562,5 +626,33 @@
   "tls_security": {
     "text": "TLSセキュリティ",
     "source_sha256": "58767c0d1e3cd75b57e0e08e6683c5334ead66019099a2fb58be84541b0a7a54"
+  },
+  "agent_event_forwarding": {
+    "text": "エージェントイベントの転送",
+    "source_sha256": "e1090fc88e59a3839e0140fd3a281bfbbd17b539d52368f482361ffbf16719c2"
+  },
+  "create_settings_file": {
+    "text": "設定ファイルの作成",
+    "source_sha256": "50bd780d0d903ddfa9aedadf4a45e1de1be54912bdb07a35f53015217bd8339b"
+  },
+  "group_defaults": {
+    "text": "グループのデフォルト",
+    "source_sha256": "b1749f27b3cc969355592356e6e5b02d51bb285fbdf74ca50ae7ff55f9e5c0d3"
+  },
+  "identity_defaults": {
+    "text": "アイデンティティのデフォルト",
+    "source_sha256": "b266228e8616a3c2cf124739871ec4d047bfd9cff78df818ca475aa769e0930f"
+  },
+  "import_settings_files": {
+    "text": "設定ファイルのインポート",
+    "source_sha256": "893c066e02cf5dde841cc589fbdcf056c336a7782f9f69e99d1f593ca99bfb3b"
+  },
+  "password_defaults": {
+    "text": "パスワードのデフォルト",
+    "source_sha256": "f38e94e1182809a407e496f1b5da2be3ac9ed637a236cf127b29e9d878c7099c"
+  },
+  "password_policy_presets": {
+    "text": "パスワードポリシーのプリセット",
+    "source_sha256": "7a8e7f4ad1e10c55e800c33b90463abd402cd49d41e51ff6bfb8ee1c6c136786"
   }
 }
