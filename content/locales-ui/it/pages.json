@@ -7908,6 +7908,1778 @@
       "role_auditor": {
         "text": "Revisore dei conti",
         "source_sha256": "465b5967e292896bee2bbe8a67298bf1eec40ae84cf2ea96990cedcf87630442"
+      },
+      "role_credential_operator": {
+        "text": "Operatore Zugangsdaten",
+        "source_sha256": "e8a4fa572bd077df397f46621283c2d03d5c27a314deb26a8671bd56afbcad95"
+      },
+      "role_developer": {
+        "text": "Entwickler",
+        "source_sha256": "bc16e42843110a44bae8ed26867bc0d4549f86bb4755a0091ea4bb686cad43e4"
+      },
+      "role_enclave_user": {
+        "text": "Utente Enclave",
+        "source_sha256": "3fb3a79ca3a319aa8a31c9b510264189e3f518e2c51d204401b86e0d1dbe7395"
+      },
+      "role_pam_approver": {
+        "text": "PAM-Genehmiger",
+        "source_sha256": "557048661d89e473f0733e15997e4f39722e084ee5c6b5e74351f35693151fbc"
+      },
+      "role_pam_requester": {
+        "text": "PAM-Antragsteller",
+        "source_sha256": "d5a353930f9c24f593659915a9c0186ddf9eeb68f8117b69a468f9251bf44fd8"
+      },
+      "role_server_administrator": {
+        "text": "Amministratore del server",
+        "source_sha256": "9a6474c838b412dae0fb927472f1ef11702b00ccfbc4aaadc963b059d783359f"
+      },
+      "role_super_admin": {
+        "text": "Super amministratore",
+        "source_sha256": "292c2a691dcd3a5e47f6b65f2a74984c1a22e283875b98ca012a4a648ec0a566"
+      },
+      "savePolicy": {
+        "text": "Salva politica",
+        "source_sha256": "57ee14ce1425ca9b693df872d192e208370cd6abc7167ca0c3b01f990dcf28d3"
+      },
+      "savedStatus": {
+        "text": "Criterio I/O della sessione salvato. Le nuove sessioni dal vivo utilizzano i massimali effettivi.",
+        "source_sha256": "f409fc8cf97074aa60395891755ae1105c00ed45c0788acb9ac1fac08873178a"
+      },
+      "saving": {
+        "text": "Risparmiareâ¦",
+        "source_sha256": "8254285d673bbc73963ed7810f4bc4b8a378dbf5803b7a650ce7ac5c00eaac3c"
+      },
+      "scopeAria": {
+        "text": "Ambito politico",
+        "source_sha256": "b16f23b5693a8b109de933bd1e5f1245e69f15c60a899752755c2810a029a93a"
+      },
+      "scopeGroup": {
+        "text": "Gruppo utenti IAM",
+        "source_sha256": "e5166642e71655aa26740876f26998c7e707960586d64b5100b2254379c4afa6"
+      },
+      "scopePrincipal": {
+        "text": "Utente (principale)",
+        "source_sha256": "dbece1061317a04b763071543b5d3b6af2616b92b36d2cc6cbc460afaf37a2ec"
+      },
+      "scopeRole": {
+        "text": "Ruolo dell'IAM",
+        "source_sha256": "5d2176852ca18ce45219d4589d49efc0c7f67f92ef90bcfadaf6d25f9f1a4920"
+      },
+      "scopeTenant": {
+        "text": "Impostazione predefinita dell'organizzazione (tenant).",
+        "source_sha256": "6e97f68ebc24ef86c08b309a01918f836284b3eda0b2e357c209a33a83354107"
+      },
+      "title": {
+        "text": "Politica di I/O della sessione",
+        "source_sha256": "bd5ccb540a2db28bdd93ccc24c0741fb64495b3f5ca385fd365a903472dc0fd6"
+      },
+      "user": {
+        "text": "Utente",
+        "source_sha256": "b512d97e7cbf97c273e4db073bbb547aa65a84589227f8f3d9e4a72b9372a24d"
+      },
+      "yes": {
+        "text": "SÌ",
+        "source_sha256": "85a39ab345d672ff8ca9b9c6876f3adcacf45ee7c1e2dbd2408fd338bd55e07e"
+      }
+    },
+    "sessionPolicy": {
+      "absoluteMax": {
+        "text": "Massimo assoluto da create_at (secondi)",
+        "source_sha256": "c6319fa3639ca296dbcd8c3e1c473c87981a889ce9cb54b8f4fd59a484f48f10"
+      },
+      "absoluteMaxAria": {
+        "text": "Secondi massimi assoluti",
+        "source_sha256": "a7bb1f4bc96ece2068fbea8d1a974bbe613b9cb0502085569c4a846a7d86178b"
+      },
+      "absoluteTtl": {
+        "text": "TTL sessione assoluta (secondi)",
+        "source_sha256": "23558fa562e19e53eb586a935fe88264c857e8b047eee8c47f39580b3505e0ba"
+      },
+      "absoluteTtlAria": {
+        "text": "Secondi TTL di sessione assoluti",
+        "source_sha256": "748291f364383d5057f8f413bddbdb3c78d49e2153f8ec8a0f60fc8f71493dd1"
+      },
+      "clientStorage": {
+        "text": "Archiviazione della sessione client",
+        "source_sha256": "6193945dcbaa893e8af95026210b36a4cedd9aac27b99a19d20118fd6740abc2"
+      },
+      "forceLogoff": {
+        "text": "Rafforzamento della disconnessione forzata (pulsante Indietro/cancella cache)",
+        "source_sha256": "ddf32cbe49a9c3dea671b746a75bdc26647796f4ca33848d71eb3f84d2c7f564"
+      },
+      "heading": {
+        "text": "Politica della sessione di accesso",
+        "source_sha256": "1aab45bb348d0ab3920f91bfdf8f624e46c8326ec83d3a2762daad7ebacd2cc6"
+      },
+      "httponly": {
+        "text": "Imposta il cookie di sessione HttpOnly Secure (doppio con Bearer; TLS richiesto)",
+        "source_sha256": "79f441a04ad0ced730f0330524a0aad78c760a659c8a092ce5b933bffa9f8cac"
+      },
+      "idleTimeout": {
+        "text": "Timeout di inattività (secondi, 0=disattivato)",
+        "source_sha256": "241fac45445a11d76ac8f43b1b89993e6f410dcaa54ad05b3b511daa048d174b"
+      },
+      "idleTimeoutAria": {
+        "text": "Secondi di timeout di inattività",
+        "source_sha256": "8622913bdca5f691f3257f1342fc4bd20cf7f154447723f87b902415a5ded6d6"
+      },
+      "intro": {
+        "text": "Durata assoluta, timeout di inattività, rotazione di aggiornamento e rafforzamento della disconnessione forzata. I token revocati e riutilizzati vengono sempre rifiutati sul lato server.",
+        "source_sha256": "3c57407797509a8949a60547d8fe07a62d883740e0759eb3b40726fb20e7b37d"
+      },
+      "multiTab": {
+        "text": "Consenti la stessa sessione in più schede del browser (archiviazione locale condivisa; nessun kick di schede duplicate)",
+        "source_sha256": "ea422743d3ba238a94a2264e575da090d36d95a05ccdb02ad819d214ac03cc5a"
+      },
+      "multiTabNote": {
+        "text": "La sessione a più schede è una scelta dell'operatore. Il rafforzamento della disconnessione forzata copre ancora il pulsante Indietro e la scadenza inattiva/assoluta. Il testo in chiaro del token non viene mai scritto nei log.",
+        "source_sha256": "9148cfb75f77bb80d35301ae32e7c03b255b2ab8632b0165e245a68c8d78dfa3"
+      },
+      "openDedicated": {
+        "text": "Aprire la pagina dedicata di timeout e disconnessione della sessione",
+        "source_sha256": "69701cc63b349b90754540bb7d6c09aa7da5fa4f50c95cd0d4b956f79c80db4e"
+      },
+      "pamDisconnect": {
+        "text": "La disconnessione da una sessione live ritorna all'elenco delle workstation. Rimani connesso al server AIC.",
+        "source_sha256": "8fae0cb36cb17683135d3f72a2524b442656e58f3e28bd5f7cea7f6eb418c4d6"
+      },
+      "refresh": {
+        "text": "Consenti l'aggiornamento della sessione prima della scadenza assoluta",
+        "source_sha256": "d87fcdd760559d0297f8c8489a23263235f865e7fbb2dedaf1149979db4a7b37"
+      },
+      "requireIam": {
+        "text": "Richiedi l'autenticazione della sessione IAM (disabilita l'interfaccia utente silenziosa del token di amministrazione)",
+        "source_sha256": "e38c06747b130b9941de6878211287a1c6cfd0421558767273ea2d24c3d13800"
+      },
+      "requireIamAria": {
+        "text": "Richiedi l'autenticazione della sessione IAM",
+        "source_sha256": "370b8e229115d05539512588afdbd9be335377522b76072e852985018771a845"
+      },
+      "rotate": {
+        "text": "Ruota il token della sessione all'aggiornamento (rifiuta il portatore precedente)",
+        "source_sha256": "c1a7cce66ad0355e1b3da7d45655584530b9a700c2f9e96af605a1ad63576d06"
+      },
+      "save": {
+        "text": "Salva policy di sessione",
+        "source_sha256": "92fd2a90adcbc6fd4b9a649a0185175406d1a36e43fe22232a18eff2db77b5a0"
+      },
+      "saved": {
+        "text": "Salvato. Le sessioni attive rispettano i nuovi limiti inattivi/assoluti alla richiesta successiva; la politica di aggiornamento si applica immediatamente.",
+        "source_sha256": "6a845d273403eb57ea4a3d6b1798c61e9de3f9a7872c439ac5a9df49956e40cc"
+      },
+      "storageLocal": {
+        "text": "locale (condiviso tra le schede; espulsione della scheda duplicata se la protezione è attiva)",
+        "source_sha256": "01d536dd7dde881e5ce1da14108d3fc64257a28d46aebcad4b4f9a4aa07c15d3"
+      },
+      "storageSession": {
+        "text": "sessione (per scheda: la nuova scheda richiede l'accesso)",
+        "source_sha256": "31ab10fce6616ad547389dfbbb6267bb6ca7b28815eb9bff2b07dbe60ce5ec51"
+      }
+    },
+    "sessionRecordings": {
+      "authorizePlayback": {
+        "text": "Autorizza la riproduzione",
+        "source_sha256": "3f7b33655ff33f628b665ef92333ffde1697d0235dfe8319e98b494588664cd3"
+      },
+      "backToList": {
+        "text": "Torniamo alle registrazioni delle sessioni",
+        "source_sha256": "354479e684a251a91b4ab1a6c18359969e3e8fea1a71e28c720a851951aa29e5"
+      },
+      "chipGraphical": {
+        "text": "grafico",
+        "source_sha256": "0693ad77100cd6f31503862f19af6dc681cf5d9a5954a8f903d7424ea12b5767"
+      },
+      "chipNotPlayable": {
+        "text": "non riproducibile",
+        "source_sha256": "24d73d1d13216ab100eaefcde04d2e5717f5defcc0fb402bcef61df6e45349ac"
+      },
+      "chipOcrPartial": {
+        "text": "Parziale: ricerca VNC OCR",
+        "source_sha256": "a5a77ff104243f76d382ff950ac0942b59545f4a84dae44d9d03acec483db6c2"
+      },
+      "chipSshRdpLive": {
+        "text": "Riproduzione SSH/RDP dal vivo",
+        "source_sha256": "e5a92cbf8d5e56279a7a0ec8eb71b73d92cc399b4dcd85a56f34f8d99572c306"
+      },
+      "chipVncLive": {
+        "text": "Riproduzione grafica VNC dal vivo",
+        "source_sha256": "4987a1bb7f9f15aef14cb6ef9b7eba5927bdcfcbb96d0e0a57ddd5369a89b82f"
+      },
+      "colAccount": {
+        "text": "Account",
+        "source_sha256": "7e1b0d5641f2640ce9a953ec231eea2c27a2a7633f7d3c273e5735e2b30c10b7"
+      },
+      "colActions": {
+        "text": "Azioni",
+        "source_sha256": "ff8059dc6752afdd30d275932b1d5031a2ec854b387a8c57ecc6689915293a43"
+      },
+      "colActor": {
+        "text": "Attore",
+        "source_sha256": "30711f196578840b7e07e45a0ce887ae79688acef96ab37a8a50b3a159254cac"
+      },
+      "colDecision": {
+        "text": "Decisione",
+        "source_sha256": "640ae4baf96061fee1798e9181e2b7a5145585233df2c27a501623afb0096ec1"
+      },
+      "colDuration": {
+        "text": "Durata",
+        "source_sha256": "4fc52a3c4c558b517c463b22d86d0e3b9cfd4255c98fe3510f9075b37ab419c9"
+      },
+      "colFormat": {
+        "text": "Formato",
+        "source_sha256": "2f343666aaa88c44430b12e6ab8a29591a069de76541125e83ff1b5acc367bf2"
+      },
+      "colProtocol": {
+        "text": "Protocollo",
+        "source_sha256": "cf0883343f4abef779b777c35764f86c9f1f4324e8b5490840245d02ad2f7c6f"
+      },
+      "colRecordingAt": {
+        "text": "Registrazione a",
+        "source_sha256": "59f6670ae098a2e57e1006b0956516b035aac7f3e64540baa813df2a943c223e"
+      },
+      "colSize": {
+        "text": "Misurare",
+        "source_sha256": "1af851907331c0ed99e7c63b4e55df808bc5fc4c990a1cf80ca8c0f76daf1f3b"
+      },
+      "colStarted": {
+        "text": "Iniziato",
+        "source_sha256": "ecbc89cd37a037342e740f9e0e0633a70180a2279b0157c9a823fce729f4bd77"
+      },
+      "colTarget": {
+        "text": "Bersaglio",
+        "source_sha256": "978354db0c00fc78c3a5524f462a73bc425df3fb2767e51a5f46352ae26ae6f9"
+      },
+      "colWhen": {
+        "text": "Zeitpunkt",
+        "source_sha256": "9d91e4d4f2637e520bc5596b68a50847140c9065ae3288d204acd065ba79622a"
+      },
+      "connectOpenBody": {
+        "text": "Le sessioni aperte tramite Connect (Le mie workstation) o Sessione aperta (Punti di connessione) arrivano qui dopo che il proxy di sessione/il piano di registrazione Jump le ha acquisite. Questo elenco è una riproduzione delle prove: non avvia una nuova sessione live.",
+        "source_sha256": "348dddc8ec04d7e7357487c83a1cb83f772b39ebe83d6a0ec846f1948b4ca60f"
+      },
+      "connectOpenTitle": {
+        "text": "Registrazioni da Connetti/Apri",
+        "source_sha256": "464cca8c4aa687bd946771518c5a815333b10004151c555d54c0e857b4e0b2d6"
+      },
+      "decisionAllowed": {
+        "text": "consentito",
+        "source_sha256": "eabc01f12ec3e7cb6db0ada0f8f37323b0cfe6d08a2a73479e7d5b62d7e63529"
+      },
+      "decisionDenied": {
+        "text": "negato",
+        "source_sha256": "62d6c2330036f64bcf71b95791743d6c77c38e0d7c8cbedcbc525c77c57cf0ee"
+      },
+      "durationMinutesSeconds": {
+        "text": "{{minutes}}m {{seconds}}s",
+        "source_sha256": "1f8e5ba1f8fc71ddcabe9230a2fe3419a5c4b63e338032758fc6c107e6f88d51"
+      },
+      "durationSeconds": {
+        "text": "{{seconds}}s",
+        "source_sha256": "c98e00945ab1f6c3908f62d4a198875f8eea59b34ed9dd5d67e2d78bfa8cc53b"
+      },
+      "durationZero": {
+        "text": "0s",
+        "source_sha256": "cc21f265975e48b967a0601c0d204e0cd82dc43f6ff6223538008e63d6265f43"
+      },
+      "empty": {
+        "text": "Nessuna registrazione della sessione ancora. Gestisci una sessione con registrazione e caricamento abilitati per popolare questo elenco.",
+        "source_sha256": "e00d5651875494102f2ef272ab41cb54ed0a9087f2a3270b3f510306a212ebb6"
+      },
+      "gridAria": {
+        "text": "Registrazioni delle sessioni",
+        "source_sha256": "fdcdd8edd0197d8d03b4f4744139e0f0f6979a0231217be01e7e857b26b98662"
+      },
+      "introBody": {
+        "text": "Sessioni privilegiate registrate, crittografate a riposo con una busta AES-256-GCM per registrazione (chiave dati racchiusa dalla KEK custodita da HSM). Seleziona una riga da decrittografare per leggerla e riprodurla nel browser. La ricerca OCR su VNC rimane Parziale.",
+        "source_sha256": "c0e76978304a9d1cd87b10d930e883750b47a5ddc9200137ae2af17ec6761ea7"
+      },
+      "loadFailed": {
+        "text": "Impossibile caricare le registrazioni della sessione. Conferma il token amministratore e la versione del server.",
+        "source_sha256": "a213db9c03161decde9dc562853f8f4239dec3f1a5a49a1482b0461fe52e61bb"
+      },
+      "open": {
+        "text": "Oeffnen",
+        "source_sha256": "830df0f253b59f5541af29908251e9a51ef40b943c14f4d8030a7682ac1511ae"
+      },
+      "planeJump": {
+        "text": "Registrazione: salto/aereo proxy",
+        "source_sha256": "d8186afa6a7c81e722b4b0dce66648387fb69766c6fd97641e81a98950a003bd"
+      },
+      "planeProxy": {
+        "text": "Registrazione: proxy di sessione",
+        "source_sha256": "ac167ad1536989318494df1135fa1b59b3346ea3f4a29f71d3a1bba2b3eb709b"
+      },
+      "planeTargetLocal": {
+        "text": "Registrazione: destinazione locale",
+        "source_sha256": "0b04471a9eeef0a289afa2343e9260c525664db544c63a641db19efddc73274b"
+      },
+      "reasonForAccess": {
+        "text": "Motivo dell'accesso",
+        "source_sha256": "888a7a4867c2b4176aebb6d24d1d2515a586392739284097d0665659f5aceb86"
+      },
+      "reasonHelper": {
+        "text": "12â500 caratteri. Non inserire segreti.",
+        "source_sha256": "1f013b30e947d91de6db22d9cc173d3bcc9672be41857ef0b57b6d93bb55fee6"
+      },
+      "reasonIntro": {
+        "text": "La riproduzione decrittografa le prove protette. Inserisci un caso, un'indagine o un motivo di controllo. Ogni tentativo consentito o negato viene registrato nel registro di controllo.",
+        "source_sha256": "df5b4e5348363a36be723571db2e3ba8697f74179b2e27298dda8accf4240e92"
+      },
+      "reasonLabel": {
+        "text": "Motivo del caso o della revisione",
+        "source_sha256": "e2b8b5ccf07f30e4c4e8d05adf83ce2c50e1481555baa148f1d732ab66f4a32c"
+      },
+      "refresh": {
+        "text": "Aggiorna",
+        "source_sha256": "0e91610117029a62a478b7fa7df0b8598bebe3ab1e192d4b1882e310719c9671"
+      },
+      "replayIntro": {
+        "text": "La decrittografia per la lettura è autorizzata e controllata. Il testo in chiaro viene trasmesso in streaming al tuo browser per la riproduzione e non viene mai memorizzato. Questa è la riproduzione delle prove, non la connessione/apertura della sessione.",
+        "source_sha256": "6647003b83ad17dfae94da977afeb3ac55beb108bf49153fa4cbb2e2a9e27d2f"
+      },
+      "replayTitle": {
+        "text": "Registrazione aperta (replay)",
+        "source_sha256": "6367562ab2a7896641cb3b739169f1a70b4061f9027baea1536a4584865943e8"
+      },
+      "reportTitle": {
+        "text": "Registrazioni delle sessioni",
+        "source_sha256": "2627b4d32c12839a86cabeab7d569787d5f0d34bef8c1827449f005b46f1c530"
+      }
+    },
+    "settings": {
+      "analyzeCertificate": {
+        "text": "Analizza il certificato",
+        "source_sha256": "0b2c66ee7cd210c886214099b92739a9fa7512f0d876a775d793f5845912d4e3"
+      },
+      "analyzing": {
+        "text": "Analizzando...",
+        "source_sha256": "34c196b48690e969cd6c607a54c214658b4087a6486175efcabbbf45dbcdba31"
+      },
+      "backendPort": {
+        "text": "Porta di back-end",
+        "source_sha256": "5b70867431eaeab4b6daa0839464704d6510e27afd006d3491ab8ae11de45cf7"
+      },
+      "backendPortHelper": {
+        "text": "Porta del server backend a cui inoltrare",
+        "source_sha256": "62eb77100513e3e7f806049ff457c22cd70444f57660b9657598c00e70cb8375"
+      },
+      "bindPortBody": {
+        "text": "Conferma quale delle porte di collegamento (8080 HTTP/8443 HTTPS) risponde da questo host. Solo la porta del protocollo attivo dovrebbe essere online.",
+        "source_sha256": "738d71c2ee77f11def7ba4982646eaa0a7233873e1f904efedd9f4cf9b68c3c6"
+      },
+      "bindPortTitle": {
+        "text": "Autotest della porta di collegamento",
+        "source_sha256": "0f2cee84af3d428741ac74d15875311c24eb0a8a2f5ae5b82fff247659b73991"
+      },
+      "certPresent": {
+        "text": "Certificato presente",
+        "source_sha256": "93ceb67d7fb59103aa58048d8ea1ecd54babd068ab64bcf2366bca295f983ef3"
+      },
+      "certPresentTlsOff": {
+        "text": "Avviso: il certificato è presente ma TLS non è abilitato. Abilita TLS per attivare HTTPS.",
+        "source_sha256": "572de3d7e5d95c6c52d1bdae40e05d5bc4dfae5a8831b2ca3dcf5fad1197744a"
+      },
+      "certificateStatus": {
+        "text": "Stato del certificato",
+        "source_sha256": "ec1cd5626ca35b6aecf34f0800144e9fde1ee9ca52e891ac9d2e11fba89e6c6e"
+      },
+      "driftTitle": {
+        "text": "Configurazione della deriva",
+        "source_sha256": "baad59313b817507e679fbd73047f515cc98b5481b3f3ca003fc6ab0584ada5d"
+      },
+      "httpMode": {
+        "text": "Modalità HTTP (non crittografata)",
+        "source_sha256": "22d42561bd057585b84f3222093ef2620bb5cf3bb96f6e787e78336f5921b11c"
+      },
+      "httpModeBody": {
+        "text": "Il server funziona senza crittografia. Consigliato solo per lo sviluppo.",
+        "source_sha256": "70bbe6e63607c71ad90c5fccc468ef938322b71d3a673da7b265bb198065b68c"
+      },
+      "httpsMode": {
+        "text": "Modalità HTTPS (crittografata)",
+        "source_sha256": "a57238133f37ab5f4154e8e0acea5e22548a22db1d0a71c3e477daeadea7253c"
+      },
+      "httpsModeBody": {
+        "text": "Il server utilizza la crittografia TLS. Richiede certificati validi.",
+        "source_sha256": "befb991c0c2b2c5cd2bf6bddf326c9ea093c333096529e3fe84fc7a6ea70024f"
+      },
+      "keepAwakeHelper": {
+        "text": "Quando sono attivi, gli agenti registrati inibiscono la sospensione dell'host e lo scheduler delle VM salta lo spegnimento inattivo/giornaliero in modo che le nuove scansioni di conformità e l'elevazione remota possano raggiungere ogni obiettivo gestito. L'impostazione predefinita dello sviluppo è attiva; l'impostazione predefinita della produzione è disattivata.",
+        "source_sha256": "e5b65c5de6eca90284ca33ebe8055465610aa776a3637209eb25a7b02e4a5fea"
+      },
+      "keepAwakeLabel": {
+        "text": "Mantenere gli obiettivi svegli (test)",
+        "source_sha256": "d074eac2cf5c7ea48279fa86817305e0d9642c31f5f35816ae450c1989a3fb87"
+      },
+      "keepAwakeTitle": {
+        "text": "Mantenere gli obiettivi svegli (test)",
+        "source_sha256": "d074eac2cf5c7ea48279fa86817305e0d9642c31f5f35816ae450c1989a3fb87"
+      },
+      "maxDrift": {
+        "text": "Deriva massima (secondi)",
+        "source_sha256": "b0c758f127db76ea366c04bf1ef856486f60eb7f96a220366ff3e34895d21fdb"
+      },
+      "maxDriftHelper": {
+        "text": "Gli endpoint con deriva superiore a questo valore verranno contrassegnati",
+        "source_sha256": "e2edef3ee187b100329b9c452a5134bc01c13dbb02287c2eecb80e1411685b30"
+      },
+      "mitmBody": {
+        "text": "Controlla mitmproxy per intercettare e ispezionare il traffico HTTP/HTTPS durante lo sviluppo. Questa funzionalità è destinata al debug e non deve essere utilizzata negli ambienti di produzione.",
+        "source_sha256": "b8b8181bc55fedf4dd1576c2067a0a975ab5e351fb3149440de1dcc091faf4d1"
+      },
+      "mitmEnable": {
+        "text": "Abilita la funzione proxy MITM",
+        "source_sha256": "ac3eaef848670e64caba7d4085d76680e22d5c11db27c073f1f40555f5901567"
+      },
+      "mitmEnableHelper": {
+        "text": "Se abilitato, il proxy MITM può essere avviato per intercettare il traffico tra il server di sviluppo dell'interfaccia utente e il backend. Configura il proxy di sviluppo dell'interfaccia utente e riavvialo per instradare il traffico attraverso il proxy.",
+        "source_sha256": "58852b40bb859cd8f69571c7c1f3ce58ce1ee1f9c7fec89c359b1e0c609c6029"
+      },
+      "mitmPortsLine": {
+        "text": "Porta proxy: {{proxy}} | Interfaccia utente Web: {{web}} | Backend: {{backend}}",
+        "source_sha256": "6d84e89f8f48d070b8343d4b290920f3a42b517d9b2aa1f7d69106757227e384"
+      },
+      "mitmTitle": {
+        "text": "Controllo proxy MITM (solo sviluppo)",
+        "source_sha256": "348ef77eed9d28ed00b9fea076513f28ed959b5b4d9bd9d17a04be4ffca1c82e"
+      },
+      "noCertFiles": {
+        "text": "Nessun file di certificato trovato. Genera un certificato autofirmato o caricane uno tuo tramite l'API di gestione dei certificati.",
+        "source_sha256": "0886db5deb1ffccd26489fcf53fa3feb4dd3140b135086faa0d9cf0bf6f4213a"
+      },
+      "noCertificate": {
+        "text": "Nessun certificato",
+        "source_sha256": "ce154b24d24ef72f59d40a960a355377f747c144df86e127e8e58d58703f7c30"
+      },
+      "openWizard": {
+        "text": "Apri la procedura guidata",
+        "source_sha256": "6e1730ea702f499da735a07ed62b828190118409ed9fea7f46060aee8cfa53f8"
+      },
+      "overviewIntro": {
+        "text": "Configura le impostazioni predefinite dell'agente, questo server",
+        "source_sha256": "22e2b55d876f1d589bd7ac4ed2484e5b56a63fd2d3374c84988137ba75a8fa67"
+      },
+      "passwordRecoveryEnabled": {
+        "text": "Abilita l'API di recupero password",
+        "source_sha256": "4d4a5a0d0f21fb3b8e22b37799603862eaca6af1592b7294b891ebfde464eff4"
+      },
+      "passwordRecoveryHelper": {
+        "text": "Se abilitato, gli amministratori possono recuperare le password in testo normale tramite l'interfaccia utente. Questa è una funzionalità sensibile alla sicurezza.",
+        "source_sha256": "bc28ac75420fb088eed91e218601fe7f90ddcd200c95cc1d07fc69eff594cbc8"
+      },
+      "portConfiguration": {
+        "text": "Configurazione della porta",
+        "source_sha256": "fac7a577e39e7c51293f055692bae57e83214585622433fcc852b047f673c7fb"
+      },
+      "portConfigurationBody": {
+        "text": "Configura le porte per il proxy MITM. Le modifiche richiedono l'arresto e il riavvio del proxy.",
+        "source_sha256": "304f35e36fe2f230c093b90fa4b0a727981eba0545ad7f757edad6a959c2055f"
+      },
+      "portConnectivityBody": {
+        "text": "Testare quali porte rispondono. Solo la porta del protocollo attivo sarà online.",
+        "source_sha256": "f4aabaffd351115defc26728c812d5ac94a839bc2d9400e9bd1e6b3156e01ed8"
+      },
+      "portConnectivityTest": {
+        "text": "Test di connettività della porta",
+        "source_sha256": "886d0eb92b031948fe5e9a32041d89535d7c5ca5198000e4307951193518fdc8"
+      },
+      "protocolModeBody": {
+        "text": "Il server viene eseguito in modalità HTTP O HTTPS (non entrambe). La modifica delle modalità richiede il riavvio del server.",
+        "source_sha256": "667d993b464a51e22720cebb46043d1d4ef003492401be730b06afaa96952db9"
+      },
+      "protocolModeTitle": {
+        "text": "Controllo della modalità protocollo",
+        "source_sha256": "90c3540112f052e606fb6864c5da37425992bba18e0911084e891a34f3a3fa55"
+      },
+      "proxyControl": {
+        "text": "Controllo per procura",
+        "source_sha256": "2349b1f6978262cc31c70b6a09d48e1e3825c7b3f52bb6c7d7ede6a2d7ab1f8b"
+      },
+      "proxyPort": {
+        "text": "Porta proxy",
+        "source_sha256": "d2b5a453127a0e1948c7c632ee44954d14abb950bc504f6c12d638bc422ae512"
+      },
+      "proxyPortHelper": {
+        "text": "Porta in cui il proxy ascolta le richieste",
+        "source_sha256": "8dcc517ba0843bd13888d73862733e2385e10ba1a141a718e70c72677a1347e6"
+      },
+      "refresh": {
+        "text": "Aggiorna",
+        "source_sha256": "0e91610117029a62a478b7fa7df0b8598bebe3ab1e192d4b1882e310719c9671"
+      },
+      "restartInitiated": {
+        "text": "Riavvio del server avviato. La pagina si ricaricherà automaticamente tra 40 secondi...",
+        "source_sha256": "420f8ec0ecc13ca761a4a530f93d48114974ab86ec2fa655c7d9d928066d15d7"
+      },
+      "restartNow": {
+        "text": "Riavvia il server adesso",
+        "source_sha256": "02fe03104889077e246028de1afa47efbbf114df26b8f6c43b83a5445a73880b"
+      },
+      "restartPending": {
+        "text": "Modifiche alla configurazione in sospeso. Per avere effetto è necessario il riavvio.",
+        "source_sha256": "fbd00e2378fc1853b442dd7912a0264d4add8cc96e3a25c3eacd54b6261d269a"
+      },
+      "restarting": {
+        "text": "Riavvio...",
+        "source_sha256": "2c5bfcb5add13c41451c031943e7eaaad258ff35ae25e92edbe99febf00aca7e"
+      },
+      "reviewRestart": {
+        "text": "Revisione/riavvio",
+        "source_sha256": "65fd229ceee9122f7548615db6705d1df0991fbad8cf1b06125a057564faee56"
+      },
+      "running": {
+        "text": "Corsa",
+        "source_sha256": "f4ccae29e1bb0c20a124570a1b43f4347ea94bba9f84ffdfddd9c7445b126128"
+      },
+      "save": {
+        "text": "Impostazioni specifiche",
+        "source_sha256": "300e453f8a416a533ba53852eddef8284b001212c55c878346a92454e0153577"
+      },
+      "selfSigned": {
+        "text": "Autofirmato",
+        "source_sha256": "b3491d7b120b0ff1ceab229dbd328e7b9fb2c73def736c82abfa7239807162c3"
+      },
+      "serverFeatureEnabled": {
+        "text": "Funzionalità server AIC abilitata",
+        "source_sha256": "f485333df4577da8a3fbabd7197b10f9b78535e28f3e80d4643cafa4b986efeb"
+      },
+      "serverFeatureTitle": {
+        "text": "Funzionalità del server AIC",
+        "source_sha256": "ce10c04affd9da49060044553295d165040123b592d46135a6116f8b743652d1"
+      },
+      "serverRestartBody": {
+        "text": "Dopo aver modificato la modalità del protocollo, riavviare il server affinché le modifiche abbiano effetto.",
+        "source_sha256": "749c977d946d673da51a5a2040fb0260893f75d82512f7c13cd9c0721da3ae96"
+      },
+      "serverRestartTitle": {
+        "text": "Controllo del riavvio del server",
+        "source_sha256": "585eb9f0985dc75d9bff2e00ad400b1304f64a4331e8e980f4a4f96443263e55"
+      },
+      "status": {
+        "text": "Stato:",
+        "source_sha256": "755c8b2a9fb114460e0909ab65c8cd47696b7648cbcdad3dbccd937c40660d0f"
+      },
+      "stopped": {
+        "text": "Fermato",
+        "source_sha256": "1a4f630ac1b69fd00728fa8a672ded71d0eae8516cb23e78f94529113399b79b"
+      },
+      "subjectAltNames": {
+        "text": "Nomi alternativi dell'oggetto:",
+        "source_sha256": "d000fc52a282acbba77dc403d8311b19215416e18d1cc644b1d350a71ea87552"
+      },
+      "switchToHttp": {
+        "text": "Passa a HTTP",
+        "source_sha256": "433ace1e28527a53f5fd8975d66d0a557f5932419e47d0e682082ab1af26e496"
+      },
+      "switchToHttps": {
+        "text": "Passa a HTTPS",
+        "source_sha256": "c3a111a01b672a014276072d9ded98a665f2445f163f60e923a070e225fc09a2"
+      },
+      "tabCrypto": {
+        "text": "Fornitore di criptovalute",
+        "source_sha256": "f7e0f3bb21097eab7f0b99b2f963adefafa219667f1706f6476ee511322ea98f"
+      },
+      "tabGeneral": {
+        "text": "Impostazioni generali",
+        "source_sha256": "de322f87b5f5957b54dc467054983c18cbd04a213066155347d00d04b34215e2"
+      },
+      "tabManifest": {
+        "text": "Manifesto dell'app",
+        "source_sha256": "eac077c3004485bac806fcb3fef313ad22fb1a1790e5a067255a83bcf0310b0f"
+      },
+      "tabMitm": {
+        "text": "Solo per sviluppatori MITM",
+        "source_sha256": "3baefc38cf7b877a486c195ef17145fe084c526ad5ea1db5d998b99fe5678500"
+      },
+      "tabServer": {
+        "text": "Controllo del server",
+        "source_sha256": "1393a2603fa7d5128cc6d79cad71fad037e3d966202b2fed597bb900b25f41e2"
+      },
+      "tabTls": {
+        "text": "TLS e sicurezza",
+        "source_sha256": "7beb4f16698569f6b80b8db344991badc2788b585f9c7189260b6c02d7ecfcb5"
+      },
+      "testConnection": {
+        "text": "Verbindung test",
+        "source_sha256": "a5d6a6f03db111a0c76c6bd77dd8be1e7053474716ac052d872b157c54228052"
+      },
+      "testPorts": {
+        "text": "Porte di prova",
+        "source_sha256": "2574ce95cb155f2c7e90cb59701a39fb0a3ab096053bcdaf1ccc4f50692a31c8"
+      },
+      "tlsDisabled": {
+        "text": "TLS disabilitato",
+        "source_sha256": "70d11c21c7f48b5cae0d7c61df5d7911d0f35438d1e896891392d9052a320b4b"
+      },
+      "tlsEnabled": {
+        "text": "TLS abilitato",
+        "source_sha256": "ea7ab61df276d55ccb01a24e677c9a13ace677de5db67f9d8159868a849f568f"
+      },
+      "tlsUpdated": {
+        "text": "Configurazione TLS aggiornata con successo! Riavviare il server per applicare le modifiche.",
+        "source_sha256": "d58efbc7f9dc1fde5e8bae568cce6a02b29e85d607521a6cb73effd0e9e80843"
+      },
+      "updating": {
+        "text": "Aggiornamento...",
+        "source_sha256": "0a4e0b71b7f3583747a2885b292087c9c6f78873bdd7b3b84cb70c1d0a9a7bc4"
+      },
+      "validFrom": {
+        "text": "Valido da:",
+        "source_sha256": "f2d7b26807daf642ace3095ff2cf182d7c53a374813be015ee7eafb0f84cf62b"
+      },
+      "validUntil": {
+        "text": "Valido fino al:",
+        "source_sha256": "93da7675c228f03c9b210e836ae6ac331fd6626ef80ad06c42f3c43dcdf18eb8"
+      },
+      "webUiPort": {
+        "text": "Porta dell'interfaccia utente Web",
+        "source_sha256": "903a073bddca687473df72a9b2f18e42a7bcad9b75f59711bbb86b0227c64643"
+      },
+      "webUiPortHelper": {
+        "text": "Porta per l'interfaccia web mitmproxy",
+        "source_sha256": "4bee2e29d1f9432cc507e00f4947f39c1c99a628f86ca165f539919ac8f4c01b"
+      },
+      "wizardDone": {
+        "text": "La procedura guidata di configurazione iniziale è stata completata. Aprilo di nuovo per rivedere le risposte o riavviare i progressi (l'identità dell'azienda viene mantenuta).",
+        "source_sha256": "1870e1e68e60656af4813287fbb4ffd00254ad82c4f18ac3947df77951a0b9b9"
+      },
+      "wizardInProgress": {
+        "text": "(in corso â riprendi in qualsiasi momento)",
+        "source_sha256": "25bc4af232544e567285b1624fee108c7f91a38109fe86d83c54a661b0fcded3"
+      },
+      "wizardPromoBody": {
+        "text": "Runbook guidato per identità aziendale, livello di conformità, impostazioni predefinite di crittografia e messaggistica facoltativa. Disponibile per gli operatori che possono gestire le impostazioni del server.",
+        "source_sha256": "c4fa25b004dc4770d8e9a9c001323c7f5473d2811581c610e705b24c94e75359"
+      },
+      "wizardPromoTitle": {
+        "text": "Procedura guidata di configurazione iniziale",
+        "source_sha256": "247e58e3191efebc183ca8b9fa31be303721ae5094816f90b7914af072e91e5f"
+      }
+    },
+    "systemsList": {
+      "agent": {
+        "text": "Agente",
+        "source_sha256": "11b39c93777e8f1f3983bdba7c72b22fe68cfea20c677e9de53e17cb7dbfb19f"
+      },
+      "allRoles": {
+        "text": "Tutti i ruoli",
+        "source_sha256": "78f133afd3ec55cd2a707e2bb12c3fac1b78d34dc44375d002704e56484de04e"
+      },
+      "allSystems": {
+        "text": "Tutti i sistemi",
+        "source_sha256": "09fae25379bfd5473b3e4c2fb7dc8e2b6dfe46b086bd3303fc76aeec22df3df7"
+      },
+      "closeDetails": {
+        "text": "Chiudi i dettagli",
+        "source_sha256": "edc82d69e76d62864543c251d1c89a71dd20db0d64c850ea798969bd6f087ee8"
+      },
+      "colAccess": {
+        "text": "Accesso",
+        "source_sha256": "ec5ba0abb717da87aab2655bd4b4a40f93f2a591a0ade63611c42925c49c17e9"
+      },
+      "colActions": {
+        "text": "Azioni",
+        "source_sha256": "ff8059dc6752afdd30d275932b1d5031a2ec854b387a8c57ecc6689915293a43"
+      },
+      "colAgent": {
+        "text": "Agente",
+        "source_sha256": "11b39c93777e8f1f3983bdba7c72b22fe68cfea20c677e9de53e17cb7dbfb19f"
+      },
+      "colDefaultPassword": {
+        "text": "Password predefinita",
+        "source_sha256": "96d973e8aeef70ff6a90644f750318f799856ecd118d22d439dc9a3144fbeb6a"
+      },
+      "colHealth": {
+        "text": "Salute",
+        "source_sha256": "55898449eb74fb2e348d13e5a5d84ab019bb87ea92687b50b3d3302eb409b784"
+      },
+      "colLastCheckIn": {
+        "text": "Check-in letterario",
+        "source_sha256": "39d860478a6e6aac95c13242f74bfcd6a28af7d3edb7a66cdb5c49eb7e25f87c"
+      },
+      "colLastCheckin": {
+        "text": "Ultimo check-in",
+        "source_sha256": "9d5980ae7a54aa18ff71158d822c0eef994ff6087feb3c35b1a90ca63a66848b"
+      },
+      "colName": {
+        "text": "Nome",
+        "source_sha256": "dcd1d5223f73b3a965c07e3ff5dbee3eedcfedb806686a05b9b3868a2c3d6d50"
+      },
+      "colPlatform": {
+        "text": "Piattaforma",
+        "source_sha256": "c78ffe19571018fbc93a78873969046fe1a80c3d21e5d20fbb2ca17c7c53a144"
+      },
+      "colRoles": {
+        "text": "Ruoli",
+        "source_sha256": "c25337055464f8d31fb1498bc94025cba5eae3b0e1cf07741f09f8b873d00103"
+      },
+      "colSystem": {
+        "text": "Sistema",
+        "source_sha256": "6725e7bbcd28f3a8a586fa34bf191fd72dde8b61756932cd3237c17a6f196f1a"
+      },
+      "dangerousDefault": {
+        "text": "Un default pericoloso",
+        "source_sha256": "76670b82c88b156fa6e5b867cb91b56914027f790566992d5a04a9e9bd90bd14"
+      },
+      "empty": {
+        "text": "Nessun sistema. Endpunkte erscheinen nach Enrollment or Discovery.",
+        "source_sha256": "42645689d96fbdbb72ade00a7a28233594233ab34e59b1594d5b27755ed908b9"
+      },
+      "exportAll": {
+        "text": "Esporta tutto",
+        "source_sha256": "514276888328818d67435b0fc0bcbe43146931a58d0b7343c2574be65690c20b"
+      },
+      "exportAria": {
+        "text": "Esporta tutti i sistemi corrispondenti in CSV",
+        "source_sha256": "fcac69eaaaf56a9609f375fa2c86d525794fd5b5b6c1d8ff0042f1941f7e4b9b"
+      },
+      "exportFailed": {
+        "text": "Esportazione non riuscita: {{error}}",
+        "source_sha256": "832e6b9d68458f5f245b51d9c5283dc691c45d31b4218d0dd32faad02db2ae66"
+      },
+      "honestyFallback": {
+        "text": "I fatti segnalati dall'agente vengono mostrati a partire dal check-in che li ha trasportati.",
+        "source_sha256": "abcfd9ca8eff528166e475d2c4353d5b09a6a8cb065fb361d25c9ee84ddec087"
+      },
+      "intro": {
+        "text": "Agenti e sistemi senza agenti in un unico inventario: l'età di archiviazione, l'integrità e le azioni di ripristino rimangono su ogni riga.",
+        "source_sha256": "1d3cef78a5da97dcf57c79acdf1161ce91df9bb0e9665b4408da25fa23d4316b"
+      },
+      "loadFailed": {
+        "text": "Impossibile caricare l'inventario dei sistemi: {{error}}",
+        "source_sha256": "3d9d9dd833f45cfcde328ad6e90d8faad82cd5383d204648fb6cb450d3fd7d73"
+      },
+      "never": {
+        "text": "Mai",
+        "source_sha256": "6300ef800bb884295b0b4b35682b75cecd7cc550d202db56d04a0643b8fb873f"
+      },
+      "noCheckin": {
+        "text": "Nessun check-in registrato.",
+        "source_sha256": "639fe1d97574c2413fde4cb85dcb135564bfea7c0e7385016f4a9528a48da24a"
+      },
+      "noRoles": {
+        "text": "Nessun ruolo assegnato",
+        "source_sha256": "0d59908d2b75f5f373683d25eb2fc29795b5f695940ec40f313338dbb004a7b2"
+      },
+      "notRecorded": {
+        "text": "Non registrato",
+        "source_sha256": "b37c7879f6c359f633ed1c478dc9ffac47ad7aac648653bb4a4d509a25fdb3b0"
+      },
+      "open": {
+        "text": "Oeffnen",
+        "source_sha256": "830df0f253b59f5541af29908251e9a51ef40b943c14f4d8030a7682ac1511ae"
+      },
+      "refresh": {
+        "text": "Aggiorna",
+        "source_sha256": "0e91610117029a62a478b7fa7df0b8598bebe3ab1e192d4b1882e310719c9671"
+      },
+      "reportTitle": {
+        "text": "Sistema",
+        "source_sha256": "504596546375608e34df68b90b4fb4087663ea22cd814f7e72cc000503c1607c"
+      },
+      "rescan": {
+        "text": "Nuova scansione",
+        "source_sha256": "ec4b3ecb7ae2ed8fae320f98e50d5e5e964f51aab07242304707556d0c93e7ac"
+      },
+      "rescanAria": {
+        "text": "Eseguire nuovamente la scansione della raccolta per questo sistema",
+        "source_sha256": "b3af1a325bf6376d26093458637016d90135820a4ec22a691d27779a3adac8ef"
+      },
+      "role": {
+        "text": "Ruolo",
+        "source_sha256": "14736a2eb9f4159f4b6b86f192c3c222243fd9659aadf2ecc0139e3d72bed85c"
+      },
+      "roleHelper": {
+        "text": "Corrisponde a qualsiasi ruolo selezionato",
+        "source_sha256": "2e46cad40adeb74a226dd2be50ea956e6d2f9392a0a70022a8bf5365cb39a688"
+      },
+      "search": {
+        "text": "Ricerca",
+        "source_sha256": "49c266baaaa70981ea188fa714d5c40cf13830d786a861c9943ae0d26a7f3fe9"
+      },
+      "timesShown": {
+        "text": "Orari mostrati in {{zone}}.",
+        "source_sha256": "923c139ffd1dbb39fbfa4fc3909f8a4698a3d54b9806107468a20623d8b6a113"
+      },
+      "unknownError": {
+        "text": "Errore sconosciuto",
+        "source_sha256": "27c2ccd962c2b8dccb52fe3688ab236f186f7a41fd57d810478712048e9ad3f8"
+      }
+    },
+    "tenants": {
+      "authPolicy": {
+        "text": "Politica di autenticazione",
+        "source_sha256": "7dc1949fbb13ad070bb474d537f98f733eabf4e3935274ce6b93e1dd151d7bb8"
+      },
+      "bootstrapCopied": {
+        "text": "Segreto Bootstrap copiato",
+        "source_sha256": "c0f37d7467df31ff02c1fc2d4c3825ef119cdc758851c3bd8d567849f83c6773"
+      },
+      "bootstrapTitle": {
+        "text": "Segreto Bootstrap (mostrato una volta)",
+        "source_sha256": "9711f7a2a5fda6a57fba150c442e45e22f3da5588cadc7e45f40fed3cdac8097"
+      },
+      "cancel": {
+        "text": "Cancellare",
+        "source_sha256": "19766ed6ccb2f4a32778eed80d1928d2c87a18d7c275ccb163ec6709d3eb2e27"
+      },
+      "close": {
+        "text": "Vicino",
+        "source_sha256": "7d9eb7acb13e24625c404401d8e88b2350e32162455885f18276cf802f7701ed"
+      },
+      "colActions": {
+        "text": "Azioni",
+        "source_sha256": "ff8059dc6752afdd30d275932b1d5031a2ec854b387a8c57ecc6689915293a43"
+      },
+      "colAuthPolicy": {
+        "text": "Politica di autenticazione",
+        "source_sha256": "db61f3b9035e47e85c0c9ce85fa590a6f980eb3976410c535584c7443dccb5f1"
+      },
+      "colCreated": {
+        "text": "Creato",
+        "source_sha256": "d70b9e24bca26b409b9458ceca6c9e5c2b5c3171c37ff050c6f6a0d7a4420d2a"
+      },
+      "colDefaultUsage": {
+        "text": "Utilizzo della procedura guidata predefinita",
+        "source_sha256": "039d3aa6743b1fa7702820ee615de34a0575a9e232a6fd180b053c9dd38d8e17"
+      },
+      "colDisplayName": {
+        "text": "Nome da visualizzare",
+        "source_sha256": "18d67c992b71ce69eb924554dbace110236c7e2db06effceb3d690b8cd64a671"
+      },
+      "colStatus": {
+        "text": "Stato",
+        "source_sha256": "920e413c7d411b61ef3e8c63b1cb6ad058d5f95f8b481dbafe60248387d8c355"
+      },
+      "copy": {
+        "text": "Copia",
+        "source_sha256": "e21f935f11d7e966dbbae78da9daa378fe8142a14e7c0cd7434183005faa6c5c"
+      },
+      "create": {
+        "text": "Creare",
+        "source_sha256": "4759498ac2a719c619e2c8cf8ee60af2d2407425e95d308eb208425b2a6d427a"
+      },
+      "createTenant": {
+        "text": "Crea multi-tenant",
+        "source_sha256": "04d24cc8e2e85572a423c4552163bd1b36c2c90463e31bd51fe2689d2450dbd7"
+      },
+      "createdToast": {
+        "text": "Multi-tenant creato",
+        "source_sha256": "888501c7009dac5886a113479f5a163afab0e0f70f4ed75d55ac8d38937a6ced"
+      },
+      "dialogCreateIntro": {
+        "text": "Registra un cliente o un'organizzazione. You receive a bootstrap secret once â agents use it with the multi-tenant GUID for HMAC authentication until enrollment completes.",
+        "source_sha256": "2f897283cc2aa76805434182b76aff672573d6748dd5e8f7853652af76525f94"
+      },
+      "dialogCreateTitle": {
+        "text": "Crea multi-tenant",
+        "source_sha256": "04d24cc8e2e85572a423c4552163bd1b36c2c90463e31bd51fe2689d2450dbd7"
+      },
+      "dialogEditIntro": {
+        "text": "Aggiorna la policy di autenticazione per questo multi-tenant. Il nome visualizzato viene corretto dopo la creazione; revocare e ricreare se è necessario un nuovo segreto di bootstrap.",
+        "source_sha256": "7385351086395bf5a664f9a34eddd555d4d3847364fb098ac412845e29f4b01d"
+      },
+      "dialogEditTitle": {
+        "text": "Modifica multi-tenant â {{name}}",
+        "source_sha256": "04356490063819d6ba226c4ae5849b489b326c92fb23039bab028b29c2fd89f2"
+      },
+      "displayName": {
+        "text": "Nome da visualizzare",
+        "source_sha256": "2b7f6a84de917e387539dbe441ca22056e793d738e6c50db30c3f569e4448df3"
+      },
+      "displayNameFixed": {
+        "text": "Il nome visualizzato non può essere modificato dopo la creazione.",
+        "source_sha256": "0966c134714d7b212c36f747594174eb4936d7e0fc9e7ed8346119f4537fa964"
+      },
+      "editAuthPolicy": {
+        "text": "Modifica politica di autenticazione",
+        "source_sha256": "a58c4eaf7c7053e7b79130a97f3359a2f5a58b5312a6a0021edc315af65ca99c"
+      },
+      "emptyState": {
+        "text": "Nessun record multi-tenant ancora. Crea un multi-tenant per ricevere un segreto bootstrap monouso per la registrazione dell'agente. Dopo la creazione, seleziona la riga per coniare i token di registrazione da questa pagina.",
+        "source_sha256": "4b721bfefc5b1d41e85decd6f39ea8c842e1b9716736dc47cebc60db04427984"
+      },
+      "enrollmentHint": {
+        "text": "I token di registrazione per il multi-tenant selezionato vengono visualizzati sotto la griglia. Usa il token di iscrizione Mint per crearne uno; il testo in chiaro viene mostrato una volta. Fare clic su un'altra riga per cambiare tenant.",
+        "source_sha256": "f3a2b073bd524248c24f3cc11d45de831652c6eaadea6e871e5a0c2206178081"
+      },
+      "hmacOnly": {
+        "text": "Oggi è supportata solo l'autenticazione HMAC. MTLS e ibrido sono riservati per una versione futura.",
+        "source_sha256": "5627005dc9b87da747eb29554c07d825b26c3d71f7f38c07d554ef677e7adf95"
+      },
+      "loadFailed": {
+        "text": "Impossibile caricare i record multi-tenant: {{message}}",
+        "source_sha256": "1002332e246674b89111a51e8af62a8928f36f3ad0caaf7804b71a82dc554913"
+      },
+      "refresh": {
+        "text": "Aggiorna",
+        "source_sha256": "0e91610117029a62a478b7fa7df0b8598bebe3ab1e192d4b1882e310719c9671"
+      },
+      "revoke": {
+        "text": "Revocare",
+        "source_sha256": "87e6d00bbf53ec5ae251de23ace84d5cf01c69deae04cfff08a5fe353a9853bb"
+      },
+      "revokeConfirm": {
+        "text": "Revoca multi-tenant",
+        "source_sha256": "f1567225bdb0a07175051ca82f6cd5ee2e443e3d9bc0a70ddedac6f4a5e133a8"
+      },
+      "revokeTenant": {
+        "text": "Revoca multi-tenant",
+        "source_sha256": "cf15d32f6f2aaf343d080c642e5153ecbdd23a76f7a0b45ac8aced85026e0ac1"
+      },
+      "revokedNotice": {
+        "text": "Questo multi-tenant è revocato. I token di registrazione non possono essere coniati per questo.",
+        "source_sha256": "83448e9402e118f60aed7fe711f441ce7799bf70b035851d3cb6ccba5ce3e5a7"
+      },
+      "revokedToast": {
+        "text": "Multi-tenant revocato",
+        "source_sha256": "d2162470eb761cf24bb9982e2e399fc383f0176340afb5684e62589cb55d2661"
+      },
+      "save": {
+        "text": "Salva",
+        "source_sha256": "1509f561f2416598629b886ad7d3c05a7e221e4e0675c84bbff4ee6d9e03913d"
+      },
+      "statusActive": {
+        "text": "Attivo",
+        "source_sha256": "92340695899bd2d86223e4a007620e0d6502fc0e08809773634c7e0743764a9c"
+      },
+      "statusRevoked": {
+        "text": "Revocato",
+        "source_sha256": "f6f738d043929f59fe41b1a5b414b33ea28ca9a6ddc74e682bdb7167b5a6ac6e"
+      },
+      "title": {
+        "text": "Multi-locazione",
+        "source_sha256": "91d3baf4ccfbd3570385afa7d72e5d1f0c39f9cca93526cb92cbeba8f8a725c5"
+      },
+      "updatedToast": {
+        "text": "Multi-tenant aggiornato",
+        "source_sha256": "b0c3f018e21aab3ea68effccc4678e3f5732df4b68d61508d70d58ce185d977a"
+      },
+      "usageUpdatedToast": {
+        "text": "Tipo di utilizzo predefinito aggiornato",
+        "source_sha256": "9a6b36e0db13607844fe9c8056f12576ea3012f4bd14ff3c2501aebb1ed1523d"
+      }
+    },
+    "training": {
+      "acceptLate": {
+        "text": "Accettare i completamenti registrati dopo la data di scadenza",
+        "source_sha256": "e840ba8ca4cf1396bbeea67c81feed896bbdbc737b20fca4b6f9a4f72bdb5c63"
+      },
+      "addDocument": {
+        "text": "Aggiungi un documento",
+        "source_sha256": "56ce0c84e84923df1fe6bc944952ab9ecd0aa8baae502d5b01a2d7ba10e04ece"
+      },
+      "addDocumentHelper": {
+        "text": "Scegli dal catalogo di creazione. L'ordine è l'ordine di lettura; il primo documento scelto è il primo.",
+        "source_sha256": "2ad90fdc15f9db2a4c8a36397519c315976e173d3ea9515f406c727bfcebcd99"
+      },
+      "appendOnlyNote": {
+        "text": "Questa verità è solo un'opportunità, erzwungen durch Datenbank-Trigger. Es gibt keinen Weg, a Zeile to aendern o to loeschen: Eine Korrektur ist a neue Zeile, and the Original bleibt sichtbar.",
+        "source_sha256": "f91a798ed9e96660f7cdf467c0d6db11fe38218b9e5ea8cd73d1b8d95314ae93"
+      },
+      "assignAssigned": {
+        "text": "Assegnato",
+        "source_sha256": "8191888dd97cae12497400274f0ceaa806cc83e10a2a9ecd94e996fd15d38cc8"
+      },
+      "assignCompleted": {
+        "text": "Completato",
+        "source_sha256": "22a970d2e5b1cc233e462be7c7b64e135a275bb09d83d87683bf4236c43113a1"
+      },
+      "assignInProgress": {
+        "text": "In corso",
+        "source_sha256": "c1f88e9d6c4145cf0530ae020155384d5688d70ed82a07a35d783bbc4b32238c"
+      },
+      "assignWaived": {
+        "text": "Rinunciato",
+        "source_sha256": "106f92af432846b45f435a77f7db61d6c6e85df66426d459849322ada965c816"
+      },
+      "attestColActions": {
+        "text": "Azioni",
+        "source_sha256": "ff8059dc6752afdd30d275932b1d5031a2ec854b387a8c57ecc6689915293a43"
+      },
+      "attestColAffirmed": {
+        "text": "Affermato (UTC)",
+        "source_sha256": "1ce80a0382dc4598e946007b45f080d051e06230c13306997118eb3bd9575e6a"
+      },
+      "attestColDocument": {
+        "text": "Documento",
+        "source_sha256": "d6bd8c0aeee80fedb2dbf05c973100c3db04be90c072a88572533f2684131a36"
+      },
+      "attestColEntered": {
+        "text": "Inserito da",
+        "source_sha256": "6046fa2e6853ea5ef3855968951cfe2e4d776bc240421049a4e1f4343105c008"
+      },
+      "attestColHash": {
+        "text": "Documento SHA-256",
+        "source_sha256": "846d372a62e3eab4e1cb1253f29a905ecc5cb1fdf871af75bf4207097c506408"
+      },
+      "attestColSigner": {
+        "text": "Firmatario",
+        "source_sha256": "0297e535f44de507bbc15a3862ae8bd93b7eb5a96150e9183346787ef19913de"
+      },
+      "attestColSource": {
+        "text": "Fonte",
+        "source_sha256": "0e570ca6fabe24f94e52c1833f3ffd25567022beb826fa16891f3322051bc221"
+      },
+      "attestationIrreversible": {
+        "text": "Dieser Eintrag wird con Quelle of-the-Verwaltung-erfasst gespeichert e kann danach non geaendert o geloescht werden. Das Verzeichnis ist nur anhaengbar, erzwungen durch a Datenbank-Trigger: Eine Korrektur ist a neue Zeile, and diese bleibt daneben sichtbar.",
+        "source_sha256": "b678e579d26f5babddac5662f8a9f78196c8384f7f2fb368e110c893abee341a"
+      },
+      "attestationsAllPrograms": {
+        "text": "Tutti i programmi",
+        "source_sha256": "0e09c5c368f27d7dec684f09b4e3c050001829316562231293344e239a3b43a7"
+      },
+      "attestationsAppendClaim": {
+        "text": "Questo registro è di sola aggiunta: una correzione è una nuova riga, mai una modifica.",
+        "source_sha256": "c4f0478cf0ab961224d3ed2d2962e000a1d80cc26812ef02948d337d63d86c0b"
+      },
+      "attestationsColDocument": {
+        "text": "Documento",
+        "source_sha256": "836ae935629796c14593cc87e3844a861cef5cabf0ef10f0f2695f4cb3e8317b"
+      },
+      "attestationsColPerson": {
+        "text": "Persona",
+        "source_sha256": "6007db63e18e532c7399975ed77d2e3900810aa75cad165b8d2e5d8b08085c3d"
+      },
+      "attestationsColStatus": {
+        "text": "Stato",
+        "source_sha256": "920e413c7d411b61ef3e8c63b1cb6ad058d5f95f8b481dbafe60248387d8c355"
+      },
+      "attestationsEmailContains": {
+        "text": "L'e-mail del firmatario contiene",
+        "source_sha256": "ccfe9f3486cdfe7d3a0f39b47fd44bd10fe862ec4591f744abecdbf838255e5d"
+      },
+      "attestationsEmailHelp": {
+        "text": "Corrispondenza senza distinzione tra maiuscole e minuscole dal server. Premi Invio o Cerca.",
+        "source_sha256": "bcea8f37ada6903cb6eb1cd6d189400fa8936d06cf0f979aa9713614bceb1116"
+      },
+      "attestationsEmpty": {
+        "text": "Nessuna attestazione corrisponde a questo filtro. Un registro vuoto è un’assenza di prove, non una prova che la formazione non sia avvenuta – e non una prova che sia avvenuta.",
+        "source_sha256": "9ef400df9c525dba3e3c073ec8ccc764210132eda94ec79c23655770d318016e"
+      },
+      "attestationsEmptyFieldsClaim": {
+        "text": "IP di origine, agente utente e tempo di permanenza sono volutamente vuoti, non persi.",
+        "source_sha256": "3d3865bd63f5ded05917bebda35980d85144c70ae13c1ee711c40a3682c8cd2e"
+      },
+      "attestationsEverybody": {
+        "text": "Tutti",
+        "source_sha256": "25a7047652d91ad86451cd74838e89d7befee5b500d7d78f8f2f042fcd003dc1"
+      },
+      "attestationsExclusionClaim": {
+        "text": "Non una valutazione di controllo; nessuna prova per 800-172 3.2.2e.",
+        "source_sha256": "99542f82ab48cdafd21b37f11e7a6734b576d7ec3746232a804b41bd09b9029d"
+      },
+      "attestationsIntro": {
+        "text": "Chi ha affermato quale versione del documento, quando e chi ha inserito il documento.",
+        "source_sha256": "d61bf1b7be43bd07a2d65ec8916e980874c6f8deee445f544f235f77cf52c1ad"
+      },
+      "attestationsLoadError": {
+        "text": "Das Bestaetigungsverzeichnis konnte non geladen werden.",
+        "source_sha256": "aa12619c5ec172da36b0a3e8495daf95144575d051ef46e00dec39c722eb280f"
+      },
+      "attestationsNoPermission": {
+        "text": "Sie brauchen the Berechtigung, the Bestaetigungsverzeichnis anzuzeigen.",
+        "source_sha256": "fd5e4a5de607bcb61ad7b7f69707513a5fbdfac36d3114559c5ce0185f5a0531"
+      },
+      "attestationsPerson": {
+        "text": "Persona",
+        "source_sha256": "6007db63e18e532c7399975ed77d2e3900810aa75cad165b8d2e5d8b08085c3d"
+      },
+      "attestationsProgram": {
+        "text": "Programma",
+        "source_sha256": "90920d93e2c7e6323a947c6edb0e31a9702002e329af32a67fea53f221983cb0"
+      },
+      "attestationsSearch": {
+        "text": "Ricerca",
+        "source_sha256": "49c266baaaa70981ea188fa714d5c40cf13830d786a861c9943ae0d26a7f3fe9"
+      },
+      "attestationsSourceClaim": {
+        "text": "Ogni riga è registrata dall'operatore: l'ha inserita un amministratore, non il firmatario.",
+        "source_sha256": "aad5f94ab300dafc2e3f956f9557f533f144e49a837ae42ea76154481a9aa758"
+      },
+      "attestationsSubtitleLedger": {
+        "text": "Nur anhaengbare Unterschriften — keine Aussage, dass a Person geschult or zertifiziert ist",
+        "source_sha256": "fe3f619d6a75e67469ccabdb21a1a3bd6b369c334c5ae9512bda43e40d831a30"
+      },
+      "attestationsTitle": {
+        "text": "Registro degli attestati di formazione",
+        "source_sha256": "1f1510a0b320fc83e849e1446690d984b2c7b8043d1a87741caee65da3d9a30d"
+      },
+      "catalogForbidden": {
+        "text": "Il catalogo documenti è limitato da un'autorizzazione che il tuo ruolo non detiene. La creazione del programma ne ha bisogno, perché un programma blocca i documenti da quel catalogo.",
+        "source_sha256": "66e7b5d052198fecde2fbd36ad795ea15c0f2ff8b0f3e297ffc44d60dae1cf84"
+      },
+      "completedOf": {
+        "text": "{{done}} di {{total}} Â· {{rate}}",
+        "source_sha256": "f6c53bbd5e9b2035955d058b501a265735622c83139ad5572b7a66b05be7d36e"
+      },
+      "controlTags": {
+        "text": "Tag di controllo",
+        "source_sha256": "6c9ca7aa064428d5b5a0c2d07bec187cc67156b7db8b3ed65d58eeec888c5807"
+      },
+      "controlTagsHelper": {
+        "text": "Separati da virgole, ad es. AT.L2-3.2.1.",
+        "source_sha256": "6b044c69169bba396417bc972acdb184d84bf0c6b34891725b205ef682d355e7"
+      },
+      "coverageAdopts": {
+        "text": "Uebernimmt {{parent}}. {{note}}",
+        "source_sha256": "18638421bc1f7cb763821b1ccfec9ee839deb007cb5e991c14d6f11f20ecf789"
+      },
+      "coverageAllDocs": {
+        "text": "Tutti i documenti: {{titles}}",
+        "source_sha256": "f3381508ba19c39867d1d57a4470df8b5a62c9ece84999d92c8f4e3610f23fdf"
+      },
+      "coverageAllHaveDocs": {
+        "text": "Tutti gli standard {{count}} che richiedono formazione dispongono di documenti",
+        "source_sha256": "6e53241b3679f65a545d597c268c79d22ca468ce5cf0e7ff0c90dc34b23964b2"
+      },
+      "coverageAndMore": {
+        "text": "e {{count}} altro",
+        "source_sha256": "25a067fd69ff7625b9eccc01a36d750435cc76099ee291969ae0f01c569b0ab3"
+      },
+      "coverageCoverage": {
+        "text": "Copertura",
+        "source_sha256": "523487a5de21adb5301bbf09807653a537991aded9884ef99c115d906c5b8a1d"
+      },
+      "coverageCovered": {
+        "text": "Coperto",
+        "source_sha256": "da69bf500ed87251c00ce3f0ba81a58c0351cd352f9777a910e2776615baa3f4"
+      },
+      "coverageDocuments": {
+        "text": "Documenti",
+        "source_sha256": "b4e929d8bcfe04189801a8ed61496d177d9e30d1b2826f4c9c4d00b3e705fa8b"
+      },
+      "coverageFooter": {
+        "text": "Ein Standard gilt als abgedeckt, wenn a Dokument in the Bibliothek a eigene Klausel dieses Standards nennt. Gli standard, il Kontrollsatz eines anderen uebernehmen, werden durch the Dokumente des Elternstandards beantwortet. Norme senza Schulungsklausel zeigen the Grund, statt della Liste to fehlen.",
+        "source_sha256": "c5e8419e0213d9715e25f291016ca9a262e5907b6bafac308dda620392cdce0d"
+      },
+      "coverageGaps": {
+        "text": "Gli standard {{count}} richiedono formazione e non hanno documenti",
+        "source_sha256": "98d6c807261001992955b326d1c5ba7146ad2190fd1f6576d936ff5397c69ef2"
+      },
+      "coverageHonestyFallback": {
+        "text": "Abgedeckt heisst: Nella Bibliothek gibt es a Dokument, the a Klausel dieser Norm nennt. Es heisst not, dass jemand the Dokument gelesen hat, ed es ist keine Kontrollbewertung.",
+        "source_sha256": "c1b07e66819e9ad7ab7ca87f400c44d67df5ca83bb2a4da0d12aa12e6b2d1225"
+      },
+      "coverageInheritClause": {
+        "text": "{{count}} eredita un genitore",
+        "source_sha256": "530b0840c93e37eadbb15f9b4625c51d05214c8ea191cf46a5ba3acc02ad1f68"
+      },
+      "coverageInherits": {
+        "text": "Eredita",
+        "source_sha256": "f54cf9b6e33fe53d7ccaf3f3d330c7b3180fb6707168534f410b01d8a6872648"
+      },
+      "coverageNDocs": {
+        "text": "{{count}} documenti",
+        "source_sha256": "f2b987b859e08c339198b855fed32eb57b3810002d9187c76902a485f0123180"
+      },
+      "coverageNoClause": {
+        "text": "Nessuna clausola",
+        "source_sha256": "61e770c9038040ced4761db001419316354974588707610c07ff0bb368e4cc90"
+      },
+      "coverageNoDocument": {
+        "text": "Nessun documento",
+        "source_sha256": "46b7bda94ac20073401d3e319355b2b8e0e35d3aeb2b1ebda39508340e319c02"
+      },
+      "coverageNoTrainingClause": {
+        "text": "{{count}} non hanno clausole di formazione",
+        "source_sha256": "8a49c76fbd3ded09c76b2f330598c74ed3ee4b8e3580cbac8aa94732df39bbfc"
+      },
+      "coverageNone": {
+        "text": "Nessuno",
+        "source_sha256": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+      },
+      "coverageNoneYet": {
+        "text": "Nessuno ancora",
+        "source_sha256": "adb85cf22bfc3254304164852b939485b2071dc53cd828a40828eb8505057ccd"
+      },
+      "coverageObligation": {
+        "text": "Obbligo e clausola",
+        "source_sha256": "2e5d8c056d70a177e15bd7533f57da89970c33fe4d732c66951d626478f10c0e"
+      },
+      "coverageOneDoc": {
+        "text": "1 documento",
+        "source_sha256": "56bde479f8031fb8fbdc33276eb2d0332856ca4d54689396eddd82e24f743126"
+      },
+      "coverageOnlyObliging": {
+        "text": "Mostra solo gli standard che richiedono la formazione della forza lavoro",
+        "source_sha256": "2410e13b6427e45dba2eaa0f9ac47637d5cbe4ab68df9030569a0c34689c3fb8"
+      },
+      "coverageOwnClause": {
+        "text": "{{count}} nomina la propria clausola",
+        "source_sha256": "18d2bc80b83eaee5fa0d6d0eb636b14bf838a8ab24b6b26cdded7650d08df3ac"
+      },
+      "coverageRegistered": {
+        "text": "{{count}} standard registrati",
+        "source_sha256": "1c79de679ce999b8754346ea370c2946bac0f42717aeaec2e6c0a3e167427afd"
+      },
+      "coverageRequires": {
+        "text": "Richiede formazione",
+        "source_sha256": "0d3e79ae4aadc9fcb567e87994424132ee7233b0fd409076b040026ec77e80fa"
+      },
+      "coverageStandard": {
+        "text": "Standard",
+        "source_sha256": "ef6691545d2c5523efed00424407cb261aeb0037d165ca5792f7f8bac3381362"
+      },
+      "daysAfterEnrollment": {
+        "text": "Giorni dopo l'iscrizione",
+        "source_sha256": "fce2a811cf6504ffa895ec4919ac643703eb1557a3f97df411e2b199818fb362"
+      },
+      "detailActions": {
+        "text": "Azioni",
+        "source_sha256": "ff8059dc6752afdd30d275932b1d5031a2ec854b387a8c57ecc6689915293a43"
+      },
+      "detailActivate": {
+        "text": "Attivare",
+        "source_sha256": "24433c70eba5b15368fe2e1dda94fe3d61db2357aa144363b9ab487e60235ab2"
+      },
+      "detailAllPrograms": {
+        "text": "Tutti i programmi",
+        "source_sha256": "0e09c5c368f27d7dec684f09b4e3c050001829316562231293344e239a3b43a7"
+      },
+      "detailArchivedExcluded": {
+        "text": "Persone archiviate in archivio {{count}}",
+        "source_sha256": "94e11acd0ef8839c7c23bd394c3699baa1ea6874265835b2a862912b87f73a14"
+      },
+      "detailArchivedExcludedTitle": {
+        "text": "— archiviert, non nell'Abschlussnenner",
+        "source_sha256": "2002530d8a3dcc2e0b27da076509dc5d8285477a16d277edf4405123a6538d58"
+      },
+      "detailAssignedN": {
+        "text": "Zugewiesen {{count}}",
+        "source_sha256": "2e300cf1d95ab46dbcb7d5d145672d7150bb654d54ef792630af9d7f56badc1a"
+      },
+      "detailAssignmentsTitle": {
+        "text": "Schulungsaufgaben — {{name}}",
+        "source_sha256": "829957dda0222b5d1a9648ce42913868a243bab690616ad2749d1bbd2599d91c"
+      },
+      "detailAttestFailed": {
+        "text": "Die Bestaetigung konnte non erfasst werden",
+        "source_sha256": "296769bb3aafd32a87c0b261db4935701a1a9d2c49520c583a42d82b296ae02e"
+      },
+      "detailBack": {
+        "text": "Zurueck ai Programmi",
+        "source_sha256": "02ac00862a33cb43d7a39d0187e955b34c5cb158280d58a8c7929e34cd1c865a"
+      },
+      "detailCancel": {
+        "text": "Cancellare",
+        "source_sha256": "19766ed6ccb2f4a32778eed80d1928d2c87a18d7c275ccb163ec6709d3eb2e27"
+      },
+      "detailChooseDocument": {
+        "text": "Waehlen Sie, for welches Dokument diese Unterschrift gilt.",
+        "source_sha256": "a277973f6d7cc1234aef8b9e599946e6fad6ca1f417e0caf68a5d03ca914c541"
+      },
+      "detailClaimCompletion": {
+        "text": "Eine Abschlusszahl ist keine Kontrollbewertung; nessun Nachweis per 800-172 3.2.2e.",
+        "source_sha256": "84805691efa9436c3ad9ff4776d684392062c444493097a9291e53a68ef5f4b0"
+      },
+      "detailClaimNotBuilt": {
+        "text": "Zugangssperre, Benotung e regelbasierte Einschreibung sind not gebaut.",
+        "source_sha256": "d462b02cbabc0e6cf919709fb57fc0f52ba4ecf83e0be0c8160e064e56f4d5a2"
+      },
+      "detailClaimOperator": {
+        "text": "Jede Bestaetigung hier ist della Verwaltung erfasst — kein Portal for Lernende, keine Selbstbedienung.",
+        "source_sha256": "24fa2e4e4b370641ee5508c43383aba69cf2d32fd08a370e00215d56c4cd1295"
+      },
+      "detailClose": {
+        "text": "Vicino",
+        "source_sha256": "7d9eb7acb13e24625c404401d8e88b2350e32162455885f18276cf802f7701ed"
+      },
+      "detailClosedTerminal": {
+        "text": "Geschlossen ist endgueltig; dieses Programm kann non wieder geoeffnet werden.",
+        "source_sha256": "dfbe34e972aaf53a2c54ed08278f14969b1a4e45e51f4d08e021fb4c99e6ca57"
+      },
+      "detailCompletedOf": {
+        "text": "Abgeschlossen {{done}} di {{total}} · {{rate}}",
+        "source_sha256": "64bbd2e598d656ba20077e91eaa6644dee0ed8c5a6abbf252ecd2417a97bb6b2"
+      },
+      "detailCreatedBy": {
+        "text": "· angelogt di",
+        "source_sha256": "9bc66e0237b28fb01bcc391d7b091ca303ec519cb3369297f857a60734d16615"
+      },
+      "detailDeliveryAttempts": {
+        "text": "Zustellversuche — keine Abschluesse",
+        "source_sha256": "d1e3afa3cca26a9770310a0aa00d225b6183aeeee6328a0edc230e73a0fa8061"
+      },
+      "detailDeliveryRecord": {
+        "text": "Liefernachweis — keine Aussage, dass a Person geschult or geeignet ist",
+        "source_sha256": "5d41fefe692e6b301c97280c2009ba87aeea59f25ea55e8b1387fbc1dd55121c"
+      },
+      "detailDueEverybody": {
+        "text": "Scadenza {{date}} per tutti",
+        "source_sha256": "e6ece8c3d48fca76fa452c09db2f6f3159cc54ec34188ccea6b15c3ced6f9950"
+      },
+      "detailDueRelativeEach": {
+        "text": "Scadenza {{days}} giorni dopo l'iscrizione di ogni persona",
+        "source_sha256": "054268c29aac9c1d5030ddd768082f6c08399d311434ec6268f889e86c8c03ed"
+      },
+      "detailDueUtc": {
+        "text": "Faellig (UTC)",
+        "source_sha256": "e5548a76a3d55d79cc90e165b260786d0b1fd515e267bc2154c7f922ef2f249b"
+      },
+      "detailDueWhen": {
+        "text": "Faellig {{when}}. Erinnerungsversuche stehen nel Sendelog auf dieser Seite.",
+        "source_sha256": "31716f50bb866d8ae17351180ca10ac4a9945d43e33e0073f6c05edb8bdfa46a"
+      },
+      "detailEnroll": {
+        "text": "Einschreiben",
+        "source_sha256": "f77f7c0277f7df6b90f07e9a0eafcdb948b28c12088c45f3faaf67e15e3de846"
+      },
+      "detailEnrollFailed": {
+        "text": "Diese Personen konnten non eingeschrieben werden",
+        "source_sha256": "efd525391ccd0d02762e36de3699526782befc4e02315807d1540e147a803d01"
+      },
+      "detailEnrollHelp": {
+        "text": "Einschreibung ist idempotente: Wer in diesem Zyklus schon eingeschrieben ist, wird not verdoppelt e il Faelligkeitsdatum bleibt. Nur active Verzeichnispersonen stehen hier.",
+        "source_sha256": "e2fb165e1b03af93f0e19850730a1306bff77595a0a5fe869cea9a1e31149f49"
+      },
+      "detailEnrollPeople": {
+        "text": "Iscrivi persone",
+        "source_sha256": "af28eb9efc5ce8832b4f855ed66a249d9d26e2377b40221b6282760cd270391d"
+      },
+      "detailEnrollToast": {
+        "text": "{{created}} registrazione; {{already}} waren in diesem Zyklus schon eingeschrieben.",
+        "source_sha256": "c5cfc2bb69bd5c3b941450891a61781a8547f091e719d08fff5dace8d83b3657"
+      },
+      "detailEnrolledPeople": {
+        "text": "Eingeschriebene Personen",
+        "source_sha256": "f584cb6fa526fcdfe2192ce912b2a704b4cdf8b3f9ecf0a4b59eaf6ae003015e"
+      },
+      "detailEnrolling": {
+        "text": "Wird eingeschrieben…",
+        "source_sha256": "c6b7a43a3e7c9bd3b85c3170c0d38a441b36e51e87a70673d406dced7903e4e5"
+      },
+      "detailFailureReason": {
+        "text": "Fehlergrund",
+        "source_sha256": "ee49a07731520bb735fb095ba87707c0e33a2ec77553836f5e2f821f6c5a9c80"
+      },
+      "detailFutureRefuse": {
+        "text": "Eine Unterschrift, the noch not stattfand, ist kein Nachweis. Geben Sie the vergangenen Zeitpunkt a.",
+        "source_sha256": "ded0c2faad9a56b9f11248ed08ddc9d361ee353df813b72733124b120eda24c9"
+      },
+      "detailHashNote": {
+        "text": "Der Dokument-Hash wird vom Server aus the gehefteten Vorlage and the Einsetzwerten dieses Programms berechnet. Er kann hier non angegeben werden, damit the Verzeichnis the genauen Bytes festhaelt, the the Server erzeugt hat.",
+        "source_sha256": "2fadd22539791ba0d2b5d00851267721f6487d1fb87d2cb98ace675dd4894556"
+      },
+      "detailInProgressN": {
+        "text": "Nell'Arbeit {{count}}",
+        "source_sha256": "db373efc8469c44a46169bd06c7ae76b9c8f6ba0ab18f98edeb89076145f39f9"
+      },
+      "detailIntent": {
+        "text": "Satz, il cappello sie bestaetigt",
+        "source_sha256": "46c7e62327355da791a2b699dc667c693892c6b8cb3bf361fd514d7e74484063"
+      },
+      "detailIntentHelp": {
+        "text": "Bleibt the Server-Standard, bis Sie ihn aendern. Pro Zeile gespeichert, damit a spaetere Aenderung keine alte Unterschrift umschreibt.",
+        "source_sha256": "94375c87b915043f5bab42ecb07f4d7ad1e01cef131f5f6424e555bbfa239dac"
+      },
+      "detailKind": {
+        "text": "Arte",
+        "source_sha256": "75df3579c73089e317e5bf917f6b6cf1cb8d19f21ad70c15e70e431c3aa2a62a"
+      },
+      "detailLateNo": {
+        "text": "· verspaetete Abschluesse werden non akzepitiert",
+        "source_sha256": "b2336e90d99d5bf4b2d2dd382a6f7dc5f7861c554ca498b29c3a86f6ef533687"
+      },
+      "detailLateYes": {
+        "text": "· verspaetete Abschluesse werden akzepitiert",
+        "source_sha256": "9ba2d1d08d7ee4eb652616df79208fa007abace889d2f733f3f9b8627b49f463"
+      },
+      "detailNoAssignmentView": {
+        "text": "Sie koennen dieses Programm sehen, aber not, wer eingeschrieben ist; il braucht il Berechtigung, Aufgaben anzuzeigen.",
+        "source_sha256": "53669af7d3fb77831d67fc19d42d89c4776fb10abd2f1a9d3298c3c698f44f5d"
+      },
+      "detailNoDocsPinned": {
+        "text": "Keine Dokumente an dieses Programm geheftet.",
+        "source_sha256": "2d3d60fe6b50dc33051ebd179c0a9d39e6afba3a183d614544bc06215d1de3dc"
+      },
+      "detailNoDue": {
+        "text": "Kein Faelligkeitsdatum auf dieser Aufgabe.",
+        "source_sha256": "8c2a9491e78d6bfbaa30db3d6473f63eae34360af74511a4ade5c35b5115adb3"
+      },
+      "detailNoNameRecorded": {
+        "text": "(nessun nome è riuscito)",
+        "source_sha256": "26ab986f42ebcdba4c73c8597202466cf3e803de0db174bfd64f719beef34447"
+      },
+      "detailNoReason": {
+        "text": "nessun motivo è",
+        "source_sha256": "a6d7f98e0ee44cda8abe3bc6c0ceff0198393268d5f2aa835f4d39facc5f4b5b"
+      },
+      "detailNoReminders": {
+        "text": "Fuer dieses Programm wurden noch keine Erinnerungsversuche festgehalten.",
+        "source_sha256": "488ce7626a40ddc828da270a98062ec532434d60b8e58289440de80978c10508"
+      },
+      "detailNobodyEnrolled": {
+        "text": "Noch niemand eingeschrieben. Einschreibung ist namentlich, a Liste nach the anderen — es gibt keine Gruppenmitgliedschaft e keine Rule, the Neueinstellungen automatisch einschreibt.",
+        "source_sha256": "06c08e27aec6583da698c93777fadc92eb30ef004032416e6de1170bd46da350"
+      },
+      "detailNowStatus": {
+        "text": "Il programma è ora {{status}}.",
+        "source_sha256": "41af8b222a49cf83168d61fc43dba7138b62da9127240d12f4481587cf1d28a4"
+      },
+      "detailOptional": {
+        "text": "opzionale",
+        "source_sha256": "ec91fdd9256cb75ae611249b50cb7eb16533f0fa91b86239ec1d439a1ea033b8"
+      },
+      "detailOptionalParen": {
+        "text": "(opzionale)",
+        "source_sha256": "edbfc3dcbe849138276fa20715807a6cfd77532f7bed31c08a8e7c248c9121cb"
+      },
+      "detailOverdueDerived": {
+        "text": "Ueberfaellig wird zur Lesezeit aus the Faelligkeitsdatum abgeleitet. Erinnerungsversuche stehen nel Sendelog darunter.",
+        "source_sha256": "b4ccd8df5586ab59ff9631b813fc72889b26bc50e2dcfdcb7eab7a20651d976d"
+      },
+      "detailOverdueN": {
+        "text": "Ueberfaellig {{count}}",
+        "source_sha256": "21acdce40c09886240768c5da71ae9a9b47f6dcdddf968760912a4221f68bcf4"
+      },
+      "detailOverdueNote": {
+        "text": "Ueberfaellig wird zur Lesezeit aus the Faelligkeitsdatum abgeleitet. Erinnerungsversuche stehen nel Sendelog darunter.",
+        "source_sha256": "b4ccd8df5586ab59ff9631b813fc72889b26bc50e2dcfdcb7eab7a20651d976d"
+      },
+      "detailOverduePrefix": {
+        "text": "In ritardo ·",
+        "source_sha256": "38b9cbd54e293ce5a58c288a466d1e9174237630b50106e24724a3322a970c8e"
+      },
+      "detailPause": {
+        "text": "Pausa",
+        "source_sha256": "858e4ba7a29fd38b630ed73a79e2738333b3fc6778fafa90252f5556c1262fdc"
+      },
+      "detailPerson": {
+        "text": "Persona",
+        "source_sha256": "6007db63e18e532c7399975ed77d2e3900810aa75cad165b8d2e5d8b08085c3d"
+      },
+      "detailPolicy": {
+        "text": "Politica",
+        "source_sha256": "c611981fab983bc648368eb81240f5a5a1eff07f40aa4c9fd155600a98eeb6af"
+      },
+      "detailRead": {
+        "text": "Leggere",
+        "source_sha256": "dca8f64910cbbb3687a8afb56b22bebeddded20f979fa48f73af3a9bb4d9df72"
+      },
+      "detailReason": {
+        "text": "Grund",
+        "source_sha256": "b45f40c737c3b279bddda74831ad9f370673711a5e225c1e7fc64bb6aded8238"
+      },
+      "detailRecordAlert": {
+        "text": "Sie halten fest, dass {{email}} dieses Dokument ausserhalb des Systems bestaetigt hat. Das Verzeichnis nennt Sie als the Person, the the Eintrag erfasst hat, and laesst Quell-IP, User-Agent e Verweildauer leer, weil the Server the unterzeichnende Person nie gesehen hat.",
+        "source_sha256": "f13b186191f6bd08b75a2776457c58d38b867a2b445d6f6874cf7c25806969e1"
+      },
+      "detailRecordAttest": {
+        "text": "Bestaetigung in the Namen dieser Person erfassen — a of the Verwaltung eingegebener Nachweis einer Unterschrift ausserhalb des Systems",
+        "source_sha256": "8bd4d1a393ac69843ce3638150b3344f379eabfefcf917f95d0a696b2218cb9e"
+      },
+      "detailRecordAttestDenied": {
+        "text": "Braucht il Berechtigung, Bestaetigungen to erfassen",
+        "source_sha256": "ebd926c9f4f3ca465207e5c542ff5029e6ca126ca85f920b0a340e992745b152"
+      },
+      "detailRecordAttestation": {
+        "text": "Bestaetigung erfassen",
+        "source_sha256": "3f4e0514b2c80d728fbd33c12ccbb2738505fe573f2b7c1c3ea323523f5bb34e"
+      },
+      "detailRecordTitle": {
+        "text": "Von the Verwaltung erfasste Bestaetigung eintragen",
+        "source_sha256": "493002fa2466480d52fd68f04a0f2b0dc50283ccc2c0a89e383fa4f91c6ba06c"
+      },
+      "detailRecordWaiver": {
+        "text": "Aussetzung erfassen",
+        "source_sha256": "d6e010d13b1a876720f9e7c19bf997584bd1e166e4ea3bff9b420547a5597172"
+      },
+      "detailRecordedCompleted": {
+        "text": "Erfasst. Jedes Pflichtokument ist jetzt bestaetigt, also dorate the Aufgabe als abgeschlossen — the ist a Liefernachweis, keine Aussage, dass the Person geschult ist.",
+        "source_sha256": "c38643ed134ae21c742399f0d39f0bf1b1c4480c01551866615b73e22c1854b9"
+      },
+      "detailRecordedOne": {
+        "text": "Eine of the Verwaltung erfasste Bestaetigung for „{{title}}“ eingetragen.",
+        "source_sha256": "993443a75e94a34f8feeb276f9148edf974860c4cc75402442671d83e82d4a81"
+      },
+      "detailRecording": {
+        "text": "Sarà facile…",
+        "source_sha256": "b935a656fd77abb707a5ad0ce28aefafa885a8619eaf8ae178bdd83987529989"
+      },
+      "detailRecur": {
+        "text": "· soll alle {{months}} Monate wiederholt werden (nichts oeffnet automatisch a neuen Zyklus)",
+        "source_sha256": "69d3706a64a1679d7dc7c2f49b9eb0862ee0e5e6e6ba93eb9c749d82c4fd776a"
+      },
+      "detailReminderLog": {
+        "text": "Erinnerungs-Sendelog",
+        "source_sha256": "91a8247da59c615e469268772090fce6ea6a733f2a07d2b7f0759e3b4b52bf36"
+      },
+      "detailReminderTitle": {
+        "text": "Registro delle lezioni di scuola — {{name}}",
+        "source_sha256": "b1754f857e524ca9140457333cb3d5898fe630e35648dc7145fe837da68bf552"
+      },
+      "detailRequired": {
+        "text": "pflicht",
+        "source_sha256": "cda455a6a9c370d03fc85865563b4013c5407b8ebe931b1fb85f9f033af2b411"
+      },
+      "detailRequiredAffirmed": {
+        "text": "{{done}} di {{total}} Pflichtokumenten bestaetigt. Opzionale Dokumente zaehlen hier not.",
+        "source_sha256": "76849bbb7d72e337033dee6a9f82a3975b25700321ec880ca2d31cbc84da54ab"
+      },
+      "detailRequiredDone": {
+        "text": "Pflicht erledigt",
+        "source_sha256": "72e079614b11684deb7fcd5b217df0a98cebb3f5bc8423468a9e43f0f6d584dc"
+      },
+      "detailRequiredParen": {
+        "text": "(pflicht)",
+        "source_sha256": "36efa8c952eed4d41116ea2ffa1d1f35a333b0663f5a01e4ae3011534613971e"
+      },
+      "detailRosterMembers": {
+        "text": "Personen nel Verzeichnis",
+        "source_sha256": "c9dd06fcfad325f3852afacc1f545828c048f83e0b2e56e2383028f339692b06"
+      },
+      "detailSelected": {
+        "text": "{{count}} ausgewaehlt",
+        "source_sha256": "b0c019bcee2d81e7a750487474399ba65a5201fd71aa72a503f5670f831b7f93"
+      },
+      "detailState": {
+        "text": "In piedi",
+        "source_sha256": "2de251e0c4e8f8190c239e46c29c60336b48cc6cd014297c11cdc92f6addc464"
+      },
+      "detailStatusFailed": {
+        "text": "Der Programmstatus konnte not geaendert werden",
+        "source_sha256": "8b697a06653ad1f167b398a6cba8b6cf386166e633103d1df2b3c8091710b06e"
+      },
+      "detailSubtitle": {
+        "text": "Documenti, iscrizione e stato di consegna per persona.",
+        "source_sha256": "209d7797334d4be849f81e0c43bb038c3857f23d939b4df5fd64b4372ef6a2b2"
+      },
+      "detailSweep": {
+        "text": "Inizio dell'Erinnerungslauf",
+        "source_sha256": "4e609b23f1654716f01fcf3fc257b52c69a32b7dce72a12f240f957d58703b9f"
+      },
+      "detailSweepFailed": {
+        "text": "Der Erinnerungslauf konnte non si avvia",
+        "source_sha256": "7574cdc934e7458726c1f7e0a649b867273aea309fae34dec68447a6030b7941"
+      },
+      "detailSweepHelp": {
+        "text": "Jeder Zustellversuch steht hier, auch fehlgeschlagene Mail. Eine gesendete Zeile ist a Zustellversuch, kein Abschluss e keine Note.",
+        "source_sha256": "4e36253ae51de18094fad41283203c7e963181b0a1b73edbc790c19f2b9784a5"
+      },
+      "detailSweepToast": {
+        "text": "Erinnerungslauf: {{sent}} gesendet, {{failed}} fehlgeschlagen, {{suppressed}} unterdrueckt",
+        "source_sha256": "6709b8b630359fdc5122e50a2decdf056cc5f92203731eaaae7d0c88fdca5ff0"
+      },
+      "detailSweeping": {
+        "text": "Lauf laeuft…",
+        "source_sha256": "8cf7c785659705eef3da82007d25cb36e04912f09ba04138e8c69b3aef70188e"
+      },
+      "detailTagged": {
+        "text": "Markiert {{tags}} — nur Markierungen; keine Kontrolle gilt hier als erfuellt.",
+        "source_sha256": "a45cdabfa90f8e06df7d2d8c61c58c9eb8b006b1e8408a1571e57b85dfb0dd20"
+      },
+      "detailTitle": {
+        "text": "Programma Schulung",
+        "source_sha256": "1ac17252706607dde79c5c422239b9bbd596c2ce619a4ae9770b8399a49dc3f0"
+      },
+      "detailTypedName": {
+        "text": "Nome con il cappello della persona unterschrieben",
+        "source_sha256": "bbf241055e483e9e21edbfc92fac216d16996e4b6754cc74a1b91d1ff11b083f"
+      },
+      "detailTypedNameHelp": {
+        "text": "Wird woertlich als getippte Unterschrift gespeichert.",
+        "source_sha256": "53c35ba120fd91fdcefd67b0db8542fc31f384c6a0b47c4c37eae63fc48f8dde"
+      },
+      "detailTypedNameRequired": {
+        "text": "Geben Sie the Namen a, con il cappello Person unterschrieben. Eine Unterschrift braucht a unterzeichnende Person.",
+        "source_sha256": "f91e528136ad9eb209ffaa9b69ce22157a09db0ec9817aed222bbe5c9ab85f87"
+      },
+      "detailUnknown": {
+        "text": "senza preavviso",
+        "source_sha256": "a418e69e9fbe3f5ee539498f036d24184da4562539491ddb884e1c6e47778c60"
+      },
+      "detailWaive": {
+        "text": "Mit begruendetem Grund aussetzen. Eine Aussetzung ist a erfasste Luecke, kein Abschluss.",
+        "source_sha256": "e8be11888a4dee58c9a40350f0187a889477ce1c6158fff709702555e5632295"
+      },
+      "detailWaiveBody": {
+        "text": "Eine Aussetzung ist a erfasste Luecke, kein Abschluss. Sie bleibt nel Nenner jeder Abschlussquote e ausserhalb des Zaehlers, anche kann Aussetzen a Prozentzahl non verbessern.",
+        "source_sha256": "5d5f15c65cb8b8915e7db79fad5a05b4f9746bb604e671fc242290d2d8d92922"
+      },
+      "detailWaiveDenied": {
+        "text": "Braucht il Berechtigung, Aufgaben to verwalten",
+        "source_sha256": "d5eff419b4039885ab8b4b48eb47c33162ce3c34eeef1f56c5f6c154572d3787"
+      },
+      "detailWaiveFailed": {
+        "text": "Diese Aufgabe konnte not ausgesetzt werden",
+        "source_sha256": "7312de130fd43c8b4fc3d754be46f593c2a4743e999f992899a2dc2fefa3740a"
+      },
+      "detailWaiveTitle": {
+        "text": "Diese Aufgabe aussetzen",
+        "source_sha256": "b9761c818e9c48fd180dd3c88dff481be6d50903cb92a632c3a2748b33859c41"
+      },
+      "detailWaivedN": {
+        "text": "Ausgesetzt {{count}} (Luecke, kein Abschluss)",
+        "source_sha256": "b933e28ad48fb34d7f44724238ef98148e05d93affe74f9a2f9428dfa6f81dcd"
+      },
+      "detailWaivedToast": {
+        "text": "Ausgesetzt per {{email}}. Eine Aussetzung ist a erfasste Luecke: Sie bleibt in the Nenner and ausserhalb des Zaehlers.",
+        "source_sha256": "9e898c221b8f235827396fc674b434935137b7297045978405a4c7aa4694507e"
+      },
+      "detailWaiverGap": {
+        "text": "Eine Aussetzung ist a erfasste Luecke, kein Abschluss: {{reason}}",
+        "source_sha256": "416b8d4d4f290ad1ec6116cd0e6d78ba9c8108b28e03f7f5c89d77549619e5cb"
+      },
+      "detailWaiverHelp": {
+        "text": "Pflicht. Eine unerklaerte offene Zeile ist the Erste, was a pruefende Person herauszieht.",
+        "source_sha256": "ccbeee261bc9d4bb9384a110e70814e0fa5139c83c9984e01b834a11230c5a9b"
+      },
+      "detailWaiving": {
+        "text": "Wird ausgesetzt…",
+        "source_sha256": "69513329fb8011bce5a57068efef362d2f7562fb949ae304b1fee3817647f522"
+      },
+      "detailWhenRequired": {
+        "text": "Geben Sie an, wann the Person unterschrieben hat.",
+        "source_sha256": "1346f685b9b8aea22f465f658154ed1efcef25398ad2ff65fe0c677324fd4e1f"
+      },
+      "detailWhenSigned": {
+        "text": "Wann sie unterschrieben hat",
+        "source_sha256": "68fff05caaf4ff7a30affebc219fe533b7962e696f68e8873c501bb5f8a79ce1"
+      },
+      "detailWhenSignedHelp": {
+        "text": "Ein Zeitpunkt in the Vergangenheit wird erwartet. Der Server lehnt a zukuenftigen ab. Eingabe nell'Ihrer Ortszeit, Speicherung nell'UTC.",
+        "source_sha256": "c924a45141422b39405a81a00aca6f72a5dd490734014fdc2eb64159f882dae4"
+      },
+      "documentsOrder": {
+        "text": "Documenti, in ordine di lettura",
+        "source_sha256": "ddc8cf6f1389f61e1ca4890a49486104a44c4c734f1fdeb4cb2710e504222b28"
+      },
+      "dueDaysAfter": {
+        "text": "{{days}} giorni dopo l'iscrizione",
+        "source_sha256": "e925d46e53e306facc60e2e692cc95354f8af6ad0624a76278d42d82c9aac1b7"
+      },
+      "dueFixed": {
+        "text": "Data di calendario fissa",
+        "source_sha256": "352d0b3bf082a179f29a3862b03c50fd30bd8cf4222fc0ab32c60a8941a25311"
+      },
+      "dueFixedDate": {
+        "text": "Risolto {{date}}",
+        "source_sha256": "ed4f066db07a03a44ebbc4c0f6d84d92673b4e4a02b310d8e4ad43613082b80e"
+      },
+      "dueFixedHelper": {
+        "text": "Un programma fisso senza data non arriverà mai a scadenza, quindi il server lo rifiuta.",
+        "source_sha256": "ffe5d1872d87db2fa9a69ce2b27b2b043e561370574011f5cb61dab5a38b5f75"
+      },
+      "dueFixedNoDate": {
+        "text": "Fisso (senza data)",
+        "source_sha256": "71d8afe22e17a1d1ee110c25ab27841ee97b4671f112e11dc3f69b33817b696c"
+      },
+      "duePolicy": {
+        "text": "La dovuta politica",
+        "source_sha256": "985e5bc7f339c0b951a09fa94b2ed73bc9a86afb4bf1e7215e4e6cac0874c8ab"
+      },
+      "dueRelative": {
+        "text": "Giorni dopo l'iscrizione",
+        "source_sha256": "fce2a811cf6504ffa895ec4919ac643703eb1557a3f97df411e2b199818fb362"
+      },
+      "emptySignerFieldsNote": {
+        "text": "Quell-IP, User-Agent e Verweildauer sind in jeder Zeile leer, weil the Server the unterzeichnende Person nie gesehen hat — er hat a Verwaltungskraft gesehen, the a Eintrag erfasst. Sie sind absichtlich leer, keine verlorenen Daten.",
+        "source_sha256": "04567a7f257401d1393e59b4a4631d0b7c88eca0ada37900783d27dce2d42cb1"
+      },
+      "frameworkTags": {
+        "text": "Tag del quadro",
+        "source_sha256": "57acdc921a3e3b9d11c865acf75349603ca05df545cfef38ec464c4443a9f095"
+      },
+      "frameworkTagsHelper": {
+        "text": "Separati da virgole, ad es. cmmc-l2, 800-171r3. Solo tag: nessun controllo è contrassegnato come soddisfatto.",
+        "source_sha256": "25b7b264e5e436d6154b4d81958cd2d9f080e718a5f433b46a1a0267f3a85f70"
+      },
+      "honestyFallback": {
+        "text": "Abschlussdaten zeigen, dass a namentlich genannte Person a bestimmte Dokumentversion to einer bestimmten Zeit bestaetigt hat. Sie sind keine Kontrollbewertung: Keine Prozentzahl hier sagt, dass a Kontrolle erfuellt ist or a Zertifizierung vorliegt.",
+        "source_sha256": "ea1cbaaff9a257a44c0c1deb40c0468e8b7f10155308ca97cba5314fe7bfff91"
+      },
+      "honestyFull": {
+        "text": "Testo completo",
+        "source_sha256": "9ed54584159ceee17b350f1bdf53f70af48d59091cfc8b37bcb17d61425eb16e"
+      },
+      "honestyLess": {
+        "text": "Meno",
+        "source_sha256": "ae5239ec63f28cd401ccd63e9f56e4ede8254a738a135ebcd33e844c18dd247f"
+      },
+      "intentDisplay": {
+        "text": "Ich habe dieses Dokument gelesen. Ich verstehe, was es of mir in meiner Arbeit verlangt.",
+        "source_sha256": "de07eb75d3e1dd584e960ec417555a6be56fa20dfb228631e15702f67535d407"
+      },
+      "kindContractor": {
+        "text": "Auftragnehmer",
+        "source_sha256": "c03c4547c02939472d9819173eb4a1b96d2aee83eca96534294edf506d96c142"
+      },
+      "kindContractorOne": {
+        "text": "Contraente",
+        "source_sha256": "ed02a72d7c361ab6221a8aaec0af5c72e9c1ada080f9a23a9ab8fa22db940354"
+      },
+      "kindEmployee": {
+        "text": "Beschaeftigte",
+        "source_sha256": "4f00542c24ec43c61e592f6397ba1d81a728586661f799fde5f43c4726f5a9e6"
+      },
+      "kindEmployeeOne": {
+        "text": "Dipendente",
+        "source_sha256": "14014e6a570327892015d91391f0756bc8c84d3594c867af4cefb5a7e9fb4eac"
+      },
+      "noDenominator": {
+        "text": "Kein Nenner",
+        "source_sha256": "d49a428d83e9eb5358d4051bd2d5e21d19aa33a90a9234760cb52fc149b66b45"
+      },
+      "notBuiltClaim": {
+        "text": "Non vengono creati gate di accesso, valutazione e registrazione basata su regole.",
+        "source_sha256": "a4dd870ed7ad561a25a8ef8132c1b01178918757b9272501b1be67f3199df5fc"
+      },
+      "notBuiltNote": {
+        "text": "In dieser Version not gebaut: il Zugangssperre, Benotung e gruppen- o regelbasierte Einschreibung. Erinnerungsmail wird auf diesem Programm festgehalten (Willkommen, faellig, ueberfaellig). Eine gesendete Zeile ist a Zustellversuch, kein Abschluss. Personen werden weiter namentlich eingeschrieben, a Liste nach the anderen.",
+        "source_sha256": "87ed0ce991ab4df2dd56d76dae849a324f57292a4651211e31aedb60d521a6a1"
+      },
+      "notesOpenFull": {
+        "text": "Aperto a ciò che ciascuno di questi significa nella sua interezza.",
+        "source_sha256": "50d4a8d1545b6437e7646d2e36703d78931cfd9518189cdfd1221ef1869c08fe"
+      },
+      "operatorRecordedFallback": {
+        "text": "Jede Zeile in dieser Version ist of the Verwaltung erfasst: Eine Verwaltungskraft hat the Nachweis einer Leistung eingetragen, the ausserhalb des Systems stattfand. Es gibt keine Selbstbedienungs-Unterschrift, also hat keine Zeile the unterzeichnende Person selbst erzeugt.",
+        "source_sha256": "2114892a43bed9ae8b25d8998c0f95b53c4379c7e29b591c89e378e14797b8d5"
+      },
+      "packsAudienceAdmins": {
+        "text": "Amministratori",
+        "source_sha256": "919fb224a3e32e407e51de2e2fc0820cb3ccaf8680ac3c5c640e7bde35ddeb60"
+      },
+      "packsAudienceAll": {
+        "text": "Tutto il personale",
+        "source_sha256": "86d27dd9e1b05f05f99d80f8474db8d21f7fc11751b1c856be5ee6dac6d53428"
+      },
+      "packsAudienceAuditors": {
+        "text": "Revisori dei conti",
+        "source_sha256": "40607f44b00a274996d57977dc6f90cc5c9ba7a353b8c164129e7c9ab95e0286"
+      },
+      "packsAudienceExecs": {
+        "text": "Dirigenti",
+        "source_sha256": "e0db2a8b264a99d6b01206d803905a551ad6745c3a5a486d14499b2a28f73aa9"
+      },
+      "packsAudienceNewHire": {
+        "text": "Nuova assunzione",
+        "source_sha256": "e2b5066deb9843472073b474194329fd73bbe8be7482b33a744f1261697c6d5e"
+      },
+      "packsAudiencePrivileged": {
+        "text": "Utenti privilegiati",
+        "source_sha256": "ee46f4edfd7e8dc25e86b9e1bca938a61e9e8a9b4d589cb0360417d17553880f"
+      },
+      "packsAudienceResponders": {
+        "text": "Risponditori agli incidenti",
+        "source_sha256": "7229735c9ee630a23ec7172387a48884d5760659351baf26185064b5ebe8a014"
+      },
+      "packsAuthorities": {
+        "text": "Autorità a cui si rivolge questo documento",
+        "source_sha256": "1d8624e327d6b8adea577ce129476316a050f0b5fccdaf76e0b5732d4895f41b"
+      },
+      "packsCitationNote": {
+        "text": "Citato a livello di clausola in modo che un valutatore possa cercarle ciascuna. Una citazione dice che questo documento parla di quella clausola. Non è detto che la clausola sia soddisfatta.",
+        "source_sha256": "a2b629489ad94ed5f4d638e816073a9ecc60d1775b45e1910a35234cf416d7b8"
+      },
+      "packsColCoverage": {
+        "text": "Copertura standard",
+        "source_sha256": "dcffc37527fc9d9b179784f4f01a23eabc60377e0de3e4d4c68fa08b60896c08"
+      },
+      "packsColDocuments": {
+        "text": "Documento",
+        "source_sha256": "36f250abd259fac2c9b93336a66f626b7f9ab66cea297f2daa6813f4aee94b73"
       }
     }
   }
