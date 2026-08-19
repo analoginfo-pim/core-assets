@@ -1,22 +1,718 @@
 {
+  "dashboard": {
+    "text": "儀表板",
+    "source_sha256": "67b696468610b879ed7f224dbf6b0861f27e39d20454cb9d7af1ec52d3e5eeaa"
+  },
+  "overview": {
+    "text": "概述",
+    "source_sha256": "d4b1ea5708dd532930a85188b45aff6f0a3ed458500c7577e0127a538eb0d100"
+  },
+  "platform_overview": {
+    "text": "平台概覽",
+    "source_sha256": "111ec57787258baad6289b8055c9557c05ebee07c0ee7db13779b69e2b3d4c13"
+  },
+  "favorites": {
+    "text": "收藏夾",
+    "source_sha256": "7a1f2a83aca9a0819f244d5b4a7a0e7f6b779eb709dd4744136b22e724dbb10b"
+  },
+  "reports_dashboards": {
+    "text": "報告和儀表板",
+    "source_sha256": "fe1b0f96ecf616af1f1b96359293ce9f2dd3462d0e987451c8fd2d651aa6d5ef"
+  },
+  "my_workspace": {
+    "text": "我的工作空間",
+    "source_sha256": "e8fdcda0f7d44ccf98ce215c88c7a2b12c6de564c1672731835507cd1d3f23d5"
+  },
+  "my_workstations": {
+    "text": "我的工作站",
+    "source_sha256": "e3db656595c3544e0b46f541b738966356460a89f8232128de7056d78176f4ff"
+  },
+  "remote_access": {
+    "text": "Remote Access",
+    "source_sha256": "7946a3c57900c0161ebb446d0e12581a1d471e1e756286511f16d2024bc8333c"
+  },
+  "secure_share": {
+    "text": "安全共享",
+    "source_sha256": "c2b1d79f4ae639052940dccfcbb6d0146e3661b36ca208d1cae0b50b22a019f4"
+  },
+  "active_grants": {
+    "text": "積極資助",
+    "source_sha256": "41a811b782ad6a9059035ec7c48828bdc1d5623736c23b9c55d8d26595025456"
+  },
+  "my_incident_reports": {
+    "text": "我的事件報告",
+    "source_sha256": "eaa4785f403ce311c1b30fc74737941e9762eeef2759defa6d81c999976816c2"
+  },
+  "my_local_account": {
+    "text": "我的本機帳戶",
+    "source_sha256": "4b02ed30fdbe8b9c847fb9a03fa77e9f85f91ecf9c4396e71739735fc5a7204b"
+  },
+  "access_identity": {
+    "text": "訪問和身份",
+    "source_sha256": "d6106b1fa8bf795d787596f5d2f0684242e9bfd7c852a22c193cbecdbf84d526"
+  },
+  "directory": {
+    "text": "目錄",
+    "source_sha256": "c8f84c3c5378b920b0ec2702cd9963a470098638b0c8aae249f74ec1a857633a"
+  },
+  "local_iam_administration": {
+    "text": "本地 IAM 管理",
+    "source_sha256": "da7112e436c16cb8ec3a5dabc864d11e81aa2717f84c27e5eb789aac51849662"
+  },
+  "enrollment_and_access_control": {
+    "text": "註冊和存取控制",
+    "source_sha256": "383bc9f7a5709b9c659a1850e4acf50997c7c4f5ff79db8aa2538d977d9beeec"
+  },
+  "credentials": {
+    "text": "證書",
+    "source_sha256": "d48a617c7da5163c44f117b9b23d8c920e69b4aa83d7b6570d71a66f3a857183"
+  },
+  "reveal_password": {
+    "text": "Reveal Password",
+    "source_sha256": "7f879e837bd3ef73aeed372451d9e807cf5383c7dc22e074c2e9b1313476a320"
+  },
+  "managed_identities": {
+    "text": "託管身分",
+    "source_sha256": "f1568457be9fb0dd62e3168a779c6f637853e808661bcc5653575789cb7b0f39"
+  },
+  "credential_vault": {
+    "text": "憑證保險庫",
+    "source_sha256": "bbf6a83734f4b820554a23f12a150906b5f4630ea26f051065f0b2e7a82642ee"
+  },
+  "endpoint_privilege": {
+    "text": "Endpoint privilege",
+    "source_sha256": "c1ec144dd982c94a6cb0cf3810f1dacc798a3feaff6abcc932b65c2d9c5f693f"
+  },
+  "applications": {
+    "text": "應用領域",
+    "source_sha256": "98e33b0f3104fcf1b812ba2c679c0f15a94f583559b731d6580df2d8307d3edf"
+  },
+  "elevation_platform_applications": {
+    "text": "Elevation Platform Applications",
+    "source_sha256": "44bcd8999abdd66e280e2c92c8d4da291e1937859261ca772fadece89192a296"
+  },
+  "elevation_platform_who_may_elevate": {
+    "text": "Elevation Platform Who May Elevate",
+    "source_sha256": "3c8f26b4f1e3885548a82bd3f9727529dee689b7df84be290e0eb0ff98ba982f"
+  },
+  "privileged_user_management": {
+    "text": "特權使用者管理",
+    "source_sha256": "851834aead10975057c46f5450c4bfa9cbd4e9120baa4da8969c8a46a96aa72b"
+  },
+  "token_elevation": {
+    "text": "代幣提升",
+    "source_sha256": "52795a799180a89b2254f9fdd1052a7bf030b3024bd71ec4c4cb37d451b048b1"
+  },
+  "direct_elevation": {
+    "text": "直接高程",
+    "source_sha256": "a5a51f424e108e4e1ceed6da7ee172e65a89218c4cd5c6d144859cb119930471"
+  },
+  "proxied_access": {
+    "text": "代理訪問",
+    "source_sha256": "6168305cc1ca00ee5ce34d9f155974c725c07a6410cdbc72207f15299a719e05"
+  },
+  "sessions": {
+    "text": "會議",
+    "source_sha256": "6fa3cbf451b2a1d54159d42c3ea5ab8725b0c8620d831f8c1602676b38ab00e6"
+  },
+  "connection_points": {
+    "text": "連接點",
+    "source_sha256": "0f998476f2fb78df86bd994079ecb696ca0a94853fd9316dc324a608bc880b8b"
+  },
+  "session_recordings": {
+    "text": "會議錄音",
+    "source_sha256": "2627b4d32c12839a86cabeab7d569787d5f0d34bef8c1827449f005b46f1c530"
+  },
+  "session_control": {
+    "text": "會話控制",
+    "source_sha256": "25f4f0d5ccddecf2a4f192b81ad8082c84f243ab5065618c6eca38a28985eb0f"
+  },
+  "jump_capacity": {
+    "text": "Jump & Capacity",
+    "source_sha256": "15916f05652111450d893aa415b1ae45968776cd180806a34041cae4ade499ca"
+  },
+  "jump_fleet_load_balancing": {
+    "text": "Jump Fleet & Load Balancing",
+    "source_sha256": "f89b99add7792a5f141bd0a839a5574dd21d40a079b12bc9c0e3ce721288c053"
+  },
+  "recording_ops": {
+    "text": "Recording Ops",
+    "source_sha256": "35f5d18ad403950802c3fe44ad7abfeae14d22154df4988e668dc84c1a9ceb6a"
+  },
+  "recording_agents_health": {
+    "text": "錄音劑 — 健康",
+    "source_sha256": "c44fbf2c855b676935eab14cb9d91082232d82e5d65b345506831435223cb4fd"
+  },
+  "deploy_recording_agent": {
+    "text": "部署錄製代理",
+    "source_sha256": "bf61245cd2d4d0f37d7198fa59f8e3c4dc3988e9d61c926a1f46b36c944e05f7"
+  },
+  "rdp_ocr_metadata": {
+    "text": "RDP OCR/元數據",
+    "source_sha256": "7be32445fda3e977715a256ab4802e26054369bf40989b419d38eb5e4860d5cc"
+  },
+  "recording_storage": {
+    "text": "錄音存儲",
+    "source_sha256": "37610f66e34f38dfb0c4f63e58e3eca5bb7bd059f3d98ffcfb9ca84b5ce64704"
+  },
+  "policy": {
+    "text": "政策",
+    "source_sha256": "c611981fab983bc648368eb81240f5a5a1eff07f40aa4c9fd155600a98eeb6af"
+  },
+  "ssh_command_filtering": {
+    "text": "SSH指令過濾",
+    "source_sha256": "302ff842d84a73367906ba809b0c50b8e2f06b3fa8e3621a4260524fab4d64b5"
+  },
+  "entitlements": {
+    "text": "權利",
+    "source_sha256": "2cc79c9e300d3cb5cb811eea6c2c28a43151fba8bf3c7634be12213a89ffc399"
+  },
+  "session_i_o_policy": {
+    "text": "Session I/O Policy",
+    "source_sha256": "faf3aa3a16410ecc74c853ad029a2f233906876ffccaf2ddd656960b39ee5e0d"
+  },
+  "approvals": {
+    "text": "核准",
+    "source_sha256": "2bfc3471571e5c008cb26bd839b0d4cbcb1132fc9d6c8206bb595fa26e83a45b"
+  },
+  "approver_profile": {
+    "text": "審核者資料",
+    "source_sha256": "cbf902bb140934715389cd7cfbcb4093fc566b2692ad62e9b6cc1c657e8a3a11"
+  },
+  "operational_technology": {
+    "text": "營運技術",
+    "source_sha256": "1edb38201ca66395e2f558d684941ae575e2a50a1750d1f3283e4d77750b189d"
+  },
+  "startup_wizard": {
+    "text": "啟動精靈",
+    "source_sha256": "f0324c059c45638ca445decb1d6ff29699ae874adc031002ea85efde2f3f0398"
+  },
+  "discovery_jobs": {
+    "text": "發現工作",
+    "source_sha256": "7941e17286705024c44a839506bcb53929f94a2d3be707a1f40d62d405dd53d2"
+  },
+  "inventory": {
+    "text": "存貨",
+    "source_sha256": "758f487fe8e9fcc59cec4694d95a9032224f967b29f39543a1fb04e2901b079e"
+  },
+  "connect": {
+    "text": "連接",
+    "source_sha256": "1a2303ede07493acc7caaa7c737f3c52bcc9cf04372be19ed1b0af6b9f2c791e"
+  },
+  "rotation_jobs": {
+    "text": "輪調工作",
+    "source_sha256": "a3f3196822c9d301a3e77a8226fc74ae98d1241491b9d0a8e1025e17e9149af1"
+  },
+  "sessions_evidence": {
+    "text": "會議/證據",
+    "source_sha256": "e1dc0bdde30ae558c4c233fdafc95c2e946e0b762d7217d59bee78b4c29245a2"
+  },
+  "systems": {
+    "text": "系統",
+    "source_sha256": "d9148b16c1107bd3b371165e897a11620fc58e6c9d274550488b73200616bdeb"
+  },
+  "systems_list": {
+    "text": "系統列表",
+    "source_sha256": "c7b91782a87fe871036bff00f23eceded5ad681021ac9734dc04bf06bffc369a"
+  },
+  "ip_scanner": {
+    "text": "IP掃描儀",
+    "source_sha256": "642ce3fa18270337489c97d34fa15ee198799c2539bc9dd0addfe14627043e7a"
+  },
+  "known_default_credentials": {
+    "text": "已知的預設憑證",
+    "source_sha256": "425412267eeb819cd2bfd903bdff8f358afcdf8b18811c53db94d4052522be66"
+  },
+  "system_groups": {
+    "text": "System Groups",
+    "source_sha256": "9dfd95f6c8759a9f181255c57bccf7a010ca1b2692d943d8b274b7a906bbc3ac"
+  },
+  "vm_management": {
+    "text": "虛擬機器管理",
+    "source_sha256": "ac4d46d6ef6c86e837b75239b7b612be3ca1c2335dc2f7ac3b9798ab82182c5a"
+  },
+  "multi_tenancy": {
+    "text": "多租戶",
+    "source_sha256": "91d3baf4ccfbd3570385afa7d72e5d1f0c39f9cca93526cb92cbeba8f8a725c5"
+  },
+  "compliance_evidence": {
+    "text": "Compliance and evidence",
+    "source_sha256": "abacd6f5def787f2168d62ffb0cd7d84d47d97bd0812982bab5410bba2bcd46c"
+  },
+  "reports": {
+    "text": "檢舉中心",
+    "source_sha256": "77ecbfb06f1a609280278311cc52101ed3552be5670a1b26e4c17a7a6d17b475"
+  },
+  "report_center": {
+    "text": "檢舉中心",
+    "source_sha256": "77ecbfb06f1a609280278311cc52101ed3552be5670a1b26e4c17a7a6d17b475"
+  },
+  "report_templates": {
+    "text": "Report Templates",
+    "source_sha256": "6c355b0cbdc0818809744f3fb18507f8ab92d2afba980d04250d60c5406caea5"
+  },
+  "assessments": {
+    "text": "Assessments",
+    "source_sha256": "761456db6ff5da2ed1f361537eb7ebeb1b2b9f86153f7474c2e0ddb652ac1e9a"
+  },
+  "current_state_compliance": {
+    "text": "當前狀態合規性",
+    "source_sha256": "da5e4759c452cc21dc10cea951de8032d207f64d9b6805dd4e4f6d8710680932"
+  },
+  "control_coverage": {
+    "text": "控制範圍",
+    "source_sha256": "5e8056b4dbb586803fb8bd3f797af2bc9e3103a160c2e8e03f8c4b4a05dbe2d2"
+  },
+  "document_lifecycle": {
+    "text": "Document Lifecycle",
+    "source_sha256": "98e6cfd8af6ec658947a2ee82b5e2eeffb6182801af635834ad10f9cc11f67dc"
+  },
+  "control_state_history": {
+    "text": "控制狀態歷史",
+    "source_sha256": "a8853de7c2a8c8d7b9354d9b2593659d07ee57a04034810f96988468e11684be"
+  },
+  "risk_register": {
+    "text": "風險登記冊",
+    "source_sha256": "1ce6332ee4dc6c3234fd6fcdf603bea5e195372a00cb52a300d1aa405dd9f51e"
+  },
+  "policy_approvals": {
+    "text": "政策批准",
+    "source_sha256": "19a416b8edcbf21d384a113621b3c908e554b00432a0597b36f796c7752a94e3"
+  },
+  "external_workstation_readiness": {
+    "text": "外部工作站準備狀況",
+    "source_sha256": "fb3dfc78252dad564fab3e376158782ce5aef902a23589f562ed1cc50de50826"
+  },
+  "wa_probe_packs": {
+    "text": "WA 探針包",
+    "source_sha256": "c93bf3b8be405b6596d117af2dbc0917d0934a145daccc81c3315ab8e64042bc"
+  },
+  "audit_engagements": {
+    "text": "審計業務",
+    "source_sha256": "66475087ed4fbe6ae258f0858964351c2d5baadf694ca6847697806bddde463c"
+  },
+  "assessment_binder": {
+    "text": "評估活頁夾",
+    "source_sha256": "edce73881ba543a19ed06b9eaee2c7998fb127db9bf6232dc805423bed35f519"
+  },
+  "auditor_text_playbooks": {
+    "text": "審計文字手冊",
+    "source_sha256": "e148e3954565ff17659ce8cdb53f8bb3eacb9feaeb9e54fbc730b728e2366e29"
+  },
+  "data_flow_mapping": {
+    "text": "Data Flow Mapping",
+    "source_sha256": "86ad3e7787e15e868074d07f3528dd2cd5c33c10b92cab3d37824e0a9277d2ca"
+  },
+  "probe_packs": {
+    "text": "探針包",
+    "source_sha256": "0546ee7ca99b001f50f6d19a5da522f2b9ac12f02387826d188d97e8099c01d0"
+  },
+  "poa_m": {
+    "text": "POA&M",
+    "source_sha256": "dfadfc4960359b3c714b53ba0f15221009e273c227109462bba09ea421ac2e9e"
+  },
+  "control_catalog": {
+    "text": "控制目錄",
+    "source_sha256": "31d80b8f41778b7abb0e92b2c2fb0cccb93a78625f60fd78c8fb94e102dfc9b6"
+  },
+  "gdpr": {
+    "text": "國內生產毛額",
+    "source_sha256": "289e8fe4a66b416dbff5f38d812278bfc3b040b43efafbd1d356a875ab0e7ffa"
+  },
+  "gdpr_processing_register": {
+    "text": "GDPR — 處理暫存器",
+    "source_sha256": "3431b130a6b299ad35644b8ff2ef97141d24385825bf89b15924b1716c684cd7"
+  },
+  "gdpr_impact_assessment": {
+    "text": "GDPR — Impact assessment",
+    "source_sha256": "11136f1e9c5077e5f5b056c451a9bd332da174e216f23b4acab7a0e3ed7b63b0"
+  },
+  "gdpr_subject_rights": {
+    "text": "GDPR — 主體權利",
+    "source_sha256": "b1ae6dacbf5cd27af883ac8d47ebe4bdb2794bd41e283f3a965cc57b4c136b35"
+  },
+  "records_of_processing": {
+    "text": "處理記錄",
+    "source_sha256": "00d8c4d2281da37af2ad5946a65591189e60982718e00b85ed6e513999cef502"
+  },
+  "dpia": {
+    "text": "dpia",
+    "source_sha256": "b5708aa8da7f0268c692af1cd8896626a8058a907703da0f7a4d8a33952d5ffa"
+  },
+  "data_subject_rights": {
+    "text": "資料主體權利",
+    "source_sha256": "4fb40566c92076fe0826b86c7e900837f6f3fbcbe3177d91700c711bf95d3469"
+  },
+  "audit_frameworks": {
+    "text": "審計框架",
+    "source_sha256": "b50639ec1e78fab2beabd27b8915d90635d97c1b1d27f149cb9d3417540fbe9d"
+  },
+  "training": {
+    "text": "訓練",
+    "source_sha256": "36a798e3f39239ccdec697ee348d2ce0a7b8d2d9087940496e2ca5d0853399f2"
+  },
+  "training_and_awareness_packs": {
+    "text": "培訓和意識包",
+    "source_sha256": "63fd5870ec17f5a42b74fdfb66f45edf3e07603145969059776670e1e2167eef"
+  },
+  "workforce_roster": {
+    "text": "員工名冊",
+    "source_sha256": "3c52889b8781520fa932530a0a19e8c63b6c356012c1e64aa1be14c758317a12"
+  },
+  "training_programs": {
+    "text": "培訓項目",
+    "source_sha256": "5b31bcdc67fe036a1fd5dce7a026ca16e2a919c32ccf1f388a5c84a8128c241e"
+  },
+  "attestation_ledger": {
+    "text": "鑑證帳本",
+    "source_sha256": "2ad56f350521831b686259f11cc0f83c7a4af104d4ab24f896a6a54640fd1cd1"
+  },
+  "incidents": {
+    "text": "事件",
+    "source_sha256": "bfe868931580fb3b173163169fae3cc3ff3efe150b5167ebe94ac9f0ab34c651"
+  },
+  "report_an_incident": {
+    "text": "報告事件",
+    "source_sha256": "13a584c8f64e9c1d830483359ed076dfda33d482079bffbfbbd93e2ae9ef5edc"
+  },
+  "alert_groups": {
+    "text": "警報組",
+    "source_sha256": "12d9954d99b715e88b2fbe9abc282cc95dd78512e7be3dc48055c458d6b1d859"
+  },
+  "auditor_ir_evidence": {
+    "text": "Auditor IR Evidence",
+    "source_sha256": "5e0e2b6124e01994cf9a0e1f15de155edde8bc2f7a8bfbd5e549c7ec8130c867"
+  },
+  "enhanced_controls": {
+    "text": "增強控制",
+    "source_sha256": "26a6ec7b22dab36eed257867549fbf389e246d663bd98a1a2439ba66d74fb4ac"
+  },
+  "audit_trail": {
+    "text": "審計追蹤",
+    "source_sha256": "d52b403962aa9a8a75829134cbf02418a99af8f5400871067014cc40162d0cff"
+  },
+  "live_events": {
+    "text": "現場活動",
+    "source_sha256": "4b8ed19b5fbad17395ec75869d5b30f434219a78473eeef7ad689a3f20490052"
+  },
+  "audit_log": {
+    "text": "審核日誌",
+    "source_sha256": "47751f88edff89d56aeb5b1e46fb03a853bfcd96617f25195c752d5557902227"
+  },
+  "event_sharing": {
+    "text": "活動分享",
+    "source_sha256": "f49ae5f48a11993b20bddca6c8da853cec1778137d08da3c4d3792f599f02103"
+  },
+  "syslog_forwarding": {
+    "text": "系統日誌轉發",
+    "source_sha256": "17340ebe93aa677f4f9461616ac003aa92add3850be05fde7c8a59f1b80965f1"
+  },
+  "configuration": {
+    "text": "配置",
+    "source_sha256": "b332c3492d5eb10a118eb6d8b0dcd689bc2477ce2ae16b303753b942b54377bc"
+  },
+  "agent": {
+    "text": "代理人",
+    "source_sha256": "11b39c93777e8f1f3983bdba7c72b22fe68cfea20c677e9de53e17cb7dbfb19f"
+  },
+  "agent_overview": {
+    "text": "代理概覽",
+    "source_sha256": "0fc079dd3842137ea97966660fd6142ed41cda042955a4e72a7d49beeab58540"
+  },
+  "settings_wizard": {
+    "text": "設定嚮導",
+    "source_sha256": "c778789ea57c5fc98116a813e2a9f4215e783a1d99d8386c53eca0bc6669ac27"
+  },
+  "bulk_provision": {
+    "text": "散裝供應",
+    "source_sha256": "133d0af633a21ac310efc2c2273bfe23f8461f4efaa72a38a2c2db28e553fcea"
+  },
+  "agent_management": {
+    "text": "Agent Management",
+    "source_sha256": "1501a898a9d8652df45ba47b7c8de147664f3c2e79a597ef166336aaee930b72"
+  },
+  "fleet_agent_versions": {
+    "text": "艦隊代理版本",
+    "source_sha256": "abc1d82b276555a7d67dd5cd188b17c515ae337cb9f6eeb97b5cb5c5de8f8b66"
+  },
+  "propagation_templates": {
+    "text": "傳播模板",
+    "source_sha256": "048324f714c8fd03e17a37f119a09e5107b896399e08878a2ef0883fd478a5f6"
+  },
+  "manage_issuances": {
+    "text": "管理發行",
+    "source_sha256": "80e915152218998b3c67f39cc5b030a4bee00b18693f1e92f9f83593f7647cc5"
+  },
+  "import_settings_migration": {
+    "text": "導入設定（遷移）",
+    "source_sha256": "1b2568610dfc5eeee1e3c6fc439a7ce2ed788eb687f3eab66e320d1859298fc6"
+  },
+  "identity_template": {
+    "text": "身分模板",
+    "source_sha256": "4a77c3278ee865a7e068e7a69925ce402418608309dddb291513aa01a36e6d91"
+  },
+  "operator_disclosures": {
+    "text": "營運商揭露",
+    "source_sha256": "489a651104986505d0d463e12797be67570e84d47a53a93ed0cf400c265e977b"
+  },
+  "server": {
+    "text": "伺服器",
+    "source_sha256": "aef7de28d52977f1b5cd0fecfdc151717610adf41e0aa33b4d9f7522a43337ef"
+  },
+  "server_configuration": {
+    "text": "伺服器配置",
+    "source_sha256": "65f170073c221c60a4731e16818a9ef3c69cfdb2a3aa40e781453dfc32aa9ea7"
+  },
+  "company_profile": {
+    "text": "公司簡介",
+    "source_sha256": "72e8825dea3b0030335bfaa60ef0cb0d432062b69ce6d0229f8a50dab34cdf08"
+  },
+  "branding_style": {
+    "text": "品牌與風格",
+    "source_sha256": "ee7daadb4c5926d0379e81db39692ecd9f295038cb705ca7b0255a1a2ffbb106"
+  },
+  "initial_setup_wizard": {
+    "text": "初始設定嚮導",
+    "source_sha256": "3c8dfed504197047eba04c9fb673432d2a39d6e0c4bd2335d378ceba4be63648"
+  },
+  "service_logs": {
+    "text": "服務日誌",
+    "source_sha256": "a1a97b1744288cb33e2cb17b29496f28de71baabb39e88f6976096d986a34b56"
+  },
+  "server_disclosures": {
+    "text": "伺服器洩漏",
+    "source_sha256": "33c20751c2f32e95da1ace42aecc6cdce90a5780828479eea52f26958b002e3d"
+  },
+  "messaging": {
+    "text": "訊息傳遞",
+    "source_sha256": "eebdbb25cbbc7651f9519d09e94ca52598e5531655ad0c4f8cf402c4cda1bff1"
+  },
+  "message_templates": {
+    "text": "訊息模板",
+    "source_sha256": "5353d591fd9f2dbaf88438cb593c42e8b91236fd4a0381e42f86be8321570975"
+  },
+  "message_snippets": {
+    "text": "訊息片段",
+    "source_sha256": "10978d5928cbe6fb5ddbbed3e5d386ea33da840d89c11dbaf6e87d8a0c2d166d"
+  },
+  "email_settings": {
+    "text": "Email Settings",
+    "source_sha256": "14aefeb74eaebd3a30730d8394d9c8f626c7a6663b1e6b5c8b98752ac5c79c40"
+  },
+  "sms_settings": {
+    "text": "簡訊設定",
+    "source_sha256": "27fb64817e208448d13f8681bc3679b25892a1273086938eb965aa4b83489a5c"
+  },
+  "security": {
+    "text": "安全",
+    "source_sha256": "8f6fb4eb7f42c0e245e29e63f5b82cc3ba19852681d1ed9aed291f59cf75ec0e"
+  },
+  "defense": {
+    "text": "阻止攻擊",
+    "source_sha256": "158d3c3ef5abfd9cf13b3894307ed3778a4d5eed818545635579dc7785c1e124"
+  },
+  "blocked_attacks": {
+    "text": "阻止攻擊",
+    "source_sha256": "158d3c3ef5abfd9cf13b3894307ed3778a4d5eed818545635579dc7785c1e124"
+  },
+  "access_control": {
+    "text": "Access Control",
+    "source_sha256": "c3ceee351e98114e44cbeadab233966c7ecb2a4685d750b683c4c9421b1fd40c"
+  },
+  "session_timeout_and_logoff": {
+    "text": "Session Timeout And Logoff",
+    "source_sha256": "5a32768c1df3da4b3f4dc2e079c2704cdcd1cb15050152bfdf2829cd1981fcc0"
+  },
+  "encryption_settings": {
+    "text": "加密設定",
+    "source_sha256": "2d0d71510d56b96e68a89093a3e877a211aca691a15dcb51092515269fe0cbbf"
+  },
+  "encryption_key_sets": {
+    "text": "Encryption Key Sets",
+    "source_sha256": "3dee651cd141de927e1bc01bba0dce1b72956e9d93ffcd6a951a6ddb5cf4daac"
+  },
+  "hsm_connections": {
+    "text": "HSM 連線",
+    "source_sha256": "76cda9fa67c316c6597d70a4fd609c517a085e5e347d00be17994248b37c2311"
+  },
+  "demo_reset": {
+    "text": "演示重置",
+    "source_sha256": "6eefd8fe554e8dd6952d68c39cb7cb5fda662c67b819d4797a636a99359ddc47"
+  },
+  "lab_tools": {
+    "text": "實驗室工具",
+    "source_sha256": "0d3f76e3c81a8c966e422f1e9c3ebcad46358281d01329af8a93a2fbcfb6a3c8"
+  },
+  "documentation": {
+    "text": "文件",
+    "source_sha256": "c205924de0fe636ccdde4ed616fef66f75b78e98b03620637965c033fd161141"
+  },
+  "documentation_home": {
+    "text": "文件主頁",
+    "source_sha256": "b53bb6e7da8c43d9ad12d264fd73c4acbbdaef5f43428b7f23a4915b40943cff"
+  },
+  "user_manuals": {
+    "text": "使用者手冊",
+    "source_sha256": "d69b37ba6d626a90a49ba308b39b62d47d418962affb587ff6e3f5d863565538"
+  },
+  "auditor_manuals": {
+    "text": "審核員手冊",
+    "source_sha256": "706c727c7973f9508927515879738ca7f8151ef790b524a20dddeef99ecbc7cc"
+  },
+  "auditor_setup_guide": {
+    "text": "審核員設定指南",
+    "source_sha256": "66eed74ada8a3d046c4bf3c5fa21eee29a19ef442ba7b9970ed1f8ad77cdfa5b"
+  },
+  "admin_manuals": {
+    "text": "Admin Manuals",
+    "source_sha256": "9703ef1710930fd5d436c23b452d0935224423b9bdba4670f0ffac43ab95b382"
+  },
+  "technical_documentation": {
+    "text": "技術文件",
+    "source_sha256": "d9e472f50948919b7de17f323845791003026e68cd5487bccb650edfbdff625d"
+  },
+  "about_licensing": {
+    "text": "About and licensing",
+    "source_sha256": "af74f5fb22293cfc569a4d4e6da65c856074ffd96c1e9e663ed29ce41d2bf79e"
+  },
+  "about": {
+    "text": "關於",
+    "source_sha256": "4efca0d10c5feb8e9b35eb1d994f2905bb71714e6a271f511d713b539ea5faa1"
+  },
+  "version_information": {
+    "text": "版本資訊",
+    "source_sha256": "75a33f90fd5e4ae1f055102aef32f670d097009d5e986b612c36ab21d42f568f"
+  },
+  "eula": {
+    "text": "最終用戶許可協議",
+    "source_sha256": "98e4a4ccc8b3ca907527613721ddfd4d5e6ed64f9b8d4e583719f2bee08b19a8"
+  },
+  "copyright": {
+    "text": "版權",
+    "source_sha256": "8dfc77ab4089e09d4397e12306086c19767ffd4bbf6e239240bde83fe537a4a7"
+  },
+  "license_and_billing": {
+    "text": "許可證和計費",
+    "source_sha256": "7b1d769c2e04a874c13481b74a183c1edcc67fbf8c8ed6a070ce0894992b2dac"
+  },
+  "settings": {
+    "text": "Overview",
+    "source_sha256": "d4b1ea5708dd532930a85188b45aff6f0a3ed458500c7577e0127a538eb0d100"
+  },
+  "getting_started": {
+    "text": "入門",
+    "source_sha256": "d00eca1bae6742803906ab42a831e8b5396d15b6573ea13c139ec31631208ec1"
+  },
+  "discover": {
+    "text": "Discover",
+    "source_sha256": "d4a33d5b78bccebe3f16843dc30e6c0f73b4eb6efb4e7114ddfebde7fa2c9954"
+  },
+  "operations_compliance": {
+    "text": "Operations Compliance",
+    "source_sha256": "19e48d68265654dad403962eede1db709616d812c6cf33b5d190f699dbe851f2"
+  },
+  "poam": {
+    "text": "波阿姆",
+    "source_sha256": "6fb9fd2e39f8bc339d3ea09e0a129d36ba748948adea968fa6ee9c4efb6baf3f"
+  },
+  "custom_report_templates": {
+    "text": "自訂報告模板",
+    "source_sha256": "084403540ab62028ed822bb56c943000fef56c120bbf650c35c518644db24462"
+  },
+  "risk": {
+    "text": "風險",
+    "source_sha256": "0711a8d636e4c068ae59fa80c03ad68e7bd9fe473c1f9248fd2cf3716e3fb715"
+  },
+  "auditor_playbooks": {
+    "text": "審計手冊",
+    "source_sha256": "a68bef65dbd030eacc70b305d6f591c6f4c535cd12703475d2db57e76d338259"
+  },
+  "training_awareness_packs": {
+    "text": "培訓意識包",
+    "source_sha256": "4a7c5194dd7a2b6e6c74be6ecfbf19775b8392ff8d7e861585b5914bb04eea9e"
+  },
+  "training_program": {
+    "text": "培訓計劃",
+    "source_sha256": "bf0a5afe6cd1334f556af43f6f04c012eb41f0616333076a5deab70adf050cf0"
+  },
+  "my_incident_report": {
+    "text": "我的事故報告",
+    "source_sha256": "915beccce0b7cd277813a3e886a805f3876e023bf65c07d448afc7cf3680d18e"
+  },
+  "ir_case_deep_link": {
+    "text": "I 案例深層鏈接",
+    "source_sha256": "567ed0a267f8f9d5df27800d4b46a759663e35c2d5652331c93a9c8884f45109"
+  },
+  "ir_alert_groups": {
+    "text": "紅外線警報組",
+    "source_sha256": "1d70b8c5b0982b99dfb709ed969fd05daadb2ef04fcd35d9bcf95c826b2839df"
+  },
+  "incident_detail": {
+    "text": "事件詳情",
+    "source_sha256": "8b16e53e0c2a5fdbf67f68a3e39f8c182b7bb805d0dcc4a9a9a9931cbe60747e"
+  },
+  "network_scan": {
+    "text": "網路掃描",
+    "source_sha256": "c77cccea948bdce409061eb8adf5b513e706ce230b17a925fe889785fb243cbe"
+  },
+  "legacy_endpoints": {
+    "text": "舊版端點",
+    "source_sha256": "cc27420eda615acf895a7c3f1b2a6c2f2a0c83a1cb1d55d31f9caa5731ea7050"
+  },
+  "privileged_identities": {
+    "text": "特權身分",
+    "source_sha256": "7c90e5f381b84c795b56eea06dd35806a6755222b734585fdc5cf273e7ccecf8"
+  },
+  "elevation_platform": {
+    "text": "斷開連接的令牌",
+    "source_sha256": "9d624829845c4a46582a3735b586a244e501fc2fb1616141cd46731927fbd116"
+  },
+  "ot_inventory": {
+    "text": "OT 庫存",
+    "source_sha256": "f1b50ff93a2929589408b1532840098073150824790588ec9a214924af79b41a"
+  },
+  "ot_target_configuration": {
+    "text": "Ot 目標配置",
+    "source_sha256": "e254720d0023fdf57454db978337fdffbc304eb7befaed283a41bf8b70897433"
+  },
+  "ot_live_session": {
+    "text": "OT 直播會議",
+    "source_sha256": "df4b8e95b3db72c84598a054a1b5654c88c809708f771eb4d8d68979a4b33388"
+  },
   "application_groups": {
-    "text": "應用程式群組",
+    "text": "應用組",
     "source_sha256": "c6eeeb35a4e6d02fd897cc406164c4b171f447bef793baa0fd3b9f003a8caa04"
   },
   "who_may_elevate": {
-    "text": "可提升者",
+    "text": "誰可以提升",
     "source_sha256": "604b111c4b9b29c812df3fc6f31168f8750350cd7ce4cf6e42166ea6f09f4b85"
   },
   "elevation_approvals": {
-    "text": "提升核准",
+    "text": "海拔批准",
     "source_sha256": "c9c857baa157be3dcfe6c46af815664bed81986d970db7a2138e2edc6b8797fa"
   },
   "disconnected_tokens": {
-    "text": "中斷連線權杖",
+    "text": "斷開連接的令牌",
     "source_sha256": "9d624829845c4a46582a3735b586a244e501fc2fb1616141cd46731927fbd116"
   },
   "open_source_credits": {
-    "text": "開放原始碼致謝",
+    "text": "開源學分",
     "source_sha256": "20fc5ff5dce0659a8fd4cfc8f44ce18350d4345c8f0e0eec83a99b13f44cab7e"
+  },
+  "general_settings": {
+    "text": "常規設定",
+    "source_sha256": "de322f87b5f5957b54dc467054983c18cbd04a213066155347d00d04b34215e2"
+  },
+  "tls_security": {
+    "text": "TLS安全",
+    "source_sha256": "d0b55cc0b586c806e3b33d9157396a7d46677e6cd548fe2294d25de32fa538c7"
+  },
+  "server_control": {
+    "text": "伺服器控制",
+    "source_sha256": "1393a2603fa7d5128cc6d79cad71fad037e3d966202b2fed597bb900b25f41e2"
+  },
+  "technische_dokumentation": {
+    "text": "技術文獻",
+    "source_sha256": "ac81875d0a3603868b276e6cf4e6231f9e1f339f29e6875d07f31d99a7458baf"
   }
 }

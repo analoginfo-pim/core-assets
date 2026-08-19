@@ -150,7 +150,11 @@ def fill_ns(tag: str, ns: str, sleep: float, translator: Any) -> int:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--tag", action="append", default=[])
-    ap.add_argument("--ns", action="append", default=["common", "dashboard"])
+    ap.add_argument(
+        "--ns",
+        action="append",
+        default=["common", "dashboard", "components", "pages", "nav"],
+    )
     ap.add_argument("--sleep", type=float, default=0.04)
     args = ap.parse_args()
     tags = args.tag or ASSIGNED
