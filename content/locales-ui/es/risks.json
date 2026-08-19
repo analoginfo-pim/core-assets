@@ -24,7 +24,7 @@
     "source_sha256": "98370ce5cdd2a345b2d924f30e3e0f966da28729181ec346665e8dc03fe0a21d"
   },
   "expiryNotice": {
-    "text": "An expired acceptance is calculated upon reading. A 12-hour run sends RiskAcceptanceLapsed once for each acceptance whose granted period ended. The event reports the expiration date. It doesn't reopen risk, pull back acceptance, or escalate anything. Delivery depends on the event destinations an operator has set up.",
+    "text": "Una aceptación caducada se calcula tras la lectura. Una ejecución de 12 horas envía RiskAcceptanceLapsed una vez por cada aceptación cuyo período concedido finalizó. El evento informa la fecha de vencimiento. No reabre el riesgo, no retrasa la aceptación ni intensifica nada. La entrega depende de los destinos del evento que haya configurado un operador.",
     "source_sha256": "6d7cf5ce3cbd16c8d61d9a948fd87d5b15ffdb948a4ddd95d3554ca88beed178"
   },
   "loadRegisterFailed": {
@@ -100,7 +100,7 @@
     "source_sha256": "40dc32754b8e89ac9e32ed47adfab03e94cbf68caf7e5ebc44fdf62135774b31"
   },
   "showingCount": {
-    "text": "{{shown}} of {{total}} erfassten Risiken angezeigt.",
+    "text": "{{shown}} de {{total}} erfassten Risiken angezeigt.",
     "source_sha256": "5da66fc5cc60fb700843ce7d7420d8ab1bb358e11dab10abed6aad3f2b97ac3c"
   },
   "emptyRegister": {
@@ -140,11 +140,11 @@
     "source_sha256": "b86192a3071dbb7c19f236c0d3d1b9f5ada27301857e9e8b0c944e04d218ba67"
   },
   "severityAria": {
-    "text": "Schweregrad {{severity}}, aus Wahrscheinlichkeit {{likelihood}} and Auswirkung {{impact}}",
+    "text": "Schweregrad {{severity}}, aus Wahrscheinlichkeit {{likelihood}} y Auswirkung {{impact}}",
     "source_sha256": "60e0a934e26ca5510b344f60a648e0332b253e0e26f2d0e9b46cacb89ccea0e5"
   },
   "severityColHelp": {
-    "text": "Aus the gespeicherten Wahrscheinlichkeit and Auswirkung unter the jetzt geltenden Bewertungsmatrix. Eine Zeile, deren Lesung sich seit the Erfassung geaendert hat, sagt the unter the Chip.",
+    "text": "Aus the gespeicherten Wahrscheinlichkeit y Auswirkung unter the jetzt geltenden Bewertungsmatrix. Eine Zeile, deren Lesung sich seit the Erfassung geaendert hat, sagt the under the Chip.",
     "source_sha256": "d50461f934b46e5005e2513ad69822279d6b6a53a110589ddedabc32ac8b03b5"
   },
   "statusColHelp": {
@@ -331,6 +331,10 @@
     "critical": {
       "text": "Crítico",
       "source_sha256": "427dd2969bd140bec3c1bcc7983da982f4815938cd4510ad0b2bad48ac5b55f9"
+    },
+    "medium": {
+      "text": "Medio",
+      "source_sha256": "8e588cd187741f1cd76f5fab77b7208782a8c21d764ce7d7a4cf3ac4e0968873"
     }
   }
 }
