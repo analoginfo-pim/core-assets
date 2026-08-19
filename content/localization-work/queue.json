@@ -376,10 +376,10 @@
       "kind": "help-manual",
       "title": "Settings language packs and flag chrome",
       "added": "2026-08-18",
-      "updated": "2026-08-18",
+      "updated": "2026-08-19",
       "source_repo": "pim-offline-server",
       "source_path": "ui/src/i18n/locales/en/common.json",
-      "source_sha256": "d85466fa5a14e3a3b4a3c5d3708b7c577ecb099695dc6e62723a4a62abea8d0f",
+      "source_sha256": "25c07b09324da667c922f96356e32c6caeceefde67877149ce784237f36ed245",
       "product_route": "",
       "required_tags": [
         "de",
@@ -389,7 +389,7 @@
         "zh-Hans"
       ],
       "draft_tags": [],
-      "notes": ""
+      "notes": "Source changed 2026-08-19 (hash d85466fa5a14 → 25c07b09324d)."
     },
     {
       "id": "about.open-source-credits",
@@ -522,6 +522,29 @@
         "es"
       ],
       "notes": "Converted headers.*.bullets[N] to nested bullets arrays for i18next; restored EN/DE favorites copy; added permission.httpStatus/serverCode/unavailableDetailed for DE/ES/FR. Draft catalogs do not close."
+    },
+    {
+      "id": "spa.login-shell-zh-tw-chrome",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "spa-chrome",
+      "title": "Login and shell language picker + zh-TW chrome",
+      "added": "2026-08-19",
+      "updated": "2026-08-19",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/i18n/LanguageSelector.tsx",
+      "source_sha256": "f4b6041436cf566e9467986b3967c2367372bde3d841c6214e5cac5b210b61cd",
+      "product_route": "/login",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [],
+      "notes": "Agent draft: login/app-bar flag picker, html lang, zh-TW nav/common/help chrome. Reviewer must close; agent draft does not close."
     }
   ]
 }
