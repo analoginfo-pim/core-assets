@@ -1,0 +1,478 @@
+{
+  "floorNote": {
+    "text": "NIST SP 800-53 Rev. 5 is the control design floor. CMMC / 800-171 / 800-172 are packaging overlays that reuse enclave evidence.",
+    "source_sha256": "4bc5812cc7e52766fe0a68db6e0bceb55d8790fae70f4de2182f3ba2387588fe"
+  },
+  "switchEffect": {
+    "text": "A change in the evaluation standard assigns the punch list and evidence view to this overlay. Already collected enclave evidence is reassigned — not deleted.",
+    "source_sha256": "8801656908fee85cbb49c2a798543c8fbba569467240321701ff193d5e389ba7"
+  },
+  "testingAgainst": {
+    "text": "Testing against:",
+    "source_sha256": "f8c723dc69c89401c0e2b3dee95771ec18bb7de2de4f61a2574aedd5d4073afb"
+  },
+  "assessmentStandard": {
+    "text": "Bewertungsstandard",
+    "source_sha256": "90313ebc5c800e45d5851c81eb12c0a912f55b7489aa0ca442d98f5314fb0aab"
+  },
+  "level": {
+    "text": "Level",
+    "source_sha256": "1709305c9fa966d14f56f0da3c3614bbc10adcf53d72f90341bb96d24afcfca3"
+  },
+  "selectStandard": {
+    "text": "Select assessment standard",
+    "source_sha256": "6f5d4086c4d121b774955a4abac21491ba962f75abf560abc42b5011d5a20058"
+  },
+  "selectLevel": {
+    "text": "Select level",
+    "source_sha256": "f17af123264531ddc96ece95a2894127fc65b04985663b5725e639683269cc72"
+  },
+  "standards": {
+    "cmmc": {
+      "text": "CMMC",
+      "source_sha256": "0ecd57c0c4a4e075944d57d01aedc7c6e7cd733d982f0aad4bf53678ab1a0fe9"
+    },
+    "nist_800_171": {
+      "text": "NIST SP 800-171",
+      "source_sha256": "f4856a2f7a01e12a623398b039c99476d5205d6791886eca5cb0357ebaeb3953"
+    },
+    "nist_800_172": {
+      "text": "NIST SP 800-172",
+      "source_sha256": "d8c82bfcd76ff4b5cf43ca875aa422768965b436af851f30c37854a6a70f6eb0"
+    },
+    "nist_800_53": {
+      "text": "NIST SP 800-53 Rev. 5",
+      "source_sha256": "4944a7b79cdc43658679db8b6c0a9abbca98253978b87bfeea1a21095e896e3d"
+    }
+  },
+  "levels": {
+    "cmmc_1": {
+      "text": "Level 1",
+      "source_sha256": "b75cf05d6d2aa22cbde9f59628a7cc6a5d70c52517333ed827bca8a397471084"
+    },
+    "cmmc_2": {
+      "text": "Level 2",
+      "source_sha256": "29cc4eb6673b99798e951e9628bd33f356f4dd56f9dd49a97770cd5db93d7064"
+    },
+    "cmmc_3": {
+      "text": "Level 3",
+      "source_sha256": "42b03421cde76b84ff90b7eb6cb1a2821ad6388bdb15b3d67cb73fd5c508da0b"
+    },
+    "171_1": {
+      "text": "Level 1 (Basic / FCI)",
+      "source_sha256": "26da5adb6511f31be8adcb8902af53f9178d26eda6983f091de70f6a0dfc95f1"
+    },
+    "171_2": {
+      "text": "Stage 2",
+      "source_sha256": "bc52af22d1648778ae9b83a7bbb0532b064beb07588540cb2cebdc05167738ef"
+    },
+    "171_3": {
+      "text": "Stage 3",
+      "source_sha256": "608eeb4141e98e3b23002baaced131031a9badfa36f0c366ffb120bfe0a12b9e"
+    },
+    "172_2": {
+      "text": "Stage 2",
+      "source_sha256": "bc52af22d1648778ae9b83a7bbb0532b064beb07588540cb2cebdc05167738ef"
+    },
+    "172_3": {
+      "text": "Stage 3",
+      "source_sha256": "608eeb4141e98e3b23002baaced131031a9badfa36f0c366ffb120bfe0a12b9e"
+    },
+    "53_moderate": {
+      "text": "Moderate",
+      "source_sha256": "5c42afc7a23018d32dcff346792b575bcdf63be118b98a61084b1afac32b93e9"
+    },
+    "53_high": {
+      "text": "High",
+      "source_sha256": "c4ebc6d4a5832cd9415f906ad03661110c705a72381c8b8b145761d02e2dd23a"
+    },
+    "171_1_suffix": {
+      "text": " Basis / FCI",
+      "source_sha256": "b0733b58d6c1d8a7c5e2a4467c9ea5d76c604d4d4911f84039695cd9e88b943f"
+    }
+  },
+  "banners": {
+    "cmmc": {
+      "text": "Target: CMMC level {{level}} ({{overlay}})",
+      "source_sha256": "033188adb2ce3e9cc303ff0ad3bcdf65b91f398523634c594dc79fae141bf091"
+    },
+    "nist_800_171": {
+      "text": "Goal: NIST SP 800-171 Level {{level}}{{suffix}}",
+      "source_sha256": "4afb89f7f23af0af23aa770331088e32534be920ce3c9c470c86b9994221cbc6"
+    },
+    "nist_800_172": {
+      "text": "Goal: NIST SP 800-172 Level {{level}}",
+      "source_sha256": "eb3be520388a5c4511c6370a9afb4b49af8cde65f8d543e14d9e7b8b7b84bd30"
+    },
+    "nist_800_53": {
+      "text": "Ziel: NIST SP 800-53 Rev. 5 {{level}}",
+      "source_sha256": "f1cd5e2ca8074ee8645dd121129c88c7a7d3a2cb460f0a5faf3e953108d60503"
+    }
+  },
+  "overlays": {
+    "cmmc_basic": {
+      "text": "NIST SP 800-171 Basis / FCI",
+      "source_sha256": "8f71ce008ab75cb820bc5756137fa3ce5094dd45240e7b5589023fe07422b96d"
+    },
+    "cmmc_full": {
+      "text": "NIST SP 800-171",
+      "source_sha256": "f4856a2f7a01e12a623398b039c99476d5205d6791886eca5cb0357ebaeb3953"
+    },
+    "cmmc_enhanced": {
+      "text": "NIST SP 800-171 + NIST SP 800-172",
+      "source_sha256": "ad905e4f7bdd4de770b4985c57032cc1c971fe9253b1461d16112b6bd6b07d97"
+    }
+  },
+  "scopeLabels": {
+    "53_high": {
+      "text": "800-53-High-Verpackung (inkl. Enhanced-Overlay)",
+      "source_sha256": "3e3d08c38aafc991ac023d3f64a7b0a25b0e5b438c72cbd45ddc7d492dea39d6"
+    },
+    "53_moderate": {
+      "text": "800-53-Moderate-Verpackung",
+      "source_sha256": "78865471f793210a2e33e301c9ece3510c214197be51b5e9fcf2bce4d23d8446"
+    },
+    "172_2": {
+      "text": "800-172 Stage 2 Enhanced packaging",
+      "source_sha256": "9aef14938fa0cc65180735cca5bf21f53327e558d4417ee3a51288f587ea5f72"
+    },
+    "172_3": {
+      "text": "800-172 Level 3 Enhanced packaging",
+      "source_sha256": "df0c01d0639c340d4c693e380b49f8f4c7ded6c7e6ab937a97b3b4e705418378"
+    },
+    "171_1": {
+      "text": "800-171 Level 1 (Basic / FCI) packaging",
+      "source_sha256": "05c2f309f3aa74f1da9bf8559b80524aef0b3dcf2ebc94c0634867ea81e75b1a"
+    },
+    "171_2": {
+      "text": "800-171 Level 2 Packaging (110 Practices)",
+      "source_sha256": "9365e7269269477197a093d43feb5ab3051e8af79bb60d98b468bb35cbe917a1"
+    },
+    "171_3": {
+      "text": "800-171 Level 3 packaging",
+      "source_sha256": "fc1618889b08a95c700120bc0273a6525ba1695b8f7faa251dee99f153d64747"
+    },
+    "cmmc_1": {
+      "text": "CMMC Level 1 (Basic / FCI) packaging",
+      "source_sha256": "0468860455c362a22c7175c1394f965a63f591d7695f1d6f5450d3442923d0d9"
+    },
+    "cmmc_2": {
+      "text": "CMMC Level 2 Packaging (110 NIST SP 800-171 Practices)",
+      "source_sha256": "5f08bf6b89cf06df8466f6891feda2d4f04ab7424e3cb4c8219360fc091ea0ce"
+    },
+    "cmmc_3": {
+      "text": "CMMC Level 3 packaging (800-171 + selected 800-172)",
+      "source_sha256": "2ade20df2c2b249a35473b347761ab9f62099013cb6257360f48469f92f92b60"
+    }
+  },
+  "explanations": {
+    "cmmc": {
+      "text": "CMMC (32 CFR 170) is DoD assessment packaging over NIST SP 800-171 (and from Level 3 selected NIST SP 800-172 requirements). Level 1: basic FCI protection; Level 2: 110 800-171 Practices for CUI; Level 3: advanced 800-172 requirements. CMMC does not replace NIST SP 800-53 Rev. 5 as a design floor.",
+      "source_sha256": "3cea730a3ae235201a8504ac9ae141ff29b230ec2a3a419403ef10435c0eb359"
+    },
+    "nist_800_171": {
+      "text": "NIST SP 800-171 Rev. 2 defines 110 security requirements in 14 families to protect CUI in non-federal systems. Level 2 corresponds to the 110 practice set (often with CMMC Level 2). The product design continues to follow NIST SP 800-53 Rev. 5; 800-171 is rating packaging about it.",
+      "source_sha256": "7444d4520ad2ca1b06c2a66b03de41c54453fda41b6caafded746961a926df92"
+    },
+    "nist_800_172": {
+      "text": "NIST SP 800-172 (Feb. 2021) adds 35 expanded requirements beyond 800-171. CMMC Stage 3 selects a subset. Unproven enhanced claims remain gaps or unknown.",
+      "source_sha256": "65cf5967ecbb7d0b43d05a9c9a41be2f749dcf6c080cd5e6957f01e5dff8a584"
+    },
+    "nist_800_53": {
+      "text": "NIST SP 800-53 Rev. 5 is the control design floor of this product (Moderate Baseline, High if applicable). CMMC / 800-171 / 800-172 are overlays that use the same enclave evidence.",
+      "source_sha256": "78e5f81c2759de85921f435bb9e498c40affd56902849f322ff4b11839669ef2"
+    }
+  },
+  "cscRescanAll": {
+    "text": "Alle neu scannen",
+    "source_sha256": "26f6e4e3387caa3e54c282c8a442b19074300310c292290d3483d71b7a02c8e7"
+  },
+  "cscRescanSelected": {
+    "text": "Auswahl scannen",
+    "source_sha256": "0fb0526b6bc5b4e1c2cff72da494842729a8df1642a55986f2620267abea9cbb"
+  },
+  "cscSystemGroup": {
+    "text": "Systemgruppe",
+    "source_sha256": "6a81fb592aadad01e3e79137e36a91b158537de82f59f3e4c34cfd97e9b0346d"
+  },
+  "cscAddSystems": {
+    "text": "Add systems",
+    "source_sha256": "5331fa4e198937d9cbc16d282242601017f70c79e8c0070f369412e2f047d029"
+  },
+  "cscHonesty": {
+    "text": "Diese Zahlen beschreiben Produktlieferung and erfasste Arbeit — kein Bewertungsurteil.",
+    "source_sha256": "18868bd77ef2270050dcdea58b6e6afe6356b4a960ff4dad147cebd4cb71f18b"
+  },
+  "gridActions": {
+    "text": "Actions",
+    "source_sha256": "ff8059dc6752afdd30d275932b1d5031a2ec854b387a8c57ecc6689915293a43"
+  },
+  "gridRescan": {
+    "text": "Neu scannen",
+    "source_sha256": "d98f477bd2749bc121d712bf6b33e7392969601ef309ea0e56a4e389ed368db0"
+  },
+  "gridOpenReport": {
+    "text": "Open report",
+    "source_sha256": "ea7e47778b32977fbba3119b5dd3de86307c8487ad4854d1a5e896dfaafeddfb"
+  },
+  "hideDetails": {
+    "text": "Standarddetails ausblenden",
+    "source_sha256": "aaca331fbb3a117e222e712851d95ae78c711a94d691126958a505119f3d5aba"
+  },
+  "showDetails": {
+    "text": "Was dieser Standard bedeutet",
+    "source_sha256": "03122870e402df04fd4dae22fed4bf7a8346fc32b7dc6c32c509d34c02ac9339"
+  },
+  "whatSwitchingDoes": {
+    "text": "Was a Wechsel bewirkt",
+    "source_sha256": "00c311d2f5ea78eb7f83c116e9542b9c32cf8460828d890e950adae6425c7c98"
+  },
+  "csc": {
+    "pageTitle": {
+      "text": "Aktueller Compliance-Stand",
+      "source_sha256": "4deee20c165da42a7bafabe58eb134c193382da9b1a15ed0d80bdc30b55907ae"
+    },
+    "pageSubtitle": {
+      "text": "Systemzustand, Befunde and erneutes Scannen for the gewaehlte Systemgruppe",
+      "source_sha256": "89672dd1b22841a30fa823b9ac730cb09a0c53a31ab928624cf1cc68a743d456"
+    },
+    "evidenceBanner": {
+      "text": "Evidence-oriented representation for examiners — turquoise marks secondary actions; no false green score.",
+      "source_sha256": "e26142974be82f5cf35741730393e05f9e845fbf093db63d5a3eaf934c62bd61"
+    },
+    "evidenceSurfaceAria": {
+      "text": "Compliance evidence surface",
+      "source_sha256": "75977897ac8c1c0b18bc7b177d935cfe3af559e1025e8bdaf60bbf354ed3a941"
+    },
+    "machineGroup": {
+      "text": "Systemgruppe",
+      "source_sha256": "6a81fb592aadad01e3e79137e36a91b158537de82f59f3e4c34cfd97e9b0346d"
+    },
+    "filterByGroupAria": {
+      "text": "Nach Systemgruppe filtern",
+      "source_sha256": "bad75c19dcb2fce7b2a9e0c9a581da2ac0d45976b1dc572a320a5b259c7b1a2c"
+    },
+    "allGroups": {
+      "text": "Alle Groups",
+      "source_sha256": "ca2f3a3600db555ce3e9e80da3b8531fa4adae300a2324fcec1a53818e793f9c"
+    },
+    "defaultGroupSuffix": {
+      "text": " (Standard)",
+      "source_sha256": "0b08a3d4d6a934df0e432dad7ab4d429fb0cd7d2252c0c2e56c9596d83a4754b"
+    },
+    "machinesChip": {
+      "text": "{{count}} System",
+      "source_sha256": "5206d088d0bc6e54b62ff5fb5e0c1feffec5ef268ce024880b70d9b0ca0b1937"
+    },
+    "machinesChip_plural": {
+      "text": "{{count}} Systeme",
+      "source_sha256": "836b93fde3b374baaa2c52f98d8b28232e4f9751d0818891e17ea96136bbd488"
+    },
+    "findingsOpen": {
+      "text": "{{count}} offene Befunde",
+      "source_sha256": "eb57024e444714b0f0978f950f2097c5ffbe8a57501f4191b2f5736e2edd1098"
+    },
+    "rescanAll": {
+      "text": "Alle scannen ({{count}})",
+      "source_sha256": "1031368e7a457dea01df4ade24afe12a334f3be2c9f30044fe620ed910df6238"
+    },
+    "rescanSelected": {
+      "text": "Auswahl scannen ({{count}})",
+      "source_sha256": "e1f4dd937f5871dbe0516a4ece10ab61bb7b4b224b8abba2276c5924df72f6ea"
+    },
+    "working": {
+      "text": "Laeuft…",
+      "source_sha256": "c76103c2fad31bf17593602cafcb7fd19e197119414b7250d2ba90d5c13d210e"
+    },
+    "addSystems": {
+      "text": "Add systems",
+      "source_sha256": "5331fa4e198937d9cbc16d282242601017f70c79e8c0070f369412e2f047d029"
+    },
+    "addSystemsAria": {
+      "text": "Add systems by network scan, list import, or one at a time",
+      "source_sha256": "9cfafef061c84b7b9f982daf8471f4d051a8bb71fad310efff591c885d76763e"
+    },
+    "syncInventory": {
+      "text": "Bestand sync.",
+      "source_sha256": "82b802fef93debb31963992b6eb87fdba9a6b38e9a6d0bcc7bb5a2bee597c0a0"
+    },
+    "syncInventoryAria": {
+      "text": "Bestand of Endpunkten synchronisieren",
+      "source_sha256": "b2013a0d52a0873d28e7027bf3953fcdbcbcab76df4dc862d429ddf7ad7b29c8"
+    },
+    "exportAuditorPack": {
+      "text": "Prueferpaket",
+      "source_sha256": "5734674aae23da025db6263e0bac0735bb127f97c641bc17888401086476b2bc"
+    },
+    "exportAuditorPackAria": {
+      "text": "Prueferpaket als ZIP exportieren",
+      "source_sha256": "722f004261919a6aa37feaef073216364c57a6ef96d2c26875ff483c43d81e11"
+    },
+    "gridMachine": {
+      "text": "System",
+      "source_sha256": "6725e7bbcd28f3a8a586fa34bf191fd72dde8b61756932cd3237c17a6f196f1a"
+    },
+    "gridOs": {
+      "text": "BS",
+      "source_sha256": "1980e84621c5b257d1c0c0e2478d3b053ebca4c797c022876998a74fca6df69c"
+    },
+    "gridAccess": {
+      "text": "Access",
+      "source_sha256": "ec5ba0abb717da87aab2655bd4b4a40f93f2a591a0ade63611c42925c49c17e9"
+    },
+    "gridRoles": {
+      "text": "Rollen",
+      "source_sha256": "74fa1b2d740dc4da5d48cd47613cf926b8435bf39fc9cf42417d4652d25c62a6"
+    },
+    "gridStig": {
+      "text": "STIG",
+      "source_sha256": "8498b781f7849eb83a0c56d66dc49f0ea2bf5d863bc3a86f4d2d245bd7d45b94"
+    },
+    "gridPosture": {
+      "text": "Status",
+      "source_sha256": "920e413c7d411b61ef3e8c63b1cb6ad058d5f95f8b481dbafe60248387d8c355"
+    },
+    "gridFindings": {
+      "text": "Befunde",
+      "source_sha256": "c013ad9e5a133fee0086a0c3215b9f03d3ec7aeb5d1b8ad2a14800a88621c2c0"
+    },
+    "gridEvidence": {
+      "text": "Evidence",
+      "source_sha256": "03867aea70acaf4c5dce37a76cf5a04dab1716d6ff70bf03761c439daa8be984"
+    },
+    "gridTopCategories": {
+      "text": "Top-Kategorien",
+      "source_sha256": "2aac5f7eeb30faf76e0a72a119493bef2b217cf3d1711cf034b353bc82194713"
+    },
+    "gridLastScan": {
+      "text": "Letzter Scan",
+      "source_sha256": "1702bf1378190e21485803a97f8fb72a727c5382e25effcb4448fb0384b013bf"
+    },
+    "gridActions": {
+      "text": "Actions",
+      "source_sha256": "ff8059dc6752afdd30d275932b1d5031a2ec854b387a8c57ecc6689915293a43"
+    },
+    "gridActionsButton": {
+      "text": "Actions",
+      "source_sha256": "ff8059dc6752afdd30d275932b1d5031a2ec854b387a8c57ecc6689915293a43"
+    },
+    "gridNever": {
+      "text": "Nie",
+      "source_sha256": "c38811a58a4b777b2810ebbba51832194686cb5d13c3827f74645722e418e22e"
+    },
+    "menuRescan": {
+      "text": "Neu scannen",
+      "source_sha256": "d98f477bd2749bc121d712bf6b33e7392969601ef309ea0e56a4e389ed368db0"
+    },
+    "menuRescanHint": {
+      "text": "Sonden for dieses System erneut ausfuehren",
+      "source_sha256": "fe12cb261f1aa9ca4733b2e9b470ced0a127faa54a0d8d7fab99ad01812a6842"
+    },
+    "menuOpenDetail": {
+      "text": "Open detail",
+      "source_sha256": "4ab8e7a5acc7597339914606baa362d0067b4e2ea3b9553a8bf743b78453e803"
+    },
+    "menuOpenDetailHint": {
+      "text": "Befunde, Fix-It-Settings and Versuchsprotokoll",
+      "source_sha256": "1743300c84627909f1a4b61fb8f9e11d292434c83d6dea1ff98f0effb80bae8a"
+    },
+    "reportTitle": {
+      "text": "Aktueller Compliance-Stand",
+      "source_sha256": "4deee20c165da42a7bafabe58eb134c193382da9b1a15ed0d80bdc30b55907ae"
+    },
+    "alertPrefix": {
+      "text": "Aus",
+      "source_sha256": "f0ce94502ed90ac3253eeb12f85f320eeb87b7c2d2be0a1a56f540b5603ead1b"
+    },
+    "alertSystems": {
+      "text": "Systeme",
+      "source_sha256": "504596546375608e34df68b90b4fb4087663ea22cd814f7e72cc000503c1607c"
+    },
+    "alertGroups": {
+      "text": "Systemgruppen",
+      "source_sha256": "ac750953cdd8d9360cbaa48d9bc85f54e637d9ad51933c5ea89068f0285ab866"
+    },
+    "alertSuffix": {
+      "text": "Befunde unten unter",
+      "source_sha256": "a762ce58c94a178d902ab11395c4aa29dced6e09afdb54d492e4e5890e39f82b"
+    },
+    "alertEvidenceNotScore": {
+      "text": "— Evidence, not a score.",
+      "source_sha256": "bf6ba8a5ccbf9f55a001640fbfc6fe65a79ad75ba81636fea42e4c8cd56d42ea"
+    },
+    "machinesChip_one": {
+      "text": "{{count}} System",
+      "source_sha256": "5206d088d0bc6e54b62ff5fb5e0c1feffec5ef268ce024880b70d9b0ca0b1937"
+    },
+    "machinesChip_other": {
+      "text": "{{count}} Systeme",
+      "source_sha256": "836b93fde3b374baaa2c52f98d8b28232e4f9751d0818891e17ea96136bbd488"
+    },
+    "findingsOpenChip": {
+      "text": "{{count}} offene Befunde",
+      "source_sha256": "eb57024e444714b0f0978f950f2097c5ffbe8a57501f4191b2f5736e2edd1098"
+    },
+    "machinesChipAria": {
+      "text": "{{count}} Systeme in the Ansicht",
+      "source_sha256": "f487079a07f09236b462d1678fde9a3aa92ae509b6dab312a1e6ac154ff30f74"
+    },
+    "findingsOpenAria": {
+      "text": "{{count}} offene Befunde unter {{packaging}}",
+      "source_sha256": "3bca540a7c12bf9666d902926895a6a8cd942088e67e312e9892b5901a7ba575"
+    },
+    "physicalHostChip": {
+      "text": "physischer Host {{count}}",
+      "source_sha256": "8ba393c1b8ea9a16dd30ff5c56a62b4e9fc8b45af470fc7b9faa37b9f30cbb14"
+    },
+    "physicalHostAria": {
+      "text": "Physical host evidence {{count}}",
+      "source_sha256": "bcc5140f55af4050383051fcc639f4b008a370435c77a3ce64473187b78e4f3e"
+    },
+    "logDerivedChip": {
+      "text": "protokollabgeleitet {{count}}",
+      "source_sha256": "de40ecedd01b83f99cb5bc5d669b942e0707056c892c785f745f103aab9525bc"
+    },
+    "logDerivedAria": {
+      "text": "Log-derived evidence {{count}}",
+      "source_sha256": "52c795589d34b904f6b10401a50fabf32406e7ce2734d845faaa3de4a60322ee"
+    },
+    "fixItSelected": {
+      "text": "Fix-It Auswahl",
+      "source_sha256": "ff34026e844f60ce614cfa352a2f54fb4d850fbca8a4c842c4135e6eb1a0fff2"
+    },
+    "fixItSelectedCount": {
+      "text": "Fix-It Auswahl ({{count}})",
+      "source_sha256": "8368dc27819c38c384c5f6f7af468d3a2b7c70e6bc1b6ce3d3fc4b4b65ca2329"
+    },
+    "fixItSelectedAria": {
+      "text": "Fix-It auf {{count}} ausgewaehlte Systeme with Live-Auto-Apply anwenden",
+      "source_sha256": "6c8e97130a21bcc9ca1caca1e6ef5f9a834e3b30f3131c128e241c5275bdf85c"
+    },
+    "fixItSelectedUnavailableAria": {
+      "text": "Fix-It selection not available — select systems with Live Auto-Apply probes",
+      "source_sha256": "3c5cfc0eb7dd93bde023966aec342befc1dab9b3754e1205e0be29285a4f22a9"
+    },
+    "selectionCaption": {
+      "text": "{{count}} ausgewaehlt — Scan betrifft nur diese Zeilen ({{group}}).",
+      "source_sha256": "40cc4628d1a18334e08f0a0a3a79efbb7af0727fd4335d7ebeebd1462d96323e"
+    },
+    "fixItSelectedHint": {
+      "text": " Fix-It Auswahl wendet the erste Live-Auto-Apply-Sonde auf the erste geeignete System an ({{count}} geeignet).",
+      "source_sha256": "4c4814065dbf4de35cf14fb1dbe61d6e6201edebf8b7651fe52ce5e24387731d"
+    },
+    "fixItSelectedNeedProbe": {
+      "text": " Fix-It Auswahl benoetigt mindestens a Live-Auto-Apply-Sonde (Fix-It-Settings in the Systemdetails aktivieren).",
+      "source_sha256": "b8dacf354f5dce4de781138ea56492caafc51e2f9b44adb73c46bfda82671583"
+    }
+  },
+  "gdpr": {
+    "dsrClockNote": {
+      "text": "Article 12 Paragraph 3: Reply within one month of receipt. For complex requests, you can extend for an additional two months — justify this before the original due date. Article 12 Paragraph 6: Verify identity before releasing personal data.",
+      "source_sha256": "501a57d0643532adfd9cd69da4c919bc8ee365c07bbd33885071b78ebf6c6993"
+    },
+    "dsrNonWorkforceNote": {
+      "text": "Customers and members of the public often do not have a workforce roster entry. Link to a roster entry if one exists; Otherwise, the name and email will be saved as a snapshot upon receipt and again during the identity check.",
+      "source_sha256": "a796297fbead179adbfdde0f052fdcafa9d485e8b5499c2d4cfc35017fc1c3fa"
+    }
+  }
+}

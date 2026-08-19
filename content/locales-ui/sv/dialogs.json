@@ -1,0 +1,918 @@
+{
+  "accountSecurity": {
+    "title": {
+      "text": "Account security",
+      "source_sha256": "1d85c11e14444f61ffecab13bae85c0dd268ef28771b56307d30f7a9f0242b4e"
+    },
+    "totpLabel": {
+      "text": "TOTP multifactor:",
+      "source_sha256": "ee0d823d9b334e9ea028d2ecc5a9e32c69cf51f27ba8de39989dd62c1811ebc2"
+    },
+    "enrolled": {
+      "text": "Set up",
+      "source_sha256": "4da10f1fbb17cac25e9e78536d4104cb4b2fbbc436dbc37dee5450f22c2accda"
+    },
+    "notEnrolled": {
+      "text": "Not set up",
+      "source_sha256": "94b768af74236a6780055999a95a6db3486c2252347f643bf057d2a746a8163e"
+    },
+    "requiredByPolicy": {
+      "text": "Required by policy",
+      "source_sha256": "ebd916f157732c051f3b71f9591a643ff685c04b3b0d669f359b367050c8346b"
+    },
+    "mfaDisabled": {
+      "text": "TOTP multifactor authentication is disabled on this server.",
+      "source_sha256": "9143564042fe83abbd31c0fbc7a258e4518d60d3ae132c138dcb0e120b2aabbe"
+    },
+    "unenrollHint": {
+      "text": "Sign out to switch authenticator apps. Lost device? Use \"Reset MFA (email)\" on the sign-in page, or ask an administrator.",
+      "source_sha256": "6a98a1e8f514ae0c753ff5164709b17965f356296b8c7fdb9e6346b4b45e1ed4"
+    },
+    "unenrollButton": {
+      "text": "Deregister my authenticator",
+      "source_sha256": "2dff66f2a4e1b12ee444e3fd88b617b2e794a89c6e831174258384e7f3da8469"
+    },
+    "unenrollAria": {
+      "text": "Deregister my TOTP authenticator",
+      "source_sha256": "64dea45a35e0dfd5def410acab225c5b291a83c92af3923c43b12e1e43d9c7d0"
+    },
+    "confirmWarning": {
+      "text": "Remove TOTP authenticator? Until you set up a new one, your account is protected only by the password{{untilReenroll}}. This action is logged.",
+      "source_sha256": "c68c93ddf9e9b006218cfe6c6128992c1c95246fcaa336ef12a451aaf6cde518"
+    },
+    "untilReenroll": {
+      "text": " until you set up a new one",
+      "source_sha256": "8b0b611b493df559007a5b0b909f8acf6362d17bd0f1299c7276a399e11c055a"
+    },
+    "currentCode": {
+      "text": "Current authenticator code",
+      "source_sha256": "d3a62cd22ed27de47d1e557cb5a429f0c3b58a31ddf837cd588d537fc4df5218"
+    },
+    "currentCodeHelper": {
+      "text": "Required because MFA is mandated by policy.",
+      "source_sha256": "51905e95a8ba33b5a2ae4c885a0ebf5a560a674c8576a7f6c79b77c8fed441ec"
+    },
+    "removing": {
+      "text": "Removing…",
+      "source_sha256": "d4b09919ec929f15c19802296a06e97a0d0862e29e23c453d638fc0c3b87c641"
+    },
+    "unenrollConfirm": {
+      "text": "Sign out",
+      "source_sha256": "48f0d3d397d49f135f116d947a805b49f084f637154a8e9913e7233a11dc16a0"
+    },
+    "notEnrolledHint": {
+      "text": "No authenticator is set up. Sign out and sign in again to enroll one.",
+      "source_sha256": "d45152f1ae7410d9a7dce91554accb0c35a646d78a03c5ef876265b3081f19a0"
+    },
+    "removedSuccess": {
+      "text": "Authenticator removed. Set up a new one at the next sign-in.",
+      "source_sha256": "198e5ee81374d1ba3f739be61161e10262ea4aaca46ed46808dc4da5ecb7e3b2"
+    },
+    "requestFailed": {
+      "text": "Request failed. Please try again.",
+      "source_sha256": "a560bb10f3415ca9c9c548c86bf15de48e94d399efd50a6461e899fce90e33c3"
+    }
+  },
+  "adminAuthHelp": {
+    "titleUnauthorized": {
+      "text": "Administrator request denied (401)",
+      "source_sha256": "b8722d8b3d37dc48d99beb168b71efed46b018bf3f4d3d3b569c728fd9b178b3"
+    },
+    "titleManual": {
+      "text": "Admin API access",
+      "source_sha256": "94be4815a1a196e33b7e69b001dd6ba94265a8332e8b073584b9c1695762b165"
+    },
+    "unauthorizedBody": {
+      "text": "A protected route at /api/admin/ returned 401 Unauthorized. If IAM session authentication is active, your login is usually expired — log in again. Without session authentication, the browser's administrative login secret does not match the ADMIN_TOKEN stored on the server (e.g. after a database reset or when only one side of the pair was changed). After correcting the token, hard reload or open /login to establish a new IAM session.",
+      "source_sha256": "041b6f1655b35a81efdfa78f4b5903983dbc1529d06562b716ad82826463df96"
+    },
+    "quickFacts": {
+      "text": "Quick facts:",
+      "source_sha256": "34b49dd74fe116122d2b22134721810ae25decdd9103709cf833b6fe3a7e8204"
+    },
+    "oneNamePrimary": {
+      "text": "One name: ADMIN_TOKEN",
+      "source_sha256": "5eb3b2ed3c69991253061d3be88ff3e7ef00351e89fa60507dd8cdd63a93b146"
+    },
+    "oneNameSecondary": {
+      "text": "The server manifest secret is called ADMIN_TOKEN. This browser appends it to every admin request as HTTP header {{header}} (and X-Admin token for older builds). Value {{token}} until real RBAC replaces this stub. There is no separate registry value called {{header}} — that is just the wire header name.",
+      "source_sha256": "4f48f0046f99ef619410e3f0fdf81033c69619ac329d68e9f800e21427dc7db0"
+    },
+    "whereSecretsPrimary": {
+      "text": "Where the server stores secrets (Windows)",
+      "source_sha256": "c02e33018aca6395745a856e07ac19d8b46bd97b0e9bffce47506db8d169292a"
+    },
+    "whereSecretsSecondary": {
+      "text": "Machine-wide settings live under {{settings}} (preferred) or {{settingsLegacy}} on older installs. Secrets such as ADMIN_TOKEN live under {{secrets}} (preferred) or {{secretsLegacy}} as encrypted registry values. Services running as LocalSystem read these keys directly. Windows Credential Manager is not used for server or agent runtime secrets — it is per-user and unavailable to service accounts.",
+      "source_sha256": "a58e912f42d67e598017536e2aa27004ca4fe4dfa91e7190bd8055ff4f39b334"
+    },
+    "unixPrimary": {
+      "text": "Unix / macOS",
+      "source_sha256": "eb22bccdb665389d79d6499dbc2f811c9995bc910b503f319caa453492fe5a84"
+    },
+    "unixSecondary": {
+      "text": "Settings under /etc/aic/ or /Library/Application Support/com.analoginfo/; Secrets via the platform keyring (Linux Secret Service / macOS Keychain), not as plain text files.",
+      "source_sha256": "ec2c7f1bade38336ca55f5f133b65480bc0b47ad8a420895abe8275e07b45268"
+    },
+    "iamPrimary": {
+      "text": "IAM session authentication",
+      "source_sha256": "3fac2c410424e741a8cb10e1af6d9bd075c0d90092ec1f310b70242098160d03"
+    },
+    "iamSecondary": {
+      "text": "When IAM_SESSION_AUTH_ENABLED is true, a valid sign-in (or the shared ADMIN_TOKEN header without a stored session) is required. Expired session tokens are cleared and the browser is sent to /login.",
+      "source_sha256": "0904aebd275408f683ea2f8f3f9bc7cb9a29289b17db12a6976ec3ff636a06d8"
+    },
+    "operatorsFooter": {
+      "text": "For operators: see docs/SECURITY.md and pim-app-config/docs/CONFIGURATION_STORAGE.md (HKLM/Keyring layout).",
+      "source_sha256": "be1698d02534b1c7ef91dd333276b084f9b619d78ce8fa210d883b9124687fbe"
+    },
+    "openSettings": {
+      "text": "Open Settings",
+      "source_sha256": "3f940108cb1ecd9c0090da0b51b45f9fe673f00b22c7ffe3d013319b97456674"
+    },
+    "signIn": {
+      "text": "Sign in",
+      "source_sha256": "bfd402b2f6f3812529b55596136d3a11c51616317e3b1cd999928e2d4eae7d3f"
+    },
+    "close": {
+      "text": "Close",
+      "source_sha256": "7d9eb7acb13e24625c404401d8e88b2350e32162455885f18276cf802f7701ed"
+    }
+  },
+  "systemGroups": {
+    "systemDetails": {
+      "text": "System details",
+      "source_sha256": "d476f742e5099cd8cd4d564ab917d10e0582b4d88106bd225053a80e7404650a"
+    },
+    "editPasswordPolicy": {
+      "text": "Edit group password policy",
+      "source_sha256": "17812689f6d3fc1005072cbf44813733317e45d514de7cef4873e59cc506809b"
+    },
+    "passwordRecovery": {
+      "text": "Password Recovery",
+      "source_sha256": "93982d33c50688ba1571673139f419dfbb5b5abbceb94d6ae42b9f8c89e1a694"
+    },
+    "sendRecoveredAria": {
+      "text": "Send recovered password by email or SMS",
+      "source_sha256": "3c0379eeb7caf40c7da4bbfcb0ed38addcc783dce4875b5d5a7e0447616c77ed"
+    },
+    "moveMachine": {
+      "text": "Move machine to another group",
+      "source_sha256": "5b89c7cb09f8738714570a27ed02a837e06c50de2278c120f62cae48023aada6"
+    },
+    "issuances": {
+      "text": "Issuances",
+      "source_sha256": "f01908e6ea9b7f522e935e0fd02cf2c2b98bdca4ff0deb6b021e2748277a7e60"
+    },
+    "copyToken": {
+      "text": "Copy enrollment token",
+      "source_sha256": "230bc798e3332f6b1ce0b0132610d965d248acf2608cd91504698030d186e168"
+    },
+    "redownloadSettings": {
+      "text": "Download settings.json again",
+      "source_sha256": "ea716927302765fe4fb89d7049dbe661ec6ef3b201baf33b2854213767753696"
+    },
+    "rotateCredential": {
+      "text": "Rotate credentials",
+      "source_sha256": "99374a232de64f8279c26c2126beb751546d0eccca691ef20ef2a10c27d2e79c"
+    },
+    "revokeIssuance": {
+      "text": "Revoke this issuance",
+      "source_sha256": "84ab3201f1a12d799cb76f822011d89d9d7a3c1af79aaa1be774157eb017062f"
+    },
+    "revokeIssuanceTitle": {
+      "text": "Revoke issuance?",
+      "source_sha256": "4bb52fddf27772f45be72121fe0900234349893d84e5f33d5daea7a59acf7b3e"
+    },
+    "importSettings": {
+      "text": "Register settings.json files",
+      "source_sha256": "78e22ed9c5024a5a06b59ecc43a8e1c6803f18de241b5f56bfbdcaafd2492b82"
+    },
+    "removeImportFile": {
+      "text": "Remove file from the import list",
+      "source_sha256": "81f2234f9e4fd4bb4ab6ba69da2c5a9b223e94e8f5b16708def5026c0393bb5d"
+    },
+    "identityDetails": {
+      "text": "Identity details (read-only)",
+      "source_sha256": "de50be8fc94e51cf989b4244a22446814ad0a1c4651985fa83e6316f0c1b2f4a"
+    },
+    "identityTemplate": {
+      "text": "Identity template",
+      "source_sha256": "95e629c53a97cb4aa5627d426f744bdb6b2c2595cc5d93f7126abab026878a6a"
+    },
+    "startOffset": {
+      "text": "Start offset (DD:HH:MM:SS)",
+      "source_sha256": "9e3723da980df146ac835bf096d8ea3c7392a37d4d31412885e4fd9082406b95"
+    },
+    "editRowPolicy": {
+      "text": "Edit row password policy",
+      "source_sha256": "7ee75b216dae2b5625244718f0598324fac0132264bdfc6cf4316308155f5445"
+    },
+    "moveRowUp": {
+      "text": "Move row up",
+      "source_sha256": "da00ee2e624bfa35fca3c17287853aefb689ad944b6fa8e1960f0799a8349b34"
+    },
+    "moveRowDown": {
+      "text": "Move row down",
+      "source_sha256": "3a57faa7b2c4c80b018b38a3105c954bf8932140f2458210318fdfc54d0d9b8a"
+    },
+    "removeRow": {
+      "text": "Remove row",
+      "source_sha256": "1810fddd9e28f47d8fc6386333f41d19bf64a233817bf8fa8d4ec90ae89957cf"
+    },
+    "findMachine": {
+      "text": "Find machine in all groups",
+      "source_sha256": "5bc30c7384bf9be3eec63080f37dc1b60bd0cacdbf04f2394fa0d0a749b0cd9b"
+    },
+    "editGroup": {
+      "text": "Edit system group",
+      "source_sha256": "f1cd21a69a3df22fc13239df593d18b3b48c0b6883689e1ba25030a8f38c697b"
+    },
+    "deploymentTemplate": {
+      "text": "Deployment template",
+      "source_sha256": "f6ca45f179b24353e741a468fb5607d08c90d905424fc0d55c29e22049188261"
+    },
+    "deleteGroup": {
+      "text": "Delete system group",
+      "source_sha256": "3ba0f6e10dd6c899adc900a0726fb7e2aa25026e1254dcca5ec9a57075302466"
+    },
+    "createGroup": {
+      "text": "Create system group",
+      "source_sha256": "cbb327d0390ec980023954b2102be8c34994fe336caa68a7de413c56c516efc2"
+    },
+    "deleteEndpoint": {
+      "text": "Delete endpoint",
+      "source_sha256": "6772d678942a3f79776df86f48c559f8977500622071105c2ec1584d50633940"
+    },
+    "groupConfig": {
+      "text": "Groups-config.json",
+      "source_sha256": "690b88a7419979a970ed5a09d63777b0478610c3c3124f96cfe8f1481e2fd252"
+    },
+    "elevationCode": {
+      "text": "Elevation code",
+      "source_sha256": "a85bfe327cf4b1968d874d599453e0d540baabc13e29e0e84aa064c4042586f0"
+    },
+    "copyCode": {
+      "text": "Copy code",
+      "source_sha256": "49a0053f3b0d5045a4ef3edfe5c39be60a7ea272cc22b7c33d646624346ccd4d"
+    },
+    "groupFallback": {
+      "text": "Group",
+      "source_sha256": "34ca0e76608842ff3e7d924a455a396a82f471052c15e3f2ed7f090ac702e5c1"
+    },
+    "createElevationCode": {
+      "text": "Create elevation code",
+      "source_sha256": "b1f9442847c29c16a5b4d8588316577b9f792d26e85849d0ac46c1911f1c0aec"
+    },
+    "targetGroup": {
+      "text": "Target group",
+      "source_sha256": "21f3df41abba91528de7699124da78fb27127af0673675bbc70fa9802c3363bf"
+    },
+    "targetGroupHelperPick": {
+      "text": "Select from Elevation Platform Policy ({{platform}}) or enter a custom OS group name.",
+      "source_sha256": "ffe920c9a587a86e5cd708a2f730502e1507d00bf42d5ca33c2fd034d8cf6b25"
+    },
+    "targetGroupHelperType": {
+      "text": "Enter an OS group name (platform policy not loaded).",
+      "source_sha256": "2e06e810415c818dad835380c2dc5523356c23e8710d96301cf334fd7f530e58"
+    },
+    "strategy": {
+      "text": "Activation code strategy",
+      "source_sha256": "b5153558f155907e5db59db293fe012bea87dd603d6a2491e7dbdb1a1320f0b7"
+    },
+    "strategyLetters": {
+      "text": "letters",
+      "source_sha256": "7ad8dbe5dbed0dcda5e2fa713de5ddb5b6db23d8b7f4fc0ed2650b5b071107c7"
+    },
+    "strategyDigits": {
+      "text": "digits",
+      "source_sha256": "cc6b6bad31a0ff4d6dfd4953a6346a1c463d884723898a2af964b998e5499e22"
+    },
+    "strategyFallback": {
+      "text": "Using built-in default list.",
+      "source_sha256": "9fb1d97d5562b5049a0f2f3757503badba35f4040bc4592acd2758086320c74f"
+    },
+    "strategyHint": {
+      "text": "The agent checks offline with its configured elevation_strategy_id; choose the same strategy that was used to deploy the endpoint.",
+      "source_sha256": "b4129dc20f76b3f7cf78e7bc891c8ea7df7ad9b1fba63d2e22a643eb47d4a9f1"
+    },
+    "strategiesLoadFailed": {
+      "text": "Could not load activation-code strategies.",
+      "source_sha256": "86a5d1b9fd968578e871578908a4309e5f316a8147eaf97dfd583c0f562806b4"
+    },
+    "durationMinutes": {
+      "text": "Duration (minutes)",
+      "source_sha256": "279a3e5e0fcb422b191ecfe78158ff72e7c5b1457207e081b474c34280d901a3"
+    },
+    "justification": {
+      "text": "Justification (ticket or incident id)",
+      "source_sha256": "d93278943ffa3462fa0df4270b345c56b9731f471911c5853cd865899ea43e77"
+    },
+    "justificationHelper": {
+      "text": "Required when Sensitive access justification policy is enabled on the server.",
+      "source_sha256": "a6cf8fbd4f9c451d94f705dacaf7f8042c8291339c59d8b45207a172e56be582"
+    },
+    "activateImmediately": {
+      "text": "Activate immediately",
+      "source_sha256": "e24f1f7aa12fb63af2a760d80ced45a0f6b00c7eaef4a597357c47aa932e16b8"
+    },
+    "scheduledActivation": {
+      "text": "Scheduled activation time",
+      "source_sha256": "a569286a152e0f2d043198b23dd63886c3fd1f4052ff092f1a4fd0d71a39e794"
+    },
+    "elevationCodeLabel": {
+      "text": "Elevation code",
+      "source_sha256": "a85bfe327cf4b1968d874d599453e0d540baabc13e29e0e84aa064c4042586f0"
+    },
+    "generateCode": {
+      "text": "Generate code",
+      "source_sha256": "4774c20db4485d79e7c21a26d2a392a3155b02260b7dc6509a48b2fbc6d342c1"
+    },
+    "generating": {
+      "text": "Generating…",
+      "source_sha256": "d20a4476a0a85978547a5781e7e575e8358f102137bf253706db20ee0fe6061c"
+    },
+    "createElevationTitle": {
+      "text": "Create elevation code",
+      "source_sha256": "b1f9442847c29c16a5b4d8588316577b9f792d26e85849d0ac46c1911f1c0aec"
+    },
+    "usageType": {
+      "text": "Usage type",
+      "source_sha256": "39220d95bd054df18ecc0fb63d8e4923a55088103b6b6c636c99402a1bad6ac4"
+    },
+    "usageConnected": {
+      "text": "Connected (managed)",
+      "source_sha256": "e066119fdc5daf29622e6501690f43d42a3714e8e978f2a79cd86e3dcaa29f42"
+    },
+    "usageOneShot": {
+      "text": "One-shot provisioning",
+      "source_sha256": "273ae2b0127fdbc20c62a889b42ce11573ad270f37e9b869554512c3ca9211c9"
+    },
+    "usageAirGapped": {
+      "text": "Air-gapped (permanent)",
+      "source_sha256": "149da59c5d6af264e390b42cbb7205094f446533075399f46907dedd490b1c22"
+    },
+    "loadingTemplate": {
+      "text": "Loading template…",
+      "source_sha256": "6f02c69b6f149347c4046f6a42ecd168857c368a913429816eeb784e2b3cae5b"
+    },
+    "defaultTtlHours": {
+      "text": "Default TTL (hours)",
+      "source_sha256": "9eeee801ff99a08b14c23d3e8d01b02d48564c141ccb12b6256b049f85267958"
+    },
+    "defaultTtlHelper": {
+      "text": "Used when the wizard does not supply ttl_hours.",
+      "source_sha256": "cff76d186748281b5942241bd0fce397f521795cc1c5bda9de9c8c9b404cd602"
+    },
+    "templateSaved": {
+      "text": "Deployment template saved",
+      "source_sha256": "69ce42b807159334be6b4494dcef4125b58fe8940ea085463c9b4485b58bb4b8"
+    },
+    "saveFailed": {
+      "text": "Save failed",
+      "source_sha256": "53ad6f999b1f062fb8fc100ddac854c3b96a36c1e03c6c8c61ce892d068b33c9"
+    },
+    "noGroupSelected": {
+      "text": "No group selected",
+      "source_sha256": "d3ffc10982c9566be975bc62c641afa5721131096b56bc218a7ff332eb84538b"
+    },
+    "seedDefaultIdentities": {
+      "text": "Create default identities on new endpoints",
+      "source_sha256": "8408a3c9bd3a25571172407690b652296591530b1e14ab6c98d8fcc1ddce4b05"
+    },
+    "explicit": {
+      "text": "Explicit",
+      "source_sha256": "d863c482f7fd7f499980fbce6670b879c413a842d0047ab0afe6ecf777430651"
+    },
+    "wellKnown": {
+      "text": "Well-known",
+      "source_sha256": "96392e4e309efe68c364522db38068015faeef5bdbfe34ebb4bb49371bc2d139"
+    },
+    "wellKnownAccount": {
+      "text": "Well-known account",
+      "source_sha256": "7e74e8ea9348ee4853e8161f6949685884bf364d2371e61b0a5a605962a53dd4"
+    },
+    "accountName": {
+      "text": "Account name",
+      "source_sha256": "a704d8d4a818d7139bddd1e7bb7ad9cbe7ad6ec02e1d4b54093c2c031e35fe93"
+    },
+    "inherit": {
+      "text": "Inherit",
+      "source_sha256": "3f72f0385768d2842d8d4a9205a4d704cffe7ef1820ded371b6b31f032142025"
+    },
+    "industryStandard": {
+      "text": "Industry standard",
+      "source_sha256": "aaa4bf6b551010150d5a26786f69b87d627ad008a172e5d6f96194460d7dc726"
+    },
+    "industryStandardHelper": {
+      "text": "Select Regulatory or Benchmark Profile to prepopulate this identity's password policy. Select Custom to edit fields without replacing.",
+      "source_sha256": "47298d2e7fe77dc7f7786e7b3da1f4f79d9595aa6b1f867e90e7da4d1e94937a"
+    },
+    "saveTemplate": {
+      "text": "Save Template",
+      "source_sha256": "ba071e525111390ebc417e6d3db43586eb03160885b12626334d82f8dfdd033a"
+    },
+    "saving": {
+      "text": "Saving…",
+      "source_sha256": "23e39291d6135814ed7c936e278974544b0df5fbf0eb0427b6700979b7472a93"
+    },
+    "identityTemplateSaved": {
+      "text": "Identity template saved",
+      "source_sha256": "b3efb765f9a0633e513e6c991322129e90a62c766e4d744f4eb38e939009247f"
+    },
+    "identityTemplateSaveFailed": {
+      "text": "Identity template could not be saved",
+      "source_sha256": "5026a59f98ee2955f419adc6d38336b854790a8ab4d3bb463aae8cd2998967c6"
+    },
+    "groupPasswordPolicy": {
+      "text": "Group password policy",
+      "source_sha256": "7da032e0e14ce9a92091f08548326988ff58f862d90aa15643a70ac167f2bdee"
+    },
+    "allStatuses": {
+      "text": "All statuses",
+      "source_sha256": "8ee57323a6f24cc7a5e2395cc0bec1eafc76799ef0e0f31c7a81ddb87faf7a2b"
+    },
+    "statusActive": {
+      "text": "Active",
+      "source_sha256": "92340695899bd2d86223e4a007620e0d6502fc0e08809773634c7e0743764a9c"
+    },
+    "statusSuperseded": {
+      "text": "Superseded",
+      "source_sha256": "e5830d265452f1ed47a8fb8891fdc488ab355a71ff18cebee2fe3dd1df2f295b"
+    },
+    "statusRevoked": {
+      "text": "Revoked",
+      "source_sha256": "f6f738d043929f59fe41b1a5b414b33ea28ca9a6ddc74e682bdb7167b5a6ac6e"
+    },
+    "statusLabel": {
+      "text": "Status",
+      "source_sha256": "920e413c7d411b61ef3e8c63b1cb6ad058d5f95f8b481dbafe60248387d8c355"
+    },
+    "settingsIssuances": {
+      "text": "Settings issuances",
+      "source_sha256": "3899369fb42eba8483ae79322a9b5eee46f0c7ca0c96f8d5376cdb26d14792ad"
+    },
+    "loadIssuancesFailed": {
+      "text": "Could not load issuances",
+      "source_sha256": "9a86f1e1286ba3af74e059c354ca185bacf39deb030cce8f98b2bf8a6afedcbb"
+    },
+    "downloadFailed": {
+      "text": "Download failed",
+      "source_sha256": "eae34ccbc4432c1358da668b091e7c952fe8be24b02dd4f8ec5ea2edef5ca1a4"
+    },
+    "regenerateFailed": {
+      "text": "Regenerate failed",
+      "source_sha256": "c15b30e9e1376970a5cbabbdc0a6b5646ed9aede337a8b51d025816c502df3a0"
+    },
+    "revokeFailed": {
+      "text": "Revoke failed",
+      "source_sha256": "f339773d29466cd1727e7b6762a131f2ec63f4020260283da888c3faf406b7f6"
+    },
+    "tokenCopied": {
+      "text": "Enrollment token copied to the clipboard",
+      "source_sha256": "2f4fcd72a09e00446243d1b764518193bf280a90fcb171bcf8e099fb5173fb89"
+    },
+    "clipboardWriteFailed": {
+      "text": "Clipboard could not be written to",
+      "source_sha256": "3d40cc43664cc3f2120a21d49a293eb653fd6ac2463a57b39685e6f948c682ab"
+    },
+    "rotateConnectedOnly": {
+      "text": "Rotate credentials (ConnectedManaged only)",
+      "source_sha256": "f5b6971d4e75c61a82bdc5819e5e974e314c517e1a718e235c8fda0c1d448f92"
+    },
+    "rotateUnavailable": {
+      "text": "Recreate not available for this row (only active ConnectedManaged exhibitions can be rotated)",
+      "source_sha256": "345f26a90c4ced3f932f39ba352c479734e1bf48f1a54439b41f67dcb14c3e46"
+    },
+    "revokeActiveOnly": {
+      "text": "Only active exhibitions can be revoked",
+      "source_sha256": "2d0e583028cccae97ea85acfaed7c35f28ed256f1c4b3b14fbfa8fac59c51630"
+    },
+    "defaultSystemGroup": {
+      "text": "Default system group",
+      "source_sha256": "1324de9db441ebf05827ba52a055cff2afab1e205949bbd0e38cb073b8e890a9"
+    },
+    "defaultSystemGroupHelper": {
+      "text": "Used when a file omits system_group_id",
+      "source_sha256": "3d1da73259f60e94c5b000436d9607a269c427dcbf60cd5e5a22c9c9db77a30c"
+    },
+    "markAirGapped": {
+      "text": "Mark as air-gapped (offline only)",
+      "source_sha256": "d78edfcc8bd88a53bd43eff777dce6ef3154f98500888dc452047f60bf8808be"
+    },
+    "chipInFile": {
+      "text": "In file",
+      "source_sha256": "ecbeefe4ca3c3346aaccd33829f15b7aa3b2fe171db0baffc38245ed78216dee"
+    },
+    "chipNeedsGroup": {
+      "text": "Group required",
+      "source_sha256": "21ee21e8258d066081259c746a98a42f402c57cde18274da05f87bb5e45f2ffb"
+    },
+    "chipValid": {
+      "text": "Valid",
+      "source_sha256": "f5162206318ee96491108354ae7361db244d6a013aa32185216b5f15ac544f4c"
+    },
+    "chipYes": {
+      "text": "Yes",
+      "source_sha256": "85a39ab345d672ff8ca9b9c6876f3adcacf45ee7c1e2dbd2408fd338bd55e07e"
+    },
+    "chipNo": {
+      "text": "No",
+      "source_sha256": "1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da161c6099be3691d"
+    },
+    "importing": {
+      "text": "Importing…",
+      "source_sha256": "c01c4324f1fa14fc76957936626e11a5150c24e748dbd08cc46848dfcbe37d00"
+    },
+    "importFiles": {
+      "text": "Import {{count}} file",
+      "source_sha256": "9aaf6de6012055f56940fe58fabb4f51b0a71a655c0214f3578383a2e01ad448"
+    },
+    "importFilesPlural": {
+      "text": "Import {{count}} files",
+      "source_sha256": "06540380d1db7fdb9094bd4955bc4d85e8e59246ed032a1eb1a4893ed1c70afa"
+    },
+    "noFilesToImport": {
+      "text": "No files to import",
+      "source_sha256": "3aa0e8bca4f4cd12ae2c1a5dd0cd0d808705804afaeda4644a870cfc2143dc1e"
+    },
+    "noValidFiles": {
+      "text": "No valid files to import",
+      "source_sha256": "fba4d7eef91889649a3964a1c1f36c16ddaa56ef7e719b587a44b96751836a1a"
+    },
+    "selectGroupForOmit": {
+      "text": "Select system group for files without system_group_id",
+      "source_sha256": "0c1dfeea9356397ce6861b53fd47f573ca0126dcb61a69685e7af0d7604b6853"
+    },
+    "importFailed": {
+      "text": "Import failed",
+      "source_sha256": "0a26f41abd00f95e7009b406e82083295f837ac1bc76e2acc1f7d66b3539c18e"
+    },
+    "unknownError": {
+      "text": "An unknown error occurred",
+      "source_sha256": "0f56130f3d6a4a92c613c545ae506c6085bd9e87905a2e65670107f56db12d58"
+    },
+    "invalidJson": {
+      "text": "Invalid JSON format",
+      "source_sha256": "70410685471d05773e9e78906f633185f632fb133a15a591e3e3136ed8ba2b14"
+    },
+    "descriptionColon": {
+      "text": "Description:",
+      "source_sha256": "0cf2814604b4c9ad9139ebf7792b197fa2072052a8d17467bb33abc6bdce7be4"
+    },
+    "deleteGroupAndEndpoints": {
+      "text": "Delete group & endpoints",
+      "source_sha256": "856399d58fd7c2ac6125b5849114c7a0ebf9df87e70890efec2a3f678141c341"
+    },
+    "deleteGroupOnly": {
+      "text": "Delete group",
+      "source_sha256": "3f7374ac08ea87dc3387b0fa58953163a6319e39015e6a5983bec7785648fed8"
+    },
+    "passwordLength": {
+      "text": "Password length",
+      "source_sha256": "e874dbcb75bfa39e85182651b8a7f53bd698f95a6e8040d2b4eaf0b2b6824a47"
+    },
+    "inheritEmpty": {
+      "text": "Leave empty to inherit the effective default.",
+      "source_sha256": "cf83383069e68f166787bf9ea45457e34460e7e1bc90271c490e1eea915e0925"
+    },
+    "maxDriftSeconds": {
+      "text": "Max drift (seconds)",
+      "source_sha256": "78fae96b1a6fbc403a7452a1e81202271f4ad9562d067aa07925e942a3693990"
+    },
+    "secretUpdateFrequency": {
+      "text": "Secret update interval (hours)",
+      "source_sha256": "3a2ac6a8105116d28853d4fc1a65a16cf2a096e09cf0a81aece6a4d96decc465"
+    },
+    "requireUppercase": {
+      "text": "Uppercase required",
+      "source_sha256": "e8ffe4186073687d132be04bef173e7e5d62c6daaf98e2fca654e5b8bed46571"
+    },
+    "requireLowercase": {
+      "text": "Lowercase required",
+      "source_sha256": "37641b53c9a397ea81243e90b59ce8e82bac69b36e34f1cb72b72ec504fe9a79"
+    },
+    "requireDigits": {
+      "text": "Digits required",
+      "source_sha256": "8e450f827cbfec99ddc9b7bf67992c45b46f16d2f7259733176d6f28790dd09d"
+    },
+    "requireSpecial": {
+      "text": "Special characters required",
+      "source_sha256": "3ca489767bfed48ce85efa64a197e899c746ff3f307967aa144416748553ee9c"
+    },
+    "allowedSpecial": {
+      "text": "Allowed special characters",
+      "source_sha256": "369a52ccc06c2441706d055a80de8c1e53f4fbb0794aae3eac1b28a011dca06f"
+    },
+    "policyVersion": {
+      "text": "Policy version",
+      "source_sha256": "800710838f0ada475f28a3baba6a350a5da645c1466c4d4fc2ee273a435e9461"
+    },
+    "caCertPath": {
+      "text": "CA certificate file path",
+      "source_sha256": "278d979a84f6d76b180fc6f11fe1011b7a5ac42beaaaebbbb972bcd41cac50c3"
+    },
+    "localAccountName": {
+      "text": "Local account name",
+      "source_sha256": "78db2f56b05282fa321d79de5cfe7b6d46482d411a58044ca4872353217cf528"
+    },
+    "groupName": {
+      "text": "Group name",
+      "source_sha256": "762ebb70ef0ea2e80a41035e91a5f95ec35b0b03d2f2acc5c5b4f4c09213c8c5"
+    },
+    "groupNameHelper": {
+      "text": "Alphanumeric, hyphens, and underscores only (max. 64 characters).",
+      "source_sha256": "d5b34fe0d2958117116157071623b2712181a12322e8258708dbbcc05f84d3f0"
+    },
+    "description": {
+      "text": "Description",
+      "source_sha256": "526e0087cc3f254d9f86f6c7d8e23d954c4dfda2b312efc29194ae8a860106ba"
+    },
+    "descriptionOptional": {
+      "text": "Optional (max. 1024 characters).",
+      "source_sha256": "1ba8aa983d294edde46aa45d0e539042d6f2c5085a8dc9b3f3b5f6a1617e9f9a"
+    },
+    "passwordCalculable": {
+      "text": "Password calculable",
+      "source_sha256": "2381891a39a2f25ba3507827579895b4e0457daca180c0fcb95fd90ae9353be1"
+    },
+    "systemInformation": {
+      "text": "System information",
+      "source_sha256": "b120922cdf69ede3a79e12d827e030ee15053cbf5c9522180b7a4638447f6f11"
+    },
+    "machineName": {
+      "text": "Machine name",
+      "source_sha256": "7c5749c19ac4b2ef719c184419cfdb6500c1d40849f799df642b5a0cb95d73c7"
+    },
+    "machineId": {
+      "text": "Machine ID",
+      "source_sha256": "ef6727e4053f46688c48127d0482df72dae767e61b9459f640c4296cbff00538"
+    },
+    "identityInformation": {
+      "text": "Identity information",
+      "source_sha256": "d7feaca470282c60d71243f9a841a33c5051506fd5ba922608d45ada8365546c"
+    },
+    "identityId": {
+      "text": "Identity ID",
+      "source_sha256": "2f8124d39c5ecd100a151182cf703aa7a8878196cb334e149a2098ababf39f92"
+    },
+    "legacy": {
+      "text": "Legacy",
+      "source_sha256": "1432897a6136de54f3a8bfcc9f9fa87ead45c109731e5769a6e94887d555ce5b"
+    },
+    "active": {
+      "text": "Active",
+      "source_sha256": "92340695899bd2d86223e4a007620e0d6502fc0e08809773634c7e0743764a9c"
+    },
+    "inactive": {
+      "text": "Inactive",
+      "source_sha256": "ac7c949f1211b7814bdd28a698e6c04e05e1a83f9f86e7ad43d2086d00e98afd"
+    },
+    "createdAt": {
+      "text": "Created at",
+      "source_sha256": "775b5bf9646856d5c599dc8bff4aa3244de6e04badd263185840f391d403f94a"
+    },
+    "lastRotation": {
+      "text": "Last rotation",
+      "source_sha256": "25796fd19bcacdf296a839c327968c467b9b86bfdd1c6fd26ffcaad41f81018d"
+    },
+    "hashAlgorithm": {
+      "text": "Hash algorithm",
+      "source_sha256": "bce19f5e0a73da8d003f151ceb7b2a1aa951072b3763a5e3c9bc81f10633a5e4"
+    },
+    "passwordPolicy": {
+      "text": "Password policy",
+      "source_sha256": "21b86a0e7f34e88de52a5477dad7f31587ff03249d89108d34f5ce2447696215"
+    },
+    "customPolicyChip": {
+      "text": "Custom policy for this identity",
+      "source_sha256": "2e87a6ce78f81f81802e144932cbe16b9bf83ddedcbd34dcbaa5f0d33071bb15"
+    },
+    "length": {
+      "text": "Length",
+      "source_sha256": "adc95605a1b30c73959fbaf21e60f9723efe855c482fa336a957924d4ea0a08b"
+    },
+    "rotationInterval": {
+      "text": "Rotation interval",
+      "source_sha256": "bb5664abd72273db5a840d9b15ac0f0b9b41f7d0ba08e07dc0154dbb9113eea6"
+    },
+    "maxDriftS": {
+      "text": "Max drift (s)",
+      "source_sha256": "98601826579faa73898af9bc0ec4ffefdd2f1d6efa1b389f865ba23e306c4fa8"
+    },
+    "uppercase": {
+      "text": "Uppercase",
+      "source_sha256": "b463d6908c1cf920e7ac73fe37d06c93381ee6425f87eb52231885f16d5027d7"
+    },
+    "lowercase": {
+      "text": "Lowercase",
+      "source_sha256": "3b677a18bc9da6c82a9ff86be3b8dd6ba634a26bc1fbad881ea753641ba2a2be"
+    },
+    "digits": {
+      "text": "Digits",
+      "source_sha256": "9cd500d3d69fb10aef3e08720fe7ee668cf59e01ece5be0b45de91753d0fd7ec"
+    },
+    "special": {
+      "text": "Special characters",
+      "source_sha256": "efd000836dc658c60232d81f7202a99dacdde2c7de0955e0a7cbb7d59357eeb5"
+    },
+    "allowedSymbols": {
+      "text": "Allowed symbols",
+      "source_sha256": "a76105a0573182766f14ff7498ca2eb504685dbe472633dd5b82b115a5e8bb3b"
+    },
+    "defaultSet": {
+      "text": "Default set",
+      "source_sha256": "94ae8994da92f11784c3cef66b36a889eec8d11917a0aa009c3b61566d78df35"
+    },
+    "yes": {
+      "text": "Yes",
+      "source_sha256": "85a39ab345d672ff8ca9b9c6876f3adcacf45ee7c1e2dbd2408fd338bd55e07e"
+    },
+    "no": {
+      "text": "No",
+      "source_sha256": "1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da161c6099be3691d"
+    },
+    "machineNameField": {
+      "text": "Machine name",
+      "source_sha256": "7c5749c19ac4b2ef719c184419cfdb6500c1d40849f799df642b5a0cb95d73c7"
+    },
+    "noMachinesFound": {
+      "text": "No machines found for “{{query}}”",
+      "source_sha256": "02d943644ea2d29bff9e2ae8dfb3db81db0beeac9f52a0b35b00a0883ac11787"
+    },
+    "adminTokenOptional": {
+      "text": "Admin Token (Optional)",
+      "source_sha256": "8674c478740feb0156ac9aa65dbbd78a3285458d4c05509d1b50306cbd0837c8"
+    },
+    "adminTokenHelper": {
+      "text": "Leave blank for testing; required in production",
+      "source_sha256": "c196498edebd2a37d09227f8d9aa5011cc5544b098f8fb9067c79b3f9e828e3c"
+    },
+    "passwordHistory": {
+      "text": "Password History",
+      "source_sha256": "73e85c35eb80abc0191bfb0bdb2f6ea1bdb17b344971e5bb41cf1faa66a21e2f"
+    },
+    "loadingPasswordHistory": {
+      "text": "Loading password history…",
+      "source_sha256": "4ec5625b4ac2785d5a86be5be703713169c73947960efab832449453b9560cda"
+    },
+    "noPasswordHistory": {
+      "text": "No password history available for this identity.",
+      "source_sha256": "4c74a4706a9adc3f9edb36e454b03ce224de0229fb0b53c44ed677cfac513c10"
+    },
+    "chipCurrent": {
+      "text": "Current",
+      "source_sha256": "e0d1b68224bf0b31ef16b206c65b5f8f6b89d18161f4a7cdcb8d0ac8d952549a"
+    },
+    "chipPast": {
+      "text": "Past",
+      "source_sha256": "ca1530e8d7017547dc0651ac6c41931eb00475cf10fe902dd6d725b9b757a904"
+    },
+    "chipFuture": {
+      "text": "Future",
+      "source_sha256": "61636cdef547228389f0260d1dbb952beb8fe5632d7069d5da9a383ad3582361"
+    },
+    "chipSelected": {
+      "text": "Selected",
+      "source_sha256": "57fd7a0cf33f2666eede69e44f8857159653f2f28e4fd7482a5e16d4af628d2a"
+    },
+    "recovering": {
+      "text": "Recovering...",
+      "source_sha256": "cf007a38cfc898ffbefd660c06867dc60a7789c47b0648ce06873eef40bfc378"
+    },
+    "recover": {
+      "text": "Recover",
+      "source_sha256": "0c5327fd45c725528c37b589d6198944faba2decd050086cbf89fa636c9843c7"
+    },
+    "basicInformation": {
+      "text": "Basic information",
+      "source_sha256": "6c092c9ca023247a0b1bf07e555b44557ffe5f01e1ebaca17943a48842ed901a"
+    },
+    "assignedName": {
+      "text": "Assigned name",
+      "source_sha256": "ef77d7790b7dab6d89b425a92ad0380964e1f5c208b65260a2331e43215c99f3"
+    },
+    "notAssigned": {
+      "text": "Not assigned",
+      "source_sha256": "13075c2336114cd61689ea2ff249beb20052a0afbad7f0e4b8d68fb866e568e7"
+    },
+    "loadTemplateFailed": {
+      "text": "Template for this usage type could not be loaded.",
+      "source_sha256": "cb3af5ba617de9225c2c2b15d498cb9eca2da9db46a413ff3d3d6f6e2ded6f17"
+    },
+    "statusExpired": {
+      "text": "Expired",
+      "source_sha256": "424a2551d356754c882d04ac16c63e6b50b80b159549d23231001f629455756e"
+    },
+    "identityLabel": {
+      "text": "Identity",
+      "source_sha256": "999f23fcd7bec7075e54bb5dea0d9c548bfe7261f95b911ed8e23d2f4188724f"
+    },
+    "neverConnected": {
+      "text": "Never connected",
+      "source_sha256": "0dac37364c3d582c802ab9ae9aefc6af2d6bb488ebbba966b271f7d6cfe7243c"
+    },
+    "connected": {
+      "text": "Connected",
+      "source_sha256": "22965568d22a14ee17af055d2870b50afcfe9fd94a83eec3196e266932297bb2"
+    },
+    "networkInformation": {
+      "text": "Network information",
+      "source_sha256": "35cd8271a59e0b527be454e51da5e0d0b83bb7b5f2dce49c580efbea16cc1c18"
+    },
+    "ipAddress": {
+      "text": "IP address",
+      "source_sha256": "0302a467885abfdd4772c9e16c57edab91b02231248202d63170f1c669d13303"
+    },
+    "macAddress": {
+      "text": "MAC address",
+      "source_sha256": "000a6ce60a8e48e3e5f0089004a301efd34e53067fc1d29547d138639055221c"
+    },
+    "platformInformation": {
+      "text": "Platform information",
+      "source_sha256": "bf6039522840d720a6c3f2e871d72a1a05d0b4e47b73b16fe510f2c838cf0262"
+    },
+    "osPlatform": {
+      "text": "OS platform",
+      "source_sha256": "0021ef577e31bd3975302459d4b8c3bdedf19fd479d4824b1ce46d803d8f12c0"
+    },
+    "osDetails": {
+      "text": "OS details",
+      "source_sha256": "18bd7c98d30483db076c1ce955d2015002ee17dbd066cfa4e33e3c214494f0c8"
+    },
+    "organization": {
+      "text": "Organization",
+      "source_sha256": "d764d42592fc968709b4c6c25c6e6b77919295dfce2c57ead02bedac5ddb3218"
+    },
+    "multiTenant": {
+      "text": "Tenant",
+      "source_sha256": "e23969d284c3424c8014c6e5b1b85ebc275bc5c74321e7677a21d023e6ea154c"
+    },
+    "domain": {
+      "text": "Domain",
+      "source_sha256": "79fa33618d8eaa1fc55f6f8a2d34c65ececc4c5961ac2b1433802c2629d55ca1"
+    },
+    "systemGroup": {
+      "text": "System group",
+      "source_sha256": "b4349ce313d00b3a572da49f5d09f4d4af67edbc24340b97362b74246fb6e6ec"
+    },
+    "securityInformation": {
+      "text": "Security information",
+      "source_sha256": "a94e2fdd66be53ef4cab3756e3b945545a4f79ed66678301107c9d2383d34b13"
+    },
+    "secretKeyVersion": {
+      "text": "Secret key version",
+      "source_sha256": "bf7feb2e6efde76bf93f17dc49270707b0a40b53658b62c6f2148ce16306c766"
+    },
+    "hasEncryptedSecret": {
+      "text": "Encrypted secret present",
+      "source_sha256": "9e39d33f3a55b6a4081526cfc2065c70638e3b9e344bd4c37017da872c07f31d"
+    },
+    "timestamps": {
+      "text": "Timestamps",
+      "source_sha256": "755f099dbf49d0984e535dbef68127da21e286c143dca18a63ec9af6adb9018a"
+    },
+    "lastUpdated": {
+      "text": "Last updated",
+      "source_sha256": "382ac5f308f76c24b2c981e2041943bc2be2229cbd285ad362b9af1cfc386ef8"
+    },
+    "lastCheckIn": {
+      "text": "Last check-in",
+      "source_sha256": "9d5980ae7a54aa18ff71158d822c0eef994ff6087feb3c35b1a90ca63a66848b"
+    },
+    "na": {
+      "text": "N/A",
+      "source_sha256": "e2f79e5b60330bba4c289962231b6ba2957d0b14e7deb3110417003c79dea635"
+    },
+    "unknown": {
+      "text": "Unknown",
+      "source_sha256": "b764cdc0eab7137467211272fa539f1260d1bf2e71bcf6ff3bdc960f5c16aa14"
+    },
+    "none": {
+      "text": "None",
+      "source_sha256": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+    }
+  },
+  "outstandingApprovals": {
+    "title": {
+      "text": "Outstanding approvals",
+      "source_sha256": "d58cd3d597b1e6c14eb4b811607d170ee89df77eb2f9c7e7ccb536b1f4385112"
+    },
+    "loadingAria": {
+      "text": "Loading outstanding approvals",
+      "source_sha256": "cc9bc05846db46e6b07eb52904e4d2892a7cc3d6b5dad3738835bad6c31faf72"
+    },
+    "loadFailed": {
+      "text": "Could not load outstanding approvals.",
+      "source_sha256": "b73bad6b8a9bea5286bb032a92a9b1f14a406feab28a00d3395da1304debeb3b"
+    },
+    "closeAria": {
+      "text": "Close outstanding approvals",
+      "source_sha256": "f00ac5d1d57fd48f5d5bdedf0ab15abcb639dc33c6386519b22ccc149a372ffe"
+    },
+    "close": {
+      "text": "Close",
+      "source_sha256": "7d9eb7acb13e24625c404401d8e88b2350e32162455885f18276cf802f7701ed"
+    }
+  }
+}

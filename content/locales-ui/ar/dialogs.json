@@ -1,0 +1,918 @@
+{
+  "accountSecurity": {
+    "title": {
+      "text": "أمان الحساب",
+      "source_sha256": "1d85c11e14444f61ffecab13bae85c0dd268ef28771b56307d30f7a9f0242b4e"
+    },
+    "totpLabel": {
+      "text": "TOTP متعدد العوامل:",
+      "source_sha256": "ee0d823d9b334e9ea028d2ecc5a9e32c69cf51f27ba8de39989dd62c1811ebc2"
+    },
+    "enrolled": {
+      "text": "يثبت",
+      "source_sha256": "4da10f1fbb17cac25e9e78536d4104cb4b2fbbc436dbc37dee5450f22c2accda"
+    },
+    "notEnrolled": {
+      "text": "لم يتم إعداده",
+      "source_sha256": "94b768af74236a6780055999a95a6db3486c2252347f643bf057d2a746a8163e"
+    },
+    "requiredByPolicy": {
+      "text": "مطلوبة بموجب السياسة",
+      "source_sha256": "ebd916f157732c051f3b71f9591a643ff685c04b3b0d669f359b367050c8346b"
+    },
+    "mfaDisabled": {
+      "text": "تم تعطيل مصادقة TOTP متعددة العوامل على هذا الخادم.",
+      "source_sha256": "9143564042fe83abbd31c0fbc7a258e4518d60d3ae132c138dcb0e120b2aabbe"
+    },
+    "unenrollHint": {
+      "text": "قم بتسجيل الخروج لتبديل تطبيقات المصادقة. الجهاز المفقود؟ استخدم \"إعادة تعيين MFA (البريد الإلكتروني)\" في صفحة تسجيل الدخول، أو اسأل المسؤول.",
+      "source_sha256": "6a98a1e8f514ae0c753ff5164709b17965f356296b8c7fdb9e6346b4b45e1ed4"
+    },
+    "unenrollButton": {
+      "text": "إلغاء تسجيل المصادق الخاص بي",
+      "source_sha256": "2dff66f2a4e1b12ee444e3fd88b617b2e794a89c6e831174258384e7f3da8469"
+    },
+    "unenrollAria": {
+      "text": "قم بإلغاء تسجيل مصادق TOTP الخاص بي",
+      "source_sha256": "64dea45a35e0dfd5def410acab225c5b291a83c92af3923c43b12e1e43d9c7d0"
+    },
+    "confirmWarning": {
+      "text": "إزالة مصادقة TOTP؟ وإلى أن تقوم بإعداد حساب جديد، يكون حسابك محميًا فقط بكلمة المرور{{untilReenroll}}. تم تسجيل هذا الإجراء.",
+      "source_sha256": "c68c93ddf9e9b006218cfe6c6128992c1c95246fcaa336ef12a451aaf6cde518"
+    },
+    "untilReenroll": {
+      "text": "حتى تقوم بإعداد واحدة جديدة",
+      "source_sha256": "8b0b611b493df559007a5b0b909f8acf6362d17bd0f1299c7276a399e11c055a"
+    },
+    "currentCode": {
+      "text": "رمز المصادقة الحالي",
+      "source_sha256": "d3a62cd22ed27de47d1e557cb5a429f0c3b58a31ddf837cd588d537fc4df5218"
+    },
+    "currentCodeHelper": {
+      "text": "مطلوب لأن MFA مفوض بموجب السياسة.",
+      "source_sha256": "51905e95a8ba33b5a2ae4c885a0ebf5a560a674c8576a7f6c79b77c8fed441ec"
+    },
+    "removing": {
+      "text": "جارٍ الإزالة...",
+      "source_sha256": "d4b09919ec929f15c19802296a06e97a0d0862e29e23c453d638fc0c3b87c641"
+    },
+    "unenrollConfirm": {
+      "text": "تسجيل الخروج",
+      "source_sha256": "48f0d3d397d49f135f116d947a805b49f084f637154a8e9913e7233a11dc16a0"
+    },
+    "notEnrolledHint": {
+      "text": "لم يتم إعداد أي أداة مصادقة. قم بتسجيل الخروج وتسجيل الدخول مرة أخرى لتسجيل واحد.",
+      "source_sha256": "d45152f1ae7410d9a7dce91554accb0c35a646d78a03c5ef876265b3081f19a0"
+    },
+    "removedSuccess": {
+      "text": "تمت إزالة أداة المصادقة. قم بإعداد واحدة جديدة عند تسجيل الدخول التالي.",
+      "source_sha256": "198e5ee81374d1ba3f739be61161e10262ea4aaca46ed46808dc4da5ecb7e3b2"
+    },
+    "requestFailed": {
+      "text": "فشل الطلب. يرجى المحاولة مرة أخرى.",
+      "source_sha256": "a560bb10f3415ca9c9c548c86bf15de48e94d399efd50a6461e899fce90e33c3"
+    }
+  },
+  "adminAuthHelp": {
+    "titleUnauthorized": {
+      "text": "تم رفض طلب المسؤول (401)",
+      "source_sha256": "b8722d8b3d37dc48d99beb168b71efed46b018bf3f4d3d3b569c728fd9b178b3"
+    },
+    "titleManual": {
+      "text": "الوصول إلى واجهة برمجة تطبيقات المشرف",
+      "source_sha256": "94be4815a1a196e33b7e69b001dd6ba94265a8332e8b073584b9c1695762b165"
+    },
+    "unauthorizedBody": {
+      "text": "أعاد المسار المحمي في /api/admin/ 401 غير مصرح به. إذا كانت مصادقة جلسة IAM نشطة، فعادةً ما تنتهي صلاحية تسجيل الدخول الخاص بك — قم بتسجيل الدخول مرة أخرى. بدون مصادقة الجلسة، لا يتطابق سر تسجيل الدخول الإداري للمتصفح مع ADMIN_TOKEN المخزن على الخادم (على سبيل المثال، بعد إعادة تعيين قاعدة البيانات أو عند تغيير جانب واحد فقط من الزوج). بعد تصحيح الرمز المميز، أعد التحميل أو افتح /تسجيل الدخول لإنشاء جلسة IAM جديدة.",
+      "source_sha256": "041b6f1655b35a81efdfa78f4b5903983dbc1529d06562b716ad82826463df96"
+    },
+    "quickFacts": {
+      "text": "حقائق سريعة:",
+      "source_sha256": "34b49dd74fe116122d2b22134721810ae25decdd9103709cf833b6fe3a7e8204"
+    },
+    "oneNamePrimary": {
+      "text": "اسم واحد: ADMIN_TOKEN",
+      "source_sha256": "5eb3b2ed3c69991253061d3be88ff3e7ef00351e89fa60507dd8cdd63a93b146"
+    },
+    "oneNameSecondary": {
+      "text": "يُسمى سر بيان الخادم ADMIN_TOKEN. يقوم هذا المتصفح بإلحاقه بكل طلب مسؤول كرأس HTTP {{header}} (ورمز X-Admin للإصدارات الأقدم). القيمة {{token}} حتى يستبدل RBAC الحقيقي هذا الكعب. لا توجد قيمة تسجيل منفصلة تسمى {{header}} — وهذا مجرد اسم رأس السلك.",
+      "source_sha256": "4f48f0046f99ef619410e3f0fdf81033c69619ac329d68e9f800e21427dc7db0"
+    },
+    "whereSecretsPrimary": {
+      "text": "حيث يقوم الخادم بتخزين الأسرار (ويندوز)",
+      "source_sha256": "c02e33018aca6395745a856e07ac19d8b46bd97b0e9bffce47506db8d169292a"
+    },
+    "whereSecretsSecondary": {
+      "text": "توجد الإعدادات على مستوى الجهاز ضمن {{settings}} (المفضل) أو {{settingsLegacy}} في عمليات التثبيت الأقدم. توجد أسرار مثل ADMIN_TOKEN ضمن {{secrets}} (مفضل) أو {{secretsLegacy}} كقيم تسجيل مشفرة. الخدمات التي تعمل كـ LocalSystem تقرأ هذه المفاتيح مباشرة. لا يتم استخدام Windows Credential Manager لأسرار وقت تشغيل الخادم أو الوكيل - فهو لكل مستخدم وغير متاح لحسابات الخدمة.",
+      "source_sha256": "a58e912f42d67e598017536e2aa27004ca4fe4dfa91e7190bd8055ff4f39b334"
+    },
+    "unixPrimary": {
+      "text": "يونيكس / ماك",
+      "source_sha256": "eb22bccdb665389d79d6499dbc2f811c9995bc910b503f319caa453492fe5a84"
+    },
+    "unixSecondary": {
+      "text": "الإعدادات ضمن /etc/aic/ أو /Library/Application Support/com.analoginfo/؛ الأسرار عبر حلقة مفاتيح النظام الأساسي (Linux Secret Service / macOS Keychain)، وليس كملفات نصية عادية.",
+      "source_sha256": "ec2c7f1bade38336ca55f5f133b65480bc0b47ad8a420895abe8275e07b45268"
+    },
+    "iamPrimary": {
+      "text": "مصادقة جلسة IAM",
+      "source_sha256": "3fac2c410424e741a8cb10e1af6d9bd075c0d90092ec1f310b70242098160d03"
+    },
+    "iamSecondary": {
+      "text": "عندما يكون IAM_SESSION_AUTH_ENABLED صحيحًا، يلزم تسجيل دخول صالح (أو رأس ADMIN_TOKEN المشترك بدون جلسة مخزنة). يتم مسح الرموز المميزة للجلسة منتهية الصلاحية ويتم إرسال المتصفح إلى /login.",
+      "source_sha256": "0904aebd275408f683ea2f8f3f9bc7cb9a29289b17db12a6976ec3ff636a06d8"
+    },
+    "operatorsFooter": {
+      "text": "بالنسبة للمشغلين: راجع docs/SECURITY.md وpim-app-config/docs/CONFIGURATION_STORAGE.md (تخطيط HKLM/Keyring).",
+      "source_sha256": "be1698d02534b1c7ef91dd333276b084f9b619d78ce8fa210d883b9124687fbe"
+    },
+    "openSettings": {
+      "text": "افتح الإعدادات",
+      "source_sha256": "3f940108cb1ecd9c0090da0b51b45f9fe673f00b22c7ffe3d013319b97456674"
+    },
+    "signIn": {
+      "text": "تسجيل الدخول",
+      "source_sha256": "bfd402b2f6f3812529b55596136d3a11c51616317e3b1cd999928e2d4eae7d3f"
+    },
+    "close": {
+      "text": "يغلق",
+      "source_sha256": "7d9eb7acb13e24625c404401d8e88b2350e32162455885f18276cf802f7701ed"
+    }
+  },
+  "systemGroups": {
+    "systemDetails": {
+      "text": "تفاصيل النظام",
+      "source_sha256": "d476f742e5099cd8cd4d564ab917d10e0582b4d88106bd225053a80e7404650a"
+    },
+    "editPasswordPolicy": {
+      "text": "تحرير سياسة كلمة المرور للمجموعة",
+      "source_sha256": "17812689f6d3fc1005072cbf44813733317e45d514de7cef4873e59cc506809b"
+    },
+    "passwordRecovery": {
+      "text": "استعادة كلمة المرور",
+      "source_sha256": "93982d33c50688ba1571673139f419dfbb5b5abbceb94d6ae42b9f8c89e1a694"
+    },
+    "sendRecoveredAria": {
+      "text": "إرسال كلمة المرور المستردة عن طريق البريد الإلكتروني أو الرسائل القصيرة",
+      "source_sha256": "3c0379eeb7caf40c7da4bbfcb0ed38addcc783dce4875b5d5a7e0447616c77ed"
+    },
+    "moveMachine": {
+      "text": "انقل الجهاز إلى مجموعة أخرى",
+      "source_sha256": "5b89c7cb09f8738714570a27ed02a837e06c50de2278c120f62cae48023aada6"
+    },
+    "issuances": {
+      "text": "الإصدارات",
+      "source_sha256": "f01908e6ea9b7f522e935e0fd02cf2c2b98bdca4ff0deb6b021e2748277a7e60"
+    },
+    "copyToken": {
+      "text": "انسخ رمز التسجيل",
+      "source_sha256": "230bc798e3332f6b1ce0b0132610d965d248acf2608cd91504698030d186e168"
+    },
+    "redownloadSettings": {
+      "text": "قم بتنزيل settings.json مرة أخرى",
+      "source_sha256": "ea716927302765fe4fb89d7049dbe661ec6ef3b201baf33b2854213767753696"
+    },
+    "rotateCredential": {
+      "text": "تدوير بيانات الاعتماد",
+      "source_sha256": "99374a232de64f8279c26c2126beb751546d0eccca691ef20ef2a10c27d2e79c"
+    },
+    "revokeIssuance": {
+      "text": "إلغاء هذا الإصدار",
+      "source_sha256": "84ab3201f1a12d799cb76f822011d89d9d7a3c1af79aaa1be774157eb017062f"
+    },
+    "revokeIssuanceTitle": {
+      "text": "إلغاء الإصدار؟",
+      "source_sha256": "4bb52fddf27772f45be72121fe0900234349893d84e5f33d5daea7a59acf7b3e"
+    },
+    "importSettings": {
+      "text": "قم بتسجيل ملفات settings.json",
+      "source_sha256": "78e22ed9c5024a5a06b59ecc43a8e1c6803f18de241b5f56bfbdcaafd2492b82"
+    },
+    "removeImportFile": {
+      "text": "إزالة الملف من قائمة الاستيراد",
+      "source_sha256": "81f2234f9e4fd4bb4ab6ba69da2c5a9b223e94e8f5b16708def5026c0393bb5d"
+    },
+    "identityDetails": {
+      "text": "تفاصيل الهوية (للقراءة فقط)",
+      "source_sha256": "de50be8fc94e51cf989b4244a22446814ad0a1c4651985fa83e6316f0c1b2f4a"
+    },
+    "identityTemplate": {
+      "text": "قالب الهوية",
+      "source_sha256": "95e629c53a97cb4aa5627d426f744bdb6b2c2595cc5d93f7126abab026878a6a"
+    },
+    "startOffset": {
+      "text": "إزاحة البداية (DD:HH:MM:SS)",
+      "source_sha256": "9e3723da980df146ac835bf096d8ea3c7392a37d4d31412885e4fd9082406b95"
+    },
+    "editRowPolicy": {
+      "text": "تحرير سياسة كلمة مرور الصف",
+      "source_sha256": "7ee75b216dae2b5625244718f0598324fac0132264bdfc6cf4316308155f5445"
+    },
+    "moveRowUp": {
+      "text": "نقل الصف لأعلى",
+      "source_sha256": "da00ee2e624bfa35fca3c17287853aefb689ad944b6fa8e1960f0799a8349b34"
+    },
+    "moveRowDown": {
+      "text": "نقل الصف إلى الأسفل",
+      "source_sha256": "3a57faa7b2c4c80b018b38a3105c954bf8932140f2458210318fdfc54d0d9b8a"
+    },
+    "removeRow": {
+      "text": "إزالة الصف",
+      "source_sha256": "1810fddd9e28f47d8fc6386333f41d19bf64a233817bf8fa8d4ec90ae89957cf"
+    },
+    "findMachine": {
+      "text": "البحث عن الجهاز في جميع المجموعات",
+      "source_sha256": "5bc30c7384bf9be3eec63080f37dc1b60bd0cacdbf04f2394fa0d0a749b0cd9b"
+    },
+    "editGroup": {
+      "text": "تحرير مجموعة النظام",
+      "source_sha256": "f1cd21a69a3df22fc13239df593d18b3b48c0b6883689e1ba25030a8f38c697b"
+    },
+    "deploymentTemplate": {
+      "text": "قالب النشر",
+      "source_sha256": "f6ca45f179b24353e741a468fb5607d08c90d905424fc0d55c29e22049188261"
+    },
+    "deleteGroup": {
+      "text": "حذف مجموعة النظام",
+      "source_sha256": "3ba0f6e10dd6c899adc900a0726fb7e2aa25026e1254dcca5ec9a57075302466"
+    },
+    "createGroup": {
+      "text": "إنشاء مجموعة النظام",
+      "source_sha256": "cbb327d0390ec980023954b2102be8c34994fe336caa68a7de413c56c516efc2"
+    },
+    "deleteEndpoint": {
+      "text": "حذف نقطة النهاية",
+      "source_sha256": "6772d678942a3f79776df86f48c559f8977500622071105c2ec1584d50633940"
+    },
+    "groupConfig": {
+      "text": "المجموعات-config.json",
+      "source_sha256": "690b88a7419979a970ed5a09d63777b0478610c3c3124f96cfe8f1481e2fd252"
+    },
+    "elevationCode": {
+      "text": "رمز الارتفاع",
+      "source_sha256": "a85bfe327cf4b1968d874d599453e0d540baabc13e29e0e84aa064c4042586f0"
+    },
+    "copyCode": {
+      "text": "نسخ الرمز",
+      "source_sha256": "49a0053f3b0d5045a4ef3edfe5c39be60a7ea272cc22b7c33d646624346ccd4d"
+    },
+    "groupFallback": {
+      "text": "مجموعة",
+      "source_sha256": "34ca0e76608842ff3e7d924a455a396a82f471052c15e3f2ed7f090ac702e5c1"
+    },
+    "createElevationCode": {
+      "text": "إنشاء رمز الارتفاع",
+      "source_sha256": "b1f9442847c29c16a5b4d8588316577b9f792d26e85849d0ac46c1911f1c0aec"
+    },
+    "targetGroup": {
+      "text": "المجموعة المستهدفة",
+      "source_sha256": "21f3df41abba91528de7699124da78fb27127af0673675bbc70fa9802c3363bf"
+    },
+    "targetGroupHelperPick": {
+      "text": "حدد من سياسة منصة الارتفاع ({{platform}}) أو أدخل اسمًا مخصصًا لمجموعة نظام التشغيل.",
+      "source_sha256": "ffe920c9a587a86e5cd708a2f730502e1507d00bf42d5ca33c2fd034d8cf6b25"
+    },
+    "targetGroupHelperType": {
+      "text": "أدخل اسم مجموعة نظام التشغيل (لم يتم تحميل سياسة النظام الأساسي).",
+      "source_sha256": "2e06e810415c818dad835380c2dc5523356c23e8710d96301cf334fd7f530e58"
+    },
+    "strategy": {
+      "text": "استراتيجية رمز التفعيل",
+      "source_sha256": "b5153558f155907e5db59db293fe012bea87dd603d6a2491e7dbdb1a1320f0b7"
+    },
+    "strategyLetters": {
+      "text": "رسائل",
+      "source_sha256": "7ad8dbe5dbed0dcda5e2fa713de5ddb5b6db23d8b7f4fc0ed2650b5b071107c7"
+    },
+    "strategyDigits": {
+      "text": "أرقام",
+      "source_sha256": "cc6b6bad31a0ff4d6dfd4953a6346a1c463d884723898a2af964b998e5499e22"
+    },
+    "strategyFallback": {
+      "text": "باستخدام القائمة الافتراضية المضمنة.",
+      "source_sha256": "9fb1d97d5562b5049a0f2f3757503badba35f4040bc4592acd2758086320c74f"
+    },
+    "strategyHint": {
+      "text": "يقوم الوكيل بالتحقق في وضع عدم الاتصال باستخدام elevation_strategy_id الذي تم تكوينه؛ اختر نفس الإستراتيجية التي تم استخدامها لنشر نقطة النهاية.",
+      "source_sha256": "b4129dc20f76b3f7cf78e7bc891c8ea7df7ad9b1fba63d2e22a643eb47d4a9f1"
+    },
+    "strategiesLoadFailed": {
+      "text": "تعذر تحميل إستراتيجيات رمز التنشيط.",
+      "source_sha256": "86a5d1b9fd968578e871578908a4309e5f316a8147eaf97dfd583c0f562806b4"
+    },
+    "durationMinutes": {
+      "text": "المدة (بالدقائق)",
+      "source_sha256": "279a3e5e0fcb422b191ecfe78158ff72e7c5b1457207e081b474c34280d901a3"
+    },
+    "justification": {
+      "text": "التبرير (التذكرة أو معرف الحادث)",
+      "source_sha256": "d93278943ffa3462fa0df4270b345c56b9731f471911c5853cd865899ea43e77"
+    },
+    "justificationHelper": {
+      "text": "مطلوب عند تمكين سياسة تبرير الوصول الحساس على الخادم.",
+      "source_sha256": "a6cf8fbd4f9c451d94f705dacaf7f8042c8291339c59d8b45207a172e56be582"
+    },
+    "activateImmediately": {
+      "text": "تفعيل على الفور",
+      "source_sha256": "e24f1f7aa12fb63af2a760d80ced45a0f6b00c7eaef4a597357c47aa932e16b8"
+    },
+    "scheduledActivation": {
+      "text": "وقت التنشيط المقرر",
+      "source_sha256": "a569286a152e0f2d043198b23dd63886c3fd1f4052ff092f1a4fd0d71a39e794"
+    },
+    "elevationCodeLabel": {
+      "text": "رمز الارتفاع",
+      "source_sha256": "a85bfe327cf4b1968d874d599453e0d540baabc13e29e0e84aa064c4042586f0"
+    },
+    "generateCode": {
+      "text": "إنشاء رمز",
+      "source_sha256": "4774c20db4485d79e7c21a26d2a392a3155b02260b7dc6509a48b2fbc6d342c1"
+    },
+    "generating": {
+      "text": "جارٍ الإنشاء…",
+      "source_sha256": "d20a4476a0a85978547a5781e7e575e8358f102137bf253706db20ee0fe6061c"
+    },
+    "createElevationTitle": {
+      "text": "إنشاء رمز الارتفاع",
+      "source_sha256": "b1f9442847c29c16a5b4d8588316577b9f792d26e85849d0ac46c1911f1c0aec"
+    },
+    "usageType": {
+      "text": "نوع الاستخدام",
+      "source_sha256": "39220d95bd054df18ecc0fb63d8e4923a55088103b6b6c636c99402a1bad6ac4"
+    },
+    "usageConnected": {
+      "text": "متصل (مُدار)",
+      "source_sha256": "e066119fdc5daf29622e6501690f43d42a3714e8e978f2a79cd86e3dcaa29f42"
+    },
+    "usageOneShot": {
+      "text": "توفير طلقة واحدة",
+      "source_sha256": "273ae2b0127fdbc20c62a889b42ce11573ad270f37e9b869554512c3ca9211c9"
+    },
+    "usageAirGapped": {
+      "text": "فجوة الهواء (دائم)",
+      "source_sha256": "149da59c5d6af264e390b42cbb7205094f446533075399f46907dedd490b1c22"
+    },
+    "loadingTemplate": {
+      "text": "جارٍ تحميل النموذج…",
+      "source_sha256": "6f02c69b6f149347c4046f6a42ecd168857c368a913429816eeb784e2b3cae5b"
+    },
+    "defaultTtlHours": {
+      "text": "مدة البقاء الافتراضية (ساعات)",
+      "source_sha256": "9eeee801ff99a08b14c23d3e8d01b02d48564c141ccb12b6256b049f85267958"
+    },
+    "defaultTtlHelper": {
+      "text": "يُستخدم عندما لا يوفر المعالج ttl_hours.",
+      "source_sha256": "cff76d186748281b5942241bd0fce397f521795cc1c5bda9de9c8c9b404cd602"
+    },
+    "templateSaved": {
+      "text": "تم حفظ قالب النشر",
+      "source_sha256": "69ce42b807159334be6b4494dcef4125b58fe8940ea085463c9b4485b58bb4b8"
+    },
+    "saveFailed": {
+      "text": "فشل الحفظ",
+      "source_sha256": "53ad6f999b1f062fb8fc100ddac854c3b96a36c1e03c6c8c61ce892d068b33c9"
+    },
+    "noGroupSelected": {
+      "text": "لم يتم تحديد أي مجموعة",
+      "source_sha256": "d3ffc10982c9566be975bc62c641afa5721131096b56bc218a7ff332eb84538b"
+    },
+    "seedDefaultIdentities": {
+      "text": "إنشاء هويات افتراضية على نقاط النهاية الجديدة",
+      "source_sha256": "8408a3c9bd3a25571172407690b652296591530b1e14ab6c98d8fcc1ddce4b05"
+    },
+    "explicit": {
+      "text": "صريح",
+      "source_sha256": "d863c482f7fd7f499980fbce6670b879c413a842d0047ab0afe6ecf777430651"
+    },
+    "wellKnown": {
+      "text": "مشهور",
+      "source_sha256": "96392e4e309efe68c364522db38068015faeef5bdbfe34ebb4bb49371bc2d139"
+    },
+    "wellKnownAccount": {
+      "text": "حساب معروف",
+      "source_sha256": "7e74e8ea9348ee4853e8161f6949685884bf364d2371e61b0a5a605962a53dd4"
+    },
+    "accountName": {
+      "text": "إسم الحساب",
+      "source_sha256": "a704d8d4a818d7139bddd1e7bb7ad9cbe7ad6ec02e1d4b54093c2c031e35fe93"
+    },
+    "inherit": {
+      "text": "يرث",
+      "source_sha256": "3f72f0385768d2842d8d4a9205a4d704cffe7ef1820ded371b6b31f032142025"
+    },
+    "industryStandard": {
+      "text": "معيار الصناعة",
+      "source_sha256": "aaa4bf6b551010150d5a26786f69b87d627ad008a172e5d6f96194460d7dc726"
+    },
+    "industryStandardHelper": {
+      "text": "حدد ملف التعريف التنظيمي أو المعياري لملء سياسة كلمة المرور الخاصة بهذه الهوية مسبقًا. حدد مخصص لتحرير الحقول دون استبدالها.",
+      "source_sha256": "47298d2e7fe77dc7f7786e7b3da1f4f79d9595aa6b1f867e90e7da4d1e94937a"
+    },
+    "saveTemplate": {
+      "text": "حفظ القالب",
+      "source_sha256": "ba071e525111390ebc417e6d3db43586eb03160885b12626334d82f8dfdd033a"
+    },
+    "saving": {
+      "text": "توفير…",
+      "source_sha256": "23e39291d6135814ed7c936e278974544b0df5fbf0eb0427b6700979b7472a93"
+    },
+    "identityTemplateSaved": {
+      "text": "تم حفظ قالب الهوية",
+      "source_sha256": "b3efb765f9a0633e513e6c991322129e90a62c766e4d744f4eb38e939009247f"
+    },
+    "identityTemplateSaveFailed": {
+      "text": "لا يمكن حفظ قالب الهوية",
+      "source_sha256": "5026a59f98ee2955f419adc6d38336b854790a8ab4d3bb463aae8cd2998967c6"
+    },
+    "groupPasswordPolicy": {
+      "text": "سياسة كلمة المرور للمجموعة",
+      "source_sha256": "7da032e0e14ce9a92091f08548326988ff58f862d90aa15643a70ac167f2bdee"
+    },
+    "allStatuses": {
+      "text": "جميع الحالات",
+      "source_sha256": "8ee57323a6f24cc7a5e2395cc0bec1eafc76799ef0e0f31c7a81ddb87faf7a2b"
+    },
+    "statusActive": {
+      "text": "نشيط",
+      "source_sha256": "92340695899bd2d86223e4a007620e0d6502fc0e08809773634c7e0743764a9c"
+    },
+    "statusSuperseded": {
+      "text": "تم استبداله",
+      "source_sha256": "e5830d265452f1ed47a8fb8891fdc488ab355a71ff18cebee2fe3dd1df2f295b"
+    },
+    "statusRevoked": {
+      "text": "تم إبطاله",
+      "source_sha256": "f6f738d043929f59fe41b1a5b414b33ea28ca9a6ddc74e682bdb7167b5a6ac6e"
+    },
+    "statusLabel": {
+      "text": "حالة",
+      "source_sha256": "920e413c7d411b61ef3e8c63b1cb6ad058d5f95f8b481dbafe60248387d8c355"
+    },
+    "settingsIssuances": {
+      "text": "إصدارات الإعدادات",
+      "source_sha256": "3899369fb42eba8483ae79322a9b5eee46f0c7ca0c96f8d5376cdb26d14792ad"
+    },
+    "loadIssuancesFailed": {
+      "text": "لا يمكن تحميل الإصدارات",
+      "source_sha256": "9a86f1e1286ba3af74e059c354ca185bacf39deb030cce8f98b2bf8a6afedcbb"
+    },
+    "downloadFailed": {
+      "text": "فشل التنزيل",
+      "source_sha256": "eae34ccbc4432c1358da668b091e7c952fe8be24b02dd4f8ec5ea2edef5ca1a4"
+    },
+    "regenerateFailed": {
+      "text": "فشلت عملية إعادة الإنشاء",
+      "source_sha256": "c15b30e9e1376970a5cbabbdc0a6b5646ed9aede337a8b51d025816c502df3a0"
+    },
+    "revokeFailed": {
+      "text": "فشل الإلغاء",
+      "source_sha256": "f339773d29466cd1727e7b6762a131f2ec63f4020260283da888c3faf406b7f6"
+    },
+    "tokenCopied": {
+      "text": "تم نسخ رمز التسجيل المميز إلى الحافظة",
+      "source_sha256": "2f4fcd72a09e00446243d1b764518193bf280a90fcb171bcf8e099fb5173fb89"
+    },
+    "clipboardWriteFailed": {
+      "text": "تعذرت الكتابة إلى الحافظة",
+      "source_sha256": "3d40cc43664cc3f2120a21d49a293eb653fd6ac2463a57b39685e6f948c682ab"
+    },
+    "rotateConnectedOnly": {
+      "text": "تدوير بيانات الاعتماد (ConnectedManaged فقط)",
+      "source_sha256": "f5b6971d4e75c61a82bdc5819e5e974e314c517e1a718e235c8fda0c1d448f92"
+    },
+    "rotateUnavailable": {
+      "text": "إعادة الإنشاء غير متاحة لهذا الصف (يمكن تدوير المعارض النشطة ConnectedManaged فقط)",
+      "source_sha256": "345f26a90c4ced3f932f39ba352c479734e1bf48f1a54439b41f67dcb14c3e46"
+    },
+    "revokeActiveOnly": {
+      "text": "يمكن إلغاء المعارض النشطة فقط",
+      "source_sha256": "2d0e583028cccae97ea85acfaed7c35f28ed256f1c4b3b14fbfa8fac59c51630"
+    },
+    "defaultSystemGroup": {
+      "text": "مجموعة النظام الافتراضية",
+      "source_sha256": "1324de9db441ebf05827ba52a055cff2afab1e205949bbd0e38cb073b8e890a9"
+    },
+    "defaultSystemGroupHelper": {
+      "text": "يُستخدم عندما يحذف ملف system_group_id",
+      "source_sha256": "3d1da73259f60e94c5b000436d9607a269c427dcbf60cd5e5a22c9c9db77a30c"
+    },
+    "markAirGapped": {
+      "text": "وضع علامة على أنها ذات فجوة هوائية (غير متصل فقط)",
+      "source_sha256": "d78edfcc8bd88a53bd43eff777dce6ef3154f98500888dc452047f60bf8808be"
+    },
+    "chipInFile": {
+      "text": "في الملف",
+      "source_sha256": "ecbeefe4ca3c3346aaccd33829f15b7aa3b2fe171db0baffc38245ed78216dee"
+    },
+    "chipNeedsGroup": {
+      "text": "المجموعة مطلوبة",
+      "source_sha256": "21ee21e8258d066081259c746a98a42f402c57cde18274da05f87bb5e45f2ffb"
+    },
+    "chipValid": {
+      "text": "صالح",
+      "source_sha256": "f5162206318ee96491108354ae7361db244d6a013aa32185216b5f15ac544f4c"
+    },
+    "chipYes": {
+      "text": "نعم",
+      "source_sha256": "85a39ab345d672ff8ca9b9c6876f3adcacf45ee7c1e2dbd2408fd338bd55e07e"
+    },
+    "chipNo": {
+      "text": "لا",
+      "source_sha256": "1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da161c6099be3691d"
+    },
+    "importing": {
+      "text": "جارٍ الاستيراد...",
+      "source_sha256": "c01c4324f1fa14fc76957936626e11a5150c24e748dbd08cc46848dfcbe37d00"
+    },
+    "importFiles": {
+      "text": "استيراد ملف {{count}}",
+      "source_sha256": "9aaf6de6012055f56940fe58fabb4f51b0a71a655c0214f3578383a2e01ad448"
+    },
+    "importFilesPlural": {
+      "text": "استيراد ملفات {{count}}",
+      "source_sha256": "06540380d1db7fdb9094bd4955bc4d85e8e59246ed032a1eb1a4893ed1c70afa"
+    },
+    "noFilesToImport": {
+      "text": "لا توجد ملفات لاستيرادها",
+      "source_sha256": "3aa0e8bca4f4cd12ae2c1a5dd0cd0d808705804afaeda4644a870cfc2143dc1e"
+    },
+    "noValidFiles": {
+      "text": "لا توجد ملفات صالحة للاستيراد",
+      "source_sha256": "fba4d7eef91889649a3964a1c1f36c16ddaa56ef7e719b587a44b96751836a1a"
+    },
+    "selectGroupForOmit": {
+      "text": "حدد مجموعة النظام للملفات التي لا تحتوي على system_group_id",
+      "source_sha256": "0c1dfeea9356397ce6861b53fd47f573ca0126dcb61a69685e7af0d7604b6853"
+    },
+    "importFailed": {
+      "text": "فشل الاستيراد",
+      "source_sha256": "0a26f41abd00f95e7009b406e82083295f837ac1bc76e2acc1f7d66b3539c18e"
+    },
+    "unknownError": {
+      "text": "حدث خطأ غير معروف",
+      "source_sha256": "0f56130f3d6a4a92c613c545ae506c6085bd9e87905a2e65670107f56db12d58"
+    },
+    "invalidJson": {
+      "text": "تنسيق JSON غير صالح",
+      "source_sha256": "70410685471d05773e9e78906f633185f632fb133a15a591e3e3136ed8ba2b14"
+    },
+    "descriptionColon": {
+      "text": "وصف:",
+      "source_sha256": "0cf2814604b4c9ad9139ebf7792b197fa2072052a8d17467bb33abc6bdce7be4"
+    },
+    "deleteGroupAndEndpoints": {
+      "text": "حذف المجموعة ونقاط النهاية",
+      "source_sha256": "856399d58fd7c2ac6125b5849114c7a0ebf9df87e70890efec2a3f678141c341"
+    },
+    "deleteGroupOnly": {
+      "text": "حذف المجموعة",
+      "source_sha256": "3f7374ac08ea87dc3387b0fa58953163a6319e39015e6a5983bec7785648fed8"
+    },
+    "passwordLength": {
+      "text": "طول كلمة المرور",
+      "source_sha256": "e874dbcb75bfa39e85182651b8a7f53bd698f95a6e8040d2b4eaf0b2b6824a47"
+    },
+    "inheritEmpty": {
+      "text": "اتركه فارغًا ليرث الإعداد الافتراضي الفعال.",
+      "source_sha256": "cf83383069e68f166787bf9ea45457e34460e7e1bc90271c490e1eea915e0925"
+    },
+    "maxDriftSeconds": {
+      "text": "أقصى الانجراف (ثواني)",
+      "source_sha256": "78fae96b1a6fbc403a7452a1e81202271f4ad9562d067aa07925e942a3693990"
+    },
+    "secretUpdateFrequency": {
+      "text": "الفاصل الزمني للتحديث السري (ساعات)",
+      "source_sha256": "3a2ac6a8105116d28853d4fc1a65a16cf2a096e09cf0a81aece6a4d96decc465"
+    },
+    "requireUppercase": {
+      "text": "مطلوب أحرف كبيرة",
+      "source_sha256": "e8ffe4186073687d132be04bef173e7e5d62c6daaf98e2fca654e5b8bed46571"
+    },
+    "requireLowercase": {
+      "text": "مطلوب أحرف صغيرة",
+      "source_sha256": "37641b53c9a397ea81243e90b59ce8e82bac69b36e34f1cb72b72ec504fe9a79"
+    },
+    "requireDigits": {
+      "text": "الأرقام المطلوبة",
+      "source_sha256": "8e450f827cbfec99ddc9b7bf67992c45b46f16d2f7259733176d6f28790dd09d"
+    },
+    "requireSpecial": {
+      "text": "الحروف الخاصة المطلوبة",
+      "source_sha256": "3ca489767bfed48ce85efa64a197e899c746ff3f307967aa144416748553ee9c"
+    },
+    "allowedSpecial": {
+      "text": "الأحرف الخاصة المسموح بها",
+      "source_sha256": "369a52ccc06c2441706d055a80de8c1e53f4fbb0794aae3eac1b28a011dca06f"
+    },
+    "policyVersion": {
+      "text": "نسخة السياسة",
+      "source_sha256": "800710838f0ada475f28a3baba6a350a5da645c1466c4d4fc2ee273a435e9461"
+    },
+    "caCertPath": {
+      "text": "مسار ملف شهادة CA",
+      "source_sha256": "278d979a84f6d76b180fc6f11fe1011b7a5ac42beaaaebbbb972bcd41cac50c3"
+    },
+    "localAccountName": {
+      "text": "اسم الحساب المحلي",
+      "source_sha256": "78db2f56b05282fa321d79de5cfe7b6d46482d411a58044ca4872353217cf528"
+    },
+    "groupName": {
+      "text": "اسم المجموعة",
+      "source_sha256": "762ebb70ef0ea2e80a41035e91a5f95ec35b0b03d2f2acc5c5b4f4c09213c8c5"
+    },
+    "groupNameHelper": {
+      "text": "الحروف الأبجدية الرقمية والواصلات والشرطات السفلية فقط (بحد أقصى 64 حرفًا).",
+      "source_sha256": "d5b34fe0d2958117116157071623b2712181a12322e8258708dbbcc05f84d3f0"
+    },
+    "description": {
+      "text": "وصف",
+      "source_sha256": "526e0087cc3f254d9f86f6c7d8e23d954c4dfda2b312efc29194ae8a860106ba"
+    },
+    "descriptionOptional": {
+      "text": "اختياري (بحد أقصى 1024 حرفًا).",
+      "source_sha256": "1ba8aa983d294edde46aa45d0e539042d6f2c5085a8dc9b3f3b5f6a1617e9f9a"
+    },
+    "passwordCalculable": {
+      "text": "كلمة المرور قابلة للحساب",
+      "source_sha256": "2381891a39a2f25ba3507827579895b4e0457daca180c0fcb95fd90ae9353be1"
+    },
+    "systemInformation": {
+      "text": "معلومات النظام",
+      "source_sha256": "b120922cdf69ede3a79e12d827e030ee15053cbf5c9522180b7a4638447f6f11"
+    },
+    "machineName": {
+      "text": "اسم الآلة",
+      "source_sha256": "7c5749c19ac4b2ef719c184419cfdb6500c1d40849f799df642b5a0cb95d73c7"
+    },
+    "machineId": {
+      "text": "معرف الآلة",
+      "source_sha256": "ef6727e4053f46688c48127d0482df72dae767e61b9459f640c4296cbff00538"
+    },
+    "identityInformation": {
+      "text": "معلومات الهوية",
+      "source_sha256": "d7feaca470282c60d71243f9a841a33c5051506fd5ba922608d45ada8365546c"
+    },
+    "identityId": {
+      "text": "معرف الهوية",
+      "source_sha256": "2f8124d39c5ecd100a151182cf703aa7a8878196cb334e149a2098ababf39f92"
+    },
+    "legacy": {
+      "text": "إرث",
+      "source_sha256": "1432897a6136de54f3a8bfcc9f9fa87ead45c109731e5769a6e94887d555ce5b"
+    },
+    "active": {
+      "text": "نشيط",
+      "source_sha256": "92340695899bd2d86223e4a007620e0d6502fc0e08809773634c7e0743764a9c"
+    },
+    "inactive": {
+      "text": "غير نشط",
+      "source_sha256": "ac7c949f1211b7814bdd28a698e6c04e05e1a83f9f86e7ad43d2086d00e98afd"
+    },
+    "createdAt": {
+      "text": "تم الإنشاء في",
+      "source_sha256": "775b5bf9646856d5c599dc8bff4aa3244de6e04badd263185840f391d403f94a"
+    },
+    "lastRotation": {
+      "text": "الدوران الأخير",
+      "source_sha256": "25796fd19bcacdf296a839c327968c467b9b86bfdd1c6fd26ffcaad41f81018d"
+    },
+    "hashAlgorithm": {
+      "text": "خوارزمية التجزئة",
+      "source_sha256": "bce19f5e0a73da8d003f151ceb7b2a1aa951072b3763a5e3c9bc81f10633a5e4"
+    },
+    "passwordPolicy": {
+      "text": "سياسة كلمة المرور",
+      "source_sha256": "21b86a0e7f34e88de52a5477dad7f31587ff03249d89108d34f5ce2447696215"
+    },
+    "customPolicyChip": {
+      "text": "سياسة مخصصة لهذه الهوية",
+      "source_sha256": "2e87a6ce78f81f81802e144932cbe16b9bf83ddedcbd34dcbaa5f0d33071bb15"
+    },
+    "length": {
+      "text": "طول",
+      "source_sha256": "adc95605a1b30c73959fbaf21e60f9723efe855c482fa336a957924d4ea0a08b"
+    },
+    "rotationInterval": {
+      "text": "الفاصل الزمني للدوران",
+      "source_sha256": "bb5664abd72273db5a840d9b15ac0f0b9b41f7d0ba08e07dc0154dbb9113eea6"
+    },
+    "maxDriftS": {
+      "text": "ماكس الانجراف (ق)",
+      "source_sha256": "98601826579faa73898af9bc0ec4ffefdd2f1d6efa1b389f865ba23e306c4fa8"
+    },
+    "uppercase": {
+      "text": "أحرف كبيرة",
+      "source_sha256": "b463d6908c1cf920e7ac73fe37d06c93381ee6425f87eb52231885f16d5027d7"
+    },
+    "lowercase": {
+      "text": "أحرف صغيرة",
+      "source_sha256": "3b677a18bc9da6c82a9ff86be3b8dd6ba634a26bc1fbad881ea753641ba2a2be"
+    },
+    "digits": {
+      "text": "Digits",
+      "source_sha256": "9cd500d3d69fb10aef3e08720fe7ee668cf59e01ece5be0b45de91753d0fd7ec"
+    },
+    "special": {
+      "text": "شخصيات خاصة",
+      "source_sha256": "efd000836dc658c60232d81f7202a99dacdde2c7de0955e0a7cbb7d59357eeb5"
+    },
+    "allowedSymbols": {
+      "text": "الرموز المسموح بها",
+      "source_sha256": "a76105a0573182766f14ff7498ca2eb504685dbe472633dd5b82b115a5e8bb3b"
+    },
+    "defaultSet": {
+      "text": "المجموعة الافتراضية",
+      "source_sha256": "94ae8994da92f11784c3cef66b36a889eec8d11917a0aa009c3b61566d78df35"
+    },
+    "yes": {
+      "text": "نعم",
+      "source_sha256": "85a39ab345d672ff8ca9b9c6876f3adcacf45ee7c1e2dbd2408fd338bd55e07e"
+    },
+    "no": {
+      "text": "لا",
+      "source_sha256": "1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da161c6099be3691d"
+    },
+    "machineNameField": {
+      "text": "اسم الآلة",
+      "source_sha256": "7c5749c19ac4b2ef719c184419cfdb6500c1d40849f799df642b5a0cb95d73c7"
+    },
+    "noMachinesFound": {
+      "text": "لم يتم العثور على آلات لـ \"{{query}}\"",
+      "source_sha256": "02d943644ea2d29bff9e2ae8dfb3db81db0beeac9f52a0b35b00a0883ac11787"
+    },
+    "adminTokenOptional": {
+      "text": "رمز المشرف (اختياري)",
+      "source_sha256": "8674c478740feb0156ac9aa65dbbd78a3285458d4c05509d1b50306cbd0837c8"
+    },
+    "adminTokenHelper": {
+      "text": "اتركه فارغًا للاختبار؛ المطلوبة في الإنتاج",
+      "source_sha256": "c196498edebd2a37d09227f8d9aa5011cc5544b098f8fb9067c79b3f9e828e3c"
+    },
+    "passwordHistory": {
+      "text": "تاريخ كلمة المرور",
+      "source_sha256": "73e85c35eb80abc0191bfb0bdb2f6ea1bdb17b344971e5bb41cf1faa66a21e2f"
+    },
+    "loadingPasswordHistory": {
+      "text": "جارٍ تحميل سجل كلمة المرور…",
+      "source_sha256": "4ec5625b4ac2785d5a86be5be703713169c73947960efab832449453b9560cda"
+    },
+    "noPasswordHistory": {
+      "text": "لا يوجد سجل كلمة مرور متاح لهذه الهوية.",
+      "source_sha256": "4c74a4706a9adc3f9edb36e454b03ce224de0229fb0b53c44ed677cfac513c10"
+    },
+    "chipCurrent": {
+      "text": "حاضِر",
+      "source_sha256": "e0d1b68224bf0b31ef16b206c65b5f8f6b89d18161f4a7cdcb8d0ac8d952549a"
+    },
+    "chipPast": {
+      "text": "ماضي",
+      "source_sha256": "ca1530e8d7017547dc0651ac6c41931eb00475cf10fe902dd6d725b9b757a904"
+    },
+    "chipFuture": {
+      "text": "مستقبل",
+      "source_sha256": "61636cdef547228389f0260d1dbb952beb8fe5632d7069d5da9a383ad3582361"
+    },
+    "chipSelected": {
+      "text": "مختارة",
+      "source_sha256": "57fd7a0cf33f2666eede69e44f8857159653f2f28e4fd7482a5e16d4af628d2a"
+    },
+    "recovering": {
+      "text": "جارٍ الاسترداد...",
+      "source_sha256": "cf007a38cfc898ffbefd660c06867dc60a7789c47b0648ce06873eef40bfc378"
+    },
+    "recover": {
+      "text": "استرداد",
+      "source_sha256": "0c5327fd45c725528c37b589d6198944faba2decd050086cbf89fa636c9843c7"
+    },
+    "basicInformation": {
+      "text": "المعلومات الأساسية",
+      "source_sha256": "6c092c9ca023247a0b1bf07e555b44557ffe5f01e1ebaca17943a48842ed901a"
+    },
+    "assignedName": {
+      "text": "الاسم المخصص",
+      "source_sha256": "ef77d7790b7dab6d89b425a92ad0380964e1f5c208b65260a2331e43215c99f3"
+    },
+    "notAssigned": {
+      "text": "لم يتم تعيينه",
+      "source_sha256": "13075c2336114cd61689ea2ff249beb20052a0afbad7f0e4b8d68fb866e568e7"
+    },
+    "loadTemplateFailed": {
+      "text": "تعذر تحميل القالب الخاص بنوع الاستخدام هذا.",
+      "source_sha256": "cb3af5ba617de9225c2c2b15d498cb9eca2da9db46a413ff3d3d6f6e2ded6f17"
+    },
+    "statusExpired": {
+      "text": "منتهي الصلاحية",
+      "source_sha256": "424a2551d356754c882d04ac16c63e6b50b80b159549d23231001f629455756e"
+    },
+    "identityLabel": {
+      "text": "هوية",
+      "source_sha256": "999f23fcd7bec7075e54bb5dea0d9c548bfe7261f95b911ed8e23d2f4188724f"
+    },
+    "neverConnected": {
+      "text": "لم يتم توصيله أبدًا",
+      "source_sha256": "0dac37364c3d582c802ab9ae9aefc6af2d6bb488ebbba966b271f7d6cfe7243c"
+    },
+    "connected": {
+      "text": "متصل",
+      "source_sha256": "22965568d22a14ee17af055d2870b50afcfe9fd94a83eec3196e266932297bb2"
+    },
+    "networkInformation": {
+      "text": "معلومات الشبكة",
+      "source_sha256": "35cd8271a59e0b527be454e51da5e0d0b83bb7b5f2dce49c580efbea16cc1c18"
+    },
+    "ipAddress": {
+      "text": "عنوان IP",
+      "source_sha256": "0302a467885abfdd4772c9e16c57edab91b02231248202d63170f1c669d13303"
+    },
+    "macAddress": {
+      "text": "عنوان ماك",
+      "source_sha256": "000a6ce60a8e48e3e5f0089004a301efd34e53067fc1d29547d138639055221c"
+    },
+    "platformInformation": {
+      "text": "معلومات المنصة",
+      "source_sha256": "bf6039522840d720a6c3f2e871d72a1a05d0b4e47b73b16fe510f2c838cf0262"
+    },
+    "osPlatform": {
+      "text": "منصة نظام التشغيل",
+      "source_sha256": "0021ef577e31bd3975302459d4b8c3bdedf19fd479d4824b1ce46d803d8f12c0"
+    },
+    "osDetails": {
+      "text": "تفاصيل نظام التشغيل",
+      "source_sha256": "18bd7c98d30483db076c1ce955d2015002ee17dbd066cfa4e33e3c214494f0c8"
+    },
+    "organization": {
+      "text": "منظمة",
+      "source_sha256": "d764d42592fc968709b4c6c25c6e6b77919295dfce2c57ead02bedac5ddb3218"
+    },
+    "multiTenant": {
+      "text": "مستأجر",
+      "source_sha256": "e23969d284c3424c8014c6e5b1b85ebc275bc5c74321e7677a21d023e6ea154c"
+    },
+    "domain": {
+      "text": "اِختِصاص",
+      "source_sha256": "79fa33618d8eaa1fc55f6f8a2d34c65ececc4c5961ac2b1433802c2629d55ca1"
+    },
+    "systemGroup": {
+      "text": "مجموعة النظام",
+      "source_sha256": "b4349ce313d00b3a572da49f5d09f4d4af67edbc24340b97362b74246fb6e6ec"
+    },
+    "securityInformation": {
+      "text": "معلومات أمنية",
+      "source_sha256": "a94e2fdd66be53ef4cab3756e3b945545a4f79ed66678301107c9d2383d34b13"
+    },
+    "secretKeyVersion": {
+      "text": "نسخة المفتاح السري",
+      "source_sha256": "bf7feb2e6efde76bf93f17dc49270707b0a40b53658b62c6f2148ce16306c766"
+    },
+    "hasEncryptedSecret": {
+      "text": "هدية سرية مشفرة",
+      "source_sha256": "9e39d33f3a55b6a4081526cfc2065c70638e3b9e344bd4c37017da872c07f31d"
+    },
+    "timestamps": {
+      "text": "الطوابع الزمنية",
+      "source_sha256": "755f099dbf49d0984e535dbef68127da21e286c143dca18a63ec9af6adb9018a"
+    },
+    "lastUpdated": {
+      "text": "آخر تحديث",
+      "source_sha256": "382ac5f308f76c24b2c981e2041943bc2be2229cbd285ad362b9af1cfc386ef8"
+    },
+    "lastCheckIn": {
+      "text": "آخر تسجيل وصول",
+      "source_sha256": "9d5980ae7a54aa18ff71158d822c0eef994ff6087feb3c35b1a90ca63a66848b"
+    },
+    "na": {
+      "text": "لا يوجد",
+      "source_sha256": "e2f79e5b60330bba4c289962231b6ba2957d0b14e7deb3110417003c79dea635"
+    },
+    "unknown": {
+      "text": "مجهول",
+      "source_sha256": "b764cdc0eab7137467211272fa539f1260d1bf2e71bcf6ff3bdc960f5c16aa14"
+    },
+    "none": {
+      "text": "لا أحد",
+      "source_sha256": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+    }
+  },
+  "outstandingApprovals": {
+    "title": {
+      "text": "الموافقات المعلقة",
+      "source_sha256": "d58cd3d597b1e6c14eb4b811607d170ee89df77eb2f9c7e7ccb536b1f4385112"
+    },
+    "loadingAria": {
+      "text": "تحميل الموافقات المعلقة",
+      "source_sha256": "cc9bc05846db46e6b07eb52904e4d2892a7cc3d6b5dad3738835bad6c31faf72"
+    },
+    "loadFailed": {
+      "text": "تعذر تحميل الموافقات المعلقة.",
+      "source_sha256": "b73bad6b8a9bea5286bb032a92a9b1f14a406feab28a00d3395da1304debeb3b"
+    },
+    "closeAria": {
+      "text": "إغلاق الموافقات المعلقة",
+      "source_sha256": "f00ac5d1d57fd48f5d5bdedf0ab15abcb639dc33c6386519b22ccc149a372ffe"
+    },
+    "close": {
+      "text": "يغلق",
+      "source_sha256": "7d9eb7acb13e24625c404401d8e88b2350e32162455885f18276cf802f7701ed"
+    }
+  }
+}
