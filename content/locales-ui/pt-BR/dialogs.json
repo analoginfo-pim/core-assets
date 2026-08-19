@@ -13,8 +13,8 @@
       "source_sha256": "dbac85c110f4370c8869273ad90e98e31a4563bf4b077d7bc9d55eb285256b07"
     },
     "notEnrolled": {
-      "text": "Nicht eingerichtet",
-      "source_sha256": "2fed0df55aacc2a56daf8743f6d36d0eb6677ddf28c00c3162071e193e099eb7"
+      "text": "Não configurado",
+      "source_sha256": "94b768af74236a6780055999a95a6db3486c2252347f643bf057d2a746a8163e"
     },
     "requiredByPolicy": {
       "text": "Política de Laut Erforderlich",
@@ -37,8 +37,8 @@
       "source_sha256": "0b297a2d2a1866b3b3f80043dde4d6d06c622e1b51f73ef5c8fc031249399a18"
     },
     "confirmWarning": {
-      "text": "O autenticador TOTP está funcionando? Bis Sie a neuen einrichten, ist Ihr Konto nur durch the Passwort geschuetzt{{untilReenroll}}. Esta ação será protocollier.",
-      "source_sha256": "d4ee2e3b614ee59e9274cacc0c79015be63ee21b1b77b2d9ed218e810b4ed864"
+      "text": "Remover o autenticador TOTP? Até que você configure uma nova, sua conta estará protegida apenas pela senha{{untilReenroll}}. Esta ação é registrada.",
+      "source_sha256": "c68c93ddf9e9b006218cfe6c6128992c1c95246fcaa336ef12a451aaf6cde518"
     },
     "untilReenroll": {
       "text": ", bis Sie sich erneut einrichten",
@@ -79,12 +79,12 @@
       "source_sha256": "aff72ace4c9c96e04f0608e70a43200d19caf51749482d0eb35ee05fd33fc48b"
     },
     "titleManual": {
-      "text": "Administrador-API-Zugriff",
-      "source_sha256": "7e094f2abbccf42cf439b8d27deb8d8698234f53af1237dfb577cca6e9cd5982"
+      "text": "Acesso à API de administrador",
+      "source_sha256": "94be4815a1a196e33b7e69b001dd6ba94265a8332e8b073584b9c1695762b165"
     },
     "unauthorizedBody": {
-      "text": "Uma rota planejada em /api/admin/ hat 401 Zurueckgegeben não autorizado. Se o IAM-Sitzungsauthentifizierung estiver ativo, seu login será concluído — melden Sie sich erneut an. Ohne Sitzungsauthentifizierung stimmt the Administrator-Anmeldegeheimnis des Browsers not with the Server gespeicherten ADMIN_TOKEN ueberein (z. B. nach einem Datenbank-Reset or wenn nur a Seite des Paars geaendert wurde). Depois que o Korrigieren des Tokens hart neu carregado ou /login for desativado, uma nova sessão IAM será iniciada.",
-      "source_sha256": "86b2f15818cdc9d35d6494986c9a88ec1482df5161f99214c7baeb261feea36d"
+      "text": "Uma rota protegida em /api/admin/ retornou 401 Não autorizado. Se a autenticação da sessão IAM estiver ativa, seu login geralmente expirou – faça login novamente. Sem autenticação de sessão, o segredo de login administrativo do navegador não corresponde ao ADMIN_TOKEN armazenado no servidor (por exemplo, após uma redefinição do banco de dados ou quando apenas um lado do par foi alterado). Depois de corrigir o token, recarregue ou abra /login para estabelecer uma nova sessão IAM.",
+      "source_sha256": "041b6f1655b35a81efdfa78f4b5903983dbc1529d06562b716ad82826463df96"
     },
     "quickFacts": {
       "text": "Kurzinfos:",
@@ -131,8 +131,8 @@
       "source_sha256": "536a45abc1445fa1d69b13c1592b880a3b7ededca3d0ba42b048527e4bfc4ae3"
     },
     "signIn": {
-      "text": "Anmelden",
-      "source_sha256": "a329a32263a460ff8d4bdf4640fd793b5dd91c99362e0ab4fb061d56883b098f"
+      "text": "Entrar",
+      "source_sha256": "bfd402b2f6f3812529b55596136d3a11c51616317e3b1cd999928e2d4eae7d3f"
     },
     "close": {
       "text": "Fechar",
@@ -233,16 +233,16 @@
       "source_sha256": "d99e40772ec629efd80dfa249fd0002bce70486bfe067c661d5fa1e4a604d97d"
     },
     "deleteGroup": {
-      "text": "Grupo de sistemas loeschen",
-      "source_sha256": "ef653ff5e4e21ccf6fd7b22c0b58a1dae1bbb2fb8946f215b4e96a653dc09eab"
+      "text": "Excluir grupo do sistema",
+      "source_sha256": "3ba0f6e10dd6c899adc900a0726fb7e2aa25026e1254dcca5ec9a57075302466"
     },
     "createGroup": {
       "text": "Grupo de sistemas formado",
       "source_sha256": "27670287048498e7e52703f6f543f01948d7adab0ffd6267b8250292a3823555"
     },
     "deleteEndpoint": {
-      "text": "Endpunkt loeschen",
-      "source_sha256": "b26826997bc26409bd0443160a89eefaa0e8145677a5efd0ef1250dc557c1e7a"
+      "text": "Excluir ponto de extremidade",
+      "source_sha256": "6772d678942a3f79776df86f48c559f8977500622071105c2ec1584d50633940"
     },
     "groupConfig": {
       "text": "Grupos-config.json",
@@ -269,8 +269,8 @@
       "source_sha256": "59887edaf7745fb18ba86a79230208cd2c2fd431b31ff9f3326b536f87918be6"
     },
     "targetGroupHelperPick": {
-      "text": "Aus Elevationsplattform-Policy ({{platform}}) waehlen ou um benutzerdefinierten OS-Gruppennamen eingeben.",
-      "source_sha256": "6a306e79a353517550711ec9e2ec233414e185a3135056dcf1c13d485b472b5d"
+      "text": "Selecione Elevation Platform Policy ({{platform}}) ou insira um nome de grupo de sistema operacional personalizado.",
+      "source_sha256": "ffe920c9a587a86e5cd708a2f730502e1507d00bf42d5ca33c2fd034d8cf6b25"
     },
     "targetGroupHelperType": {
       "text": "OS-Gruppennamen eingeben (Plattformrichtlinie not geladen).",
@@ -293,8 +293,8 @@
       "source_sha256": "7ed4f77602dcfc60e93a7c46ec49f34e73d2ba72b045cc95f0935d79afe9ac73"
     },
     "strategyHint": {
-      "text": "O agente está offline com o seiner configurado em height_strategy_id; dieselbe Strategie waehlen, com o Endpunkt bereitgestellt wurde.",
-      "source_sha256": "6edf9654725b2f5e074ab98c7e232df03a7bdc4cd69f5e10e018fd07ec522a94"
+      "text": "O agente verifica offline com seu lifting_strategy_id configurado; escolha a mesma estratégia usada para implementar o endpoint.",
+      "source_sha256": "b4129dc20f76b3f7cf78e7bc891c8ea7df7ad9b1fba63d2e22a643eb47d4a9f1"
     },
     "strategiesLoadFailed": {
       "text": "O código de ativação estratégica não é válido.",
@@ -373,8 +373,8 @@
       "source_sha256": "8dc9cb1fdc3dd16424809c9da05cb58672a42169bf54487f8339749d56873c21"
     },
     "noGroupSelected": {
-      "text": "Ausgewaehlt do Grupo Keine",
-      "source_sha256": "5ef05ebc49914ff3fc816d28f6ffe700e3ab971eb47e521310a26478559cf546"
+      "text": "Nenhum grupo selecionado",
+      "source_sha256": "d3ffc10982c9566be975bc62c641afa5721131096b56bc218a7ff332eb84538b"
     },
     "seedDefaultIdentities": {
       "text": "Standardidentitaeten auf neuen Endpunkten anlegen",
@@ -405,12 +405,12 @@
       "source_sha256": "386bb590dbea2eee5d0a8c2f2df8a6327126da74c66e523bf41b19f338f0582f"
     },
     "industryStandardHelper": {
-      "text": "Regulatórios ou Benchmark-Profil waehlen, um Kennwortrichtlinie este Identitaet vorzufuellen. Benutzerdefiniert waehlen, um Felder sem Ersetzen para suportar.",
-      "source_sha256": "e85bdf6c2c5fe1cca65498e9ce629413efa5904b58bf816b6b3f2897e499e3b6"
+      "text": "Selecione Perfil Regulatório ou de Referência para preencher previamente a política de senha desta identidade. Selecione Personalizado para editar campos sem substituir.",
+      "source_sha256": "47298d2e7fe77dc7f7786e7b3da1f4f79d9595aa6b1f867e90e7da4d1e94937a"
     },
     "saveTemplate": {
-      "text": "Vorlage Speichern",
-      "source_sha256": "c5505bb9de3b8bbd03cfc2f778ea34630d1a9ddefb1cf5c7dc993c9d502a2720"
+      "text": "Salvar modelo",
+      "source_sha256": "ba071e525111390ebc417e6d3db43586eb03160885b12626334d82f8dfdd033a"
     },
     "saving": {
       "text": "Wird gespeichert…",
@@ -421,8 +421,8 @@
       "source_sha256": "e129ed4588a2bb7531d38be03243677ededa4f2d8402d897f2f92a8391e84d36"
     },
     "identityTemplateSaveFailed": {
-      "text": "Identitaetsvorlage konnte not gespeichert werden",
-      "source_sha256": "9936980378f2cd6cd531ef433ae806046daca318bdd8bd83f394f3e085c8a283"
+      "text": "Não foi possível salvar o modelo de identidade",
+      "source_sha256": "5026a59f98ee2955f419adc6d38336b854790a8ab4d3bb463aae8cd2998967c6"
     },
     "groupPasswordPolicy": {
       "text": "Grupos-Kennwortrichtlinie",
@@ -473,20 +473,20 @@
       "source_sha256": "8aea902c8c4b87888604a0f206bebb05aa84013615238a76f7eeb5b2f4e9b352"
     },
     "clipboardWriteFailed": {
-      "text": "Zwischenablage konnte not beschrieben werden",
-      "source_sha256": "aaae26ac8efa9c3fc34a56ed8e1b7285b919e77e19b29e267b7a4d1d9e5d03f3"
+      "text": "Não foi possível gravar na área de transferência",
+      "source_sha256": "3d40cc43664cc3f2120a21d49a293eb653fd6ac2463a57b39685e6f948c682ab"
     },
     "rotateConnectedOnly": {
       "text": "Data de envio rotieren (nur ConnectedManaged)",
       "source_sha256": "d776b86c3874fee2570baa6f5d163473216cd93407a5dd0e45add74c54c943a4"
     },
     "rotateUnavailable": {
-      "text": "Neu erzeugen for this Zeile not verfuegbar (nur ativo ConnectedManaged-Ausstellungen koennen rotiert werden)",
-      "source_sha256": "839933a4437630767fb1dbea06d92fb7ec87e6e5f81ac898106bad0016a0b853"
+      "text": "Recriar não está disponível para esta linha (somente exposições ativas ConnectedManaged podem ser rotacionadas)",
+      "source_sha256": "345f26a90c4ced3f932f39ba352c479734e1bf48f1a54439b41f67dcb14c3e46"
     },
     "revokeActiveOnly": {
-      "text": "Nur ativo Ausstellungen koennen widerufen werden",
-      "source_sha256": "908720cbfc7b32de3b218f7a98c8225f12d07bae49a1926ad59270b7d0d2ca6f"
+      "text": "Apenas exposições ativas podem ser revogadas",
+      "source_sha256": "2d0e583028cccae97ea85acfaed7c35f28ed256f1c4b3b14fbfa8fac59c51630"
     },
     "defaultSystemGroup": {
       "text": "Grupo de sistema padrão",
@@ -541,8 +541,8 @@
       "source_sha256": "c11abffd277d0716a3b411dac974c8c0800a1e9ff621e9e7e946cf098ec81a58"
     },
     "selectGroupForOmit": {
-      "text": "Systemgruppe para Dateien sem system_group_id waehlen",
-      "source_sha256": "7f1366e7b79e33bde1da7a788e07241d18f536ce90677a1589a3f39cbb3a0c6a"
+      "text": "Selecione o grupo de sistemas para arquivos sem system_group_id",
+      "source_sha256": "0c1dfeea9356397ce6861b53fd47f573ca0126dcb61a69685e7af0d7604b6853"
     },
     "importFailed": {
       "text": "Importar fehlgeschlagen",
@@ -561,12 +561,12 @@
       "source_sha256": "0cf2814604b4c9ad9139ebf7792b197fa2072052a8d17467bb33abc6bdce7be4"
     },
     "deleteGroupAndEndpoints": {
-      "text": "Group & Endpunkte loeschen",
-      "source_sha256": "be6bf07eb88347a4adc5717738464a5be95d16985d1691492da61832197d8375"
+      "text": "Excluir grupo e endpoints",
+      "source_sha256": "856399d58fd7c2ac6125b5849114c7a0ebf9df87e70890efec2a3f678141c341"
     },
     "deleteGroupOnly": {
-      "text": "Grupo Loeschen",
-      "source_sha256": "3323b396a699996e4d7c6f549c230749b72172e54ae9cf6995dd43cfa12db02f"
+      "text": "Excluir grupo",
+      "source_sha256": "3f7374ac08ea87dc3387b0fa58953163a6319e39015e6a5983bec7785648fed8"
     },
     "passwordLength": {
       "text": "Kennwortlaenge",
@@ -797,8 +797,8 @@
       "source_sha256": "da974576b029198a7bd22bca6b36836269bf3f0da5606bceb686022b6b475951"
     },
     "loadTemplateFailed": {
-      "text": "Vorlage for diesen Nutzungstyp konnte not geladen werden.",
-      "source_sha256": "041683d618ab928d737709d548c212d23de5184d5eedcbb06745da2f3e50ac50"
+      "text": "Não foi possível carregar o modelo para este tipo de uso.",
+      "source_sha256": "cb3af5ba617de9225c2c2b15d498cb9eca2da9db46a413ff3d3d6f6e2ded6f17"
     },
     "statusExpired": {
       "text": "Abgelaufen",
@@ -889,8 +889,8 @@
       "source_sha256": "276ffa1fb4f970104fc7873c371e0af2c6b10b8375e7104b6ca3708c487163f0"
     },
     "none": {
-      "text": "Keine",
-      "source_sha256": "8a572015c49b2071ebcf52dde28b20d61ba0559b2410e83d41a0a1a14184bf90"
+      "text": "Nenhum",
+      "source_sha256": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
     }
   },
   "outstandingApprovals": {
