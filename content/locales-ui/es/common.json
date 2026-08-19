@@ -90,5 +90,603 @@
       "text": "No se pudieron cargar la configuración de idioma. Confirme que ha iniciado sesión con permiso para administrar la configuración del servidor.",
       "source_sha256": "59a8e15fa422f316162d802df0dbfa6be8dd053e190275684e8835f4fbd38ab2"
     }
+  },
+  "chrome": {
+    "sessionPolicy": {
+      "heading": {
+        "text": "Logon session policy",
+        "source_sha256": "1aab45bb348d0ab3920f91bfdf8f624e46c8326ec83d3a2762daad7ebacd2cc6"
+      },
+      "intro": {
+        "text": "Controls idle and absolute timeouts for admin logon sessions. Changes apply to new sessions.",
+        "source_sha256": "3fea93db11ba9dd9964451ec47f6f2fdffbd43a9ccd38e730aede3c5965021d8"
+      },
+      "openDedicated": {
+        "text": "Open full session policy page",
+        "source_sha256": "3bd751be0e57e60418ef1e633b8b690b26faefcaec08abd2498e7da2e31f1c5c"
+      },
+      "requireIamAria": {
+        "text": "Require IAM logon",
+        "source_sha256": "6d18fa3cd5bcbd888d09ac5de941e97dc541658c3f74866589e3477eba3fd8b6"
+      },
+      "requireIam": {
+        "text": "Require IAM logon",
+        "source_sha256": "6d18fa3cd5bcbd888d09ac5de941e97dc541658c3f74866589e3477eba3fd8b6"
+      },
+      "absoluteTtl": {
+        "text": "Absolute session lifetime (minutes)",
+        "source_sha256": "5290a28ee1829186c3dea2f1ed848eda69a9f676b1a89e7f36eddde6fd85b476"
+      },
+      "absoluteTtlAria": {
+        "text": "Absolute session lifetime in minutes",
+        "source_sha256": "582593c1309f804adbc84dbe5e2d2166bb7a33a2845a3a9ba842e79f3e86bfba"
+      },
+      "idleTimeout": {
+        "text": "Idle timeout (minutes)",
+        "source_sha256": "4cc8718d8b78a91783e56f0b6c1a5e51b24a6d42815a6a30d207a8cf65088377"
+      },
+      "idleTimeoutAria": {
+        "text": "Idle timeout in minutes",
+        "source_sha256": "8a3fc712eb83fbfa35d30a723e69045c2f9439cf6445f147115dbcb469a8838c"
+      },
+      "absoluteMax": {
+        "text": "Maximum absolute lifetime (minutes)",
+        "source_sha256": "a9e5927435706906862d40f353d8d1ee4fb9e0945bfdd90b18f08e5f637e6d74"
+      },
+      "absoluteMaxAria": {
+        "text": "Maximum absolute lifetime in minutes",
+        "source_sha256": "0649ef8b5838130b9818c4f9d4a2532140c5c11a6678d6252b73a34463d9fd4a"
+      },
+      "refresh": {
+        "text": "Extend session on activity",
+        "source_sha256": "b2a3655c529fa7a2f9bd5441112637022126669849cdfe7e6e3f0602f61dad82"
+      },
+      "rotate": {
+        "text": "Rotate token on refresh",
+        "source_sha256": "4a835f628f39a0957133263df4c3bf349f997910507deccc016bf000cf333f21"
+      },
+      "multiTab": {
+        "text": "Allow multiple browser tabs",
+        "source_sha256": "780a5054c52cc9fa082d8df357b89d19c984562a3cc45c90a9642c65e4cbc1f8"
+      },
+      "forceLogoff": {
+        "text": "Log off when session expires",
+        "source_sha256": "a2ff5e8b61d0ca31832acf186feca4ef523889c3e29a16f785daedf09232aeb5"
+      },
+      "httponly": {
+        "text": "Use HttpOnly cookie",
+        "source_sha256": "aa2dc5c13ad106f4b7303e133deb6e14e23bd4e305edc4397d76c6cd84d32853"
+      },
+      "pamDisconnectAria": {
+        "text": "Disconnect PAM sessions on logoff",
+        "source_sha256": "f3f69e47b0ad6976cffdb0df8b6501a41e5569665258da43da8a22e7d64be7b9"
+      },
+      "pamDisconnect": {
+        "text": "Disconnect PAM sessions on logoff",
+        "source_sha256": "f3f69e47b0ad6976cffdb0df8b6501a41e5569665258da43da8a22e7d64be7b9"
+      },
+      "clientStorage": {
+        "text": "Client session storage",
+        "source_sha256": "6193945dcbaa893e8af95026210b36a4cedd9aac27b99a19d20118fd6740abc2"
+      },
+      "storageSession": {
+        "text": "sessionStorage",
+        "source_sha256": "1d589af652bf6bb4ce8c96335c697952e111f91e55f6d479e229f34fe6b911ed"
+      },
+      "storageLocal": {
+        "text": "localStorage",
+        "source_sha256": "5ccee5ef26d411cb0f5d4f468d3edfe1feac9bd69411bad25095b25e3ef72734"
+      },
+      "multiTabNote": {
+        "text": "Multiple tabs share the same logon session. Logoff in one tab ends all.",
+        "source_sha256": "2db5840e461f5bf8010d816acea18c2527e2793b630658da047d3e2fa9ef1b9e"
+      },
+      "save": {
+        "text": "Save session policy",
+        "source_sha256": "92fd2a90adcbc6fd4b9a649a0185175406d1a36e43fe22232a18eff2db77b5a0"
+      }
+    }
+  },
+  "technische_dokumentation": {
+    "text": "Technical documentation",
+    "source_sha256": "0168094224b8ae94097f34b0cc8d5a6a5362af40edf7b9f790363c67b75ee86a"
+  },
+  "actions": {
+    "add": {
+      "text": "Hinzufügen",
+      "source_sha256": "cbb95cf02b7d0216731add80f69d9fc11edac11bd2d07b5b47be70faa4b74ff5",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "cancel": {
+      "text": "Abbrechen",
+      "source_sha256": "f7ff1178af202f6ffb67b9572c3fcf88059d030657e6e07447123f4e48c78e50",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "close": {
+      "text": "Schließen",
+      "source_sha256": "b808f6e97075772fe36de2ee4ea0eb310550f84baa9ea8aa88314f21e467616d",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "delete": {
+      "text": "Löschen",
+      "source_sha256": "6c2d352161df580922a184a99f8f0900612154aaa4c8f7fd03df2fbec0e24f06",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "edit": {
+      "text": "Bearbeiten",
+      "source_sha256": "84e45ee7341134db76d539d9ea4806d7ef7c23f846c73063848335a3f481c6bd",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "import": {
+      "text": "Importieren",
+      "source_sha256": "b0b045d64b415dc2ddd161e2ea53770810701508fd820300c073c1afc44e2527",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "refresh": {
+      "text": "Aktualisieren",
+      "source_sha256": "96bf0098166f6c3ee6ba53efd62eef89ed686741de9f9f934ad51cfffe849abe",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "search": {
+      "text": "Suchen",
+      "source_sha256": "dd097e77dd737a2ac71a1f2faa492711111dd78d77d8ae7d9067c57b01e78810",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    }
+  },
+  "appBar": {
+    "about": {
+      "text": "Info",
+      "source_sha256": "170322a32f3c35b2c61576a5553d352d7b3c8ae7086dab78f15fc891a28c067c",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "aboutMenuAria": {
+      "text": "Info-Menü",
+      "source_sha256": "5205d43782782e38bac87763825467caf5a0ad009c035a6cfb5cac181db2a47c",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "aboutMenuListAria": {
+      "text": "Info",
+      "source_sha256": "170322a32f3c35b2c61576a5553d352d7b3c8ae7086dab78f15fc891a28c067c",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "activateLicense": {
+      "text": "Lizenz aktivieren",
+      "source_sha256": "7609c431532854f539a2a2181e25f12703b1aa00252335f0b02a7ad7fda11516",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "approvalsAria": {
+      "text": "Ausstehende Genehmigungen",
+      "source_sha256": "d71bfc512802e7ea1cf58043c9cee7151cb09c7effa6b375d01f82c81268b681",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "approvalsTooltip": {
+      "text": "Ausstehende PAM-Genehmigungen",
+      "source_sha256": "1cc08dc5401940ed6315292a41406dc0d526640f80c4a12022c3f9c7ca6e8006",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "copyright": {
+      "text": "Urheberrecht",
+      "source_sha256": "afdd5134162384d67f5e37a50d269a73e04569a5ac48ebbe25dd234a74ce9666",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "currentLicense": {
+      "text": "Aktuelle Lizenz",
+      "source_sha256": "ec01ab3309dc3af9a630329a134b469f2df81dd59c308397118a306524c576b6",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "docs": {
+      "text": "Doku",
+      "source_sha256": "2a9d508bdc770606930e55d6546b2855b848536cb2a307303413c60f63cdd7b0",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "docsAria": {
+      "text": "Dokumentation öffnen",
+      "source_sha256": "e1ae6b1dfd658e43187334091419b36b13b9ef52463c8a680d544fd0164a71a6",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "drawerTitle": {
+      "text": "AIC Server",
+      "source_sha256": "7dcbd2ffbb7a272b6ce96fbfd8262cc645c6112ebff668ec31ede027749ed722",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "eula": {
+      "text": "EULA",
+      "source_sha256": "98e4a4ccc8b3ca907527613721ddfd4d5e6ed64f9b8d4e583719f2bee08b19a8",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "importLicenseKey": {
+      "text": "Lizenzschlüssel importieren",
+      "source_sha256": "a34dbf255d75463e1ef467c266b44d5f125589d572a0efa54dff7393b500405a",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "licenseAndBilling": {
+      "text": "Lizenz und Abrechnung",
+      "source_sha256": "c970caf2bae708f63b8908cb3288cca45c900f229293d1f6aa7a8282f769c10b",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "licenseIntegrity": {
+      "text": "Lizenzintegrität",
+      "source_sha256": "1a18ad05167aa85df92ad82790be3a11393ae5b35b6ea290c3db305d0215d850",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "licenseModels": {
+      "text": "Lizenzmodelle",
+      "source_sha256": "3574c074252fed3cf0a39d7f40f1f82fe2f7078043051296cf3cc475f46a4952",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "licensing": {
+      "text": "Lizenz",
+      "source_sha256": "0e7af3b919514c1cb58dd338d9bd800b0ecbc26138f657e6c022870841acf98e",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "licensingMenuAria": {
+      "text": "Lizenz-Menü",
+      "source_sha256": "a91270b02ac0f7ac3aa9a780b79683a3cd794b55a3ba58d1a954ef982ef64b22",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "licensingMenuListAria": {
+      "text": "Lizenz",
+      "source_sha256": "0e7af3b919514c1cb58dd338d9bd800b0ecbc26138f657e6c022870841acf98e",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "openSourceCredits": {
+      "text": "Open-Source-Hinweise",
+      "source_sha256": "bee75d4a6ac7ca1eae580fbe747e9f0ff71e1e33ef3c74b845f3b540ec4635f6",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "serverProduct": {
+      "text": "Server",
+      "source_sha256": "aef7de28d52977f1b5cd0fecfdc151717610adf41e0aa33b4d9f7522a43337ef",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "themeAria": {
+      "text": "Design ändern",
+      "source_sha256": "a65ed51632c5b04f884c5ff15866053d9b5c263dd2f7c4433f409c8b28d87fe3",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "themeDark": {
+      "text": "Dunkel",
+      "source_sha256": "368b231be48a946af5069620ce6f006363d2a6db05732f1e630dade6c0d79177",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "themeDeuteranopia": {
+      "text": "Deuteranopie",
+      "source_sha256": "d20c3258e2960f6d97983ac29efe03b015ad0c69701874cdb1267d14809cd460",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "themeHighContrast": {
+      "text": "Hoher Kontrast",
+      "source_sha256": "925d7dad2119b12c2228da738615cfc3b828e4e79b2862369a295267a505e214",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "themeLight": {
+      "text": "Hell",
+      "source_sha256": "8d586f8b60df1ad7502b52fc50d2e0b6d0d9b5643875c054d821dfd8e6672bed",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "themeTooltip": {
+      "text": "Design ändern",
+      "source_sha256": "a65ed51632c5b04f884c5ff15866053d9b5c263dd2f7c4433f409c8b28d87fe3",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "usageAndBilling": {
+      "text": "Nutzung und Abrechnung",
+      "source_sha256": "6578bd2e0f426fb60881d8803277e52f0f88d9fe9419081e06741dacf6fc0cbe",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "versionInformation": {
+      "text": "Versionsinformationen",
+      "source_sha256": "4e84c2c4684c023aba071fb62fe3bad60a455b252b8d15412a4fd89f4fbad158",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    }
+  },
+  "grid": {
+    "columns": {
+      "text": "Spalten",
+      "source_sha256": "b9d473f90e0b9347cedcbb48366ced0bbecd6a5ba80a7d3a021656af6a8a21ad",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "density": {
+      "text": "Dichte",
+      "source_sha256": "3e1a3cb1ad23394d0e7bf68be3e277707a32370892eee0e4d8414a7c0bfbe62e",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "export": {
+      "text": "Exportieren",
+      "source_sha256": "c940a378a142a104a1ebb540781dda42999be0a480ae0b8e63b141d2ce7af923",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "filters": {
+      "text": "Filter",
+      "source_sha256": "638e249f4a15ebb84957da130701d138a6e06d88dceeaa2e6dcd91db70cc1381",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "footerTotalRows": {
+      "text": "Zeilen gesamt:",
+      "source_sha256": "d2740bbbe7620c3abdd55f2ba530cc3054c78240f449e82ba4a67f141bf61b4a",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "footerTotalVisibleRows": {
+      "text": "{{visible}} von {{total}}",
+      "source_sha256": "f7731e1b4d301c8aa152cb29e6261397c438df32a60816d0ffec31151eb228d7",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "quickFilterAria": {
+      "text": "Schnellsuche {{title}}",
+      "source_sha256": "6217492fb98a04703ae75d03b72254855ba3db30076efd5a5e35b98517d9337a",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "quickFilterLabel": {
+      "text": "Suchen",
+      "source_sha256": "dd097e77dd737a2ac71a1f2faa492711111dd78d77d8ae7d9067c57b01e78810",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "quickFilterPlaceholder": {
+      "text": "Suchen…",
+      "source_sha256": "b39a1da0668e154954603179700897d1175a3764de8b4ab33bd5f6f95732955d",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    }
+  },
+  "iamToolbar": {
+    "logOff": {
+      "text": "Abmelden",
+      "source_sha256": "545f8be33bf06a1cb6eaa138814f3530c78354caf5f2edcec690c2cf8f9251bc",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "logOffAria": {
+      "text": "Abmelden",
+      "source_sha256": "545f8be33bf06a1cb6eaa138814f3530c78354caf5f2edcec690c2cf8f9251bc",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "security": {
+      "text": "Sicherheit",
+      "source_sha256": "4474c752608931d97a7d1471967cee891c712af9ce643adbe7cbfbdbdbce7216",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "securityAria": {
+      "text": "Kontosicherheit und Mehrfaktor",
+      "source_sha256": "9133270b41a827921725b34f2fcf2e6e6b7bf5da9899b17a25bedf2b5c25ff07",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "signedIn": {
+      "text": "Angemeldet",
+      "source_sha256": "531a13c9f09d824afa7aeb525f0757c6a2b3553a40211958b185a82d8107d375",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    }
+  },
+  "knownDefaults": {
+    "colActions": {
+      "text": "Aktionen",
+      "source_sha256": "5656f92db78df688863354be0c8795c8a786d2ee742231e0e8e6d99a430f240d",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "colOs": {
+      "text": "Betriebssystem",
+      "source_sha256": "d73575eec0014b6172e403c3f5222074338e1568aae0f2fbebe6995927e96811",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "colPassword": {
+      "text": "Veröffentlichter Standard",
+      "source_sha256": "c9747501923a239ae4eaf23f717245abe6210e7d22d32e7b58fe64835205e523",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "colPlatform": {
+      "text": "Plattform",
+      "source_sha256": "cdf648878bc01354ece4ab85c12169b13babf2d32b13dddcbb04c47dc8055a70",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "colProduct": {
+      "text": "Produkt",
+      "source_sha256": "34b157607524c11c50670fe9194082bfed9e5fe45c0ecb7a435eab7d01856d0e",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "colProtocol": {
+      "text": "Dienst",
+      "source_sha256": "ecc4f77cf213133424a79389981368da6d212ef84d247a91be12da532863062f",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "colUsedFor": {
+      "text": "Verwendung",
+      "source_sha256": "947c0a678ed5984608fec8d1e424029d8eb4655b023782858ab519a7b90f5315",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "colUsername": {
+      "text": "Benutzername",
+      "source_sha256": "fc309e30dbbe8a435efbdd0b7e382595932509ed56f140aa1759256b00485a18",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "colVendor": {
+      "text": "Hersteller",
+      "source_sha256": "32da517562d9698ec58c77afe07b0bb898efff69125543cd0be5e54999934120",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "intro": {
+      "text": "Öffentlich dokumentierte Werkskennwörter der Hersteller zur Haltungsbewertung. Ein Treffer bedeutet, dass ein gefährliches Standardkennwort noch in Gebrauch ist — auf ein plattformgerechtes Zufallskennwort wechseln. Das ist Liefernachweis, kein Met- oder Zertifizierungsanspruch.",
+      "source_sha256": "3abb7981b7daac33b576f9b5a8b0068bc1d54fa03706067701e9c308c8a7b8fe",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "maskPasswords": {
+      "text": "Veröffentlichte Kennwörter ausblenden",
+      "source_sha256": "a11fe1af6f41b128052b9b2a24ba39576245fba623fd177efad1c1e96b59d1ee",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "searchAll": {
+      "text": "Alle Felder",
+      "source_sha256": "e976f86136b97771de0db83b5058db6f4f2eaf0b03274a03af7d02e084c4fd70",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "searchField": {
+      "text": "Suchfeld",
+      "source_sha256": "f7561dd68da4bfb8b0de14000409f0ac2a6f47ae39cd942ecc854ca954816e3e",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "searchOs": {
+      "text": "Betriebssystem",
+      "source_sha256": "d73575eec0014b6172e403c3f5222074338e1568aae0f2fbebe6995927e96811",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "searchPassword": {
+      "text": "Veröffentlichtes Kennwort",
+      "source_sha256": "38c390e3bc159d782d8c20ecceba4f4566e45c2881a31cf1f2751d1137e2f367",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "searchPlatform": {
+      "text": "Plattform",
+      "source_sha256": "cdf648878bc01354ece4ab85c12169b13babf2d32b13dddcbb04c47dc8055a70",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "searchQuery": {
+      "text": "Suchen",
+      "source_sha256": "dd097e77dd737a2ac71a1f2faa492711111dd78d77d8ae7d9067c57b01e78810",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "searchService": {
+      "text": "Dienst",
+      "source_sha256": "ecc4f77cf213133424a79389981368da6d212ef84d247a91be12da532863062f",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "searchUsername": {
+      "text": "Benutzername",
+      "source_sha256": "fc309e30dbbe8a435efbdd0b7e382595932509ed56f140aa1759256b00485a18",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "searchVendor": {
+      "text": "Hersteller",
+      "source_sha256": "32da517562d9698ec58c77afe07b0bb898efff69125543cd0be5e54999934120",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "tabCatalog": {
+      "text": "Kennwortkatalog",
+      "source_sha256": "891c293e94be7d73eee82c5fe4cb62d6cbecf52f6d2b99fac7a0c27bc16b0a02",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "tabPatterns": {
+      "text": "Plattform-Kennwortmuster",
+      "source_sha256": "cd5721a9e1ea08c9e4e9c2beddebacf91dcb3beda04d198962fb5387dd2894c2",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "tabSources": {
+      "text": "Wörterbuchquellen",
+      "source_sha256": "b5af253be991c96710bf8dd57e11265cbffaebb3034a7485aa67529c1844ec8c",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "title": {
+      "text": "Bekannte Standardkennwörter",
+      "source_sha256": "1d15845e9a49496acd72b8156e5a3255f4c2d5e1d65921baa58d56216314083e",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    }
+  },
+  "quickSearch": {
+    "ariaLabel": {
+      "text": "Endpunkte und Aufgaben durchsuchen",
+      "source_sha256": "4255b311b003c2db91d14a5d1574b1e9a23dceaf4c6d408c6ea507442a8d2220",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "chooseAction": {
+      "text": "Aktion wählen",
+      "source_sha256": "d1f2d683aea50d3f3877e5063a8b3c58af412e648903eeec11e13463c0e621c1",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "clear": {
+      "text": "Leeren",
+      "source_sha256": "9de63c78485ea94a51840a0ff886796dcee9b9449e7377950cff25deb22fc6dd",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "close": {
+      "text": "Schließen",
+      "source_sha256": "b808f6e97075772fe36de2ee4ea0eb310550f84baa9ea8aa88314f21e467616d",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "endpoint": {
+      "text": "Endpunkt",
+      "source_sha256": "fb86696e7b1cdc620ed308d41bb96f28c7ed629fa0582556d98ef82e4c421c15",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "generateConfigFile": {
+      "text": "Konfigurationsdatei erzeugen",
+      "source_sha256": "66fa66451c49bcc43225fec0d27a18d00b85cd2179b1143cc4d7671a0f9b73a8",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "getElevationCode": {
+      "text": "Erhöhungscode holen",
+      "source_sha256": "95508494595fc04b9e837cc13bf079a63dc5724f5968fb7926fc48badf00d828",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "manageIdentities": {
+      "text": "Identitäten verwalten",
+      "source_sha256": "d50a20e0e3814924d24074ce625b573feca5656422093854097936d07a05fd56",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "open": {
+      "text": "Öffnen",
+      "source_sha256": "bc385a30b5378841099b66c2c42ded6f46ab144f586be608f541661721776859",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "openEndpointsInventory": {
+      "text": "Endpunktbestand öffnen",
+      "source_sha256": "911e85aba5be4e70e019f5b2d76ce5ebeb63960c28e68baabfb0cefee2e5b81f",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "placeholder": {
+      "text": "Schnellsuche",
+      "source_sha256": "01d3b6184935890d00acf024c6b5b529627031f20e7d2ac5dce7d69cb9122f5d",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "revealPassword": {
+      "text": "Passwort anzeigen",
+      "source_sha256": "dccd381767f2664edb1d31c578526c72d6e0777efa318456df2602f3fab1dfca",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "typeToSearch": {
+      "text": "Tippen Sie, um Aufgaben und Maschinen zu suchen",
+      "source_sha256": "7d83294308c01576caded74b67aa014493f00e334ccf990bc02ff95166ee652c",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    }
+  },
+  "technical": {
+    "howTo": {
+      "0": {
+        "text": "technical.howTo.0",
+        "source_sha256": "c49199e605eec01c58c9e5b4438cb2b33f4f6cf0572e509d8783599aea526315",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "1": {
+        "text": "technical.howTo.1",
+        "source_sha256": "b4ba313b3efc8f55a03aa0debc5d8ccae54619ecf66dc9a627491b1390dca4bc",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "2": {
+        "text": "technical.howTo.2",
+        "source_sha256": "19eaaba4886b3ef89ea3e31b0ea33ef0cc2cd363e7aad33bf5a09cdb035b10f9",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "3": {
+        "text": "technical.howTo.3",
+        "source_sha256": "87df08db2ef5d06ca0b037ab3e469539a93c8ea1b0a6f1e405767d0a53440cb6",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "4": {
+        "text": "technical.howTo.4",
+        "source_sha256": "151212c0c20b559b8165fcf0ac9a08a0951b60f43048d93d07ec2d2fa96e5a72",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      }
+    },
+    "limits": {
+      "0": {
+        "text": "technical.limits.0",
+        "source_sha256": "d15af354a33ee4686ebacab1d2cd9556620050eb97f76633835007679841f966",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "1": {
+        "text": "technical.limits.1",
+        "source_sha256": "232fdc50e3f9081224dcd2fca1c8f824ac016df7e85869d279df120cfba1117b",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "2": {
+        "text": "technical.limits.2",
+        "source_sha256": "fbbb82dfc4d3089b7995bb118d2821fd10adac4bf058b2f8f917d4b6197a242e",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      }
+    }
   }
 }

@@ -268,5 +268,548 @@
       "text": "Abrir {{label}} después del inicio de sesión",
       "source_sha256": "8f727be65c4c984231c04dfe77e7d6af377bceeb26024ed8c2e0ebb6c1dcf789"
     }
+  },
+  "disclosure": {
+    "classificationBannerAria": {
+      "text": "Klassifikationsbanner",
+      "source_sha256": "82c22fc995c3764b846414532e9ac9e1219afbe84f0063a3f15ea04200b6c635",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "dismissLoginNotice": {
+      "text": "Anmeldehinweis schließen",
+      "source_sha256": "b8ebd23f12fc6d5e7e47a9f1d5415451c0567f2a8e7054eb17a132293746c340",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "loginNotice": {
+      "text": "Anmeldehinweis",
+      "source_sha256": "81a09574bed73eed262cd5dba47724d62adc5b15f42bafdb7747d7039fb8b1ce",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "sessionNotice": {
+      "text": "Sitzungshinweis",
+      "source_sha256": "b946286b27423de83169b3ca3321eec8b74f677cb3ec3a78e27a20132dde6137",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    }
+  },
+  "notifications": {
+    "bellAria": {
+      "text": "Benachrichtigungen",
+      "source_sha256": "f7205df4f1e2d6bc2514c684348db63c717deef6640866da3585fdcacbba7d1f",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "clearAll": {
+      "text": "Alle löschen",
+      "source_sha256": "92726d21c7e4c1b98c3d00273d135f6c263201dde1a68312ad370694e55b30cf",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "empty": {
+      "text": "Noch keine Benachrichtigungen",
+      "source_sha256": "c92087f5842dd9a7d657e7dc6541781d10014d7bb79fe5ea1480f62ac05b986f",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "title": {
+      "text": "Benachrichtigungen",
+      "source_sha256": "f7205df4f1e2d6bc2514c684348db63c717deef6640866da3585fdcacbba7d1f",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    }
+  },
+  "pageHeader": {
+    "helpAria": {
+      "text": "Hilfe für {{title}} öffnen",
+      "source_sha256": "85d7b9bed0be64977d42741bedceb3ea80f6159ea33864bd20e2815da6aee692",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    },
+    "helpTitle": {
+      "text": "{{title}} — Hilfe",
+      "source_sha256": "a092afe885822f6ad4546f8d1a4431ffc8696d1d9e955089c3c80865350674ae",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    }
+  },
+  "permission": {
+    "loadingAria": {
+      "text": "{{label}} werden geladen",
+      "source_sha256": "9307b9287f4f4f98b81ac7eef17f9080159da1e7f07ea9cdabe6dd795dac7343",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    }
+  },
+  "pinFavorite": {
+    "pinTooltip": {
+      "text": "{{label}} an Favoriten anheften",
+      "source_sha256": "3a5213d2c35ec0d0e32139e5d685e292ef5033fc1b88dbdc64df788517341111",
+      "note": "EN draft from Tier1 walk fill; formal register pending"
+    }
+  },
+  "sectionLanding": {
+    "desc": {
+      "access_control": {
+        "text": "Lokale IAM-Prinzipale, Anmelderichtlinie, IP-Regeln und Anmeldeprotokoll.",
+        "source_sha256": "ba202345d8e93587a760a3873c6bc69d943c516d35b8ccfec23da6ed2114f68f",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "agent_event_forwarding": {
+        "text": "Standard-Ereignisprotokoll- und Syslog-Schlüssel in Agent-Einstellungen.",
+        "source_sha256": "709e739eb285c512d1c4765c1027840cbd2f9976b8bc1344e1e7bab3fc521d1b",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "agent_management": {
+        "text": "Verbundene Agenten, erlaubte Einstellungen, Push-Diagnose und Fähigkeiten.",
+        "source_sha256": "0009255debe5f5bee316682edb06c9337cfd997b13e349f525ae15847c57b023",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "agent_overview": {
+        "text": "Einstellungsdateien, Bereitstellung und Standards, die Endpunkte erhalten.",
+        "source_sha256": "ff3b76a911c74e44c3b87b66aa0d915705b580924e4fb278be158568f64cf73a",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "app_manifest": {
+        "text": "Schreibgeschützte Ansicht der app-config-Schlüssel zur Laufzeit.",
+        "source_sha256": "646b1ce405e3a91e5b87f9abf567d301c3569697c5fa71dc2c9c9ff76cce5522",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "applications": {
+        "text": "Katalog sensibler Apps mit Dauer; gebündelte oder Kunden-CSV importieren.",
+        "source_sha256": "48274010cecc8d4374ac07e579bdb85a439c1795ef45a6acee1248aae2cb6737",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "approvals": {
+        "text": "Ihnen zugewiesene Zugriffsanfragen genehmigen oder ablehnen.",
+        "source_sha256": "9db6bf707395c6f5cb3ef553adbb2dc4f49cbbf38fab891aa289f831cb47d386",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "approver_profile": {
+        "text": "Kontaktkanäle, wenn Sie zur Genehmigung aufgefordert werden.",
+        "source_sha256": "0ad3b19135194e3cdf30c52d9246d5644bbbac2501182a8b27630b3f8396de77",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "audit_log": {
+        "text": "Dauerhafter Nachweispfad in PostgreSQL.",
+        "source_sha256": "c8d178843e7c9e64491511fa5ad805d2dbc495e4790d1167f0a12e6a69a96614",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "branding_style": {
+        "text": "Eigenes Logo für Anmeldeseite und Anwendungsleiste hochladen.",
+        "source_sha256": "0312d24c54d2815c289b5962c1313971e29a88d71a3a069a66b67702a3c0b416",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "bulk_provision": {
+        "text": "Viele Endpunkte per CSV oder Tabelle bereitstellen.",
+        "source_sha256": "ecee0a12e4a7f0c098bde129b5d3cf7062fb30eb7438b75df2e666992362858c",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "company_profile": {
+        "text": "Organisationsnamen und Supportkontakte für Hinweise.",
+        "source_sha256": "a7d25d5dc6b5100dd4e803f1295da5094abb7679e3fb3f58c3a83b2f571a121a",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "connect": {
+        "text": "OT-Protokollsitzungen aus der Asset-Liste öffnen (nicht SSH, RDP oder VNC).",
+        "source_sha256": "1e262ff0717ec0429d5bd69a2299eae7f1c73e796dedef27196f05ab124a1869",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "connection_points": {
+        "text": "SSH- und RDP-Ziele definieren, vermittelte Sitzungen starten und Zugangsdaten verwalten.",
+        "source_sha256": "f61c4c5ae1f79a44386e9ff074dc590bd9666e720fc6ccb9661ced087fff59d5",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "create_settings_file": {
+        "text": "Agent-Einstellungen JSON mit Enrollment-Token ausstellen.",
+        "source_sha256": "a21edeecedf5df4254bb0923866722447c79edb73ce51840e884da8f4f9ee824",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "credentials": {
+        "text": "Kennwörter bei Bedarf rotieren, Break-Glass anfordern und Zielpläne öffnen.",
+        "source_sha256": "d22ea987512a982a416785716218a08231ea3aa88f6fb9afb03c97ea0ad70c52",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "demo_data": {
+        "text": "Entwicklungsprogramme zum Anlegen oder Zurücksetzen von Beispieldaten.",
+        "source_sha256": "c5fd61dcebf7f4af81b41e9934c75ead83b4adb87906ae579824cf32545dbc53",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "deploy_recording_agent": {
+        "text": "Enrollment-Token erzeugen und Installationsschritte für die Aufzeichnung befolgen.",
+        "source_sha256": "fa1bed367793fd61752b2cc5373b34b9ec8920baeec25e1e0ac16992da80ca2b",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "direct_elevation": {
+        "text": "Zeitlich begrenzte privilegiierte Mitgliedschaften auf verbundenen Endpunkten.",
+        "source_sha256": "f0e7e6bd6e226ecae504befc65c2bd94f67268a105c7e75343d3ce392deb7722",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "discovery_jobs": {
+        "text": "Erkennungsjobs ausführen, Scan-Zeitpläne verwalten und die Asset-Liste prüfen.",
+        "source_sha256": "459ed2a3f0a434cc53aa597b196e05c1855aa915d8c5375a604d2dbac680f7e2",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "elevation_mocks": {
+        "text": "Statische Prototypen für Mehrkanal-Elevation.",
+        "source_sha256": "70e6f633e87f75c387697c5adb61359fa7daec1492099b4aea7e48591afc8478",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "elevation_policy": {
+        "text": "OS-Gruppenangebote, Dauerstufen und Kanal-Schalter für Modi 1–3.",
+        "source_sha256": "249a984b2a999700b09f725e92aa735d94688ab56807445e76fa5cfcb7638c63",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "email_settings": {
+        "text": "SMTP-Relay und Absenderidentität für ausgehende Post.",
+        "source_sha256": "8ebf9ba3a2e8a371a27a3c4f10acb0c1e7d2b48362dc926a0c9dc8beeb98cb26",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "encryption_key_sets": {
+        "text": "Serverstandard und benannte Schlüssel; nach Schlüsselwechsel neu verschlüsseln.",
+        "source_sha256": "10e6fec7f9cfe7720bbe56b74acabf9abc8f68c66b448b5299da371cd79e87c5",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "encryption_settings": {
+        "text": "FIPS-Status, Anbieterkatalog, Sicherung und optionale HSM-Kopplung.",
+        "source_sha256": "8861f5bce6ebeb6391d448a18751a080563393d02142140aebe87cc6a952340a",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "enrollment_and_access_control": {
+        "text": "Prüfermatrix: wer Registrierungsfelder bearbeiten darf und welche Audit-Ereignisse das belegen.",
+        "source_sha256": "b2facfd2bdc0fdc5691477475a8b1d8fe3050f84f8759b3df0e444e430a8cd26",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "entitlements": {
+        "text": "Wer welche Verbindungsziele anfordern oder starten darf.",
+        "source_sha256": "441339f7259f7a6fc7ca69696c62c4ab6c03b64f07c21038eb03ae62443fd59a",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "event_sharing": {
+        "text": "SIEM, ServiceNow, Jira und generische HTTPS-Webhooks sowie integrierte Senken.",
+        "source_sha256": "8f32feb2445a148fc74d2344abc8a2fdbe0e622feb9cfab82d7dbba52f2b1120",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "fleet_agent_versions": {
+        "text": "Agent-Versionen, Check-in-Alter, Push-Erreichbarkeit und Laufzeitwarnungen.",
+        "source_sha256": "98dfbf2a827d4d3985eca668304d1f1704a7762d6d71ded527ec064d6fdcea97",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "general_settings": {
+        "text": "Öffentliche URL, Multi-Tenant-Standard, Drift-Schwellen und Admin-Token.",
+        "source_sha256": "a63db0ed246bccc78e072c840c92e2ff5edddb6f34a573b9afe59be70177294d",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "group_defaults": {
+        "text": "Standard-Kennwortrichtlinie für neue Systemgruppen.",
+        "source_sha256": "50102b9e77dbbe46e67d7a4918da4d9e5803cbdca905186713e1c2d9cea2d6ef",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "hsm_connections": {
+        "text": "PKCS#11-Anbieter und Verbindungsprofile für HSMs registrieren.",
+        "source_sha256": "e62cec646a097e83ce06101ed694c194b363c9c6661e6134daf6eb004a112af6",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "identity_defaults": {
+        "text": "Identitätsvorlage und Seed-Optionen für verwaltete Konten.",
+        "source_sha256": "1e3a64b15f074da534bb06d07055aa06f9b59aea9c1515cea7b6a8ad751d07dd",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "identity_template": {
+        "text": "Welche verwalteten Konten auf neuen Gruppenmitgliedern angelegt werden.",
+        "source_sha256": "48929b454bf8e42007060fdd58292bc5cadf216aef9a6f4a94d3619963ef087f",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "import_settings_files": {
+        "text": "Legacy-Einstellungen JSON zur Migrationsprüfung validieren.",
+        "source_sha256": "b4d46990b83c8c1f8aec63ae0afb6410642c515cb9c55ac44ba3d17278535b28",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "incidents": {
+        "text": "Vorfallserkennungs- und -reaktionsfälle — Schwere, Stufe, Zeitplan.",
+        "source_sha256": "b45c2249942654e3983afc387ef1ca3aeedcfd2011b4f5d3efc3c11e15f6732e",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "initial_setup_wizard": {
+        "text": "Geführter Runbook für neue Enklaven: Firma, Compliance, Verschlüsselung, E-Mail.",
+        "source_sha256": "92101ad49bf173f628c829a44a0d6d3a6e11361b044462c96ff836f7a62fcc6f",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "inventory": {
+        "text": "OT-Ziele, Status und Verbinden oder Konfigurieren pro Zeile.",
+        "source_sha256": "4c8ebb2b90d7cfbe21ec860d6df83c3fc8ee188885efa8006aa1f68295fb61ab",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "jump_fleet_load_balancing": {
+        "text": "Externe Jump-Hosts und lokale Kapazität konfigurieren, Drain/Gewicht und Probe.",
+        "source_sha256": "5bbe0b96d49d9b90333b623caccc0a215331084bdf3f36c70732c8cb7483caa5",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "lab_advanced": {
+        "text": "Manifest-Anzeige, MITM-Lab-Werkzeuge und Demo-Daten.",
+        "source_sha256": "47d6924571d3b83a661a307d5a85a598868291eea84872d15b1290cdd18c2b8e",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "live_events": {
+        "text": "Nahezu Echtzeit-Betriebsfeed von Agenten und diesem Server.",
+        "source_sha256": "0bf83daae121beafbebe9f088844412d8abbce1885afc384bc629a96b2a70bb4",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "local_iam_administration": {
+        "text": "Benutzer, Gruppen, Rollenfähigkeiten, Secure-Share-Entscheidungen und Arbeitsplatz-Assets.",
+        "source_sha256": "a21545ba1f3559e5f29533c81639c2d6e07ff498c4272007e471ce01bc08d2c1",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "local_user_groups": {
+        "text": "Namensbasierte Gruppen für Berechtigungen und Zugriffssteuerung (Registerkarte Gruppen).",
+        "source_sha256": "a20626f747ce1d8a24706c9299e4f97a4799e033bb1768501e870b28ef268385",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "manage_issuances": {
+        "text": "Ausgestellte Einstellungspakete rotieren, widerrufen und erneut laden.",
+        "source_sha256": "5458756f92328e1a08f37f1277e08093ef4f21785ac6e635a2d975d5f7fa34e2",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "message_snippets": {
+        "text": "Gemeinsame Textfragmente für mehrere Vorlagen.",
+        "source_sha256": "c5c1063b461d02803eeb8ae529fe6a0962307145c0b725499140cabbb9b78a5a",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "message_templates": {
+        "text": "Wiederverwendbare Benachrichtigungstexte für Betreiber-E-Mails.",
+        "source_sha256": "ac5a93dd0347517243e5be529ad26772b115f45c103134456fd7fc6b690ae2e4",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "messaging": {
+        "text": "E-Mail-Vorlagen, SMTP und SMS-Anbieter für Benachrichtigungen.",
+        "source_sha256": "552db398c4ffd1d34c6b1d3c401a79d041ea709f2dcc5e6749dc4b07448f2269",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "mitm_dev_only": {
+        "text": "Optionale mitmproxy-Integration zum Debuggen von Agent-Verkehr im Lab.",
+        "source_sha256": "be07cf0a14e40a067f821cfbd212253f82ff688bc098aaf2537c03e2d2bc8729",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "multi_tenancy": {
+        "text": "Kundenorganisationen und Bootstrap-Geheimnisse für die Agent-Authentifizierung.",
+        "source_sha256": "0fde254cab74d78f50e0d6886e0ddc5446feb27ef09c611e00caf7fece9d0bf9",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "my_workstations": {
+        "text": "Ihnen zugewiesene Sitze. Verbinden startet eine aufgezeichnete Sitzung.",
+        "source_sha256": "12eec634f0e8320c0ec4918b81a19f525d7b68cc24ef6f502a8a370c0e7b2db5",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "operator_disclosures": {
+        "text": "Standardhinweise vor sensiblen Betreiberaktionen.",
+        "source_sha256": "e3d1ad96fa179905d684339e186e2be83d41f1b87ffecb283eb44eb94bd9850a",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "password_defaults": {
+        "text": "Programmweite Kennwortrichtlinie am Ende der Vererbungskette.",
+        "source_sha256": "da80b4fc8dc54e34fc18b6d7de2ede6fce5a6ab4d46e0cb56c88f08cb0e5b12c",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "password_policy_presets": {
+        "text": "Benannte Richtlinienpakete für Standards oder Gruppendialoge.",
+        "source_sha256": "3e1513066327c2238ccf499ad894239a7a44d970d28ddc46353560a600143fe5",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "privileged_user_management": {
+        "text": "WDAC-/AppLocker-Paketzuweisung, Hash-Überwachung und Ausnahme-Genehmigungen.",
+        "source_sha256": "4d80391ddec81cb5d9aa7cc02c2d61943da3a9e3cc737dd21c615eb102445ed4",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "propagation_templates": {
+        "text": "Propagationsskript-Katalog, Push und Air-Gap-Export.",
+        "source_sha256": "a04814a9d2570bc6ce626bd08e2fd1a7cbc56f10c65f418ad3281c56bb28126c",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "proxied_access": {
+        "text": "Live- und Planstatus für Sitzungsvermittlung und privilegierte Befehlssteuerungen.",
+        "source_sha256": "ce7c10f19b3be1ff9ed55ddea21989c2b1414bf11904f5df3c5bdd252182d7aa",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "rbac_lab": {
+        "text": "RBAC-Testmodus und Stub-Profile — standardmäßig Eigentümerzugriff.",
+        "source_sha256": "2909fe3ddaff8b0c6f24c7827e6499c30671e02b2f5e0b7a57cf9e51cd6cc918",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "rdp_ocr_metadata": {
+        "text": "Lab-Tesseract-Auftragswarteschlange, Suchtreffer und Metadaten pro Maschine.",
+        "source_sha256": "303ea3e69de6ee1c52081409ce910adade9ab756030a6961eee60e2673f371e9",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "recording_agents_health": {
+        "text": "Registrierte Agenten mit Check-in-Status und Proxy- bzw. lokalem Aufzeichnungsmodus.",
+        "source_sha256": "31c197af3c112dcc27b092cec90301af3ce48c97e7e40b90fd6aca3a35c9068e",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "recording_storage": {
+        "text": "Effektive Pfade für verschlüsselte Aufzeichnungen und OCR-Metadaten.",
+        "source_sha256": "fef3c404452ca78f37242cf129462bf93fbb9bd6d4c737372105392fbf3d6abc",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "remote_access": {
+        "text": "Betreiberverbindung für Systeme mit Sitzungskanal.",
+        "source_sha256": "7d1e0f01e83d7e891034daf2d2bb56a77f6d1b08574f8df4b18f6060a4d000bd",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "server_configuration": {
+        "text": "Wie dieser Server läuft: TLS, Identität, Krypto und Steuerung.",
+        "source_sha256": "4837831815548e9cebf510aeebee855492633c020dc25a02418fe4c63071a836",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "server_control": {
+        "text": "Anzeigename, Maschinen-GUID und öffentliche URL-Identität.",
+        "source_sha256": "4012a3da6d47bed527e41f39f264145ad00f2632cefa15db179d14133b6ad92b",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "server_disclosures": {
+        "text": "Klassifikationsbanner und Fußzeile für diese Web-Administration.",
+        "source_sha256": "fea98f841e6000dfdd02bee7865d9e000ebc062ad6b24b3587ff66dbe54b3c33",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "session_control": {
+        "text": "Aktive privilegierte Sitzungen überwachen und beenden.",
+        "source_sha256": "b1fd528a85eb1e4c133e023765fd3fd2734d390b369438727ae5978d6f947bf5",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "session_recordings": {
+        "text": "Aufgezeichnete vermittelte Sitzungen durchsuchen und wiedergeben.",
+        "source_sha256": "73b4c2e612258a1dd3551f94ad8d9c3ef7619a5d9f6ae6c14225c2270838759f",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "session_timeout_and_logoff": {
+        "text": "Leerlauf- und Absolute Limits, Refresh-Rotation und erzwungene Abmeldung.",
+        "source_sha256": "d4714ce011fce97f63beaa3753386255b0ea71a447ae14e7d759858668d094a6",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "sessions_evidence": {
+        "text": "Offene OT-Sitzungen und Sitzungsnachweise prüfen.",
+        "source_sha256": "ae8d13776e5251ed5cfe5eb5ce7ba23b718ac342084ce918df44c6ab14e1433e",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "sms_settings": {
+        "text": "Twilio- oder HTTP-SMS-Webhook für Zugangsdaten-Benachrichtigung.",
+        "source_sha256": "866d42ce8acfb030c66dc724d40d2006b242c4a04d7744d97ef21f67163f47d6",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "ssh_command_filtering": {
+        "text": "Befehlssätze, Zuweisungen und Normalisierung für Sitzungsfilter.",
+        "source_sha256": "a7c07aaefa9fddac57b3dbeb48fb58e4cbe3e070bd0482e73309d5302b9842b1",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "startup_wizard": {
+        "text": "Geführter Weg von leerer OT-Umgebung zu erkannten und registrierten Assets.",
+        "source_sha256": "8f9134198a680d96c1b9ba5a003fff4093c133dacfe297d3866d1b5d82d60632",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "syslog_forwarding": {
+        "text": "EPIM-Ereignisse an einen entfernten Syslog-Collector weiterleiten.",
+        "source_sha256": "bf49909fac99f77a31a7965e1cc3ad228910bbc1b99603f656ab6989a09ae15e",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "system_groups": {
+        "text": "Gemeinsame Kennwortrichtlinie, Identitätsvorlagen und Assistenten-Standards.",
+        "source_sha256": "f357f8f2497bb7511cfb11a20edc5e05cf1d853e5e157fc714295c2160fe9fda",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "systems_list": {
+        "text": "Jedes bekannte System, mit oder ohne Agent, inkl. Erreichbarkeit und Sammelstatus.",
+        "source_sha256": "e1f856e9bc5dfd4f398439be8decb52efc1abe44a43bc457e3bc94a34ada9746",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "tls_security": {
+        "text": "HTTPS-Listener-Zertifikate und Client-Authentifizierung.",
+        "source_sha256": "a4c7dedd41d2b892564f26ad49db626dd875453be5d6512b9ec796253f216129",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "vm_management": {
+        "text": "Hypervisor-Verbindungen und VM-Pools für Energieplanung (nur Admin).",
+        "source_sha256": "ca25087ea8fdd9b404b5866e058942cdfa0a8188d9d9e44e293f6c5a51d99ab1",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "who_may_elevate": {
+        "text": "IAM-Benutzer an Anwendungsregeln binden, optional mit Ablauf. OS-Gruppenangebote bleiben unter Richtlinie.",
+        "source_sha256": "7f4b8dfc4cc4652d6ab7af62384338c3a49322079cb7c800715fb644859909e1",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "workstation_assignments": {
+        "text": "IAM-Benutzer Arbeitsplätzen zuweisen, die unter Meine Arbeitsplätze erscheinen.",
+        "source_sha256": "27ee6ede2e04ca93f77986bf9ef2cfbf35f1cb9f936dc92e7423e302cbcf8508",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      }
+    },
+    "group": {
+      "approvals": {
+        "text": "Genehmigungen",
+        "source_sha256": "6190cd1a0e88ff24f55662189d61153316cb0c9ca2a840ce2310b4ef598e4ca9",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "directory": {
+        "text": "Verzeichnis",
+        "source_sha256": "49d7690f3cac715ad890f249868083f586c2a27e9b85e7fefbb045fdff471f4f",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "jump_capacity": {
+        "text": "Jump & Kapazität",
+        "source_sha256": "15ce94b4b5d2238e36e738dbe9d76c8b214e2d9131ca3b589b7440c3558d1c3d",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "ot_surfaces": {
+        "text": "OT-Oberflächen",
+        "source_sha256": "fb931559a5298b49165d808158dde959574e1cd80dbb5ffd1bc0357c4b3f5cbe",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "policy": {
+        "text": "Richtlinie",
+        "source_sha256": "4a166d079dad7def05b8dcf7aabea6d0ee35fca1133be664d621b31ede5082f1",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "recording_ops": {
+        "text": "Aufzeichnungsbetrieb",
+        "source_sha256": "bd3e16e73b1c301b02ac81ed892bffb2b2cadc20cbefb51ea1c5254345d9e4df",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "sessions": {
+        "text": "Sitzungen",
+        "source_sha256": "024d47abf2a0b4d5273888b70674c95152ed04d3ab1763e665a4b693d732fd84",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      }
+    },
+    "intro": {
+      "access": {
+        "text": "Kennwörter anzeigen, Elevationscodes ausstellen und verwaltete lokale Identitäten verwalten.",
+        "source_sha256": "4761e061197f09e20fb72898084a3ce04536f0db8055912fbc44f58ebd0c31fa",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "agent": {
+        "text": "Hier Einstellungsdateien ausstellen, eine Flotte bereitstellen oder Standards ändern.",
+        "source_sha256": "d99d508ffe186157eb9e1bb543d48561d5d00b4121a54bf61cca8500aa611504",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "auditing": {
+        "text": "Live-Ereignisse überwachen, Audit-Nachweise exportieren, IR-Fälle verwalten und Weiterleitungssenken konfigurieren.",
+        "source_sha256": "f13cf95f01b9fe3be455f8e4e7713c1bed8d8208d73340f051819db8cda5e74c",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "lab": {
+        "text": "Schreibgeschützte Manifest-Ansicht, Lab-MITM-Proxy, RBAC-Testmodus und Demo-Daten. Nicht für Produktion.",
+        "source_sha256": "02deccb2be289f884e5770d4d001469a0362c41d00b89a9cf1db3b10dfcb7cef",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "messaging": {
+        "text": "Vorlagen, Snippets, SMTP und SMS für Betreiber-Benachrichtigungen zu Zugangsdaten.",
+        "source_sha256": "87d52bcc59cb03c31d347088c15bac6d8055d6ef1eeb0dc7b6bec95dbbb2db28",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "ot": {
+        "text": "Betriebstechnik: OT-Ziele erkennen und inventarisieren, Protokollsitzungen verbinden und Kennwortrotation sowie Break-Glass steuern.",
+        "source_sha256": "7ef1127118ff39a9c4d9dc75d9add5f84e20f2139dfb30c25060872857238d05",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "proxied": {
+        "text": "Interaktive Browser-SSH/RDP-Sitzungen öffnen und Zugriff steuern: Verbindungspunkte, Aufzeichnungen, Aufzeichnungsagenten, OCR-Metadaten, Speicherorte, Sitzungssteuerung, Zugangsdaten-Tresor und Zugriffsanfragen.",
+        "source_sha256": "de532a3bf29f47902e1f42588676205a9567986ad1cfee945a458286b3908cb4",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      },
+      "systems": {
+        "text": "Endpunkte inventarisieren, Systemgruppen organisieren und Mandantenfähigkeit verwalten. Agent-Einstellungen liegen unter Agent-Konfiguration.",
+        "source_sha256": "02a42bc2f78b37023fb284fd2919a906ffa68f10732e81b8a52f64d5b3d129de",
+        "note": "EN draft from Tier1 walk fill; formal register pending"
+      }
+    }
   }
 }
