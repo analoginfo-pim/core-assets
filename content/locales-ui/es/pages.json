@@ -9,8 +9,8 @@
       "source_sha256": "48f732653aba7891625a77efcb65237f0292ab94e4a32762602ae74abcc21591"
     },
     "title": {
-      "text": "Open-Source-Hinweise",
-      "source_sha256": "bee75d4a6ac7ca1eae580fbe747e9f0ff71e1e33ef3c74b845f3b540ec4635f6"
+      "text": "Créditos de código abierto",
+      "source_sha256": "2f3759e2dfda6c2052567af1a495bd716f90a93a373c564846055d6cb9e44a81"
     }
   },
   "chrome": {
@@ -8482,6 +8482,270 @@
       "wizardPromoTitle": {
         "text": "Initial setup wizard",
         "source_sha256": "247e58e3191efebc183ca8b9fa31be303721ae5094816f90b7914af072e91e5f"
+      },
+      "displayTimezoneTitle": {
+        "text": "Mostrar zona horaria",
+        "source_sha256": "63ea905fea79d92116563aa642ec721550f0fdfdfff6b97d65bdfd9c14288aa1"
+      },
+      "displayTimezoneHelper": {
+        "text": "Todos los relojes de este programa utilizan esta zona, incluido el historial, los informes y los registros en modo local. Los instantes se almacenan como RFC 3339 para que los cálculos sean correctos. Déjelo vacío para seguir la hora local de este anfitrión. La zona o desplazamiento siempre se muestra.",
+        "source_sha256": "e12db244f5bdef42dcf0fa8a79eaa04578307120f625d2cb0ee3f20930637e98"
+      },
+      "programTimezoneLabel": {
+        "text": "Zona horaria del programa",
+        "source_sha256": "13ce6d44904b7e549a024a8f94f4e6e90f3197873bac1faa6e80f1780bbd0450"
+      },
+      "programTimezoneEmpty": {
+        "text": "Utilice la hora local de este anfitrión",
+        "source_sha256": "95138241506c5bc92dbc16b04469fe740d1cc16da913a5040c2352fde434bec0"
+      },
+      "programTimezoneHelper": {
+        "text": "Zona de la IANA como América/Los_Angeles. El vacío sigue el reloj del host.",
+        "source_sha256": "e550990e80e66c9c473ab3e83b7f54208f46de9a43d35c4a7ea7f889d537b273"
+      },
+      "saveTimezone": {
+        "text": "Guardar zona horaria",
+        "source_sha256": "9ed62229370dee21f6a8b6507e7e20d0f3bf61436b9d649e39fdac196903d1cb"
+      },
+      "timezoneLoadError": {
+        "text": "No se pudo cargar la zona horaria de visualización. Confirma que has iniciado sesión.",
+        "source_sha256": "85a14a3c3ea154f85f8cef317d29289a1f78c6b65a136cb79c451b5764f1a95f"
+      },
+      "timezoneSaveError": {
+        "text": "No se pudo guardar la zona horaria de visualización.",
+        "source_sha256": "62229743a4cc5522a81ea1af67f5708fbaf1b02ef13b45e3985ba83fe239a2bd"
+      },
+      "timezoneSaved": {
+        "text": "Mostrar zona horaria guardada. Los relojes de todo el programa ahora utilizan esta configuración.",
+        "source_sha256": "248e61ea11fdc0042999e7d1affd02f0a6ea9ce8579dcd2e78c5000eeee82715"
+      },
+      "timezoneResolved": {
+        "text": "Ahora se muestra como {{timezone}} ({{offset}}).",
+        "source_sha256": "ef32794eb6c7894d03ac05425aa2b733cd81dfb67122c62027145a8f3b68d140"
+      },
+      "preferredIdpLabel": {
+        "text": "Proveedor de identidad preferido",
+        "source_sha256": "1d732eef763a1567f68f90bee418dfd5466dc355559622879408bc701328318b"
+      },
+      "savePreferredIdp": {
+        "text": "Guardar proveedor preferido",
+        "source_sha256": "6bd9e1245bc0c122758e00c730a3155c02d9cdb921b9587b5ca79fd3bb049a2f"
+      },
+      "gridReportExportTitle": {
+        "text": "Exportación de informes de cuadrícula",
+        "source_sha256": "5e639e17dc2104202bc20b14cfcbf33af06423466379320af5620b4c6b223b11"
+      },
+      "orgNameLabel": {
+        "text": "Nombre de la organización (opcional)",
+        "source_sha256": "208adf551606fb61da011c6c6da4e4cf977c8891034ba5167c2c1d637d7cee33"
+      },
+      "confidentialityNoticeLabel": {
+        "text": "aviso de confidencialidad",
+        "source_sha256": "c9dd3bba7545c62a0c8c5bc72904e11aef04bf5bb863b5b7fd4b9fb9dcc9af94"
+      },
+      "saveReportExport": {
+        "text": "Guardar informe Exportar preferencias",
+        "source_sha256": "50c2c052d6a427a16abc44d3decbc652a3a77b6a4bde24102791679539cdfcb2"
+      },
+      "saveSettings": {
+        "text": "Guardar configuración",
+        "source_sha256": "768c232359516aac85267a63944e3b13a79784adf0251aa5623ca48ec74d596f"
+      },
+      "saving": {
+        "text": "Ahorro...",
+        "source_sha256": "bd1a2678f33a5f7e4b7a9cff984efe1a82544bb949dc70ae4923541617efb4f1"
+      },
+      "saveSuccess": {
+        "text": "¡La configuración se guardó correctamente!",
+        "source_sha256": "a0da21e695e685b5669d3ca5433dd1419ef53de66155bc19d3cfbe3b64e30c8c"
+      },
+      "saveFailed": {
+        "text": "No se pudo guardar la configuración. Por favor inténtalo de nuevo.",
+        "source_sha256": "a9c2fc69d5914a0d43a8069c58caad447c85307874f41efa653d10b5f80ab668"
+      },
+      "syslogEnable": {
+        "text": "Habilitar el reenvío de syslog",
+        "source_sha256": "6e6ba37fb71cf213c1e384fcb072be2f1b6c7fae9cc606c75d7df5c3c55dfdb1"
+      },
+      "syslogCollectorHeading": {
+        "text": "Conexión de colector",
+        "source_sha256": "01542b90e301243a8cb98e934cace02987bcd47d5f97bfc5958961a0cb266cd8"
+      },
+      "syslogHost": {
+        "text": "Anfitrión coleccionista",
+        "source_sha256": "6746544a57002c68a408332082bcd003b713eb533e2c919c07bba245358d115b"
+      },
+      "syslogHostHelper": {
+        "text": "Nombre de host o IP del recopilador de syslog",
+        "source_sha256": "6b74fc21dc6b9747da7af99fb614fca1cf0f0b00664eaa9e055c84becdcf9c30"
+      },
+      "syslogPort": {
+        "text": "Puerto",
+        "source_sha256": "3915eac6006800f37b3f64c1e5d7fb023083adf29eb8782e22ea0ddbe3f80e01"
+      },
+      "syslogPortHelper": {
+        "text": "514 (UDP/TCP) / 6514 (TCP sobre TLS)",
+        "source_sha256": "cdfefb523bb4bb3e8e0a936ee0419bb5a5b3de6105d150018b0aa167a47a01ad"
+      },
+      "syslogProtocol": {
+        "text": "Protocolo",
+        "source_sha256": "fd399bf6bc7ba48cbe84119196623db91cbd4adca8b328deb2208764eaadec50"
+      },
+      "syslogFacility": {
+        "text": "Instalación",
+        "source_sha256": "5b7d51dc402422a6957afb4dc9220b4ec3f55d48344d81175bed982a46b67829"
+      },
+      "syslogFacilityHelper": {
+        "text": "Palabra clave de instalación RFC 5424",
+        "source_sha256": "0a27b88c6e7b9721ace84677b6a69a4cf4622f34f583c95bd394db6de2f8ea15"
+      },
+      "syslogTcpFraming": {
+        "text": "trama TCP",
+        "source_sha256": "dfe3a636a5228b3165db69b2d766754ef8c5d68ed504143fe60eac52dc86390d"
+      },
+      "syslogTcpFramingHelper": {
+        "text": "Cómo se delimitan los registros en TCP",
+        "source_sha256": "9f1eebbb88fb0809a5e976d4142409d85112bfde49f15bb45ed2f458a77e81b0"
+      },
+      "syslogAppName": {
+        "text": "Nombre de la aplicación (identificador)",
+        "source_sha256": "fc119a771ba41fbd96ed1600efdae340c2290ec8da73f4a08cb0ef7d7b180e32"
+      },
+      "syslogAppNameHelper": {
+        "text": "RFC 5424 NOMBRE DE LA APLICACIÓN; El valor predeterminado en blanco es el nombre del servicio.",
+        "source_sha256": "7b00ba78348f5163b9feb3e9879d8869061c5eeb3a3778439d26c4ead27c13f8"
+      },
+      "syslogTlsCa": {
+        "text": "Ruta del certificado TLS CA",
+        "source_sha256": "6a136e9288e48749af7b4cf31ed2f9a7ac44a6afb1e6179524e3966015180c04"
+      },
+      "syslogTlsSni": {
+        "text": "Nombre del servidor TLS (SNI)",
+        "source_sha256": "a6214060e67ab807f4ab93abcf36108738b75b9d1f41a68c961b04e1ccc912da"
+      },
+      "syslogSave": {
+        "text": "Guardar la configuración de syslog",
+        "source_sha256": "f731931f553d36fa8043d26ea900509fe752d6214333660cb02403724a54b5c9"
+      },
+      "syslogTest": {
+        "text": "Enviar mensaje de prueba",
+        "source_sha256": "82da38739ebe99ff8b2f5df1c890c5b57e986d7fd3cd41fe46beb00a595feadc"
+      },
+      "brandingTitle": {
+        "text": "Marca y estilo",
+        "source_sha256": "105ca43c600371d9a052d5bd675c1b324701c17bd2d4fc8c05e3cdf2e70b0e35"
+      },
+      "brandingIntro": {
+        "text": "Cargue un logotipo personalizado, establezca el nombre de la marca y configure el banner de clasificación y los colores de los avisos.",
+        "source_sha256": "b2b6df320947306304fccc637cac8786f6086a3938ee585f7374c9455c357ecf"
+      },
+      "brandNameLabel": {
+        "text": "Nombre de la marca (texto alternativo del logotipo)",
+        "source_sha256": "5a0eccf7181a732a136e27aef0782f66a0bcdb6f6b3ad14af0fce381803f3222"
+      },
+      "logoUpload": {
+        "text": "Subir logotipo",
+        "source_sha256": "9619a2d1af1324c385fccb0f0d836ea72e1a35bf43b57e0864bd8cab4e42b56e"
+      },
+      "logoHelper": {
+        "text": "PNG o SVG, máximo 512 KB.",
+        "source_sha256": "7cfce58df808c03413c7392ec395d3203d9cf6f63149579f8aa38fd4653d7091"
+      },
+      "classificationBanner": {
+        "text": "Bandera de clasificación",
+        "source_sha256": "84c6764507da7b8dfc45dea86e660fdb4fced5a7d6b9f84ffe04d646a7c89379"
+      },
+      "noticeRow": {
+        "text": "Fila de aviso",
+        "source_sha256": "4c38430376d4274785088aa0522193d7ec27e6222d70a94e9a8d2a7de307556b"
+      },
+      "accentColor": {
+        "text": "Color de acento",
+        "source_sha256": "c86ed6cd55c36b021884c7d06b1c98eb4b30197fc0f3963b25a93a42189bba9a"
+      },
+      "saveBranding": {
+        "text": "Guardar marca",
+        "source_sha256": "35914c543e01f79164893cd82bd6daa9f93f709cf336b7050d44814b50a0dcec"
+      },
+      "serviceLogsTimezoneLabel": {
+        "text": "Zona horaria de visualización del registro",
+        "source_sha256": "94b46787f8456c02aebd6cf95d79707ef5ef1aae7b19a791577053943d232dc7"
+      },
+      "preferredIdpHeading": {
+        "text": "Proveedor de identidad preferido",
+        "source_sha256": "1d732eef763a1567f68f90bee418dfd5466dc355559622879408bc701328318b"
+      },
+      "preferredIdpHelper": {
+        "text": "Preferencia personal para este navegador en la pantalla de inicio de sesión. Anula el valor predeterminado global (Control de acceso → Proveedores). Déjelo como Usar valor predeterminado global para seguir la configuración del servidor.",
+        "source_sha256": "6967475e39b796d4ca5f711164cb189ede64d511de228786206b8205786420bd"
+      },
+      "preferredIdpSaved": {
+        "text": "Proveedor de identidad preferido guardado para este navegador.",
+        "source_sha256": "caeb480f09fc880fbad7d5fcaa4826764d317a5e9155b28df30676b169681828"
+      },
+      "useGlobalDefault": {
+        "text": "Usar valor predeterminado global",
+        "source_sha256": "ceb014182c48233d619d3b237d01ae0902671b73cbd4fb736cfdb3c050fec248"
+      },
+      "gridReportExportHelper": {
+        "text": "Estos valores aparecen en la parte superior de cada exportación a CSV, Excel y PDF desde las cuadrículas de administración de este navegador. Se almacenan localmente para su cuenta de operador y no cambian la configuración del servidor.",
+        "source_sha256": "ccb794ebe082aced1e8838beb439108d8cd43387bfc3ce8a7c95cc1b40fc4133"
+      },
+      "reportExportSaved": {
+        "text": "Se guardaron las preferencias de exportación del informe.",
+        "source_sha256": "69a87a26edb45791c9c7af2b9f93dc4d63fa4f110b4e7c0f8de6d0a692dfd4fb"
+      },
+      "orgNameHelper": {
+        "text": "Se muestra como la primera línea en los informes exportados cuando se configura.",
+        "source_sha256": "2e6d2c5af6fba8052b7945100388e99c13a0fc946af0af726a953032042b46a8"
+      },
+      "confidentialityHelper": {
+        "text": "Ejemplo: \"Confidencial de la empresa: no distribuir\"",
+        "source_sha256": "6677656543e0acaf422eff862294a050a5541d8e339660815ec68dcec691e47e"
+      },
+      "openBranding": {
+        "text": "Marca abierta y estilo",
+        "source_sha256": "727b0cb99cccbc5f26e5e4e9ebc52d5484d42638d92f630754d395b7ea346b67"
+      },
+      "brandingSectionHelper": {
+        "text": "Cargue un logotipo personalizado y configure los colores del banner para la página de inicio de sesión y el encabezado de la aplicación.",
+        "source_sha256": "a422bd74c419a98099b0235d63182cb7a2783679d36cc0d00602dcafda747d54"
+      },
+      "syslogSiemHeading": {
+        "text": "Formato de salida SIEM",
+        "source_sha256": "3a913ff9d1ef134f14593f0d581b27b324c9168544daa76b655d01ed6d8785ec"
+      },
+      "syslogSiemFormat": {
+        "text": "formato SIEM",
+        "source_sha256": "356c6074045670a682396d1b3e82155db39b89fc80a85efd4cad39b1325fb3f3"
+      },
+      "syslogSiemFormatHelper": {
+        "text": "Forma de carga útil para eventos reenviados (RFC 5424 JSON, CEF, LEEF o texto sin formato)",
+        "source_sha256": "77da1f441574508341229829d370ba5b07c898eb6f3babfdf7c3b7cd51f08b3b"
+      },
+      "syslogOptionalFields": {
+        "text": "Campos opcionales predeterminados",
+        "source_sha256": "e37fdfb6a1946e066650cd5c8190b3be86e6f1278b89420cd9a985a34efd7ba6"
+      },
+      "syslogTlsHeading": {
+        "text": "Configuración TLS",
+        "source_sha256": "d6a1061ee25b9a98fc5e06c75d80723dff0f79db4cadc29176e0768adcd7d52b"
+      },
+      "logoUploadTitle": {
+        "text": "Subir logotipo del producto",
+        "source_sha256": "eab42f86c10269ac86c1b3f382e6fd2a3b375e780fcd70d123ab5f673eb51c9f"
+      },
+      "logoDropHelper": {
+        "text": "PNG o SVG, máximo 512 KB. Suelte un archivo o presione Entrar para explorar.",
+        "source_sha256": "a1b327fb21e591d38bfd156316ea5bbef40733113544b02c3d80de46c27d822f"
+      },
+      "logoUrlOverride": {
+        "text": "Anulación de URL del logotipo (opcional)",
+        "source_sha256": "a91140329b24534c4425f8addbe850850a8084ed465b0ca799f923e0e4742460"
+      },
+      "styleHeading": {
+        "text": "Colores de banner y cromo.",
+        "source_sha256": "10697bce381f48628aa23759006769ece8f25988eee30a784cb9412503d59705"
       }
     },
     "systemsList": {
@@ -12481,33 +12745,28 @@
       ]
     },
     "settings__access-control": {
-      "bullets": {
-        "0": {
-          "text": "0",
-          "source_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
-          "note": "EN draft from Tier1 walk fill; formal register pending"
-        },
-        "1": {
-          "text": "1",
-          "source_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
-          "note": "EN draft from Tier1 walk fill; formal register pending"
-        }
-      },
-      "helpAriaLabel": {
-        "text": "Help Aria Label",
-        "source_sha256": "403861886732e2c82894ddbc65896fc1af3bcee3cce6127bfee3dd54e143c69e",
-        "note": "EN draft from Tier1 walk fill; formal register pending"
+      "title": {
+        "text": "Control de acceso",
+        "source_sha256": "3a294269fa339b6923279c02c9c73a32d64abbd0cf7bc7fad44e860c6f160892"
       },
       "summary": {
-        "text": "Summary",
-        "source_sha256": "8e76a94ac8320d515375e625bef1829238b097ecbd33611b59eeefd4ffefebfb",
-        "note": "EN draft from Tier1 walk fill; formal register pending"
+        "text": "Principales de IAM locales, catálogo de roles, reglas de IP de acceso remoto, auditoría de inicio de sesión y sondas de autenticación.",
+        "source_sha256": "ce0d24b57438a8553f0d8b5f346435d23d227692de807330cd425244ad8c9e79"
       },
-      "title": {
-        "text": "Title",
-        "source_sha256": "7e8cd2056da73a7fefb6cd91f4e5d199d08d9058c517b9a2476b1b520324d674",
-        "note": "EN draft from Tier1 walk fill; formal register pending"
-      }
+      "helpAriaLabel": {
+        "text": "Abrir ayuda para Control de Acceso",
+        "source_sha256": "b3ca0eb38a9a63c26ee83ee2566ae537708df3a99dcd5772110ed1c83a594428"
+      },
+      "bullets": [
+        {
+          "text": "Las pestañas cubren principios, roles, políticas de inicio de sesión, reglas de IP, información sobre amenazas y pruebas de conectividad.",
+          "source_sha256": "7cfebc7400b66c542065db62d40b9f42e4c0ea000176abb2dd477f134f2b1e0b"
+        },
+        {
+          "text": "Los límites de tiempo de espera de sesión y cierre de sesión forzado se encuentran en Tiempo de espera de sesión y cierre de sesión.",
+          "source_sha256": "132c5818269749e6e2df5b5b0560ca30e9c172bdb4698c7708737581b4e7342d"
+        }
+      ]
     },
     "settings__crypto": {
       "summary": {
@@ -12618,6 +12877,80 @@
         "text": "Title",
         "source_sha256": "7e8cd2056da73a7fefb6cd91f4e5d199d08d9058c517b9a2476b1b520324d674",
         "note": "EN draft from Tier1 walk fill; formal register pending"
+      }
+    },
+    "settings__general": {
+      "title": {
+        "text": "Configuración: generales",
+        "source_sha256": "d6a739cf65e5c5296f96bca626e2b13937cb90fa0755195dcf20735ea082500d"
+      },
+      "summary": {
+        "text": "Opciones operativas para todo el servidor: URL anunciada, multiinquilino predeterminado, comportamiento de provisión automática, umbrales de desviación y token de API de administrador.",
+        "source_sha256": "6cb687b9f157ed8f61c42bb898591d5cdddf4ba4702bf4aa8d20e4bf7eb07e2e"
+      },
+      "helpAriaLabel": {
+        "text": "Abrir ayuda para Configuración – General",
+        "source_sha256": "ee854155cef367a97c628f486ce1af9bd49ba98d52e12ea7e932e8da12096e08"
+      },
+      "bullets": [
+        {
+          "text": "Los cambios aquí afectan a todos los inquilinos múltiples a menos que se anulen a nivel de grupo, máquina o identidad.",
+          "source_sha256": "0833431c3bc05d777199de471933edaaadd5d6905abae6f11fc7d26aeda1a596"
+        }
+      ]
+    },
+    "settings__tls": {
+      "title": {
+        "text": "Configuración: TLS",
+        "source_sha256": "525f4eb0b4f4f72cdfad1ccd8e2612071a4d471cb4c1171c6df3dd8d377eaecb"
+      },
+      "summary": {
+        "text": "Certificados de escucha HTTPS y opciones de autenticación de cliente para conexiones de agentes y administradores.",
+        "source_sha256": "99df96065784832fdefeb30b451e4ba3647430b4f082165e2a8d429586fcce26"
+      }
+    },
+    "settings__server": {
+      "title": {
+        "text": "Configuración: identidad del servidor",
+        "source_sha256": "56ebe939465cdc8bc4be17d6efb0853f1e5f708f538a2b9595b54cf157d56d5a"
+      },
+      "summary": {
+        "text": "Cómo se identifica este servidor ante los agentes y operadores (nombre para mostrar, GUID de la máquina, URL pública).",
+        "source_sha256": "6458ad225ada796454099aded84402ef06553bc616e14f44294ba4f93111e4e2"
+      }
+    },
+    "settings__manifest": {
+      "title": {
+        "text": "Configuración: manifiesto",
+        "source_sha256": "3039951ad700d755bcb7f6006def4679d9b481df6de1ff6321ed2a25045b78ac"
+      },
+      "summary": {
+        "text": "Vista de solo lectura de las claves de configuración de la aplicación que el demonio lee en tiempo de ejecución. Utilice la CLI del configurador para cambiar los valores.",
+        "source_sha256": "6bf7a8d1bd0744799da259f82654a2c98f0647d333e1de3be28accf142f4b731"
+      }
+    },
+    "settings__mitm": {
+      "title": {
+        "text": "Configuración: proxy MITM",
+        "source_sha256": "18a51aa9ec03f82d484295ab1c0f1518f978d6db7eab011e3c17f5c92114240a"
+      },
+      "summary": {
+        "text": "Integración opcional de mitmproxy para depurar el tráfico del agente en desarrollo. Deshabilitar en producción.",
+        "source_sha256": "84bba7f0e9698254a54a2c1faa6b35b46d6a1b412382bb377012848e30deb0b3"
+      }
+    },
+    "about__open-source-credits": {
+      "title": {
+        "text": "Créditos de código abierto",
+        "source_sha256": "2f3759e2dfda6c2052567af1a495bd716f90a93a373c564846055d6cb9e44a81"
+      },
+      "summary": {
+        "text": "Componentes de código abierto de terceros incorporados en AIC Server, con identidad de licencia y texto de licencia cuando se recopilan. Esta página permanece en inglés de EE. UU.",
+        "source_sha256": "1575e81840eb26e52ed510bfabd735b7a5c7c254eb55d6a74600791d0453263c"
+      },
+      "helpAriaLabel": {
+        "text": "Abrir ayuda para créditos de código abierto",
+        "source_sha256": "19b0e8a9e0b9c3264701035a398ced6c14e1b936cf59d249a93442b0412596e8"
       }
     }
   },

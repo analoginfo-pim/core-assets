@@ -272,8 +272,102 @@
   "sectionLanding": {
     "desc": {
       "blocked_attacks": {
-        "text": "Blocked Attacks",
-        "source_sha256": "158d3c3ef5abfd9cf13b3894307ed3778a4d5eed818545635579dc7785c1e124"
+        "text": "Blocked attempts and attack-origin heat map for this server.",
+        "source_sha256": "ef4984b25cd6ba4200d9d6cd3c1c265f86337d293ae71e87b847ce02a0bd27e9"
+      },
+      "general_settings": {
+        "text": "Advertised URL, default multi-tenant, drift thresholds, and admin token.",
+        "source_sha256": "8b2b089765c675e8121b0f5b530508ab4e2d6d98ee5617aef00b8913af88c251"
+      },
+      "company_profile": {
+        "text": "Organization names and support contacts used in notices and disclosures.",
+        "source_sha256": "f899521721ae6056677384bfeba01a0cb1477a34461b539d12557410a457b170"
+      },
+      "branding_style": {
+        "text": "Upload a custom logo for the sign-in page and application header.",
+        "source_sha256": "346e502f09bb2a3317c22fa2905a05204b5e2d3708c50b89d9eea60ea7ff9cf7"
+      },
+      "initial_setup_wizard": {
+        "text": "Guided runbook for a new enclave: company, compliance, encryption, email.",
+        "source_sha256": "0f006f002c3f489fab87efcb719e1732dd381e5b314558ea22f7461688c7e45a"
+      },
+      "access_control": {
+        "text": "Local IAM principals, logon policy, IP allow/deny rules, and sign-in audit.",
+        "source_sha256": "f2a92c9cf2933ed2a988ff54a8cbb9013e00517c0fd1b820039647ac621d107e"
+      },
+      "session_timeout_and_logoff": {
+        "text": "Idle and absolute session limits, refresh rotation, and forced logoff hardening (AC-12 / SC-23).",
+        "source_sha256": "83428520e4c80872277330f723b847283fa30c5162b05d7c33e3c12b613dc3d6"
+      },
+      "tls_security": {
+        "text": "HTTPS listener certificates and client authentication.",
+        "source_sha256": "f71c639e88b1734a5bdaccbce070ff6c86c14e910dd9f0b8a8a778cc3ebedbf8"
+      },
+      "server_control": {
+        "text": "Display name, machine GUID, and public URL identity.",
+        "source_sha256": "a17e13e710df53065c2a83b404a994a84e5f0f95f35b03eda7c4a659c06960e6"
+      },
+      "encryption_settings": {
+        "text": "FIPS posture, provider catalog, backup & restore, and optional HSM linking.",
+        "source_sha256": "ba850145ed4a948a7bf79cd29d2dbd1b47e24a8b1da0dac5558feb68defe8d6f"
+      },
+      "encryption_key_sets": {
+        "text": "Server default and named keys; rotate and re-encrypt group data after key changes.",
+        "source_sha256": "fcb8c9a59c225e537a64bd855bd7a3eec5d12644c80c20d3b9c16a2d2435a52a"
+      },
+      "hsm_connections": {
+        "text": "Register PKCS#11 vendors and connection profiles.",
+        "source_sha256": "e522fc85b3c509e61674ad0429ffce8df2ddc9ee8cb6323b5d490035ab9b1c4e"
+      },
+      "syslog_forwarding": {
+        "text": "Forward EPIM events from this server to a remote syslog collector.",
+        "source_sha256": "7bfce338cfec390330de3e5f7109da6cf80bcc5bd5c2dfbcfe1dd3a5e1212634"
+      },
+      "app_manifest": {
+        "text": "Read-only view of app-config keys the daemon reads at runtime.",
+        "source_sha256": "b05991a3615e91a71780be581614751b77dd694d0cc57ba6e044003afb6035f3"
+      },
+      "mitm_dev_only": {
+        "text": "Optional mitmproxy integration for development debugging.",
+        "source_sha256": "724541d770d749c8acfd8248c1f60e14cfd961a6f14676e7d3921fbc96beb261"
+      }
+    },
+    "intro": {
+      "platform": {
+        "text": "Configuration for this AIC Server process: operational settings, TLS, identity providers, crypto providers, and HSM connections.",
+        "source_sha256": "5d261d6667101b66f45f4be99de5acaad2e232a6c7c441473c1285577aa4c042"
+      },
+      "agent": {
+        "text": "Start here to issue a settings file, provision a fleet, or change the defaults those files carry.",
+        "source_sha256": "682c2e35da3b5458385e1813ac03faef7e8cb2a3b90e64bc03bffcc70f7ec205"
+      },
+      "lab": {
+        "text": "Read-only manifest inspection, lab-only MITM proxy, RBAC test mode, and demo data utilities. Not for production deployments.",
+        "source_sha256": "bcabf31f030d2f2db339629921018711898ae437259a954a8c663e9feed5a34f"
+      },
+      "access": {
+        "text": "Access and identity surfaces for this enclave.",
+        "source_sha256": "e2f8a299f5911a3822dafcb896e2e0c0ce4218715fe2d024310e7e6f302fab82"
+      },
+      "proxied": {
+        "text": "Proxied session and remote-access entry points.",
+        "source_sha256": "245f019017f8643f6993c5ae751e9059634a1705d7e32f94b89a4324757e5808"
+      },
+      "ot": {
+        "text": "Operational technology discovery and credential surfaces.",
+        "source_sha256": "4d4ba62633e0d205e30a0123103743f446f3fba861a2ab493ead6026a730c987"
+      },
+      "systems": {
+        "text": "Systems inventory and related operator tools.",
+        "source_sha256": "be143bb2ea45ab99721ab25381e03de9088ff4e5b289af48aacddcb034497738"
+      },
+      "auditing": {
+        "text": "Audit, evidence, and assessor-facing surfaces.",
+        "source_sha256": "74440d3a3924790dfadc5bc88d8fcce515dd51123052b94124e9a43df2e259ae"
+      },
+      "messaging": {
+        "text": "Templates, snippets, SMTP, and SMS settings for operator credential notify.",
+        "source_sha256": "9099c8f834ae1b834c7c5cee0228e31756447d67bef595bbfbf4a271043c5b86"
       }
     }
   },
