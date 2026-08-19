@@ -496,6 +496,32 @@
       ],
       "draft_tags": [],
       "notes": "Source changed 2026-08-18 (hash 613dfb5c6b2f → ab84fcb5ebbf). Source changed 2026-08-18 (hash ab84fcb5ebbf → d26038c7ad49)."
+    },
+    {
+      "id": "spa.favorites-header-bullets",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "ui-chrome",
+      "title": "Favorites page header bullets array shape + permission chrome keys",
+      "added": "2026-08-19",
+      "updated": "2026-08-19",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/i18n/locales/en/pages.json",
+      "source_sha256": "1c687c29f35fa45a1e3b194bb42d449918e2b9de87a55474ba9767ddf793b0bd",
+      "product_route": "/favorites",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans"
+      ],
+      "draft_tags": [
+        "de",
+        "fr",
+        "es"
+      ],
+      "notes": "Converted headers.*.bullets[N] to nested bullets arrays for i18next; restored EN/DE favorites copy; added permission.httpStatus/serverCode/unavailableDetailed for DE/ES/FR. Draft catalogs do not close."
     }
   ]
 }
