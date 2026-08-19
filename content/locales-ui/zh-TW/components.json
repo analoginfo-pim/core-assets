@@ -296,12 +296,12 @@
   "sectionLanding": {
     "desc": {
       "access_control": {
-        "text": "存取控制",
-        "source_sha256": "c3ceee351e98114e44cbeadab233966c7ecb2a4685d750b683c4c9421b1fd40c"
+        "text": "本機 IAM 主體、登入原則、IP 允許/拒絕規則和登入審核。",
+        "source_sha256": "23492d1a54c3da90ef78959a5fe003f9b827ba5bdd925c9d01a4029c1177261a"
       },
       "app_manifest": {
-        "text": "應用清單",
-        "source_sha256": "eac077c3004485bac806fcb3fef313ad22fb1a1790e5a067255a83bcf0310b0f"
+        "text": "守護程序在運行時讀取的應用程式配置鍵的唯讀視圖。",
+        "source_sha256": "9c22393b42d4f2848e23ada17f388cf4cefdfc4996b8d6ec16ba8c60c7ae7fde"
       },
       "approvals": {
         "text": "核准",
@@ -312,16 +312,16 @@
         "source_sha256": "cbf902bb140934715389cd7cfbcb4093fc566b2692ad62e9b6cc1c657e8a3a11"
       },
       "blocked_attacks": {
-        "text": "阻止攻擊",
-        "source_sha256": "158d3c3ef5abfd9cf13b3894307ed3778a4d5eed818545635579dc7785c1e124"
+        "text": "該伺服器的阻止嘗試和攻擊來源熱圖。",
+        "source_sha256": "a184f714b365b8c85832eec147c7ffec82626f3696a2b45d23dee003ca2d9e0a"
       },
       "branding_style": {
-        "text": "品牌風格",
-        "source_sha256": "27e99972ee65776695b59f790d041e20862ce3f09fb118935b885bc21bbfff4f"
+        "text": "上傳登入頁面和應用程式標題的自訂徽標。",
+        "source_sha256": "b328f97e3060285554b41bb6f8c5c2c8f3c67a099431706cb3caf27b725d575b"
       },
       "company_profile": {
-        "text": "公司簡介",
-        "source_sha256": "72e8825dea3b0030335bfaa60ef0cb0d432062b69ce6d0229f8a50dab34cdf08"
+        "text": "通知和揭露中使用的組織名稱和支援聯絡人。",
+        "source_sha256": "52574a676f632bf19bc278b54cfa9b139f962b96025693e9fc7e04051a3e08ed"
       },
       "connect": {
         "text": "連接",
@@ -356,28 +356,28 @@
         "source_sha256": "14aefeb74eaebd3a30730d8394d9c8f626c7a6663b1e6b5c8b98752ac5c79c40"
       },
       "encryption_key_sets": {
-        "text": "加密金鑰集",
-        "source_sha256": "3dee651cd141de927e1bc01bba0dce1b72956e9d93ffcd6a951a6ddb5cf4daac"
+        "text": "伺服器預設鍵和命名鍵；密鑰更改後輪換並重新加密群組資料。",
+        "source_sha256": "97fda7f77b5cca5c99e1f41c57df41d933da064fa1db34f60bbfd62a95897ca1"
       },
       "encryption_settings": {
-        "text": "加密設定",
-        "source_sha256": "2d0d71510d56b96e68a89093a3e877a211aca691a15dcb51092515269fe0cbbf"
+        "text": "FIPS 狀態、提供者目錄、備份和還原以及可選的 HSM 連結。",
+        "source_sha256": "f1dfa31fdb3ae46aa861db3443e13cf52d5f0eb3037ca78ad21e6c795253742f"
       },
       "entitlements": {
         "text": "權利",
         "source_sha256": "2cc79c9e300d3cb5cb811eea6c2c28a43151fba8bf3c7634be12213a89ffc399"
       },
       "general_settings": {
-        "text": "常規設定",
-        "source_sha256": "de322f87b5f5957b54dc467054983c18cbd04a213066155347d00d04b34215e2"
+        "text": "公佈的 URL、預設多租戶、偏差閾值和管理令牌。",
+        "source_sha256": "41081af5159fc6af00370c384562ac8a5bd950d268836e190c9bd3bb038640a3"
       },
       "hsm_connections": {
-        "text": "HSM 連線",
-        "source_sha256": "09bd2ba559d5525e987fd4a6796c9f880cb632f0e1dad8299d07f805ac0af10a"
+        "text": "註冊 PKCS#11 供應商和連線設定檔。",
+        "source_sha256": "8b5ced9cf39f8168a44e4923a61425921c3e216f391366109bb87a976b6ccc2f"
       },
       "initial_setup_wizard": {
-        "text": "初始設定嚮導",
-        "source_sha256": "3c8dfed504197047eba04c9fb673432d2a39d6e0c4bd2335d378ceba4be63648"
+        "text": "新飛地的指導運作手冊：公司、合規性、加密、電子郵件。",
+        "source_sha256": "0b5cf0f170ff9e91d9b2ad6b1551693b34aa5400667f59646361dbb017f619a1"
       },
       "inventory": {
         "text": "存貨",
@@ -396,8 +396,8 @@
         "source_sha256": "5353d591fd9f2dbaf88438cb593c42e8b91236fd4a0381e42f86be8321570975"
       },
       "mitm_dev_only": {
-        "text": "僅限中間人開發",
-        "source_sha256": "fbd1dda98841191e90afdd843ab14fa02ae43b2f0051b9886567b21fe8e58366"
+        "text": "用於開發調試的可選 mitmproxy 整合。",
+        "source_sha256": "4d0193e379bc7f026dfeacaff4f7bcefe632f34a8c1f3df62ee648fa36dd9e7e"
       },
       "multi_tenancy": {
         "text": "多租戶",
@@ -432,8 +432,8 @@
         "source_sha256": "7946a3c57900c0161ebb446d0e12581a1d471e1e756286511f16d2024bc8333c"
       },
       "server_control": {
-        "text": "伺服器控制",
-        "source_sha256": "1393a2603fa7d5128cc6d79cad71fad037e3d966202b2fed597bb900b25f41e2"
+        "text": "顯示名稱、電腦 GUID 和公用 URL 識別。",
+        "source_sha256": "a5cd2a128e7641ab14510636b99c930e0b5c392f33860eb9ac2200f349c45c10"
       },
       "session_control": {
         "text": "會話控制",
@@ -444,8 +444,8 @@
         "source_sha256": "2627b4d32c12839a86cabeab7d569787d5f0d34bef8c1827449f005b46f1c530"
       },
       "session_timeout_and_logoff": {
-        "text": "會話逾時和註銷",
-        "source_sha256": "5a32768c1df3da4b3f4dc2e079c2704cdcd1cb15050152bfdf2829cd1981fcc0"
+        "text": "空閒和絕對會話限制、刷新輪換和強制註銷強化 (AC-12 / SC-23)。",
+        "source_sha256": "fe27dcc7d6d238e3d2939809d473faf41ef9e52446e89cee2ebacb1cc92b55c4"
       },
       "sessions_evidence": {
         "text": "會議證據",
@@ -472,8 +472,8 @@
         "source_sha256": "c7b91782a87fe871036bff00f23eceded5ad681021ac9734dc04bf06bffc369a"
       },
       "tls_security": {
-        "text": "TLS安全",
-        "source_sha256": "d0b55cc0b586c806e3b33d9157396a7d46677e6cd548fe2294d25de32fa538c7"
+        "text": "HTTPS 偵聽器憑證和用戶端驗證。",
+        "source_sha256": "0065a5a0ccca40769e6cc5e1490af29773be0640d58d9351c7180c9d75c43edf"
       },
       "vm_management": {
         "text": "虛擬機器管理",
@@ -538,6 +538,10 @@
       "server_disclosures": {
         "text": "伺服器洩漏",
         "source_sha256": "33c20751c2f32e95da1ace42aecc6cdce90a5780828479eea52f26958b002e3d"
+      },
+      "syslog_forwarding": {
+        "text": "將 EPIM 事件從此伺服器轉送到遠端系統日誌收集器。",
+        "source_sha256": "ec0c45b0cd4faf173a949559608f96e82ef6eb8c824d2dc5daee1cb833f3ce52"
       }
     },
     "group": {
@@ -616,6 +620,18 @@
       "agent": {
         "text": "代理人",
         "source_sha256": "11b39c93777e8f1f3983bdba7c72b22fe68cfea20c677e9de53e17cb7dbfb19f"
+      },
+      "platform": {
+        "text": "此 AIC 伺服器程序的配置：操作設定、TLS、身分識別提供者、加密提供者和 HSM 連線。",
+        "source_sha256": "4933c748c00b454caf3b9691c4b818748ecec03bcac793c19236e64f010e40ea"
+      },
+      "access": {
+        "text": "該飛地的訪問和身份表面。",
+        "source_sha256": "d2e9e0b7a2622c9f3aa76afefb26aaaac0f227975d153590c94eeffa96b468a9"
+      },
+      "auditing": {
+        "text": "面向審計、證據和評估者的介面。",
+        "source_sha256": "a30bd306d7f540bca56107c731526fa74ad182dc8b9ad5eccae6460b1de5d13d"
       }
     }
   },
@@ -721,6 +737,48 @@
     "classificationBannerAria": {
       "text": "密級橫幅",
       "source_sha256": "ea43f5147b63d762baa0554a0a5bcfd71c6e176f55529011c713a5f0662e0118"
+    }
+  },
+  "permission": {
+    "httpStatus": {
+      "text": "HTTP {{status}}",
+      "source_sha256": "1ff765218238b55d8a52932e2f7f3e7d5795e71613a4877f9898b12a070d02f5"
+    },
+    "serverCode": {
+      "text": "代碼 {{code}}",
+      "source_sha256": "5cba9c18c6796cabf47e0bcbf16e4f419ec20bcbf7e7ee290b37807503126071"
+    },
+    "requiredPermission": {
+      "text": "權限 {{permission}}",
+      "source_sha256": "21bb6439d4d2994588728c105cf52d4c6bc9dd76d4c8e2252d7b214fd736ed3f"
+    },
+    "requestId": {
+      "text": "要求 {{id}}",
+      "source_sha256": "2080b094bffdeaaa98c2e81ca3225dc161ac0e557956a29eaaefefd8f0aef9ae"
+    },
+    "unavailableDetailed": {
+      "text": "無法驗證對 {{resource}} 的存取。伺服器未成功回應。請重新整理頁面或再試一次。",
+      "source_sha256": "111fc8236203cb86bdfec327df1a26dd1d3160d0ac304af18e89ba28c3d4731f"
+    },
+    "denied": {
+      "text": "您沒有檢視 {{resource}} 的權限。若需要存取，請聯絡管理員。",
+      "source_sha256": "af6b19b1b262212bf0ac75d46bdcbefed2c7341d189a4686cc2e64dcf2d6f029"
+    },
+    "unavailable": {
+      "text": "無法驗證對 {{resource}} 的存取。伺服器未回應。請重新整理頁面或再試一次。",
+      "source_sha256": "fbd742fa6153cfb8d717dfe9e7e10d795185184f43f0ace26e35711760ea5c14"
+    },
+    "defaultResource": {
+      "text": "此頁面",
+      "source_sha256": "270e420dd35f9c27db37b181c6ed4e478216044423f94afbfe6ca4946523af2b"
+    },
+    "loadingLabel": {
+      "text": "頁面權限",
+      "source_sha256": "c08dbfdf9887b0bcfd833ef0f1c44c83ecc3911440b80abb5c853b5389a1d8d5"
+    },
+    "loadingAria": {
+      "text": "正在載入 {{label}}",
+      "source_sha256": "e3a1d5c26a1c67c9dd315de464e8eb146b6485f5a51b6833665ed696a7d0d1d1"
     }
   }
 }
