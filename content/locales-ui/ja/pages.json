@@ -4150,8 +4150,8 @@
         },
         "auditor_seats": {
           "label": {
-            "text": "プリューファー / エンゲージメント シッツェ",
-            "source_sha256": "6441f3225384a52897a6b311b427d9383ceb29aabbd33d25fed68babc03b912f"
+            "text": "監査役・エンゲージメント席",
+            "source_sha256": "9331993f2b610d2c011f5b4eafa6e9ebbdbb98369756829bb1d4f996d996ef41"
           },
           "summary": {
             "text": "Binder-Instanzen または gleichzeitige Pruefersitze。",
@@ -4264,8 +4264,8 @@
             "source_sha256": "4965edda015d00632e1d12d0b1e7da1b6e2d75356a51beda9f7497f9a4a35337"
           },
           "summary": {
-            "text": "製品モジュール (PAM、Pruefer、HSM、Jump-Lastausgleich、weitere)。",
-            "source_sha256": "4f9b681ba4f032ea9588f740fb1bc2be8af311947ef833cc44477db59711c40f"
+            "text": "製品モジュール (PAM、監査、HSM、ジャンプ ロード バランシングなど)。",
+            "source_sha256": "351284fe72cc93a4c5331d1f25cd0926f4ffdcc334bb7304cf91220495a37e65"
           }
         },
         "msp_pool": {
@@ -9434,8 +9434,8 @@
         "source_sha256": "9aadae742f3de0a54f4002321505563a8fc2bc763fe66a63a5e8930ecbd1b34d"
       },
       "detailRecordedOne": {
-        "text": "「{{title}}」 eingetragen の Verwaltung erfasste Bestaetigung の Eine。",
-        "source_sha256": "993443a75e94a34f8feeb276f9148edf974860c4cc75402442671d83e82d4a81"
+        "text": "「{{title}}」について管理者が記録した確認が入力されます。",
+        "source_sha256": "e983f360b1683c3cede6c7da558366f05f2434e3a9fa4401bd657d463258e3af"
       },
       "detailRecording": {
         "text": "ワイルドアーファスト…",
@@ -10138,8 +10138,8 @@
         "source_sha256": "9ad3072e2c46a75d77cca266b5c7048a569d23671b3d46615d2b6857800fb143"
       },
       "workforceEmployingOrgHelp": {
-        "text": "Pruefer fragen bei Auftragnehmern nach the Unternehmen、sie beschaeftigt。 Tragen Sie es for jeden Auftragnehmer a.",
-        "source_sha256": "202641ec62b6e3a4f6ed10209ae89844a25905a69c81dc644bd05a0cc007cce6"
+        "text": "監査人は請負業者に対し、どの会社が雇用しているのかを尋ねます。契約者ごとに入力してください。",
+        "source_sha256": "6850344f3e7abd4b1d38909d53e09a02ab5ac757665cbef043d8b8f66a679b4d"
       },
       "workforceEmpty": {
         "text": "Nobody is on the roster for this filter. An empty roster is not a completion record — nothing has been assigned and nothing has been affirmed.",
@@ -10308,8 +10308,8 @@
             "source_sha256": "2f582a86171d1efe6d366717f7ff09444aaac44bcc469ad35a4c7de6f00e12b3"
           },
           {
-            "text": "Historischen スロット 0 は、erste rotierte Passwort Nutzen 用です。 aktuellen Wert の leer lassen。",
-            "source_sha256": "010fd695560ff8078cb04fc70ff8a21f905306fa297be57e397c3c4c68114abe"
+            "text": "最初にローテーションされたパスワードには過去のスロット 0 を使用します。現在の値を空のままにします。",
+            "source_sha256": "baaf28380cdcee6cb11fad10b295e474b4214ab46ac58e48bdfbad9d63c0d04a"
           },
           {
             "text": "Vollstaendige Identitaetsverwaltung bleibt auf the Seite Identitaeten.",
@@ -10335,16 +10335,16 @@
       "bullets": {
         "text": [
           {
-            "text": "Verfuegbar は、jeden angemeldeten lokalen ユーザー、einschliesslich Assessor、および Endbenutzer-Demo-Rollen 用です。",
-            "source_sha256": "441500f297b296262e14b1db99f7236c034ec6b864e5f3dba93cccaab1356a0e"
+            "text": "評価者およびエンド ユーザーのデモ ロールを含む、ログインしているローカル ユーザーが利用できます。",
+            "source_sha256": "69259be1c6a0a987689fdde4862e36fa47b8674695bc7ecf6d6a3cde907cdba0"
           },
           {
             "text": "Diese Enclave-Identitaet のパスワードおよび MFA は、Aenderungen のゲルテン ナーです。",
             "source_sha256": "a4664420118d1574ab3f741ca917345b3ab7970e3e0fc4878f5ae30c6a5f0fdd"
           },
           {
-            "text": "Zugriff & Identitaet の管理上の利点については、管理者が責任を負います。",
-            "source_sha256": "e3aeb95b8ce7cdeabc7d07944b4facd30a53ff69737f5bef914a5e9613e678ab"
+            "text": "ロールで許可されている場合、管理ユーザー管理は「アクセスとアイデンティティ」の下にあります。",
+            "source_sha256": "39576912af4cbc8e9335357d5b0c8256518a0fef41a5830b9cfcf975bd6c24a1"
           }
         ],
         "source_sha256": "c13039bdfca22034a4c0bfeab845660f9253f659c6993e0a8495ace95c53060c"
@@ -10374,8 +10374,8 @@
             "source_sha256": "1a360903ee28aaeca605ca0ae0908fb9d174a1df0bc516a20f99e9e4e4a20a05"
           },
           {
-            "text": "Jump-Flottekapazitaet および Probe-Platzierung liegen unter Proxy-Zugriff → Jump & Kapazitaet → Jump-Flotte & Lastverteilung (/pam/jump-fleet)。",
-            "source_sha256": "9ed20e63fb1cbd911847306982e5330a133ebecc48e7793fd7bb4d162e44a147"
+            "text": "ジャンプ フリートの容量とプローブの配置は、「プロキシ アクセス」→「ジャンプと容量」→「ジャンプ フリートと負荷分散」(/pam/jump-fleet) の下にあります。",
+            "source_sha256": "4cfc3f3dc457370867d0ffe8df6851e344e8c5a0c54699e00f3b5ea6499b75f4"
           },
           {
             "text": "レガシー /admin/hypervisors および /admin/vm-pools は、これより上です。",
@@ -10411,8 +10411,8 @@
       "bullets": {
         "text": [
           {
-            "text": "Oeffnen ueber コンプライアンスと Nachweise → 評価 → プローブ パック。",
-            "source_sha256": "e21880cf77d51f3bcf652650aae6e104d71fa759209a409fc454d61cc7ba51d0"
+            "text": "コンプライアンスと証拠 → 評価 → サンプル パックから開きます。",
+            "source_sha256": "5f4acea2da7b7771e61e55c676eaecab023eeaf54209b93a61cde9dc275e14cb"
           },
           {
             "text": "ダッシュボード プロの Maschine コンプライアンスと Nachweise → 評価 → Aktueller Compliance を強化します。",
@@ -10469,8 +10469,8 @@
       "bullets": {
         "text": [
           {
-            "text": "フレームワーク waehlen、um Anforderungen、および Relevanzzahlen から durchsuchen まで。",
-            "source_sha256": "33a69de150c84bddfd3596dd7f834ffa60547050b1fbeeae3bee169b41f545dc"
+            "text": "要件と関連性の数値を検索するためのフレームワークを選択します。",
+            "source_sha256": "b465cdf23338b8769fdf9844e4b9441118640098e95d36c95af7c0531c9855b3"
           },
           {
             "text": "Kundeneigene Verpflichtungen bleiben bei the Organisation.",
@@ -10500,8 +10500,8 @@
             "source_sha256": "4ae057de4425b523b3f1372a3f20bea6f100fc0dd3d3c27e62a4f0d78e31234e"
           },
           {
-            "text": "Der Workflow zeichnet Entscheidungen and Fristen auf — er ersetzt keine Rechtspruefung.",
-            "source_sha256": "10ee71d6bd9c82c2d8718759c5b98a15bfb65640e0b676d5ea74971b5bc597db"
+            "text": "ワークフローは決定事項と期限を記録します。これは法的審査に代わるものではありません。",
+            "source_sha256": "bf0cbf74ea7259f24b84e2baf15b1d8211986f0966515fd4725ae35c812fcc52"
           },
           {
             "text": "Statusfelder beschreiben Produktlieferung、kein Assessment-Urteil。",
@@ -10531,8 +10531,8 @@
             "source_sha256": "9e992718dfba6740a037391da63931d28241862ba0394b708fb170d4f3b9d7fd"
           },
           {
-            "text": "Pruefzyklen and Export erzeugen Liefernachweise — keine GDPR-Konformitaet or Zertifizierung.",
-            "source_sha256": "cab1f91fe3369d499133e9ef953880afe579eb52c4f1bb7489831b89f4450be7"
+            "text": "テスト サイクルとエクスポートにより納品証明が生成されます。GDPR への準拠や認証はありません。",
+            "source_sha256": "bac0e68aa28f4c060b2c57f9007c7c5b8a25c1270f8f18402e0ff44815f7d8b7"
           },
           {
             "text": "Unterscheiden Sie Veranttwortlichen-Eintraege (第 30 条要約 1) または Auftragsverarbeiter-Eintraegen (第 30 条要約 2)。",
@@ -10589,12 +10589,12 @@
       "bullets": {
         "text": [
           {
-            "text": "Oeffnen ueber コンプライアンス & Nachweise → 評価 → POA&M。",
-            "source_sha256": "c46b825284a6ca3958407fe992e8357e9345b1ef765d0b176ff34a7a59b52d07"
+            "text": "コンプライアンスと証拠 → 評価 → POA&M を通じて開きます。",
+            "source_sha256": "818f5a2ab460dcf3a25a4b031f3229a156bd43f5ae0ab4694b2e591bf4b9b514"
           },
           {
-            "text": "Anlegen および Edit erfordern Evidence-Request-Berechtigung; Anzeigen Nutzt Berichtskatalog-Ansicht。",
-            "source_sha256": "ccb7bd2528d639833a89276a52bd6dc7b92fe7a4ce8219318f46109cb9a48923"
+            "text": "作成と編集には証拠リクエストの権限が必要です。ビューではレポート カタログ ビューを使用します。",
+            "source_sha256": "64aeddabb67f60c5c6f4b99ef95966d4e1624507cb00aff120dfe9004e4614d5"
           },
           {
             "text": "ステータスとリシコはレーベンツィクルスフェルダーではなく、メット、コンフォーム、ツェルティフィツィエルトではありません。",
@@ -10620,8 +10620,8 @@
       "bullets": {
         "text": [
           {
-            "text": "Oeffnen ueber Sicherheit → Blockierte Angriffe、Favoriten または Start-Dashboard-Kachel。",
-            "source_sha256": "5f715162ee60766c667555d3a7a82cfc55abe96d80359816651fd22a69af78f0"
+            "text": "[セキュリティ → ブロックされた攻撃]、[お気に入り]、またはホーム ダッシュボード タイルから開きます。",
+            "source_sha256": "f8be14579ae28baaebe90db20c162b13f9bdef130b6858997ece89a902bb069b"
           },
           {
             "text": "Zaehler sind nur abgelehnte と fehlgeschlagene Ereignisse。リーレ・クエレン・ツァイゲン・フェルト。",
@@ -10756,8 +10756,8 @@
       "bullets": {
         "text": [
           {
-            "text": "Fuer Token-Mint は、設定で高度を確認するか、設定をインポートしてください。",
-            "source_sha256": "48bfdd323c21e7c5a11ff4e2e094ebaeba266ba0623f05836529b3443b750312"
+            "text": "トークンミントの場合、昇格は設定またはインポートされた設定で構成する必要があります。",
+            "source_sha256": "e4e6f3917d42d6246dd131cd220d906f55a7ecc47e81e18f583a21103c8ac440"
           },
           {
             "text": "Remote Non-Agent Local Elevation nutzt WinRM — not the Agent-Pipe — and widerruft danach automatisch.",
@@ -10795,8 +10795,8 @@
             "source_sha256": "6b77f99970bb34dcf8cbe71924d34df7e779d81a15de5e7076eaf349f82c53bb"
           },
           {
-            "text": "エクスポート (Word、RTF、Arbeitsmappe、HTML、Druck/PDF) bleibt sichtbar; erfordert バインダー エクスポート Berechtigung。",
-            "source_sha256": "f37632e6d5313a907fda1e8529525efc7e95e0da447c956e51ed898ff9b83b01"
+            "text": "ステータス チップはギャップ指向の — であり、決して偽のグリーン コンプライアンス スコアではありません。",
+            "source_sha256": "a6efdf26d3251274ba098a9143264f04435f7aef839f52d33cc43cb7f6747606"
           }
         ],
         "source_sha256": "fa40a6bf19ff8a58acdfdf6890c6fd7423785b59a2358cd79c21ebd6177e8369"
@@ -10880,8 +10880,8 @@
             "source_sha256": "bc4d0d1528bd15556242a54ef579bdd7c2c4367d30c72bdb7338f53a5b2af710"
           },
           {
-            "text": "Oeffnen ueber コンプライアンスと Nachweise → 評価 → Kontrollstatus-Verlauf。",
-            "source_sha256": "3255fa83be90a86c998134899918ded4f1cc024d98d9f9a7a6182cbbc97222ca"
+            "text": "コンプライアンスと証拠 → 評価 → ステータス履歴を管理して開きます。",
+            "source_sha256": "4cdd743afca2b9517c23c660bd83ebb6b86f1387635638fe9560387d8c17425b"
           }
         ],
         "source_sha256": "db88c96904f71f5f5f46a75f50928bdc87ecc5862d1f536c7fcc892ff7a1bf21"
@@ -10903,8 +10903,8 @@
       "bullets": {
         "text": [
           {
-            "text": "Oeffnen ueber Compliance & Nachweise → Assessments → Datenfluss-Mapping.",
-            "source_sha256": "4ee42695ea666e6c6edcd445bb73ac330fcb793faaf848bf1ed8e21b780239ab"
+            "text": "コンプライアンスと証拠 → 評価 → データ フロー マッピング経由で開きます。",
+            "source_sha256": "a6f34d58128cf012220c5409fe4860fc7b2899156fe3388c22fcbaab47d1a93f"
           },
           {
             "text": "Datenfluesse and Enclaves anlegen and bearbeiten; the Diagramm zeigt Quelle and Ziel with Form (not allein Farbe).",
@@ -10915,12 +10915,12 @@
             "source_sha256": "ef0c1ca949dd1105e7ae902d34f66d3159f2835307bb7ec9cb41096ff27a9662"
           },
           {
-            "text": "Dienst- and Firewall-Regelbearbeitung ist auf dieser Seite noch not verfuegbar.",
-            "source_sha256": "fcbde942d82383f00f5aae53504268a0494dab1868a11a080974a16597e18d08"
+            "text": "このページでは、サービスとファイアウォール ルールの編集はまだ利用できません。",
+            "source_sha256": "6c94a6a16add46655380a16eef54b54afde3689a65a5bfc60f8c3d17c470eb72"
           },
           {
-            "text": "Wenn the Store は、verfuegbar ist (移行のオーステヘンド) ではなく、正確な情報を確認する必要があります。",
-            "source_sha256": "4c148f7c3160498a99bb5d7826601d46843a3d0ef1b68844cb872bd3ffdc90b8"
+            "text": "ストアが利用できない場合 (移行保留中)、サイトはデータを作成するのではなく、正直なままになります。",
+            "source_sha256": "f14cb350801016f718fcb091e22dde1e3489f88998e93b1806cc895b8e65998f"
           }
         ],
         "source_sha256": "ab3cb0985e52aafcbb117e0204b7f98c2a2e4d91158070a2247a412cfb2c7a72"
@@ -10973,16 +10973,16 @@
             "source_sha256": "5f15993e234347ff609cdf7e43d44ee34b32d069020743b413bdfd07a14d914e"
           },
           {
-            "text": "Harte Error (z.B. Malware / Deny-Liste) は権利放棄の対象ではありません。 weiche Skips koennen a zeitlich begrenzten 権利放棄。",
-            "source_sha256": "e228b4ec4d2273962334c48964219c1c3bdc88f962b029924a10abdb0dcc8ff1"
+            "text": "ハード エラー (マルウェア/拒否リストなど) を放棄することはできません。ソフト スキップには、期間限定の免除が適用される場合があります。",
+            "source_sha256": "98207ceac4e9286a83812fbdb51eec458e4bbbb80e59acf83335b30a693b8c29"
           },
           {
-            "text": "Oeffnen ueber コンプライアンスと Nachweise → 評価 → Externe Arbeitsplatz-Bereitschaft。 Unterschiedlich zum Aktuellen コンプライアンス - エンクレーブ ホストの立場。",
-            "source_sha256": "f97f59c50069fb37cc58623a3c128f34992abf7ceb393a0b25ff7ba7a687b14e"
+            "text": "コンプライアンスと証拠 → 評価 → 外部の職場の準備状況を通じてオープンします。エンクレーブ ホストの現在のコンプライアンス レベルとは異なります。",
+            "source_sha256": "8f53d17a2a24a93ec33a363012cab36c21e8a4039acba89e29811b5d68aaa367"
           },
           {
-            "text": "評価中のプローブ パック → WA プローブ パック veroeffentlichen、damit エージェント サーバーveroeffentlichte Pruefungen loden koennen。",
-            "source_sha256": "e374e812817f66a7a98a8d3ffe56f4f9d0804e52a37e8215fe8be176b0785227"
+            "text": "エージェントがサーバーで公開された評価をロードできるように、「評価 → WA プローブ パック」の下にサンプル パックを公開します。",
+            "source_sha256": "9108c3188b3103a9364d67b7b70aa3eb1b827ef5bfe4922e4f0a87d0fc2ce79b"
           },
           {
             "text": "/enclave/workstation-assurance へのレガシー ブックマークはさらに上になります。",
@@ -11035,8 +11035,8 @@
       "bullets": {
         "text": [
           {
-            "text": "Oeffnen ueber コンプライアンスと Nachweise → 評価 → Betriebs-Compliance。",
-            "source_sha256": "293cda659a59362a3fc5ada5a13784fd99c52448830f35fb5057794b2f5d0699"
+            "text": "コンプライアンスと証拠 → 評価 → 運用上のコンプライアンスを介して開きます。",
+            "source_sha256": "fa560a407f381549ba3edfb361f041a98a1e8c593d751d10219f6de09fc66124"
           },
           {
             "text": "ステータス チップは Live、Teilweise、Fehlt、Blockiert のいずれか — メットに該当します。",
@@ -11070,8 +11070,8 @@
       "bullets": {
         "text": [
           {
-            "text": "パック、Endpunkt、またはグループを構成します。エージェントは SHA-256 をウェンデンとメルデンにします。",
-            "source_sha256": "f46648c72be83ae1e180f7552fac5888001c151836ba2bdfdf80f224483082c7"
+            "text": "構成はパックをエンドポイントまたはグループに固定します。エージェントはそれを適用し、SHA-256 を報告します。",
+            "source_sha256": "c0c37977f0b50411356135b63c885b78a901273ae90c7362be2d4830c4187bdc"
           },
           {
             "text": "Verstoesse zeigen AppLocker-/WDAC-Blocks — TemporaryAllowRule-Ausnahmen のワークフロー。",
@@ -11113,8 +11113,8 @@
             "source_sha256": "0cf084088617380b279413ac41b215eb4a1d6972fa51b1c0d51058c24ce320ca"
           },
           {
-            "text": "Oeffnen ueber コンプライアンスと Nachweise → 評価 → WA プローブ パック。",
-            "source_sha256": "9aeecf10e1b7e7a56b91e55298ca8cc886c1c30e6a5ea1f92323305ff28a325c"
+            "text": "コンプライアンスと証拠 → 評価 → WA サンプル パックから開きます。",
+            "source_sha256": "b64e749e2d788b918090339c7d62668f4b2d7f77fcaecd621551508dbd77688c"
           }
         ],
         "source_sha256": "87dcb67206f202a6aa4042e535f31f4a5eaf94729da1c08f2fa33da2d7320885"
@@ -11227,8 +11227,8 @@
             "source_sha256": "24c5a91beb905445f4c42b67b9a2c9c2122d4a6a374bcf7d3b099788d226057b"
           },
           {
-            "text": "Fuer dauerhafte Audit-Nachweise (ATO、SOC 2、CMMC) は、Abschnitt Nutzen の監査ログです。",
-            "source_sha256": "c8ac93a467541a02b3630b8784c8175c5f07b05f46b854099969e8902821fac1"
+            "text": "永続的な監査証拠 (ATO、SOC 2、CMMC) については、このセクションの監査ログを使用します。",
+            "source_sha256": "520f907e1620982a0b212189335eb579ffebd4b1afa6680f6e0fb23c39b44e97"
           },
           {
             "text": "Webhook-Weiterleitung konfigurieren とすべての情報を Ereignisweitergabe pruefen に送信します。",
@@ -11258,8 +11258,8 @@
             "source_sha256": "9b6086db00aeb1c3eea492fbd682e84a290d48537c20adcaad880672a7b038ff"
           },
           {
-            "text": "Routing pro Ereignis bearbeitet Senken-Schalter pro Ereignistyp; Failed/Retry-Outbox listet prozesslokale Zustellfehler.",
-            "source_sha256": "4bec2d6d67d8f3f365f55da81fc94cc820285a2f65cebae474ae7d9404801148"
+            "text": "イベントごとのルーティングは、イベント タイプごとにシンク スイッチを編集します。 「失敗/再試行」送信ボックスには、プロセスローカルの配信失敗がリストされます。",
+            "source_sha256": "816b94fc460fd6d284da7e492b61a648670f150cf39eab296914340bca47cb42"
           }
         ],
         "source_sha256": "b41f80359e110a90ac0c87287f80acdc8f805a7064eabfa152262513b413bef4"
@@ -11289,8 +11289,8 @@
             "source_sha256": "29d90510812b9b03bab2c14a17d8e47d367b71e922245f3470602c1d76c3c344"
           },
           {
-            "text": "Das Entfernen eines は、archiviert ihn statt を loeschen にピン留めし、Audit-Trail erhalten bleibt を破棄します。",
-            "source_sha256": "ed4ca9739b35cc01123daa66e5016e9f040ce9ed24ef25260c228da2f357b741"
+            "text": "ピンを削除すると、ピンが削除されるのではなくアーカイブされるため、監査証跡はそのまま残ります。",
+            "source_sha256": "9fccdc958ff9bbbbc893240998b27dfa0e06ffd2195aad02e9af82eb7996fff2"
           },
           {
             "text": "Eine angeheftete Seite、mehr liefert ではなく、より新しいサーバー、wird hier gemeldet と uebersprungen — nie まだ geloescht。",
@@ -11487,8 +11487,8 @@
             "source_sha256": "b36863287943a96f8ca340a141700a9b7c13d73ee98990c1fdd2dbb1489e9d90"
           },
           {
-            "text": "Arbeitsplatz-Passwort にある Sie brauchen — Enclave meldet Sie an。",
-            "source_sha256": "162254eb9d7a6e7cc8208e3e3f6b531139a6f186d93087dc933b566fc9ddbe81"
+            "text": "ワークステーションのパスワードは必要ありません。エンクレーブがサインインします。",
+            "source_sha256": "075278f20a5d81d04b72863f538918c7549e1e0e9bf6b4ecb0cbeb8340c374e2"
           }
         ],
         "source_sha256": "c4db149c783c0d9cef742b24a95a94c56822798e74a09bf5e97689129d705734"
@@ -11605,8 +11605,8 @@
             "source_sha256": "7dbbd3cb0abf477c68ac86b804db9af5fff7c72eeb04d38f64757cdbb0be2efc"
           },
           {
-            "text": "Zugriff braucht は stehende Berechtigung、アクティブな JIT-Freigabe または Selbstgenehmigung です。",
-            "source_sha256": "97687603094efd695a339947bb56b0a136ac4e0ce9979787f79f90343ec78ce0"
+            "text": "アクセスするには、永続的な許可、アクティブな JIT 承認、または自己承認が必要です。",
+            "source_sha256": "7511d413d36d1b9fed38d4b8281339860ae0cad2a039fdffa2d6a00ce8ced20c"
           },
           {
             "text": "Jede geoeffnete セッション wird standardmaessig aufgezeichnet (プロキシまたは ziel-lokal)。",
@@ -11632,8 +11632,8 @@
       "bullets": {
         "text": [
           {
-            "text": "Subjekt- と Zielwaehler のナットゼン IAM-Prinzipale、Rollen および Verbindungspunkte — keine rohen UUID-Felder。",
-            "source_sha256": "326de08f431ef2128bece9ec5b3c285d7b9e17efa6656f3ec006d76f40960d64"
+            "text": "サブジェクトとターゲットのセレクターは、生の UUID フィールドではなく、IAM プリンシパル、ロール、接続ポイント — を使用します。",
+            "source_sha256": "ae1de547c38204b5f33933e8c3a5599a3df104d32009bc6b6e02899a40157ce6"
           },
           {
             "text": "拒否ルール ueberschreiben 許可します。",
@@ -11659,16 +11659,16 @@
       "bullets": {
         "text": [
           {
-            "text": "メニュー: Proxy-Zugriff → Jump & Kapazitaet → Jump-Flotte & Lastvertailung。",
-            "source_sha256": "9bc50aef3491785df67a59fe0aa0bcff712d55a06c97553292cee83836482d76"
+            "text": "メニュー: プロキシ アクセス → ジャンプと容量 → ジャンプ フリートと負荷分散。",
+            "source_sha256": "7c257570957d90d1b1a8741bc756b32435da3195014bbece5f87490ef7ba7233"
           },
           {
             "text": "Intern sicherstellen legt the Kapazitaetszeile aic-server-local an or aktualisiert sie.",
             "source_sha256": "2d01a6b0cd61371a94f5beb943f57d0827c06d34dc4c813136de8280841a2346"
           },
           {
-            "text": "最後のオース (oeffnet keine Benutzersitzung) を使用したドライラン オースワールのプローブ プラツィエルング フェールト。",
-            "source_sha256": "dfad522163cf4991d7dd3a30c9919a9e2ccb849362c8b3a616d1663942c6b92c"
+            "text": "プローブの配置では、最も軽い負荷でドライ ラン選択が実行されます (ユーザー セッションは開きません)。",
+            "source_sha256": "29bfd15b7567f905f7a2d54203487503e216d6d4146ccd8c72545b4a1d82d69a"
           },
           {
             "text": "SSH-Vermittlung は unabhaengig です — SSH-/RDP-Ziele の Verbindungspunkte を参照してください。",
@@ -11864,8 +11864,8 @@
       "bullets": {
         "text": [
           {
-            "text": "Altes Passwort は、gespeicherte Passwort を確認してください。",
-            "source_sha256": "7be70ce38d38153274138bd60fb361dda166ae72adcc44245fce3e30e2f803ff"
+            "text": "保存されたパスワードについては、古いパスワードを空白のままにしておきます。",
+            "source_sha256": "4806a63846bdd518a7d1f4b85b8c876d73c5614126cc3b1d1c9af4af2d9b23a4"
           },
           {
             "text": "Zeitplaene pro Ziel auf the jeweiligen Konfigurationsseite。",
@@ -11945,8 +11945,8 @@
       "bullets": {
         "text": [
           {
-            "text": "Altes Passwort は、gespeicherte Passwort を確認してください。",
-            "source_sha256": "7be70ce38d38153274138bd60fb361dda166ae72adcc44245fce3e30e2f803ff"
+            "text": "保存されたパスワードについては、古いパスワードを空白のままにしておきます。",
+            "source_sha256": "4806a63846bdd518a7d1f4b85b8c876d73c5614126cc3b1d1c9af4af2d9b23a4"
           },
           {
             "text": "Zeitplaene pro Ziel auf the jeweiligen Konfigurationsseite.",
@@ -11976,8 +11976,8 @@
             "source_sha256": "0fd0d29ce8acee545559479095240c1ecb43105e1969d872d912691e0b91b00f"
           },
           {
-            "text": "OT-Protokollsitzungen — keine SSH-、RDP-、または VNC-Aufzeichnungen。",
-            "source_sha256": "c24aa35ed9e6fd0fc9b4f226431eded59b775a0095596fa65c9a01149c114c59"
+            "text": "OT プロトコル セッション — には SSH、RDP、または VNC の記録はありません。",
+            "source_sha256": "ef6366a12e8eb63750f43db0b9227e8824b462b82ed5dba672e1750dd2b1fc5f"
           }
         ],
         "source_sha256": "ee32ccd4aeaed920688a1898a62b0c9c42982214d18e60a8aa3350503128acd6"
@@ -12080,8 +12080,8 @@
       "bullets": {
         "text": [
           {
-            "text": "Anwenden-Transport waehlen: Lokaler Agent または Remote Non-Agent Local Elevation (WinRM)。",
-            "source_sha256": "8dc991028a1044ac1b11a9b0f344192226e1f783005a1791a518e39a29295f24"
+            "text": "[トランスポートの適用: ローカル エージェントまたはリモート非エージェント ローカル昇格 (WinRM)] を選択します。",
+            "source_sha256": "6bb5257d181638bc40e2a40561787d4e1f5791f3e3d09d7e04c6bb4a7728a5a8"
           },
           {
             "text": "Verzoegerung (Start wann) と Dauer (Laufzeit bis Auto-widerruf) のセットゼン。",
@@ -12273,8 +12273,8 @@
             "source_sha256": "31f8cd1a67632614de83eb29c91ffe8ee1265f445bf1d54d935d28589e6575e1"
           },
           {
-            "text": "Armored-Export は、Paste-Kanaele の ASCII-Huelle を使用した dasselbe Packet、oeffentlichem Schluessel を使用した keine PGP-Nachricht です。",
-            "source_sha256": "0531989bd5e90fe9701fc3ce9a3b75a6b87c21f923e883823ad57b55f6c51edc"
+            "text": "アーマード エクスポートは、公開キーを含む PGP メッセージではなく、ペースト チャネル用の ASCII エンベロープを含む同じパッケージです。",
+            "source_sha256": "d09a8b9acf288762f595134a62c958da2947744a4f072583880b31251376b7e5"
           }
         ],
         "source_sha256": "0f386e072b839131b51f455ed8b5b5f7b26ff3a00fae77da2afefc07c762dc61"
@@ -12399,16 +12399,16 @@
       "bullets": {
         "text": [
           {
-            "text": "Ablauf: Im Katalog bearbeiten & speichern → Install Pushen → Identitaeten binding → Am Agent testen.",
-            "source_sha256": "0b0b8da3300d732196298a612d1e257cbf7c2517d60494747e76219beb658a00"
+            "text": "プロセス: 編集してカタログに保存 → プッシュ インストール → ID をバインド → エージェントでテストします。",
+            "source_sha256": "06a5a00760e42597eb968677478b7659d9cb0d06f6e9f2423e2fd5a36737048e"
           },
           {
             "text": "フェーズ: 回転前 (ベルハイゲン) → パスワーテンダーン → 回転確認 (回転後)。エージェントをテストして、プッシュをコピーしてください。",
             "source_sha256": "bb801bee89c44e6e814df5d669303e6b9db33ed1e4342a6a89ad24e1b649d1a8"
           },
           {
-            "text": "Lebenszyklusphasen の Skripte laufen (事前に回転し、確認してください) — Sitzungsvermittlung (siehe Proxy-Zugriff) ではありません。",
-            "source_sha256": "eee234ac056c4218c020f5a284bf7efa05582d82fc6297cf9dd5a433e93aa7d2"
+            "text": "スクリプトは、セッション仲介ではなく、ライフサイクル フェーズ (事前ローテーション、検証など) で実行されます (「プロキシ アクセス」を参照)。",
+            "source_sha256": "f03e9a0e6f87e4151106967e63476f64f5ff58c174ac7ee2c140cdabb0134877"
           },
           {
             "text": "Lab-Skelett または Identitaeten ビンデンと、ディーゼル セイテ プシェンの​​ Aus Standardvorlage anlegen。",
@@ -12488,16 +12488,16 @@
       "bullets": {
         "text": [
           {
-            "text": "Laenge、Rotation、Zeichenregeln、および erweiterte Generierungsfelder bearbeiten; PUT /api/offline/settings ごとに設定します。",
-            "source_sha256": "55e5504e9db8b2c99e408df75eb4f2059bb4cf549776eabcf449c25e7e856481"
+            "text": "長さ、回転、文字ルール、および高度な生成フィールドを編集します。 PUT /api/offline/settings で保存します。",
+            "source_sha256": "20d6054dab217a93b62a5d339b7aa50cf999b1489cb9cb76f07651eb8cec0de6"
           },
           {
-            "text": "Eingebaute または gespeicherte は、アンウェンデン、ダン Mit Programm-Vorgaben wiederherstellen、um Operator-Ueberschreibungen を loeschen にプリセットします。",
-            "source_sha256": "e4cfe08e14284fae602b5b4ce6ac196d3bbc8b8e5cab9173aa28e6ed739f68d9"
+            "text": "組み込みまたは保存されたプリセットを適用し、プログラム プリセットを使用して復元してオペレーター オーバーライドを削除します。",
+            "source_sha256": "5be64411e5c7d6ffaab10a2118163a1a4f8f9295657bfe73da50a28f0084fbcf"
           },
           {
-            "text": "Benannte Presets werden separat unter Passwortrichtlinien-Presets verwaltet.",
-            "source_sha256": "c1b092929b38149c35bac1c76e49d312d171e6752ea45227362073e5551acd2c"
+            "text": "名前付きプリセットは、パスワード ポリシー プリセットで個別に管理されます。",
+            "source_sha256": "f38fe7c95f8b5df7059e888dca6eafd279d1a1a8fe23e5912f90f756e54637d1"
           }
         ],
         "source_sha256": "7e33cdbcfeb5752b1e43a4ff4651adc7ec3d91403afa7c291e146d1a2023a95c"
@@ -12537,8 +12537,8 @@
             "source_sha256": "786e94a7ae791d4ba9f7e9076228761d599f7496153f7e2fc6c82fdfcbba1f19"
           },
           {
-            "text": "Die Seite Krypto-Anbieter kann a Verbindung waehlen、um PKCS11_MODULE_PATH および PKCS11_SLOT_ID vorzufuellen。",
-            "source_sha256": "7a5c14790180f892565de6b91d589608bb1a35a29645519cc4c41a68228fd082"
+            "text": "[暗号化プロバイダー] ページでは、PKCS11_MODULE_PATH および PKCS11_SLOT_ID を事前に入力する接続を選択できます。",
+            "source_sha256": "b05aadebbb240d4b352bbeba089231b6431df820133b6d221af9563587f99793"
           }
         ],
         "source_sha256": "553a66745d9eef38d45ef52f753359eab835a5bcdaeed3f6c88f92d09bf9fa7a"
@@ -12623,8 +12623,8 @@
       "bullets": {
         "text": [
           {
-            "text": "Operatoren、Servereinstellungen verwalten duerfen (スーパーユーザー/オーナー) の Verfuegbar。",
-            "source_sha256": "488c95239e0214923034475614fe7575322c4f20af76a096fb7c2f23e36ed7ad"
+            "text": "サーバー設定の管理を許可されたオペレーター（スーパーユーザー/オーナー）が利用できます。",
+            "source_sha256": "798fa8837e3e4dc7609fe2b062343d0882e100e40c7a0334fe007e9cb44caa32"
           },
           {
             "text": "Unternehmensidentitaet wird ueberdenselben Speicher Unternehmensprofil / Offenlegungsvariablen bearbeitet。",
@@ -12782,8 +12782,8 @@
       "bullets": {
         "text": [
           {
-            "text": "Fuer Migrationspruefung — Konfigurator または import-settings-CLI の Live-Anwenden ナッツ Datei → Settings anwenden。",
-            "source_sha256": "a4729b23485a7f32963cec7c69f66608c31db3da7412a60dd2f6a2af271999e8"
+            "text": "移行チェックの場合、— ライブ適用ではファイル → を使用し、コンフィギュレーターまたはインポート設定 CLI で設定を適用します。",
+            "source_sha256": "e06093312daaa0b3c332eb81dbda6616cd48f44fcd09410b3fc16d44e079a28e"
           }
         ],
         "source_sha256": "9cbbd66d40ecbd989f8d8664e8b48dd1a9637bec16a45d960ce3fbc05e34c5ed"
@@ -12820,8 +12820,8 @@
       "bullets": {
         "text": [
           {
-            "text": "Erzeugt Settings, the the Agent ueber Konfigurator or import-settings importiert.",
-            "source_sha256": "7555e2289b341e877ba9332d6c52e11974d32243adbc9df5c8f0c41afb37852f"
+            "text": "エージェントがコンフィギュレーターまたはインポート設定を介してインポートする設定を作成します。",
+            "source_sha256": "7a3fcc0db000ec132fafd0b90f241aa6c13f58c1288f84826f17caaff03ed176"
           },
           {
             "text": "ConnectedManaged erwartet regelmaessigen Check-in; AirGappedPermanent not.",

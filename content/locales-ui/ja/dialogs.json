@@ -103,8 +103,8 @@
       "source_sha256": "ba2eefc31e3b7c2dd8e9ff8799704ebf5339d403d147ede46a2c289d617658aa"
     },
     "whereSecretsSecondary": {
-      "text": "{{settings}} (最初に) または {{settingsLegacy}} をインストールする前に設定を変更してください。 {{secrets}} (bevorzugt) または {{secretsLegacy}} に関する ADMIN_TOKEN に関する情報は、レジストリを参照してください。 LocalSystem は Schluessel の指示に従ってください。 Windows Credential Manager はサーバーまたはエージェント用ではありません。これは benutzerbezogen であり、Dienstkonten では verfuegbar ではありません。",
-      "source_sha256": "0180a3a98eadcb44616957fbea4693cedd8796aa422cccb994d4a7c97d5a162b"
+      "text": "マシン全体の設定は、古いインストールでは {{settings}} (推奨) または {{settingsLegacy}} の下に存在します。 ADMIN_TOKEN などのシークレットは、暗号化されたレジストリ値として {{secrets}} (推奨) または {{secretsLegacy}} の下に存在します。 LocalSystem として実行されているサービスは、これらのキーを直接読み取ります。 Windows 資格情報マネージャーは、サーバーまたはエージェントのランタイム シークレットには使用されません — これはユーザーごとであり、サービス アカウントには使用できません。",
+      "source_sha256": "a58e912f42d67e598017536e2aa27004ca4fe4dfa91e7190bd8055ff4f39b334"
     },
     "unixPrimary": {
       "text": "Unix / macOS",
@@ -757,8 +757,8 @@
       "source_sha256": "4ec5625b4ac2785d5a86be5be703713169c73947960efab832449453b9560cda"
     },
     "noPasswordHistory": {
-      "text": "Kein Kennwortverlauf は、 Diese Identitaet Verfuegbar を表します。",
-      "source_sha256": "fc47c632c99aa20f9fb949e3c85e4b0e895cffc38cffb94e691cf247d5bbab4a"
+      "text": "この ID にはパスワード履歴がありません。",
+      "source_sha256": "4c74a4706a9adc3f9edb36e454b03ce224de0229fb0b53c44ed677cfac513c10"
     },
     "chipCurrent": {
       "text": "アクトゥエル",

@@ -103,8 +103,8 @@
       "source_sha256": "ba2eefc31e3b7c2dd8e9ff8799704ebf5339d403d147ede46a2c289d617658aa"
     },
     "whereSecretsSecondary": {
-      "text": "Makine Ayarları, başka bir kurulum sırasında {{settings}} (bevorzugt) veya {{settingsLegacy}} altında bulunur. ADMIN_TOKEN, {{secrets}} (bevorzugt) veya {{secretsLegacy}} ile kayıt defteri olarak kayıtlıdır. Yerel Sistem, doğrudan Schlüessel'i kullanır. Windows Kimlik Bilgisi Yöneticisi kablosu Sunucu veya Ajan-Laufzeitgeheimnisse genutzt için değil — bu iyi bir şey ve Dienstkonten için verfuegbar değil.",
-      "source_sha256": "0180a3a98eadcb44616957fbea4693cedd8796aa422cccb994d4a7c97d5a162b"
+      "text": "Makine genelindeki ayarlar, eski yüklemelerde {{settings}} (tercih edilen) veya {{settingsLegacy}} altında çalışır. ADMIN_TOKEN gibi sırlar, şifrelenmiş kayıt defteri değerleri olarak {{secrets}} (tercih edilen) veya {{secretsLegacy}} altında bulunur. LocalSystem olarak çalışan servisler bu anahtarları doğrudan okur. Windows Kimlik Bilgisi Yöneticisi, sunucu veya aracı çalışma zamanı sırları için kullanılmaz — kullanıcı başınadır ve hizmet hesapları tarafından kullanılamaz.",
+      "source_sha256": "a58e912f42d67e598017536e2aa27004ca4fe4dfa91e7190bd8055ff4f39b334"
     },
     "unixPrimary": {
       "text": "Unix / macOS",
@@ -757,8 +757,8 @@
       "source_sha256": "4e345168c5c334b02567a30e2f9866267b4686b869c4a698ee6be9fbeccf48d3"
     },
     "noPasswordHistory": {
-      "text": "Diese Identitaet verfuegbar için Kein Kennwortverlauf.",
-      "source_sha256": "fc47c632c99aa20f9fb949e3c85e4b0e895cffc38cffb94e691cf247d5bbab4a"
+      "text": "Bu kimlik için şifre geçmişi yok.",
+      "source_sha256": "4c74a4706a9adc3f9edb36e454b03ce224de0229fb0b53c44ed677cfac513c10"
     },
     "chipCurrent": {
       "text": "Akım",

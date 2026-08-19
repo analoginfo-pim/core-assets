@@ -103,8 +103,8 @@
       "source_sha256": "ba2eefc31e3b7c2dd8e9ff8799704ebf5339d403d147ede46a2c289d617658aa"
     },
     "whereSecretsSecondary": {
-      "text": "Ustawienia Maschinenweite leżą pod {{settings}} (bevorzugt) lub {{settingsLegacy}} bei aelteren Installationen. Geheimnisse wie ADMIN_TOKEN Liegen unter {{secrets}} (bevorzugt) lub {{secretsLegacy}} als verschluesselte Registrierungswerte. Dienste als LocalSystem lesen diese Schluessel direkt. Menedżer poświadczeń systemu Windows nie jest przeznaczony dla serwera lub agenta-Laufzeitgeheimnisse genutzt — jest ist benutzerbezogen, a dla Dienstkonten nie jest verfuegbar.",
-      "source_sha256": "0180a3a98eadcb44616957fbea4693cedd8796aa422cccb994d4a7c97d5a162b"
+      "text": "Ustawienia dla całego komputera są dostępne pod {{settings}} (preferowane) lub {{settingsLegacy}} w starszych instalacjach. Sekrety takie jak ADMIN_TOKEN znajdują się pod {{secrets}} (preferowane) lub {{secretsLegacy}} jako zaszyfrowane wartości rejestru. Usługi działające jako LocalSystem bezpośrednio odczytują te klucze. Menedżer poświadczeń systemu Windows nie jest używany w przypadku tajnych informacji wykonawczych serwera lub agenta —. Jest on przypisany do użytkownika i niedostępny dla kont usługowych.",
+      "source_sha256": "a58e912f42d67e598017536e2aa27004ca4fe4dfa91e7190bd8055ff4f39b334"
     },
     "unixPrimary": {
       "text": "Unix/macOS",
@@ -377,8 +377,8 @@
       "source_sha256": "d3ffc10982c9566be975bc62c641afa5721131096b56bc218a7ff332eb84538b"
     },
     "seedDefaultIdentities": {
-      "text": "Standardidentitaeten auf neuen Endpunkten anlegen",
-      "source_sha256": "dfa722f8d065d1dffa3d3d64a34b4e289b07f6d96a31fce229eb988523a08ff4"
+      "text": "Utwórz domyślne tożsamości na nowych punktach końcowych",
+      "source_sha256": "8408a3c9bd3a25571172407690b652296591530b1e14ab6c98d8fcc1ddce4b05"
     },
     "explicit": {
       "text": "Rozjaśnij",
@@ -757,8 +757,8 @@
       "source_sha256": "4ec5625b4ac2785d5a86be5be703713169c73947960efab832449453b9560cda"
     },
     "noPasswordHistory": {
-      "text": "Kein Kennwortverlauf dla diese Identitaet verfuegbar.",
-      "source_sha256": "fc47c632c99aa20f9fb949e3c85e4b0e895cffc38cffb94e691cf247d5bbab4a"
+      "text": "Brak historii haseł dla tej tożsamości.",
+      "source_sha256": "4c74a4706a9adc3f9edb36e454b03ce224de0229fb0b53c44ed677cfac513c10"
     },
     "chipCurrent": {
       "text": "Aktualny",
