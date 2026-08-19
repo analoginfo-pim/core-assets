@@ -8921,10 +8921,6 @@
         "text": "Health",
         "source_sha256": "55898449eb74fb2e348d13e5a5d84ab019bb87ea92687b50b3d3302eb409b784"
       },
-      "colLastCheckIn": {
-        "text": "Letzter Check-in",
-        "source_sha256": "39d860478a6e6aac95c13242f74bfcd6a28af7d3edb7a66cdb5c49eb7e25f87c"
-      },
       "colLastCheckin": {
         "text": "Last check-in",
         "source_sha256": "9d5980ae7a54aa18ff71158d822c0eef994ff6087feb3c35b1a90ca63a66848b"
@@ -13310,6 +13306,552 @@
     "blocked_licensed_content": {
       "text": "BLOCKED — licensed content not embedded",
       "source_sha256": "5811e218fdc9316c3637e261e826d4f7901cde5c891b8b738b5bd693a8ca671b"
+    }
+  },
+  "ipScanner": {
+    "add": {
+      "text": "Add",
+      "source_sha256": "9fd728c66c9a256b121472dabf32a34317aed01d8427d70ec830289cf23a7cc8"
+    },
+    "addTargetAria": {
+      "text": "Add scan target",
+      "source_sha256": "1da178a25441f8cd60ce4d4eda521c8ce14241a686de84680eb38f55b042da30"
+    },
+    "allNetworksAria": {
+      "text": "Use all local networks as scan targets",
+      "source_sha256": "734906bb4d84eb7d51d1e97ea761ebf440300723684a3306d7c050a7976588c4"
+    },
+    "allNetworksTooltip": {
+      "text": "Fill targets with every local adapter network except loopback.",
+      "source_sha256": "4198d1114db9e98383cca8d97ec93a3979252ea21203bb6e4f3f0cfb3ee52ea2"
+    },
+    "analysisComplete": {
+      "text": "Analysis complete.",
+      "source_sha256": "43b55e6e61633113de9630d8ac537dad50793a99319502a59af0f8081deba7bf"
+    },
+    "analysisFailed": {
+      "text": "Analysis failed.",
+      "source_sha256": "1c6ba18eee77816e6ae633e5cd1e5073d95c1875b41f9899fde57bf11f338fac"
+    },
+    "analysisHeading": {
+      "text": "Posture findings",
+      "source_sha256": "ebc99d9bb6bf093eb43238ece9461928a61dcd6d2f86c3ee9f0b7c7654f225ba"
+    },
+    "analysisSummary": {
+      "text": "{{count}} findings",
+      "source_sha256": "d7826b9bafb05d95a724a070e7c9e7382b42c3139bd1a09498c72c13b22a2521"
+    },
+    "analysisTitle": {
+      "text": "IP Scanner analysis",
+      "source_sha256": "8b2d6f319be45cb5f932cf2355102980303c008265293647ca1fe57a34b93003"
+    },
+    "analyze": {
+      "text": "Analyze Vulnerabilities",
+      "source_sha256": "f43b288145c6c3167e2b924b1ab665c3182592997a4425820d62cbf40e87b0ac"
+    },
+    "analyzeAria": {
+      "text": "Analyze scan results for vulnerabilities",
+      "source_sha256": "eaf61a70991b82249a2a0c21b1f82e36297feb4cc69b4fb5b29995d8e221001a"
+    },
+    "analyzeTooltip": {
+      "text": "Compare live hosts to inventory and open posture findings for audit remediation. Not a CVE scan.",
+      "source_sha256": "d0231db3b6ed686ca7eeaa43f32824768a2bd36a88ac4697805b870fba9548be"
+    },
+    "analyzing": {
+      "text": "Analyzing…",
+      "source_sha256": "89b633adede66a057e627e74390a5d50adf46a7d53d4425524f3cb9d82012f12"
+    },
+    "analyzingInventory": {
+      "text": "Comparing scan results to inventory…",
+      "source_sha256": "07130bacfd80c3e40b53378c82b3440cd899f7b8ad2ee030da430a6fb21e8046"
+    },
+    "catalog": {
+      "text": "Catalog",
+      "source_sha256": "3877d14889a9909b9c6ec38d2390599cdc741b73e37505864863ef8e57fb3594"
+    },
+    "checkDefaults": {
+      "text": "Check Defaults",
+      "source_sha256": "de3b99f010ec8bc5a25a475d9252c50291d0a09fce5fba45b0efcee427da4c6e"
+    },
+    "checkDefaultsAria": {
+      "text": "Check published factory credentials against selected hosts",
+      "source_sha256": "2bb83ddbb1801b44db64e93c83798d22d358c06869e865144e32c1a411a79f78"
+    },
+    "checkDefaultsFailed": {
+      "text": "Check Defaults failed.",
+      "source_sha256": "751c50ed28dc49bc3877af9f158601d5772c084eae04237f9b62b75b992f25bc"
+    },
+    "colActions": {
+      "text": "Actions",
+      "source_sha256": "ff8059dc6752afdd30d275932b1d5031a2ec854b387a8c57ecc6689915293a43"
+    },
+    "colControl": {
+      "text": "Control",
+      "source_sha256": "32d7e82082479b8cb546187ff0af11e4915e4d17bc28e02dca7425288b79badd"
+    },
+    "colFinding": {
+      "text": "Finding",
+      "source_sha256": "59d032ea6dfc44962491e00a3bd57317bb997467d34ef73b02d7489b399f6225"
+    },
+    "colHost": {
+      "text": "Host",
+      "source_sha256": "4a823118b9ba8baa2f47489c0716f52755368e3e3c2c26d60736ccfa1bb21b5e"
+    },
+    "colInventory": {
+      "text": "Inventory",
+      "source_sha256": "758f487fe8e9fcc59cec4694d95a9032224f967b29f39543a1fb04e2901b079e"
+    },
+    "colIp": {
+      "text": "IP",
+      "source_sha256": "bf5505174a73b2832a95fef91403b87f99df3b1d283ad26729e4cfd22e96f208"
+    },
+    "colMac": {
+      "text": "MAC",
+      "source_sha256": "1f6368e6ecc0aa626f29ac4e81f7d034e5417d0bed2dca558ddc9be0ecd9d081"
+    },
+    "colName": {
+      "text": "Name",
+      "source_sha256": "dcd1d5223f73b3a965c07e3ff5dbee3eedcfedb806686a05b9b3868a2c3d6d50"
+    },
+    "colPorts": {
+      "text": "Ports",
+      "source_sha256": "de5648dd8c8ea01b58958a7767c3c176367c36890141739abf69d7c741ed70ab"
+    },
+    "colRemediation": {
+      "text": "Remediation",
+      "source_sha256": "5a0ee3452091b09414ea86a8738ccecc52b75ddb37acdcc9e8a183caa813a27b"
+    },
+    "colRisk": {
+      "text": "Posture",
+      "source_sha256": "bdba27f66eb184347c1a70c000c95215188bdc8895666aded2763722a4c77ff9"
+    },
+    "colSeverity": {
+      "text": "Severity",
+      "source_sha256": "5e9f98120dbe568255ee059f39671686982b113d4e917b6d6faf149918c81709"
+    },
+    "colStatus": {
+      "text": "Status",
+      "source_sha256": "920e413c7d411b61ef3e8c63b1cb6ad058d5f95f8b481dbafe60248387d8c355"
+    },
+    "colVendor": {
+      "text": "Vendor",
+      "source_sha256": "f8aa82b42d07d108ed357335c9ac0d1a88cafb7292d61b30e0bdb224f20fd480"
+    },
+    "defaultsCatalogAria": {
+      "text": "Open Known Default Credentials catalog",
+      "source_sha256": "9c677c2d3397aef14ec3da6f7de13e305b052805aea2cb6e4f612c4393be4317"
+    },
+    "defaultsHelp": {
+      "text": "Open help for Known Default Credentials",
+      "source_sha256": "87e7bad6d21fe4f8ddcb764fa1e34e7b4f3c379ad05641bb8915aa6af113610c"
+    },
+    "defaultsHelpAria": {
+      "text": "Help for Known Default Credentials",
+      "source_sha256": "cb35f09ae4a7dd109ad4227b0399bcc79a2b5caaac05ddccf1d59262150301ab"
+    },
+    "discoveryNotesTitle": {
+      "text": "Discovery notes",
+      "source_sha256": "ca40703b89004d2e1eeea32c1646c884666cf2fdd39bac12e4f461cb6358e008"
+    },
+    "elapsed": {
+      "text": "Elapsed {{seconds}}s",
+      "source_sha256": "b9b869f2b6dc7550aceded419fcaaffb8217f448249bea779544ab2833158d6d"
+    },
+    "emptyBlocked": {
+      "text": "Scanner blocked until connectivity is restored.",
+      "source_sha256": "99202957347fbc0ef0ce826b134915387150890ddd364421bff84334d64e6ff5"
+    },
+    "emptyIdle": {
+      "text": "No scan results yet. Add targets and click Scan.",
+      "source_sha256": "44c40801bee1656392d5e218292ff780535d589d8a9fafa704e4a03ad227c724"
+    },
+    "emptyLoading": {
+      "text": "Checking scanner status…",
+      "source_sha256": "91869e8e231e58531125aff2e89b93520ac9cc710331194c0210a68863224d96"
+    },
+    "emptyScanning": {
+      "text": "Scan in progress…",
+      "source_sha256": "c19b8ea94d1d20590e8f1e4a1f486865cdc0d6db3fca68c91da1331005d26ebe"
+    },
+    "engine": {
+      "text": "Engine: {{name}}",
+      "source_sha256": "c6b187dfb82b6f176a2feb8b3f0437b1af79607ccb2cc9c993e647dc8c3d01b8"
+    },
+    "engineReady": {
+      "text": "Engine ready",
+      "source_sha256": "08a55a9ae3b1d9b1c868036f928a7420b6144a0ab7c87b3d84c1f692e9791fa1"
+    },
+    "enroll": {
+      "text": "Enroll in Systems List",
+      "source_sha256": "72c6ee7cf001f8f1bf8730f34a81af3f68874e96af48d2a09f6741c86ed3a2f2"
+    },
+    "enrollAria": {
+      "text": "Enroll host {{host}} in Systems List",
+      "source_sha256": "f025d7288749e03aae2dd0a156520263aeb32e7402a577a3bf5556a39d0c70e5"
+    },
+    "estimating": {
+      "text": "Estimating…",
+      "source_sha256": "4423d5fe4c107724524b0af57cd96c8a942123b588cc9ff55d1e05d020366f96"
+    },
+    "familyIpv4": {
+      "text": "IPv4",
+      "source_sha256": "b12b510bd0933587ac66f42ad276369d91e3bbcb1be2ec0f1555d986b0ba3b5c"
+    },
+    "familyIpv6": {
+      "text": "IPv6",
+      "source_sha256": "0b0f0a267e77991baf744de41e938a1359a38fd138a8939dd8a3ec8fb17f961d"
+    },
+    "findingActionsAria": {
+      "text": "Actions for finding on {{host}}",
+      "source_sha256": "42586f71f5b208154732912e2b5a831e3a4081ce5139fdb6bbff4a410172b36a"
+    },
+    "hostsFound": {
+      "text": "{{count}} hosts",
+      "source_sha256": "bcc39e82c5184c8c52e80d38017e41ddecff24d778769cde42fa0cf6a3ab3f67"
+    },
+    "ipRange": {
+      "text": "IP range",
+      "source_sha256": "35cd053a8ddf57513dc419a17a472fc4802463544521c3c006361d69f14da910"
+    },
+    "ipRangeAria": {
+      "text": "IP range or CIDR to scan",
+      "source_sha256": "7c0ddc8f5b37bbecf44dc596116b59b52039a1a135a306a1c3199f209af08b24"
+    },
+    "ipRangeHelper": {
+      "text": "Enter an IP, range, or CIDR, then Add.",
+      "source_sha256": "c00fc852fd5fed3a3d2681cc03828b97ed07e569561adf967ca322132be7ed28"
+    },
+    "ipRangePlaceholder": {
+      "text": "192.168.1.0/24",
+      "source_sha256": "d01a825c13311b46a70c53405baab8c9aab1ceda5076cf56ef86d1d8c8673f5a"
+    },
+    "ipv6Neighbors": {
+      "text": "IPv6 neighbors",
+      "source_sha256": "cf1294ff29cf7a7185decd771b3238d377326452d1ebab2584aebc34da948e14"
+    },
+    "ipv6NeighborsAria": {
+      "text": "Discover IPv6 neighbor hosts",
+      "source_sha256": "704e8204b2cdaebb1f8be68ccfb69865de82e85f54e0ab951bf9132b41b58a02"
+    },
+    "ipv6NeighborsTooltip": {
+      "text": "Probe local IPv6 neighbors and add reachable addresses as targets.",
+      "source_sha256": "55b511d4a2b18fbd1c1319f1e5c52c47dc65b250bdc3f72b9c0d3b355658511a"
+    },
+    "known": {
+      "text": "Known",
+      "source_sha256": "19984a437f318d8a4b23feb8b9e8c999b3a26a480bb7e279d80397e62e2cf56d"
+    },
+    "knownNamed": {
+      "text": "Known: {{name}}",
+      "source_sha256": "da732913f1c3c957e2457128b4cbbc08924e3fa002259796df40411f4a0ffaa8"
+    },
+    "manageDefaultsShort": {
+      "text": "Defaults catalog",
+      "source_sha256": "d0afe3c50fcfc4ed80e8cfa07e0ebd8c5383216ae3e2a145a0a5c7d1bb61811d"
+    },
+    "na": {
+      "text": "N/A",
+      "source_sha256": "e2f79e5b60330bba4c289962231b6ba2957d0b14e7deb3110417003c79dea635"
+    },
+    "networksHint": {
+      "text": "Select networks to include as scan targets.",
+      "source_sha256": "0cb5ad56a0c5bdde971f351e15fd7a4b9ddf665d34e902ea040f4cc086ec23a1"
+    },
+    "networksListAria": {
+      "text": "Local networks on this server",
+      "source_sha256": "e772d8a02b26fdecf23ef284e69984010e6b4983829e2e8e3211fecedaca2ce6"
+    },
+    "networksOnServer": {
+      "text": "Networks on this server",
+      "source_sha256": "427e6413b2617069083e596552a3c1bb4608623b7305db91b02178cb97438058"
+    },
+    "networksPicker": {
+      "text": "Local networks",
+      "source_sha256": "38eeb1f1c8db56c62ccdc639500512cb31bd0056e0237523de5d09ce1bc33494"
+    },
+    "networksPickerAria": {
+      "text": "Choose local networks for the scan",
+      "source_sha256": "9d73ae79621e97f57050a650a82b2b61559458636dfcb2f4a735450662574a0e"
+    },
+    "noLocalNetworks": {
+      "text": "No local networks reported.",
+      "source_sha256": "948ce80dfeaca6d3c075e782b82a0f006a1642f936af342480b78ed2cfc633d8"
+    },
+    "noOpenPorts": {
+      "text": "No open ports",
+      "source_sha256": "f35d972620c6ef2e3e3897e8856b00e6fe152be79440c3ece90f3bc27816174e"
+    },
+    "noPorts": {
+      "text": "No ports",
+      "source_sha256": "27719e323df9abae359a0d76c58e1d0d857eb92a041aacaab43526b469d840c6"
+    },
+    "none": {
+      "text": "None",
+      "source_sha256": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+    },
+    "online": {
+      "text": "Online",
+      "source_sha256": "0d21bd52022ca7f7e97109d28d327da1e68cc0bedd9713b2dc2b49d3aa104392"
+    },
+    "openCatalogAria": {
+      "text": "Open Known Default Credentials catalog",
+      "source_sha256": "9c677c2d3397aef14ec3da6f7de13e305b052805aea2cb6e4f612c4393be4317"
+    },
+    "openCatalogForHostAria": {
+      "text": "Open catalog for {{host}}",
+      "source_sha256": "6b3468be29742f84fa2185ad9992b14b08db0aad89a7edc15175ae70e62cc578"
+    },
+    "openPoam": {
+      "text": "Open POA&M",
+      "source_sha256": "8609b74b88f3ff55c87eed725bb2c4979f5f908aac3f9a1101e449a93b599fed"
+    },
+    "openPoamAria": {
+      "text": "Open POA&M for these findings",
+      "source_sha256": "827a7b869fa8530a892bb0b769bfcf6a10cffbe6980ef7eece6ba9a182f3cd84"
+    },
+    "openReportCenterAria": {
+      "text": "Open vulnerability inventory report",
+      "source_sha256": "5b7be052337e95a864bec168806d524d11a87d13f58c1736d48e19d6479e997e"
+    },
+    "openSystemsAria": {
+      "text": "Open Systems List to enroll hosts",
+      "source_sha256": "6645228f0da16862c9b4d14c8b66b30f3521f11ad8970fe4db8c715fbdb6a993"
+    },
+    "pageIntro": {
+      "text": "Scan local and virtualization networks for live hosts, then compare results to inventory.",
+      "source_sha256": "c532870d651b857974709b08e3790fc67ac13f946be5e00f9628fac2c621a0c9"
+    },
+    "pageTitle": {
+      "text": "IP Scanner",
+      "source_sha256": "642ce3fa18270337489c97d34fa15ee198799c2539bc9dd0addfe14627043e7a"
+    },
+    "poamFailed": {
+      "text": "Could not open POA&M.",
+      "source_sha256": "01ee8f0d6f84aec78ebcc7668851cc88734c3393c2ca31d4f7511b8058d4ad6a"
+    },
+    "poamOpened": {
+      "text": "POA&M opened.",
+      "source_sha256": "053e84f3cc57372fcff399c456ecc2bc608aa126c2efb6b75826ca932cb21ef4"
+    },
+    "portProfile": {
+      "text": "Port profile",
+      "source_sha256": "ee58f4776e2f7d8c779b95be873ffc8bf49a2f9dc6f37916a09dd522f130aba7"
+    },
+    "portProfileAria": {
+      "text": "Port profile for the scan",
+      "source_sha256": "bef9243b6642bb7c497384a4e7213bc48ffe38e17f75932a4f7ca1a74d7d75aa"
+    },
+    "portProfileTooltip": {
+      "text": "Quick, common services, or a custom port list.",
+      "source_sha256": "191fbd89d90d3852d66b0b750d897301831e35265141a7b00b2ce2cbf74d9057"
+    },
+    "ports": {
+      "text": "Ports",
+      "source_sha256": "de5648dd8c8ea01b58958a7767c3c176367c36890141739abf69d7c741ed70ab"
+    },
+    "portsAria": {
+      "text": "Custom ports, comma-separated",
+      "source_sha256": "7a09faa5dd4b4ff9ca22f23cf9926e23561cca56420883153c4d69f34d6d66ba"
+    },
+    "portsHelper": {
+      "text": "Comma-separated TCP ports when the profile is Custom.",
+      "source_sha256": "9249ffcc4d99d8f98244208950e845fed4ac4a1829e54705c7c27e041ad9b098"
+    },
+    "probesHostsWorkers": {
+      "text": "{{probes}} probes · {{hosts}} hosts · {{workers}} workers",
+      "source_sha256": "74194daf383a263dadbd1c763a9894371c5ad91e32d9a14b9aff3200e85a3378"
+    },
+    "probing": {
+      "text": "Probing {{current}} of {{total}}",
+      "source_sha256": "0be4291a587437b599bf90761ac0af31731fd0301b4e820d0dc420e73d845cab"
+    },
+    "profileCommon": {
+      "text": "Common",
+      "source_sha256": "309955e00850b8afeb148450c7208585a85f8b652d5c625c777726f44837f69c"
+    },
+    "profileCustom": {
+      "text": "Custom",
+      "source_sha256": "494ca78f7374e46fb2de9ad9f2dbd4aaae89b50b2ca044177a1566a59e06627e"
+    },
+    "profileQuick": {
+      "text": "Quick",
+      "source_sha256": "9f49fadb6a863305a9b3e350cba91aff0adc2790f56ae60687e7137a99de0344"
+    },
+    "progressLog": {
+      "text": "Progress log",
+      "source_sha256": "9eb5ad467bc2ab2bc0d62517250d20165cdb3ed536e30b8e8ad60106a4ff0142"
+    },
+    "progressLogAria": {
+      "text": "Scan progress log",
+      "source_sha256": "e0a7008f517b179b07eb05fbf6b7f593bde7cfc775c35e80fe76a921bcb76f8c"
+    },
+    "progressReadFailed": {
+      "text": "Could not read scan progress.",
+      "source_sha256": "b52ebbfc6a5fe901805c957428a7b3fdbbdbab2f196ed016d55b95c980d88767"
+    },
+    "ready": {
+      "text": "Scanner ready",
+      "source_sha256": "67df04d77da74e43e06b9644863458c8e72a2edd49bd4576afd3d044ead14759"
+    },
+    "refreshNetworks": {
+      "text": "Refresh Networks",
+      "source_sha256": "1956b3a53b681d5658540ae622c1d6e4356d113a03b087f8e99e805c10371bcd"
+    },
+    "refreshNetworksAria": {
+      "text": "Reload local networks from this server",
+      "source_sha256": "a71abc410779988d9e764b6e9ba7f2015cac932b19e054ebf13832dc0a05a679"
+    },
+    "refreshNetworksTooltip": {
+      "text": "Reload adapter and inventory networks from this server.",
+      "source_sha256": "19e923dfec23b2363a1379758006c58b99f5bc77c1593995ef7c4484dc35baf2"
+    },
+    "removeTargetAria": {
+      "text": "Remove scan target {{target}}",
+      "source_sha256": "79a03d396cc6bf89bf03b886454bd8f6effd0653f51391532bfcc9c371ed6ab6"
+    },
+    "resultStats": {
+      "text": "{{online}} online · {{unknown}} unknown",
+      "source_sha256": "6feae0a0005184e442a77239f18d91c51bad76b1c2f3ba63273b33ab402574ca"
+    },
+    "resultsLive": {
+      "text": "Live results",
+      "source_sha256": "8630f079d8f5e6c6498cfe5d5b4f2567ab09dc555bd5d4da45f7836ad41432af"
+    },
+    "resultsTitle": {
+      "text": "Scan results",
+      "source_sha256": "b5e09d8b7d1e4139f26f2d9fc36fd1ef19bbe1ff63558a4e1df058210f4c7674"
+    },
+    "rowActionsAria": {
+      "text": "Row actions for {{host}}",
+      "source_sha256": "f8a1b7bd390129bff9138638b74283dda13c9f3723320130131f2e5cfecc5df6"
+    },
+    "rowActionsTooltip": {
+      "text": "Actions for this host",
+      "source_sha256": "a576af76c92ba8e7fccc36189bfe0c7b1d7deaa3dcaa123104403ceb515876ac"
+    },
+    "savedImport": {
+      "text": "{{count}} saved to import queue",
+      "source_sha256": "905bce6415aacc87e35ae1910dd65c662ddb671dadb55e8d4f175c56048e112d"
+    },
+    "scan": {
+      "text": "Scan",
+      "source_sha256": "ea1c510d1ddb726491a6cb0a66573189c72bf8781322f8adaed0c0c0c7cea4af"
+    },
+    "scanFailed": {
+      "text": "The network scan failed.",
+      "source_sha256": "21ebd7292f3b5497c10ef3a20bbf98a55d78885c4edf7e43381056fb49ae966e"
+    },
+    "scanNetworks": {
+      "text": "Scan Networks",
+      "source_sha256": "6abbe217d4d278653d6a5a8a070451a756a61fa6dfcba0a7052a56fe1725ebf6"
+    },
+    "selectAllNetworks": {
+      "text": "Select all shown",
+      "source_sha256": "42dc8674c37597c0db8aa1274b546ec812db4496f259a15bc1506959fcf4279c"
+    },
+    "startAria": {
+      "text": "Start IP scan",
+      "source_sha256": "63b83d105c12e41f59cceb296ac94f37b71d9e4c1a65bcf4dd9e5e459e634d12"
+    },
+    "startFailed": {
+      "text": "The network scan did not start.",
+      "source_sha256": "79a8f9ee0797acd0dfc5a21607080caaf03b4e89fc7740f26b9e2d7332c4d848"
+    },
+    "startTooltip": {
+      "text": "Start a concurrent IP range scan.",
+      "source_sha256": "64468671e013e8b97a68b4e356da02b4c5e480aa3c90e08cfc78b46f039dde0e"
+    },
+    "statusCompleted": {
+      "text": "Completed",
+      "source_sha256": "22a970d2e5b1cc233e462be7c7b64e135a275bb09d83d87683bf4236c43113a1"
+    },
+    "statusFailed": {
+      "text": "Failed",
+      "source_sha256": "031a8f0f659df890dfd53c92e45295b0f14c997185bae46e168831e403b273f7"
+    },
+    "statusQueued": {
+      "text": "Queued",
+      "source_sha256": "661ff40a07e037bbd5f7d4ec97a4df1503096ca910e7c9e2d7a4e9abd4e4e1a0"
+    },
+    "statusRunning": {
+      "text": "Running",
+      "source_sha256": "f4ccae29e1bb0c20a124570a1b43f4347ea94bba9f84ffdfddd9c7445b126128"
+    },
+    "statusStopped": {
+      "text": "Stopped",
+      "source_sha256": "1a4f630ac1b69fd00728fa8a672ded71d0eae8516cb23e78f94529113399b79b"
+    },
+    "stop": {
+      "text": "Stop",
+      "source_sha256": "cae7d57bc067a514b8e34c9589631a95c7dc051638ddd2a190773269279a99df"
+    },
+    "stopAria": {
+      "text": "Stop IP scan",
+      "source_sha256": "ed4103cfeda2fda056da8c7404144b497cfbeed99e4023c7a6b1553cd1548295"
+    },
+    "stopFailed": {
+      "text": "Could not stop the scan.",
+      "source_sha256": "3b41a682d960088db1e9cd6e38088b3167e18899cd8a0de169ecb1f8a2a824f1"
+    },
+    "stopTooltip": {
+      "text": "Request a cooperative stop.",
+      "source_sha256": "355bdb20889d856d889d65049b23b29078e818caa63590c8e27808b698954b41"
+    },
+    "title": {
+      "text": "IP Scanner",
+      "source_sha256": "642ce3fa18270337489c97d34fa15ee198799c2539bc9dd0addfe14627043e7a"
+    },
+    "trackPoam": {
+      "text": "Track POA&M",
+      "source_sha256": "2b4f1d847634f7fa2173bb0992ca222c3c3eb98a79c5f940ab1d6ac66963b1e2"
+    },
+    "trackPoamAria": {
+      "text": "Track this finding on POA&M",
+      "source_sha256": "62623d880ba30ec86a75ae814dd3de536a1bae3422fb0a90a65e5897e11ac45e"
+    },
+    "unavailable": {
+      "text": "Unavailable",
+      "source_sha256": "ca184496974204a0bd3fd4925e0540bc4b0df6fcc232994d29754272b7183812"
+    },
+    "unknown": {
+      "text": "Unknown",
+      "source_sha256": "b764cdc0eab7137467211272fa539f1260d1bf2e71bcf6ff3bdc960f5c16aa14"
+    },
+    "useAllLocal": {
+      "text": "Use All Local Networks",
+      "source_sha256": "dbe54965461ef644bbc11005c90e49fb2fefc0cecd67599659bbcdec23aba31a"
+    },
+    "useNetworkAria": {
+      "text": "Include network {{network}}",
+      "source_sha256": "138102b482878ba7a6349b076a0d0aecefc8512d39ea9795885e6059ef861601"
+    },
+    "useVirt": {
+      "text": "Use Virtualization Networks",
+      "source_sha256": "4aefda88d5d01780961469acb0720de63c251e1289d8812dc729db8bd03292e7"
+    },
+    "virtNetworksAria": {
+      "text": "Use virtualization networks as scan targets",
+      "source_sha256": "065fab16ce4b2ac40b779ff1a6309a1d505127a99db2ac94b2769eab31748496"
+    },
+    "virtNetworksTooltip": {
+      "text": "Fill targets with Docker, Hyper-V, WSL, and other virtualization ranges.",
+      "source_sha256": "4a4c09bddc27b3ff991779df658e34770f0aff51c9c60e814b174b1003a0863e"
+    },
+    "vulnInventoryReport": {
+      "text": "Vulnerability inventory report",
+      "source_sha256": "899d5dc59ee0115f4d64362c7f9c7cd2c6e20bb5c5da5164a9ca1748dfeb50b6"
+    },
+    "workers": {
+      "text": "Workers",
+      "source_sha256": "7a1ec9fe6c3b483f5420a820892c4e29c5e76f6e1bbed4671e07de3371653e98"
+    },
+    "workersAria": {
+      "text": "Concurrent probe workers",
+      "source_sha256": "cd5c8b03cecab18093e95c563cd0b24e4308b66353f9deccf948501c4db92142"
+    },
+    "workersHelper": {
+      "text": "How many TCP connect attempts run at once (default 64, max 500).",
+      "source_sha256": "f295b29a0833d7882acfdca2809e09d94c0ad5fdc09ec5ba88557ca445c439d6"
     }
   }
 }
