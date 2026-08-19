@@ -91,7 +91,7 @@
     "technical": {
       "label": {
         "text": "Technische Dokumentation",
-        "source_sha256": ""
+        "source_sha256": "ac81875d0a3603868b276e6cf4e6231f9e1f339f29e6875d07f31d99a7458baf"
       },
       "description": {
         "text": "OpenAPI, Swagger UI und technische Entwicklerreferenz.",
@@ -108,38 +108,72 @@
       "text": "So richten Sie Auditoren auf derselben Anmeldeseite ein, welche Gruppen Sie verwenden und wo Sie die Einstellungen vornehmen.",
       "source_sha256": ""
     },
-    "body": [
-      {
-        "text": "Jeder meldet sich auf derselben Anmeldeseite an. Es gibt kein getrenntes Auditor-Portal. Menüs und Rechte kommen aus den Gruppen, die Sie zuweisen. Das entspricht dem Thoropass-Modell: ein Auditor prüft Nachweise; ein Audit-Admin (Leitung) kann außerdem andere Auditoren einrichten. Identitätsadministratoren legen Konten an, die keine Auditoren sind. Das ist keine Auditoraufgabe.",
-        "source_sha256": ""
+    "body": {
+      "text": [
+        {
+          "text": "Jeder meldet sich auf derselben Anmeldeseite an. Es gibt kein getrenntes Auditor-Portal. Menüs und Rechte kommen aus den Gruppen, die Sie zuweisen. Das entspricht dem Thoropass-Modell: ein Auditor prüft Nachweise; ein Audit-Admin (Leitung) kann außerdem andere Auditoren einrichten. Identitätsadministratoren legen Konten an, die keine Auditoren sind. Das ist keine Auditoraufgabe.",
+          "source_sha256": ""
+        },
+        {
+          "text": "Demonstrationsumgebungen enthalten drei Startkonten, damit Sie jede Aufgabe ausprobieren können. Ändern Sie diese Passwörter vor jeder gemeinsamen Demonstration. Produktionsumgebungen legen eigene Personen an und ordnen sie den Gruppen unten zu. Dieser Leitfaden beschreibt die Einrichtung des Produkts. Er ist keine Zertifizierungsbehauptung.",
+          "source_sha256": ""
+        }
+      ],
+      "source_sha256": "79cc736f07c5c7ff7b412abcf4d0f3e342981f32071f915214cc82f30cf4d5ed",
+      "0": {
+        "text": "Jeder meldet sich auf derselben Anmeldeseite an. Es gibt kein separates Prüferportal. Menüs und Rechte stammen aus den Gruppen, die Sie zuweisen. Dies entspricht dem Thoropass-Modell: Ein Prüfer prüft Beweise; Ein Audit-Administrator (Management) kann auch andere Auditoren einrichten. Identitätsadministratoren erstellen Konten, die keine Prüfer sind. Dies ist nicht die Aufgabe eines Wirtschaftsprüfers.",
+        "source_sha256": "93678c7582ae3d470c897c7b6308b550050b55d23e87ac32d6458c4c33b815ce"
       },
-      {
-        "text": "Demonstrationsumgebungen enthalten drei Startkonten, damit Sie jede Aufgabe ausprobieren können. Ändern Sie diese Passwörter vor jeder gemeinsamen Demonstration. Produktionsumgebungen legen eigene Personen an und ordnen sie den Gruppen unten zu. Dieser Leitfaden beschreibt die Einrichtung des Produkts. Er ist keine Zertifizierungsbehauptung.",
-        "source_sha256": ""
+      "1": {
+        "text": "Demonstration environments include three starting accounts so you can try out each task. Change these passwords before each joint demonstration. Production environments create their own people and assign them to the groups below. This guide describes how to set up the product. It is not a certification claim.",
+        "source_sha256": "1588afb7ee4753cff6b34d99ceefde61744ca5619bac1eeca60450567c82b543"
       }
-    ],
-    "steps": [
-      {
-        "text": "Öffnen Sie die lokale IAM-Verwaltung und legen Sie die Person an oder wählen Sie sie aus.",
-        "source_sha256": ""
+    },
+    "steps": {
+      "text": [
+        {
+          "text": "Öffnen Sie die lokale IAM-Verwaltung und legen Sie die Person an oder wählen Sie sie aus.",
+          "source_sha256": ""
+        },
+        {
+          "text": "Fügen Sie die Person den Gruppen für ihre Aufgabe in der Tabelle unten hinzu.",
+          "source_sha256": ""
+        },
+        {
+          "text": "Oder schreiben Sie sie mit der passenden Einschreibungsvorgabe ein.",
+          "source_sha256": ""
+        },
+        {
+          "text": "Bitten Sie sie, sich auf der gewöhnlichen Anmeldeseite anzumelden.",
+          "source_sha256": ""
+        },
+        {
+          "text": "Öffnen Sie Audit-Engagements, um sie zu einem Engagement einzuladen, wenn Ihr Verfahren Einladungen verwendet.",
+          "source_sha256": ""
+        }
+      ],
+      "source_sha256": "ac52c5d400490952ab0ca134ba34ecf99b67e66fde5f4fb44b0ec859e4e09596",
+      "0": {
+        "text": "Open the local IAM administration and create or select the person.",
+        "source_sha256": "74218568bb6ab85a4b766f47fd67f5f6305e83c891be656af67ebc4a184cd5e4"
       },
-      {
-        "text": "Fügen Sie die Person den Gruppen für ihre Aufgabe in der Tabelle unten hinzu.",
-        "source_sha256": ""
+      "1": {
+        "text": "Fügen Sie der Person die Gruppen für ihre Aufgabe in der Tabelle unten hinzu.",
+        "source_sha256": "04af034c1ca9b64caf261d340155af8e7ae832a831b21a78fbf873a5bab41d98"
       },
-      {
-        "text": "Oder schreiben Sie sie mit der passenden Einschreibungsvorgabe ein.",
-        "source_sha256": ""
+      "2": {
+        "text": "Oder Sie schreiben sie mit der passenden Einschreibungsvorgabe ein.",
+        "source_sha256": "c183e94845a61af1a995b5dedd84d77e0e9cefcfe881267ca607ba9a9c7ab6bb"
       },
-      {
-        "text": "Bitten Sie sie, sich auf der gewöhnlichen Anmeldeseite anzumelden.",
-        "source_sha256": ""
+      "3": {
+        "text": "Bitten Sie sie, sich auf der privaten Anmeldeseite anzumelden.",
+        "source_sha256": "99c24d5b7ace5c227361b4da5ac4db418ee637e02dfc0e248d1b89f9d83d8f36"
       },
-      {
+      "4": {
         "text": "Öffnen Sie Audit-Engagements, um sie zu einem Engagement einzuladen, wenn Ihr Verfahren Einladungen verwendet.",
-        "source_sha256": ""
+        "source_sha256": "73bcbd7fef0629721b8da9ccf5fc45dff8646fa730735e3d2f591f54c027c993"
       }
-    ],
+    },
     "productLabel": {
       "text": "Lokale IAM-Verwaltung öffnen",
       "source_sha256": ""
@@ -150,243 +184,442 @@
           "text": "Auditoraufgaben, Gruppen und Grenzen",
           "source_sha256": ""
         },
-        "headers": [
-          {
-            "text": "Aufgabe",
-            "source_sha256": ""
+        "headers": {
+          "text": [
+            {
+              "text": "Aufgabe",
+              "source_sha256": ""
+            },
+            {
+              "text": "Gruppen",
+              "source_sha256": ""
+            },
+            {
+              "text": "Einschreibungsvorgabe",
+              "source_sha256": ""
+            },
+            {
+              "text": "Darf",
+              "source_sha256": ""
+            },
+            {
+              "text": "Darf nicht",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "c9f80dca8194bfde07692290957a77cc3d3d0033f33b9bba0aacc23d38e06422",
+          "0": {
+            "text": "Arbeit",
+            "source_sha256": "ad617a0fdd57e3f4b8ebb27f6f60470bc4468aadec290db57e612f751767745d"
           },
-          {
+          "1": {
             "text": "Gruppen",
-            "source_sha256": ""
+            "source_sha256": "39bbb719fa2b9d2251039cbf2cd072e1120a414278263e2f11d99af0236c4262"
           },
-          {
-            "text": "Einschreibungsvorgabe",
-            "source_sha256": ""
+          "2": {
+            "text": "Registrierungsvoreinstellung",
+            "source_sha256": "a17f139a800b40ba79072e64cadb7a194d4e9c53938806d6fadf9a67b4b995e8"
           },
-          {
-            "text": "Darf",
-            "source_sha256": ""
+          "3": {
+            "text": "Kann",
+            "source_sha256": "2de2c8f7e0f142fc595dfc3b82b8ce30841e6a9ca3a7560742c1e10823786b41"
           },
-          {
+          "4": {
             "text": "Darf nicht",
-            "source_sha256": ""
+            "source_sha256": "718e628f3829d259821ebdd30c7c5f43d0d99378ee8a120e16df2b366a601b70"
           }
-        ],
-        "rows": [
-          [
-            "Nur-Lesen-Beobachter",
-            "Nur-Lesen-Assessoren und Dokumentationsbenutzer",
-            "read-only-assessor",
-            "Assessment-Binder und Berichte ansehen",
-            "Binderinhalt schreiben, Fix-It oder Identitäten verwalten"
+        },
+        "rows": {
+          "text": [
+            [
+              "Nur-Lesen-Beobachter",
+              "Nur-Lesen-Assessoren und Dokumentationsbenutzer",
+              "read-only-assessor",
+              "Assessment-Binder und Berichte ansehen",
+              "Binderinhalt schreiben, Fix-It oder Identitäten verwalten"
+            ],
+            [
+              "Arbeitender Auditor (Auditor)",
+              "CMMC-Assessoren, Assessment-Team und Dokumentationsbenutzer",
+              "cmmc-assessor",
+              "Binderinhalt schreiben, Engagements prüfen, Risiken pflegen",
+              "Konten anlegen, Passwörter zurücksetzen, Fix-It oder Restrisiko akzeptieren"
+            ],
+            [
+              "Leitender Auditor (Audit-Admin)",
+              "Leitende Auditoren, CMMC-Assessoren, Assessment-Team und Dokumentationsbenutzer",
+              "lead-auditor",
+              "Wie der arbeitende Auditor, plus auditorbezogene Konten anlegen, sie Auditorgruppen hinzufügen, nur diese Passwörter zurücksetzen und Engagements verwalten",
+              "Administratorpasswörter zurücksetzen, Super-Admin vergeben, Identitätsanbieter verwalten oder Fix-It"
+            ]
           ],
-          [
-            "Arbeitender Auditor (Auditor)",
-            "CMMC-Assessoren, Assessment-Team und Dokumentationsbenutzer",
-            "cmmc-assessor",
-            "Binderinhalt schreiben, Engagements prüfen, Risiken pflegen",
-            "Konten anlegen, Passwörter zurücksetzen, Fix-It oder Restrisiko akzeptieren"
-          ],
-          [
-            "Leitender Auditor (Audit-Admin)",
-            "Leitende Auditoren, CMMC-Assessoren, Assessment-Team und Dokumentationsbenutzer",
-            "lead-auditor",
-            "Wie der arbeitende Auditor, plus auditorbezogene Konten anlegen, sie Auditorgruppen hinzufügen, nur diese Passwörter zurücksetzen und Engagements verwalten",
-            "Administratorpasswörter zurücksetzen, Super-Admin vergeben, Identitätsanbieter verwalten oder Fix-It"
-          ]
-        ]
+          "source_sha256": "0989ec67ac90bf350fc49510a508186885ccd0fed9ce01ee88c849ea12811025",
+          "0": {
+            "0": {
+              "text": "Schreibgeschützter Beobachter",
+              "source_sha256": "124a075178664d2ee91ff8fc4b9105d0836a437049fc24111597b6155b208eda"
+            },
+            "1": {
+              "text": "Schreibgeschützte Gutachter und Dokumentationsbenutzer",
+              "source_sha256": "b9850db67366f8e12d47aca92555920fcb1fb9c5627a1f58254c67feecf2ca1d"
+            },
+            "2": {
+              "text": "Nur-Lese-Prüfer",
+              "source_sha256": "78218efaecc299d8937a7ccb02b5218dcbb87b5817793e358b7e009245532e47"
+            },
+            "3": {
+              "text": "Bewertungsordner und Berichte anzeigen",
+              "source_sha256": "9d46e9a523253882459bbfe2fcdb69c3dc2e943f89f6a3334fad58bd3ad446ec"
+            },
+            "4": {
+              "text": "Schreiben Sie Ordnerinhalte, reparieren Sie sie oder verwalten Sie Identitäten",
+              "source_sha256": "82fd8376cc83606a3a7e1fd9e5c91a5b8331dbdd60447019613ac890b785f017"
+            }
+          },
+          "1": {
+            "0": {
+              "text": "Arbeitsauditor (Auditor)",
+              "source_sha256": "944d1f7fee040102f42afef4a10b48a4992a6f40fefbaa0e98a0ec7c941cc6ab"
+            },
+            "1": {
+              "text": "CMMC Prüfer, Bewertungsteam und Dokumentationsbenutzer",
+              "source_sha256": "b48d7428c73de6aa422f5de2de8d6eef73c438fec280ac7916831ee0a9494838"
+            },
+            "2": {
+              "text": "cmmc-assessor",
+              "source_sha256": "6613533426ca2300e9c63eeb209573f98c115704d96509ebe7fd95e42560526d"
+            },
+            "3": {
+              "text": "Schreiben Sie Ordnerinhalte, überprüfen Sie Aufträge und verwalten Sie Risiken",
+              "source_sha256": "e6d4700c06f8b2c0571430eeef7a57778c7c1a0f7093b3c898f6f4cd37c28549"
+            },
+            "4": {
+              "text": "Erstellen Sie Konten, setzen Sie Passwörter zurück, reparieren Sie es oder akzeptieren Sie ein Restrisiko",
+              "source_sha256": "7ed48f8d001148d1a523e82d8e19089fa9bd91d315a39d408e194ffd0fb238e4"
+            }
+          },
+          "2": {
+            "0": {
+              "text": "Leitender Auditor (Audit-Administrator)",
+              "source_sha256": "ad327d82e6d729f67843d72b3dc5d3820b11479f40abd170d786e44a537595f1"
+            },
+            "1": {
+              "text": "Leitende Auditoren, CMMC-Assessoren, Bewertungsteam und Dokumentationsbenutzer",
+              "source_sha256": "5f38ef6b0333ece489762dd38e800f99608fddcfa85dfd6d07cdca9721b00d28"
+            },
+            "2": {
+              "text": "Leitender Auditor",
+              "source_sha256": "4012403d359f568308ee40454e0f6062e277496074f12d38353777ac7e185f51"
+            },
+            "3": {
+              "text": "Das Gleiche wie ein arbeitender Prüfer, außerdem können Sie Konten der Prüferklasse erstellen, sie Prüfergruppen hinzufügen, nur diese Passwörter zurücksetzen und Aufträge verwalten",
+              "source_sha256": "a7c2351fa40bcbee672810e7cb7fa60ada50db21e8dabc927841136e12c822f6"
+            },
+            "4": {
+              "text": "Setzen Sie Administratorkennwörter zurück, gewähren Sie Super Admin, verwalten Sie Identitätsanbieter oder reparieren Sie es",
+              "source_sha256": "8e7a60df7c9f329660a9a05c3c3d20c7f9f5daf7e7689e3ea4dfa2d631296a3c"
+            }
+          }
+        }
       },
       "seeds": {
         "caption": {
           "text": "Startkonten für Demonstrationen",
           "source_sha256": ""
         },
-        "headers": [
-          {
+        "headers": {
+          "text": [
+            {
+              "text": "Benutzername",
+              "source_sha256": ""
+            },
+            {
+              "text": "Aufgabe",
+              "source_sha256": ""
+            },
+            {
+              "text": "Gruppen",
+              "source_sha256": ""
+            },
+            {
+              "text": "Hinweise",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "3c895f0f8f250ed6c4e7de63fe13fd7279fb1cd1665bd802a4afd440863eef12",
+          "0": {
             "text": "Benutzername",
-            "source_sha256": ""
+            "source_sha256": "fc309e30dbbe8a435efbdd0b7e382595932509ed56f140aa1759256b00485a18"
           },
-          {
+          "1": {
             "text": "Aufgabe",
-            "source_sha256": ""
+            "source_sha256": "5683517b480b8f352080960014ea795c39c58419f1f8215833e780d358cd6665"
           },
-          {
+          "2": {
             "text": "Gruppen",
-            "source_sha256": ""
+            "source_sha256": "39bbb719fa2b9d2251039cbf2cd072e1120a414278263e2f11d99af0236c4262"
           },
-          {
+          "3": {
             "text": "Hinweise",
-            "source_sha256": ""
+            "source_sha256": "b791a5686bab4aa0cd0b84e981e03bcb5ab29d49b0d012f8f44a42337f982ade"
           }
-        ],
-        "rows": [
-          [
-            "readonly",
-            "Nur-Lesen-Beobachter",
-            "Nur-Lesen-Assessoren und Dokumentationsbenutzer",
-            "Sieht Nachweise. Kann den Binder nicht schreiben."
+        },
+        "rows": {
+          "text": [
+            [
+              "readonly",
+              "Nur-Lesen-Beobachter",
+              "Nur-Lesen-Assessoren und Dokumentationsbenutzer",
+              "Sieht Nachweise. Kann den Binder nicht schreiben."
+            ],
+            [
+              "auditor",
+              "Arbeitender Auditor",
+              "CMMC-Assessoren, Assessment-Team und Dokumentationsbenutzer",
+              "Prüft und schreibt Nachweise. Kann keine Konten anlegen."
+            ],
+            [
+              "auditorlead",
+              "Leitender Auditor (Audit-Admin)",
+              "Leitende Auditoren, CMMC-Assessoren, Assessment-Team und Dokumentationsbenutzer",
+              "Kann andere Auditoren einrichten. Kann keine Administratorpasswörter zurücksetzen."
+            ]
           ],
-          [
-            "auditor",
-            "Arbeitender Auditor",
-            "CMMC-Assessoren, Assessment-Team und Dokumentationsbenutzer",
-            "Prüft und schreibt Nachweise. Kann keine Konten anlegen."
-          ],
-          [
-            "auditorlead",
-            "Leitender Auditor (Audit-Admin)",
-            "Leitende Auditoren, CMMC-Assessoren, Assessment-Team und Dokumentationsbenutzer",
-            "Kann andere Auditoren einrichten. Kann keine Administratorpasswörter zurücksetzen."
-          ]
-        ]
+          "source_sha256": "6436737e7de6c41c23aada9c3c083eb8eb2bbf47e795580922ae0d50ed8a7922"
+        }
       },
       "screens": {
         "caption": {
           "text": "Bildschirme und wer sie nutzen darf",
           "source_sha256": ""
         },
-        "headers": [
-          {
+        "headers": {
+          "text": [
+            {
+              "text": "Bildschirm",
+              "source_sha256": ""
+            },
+            {
+              "text": "Nur-Lesen",
+              "source_sha256": ""
+            },
+            {
+              "text": "Arbeitender Auditor",
+              "source_sha256": ""
+            },
+            {
+              "text": "Leitung (Audit-Admin)",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "c620e89de5d2132c813eea110467d8d1bdf40505ac6c0dcdb825ef5d09b25a61",
+          "0": {
             "text": "Bildschirm",
-            "source_sha256": ""
+            "source_sha256": "13cae19164935e0c192979c5511e086a260c2b1a611b080882fc3b62a0380506"
           },
-          {
+          "1": {
             "text": "Nur-Lesen",
-            "source_sha256": ""
+            "source_sha256": "bfb9000c57167b252f23af44e3a04bb894b5e6b0440f0d79c582e51cbbbce955"
           },
-          {
-            "text": "Arbeitender Auditor",
-            "source_sha256": ""
+          "2": {
+            "text": "Arbeitender Wirtschaftsprüfer",
+            "source_sha256": "7df7674fd19b99f90274271a92da05af07955acf2019287beca822c9ae2d21db"
           },
-          {
+          "3": {
             "text": "Leitung (Audit-Admin)",
-            "source_sha256": ""
+            "source_sha256": "ca42fdc257ecfbf81cfe91bb5e42c26a43377bec368b14764d54351383729520"
           }
-        ],
-        "rows": [
-          [
-            "Anmelden",
-            "Ja",
-            "Ja",
-            "Ja"
+        },
+        "rows": {
+          "text": [
+            [
+              "Anmelden",
+              "Ja",
+              "Ja",
+              "Ja"
+            ],
+            [
+              "Assessment-Binder",
+              "Ansehen",
+              "Ansehen und schreiben",
+              "Ansehen und schreiben"
+            ],
+            [
+              "Berichtszentrum",
+              "Ansehen und herunterladen",
+              "Ansehen und herunterladen",
+              "Ansehen und herunterladen"
+            ],
+            [
+              "Audit-Engagements",
+              "Ansehen, wenn eingeladen",
+              "Prüfen",
+              "Prüfen und verwalten"
+            ],
+            [
+              "Aktueller Compliance-Stand",
+              "Lesen",
+              "Lesen",
+              "Lesen"
+            ],
+            [
+              "Auditierung",
+              "Lesen",
+              "Lesen",
+              "Lesen"
+            ],
+            [
+              "Lokale IAM-Verwaltung",
+              "Nein",
+              "Nein",
+              "Nur auditorbezogene Konten"
+            ],
+            [
+              "Einschreibung und Zugriffskontrolle",
+              "Matrix lesen",
+              "Matrix lesen",
+              "Matrix lesen"
+            ],
+            [
+              "Servereinstellungen / Fix-It",
+              "Nein",
+              "Nein",
+              "Nein"
+            ]
           ],
-          [
-            "Assessment-Binder",
-            "Ansehen",
-            "Ansehen und schreiben",
-            "Ansehen und schreiben"
-          ],
-          [
-            "Berichtszentrum",
-            "Ansehen und herunterladen",
-            "Ansehen und herunterladen",
-            "Ansehen und herunterladen"
-          ],
-          [
-            "Audit-Engagements",
-            "Ansehen, wenn eingeladen",
-            "Prüfen",
-            "Prüfen und verwalten"
-          ],
-          [
-            "Aktueller Compliance-Stand",
-            "Lesen",
-            "Lesen",
-            "Lesen"
-          ],
-          [
-            "Auditierung",
-            "Lesen",
-            "Lesen",
-            "Lesen"
-          ],
-          [
-            "Lokale IAM-Verwaltung",
-            "Nein",
-            "Nein",
-            "Nur auditorbezogene Konten"
-          ],
-          [
-            "Einschreibung und Zugriffskontrolle",
-            "Matrix lesen",
-            "Matrix lesen",
-            "Matrix lesen"
-          ],
-          [
-            "Servereinstellungen / Fix-It",
-            "Nein",
-            "Nein",
-            "Nein"
-          ]
-        ]
+          "source_sha256": "04f8d3c8b3d8b043a23447aacb23b3ff099a4402680b8f21a999c4b80be07dee"
+        }
       }
     },
     "configLinksTitle": {
       "text": "Wo Sie diese Einstellungen vornehmen",
       "source_sha256": ""
     },
-    "configLinks": [
-      {
+    "configLinks": {
+      "text": [
+        {
+          "label": {
+            "text": "Anmelden",
+            "source_sha256": ""
+          },
+          "note": {
+            "text": "Die einzige Anmeldeseite. Auditoren nutzen diese Seite wie alle anderen.",
+            "source_sha256": ""
+          }
+        },
+        {
+          "label": {
+            "text": "Lokale IAM-Verwaltung",
+            "source_sha256": ""
+          },
+          "note": {
+            "text": "Zugriff und Identität → Verzeichnis → Lokale IAM-Verwaltung. Personen anlegen, Gruppen zuweisen und auditorbezogene Passwörter zurücksetzen (nur Leitung).",
+            "source_sha256": ""
+          }
+        },
+        {
+          "label": {
+            "text": "Einschreibung und Zugriffskontrolle",
+            "source_sha256": ""
+          },
+          "note": {
+            "text": "Zugriff und Identität → Verzeichnis → Einschreibung und Zugriffskontrolle. Zeigt die Einschreibungsvorgaben (read-only-assessor, cmmc-assessor, lead-auditor).",
+            "source_sha256": ""
+          }
+        },
+        {
+          "label": {
+            "text": "Audit-Engagements",
+            "source_sha256": ""
+          },
+          "note": {
+            "text": "Compliance → Audit-Engagements. Auditoren einladen und das Engagement verwalten.",
+            "source_sha256": ""
+          }
+        },
+        {
+          "label": {
+            "text": "Assessment-Binder",
+            "source_sha256": ""
+          },
+          "note": {
+            "text": "Compliance → Assessment-Binder. Steuerungsnarrative und Nachweise schreiben oder prüfen.",
+            "source_sha256": ""
+          }
+        },
+        {
+          "label": {
+            "text": "Auditor-Handbücher",
+            "source_sha256": ""
+          },
+          "note": {
+            "text": "Dokumentation → Auditor-Handbücher. Dieser Leitfaden und die Kapitel für die Assessorarbeit.",
+            "source_sha256": ""
+          }
+        }
+      ],
+      "source_sha256": "04e9f34f0b14aa6d878e4ec1509b7648f6934052f48aca3a04464d0319072d6f",
+      "0": {
         "label": {
-          "text": "Anmelden",
-          "source_sha256": ""
+          "text": "Registrieren",
+          "source_sha256": "bb7234ec12451361e6f35bcbe76de58e4350657fe60d1b96ace0947f59194083"
         },
         "note": {
-          "text": "Die einzige Anmeldeseite. Auditoren nutzen diese Seite wie alle anderen.",
-          "source_sha256": ""
+          "text": "Die einzige Anmeldeseite. Wirtschaftsprüfer nutzen diese Website wie alle anderen auch.",
+          "source_sha256": "7c1772680987eb0810879683657437c5ca711dca2eb24ad4b44bfdd1d75c4754"
         }
       },
-      {
+      "1": {
         "label": {
           "text": "Lokale IAM-Verwaltung",
-          "source_sha256": ""
+          "source_sha256": "5d77bb3f5103f030369432f842ff121b8ab21cc2d69e5dd79a20aa7179aa9863"
         },
         "note": {
-          "text": "Zugriff und Identität → Verzeichnis → Lokale IAM-Verwaltung. Personen anlegen, Gruppen zuweisen und auditorbezogene Passwörter zurücksetzen (nur Leitung).",
-          "source_sha256": ""
+          "text": "Zugriff und Identität → Verzeichnis → Lokale IAM-Verwaltung. Erstellen Sie Personen, weisen Sie Gruppen zu und setzen Sie Prüfer-bezogene Passwörter zurück (nur Leitung).",
+          "source_sha256": "9fec7d41b1ecc877bdbc95218fd2220dfcb81730be30f0719906f0e3aa95b907"
         }
       },
-      {
+      "2": {
         "label": {
           "text": "Einschreibung und Zugriffskontrolle",
-          "source_sha256": ""
+          "source_sha256": "2fd02dace2cb256f9260feb7e51309d8160f06046f526609060fe702defecb8a"
         },
         "note": {
-          "text": "Zugriff und Identität → Verzeichnis → Einschreibung und Zugriffskontrolle. Zeigt die Einschreibungsvorgaben (read-only-assessor, cmmc-assessor, lead-auditor).",
-          "source_sha256": ""
+          "text": "Zugriff und Identität → Verzeichnis → Registrierung und Zugriffskontrolle. Zeigt die Registrierungsvoraussetzungen an (Nur-Lese-Assessor, CMMC-Assessor, Lead-Auditor).",
+          "source_sha256": "182512ee39ef91dc376dd76adb5d4b99c82cbe71ff84211e6e899c3b1d2eb1fd"
         }
       },
-      {
+      "3": {
         "label": {
-          "text": "Audit-Engagements",
-          "source_sha256": ""
+          "text": "Audit-Aufträge",
+          "source_sha256": "dfcaba173519aee109c924095aa988b1a5824cad0057d441b2459f513227e23a"
         },
         "note": {
-          "text": "Compliance → Audit-Engagements. Auditoren einladen und das Engagement verwalten.",
-          "source_sha256": ""
+          "text": "Compliance → Audit-Aufträge. Auditoren einladen und das Engagement verwalten.",
+          "source_sha256": "ce71519ef6836ac4b01029aa14780320240dab405ca9b79fee5693d12bdcacd8"
         }
       },
-      {
+      "4": {
         "label": {
-          "text": "Assessment-Binder",
-          "source_sha256": ""
+          "text": "Bewertungsordner",
+          "source_sha256": "f6b38b0d06b1d601b62003ce6d3b5cb52447b4598bdb96151a213a9535b28d7f"
         },
         "note": {
-          "text": "Compliance → Assessment-Binder. Steuerungsnarrative und Nachweise schreiben oder prüfen.",
-          "source_sha256": ""
+          "text": "Compliance → Assessment-Ordner. Steuerungsnarrative und Nachweise schreiben oder prüfen.",
+          "source_sha256": "16bbc2b7290931fd3763e95c32069cff700f89a87946c87919286fb0f9d02c66"
         }
       },
-      {
+      "5": {
         "label": {
-          "text": "Auditor-Handbücher",
-          "source_sha256": ""
+          "text": "Wirtschaftsprüfer-Handbucher",
+          "source_sha256": "8bda1a436adad4218135701588a04edb7c5cb1f413b55a5531046dd6fe94d69d"
         },
         "note": {
-          "text": "Dokumentation → Auditor-Handbücher. Dieser Leitfaden und die Kapitel für die Assessorarbeit.",
-          "source_sha256": ""
+          "text": "Dokumentation → Auditor-Handbuch. Dieser Leitfaden und das Kapitel zur Assessorarbeit.",
+          "source_sha256": "b9e89deab82e7bffc02e6f434542ad9354d5e780cf9fb5af3c3b314eb1e85cf1"
         }
       }
-    ]
+    }
   },
   "user": {
     "title": {
@@ -407,41 +640,75 @@
           "text": "Anmelden, Meine Arbeitsplätze öffnen und eine erste vermittelte Sitzung starten.",
           "source_sha256": ""
         },
-        "body": [
-          {
-            "text": "AIC Server zeigt eine Anmeldeseite im Browser. Nutzen Sie die Identität, die Ihre Organisation Ihnen gegeben hat (lokales Konto oder Verzeichnis). Wenn die Seite eine Mehrfaktor-Authentifizierung verlangt, schließen Sie sie ab, bevor Sie Arbeitsplatzsteuerungen erwarten.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Meine Arbeitsplätze listet die Ihnen zugewiesenen Maschinen. Sie können keinen Zugriff auf einen Host erfinden, der nicht auf dieser Liste steht — bitten Sie einen Administrator um eine Zuweisung, statt endlos neu zu versuchen.",
-            "source_sha256": ""
-          }
-        ],
-        "steps": [
-          {
-            "text": "Melden Sie sich an und schließen Sie MFA ab, wenn Sie dazu aufgefordert werden.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Öffnen Sie Meine Arbeitsplätze in der Hauptnavigation.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Wählen Sie einen zugewiesenen Arbeitsplatz und starten Sie den Sitzungsvermittler.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Lassen Sie den Browser-Tab geöffnet, während die Sitzung startet. Schließen Sie ihn erst nach dem Trennen.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Fehlt eine Maschine, wenden Sie sich an einen Administrator, statt die Sitzung einer anderen Person zu teilen.",
-            "source_sha256": ""
-          }
-        ],
+        "body": {
+          "text": [
+            {
+              "text": "AIC Server zeigt eine Anmeldeseite im Browser. Nutzen Sie die Identität, die Ihre Organisation Ihnen gegeben hat (lokales Konto oder Verzeichnis). Wenn die Seite eine Mehrfaktor-Authentifizierung verlangt, schließen Sie sie ab, bevor Sie Arbeitsplatzsteuerungen erwarten.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Meine Arbeitsplätze listet die Ihnen zugewiesenen Maschinen. Sie können keinen Zugriff auf einen Host erfinden, der nicht auf dieser Liste steht — bitten Sie einen Administrator um eine Zuweisung, statt endlos neu zu versuchen.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "a0cdbb3ca3ca3a48013ea27b5481e822511d63a6f2fecfcd3c2c55cbfd02bdf4"
+        },
+        "steps": {
+          "text": [
+            {
+              "text": "Melden Sie sich an und schließen Sie MFA ab, wenn Sie dazu aufgefordert werden.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Öffnen Sie Meine Arbeitsplätze in der Hauptnavigation.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Wählen Sie einen zugewiesenen Arbeitsplatz und starten Sie den Sitzungsvermittler.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Lassen Sie den Browser-Tab geöffnet, während die Sitzung startet. Schließen Sie ihn erst nach dem Trennen.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Fehlt eine Maschine, wenden Sie sich an einen Administrator, statt die Sitzung einer anderen Person zu teilen.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "692b65ff06cf2a9b170e87482ebaa7cb712734c1ae3e5126b1b285d14f8417ea"
+        },
         "productLabel": {
           "text": "Meine Arbeitsplätze öffnen",
           "source_sha256": ""
+        },
+        "body[0]": {
+          "text": "AIC Server zeigt eine Anmeldeseite im Browser an. Nutzen Sie die Identität, die Ihre Organisation Ihnen gegeben hat (lokales Konto oder Verzeichnis). Wenn auf der Seite eine Mehrfaktor-Authentifizierung verlangt wird, schließen Sie sie ab, bevor Sie Arbeitsplatzsteuerungen erwarten.",
+          "source_sha256": "3bb16e12b874f50e7ecbf49aa4e67d66092ed54498146cb16742f5a1821af747"
+        },
+        "body[1]": {
+          "text": "Meine Arbeitsplätze listet die Ihnen zugewiesenen Maschinen auf. Sie können den Zugriff auf einen Host, der nicht auf dieser Liste steht, nicht erfinden – bitten Sie einen Administrator, ihn zuzuweisen, anstatt es endlos erneut zu versuchen.",
+          "source_sha256": "0220bae51ce71a2ce0a7d5cabf268ffcce5f4c9c869516b7f75a4c621477cf41"
+        },
+        "steps[0]": {
+          "text": "Melden Sie sich an and schliessen Sie MFA ab, wenn Sie dazu aufgefordert werden.",
+          "source_sha256": "b17c7be99851c8f927b5e5678e5b5a4eca0089db8515b689a489c6d36d8f1f0f"
+        },
+        "steps[1]": {
+          "text": "Öffnen Sie meine Arbeitsplätze in der Hauptnavigation.",
+          "source_sha256": "411fd808343f1ddc7eaab58903ff8ccdb568d41cdae3fd636302bcf3daf1d5cd"
+        },
+        "steps[2]": {
+          "text": "Wählen Sie einen zugewiesenen Arbeitsplatz aus und starten Sie den Sitzungsleiter.",
+          "source_sha256": "7567a3b116cef57725e22990ed16699950e95ad15cd5b4546488b844d96acc05"
+        },
+        "steps[3]": {
+          "text": "Lassen Sie den Browser-Tab geoeffnet, während die Sitzung gestartet wird. Schließen Sie ihn erst nach dem Trennen.",
+          "source_sha256": "5b0f4c1d183230872859ea82d34f3c2080af5711f9896f59957b770c92b23a0d"
+        },
+        "steps[4]": {
+          "text": "Fehlt eine Maschine, wenden Sie sich an einen Administrator, anstatt die Sitzung einer anderen Person zu teilen.",
+          "source_sha256": "2f93d32681e0d0587565191e4f60651646dde49d8691b1865f747e20874d7830"
         }
       },
       "my-workstations": {
@@ -453,37 +720,67 @@
           "text": "Energiezustand, erneutes Verbinden und das Vorgehen, wenn ein Host schläft.",
           "source_sha256": ""
         },
-        "body": [
-          {
-            "text": "Ein- und Aufwecksteuerungen gelten nur für Ihnen zugewiesene Maschinen. Schlafende oder offline Zustände sind normal, wenn ein Host ausgeschaltet ist. Warten Sie auf das Aufwecken oder fragen Sie einen Admin, bevor Sie wiederholt neu versuchen.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Beenden Sie Sitzungen im Vermittler, wenn Sie fertig sind, damit Leerlaufzeiten und Sitzungsaufzeichnung sauber schließen können. Teilen Sie keine Sitzungstickets oder Einmallinks außerhalb der Produktoberfläche.",
-            "source_sha256": ""
-          }
-        ],
-        "steps": [
-          {
-            "text": "Nutzen Sie angezeigte Ein- oder Aufwecksteuerungen nur für Ihre zugewiesenen Maschinen.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Zeigt der Status schlafend oder offline, warten Sie kurz und fragen Sie einen Admin, wenn der Zustand bleibt.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Beenden Sie die Sitzung im Vermittler, wenn Sie fertig sind.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Fügen Sie Sitzungs-URLs niemals in Chat oder E-Mail ein.",
-            "source_sha256": ""
-          }
-        ],
+        "body": {
+          "text": [
+            {
+              "text": "Ein- und Aufwecksteuerungen gelten nur für Ihnen zugewiesene Maschinen. Schlafende oder offline Zustände sind normal, wenn ein Host ausgeschaltet ist. Warten Sie auf das Aufwecken oder fragen Sie einen Admin, bevor Sie wiederholt neu versuchen.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Beenden Sie Sitzungen im Vermittler, wenn Sie fertig sind, damit Leerlaufzeiten und Sitzungsaufzeichnung sauber schließen können. Teilen Sie keine Sitzungstickets oder Einmallinks außerhalb der Produktoberfläche.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "ecb46808d163a3d523d2e88b9af2836cab4ac5e1c1e3e2c4f6d532458127c8fd"
+        },
+        "steps": {
+          "text": [
+            {
+              "text": "Nutzen Sie angezeigte Ein- oder Aufwecksteuerungen nur für Ihre zugewiesenen Maschinen.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Zeigt der Status schlafend oder offline, warten Sie kurz und fragen Sie einen Admin, wenn der Zustand bleibt.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Beenden Sie die Sitzung im Vermittler, wenn Sie fertig sind.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Fügen Sie Sitzungs-URLs niemals in Chat oder E-Mail ein.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "969d2365a6910d326a7694e26d220d8626fad3befbb7c8d8314197be17963cb1"
+        },
         "productLabel": {
           "text": "Meine Arbeitsplätze öffnen",
           "source_sha256": ""
+        },
+        "body[0]": {
+          "text": "Ein- und Aufwecksteuerungen gelten nur für die Ihnen zugewiesenen Maschinen. Schlafende oder Offline-Zustände sind normal, wenn ein Host ausgeschaltet ist. Warten Sie auf das Aufwecken oder fragen Sie einen Admin, bevor Sie es erneut versuchen.",
+          "source_sha256": "6e28429879e643758984cfeef03e390323e0d1dc426116ccb50f7ae46de528a8"
+        },
+        "body[1]": {
+          "text": "Beenden Sie Sitzungen im Mediator, wenn Sie fertig sind, damit Leerlaufzeiten und Sitzungsaufzeichnungen sauber geschlossen werden können. Teilen Sie keine Sitzungstickets oder einmaligen Links außerhalb der Produktoberfläche.",
+          "source_sha256": "f051906594b38b28a5445245cf4fe00d1b2060d09208a0ab558098a9f659b13a"
+        },
+        "steps[0]": {
+          "text": "Nutzen Sie die angezeigten Ein- oder Aufwecksteuerungen nur für Ihre zugewiesenen Maschinen.",
+          "source_sha256": "d9cfdc2286aab81d1a9b91c9cc67d5566f4175ad4e81826bcaa4dd5e982afe68"
+        },
+        "steps[1]": {
+          "text": "Zeigt den Status „schlafend“ oder „offline“ an, warten Sie kurz und fragen Sie einen Admin, ob der Zustand bestehen bleibt.",
+          "source_sha256": "21814b8d8777ec791e56538b597e3b6112064bda0950ace12d72a2532b41bed4"
+        },
+        "steps[2]": {
+          "text": "Beenden Sie the Session in the Vermittler, wenn Sie fertig sind.",
+          "source_sha256": "a928a0f0864148c7651b10d817e1b6de5993f53276851ad7033906be1409dbc4"
+        },
+        "steps[3]": {
+          "text": "Fügen Sie Sitzungs-URLs niemals im Chat oder per E-Mail hinzu.",
+          "source_sha256": "76141efae53b83608509d67e93e7f0119357495bafcaae8e71b947554a57e980"
         }
       },
       "secure-share": {
@@ -495,37 +792,67 @@
           "text": "Geteilte Elemente empfangen und öffnen, ohne Admin-Rechte.",
           "source_sha256": ""
         },
-        "body": [
-          {
-            "text": "Sicheres Teilen erscheint, wenn Ihre Rolle es erlaubt. An Sie gerichtete Pakete öffnen sich im Produktbetrachter. Ein Download ist nur möglich, wenn die Paketrichtlinie ihn zulässt.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Behandeln Sie unerwartete Freigaben als Supportfall: melden Sie sie einem Administrator. Leiten Sie keine Einmallinks weiter.",
-            "source_sha256": ""
-          }
-        ],
-        "steps": [
-          {
-            "text": "Öffnen Sie Sicheres Teilen im Benutzermenü, wenn es verfügbar ist.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Nehmen Sie an Sie gerichtete Pakete an und öffnen Sie sie im Betrachter.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Laden Sie nur herunter, wenn das Paket es erlaubt.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Melden Sie unerwartete Freigaben Ihrem Administrator.",
-            "source_sha256": ""
-          }
-        ],
+        "body": {
+          "text": [
+            {
+              "text": "Sicheres Teilen erscheint, wenn Ihre Rolle es erlaubt. An Sie gerichtete Pakete öffnen sich im Produktbetrachter. Ein Download ist nur möglich, wenn die Paketrichtlinie ihn zulässt.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Behandeln Sie unerwartete Freigaben als Supportfall: melden Sie sie einem Administrator. Leiten Sie keine Einmallinks weiter.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "12cd909292dd4a4ec55a8f5c58525a5d9caa1e600a056ae6bc31fb8d383e2937"
+        },
+        "steps": {
+          "text": [
+            {
+              "text": "Öffnen Sie Sicheres Teilen im Benutzermenü, wenn es verfügbar ist.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Nehmen Sie an Sie gerichtete Pakete an und öffnen Sie sie im Betrachter.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Laden Sie nur herunter, wenn das Paket es erlaubt.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Melden Sie unerwartete Freigaben Ihrem Administrator.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "e6c8f6a7c5e356a972bcb6e98d9f293e69b398c31c97d93be929141777159a72"
+        },
         "productLabel": {
           "text": "Sicheres Teilen öffnen",
           "source_sha256": ""
+        },
+        "body[0]": {
+          "text": "Sicheres Teilen erscheint, wenn Ihre Rolle es erlaubt. An Sie gerichtete Pakete öffnen sich im Produktbetrachter. Ein Download ist nur möglich, wenn die Paketrichtlinie ihn zuläßt.",
+          "source_sha256": "12aecf8b1c688a5b602a37a07fdd0ebc13f74ea402238a2cc31c9f75ff8ba8fe"
+        },
+        "body[1]": {
+          "text": "Behandeln Sie unerwartete Veröffentlichungen als Supportproblem: Melden Sie sie einem Administrator. Leiten Sie keine einmaligen Links weiter.",
+          "source_sha256": "b5997371072b282baa3ded90e47d8230d6b26ad65000e131afd46c38b46e77f2"
+        },
+        "steps[0]": {
+          "text": "Öffnen Sie sicheres Teilen im Benutzermenü, wenn es verfügbar ist.",
+          "source_sha256": "416cbe980fb9c113b42007fd428bbceeb23d8cd9e1cb54aef984114454dfa4c0"
+        },
+        "steps[1]": {
+          "text": "Nehmen Sie an Sie gerichtete Pakete an und öffnen Sie sie im Betrachter.",
+          "source_sha256": "79922d18824ef760c8b8133e6e8e136453483f6c848f38206277dd60546490eb"
+        },
+        "steps[2]": {
+          "text": "Loading Sie nur herunter, wenn das Paket erlaubt ist.",
+          "source_sha256": "4cc1e31fea7a6a51974f80a72769a486c791184e8be45fb7e5ef998aecd6fc6b"
+        },
+        "steps[3]": {
+          "text": "Melden Sie unerwartete Freigaben Ihrem Administrator.",
+          "source_sha256": "e5ddaa1f441900e0f4d9c1a65d9d04457b786441e526e6a41816ac960b9c015b"
         }
       },
       "account": {
@@ -537,37 +864,67 @@
           "text": "Profil, Passwort und MFA-Selbstbedienung.",
           "source_sha256": ""
         },
-        "body": [
-          {
-            "text": "Ihre Profilseite enthält Anzeigename und Kontaktdaten. Passwortänderungen folgen der Längen- und Verlaufsrichtlinie der Organisation. MFA-Authenticatoren werden registriert oder ersetzt, wenn die Sicherheitsseite Sie dazu auffordert.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Melden Sie sich an einer geteilten Konsole ab, wenn Sie fertig sind, damit die nächste Person Ihre Sitzung nicht übernimmt.",
-            "source_sha256": ""
-          }
-        ],
-        "steps": [
-          {
-            "text": "Aktualisieren Sie Anzeigename und Kontaktdaten auf Ihrer Profilseite.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Ändern Sie das Passwort über den Kontosicherheitsablauf.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Registrieren oder ersetzen Sie MFA-Authenticatoren, wenn Sie dazu aufgefordert werden.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Melden Sie sich an geteilten Konsolen ab, wenn Sie fertig sind.",
-            "source_sha256": ""
-          }
-        ],
+        "body": {
+          "text": [
+            {
+              "text": "Ihre Profilseite enthält Anzeigename und Kontaktdaten. Passwortänderungen folgen der Längen- und Verlaufsrichtlinie der Organisation. MFA-Authenticatoren werden registriert oder ersetzt, wenn die Sicherheitsseite Sie dazu auffordert.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Melden Sie sich an einer geteilten Konsole ab, wenn Sie fertig sind, damit die nächste Person Ihre Sitzung nicht übernimmt.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "7ebede1c37fe5a68dcc208a2c5a2a6e9f4a9c8143682ea468cb1cc97bbafe680"
+        },
+        "steps": {
+          "text": [
+            {
+              "text": "Aktualisieren Sie Anzeigename und Kontaktdaten auf Ihrer Profilseite.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Ändern Sie das Passwort über den Kontosicherheitsablauf.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Registrieren oder ersetzen Sie MFA-Authenticatoren, wenn Sie dazu aufgefordert werden.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Melden Sie sich an geteilten Konsolen ab, wenn Sie fertig sind.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "5bac05b540598daac6caf96171beff466364f76cdcd3afd5032dc30a58f00ac4"
+        },
         "productLabel": {
           "text": "Kontoprofil öffnen",
           "source_sha256": ""
+        },
+        "body[0]": {
+          "text": "Ihre Profilseite enthält Anzeigenamen und Kontaktdaten. Passwortänderungen folgen der Längen- und Verlaufsrichtlinie der Organisation. MFA-Authenticatoren werden registriert oder ersetzt, wenn die Sicherheitsseite Sie dazu auffordert.",
+          "source_sha256": "c241b9507fd31189278007ebea840c33d127f8aa5fd97630bdab24e2c1995a12"
+        },
+        "body[1]": {
+          "text": "Melden Sie sich an einer geteilten Konsole ab, wenn Sie fertig sind, damit die nächste Person Ihre Sitzung nicht übernimmt.",
+          "source_sha256": "aa1f3eb47d973b6651eaacad451dac6d6a78837a3e536be1652f30b3dee56170"
+        },
+        "steps[0]": {
+          "text": "Aktualisieren Sie Ihren Anzeigenamen und Ihre Kontaktdaten auf Ihrer Profilseite.",
+          "source_sha256": "39025b390dace410d9005dab5587aed4f1904f15de60b5548bf910a904d5a312"
+        },
+        "steps[1]": {
+          "text": "Ändern Sie das Passwort über den Kontosicherheitsprozess.",
+          "source_sha256": "ba6476d58bd25ceb03864505acea5d973aee3f00352405a88ddad193b487fbb3"
+        },
+        "steps[2]": {
+          "text": "Registrieren oder ersetzen Sie MFA-Authenticatoren, wenn Sie dazu berechtigt sind.",
+          "source_sha256": "7fb45592eb6e81c4719ecee5a3d0caccfd0dd09574886c3b93916214bf802c12"
+        },
+        "steps[3]": {
+          "text": "Melden Sie sich an geteilten Konsolen ab, wenn Sie fertig sind.",
+          "source_sha256": "e5c0b14c5eccd7e3732c83d9865b7a95b9688c60bf5cad6c2da781e7bd7f0159"
         }
       },
       "get-help": {
@@ -579,34 +936,64 @@
           "text": "Was Sie festhalten, bevor Sie einen Administrator kontaktieren.",
           "source_sha256": ""
         },
-        "body": [
-          {
-            "text": "Halten Sie die Seiten-URL, die Uhrzeit einschließlich Zeitzone und den genauen Fehlertext fest. Ein kurzer erneuter Versuch nach einer Wartezeit ist sinnvoll. Wiederholtes Klicken umgeht keine Zugriffsentscheidungen.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Fügen Sie niemals Passwörter, Wiederherstellungscodes oder Elevation-Codes in Chat oder Tickets ein. Bitten Sie einen Administrator um eine Audit-Korrelation, wenn Sie einen formellen Nachweis brauchen.",
-            "source_sha256": ""
-          }
-        ],
-        "steps": [
-          {
-            "text": "Notieren Sie URL, Uhrzeit (mit Zeitzone) und Fehlertext.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Versuchen Sie es nach kurzer Wartezeit einmal erneut.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Bitten Sie bei Bedarf einen Administrator um eine Audit-Korrelation.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Halten Sie Geheimnisse aus Tickets und Chat heraus.",
-            "source_sha256": ""
-          }
-        ]
+        "body": {
+          "text": [
+            {
+              "text": "Halten Sie die Seiten-URL, die Uhrzeit einschließlich Zeitzone und den genauen Fehlertext fest. Ein kurzer erneuter Versuch nach einer Wartezeit ist sinnvoll. Wiederholtes Klicken umgeht keine Zugriffsentscheidungen.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Fügen Sie niemals Passwörter, Wiederherstellungscodes oder Elevation-Codes in Chat oder Tickets ein. Bitten Sie einen Administrator um eine Audit-Korrelation, wenn Sie einen formellen Nachweis brauchen.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "464817632310f47c0f147440e4b830346bf9dcb4c0c44baaffdd82b90b98c883"
+        },
+        "steps": {
+          "text": [
+            {
+              "text": "Notieren Sie URL, Uhrzeit (mit Zeitzone) und Fehlertext.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Versuchen Sie es nach kurzer Wartezeit einmal erneut.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Bitten Sie bei Bedarf einen Administrator um eine Audit-Korrelation.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Halten Sie Geheimnisse aus Tickets und Chat heraus.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "5eb1ed1f7dfe1f5184781ff3b8b39004f2fc228adeb074d640df34505c3d4951"
+        },
+        "body[0]": {
+          "text": "Erfassen Sie die Seiten-URL, die Uhrzeit inklusive Zeitzone und den genauen Fehlertext. Ein kurzer erneuter Versuch nach einer Wartezeit ist sinnvoll. Durch wiederholtes Klicken werden Zugriffsentscheidungen nicht umgangen.",
+          "source_sha256": "b41a524e67fe73dfee5828c4790a86a6ac7913b08d6dee7c50a4fceec5017ae9"
+        },
+        "body[1]": {
+          "text": "Geben Sie niemals Passwörter, Wiederherstellungscodes oder Höhencodes in Chat oder Tickets ein. Bitten Sie einen Administrator um eine Prüfungskorrelation, wenn Sie einen formellen Nachweis benötigen.",
+          "source_sha256": "276713d39c04da4fc54416eeea69a59b59e0166401981fd08d07975469370c07"
+        },
+        "steps[0]": {
+          "text": "Notieren Sie URL, Uhrzeit (mit Zeitzone) und Fehlertext.",
+          "source_sha256": "3477401d201dce8a786c09d9f961c6aaa9046ffa129bb26922073f94b56dc33d"
+        },
+        "steps[1]": {
+          "text": "Versuchen Sie es nach kurzer Wartezeit noch einmal.",
+          "source_sha256": "fbc1230faef039ac33cb1b784a62e88529932705ba0d528af4cf050187ad49cf"
+        },
+        "steps[2]": {
+          "text": "Bitten Sie bei Bedarf einen Administrator um eine Audit-Korrelation.",
+          "source_sha256": "1394f7d17cc1aec007ac675248ffd8a629279b1fb2a5c5330db69573bcd18260"
+        },
+        "steps[3]": {
+          "text": "Halten Sie Geheimnisse aus Tickets und Chat heraus.",
+          "source_sha256": "e42914b2be5ce605f61495bfe1e537ab504e41b17564dafaef3633b40a31124a"
+        }
       }
     }
   },
@@ -629,41 +1016,75 @@
           "text": "Binder anlegen, Narrative ausfüllen und Nachweispakete exportieren.",
           "source_sha256": ""
         },
-        "body": [
-          {
-            "text": "Der Assessment-Binder ist die Produktfläche, um Steuerungsnarrative zu ordnen und Nachweise zu verknüpfen, die die Enklave bereits erzeugt hat. Legen Sie einen Binder für das von Ihrer Organisation festgelegte Assessment-Fenster an oder wählen Sie ihn aus.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Schreiben Sie Narrative, die der Wirklichkeit entsprechen. Teilweise und Geplant sind gültige Statuswerte. Erfinden Sie keine Artefakte, um Umgesetzt zu erzwingen.",
-            "source_sha256": ""
-          }
-        ],
-        "steps": [
-          {
-            "text": "Öffnen Sie den Assessment-Binder über Compliance- oder Dokumentationsmenüs, die Ihre Rolle erlaubt.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Legen Sie eine Binder-Instanz für das Assessment-Fenster an oder wählen Sie sie aus.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Füllen Sie Steuerungsnarrative mit ehrlichem Status (Umgesetzt / Teilweise / Geplant).",
-            "source_sha256": ""
-          },
-          {
-            "text": "Hängen Sie Nachweise an oder verknüpfen Sie Nachweise, die die Enklave bereits erzeugt hat.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Exportieren Sie das Nachweispaket. Behalten Sie SHA-256-Manifeste, wenn Sie extern teilen.",
-            "source_sha256": ""
-          }
-        ],
+        "body": {
+          "text": [
+            {
+              "text": "Der Assessment-Binder ist die Produktfläche, um Steuerungsnarrative zu ordnen und Nachweise zu verknüpfen, die die Enklave bereits erzeugt hat. Legen Sie einen Binder für das von Ihrer Organisation festgelegte Assessment-Fenster an oder wählen Sie ihn aus.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Schreiben Sie Narrative, die der Wirklichkeit entsprechen. Teilweise und Geplant sind gültige Statuswerte. Erfinden Sie keine Artefakte, um Umgesetzt zu erzwingen.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "a2ebeccc059121446caf5d3995b131c42118b0b192545e65f1ab871561bfe73e"
+        },
+        "steps": {
+          "text": [
+            {
+              "text": "Öffnen Sie den Assessment-Binder über Compliance- oder Dokumentationsmenüs, die Ihre Rolle erlaubt.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Legen Sie eine Binder-Instanz für das Assessment-Fenster an oder wählen Sie sie aus.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Füllen Sie Steuerungsnarrative mit ehrlichem Status (Umgesetzt / Teilweise / Geplant).",
+              "source_sha256": ""
+            },
+            {
+              "text": "Hängen Sie Nachweise an oder verknüpfen Sie Nachweise, die die Enklave bereits erzeugt hat.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Exportieren Sie das Nachweispaket. Behalten Sie SHA-256-Manifeste, wenn Sie extern teilen.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "a515b0e78027f1ba4d5a9c900991e9da4a642e9a469211043213f9cad021c4d1"
+        },
         "productLabel": {
           "text": "Assessment-Binder öffnen",
           "source_sha256": ""
+        },
+        "body[0]": {
+          "text": "Der Bewertungsordner ist die Produktoberfläche zum Organisieren von Kontrollerzählungen und zum Verknüpfen von Beweisen, die die Enklave bereits generiert hat. Erstellen Sie einen Ordner für das festgelegte Bewertungsfenster Ihrer Organisation oder wählen Sie einen Ordner aus.",
+          "source_sha256": "ca4235c225a6ca7e01822302088a75ffd52ef600eb1ea4121bc98addd601c8a7"
+        },
+        "body[1]": {
+          "text": "Schreiben Sie Erzählungen, die der Realität entsprechen. „Teilweise“ und „Geplant“ sind gültige Statuswerte. Erfinden Sie keine Artefakte, um die Implementierung zu erzwingen.",
+          "source_sha256": "4b3d69d0aaaeb661876cb393605eb57985afc90cef156be62771b5f646e9da13"
+        },
+        "steps[0]": {
+          "text": "Öffnen Sie den Bewertungsordner über die Compliance- oder Dokumentationsmenüs, die Ihre Rolle zulässt.",
+          "source_sha256": "ef74e0178cd60cd2a3c7bf683d747111c70a752a2bb6fa0dda042c4b5c5caa99"
+        },
+        "steps[1]": {
+          "text": "Erstellen Sie eine Binder-Instanz für das Bewertungsfenster oder wählen Sie sie aus.",
+          "source_sha256": "3cca9d9d54aedee15fae19d8c6249bea19687b27ecf3c14e3780185253175cd6"
+        },
+        "steps[2]": {
+          "text": "Füllen Sie Steuerungsnarrative mit ehrlichem Status (Umgesetzt / Teilweise / Geplant).",
+          "source_sha256": "749cf7779132a19e3f652c401dce7f82658c8aab985b515ea7d822b1276b2b75"
+        },
+        "steps[3]": {
+          "text": "Hägen Sie Nachweise an oder verknuepfen Sie Nachweise, die die Enklave bereits erstellt hat.",
+          "source_sha256": "221057df685280aeef46d9924c0301c272ff2bfb55906d7aef9be49c2c422667"
+        },
+        "steps[4]": {
+          "text": "Exportieren Sie das Nachweispaket. Behalten Sie SHA-256-Manifeste bei, wenn Sie extern teilen.",
+          "source_sha256": "c323fc7e06fed66631f91ee99ddbc1b19dfbb6f948f7bdf5741e3209126f2c6f"
         }
       },
       "report-center": {
@@ -675,79 +1096,139 @@
           "text": "Katalogberichte ausführen und Nachweise ohne Fix-It-Rechte herunterladen.",
           "source_sha256": ""
         },
-        "body": [
-          {
-            "text": "Filter im Berichtszentrum-Katalog helfen Ihnen, SSP-, Bestands- und Zugriffsberichte zu finden. Bevorzugen Sie verschlüsselte Paketdownloads, wenn der Inhalt CUI enthalten kann.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Auditor-Rollen erhalten keine Fix-It- oder erneuten Scan-Aktionen. Bitten Sie Operatoren, diese auszuführen, und prüfen Sie die Ergebnisse danach erneut.",
-            "source_sha256": ""
-          }
-        ],
-        "steps": [
-          {
-            "text": "Filtern Sie den Katalog nach der benötigten Berichtsfamilie.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Führen Sie den Bericht aus und laden Sie das von Ihrer Organisation erlaubte Paket herunter.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Bewahren Sie Exporte gemäß Ihrer Nachweisaufbewahrungsrichtlinie auf.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Eskalieren Sie fehlende Operatoraktionen, statt selbst zu beheben.",
-            "source_sha256": ""
-          }
-        ],
+        "body": {
+          "text": [
+            {
+              "text": "Filter im Berichtszentrum-Katalog helfen Ihnen, SSP-, Bestands- und Zugriffsberichte zu finden. Bevorzugen Sie verschlüsselte Paketdownloads, wenn der Inhalt CUI enthalten kann.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Auditor-Rollen erhalten keine Fix-It- oder erneuten Scan-Aktionen. Bitten Sie Operatoren, diese auszuführen, und prüfen Sie die Ergebnisse danach erneut.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "7bbdb97a602faf13b879bebd4928cbc9b485c84db85c02c8eb21d484578ee77a"
+        },
+        "steps": {
+          "text": [
+            {
+              "text": "Filtern Sie den Katalog nach der benötigten Berichtsfamilie.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Führen Sie den Bericht aus und laden Sie das von Ihrer Organisation erlaubte Paket herunter.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Bewahren Sie Exporte gemäß Ihrer Nachweisaufbewahrungsrichtlinie auf.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Eskalieren Sie fehlende Operatoraktionen, statt selbst zu beheben.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "4d92ac5e58fd4fecbfcd9fad4ec3d2634e9532f0aa45d3fce22b26ae856956de"
+        },
         "productLabel": {
           "text": "Berichtszentrum öffnen",
           "source_sha256": ""
+        },
+        "body[0]": {
+          "text": "Filter im Berichtszentrum-Katalog helfen Ihnen, SSP-, Bestands- und Zugriffsberichte zu finden. Bevorzugen Sie verschluesselte Paketdownloads, wenn der Inhalt CUI enthalten kann.",
+          "source_sha256": "a5a3868aefedc7720ebea3f1ac5b979a5c7ceb50390f5515a4bae236babebf89"
+        },
+        "body[1]": {
+          "text": "Auditor-Rollen erhalten keine Fix-it- oder Rescan-Aktionen. Bitten Sie die Bediener, sie durchzuführen und die Ergebnisse anschließend erneut zu überprüfen.",
+          "source_sha256": "2dd392e651620f8489fdca0f845f7fdf131f75f8353397e578ac5f2c4d569a93"
+        },
+        "steps[0]": {
+          "text": "Filtern Sie den Katalog nach der benötigten Berichtsfamilie.",
+          "source_sha256": "c0f1e32684c0480798e9f1daa5a10ea1a03b12d56329e5b5a0e36004023fc7bd"
+        },
+        "steps[1]": {
+          "text": "Führen Sie den Bericht aus und laden Sie das von Ihrer Organisation erlaubte Paket herunter.",
+          "source_sha256": "dc82e8ab6a7d56f9b8f1822df0253bed8f44b776495d6f1efcaed6044326a80c"
+        },
+        "steps[2]": {
+          "text": "Bewahren Sie Exporte gemäß Ihrer Nachweisaufbewahrungsrichtlinie auf.",
+          "source_sha256": "b69b267f69a8882b7526297a1d1def147d87f8834b2593452540a20076c874e0"
+        },
+        "steps[3]": {
+          "text": "Eskalieren Sie fehlende Bedieneraktionen, anstatt sie selbst zu beheben.",
+          "source_sha256": "ab93a9fb83becdf12fa674e4c81c0a300f0415071c8aa923fdd0efeff601a108"
         }
       },
       "current-state": {
         "title": {
           "text": "Aktueller Compliance-Stand (lesen)",
-          "source_sha256": ""
+          "source_sha256": "2210bc8eacce374ea4e26a616403006ae88aff7e5297053af05f61ea197499a0"
         },
         "summary": {
           "text": "Lage und Feststellungen prüfen, ohne zu beheben.",
           "source_sha256": ""
         },
-        "body": [
-          {
-            "text": "Aktueller Compliance-Stand zeigt Lage und Feststellungen, wenn Ihre Rolle Leserechte umfasst. Nutzen Sie Filter für Rolle, Feststellungskategorie oder Maschine.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Halten Sie Lücken in Binder-Narrativen fest. Das Ändern von Produktionseinstellungen ist eine Operatoraufgabe.",
-            "source_sha256": ""
-          }
-        ],
-        "steps": [
-          {
-            "text": "Öffnen Sie Aktueller Compliance-Stand mit einer lesefähigen Rolle.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Filtern Sie auf die geprüfte Population.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Behandeln Sie Erneut scannen / Fix-It als Operatoraktionen.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Halten Sie Lücken im Binder fest, statt Einstellungen zu ändern.",
-            "source_sha256": ""
-          }
-        ],
+        "body": {
+          "text": [
+            {
+              "text": "Aktueller Compliance-Stand zeigt Lage und Feststellungen, wenn Ihre Rolle Leserechte umfasst. Nutzen Sie Filter für Rolle, Feststellungskategorie oder Maschine.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Halten Sie Lücken in Binder-Narrativen fest. Das Ändern von Produktionseinstellungen ist eine Operatoraufgabe.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "521839981d87051d2e4950d8dc1dd9dca77edb694455eeedec07166a79553652"
+        },
+        "steps": {
+          "text": [
+            {
+              "text": "Öffnen Sie Aktueller Compliance-Stand mit einer lesefähigen Rolle.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Filtern Sie auf die geprüfte Population.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Behandeln Sie Erneut scannen / Fix-It als Operatoraktionen.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Halten Sie Lücken im Binder fest, statt Einstellungen zu ändern.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "caf3174fde7fd8181f1395e052d67dcc9661034c37399616a18425e989264f61"
+        },
         "productLabel": {
           "text": "Aktuellen Compliance-Stand öffnen",
           "source_sha256": ""
+        },
+        "body[0]": {
+          "text": "Aktueller Compliance-Stand zeigt Lage und Feststellungen, wenn Ihre Rolle Leserechte umfasst. Nutzen Sie Filter für Rolle, Feststellungskategorie oder Maschine.",
+          "source_sha256": "8fadf5351c4e0e50156742ef41e17ca66f2b0c286e66d35ef196afdef9efd298"
+        },
+        "body[1]": {
+          "text": "Erfassen Sie Lücken in Ordnererzählungen. Das Ändern von Produktionseinstellungen ist eine Bedieneraufgabe.",
+          "source_sha256": "258430a03be7d12d71196ae2cd53d57e9699266db8f5233133c2ed18aba3616f"
+        },
+        "steps[0]": {
+          "text": "Öffnen Sie den aktuellen Compliance-Stand mit einer lesbaren Rolle.",
+          "source_sha256": "30fe2e4d0f33738239a332b48a0e745f729a3e896a9d5204921354a56b592482"
+        },
+        "steps[1]": {
+          "text": "Filtern Sie nach der gepruefte Bevölkerung.",
+          "source_sha256": "36ed28a3b9c16d59c42a48f9de4c2639152488468e63c15e2c849063e75eefe4"
+        },
+        "steps[2]": {
+          "text": "Behandeln Sie Erneut scannen / Fix-It als Operatoraktionen.",
+          "source_sha256": "563a4d5ecf290c3c3296a93c80bd49bd7559b97ee359ba5df06c64793831b118"
+        },
+        "steps[3]": {
+          "text": "Halten Sie Lücken im Binder fest, statt Einstellungen zu aendern.",
+          "source_sha256": "ae8e38397fff6294f6a6c8e5b108cb7995bc212a43cb35892d6b47e4f96850a3"
         }
       },
       "audit-review": {
@@ -759,83 +1240,147 @@
           "text": "Audit-Nachweise prüfen, ohne Senken zu konfigurieren.",
           "source_sha256": ""
         },
-        "body": [
-          {
-            "text": "Die Audit-Suche unterstützt Akteur, Aktion und Zeitraum. Detailzeilen tragen Korrelationsfelder wie Anfrage-ID und Ergebnis für eine AU-artige Prüfung.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Der Alarmverlauf dient der Prüfung und Eskalation. Senken konfigurieren und Geheimnisse anzeigen bleiben bei Administratoren.",
-            "source_sha256": ""
-          }
-        ],
-        "steps": [
-          {
-            "text": "Suchen Sie im Audit nach Akteur, Aktion und Zeitraum.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Öffnen Sie Detailzeilen für Korrelationsfelder (Anfrage-ID, Ergebnis).",
-            "source_sha256": ""
-          },
-          {
-            "text": "Prüfen Sie den Alarmverlauf. Eskalieren Sie Konfigurationslücken an Administratoren.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Fordern Sie über Auditor-Rollen niemals die Anzeige von Geheimnissen an.",
-            "source_sha256": ""
-          }
-        ],
+        "body": {
+          "text": [
+            {
+              "text": "Die Audit-Suche unterstützt Akteur, Aktion und Zeitraum. Detailzeilen tragen Korrelationsfelder wie Anfrage-ID und Ergebnis für eine AU-artige Prüfung.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Der Alarmverlauf dient der Prüfung und Eskalation. Senken konfigurieren und Geheimnisse anzeigen bleiben bei Administratoren.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "892dd6efa4a58e6eb3f1e2dfc52a43d3adf42f2d8e235461003dcbaec6a6a2e5"
+        },
+        "steps": {
+          "text": [
+            {
+              "text": "Suchen Sie im Audit nach Akteur, Aktion und Zeitraum.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Öffnen Sie Detailzeilen für Korrelationsfelder (Anfrage-ID, Ergebnis).",
+              "source_sha256": ""
+            },
+            {
+              "text": "Prüfen Sie den Alarmverlauf. Eskalieren Sie Konfigurationslücken an Administratoren.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Fordern Sie über Auditor-Rollen niemals die Anzeige von Geheimnissen an.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "005318870b7d16c90829c84c2aad2e29806968de6beb17dfe57f68d0f69d3ffc"
+        },
         "productLabel": {
           "text": "Audit öffnen",
           "source_sha256": ""
+        },
+        "body[0]": {
+          "text": "Die Audit-Suche unterstützt Akteur, Aktion und Zeitraum. Detailzeilen enthalten Korrelationsfelder wie Anfrage-ID und Ergebnis für eine AU-ähnliche Prüfung.",
+          "source_sha256": "686a83f7778923100a0c85d7264c6561d6dd8912eea6aec704e3fae8e794ef00"
+        },
+        "body[1]": {
+          "text": "Die Alarmhistorie dient zur Überprüfung und Eskalation. Das Konfigurieren von Senken und das Anzeigen von Geheimnissen obliegt den Administratoren.",
+          "source_sha256": "d28013b331abb3b0908a8264ff5bf5f476ab5b678d5a6aa2a4266262f0ebeb72"
+        },
+        "steps[0]": {
+          "text": "Suchen Sie im Audit nach Akteur, Action und Zeitraum.",
+          "source_sha256": "c67a366b71a676ffe19e74c7bf88e11b5df7c6e91de5040bb23b4f1858776e14"
+        },
+        "steps[1]": {
+          "text": "Öffnen Sie Detailzeilen für Korrelationsfelder (Anfrage-ID, Ergebnis).",
+          "source_sha256": "5116162ff2dceffcded62ee83ba2cb1b5347e811211bd6b7a1422442db39e796"
+        },
+        "steps[2]": {
+          "text": "Prüfen Sie den Alarmverlauf. Eskalieren Sie die Konfigurationslücken an einen Administrator.",
+          "source_sha256": "90259c2cf0a7a4dde59ae0c41416ffa40af36e01380ccd6b1ebc3f7d0b7c0e1f"
+        },
+        "steps[3]": {
+          "text": "Fordern Sie niemals die Anzeige von Geheimnissen über Auditor-Rollen an.",
+          "source_sha256": "ea4966127ce5c12f316cf43cc164a99bfcfba9c7ee5f25f21ff6b5fc7c395986"
         }
       },
       "enhanced-controls": {
         "title": {
           "text": "Erweiterte Steuerungen (800-172 / High-Erweiterungen)",
-          "source_sha256": ""
+          "source_sha256": "6a549da704c485e15fedce891c72d9c1e851f980710b9d69e82a3e69aabb3e00"
         },
         "summary": {
           "text": "Das Inventar erweiterter Anforderungen und seinen ehrlichen Status lesen.",
           "source_sha256": ""
         },
-        "body": [
-          {
-            "text": "Erweiterte Steuerungen listen jede dem Produkt bekannte erweiterte Anforderung aus NIST SP 800-172 sowie die benannten NIST-SP-800-53-High-Erweiterungen, zu denen die Enklave beiträgt. Jede Zeile trägt einen Status Live, Teilweise, Fehlt oder Blockiert und eine kurze Ehrlichkeitshinweis, was das Produkt tatsächlich tut.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Das Produkt meldet für diese Zeilen niemals Met und behauptet niemals eine CMMC-Level-3-Zertifizierung. Zeilen für Organisationsprogramme, die das Produkt nicht ausführen kann — Sensibilisierungsschulung, Personalscreening, Penetrationstests, Lieferketten-Risikomanagement und Cyber-Resilienztechniken wie Vielfalt oder Täuschung — bleiben Blockiert mit einem genannten Grund. Behandeln Sie Live-Zeilen als Produkthilfen, die Sie trotzdem bewerten müssen, nicht als Assessment-Schlussfolgerungen.",
-            "source_sha256": ""
-          }
-        ],
-        "steps": [
-          {
-            "text": "Öffnen Sie Erweiterte Steuerungen und prüfen Sie die Statusspalte für die Anforderungsfamilie, die Sie bewerten.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Lesen Sie den Ehrlichkeitshinweis, bevor Sie eine Zeile zitieren. Er nennt die Produktgrenze.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Behandeln Sie Blockiert-Zeilen als Organisationsarbeit Ihrer Organisation, nicht als Produktdefekte.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Übernehmen Sie Feststellungen in Binder-Narrative mit Ihrer eigenen Statusformulierung.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Lehnen Sie jedes Narrativ ab, das diese Zeilen auf Met hebt oder eine Level-3-Zertifizierung behauptet.",
-            "source_sha256": ""
-          }
-        ],
+        "body": {
+          "text": [
+            {
+              "text": "Erweiterte Steuerungen listen jede dem Produkt bekannte erweiterte Anforderung aus NIST SP 800-172 sowie die benannten NIST-SP-800-53-High-Erweiterungen, zu denen die Enklave beiträgt. Jede Zeile trägt einen Status Live, Teilweise, Fehlt oder Blockiert und eine kurze Ehrlichkeitshinweis, was das Produkt tatsächlich tut.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Das Produkt meldet für diese Zeilen niemals Met und behauptet niemals eine CMMC-Level-3-Zertifizierung. Zeilen für Organisationsprogramme, die das Produkt nicht ausführen kann — Sensibilisierungsschulung, Personalscreening, Penetrationstests, Lieferketten-Risikomanagement und Cyber-Resilienztechniken wie Vielfalt oder Täuschung — bleiben Blockiert mit einem genannten Grund. Behandeln Sie Live-Zeilen als Produkthilfen, die Sie trotzdem bewerten müssen, nicht als Assessment-Schlussfolgerungen.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "573d500197dea666a503b024c71617555729d6dd8165b12566d73e58d6e6d227"
+        },
+        "steps": {
+          "text": [
+            {
+              "text": "Öffnen Sie Erweiterte Steuerungen und prüfen Sie die Statusspalte für die Anforderungsfamilie, die Sie bewerten.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Lesen Sie den Ehrlichkeitshinweis, bevor Sie eine Zeile zitieren. Er nennt die Produktgrenze.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Behandeln Sie Blockiert-Zeilen als Organisationsarbeit Ihrer Organisation, nicht als Produktdefekte.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Übernehmen Sie Feststellungen in Binder-Narrative mit Ihrer eigenen Statusformulierung.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Lehnen Sie jedes Narrativ ab, das diese Zeilen auf Met hebt oder eine Level-3-Zertifizierung behauptet.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "e09c55dbc76341755c73e79c6eb925bbbd8483e89b8861b0a3978c463a6a59c6"
+        },
         "productLabel": {
           "text": "Erweiterte Steuerungen öffnen",
           "source_sha256": ""
+        },
+        "body[0]": {
+          "text": "Erweiterte Steuerungen hören jede dem Produkt bekannte erweiterte Anforderung aus NIST SP 800-172 sowie die benannten NIST-SP-800-53-High-Erweiterungen, denen die Enklave beiträgt. Jede Zeile enthält einen Status Live, Teilweise, Fehlt oder Blockiert und einen kurzen Ehrlichkeitshinweis, der das Produkt tatsächlich enthält.",
+          "source_sha256": "6ff706303af7538a672ab6c8b5cf8c033ffacebdf27f03cd33e4a63b34e8bfcd"
+        },
+        "body[1]": {
+          "text": "Das Produkt meldet niemals „Erfüllt“ für diese Linien und beansprucht niemals eine CMMC Level 3-Zertifizierung. Zeilen für Organisationsprogramme, die das Produkt nicht ausführen kann – Sensibilisierungsschulung, Mitarbeiterüberprüfung, Penetrationstests, Risikomanagement in der Lieferkette und Cyber-Resilienztechniken wie Diversität oder Täuschung – bleiben mit einem angegebenen Grund gesperrt. Behandeln Sie stromführende Leitungen als Produkthilfen, die Sie noch bewerten müssen, und nicht als Bewertungsschlussfolgerungen.",
+          "source_sha256": "12721b9771d5b54692a3c9c89e729cc89bcacfdab3eb94897256da898fc29d60"
+        },
+        "steps[0]": {
+          "text": "Öffnen Sie erweiterte Steuerungen und prüfen Sie die Statusspalte für die Anforderungsfamilie, die Sie bewerten.",
+          "source_sha256": "d67c927473fa350f35081e53519dfc4217435f30d7cfd08a4658641c5fb8b583"
+        },
+        "steps[1]": {
+          "text": "Lesen Sie den Ehrlichkeitshinweis, bevor Sie eine Zeile zitieren. Er nennt die Produktgrenze.",
+          "source_sha256": "d91195c4bbb4a155895d4d7c309a77ae75031f9cb9d8f8ec6db488f8e8709c96"
+        },
+        "steps[2]": {
+          "text": "Behandeln Sie blockierte Zeilen als Organisationsarbeit Ihrer Organisation, nicht als Produktdefekte.",
+          "source_sha256": "c70180bc448ca81eea2430d2a600512f1ce7f34c2c3a8e539670d5f9ae17d91f"
+        },
+        "steps[3]": {
+          "text": "Übernehmen Sie Feststellungen in Binder-Narrative mit Ihrer eigenen Statusformulierung.",
+          "source_sha256": "f4e19ce8a48b2961ff6925103b68f57b7ee8977fbe7cb2cf49ed0f6ddebc0b6c"
+        },
+        "steps[4]": {
+          "text": "Lehnen Sie jedes Narrativ ab, das diese Zeilen auf Met hebt oder eine Level-3-Zertifizierung behauptet.",
+          "source_sha256": "5345361251d0a986996c56401cd8ec96eaed984f66acc993675b8343fc57ac72"
         }
       },
       "export-hygiene": {
@@ -847,34 +1392,64 @@
           "text": "Wie Sie die Enklave mit Nachweisen verlassen, die prüfbar bleiben.",
           "source_sha256": ""
         },
-        "body": [
-          {
-            "text": "Bevorzugen Sie Produktexportpakete gegenüber Screenshots allein. Wenn Sie Pakete außerhalb der Enklave teilen, behalten Sie das SHA-256-Manifest bei den Dateien, damit Empfänger die Integrität prüfen können.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Behaupten Sie aus diesen Handbüchern keine FedRAMP-Autorisierung, CMMC-Zertifizierung oder FIPS-Validierung. Ordnen Sie Steuerungen in Ihrem Binder den Nachweisen zu, die Sie tatsächlich erfasst haben. Bitten Sie Operatoren um signierte Release-Artefakte, wenn Sie einen Integritätsnachweis für Installer brauchen.",
-            "source_sha256": ""
-          }
-        ],
-        "steps": [
-          {
-            "text": "Exportieren Sie von Produktflächen, wenn verfügbar.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Behalten Sie SHA-256-Manifeste bei externen Freigaben.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Vermeiden Sie Zertifizierungssprache, die der Nachweis nicht trägt.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Fordern Sie bei Bedarf signierte Release-Artefakte von Operatoren an.",
-            "source_sha256": ""
-          }
-        ]
+        "body": {
+          "text": [
+            {
+              "text": "Bevorzugen Sie Produktexportpakete gegenüber Screenshots allein. Wenn Sie Pakete außerhalb der Enklave teilen, behalten Sie das SHA-256-Manifest bei den Dateien, damit Empfänger die Integrität prüfen können.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Behaupten Sie aus diesen Handbüchern keine FedRAMP-Autorisierung, CMMC-Zertifizierung oder FIPS-Validierung. Ordnen Sie Steuerungen in Ihrem Binder den Nachweisen zu, die Sie tatsächlich erfasst haben. Bitten Sie Operatoren um signierte Release-Artefakte, wenn Sie einen Integritätsnachweis für Installer brauchen.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "09b54b5abb67705def343cb2ccc39763476f15b18d8bb2627bf1a7e8eebef3b0"
+        },
+        "steps": {
+          "text": [
+            {
+              "text": "Exportieren Sie von Produktflächen, wenn verfügbar.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Behalten Sie SHA-256-Manifeste bei externen Freigaben.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Vermeiden Sie Zertifizierungssprache, die der Nachweis nicht trägt.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Fordern Sie bei Bedarf signierte Release-Artefakte von Operatoren an.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "36060a8d1c150658106898a1a09f54bcc0b486be5ec1f5a17775304091d5560e"
+        },
+        "body[0]": {
+          "text": "Bevorzugen Sie Produktexportpakete gegenüber Screenshots allein. Wenn Sie Pakete außerhalb der Enklave teilen, bewahren Sie das SHA-256-Manifest mit den Dateien auf, damit die Empfänger die Integrität überprüfen können.",
+          "source_sha256": "3b46f940bfb2043ca357004f4110c1d735a343b1605415e0b3a739edcca711fa"
+        },
+        "body[1]": {
+          "text": "Do not claim FedRAMP authorization, CMMC certification or FIPS validation from these guides. Organize controls in your binder according to what you actually recorded. Ask operators for signed release artifacts if you need a proof of integrity for installers.",
+          "source_sha256": "e2ddf4e8c3f58fafd03a8a1f485eeb3c17e3a8b40b139ba0ee2e113f2381d6e2"
+        },
+        "steps[0]": {
+          "text": "Exportieren Sie Produkte, wenn verfügbar.",
+          "source_sha256": "c566d8276c589d70988b5f67497173e798ae266bce2851f32342623172a905e7"
+        },
+        "steps[1]": {
+          "text": "Beachten Sie das SHA-256-Manifest bei externen Veröffentlichungen.",
+          "source_sha256": "68c654cc11f6efa7161d30d8316f295369ae3161c3fb803947088b1aea88a8a6"
+        },
+        "steps[2]": {
+          "text": "Vermeiden Sie Zertifizierungssprachen, die den Nachweis nicht unterstützen.",
+          "source_sha256": "47f14528b3877374cddec3d196785e40ee58e3195e71f9c329068ce0ca942d53"
+        },
+        "steps[3]": {
+          "text": "Fordern Sie bei Bedarf signierte Release-Artefakte der Betreiber an.",
+          "source_sha256": "adc71156a52bc736bb83c7c9906902a6e8076c68ba42f09a641d978629e2bc40"
+        }
       }
     }
   },
@@ -897,41 +1472,75 @@
           "text": "Konfigurationshubs, Unternehmensprofil und Einrichtungsassistent.",
           "source_sha256": ""
         },
-        "body": [
-          {
-            "text": "Öffnen Sie in einer neuen Enklave Konfiguration → Server → Einrichtungsassistent. Der Assistent führt durch Compliance-Profil, Verschlüsselungsvorgaben, optionale E-Mail-Anbieterauswahl und optionale E-Mail-Server-Installation (SMTP- oder API-Geheimnisse über Konfiguration → Server → Messaging / AppConfig). Er führt niemals eine zerstörende Datenbankinitialisierung aus.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Das Unternehmensprofil speichert Offenlegungsvariablen für Hinweise und Agentenvorlagen. Produktbranding (Logo / Markenname) bleibt unter Branding & Stil. Bestätigen Sie nach dienstrelevanten Änderungen, dass der Windows-Dienst RUNNING ist und runtime-status.json aktuell ist.",
-            "source_sha256": ""
-          }
-        ],
-        "steps": [
-          {
-            "text": "Führen Sie den Einrichtungsassistenten unter Konfiguration → Server für Compliance, Verschlüsselung und optionale E-Mail aus.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Speichern Sie bei der E-Mail-Server-Installation SMTP- oder Cloud-API-Geheimnisse, wenn Sie bereit sind (oder schließen Sie unter Konfiguration → Server → Messaging ab).",
-            "source_sha256": ""
-          },
-          {
-            "text": "Setzen Sie das Unternehmensprofil, bevor Sie Agenteneinstellungen exportieren.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Bestätigen Sie, dass COMPLIANCE_PROFILE und ADMIN_AUTH_MODE der Einsatzabsicht entsprechen.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Bestätigen Sie nach dienstrelevanten Änderungen, dass aic-offline-server-service RUNNING ist und runtime-status.json aktuell ist.",
-            "source_sha256": ""
-          }
-        ],
+        "body": {
+          "text": [
+            {
+              "text": "Öffnen Sie in einer neuen Enklave Konfiguration → Server → Einrichtungsassistent. Der Assistent führt durch Compliance-Profil, Verschlüsselungsvorgaben, optionale E-Mail-Anbieterauswahl und optionale E-Mail-Server-Installation (SMTP- oder API-Geheimnisse über Konfiguration → Server → Messaging / AppConfig). Er führt niemals eine zerstörende Datenbankinitialisierung aus.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Das Unternehmensprofil speichert Offenlegungsvariablen für Hinweise und Agentenvorlagen. Produktbranding (Logo / Markenname) bleibt unter Branding & Stil. Bestätigen Sie nach dienstrelevanten Änderungen, dass der Windows-Dienst RUNNING ist und runtime-status.json aktuell ist.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "de0bf516717720f2ab8a91060486801693052d91730fda8f609045b27b9915d2"
+        },
+        "steps": {
+          "text": [
+            {
+              "text": "Führen Sie den Einrichtungsassistenten unter Konfiguration → Server für Compliance, Verschlüsselung und optionale E-Mail aus.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Speichern Sie bei der E-Mail-Server-Installation SMTP- oder Cloud-API-Geheimnisse, wenn Sie bereit sind (oder schließen Sie unter Konfiguration → Server → Messaging ab).",
+              "source_sha256": ""
+            },
+            {
+              "text": "Setzen Sie das Unternehmensprofil, bevor Sie Agenteneinstellungen exportieren.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Bestätigen Sie, dass COMPLIANCE_PROFILE und ADMIN_AUTH_MODE der Einsatzabsicht entsprechen.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Bestätigen Sie nach dienstrelevanten Änderungen, dass aic-offline-server-service RUNNING ist und runtime-status.json aktuell ist.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "fa07c13979a5a825e5a2c5fa7eb230d0d0bcc46d3a21bd7c677e73240a95b05a"
+        },
         "productLabel": {
           "text": "Konfiguration öffnen",
           "source_sha256": ""
+        },
+        "body[0]": {
+          "text": "Öffnen Sie in einer neuen Enklave Konfiguration → Server → Setup-Assistent. Der Assistent führt Sie durch das Compliance-Profil, die Verschlüsselungseinstellungen, die optionale Auswahl des E-Mail-Anbieters und die optionale Installation des E-Mail-Servers (SMTP- oder API-Geheimnisse über Konfiguration → Server → Messaging / AppConfig). Es führt niemals eine destruktive Datenbankinitialisierung durch.",
+          "source_sha256": "0e1821bc102c62606b878cfd96be8e7373261ecb74c34797e58b5fd8fdd26895"
+        },
+        "body[1]": {
+          "text": "Das Unternehmensprofil speichert Offenlegungsvariablen für Mitteilungen und Agentenvorlagen. Das Produkt-Branding (Logo/Markenname) bleibt unter „Branding & Style“. Nachdem Sie dienstbezogene Änderungen vorgenommen haben, vergewissern Sie sich, dass der Windows-Dienst AUSGEFÜHRT ist und runtime-status.json aktuell ist.",
+          "source_sha256": "bba090671dffe28a1bc80cd217c28c01415f4694ed08eda4c68c31b4c69a395c"
+        },
+        "steps[0]": {
+          "text": "Führen Sie den Einrichtungsassistenten unter Konfiguration → Server für Compliance, Verschluesselung und optionale E-Mail aus.",
+          "source_sha256": "dbced799688450951c39b4052f7daa6de747c36dce37ff921a9026631bcb8b3b"
+        },
+        "steps[1]": {
+          "text": "Speichern Sie bei der E-Mail-Server-Installation die SMTP- oder Cloud-API-Geheimnisse, wenn Sie bereit sind (oder schließen Sie sie unter Konfiguration → Server → Messaging ab).",
+          "source_sha256": "afe7699accc12b93e091294a7536e12d4b1b6519c5f3f58929f548a2ae47c3fb"
+        },
+        "steps[2]": {
+          "text": "Setzen Sie das Unternehmensprofil, bevor Sie Agenteneinstellungen exportieren.",
+          "source_sha256": "c2c3d3d93bfa13bca672f4df5eab009123bb99242c8da292c6fec45193737ce3"
+        },
+        "steps[3]": {
+          "text": "Stellen Sie sicher, dass COMPLIANCE_PROFILE und ADMIN_AUTH_MODE der Einsatzabsicht entsprechen.",
+          "source_sha256": "64a30d77497ab17ab20f10d4f65fea924029fb0849b5c4ede667b166befe8d2d"
+        },
+        "steps[4]": {
+          "text": "Bestaetigen Sie nach dienstrelevanten Änderungen, dass aic-offline-server-service RUNNING ist und runtime-status.json aktuell ist.",
+          "source_sha256": "fe010858d036edcd1121492c3e86aa87c1cb22342d0a04d7c038e142516bcbef"
         }
       },
       "identity": {
@@ -943,41 +1552,75 @@
           "text": "Lokale Prinzipale, wohlbekannte Gruppen und Enrollment-Vorgaben.",
           "source_sha256": ""
         },
-        "body": [
-          {
-            "text": "Die tägliche Benutzer- und Gruppenverwaltung liegt unter Zugriff & Identität → Verzeichnis → Lokale IAM-Verwaltung. Konfiguration → Sicherheit → Zugriffskontrolle bleibt für lokale Prinzipale und Verzeichnisverbindungen der Konfigurationsfläche verfügbar. Weisen Sie wohlbekannte Gruppen (Owners, Entwickler, Auditoren) mit geringsten Rechten zu. Bevorzugen Sie Sitzungs-MFA für Produktion. Das geteilte Admin-Token ist nur für den Notfall.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Enrollment-Token für Agenten werden unter Systeme → Mandantenfähigkeit erzeugt, wenn Sie Token-Bootstrap nutzen. Rotieren Sie bekannte ADMIN_TOKEN-Werte vor jeder geteilten oder kundenorientierten Demo. Enrollment und Zugriffskontrolle unter Zugriff & Identität ist eine assessororientierte Matrix, keine zweite CRUD-Konsole.",
-            "source_sha256": ""
-          }
-        ],
-        "steps": [
-          {
-            "text": "Legen Sie Prinzipale unter Zugriff & Identität → Verzeichnis → Lokale IAM-Verwaltung an oder pflegen Sie sie (oder Konfiguration → Sicherheit → Zugriffskontrolle, wenn das Ihr Ablauf ist).",
-            "source_sha256": ""
-          },
-          {
-            "text": "Weisen Sie wohlbekannte Gruppen mit geringsten Rechten zu.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Erzeugen Sie Enrollment-Token unter Systeme → Mandantenfähigkeit, wenn Sie Token-Bootstrap nutzen.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Bevorzugen Sie Sitzungs-MFA. Behandeln Sie das geteilte Admin-Token als Notfallmittel.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Rotieren Sie ADMIN_TOKEN vor geteilten Demos.",
-            "source_sha256": ""
-          }
-        ],
+        "body": {
+          "text": [
+            {
+              "text": "Die tägliche Benutzer- und Gruppenverwaltung liegt unter Zugriff & Identität → Verzeichnis → Lokale IAM-Verwaltung. Konfiguration → Sicherheit → Zugriffskontrolle bleibt für lokale Prinzipale und Verzeichnisverbindungen der Konfigurationsfläche verfügbar. Weisen Sie wohlbekannte Gruppen (Owners, Entwickler, Auditoren) mit geringsten Rechten zu. Bevorzugen Sie Sitzungs-MFA für Produktion. Das geteilte Admin-Token ist nur für den Notfall.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Enrollment-Token für Agenten werden unter Systeme → Mandantenfähigkeit erzeugt, wenn Sie Token-Bootstrap nutzen. Rotieren Sie bekannte ADMIN_TOKEN-Werte vor jeder geteilten oder kundenorientierten Demo. Enrollment und Zugriffskontrolle unter Zugriff & Identität ist eine assessororientierte Matrix, keine zweite CRUD-Konsole.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "48840d604859efc01238d5bde4e0d0692ad385b36cd85db07434ad05c0af03c2"
+        },
+        "steps": {
+          "text": [
+            {
+              "text": "Legen Sie Prinzipale unter Zugriff & Identität → Verzeichnis → Lokale IAM-Verwaltung an oder pflegen Sie sie (oder Konfiguration → Sicherheit → Zugriffskontrolle, wenn das Ihr Ablauf ist).",
+              "source_sha256": ""
+            },
+            {
+              "text": "Weisen Sie wohlbekannte Gruppen mit geringsten Rechten zu.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Erzeugen Sie Enrollment-Token unter Systeme → Mandantenfähigkeit, wenn Sie Token-Bootstrap nutzen.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Bevorzugen Sie Sitzungs-MFA. Behandeln Sie das geteilte Admin-Token als Notfallmittel.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Rotieren Sie ADMIN_TOKEN vor geteilten Demos.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "e39eb518945aefdfb4eddb196a97fceb4e3d1f4883e3c81fdcd44dee8597ffaf"
+        },
         "productLabel": {
           "text": "Lokale IAM-Verwaltung öffnen",
           "source_sha256": ""
+        },
+        "body[0]": {
+          "text": "Die tägliche Benutzer- und Gruppenverwaltung finden Sie unter Zugriff & Identität → Verzeichnis → Lokale IAM-Verwaltung. Konfiguration → Sicherheit → Zugriffskontrolle bleibt für lokale Prinzipale und Verzeichnisverbindungen im Konfigurationsfenster verfügbar. Weisen Sie bekannte Gruppen (Eigentümer, Entwickler, Prüfer) mit den geringsten Berechtigungen zu. Bevorzugen Sie Sitzungs-MFA für die Produktion. Der Shared Admin-Token ist nur für Notfälle gedacht.",
+          "source_sha256": "3e1be4c3f44fd992be8141df97b307d6437960a4e2d9c6a5c6a670a280ac74f7"
+        },
+        "body[1]": {
+          "text": "Registrierungstoken für Agenten werden unter Systeme → Multitenancy erstellt, wenn Sie Token-Bootstrap verwenden. Rotieren Sie bekannte ADMIN_TOKEN-Werte vor jeder gemeinsamen oder kundenorientierten Demo. Bei der Registrierung und Zugriffskontrolle unter Access & Identity handelt es sich um eine prüferorientierte Matrix, nicht um eine zweite CRUD-Konsole.",
+          "source_sha256": "eddede5e5680a5488e23be12b49250a57a723113209358ce50651aea6c91ab6c"
+        },
+        "steps[0]": {
+          "text": "Erstellen oder verwalten Sie Prinzipale unter „Zugriff und Identität“ → „Verzeichnis“ → „Lokale IAM-Verwaltung“ (oder „Konfiguration“ → „Sicherheit“ → „Zugriffskontrolle“, wenn Sie dies wünschen).",
+          "source_sha256": "d4b2ad72f72409a0fa1fb15cb5bc9ccbf124cb82895b51818975110fcb0a39a6"
+        },
+        "steps[1]": {
+          "text": "Weisen Sie wohlbekannte Gruppen mit geringsten Rechten an.",
+          "source_sha256": "69ec5fab5862578438a464f39310956886c01483258f8bdb9aa30457fbc0bd27"
+        },
+        "steps[2]": {
+          "text": "Erzeugen Sie Enrollment-Token unter Systemen → Mandantenfähigkeit, wenn Sie Token-Bootstrap nutzen.",
+          "source_sha256": "a72776cbaa39549281844b5390e22e13c85cc77d7216d8ae17e2b9ffa85e8ff4"
+        },
+        "steps[3]": {
+          "text": "Bevorzugen Sie Sitzungs-MFA. Behandeln Sie das geteilte Admin-Token als Notfallmittel.",
+          "source_sha256": "0848c784405cc62dca60cf75c1605c89a2ad31b34c7d5dfb8fb457ef5f7696d0"
+        },
+        "steps[4]": {
+          "text": "Drehen Sie ADMIN_TOKEN vor geteilten Demos.",
+          "source_sha256": "08d5f442ac16daffb80fd2cda8f069394df26060580bc9ab9ca48c0ae715ff0f"
         }
       },
       "agents": {
@@ -989,41 +1632,75 @@
           "text": "Agentenvorgaben, Offenlegungen und Bereitstellungsabläufe unter Konfiguration → Agent.",
           "source_sha256": ""
         },
-        "body": [
-          {
-            "text": "Exportieren oder übertragen Sie Agenteneinstellungen erst, wenn die Unternehmensoffenlegungen vollständig sind. Prüfen Sie nach der Installation den Agent-Check-in und die Gesundheit unter Systeme → Systemliste.",
-            "source_sha256": ""
-          },
-          {
-            "text": "AGENT_HMAC_ENFORCE_MODE=dual_mode akzeptiert während der Einlaufphase signierten und unsignierten Agentenverkehr. Wechseln Sie zu required, wenn Agenten zuverlässig signieren. Bestätigen Sie die Elevation-Named-Pipe und elevation_configured, bevor Sie Elevation-Codes unter Zugriff & Identität → Elevation erzeugen.",
-            "source_sha256": ""
-          }
-        ],
-        "steps": [
-          {
-            "text": "Exportieren oder übertragen Sie Einstellungen von Konfiguration → Agent, nachdem die Unternehmensoffenlegungen vollständig sind.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Prüfen Sie nach der Installation den Agent-Check-in und die Gesundheit der Systemliste.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Behalten Sie dual_mode HMAC, bis Agenten mit Signatur einlaufen, dann required.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Rotieren Sie während Passwortwiederherstellungsübungen niemals persönliche Administratorkonten. Nutzen Sie ein dafür angelegtes Dienstkonto.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Bestätigen Sie Elevation-Pipe und elevation_configured, bevor Sie Elevation-Codes erzeugen.",
-            "source_sha256": ""
-          }
-        ],
+        "body": {
+          "text": [
+            {
+              "text": "Exportieren oder übertragen Sie Agenteneinstellungen erst, wenn die Unternehmensoffenlegungen vollständig sind. Prüfen Sie nach der Installation den Agent-Check-in und die Gesundheit unter Systeme → Systemliste.",
+              "source_sha256": ""
+            },
+            {
+              "text": "AGENT_HMAC_ENFORCE_MODE=dual_mode akzeptiert während der Einlaufphase signierten und unsignierten Agentenverkehr. Wechseln Sie zu required, wenn Agenten zuverlässig signieren. Bestätigen Sie die Elevation-Named-Pipe und elevation_configured, bevor Sie Elevation-Codes unter Zugriff & Identität → Elevation erzeugen.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "6334884d1e6a2d791ae09070839ee197bcc163573886952555caa9bba9530edd"
+        },
+        "steps": {
+          "text": [
+            {
+              "text": "Exportieren oder übertragen Sie Einstellungen von Konfiguration → Agent, nachdem die Unternehmensoffenlegungen vollständig sind.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Prüfen Sie nach der Installation den Agent-Check-in und die Gesundheit der Systemliste.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Behalten Sie dual_mode HMAC, bis Agenten mit Signatur einlaufen, dann required.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Rotieren Sie während Passwortwiederherstellungsübungen niemals persönliche Administratorkonten. Nutzen Sie ein dafür angelegtes Dienstkonto.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Bestätigen Sie Elevation-Pipe und elevation_configured, bevor Sie Elevation-Codes erzeugen.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "6dee7d8d82647295fff5f1b8bfbb51aa45164b73212fea55aac9a412a53f7bfa"
+        },
         "productLabel": {
           "text": "Systemliste öffnen",
           "source_sha256": ""
+        },
+        "body[0]": {
+          "text": "Exportieren oder übertragen Sie Agenteneinstellungen erst, wenn die Unternehmensoffenlegungen vollständig sind. Prüfen Sie nach der Installation den Agent-Check-in und die Gesundheit unter Systeme → Systemliste.",
+          "source_sha256": "adcb38115aaa6d932a7114fcc1c17940c64bb6104dad4dfc4ea34aa372d6354b"
+        },
+        "body[1]": {
+          "text": "AGENT_HMAC_ENFORCE_MODE=dual_mode akzeptiert signierten und nicht signierten Agentenverkehr während der Aufwärmphase. Wechseln Sie zu „Erforderlich“, wenn Agenten zuverlässig signieren. Bestätigen Sie „Elevation-Named-Pipe“ und „elevation_configured“, bevor Sie Höhencodes unter „Zugriff & Identität“ → „Höhe“ generieren.",
+          "source_sha256": "cff9f9beb4cbc6d1fd34d41d2ad56f4921e1bcd734d58e32fe8da7384c4a2303"
+        },
+        "steps[0]": {
+          "text": "Exportieren oder übertragen Sie die Einstellungen unter Konfiguration → Agent, nachdem die Unternehmensoffenlegungen vollständig sind.",
+          "source_sha256": "05504c31f7891389b17ec403360cdc93e7b52ea2d0418f7e21c03c799f80088f"
+        },
+        "steps[1]": {
+          "text": "Überprüfen Sie nach der Installation den Agent-Check-in und die Gesundheit der Systemliste.",
+          "source_sha256": "a2c44839bae1d6328bbc7671be194c34698b224687a895a88318434ea46011fc"
+        },
+        "steps[2]": {
+          "text": "Behalten Sie dual_mode HMAC bei, bis Agenten mit Signatur einlaufen, dann erforderlich.",
+          "source_sha256": "6900cd7205bb678bd84ecb8411aeac9c66de46667c0e4dcb0179c03d111decf5"
+        },
+        "steps[3]": {
+          "text": "Drehen Sie niemals persönliche Administratorkonten. Nutzen Sie ein dafür angelegtes Dienstkonto.",
+          "source_sha256": "2e6134cdc3e958d2305f6a74fd5b1831f5d26f657ef5e16a01588f8aba492537"
+        },
+        "steps[4]": {
+          "text": "Legen Sie Elevation-Pipe und height_configured fest, bevor Sie Elevation-Codes erzeugen.",
+          "source_sha256": "d8b1ac754c08f89d2c0d9e4c1a798a33d1debe955e1e5bf4718da076cb797b92"
         }
       },
       "messaging": {
@@ -1035,37 +1712,67 @@
           "text": "E-Mail- / SMS-Anbieter für Wiederherstellung und Operatoralarme.",
           "source_sha256": ""
         },
-        "body": [
-          {
-            "text": "Konfiguration → Server → Messaging → E-Mail hält die SMTP-Datenbankzeile und Cloud-Anbietergeheimnisse (SendGrid, Mailgun, Microsoft Graph) in AppConfig. Der Einrichtungsassistent kann den Anbieter wählen und optional dieselben Felder speichern. Geheimnisse liegen niemals in der Antwort-JSON des Assistenten.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Führen Sie Erreichbarkeitsprüfungen vor dem Go-Live aus. Private und Metadaten-Ziele sind außerhalb von Entwicklungsprofilen gesperrt. Speichern Sie API-Schlüssel nur in Plattformgeheimnissen — niemals in Tickets oder Chat. Eine erfolgreiche Prüfung oder ein Testsenden belegt die Zustellkonfiguration. Es belegt nicht, dass eine Assessment-Steuerung erfüllt ist.",
-            "source_sha256": ""
-          }
-        ],
-        "steps": [
-          {
-            "text": "Konfigurieren Sie SMTP oder einen Cloud-Anbieter, bevor Sie sich auf Wiederherstellungsmail verlassen.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Nutzen Sie den Assistentenschritt E-Mail-Server-Installation oder Konfiguration → Server → Messaging → E-Mail für Geheimnisse.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Führen Sie Erreichbarkeitsprüfungen aus. Erwarten Sie Sperren für private/Metadaten-Ziele außerhalb von Entwicklungsprofilen.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Testen Sie die Benachrichtigung vor dem Go-Live mit einem Nicht-Produktionspostfach.",
-            "source_sha256": ""
-          }
-        ],
+        "body": {
+          "text": [
+            {
+              "text": "Konfiguration → Server → Messaging → E-Mail hält die SMTP-Datenbankzeile und Cloud-Anbietergeheimnisse (SendGrid, Mailgun, Microsoft Graph) in AppConfig. Der Einrichtungsassistent kann den Anbieter wählen und optional dieselben Felder speichern. Geheimnisse liegen niemals in der Antwort-JSON des Assistenten.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Führen Sie Erreichbarkeitsprüfungen vor dem Go-Live aus. Private und Metadaten-Ziele sind außerhalb von Entwicklungsprofilen gesperrt. Speichern Sie API-Schlüssel nur in Plattformgeheimnissen — niemals in Tickets oder Chat. Eine erfolgreiche Prüfung oder ein Testsenden belegt die Zustellkonfiguration. Es belegt nicht, dass eine Assessment-Steuerung erfüllt ist.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "119d3d64350be31330b90be34c7995700c672567056c7c39b465bd656742bbda"
+        },
+        "steps": {
+          "text": [
+            {
+              "text": "Konfigurieren Sie SMTP oder einen Cloud-Anbieter, bevor Sie sich auf Wiederherstellungsmail verlassen.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Nutzen Sie den Assistentenschritt E-Mail-Server-Installation oder Konfiguration → Server → Messaging → E-Mail für Geheimnisse.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Führen Sie Erreichbarkeitsprüfungen aus. Erwarten Sie Sperren für private/Metadaten-Ziele außerhalb von Entwicklungsprofilen.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Testen Sie die Benachrichtigung vor dem Go-Live mit einem Nicht-Produktionspostfach.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "269e297bf59890e8b682b51c719f9981dbf49fbbd77afe747790aa255fb40e0a"
+        },
         "productLabel": {
           "text": "Messaging-E-Mail öffnen",
           "source_sha256": ""
+        },
+        "body[0]": {
+          "text": "Konfiguration → Server → Messaging → E-Mail behält die SMTP-Datenbankzeile und die Geheimnisse des Cloud-Anbieters (SendGrid, Mailgun, Microsoft Graph) in AppConfig. Der Einrichtungsassistent kann den Anbieter auswählen und optional die gleichen Felder speichern. Im Antwort-JSON des Assistenten liegen niemals Geheimnisse.",
+          "source_sha256": "6e4d589cb2fc26c59cfde83d72a51e9876ced4bd81120205a0c960dc236466c1"
+        },
+        "body[1]": {
+          "text": "Führen Sie Erreichbarkeitsprüfungen vor dem Go-Live aus. Private und Metadaten-Ziele sind außerhalb von Entwicklungsprofilen gesperrt. Speichern Sie API-Schluessel nur in Plattformgeheimnissen – niemals in Tickets oder Chat. Eine erfolgreiche Prüfung oder ein Testsenden belegt die Zustellkonfiguration. Es belegt nicht, dass eine Assessment-Steuerung erforderlich ist.",
+          "source_sha256": "a2c215160d6a28b521380577f7ad42999f17c4ee4a1fd93fb4ff8397fd1b4d42"
+        },
+        "steps[0]": {
+          "text": "Konfigurieren Sie SMTP oder einen Cloud-Anbieter, bevor Sie sich auf Wiederherstellungsmail verlassen.",
+          "source_sha256": "5cf221196eaef95cc9d53479c47e63db977b67860bad3a103a9e302d7851eead"
+        },
+        "steps[1]": {
+          "text": "Nutzen Sie den Assistentenschritt E-Mail-Server-Installation oder Konfiguration → Server → Messaging → E-Mail für Geheimnisse.",
+          "source_sha256": "7400fd9d13e48adbb05ce46b7442b48773cd2ddec12d42f2ec5c4e25175b7ff8"
+        },
+        "steps[2]": {
+          "text": "Fuhren Sie Erreichbarkeitsprüfungen aus. Erwarten Sie Sperren für private/Metadaten-Ziele außerhalb von Entwicklungsprofilen.",
+          "source_sha256": "66de378e588ca56abddf3ba0088753b3e42948bebb88eb86a38c6c3d84c80554"
+        },
+        "steps[3]": {
+          "text": "Testen Sie die Benachrichtigung vor dem Go-Live mit einem Nicht-Produktionspostfach.",
+          "source_sha256": "9973e7d5c4534856d7230d6ad1dfedc361624cd1ec74b35fd388c79012e366b5"
         }
       },
       "credentials-elevation": {
@@ -1077,41 +1784,75 @@
           "text": "Passwort anzeigen, Verwaltete Identitäten, Zugangsdaten-Tresor und Elevation unter Zugriff & Identität.",
           "source_sha256": ""
         },
-        "body": [
-          {
-            "text": "Zugriff & Identität → Zugangsdaten enthält Passwort anzeigen, Verwaltete Identitäten und Zugangsdaten-Tresor. Passwort anzeigen stellt ein gespeichertes Passwort für eine enrollte Endpunktidentität wieder her, wenn Ihre Rolle es erlaubt und der Audit-Pfad die Anzeige aufzeichnet. Verwaltete Identitäten sind lokale Konten auf einem gewählten Endpunkt, deren Passwörter der Server rotiert. Wählen Sie zuerst einen Endpunkt — Identitäten sind immer maschinenbezogen. Der Zugangsdaten-Tresor speichert Geheimnisse für Sitzungs- und Zugriffsabläufe. Behandeln Sie Tresorzeilen als sensibles Inventar, nicht als Beweis, dass jede Passwortrichtlinie Ihrer Organisation Met ist.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Zugriff & Identität → Elevation umfasst Token-Elevation (Einmalcodes, die der Endpunktagent einlöst), Elevation-Plattform, Direkte Elevation (serverinitiierte zeitlich begrenzte Mitgliedschaften über Lokalen Agenten oder Remote Non-Agent Local Elevation über WinRM) und Privileged User Management. Domänengruppen-Elevation bleibt nicht verfügbar, bis ein Domänencontroller konfiguriert ist. Erzeugen Sie Elevation erst, wenn der Agent-Elevation-Kanal gesund ist. Jede Erzeugung und Einlösung sollte unter Compliance & Nachweise → Audit-Spur erscheinen.",
-            "source_sha256": ""
-          }
-        ],
-        "steps": [
-          {
-            "text": "Öffnen Sie Zugriff & Identität → Zugangsdaten → Verwaltete Identitäten. Wählen Sie einen Endpunkt, bevor Sie Identitäten anlegen oder bearbeiten.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Nutzen Sie Passwort anzeigen nur für autorisierte Wiederherstellung. Bestätigen Sie danach die Audit-Zeile.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Prüfen Sie das Inventar des Zugangsdaten-Tresors unter Zugriff & Identität → Zugangsdaten → Zugangsdaten-Tresor.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Bestätigen Sie die Agent-Elevation-Gesundheit. Erzeugen Sie dann unter Zugriff & Identität → Elevation → Token-Elevation oder Direkte Elevation, wie erforderlich.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Nutzen Sie für Rotations- und Wiederherstellungsübungen ein dediziertes Dienstkonto — niemals persönliche Administratorkonten.",
-            "source_sha256": ""
-          }
-        ],
+        "body": {
+          "text": [
+            {
+              "text": "Zugriff & Identität → Zugangsdaten enthält Passwort anzeigen, Verwaltete Identitäten und Zugangsdaten-Tresor. Passwort anzeigen stellt ein gespeichertes Passwort für eine enrollte Endpunktidentität wieder her, wenn Ihre Rolle es erlaubt und der Audit-Pfad die Anzeige aufzeichnet. Verwaltete Identitäten sind lokale Konten auf einem gewählten Endpunkt, deren Passwörter der Server rotiert. Wählen Sie zuerst einen Endpunkt — Identitäten sind immer maschinenbezogen. Der Zugangsdaten-Tresor speichert Geheimnisse für Sitzungs- und Zugriffsabläufe. Behandeln Sie Tresorzeilen als sensibles Inventar, nicht als Beweis, dass jede Passwortrichtlinie Ihrer Organisation Met ist.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Zugriff & Identität → Elevation umfasst Token-Elevation (Einmalcodes, die der Endpunktagent einlöst), Elevation-Plattform, Direkte Elevation (serverinitiierte zeitlich begrenzte Mitgliedschaften über Lokalen Agenten oder Remote Non-Agent Local Elevation über WinRM) und Privileged User Management. Domänengruppen-Elevation bleibt nicht verfügbar, bis ein Domänencontroller konfiguriert ist. Erzeugen Sie Elevation erst, wenn der Agent-Elevation-Kanal gesund ist. Jede Erzeugung und Einlösung sollte unter Compliance & Nachweise → Audit-Spur erscheinen.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "b3665fe72f575ea02560e3dd7904a0d5a26a7daa9507ce64636039e1e3ccc781"
+        },
+        "steps": {
+          "text": [
+            {
+              "text": "Öffnen Sie Zugriff & Identität → Zugangsdaten → Verwaltete Identitäten. Wählen Sie einen Endpunkt, bevor Sie Identitäten anlegen oder bearbeiten.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Nutzen Sie Passwort anzeigen nur für autorisierte Wiederherstellung. Bestätigen Sie danach die Audit-Zeile.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Prüfen Sie das Inventar des Zugangsdaten-Tresors unter Zugriff & Identität → Zugangsdaten → Zugangsdaten-Tresor.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Bestätigen Sie die Agent-Elevation-Gesundheit. Erzeugen Sie dann unter Zugriff & Identität → Elevation → Token-Elevation oder Direkte Elevation, wie erforderlich.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Nutzen Sie für Rotations- und Wiederherstellungsübungen ein dediziertes Dienstkonto — niemals persönliche Administratorkonten.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "afb90dbc0153659d1152c5c1709f04a7d8ffce9c858a945a0a4f9c1c9036c4b1"
+        },
         "productLabel": {
           "text": "Token-Elevation öffnen",
           "source_sha256": ""
+        },
+        "body[0]": {
+          "text": "Zugriff und Identität → Anmeldeinformationen umfassen „Passwort anzeigen“, „Verwaltete Identitäten“ und „Anmeldeinformations-Tresor“. „Passwort anzeigen“ stellt ein gespeichertes Passwort für eine registrierte Endpunktidentität wieder her, wenn Ihre Rolle dies zulässt und der Prüfpfad die Ansicht aufzeichnet. Verwaltete Identitäten sind lokale Konten auf einem ausgewählten Endpunkt, deren Passwörter vom Server rotiert werden. Wählen Sie zunächst einen Endpunkt – Identitäten sind immer maschinenbezogen. Der Anmeldeinformations-Tresor speichert Geheimnisse für Sitzungs- und Zugriffsflüsse. Behandeln Sie Tresorzeilen als vertrauliches Inventar und nicht als Beweis dafür, dass die Passwortrichtlinie Ihrer Organisation eingehalten wird.",
+          "source_sha256": "9a02950130229772fe38dcc62692628bd452f1c5b0f14d5b74bed20700ebd4b5"
+        },
+        "body[1]": {
+          "text": "Access & Identity → Elevation umfasst Token Elevation (einmalige Codes, die der Endpunktagent einlöst), Elevation Platform, Direct Elevation (serverinitiierte zeitlich begrenzte Mitgliedschaften über Local Agent oder Remote Non-Agent Local Elevation über WinRM) und Privileged User Management. Die Domänengruppenerhöhung bleibt erst verfügbar, wenn ein Domänencontroller konfiguriert ist. Erstellen Sie keine Erhöhung, bis der Agent-Erhöhungskanal fehlerfrei ist. Jede Erstellung und Einlösung sollte unter Compliance & Evidence → Audit Trail erscheinen.",
+          "source_sha256": "2c0c1e848203a2603d4ba1e173b23ebca331abf2c8f7b663a6f9f78ec622fdca"
+        },
+        "steps[0]": {
+          "text": "Open Access & Identity → Credentials → Managed Identities. Choose an endpoint before creating or editing identities.",
+          "source_sha256": "fa3ca07c9b7d0e7bb82b7362dd6f9c8e37f7f700cc45228d83e6303819b76278"
+        },
+        "steps[1]": {
+          "text": "Verwenden Sie „Passwort anzeigen“ nur für die autorisierte Wiederherstellung. Bestätigen Sie dann die Prüfzeile.",
+          "source_sha256": "aa7b64f13afea1636b6f265a3e86883a4677f3c92d5be89d8783a9461aaceb17"
+        },
+        "steps[2]": {
+          "text": "Überprüfen Sie den Bestand des Credential Vault unter Zugriff & Identität → Anmeldeinformationen → Credential Vault.",
+          "source_sha256": "1ae64ed3107d649f2a37b92cfdb7e5a8216ab65b97fa9f0900b6efc0795e28c4"
+        },
+        "steps[3]": {
+          "text": "Bestätigen Sie den Zustand der Agentenerhöhung. Erstellen Sie dann je nach Bedarf Access & Identity → Elevation → Token Elevation oder Direct Elevation.",
+          "source_sha256": "da22b6d29849b498db11e4acc331a50f871701547ea9dfe6b9d40d6f44c96c7c"
+        },
+        "steps[4]": {
+          "text": "Nutzen Sie für Rotations- und Wiederherstellungsübungen ein dediziertes Dienstkonto – niemals persönliche Administratorkonten.",
+          "source_sha256": "81c1566560fdcdb82af60e975f20086d49752bb8ef56e94aa117472f4a7880d7"
         }
       },
       "proxied-access": {
@@ -1123,45 +1864,83 @@
           "text": "Verbindungspunkte, Jump-Kapazität, Aufzeichnungen, Befehlsfilterung und Sitzungsgenehmigungen.",
           "source_sha256": ""
         },
-        "body": [
-          {
-            "text": "Vermittelter Zugriff vermittelt aufgezeichnete SSH-, RDP- und verwandte Sitzungen. Verbindungspunkte definieren Ziele. Sitzungssteuerung und Sitzungsaufzeichnungen zeigen live und gespeicherte Sitzungsnachweise. Recording Ops umfasst die Gesundheit des Recording-Agenten, Bereitstellung, RDP-OCR / Metadaten und Recording-Speicher. Berechtigungen und Sitzungs-E/A-Richtlinie entscheiden, wer welche Ziele öffnen darf und welche E/A-Regeln gelten.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Jump & Kapazität → Jump-Flotte & Lastverteilung konfiguriert Jump- / Recording-Proxy-Kapazität über externe Jump-Hosts und den lokalen AIC-Server-Endpunkt. Nutzen Sie Platzierung prüfen für eine Trockenlauf-Auswahl des am wenigsten belasteten Knotens — das öffnet keine Benutzersitzung. SSH-Befehlsfilterung unter Vermittelter Zugriff → Richtlinie steuert, welche Befehle eine vermittelte SSH-Sitzung ausführen darf, wenn ein Filter gebunden ist. Ein erlaubter Befehl, der gelingt, und ein eingeschränkter Befehl, der abgelehnt wird, sind die Live-Nachweise dieser Richtlinie. Genehmigungen und Genehmigerprofil behandeln Zugriffsanfragen, wenn Ihre Enklave sie verlangt.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Meine Arbeitsplätze (unter Mein Arbeitsbereich) ist die Endbenutzer-Verbindungsfläche für zugewiesene Plätze. Fernzugriff ist die Operator-Verbindungsfläche, wenn Sie Rechte auf Verbindungsziele haben. Nur die Seitenoberfläche zu öffnen ist kein Sitzungsnachweis — eine echte Sitzung zeigt eine nicht leere Sitzungs-ID und eine verbindende oder verbundene Protokollfläche.",
-            "source_sha256": ""
-          }
-        ],
-        "steps": [
-          {
-            "text": "Definieren oder prüfen Sie Ziele unter Vermittelter Zugriff → Sitzungen → Verbindungspunkte.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Stellen Sie sicher, dass Jump-Flotte & Lastverteilung nutzbare Kapazität hat. Führen Sie Platzierung prüfen aus, bevor Sie Connect-Fehler dem Client zuschreiben.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Bestätigen Sie Recording-Agenten — Gesundheit und Recording-Speicher, bevor Sie aufgezeichnete Sitzungen verlangen.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Binden Sie SSH-Befehlsfilterung, wenn Sie Befehlssteuerung brauchen. Üben Sie in einer Live-Sitzung ein Erlauben und ein Ablehnen.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Nutzen Sie Genehmigungen, wenn Zugriffsanfragen zur Richtlinie gehören. Prüfen Sie danach Sitzungsaufzeichnungen auf die erwartete Nachweiszeile.",
-            "source_sha256": ""
-          }
-        ],
+        "body": {
+          "text": [
+            {
+              "text": "Vermittelter Zugriff vermittelt aufgezeichnete SSH-, RDP- und verwandte Sitzungen. Verbindungspunkte definieren Ziele. Sitzungssteuerung und Sitzungsaufzeichnungen zeigen live und gespeicherte Sitzungsnachweise. Recording Ops umfasst die Gesundheit des Recording-Agenten, Bereitstellung, RDP-OCR / Metadaten und Recording-Speicher. Berechtigungen und Sitzungs-E/A-Richtlinie entscheiden, wer welche Ziele öffnen darf und welche E/A-Regeln gelten.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Jump & Kapazität → Jump-Flotte & Lastverteilung konfiguriert Jump- / Recording-Proxy-Kapazität über externe Jump-Hosts und den lokalen AIC-Server-Endpunkt. Nutzen Sie Platzierung prüfen für eine Trockenlauf-Auswahl des am wenigsten belasteten Knotens — das öffnet keine Benutzersitzung. SSH-Befehlsfilterung unter Vermittelter Zugriff → Richtlinie steuert, welche Befehle eine vermittelte SSH-Sitzung ausführen darf, wenn ein Filter gebunden ist. Ein erlaubter Befehl, der gelingt, und ein eingeschränkter Befehl, der abgelehnt wird, sind die Live-Nachweise dieser Richtlinie. Genehmigungen und Genehmigerprofil behandeln Zugriffsanfragen, wenn Ihre Enklave sie verlangt.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Meine Arbeitsplätze (unter Mein Arbeitsbereich) ist die Endbenutzer-Verbindungsfläche für zugewiesene Plätze. Fernzugriff ist die Operator-Verbindungsfläche, wenn Sie Rechte auf Verbindungsziele haben. Nur die Seitenoberfläche zu öffnen ist kein Sitzungsnachweis — eine echte Sitzung zeigt eine nicht leere Sitzungs-ID und eine verbindende oder verbundene Protokollfläche.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "aa59cc5301b86a53ebe226758dbfbbadea4b2c976396934f0a9d69c643e1622e"
+        },
+        "steps": {
+          "text": [
+            {
+              "text": "Definieren oder prüfen Sie Ziele unter Vermittelter Zugriff → Sitzungen → Verbindungspunkte.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Stellen Sie sicher, dass Jump-Flotte & Lastverteilung nutzbare Kapazität hat. Führen Sie Platzierung prüfen aus, bevor Sie Connect-Fehler dem Client zuschreiben.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Bestätigen Sie Recording-Agenten — Gesundheit und Recording-Speicher, bevor Sie aufgezeichnete Sitzungen verlangen.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Binden Sie SSH-Befehlsfilterung, wenn Sie Befehlssteuerung brauchen. Üben Sie in einer Live-Sitzung ein Erlauben und ein Ablehnen.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Nutzen Sie Genehmigungen, wenn Zugriffsanfragen zur Richtlinie gehören. Prüfen Sie danach Sitzungsaufzeichnungen auf die erwartete Nachweiszeile.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "5769cd8f128cd0e42403e8a02f5062e81f597763691f91dbeca5831e509750a4"
+        },
         "productLabel": {
           "text": "Jump-Flotte & Lastverteilung öffnen",
           "source_sha256": ""
+        },
+        "body[0]": {
+          "text": "Vermittelte Zugangsvermittler zeichneten SSH, RDP und zugehörige Sitzungen auf. Verbindungspunkte definieren Ziele. Sitzungskontrollen und Sitzungsaufzeichnungen zeigen Live- und gespeicherte Sitzungsbeweise. Recording Ops umfasst die Aufzeichnung des Agent-Zustands, der Bereitstellung, RDP OCR/Metadaten und der Aufzeichnungsspeicherung. Berechtigungen und Sitzungs-E/A-Richtlinien entscheiden darüber, wer welche Ziele öffnen kann und welche E/A-Regeln gelten.",
+          "source_sha256": "1f4b41dd54e865fc4eb2c99ad37071e44b51f22c8d02be3b9486fe30c47c0220"
+        },
+        "body[1]": {
+          "text": "Jump & Capacity → Jump Fleet & Load Balancing konfiguriert die Jump-/Recording-Proxy-Kapazität über externe Jump-Hosts und den lokalen AIC-Server-Endpunkt. Verwenden Sie „Platzierung prüfen“ für eine Probeauswahl des am wenigsten belasteten Knotens – dadurch wird keine Benutzersitzung geöffnet. SSH-Befehlsfilterung unter vermitteltem Zugriff → Richtlinie steuert, welche Befehle eine vermittelte SSH-Sitzung ausführen darf, wenn ein Filter gebunden ist. Ein zulässiger Befehl, der erfolgreich ist, und ein eingeschränkter Befehl, der abgelehnt wird, sind der lebendige Beweis dieser Richtlinie. Genehmigungen und Genehmigerprofile bearbeiten Zugriffsanfragen, wenn Ihre Enklave dies erfordert.",
+          "source_sha256": "5b38f4afbc8773e0de30d3e9fc0cdd87c747dfb8918e301826ed04d8bed847ac"
+        },
+        "body[2]": {
+          "text": "Meine Arbeitsplaetze (unter Mein Arbeitsbereich) ist die Endbenutzer-Verbindungsflaeche für zugewiesene Plaetze. Fernzugriff ist die Operator-Verbindungsfläche, wenn Sie Rechte auf Verbindungsziele haben. Nur die Seitenoberflaeche zu öffnen ist kein Sitzungsnachweis – eine echte Sitzung zeigt eine nicht leere Sitzungs-ID und eine verbindende oder verbundene Protokollflaeche.",
+          "source_sha256": "e42d54032e6be91c9e790fc6db8b9a366214f8ae597cd984600e4c9bea0690f7"
+        },
+        "steps[0]": {
+          "text": "Definieren oder prüfen Sie Ziele unter Brokered Access → Sessions → Connection Points.",
+          "source_sha256": "4fd9d714ab299ca22cf2f9d0c06de4c2204cf24da3c78ff4cd854d76697b06ce"
+        },
+        "steps[1]": {
+          "text": "Stellen Sie sicher, dass Jump-Flotte & Lastverteilung nutzbare Kapazitäten haben. Prüfen Sie die Platzierung, bevor Sie den Connect-Error dem Client zuschreiben.",
+          "source_sha256": "1f5386e65c8c31cd7e3c1df323c43cc74f7a23a745224f0ac25475719599de13"
+        },
+        "steps[2]": {
+          "text": "Bestaetigen Sie Recording-Agenten – Gesundheit und Recording-Speicher, bevor Sie aufgezeichnete Sessions verlangen.",
+          "source_sha256": "14bab5ea3cd8e41c7ff3688f22a9f7b618532b8b57ca7ca76758cfb40b1a3172"
+        },
+        "steps[3]": {
+          "text": "Binden Sie SSH-Befehlsfilterung, wenn Sie Befehlssteuerung benötigen. Ueben Sie in einer Live-Session ein Erlauben und ein Ablehnen.",
+          "source_sha256": "bd8ccfc457de6b38c55a9159619ebb187e06f71e32705c69fce55d979686b8cb"
+        },
+        "steps[4]": {
+          "text": "Nutzen Sie Genehmigungen, wenn Zugriffsanfragen zur Richtlinie erhoben werden. Prüfen Sie danach Sitzungsaufzeichnungen auf die erwartete Nachweiszeile.",
+          "source_sha256": "a2f3f085c7fc755b76aceace67ad3e7c257e865149801473d05847d2a15e8e13"
         }
       },
       "evidence-audit": {
@@ -1173,45 +1952,83 @@
           "text": "Audit-Spur, Berichtszentrum, Aktueller Compliance-Stand und Assessment-Binder für Operatoren.",
           "source_sha256": ""
         },
-        "body": [
-          {
-            "text": "Compliance & Nachweise → Audit-Spur enthält Übersicht, Live-Ereignisse, Audit-Protokoll, Ereignisteilung und Syslog-Weiterleitung. Suchen Sie nach Akteur, Aktion und Zeitraum. Detailzeilen tragen Korrelationsfelder wie Anfrage-ID und Ergebnis. Syslog oder Ereignisteilung zu konfigurieren erzeugt einen Zustellweg — das erfüllt für sich kein Assessor-Urteil.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Das Berichtszentrum führt Katalogberichte und Pakete aus. Aktueller Compliance-Stand zeigt Lage und Feststellungen je Maschine. Erneut scannen und Fix-It sind Operatoraktionen, die Produktnachweise auffrischen, keine Compliance-Zertifikate. Der Assessment-Binder ordnet Narrative und verknüpft Nachweise, die die Enklave bereits erzeugt hat. Schreiben Sie ehrliche Statuswerte Umgesetzt / Teilweise / Geplant (oder gleichwertig). Erfinden Sie keine Artefakte, um eine Met-Behauptung zu erzwingen.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Schulungs- und Sensibilisierungspakete unter Compliance & Nachweise → Schulung können Dokumenteninhalte zum Bearbeiten zeigen. Workforce-Zuweisung, Erinnerungsleitern, Attestierungsbücher, Willkommensschreiben und Bewertung sind noch nicht als durchgängiges Online-Programm vollständig geliefert — beschreiben Sie das Rendern eines Dokuments nicht als abgeschlossene Sensibilisierungsschulung.",
-            "source_sha256": ""
-          }
-        ],
-        "steps": [
-          {
-            "text": "Öffnen Sie nach sensiblen Admin-Aktionen Compliance & Nachweise → Audit-Spur → Audit-Protokoll und bestätigen Sie den erwarteten Akteur und die Aktion.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Führen Sie benötigte Berichte unter Compliance & Nachweise → Berichte → Berichtszentrum aus.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Nutzen Sie Aktueller Compliance-Stand, um Feststellungen zu prüfen. Behandeln Sie Erneut scannen / Fix-It als Lieferauffrischungen, nicht als Assessment-Schlussfolgerungen.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Halten Sie Assessment-Binder-Narrative an Nachweisen ausgerichtet, die Sie zeigen können. Lassen Sie Lücken Teilweise oder Geplant, wenn Nachweise unvollständig sind.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Konfigurieren Sie Syslog-Weiterleitung nur, wenn Sie einen Collector haben. Prüfen Sie die Zustellung getrennt vom Seitenladen.",
-            "source_sha256": ""
-          }
-        ],
+        "body": {
+          "text": [
+            {
+              "text": "Compliance & Nachweise → Audit-Spur enthält Übersicht, Live-Ereignisse, Audit-Protokoll, Ereignisteilung und Syslog-Weiterleitung. Suchen Sie nach Akteur, Aktion und Zeitraum. Detailzeilen tragen Korrelationsfelder wie Anfrage-ID und Ergebnis. Syslog oder Ereignisteilung zu konfigurieren erzeugt einen Zustellweg — das erfüllt für sich kein Assessor-Urteil.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Das Berichtszentrum führt Katalogberichte und Pakete aus. Aktueller Compliance-Stand zeigt Lage und Feststellungen je Maschine. Erneut scannen und Fix-It sind Operatoraktionen, die Produktnachweise auffrischen, keine Compliance-Zertifikate. Der Assessment-Binder ordnet Narrative und verknüpft Nachweise, die die Enklave bereits erzeugt hat. Schreiben Sie ehrliche Statuswerte Umgesetzt / Teilweise / Geplant (oder gleichwertig). Erfinden Sie keine Artefakte, um eine Met-Behauptung zu erzwingen.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Schulungs- und Sensibilisierungspakete unter Compliance & Nachweise → Schulung können Dokumenteninhalte zum Bearbeiten zeigen. Workforce-Zuweisung, Erinnerungsleitern, Attestierungsbücher, Willkommensschreiben und Bewertung sind noch nicht als durchgängiges Online-Programm vollständig geliefert — beschreiben Sie das Rendern eines Dokuments nicht als abgeschlossene Sensibilisierungsschulung.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "dfd9cb10ade310d9c91987a7244fc61c4b941e135ff573b7b5ad1b9620e19584"
+        },
+        "steps": {
+          "text": [
+            {
+              "text": "Öffnen Sie nach sensiblen Admin-Aktionen Compliance & Nachweise → Audit-Spur → Audit-Protokoll und bestätigen Sie den erwarteten Akteur und die Aktion.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Führen Sie benötigte Berichte unter Compliance & Nachweise → Berichte → Berichtszentrum aus.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Nutzen Sie Aktueller Compliance-Stand, um Feststellungen zu prüfen. Behandeln Sie Erneut scannen / Fix-It als Lieferauffrischungen, nicht als Assessment-Schlussfolgerungen.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Halten Sie Assessment-Binder-Narrative an Nachweisen ausgerichtet, die Sie zeigen können. Lassen Sie Lücken Teilweise oder Geplant, wenn Nachweise unvollständig sind.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Konfigurieren Sie Syslog-Weiterleitung nur, wenn Sie einen Collector haben. Prüfen Sie die Zustellung getrennt vom Seitenladen.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "bcf0ad33596ad008391f32721a811f464a98356c39e94fdb849401aaa2f5c18e"
+        },
         "productLabel": {
           "text": "Audit-Spur öffnen",
           "source_sha256": ""
+        },
+        "body[0]": {
+          "text": "Compliance & Nachweise → Audit-Spur enthält Übersicht, Live-Ereignisse, Audit-Protokoll, Ereignismeldung und Syslog-Weiterleitung. Suchen Sie nach Akteur, Action und Zeitraum. Detailzeilen tragen Korrelationsfelder wie Anfrage-ID und Ergebnis. Syslog oder Ereignisteilung zur Konfiguration eines Zustellwegs – der für sich kein Assessor-Urteil erfüllt.",
+          "source_sha256": "2d563d2a60a8f938674224928e39b85bf9c87a560190c27c5a1dcf3df7760271"
+        },
+        "body[1]": {
+          "text": "Das Report Center führt Katalogberichte und Pakete aus. Der aktuelle Compliance-Status zeigt die Situation und Erkenntnisse pro Maschine. „Rescan“ und „Fix-It“ sind Bedieneraktionen, die Produktanmeldeinformationen aktualisieren, keine Konformitätszertifikate. Der Bewertungsordner organisiert Erzählungen und verknüpft Beweise, die die Enklave bereits generiert hat. Schreiben Sie ehrliche Status: Umgesetzt / Teilweise / Geplant (oder gleichwertig). Erfinden Sie keine Artefakte, um einen Met-Anspruch zu erzwingen.",
+          "source_sha256": "b01d8d40be9d95ba9340ecfe317648de5c123960d90647a17d70662b46c0a6d5"
+        },
+        "body[2]": {
+          "text": "Schulungs- und Sensibilisierungspakete unter Compliance & Evidence → Schulung können Dokumentinhalte zur Bearbeitung anzeigen. Personalzuweisung, Erinnerungsleitern, Bescheinigungsbücher, Begrüßungsschreiben und Beurteilungen werden noch nicht vollständig als durchgängiges Online-Programm bereitgestellt – bezeichnen Sie die Erstellung eines Dokuments nicht als abgeschlossene Sensibilisierungsschulung.",
+          "source_sha256": "ae3f0b0e561b7f2004e0348a27f42aba96b8398e8c89522944c0c03d1cd52fed"
+        },
+        "steps[0]": {
+          "text": "Öffnen Sie nach sinnvollen Admin-Aktionen Compliance & Nachweise → Audit-Spur → Audit-Protokoll und bestätigen Sie den erwarteten Akteur und die Aktion.",
+          "source_sha256": "df0e712cd91fbbaf27a8771306d54eed222415f9ef14b2d2e41676aef6cadd46"
+        },
+        "steps[1]": {
+          "text": "Führen Sie benoetigte Berichte unter Compliance & Nachweise → Berichte → Berichtszentrum aus.",
+          "source_sha256": "5478831abbe39125c9c2ea3080c35922244985ec3242f1d53be93679dbf7a689"
+        },
+        "steps[2]": {
+          "text": "Nutzen Sie den aktuellen Compliance-Stand, um Feststellungen zu prüfen. Behandeln Sie Erneut scannen / Fix-It als Lieferauffrischungen, nicht als Assessment-Schlussfolgerungen.",
+          "source_sha256": "ceceb81542d7d2900d959fd310c0cfd7c745f6d87161c3328106c122a197850d"
+        },
+        "steps[3]": {
+          "text": "Sorgen Sie dafür, dass die Beurteilungsmappenerzählungen mit den Beweisen, die Sie vorlegen können, in Einklang stehen. Lassen Sie Lücken teilweise oder geplant, wenn die Beweise unvollständig sind.",
+          "source_sha256": "12ae0e9d4c81e3fdb76277acefc51016f94a0ddf7f52a1ae9149ebed92ced64a"
+        },
+        "steps[4]": {
+          "text": "Konfigurieren Sie die Syslog-Weiterleitung nur, wenn Sie einen Collector haben. Prüfen Sie die Zustellung getrennt vom Seitenladen.",
+          "source_sha256": "790bc004eb5ea39bb275aeb9f148e5ebe85d0169027659d980345eeb0b29580c"
         }
       },
       "enhanced-controls": {
@@ -1223,41 +2040,75 @@
           "text": "Hunt-Detektoren, CIRT-Übungen und Stempel erweiterter Steuerungen ausführen.",
           "source_sha256": ""
         },
-        "body": [
-          {
-            "text": "Erweiterte Steuerungen zeigen das Inventar erweiterter Anforderungen (NIST SP 800-172 plus benannte NIST-SP-800-53-High-Erweiterungen) mit einem Status Live, Teilweise, Fehlt oder Blockiert. Operatoren steuern die Übungsaktionen auf dieser Seite. Assessoren lesen die Ergebnisse.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Führen Sie Hunt-Detektoren und CIRT-Übung aufzeichnen aus, um SOC- und CIRT-Lage aufzufrischen. Nutzen Sie dann Benachrichtigung / SIEM-Stempel üben, um die Anker für Vorfallmeldung und Audit-Prüfung in die Vorfallzeitleiste zu schreiben. Zeitleisteneinträge sind nur anhängend. Eine Übung fügt Datensätze hinzu und ändert frühere nicht. Das Produkt meldet für diese Zeilen niemals Met und behauptet niemals eine CMMC-Level-3-Zertifizierung.",
-            "source_sha256": ""
-          }
-        ],
-        "steps": [
-          {
-            "text": "Öffnen Sie Erweiterte Steuerungen unter Compliance & Nachweise → Vorfälle → Erweiterte Steuerungen.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Setzen Sie das Bereitstellungsfenster, bevor Sie eine CIRT-Übung aufzeichnen.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Führen Sie Hunt-Detektoren aus, dann CIRT-Übung aufzeichnen, dann Benachrichtigung / SIEM-Stempel üben.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Bestätigen Sie zuerst, dass Messaging konfiguriert ist. Sonst haben Benachrichtigungsstempel keinen Zustellweg zum Nachweis.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Lassen Sie Blockiert-Zeilen unbehandelt. Sie sind Organisationsarbeit und können nicht aus dem Produkt geschlossen werden.",
-            "source_sha256": ""
-          }
-        ],
+        "body": {
+          "text": [
+            {
+              "text": "Erweiterte Steuerungen zeigen das Inventar erweiterter Anforderungen (NIST SP 800-172 plus benannte NIST-SP-800-53-High-Erweiterungen) mit einem Status Live, Teilweise, Fehlt oder Blockiert. Operatoren steuern die Übungsaktionen auf dieser Seite. Assessoren lesen die Ergebnisse.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Führen Sie Hunt-Detektoren und CIRT-Übung aufzeichnen aus, um SOC- und CIRT-Lage aufzufrischen. Nutzen Sie dann Benachrichtigung / SIEM-Stempel üben, um die Anker für Vorfallmeldung und Audit-Prüfung in die Vorfallzeitleiste zu schreiben. Zeitleisteneinträge sind nur anhängend. Eine Übung fügt Datensätze hinzu und ändert frühere nicht. Das Produkt meldet für diese Zeilen niemals Met und behauptet niemals eine CMMC-Level-3-Zertifizierung.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "8a3dce9e0c0f551daa1029b52e930b3469655bf5f28e01be71dbf993d73ab4eb"
+        },
+        "steps": {
+          "text": [
+            {
+              "text": "Öffnen Sie Erweiterte Steuerungen unter Compliance & Nachweise → Vorfälle → Erweiterte Steuerungen.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Setzen Sie das Bereitstellungsfenster, bevor Sie eine CIRT-Übung aufzeichnen.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Führen Sie Hunt-Detektoren aus, dann CIRT-Übung aufzeichnen, dann Benachrichtigung / SIEM-Stempel üben.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Bestätigen Sie zuerst, dass Messaging konfiguriert ist. Sonst haben Benachrichtigungsstempel keinen Zustellweg zum Nachweis.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Lassen Sie Blockiert-Zeilen unbehandelt. Sie sind Organisationsarbeit und können nicht aus dem Produkt geschlossen werden.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "03a82e1cb50a1752a07a724d9b5168bc0be7368f8b8e9c8cf7da727debbb4708"
+        },
         "productLabel": {
           "text": "Erweiterte Steuerungen öffnen",
           "source_sha256": ""
+        },
+        "body[0]": {
+          "text": "Erweiterte Steuerungen zeigen das Inventar erweiterter Anforderungen (NIST SP 800-172 plus benannte NIST-SP-800-53-High-Erweiterungen) mit einem Status Live, Teilweise, Fehlt oder Blockiert. Operatoren steuern die Uebungsaktionen auf dieser Seite. Assessoren lesen die Ergebnisse.",
+          "source_sha256": "5e93ce0fa3c96eaf3d42d1be11d70dc22a6af1ff87643b05b1261e441f7b445e"
+        },
+        "body[1]": {
+          "text": "Führen Sie Hunt Detectors und CIRT Exercise Record aus, um die SOC- und CIRT-Situation zu aktualisieren. Verwenden Sie dann Benachrichtigung/SIEM-Stempel, um den Anker für die Vorfallberichterstattung und Prüfungsüberprüfung in der Vorfallzeitleiste zu schreiben. Timeline-Einträge stehen nur noch aus. Eine Übung fügt Datensätze hinzu und ändert vorherige. Das Produkt meldet niemals „Erfüllt“ für diese Linien und beansprucht niemals eine CMMC Level 3-Zertifizierung.",
+          "source_sha256": "af50a635b99a8146439b4acb6ebc3f5278eab76e54634f1f0e775454bd729dbf"
+        },
+        "steps[0]": {
+          "text": "Öffnen Sie Erweiterte Steuerungen unter Compliance & Nachweise → Vorfälle → Erweiterte Steuerungen.",
+          "source_sha256": "b5c69982a9f1aceb8df145ef9595200b2ec8b6ee9ef3807b6c79024dcd8af4f7"
+        },
+        "steps[1]": {
+          "text": "Setzen Sie das Bereitstellungsfenster, bevor Sie eine CIRT-Uebung aufzeichnen.",
+          "source_sha256": "8b3d971fe9275afc98694085e35f9960462d5f74b2a0608a850e7fb319a18a49"
+        },
+        "steps[2]": {
+          "text": "Führen Sie Hunt-Detektoren aus, dann CIRT-Übung aufzeichnen, dann Benachrichtigung / SIEM-Stempel ueben.",
+          "source_sha256": "4fc22202a55b1f759425beb61cf30eb757163ece20173ff1d11cec368a75ac42"
+        },
+        "steps[3]": {
+          "text": "Bestätigen Sie zunächst, dass die Nachrichtenübermittlung konfiguriert ist. Andernfalls können Benachrichtigungsstempel keinen Zustellweg nachweisen.",
+          "source_sha256": "291d73dcd5f7a3aa926f86cff43672ae97d2212269b317dc52c478f1718c3df3"
+        },
+        "steps[4]": {
+          "text": "Lassen Sie verstopfte Leitungen unbearbeitet. Sie sind organisatorische Arbeiten und können vom Produkt nicht ausgeschlossen werden.",
+          "source_sha256": "39aaf4b58a84b37e47330fbe4ae2743c5f5f1c4564b018e31a656bcc2cbe67d4"
         }
       },
       "about-licensing": {
@@ -1269,37 +2120,67 @@
           "text": "Versionsinformationen, EULA, Urheberrecht sowie Lizenz und Abrechnung unter Info & Lizenzierung.",
           "source_sha256": ""
         },
-        "body": [
-          {
-            "text": "Info & Lizenzierung ist ein eigener Abschnitt der obersten Ebene. Versionsinformationen zeigen die Paketversion der Admin-Konsole und die Build-Version des AIC-Server-Binärpakets für Supportfälle. EULA und Urheberrecht zeigen den mit dieser Konsole gelieferten Lizenzvertrag und Urheberrechtshinweis — die Software wird lizenziert, nicht verkauft.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Lizenz und Abrechnung spiegelt Suite-Berechtigung und Gesundheit für diesen Einsatz. Importieren Sie hier einen signierten Schlüssel, nachdem Sie ihn von AIC License Management erhalten haben (eine separate öffentlich gehostete Site für Aktivierung und Paketerhalt). Erzeugung, Überweisungsalarme und Finanz-Audit liegen auf jener öffentlichen Site — nicht auf dieser Seite. Der Berechtigungsstatus beschreibt die Produktlizenzierung. Er ist keine FedRAMP-, CMMC- oder FIPS-Zertifizierungsbehauptung.",
-            "source_sha256": ""
-          }
-        ],
-        "steps": [
-          {
-            "text": "Öffnen Sie Info & Lizenzierung → Versionsinformationen, wenn Sie einen Supportfall eröffnen. Kopieren Sie Konsolen- und Serverversion.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Lesen Sie EULA und Urheberrecht im selben Abschnitt, bevor Sie über Ihre Vereinbarung hinaus weitergeben oder bereitstellen.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Importieren Sie signierte Lizenzschlüssel unter Info & Lizenzierung → Lizenz und Abrechnung, wenn Sie On-Prem-Berechtigungen verlängern.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Nutzen Sie die öffentliche License-Management-Site für Aktivierungsabläufe, die diese Konsole nicht hostet.",
-            "source_sha256": ""
-          }
-        ],
+        "body": {
+          "text": [
+            {
+              "text": "Info & Lizenzierung ist ein eigener Abschnitt der obersten Ebene. Versionsinformationen zeigen die Paketversion der Admin-Konsole und die Build-Version des AIC-Server-Binärpakets für Supportfälle. EULA und Urheberrecht zeigen den mit dieser Konsole gelieferten Lizenzvertrag und Urheberrechtshinweis — die Software wird lizenziert, nicht verkauft.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Lizenz und Abrechnung spiegelt Suite-Berechtigung und Gesundheit für diesen Einsatz. Importieren Sie hier einen signierten Schlüssel, nachdem Sie ihn von AIC License Management erhalten haben (eine separate öffentlich gehostete Site für Aktivierung und Paketerhalt). Erzeugung, Überweisungsalarme und Finanz-Audit liegen auf jener öffentlichen Site — nicht auf dieser Seite. Der Berechtigungsstatus beschreibt die Produktlizenzierung. Er ist keine FedRAMP-, CMMC- oder FIPS-Zertifizierungsbehauptung.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "64d70852485233729531b53f9f2540799b95294974ecb68e67d27bf5193acd84"
+        },
+        "steps": {
+          "text": [
+            {
+              "text": "Öffnen Sie Info & Lizenzierung → Versionsinformationen, wenn Sie einen Supportfall eröffnen. Kopieren Sie Konsolen- und Serverversion.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Lesen Sie EULA und Urheberrecht im selben Abschnitt, bevor Sie über Ihre Vereinbarung hinaus weitergeben oder bereitstellen.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Importieren Sie signierte Lizenzschlüssel unter Info & Lizenzierung → Lizenz und Abrechnung, wenn Sie On-Prem-Berechtigungen verlängern.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Nutzen Sie die öffentliche License-Management-Site für Aktivierungsabläufe, die diese Konsole nicht hostet.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "ae83162ef4ac4519ac8e1a50fac803167fdaef8db2792b092963b58d33efd5d6"
+        },
         "productLabel": {
           "text": "Lizenz und Abrechnung öffnen",
           "source_sha256": ""
+        },
+        "body[0]": {
+          "text": "„Info & Lizenzierung“ ist ein separater Abschnitt auf der obersten Ebene. Die Versionsinformationen zeigen die Paketversion der Admin-Konsole und die Build-Version des AIC-Server-Binärpakets für Supportfälle. EULA und Urheberrechtshinweis: Die Lizenzvereinbarung und der Urheberrechtshinweis, die dieser Konsole beiliegen – die Software wird lizenziert und nicht verkauft.",
+          "source_sha256": "7f9c2557a1879727252317db72ff06df0209e43e3d1c4ed53bbd3856a8884cd7"
+        },
+        "body[1]": {
+          "text": "Lizenz und Abrechnung spiegeln die Suite-Berechtigung und den Zustand für diese Bereitstellung wider. Importieren Sie hier einen signierten Schlüssel, nachdem Sie ihn von AIC License Management (einer separaten öffentlich gehosteten Site für Aktivierung und Paketempfang) erhalten haben. Generierung, Transferbenachrichtigungen und Finanzprüfung finden auf der öffentlichen Website statt – nicht auf dieser Seite. Der Berechtigungsstatus beschreibt die Produktlizenzierung. Es handelt sich nicht um einen FedRAMP-, CMMC- oder FIPS-Zertifizierungsanspruch.",
+          "source_sha256": "0de5ec869c25e72e2c82f4c62964cf323ae08b5ace1a7109514cf1c707db93c7"
+        },
+        "steps[0]": {
+          "text": "Öffnen Sie Informationen & Lizenzierung → Versionsinformationen, wenn Sie einen Supportfall beantragen. Kopieren Sie Konsolen- und Serverversionen.",
+          "source_sha256": "b037ce6f3c8abd57cae579162e4bdccc9c9f01e5573c5eaf1a849748c33e3a75"
+        },
+        "steps[1]": {
+          "text": "Lesen Sie die EULA und das Urheberrecht im selben Abschnitt, bevor Sie sie über Ihre Zustimmung hinaus verbreiten oder bereitstellen.",
+          "source_sha256": "ef1fd494ebc0fd6c83765a4d442baa180c12dca7e1b2ca66ae8cf3592b53226a"
+        },
+        "steps[2]": {
+          "text": "Importieren Sie den signierten Lizenzschlüssel unter Info & Lizenzierung → Lizenz und Abrechnung, wenn Sie On-Prem-Berechtigungen verlaengern.",
+          "source_sha256": "d27d985d0a190e603bfc750594e2f7ed81e654d6b7e609b6693cbfb7396002f2"
+        },
+        "steps[3]": {
+          "text": "Nutzen Sie die offizielle Lizenz-Management-Site für Aktivierungsblätter, die diese Konsole nicht hostet.",
+          "source_sha256": "86fd3ff732116a2bc500007597f7ce2dffa029fe09ed8e473d9fb6c76caa8229"
         }
       },
       "backup-ops": {
@@ -1311,45 +2192,83 @@
           "text": "Dienstgesundheit, Verschlüsselungs-Backup und -Wiederherstellung sowie Prüfung nach Änderungen.",
           "source_sha256": ""
         },
-        "body": [
-          {
-            "text": "Bestätigen Sie nach Bereitstellungen oder Konfigurationsänderungen die HTTPS-Gesundheit und dass Ihre Admin-Sitzung noch funktioniert. Prüfen Sie Compliance & Nachweise → Audit-Spur auf unerwartete Fehler. Konfiguration → Server → Dienstprotokolle hilft, dienstseitige Protokollausgabe bei Start- oder Laufzeitproblemen zu prüfen.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Konfiguration → Sicherheit → Verschlüsselungseinstellungen enthält Backup und Wiederherstellung für Verschlüsselungsmaterial (Export, Import und optionaler Super-Admin-Klartextexport, wenn Ihre Rolle es erlaubt). Verschlüsselungsschlüssel-Sätze decken den Serverstandard und benannte Master-Verschlüsselungsschlüssel ab, einschließlich Rotieren und Neu-Verschlüsseln nach Schlüsseländerungen. Diese Flächen schützen die kryptografische Verwahrung — sie sind kein vollständiges Anwendungsdatenbank-Backupgerät. Halten Sie einen externen Wiederherstellungsweg für PostgreSQL und Hostkonfiguration bereit, bevor Sie eine zerstörende Datenbankinitialisierung ausführen.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Prüfen Sie nach einer großen Bereitstellung oder einer zerstörenden Datenbankinitialisierung, dass Endpunkt-Enrollment, Passwortwiederherstellung und der Elevation-Kanal noch funktionieren, bevor Sie das System als bereit behandeln. Führen Sie niemals eine zerstörende Datenbankinitialisierung aus, ohne zuerst einen Wiederherstellungsweg vorzubereiten.",
-            "source_sha256": ""
-          }
-        ],
-        "steps": [
-          {
-            "text": "Bestätigen Sie nach der Bereitstellung HTTPS-Gesundheit und Admin-Sitzung.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Prüfen Sie nach Konfigurationsänderungen Compliance & Nachweise → Audit-Spur auf unerwartete Fehler.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Nutzen Sie Konfiguration → Sicherheit → Verschlüsselungseinstellungen → Backup und Wiederherstellung, wenn Sie Verschlüsselungsmaterial exportieren oder importieren müssen. Halten Sie Datenbankbackups außerhalb des Produkts.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Prüfen Sie nach einer großen Bereitstellung, dass Endpunkt-Enrollment, Passwortwiederherstellung und der Elevation-Kanal noch funktionieren.",
-            "source_sha256": ""
-          },
-          {
-            "text": "Lassen Sie eine zerstörende Datenbankinitialisierung niemals ohne den Wiederherstellungsschritt.",
-            "source_sha256": ""
-          }
-        ],
+        "body": {
+          "text": [
+            {
+              "text": "Bestätigen Sie nach Bereitstellungen oder Konfigurationsänderungen die HTTPS-Gesundheit und dass Ihre Admin-Sitzung noch funktioniert. Prüfen Sie Compliance & Nachweise → Audit-Spur auf unerwartete Fehler. Konfiguration → Server → Dienstprotokolle hilft, dienstseitige Protokollausgabe bei Start- oder Laufzeitproblemen zu prüfen.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Konfiguration → Sicherheit → Verschlüsselungseinstellungen enthält Backup und Wiederherstellung für Verschlüsselungsmaterial (Export, Import und optionaler Super-Admin-Klartextexport, wenn Ihre Rolle es erlaubt). Verschlüsselungsschlüssel-Sätze decken den Serverstandard und benannte Master-Verschlüsselungsschlüssel ab, einschließlich Rotieren und Neu-Verschlüsseln nach Schlüsseländerungen. Diese Flächen schützen die kryptografische Verwahrung — sie sind kein vollständiges Anwendungsdatenbank-Backupgerät. Halten Sie einen externen Wiederherstellungsweg für PostgreSQL und Hostkonfiguration bereit, bevor Sie eine zerstörende Datenbankinitialisierung ausführen.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Prüfen Sie nach einer großen Bereitstellung oder einer zerstörenden Datenbankinitialisierung, dass Endpunkt-Enrollment, Passwortwiederherstellung und der Elevation-Kanal noch funktionieren, bevor Sie das System als bereit behandeln. Führen Sie niemals eine zerstörende Datenbankinitialisierung aus, ohne zuerst einen Wiederherstellungsweg vorzubereiten.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "755c06cef500372c3524a46d06805c76968dfa976c28bd6c7e5e69280c31748d"
+        },
+        "steps": {
+          "text": [
+            {
+              "text": "Bestätigen Sie nach der Bereitstellung HTTPS-Gesundheit und Admin-Sitzung.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Prüfen Sie nach Konfigurationsänderungen Compliance & Nachweise → Audit-Spur auf unerwartete Fehler.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Nutzen Sie Konfiguration → Sicherheit → Verschlüsselungseinstellungen → Backup und Wiederherstellung, wenn Sie Verschlüsselungsmaterial exportieren oder importieren müssen. Halten Sie Datenbankbackups außerhalb des Produkts.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Prüfen Sie nach einer großen Bereitstellung, dass Endpunkt-Enrollment, Passwortwiederherstellung und der Elevation-Kanal noch funktionieren.",
+              "source_sha256": ""
+            },
+            {
+              "text": "Lassen Sie eine zerstörende Datenbankinitialisierung niemals ohne den Wiederherstellungsschritt.",
+              "source_sha256": ""
+            }
+          ],
+          "source_sha256": "e8752a41376a03e3532668e872808d796ff255e74b4e61e27e038ef24e1fa330"
+        },
         "productLabel": {
           "text": "Verschlüsselungseinstellungen öffnen",
           "source_sha256": ""
+        },
+        "body[0]": {
+          "text": "Stellen Sie sicher, dass Sie nach Bereitstellungen oder Konfigurationsänderungen die HTTPS-Gesundheit gewährleisten und dass Ihre Admin-Sitzung noch funktioniert. Prüfen Sie Compliance & Nachweise → Audit-Spur auf unerwartete Fehler. Konfiguration → Server → Dienstprotokolle hilft, dienstseitige Protokollausgabe bei Start- oder Laufzeitproblemen zu prüfen.",
+          "source_sha256": "a62c3709ad462ab710d55355fd380ed72d8a7c730dc011d3194e4a8667abdd92"
+        },
+        "body[1]": {
+          "text": "Konfiguration → Sicherheit → Verschluesselungseinstellungen enthält Backup und Wiederherstellung für Verschluesselungsmaterial (Export, Import und optionaler Super-Admin-Klartextexport, wenn Ihre Rolle es erlaubt). Verschluesselungsschlussel-Saetze decken den Serverstandard und benannte Master-Verschlusselungsschluessel ab, einschliesslich Rotieren und Neu-Verschluesseln nach Schluesselaenderungen. Diese Flaschen schützen die kryptografische Verwahrung – sie sind kein vollständiges Anwendungsdatenbank-Backupgerät. Halten Sie einen externen Wiederherstellungsweg für PostgreSQL und Hostkonfiguration bereit, bevor Sie eine zerstörende Datenbankinitialisierung durchführen.",
+          "source_sha256": "ecb1ce3b075da52f9fc0f150621288af3fa186e50a2213a3e4222e04dfa87fae"
+        },
+        "body[2]": {
+          "text": "Stellen Sie nach einer großen Bereitstellung oder einer destruktiven Datenbankinitialisierung sicher, dass die Endpunktregistrierung, die Kennwortwiederherstellung und der Elevationskanal noch funktionieren, bevor Sie das System als bereit betrachten. Führen Sie niemals eine destruktive Datenbankinitialisierung durch, ohne zuvor einen Wiederherstellungspfad vorzubereiten.",
+          "source_sha256": "e7d5f2a977c7df4dfdec6c72bb9fdc12c3530137718ade73d8aeead542d21202"
+        },
+        "steps[0]": {
+          "text": "Bestaetigen Sie nach der Bereitstellung von HTTPS-Gesundheit und Admin-Session.",
+          "source_sha256": "02495b3d91b83dc9182b63a507132fbe3eabc443e0a3ca0220b8f6642eaca10b"
+        },
+        "steps[1]": {
+          "text": "Prüfen Sie nach Konfigurationsaenderungen Compliance & Nachweise → Audit-Spur auf unerwartete Fehler.",
+          "source_sha256": "83e3e75b05e24aa880923b9280506d3fbc753d0cd98d8eeef5997d16edcd6adb"
+        },
+        "steps[2]": {
+          "text": "Verwenden Sie Konfiguration → Sicherheit → Verschlüsselungseinstellungen → Sichern und Wiederherstellen für wichtige Materialverfahren.",
+          "source_sha256": "b943e7ec6e06d270fab40c759847b8180f8384c6eb22606098571357f9fb277a"
+        },
+        "steps[3]": {
+          "text": "Überprüfen Sie nach einer großen Bereitstellung, ob die Endpunktregistrierung, die Kennwortwiederherstellung und der Elevationskanal noch funktionieren.",
+          "source_sha256": "754d3f177f252a231b3c6680f21806ca854d0e4990f2c364d530ea8037887ec4"
+        },
+        "steps[4]": {
+          "text": "Lassen Sie eine zerstörende Datenbankinitialisierung niemals ohne den Wiederherstellungsschritt durchführen.",
+          "source_sha256": "966c6ae20783ee8845240eafc2d9d2a83fab2f212682e20b5437d10659099efb"
         }
       }
     }
@@ -1357,11 +2276,11 @@
   "technical": {
     "resourceLabel": {
       "text": "technische Dokumentation",
-      "source_sha256": ""
+      "source_sha256": "8e5b2b3a938ffb633f697fcef3608aaf8474e8551c70df4406dad393f3d90fbe"
     },
     "title": {
       "text": "Technische Dokumentation",
-      "source_sha256": ""
+      "source_sha256": "ac81875d0a3603868b276e6cf4e6231f9e1f339f29e6875d07f31d99a7458baf"
     },
     "gateIntro": {
       "text": "OpenAPI und Swagger UI sind auf Super-Administratoren und Mitglieder der wohlbekannten Gruppe Entwickler beschränkt (",
@@ -1380,28 +2299,28 @@
       "source_sha256": ""
     },
     "howToTitle": {
-      "text": "So nutzen Sie diese Klasse",
-      "source_sha256": ""
+      "text": "Nutzen Sie also diese Klasse",
+      "source_sha256": "3c767cf28d54f3af09639bbad33e7ada6796e4619df8ec941152dfffc496c5c1"
     },
     "howTo": {
       "0": {
-        "text": "Open Swagger UI to try authenticated routes with your current session cookie or admin token header as documented in the security schemes.",
+        "text": "Öffnen Sie die Swagger-Benutzeroberfläche, um authentifizierte Routen mit Ihrem aktuellen Sitzungscookie oder Admin-Token-Header auszuprobieren, wie in den Sicherheitsschemata dokumentiert.",
         "source_sha256": "455a79a02f04ad7248d8a5a02c779031cd1005fe3176120a1bc5fe76ab37220c"
       },
       "1": {
-        "text": "Download OpenAPI JSON for offline review or client generation; re-fetch after each server deploy that touches routes.",
+        "text": "Laden Sie OpenAPI JSON zur Offline-Überprüfung oder Client-Generierung herunter. Nach jeder Serverbereitstellung, die Routen berührt, erneut abrufen.",
         "source_sha256": "97e4fb65711ff740df64cd1e0222d6460f283cb2ea8941b7c193fb721fcb36b3"
       },
       "2": {
-        "text": "Agent wire routes expect HMAC headers when agents sign; unsigned is still accepted only while AGENT_HMAC_ENFORCE_MODE=dual_mode.",
+        "text": "Agent-Drahtrouten erwarten HMAC-Header, wenn Agenten signieren. unsigned wird weiterhin nur akzeptiert, wenn AGENT_HMAC_ENFORCE_MODE=dual_mode ist.",
         "source_sha256": "b6119999574f9244c951c36c3281995c78bde67a5c217d49a6d419e4720cb411"
       },
       "3": {
-        "text": "Startup wizard admin routes are under /api/admin/startup-wizard; Messaging email save paths remain /api/offline/messaging/email*.",
+        "text": "Die Admin-Routen des Startassistenten befinden sich unter /api/admin/startup-wizard; Die Speicherpfade für Messaging-E-Mails bleiben /api/offline/messaging/email*.",
         "source_sha256": "0cb2e44ab491db274f7001a79df736c7cb55d2b5ff6f22c6bb39472be8ae93b1"
       },
       "4": {
-        "text": "Prefer docs under /docs/admin for operator runbooks; this page is for API consumers and developers.",
+        "text": "Bevorzugen Sie Dokumente unter /docs/admin für Operator-Runbooks; Diese Seite richtet sich an API-Konsumenten und -Entwickler.",
         "source_sha256": "a2402179d7a2342edbfb8bc4b6885613e20b28b4aa2297015f257c402e530b98"
       }
     },
@@ -1411,15 +2330,15 @@
     },
     "limits": {
       "0": {
-        "text": "OpenAPI coverage tracks declared routes; a missing operation in the UI is not proven by downloading this file alone.",
+        "text": "Die OpenAPI-Abdeckung verfolgt deklarierte Routen; Ein fehlender Vorgang in der Benutzeroberfläche wird durch das Herunterladen dieser Datei allein nicht nachgewiesen.",
         "source_sha256": "a7cece47cc7c818cb4f7ef46df31be252842e7c5d63e733b90f048d227b24f93"
       },
       "1": {
-        "text": "Examples may omit lab-only or feature-gated routes until they are declared in the OpenAPI set.",
+        "text": "In den Beispielen können reine Lab- oder Feature-Gated-Routen weggelassen werden, bis sie im OpenAPI-Set deklariert werden.",
         "source_sha256": "87cf0af998043d5e1bc94f4b1175f8b2322309104816d728a1db981f129d7141"
       },
       "2": {
-        "text": "This page is not a certification package — keep SSP evidence in the Assessment Binder.",
+        "text": "Bei dieser Seite handelt es sich nicht um ein Zertifizierungspaket. Bewahren Sie den SSP-Nachweis im Bewertungsordner auf.",
         "source_sha256": "da732f454edd8d9203e41694e233b4b03cbd71c73872ed9525621aa3d217911a"
       }
     },
@@ -1429,7 +2348,7 @@
     },
     "downloadOpenApi": {
       "text": "OpenAPI-JSON herunterladen",
-      "source_sha256": ""
+      "source_sha256": "d6b98770f09a01bb95be1ff165a8703ab71baa2605657107fa2337a7b6af5d1c"
     },
     "viewRaw": {
       "text": "OpenAPI roh anzeigen",
@@ -1441,7 +2360,39 @@
     },
     "loaded": {
       "text": "OpenAPI-Dokument geladen ({{count}} Zeichen).",
-      "source_sha256": ""
+      "source_sha256": "5d567a28ed0277e3db3ecaec1cf42d24e1d31ecaf727344f52e7f020faa91ee8"
+    },
+    "howTo[0]": {
+      "text": "Öffnen Sie Swagger UI, um authentifizierte Routen mit Ihrem aktuellen Sitzungscookie oder Admin-Token-Header zu prüfen, wie in den Sicherheitsschemata dokumentiert.",
+      "source_sha256": "fc2ef4a323c432ac0788fc5400c6dec9c9472224b628c6b43e293bd9b39606ac"
+    },
+    "howTo[1]": {
+      "text": "Laden Sie OpenAPI-JSON für die Offline-Prüfung oder Client-Erzeugung herunter. Holen Sie es sich nach jeder Serverbereitstellung erneut, die Routen geändert.",
+      "source_sha256": "00e0c99808624c4d9d7c954b06b1ea40d9f893b9ed08cc3d9fa1df60c43d5b85"
+    },
+    "howTo[2]": {
+      "text": "Agent-Drahtrouten erwarten HMAC-Header, wenn Agenten signieren. Unsigniert wird nur akzeptiert, solange AGENT_HMAC_ENFORCE_MODE=dual_mode gilt.",
+      "source_sha256": "39646376bd78b7c28e590bab1cb648c621129254820461a2e00ae5d22fbf07db"
+    },
+    "howTo[3]": {
+      "text": "Die Administratorrouten des Startassistenten sind unter /api/admin/startup-wizard verfügbar. Speicherpfade für Messaging-Geheimnisse bleiben in AppConfig – niemals im JSON-Antwort-JSON des Assistenten.",
+      "source_sha256": "b93629c813d42a2ef864bb83d9e5f5549eac2b61fa9d96d7811bc6c2e3263c53"
+    },
+    "howTo[4]": {
+      "text": "Bevorzugen Sie Docs unter /docs/admin für Operator-Runbooks. Diese Seite richtet sich an API-Nutzer und Entwickler.",
+      "source_sha256": "a5ddc7433dfbb8244d118bc13f323f1faa3b4e11219c084440fbd8a7bec9ab43"
+    },
+    "limits[0]": {
+      "text": "Die OpenAPI-Abdeckung folgt deklarierten Routen. Ein fehlender Vorgang in der Benutzeroberfläche wird nicht allein durch das Herunterladen dieser Datei nachgewiesen.",
+      "source_sha256": "774d1ff0ca38b6ee7f49e97fab74eff6c2db37ba707b7a7e54e8fa767ee29147"
+    },
+    "limits[1]": {
+      "text": "Dual-mode agent HMAC is a run-in stance, not an assertion that every agent is already signed.",
+      "source_sha256": "6af0bf1a58b6f500e8d64fd9f3080d1d8fd3fe0574aba1519b656144658583da"
+    },
+    "limits[2]": {
+      "text": "Betrachten Sie erfolgreiche Swagger-Anrufe nicht als Beweis für eine abgeschlossene ATO – bewahren Sie diese Arbeit im Bewertungsordner und in Ihrem SSP-Prozess auf.",
+      "source_sha256": "8db541e1a096c4efcf68c0bada5dc0549bf9f5060c854d88cd7edc103dbd76b8"
     }
   },
   "swagger": {
@@ -1475,7 +2426,7 @@
     },
     "loading": {
       "text": "Swagger UI wird geladen…",
-      "source_sha256": ""
+      "source_sha256": "e4b0195f3e7bdfca83e1b52cb3dc1794d737c5ca72763cc423ee3b4a6f88aa76"
     },
     "hostAria": {
       "text": "Swagger UI",
@@ -1521,7 +2472,7 @@
     },
     "filterAria": {
       "text": "OpenAPI-Operationen filtern",
-      "source_sha256": ""
+      "source_sha256": "e2515d8f78268c71d82a77d1638886ef2b88cdb2db5e70356c0b0a456f26e60e"
     },
     "downloadJson": {
       "text": "JSON herunterladen",
@@ -1544,8 +2495,8 @@
       "source_sha256": ""
     },
     "capped": {
-      "text": " (Seitenliste auf 500 begrenzt)",
-      "source_sha256": ""
+      "text": "(Seitenliste auf 500 begrenzt)",
+      "source_sha256": "5d2515a909748541745222b9f43e46e2385961eab8248ab06921a904b943f6b6"
     },
     "opsAria": {
       "text": "OpenAPI-Operationen",
