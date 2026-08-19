@@ -951,12 +951,12 @@
       },
       "bullets": [
         {
-          "text": "Jede Zeile bleibt unveraenderlich — anders als Ereignisse geht hier nichts durch Speichermangel verloren.",
-          "source_sha256": "22c0db129baf6fdd8e8d929b6bda50bf9bbe815d6534219ac200cdddd4600566"
+          "text": "Every row stays immutable — unlike live events, nothing here is lost to ring-buffer pressure.",
+          "source_sha256": "4ef83e416ec214922f7aff03a6d460b4790dd0cd2e592269578a8eb5f52f4067"
         },
         {
-          "text": "Gli host Windows spiegeln ausgewaehlte Verwaltungsaktionen zusaetzlich ins betriebliche Ereignisprotokoll.",
-          "source_sha256": "ff820f63338134b15469580a6e92c2d37f7d2dc56ec87e78727567bfb7932c4b"
+          "text": "Windows hosts also mirror selected admin actions into the operational event log.",
+          "source_sha256": "97c7e2c149863ecfea997ae35cd30a3c5b552ae3b86d6b799f4d60e752cf2a3e"
         },
         {
           "text": "Exporte of dieser Seite with the Live-Ereignisfeed kombinieren, um a Vorfallszeitlinie to rekonstruieren.",
@@ -2353,12 +2353,12 @@
           "source_sha256": "190fce9fa8875c2603cc6c4b6c8b843c934f68ef5b501e3c8794c07183bb5748"
         },
         {
-          "text": "Standardsabdeckung zeigt, ob for jede registrierte Framework-Anforderung a Dokument esistente.",
-          "source_sha256": "430e205c9f574d59d3ed1131ff080a4f3544d0bea23a8a5b3931148adbfa07ac"
+          "text": "Standards coverage shows whether a document exists for each registered framework requirement.",
+          "source_sha256": "0242e8bccf398aacf24c50e2ec3db05cddc6d75bf1ca1f49fce4d0e8c5a39dce"
         },
         {
-          "text": "Geplante Programme, Zuweisung e Attestierung sind Oberflaechen separati.",
-          "source_sha256": "c854df5ba9d9edd8ba9d8d09686e9e22607267aa816783c19f92cf7d3d8d582a"
+          "text": "Planned programs, assignment, and attestation are separate surfaces.",
+          "source_sha256": "4766838981d40ea7ac09029ecb34a1750d9342e46753037df9e6b3f370265c24"
         }
       ]
     },
@@ -4838,16 +4838,16 @@
         "source_sha256": "664d1423a866ce97203fa37f5ae2ace69e32b947be5bfd9d40556c3d6d48310f"
       },
       "knownEventTypes": {
-        "text": "{{count}} bekannte Ereignistypen",
-        "source_sha256": "6374c41a3b7f3b28f2bc623f828514dffa617b03c34746e9e9b8de5c9cdacf24"
+        "text": "{{count}} known event types",
+        "source_sha256": "b0cf26fac1590035c317645c6670df0fbaf842d38c72b5bb390f1e5665ceb7b0"
       },
       "loadFailed": {
         "text": "Impossibile caricare gli eventi: {{message}}",
         "source_sha256": "693a35efa4ca1f507adf1ab1ca77af2d677e59b47ea4278ab06dec92b647ab05"
       },
       "loadingCatalog": {
-        "text": "Caricamento catalogoâ¦",
-        "source_sha256": "97e6c9228e55292f700d61e2a554c575a6024d5f4de3768a251af054f328fb2b"
+        "text": "Loading catalog…",
+        "source_sha256": "f5b90251be2ba2dd073e24c937ead75483f053ac80c25ab3d034618b5fb7f449"
       },
       "noRows": {
         "text": "Nessun evento nel buffer circolare attivo per il filtro corrente.",
@@ -7621,8 +7621,8 @@
           "source_sha256": "b64ac05f17e64d037db81a98f51e2688216e292ae9748f979f04dfbac49fd7fc"
         },
         "planned": {
-          "text": "Geplant",
-          "source_sha256": "dbbae30b567c7f783910729c411e2be399074c1320190688b9435d0047b35e2f"
+          "text": "Planned",
+          "source_sha256": "fb6f7c93e6bf3dfac450d268bf57844ae92b9c93f7d027b07f715bfbc467d225"
         },
         "transport": {
           "text": "Trasporto",
@@ -7654,18 +7654,18 @@
             "source_sha256": "84b7187a81b0f93d6f29f42161f85f105fe80e2da348f1d5d83fae4b5b132f3c"
           },
           "notes": {
-            "text": "Erfordert Graph-App-Configuration. Ehrliche Live-Teilmenge per il trasporto Exchange-Online.",
-            "source_sha256": "06c856f041363a4cd8324005b90794ba9a0212d5683c2ff89b14e0b6a40383ff"
+            "text": "Requires Graph app configuration. Honest Live subset for Exchange Online transport.",
+            "source_sha256": "1182cbddf17269844a95726066b51e6a527478e2b302fd05df00caab116c95a6"
           }
         },
         "openpgp_rfc9580": {
           "description": {
-            "text": "PKESK v3 + SEIPDv1 (AES-256-CFB) solo con AWS-LC — nessun anello. Nimmt OpenPGP o PEM-Schluessel.",
-            "source_sha256": "5e5e9b9f2611fc57c2c89ebe10281cfe1b8b35c8c590a2e2ab61e1cfa3d00eea"
+            "text": "PKESK v3 + SEIPDv1 (AES-256-CFB) with AWS-LC only — no ring. Accepts OpenPGP or PEM keys.",
+            "source_sha256": "b1e8274a5c8f7af65dd6da8d535ee05483663109544f0e674e01a830887e4eff"
           },
           "label": {
-            "text": "OpenPGP (RFC-9580-Teilmenge)",
-            "source_sha256": "cc7ccc649b6b4e980e3071b916cfb570c84d7325434088f7d0d5fd20a4cda960"
+            "text": "OpenPGP (RFC 9580 subset)",
+            "source_sha256": "ff15f3a6ab70999043d7f23e2dc7a5d339be00498f9045519cddd2eedb8cc0b9"
           },
           "notes": {
             "text": "SHA-1 è compatibile solo con OpenPGP. L'accesso al canale è consentito su AWS-LC FIPS (CMVP #4759).",
@@ -7678,18 +7678,18 @@
             "source_sha256": "463d59c477bc1d83b09ae81d26909161d48503bf199b5f465886c916d4ce5c41"
           },
           "label": {
-            "text": "Sicheres Teilen, pannello ASCII (KeyManager)",
-            "source_sha256": "a5beb77dff0b745f54570e7c8e08ba63defd91d02b21cd391375dbc4db85e36d"
+            "text": "Secure Share, ASCII-armored (KeyManager)",
+            "source_sha256": "3a83d5351b32bb99b6eea60be1d478ca311d6ca0689cef9f94c84f5d06ee29a7"
           },
           "notes": {
-            "text": "Dual-Live-KeyManager (AWS-LC + HSM); AC-16-Kennzeichnungen nel Paketmetadaten.",
-            "source_sha256": "be35085a3646c55d1a6993880dcb355c163e15571744e28e49c8efec3f90759d"
+            "text": "Dual-live KeyManager (AWS-LC + HSM); AC-16 markings in package metadata.",
+            "source_sha256": "e6b34623d4864c5d8500db305bc529f7147ffba65e1dceeb897591dc00950e77"
           }
         },
         "smime_enveloped": {
           "description": {
-            "text": "RFC 5652 CMS EnvelopedData come application/pkcs7-mime: AES-256-CBC-Inhaltverschluesselung e RSA PKCS#1-Schluesseltransport.",
-            "source_sha256": "23cf3031594645820ee4eb0282eb34d03ba1ad6c1fd250c2562532bd149666dc"
+            "text": "RFC 5652 CMS EnvelopedData as application/pkcs7-mime: AES-256-CBC content encryption and RSA PKCS#1 key transport.",
+            "source_sha256": "a9bf034da05932b2e5c6129c1e14670d573a1a2746863fe9cbe6e3b2730cbcbc"
           },
           "label": {
             "text": "Dati Enveloped CMS S/MIME (.p7m)",
@@ -7896,6 +7896,122 @@
           "text": "STARTTLS",
           "source_sha256": "8487724bc34b8bc35333f61935f1b11ff11dfad7295d4dfd2d5eb84dd0057939"
         }
+      },
+      "dialogCreateTemplateTitle": {
+        "text": "Create Template",
+        "source_sha256": "b79296f1d39e5cc9c6b177210c04546596e13538719140c0f540d62b99fd9d87"
+      },
+      "dialogEditTemplateTitle": {
+        "text": "Edit Template — {{name}}",
+        "source_sha256": "527f316a5cb4bd7b111489f806de7f1fdad96de59cbd71a51ef05c27337bbd07"
+      },
+      "dialogCreateSnippetTitle": {
+        "text": "Create Snippet",
+        "source_sha256": "4eda97952b0113d9a097fdc40f58622299c36076b47654bf9827c6b148e70364"
+      },
+      "dialogEditSnippetTitle": {
+        "text": "Edit Snippet — {{name}}",
+        "source_sha256": "230b67c81760fcd1a8b9cd776877e8b4efa4b56418cc42984984c95b48aadebf"
+      },
+      "dialogName": {
+        "text": "Name",
+        "source_sha256": "dcd1d5223f73b3a965c07e3ff5dbee3eedcfedb806686a05b9b3868a2c3d6d50"
+      },
+      "dialogDescription": {
+        "text": "Description",
+        "source_sha256": "526e0087cc3f254d9f86f6c7d8e23d954c4dfda2b312efc29194ae8a860106ba"
+      },
+      "dialogDescriptionHelper": {
+        "text": "Optional, free-form",
+        "source_sha256": "b41952dfad6a611574b87a30bbb117f86b266424bae945c57100aa4aa43096e9"
+      },
+      "dialogSnippetNameHelper": {
+        "text": "Reference from templates as {snippet:name}",
+        "source_sha256": "7c2cac1d4abb933d07384ec2e8eb25da5fa1ba7eb8327fe76d3aa10d174ae552"
+      },
+      "dialogGroup": {
+        "text": "Group",
+        "source_sha256": "34ca0e76608842ff3e7d924a455a396a82f471052c15e3f2ed7f090ac702e5c1"
+      },
+      "dialogCancel": {
+        "text": "Cancel",
+        "source_sha256": "19766ed6ccb2f4a32778eed80d1928d2c87a18d7c275ccb163ec6709d3eb2e27"
+      },
+      "dialogSave": {
+        "text": "Save",
+        "source_sha256": "1509f561f2416598629b886ad7d3c05a7e221e4e0675c84bbff4ee6d9e03913d"
+      },
+      "dialogClose": {
+        "text": "Close",
+        "source_sha256": "7d9eb7acb13e24625c404401d8e88b2350e32162455885f18276cf802f7701ed"
+      },
+      "dialogSend": {
+        "text": "Send",
+        "source_sha256": "f6f4688ff23d50c67053963c251fa0ce64a925cf283537cf066b1f362cb9b778"
+      },
+      "dialogEncryptedEmailTitle": {
+        "text": "Send encrypted email (CUI)",
+        "source_sha256": "0e6b73eac42d5b38b50786ac9fbaa0c6239c2e5ee6a87beaf8697bf1b13d5291"
+      },
+      "dialogEncryptedEmailBody": {
+        "text": "Clear CUI never rides in the message body. Choose a Live standard; the sensitive payload becomes an encrypted attachment. Microsoft Graph OME delivers that attachment via Graph sendMail — it is not Azure Purview IRM.",
+        "source_sha256": "54b94c8be32dcb143b4350ec6c119700cc24abbaff1af3dde532538cf160e126"
+      },
+      "dialogEncryptedEmailRecipient": {
+        "text": "Recipient",
+        "source_sha256": "51fac985e95345d90b3c8a69f5e60003cbbd47a06efdcf0270d76be85b408657"
+      },
+      "dialogEncryptedEmailRecipientHelper": {
+        "text": "e.g. you@example.com or your configured SMTP sink",
+        "source_sha256": "9d879f269db276fb21b50b695d828b507ddea578b929e639350c74f387a8103c"
+      },
+      "dialogEncryptedEmailStandard": {
+        "text": "Encryption standard",
+        "source_sha256": "fb83686f4beb0fe5bc4cb50db7388d88d27b7c4bc4f3b3b9db79a1e9ca84bf4c"
+      },
+      "dialogEncryptedEmailSubject": {
+        "text": "Subject",
+        "source_sha256": "68971283841aecdf1da48428849b3b33164ec5c41d0f3c4d6cea624db5aff8f2"
+      },
+      "dialogEncryptedEmailPlaintext": {
+        "text": "CUI plaintext (attachment only)",
+        "source_sha256": "fdde27dba5ff9faff1706b7b40256d7110c988f5000ac471c8f052b9e91bc18c"
+      },
+      "dialogEncryptedEmailPlaintextHelper": {
+        "text": "Never pasted into the SMTP body when marking is CUI",
+        "source_sha256": "a21087901759d9dd6d6ba47d07691561a9e9b60da639e9a822dc6cd5080b75f3"
+      },
+      "dialogEncryptedEmailStatusBody": {
+        "text": "Status body (non-CUI)",
+        "source_sha256": "0d9e466a65b09e419eb384c11643bb5fa66644a23035907c1d9aee56863ab858"
+      },
+      "dialogEncryptedEmailStatusHelper": {
+        "text": "Optional. Leave blank for the default status-only notice.",
+        "source_sha256": "ff094ec9bdadd94ab8d154fdecaa3368938b64bf05d9005e2cf9f54f6520f08d"
+      },
+      "dialogEncryptedEmailPassphrase": {
+        "text": "Passphrase",
+        "source_sha256": "e7611f0537df5fc5d0177da520628219fccf065a1d4176cfbde2f75d824821f4"
+      },
+      "dialogEncryptedEmailSend": {
+        "text": "Send encrypted",
+        "source_sha256": "25c608b34e46818a3c5a233a0de7664b93f105c82674de277ff0854c6c9512d7"
+      },
+      "dialogTestSmsTitle": {
+        "text": "Send test SMS",
+        "source_sha256": "7cde746219b59803d412ee27b6de148bfec1482ca8b3a06f8e4b4c7d07376184"
+      },
+      "dialogTestSmsBody": {
+        "text": "Uses the saved SMS provider. Save settings first. Optional media URLs enable MMS when the provider supports it.",
+        "source_sha256": "af4b28e23155ad1fee112fa420ca1cd784c1e22b2d433b32f95c71aaf646eac1"
+      },
+      "dialogTestSmsMedia": {
+        "text": "MMS media URLs (optional)",
+        "source_sha256": "51f57eb5f91d1e4196d74b8fd0e1caf39e83acc2425e409f0925f37b4f2974e9"
+      },
+      "dialogTestSmsMediaHelper": {
+        "text": "Space- or comma-separated HTTPS URLs",
+        "source_sha256": "c749254ad80d1858e5f019e254a916528294d192faa5b4170a44de48a2fe1643"
       }
     },
     "myIncidentReports": {
@@ -11132,8 +11248,8 @@
         "source_sha256": "888501c7009dac5886a113479f5a163afab0e0f70f4ed75d55ac8d38937a6ced"
       },
       "dialogCreateIntro": {
-        "text": "Registra un cliente o un'organizzazione. You receive a bootstrap secret once â agents use it with the multi-tenant GUID for HMAC authentication until enrollment completes.",
-        "source_sha256": "2f897283cc2aa76805434182b76aff672573d6748dd5e8f7853652af76525f94"
+        "text": "Registra un cliente o un'organizzazione. You receive a bootstrap secret once — agents use it with the multi-tenant GUID for HMAC authentication until enrollment completes.",
+        "source_sha256": "c6f791ebd959242a3332333c4d7f4e8a861546104a42affa49f86c1aee5b8dc6"
       },
       "dialogCreateTitle": {
         "text": "Crea multi-tenant",
@@ -11506,16 +11622,16 @@
         "source_sha256": "94e11acd0ef8839c7c23bd394c3699baa1ea6874265835b2a862912b87f73a14"
       },
       "detailArchivedExcludedTitle": {
-        "text": "— archiviert, non nell'Abschlussnenner",
-        "source_sha256": "2002530d8a3dcc2e0b27da076509dc5d8285477a16d277edf4405123a6538d58"
+        "text": " — archived, not in the completion denominator",
+        "source_sha256": "66e7280f07a0c864e84779efd5209b199c61f9fb636835639da086ee495e3691"
       },
       "detailAssignedN": {
         "text": "Zugewiesen {{count}}",
         "source_sha256": "2e300cf1d95ab46dbcb7d5d145672d7150bb654d54ef792630af9d7f56badc1a"
       },
       "detailAssignmentsTitle": {
-        "text": "Schulungsaufgaben — {{name}}",
-        "source_sha256": "829957dda0222b5d1a9648ce42913868a243bab690616ad2749d1bbd2599d91c"
+        "text": "Training assignments — {{name}}",
+        "source_sha256": "f6f8a0c076a0013b601342f69bcfb260b7b74320c89ff405b4946b68b35963d0"
       },
       "detailAttestFailed": {
         "text": "Die Bestaetigung konnte non erfasst werden",
@@ -11606,8 +11722,8 @@
         "source_sha256": "c5cfc2bb69bd5c3b941450891a61781a8547f091e719d08fff5dace8d83b3657"
       },
       "detailEnrolledPeople": {
-        "text": "Eingeschriebene Personen",
-        "source_sha256": "f584cb6fa526fcdfe2192ce912b2a704b4cdf8b3f9ecf0a4b59eaf6ae003015e"
+        "text": "Enrolled people",
+        "source_sha256": "96ead51f9a63a47e8abadf217bae350e3d5fb370c418104ec3360d2e1347d932"
       },
       "detailEnrolling": {
         "text": "Wird eingeschrieben…",
@@ -11746,8 +11862,8 @@
         "source_sha256": "493002fa2466480d52fd68f04a0f2b0dc50283ccc2c0a89e383fa4f91c6ba06c"
       },
       "detailRecordWaiver": {
-        "text": "Aussetzung erfassen",
-        "source_sha256": "d6e010d13b1a876720f9e7c19bf997584bd1e166e4ea3bff9b420547a5597172"
+        "text": "Record waiver",
+        "source_sha256": "2195b71c57bd6fa98efbc3856801b1f31dbb814ec7d01e2f725ecec2f9429e0b"
       },
       "detailRecordedCompleted": {
         "text": "Erfasst. Jedes Pflichtokument ist jetzt bestaetigt, also dorate the Aufgabe als abgeschlossen — the ist a Liefernachweis, keine Aussage, dass the Person geschult ist.",
@@ -11766,36 +11882,36 @@
         "source_sha256": "69d3706a64a1679d7dc7c2f49b9eb0862ee0e5e6e6ba93eb9c749d82c4fd776a"
       },
       "detailReminderLog": {
-        "text": "Erinnerungs-Sendelog",
-        "source_sha256": "91a8247da59c615e469268772090fce6ea6a733f2a07d2b7f0759e3b4b52bf36"
+        "text": "Reminder send log",
+        "source_sha256": "6e05c2c9df4ad393048a75bb34a455b33057a001898367837d07eb9310a90d54"
       },
       "detailReminderTitle": {
         "text": "Registro delle lezioni di scuola — {{name}}",
         "source_sha256": "b1754f857e524ca9140457333cb3d5898fe630e35648dc7145fe837da68bf552"
       },
       "detailRequired": {
-        "text": "pflicht",
-        "source_sha256": "cda455a6a9c370d03fc85865563b4013c5407b8ebe931b1fb85f9f033af2b411"
+        "text": "required",
+        "source_sha256": "d0a3630555bbec7fc05a98d311c23b00fd1ab4d8296ac4a4125976d80b6a6959"
       },
       "detailRequiredAffirmed": {
-        "text": "{{done}} di {{total}} Pflichtokumenten bestaetigt. Opzionale Dokumente zaehlen hier not.",
-        "source_sha256": "76849bbb7d72e337033dee6a9f82a3975b25700321ec880ca2d31cbc84da54ab"
+        "text": "{{done}} of {{total}} required documents affirmed. Optional documents do not count here.",
+        "source_sha256": "7b030347e337091d3a7d5cba50ce49d52c3f28e3eaaf3c0ac22efd3835a3a030"
       },
       "detailRequiredDone": {
-        "text": "Pflicht erledigt",
-        "source_sha256": "72e079614b11684deb7fcd5b217df0a98cebb3f5bc8423468a9e43f0f6d584dc"
+        "text": "Required done",
+        "source_sha256": "4618b709262478f44602a3ac367be2fc07b0735a273150e9fc1030a6f63b11d5"
       },
       "detailRequiredParen": {
-        "text": "(pflicht)",
-        "source_sha256": "36efa8c952eed4d41116ea2ffa1d1f35a333b0663f5a01e4ae3011534613971e"
+        "text": " (required)",
+        "source_sha256": "e68d8df7696c286f450afee8c027e9567726ccf6516e28f8dee6cd83303b1d78"
       },
       "detailRosterMembers": {
-        "text": "Personen nel Verzeichnis",
-        "source_sha256": "c9dd06fcfad325f3852afacc1f545828c048f83e0b2e56e2383028f339692b06"
+        "text": "People in the roster",
+        "source_sha256": "bcb04d365fcfab64f7612da44fb9812a3f2251be11ff16218aebe2e2fb35a123"
       },
       "detailSelected": {
-        "text": "{{count}} ausgewaehlt",
-        "source_sha256": "b0c019bcee2d81e7a750487474399ba65a5201fd71aa72a503f5670f831b7f93"
+        "text": "{{count}} selected",
+        "source_sha256": "c7f761b38b197daa6b822be7397d8e2701c3dbb12b79b4a90eb1c37969bed5a6"
       },
       "detailState": {
         "text": "In piedi",
@@ -11810,8 +11926,8 @@
         "source_sha256": "209d7797334d4be849f81e0c43bb038c3857f23d939b4df5fd64b4372ef6a2b2"
       },
       "detailSweep": {
-        "text": "Inizio dell'Erinnerungslauf",
-        "source_sha256": "4e609b23f1654716f01fcf3fc257b52c69a32b7dce72a12f240f957d58703b9f"
+        "text": "Start reminder sweep",
+        "source_sha256": "590915a0d296fd660d445b0a9d844fa34e153345f7844b049a1c73c2ea094d07"
       },
       "detailSweepFailed": {
         "text": "Der Erinnerungslauf konnte non si avvia",
@@ -11822,8 +11938,8 @@
         "source_sha256": "4e36253ae51de18094fad41283203c7e963181b0a1b73edbc790c19f2b9784a5"
       },
       "detailSweepToast": {
-        "text": "Erinnerungslauf: {{sent}} gesendet, {{failed}} fehlgeschlagen, {{suppressed}} unterdrueckt",
-        "source_sha256": "6709b8b630359fdc5122e50a2decdf056cc5f92203731eaaae7d0c88fdca5ff0"
+        "text": "Reminder sweep: {{sent}} sent, {{failed}} failed, {{suppressed}} suppressed",
+        "source_sha256": "8d3eef54a7e3c2bd1f482321d52c074da0a5574b693a4230f84cebbf6d7a7c53"
       },
       "detailSweeping": {
         "text": "Lauf laeuft…",
@@ -11834,32 +11950,32 @@
         "source_sha256": "a45cdabfa90f8e06df7d2d8c61c58c9eb8b006b1e8408a1571e57b85dfb0dd20"
       },
       "detailTitle": {
-        "text": "Programma Schulung",
-        "source_sha256": "1ac17252706607dde79c5c422239b9bbd596c2ce619a4ae9770b8399a49dc3f0"
+        "text": "Training program",
+        "source_sha256": "bd5d34b740225f6431cf61f45808701a4d403cb52da8a132e7262d49ed099d26"
       },
       "detailTypedName": {
-        "text": "Nome con il cappello della persona unterschrieben",
-        "source_sha256": "bbf241055e483e9e21edbfc92fac216d16996e4b6754cc74a1b91d1ff11b083f"
+        "text": "Name the person typed when signing",
+        "source_sha256": "c8fa388558a311c2db511ab6fdcd12fcae34e311cb3f493fa8bf0c1b9dae8bce"
       },
       "detailTypedNameHelp": {
         "text": "Wird woertlich als getippte Unterschrift gespeichert.",
         "source_sha256": "53c35ba120fd91fdcefd67b0db8542fc31f384c6a0b47c4c37eae63fc48f8dde"
       },
       "detailTypedNameRequired": {
-        "text": "Geben Sie the Namen a, con il cappello Person unterschrieben. Eine Unterschrift braucht a unterzeichnende Person.",
-        "source_sha256": "f91e528136ad9eb209ffaa9b69ce22157a09db0ec9817aed222bbe5c9ab85f87"
+        "text": "Enter the name the person typed when signing. A signature needs a signing person.",
+        "source_sha256": "82410baf44651de074eb0743f60df76861397a279aff1d66938e55c89d39b20a"
       },
       "detailUnknown": {
         "text": "senza preavviso",
         "source_sha256": "a418e69e9fbe3f5ee539498f036d24184da4562539491ddb884e1c6e47778c60"
       },
       "detailWaive": {
-        "text": "Mit begruendetem Grund aussetzen. Eine Aussetzung ist a erfasste Luecke, kein Abschluss.",
-        "source_sha256": "e8be11888a4dee58c9a40350f0187a889477ce1c6158fff709702555e5632295"
+        "text": "Waive with a documented reason. A waiver is a recorded gap, not completion.",
+        "source_sha256": "ca0c83a88b92204694489188faa5273754676dfd7a381a702b57bcaefeac0166"
       },
       "detailWaiveBody": {
-        "text": "Eine Aussetzung ist a erfasste Luecke, kein Abschluss. Sie bleibt nel Nenner jeder Abschlussquote e ausserhalb des Zaehlers, anche kann Aussetzen a Prozentzahl non verbessern.",
-        "source_sha256": "5d5f15c65cb8b8915e7db79fad5a05b4f9746bb604e671fc242290d2d8d92922"
+        "text": "A waiver is a recorded gap, not completion. It stays in the denominator of every completion rate and outside the numerator, so waiving cannot improve a percentage.",
+        "source_sha256": "25dd1a544545f11dd0d1b5b63dd03e45d85d5293ea62740a7e7327e8296a4f97"
       },
       "detailWaiveDenied": {
         "text": "Braucht il Berechtigung, Aufgaben to verwalten",
@@ -11878,12 +11994,12 @@
         "source_sha256": "b933e28ad48fb34d7f44724238ef98148e05d93affe74f9a2f9428dfa6f81dcd"
       },
       "detailWaivedToast": {
-        "text": "Ausgesetzt per {{email}}. Eine Aussetzung ist a erfasste Luecke: Sie bleibt in the Nenner and ausserhalb des Zaehlers.",
-        "source_sha256": "9e898c221b8f235827396fc674b434935137b7297045978405a4c7aa4694507e"
+        "text": "Waived for {{email}}. A waiver is a recorded gap: it stays in the denominator and outside the numerator.",
+        "source_sha256": "9ff3677991c05d632baa82c923d189e4a9389941ffdbf5f75e8b942b04e2185e"
       },
       "detailWaiverGap": {
-        "text": "Eine Aussetzung ist a erfasste Luecke, kein Abschluss: {{reason}}",
-        "source_sha256": "416b8d4d4f290ad1ec6116cd0e6d78ba9c8108b28e03f7f5c89d77549619e5cb"
+        "text": "A waiver is a recorded gap, not completion: {{reason}}",
+        "source_sha256": "1902e95a817a35b79667e62b13a58876f6d2477795341598d05507879789e8b5"
       },
       "detailWaiverHelp": {
         "text": "Pflicht. Eine unerklaerte offene Zeile ist the Erste, was a pruefende Person herauszieht.",
@@ -11894,12 +12010,12 @@
         "source_sha256": "69513329fb8011bce5a57068efef362d2f7562fb949ae304b1fee3817647f522"
       },
       "detailWhenRequired": {
-        "text": "Geben Sie an, wann the Person unterschrieben hat.",
-        "source_sha256": "1346f685b9b8aea22f465f658154ed1efcef25398ad2ff65fe0c677324fd4e1f"
+        "text": "Enter when the person signed.",
+        "source_sha256": "9c904c344bd872cd40e4646af6a5a89b071b4411879e3ff35177298b3fca1192"
       },
       "detailWhenSigned": {
-        "text": "Wann sie unterschrieben hat",
-        "source_sha256": "68fff05caaf4ff7a30affebc219fe533b7962e696f68e8873c501bb5f8a79ce1"
+        "text": "When they signed",
+        "source_sha256": "8ebf387d4cfc8a0be27c3043d75b010386e5c6e460180f34d0e0f3ce5478fbee"
       },
       "detailWhenSignedHelp": {
         "text": "Ein Zeitpunkt in the Vergangenheit wird erwartet. Der Server lehnt a zukuenftigen ab. Eingabe nell'Ihrer Ortszeit, Speicherung nell'UTC.",
@@ -11982,8 +12098,8 @@
         "source_sha256": "14014e6a570327892015d91391f0756bc8c84d3594c867af4cefb5a7e9fb4eac"
       },
       "noDenominator": {
-        "text": "Kein Nenner",
-        "source_sha256": "d49a428d83e9eb5358d4051bd2d5e21d19aa33a90a9234760cb52fc149b66b45"
+        "text": "No denominator",
+        "source_sha256": "586473cd914e751db74fce8772f83f49a3cdf18531a13833b05cf5226ac442e5"
       },
       "notBuiltClaim": {
         "text": "Non vengono creati gate di accesso, valutazione e registrazione basata su regole.",
@@ -12534,20 +12650,24 @@
         "source_sha256": "5c06a040e16de6c90ed0a5d5b162da2ea26dbeeebff72a9f64a108325a9ac572"
       },
       "workforceSaving": {
-        "text": "Risparmiareâ¦",
-        "source_sha256": "8254285d673bbc73963ed7810f4bc4b8a378dbf5803b7a650ce7ac5c00eaac3c"
+        "text": "Saving…",
+        "source_sha256": "23e39291d6135814ed7c936e278974544b0df5fbf0eb0427b6700979b7472a93"
       },
       "workforceStatusFailed": {
         "text": "Der Verzeichnisstatus konnte non geaendert werden",
         "source_sha256": "0fae9b0ed6d4244ab8b3757175f0effd013da54ba91da699212b4cac7c88d3d1"
       },
       "workforceSubtitleRoster": {
-        "text": "Verzeichnis the Aufzeichnung — kein Abschluss- o Bewertungsanspruch",
-        "source_sha256": "15a756663447c2fb532be49c7e3e47d87f70be41c2a4b3750ce31e4a253cb517"
+        "text": "Roster is the record — not a completion or grading claim",
+        "source_sha256": "ec99fd0f482c5615b19100ba760b73f6e6ff0bc7e092d9130e4c75f6b8af666f"
       },
       "workforceTitle": {
         "text": "Elenco della forza lavoro per la formazione",
         "source_sha256": "255f16b6b5a9b0f25c506f52adea3791377e816ed665dcdea1acb6058b9b8964"
+      },
+      "programsCreateSubmit": {
+        "text": "Create Program",
+        "source_sha256": "d3f8c7dba2b2d42a7ec6f5c637beb06a0d2787a273fab9e33c15fbb3a9dd77e1"
       }
     }
   },

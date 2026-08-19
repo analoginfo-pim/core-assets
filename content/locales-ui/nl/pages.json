@@ -98,5 +98,131 @@
         "source_sha256": "67b696468610b879ed7f224dbf6b0861f27e39d20454cb9d7af1ec52d3e5eeaa"
       }
     }
+  },
+  "chrome": {
+    "training": {
+      "programsCreateSubmit": {
+        "text": "Create Program",
+        "source_sha256": "d3f8c7dba2b2d42a7ec6f5c637beb06a0d2787a273fab9e33c15fbb3a9dd77e1"
+      }
+    },
+    "messaging": {
+      "dialogCreateTemplateTitle": {
+        "text": "Create Template",
+        "source_sha256": "b79296f1d39e5cc9c6b177210c04546596e13538719140c0f540d62b99fd9d87"
+      },
+      "dialogEditTemplateTitle": {
+        "text": "Edit Template — {{name}}",
+        "source_sha256": "527f316a5cb4bd7b111489f806de7f1fdad96de59cbd71a51ef05c27337bbd07"
+      },
+      "dialogCreateSnippetTitle": {
+        "text": "Create Snippet",
+        "source_sha256": "4eda97952b0113d9a097fdc40f58622299c36076b47654bf9827c6b148e70364"
+      },
+      "dialogEditSnippetTitle": {
+        "text": "Edit Snippet — {{name}}",
+        "source_sha256": "230b67c81760fcd1a8b9cd776877e8b4efa4b56418cc42984984c95b48aadebf"
+      },
+      "dialogName": {
+        "text": "Name",
+        "source_sha256": "dcd1d5223f73b3a965c07e3ff5dbee3eedcfedb806686a05b9b3868a2c3d6d50"
+      },
+      "dialogDescription": {
+        "text": "Description",
+        "source_sha256": "526e0087cc3f254d9f86f6c7d8e23d954c4dfda2b312efc29194ae8a860106ba"
+      },
+      "dialogDescriptionHelper": {
+        "text": "Optional, free-form",
+        "source_sha256": "b41952dfad6a611574b87a30bbb117f86b266424bae945c57100aa4aa43096e9"
+      },
+      "dialogSnippetNameHelper": {
+        "text": "Reference from templates as {snippet:name}",
+        "source_sha256": "7c2cac1d4abb933d07384ec2e8eb25da5fa1ba7eb8327fe76d3aa10d174ae552"
+      },
+      "dialogGroup": {
+        "text": "Group",
+        "source_sha256": "34ca0e76608842ff3e7d924a455a396a82f471052c15e3f2ed7f090ac702e5c1"
+      },
+      "dialogCancel": {
+        "text": "Cancel",
+        "source_sha256": "19766ed6ccb2f4a32778eed80d1928d2c87a18d7c275ccb163ec6709d3eb2e27"
+      },
+      "dialogSave": {
+        "text": "Save",
+        "source_sha256": "1509f561f2416598629b886ad7d3c05a7e221e4e0675c84bbff4ee6d9e03913d"
+      },
+      "dialogClose": {
+        "text": "Close",
+        "source_sha256": "7d9eb7acb13e24625c404401d8e88b2350e32162455885f18276cf802f7701ed"
+      },
+      "dialogSend": {
+        "text": "Send",
+        "source_sha256": "f6f4688ff23d50c67053963c251fa0ce64a925cf283537cf066b1f362cb9b778"
+      },
+      "dialogEncryptedEmailTitle": {
+        "text": "Send encrypted email (CUI)",
+        "source_sha256": "0e6b73eac42d5b38b50786ac9fbaa0c6239c2e5ee6a87beaf8697bf1b13d5291"
+      },
+      "dialogEncryptedEmailBody": {
+        "text": "Clear CUI never rides in the message body. Choose a Live standard; the sensitive payload becomes an encrypted attachment. Microsoft Graph OME delivers that attachment via Graph sendMail — it is not Azure Purview IRM.",
+        "source_sha256": "54b94c8be32dcb143b4350ec6c119700cc24abbaff1af3dde532538cf160e126"
+      },
+      "dialogEncryptedEmailRecipient": {
+        "text": "Recipient",
+        "source_sha256": "51fac985e95345d90b3c8a69f5e60003cbbd47a06efdcf0270d76be85b408657"
+      },
+      "dialogEncryptedEmailRecipientHelper": {
+        "text": "e.g. you@example.com or your configured SMTP sink",
+        "source_sha256": "9d879f269db276fb21b50b695d828b507ddea578b929e639350c74f387a8103c"
+      },
+      "dialogEncryptedEmailStandard": {
+        "text": "Encryption standard",
+        "source_sha256": "fb83686f4beb0fe5bc4cb50db7388d88d27b7c4bc4f3b3b9db79a1e9ca84bf4c"
+      },
+      "dialogEncryptedEmailSubject": {
+        "text": "Subject",
+        "source_sha256": "68971283841aecdf1da48428849b3b33164ec5c41d0f3c4d6cea624db5aff8f2"
+      },
+      "dialogEncryptedEmailPlaintext": {
+        "text": "CUI plaintext (attachment only)",
+        "source_sha256": "fdde27dba5ff9faff1706b7b40256d7110c988f5000ac471c8f052b9e91bc18c"
+      },
+      "dialogEncryptedEmailPlaintextHelper": {
+        "text": "Never pasted into the SMTP body when marking is CUI",
+        "source_sha256": "a21087901759d9dd6d6ba47d07691561a9e9b60da639e9a822dc6cd5080b75f3"
+      },
+      "dialogEncryptedEmailStatusBody": {
+        "text": "Status body (non-CUI)",
+        "source_sha256": "0d9e466a65b09e419eb384c11643bb5fa66644a23035907c1d9aee56863ab858"
+      },
+      "dialogEncryptedEmailStatusHelper": {
+        "text": "Optional. Leave blank for the default status-only notice.",
+        "source_sha256": "ff094ec9bdadd94ab8d154fdecaa3368938b64bf05d9005e2cf9f54f6520f08d"
+      },
+      "dialogEncryptedEmailPassphrase": {
+        "text": "Passphrase",
+        "source_sha256": "e7611f0537df5fc5d0177da520628219fccf065a1d4176cfbde2f75d824821f4"
+      },
+      "dialogEncryptedEmailSend": {
+        "text": "Send encrypted",
+        "source_sha256": "25c608b34e46818a3c5a233a0de7664b93f105c82674de277ff0854c6c9512d7"
+      },
+      "dialogTestSmsTitle": {
+        "text": "Send test SMS",
+        "source_sha256": "7cde746219b59803d412ee27b6de148bfec1482ca8b3a06f8e4b4c7d07376184"
+      },
+      "dialogTestSmsBody": {
+        "text": "Uses the saved SMS provider. Save settings first. Optional media URLs enable MMS when the provider supports it.",
+        "source_sha256": "af4b28e23155ad1fee112fa420ca1cd784c1e22b2d433b32f95c71aaf646eac1"
+      },
+      "dialogTestSmsMedia": {
+        "text": "MMS media URLs (optional)",
+        "source_sha256": "51f57eb5f91d1e4196d74b8fd0e1caf39e83acc2425e409f0925f37b4f2974e9"
+      },
+      "dialogTestSmsMediaHelper": {
+        "text": "Space- or comma-separated HTTPS URLs",
+        "source_sha256": "c749254ad80d1858e5f019e254a916528294d192faa5b4170a44de48a2fe1643"
+      }
+    }
   }
 }

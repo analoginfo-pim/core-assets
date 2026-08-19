@@ -1296,7 +1296,7 @@
       "bullets": [
         {
           "text": "Jede Zeile bleibt unveränderlich — anders als Ereignisse geht hier nichts durch Speichermangel verloren.",
-          "source_sha256": ""
+          "source_sha256": "123ca43f78ea0a76856ecee6d76d7178645bf801d6ddc434b519f2250f2c41db"
         },
         {
           "text": "Windows-Hosts spiegeln ausgewählte Verwaltungsaktionen zusätzlich ins betriebliche Ereignisprotokoll.",
@@ -4658,7 +4658,7 @@
       },
       "knownEventTypes": {
         "text": "{{count}} bekannte Ereignistypen",
-        "source_sha256": ""
+        "source_sha256": "6374c41a3b7f3b28f2bc623f828514dffa617b03c34746e9e9b8de5c9cdacf24"
       },
       "bufferedOne": {
         "text": "1 Ereignis im Live-Ringpuffer (Aktualisierung alle 30 s).",
@@ -8324,7 +8324,7 @@
         "secure_share_armored": {
           "label": {
             "text": "Sicheres Teilen, ASCII-gepanzert (KeyManager)",
-            "source_sha256": ""
+            "source_sha256": "a5beb77dff0b745f54570e7c8e08ba63defd91d02b21cd391375dbc4db85e36d"
           },
           "description": {
             "text": "Verpackt Inhalt in UniversalEnvelope über den Server-KeyManager, dann AIC-Sicheres-Teilen-ASCII-Panzerung für E-Mail. Entschlüsselung braucht denselben Schlüsselring.",
@@ -8429,6 +8429,122 @@
           "text": "Basis (Benutzername + Passwort)",
           "source_sha256": ""
         }
+      },
+      "dialogCreateTemplateTitle": {
+        "text": "Vorlage erstellen",
+        "source_sha256": "56e5e2c38387a1248d7ed4ebf414b5c4d5a54fbd23d38b8bfcc7d4ed8dd8c032"
+      },
+      "dialogEditTemplateTitle": {
+        "text": "Vorlage bearbeiten — {{name}}",
+        "source_sha256": "55ede368802586953a27a8622920d5b92e461e37195911c4c7236d146b7b2cf6"
+      },
+      "dialogCreateSnippetTitle": {
+        "text": "Snippet erstellen",
+        "source_sha256": "260fec6c3efda639c16d0d48774cf92bd195e8757d129d5f66b3f866954fad77"
+      },
+      "dialogEditSnippetTitle": {
+        "text": "Snippet bearbeiten — {{name}}",
+        "source_sha256": "cd814f415eec72e835df41c66671b7a13c360f3b75966ebeef6edf0a34d3f065"
+      },
+      "dialogName": {
+        "text": "Name",
+        "source_sha256": "dcd1d5223f73b3a965c07e3ff5dbee3eedcfedb806686a05b9b3868a2c3d6d50"
+      },
+      "dialogDescription": {
+        "text": "Beschreibung",
+        "source_sha256": "e9262f007dfbc513350f9396ca3ebf7aec9535551e4f9d3bbd54ac5bd57bb71c"
+      },
+      "dialogDescriptionHelper": {
+        "text": "Optional, freier Text",
+        "source_sha256": "a53e8b4e59ebbc3ae4cd2d295b1c766bb23d0b914fd36091c7178a5abc580e4a"
+      },
+      "dialogSnippetNameHelper": {
+        "text": "In Vorlagen als {snippet:name} referenzieren",
+        "source_sha256": "0ccdc3a1c81ce73bb175d7d817b03b7d25a6c913fb059454c6a665b52974410d"
+      },
+      "dialogGroup": {
+        "text": "Gruppe",
+        "source_sha256": "b4c0226585b5b04709ff49817a224d909d1fec0e9466884ce994be6f994554ed"
+      },
+      "dialogCancel": {
+        "text": "Abbrechen",
+        "source_sha256": "f7ff1178af202f6ffb67b9572c3fcf88059d030657e6e07447123f4e48c78e50"
+      },
+      "dialogSave": {
+        "text": "Speichern",
+        "source_sha256": "f6b2ff39f540eb8164628b1f1a838aea1eb673394253fa603d8935297eaaf36e"
+      },
+      "dialogClose": {
+        "text": "Schließen",
+        "source_sha256": "b808f6e97075772fe36de2ee4ea0eb310550f84baa9ea8aa88314f21e467616d"
+      },
+      "dialogSend": {
+        "text": "Senden",
+        "source_sha256": "079bef4e232ff78a9c6def1c06f7a059cf4ddd087271bd03892d7463947fdf96"
+      },
+      "dialogEncryptedEmailTitle": {
+        "text": "Verschlüsselte E-Mail senden (CUI)",
+        "source_sha256": "513b93b2f30f7d7749db92cc508937a4ec298de92864a33e235d52675a19f260"
+      },
+      "dialogEncryptedEmailBody": {
+        "text": "Klartext-CUI steht nie im Nachrichtentext. Wählen Sie einen Live-Standard; die Nutzlast wird ein verschlüsselter Anhang. Microsoft Graph OME liefert diesen Anhang per Graph sendMail — das ist kein Azure Purview IRM.",
+        "source_sha256": "f6b75410d7d5a99b0305f3ad3b634da0c2d49d351aebeb76c73d37dc4e9f2007"
+      },
+      "dialogEncryptedEmailRecipient": {
+        "text": "Empfänger",
+        "source_sha256": "2f3ce594bc512d2ea9a29b42abbad561b334202c838236b1351a4de70cbf2e15"
+      },
+      "dialogEncryptedEmailRecipientHelper": {
+        "text": "z. B. you@example.com oder Ihr konfigurierter SMTP-Senke",
+        "source_sha256": "45cf45292e6fff2d32e64ff36cdaf5eedbc181852f91857dc96df4a59f543cee"
+      },
+      "dialogEncryptedEmailStandard": {
+        "text": "Verschlüsselungsstandard",
+        "source_sha256": "110101e62030cef9d3372b0e1152efa12547877274a4208ad78cc88745e5ad73"
+      },
+      "dialogEncryptedEmailSubject": {
+        "text": "Betreff",
+        "source_sha256": "ec93bf68500700accd4d21f214b9266a9ad51dc9d7e9396a205ea8a8a4689b3c"
+      },
+      "dialogEncryptedEmailPlaintext": {
+        "text": "CUI-Klartext (nur Anhang)",
+        "source_sha256": "e285eb0512442c5b7241d4cb7661254a2a9abdb37b909f352a146a258138a083"
+      },
+      "dialogEncryptedEmailPlaintextHelper": {
+        "text": "Wird bei CUI-Markierung nie in den SMTP-Textkörper eingefügt",
+        "source_sha256": "910241c7460147601bbe32d040eb0e9d21940703918a02e3147db77d3f3bc0e1"
+      },
+      "dialogEncryptedEmailStatusBody": {
+        "text": "Statustext (kein CUI)",
+        "source_sha256": "c5c565706953dc20cda20cf88d4760e29c3f4ac7e060631321ae78e982847d38"
+      },
+      "dialogEncryptedEmailStatusHelper": {
+        "text": "Optional. Leer lassen für den Standard-Statushinweis.",
+        "source_sha256": "18ee6ac6716685d71318b85a4502ba3e584413018150c1d1bd0f0e4c06b7e934"
+      },
+      "dialogEncryptedEmailPassphrase": {
+        "text": "Passphrase",
+        "source_sha256": "e7611f0537df5fc5d0177da520628219fccf065a1d4176cfbde2f75d824821f4"
+      },
+      "dialogEncryptedEmailSend": {
+        "text": "Verschlüsselt senden",
+        "source_sha256": "9785e96b0ee298ea26e0d19f0d532496b1085f5caf5fa2a97009aff075086295"
+      },
+      "dialogTestSmsTitle": {
+        "text": "Test-SMS senden",
+        "source_sha256": "98fd344077cf8d8f1492e7169554af1dbe9a29c848ee26dc7887e83577d302df"
+      },
+      "dialogTestSmsBody": {
+        "text": "Verwendet den gespeicherten SMS-Anbieter. Einstellungen zuerst speichern. Optionale Medien-URLs aktivieren MMS, wenn der Anbieter das unterstützt.",
+        "source_sha256": "7749324938a171b16045e11809d11161f6ca23b4bfb25063346851dead90a56d"
+      },
+      "dialogTestSmsMedia": {
+        "text": "MMS-Medien-URLs (optional)",
+        "source_sha256": "6b61225acf8c7aed43f4cd4621be1fd052e5d5fb21334db587e1381a3542fbbc"
+      },
+      "dialogTestSmsMediaHelper": {
+        "text": "Leer- oder kommagetrennte HTTPS-URLs",
+        "source_sha256": "07d7f9f8ced2f9ecfdabfaf354daaec50e57aa6802415e9c5c76b295a5cbc2da"
       }
     },
     "training": {
@@ -9018,7 +9134,7 @@
       },
       "detailRosterMembers": {
         "text": "Personen im Verzeichnis",
-        "source_sha256": ""
+        "source_sha256": "3cb0cd6876318a8d5d0a0dcc14d8bd17ac436b0caf8177d2ea3f1809f2bfa2cf"
       },
       "detailTypedName": {
         "text": "Name, mit dem die Person unterschrieben hat",
@@ -9755,6 +9871,14 @@
       "completedOf": {
         "text": "{{done}} von {{total}} · {{rate}}",
         "source_sha256": ""
+      },
+      "programsCreateSubmit": {
+        "text": "Programm erstellen",
+        "source_sha256": "1ea25f0f49e8a21f6ab36b8cc1e4cede2638fe16e7e38560cb3ffbd235b9cd5c"
+      },
+      "programsCreating": {
+        "text": "Wird erstellt…",
+        "source_sha256": "8b4d715d8366e05a19b3e025bd2179262c0f1bda1a7ee1711f860a4ef7ddee7f"
       }
     },
     "reports": {
