@@ -99,9 +99,97 @@ def store_license_body(body: str) -> tuple[str, str]:
     HARVESTED_DIR.mkdir(parents=True, exist_ok=True)
     rel = f"license-texts/by-sha256/{digest}.txt"
     path = OUT / rel
-    if not path.is_file():
-        path.write_text(normalized, encoding="utf-8")
+    expected = normalized.encode("utf-8")
+    # Always persist LF bytes (write_bytes). Never leave a CRLF working-tree
+    # copy that would invalidate license_text_sha256 after git checkout.
+    if not path.is_file() or path.read_bytes() != expected:
+        path.write_bytes(expected)
     return rel, digest
+
+
+def is_pointer_only_license_body(body: str) -> bool:
+    """True when the body is a short pointer, not a redistributable grant text."""
+    t = body.strip()
+    if not t:
+        return True
+    if "Full published text:" in t and len(t) < 500:
+        return True
+    # Common Rust COPYING stubs that only name LICENSE-APACHE / LICENSE-MIT.
+    if len(t) < 500 and "LICENSE-APACHE" in t and "LICENSE-MIT" in t:
+        return True
+    if len(t) < 200 and re.search(r"see\s+(the\s+)?license", t, re.I):
+        return True
+    return False
+
+
+def spdx_tokens(expr: str) -> list[str]:
+    parts = re.split(r"\s+(?:OR|AND|WITH)\s+", expr.strip(), flags=re.I)
+    return [p.strip("() ").strip() for p in parts if p.strip("() ").strip()]
+
+
+def combine_standard_spdx_bodies(expr: str, license_map: dict[str, str]) -> str | None:
+    """Concatenate stored published texts for every SPDX token that we have."""
+    bodies: list[str] = []
+    for tok in spdx_tokens(expr):
+        rel = license_map.get(tok)
+        if not rel:
+            continue
+        path = OUT / rel
+        if not path.is_file() or path.stat().st_size < 80:
+            continue
+        std = path.read_text(encoding="utf-8")
+        if is_pointer_only_license_body(std):
+            continue
+        bodies.append(f"--- {tok} ---\n{std.rstrip()}")
+    if not bodies:
+        return None
+    return "\n\n".join(bodies) + "\n"
+
+
+def is_commercial_npm_package(name: str, license_raw: str | None) -> bool:
+    """MUI X Pro/Premium and similar proprietary packages (not redistributable OSS)."""
+    n = (name or "").lower()
+    if n.startswith(
+        (
+            "@mui/x-data-grid-pro",
+            "@mui/x-data-grid-premium",
+            "@mui/x-date-pickers-pro",
+            "@mui/x-charts-pro",
+            "@mui/x-tree-view-pro",
+            "@mui/x-license",
+            "@mui/x-telemetry",
+        )
+    ):
+        return True
+    lic = (license_raw or "").strip().upper()
+    if lic.startswith("SEE LICENSE"):
+        return True
+    if lic in {"PROPRIETARY", "COMMERCIAL", "UNLICENSED"}:
+        return True
+    return False
+
+
+def reconcile_spdx_with_harvested_body(spdx: str | None, body: str | None) -> str | None:
+    """Prefer the grant in the harvested file when package.json SPDX disagrees."""
+    if not body:
+        return spdx
+    head = body.lstrip()[:240].upper()
+    if "APACHE LICENSE" in head or "APACHE LICENSE VERSION 2" in head:
+        if not spdx or spdx.strip().upper() in {"MIT", "ISC", "BSD-2-CLAUSE", "BSD-3-CLAUSE"}:
+            return "Apache-2.0"
+    if head.startswith("MIT LICENSE") or "PERMISSION IS HEREBY GRANTED, FREE OF CHARGE" in head:
+        if spdx and "APACHE" in spdx.upper() and "OR" not in spdx.upper():
+            return "MIT"
+    return spdx
+
+
+def is_vendor_third_party_path(meta: dict) -> bool:
+    """Path crates under pim-offline-server/vendor/ are vendored third-party OSS."""
+    mp = meta.get("manifest_path")
+    if not isinstance(mp, str) or not mp:
+        return False
+    norm = mp.replace("\\", "/").lower()
+    return "/vendor/" in norm
 
 
 def parse_cargo_lock(lock_path: Path) -> list[dict]:
@@ -598,28 +686,50 @@ def finalize_entry_license(
 ) -> None:
     """Attach license text path/sha or mark BLOCKED. Never invent a license id."""
     body = harvested_body or license_file_body
+    if body and is_pointer_only_license_body(body):
+        # Do not treat COPYING / "see LICENSE-*" stubs as redistributable grant text.
+        body = None
+
     expr = entry.get("license_spdx")
     if body and body.strip():
+        expr = reconcile_spdx_with_harvested_body(
+            str(expr) if expr else None, body
+        )
+        if expr:
+            entry["license_spdx"] = normalize_spdx(expr)
+            entry["license_name"] = entry["license_spdx"]
         rel, digest = store_license_body(body)
         entry["license_text_path"] = rel
         entry["license_text_sha256"] = digest
         entry["disclosure_status"] = "ok"
-        if not entry.get("license_name") and expr:
-            entry["license_name"] = expr
+        if not entry.get("license_name") and entry.get("license_spdx"):
+            entry["license_name"] = entry["license_spdx"]
         if not entry.get("license_name"):
             entry["license_name"] = "See license text (as published by the licensor)"
         return
 
     if expr:
-        primary = primary_spdx_id(expr)
+        combined = combine_standard_spdx_bodies(str(expr), license_map)
+        if combined:
+            hrel, digest = store_license_body(combined)
+            entry["license_text_path"] = hrel
+            entry["license_text_sha256"] = digest
+            entry["disclosure_status"] = "ok"
+            if not entry.get("license_name"):
+                entry["license_name"] = expr
+            if not entry.get("notes"):
+                entry["notes"] = (
+                    "Package-local LICENSE was a pointer or missing; stored published "
+                    "SPDX license text(s) for the declared expression."
+                )
+            return
+        primary = primary_spdx_id(str(expr))
         rel = license_map.get(primary)
         if rel:
             path = OUT / rel
             if path.is_file() and path.stat().st_size > 80:
-                # Prefer storing by-hash copy of the standard text for stable paths
                 std = path.read_text(encoding="utf-8")
-                # Reject pointer-only stubs as insufficient for Live
-                if "Full published text:" in std and len(std) < 400:
+                if is_pointer_only_license_body(std):
                     entry["license_text_path"] = None
                     entry["license_text_sha256"] = None
                     entry["disclosure_status"] = "BLOCKED"
@@ -680,21 +790,27 @@ def add_incorporated_assets(entries: list[dict]) -> None:
             }
         )
 
-    for rel_src, name, homepage in (
+    for rel_src, name, homepage, spdx, license_name in (
         (
             "data/known-default-credentials/defaultcreds/LICENSE.txt",
             "defaultcreds (known-default credentials research list)",
             None,
+            "MIT",
+            "MIT License",
         ),
         (
             "data/known-default-credentials/seclists-default/LICENSE.txt",
             "SecLists default credentials subset",
             "https://github.com/danielmiessler/SecLists",
+            "MIT",
+            "MIT License",
         ),
         (
             "data/known-default-credentials/scadapass/LICENSE-ITI-ICS-Security-Tools.md",
             "SCADAPASS / ITI ICS Security Tools attribution",
             None,
+            "CC-BY-4.0",
+            "Creative Commons Attribution 4.0 International",
         ),
     ):
         src = ROOT / rel_src
@@ -709,8 +825,8 @@ def add_incorporated_assets(entries: list[dict]) -> None:
                 "name": name,
                 "version": "bundled data",
                 "ecosystem": "incorporated-asset",
-                "license_spdx": None,
-                "license_name": "See license text (as published by the data licensor)",
+                "license_spdx": spdx,
+                "license_name": license_name,
                 "copyright": None,
                 "homepage": homepage,
                 "license_text_path": hrel,
@@ -735,46 +851,79 @@ def npm_production_packages(lock_path: Path, node_modules: Path) -> list[dict]:
             continue
         if meta.get("dev") is True:
             continue
-        # package name: last segment for unscoped; @scope/name for scoped
+        # package name: lockfile "name" (canonical) beats directory leaf (wrap-ansi-cjs → wrap-ansi)
         rest = key[len("node_modules/") :]
-        # Prefer the leaf package name (final node_modules segment)
         parts = rest.split("/node_modules/")
         leaf = parts[-1]
-        if leaf.startswith("@analoginfo-pim/"):
-            continue  # first-party AIC packages
-        name = leaf
+        pkg_dir = UI / key if (UI / key).is_dir() else node_modules / leaf
+        if not pkg_dir.is_dir():
+            pkg_dir = (UI / key) if key else pkg_dir
+
+        name = meta.get("name")
         version = meta.get("version") or "unknown"
         lic = meta.get("license")
         if isinstance(lic, dict):
             lic = lic.get("type")
-        pkg_dir = node_modules
-        # Resolve nested path for harvest
-        for segment in key.split("/")[1:]:  # skip leading empty from split? key is node_modules/...
-            pass
-        # key like node_modules/foo or node_modules/@scope/pkg or nested
-        pkg_dir = UI / key if (UI / key).is_dir() else node_modules / leaf
-        if not pkg_dir.is_dir():
-            # try from UI root relative
-            pkg_dir = (UI / key) if key else pkg_dir
-        if not lic and pkg_dir.is_dir():
+        if pkg_dir.is_dir():
             pj = pkg_dir / "package.json"
             if pj.is_file():
                 try:
                     nested = json.loads(pj.read_text(encoding="utf-8"))
-                    lic = nested.get("license")
-                    if isinstance(lic, dict):
-                        lic = lic.get("type")
+                    if not name:
+                        name = nested.get("name")
+                    if not lic:
+                        lic = nested.get("license")
+                        if isinstance(lic, dict):
+                            lic = lic.get("type")
                     if version == "unknown":
                         version = nested.get("version") or version
                 except Exception:
                     pass
+        name = name or leaf
+        if isinstance(name, str) and name.startswith("@analoginfo-pim/"):
+            continue  # first-party AIC packages
+
+        lic_s = str(lic) if lic else None
+        if is_commercial_npm_package(str(name), lic_s):
+            notice = (
+                f"{name}@{version} is distributed under a commercial / proprietary "
+                "license. The full license text is not redistributable in this "
+                "open-source credits inventory. See the package LICENSE file in "
+                "node_modules and your MUI X commercial agreement."
+            )
+            hrel, digest = store_license_body(notice)
+            out.append(
+                {
+                    "id": f"npm:{name}@{version}",
+                    "name": name,
+                    "version": str(version),
+                    "ecosystem": "npm",
+                    "license_spdx": None,
+                    "license_name": "Commercial / proprietary (text not redistributable)",
+                    "copyright": None,
+                    "homepage": meta.get("resolved"),
+                    "license_text_path": hrel,
+                    "license_text_sha256": digest,
+                    "source": "pim-offline-server/ui/package-lock.json (production) + node_modules",
+                    "notes": (
+                        "Commercial package listed for complete disclosure. "
+                        "SPDX 'SEE LICENSE IN LICENSE' is not a valid open-source "
+                        "identifier and is not shown. Status is commercial, not Live OSS."
+                    ),
+                    "direct": False,
+                    "disclosure_status": "commercial",
+                    "_pkg_dir": None,
+                }
+            )
+            continue
+
         entry = {
             "id": f"npm:{name}@{version}",
             "name": name,
             "version": str(version),
             "ecosystem": "npm",
-            "license_spdx": normalize_spdx(str(lic) if lic else None),
-            "license_name": str(lic) if lic else None,
+            "license_spdx": normalize_spdx(lic_s),
+            "license_name": lic_s,
             "copyright": None,
             "homepage": meta.get("resolved"),
             "license_text_path": None,
@@ -785,10 +934,21 @@ def npm_production_packages(lock_path: Path, node_modules: Path) -> list[dict]:
             "_pkg_dir": str(pkg_dir) if pkg_dir.is_dir() else None,
         }
         out.append(entry)
-    # Deduplicate by id (same name@version may appear nested)
+    # Deduplicate by id (same name@version may appear nested / via -cjs aliases)
     dedup: dict[str, dict] = {}
     for e in out:
-        dedup[e["id"]] = e
+        existing = dedup.get(e["id"])
+        if existing is None:
+            dedup[e["id"]] = e
+            continue
+        # Prefer an entry that still has a harvest directory; keep commercial.
+        if existing.get("disclosure_status") == "commercial":
+            continue
+        if e.get("disclosure_status") == "commercial":
+            dedup[e["id"]] = e
+            continue
+        if not existing.get("_pkg_dir") and e.get("_pkg_dir"):
+            dedup[e["id"]] = e
     return list(dedup.values())
 
 
@@ -805,7 +965,20 @@ def sync_to_consumers() -> None:
             rel = src.relative_to(OUT)
             dest = dest_root / rel
             dest.parent.mkdir(parents=True, exist_ok=True)
-            dest.write_bytes(src.read_bytes())
+            data = src.read_bytes()
+            last_err: OSError | None = None
+            for attempt in range(3):
+                try:
+                    dest.write_bytes(data)
+                    last_err = None
+                    break
+                except OSError as e:
+                    last_err = e
+                    import time
+
+                    time.sleep(0.25 * (attempt + 1))
+            if last_err is not None:
+                raise last_err
         print(f"Synced -> {dest_root}")
 
 
@@ -848,12 +1021,17 @@ def main(argv: list[str] | None = None) -> int:
         if key in seen:
             continue
         seen.add(key)
-        if pkg["kind"] == "path":
-            path_excluded += 1
-            continue
         meta = cargo_meta.get(key) or {}
         meta_lic = meta.get("license") if isinstance(meta.get("license"), str) else None
-        if is_first_party_cargo(pkg["name"], meta_lic, pkg.get("source") or ""):
+        if pkg["kind"] == "path":
+            # Vendored third-party under vendor/ is disclosed; AIC workspace path crates are not.
+            if not is_vendor_third_party_path(meta):
+                path_excluded += 1
+                continue
+            if is_first_party_cargo(pkg["name"], meta_lic, pkg.get("source") or ""):
+                path_excluded += 1
+                continue
+        elif is_first_party_cargo(pkg["name"], meta_lic, pkg.get("source") or ""):
             first_party_excluded += 1
             continue
         unique_lock.append(pkg)
@@ -869,6 +1047,11 @@ def main(argv: list[str] | None = None) -> int:
             crate_dir = reg_index.get((name, ver))
         elif kind == "git":
             crate_dir = git_index.get(name)
+        elif kind == "path":
+            if meta.get("manifest_path"):
+                mp = Path(str(meta["manifest_path"]))
+                if mp.is_file():
+                    crate_dir = mp.parent
         if crate_dir is None and meta.get("manifest_path"):
             mp = Path(str(meta["manifest_path"]))
             if mp.is_file():
@@ -895,6 +1078,20 @@ def main(argv: list[str] | None = None) -> int:
             first_party_excluded += 1
             continue
 
+        if kind == "registry":
+            src_note = (
+                "pim-offline-server/Cargo.lock + local Cargo registry / cargo metadata"
+            )
+        elif kind == "git":
+            src_note = (
+                "pim-offline-server/Cargo.lock + local Cargo git checkout / cargo metadata"
+            )
+        else:
+            src_note = (
+                "pim-offline-server/Cargo.lock + vendored path crate "
+                "(vendor/) / cargo metadata"
+            )
+
         entry = {
             "id": f"cargo:{name}@{ver}",
             "name": name,
@@ -906,11 +1103,7 @@ def main(argv: list[str] | None = None) -> int:
             "homepage": f"https://crates.io/crates/{name}" if kind == "registry" else None,
             "license_text_path": None,
             "license_text_sha256": None,
-            "source": (
-                "pim-offline-server/Cargo.lock + local Cargo registry / cargo metadata"
-                if kind == "registry"
-                else "pim-offline-server/Cargo.lock + local Cargo git checkout / cargo metadata"
-            ),
+            "source": src_note,
             "notes": None,
             "direct": False,
             "cargo_source_kind": kind,
@@ -926,7 +1119,13 @@ def main(argv: list[str] | None = None) -> int:
     npm_entries: list[dict] = []
     npm_ok = 0
     npm_blocked = 0
+    npm_commercial = 0
     for e in npm_raw:
+        if e.get("disclosure_status") == "commercial":
+            e.pop("_pkg_dir", None)
+            npm_commercial += 1
+            npm_entries.append(e)
+            continue
         pkg_dir_s = e.pop("_pkg_dir", None)
         harvested = None
         if pkg_dir_s:
@@ -947,27 +1146,48 @@ def main(argv: list[str] | None = None) -> int:
         + sorted(npm_entries, key=lambda e: (e["name"].lower(), e["version"]))
     )
 
-    blocked = [e for e in all_entries if e.get("disclosure_status") == "BLOCKED"]
+    oss_blocked = [e for e in all_entries if e.get("disclosure_status") == "BLOCKED"]
+    commercial = [e for e in all_entries if e.get("disclosure_status") == "commercial"]
     with_text = sum(1 for e in all_entries if e.get("license_text_path"))
-    status = "Live" if not blocked else "Blocked"
+    if oss_blocked:
+        status = "BLOCKED"
+    elif commercial:
+        status = "Partial"
+    else:
+        status = "Live"
     honesty = (
         "This inventory lists every third-party open-source component incorporated "
-        "into AIC Server from the production Cargo graph (registry and git crates), "
-        "the npm production graph (package-lock.json, non-dev), and incorporated "
-        "on-disk assets (including lipis/flag-icons). First-party path crates, "
-        "AIC-named / proprietary crates, and @analoginfo-pim/* npm packages are "
-        "excluded as AIC-owned code, not third-party open source. License bodies "
-        "were harvested from local Cargo registry / git checkouts, node_modules "
-        "LICENSE files, and in-tree LICENSE copies; common SPDX identifiers use "
-        "the stored published license text when a package-local file was absent. "
-        "No package or license was invented. "
+        "into AIC Server from the production Cargo graph (registry, git, and "
+        "vendored path crates under vendor/), the npm production graph "
+        "(package-lock.json, non-dev; lockfile package name preferred over "
+        "directory leaf), and incorporated on-disk assets (including "
+        "lipis/flag-icons). First-party workspace path crates, AIC-named / "
+        "proprietary crates, and @analoginfo-pim/* npm packages are excluded as "
+        "AIC-owned code, not third-party open source. License bodies were "
+        "harvested from local Cargo registry / git / vendor checkouts, "
+        "node_modules LICENSE files, and in-tree LICENSE copies; common SPDX "
+        "identifiers use the stored published license text when a package-local "
+        "file was a pointer or absent. No package or license was invented. "
         + (
-            "Every listed package has a license identity and license text (Live)."
+            "Every listed open-source package has a license identity and license "
+            "text (Live)."
             if status == "Live"
             else (
-                f"{len(blocked)} package(s) are BLOCKED because no license identity "
-                "and/or license text could be harvested; they remain listed and are "
-                "not silently omitted."
+                (
+                    f"{len(oss_blocked)} package(s) are BLOCKED because no license "
+                    "identity and/or redistributable license text could be harvested; "
+                    "they remain listed and are not silently omitted. "
+                )
+                if oss_blocked
+                else ""
+            )
+            + (
+                (
+                    f"{len(commercial)} commercial / proprietary package(s) are "
+                    "listed without redistributable license text (Partial — not Live)."
+                )
+                if commercial
+                else ""
             )
         )
     )
@@ -1005,18 +1225,38 @@ def main(argv: list[str] | None = None) -> int:
                     "npm_production_count": len(npm_entries),
                     "npm_production_with_license_text": npm_ok,
                     "npm_production_blocked": npm_blocked,
+                    "npm_production_commercial": npm_commercial,
                     "incorporated_count": len(incorporated),
                     "entries_with_license_text": with_text,
-                    "blocked_count": len(blocked),
+                    "blocked_count": len(oss_blocked),
+                    "commercial_count": len(commercial),
                 },
             ),
             ("entry_count", len(all_entries)),
-            ("blocked_count", len(blocked)),
+            ("blocked_count", len(oss_blocked)),
+            ("commercial_count", len(commercial)),
             (
                 "blocked_packages",
                 [
-                    {"id": e["id"], "name": e["name"], "version": e["version"], "ecosystem": e["ecosystem"]}
-                    for e in blocked
+                    {
+                        "id": e["id"],
+                        "name": e["name"],
+                        "version": e["version"],
+                        "ecosystem": e["ecosystem"],
+                    }
+                    for e in oss_blocked
+                ],
+            ),
+            (
+                "commercial_packages",
+                [
+                    {
+                        "id": e["id"],
+                        "name": e["name"],
+                        "version": e["version"],
+                        "ecosystem": e["ecosystem"],
+                    }
+                    for e in commercial
                 ],
             ),
             ("entries", all_entries),
@@ -1026,6 +1266,7 @@ def main(argv: list[str] | None = None) -> int:
                     "notes": (
                         "Complete third-party disclosure is in entries[]. "
                         f"First-party Cargo path packages excluded: {path_excluded}. "
+                        "Vendored third-party path crates under vendor/ are included. "
                         "CycloneDX SBOM remains a companion artifact for hashes/purls."
                     ),
                 },
@@ -1035,7 +1276,7 @@ def main(argv: list[str] | None = None) -> int:
 
     inv_path = OUT / "inventory.json"
     inv_text = json.dumps(inventory, indent=2, ensure_ascii=False) + "\n"
-    inv_path.write_text(inv_text, encoding="utf-8")
+    inv_path.write_text(inv_text, encoding="utf-8", newline="\n")
 
     # Slim blocked list for operators
     blocked_path = OUT / "blocked-packages.json"
@@ -1043,14 +1284,17 @@ def main(argv: list[str] | None = None) -> int:
         json.dumps(
             {
                 "schema": "aic-open-source-credits-blocked",
-                "count": len(blocked),
+                "count": len(oss_blocked),
                 "packages": inventory["blocked_packages"],
+                "commercial_count": len(commercial),
+                "commercial_packages": inventory["commercial_packages"],
             },
             indent=2,
             ensure_ascii=False,
         )
         + "\n",
         encoding="utf-8",
+        newline="\n",
     )
 
     readme = OUT / "README.md"
@@ -1072,7 +1316,8 @@ from real lockfiles and harvested LICENSE copies. See `inventory.json`
 | --- | ---: |
 | Entries (third-party) | {len(all_entries)} |
 | With license text | {with_text} |
-| BLOCKED | {len(blocked)} |
+| BLOCKED (OSS gaps) | {len(oss_blocked)} |
+| Commercial / proprietary | {len(commercial)} |
 | Cargo third-party | {len(cargo_entries)} |
 | npm production | {len(npm_entries)} |
 | Incorporated assets | {len(incorporated)} |
@@ -1101,25 +1346,43 @@ Inventory SHA-256: `{sha256_text(inv_text)}`
     )
 
     print(f"Wrote {inv_path} ({len(all_entries)} entries, status={status})")
-    print(f"With license text={with_text} blocked={len(blocked)}")
+    print(
+        f"With license text={with_text} oss_blocked={len(oss_blocked)} "
+        f"commercial={len(commercial)}"
+    )
     print(
         f"Cargo third-party={len(cargo_entries)} ok={cargo_resolved} blocked={cargo_blocked} "
         f"path_excluded={path_excluded}"
     )
-    print(f"npm production={len(npm_entries)} ok={npm_ok} blocked={npm_blocked}")
-    if blocked:
+    print(
+        f"npm production={len(npm_entries)} ok={npm_ok} blocked={npm_blocked} "
+        f"commercial={npm_commercial}"
+    )
+    if oss_blocked:
         print("BLOCKED packages:")
-        for e in blocked[:50]:
+        for e in oss_blocked[:50]:
             print(f"  - {e['id']}")
-        if len(blocked) > 50:
-            print(f"  ... and {len(blocked) - 50} more")
+        if len(oss_blocked) > 50:
+            print(f"  ... and {len(oss_blocked) - 50} more")
+    if commercial:
+        print("Commercial / proprietary packages:")
+        for e in commercial[:50]:
+            print(f"  - {e['id']}")
 
     sync_to_consumers()
 
-    if args.require_live and blocked:
+    # --require-live: fail closed on true OSS BLOCKED gaps. Partial (commercial-only)
+    # is shippable honesty — not Live, but not an invented/missing OSS license.
+    if args.require_live and oss_blocked:
         print(
-            f"ERROR: --require-live refused {len(blocked)} BLOCKED package(s); "
+            f"ERROR: --require-live refused {len(oss_blocked)} BLOCKED package(s); "
             "disclosure is incomplete (fail-closed).",
+            file=sys.stderr,
+        )
+        return 2
+    if args.require_live and status == "BLOCKED":
+        print(
+            "ERROR: --require-live refused status=BLOCKED.",
             file=sys.stderr,
         )
         return 2

@@ -6,6 +6,13 @@
 # diff churn (every commit looks like it touched every line).
 * text=auto eol=lf
 
+# Open Source Credits license bodies are hashed as LF bytes by
+# generate-open-source-credits.py. Pin explicitly so Windows checkouts
+# never rewrite them to CRLF (which would invalidate license_text_sha256).
+legal/open-source-credits/license-texts/** text eol=lf
+legal/open-source-credits/*.json text eol=lf
+legal/open-source-credits/*.md text eol=lf
+
 # Common binary file types — never convert line endings, never diff as text.
 *.png binary
 *.jpg binary
