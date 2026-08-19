@@ -1,35 +1,35 @@
 {
   "title": {
-    "text": "Risikoregister",
-    "source_sha256": "7e81d387600f4fd81d44fea37f26152cfd7476f74baa593c34ebd794c0171f92"
+    "text": "风险登记册",
+    "source_sha256": "1ce6332ee4dc6c3234fd6fcdf603bea5e195372a00cb52a300d1aa405dd9f51e"
   },
   "back": {
     "text": "风险登记册",
     "source_sha256": "7e81d387600f4fd81d44fea37f26152cfd7476f74baa593c34ebd794c0171f92"
   },
   "needPermission": {
-    "text": "Sie brauchen the Berechtigung, the Risikoregister to sehen.",
-    "source_sha256": "aa210bb51311831fb0ee3caac5814c204f833780563b0014cd925ef2709c6fd8"
+    "text": "您需要获得查看风险登记册的权限。",
+    "source_sha256": "a582ce78b9a6e1306d4af6c03ff6339b521c30b9ff407eb66803d8338e6ff832"
   },
   "loadFailed": {
-    "text": "Dieses Risiko konnte not geladen werden。",
-    "source_sha256": "37bf64d2ea1a77d4c32dcdce3c3edc5e865a8722e6bca86b82c519a99de4cf70"
+    "text": "该风险无法加载。",
+    "source_sha256": "de8962c97b1107b59ed2e138be903115115b63264abd1e3b58614c4b76dff868"
   },
   "loadingLabel": {
     "text": "风险登记册",
     "source_sha256": "7e81d387600f4fd81d44fea37f26152cfd7476f74baa593c34ebd794c0171f92"
   },
   "honesty": {
-    "text": "Das Register erfasst Risikoentscheidungen：是 identifiziert wurde、wie behandelt wird、wer akzeptiert hat 和 wann the Akzeptanz endet。不，戴一顶 Kontrolle bestanden 帽子。",
-    "source_sha256": "dea83c3d13f9ae0d59f7f9ec35b32ca516751f5e5e1cc62bd7cb18d0bda9bdd7"
+    "text": "登记册记录了风险决策：识别了什么、如何处理、谁接受了以及接受何时结束。它并没有说控制已经通过。",
+    "source_sha256": "98370ce5cdd2a345b2d924f30e3e0f966da28729181ec346665e8dc03fe0a21d"
   },
   "expiryNotice": {
-    "text": "Eine abgelaufene Akzeptanz wrd beim Lesen berechnet。在 Zwoelf-Stunden-Lauf 中，风险接受已失效，但风险接受时间已结束。 Das Ereignis 融合了 Ablaufdatum。 Es oeffnet the Risiko not wieder, zieht the Akzeptanz not zurueck and eskaliert nichts. Die Zustellung haengt of the Ereigniszielen ab，操作员 eingerichtet 帽子。",
-    "source_sha256": "fef0a558751ff3e308bfe724dedd52b0bf8c60de9bb28b90b36edc23fa2a0635"
+    "text": "过期接受是在阅读时计算的。 12 小时的运行对于授予期限结束的每个接受发送一次 RiskAcceptanceLapsed。该事件报告到期日期。它不会重新开启风险、撤回接受度或升级任何事情。交付取决于操作员设置的事件目的地。",
+    "source_sha256": "6d7cf5ce3cbd16c8d61d9a948fd87d5b15ffdb948a4ddd95d3554ca88beed178"
   },
   "loadRegisterFailed": {
-    "text": "Das Risikoregister konnte not geladen werden。 Pruefen Sie Ansichtsberechtigung 和 Registerspeicher。",
-    "source_sha256": "3709da8b2f0a61736b1bbe6f77125ff591e93b05d5925c67be4dbe7027f21ab2"
+    "text": "无法加载风险登记册。检查查看权限并注册存储。",
+    "source_sha256": "ba6f6c84358290be524df44625430a2cd66ba6ce32958f9144136b69489dab0e"
   },
   "newRisk": {
     "text": "新风险",
@@ -40,16 +40,16 @@
     "source_sha256": "4d3368c6f812acc8aa9698218c06a189b7a5cd0fed346ce83901ee847f87707f"
   },
   "identified": {
-    "text": "Identifiziert: {{count}}",
-    "source_sha256": "6d9fc140485998bb08d863abe93ea584f9871c3dfdc3e5090e7b173a63744d4d"
+    "text": "已识别：{{count}}",
+    "source_sha256": "fbb1aa7eeaaa62624dd1e200f886e58d827f93c624263c674b6affccacf85d01"
   },
   "analyzing": {
     "text": "分析中：{{count}}",
     "source_sha256": "6f9b3e70485af49405660e242dfe0eaa0b78d62a49eaa4b0b7ce8dac001c47b4"
   },
   "treatmentPlanned": {
-    "text": "Behandlung geplant： {{count}}",
-    "source_sha256": "6e4aaee7dd57adbb2a4dfbd8d86bda3c16f78f66f3ff6937832788feae5c0ff6"
+    "text": "计划治疗：{{count}}",
+    "source_sha256": "503ae74cca5adab95fff9809ad9e598085a5562877f72609cdb534edb06b4b91"
   },
   "monitoring": {
     "text": "尤伯瓦琼： {{count}}",
@@ -64,8 +64,8 @@
     "source_sha256": "13f7eb63bade24490c5a2f909398076f957d19aebb35063cd382be0f811a3ca6"
   },
   "reviewsOverdue": {
-    "text": "Pruefungen ueberfaellig: {{count}}",
-    "source_sha256": "bdda0196e72ae85baf954037317ca9d0524e477b22d18e033f98177e25d23988"
+    "text": "逾期评论：{{count}}",
+    "source_sha256": "7041f037cde743123f955d55383dfb3c4fba0a99e855d92af3949ceb3adc7069"
   },
   "acceptancesExpired": {
     "text": "Akzeptanzen abgelaufen：{{count}}",
@@ -104,8 +104,8 @@
     "source_sha256": "5da66fc5cc60fb700843ce7d7420d8ab1bb358e11dab10abed6aad3f2b97ac3c"
   },
   "emptyRegister": {
-    "text": "Keine Risiken passen to diesen Filter. Ein leeres Register heisst, dass hier nichts erfasst wurde — not, dass es keine Exposition gibt.",
-    "source_sha256": "d82abf43f639e14ebce90f92ac07a5781caf440fc4d2bea67745ee001047924c"
+    "text": "这些过滤器不存在任何风险。空寄存器意味着这里没有记录任何内容 - 并不是没有曝光。",
+    "source_sha256": "13fac553039bf4062453a66736d37a77e36788132bf04446010237e6f94d80c3"
   },
   "colRisk": {
     "text": "里西科",
@@ -148,40 +148,40 @@
     "source_sha256": "d50461f934b46e5005e2513ad69822279d6b6a53a110589ddedabc32ac8b03b5"
   },
   "statusColHelp": {
-    "text": "是 zuletzt ueber dieses Risiko entschieden wurde。 Statuswerte sind erfasste Entscheidungen, kein Bewertungsergebnis。",
-    "source_sha256": "a32a0feb73274c10417de7c0044ab7fc37697d7f1e88d15fbadb2152415b3ded"
+    "text": "最近对此风险做出了什么决定。状态值是记录的决策，而不是评估结果。",
+    "source_sha256": "d9fbc7430001dc38492f31c3b9413f2a2da795d7d817408341f42cc29877e965"
   },
   "reviewColHelp": {
-    "text": "Wann dieses Risiko als Naechstes geprueft werden soll。 Ueberfaellig wird beim Lesen dieser Liste berechnet;尼希茨库恩迪格特群岛",
-    "source_sha256": "8f740c0fff3319acc876cd0a151096208839bba6b2bcb0339393813ba0cb589f"
+    "text": "下一步应该什么时候检查这个风险？逾期是在阅读此列表时计算的；没有任何宣布。",
+    "source_sha256": "f01b9b6b031250ffd5a2282486dc6867f332736b872581be4b9d0f822ddc3d59"
   },
   "acceptanceColHelp": {
-    "text": "Ob Jemand dieses Risiko akzeptiert hat and bis wann. Eine abgelaufene Akzeptanz ist erloschen, and niemand wurde benachrichtigt。",
-    "source_sha256": "5eca7467fbc5f0c67dda207f92d04587461d8092b9acbf838515e8bef28a6e5d"
+    "text": "是否有人接受了这种风险以及何时接受。一份过期的接受已经过期，并且没有通知任何人。",
+    "source_sha256": "61ef7eab6b7bec77a16590dce6d5e04927d405a278eb8122c3adffecd1f95e4c"
   },
   "toolbarTitle": {
     "text": "Risikoregister",
     "source_sha256": "7e81d387600f4fd81d44fea37f26152cfd7476f74baa593c34ebd794c0171f92"
   },
   "toolbarSubtitle": {
-    "text": "Erfasste Risikoentscheidungen — keine Aussage, dass a Kontrolle bestanden hat",
-    "source_sha256": "b47f46d07bd9d7c0b098b575a50371722f3c9b71a4ffd4c9442fffd2c47fb2da"
+    "text": "捕获的风险决策 - 没有声明存在控制",
+    "source_sha256": "d05bf223147845f6ecede4e3d70d25052dd825003c18290429cd506ce4e825d8"
   },
   "createTitle": {
-    "text": "Ein Risiko erfassen",
-    "source_sha256": "1f932a5e8b141c8f71a8b3ee6382b48193c892d93996bdc2075a532e3631f9a0"
+    "text": "捕捉风险",
+    "source_sha256": "c362bb511892bcf41ea54cac3837dbbe798e5556252581c937da47e8e90a52ca"
   },
   "createScoringNote": {
-    "text": "Der Schweregrad wird aus the gewaehlten Wahrscheinlichkeit and Auswirkung berechnet and nie gespeichert。与该版本的Bewertungsmatrix zum Zeitpunkt the Erfassung相比，该Risiko spaeter因此更容易理解，wie es entschieden wurde。",
-    "source_sha256": "40584d4068f7e729cd8dbff8383b055257cbc424efe799101b026e5c3c9a888d"
+    "text": "严重性是根据选定的概率和影响计算的，并且永远不会保存。记录时评估矩阵的版本将被保存，以便以后可以按所决定的方式读取风险。",
+    "source_sha256": "7dd559e1208fdfc4e9ae441efe8a6933fdbfad1ea7e1c391a896c5e401424280"
   },
   "createRef": {
     "text": "风险参考",
     "source_sha256": "d12ecea9393094b8801476545360e8bc7a76ed1423a34b5f24edb80c0140f2e7"
   },
   "createRefHelp": {
-    "text": "Ihre Kennung for dieses Risiko, eindeutig in the Register.",
-    "source_sha256": "aabe344cc8fe2911d696fdf3b5501cfd4093d8c04da8f7fe23cd48a81e2423c8"
+    "text": "您的此风险的标识符，在登记册中清晰可见。",
+    "source_sha256": "e441a6f1801b5af9329a37693a12839319dc0109fec609e7ceacb66012762bf7"
   },
   "createTitleField": {
     "text": "Title",
@@ -200,8 +200,8 @@
     "source_sha256": "5c008fc563aa8d8645dd99a59f7ff76734bdc83ba43f0efb99fdf97128df7fc5"
   },
   "createOwnerHelp": {
-    "text": "Die Person，即 Risiko verantwortlich ist。",
-    "source_sha256": "070bc6e675b92667c7eb4e0a508b6f843bbf91c0f8ca96424dbad522e586bdcb"
+    "text": "负责此风险的人。",
+    "source_sha256": "d5e27c7797192b80b800f821ac3cac90b92a5dde8af95fd030f2310c47db8af9"
   },
   "createLikelihood": {
     "text": "自然规律",
@@ -216,8 +216,8 @@
     "source_sha256": "8eeb037702e13e7862fc006ef504c5311ccf8f041535adfaa0c4db7a04c52853"
   },
   "createReviewDueHelp": {
-    "text": "选修的。如果没有 Pruefungsdatum wird nie als ueberfaellig gemeldet，则 Ein Risiko。",
-    "source_sha256": "abd47219a3972130550933b10fa01348eded3efe1272ce62778cab9b29be364f"
+    "text": "选修的。没有审核日期的风险绝不会被报告为逾期。",
+    "source_sha256": "dc3a7a22c56ca90462753e6a6042dbb2d62a19fa7a450562d09e1707b4084df8"
   },
   "createCancel": {
     "text": "取消",
@@ -232,16 +232,16 @@
     "source_sha256": "6060bb368634e155515fb1fe28fe367d8a70cd9b9cd1e3567793f4b7ce2a79e0"
   },
   "toastRecordFailed": {
-    "text": "Dieses Risiko konnte not erfast werden",
-    "source_sha256": "0f031e62916afda4c8d2565ecc9baad36022fd231f429d8213a8cd8f455f55cb"
+    "text": "该风险无法记录",
+    "source_sha256": "7172a624a24746f8e2c1a0872146af21e73dbbf5ecc6e1628c632a36ccd45578"
   },
   "review_none": {
     "text": "凯因·普鲁丰·吉普兰特",
     "source_sha256": "3e70e83ae8974e3983584d857122563b2d53360d2b36554d7083f6ab310d9bfd"
   },
   "review_overdue": {
-    "text": "Ueberfaellig seit {{date}}",
-    "source_sha256": "0e99f48b330cc5a1888144b6929f8176263617af34b2ff3b0f293db542e168c2"
+    "text": "自 {{date}} 起逾期",
+    "source_sha256": "6d9e581a8ad01ead9ea102048ed06b79d5fb41a037f133a8e00b77139a542de2"
   },
   "review_due": {
     "text": "法利格 {{date}}",
@@ -285,8 +285,8 @@
       "source_sha256": "525ac2f6efbb287b816cc19b49ff7e8c8100deed9922534f8896f66ee2d71e9e"
     },
     "open": {
-      "text": "Offen",
-      "source_sha256": "64509e1af49cd9877c460e68d2674bd1532f9aa17e0d4f63518911dc10cab331"
+      "text": "打开",
+      "source_sha256": "ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942"
     },
     "mitigating": {
       "text": "位于贝赫邦",

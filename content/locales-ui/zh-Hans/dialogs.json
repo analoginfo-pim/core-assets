@@ -21,28 +21,28 @@
       "source_sha256": "76fcf9302cec2946fb3272c495d55736b939206292adde7373a4e5e434fb411f"
     },
     "mfaDisabled": {
-      "text": "TOTP-Mehrfaktorauthentifizierung ist auf diesem Server deaktiviert.",
-      "source_sha256": "212f85bb729d269101abab16156e34865346d35a1bf7b56769507c0287ff299a"
+      "text": "此服务器上禁用 TOTP 多重身份验证。",
+      "source_sha256": "9143564042fe83abbd31c0fbc7a258e4518d60d3ae132c138dcb0e120b2aabbe"
     },
     "unenrollHint": {
       "text": "将身份验证器应用程序注销到 wechseln。杰拉特·维洛伦？ Nutzen Sie “MFA zuruecksetzen（电子邮件）” auf Anmeldeseite 或 fragen Sie 管理员。",
       "source_sha256": "b4fe6ad172e2ff2f7f02e361d17f7353e5a61cca90a501a2d8418264d1f477ad"
     },
     "unenrollButton": {
-      "text": "Mein 身份验证器 abmelden",
-      "source_sha256": "89d9ad8d722bfcf7274e6e9f7d14af59e5dd2c49307714c396bd1c5dd9d9165c"
+      "text": "注销我的身份验证器",
+      "source_sha256": "2dff66f2a4e1b12ee444e3fd88b617b2e794a89c6e831174258384e7f3da8469"
     },
     "unenrollAria": {
-      "text": "Meinen TOTP-Authenticator abmelden",
-      "source_sha256": "0b297a2d2a1866b3b3f80043dde4d6d06c622e1b51f73ef5c8fc031249399a18"
+      "text": "取消注册我的 TOTP 身份验证器",
+      "source_sha256": "64dea45a35e0dfd5def410acab225c5b291a83c92af3923c43b12e1e43d9c7d0"
     },
     "confirmWarning": {
-      "text": "TOTP-Authenticator entfernen？ Bis Sie a neuen einrichten, ist Ihr Konto nur durch Passwort geschuetzt{{untilReenroll}}.行动协议。",
-      "source_sha256": "d4ee2e3b614ee59e9274cacc0c79015be63ee21b1b77b2d9ed218e810b4ed864"
+      "text": "删除 TOTP 验证器？在您设置新帐户之前，您的帐户仅受密码 {{untilReenroll}} 保护。此操作已记录。",
+      "source_sha256": "c68c93ddf9e9b006218cfe6c6128992c1c95246fcaa336ef12a451aaf6cde518"
     },
     "untilReenroll": {
-      "text": ", bis Sie sich erneut einrichten",
-      "source_sha256": "dcee2d34cffa5c2c4633cc8fab21fe693673fbdf182fc546f2ae2d75537ed2e0"
+      "text": "直到您设置一个新的",
+      "source_sha256": "8b0b611b493df559007a5b0b909f8acf6362d17bd0f1299c7276a399e11c055a"
     },
     "currentCode": {
       "text": "Aktueller 验证码",
@@ -79,12 +79,12 @@
       "source_sha256": "aff72ace4c9c96e04f0608e70a43200d19caf51749482d0eb35ee05fd33fc48b"
     },
     "titleManual": {
-      "text": "管理员-API-Zugriff",
-      "source_sha256": "7e094f2abbccf42cf439b8d27deb8d8698234f53af1237dfb577cca6e9cd5982"
+      "text": "管理 API 访问",
+      "source_sha256": "94be4815a1a196e33b7e69b001dd6ba94265a8332e8b073584b9c1695762b165"
     },
     "unauthorizedBody": {
-      "text": "Eine geschuetzte Route unter /api/admin/ hat 401 未经授权 zurueckgegeben。 IAM-Sitzungsauthentifizierung aktiv ist, ist Ihre Sign-in meist abgelaufen — melden Sie sich erneut an。请注意浏览器管理员的身份验证不使用服务器上的 ADMIN_TOKEN ueberein（z. B. nach einem Datenbank-Reset 或 wenn nur a Seite des Paars geaendert wurde）。 Nach the Korrigieren des Tokens hart neu laden or /login oeffnen, um a neue IAM-Session aufzubauen.",
-      "source_sha256": "86b2f15818cdc9d35d6494986c9a88ec1482df5161f99214c7baeb261feea36d"
+      "text": "/api/admin/ 处的受保护路由返回 401 Unauthorized。如果 IAM 会话身份验证处于活动状态，您的登录通常会过期 - 请重新登录。如果没有会话身份验证，浏览器的管理登录密码与服务器上存储的 ADMIN_TOKEN 不匹配（例如，在数据库重置后或仅更改了其中一侧时）。更正令牌后，硬重新加载或打开 /login 以建立新的 IAM 会话。",
+      "source_sha256": "041b6f1655b35a81efdfa78f4b5903983dbc1529d06562b716ad82826463df96"
     },
     "quickFacts": {
       "text": "库兹信息：",
@@ -111,8 +111,8 @@
       "source_sha256": "eb22bccdb665389d79d6499dbc2f811c9995bc910b503f319caa453492fe5a84"
     },
     "unixSecondary": {
-      "text": "/etc/aic/ 或 /Library/Application Support/com.analoginfo/ 下的设置； Geheimnisse ueber the Plattform-Keyring (Linux Secret Service / macOS Keychain)，而不是 Klartextdateien。",
-      "source_sha256": "85f4f0ce310d449dc6381e75d16df35ff7e8a511b3d0d3f8f571f4f300318985"
+      "text": "/etc/aic/ 或 /Library/Application Support/com.analoginfo/ 下的设置；通过平台密钥环（Linux Secret Service / macOS Keychain）的秘密，而不是纯文本文件。",
+      "source_sha256": "ec2c7f1bade38336ca55f5f133b65480bc0b47ad8a420895abe8275e07b45268"
     },
     "iamPrimary": {
       "text": "IAM-身份验证",
@@ -123,16 +123,16 @@
       "source_sha256": "ed79e51dfec47ae9476ee58786336c2b198ee4c3d1ffc6b825ec5e7ef1eadb2c"
     },
     "operatorsFooter": {
-      "text": "Fuer Betreiber：siehe docs/SECURITY.md 和 pim-app-config/docs/CONFIGURATION_STORAGE.md（HKLM-/Keyring-Layout）。",
-      "source_sha256": "21921c85d55afd80b1619b42c10d42804f7d5571af3ec2e91c58e023c026070c"
+      "text": "对于操作员：请参阅 docs/SECURITY.md 和 pim-app-config/docs/CONFIGURATION_STORAGE.md （HKLM/Keyring 布局）。",
+      "source_sha256": "be1698d02534b1c7ef91dd333276b084f9b619d78ce8fa210d883b9124687fbe"
     },
     "openSettings": {
       "text": "设置关闭",
       "source_sha256": "536a45abc1445fa1d69b13c1592b880a3b7ededca3d0ba42b048527e4bfc4ae3"
     },
     "signIn": {
-      "text": "Anmelden",
-      "source_sha256": "a329a32263a460ff8d4bdf4640fd793b5dd91c99362e0ab4fb061d56883b098f"
+      "text": "登入",
+      "source_sha256": "bfd402b2f6f3812529b55596136d3a11c51616317e3b1cd999928e2d4eae7d3f"
     },
     "close": {
       "text": "关闭",
@@ -157,8 +157,8 @@
       "source_sha256": "145f05d5e40bcba9bd17cdd0ec6c4e3f3682ddc92dcb6828a3b81d33018f3fa5"
     },
     "moveMachine": {
-      "text": "Maschine in a andere Group verschieben",
-      "source_sha256": "3d57809d49d6de8398686396c1078cfb6a8de0c5191a30e4c6a29d6fcce04fb9"
+      "text": "将机器移至另一组",
+      "source_sha256": "5b89c7cb09f8738714570a27ed02a837e06c50de2278c120f62cae48023aada6"
     },
     "issuances": {
       "text": "奥斯泰伦根",
@@ -169,8 +169,8 @@
       "source_sha256": "ff62f5dce1d5a00880e2f98ac3161c89a2a35fd06831d6b6062fd24088151609"
     },
     "redownloadSettings": {
-      "text": "settings.json erneut herunterladen",
-      "source_sha256": "7a7a22c7d56eb05bc0cb08f0710f5175662b64f8edb957f1821bedb9afa4b55b"
+      "text": "再次下载settings.json",
+      "source_sha256": "ea716927302765fe4fb89d7049dbe661ec6ef3b201baf33b2854213767753696"
     },
     "rotateCredential": {
       "text": "罗蒂伦资料",
@@ -185,8 +185,8 @@
       "source_sha256": "8ce4cd0f1db49777f7a1dd25bc631992fd0d67413ee2cbf74d5ed8315f42352a"
     },
     "importSettings": {
-      "text": "settings.json-Dateien registrieren",
-      "source_sha256": "4072659528f293ae3d6933d18704e6707cb5b4d7364d2c73c3862e052f130c91"
+      "text": "注册settings.json文件",
+      "source_sha256": "78e22ed9c5024a5a06b59ecc43a8e1c6803f18de241b5f56bfbdcaafd2492b82"
     },
     "removeImportFile": {
       "text": "进口清单的日期",
@@ -269,12 +269,12 @@
       "source_sha256": "59887edaf7745fb18ba86a79230208cd2c2fd431b31ff9f3326b536f87918be6"
     },
     "targetGroupHelperPick": {
-      "text": "Aus Elevationsplattform-Policy ({{platform}}) waehlen 或 benutzerdefinierten OS-Gruppennamen eingeben。",
-      "source_sha256": "6a306e79a353517550711ec9e2ec233414e185a3135056dcf1c13d485b472b5d"
+      "text": "从提升平台策略 ({{platform}}) 中选择或输入自定义操作系统组名称。",
+      "source_sha256": "ffe920c9a587a86e5cd708a2f730502e1507d00bf42d5ca33c2fd034d8cf6b25"
     },
     "targetGroupHelperType": {
-      "text": "OS-Gruppennamen eingeben (Plattformrichtlinie not geladen).",
-      "source_sha256": "008c3993f00404600a0a545cf371d2e9e988129eac959cec13812d617a965f47"
+      "text": "输入操作系统组名称（未加载平台策略）。",
+      "source_sha256": "2e06e810415c818dad835380c2dc5523356c23e8710d96301cf334fd7f530e58"
     },
     "strategy": {
       "text": "活动代码策略",
@@ -293,8 +293,8 @@
       "source_sha256": "7ed4f77602dcfc60e93a7c46ec49f34e73d2ba72b045cc95f0935d79afe9ac73"
     },
     "strategyHint": {
-      "text": "Der Agent 使用 Seiner konfiguriertenlevation_strategy_id 离线；柴油策略 waehlen，与 Endpunkt bereitgestellt wurde。",
-      "source_sha256": "6edf9654725b2f5e074ab98c7e232df03a7bdc4cd69f5e10e018fd07ec522a94"
+      "text": "代理使用其配置的elevation_strategy_id进行离线检查；选择用于部署端点的相同策略。",
+      "source_sha256": "b4129dc20f76b3f7cf78e7bc891c8ea7df7ad9b1fba63d2e22a643eb47d4a9f1"
     },
     "strategiesLoadFailed": {
       "text": "活动代码-战略不是立即生效的。",
@@ -333,8 +333,8 @@
       "source_sha256": "e6e5f0fa290d1a6660466194b7fc9f9d5faa64e6b0c4767c3d703444299059c3"
     },
     "createElevationTitle": {
-      "text": "Elevationscode erstellen",
-      "source_sha256": "fdfc7849b07a1e944431caa27f37505d7cff7e527b6323e0fcb9fa4911ae9edd"
+      "text": "创建高程代码",
+      "source_sha256": "b1f9442847c29c16a5b4d8588316577b9f792d26e85849d0ac46c1911f1c0aec"
     },
     "usageType": {
       "text": "努宗格",
@@ -405,12 +405,12 @@
       "source_sha256": "386bb590dbea2eee5d0a8c2f2df8a6327126da74c66e523bf41b19f338f0582f"
     },
     "industryStandardHelper": {
-      "text": "Regulatorisches 或 Benchmark-Profil waehlen，是 Kennwortrichtlinie dieser Identitaet vorzufuellen。 Benutzerdefiniert waehlen, um Felder without Ersetzen to bearbeiten.",
-      "source_sha256": "e85bdf6c2c5fe1cca65498e9ce629413efa5904b58bf816b6b3f2897e499e3b6"
+      "text": "选择监管或基准配置文件以预填充此身份的密码策略。选择自定义以编辑字段而不替换。",
+      "source_sha256": "47298d2e7fe77dc7f7786e7b3da1f4f79d9595aa6b1f867e90e7da4d1e94937a"
     },
     "saveTemplate": {
-      "text": "Vorlage speichern",
-      "source_sha256": "c5505bb9de3b8bbd03cfc2f778ea34630d1a9ddefb1cf5c7dc993c9d502a2720"
+      "text": "保存模板",
+      "source_sha256": "ba071e525111390ebc417e6d3db43586eb03160885b12626334d82f8dfdd033a"
     },
     "saving": {
       "text": "维尔德·格斯佩歇特…",
@@ -453,8 +453,8 @@
       "source_sha256": "ac2d953477be5979f81603a1c301bd0640cca14efdc1bb44941e9d9f8ea43d9d"
     },
     "loadIssuancesFailed": {
-      "text": "Ausstellungen konnten not geladen werden",
-      "source_sha256": "8592129935217824e0f9050cdb648ceec9c6a28bb84b677d024fae1802abf34d"
+      "text": "无法加载发行",
+      "source_sha256": "9a86f1e1286ba3af74e059c354ca185bacf39deb030cce8f98b2bf8a6afedcbb"
     },
     "downloadFailed": {
       "text": "下载fehlgeschlagen",
@@ -473,20 +473,20 @@
       "source_sha256": "8aea902c8c4b87888604a0f206bebb05aa84013615238a76f7eeb5b2f4e9b352"
     },
     "clipboardWriteFailed": {
-      "text": "Zwischenablage konnte not beschrieben werden",
-      "source_sha256": "aaae26ac8efa9c3fc34a56ed8e1b7285b919e77e19b29e267b7a4d1d9e5d03f3"
+      "text": "剪贴板无法写入",
+      "source_sha256": "3d40cc43664cc3f2120a21d49a293eb653fd6ac2463a57b39685e6f948c682ab"
     },
     "rotateConnectedOnly": {
-      "text": "Zugangsdaten rotieren (nur ConnectedManaged)",
-      "source_sha256": "d776b86c3874fee2570baa6f5d163473216cd93407a5dd0e45add74c54c943a4"
+      "text": "轮换凭据（仅限 ConnectedManaged）",
+      "source_sha256": "f5b6971d4e75c61a82bdc5819e5e974e314c517e1a718e235c8fda0c1d448f92"
     },
     "rotateUnavailable": {
-      "text": "Neu erzeugen for diese Zeile not verfuegbar (nur aktive ConnectedManaged-Ausstellungen koennen rotiert werden)",
-      "source_sha256": "839933a4437630767fb1dbea06d92fb7ec87e6e5f81ac898106bad0016a0b853"
+      "text": "重新创建不适用于该行（只能轮换活动的 ConnectedManaged 展览）",
+      "source_sha256": "345f26a90c4ced3f932f39ba352c479734e1bf48f1a54439b41f67dcb14c3e46"
     },
     "revokeActiveOnly": {
-      "text": "Nur aktive Ausstellungen koennen Widerrufen werden",
-      "source_sha256": "908720cbfc7b32de3b218f7a98c8225f12d07bae49a1926ad59270b7d0d2ca6f"
+      "text": "只有正在进行的展览才能被撤销",
+      "source_sha256": "2d0e583028cccae97ea85acfaed7c35f28ed256f1c4b3b14fbfa8fac59c51630"
     },
     "defaultSystemGroup": {
       "text": "标准系统集团",
@@ -541,8 +541,8 @@
       "source_sha256": "c11abffd277d0716a3b411dac974c8c0800a1e9ff621e9e7e946cf098ec81a58"
     },
     "selectGroupForOmit": {
-      "text": "没有 system_group_id 的 Dateien 的 Systemgruppe waehlen",
-      "source_sha256": "7f1366e7b79e33bde1da7a788e07241d18f536ce90677a1589a3f39cbb3a0c6a"
+      "text": "为没有 system_group_id 的文件选择系统组",
+      "source_sha256": "0c1dfeea9356397ce6861b53fd47f573ca0126dcb61a69685e7af0d7604b6853"
     },
     "importFailed": {
       "text": "进口酒精",
@@ -561,8 +561,8 @@
       "source_sha256": "0cf2814604b4c9ad9139ebf7792b197fa2072052a8d17467bb33abc6bdce7be4"
     },
     "deleteGroupAndEndpoints": {
-      "text": "集团与 Endpunkte loeschen",
-      "source_sha256": "be6bf07eb88347a4adc5717738464a5be95d16985d1691492da61832197d8375"
+      "text": "删除组和端点",
+      "source_sha256": "856399d58fd7c2ac6125b5849114c7a0ebf9df87e70890efec2a3f678141c341"
     },
     "deleteGroupOnly": {
       "text": "勒申集团",
@@ -581,8 +581,8 @@
       "source_sha256": "cef65f353e8e9eebc42d0ed1d8cb9ba88fbb10421fdec286b81f6a15d8f3a7fd"
     },
     "secretUpdateFrequency": {
-      "text": "Geheimnis-Aktualisierungsintervall (Stunden)",
-      "source_sha256": "e5aa10b4753b948abb23ce426fce0dd649f4f522732a038cb387d2e1d5d6bed5"
+      "text": "秘密更新间隔（小时）",
+      "source_sha256": "3a2ac6a8105116d28853d4fc1a65a16cf2a096e09cf0a81aece6a4d96decc465"
     },
     "requireUppercase": {
       "text": "总书本",
@@ -737,8 +737,8 @@
       "source_sha256": "720cb8d70ae324209d8f9d578bdf97edd6a40491edf84d0321535acd7ab77b23"
     },
     "noMachinesFound": {
-      "text": "„{{query}}“ 的 Keine Maschinen gefunden",
-      "source_sha256": "611477b0025ace78393e0d1dcaa38b6290acd4900afae34c016ae81762db2a12"
+      "text": "未找到“{{query}}”的机器",
+      "source_sha256": "02d943644ea2d29bff9e2ae8dfb3db81db0beeac9f52a0b35b00a0883ac11787"
     },
     "adminTokenOptional": {
       "text": "管理员令牌（可选）",
@@ -753,8 +753,8 @@
       "source_sha256": "95d6a32f334c6c76e89bc56e30e050bc227b45405ee0cc8b3410ab0d6584c74c"
     },
     "loadingPasswordHistory": {
-      "text": "Kennwortverlauf wird geladen…",
-      "source_sha256": "4e345168c5c334b02567a30e2f9866267b4686b869c4a698ee6be9fbeccf48d3"
+      "text": "正在加载密码历史记录...",
+      "source_sha256": "4ec5625b4ac2785d5a86be5be703713169c73947960efab832449453b9560cda"
     },
     "noPasswordHistory": {
       "text": "Kein Kennwortverlauf for diese Identitaet verfuegbar。",
@@ -797,8 +797,8 @@
       "source_sha256": "da974576b029198a7bd22bca6b36836269bf3f0da5606bceb686022b6b475951"
     },
     "loadTemplateFailed": {
-      "text": "Vorlage for diesen Nutzungstyp konnte not geladen werden。",
-      "source_sha256": "041683d618ab928d737709d548c212d23de5184d5eedcbb06745da2f3e50ac50"
+      "text": "无法加载此使用类型的模板。",
+      "source_sha256": "cb3af5ba617de9225c2c2b15d498cb9eca2da9db46a413ff3d3d6f6e2ded6f17"
     },
     "statusExpired": {
       "text": "阿布盖劳芬",

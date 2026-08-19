@@ -136,7 +136,7 @@
     "source_sha256": "e1a5805bcbc1a9167d637f24fd8fed7480a67002595c67ec24f250e46def42b7"
   },
   "wizardGroup": {
-    "text": "System group whose password policy, identity template, and elevation settings are copied into the issuance.",
+    "text": "其密码策略、身份模板和提升设置复制到发行中的系统组。",
     "source_sha256": "f3bc2942ca8ffb5f37314aa958681bbd1766675e19f961f7893172f9b175d80b"
   },
   "passwordLength": {
@@ -188,7 +188,7 @@
     "source_sha256": "4a394e7e2414a21b729c70ec96cbc37eb82b67ca84970abff07155ff95ace8fc"
   },
   "elevationEndpoint": {
-    "text": "Endpoint that accepts the code through the offline agent elevation channel.",
+    "text": "通过离线代理提升通道接受代码的端点。",
     "source_sha256": "c67179191f74b5f4311d948ec6c8241b08ebb29512135b5f01896e123ccdf813"
   },
   "elevationTargetGroup": {
@@ -196,7 +196,7 @@
     "source_sha256": "e9371a9f0472b8eeccd421c0751ef464611e08a571cbc6fd13fe3a173d002f31"
   },
   "elevationDuration": {
-    "text": "Minutes the elevation stays active after activation (1–480).",
+    "text": "激活后海拔保持活动状态的分钟数 (1–480)。",
     "source_sha256": "9a111f0d9e050b381a89c095a650cd9c158718ec61b2c9bfcea4c39cf85a0c29"
   },
   "elevationScheduled": {
@@ -264,7 +264,7 @@
     "source_sha256": "fe285f648bc82e96068223be372bdcd7d308e83cec734f6dcff5aa3bdcb95fbf"
   },
   "loginResetToken": {
-    "text": "One-time token from your password-reset email. Paste it here to set a new password.",
+    "text": "来自您的密码重置电子邮件的一次性令牌。将其粘贴到此处以设置新密码。",
     "source_sha256": "5af28c47fb36f5617285ae9faa75ede24b24a45d245ee65fcb8aa90bc1ddd8da"
   },
   "loginWebAuthn": {
@@ -336,7 +336,7 @@
     "source_sha256": "d07a2b2289fcd0527802ba31009efafc166b98a3c4c43ccfc9c58ffe67ec357f"
   },
   "threatIntelCidr": {
-    "text": "Network range to allow or suppress in threat-intel decisions. Use CIDR notation.",
+    "text": "在威胁情报决策中允许或抑制的网络范围。使用 CIDR 表示法。",
     "source_sha256": "4bd87b6f99cc9f3f1599bb5c310dbe9967463fed905ab33ff321b6f4baa16bba"
   },
   "threatIntelComment": {
@@ -364,7 +364,7 @@
     "source_sha256": "4221f13528588aff027f10009243f9184c8f031f7fb97c5623c545d08323eee5"
   },
   "idpClientSecret": {
-    "text": "Client secret for confidential OIDC clients. Stored as a secret; never paste into tickets.",
+    "text": "机密 OIDC 客户的客户机密。作为秘密存储；切勿粘贴到门票中。",
     "source_sha256": "e551b309847b606bd42fe279aaf05380da9dcd019b8fc18d39e38055056a5475"
   },
   "idpDisplayName": {
@@ -392,7 +392,7 @@
     "source_sha256": "d90b2bb6b474ca91f28b44f2054fb63e41dc29e00fcc25f8e70504fcc9001755"
   },
   "localPwMinLength": {
-    "text": "Minimum length for local IAM passwords under this policy.",
+    "text": "此策略下本地 IAM 密码的最小长度。",
     "source_sha256": "fc43543a8d3c024e910762ad2d28fcdf16fdb50d07e2468042b93ac73eb3c095"
   },
   "localPwMaxAgeDays": {
@@ -400,7 +400,7 @@
     "source_sha256": "60bf7d84addb680b56fe9304454dd8c3515ac01d6b5d55c0b2a69028c0c7878d"
   },
   "localPwMinAgeDays": {
-    "text": "Minimum days between local password changes. Prevents rapid recycle of history.",
+    "text": "本地密码更改之间的最短天数。防止历史的快速循环。",
     "source_sha256": "1ddacdf4dcfb9d71f040eb83e8d0b4282356727ad9ae5e78b69a632f43844212"
   },
   "localPwHistoryCount": {
@@ -412,7 +412,7 @@
     "source_sha256": "fa1e9f1700e1ef97e19f34aa6f5a83327d4c6c0fd9087fff07b17287bb595372"
   },
   "adHomeDomain": {
-    "text": "Prime Active Directory DNS domain for this trust policy (for example contoso.local).",
+    "text": "此信任策略的主要 Active Directory DNS 域（例如 contoso.local）。",
     "source_sha256": "f1e35b0af278c15daa931ff37312f02434a6c42c64124b8320d900ec2f15817b"
   },
   "adFederatedDomains": {
@@ -428,7 +428,7 @@
     "source_sha256": "79500feb4dda69478f0d7fac588e4123b35fa583509615b5ffb1214e8cc716e3"
   },
   "adEvalGroups": {
-    "text": "Comma-separated groups to evaluate for elevated mapping under the trust policy.",
+    "text": "逗号分隔的组，用于评估信任策略下的提升映射。",
     "source_sha256": "7b4dcc8f82a49b0a0018bd7680c54598b9933b2e6c59123161f71f9c300eb611"
   },
   "countryAllowList": {
@@ -448,7 +448,7 @@
     "source_sha256": "af9ccd82d0de4e5f5c47f85bf6d4d1d1954d4949b79802d5e8c99155d924dde7"
   },
   "logonPolicyName": {
-    "text": "Name of this logon policy. Principals and roles reference it by this label.",
+    "text": "此登录策略的名称。校长和角色通过此标签引用它。",
     "source_sha256": "b88dbe46d12742724617e7815677dc1dd7a0f1d493c84d51f4824588ee877e02"
   },
   "logonPolicyValue": {
@@ -460,7 +460,7 @@
     "source_sha256": "be2b1334855b2d77a0ed96475ec3b0b171194f34b7d65cc6199fa059c75758f1"
   },
   "ipRuleComment": {
-    "text": "Optional note describing who or what this IP rule is for.",
+    "text": "描述此 IP 规则适用于谁或什么的可选注释。",
     "source_sha256": "4d67ebc85cc0e97109c49fe1b42804711d5ad8cf85a61cb0133d3a67baf58966"
   },
   "idpClaimFilterMode": {
@@ -516,7 +516,7 @@
     "source_sha256": "5d96bad10498ff2ac7fc7a37e9f7f9a6780537ab33ecefc8b44f99aa7dcc7778"
   },
   "fourEyesManagerEmail": {
-    "text": "Email of the manager or second person who must acknowledge.",
+    "text": "必须确认的经理或第二人的电子邮件。",
     "source_sha256": "7a81e8728214385171a9d63c819ff6910599f34d9d4f5c4578b5120df4f0a80b"
   },
   "fourEyesHours": {
@@ -528,11 +528,11 @@
     "source_sha256": "0da4b86ea57f36faf9e30f55a9b9f5f821aa442f050aede42ee9ac6b2501197e"
   },
   "dryRunSourceIp": {
-    "text": "Source IP used for a dry-run access-map evaluation. Does not change live rules.",
+    "text": "用于试运行访问映射评估的源 IP。不改变实时规则。",
     "source_sha256": "1f86e42b66c6646037b64ce15cf1503f2851f984a8bd00d692dc89a859304705"
   },
   "pamConnectionPointName": {
-    "text": "Label operators see when opening a session. Prefer the machine or service name they already know.",
+    "text": "标签操作员在打开会话时会看到。更喜欢他们已经知道的机器或服务名称。",
     "source_sha256": "1ca129a40992b4224702486a43f130fd246c7fb234152fce33fd08f573f7f825"
   },
   "pamProtocol": {
@@ -700,7 +700,7 @@
     "source_sha256": "b9611f00063744cda7473bc5702578eaad5be5febf2cf98f739423e6d380508f"
   },
   "commandAssignmentSet": {
-    "text": "Command governance set to attach. Its allow and deny patterns apply in the chosen scope.",
+    "text": "命令治理设置为附加。其允许和拒绝模式适用于所选范围。",
     "source_sha256": "f4eeb4d8914dd8e3c6840dbb0aaf945074a73e6c36e69f637b3ef0f839ee108a"
   },
   "commandAssignmentScope": {
@@ -740,7 +740,7 @@
     "source_sha256": "16fd9e68795c0e1691d45e0a527598df485a609e5c1a8cafe5a76d0961d48db9"
   },
   "commandEntitlementNotes": {
-    "text": "Optional operator note on why this entitlement exists. Not a secret.",
+    "text": "关于为什么存在此权利的可选操作员注释。这不是秘密。",
     "source_sha256": "73d9c6ca63f04cf1f3a02c801ad3fcc7a63fb99b88ac210e8a9630bd5f4802f5"
   },
   "commandPreviewRaw": {
@@ -804,7 +804,7 @@
     "source_sha256": "2bb194d13cf8f6c673dc16de34eb38228c8b66416183f278c6819e6c0b2be951"
   },
   "emailGraphTenantId": {
-    "text": "Microsoft Entra (Azure AD) tenant ID used for Graph sendMail with modern auth.",
+    "text": "用于具有现代身份验证的 Graph sendMail 的 Microsoft Entra (Azure AD) 租户 ID。",
     "source_sha256": "38a94f06e2de5534e4613b05cbdf0497e9bdf3198b0151447f6cce516e2b5e85"
   },
   "emailGraphClientId": {
@@ -820,7 +820,7 @@
     "source_sha256": "db800ad0f4297b45f453e74df1e614daad986e70aa553119e14ad8c381145f5a"
   },
   "emailApiKey": {
-    "text": "API key for this email provider. Stored as a secret; never paste into tickets.",
+    "text": "该电子邮件提供商的 API 密钥。作为秘密存储；切勿粘贴到门票中。",
     "source_sha256": "9fb08135ba3ff2ab247ee317a54c931c64f9d4372d24db0920660580a81bcaa6"
   },
   "emailFromAddress": {
@@ -864,11 +864,11 @@
     "source_sha256": "e66e86ddb0caef25c7bcbea879b50e97a18d408c8507893d4458bc5122afb861"
   },
   "messagingProbeLog": {
-    "text": "Read-only step log from the last connectivity or authentication probe. Secrets are never shown.",
+    "text": "上次连接或身份验证探测的只读步骤日志。秘密永远不会被显露出来。",
     "source_sha256": "6477266304a1846d73860ea1928b514d960570d32700b23903f318685a1072c0"
   },
   "smsProvider": {
-    "text": "Which SMS send system to use (Twilio, MessageBird, Vonage, Plivo, Telnyx, or SNS).",
+    "text": "使用哪种 SMS 发送系统（Twilio、MessageBird、Vonage、Plivo、Telnyx 或 SNS）。",
     "source_sha256": "fbb59b097afb994b89dc1bc747fd15e5c151794d7a070a099929843c25ab1f01"
   },
   "smsTwilioSid": {
@@ -920,7 +920,7 @@
     "source_sha256": "cfb276cab824921da50eeaa9c9781f68dcb6a2a879e4fec5dbb523cc4f5f2082"
   },
   "elevationChallengeId": {
-    "text": "Challenge identifier returned by the agent. Paste it to compute a response.",
+    "text": "代理返回的质询标识符。粘贴它以计算响应。",
     "source_sha256": "4c0781f2b6f37469f739db850d23d44c6045c48a3990df8595f9619b3b266fe6"
   },
   "elevationResponse": {
@@ -936,7 +936,7 @@
     "source_sha256": "13ca7068de62c605864f328bbb43bab7632a49ceceee1fba046e35a8f9fc7b7a"
   },
   "auditEngagementType": {
-    "text": "Whether this is an internal, customer, or external-firm engagement.",
+    "text": "无论这是内部、客户还是外部公司的参与。",
     "source_sha256": "1e83f747d891cd4ec397354e2615b84e04e08c422c32dd0447b7571d30854b25"
   },
   "auditFirm": {
@@ -980,7 +980,7 @@
     "source_sha256": "dbd2dc04c8ad3b51c8747881d5fe64731f953ed7117ebfda3ff7ac99ab232059"
   },
   "auditCitationSource": {
-    "text": "Identifier of the cited source (control id, document id, or ticket).",
+    "text": "引用来源的标识符（控制 ID、文档 ID 或票证）。",
     "source_sha256": "5e6998895d1eac2876079ca1be3863403fe75900fd8b0dbbcc5f827d9624fb8f"
   },
   "auditCitationSummary": {
@@ -1008,7 +1008,7 @@
     "source_sha256": "e6d9c29ee5140437679dc241e7516c10c8c90c9021cf5450dd6f0d3289f81593"
   },
   "riskImpact": {
-    "text": "Inherent impact before treatment (1–5 or the scale your program uses).",
+    "text": "治疗前的固有影响（1-5 或您的计划使用的等级）。",
     "source_sha256": "0aa3d03d73207c357e31b5de5e205dc2cbe699a313f4266654ee346151214752"
   },
   "riskTreatment": {
@@ -1016,7 +1016,7 @@
     "source_sha256": "2853b30b1c90249ae54492a4e5ec82e2d4ff0352570cebb4de4c9773e8335e9b"
   },
   "riskTreatmentSummary": {
-    "text": "Plain-language summary of the treatment plan and owners.",
+    "text": "治疗计划和所有者的简单语言摘要。",
     "source_sha256": "06b93949456352ecb2d2a7dd8ad85f2e937cc8c62381a5858ab1811cee344681"
   },
   "riskResidualLikelihood": {
@@ -1060,7 +1060,7 @@
     "source_sha256": "0c6beab3ad324f5bbcd5094398099fa4849f8ba9c3f1445aecf1d696aec80342"
   },
   "eventsDestName": {
-    "text": "Operator label for this HTTP event destination.",
+    "text": "此 HTTP 事件目标的运算符标签。",
     "source_sha256": "b5eb46ce73f64b32d5d76cfefdb24517a8e88080bf8461416a326d17744ea6dd"
   },
   "eventsTypeFilter": {
@@ -1084,7 +1084,7 @@
     "source_sha256": "4ec3f229dd270bf7ee13520bf7573d083d43dc7a9677f3388324a653a03868dc"
   },
   "knownDefaultMaskPasswords": {
-    "text": "When on, hides published factory passwords in the grid. Turn off to confirm the documented default.",
+    "text": "启用后，隐藏网格中已发布的工厂密码。关闭以确认记录的默认值。",
     "source_sha256": "d71b449d8cbad53f8ae82ef5bb634825fe16106f2801d30dd144e6b21e09e6e9"
   },
   "knownDefaultCustomerCsv": {
@@ -1116,7 +1116,7 @@
     "source_sha256": "678328a2b51141f1be351a21ae44be0147369b11948a080a96fca2b898ea6513"
   },
   "knownDefaultBannerMatchHint": {
-    "text": "Banner tokens separated by | used to match scan signatures.",
+    "text": "横幅标记由 | 分隔用于匹配扫描签名。",
     "source_sha256": "99892d717603d82df3f40cc15ff72b65c89b4a7bbe7380bb902271157e283c7d"
   },
   "knownDefaultNotes": {
@@ -1144,7 +1144,7 @@
     "source_sha256": "cdeca4554ed17e22b9cb42ab9b1b09b2d5d6cc99417c0d1cca77040affa5bb0a"
   },
   "otScanNetworks": {
-    "text": "IPv4 networks to scan during discovery. Enter one CIDR per line. The first network is used for the next run.",
+    "text": "在发现期间要扫描的 IPv4 网络。每行输入一个 CIDR。第一个网络用于下一次运行。",
     "source_sha256": "5834f4649a122340da8fe196ddd7122f64e6074c366edda5a68d92e020cc329a"
   },
   "otDiscoveryInterval": {
@@ -1160,7 +1160,7 @@
     "source_sha256": "3bc2a0eb877e00bac5d848c1fbeccd405e0fc9e095d7832f59fdf0a6f8045d85"
   },
   "otRotateNewPassword": {
-    "text": "New password to apply on the target after rotation and vault propagation complete.",
+    "text": "旋转和保管库传播完成后应用于目标的新密码。",
     "source_sha256": "213300940e2783c85cbb2f3a7bf3f713e589f9bb61bfd604816051b9d9f81927"
   },
   "otBreakGlassReason": {
@@ -1172,7 +1172,7 @@
     "source_sha256": "9f7744d8b46400e24f696881bc9dd063a6aafc00d9604ed3ccacb30f32611963"
   },
   "actionSave": {
-    "text": "Saves the current changes to the server.",
+    "text": "将当前更改保存到服务器。",
     "source_sha256": "d0d1ee4349586ece84e1c06d921668fe7e84b03f6aaa9044892629b9cbe0da70"
   },
   "actionCancel": {
@@ -1184,7 +1184,7 @@
     "source_sha256": "cf7d08fc86749607e1d794cb0c4b1a11bdc09415bfff9d84e099748c4420e8b8"
   },
   "actionCreate": {
-    "text": "Opens the form to create a new item.",
+    "text": "打开表单以创建新项目。",
     "source_sha256": "bb87e18e94258f3d25f09bf899a306121126f025a469ade65528c29cc436ebf7"
   },
   "actionEdit": {
@@ -1204,7 +1204,7 @@
     "source_sha256": "99831355a0773be581c72921bc2a383a1bb2c4cf25c3fa12d57b04bdfccec8b8"
   },
   "actionCopy": {
-    "text": "Copies this value to the clipboard.",
+    "text": "将此值复制到剪贴板。",
     "source_sha256": "173fdba46f17f05edaf02dd8e065a5c53f5ac3929b86aa3b509d8ca3375e4e9f"
   },
   "actionReveal": {
@@ -1212,7 +1212,7 @@
     "source_sha256": "e7cf05b8447a4345270a3840f66b8b3bc0dbb92b37cb9df20791884aa28f11db"
   },
   "actionDownload": {
-    "text": "Downloads this file or export to your computer.",
+    "text": "下载此文件或导出到您的计算机。",
     "source_sha256": "9c880fd2b1019f753c17b2e92bfc564894350a0930a079f2070f76b1826a8320"
   },
   "actionUpload": {
@@ -1224,7 +1224,7 @@
     "source_sha256": "41ee4952d93449e7584447a85b8202f6ee2f04fefa3fb715dbc1f8fc82b60d96"
   },
   "actionFilter": {
-    "text": "Opens or clears filters for this view.",
+    "text": "打开或清除该视图的过滤器。",
     "source_sha256": "4734c41ec87a43257d2a291b053669e1d96f2b79f69d3f09f711a049f99d8f7d"
   },
   "actionMore": {
@@ -1312,7 +1312,7 @@
     "source_sha256": "bf4c1c056cd9427ea88c1266537b7866fb35646beee10cffa0d0ffa52eb6a09d"
   },
   "actionEnsure": {
-    "text": "Creates or repairs the AIC Server local Jump capacity endpoint.",
+    "text": "创建或修复 AIC Server 本地跳转容量端点。",
     "source_sha256": "40c5418937d1c5767c64da016819567ec0cdbe9b7d159f0a104fdaaa4aa7c489"
   },
   "actionProbe": {
@@ -1320,7 +1320,7 @@
     "source_sha256": "c4068d6d9bbabd8b7fa1672936d70813e7e3782ef52e7d8aeec742f4de5a37cc"
   },
   "actionMintToken": {
-    "text": "Creates a one-time enrollment code for a new Jump host.",
+    "text": "为新的 Jump 主机创建一次性注册代码。",
     "source_sha256": "dde5ddb368694202f414e3cd80ea5a541f61d1a9e8b34c5a79fb998fcec57159"
   },
   "actionPlaneOn": {
@@ -1332,7 +1332,7 @@
     "source_sha256": "d5d652866187edff919ba761e2a50da3c4917db46939d9122a1c684d69518765"
   },
   "actionFavorite": {
-    "text": "Adds or removes this system from your favorites list.",
+    "text": "在您的收藏夹列表中添加或删除该系统。",
     "source_sha256": "cbf62b7de6f03653e1fe953b9bd45b86dc6e4a0175b3be2a8f34fceef75cfa70"
   },
   "actionUnassign": {
@@ -1368,11 +1368,11 @@
     "source_sha256": "5d378e9cb86a17c0860e9a8c17f0477e4cddfb1cd488aecab6bd0e7cbf67321c"
   },
   "actionSubmit": {
-    "text": "Submits this request or form to the server.",
+    "text": "将此请求或表单提交到服务器。",
     "source_sha256": "f80ac3529006d1ff0513421d782c88eb5b1b7b753121b7be79b9c70608ea92ad"
   },
   "otTargetDisplayName": {
-    "text": "Friendly name shown in the OT inventory and Connect lists. Operators see this label — not the hostname alone.",
+    "text": "OT 库存和连接列表中显示的友好名称。操作员看到这个标签——而不仅仅是主机名。",
     "source_sha256": "73c2fea3175a35aa717099f8b1083c80f45b55b2ebad967b9640c1782ae318aa"
   },
   "otTargetHost": {
@@ -1392,7 +1392,7 @@
     "source_sha256": "027cdbed06f7ce7200fa581d883d416d7082206d1ccc0fdd3e8a55f7be03b456"
   },
   "otRotationIntervalMinutes": {
-    "text": "How often to rotate after you save with scheduling enabled. Minimum 5 minutes. Next run is computed in UTC.",
+    "text": "在启用计划的情况下保存后轮换的频率。至少 5 分钟。下一次运行以 UTC 计算。",
     "source_sha256": "28cd9f4e5529ec32dd6223aa3564fc7181195fae27cf49632aef5784bc966263"
   },
   "otRotationProtocolTarget": {
@@ -1412,7 +1412,7 @@
     "source_sha256": "98ebe3ec010bb924705c1272ddd338f62aec511d3c14ab5fc3f93b488ab167c8"
   },
   "otWizardScanNetworks": {
-    "text": "One IPv4 network per line in CIDR form. Discovery uses the first network when you start the wizard scan.",
+    "text": "CIDR 形式的每条线路一个 IPv4 网络。当您启动向导扫描时，发现将使用第一个网络。",
     "source_sha256": "7c1eebed82458eff2b9f07bec680019f48cfad0f13a48b56cb946e95cb7d7e6a"
   },
   "defaultPolicyVersion": {
@@ -1452,7 +1452,7 @@
     "source_sha256": "556f087b46912d887acd556e013e6e1e3815432165c483d94eaa04f6bffe754c"
   },
   "actionClone": {
-    "text": "Creates a copy of this command list under a new name.",
+    "text": "以新名称创建此命令列表的副本。",
     "source_sha256": "0b74b66e4d560b74a0b00e90dbd810c890cdb860b3905db7c6087c1d61d79fc7"
   },
   "actionView": {
@@ -1460,7 +1460,7 @@
     "source_sha256": "180259b350501da5073989393e50dcdd7d832a37534e2e226301bb3124fa2aca"
   },
   "actionRestoreDefault": {
-    "text": "Replaces this shipped list with the factory rules. Your edits to this list are discarded. Assignments stay.",
+    "text": "用工厂规则替换此发货列表。您对此列表的编辑将被丢弃。作业保留。",
     "source_sha256": "5caf4a4207d1edf4d3625438289fe47bd1e364ccd9f72298a54017a94f881f25"
   },
   "actionAcknowledge": {
@@ -1472,7 +1472,7 @@
     "source_sha256": "7161f23af662f8169dafaa614b3507f14a4ebde85763b8336c417932ba97cb43"
   },
   "actionSetCredential": {
-    "text": "Sets or updates the credential used when opening this connection.",
+    "text": "设置或更新打开此连接时使用的凭据。",
     "source_sha256": "296ba4800e1c1861fa6221d1f3f8c4384ae866ca9a2ee3ba008d9287b5eab9c5"
   },
   "actionClipboard": {
@@ -1480,7 +1480,7 @@
     "source_sha256": "2c8b9ddba775564fc5cbb6629b1fe2aa2f7250416833a26d06388d6385479a97"
   },
   "actionFileTransfer": {
-    "text": "Opens the file-copy panel. Send delivers the file to the remote computer (SSH: SFTP into aic-transfer in the account home; Windows Remote Desktop: the user-profile aic-transfer folder). VNC cannot receive files.",
+    "text": "打开文件复制面板。 Send 将文件传送到远程计算机（SSH：SFTP 到帐户主目录中的 aic-transfer；Windows 远程桌面：用户配置文件 aic-transfer 文件夹）。 VNC 无法接收文件。",
     "source_sha256": "a1256df16367813ab049f6e8720153a891d70f6cca9e16e5eaf9bc4f45969a85"
   },
   "actionSoftKeyboard": {
@@ -1500,7 +1500,7 @@
     "source_sha256": "731e72ce5856353d6a4fac5fc572bb10f9978f5473a14ced8ca8036b98e250d3"
   },
   "actionFileUpload": {
-    "text": "Sends a file to the remote computer. SSH uses SFTP into aic-transfer in the account home. Windows Remote Desktop uses the user-profile aic-transfer folder. VNC cannot receive files. A failed send is an error, not a success.",
+    "text": "将文件发送到远程计算机。 SSH 使用 SFTP 进入帐户主目录中的 aic-transfer。 Windows 远程桌面使用用户配置文件 aic-transfer 文件夹。 VNC 无法接收文件。发送失败是一个错误，而不是成功。",
     "source_sha256": "3cb9d9511ec7c4a6d5bacfce007e3d2215fd3273b2abc85246513dcd519ab754"
   },
   "actionFileDownload": {
@@ -1552,15 +1552,15 @@
     "source_sha256": "526e5508f7829a149cd17c617691d5363a0c35b15910643c80869a9ce9dadacb"
   },
   "actionResetMfa": {
-    "text": "Clears enrolled MFA factors for this principal after you confirm. They must re-enroll.",
+    "text": "确认后清除该委托人注册的 MFA 因素。他们必须重新注册。",
     "source_sha256": "9453fbd9dcab7d49b296617bb4ea9a43b3fc8c041075430df02f56fbfc42b300"
   },
   "actionRevoke": {
-    "text": "Revokes this credential or session so it can no longer be used.",
+    "text": "撤销此凭据或会话，使其无法再使用。",
     "source_sha256": "799216167d1da1e806b50e03204dba54d5154384a693e65fa89c844c43de1ecf"
   },
   "actionAddRule": {
-    "text": "Adds a new allow or deny rule to this command set.",
+    "text": "向此命令集添加新的允许或拒绝规则。",
     "source_sha256": "cbff74cb1a701e73a4c83ceebacbc9da0dc87ccf2a2ecba3598010ea290717b6"
   },
   "actionPreview": {
@@ -1576,7 +1576,7 @@
     "source_sha256": "3ac9c548f788f9125f41b00099863034ed5becab8b44c0b2ea42b660d1fa4b05"
   },
   "actionMoveUp": {
-    "text": "Moves this rule earlier in evaluation order.",
+    "text": "将此规则移到评估顺序的前面。",
     "source_sha256": "8ad228c314166fb7358693d17a796dbb5640631391988e75e957c35ebca45d90"
   },
   "actionMoveDown": {
@@ -1596,7 +1596,7 @@
     "source_sha256": "aa735ea240173258268c4dbb6c48ed83fb26b39775a39eb448c2fa49f0f8a32e"
   },
   "actionDeploymentTemplate": {
-    "text": "Edits deployment template defaults for each usage type in this group.",
+    "text": "编辑该组中每种使用类型的部署模板默认值。",
     "source_sha256": "5db5825dd4f0d666823385f1a521fe90e44a651ea6e79cbc0fa8379dc65701a0"
   },
   "actionSettingsWizard": {
@@ -1688,7 +1688,7 @@
     "source_sha256": "d08860f3329d5d3aca6a77454f49afcb393773b34055ab37ea24ccd4a361c7fd"
   },
   "sessionHttpOnlyCookie": {
-    "text": "Stores the session in an HttpOnly cookie so script cannot read the token.",
+    "text": "将会话存储在 HttpOnly cookie 中，以便脚本无法读取令牌。",
     "source_sha256": "9e922eeac33fa3de0e0b32d7ecb02aba0b8a94c425f512109e53bd7e33a710ac"
   },
   "sessionClientStorage": {
@@ -1696,7 +1696,7 @@
     "source_sha256": "019812bbbd5a96c9fcabf79e9c82b4481bf05074fae646118322d8cf9a3bf0fb"
   },
   "threatIntelEnabled": {
-    "text": "Turns threat-intelligence lookups on or off for access decisions.",
+    "text": "打开或关闭威胁情报查找以做出访问决策。",
     "source_sha256": "a998d6ea1ea490177c462aa2af7c2d0662809967dea1586c5a6e2b7838446413"
   },
   "threatIntelFailClosed": {
@@ -1740,7 +1740,7 @@
     "source_sha256": "32022659a3968ca56b3e983c6b78227ae64d96967a69b7df828db7ef581f1855"
   },
   "windowsIaEnabled": {
-    "text": "Allows Windows integrated authentication (Negotiate) for console logon.",
+    "text": "允许控制台登录的 Windows 集成身份验证（协商）。",
     "source_sha256": "91c89f98ef1e30656693d6ee535536cbe08e3528f98a79f54b2d2e4f33ab105f"
   },
   "windowsIaAllowNtlm": {
@@ -1756,7 +1756,7 @@
     "source_sha256": "775d462ddfb490b231218ef1d7f784630641cfeabc7dd861c0d1a1dd1c690134"
   },
   "ipRuleEnabled": {
-    "text": "When off, this IP rule is ignored until you enable it again.",
+    "text": "关闭后，此 IP 规则将被忽略，直到您再次启用它。",
     "source_sha256": "b89cd2cecc6ad1505a126d75c764e7fe60f9b55479101144f0fb07fb31f3cac0"
   },
   "webAuthnRequireUv": {
@@ -1776,11 +1776,11 @@
     "source_sha256": "9c34d8edf0c5961cdc5c8b701918ce29f4ac8a14012ee3cc568eede835fc9c2d"
   },
   "accessMapTodEnabled": {
-    "text": "Turns time-of-day access rules on or off for console logon.",
+    "text": "打开或关闭控制台登录的每日时间访问规则。",
     "source_sha256": "9666167cd4b14cb7d1929b56359d65309e8bc98b3f26fb67360ec6a91535c828"
   },
   "accessMapFourEyesNotify": {
-    "text": "When on, sends the manager notify email for four-eyes acknowledgments.",
+    "text": "启用后，向经理发送四眼确认通知电子邮件。",
     "source_sha256": "78246c1bd940da2becb68659ec90ee20454a5785993be5f8f812211c0b694ee2"
   },
   "mfaTotpEnabled": {
@@ -1832,7 +1832,7 @@
     "source_sha256": "ab545349ed38ac836921ad28dbd82189978c1e0573b544c441f3f153a314e9fc"
   },
   "countryAllowPick": {
-    "text": "Search and select countries for this geography allow or deny list.",
+    "text": "搜索并选择此地理允许或拒绝列表的国家/地区。",
     "source_sha256": "88ede33b9e0d4fde1ee796a249672b59445ea0a5d995b3027669b4dfec4c5c30"
   },
   "elevationActivateImmediately": {
@@ -1848,7 +1848,7 @@
     "source_sha256": "06dc20d504b41885572ce1467081f7cd728c487bd2d11cd2780885732e4aca33"
   },
   "deploymentUsageType": {
-    "text": "Usage type whose deployment template defaults you are editing.",
+    "text": "您正在编辑其部署模板默认值的使用类型。",
     "source_sha256": "43240c6bd702693aaf3a216b010a27154971a629e2613a31383a5a0f90138e30"
   },
   "importSettingsGroup": {
@@ -1872,7 +1872,7 @@
     "source_sha256": "443843f65efad1d2f79f5668c1347c02db07ecbfd108fa67fff805536b0c9171"
   },
   "configJsonPreview": {
-    "text": "Read-only preview of the group config.json. Download to save a copy.",
+    "text": "组 config.json 的只读预览。下载以保存副本。",
     "source_sha256": "d86789c9b9a57c30f3082852eecf90ee400739807580802f23a616790818761f"
   },
   "deleteConfirmName": {
@@ -1912,7 +1912,7 @@
     "source_sha256": "f3deb52a0fa8fe371926bfc410c6bebb56b6f5802503bf62598b2d12419bca7c"
   },
   "hsmInitPin": {
-    "text": "Sets or changes a PIN on the selected HSM token. Requires the correct current PIN.",
+    "text": "设置或更改所选 HSM 令牌上的 PIN。需要正确的当前 PIN 码。",
     "source_sha256": "97f46ce91531726ac65a3813c52308d7a5ca9998c120be36bcce175b622500c4"
   },
   "hsmUserPin": {
@@ -1948,7 +1948,7 @@
     "source_sha256": "bc7ac272f8402fb2e37cf3454f312aa125ff67e1df56467a9a7b79af369f1c5c"
   },
   "notesField": {
-    "text": "Optional operator note. Use product language; do not put lab host or account recipes here.",
+    "text": "可选操作员注释。使用产品语言；不要将实验室主机或帐户食谱放在这里。",
     "source_sha256": "a2b5d5aa19efa868448977a695e0dafff57f34b7e7571c835ab7bd591c03065b"
   },
   "hostField": {
@@ -1968,7 +1968,7 @@
     "source_sha256": "d7a12c3ed68abea26009c51a58e4bb5f9e020186ac37cd2ade8531b80f774ea9"
   },
   "cloudField": {
-    "text": "Cloud provider setting for this HSM or KMS connection (region, resource, or account id).",
+    "text": "此 HSM 或 KMS 连接的云提供商设置（区域、资源或帐户 ID）。",
     "source_sha256": "af1cbbd5c12ab08604e1a9a2d5a1864d39af7c5d02476085a5e0362bf6a30918"
   },
   "vendorField": {
@@ -2036,7 +2036,7 @@
     "source_sha256": "6a3da15a420f126829f273f743d5a99bac0d8aaad117f7598b9ce5f999cc4530"
   },
   "elevationMatchSelect": {
-    "text": "How the agent recognizes the application (publisher, path, hash, or package).",
+    "text": "代理如何识别应用程序（发布者、路径、哈希或包）。",
     "source_sha256": "d544ef3a5a52c6245bae6b743237338098432552ed1d786c7e5cc200756cd6ef"
   },
   "cryptoProviderKind": {
@@ -2072,7 +2072,7 @@
     "source_sha256": "e03d272dccd7e3ed7d1facd060a78d566447dfd699dac925dadbe2afe50b2dcd"
   },
   "elevateSwitch": {
-    "text": "Allows this application to run with elevated rights when matched.",
+    "text": "允许此应用程序在匹配时以提升的权限运行。",
     "source_sha256": "06251fc787e8302ee800ad609218ecc00717cdf3ab579c417012faebfc138e3f"
   },
   "allowChildProcessesSwitch": {
@@ -2328,7 +2328,7 @@
     "source_sha256": "a931910636b54c0827462ff37171ebd73fe59ae7736dcd9356d5c10e0ce0d4bc"
   },
   "enrollmentTokenPlaintext": {
-    "text": "One-time enrollment token plaintext. Copy it now; it is not shown again.",
+    "text": "一次性注册令牌明文。立即复制；它不再显示。",
     "source_sha256": "ee2752057ce69a0c88e8ad69956590d6340446334d42bef43257c60a1f98a45f"
   },
   "enrollmentTokenRevoke": {
@@ -2348,7 +2348,7 @@
     "source_sha256": "4a319bf62ef80d19c1f0b3a69ec45642915bae26fe0fc83663156b32888b9a22"
   },
   "serverIdentityReset": {
-    "text": "Reloads server identity fields from the last saved values.",
+    "text": "从上次保存的值重新加载服务器标识字段。",
     "source_sha256": "74c0de8e15ded782c9988576cb1cf718214da9b680d4a1bae48647f3863c0a36"
   },
   "serverIdentityProbe": {
@@ -2356,7 +2356,7 @@
     "source_sha256": "1f6fa082135622433be8ddeedaaa025c8497c165aff2049906051678ce125b63"
   },
   "serverIdentityResolvedUrl": {
-    "text": "Read-only resolved advertised URL from the current port and scheme.",
+    "text": "从当前端口和方案只读解析广告 URL。",
     "source_sha256": "70c39d2cfce2058fa9fab3705d76a638c6d8f43f4dce7457d70cb55b0c389737"
   },
   "messageTemplateRefresh": {
@@ -2376,11 +2376,11 @@
     "source_sha256": "f3bd6df1a992539b62a6c3994065735be890a37edaa86372948f10cef96b1867"
   },
   "messageTemplateBuiltin": {
-    "text": "Built-in templates are read-only and cannot be deleted.",
+    "text": "内置模板是只读的，无法删除。",
     "source_sha256": "52bd22147a3ced999700797ef353b9b3166c97fd8480ce1e9ab9c003b1aeba31"
   },
   "waProbePublishSample": {
-    "text": "Publishes the sample workstation-assurance probe pack to the server catalog.",
+    "text": "将示例工作站保障探针包发布到服务器目录。",
     "source_sha256": "727b1b3469f8f6535f886cbbf02b4581f9e220313b5f8f4aba87f985ae1375a2"
   },
   "waProbeUpload": {
@@ -2392,11 +2392,11 @@
     "source_sha256": "438e2f3bc4b25b74afd34aa99b49ed0ad750bfeddb3d9ce68aaf20ec703cc88c"
   },
   "waProbePackJson": {
-    "text": "Probe pack JSON preview. Publish writes it to the server catalog.",
+    "text": "探针包 JSON 预览。发布将其写入服务器目录。",
     "source_sha256": "9f07d39caacdaa41106d14f795490782ecc10c1d0e13808ae0fd026cea7d0e58"
   },
   "waProbeActivate": {
-    "text": "Makes this probe pack the active pack for workstation assurance.",
+    "text": "使该探针包成为工作站保证的活动包。",
     "source_sha256": "a2a68b3dee01d9459773bd42f1495db538ad55886910b0811f38f386d341958c"
   },
   "policyApprovalOpen": {
@@ -2428,7 +2428,7 @@
     "source_sha256": "1af7a9374f4c0c690fbe80da539b204b1d3717db4d66192679be1782389d4d71"
   },
   "ocrSearchText": {
-    "text": "Searches OCR text across processed recordings.",
+    "text": "在已处理的录音中搜索 OCR 文本。",
     "source_sha256": "d88063df6ff44d4f1b0df892d6ac1f20f102a38675e6583fdf3e24d36b639728"
   },
   "ocrOpenRecording": {
@@ -2456,15 +2456,15 @@
     "source_sha256": "96bf9d40fa58625eb8a582e19280f16a466827510a20e8d53c26099e6d88a59c"
   },
   "waFleetRunScan": {
-    "text": "Runs or refreshes assurance scanning for this workstation.",
+    "text": "运行或刷新此工作站的保证扫描。",
     "source_sha256": "13cae108c8e2da62d5411bbbde9d17bfa9b39b88f73f7deabf66eb0eb943bbbe"
   },
   "waiverApprover": {
-    "text": "Name of the person authorizing this waiver.",
+    "text": "授权此豁免的人的姓名。",
     "source_sha256": "97dec938be56dee6b532e28317eaef3f07fb54c0b3f83d2118912ee2970b236d"
   },
   "waiverReason": {
-    "text": "Why this finding is waived and for how long.",
+    "text": "为什么这一发现被放弃以及持续多长时间。",
     "source_sha256": "1dc8f0995d4039dd26bc4b68c0d0943b2a605149f3241e724a057c42c19cf867"
   },
   "waiverExpires": {
@@ -2512,7 +2512,7 @@
     "source_sha256": "696d0c8ce843171ea4f2a95e6ed9c8da502b3be187adb472b67798dbed566675"
   },
   "actionClearAll": {
-    "text": "Clears every selected item in this list.",
+    "text": "清除此列表中的每个选定项目。",
     "source_sha256": "e84ca6635243582d1f95af676df628d9f228ccb5c8008457cea241b048d541c5"
   },
   "actionSelectAll": {
@@ -2524,7 +2524,7 @@
     "source_sha256": "b1ea5f844a1f2e679b4cd5fbd682f118ecb11eedf652ac2be0c20762ff7db388"
   },
   "actionScheduleElevation": {
-    "text": "Schedules remote non-agent local elevation with the selected identity and window.",
+    "text": "使用选定的身份和窗口安排远程非代理本地提升。",
     "source_sha256": "fbe08e896914082f945597e3b755150a6bf8b945e3c64e6e2eda9eeae5cd1a5a"
   },
   "actionRunProbe": {
@@ -2616,7 +2616,7 @@
     "source_sha256": "aa6ca6da9be2ea39c1e169c527f6297fbb787e1b9c6e54a94c05e7e07c18aae6"
   },
   "iamToolbarAccount": {
-    "text": "Opens account security or session options for the signed-in operator.",
+    "text": "为登录操作员打开帐户安全或会话选项。",
     "source_sha256": "933a8fe2f176c8119a189ec15b6cee490938c50dd1a088276f17fdbb75b2aa79"
   },
   "iamToolbarLogout": {
@@ -2636,7 +2636,7 @@
     "source_sha256": "981f881988f7a6925f607d0504b2dc587a270851e7e3fc13b28b0ddaa4b6df83"
   },
   "identityUuidField": {
-    "text": "Principal UUID when advanced entry is enabled.",
+    "text": "启用高级条目时的主要 UUID。",
     "source_sha256": "630a706994baa3425b0230a5f6d1ffdebd2fbee6a88de4eee251668280733793"
   },
   "labFillAccount": {
@@ -2660,7 +2660,7 @@
     "source_sha256": "67916fbebde50f3f68fe85f98cbcfc64cd04686d5c5af29d5cd0e76126b42cb0"
   },
   "mainNavDocs": {
-    "text": "Opens product documentation in a new browser tab.",
+    "text": "在新的浏览器选项卡中打开产品文档。",
     "source_sha256": "a102de2a02634bb0168347a614118f9e2f87e42a85e96f6bc685fc34476c1692"
   },
   "mainNavAbout": {
@@ -2700,11 +2700,11 @@
     "source_sha256": "2d19a09bfa37e198619b800837a67735b46a1d174d3652c1aff6936b3ccae50f"
   },
   "ipScannerAddTarget": {
-    "text": "Add the draft IP range or CIDR to the scan target list.",
+    "text": "将草稿 IP 范围或 CIDR 添加到扫描目标列表。",
     "source_sha256": "feaf66dc6606d04c634194b51578ae0dea9f1f47b757892d72d6ec449eff37ca"
   },
   "ipScannerIpv6Neighbors": {
-    "text": "Adds the ipv6-neighbors discovery target (OS neighbor cache and link-local). Not a full network sweep.",
+    "text": "添加 ipv6-neighbors 发现目标（操作系统邻居缓存和链路本地）。不是全面的网络扫描。",
     "source_sha256": "26af63518f9c123473b1335d785763bb8edd822cb8dab6ce1391d3b00022f59b"
   },
   "ipScannerProgressLog": {
@@ -2904,11 +2904,11 @@
     "source_sha256": "66bb8de9f775dee3c0a8f6f28723cb99636b996e63bf1f9fc4ca97f626a3b7d7"
   },
   "agentSyslogFormat": {
-    "text": "Syslog message format (RFC 5424 or related).",
+    "text": "系统日志消息格式（RFC 5424 或相关）。",
     "source_sha256": "b109852db5c27adad3a71120e3b1f7b2e60ad033ac2622a844649cf4dda07bc0"
   },
   "agentSyslogTlsVerify": {
-    "text": "When on, verifies the syslog collector TLS certificate.",
+    "text": "打开时，验证系统日志收集器 TLS 证书。",
     "source_sha256": "e69b41e697d242e5af54377d6f132112a8da4080406810c94dba639d623f5b9c"
   },
   "disclosureWizardField": {
@@ -2928,7 +2928,7 @@
     "source_sha256": "7207d73378ae000f429d0d85f703d3d894f654266bef20183eb8ebaf891e292c"
   },
   "cryptoBackupImport": {
-    "text": "Restores crypto material from a previously exported backup file.",
+    "text": "从之前导出的备份文件中恢复加密材料。",
     "source_sha256": "cc854540343d91a60c813df0d6d8de2af7e75d45f3e6bead9971274071c3574a"
   },
   "cryptoBackupDryRun": {
@@ -2964,7 +2964,7 @@
     "source_sha256": "715533e725ee8ab91d7158ec8bbad8948d9b09b9c65489a237a0f8b44418a39d"
   },
   "moveToHsm": {
-    "text": "Runs or continues migration of crypto custody from software to HSM.",
+    "text": "运行或继续将加密货币托管从软件迁移到 HSM。",
     "source_sha256": "2ea98d0c95d4e0c06d34e21f5110439e33b6746f64bd31510d6874675ae54d80"
   },
   "cryptoMigrationTarget": {
@@ -2992,7 +2992,7 @@
     "source_sha256": "88252e11a0a2ad56465d1cb004eb3f45b1a093a848308aeb0b9be07fcc073884"
   },
   "defaultPwRequireDigit": {
-    "text": "Require at least one digit in the enclave default password policy.",
+    "text": "enclave 默认密码策略中至少需要一位数字。",
     "source_sha256": "418a2962a771f87a05a43412faf6588f9e35d0d2135b91454fe2d2003735cfb1"
   },
   "defaultPwRequireSymbol": {
@@ -3004,7 +3004,7 @@
     "source_sha256": "ebecb2b2c350acc73c1208e629067f5f0505d94437099ef894395020e9759e80"
   },
   "complianceIndustry": {
-    "text": "Industry packaging used to suggest disclosure defaults.",
+    "text": "行业包装过去常常暗示默认披露。",
     "source_sha256": "de29070442b75650e4b00fcb33ebf4d2c487c5fa8c8a12c4c7a0e2215c331f7d"
   },
   "complianceCmmcLevel": {
@@ -3036,7 +3036,7 @@
     "source_sha256": "6b8691a510b43513f4e6eae9818118c8c9677d1106ee33dab75fa98310fc2cd0"
   },
   "frameworkCoverageSwitch": {
-    "text": "Includes or excludes this framework row from the coverage summary.",
+    "text": "在覆盖范围摘要中包含或排除此框架行。",
     "source_sha256": "41b1847db597ef578a273bf0f483569f49320702a1eb0261275893f95b020c30"
   },
   "accountSecurityDialogCtrl3": {
@@ -3052,7 +3052,7 @@
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "complianceAuditorSyncPanelCtrl2": {
-    "text": "Purpose help for this control on the operator console.",
+    "text": "操作员控制台上此控制的目的帮助。",
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "complianceAuditorSyncPanelCtrl1": {
@@ -3112,7 +3112,7 @@
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "eventTypeFilterEventTypeFilterEditorCtrl4": {
-    "text": "Purpose help for this control on the operator console.",
+    "text": "操作员控制台上此控制的目的帮助。",
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "eventTypeFilterEventTypeFilterEditorCtrl3": {
@@ -3124,11 +3124,11 @@
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "identityPickListCtrl3": {
-    "text": "Purpose help for this control on the operator console.",
+    "text": "操作员控制台上此控制的目的帮助。",
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "identityPickListCtrl2": {
-    "text": "Purpose help for this control on the operator console.",
+    "text": "操作员控制台上此控制的目的帮助。",
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "labTestAccountsPanelCtrl2": {
@@ -3144,7 +3144,7 @@
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "machinePolicyDialogCtrl3": {
-    "text": "Purpose help for this control on the operator console.",
+    "text": "操作员控制台上此控制的目的帮助。",
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "machinePolicyDialogCtrl2": {
@@ -3152,7 +3152,7 @@
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "machinePolicyDialogCtrl1": {
-    "text": "Purpose help for this control on the operator console.",
+    "text": "操作员控制台上此控制的目的帮助。",
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "mocksElevationChallengeMockPanelCtrl3": {
@@ -3160,7 +3160,7 @@
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "mocksElevationChallengeMockPanelCtrl2": {
-    "text": "Purpose help for this control on the operator console.",
+    "text": "操作员控制台上此控制的目的帮助。",
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "mocksElevationChallengeMockPanelCtrl1": {
@@ -3224,7 +3224,7 @@
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "passwordPolicyAdvancedPasswordPolicyFieldsCtrl3": {
-    "text": "Purpose help for this control on the operator console.",
+    "text": "操作员控制台上此控制的目的帮助。",
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "passwordPolicyAdvancedPasswordPolicyFieldsCtrl2": {
@@ -3236,7 +3236,7 @@
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "passwordPolicyBasicPasswordPolicyFieldsCtrl2": {
-    "text": "Purpose help for this control on the operator console.",
+    "text": "操作员控制台上此控制的目的帮助。",
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "passwordPolicyBasicPasswordPolicyFieldsCtrl1": {
@@ -3268,7 +3268,7 @@
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "policyInheritanceGroupPolicyInheritanceDialogCtrl1": {
-    "text": "Purpose help for this control on the operator console.",
+    "text": "操作员控制台上此控制的目的帮助。",
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "policyInheritancePolicyInheritanceTableCtrl2": {
@@ -3288,7 +3288,7 @@
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "sessionsSshTerminalViewportCtrl4": {
-    "text": "Purpose help for this control on the operator console.",
+    "text": "操作员控制台上此控制的目的帮助。",
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "sessionsSshTerminalViewportCtrl3": {
@@ -3296,7 +3296,7 @@
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "sessionsSshTerminalViewportCtrl2": {
-    "text": "Purpose help for this control on the operator console.",
+    "text": "操作员控制台上此控制的目的帮助。",
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "sessionsSshTerminalViewportCtrl1": {
@@ -3328,7 +3328,7 @@
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "settingsAgentEventDefaultsFormCtrl3": {
-    "text": "Purpose help for this control on the operator console.",
+    "text": "操作员控制台上此控制的目的帮助。",
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "settingsAgentEventDefaultsFormCtrl2": {
@@ -3340,7 +3340,7 @@
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "settingsApplyDisclosureStandardWizardCtrl5": {
-    "text": "Purpose help for this control on the operator console.",
+    "text": "操作员控制台上此控制的目的帮助。",
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "settingsCryptoCryptoBackupToolsCtrl3": {
@@ -3460,7 +3460,7 @@
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "settingsCryptoMigrateFromHsmConfirm": {
-    "text": "Type the confirmation phrase to authorize moving crypto custody from HSM back to software.",
+    "text": "输入确认短语以授权将加密货币托管从 HSM 移回软件。",
     "source_sha256": "bec317f018d737e90c234fbc3306a85454c5225502e4b97cc6d4127eaf120183"
   },
   "settingsCryptoMigrateFromHsmApply": {
@@ -3556,7 +3556,7 @@
     "source_sha256": "c3ccf9fb2b98c1bd3206c132ff7b41e10786a1fd7e130b31b6ec80949e0fb117"
   },
   "otBreakGlassReveal": {
-    "text": "Requests audited one-time reveal of the stored password for the selected asset.",
+    "text": "请求经过审核的一次性泄露所选资产的存储密码。",
     "source_sha256": "5364a57e0e108793746a0945ec25e989cab3bbd0bb0c4236cc415828d49171a9"
   },
   "otDismissReveal": {
@@ -3572,7 +3572,7 @@
     "source_sha256": "e285826d6198aceebec32fd4c63da6598835e89c046397b5daf52c05a4ef04b7"
   },
   "gdprRopaKind": {
-    "text": "Controller rows follow Article 30(1); processor rows follow Article 30(2).",
+    "text": "控制器行遵循第 30(1) 条；处理器行遵循第 30(2) 条。",
     "source_sha256": "7bc5d00d7a864e73894b67f188538a24a87756666bc850ab84ae6eccc6e3c446"
   },
   "gdprRopaActivityName": {
@@ -3616,7 +3616,7 @@
     "source_sha256": "4ff395e24747fc659d0e3ffa66dda70713765ed49bd2deb7f204c16d8b5338ef"
   },
   "gdprRopaDataSubjects": {
-    "text": "Who the data is about (for example employees, customers, or visitors).",
+    "text": "数据的对象是谁（例如员工、客户或访客）。",
     "source_sha256": "5c245dd01ac3aa4d6024ee6271ad5095c4476513014fb046ebd4528602a3911d"
   },
   "gdprRopaPersonalData": {
@@ -3624,7 +3624,7 @@
     "source_sha256": "9fc7efd29389ff6729b0a2e36743942c784fb2a695f0918940666fafad4d5f57"
   },
   "gdprRopaRecipients": {
-    "text": "Who receives the data (teams, vendors, or authorities).",
+    "text": "谁接收数据（团队、供应商或当局）。",
     "source_sha256": "fd83d4af9c19e66fee70480d5f53d99a3d8dbe272b6cc90a390d30b4f323149b"
   },
   "gdprRopaTransfers": {
@@ -3640,7 +3640,7 @@
     "source_sha256": "29b734fdc86cadf76643883abed2d9d484108b18137cdf4dc25e443cbcfac234"
   },
   "gdprRopaSecurity": {
-    "text": "General technical and organizational measures that protect this processing.",
+    "text": "保护此处理的一般技术和组织措施。",
     "source_sha256": "56485b8f82b6b4cb015aeba1cd152a0b7d83127a1f38fa5fbfe50854123ee6ee"
   },
   "gdprRopaReviewCycle": {
@@ -3652,7 +3652,7 @@
     "source_sha256": "6be40977fbf3758f3aa0882147caffa33fec839a698a589f4ae5833f8ac92478"
   },
   "gdprRopaExport": {
-    "text": "Download the active register as JSON for supervisory authority review.",
+    "text": "下载 JSON 格式的活动寄存器以供监管机构审核。",
     "source_sha256": "057ba68f1f3ffe9e5d7c72e8f093f837a24b39106341b5c91dcb44d6bdb282d0"
   },
   "gdprDpiaTitle": {
@@ -3676,7 +3676,7 @@
     "source_sha256": "302fe375a7268db8ac01b1854b6af2a4b11da5d14eb73f5f98db9650b84cedbe"
   },
   "gdprDpiaNecessity": {
-    "text": "Explain whether the processing is necessary and proportionate.",
+    "text": "解释处理是否必要且适当。",
     "source_sha256": "ae204da4c4d0e4f0120c5f9382a3d7e73f03c23289d8f1952f168c502017d504"
   },
   "gdprDpiaRisk": {
@@ -3684,11 +3684,11 @@
     "source_sha256": "f58e5252f99127bd80789495b432eeaecb9594c021c3ea57356a712291febeae"
   },
   "gdprDpiaMitigation": {
-    "text": "List measures chosen to reduce or remove those risks.",
+    "text": "列出为减少或消除这些风险而选择的措施。",
     "source_sha256": "ca6d5eb607896cc4addaa62db0a839dcc002432512668719e4a69aca38f78d75"
   },
   "gdprDpiaDpoAdvice": {
-    "text": "Record advice from the data protection officer when one is designated.",
+    "text": "当指定数据保护官员时，记录其建议。",
     "source_sha256": "d73a214ec10cb28c2b3805057f1049d0260c1e21de3d2e67fd8297c430ef062c"
   },
   "gdprDpiaPriorConsultationNotes": {
@@ -3756,7 +3756,7 @@
     "source_sha256": "6103655e7bc5bdd79049b4a28fb05bba72b3a10c6d0f0a5c01edd72891f68e94"
   },
   "gdprDsrDecision": {
-    "text": "Final decision and plain-language reason, including any exemption relied on.",
+    "text": "最终决定和通俗易懂的理由，包括所依赖的任何豁免。",
     "source_sha256": "725db5bfab4336423cd78c4c1b0e48ce0b46e11700020b405ed6774fee8b9457"
   },
   "gdprDsrExtend": {
