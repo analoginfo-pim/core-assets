@@ -3,7 +3,7 @@
   "schema_version": 2,
   "status": "Partial",
   "honesty": "This inventory lists every third-party open-source component incorporated into AIC Server from the production Cargo graph (registry, git, and vendored path crates under vendor/), the npm production graph (package-lock.json, non-dev; lockfile package name preferred over directory leaf), and incorporated on-disk assets (including lipis/flag-icons). First-party workspace path crates, AIC-named / proprietary crates, and @analoginfo-pim/* npm packages are excluded as AIC-owned code, not third-party open source. License bodies were harvested from local Cargo registry / git / vendor checkouts, node_modules LICENSE files, and in-tree LICENSE copies; common SPDX identifiers use the stored published license text when a package-local file was a pointer or absent. No package or license was invented. 5 commercial / proprietary package(s) are listed without redistributable license text (Partial — not Live).",
-  "generated_utc": "2026-08-19T14:03:25Z",
+  "generated_utc": "2026-08-19T20:53:28Z",
   "generation": {
     "tool": "core-assets/scripts/generate-open-source-credits.py",
     "cargo_lock_path": "pim-offline-server/Cargo.lock",
