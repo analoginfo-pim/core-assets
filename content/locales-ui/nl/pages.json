@@ -780,7 +780,7 @@
         "source_sha256": "542808be97fac8256ba428d8cc83f3d5ed0b43af2e338d29d4c49122c5ddaa2f"
       },
       "creditsIntro": {
-        "text": "Elke open-sourcecomponent van derden die is opgenomen in AIC Server (vrachtproductiegrafiek, npm-productiegrafiek en ingebouwde activa). Elke rij noemt het project, de licentie en de copyrightkennisgeving, indien bekend. Vouw een rij uit om de licentietekst te lezen.",
+        "text": "Elke open-sourcecomponent van derden die is opgenomen in AIC Server (vrachtproductiegrafiek, npm-productiegrafiek en opgenomen activa). Elke rij noemt het project, de licentie en de copyrightkennisgeving, indien bekend. Vouw een rij uit om de licentietekst te lezen.",
         "source_sha256": "c52c085bb1b4d48ad292f6a90c64460a54e5fc4a11cb261e0da63942ee025710"
       },
       "creditsLicenseLoadFailed": {
@@ -816,7 +816,7 @@
         "source_sha256": "053277bb67c8b6d5914ee02e424496c8ba8758a7e953ea71ab7185997877dbf1"
       },
       "creditsMeta": {
-        "text": "__PH0__ third-party entries (__PH1__ with license text). Generated __PH2__. Cargo.lock packages: __PH3__. Cargo.lock SHA-256: __PH4__. package-lock SHA-256: __PH5__. Server SBOM SHA-256: __PH6__.",
+        "text": "{{count}} vermeldingen van derden ({{withText}} met licentietekst). Gegenereerd {{when}}. Cargo.lock-pakketten: {{lockCount}}. Cargo.lock SHA-256: {{cargoSha}}. pakketslot SHA-256: {{npmSha}}. ServerSBOM SHA-256: {{sbomSha}}.",
         "source_sha256": "37cbade557d95f3a067cffa03a1c36099fd44681678975f0b8fe75e114a29c1e"
       },
       "creditsNoLicenseBody": {
@@ -2052,8 +2052,8 @@
         "source_sha256": "c926c2c50e65d5a5799f548604472ee8554b53c376e45be580b3a06a484d8fc0"
       },
       "operatorLine": {
-        "text": "Operator: {{operator}} Â· Deelnemers: {{count}} Â· Opname: {{mode}}",
-        "source_sha256": "3f1478697c55136a16505b949d61685810525b777823a9573ff5174f2727151a"
+        "text": "Operator: {{operator}} · Deelnemers: {{count}} · Opname: {{mode}}",
+        "source_sha256": "8e4bdb3ce9693602e121fd20c157a68454c7eebbb8f3ceb6bc8984a4a7590ece"
       },
       "password": {
         "text": "Wachtwoord (alleen schrijven)",
@@ -2166,7 +2166,7 @@
         }
       },
       "stateChip": {
-        "text": "State: __PH0__",
+        "text": "Staat: {{state}}",
         "source_sha256": "cdf97e373ae979b777065f0335ffbdb4d8bfdc3f1e9962a942e83360b6b77bc6"
       },
       "storeCredential": {
@@ -2182,7 +2182,7 @@
         "source_sha256": "55ae6b24fc9a2563c13a37eca84a0b7c909c1ccf446235659e17fac70f9abf3f"
       },
       "supervisorChip": {
-        "text": "Supervisor: __PH0__",
+        "text": "Toezichthouder: {{name}}",
         "source_sha256": "587f02be8489da52870489fa05b246becc4d354cb742c87da342140e8b7ee417"
       },
       "ticketRef": {
@@ -2342,7 +2342,7 @@
         "source_sha256": "e761d125e12839114232b16a9688c0ca152fbfe271462c415f57556cb3ff522f"
       },
       "deliveryHistory": {
-        "text": "Delivery History — __PH0__",
+        "text": "Leveringsgeschiedenis — {{label}}",
         "source_sha256": "1122b2db08e9aaa7a800a9713833cfab0c799ec73f3a8add4039b525f945434c"
       },
       "driftChip": {
@@ -2402,11 +2402,11 @@
         "source_sha256": "0d1af88e4f70b4c478999bf1ee3dade91ceae4640b0451c9e9f9afdc3c2f33f7"
       },
       "itemCounts": {
-        "text": "In kaart gebracht bewijsmateriaal: {{mapped}} Â· Open POA&M: {{poam}} Â· Laatste bewijsmateriaal: {{latest}}",
-        "source_sha256": "c8b04d2681588eaadcdf70bd3ba4ef0acaa27df6accdb81ca3199f439943bcaf"
+        "text": "In kaart gebracht bewijs: {{mapped}} · Open POA&M: {{poam}} · Laatste bewijs: {{latest}}",
+        "source_sha256": "a82fe75847b6b8fd14d42c1f4a91376061e2496dc8cd67f95554b8b24d8303a5"
       },
       "lastDays": {
-        "text": "Last __PH0__ days",
+        "text": "Afgelopen {{days}} dagen",
         "source_sha256": "fc2746701094b10e6b2ee05d1c0e87535b0f605ffacb79853bedcbe1851b7570"
       },
       "loadFailed": {
@@ -3086,7 +3086,7 @@
         "source_sha256": "b0cf26fac1590035c317645c6670df0fbaf842d38c72b5bb390f1e5665ceb7b0"
       },
       "loadFailed": {
-        "text": "Failed to load events: __PH0__",
+        "text": "Kan gebeurtenissen niet laden: {{message}}",
         "source_sha256": "693a35efa4ca1f507adf1ab1ca77af2d677e59b47ea4278ab06dec92b647ab05"
       },
       "loadingCatalog": {
@@ -3152,8 +3152,8 @@
         "source_sha256": "42f6352b0f726c25c2e7f4468a0f5d19e5d79e8c000683bbf0e265f4cb9662fc"
       },
       "driftUnknown": {
-        "text": "Sommige vastgezette pagina's maken geen deel uit van deze serverbuild: __PH0__. Ze worden overgeslagen, niet verwijderd.",
-        "source_sha256": "b6825aa9c7ca544e26868d11ca890a6b998b872062557b8cec014f59f1d8d1c7"
+        "text": "Sommige vastgezette pagina's maken geen deel uit van deze serverbuild: {{keys}}. Ze worden overgeslagen, niet verwijderd.",
+        "source_sha256": "2e85140ddc9a8ce8eab36fbb0bf29cfa1713ff94121f8565c880bf68ef9b3262"
       },
       "loadFailed": {
         "text": "Kon favorieten niet laden: {{error}}",
@@ -3586,8 +3586,8 @@
         "source_sha256": "472590ae974d4c1f44b3780df0b152d9119f076c61bfb3e8cb6affd7889ac0a8"
       },
       "providerLine": {
-        "text": "Provider {{provider}} Â· host {{host}} Â· id {{id}}",
-        "source_sha256": "a3e1b754ebab3fa8bff0877292cfb9f4bf467b29ee5727b24405bdc420c08392"
+        "text": "Provider {{provider}} · host {{host}} · id {{id}}",
+        "source_sha256": "ee6f45ae45ec36d4848105f91e1c9672af2ff8db31e6e7c40e550ea73e11d228"
       },
       "secretStored": {
         "text": "Geheim opgeslagen",
@@ -3606,8 +3606,8 @@
         "source_sha256": "532eaabd9574880dbf76b9b8cc00832c20a6ec113d682299550d7a6e0f345e25"
       },
       "timingLine": {
-        "text": "Wachttijd bij opstarten {{boot}}s Â· slaapstand na synchronisatie {{post}}m Â· inactief {{idle}}m Â· schema {{schedule}} Â· {{action}}",
-        "source_sha256": "e8304c361dae35d6db6609ed475759c1737f0789f8aa84a98b7167e31e773918"
+        "text": "Opstartwachttijd {{boot}}s · slaap na synchronisatie {{post}}m · inactief {{idle}}m · schema {{schedule}} · {{action}}",
+        "source_sha256": "503544f12f121e837014aeeab6052227ba023c755a6bfad08cbbff2a6ebadfb7"
       },
       "title": {
         "text": "Hypervisor-verbindingen",
@@ -3734,7 +3734,7 @@
         "source_sha256": "ab71d41f8a60a8096834eee9fe16bbc1de26d9603f5f7d27a6be191782883e24"
       },
       "diagramAriaEmphasis": {
-        "text": "Emphasized for __PH0__: __PH1__.",
+        "text": "Benadrukt voor {{role}}: {{steps}}.",
         "source_sha256": "7a74b6f2c8c5710da0fc2338d5a251af3d657cdd08b411ec62e44e45b04be843"
       },
       "diagramAriaFlow": {
@@ -4252,8 +4252,8 @@
         "source_sha256": "b24d6d33736ecd5604a4b17bc9c6481039fac362bb7df044ef1c10a2bfd21db6"
       },
       "ocrStatusLine": {
-        "text": "Tekstzoekmachine {{ready}} ({{backend}}) Â· in de wachtrij {{queued}} Â· voltooid {{completed}} Â· mislukt {{failed}}",
-        "source_sha256": "1689e21c6bd58201a119d3e70cba2e7e00b8e98f4f83133404b7154b5ffd171d"
+        "text": "Tekstzoekmachine {{ready}} ({{backend}}) · in wachtrij {{queued}} · voltooid {{completed}} · mislukt {{failed}}",
+        "source_sha256": "e69f4677d39769b6c7ddf5b35cca9e93616397c0d1a09b019fb226a4162f0f44"
       },
       "ocrUnavailable": {
         "text": "OCR-status niet beschikbaar.",
@@ -4296,7 +4296,7 @@
         "source_sha256": "a8a890d9c54bb834f9ba4c0f86fec5dc1a94d9d0e717c342be9988f0e766c187"
       },
       "planeOnSummary": {
-        "text": "Jump plane is on. Active host: __PH0__ (__PH1__). Open redirects session access to __PH2__; recording and OCR run on that host.",
+        "text": "Het sprongvliegtuig staat aan. Actieve host: {{name}} ({{id}}). Open leidt sessietoegang om naar {{url}}; opname en OCR worden op die host uitgevoerd.",
         "source_sha256": "ac923a6a286419d147704c951aa6b1182793bc25ee7be7583f9e387478e6ba5b"
       },
       "poolHelper": {
@@ -4428,7 +4428,7 @@
         "source_sha256": "faadafecaa5f3e956e6282b11e7dbdc79454c89d91c4838397520ffc373afc17"
       },
       "unhealthyHostTrail": {
-        "text": "and use the power controls there so its capacity is tracked. Placement mode: __PH0__.",
+        "text": "en gebruik daar de stroombediening zodat de capaciteit wordt bijgehouden. Plaatsingsmodus: {{mode}}.",
         "source_sha256": "d672fa97aa78c7b55ca488544b9f479ce09a2b3a93861bed362480b4bb95e232"
       },
       "vmPoolsLink": {
@@ -4684,8 +4684,8 @@
         "source_sha256": "efa0194bc2bb9d2d393ce9b7a3bf2b9e5a35c631970b2c26fc35f0d2159dbb8d"
       },
       "estDay": {
-        "text": "Estimated day (Ã24)",
-        "source_sha256": "7102c569d064e150581380ecabbe552ec09a617cf85576f4c99f21f60e5e8c7a"
+        "text": "Geschatte dag (×24)",
+        "source_sha256": "8fabd3332334a8caad0d0e617e6115baa16cc74ed3ce786de3f8705b78475f47"
       },
       "estHour": {
         "text": "Geschat uur",
@@ -5218,7 +5218,7 @@
     },
     "localEnrollment": {
       "accountNow": {
-        "text": "Account __PH0__ is now __PH1__.",
+        "text": "Account {{username}} is nu {{status}}.",
         "source_sha256": "fe46cfb6ee89901f7413d86b6afa2171b64c106ac64484bf897d62624027d21e"
       },
       "accountStatus": {
@@ -5306,7 +5306,7 @@
         "source_sha256": "c44527e8e56750ed4c0a2c85c1e8a08ca57f12a37a8f4afda34342c833dd70cb"
       },
       "dialogTitle": {
-        "text": "Enroll / edit — __PH0__",
+        "text": "Inschrijven / bewerken — {{username}}",
         "source_sha256": "89a1425ee7dfebc43492e92f234b9efab4d08bb2cc5f2ed68b8f02aca3cb1bbb"
       },
       "disableAccount": {
@@ -6164,7 +6164,7 @@
         "source_sha256": "33a7e908344d7d3901a5fcfc60a6d528bf077050c78a1432da3f6422070aa01b"
       },
       "wakeAria": {
-        "text": "Wake __PH0__",
+        "text": "Wakker worden {{name}}",
         "source_sha256": "4c0aeebaa3f32042b842b5e6f6d03d8995742d9eeb83df49c6bf3e5851ecf350"
       },
       "wakeRequired": {
@@ -6446,7 +6446,7 @@
         "source_sha256": "dcb3edfb0d8604e0bf6387b9354d7d6d299aedd15db74e8cf8f6f35ff3170d4f"
       },
       "mediationBody": {
-        "text": "Ticketvalideren is live: POST /api/admin/pam/sessions/tickets/validate (levenscyclus + optioneel toegeven), check-in pusht bruikbare tickets naar de agent, en verhoging IPC SessionTicketValidateRequest wordt mislukt voor die cache. SSH mediate-before-ssh is live op de agent (russh Connected / Brokered exec / Interactive PTY met SessionInteractiveIo Attach; asciicast capture-uploads naar gecodeerde serveropslag). Volledige interactieve RDP-makelaardij op de agent blijft gepland (alleen proxy-SKU is het Live Windows-pad).",
+        "text": "Ticketvalideren is live: POST /api/admin/pam/sessions/tickets/validate (levenscyclus + optioneel toegeven), check-in pusht bruikbare tickets naar de agent, en verhoging IPC SessionTicketValidateRequest wordt mislukt voor die cache. SSH mediate-before-ssh is live op de agent (russh Connected / Brokered exec / Interactive PTY met SessionInteractiveIo Attach; asciicast capture-uploads naar gecodeerde serveropslag). Volledige interactieve RDP-bemiddeling op de agent blijft gepland (SKU voor alleen proxy is het Live Windows-pad).",
         "source_sha256": "caf6d4e3712640e0b1e69931aca4adca2efa1aa184ef0e0870f6b100fa3cd647"
       },
       "mediationTitle": {
@@ -6454,7 +6454,7 @@
         "source_sha256": "3f2e1deb11a391b1ea11ece40274f3b7e113484d35d65ed9f0e5c81ee1e583ef"
       },
       "rdpBody": {
-        "text": "Proxied Open via het AIC Server-besturingsvlak (of een enkele ingeschreven Jump) brengt de IronRDP-zijspan naar de Windows CUI-stoel met proxy-opname. Wanneer een WebSocket-viewer van een operator is aangesloten, produceert de sessie een gebonden opname met niet-nul frames (inhoudsbalk). RDP-klembordinjectie is getypt met plakken (Live) - niet native CLIPRDR PDU (gedeeltelijk). Browsersessies UI decoderen om MP4-weergave te lezen is Live (P1-2). RDP-makelaardij aan de agentzijde blijft gepland (P1-3) – behandel die chip niet als voltooid.",
+        "text": "Proxied Open via het AIC Server-besturingsvlak (of een enkele ingeschreven Jump) brengt het IronRDP zijspan naar de Windows CUI-stoel met proxy-opname. Wanneer een WebSocket-viewer van een operator is aangesloten, produceert de sessie een gebonden opname met niet-nul frames (inhoudsbalk). RDP klembordinjectie is getypt met plakken (Live) - niet native CLIPRDR PDU (gedeeltelijk). Browsersessies UI decoderen om MP4-weergave te lezen is Live (P1-2). Agent-side RDP-tussenhandel blijft gepland (P1-3) — behandel die chip niet als voltooid.",
         "source_sha256": "bfa3a130a1c8bf9907999d579c2210c2a05285c5a707c4b1f689655366168d93"
       },
       "rdpTitle": {
@@ -6654,7 +6654,7 @@
         "source_sha256": "6693eaec1991dbd10c3a21d29e6dfe080580428d70c2590b25aed8eec94907ad"
       },
       "intro": {
-        "text": "Eén lijst van elk systeem dat u kunt bereiken. Connect opent een interactieve opgenomen SSH/RDP/VNC-sessie via de PAM-sessiebroker wanneer er een verbindingspunt bestaat voor die host. Rijen waarvoor een goedgekeurd toegangsverzoek nodig is, tonen in plaats daarvan Request.",
+        "text": "Eén lijst van elk systeem dat u kunt bereiken. Connect opent een interactief opgenomen SSH/RDP/VNC-sessie via de PAM-sessiebroker wanneer er een verbindingspunt bestaat voor die host. Rijen waarvoor een goedgekeurd toegangsverzoek nodig is, tonen in plaats daarvan Request.",
         "source_sha256": "4441e6948e016c869d31ce51a0be1d1dc418d9c4d9dc9665f38bfa4ac49deb22"
       },
       "liveOpen": {

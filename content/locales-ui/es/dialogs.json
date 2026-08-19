@@ -1,16 +1,16 @@
 {
   "accountSecurity": {
     "title": {
-      "text": "Kontosicherheit",
-      "source_sha256": "1487a13732076802730bc96f0ea0eabb1f66f51ac90dc8f8b1a7df52467a47ff"
+      "text": "Seguridad de la cuenta",
+      "source_sha256": "1d85c11e14444f61ffecab13bae85c0dd268ef28771b56307d30f7a9f0242b4e"
     },
     "totpLabel": {
-      "text": "TOTP-Mehrfaktor:",
-      "source_sha256": "7606d2924fca5cbf8280140dfc5e20885da3140cf07fefe23cd4e94840dbb709"
+      "text": "TOTP multifactorial:",
+      "source_sha256": "ee0d823d9b334e9ea028d2ecc5a9e32c69cf51f27ba8de39989dd62c1811ebc2"
     },
     "enrolled": {
-      "text": "Eingerichtet",
-      "source_sha256": "dbac85c110f4370c8869273ad90e98e31a4563bf4b077d7bc9d55eb285256b07"
+      "text": "Configuración",
+      "source_sha256": "4da10f1fbb17cac25e9e78536d4104cb4b2fbbc436dbc37dee5450f22c2accda"
     },
     "notEnrolled": {
       "text": "No configurado",
@@ -21,8 +21,8 @@
       "source_sha256": "76fcf9302cec2946fb3272c495d55736b939206292adde7373a4e5e434fb411f"
     },
     "mfaDisabled": {
-      "text": "TOTP-Mehrfaktorauthentifizierung ist auf diesem Server deaktiviert.",
-      "source_sha256": "212f85bb729d269101abab16156e34865346d35a1bf7b56769507c0287ff299a"
+      "text": "La autenticación multifactor TOTP está deshabilitada en este servidor.",
+      "source_sha256": "9143564042fe83abbd31c0fbc7a258e4518d60d3ae132c138dcb0e120b2aabbe"
     },
     "unenrollHint": {
       "text": "Sign out, um the Authenticator-App to wechseln. Geraet verloren? Nutzen Sie „MFA zuruecksetzen (E-Mail)“ auf the Anmeldeseite or fragen Sie a Administrator.",
@@ -41,20 +41,20 @@
       "source_sha256": "c68c93ddf9e9b006218cfe6c6128992c1c95246fcaa336ef12a451aaf6cde518"
     },
     "untilReenroll": {
-      "text": ", bis Sie sich erneut einrichten",
-      "source_sha256": "dcee2d34cffa5c2c4633cc8fab21fe693673fbdf182fc546f2ae2d75537ed2e0"
+      "text": "hasta que configures uno nuevo",
+      "source_sha256": "8b0b611b493df559007a5b0b909f8acf6362d17bd0f1299c7276a399e11c055a"
     },
     "currentCode": {
-      "text": "Aktueller Authenticator-Code",
-      "source_sha256": "d59097c01154ea86f0e8ddeab19fad35de537bde8c7dc06c0670b563282333ba"
+      "text": "Código de autenticación actual",
+      "source_sha256": "d3a62cd22ed27de47d1e557cb5a429f0c3b58a31ddf837cd588d537fc4df5218"
     },
     "currentCodeHelper": {
       "text": "Erforderlich, weil MFA laut Policy vorgeschrieben ist.",
       "source_sha256": "e25733c470fa38b688b248dd590b1d414fd6ffe7a5c3a8ce72ead935a90b3404"
     },
     "removing": {
-      "text": "Wird entfernt…",
-      "source_sha256": "b879e84efc5672734eeab8cc707fbe0a6a36a317f741a4a82b7f49f3c3ac50d1"
+      "text": "Eliminando…",
+      "source_sha256": "d4b09919ec929f15c19802296a06e97a0d0862e29e23c453d638fc0c3b87c641"
     },
     "unenrollConfirm": {
       "text": "Sign out",
@@ -75,8 +75,8 @@
   },
   "adminAuthHelp": {
     "titleUnauthorized": {
-      "text": "Administratoranfrage abgelehnt (401)",
-      "source_sha256": "aff72ace4c9c96e04f0608e70a43200d19caf51749482d0eb35ee05fd33fc48b"
+      "text": "Solicitud de administrador denegada (401)",
+      "source_sha256": "b8722d8b3d37dc48d99beb168b71efed46b018bf3f4d3d3b569c728fd9b178b3"
     },
     "titleManual": {
       "text": "Acceso a la API de administrador",
@@ -87,12 +87,12 @@
       "source_sha256": "041b6f1655b35a81efdfa78f4b5903983dbc1529d06562b716ad82826463df96"
     },
     "quickFacts": {
-      "text": "Kurzinfos:",
-      "source_sha256": "b4f3ee1eec63195b67a0f0c04ad39d32b3d6914dabab6c2dd0e996d9883dd1bc"
+      "text": "Datos breves:",
+      "source_sha256": "34b49dd74fe116122d2b22134721810ae25decdd9103709cf833b6fe3a7e8204"
     },
     "oneNamePrimary": {
-      "text": "Ein Name: ADMIN_TOKEN",
-      "source_sha256": "6a42766ea0badc1cf03bb537cfbfb7e0b24e47bf0ff161e97d93ce1f93902022"
+      "text": "Un nombre: ADMIN_TOKEN",
+      "source_sha256": "5eb3b2ed3c69991253061d3be88ff3e7ef00351e89fa60507dd8cdd63a93b146"
     },
     "oneNameSecondary": {
       "text": "El secreto del manifiesto del servidor se llama ADMIN_TOKEN. Este navegador lo agrega a cada solicitud de administrador como encabezado HTTP {{header}} (y token X-Admin para compilaciones anteriores). Valore {{token}} hasta que el RBAC real reemplace este código auxiliar. No existe un valor de registro separado llamado {{header}}; es solo el nombre del encabezado del cable.",
@@ -115,8 +115,8 @@
       "source_sha256": "ec2c7f1bade38336ca55f5f133b65480bc0b47ad8a420895abe8275e07b45268"
     },
     "iamPrimary": {
-      "text": "IAM-Sitzungsauthentifizierung",
-      "source_sha256": "bdc9c9abf4cb87bcb0fb6ac8c3e8f8f8e7bfbe4877f23c09b0018fed1ec59cbb"
+      "text": "Autenticación de sesión IAM",
+      "source_sha256": "3fac2c410424e741a8cb10e1af6d9bd075c0d90092ec1f310b70242098160d03"
     },
     "iamSecondary": {
       "text": "Wenn IAM_SESSION_AUTH_ENABLED wahr ist, ist a gueltige Sign-in (or the gemeinsamen ADMIN_TOKEN-Header without gespeicherte Session) erforderlich. Abgelaufene Sitzungstoken werden geloescht and the Browser to /login geschickt.",
@@ -141,16 +141,16 @@
   },
   "systemGroups": {
     "systemDetails": {
-      "text": "Systemdetails",
-      "source_sha256": "f75e88c835fff7c34bfd8a6b2314151d92a5a296387e893a0afd6f19e1c72a88"
+      "text": "Detalles del sistema",
+      "source_sha256": "d476f742e5099cd8cd4d564ab917d10e0582b4d88106bd225053a80e7404650a"
     },
     "editPasswordPolicy": {
       "text": "Groups-Kennwortrichtlinie bearbeiten",
       "source_sha256": "727f7940af98c93c91335dc380687d84597c7c48257a46497f6c52cb4693eac7"
     },
     "passwordRecovery": {
-      "text": "Kennwortwiederherstellung",
-      "source_sha256": "cc48b74c6caa2d18a0ef5a5805af01e93ac71b0ff378def38a5ba1d927f86a7f"
+      "text": "Recuperación de contraseña",
+      "source_sha256": "93982d33c50688ba1571673139f419dfbb5b5abbceb94d6ae42b9f8c89e1a694"
     },
     "sendRecoveredAria": {
       "text": "Wiederhergestelltes Kennwort per E-Mail or SMS senden",
@@ -161,28 +161,28 @@
       "source_sha256": "3d57809d49d6de8398686396c1078cfb6a8de0c5191a30e4c6a29d6fcce04fb9"
     },
     "issuances": {
-      "text": "Ausstellungen",
-      "source_sha256": "3e07cb6e2871cbc14405dafd40b2d7e30740032d8684c6203bf4e06c8ba74938"
+      "text": "Emisiones",
+      "source_sha256": "f01908e6ea9b7f522e935e0fd02cf2c2b98bdca4ff0deb6b021e2748277a7e60"
     },
     "copyToken": {
-      "text": "Enrollment-Token kopieren",
-      "source_sha256": "ff62f5dce1d5a00880e2f98ac3161c89a2a35fd06831d6b6062fd24088151609"
+      "text": "Copiar token de inscripción",
+      "source_sha256": "230bc798e3332f6b1ce0b0132610d965d248acf2608cd91504698030d186e168"
     },
     "redownloadSettings": {
       "text": "settings.json erneut herunterladen",
       "source_sha256": "7a7a22c7d56eb05bc0cb08f0710f5175662b64f8edb957f1821bedb9afa4b55b"
     },
     "rotateCredential": {
-      "text": "Zugangsdaten rotieren",
-      "source_sha256": "72ef3e9654cd04f3366fd7a5ac7755ffd51189199d9fcd307a5882950155dc93"
+      "text": "Rotar credenciales",
+      "source_sha256": "99374a232de64f8279c26c2126beb751546d0eccca691ef20ef2a10c27d2e79c"
     },
     "revokeIssuance": {
-      "text": "Diese Ausstellung widerrufen",
-      "source_sha256": "71f2f90b42da7ea59b66135f26d98982a5e5a431fbf5b80d18a4d9bff23361d4"
+      "text": "Revocar esta emisión",
+      "source_sha256": "84ab3201f1a12d799cb76f822011d89d9d7a3c1af79aaa1be774157eb017062f"
     },
     "revokeIssuanceTitle": {
-      "text": "Ausstellung widerrufen?",
-      "source_sha256": "8ce4cd0f1db49777f7a1dd25bc631992fd0d67413ee2cbf74d5ed8315f42352a"
+      "text": "¿Revocar emisión?",
+      "source_sha256": "4bb52fddf27772f45be72121fe0900234349893d84e5f33d5daea7a59acf7b3e"
     },
     "importSettings": {
       "text": "settings.json-Dateien registrieren",
@@ -205,40 +205,40 @@
       "source_sha256": "ecd0097b5c46d57d3dc7eed7e0b6310a2e23bd8e0b8b279ca6ea78133429f2f4"
     },
     "editRowPolicy": {
-      "text": "Zeilen-Kennwortrichtlinie bearbeiten",
-      "source_sha256": "64a1d27eb2b44e43cee2a29886aaf5e3d2b27187a80aadcd09ea151165b7ddaa"
+      "text": "Editar política de contraseña de fila",
+      "source_sha256": "7ee75b216dae2b5625244718f0598324fac0132264bdfc6cf4316308155f5445"
     },
     "moveRowUp": {
-      "text": "Zeile nach oben",
-      "source_sha256": "fc7cc48718727768d4e4124314aa01d9e300e2e24abc6ea813a571a44c1c5aa5"
+      "text": "Mover fila hacia arriba",
+      "source_sha256": "da00ee2e624bfa35fca3c17287853aefb689ad944b6fa8e1960f0799a8349b34"
     },
     "moveRowDown": {
-      "text": "Zeile nach unten",
-      "source_sha256": "e2eccf13de43d640ae987b5e00b80b4b84350ca9fa10aa07b7ce03980a4e034a"
+      "text": "Mover fila hacia abajo",
+      "source_sha256": "3a57faa7b2c4c80b018b38a3105c954bf8932140f2458210318fdfc54d0d9b8a"
     },
     "removeRow": {
-      "text": "Zeile entfernen",
-      "source_sha256": "ee42feb489d8ae913cc3ee94459692bbebb3c78a9b20dca8c6e388def993e244"
+      "text": "Quitar fila",
+      "source_sha256": "1810fddd9e28f47d8fc6386333f41d19bf64a233817bf8fa8d4ec90ae89957cf"
     },
     "findMachine": {
       "text": "Maschine in allen Groups suchen",
       "source_sha256": "ea75d40f9b780fceecb80bcd8d015d36270c2f233700d4604423ffa3dbf756f8"
     },
     "editGroup": {
-      "text": "Systemgruppe bearbeiten",
-      "source_sha256": "7373dd9317d633f2f66c4a6ab740df82295df208b258edf97312862677bb4f98"
+      "text": "Editar grupo de sistemas",
+      "source_sha256": "f1cd21a69a3df22fc13239df593d18b3b48c0b6883689e1ba25030a8f38c697b"
     },
     "deploymentTemplate": {
-      "text": "Bereitstellungsvorlage",
-      "source_sha256": "d99e40772ec629efd80dfa249fd0002bce70486bfe067c661d5fa1e4a604d97d"
+      "text": "Plantilla de implementación",
+      "source_sha256": "f6ca45f179b24353e741a468fb5607d08c90d905424fc0d55c29e22049188261"
     },
     "deleteGroup": {
       "text": "Eliminar grupo del sistema",
       "source_sha256": "3ba0f6e10dd6c899adc900a0726fb7e2aa25026e1254dcca5ec9a57075302466"
     },
     "createGroup": {
-      "text": "Systemgruppe erstellen",
-      "source_sha256": "27670287048498e7e52703f6f543f01948d7adab0ffd6267b8250292a3823555"
+      "text": "Crear grupo de sistemas",
+      "source_sha256": "cbb327d0390ec980023954b2102be8c34994fe336caa68a7de413c56c516efc2"
     },
     "deleteEndpoint": {
       "text": "Eliminar punto final",
@@ -249,24 +249,24 @@
       "source_sha256": "690b88a7419979a970ed5a09d63777b0478610c3c3124f96cfe8f1481e2fd252"
     },
     "elevationCode": {
-      "text": "Elevationscode",
-      "source_sha256": "de69ad31792a1930f0a719a09ce0b42561668a72dd1eb6b6faf8fd5a7849e882"
+      "text": "código de elevación",
+      "source_sha256": "a85bfe327cf4b1968d874d599453e0d540baabc13e29e0e84aa064c4042586f0"
     },
     "copyCode": {
-      "text": "Code kopieren",
-      "source_sha256": "2ed99c26c545d4d132ade09ebeb4700018c0423f511d308e91631d0324538ac8"
+      "text": "Copiar código",
+      "source_sha256": "49a0053f3b0d5045a4ef3edfe5c39be60a7ea272cc22b7c33d646624346ccd4d"
     },
     "groupFallback": {
       "text": "Group",
       "source_sha256": "34ca0e76608842ff3e7d924a455a396a82f471052c15e3f2ed7f090ac702e5c1"
     },
     "createElevationCode": {
-      "text": "Elevationscode erstellen",
-      "source_sha256": "fdfc7849b07a1e944431caa27f37505d7cff7e527b6323e0fcb9fa4911ae9edd"
+      "text": "Crear código de elevación",
+      "source_sha256": "b1f9442847c29c16a5b4d8588316577b9f792d26e85849d0ac46c1911f1c0aec"
     },
     "targetGroup": {
-      "text": "Zielgruppe",
-      "source_sha256": "59887edaf7745fb18ba86a79230208cd2c2fd431b31ff9f3326b536f87918be6"
+      "text": "Grupo objetivo",
+      "source_sha256": "21f3df41abba91528de7699124da78fb27127af0673675bbc70fa9802c3363bf"
     },
     "targetGroupHelperPick": {
       "text": "Seleccione entre Política de plataforma de elevación ({{platform}}) o ingrese un nombre de grupo de sistema operativo personalizado.",
@@ -277,20 +277,20 @@
       "source_sha256": "008c3993f00404600a0a545cf371d2e9e988129eac959cec13812d617a965f47"
     },
     "strategy": {
-      "text": "Aktivierungscode-Strategie",
-      "source_sha256": "c8ca3e1fd1eb7c6b86334b5d4cb3bde6e4376c9ba730a7ae41bc6849c2b5d1b9"
+      "text": "Estrategia de código de activación",
+      "source_sha256": "b5153558f155907e5db59db293fe012bea87dd603d6a2491e7dbdb1a1320f0b7"
     },
     "strategyLetters": {
-      "text": "Buchstaben",
-      "source_sha256": "0b5041be41b01e968a26f752f2d69e54715729c5167293ee0ff6c50786a8d13f"
+      "text": "letras",
+      "source_sha256": "7ad8dbe5dbed0dcda5e2fa713de5ddb5b6db23d8b7f4fc0ed2650b5b071107c7"
     },
     "strategyDigits": {
-      "text": "Ziffern",
-      "source_sha256": "507f2e07382d8082c6e5eac20bd0b08e9281bd8dbb6d40467425596b8b91bae4"
+      "text": "dígitos",
+      "source_sha256": "cc6b6bad31a0ff4d6dfd4953a6346a1c463d884723898a2af964b998e5499e22"
     },
     "strategyFallback": {
-      "text": "Eingebaute Standardliste wird verwendet.",
-      "source_sha256": "7ed4f77602dcfc60e93a7c46ec49f34e73d2ba72b045cc95f0935d79afe9ac73"
+      "text": "Usando la lista predeterminada incorporada.",
+      "source_sha256": "9fb1d97d5562b5049a0f2f3757503badba35f4040bc4592acd2758086320c74f"
     },
     "strategyHint": {
       "text": "El agente verifica fuera de línea con su elevación_strategy_id configurado; Elija la misma estrategia que se utilizó para implementar el punto final.",
@@ -301,8 +301,8 @@
       "source_sha256": "0d78552b3f34df7d3f44b2b8ae56e8bff3902bc0766e10b83941587a12b93879"
     },
     "durationMinutes": {
-      "text": "Dauer (Minuten)",
-      "source_sha256": "99a6d467e2701085072ae6a2709bf4e0e284fa401c929171eac40bb31ede7023"
+      "text": "Duración (minutos)",
+      "source_sha256": "279a3e5e0fcb422b191ecfe78158ff72e7c5b1457207e081b474c34280d901a3"
     },
     "justification": {
       "text": "Begruendung (Ticket- or Vorfall-ID)",
@@ -313,60 +313,60 @@
       "source_sha256": "be1ace05bcce2ed6607b6914ed17470547172bc2f4456cf6cc93b36694e606aa"
     },
     "activateImmediately": {
-      "text": "Sofort aktivieren",
-      "source_sha256": "f63271ec729b5f5e536e66e954ab66394eedaebef991e49c173c776e784e56a3"
+      "text": "Activar inmediatamente",
+      "source_sha256": "e24f1f7aa12fb63af2a760d80ced45a0f6b00c7eaef4a597357c47aa932e16b8"
     },
     "scheduledActivation": {
-      "text": "Geplante Aktivierungszeit",
-      "source_sha256": "69bb321ed9797e40944cf30cd9e4cd7e558620d93521fe37b976596f2f91b86a"
+      "text": "Hora de activación programada",
+      "source_sha256": "a569286a152e0f2d043198b23dd63886c3fd1f4052ff092f1a4fd0d71a39e794"
     },
     "elevationCodeLabel": {
-      "text": "Elevationscode",
-      "source_sha256": "de69ad31792a1930f0a719a09ce0b42561668a72dd1eb6b6faf8fd5a7849e882"
+      "text": "código de elevación",
+      "source_sha256": "a85bfe327cf4b1968d874d599453e0d540baabc13e29e0e84aa064c4042586f0"
     },
     "generateCode": {
-      "text": "Code erzeugen",
-      "source_sha256": "b3ac6b2f0ff7a5729d40ddc19ad8ed3dcf36670004a6c147008e65d645e1ffb9"
+      "text": "Generar código",
+      "source_sha256": "4774c20db4485d79e7c21a26d2a392a3155b02260b7dc6509a48b2fbc6d342c1"
     },
     "generating": {
-      "text": "Wird erzeugt…",
-      "source_sha256": "e6e5f0fa290d1a6660466194b7fc9f9d5faa64e6b0c4767c3d703444299059c3"
+      "text": "Generando…",
+      "source_sha256": "d20a4476a0a85978547a5781e7e575e8358f102137bf253706db20ee0fe6061c"
     },
     "createElevationTitle": {
-      "text": "Elevationscode erstellen",
-      "source_sha256": "fdfc7849b07a1e944431caa27f37505d7cff7e527b6323e0fcb9fa4911ae9edd"
+      "text": "Crear código de elevación",
+      "source_sha256": "b1f9442847c29c16a5b4d8588316577b9f792d26e85849d0ac46c1911f1c0aec"
     },
     "usageType": {
-      "text": "Nutzungstyp",
-      "source_sha256": "93bacdee384936d97b02f194f6f48b5c2ecf249071a2cb5bd71e338b3ee93421"
+      "text": "Tipo de uso",
+      "source_sha256": "39220d95bd054df18ecc0fb63d8e4923a55088103b6b6c636c99402a1bad6ac4"
     },
     "usageConnected": {
-      "text": "Verbunden (verwaltet)",
-      "source_sha256": "a374643b3f1b05ee343502861d5d93b7054fa3cd3f737f0299893b096263a79e"
+      "text": "Conectado (gestionado)",
+      "source_sha256": "e066119fdc5daf29622e6501690f43d42a3714e8e978f2a79cd86e3dcaa29f42"
     },
     "usageOneShot": {
-      "text": "Einmalige Bereitstellung",
-      "source_sha256": "0362a90aa18f9889bd14ba3a3850afc66a7fb701dc1c6096c5dcd20ead1251aa"
+      "text": "Aprovisionamiento de una sola vez",
+      "source_sha256": "273ae2b0127fdbc20c62a889b42ce11573ad270f37e9b869554512c3ca9211c9"
     },
     "usageAirGapped": {
-      "text": "Air-gapped (dauerhaft)",
-      "source_sha256": "b47b40ddbae1ac21bf48a7b573e858d47822400f9c960f24ebda7eb238a8e4ec"
+      "text": "Con espacio de aire (permanente)",
+      "source_sha256": "149da59c5d6af264e390b42cbb7205094f446533075399f46907dedd490b1c22"
     },
     "loadingTemplate": {
-      "text": "Vorlage wird geladen…",
-      "source_sha256": "4a8ed6eaa15a4f472d7c9e1aefaf09f88c3c8e81d3174120a4905a2e03d701e3"
+      "text": "Cargando plantilla…",
+      "source_sha256": "6f02c69b6f149347c4046f6a42ecd168857c368a913429816eeb784e2b3cae5b"
     },
     "defaultTtlHours": {
-      "text": "Standard-TTL (Stunden)",
-      "source_sha256": "0649a6b24182e72a08041dde06daa7e2773b324565cb442d45ec1d9b47a33233"
+      "text": "TTL predeterminado (horas)",
+      "source_sha256": "9eeee801ff99a08b14c23d3e8d01b02d48564c141ccb12b6256b049f85267958"
     },
     "defaultTtlHelper": {
       "text": "Wird verwendet, wenn the Assistent kein ttl_hours angibt.",
       "source_sha256": "5c8f2dd0556bf14ffbe371c7b7d20b3362efcdf61252549036f9be2aa8e89bd0"
     },
     "templateSaved": {
-      "text": "Bereitstellungsvorlage gespeichert",
-      "source_sha256": "2d01362b9c7bd9c7632220df1f402bddafbbdf93d60cbf5794c3a094b4931219"
+      "text": "Plantilla de implementación guardada",
+      "source_sha256": "69ce42b807159334be6b4494dcef4125b58fe8940ea085463c9b4485b58bb4b8"
     },
     "saveFailed": {
       "text": "Save fehlgeschlagen",
@@ -381,28 +381,28 @@
       "source_sha256": "dfa722f8d065d1dffa3d3d64a34b4e289b07f6d96a31fce229eb988523a08ff4"
     },
     "explicit": {
-      "text": "Explizit",
-      "source_sha256": "73691015bd0a63b3af62e99fc050edfeb5acd94298775e5657bd6f2beb321876"
+      "text": "Explícito",
+      "source_sha256": "d863c482f7fd7f499980fbce6670b879c413a842d0047ab0afe6ecf777430651"
     },
     "wellKnown": {
-      "text": "Bekannt",
-      "source_sha256": "0f8dd7a3658f302d40f0da33a1fbc23a4f93c328239701de352762444f9ec029"
+      "text": "Bien conocido",
+      "source_sha256": "96392e4e309efe68c364522db38068015faeef5bdbfe34ebb4bb49371bc2d139"
     },
     "wellKnownAccount": {
-      "text": "Bekanntes Konto",
-      "source_sha256": "45bc0119712c32c7b48f2c93d09456a217aa5cc37018d90f000359bf419af9b9"
+      "text": "cuenta conocida",
+      "source_sha256": "7e74e8ea9348ee4853e8161f6949685884bf364d2371e61b0a5a605962a53dd4"
     },
     "accountName": {
-      "text": "Kontoname",
-      "source_sha256": "29f555468f427e15858996303c51e395d12c1aaa4558ec7e35a79f6bb54c266b"
+      "text": "Nombre de cuenta",
+      "source_sha256": "a704d8d4a818d7139bddd1e7bb7ad9cbe7ad6ec02e1d4b54093c2c031e35fe93"
     },
     "inherit": {
-      "text": "Vererben",
-      "source_sha256": "b4c9f20792cfa6dab5b29b9bf9018c6a60cb040ba530393501e7f7ae7141bedc"
+      "text": "Heredar",
+      "source_sha256": "3f72f0385768d2842d8d4a9205a4d704cffe7ef1820ded371b6b31f032142025"
     },
     "industryStandard": {
-      "text": "Branchenstandard",
-      "source_sha256": "386bb590dbea2eee5d0a8c2f2df8a6327126da74c66e523bf41b19f338f0582f"
+      "text": "Estándar de la industria",
+      "source_sha256": "aaa4bf6b551010150d5a26786f69b87d627ad008a172e5d6f96194460d7dc726"
     },
     "industryStandardHelper": {
       "text": "Seleccione Perfil regulatorio o de referencia para completar previamente la política de contraseña de esta identidad. Seleccione Personalizado para editar campos sin reemplazarlos.",
@@ -413,8 +413,8 @@
       "source_sha256": "ba071e525111390ebc417e6d3db43586eb03160885b12626334d82f8dfdd033a"
     },
     "saving": {
-      "text": "Wird gespeichert…",
-      "source_sha256": "915ceeb27637953b9576bc64f8e8c88a8af76d2cf477fe2cb7f23119c4d12dd5"
+      "text": "Ahorro…",
+      "source_sha256": "23e39291d6135814ed7c936e278974544b0df5fbf0eb0427b6700979b7472a93"
     },
     "identityTemplateSaved": {
       "text": "Identitaetsvorlage gespeichert",
@@ -429,44 +429,44 @@
       "source_sha256": "9e5b212e46dbfe1cab9461a97d4fa45b191119deea4b8facd5d87146bd3c9763"
     },
     "allStatuses": {
-      "text": "Alle Status",
-      "source_sha256": "23ee74c4a81bad302d83b06a3e95cf6f9833f41fbfed14f5b76036f4c3e07aea"
+      "text": "Todos los estados",
+      "source_sha256": "8ee57323a6f24cc7a5e2395cc0bec1eafc76799ef0e0f31c7a81ddb87faf7a2b"
     },
     "statusActive": {
-      "text": "Aktiv",
-      "source_sha256": "8163454f378f0814a0911afc75bb63814643a45803a0460003800e1c6b9be636"
+      "text": "Activo",
+      "source_sha256": "92340695899bd2d86223e4a007620e0d6502fc0e08809773634c7e0743764a9c"
     },
     "statusSuperseded": {
-      "text": "Ersetzt",
-      "source_sha256": "d234c69d23155c7b68288af7df7fc4bae7f705de440bd8d6ad642fecf91b919c"
+      "text": "Reemplazado",
+      "source_sha256": "e5830d265452f1ed47a8fb8891fdc488ab355a71ff18cebee2fe3dd1df2f295b"
     },
     "statusRevoked": {
-      "text": "Widerrufen",
-      "source_sha256": "d1a9bdb8adc5263af7e5c95eb4b91317a36a9e30568370014a2d0348625faabb"
+      "text": "Revocado",
+      "source_sha256": "f6f738d043929f59fe41b1a5b414b33ea28ca9a6ddc74e682bdb7167b5a6ac6e"
     },
     "statusLabel": {
       "text": "Status",
       "source_sha256": "920e413c7d411b61ef3e8c63b1cb6ad058d5f95f8b481dbafe60248387d8c355"
     },
     "settingsIssuances": {
-      "text": "Einstellungs-Ausstellungen",
-      "source_sha256": "ac2d953477be5979f81603a1c301bd0640cca14efdc1bb44941e9d9f8ea43d9d"
+      "text": "Emisiones de configuración",
+      "source_sha256": "3899369fb42eba8483ae79322a9b5eee46f0c7ca0c96f8d5376cdb26d14792ad"
     },
     "loadIssuancesFailed": {
       "text": "Ausstellungen konnten not geladen werden",
       "source_sha256": "8592129935217824e0f9050cdb648ceec9c6a28bb84b677d024fae1802abf34d"
     },
     "downloadFailed": {
-      "text": "Download fehlgeschlagen",
-      "source_sha256": "e29111b10e59b51d5ddb80163e4a1f3abf408687b605c273eb93374cf075ee79"
+      "text": "Descarga fallida",
+      "source_sha256": "eae34ccbc4432c1358da668b091e7c952fe8be24b02dd4f8ec5ea2edef5ca1a4"
     },
     "regenerateFailed": {
-      "text": "Neu erzeugen fehlgeschlagen",
-      "source_sha256": "c7d0edb442381f99e8f7625fd0692fe9b75f85462b8549e1cb5f8456e9ea8835"
+      "text": "Falló la regeneración",
+      "source_sha256": "c15b30e9e1376970a5cbabbdc0a6b5646ed9aede337a8b51d025816c502df3a0"
     },
     "revokeFailed": {
-      "text": "Widerruf fehlgeschlagen",
-      "source_sha256": "01dc64c70623ad820838443daba28114d01ad9b33d025a25c08f8550291beb24"
+      "text": "Revocar falló",
+      "source_sha256": "f339773d29466cd1727e7b6762a131f2ec63f4020260283da888c3faf406b7f6"
     },
     "tokenCopied": {
       "text": "Enrollment-Token in the Zwischenablage kopiert",
@@ -477,8 +477,8 @@
       "source_sha256": "3d40cc43664cc3f2120a21d49a293eb653fd6ac2463a57b39685e6f948c682ab"
     },
     "rotateConnectedOnly": {
-      "text": "Zugangsdaten rotieren (nur ConnectedManaged)",
-      "source_sha256": "d776b86c3874fee2570baa6f5d163473216cd93407a5dd0e45add74c54c943a4"
+      "text": "Rotar credenciales (solo ConnectedManaged)",
+      "source_sha256": "f5b6971d4e75c61a82bdc5819e5e974e314c517e1a718e235c8fda0c1d448f92"
     },
     "rotateUnavailable": {
       "text": "La recreación no está disponible para esta fila (solo se pueden rotar las exposiciones ConnectedManaged activas)",
@@ -489,8 +489,8 @@
       "source_sha256": "2d0e583028cccae97ea85acfaed7c35f28ed256f1c4b3b14fbfa8fac59c51630"
     },
     "defaultSystemGroup": {
-      "text": "Standard-Systemgruppe",
-      "source_sha256": "368f7d04806d3b93725a4b0f5634a4072cdce665eaa5123c87a0822b42fbb96a"
+      "text": "Grupo de sistema predeterminado",
+      "source_sha256": "1324de9db441ebf05827ba52a055cff2afab1e205949bbd0e38cb073b8e890a9"
     },
     "defaultSystemGroupHelper": {
       "text": "Wird verwendet, wenn a Datei system_group_id weglaesst",
@@ -501,8 +501,8 @@
       "source_sha256": "264780293b41e5eb82f434858780de1ffdaaf6d214d775e043bdce00d2d01365"
     },
     "chipInFile": {
-      "text": "In Datei",
-      "source_sha256": "68df8d68515575886275e9a51ae317a0149bc00d1e1f7b6f445c832aa0500d9e"
+      "text": "en archivo",
+      "source_sha256": "ecbeefe4ca3c3346aaccd33829f15b7aa3b2fe171db0baffc38245ed78216dee"
     },
     "chipNeedsGroup": {
       "text": "Group noetig",
@@ -521,16 +521,16 @@
       "source_sha256": "1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da161c6099be3691d"
     },
     "importing": {
-      "text": "Wird importiert…",
-      "source_sha256": "9f052773097ff125c8b53b876eae2e241b9ab284389163326fe8afb3a7ef904f"
+      "text": "Importador…",
+      "source_sha256": "c01c4324f1fa14fc76957936626e11a5150c24e748dbd08cc46848dfcbe37d00"
     },
     "importFiles": {
-      "text": "{{count}} Datei importieren",
-      "source_sha256": "f5df1169bb751ddb2b0a6ba75f7a33fd2206cfaf0e5d42d48ac114645b96595e"
+      "text": "Importar archivo {{count}}",
+      "source_sha256": "9aaf6de6012055f56940fe58fabb4f51b0a71a655c0214f3578383a2e01ad448"
     },
     "importFilesPlural": {
-      "text": "{{count}} Dateien importieren",
-      "source_sha256": "871e4f33fd215d70cced8c9149ff91c6fb7fd890d089732913e0923dfebc58a5"
+      "text": "Importar archivos {{count}}",
+      "source_sha256": "06540380d1db7fdb9094bd4955bc4d85e8e59246ed032a1eb1a4893ed1c70afa"
     },
     "noFilesToImport": {
       "text": "No hay archivos para importar",
@@ -545,8 +545,8 @@
       "source_sha256": "0c1dfeea9356397ce6861b53fd47f573ca0126dcb61a69685e7af0d7604b6853"
     },
     "importFailed": {
-      "text": "Import fehlgeschlagen",
-      "source_sha256": "943a42b10aba0931b882ea8c85c67b4e310d83c72cc2eafca6aff06c9f02a2b1"
+      "text": "Importación fallida",
+      "source_sha256": "0a26f41abd00f95e7009b406e82083295f837ac1bc76e2acc1f7d66b3539c18e"
     },
     "unknownError": {
       "text": "Unbekannter Error aufgetreten",
@@ -577,48 +577,48 @@
       "source_sha256": "819c58e18df9cd1a83954d8798de762ad86fe300fbb29ffea546077cd147541d"
     },
     "maxDriftSeconds": {
-      "text": "Max. Abweichung (Sekunden)",
-      "source_sha256": "cef65f353e8e9eebc42d0ed1d8cb9ba88fbb10421fdec286b81f6a15d8f3a7fd"
+      "text": "Deriva máxima (segundos)",
+      "source_sha256": "78fae96b1a6fbc403a7452a1e81202271f4ad9562d067aa07925e942a3693990"
     },
     "secretUpdateFrequency": {
-      "text": "Geheimnis-Aktualisierungsintervall (Stunden)",
-      "source_sha256": "e5aa10b4753b948abb23ce426fce0dd649f4f522732a038cb387d2e1d5d6bed5"
+      "text": "Intervalo de actualización secreta (horas)",
+      "source_sha256": "3a2ac6a8105116d28853d4fc1a65a16cf2a096e09cf0a81aece6a4d96decc465"
     },
     "requireUppercase": {
       "text": "Grossbuchstaben erforderlich",
       "source_sha256": "c426589c4bf8f1928f6f04cc95786dfe10504caa17651e2ef50dff8de4105986"
     },
     "requireLowercase": {
-      "text": "Kleinbuchstaben erforderlich",
-      "source_sha256": "c6351baf92aa86fa19083f826bca5c4f4911f125b941d8f5f7199cee03ed2c54"
+      "text": "Se requieren minúsculas",
+      "source_sha256": "37641b53c9a397ea81243e90b59ce8e82bac69b36e34f1cb72b72ec504fe9a79"
     },
     "requireDigits": {
-      "text": "Ziffern erforderlich",
-      "source_sha256": "5a9d774eaa781e87b317c45563754b87956ab754886815d4cbfb650a63f9aa49"
+      "text": "Dígitos requeridos",
+      "source_sha256": "8e450f827cbfec99ddc9b7bf67992c45b46f16d2f7259733176d6f28790dd09d"
     },
     "requireSpecial": {
-      "text": "Sonderzeichen erforderlich",
-      "source_sha256": "e89157a6983a30292aa449e79696097725381bda037ec6c8b645493599c783b4"
+      "text": "Se requieren caracteres especiales",
+      "source_sha256": "3ca489767bfed48ce85efa64a197e899c746ff3f307967aa144416748553ee9c"
     },
     "allowedSpecial": {
-      "text": "Erlaubte Sonderzeichen",
-      "source_sha256": "6b1e77a6f8f605c252ffba3fb30e019ad7921ec3f36ebc638fc77470294d8d8b"
+      "text": "Caracteres especiales permitidos",
+      "source_sha256": "369a52ccc06c2441706d055a80de8c1e53f4fbb0794aae3eac1b28a011dca06f"
     },
     "policyVersion": {
-      "text": "Richtlinienversion",
-      "source_sha256": "2d6d3c7924dd6bd246eb1436a496f2d155cb683d31a74762317dc86a7c039d7c"
+      "text": "Versión de política",
+      "source_sha256": "800710838f0ada475f28a3baba6a350a5da645c1466c4d4fc2ee273a435e9461"
     },
     "caCertPath": {
-      "text": "CA-Zertifikat-Dateipfad",
-      "source_sha256": "bce49bdd0533c483e58e675aef044cf862c61a8480df1440bae26f9ae9f1bdec"
+      "text": "Ruta del archivo del certificado CA",
+      "source_sha256": "278d979a84f6d76b180fc6f11fe1011b7a5ac42beaaaebbbb972bcd41cac50c3"
     },
     "localAccountName": {
-      "text": "Lokaler Kontoname",
-      "source_sha256": "4ca9f990f653fe56e85860de0df7b06a0e0b43844dfbea938a84f172cc394811"
+      "text": "Nombre de cuenta local",
+      "source_sha256": "78db2f56b05282fa321d79de5cfe7b6d46482d411a58044ca4872353217cf528"
     },
     "groupName": {
-      "text": "Gruppenname",
-      "source_sha256": "1f155d97469ee1fadd1d71fc18d9fbed070ec2b7d5d6f1f5a7b1e59f192882cf"
+      "text": "Nombre del grupo",
+      "source_sha256": "762ebb70ef0ea2e80a41035e91a5f95ec35b0b03d2f2acc5c5b4f4c09213c8c5"
     },
     "groupNameHelper": {
       "text": "Nur alphanumerisch, Bindestriche and Unterstriche (max. 64 Zeichen).",
@@ -629,24 +629,24 @@
       "source_sha256": "526e0087cc3f254d9f86f6c7d8e23d954c4dfda2b312efc29194ae8a860106ba"
     },
     "descriptionOptional": {
-      "text": "Optional (max. 1024 Zeichen).",
-      "source_sha256": "5a94f4c0abee5d166293dc75b2b96a63a064849d626077ba74633ac93edf7608"
+      "text": "Opcional (máx. 1024 caracteres).",
+      "source_sha256": "1ba8aa983d294edde46aa45d0e539042d6f2c5085a8dc9b3f3b5f6a1617e9f9a"
     },
     "passwordCalculable": {
-      "text": "Kennwort berechenbar",
-      "source_sha256": "37ccc5e1500cbdef7f27143cc5a2f7ba8bfb927caf67e0a0bec3441c4cd18495"
+      "text": "Contraseña calculable",
+      "source_sha256": "2381891a39a2f25ba3507827579895b4e0457daca180c0fcb95fd90ae9353be1"
     },
     "systemInformation": {
-      "text": "Systeminformationen",
-      "source_sha256": "d3230dab2854d5ba0f73d3c621bcf9aff4ee193a0192d0face3fd106592ec327"
+      "text": "Información del sistema",
+      "source_sha256": "b120922cdf69ede3a79e12d827e030ee15053cbf5c9522180b7a4638447f6f11"
     },
     "machineName": {
-      "text": "Maschinenname",
-      "source_sha256": "720cb8d70ae324209d8f9d578bdf97edd6a40491edf84d0321535acd7ab77b23"
+      "text": "Nombre de la máquina",
+      "source_sha256": "7c5749c19ac4b2ef719c184419cfdb6500c1d40849f799df642b5a0cb95d73c7"
     },
     "machineId": {
-      "text": "Maschinen-ID",
-      "source_sha256": "bdfa8820b7721524f04c92890ddd8cb24b8fb2c589606948f51950c3e4be8659"
+      "text": "ID de máquina",
+      "source_sha256": "ef6727e4053f46688c48127d0482df72dae767e61b9459f640c4296cbff00538"
     },
     "identityInformation": {
       "text": "Identitaetsinformationen",
@@ -661,28 +661,28 @@
       "source_sha256": "1432897a6136de54f3a8bfcc9f9fa87ead45c109731e5769a6e94887d555ce5b"
     },
     "active": {
-      "text": "Aktiv",
-      "source_sha256": "8163454f378f0814a0911afc75bb63814643a45803a0460003800e1c6b9be636"
+      "text": "Activo",
+      "source_sha256": "92340695899bd2d86223e4a007620e0d6502fc0e08809773634c7e0743764a9c"
     },
     "inactive": {
-      "text": "Inaktiv",
-      "source_sha256": "bf7c9171cb4911c763abd6e6d52bf72fd829d7357b0e801071d3971490981951"
+      "text": "Inactivo",
+      "source_sha256": "ac7c949f1211b7814bdd28a698e6c04e05e1a83f9f86e7ad43d2086d00e98afd"
     },
     "createdAt": {
-      "text": "Erstellt am",
-      "source_sha256": "94114e0ea7e52eef052200504c8ac0007c7bc98cc8da41a9643a5320f7ef1cce"
+      "text": "Creado en",
+      "source_sha256": "775b5bf9646856d5c599dc8bff4aa3244de6e04badd263185840f391d403f94a"
     },
     "lastRotation": {
-      "text": "Letzte Rotation",
-      "source_sha256": "ec164be7e0638380c91334b8100c3878e18c225b6be2f50e6fffd69a3cdc7536"
+      "text": "Última rotación",
+      "source_sha256": "25796fd19bcacdf296a839c327968c467b9b86bfdd1c6fd26ffcaad41f81018d"
     },
     "hashAlgorithm": {
-      "text": "Hash-Algorithmus",
-      "source_sha256": "8e7cc36cf51824a8933d288c4520ee5200b228265dc6c84d0940782782bcbeac"
+      "text": "Algoritmo hash",
+      "source_sha256": "bce19f5e0a73da8d003f151ceb7b2a1aa951072b3763a5e3c9bc81f10633a5e4"
     },
     "passwordPolicy": {
-      "text": "Kennwortrichtlinie",
-      "source_sha256": "70b3741e1c5e67091e20aa5a50889d50f1b063606c141dd19515ea5f118dbdc4"
+      "text": "Política de contraseñas",
+      "source_sha256": "21b86a0e7f34e88de52a5477dad7f31587ff03249d89108d34f5ce2447696215"
     },
     "customPolicyChip": {
       "text": "Benutzerdefinierte Policy for diese Identitaet",
@@ -693,36 +693,36 @@
       "source_sha256": "465ec7cb514ab1d25c1b9dcb44d390a37be182dfe8b76dd9a34eb46d2d3cfafe"
     },
     "rotationInterval": {
-      "text": "Rotationsintervall",
-      "source_sha256": "3a93e5abc997563a441dcb8055e231b783f0c5af2c0bb2cd39e848208f7c07e6"
+      "text": "Intervalo de rotación",
+      "source_sha256": "bb5664abd72273db5a840d9b15ac0f0b9b41f7d0ba08e07dc0154dbb9113eea6"
     },
     "maxDriftS": {
-      "text": "Max. Abweichung (s)",
-      "source_sha256": "749a997d7b615ee2f06b1816e25107822fde525514162e3f7542dcbd28d73e3d"
+      "text": "Deriva máxima (s)",
+      "source_sha256": "98601826579faa73898af9bc0ec4ffefdd2f1d6efa1b389f865ba23e306c4fa8"
     },
     "uppercase": {
       "text": "Grossbuchstaben",
       "source_sha256": "21a56245fd3a5f7a64420247b88029c9fcd2a2cdae39f427763c8ec9bfba5386"
     },
     "lowercase": {
-      "text": "Kleinbuchstaben",
-      "source_sha256": "de00d0269042f92948a035dba8e97b3ecf983f4e8d09389bedefaf98e0d8798a"
+      "text": "Minúsculas",
+      "source_sha256": "3b677a18bc9da6c82a9ff86be3b8dd6ba634a26bc1fbad881ea753641ba2a2be"
     },
     "digits": {
-      "text": "Ziffern",
-      "source_sha256": "507f2e07382d8082c6e5eac20bd0b08e9281bd8dbb6d40467425596b8b91bae4"
+      "text": "Dígitos",
+      "source_sha256": "9cd500d3d69fb10aef3e08720fe7ee668cf59e01ece5be0b45de91753d0fd7ec"
     },
     "special": {
-      "text": "Sonderzeichen",
-      "source_sha256": "426a8f6c8951ae9662134dc171f5f13e415f8f54a8cb113cb569cfea0dcefe40"
+      "text": "Caracteres especiales",
+      "source_sha256": "efd000836dc658c60232d81f7202a99dacdde2c7de0955e0a7cbb7d59357eeb5"
     },
     "allowedSymbols": {
-      "text": "Erlaubte Symbole",
-      "source_sha256": "9a72f6984e97bc2376a8feb8f7c17108dbf1b461a970689554b14aae1a0cc8b0"
+      "text": "Símbolos permitidos",
+      "source_sha256": "a76105a0573182766f14ff7498ca2eb504685dbe472633dd5b82b115a5e8bb3b"
     },
     "defaultSet": {
-      "text": "Standardsatz",
-      "source_sha256": "e87c663bb4ef83642636ea81f62f85d8b7e84722ef8f1543773043514ad6a679"
+      "text": "Conjunto predeterminado",
+      "source_sha256": "94ae8994da92f11784c3cef66b36a889eec8d11917a0aa009c3b61566d78df35"
     },
     "yes": {
       "text": "Yes",
@@ -733,40 +733,40 @@
       "source_sha256": "1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da161c6099be3691d"
     },
     "machineNameField": {
-      "text": "Maschinenname",
-      "source_sha256": "720cb8d70ae324209d8f9d578bdf97edd6a40491edf84d0321535acd7ab77b23"
+      "text": "Nombre de la máquina",
+      "source_sha256": "7c5749c19ac4b2ef719c184419cfdb6500c1d40849f799df642b5a0cb95d73c7"
     },
     "noMachinesFound": {
       "text": "No se encontraron máquinas para “{{query}}”",
       "source_sha256": "02d943644ea2d29bff9e2ae8dfb3db81db0beeac9f52a0b35b00a0883ac11787"
     },
     "adminTokenOptional": {
-      "text": "Admin-Token (optional)",
-      "source_sha256": "ae8a075ffb944e6d2995ad4aa7b07827b37fe67392d866428c89029ae5684326"
+      "text": "Token de administrador (opcional)",
+      "source_sha256": "8674c478740feb0156ac9aa65dbbd78a3285458d4c05509d1b50306cbd0837c8"
     },
     "adminTokenHelper": {
       "text": "Déjelo en blanco para realizar pruebas; requerido en la producción",
       "source_sha256": "c196498edebd2a37d09227f8d9aa5011cc5544b098f8fb9067c79b3f9e828e3c"
     },
     "passwordHistory": {
-      "text": "Kennwortverlauf",
-      "source_sha256": "95d6a32f334c6c76e89bc56e30e050bc227b45405ee0cc8b3410ab0d6584c74c"
+      "text": "Historial de contraseñas",
+      "source_sha256": "73e85c35eb80abc0191bfb0bdb2f6ea1bdb17b344971e5bb41cf1faa66a21e2f"
     },
     "loadingPasswordHistory": {
-      "text": "Kennwortverlauf wird geladen…",
-      "source_sha256": "4e345168c5c334b02567a30e2f9866267b4686b869c4a698ee6be9fbeccf48d3"
+      "text": "Cargando historial de contraseñas…",
+      "source_sha256": "4ec5625b4ac2785d5a86be5be703713169c73947960efab832449453b9560cda"
     },
     "noPasswordHistory": {
       "text": "Kein Kennwortverlauf for diese Identitaet verfuegbar.",
       "source_sha256": "fc47c632c99aa20f9fb949e3c85e4b0e895cffc38cffb94e691cf247d5bbab4a"
     },
     "chipCurrent": {
-      "text": "Aktuell",
-      "source_sha256": "f4d865ae1b77220880738db8d0b4b45e625de3aefd318703ecaad5d7006f9dd6"
+      "text": "Actual",
+      "source_sha256": "e0d1b68224bf0b31ef16b206c65b5f8f6b89d18161f4a7cdcb8d0ac8d952549a"
     },
     "chipPast": {
-      "text": "Vergangen",
-      "source_sha256": "ec4b9c84d4e53b31b1e812ca994792b9cb3e6047a0a5298ab5e560c41f898a94"
+      "text": "Pasado",
+      "source_sha256": "ca1530e8d7017547dc0651ac6c41931eb00475cf10fe902dd6d725b9b757a904"
     },
     "chipFuture": {
       "text": "Zukuenftig",
@@ -777,20 +777,20 @@
       "source_sha256": "3eaf5da150e205d3cc95ebf68ccfaa897db746c11daca0e5687e31a35643ee98"
     },
     "recovering": {
-      "text": "Wird wiederhergestellt…",
-      "source_sha256": "8cdf6eeff0c9d4ddafd81aef97df629c555886a4b994a0643ab55b79501b0b19"
+      "text": "Recuperante...",
+      "source_sha256": "cf007a38cfc898ffbefd660c06867dc60a7789c47b0648ce06873eef40bfc378"
     },
     "recover": {
-      "text": "Wiederherstellen",
-      "source_sha256": "ab99a15c6bcda97945b0611d5ae255f88207719004370e9dab12d062646b765d"
+      "text": "Recuperar",
+      "source_sha256": "0c5327fd45c725528c37b589d6198944faba2decd050086cbf89fa636c9843c7"
     },
     "basicInformation": {
-      "text": "Grundinformationen",
-      "source_sha256": "41ddf7293f449876457318615def0ab87dd09116d77e0f83d3e661f7890029f8"
+      "text": "Información básica",
+      "source_sha256": "6c092c9ca023247a0b1bf07e555b44557ffe5f01e1ebaca17943a48842ed901a"
     },
     "assignedName": {
-      "text": "Zugewiesener Name",
-      "source_sha256": "0c79622bf63f9526dd0f769eef0e57c57b1368b6c7df2b7e6dcda49de17e42f4"
+      "text": "Nombre asignado",
+      "source_sha256": "ef77d7790b7dab6d89b425a92ad0380964e1f5c208b65260a2331e43215c99f3"
     },
     "notAssigned": {
       "text": "No asignado",
@@ -801,64 +801,64 @@
       "source_sha256": "cb3af5ba617de9225c2c2b15d498cb9eca2da9db46a413ff3d3d6f6e2ded6f17"
     },
     "statusExpired": {
-      "text": "Abgelaufen",
-      "source_sha256": "8e93f2e8507d3d5cb6b27abd6b768799ae552f65258bd18a7864449bd25006f3"
+      "text": "Venció",
+      "source_sha256": "424a2551d356754c882d04ac16c63e6b50b80b159549d23231001f629455756e"
     },
     "identityLabel": {
       "text": "Identitaet",
       "source_sha256": "82fe524b7679be0427e0f83a134c05752297d97079f38a7ee38b55af80c9e125"
     },
     "neverConnected": {
-      "text": "Nie verbunden",
-      "source_sha256": "e30cdfb9075e495b1999cb0b5ce444fa39e65c7f5b736bf2929b8cc70b94ef8f"
+      "text": "Nunca conectado",
+      "source_sha256": "0dac37364c3d582c802ab9ae9aefc6af2d6bb488ebbba966b271f7d6cfe7243c"
     },
     "connected": {
-      "text": "Verbunden",
-      "source_sha256": "0338189c985eee9c190291f07c97fdd16bff676256302cf45690b80bb6fcbb9a"
+      "text": "Conectado",
+      "source_sha256": "22965568d22a14ee17af055d2870b50afcfe9fd94a83eec3196e266932297bb2"
     },
     "networkInformation": {
-      "text": "Netzwerkinformationen",
-      "source_sha256": "58140306f4e6e2599f29007c933668bdb19e0d445d9eb1c5e1e4dacc7f1f7927"
+      "text": "Información de red",
+      "source_sha256": "35cd8271a59e0b527be454e51da5e0d0b83bb7b5f2dce49c580efbea16cc1c18"
     },
     "ipAddress": {
-      "text": "IP-Adresse",
-      "source_sha256": "9654ff3be5be1da0bd6fa04fd886cf3874d1571cddf1cf48da5fa519fa930b8e"
+      "text": "dirección IP",
+      "source_sha256": "0302a467885abfdd4772c9e16c57edab91b02231248202d63170f1c669d13303"
     },
     "macAddress": {
-      "text": "MAC-Adresse",
-      "source_sha256": "975a89de712e0e82bac85868ac6462ca9ea9989bdcfb7c1ede8dbf4c6add12fc"
+      "text": "dirección MAC",
+      "source_sha256": "000a6ce60a8e48e3e5f0089004a301efd34e53067fc1d29547d138639055221c"
     },
     "platformInformation": {
-      "text": "Plattforminformationen",
-      "source_sha256": "3c65fb72918b13eba97ecfba6680c5fe3a9a542acd645e059e7034ebcf1054f1"
+      "text": "Información de la plataforma",
+      "source_sha256": "bf6039522840d720a6c3f2e871d72a1a05d0b4e47b73b16fe510f2c838cf0262"
     },
     "osPlatform": {
-      "text": "OS-Plattform",
-      "source_sha256": "a0ce19ef184c0f8d9194c99a180ee7d64860dfaba0832158af99c950a123ca65"
+      "text": "plataforma del sistema operativo",
+      "source_sha256": "0021ef577e31bd3975302459d4b8c3bdedf19fd479d4824b1ce46d803d8f12c0"
     },
     "osDetails": {
-      "text": "OS-Details",
-      "source_sha256": "78008eb6d2d9a2b1052044676563569c1ae0d3f82787055bc45de9b7854aa664"
+      "text": "Detalles del sistema operativo",
+      "source_sha256": "18bd7c98d30483db076c1ce955d2015002ee17dbd066cfa4e33e3c214494f0c8"
     },
     "organization": {
-      "text": "Organisation",
-      "source_sha256": "350be3643ce78043f7c268bdcee1df0bd01bc04f4eb83a62beb66e76c6e776a7"
+      "text": "Organización",
+      "source_sha256": "d764d42592fc968709b4c6c25c6e6b77919295dfce2c57ead02bedac5ddb3218"
     },
     "multiTenant": {
-      "text": "Mandant",
-      "source_sha256": "9837fb6af947b2f590f0d9301a00c28b7f65a934a4e3cde4bbad8294e3d94020"
+      "text": "Arrendatario",
+      "source_sha256": "e23969d284c3424c8014c6e5b1b85ebc275bc5c74321e7677a21d023e6ea154c"
     },
     "domain": {
       "text": "Domaene",
       "source_sha256": "f436e7ac8248bf4fc97267193fc49c3abb93a21c694476b346820aad2cfb172b"
     },
     "systemGroup": {
-      "text": "Systemgruppe",
-      "source_sha256": "6a81fb592aadad01e3e79137e36a91b158537de82f59f3e4c34cfd97e9b0346d"
+      "text": "Grupo de sistemas",
+      "source_sha256": "b4349ce313d00b3a572da49f5d09f4d4af67edbc24340b97362b74246fb6e6ec"
     },
     "securityInformation": {
-      "text": "Sicherheitsinformationen",
-      "source_sha256": "651ba165ae0f8229d7e0047715cf225d69607cd89aad27a98c99eca754b93995"
+      "text": "Información de seguridad",
+      "source_sha256": "a94e2fdd66be53ef4cab3756e3b945545a4f79ed66678301107c9d2383d34b13"
     },
     "secretKeyVersion": {
       "text": "Geheimschluesselversion",
@@ -869,24 +869,24 @@
       "source_sha256": "470a5d7aa5e8b8b9710d3bc5cbb8b7329b1e8283f4944e223c82cb85303450f0"
     },
     "timestamps": {
-      "text": "Zeitstempel",
-      "source_sha256": "0721d29d97fbf8992e96cf7702d1f305381de9c8b20379f5ac920df24cfda555"
+      "text": "Marcas de tiempo",
+      "source_sha256": "755f099dbf49d0984e535dbef68127da21e286c143dca18a63ec9af6adb9018a"
     },
     "lastUpdated": {
-      "text": "Zuletzt aktualisiert",
-      "source_sha256": "5d82dcbd38d081599808df9dec0f196f091ebb193ad96016b3090a3045976f26"
+      "text": "Última actualización",
+      "source_sha256": "382ac5f308f76c24b2c981e2041943bc2be2229cbd285ad362b9af1cfc386ef8"
     },
     "lastCheckIn": {
-      "text": "Letzter Check-in",
-      "source_sha256": "39d860478a6e6aac95c13242f74bfcd6a28af7d3edb7a66cdb5c49eb7e25f87c"
+      "text": "último check-in",
+      "source_sha256": "9d5980ae7a54aa18ff71158d822c0eef994ff6087feb3c35b1a90ca63a66848b"
     },
     "na": {
-      "text": "k. A.",
-      "source_sha256": "4b86dcfa52080c5c8a2db49b2062d48e175a4e42f67aa227a0eb261485ff87bf"
+      "text": "N / A",
+      "source_sha256": "e2f79e5b60330bba4c289962231b6ba2957d0b14e7deb3110417003c79dea635"
     },
     "unknown": {
-      "text": "Unbekannt",
-      "source_sha256": "276ffa1fb4f970104fc7873c371e0af2c6b10b8375e7104b6ca3708c487163f0"
+      "text": "Desconocido",
+      "source_sha256": "b764cdc0eab7137467211272fa539f1260d1bf2e71bcf6ff3bdc960f5c16aa14"
     },
     "none": {
       "text": "No",
@@ -895,12 +895,12 @@
   },
   "outstandingApprovals": {
     "title": {
-      "text": "Ausstehende Genehmigungen",
-      "source_sha256": "d71bfc512802e7ea1cf58043c9cee7151cb09c7effa6b375d01f82c81268b681"
+      "text": "Aprobaciones destacadas",
+      "source_sha256": "d58cd3d597b1e6c14eb4b811607d170ee89df77eb2f9c7e7ccb536b1f4385112"
     },
     "loadingAria": {
-      "text": "Ausstehende Genehmigungen werden geladen",
-      "source_sha256": "4ff6222993181a676488db0698dadd2646a68493cf3264d7bbd56d53af27000a"
+      "text": "Cargando aprobaciones pendientes",
+      "source_sha256": "cc9bc05846db46e6b07eb52904e4d2892a7cc3d6b5dad3738835bad6c31faf72"
     },
     "loadFailed": {
       "text": "Ausstehende Genehmigungen konnten not geladen werden.",
