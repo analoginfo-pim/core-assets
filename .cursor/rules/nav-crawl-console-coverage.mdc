@@ -1,0 +1,116 @@
+---
+description: Comprehensive / all-pages UI coverage requires a nav-driven crawl that clicks every menu and submenu; console errors, blank routes, missing-string banners, and 429 storms are FAIL — never chrome-only PASS.
+alwaysApply: true
+---
+
+# Nav crawl console coverage (hard rule)
+
+Operator defect (2026-08-19): agents claimed all-pages / comprehensive UI
+coverage from hardcoded route lists, heading asserts, or chrome-only
+walks while nested nav leaves were never clicked, console `TypeError`s
+and `Missing string:` banners did not fail the run, blank pages after a
+mid-walk deploy were counted green, and locale was assumed rather than
+verified in-product. Separately, localization heal storms produced HTTP
+429s that were dismissed as “test noise.” RCA:
+`pim-offline-server/docs/dev/i18n-429-request-storm-rca-20260819.md`.
+
+## The rule
+
+> **Never claim comprehensive, all-pages, full UI, or nav crawl “works,”
+> “PASS,” or “clean” unless a nav-driven Playwright (or equivalent)
+> crawl expanded every left-nav menu and submenu, clicked every leaf,
+> verified locale in-product, recorded served-bundle identity, and
+> failed the run on product console errors, pageerrors, error
+> boundaries, blank/non-rendered routes, missing-string banners / raw
+> i18n keys, and 429 storms. Chrome-only nav, hardcoded route lists that
+> skip nested leaves, and warning-only console collection are forbidden
+> as comprehensive coverage.**
+
+## When this rule applies
+
+Trigger phrases (non-exhaustive): comprehensive UI test, all-pages
+crawl, full admin walk, nav crawl complete, console-clean matrix,
+locale walk for zh-TW / de / en, “every menu tested.”
+
+Does **not** force a full nav crawl for a narrowly scoped single-page
+layout fix that explicitly scopes out comprehensive coverage (still must
+not claim all-pages PASS).
+
+## Required proof
+
+| # | Requirement | Pass condition |
+| --- | --- | --- |
+| 1 | **Nav-driven** | Expand every left-nav section and nested submenu; click every leaf link (not only a static allow-list that omits nested items) |
+| 2 | **Locale in-product** | Header chip / `html.lang` / visible BCP-47 tag matches the intended pack for that run |
+| 3 | **Served bundle** | Record disk-or-served asset identity for the run (SPA hash) |
+| 4 | **Console / pageerror** | Product console errors and `pageerror` → **FAIL** (known third-party noise may filter; `TypeError`, `Missing string:`, error-boundary text may not) |
+| 5 | **Render** | Route that never rendered / blank body → **FAIL**, never omitted or passed |
+| 6 | **Missing strings** | Visible `Missing string:` / missing-key banner / raw key chrome → **FAIL** |
+| 7 | **429 storms** | Elevated 429 counts are a **product defect** (fix client storm or name BLOCKED) — not flaky test noise |
+| 8 | **Wall-clock** | A single-locale full-leaf crawl that cannot finish in a **reasonable** time (order of **~2 minutes** on a healthy unlimited lab, not hours) is itself a **defect** — usually lab rate limiting still on, or an inefficient crawl→fix→rebuild→retest loop. Slow verification is what leads to skipped verification |
+
+Canonical spec:
+`pim-offline-server/ui/e2e/nav-crawl-console-embedded-live.spec.ts`
+(evidence under `docs/dev/evidence/nav-crawl-zh-tw-20260819/`).
+
+## Forbidden “false green”
+
+- Hardcoded route arrays that never expand nested drawer groups
+- Heading-visible / nav-label asserts without body render checks
+- Collecting console errors as notes while still exiting 0
+- Passing blank pages (deploy bounce, AuthBound shell, empty main)
+- Assuming locale from cookie/init script without in-product verify
+- Treating HTTP 429 storms as acceptable Playwright noise
+- Claiming comprehensive coverage from Connect / binder / messaging
+  sibling matrices alone
+- “Passing” a crawl that spent hours sleeping / backing off around 429s
+  instead of turning lab rate limiting off first
+  ([`rate-limiting-off-for-testing.mdc`](rate-limiting-off-for-testing.mdc))
+
+## Required agent behavior
+
+1. **Unlimited lab first** — before a crawl: confirm
+   [`rate-limiting-off-for-testing.mdc`](rate-limiting-off-for-testing.mdc)
+   posture (lab-dev / `REQUEST_RATE_LIMITING_ENABLED=false`, or until that
+   binary is served: `ADMIN_AUTH_LOCKOUT_ENABLED=false`). Do **not** burn
+   the sweep on Retry-After sleeps.
+2. When claiming comprehensive / all-pages UI coverage: name the nav-crawl
+   spec (or equivalent evidence) and the per-locale matrix path.
+3. Fail closed on console / boundary / blank / missing-string / 429 storm.
+4. Prefer SPA nav clicks after first load; never green a route that did
+   not render. Batch defects from one crawl, fix the list, re-crawl once —
+   do not serialize crawl→fix-one→rebuild→crawl.
+5. Locale JSON: edit `locales/ui/<tag>/` on disk and reload — **no rebuild**.
+   SPA behavior: Vite against the live API — **no re-embed**. Full deploy
+   only when embedding is required; say *pending full deploy* otherwise.
+6. Cross-link
+   [`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc)
+   (layout proof) and
+   [`session-connect-protocol-surface.mdc`](session-connect-protocol-surface.mdc)
+   / [`mailpit-messaging-comprehensive-test.mdc`](mailpit-messaging-comprehensive-test.mdc)
+   / [`assessment-binder-section-content.mdc`](assessment-binder-section-content.mdc)
+   (sibling false-green classes).
+7. Mirror this rule to `core-assets/.cursor/rules/` in the same change
+   set ([`auto-commit-push.mdc`](auto-commit-push.mdc)).
+
+## Worked violation → fix
+
+**Violation:** “All admin pages PASS” from a static `ROUTES[]` goto loop
+in English only; nested PAM / Configuration leaves never opened;
+`i18n: missing string` console lines ignored; 40× 429 during the walk
+called “rate-limit flake.”
+
+**Fix:** Run
+`nav-crawl-console-embedded-live.spec.ts` with `-g "locale=zh-TW"` (then
+`en` / `de`); expand entire drawer; fail on console / missing-string /
+blank / 429 storm; fix packs and client heal; record matrix under
+`docs/dev/evidence/nav-crawl-zh-tw-20260819/`.
+
+## Origin
+
+2026-08-19 — operator hard rule after i18n 429 storms and incomplete
+nav walks greenwashed console and missing-string defects. Same-day:
+wall-clock clause — a crawl that cannot complete in reasonable time
+(~2 minutes vs multi-hour 429/rebuild loops) is a defect; unlimited lab
+posture first per
+[`rate-limiting-off-for-testing.mdc`](rate-limiting-off-for-testing.mdc).

@@ -1,0 +1,109 @@
+---
+description: Rate limiting is enabled for production and public-internet demo; disabled by default for internal testing, localization, and development — profile-driven via pim-app-config, never env vars.
+alwaysApply: true
+---
+
+# Rate limiting off for internal testing (hard rule)
+
+Operator directive (Phil, 2026-08-19), clarified same day:
+
+> **Always remove rate limiting when performing testing. Allow removal of
+> rate limiting for development testing as a first-class capability.**
+>
+> **The demo environment put on the public internet has rate limiting.
+> Doing internal testing and localization testing/development do not have
+> rate limiting enabled.**
+
+## The rule
+
+> **Request rate limiting and AC-7-style lockouts are profile-driven.
+> Production and public-internet demo come up limited. Internal testing,
+> localization testing, and development (`lab-dev` / AppMode dev) come up
+> unlimited by default — agents and developers must not hit HTTP 429
+> because they forgot a flag. Configuration is `REQUEST_RATE_LIMITING_ENABLED`
+> in `pim-app-config` (`default_dev=false`, `default_prod=true`), never an
+> environment variable. Startup always logs the active posture. The
+> localization client storm is still a product defect to fix; unlimited
+> testing does not excuse a request storm in production.**
+
+## Posture table (operator)
+
+| Environment | Rate limiting |
+| --- | --- |
+| Public internet demo | **Enabled** — internet-exposed |
+| Production | **Enabled** |
+| Internal testing / localization testing / development | **Disabled by default** |
+
+## When it applies
+
+Any lab e2e, nav crawl, comprehensive QA, localization walk, or internal
+development session against AIC Server. Also when adding or changing
+rate-limit / AC-7 lockout code.
+
+## Required
+
+1. **Profile defaults** — `REQUEST_RATE_LIMITING_ENABLED`: `default_dev=false`,
+   `default_prod=true`. Prefer `COMPLIANCE_PROFILE=lab-dev` on internal
+   hosts so unset values resolve unlimited; commercial / cmmc-l2 / prod
+   AppMode stay limited.
+2. **Loud posture** — startup `tracing` states enabled vs disabled; when
+   disabled, also a `runtime-status.json` warning. Never silently unlimited
+   on an internet-exposed host.
+3. **Wire tests** — crawls and embedded-live e2e assume lab unlimited
+   posture (or set the manifest key via configurator / admin API — never
+   `$env:`). Lab helper:
+   `pim-offline-server/scripts/Set-LabRequestRateLimitingOff.ps1`.
+4. **Still fix client storms** — localization heal/report storms remain
+   defects; see
+   `pim-offline-server/docs/dev/i18n-429-request-storm-rca-20260819.md`.
+5. **Loop cost** — a ~2-minute sweep that becomes multi-hour because of
+   429 backoff or rebuild cycles is a **defect**. Disable limiting first;
+   locale JSON and Vite — never rebuild to verify those; batch crawl then
+   fix then re-crawl once.
+6. Mirror this rule to `core-assets/.cursor/rules/` in the same change set.
+
+## Forbidden
+
+- Leaving production or public-internet demo unlimited
+- Using an environment variable for this switch
+  ([`no-environment-variables.mdc`](no-environment-variables.mdc))
+- Hand-editing limiter constants per run instead of the manifest key
+- Treating 429 during internal testing as acceptable noise rather than
+  fixing profile posture and/or the client storm
+- Weakening production defaults
+  ([`baseline-security-perfect-always.mdc`](baseline-security-perfect-always.mdc))
+
+## Worked violation → fix
+
+**Violation:** Lab crawl trips AC-7 admin-token lockout after missing-key
+POSTs; agents invent `$env:DISABLE_RATE_LIMIT=1` or ask to raise thresholds
+ad hoc; public demo inherits unlimited from a copied lab settings file.
+
+**Fix:** Lab `COMPLIANCE_PROFILE=lab-dev` + `default_dev=false` so limiting
+is off without a flag; production/demo `default_prod=true`; startup log
+names the posture; client heal/negative-cache still lands per the 429 RCA.
+
+## Cross-references
+
+| Rule / doc | Overlap |
+| --- | --- |
+| [`no-environment-variables.mdc`](no-environment-variables.mdc) | Manifest / CLI only |
+| [`baseline-security-perfect-always.mdc`](baseline-security-perfect-always.mdc) | Prod/demo floor stays limited |
+| [`nav-crawl-console-coverage.mdc`](nav-crawl-console-coverage.mdc) | Crawls run under lab unlimited posture |
+| `pim-offline-server/docs/dev/i18n-429-request-storm-rca-20260819.md` | Client storm still fixed |
+| `REQUEST_RATE_LIMITING_ENABLED` in `pim-offline-server/app-config.toml` | Authority key |
+
+## Origin
+
+2026-08-19 — operator hard rule: always remove rate limiting for testing;
+first-class capability. Same-day clarification: public-internet demo and
+production stay limited; internal testing / localization / development
+are unlimited by default (profile-driven).
+
+Same-day operator rationale (loop cost): **rate limiting on development
+and testing systems is a counter-pattern to getting an RC out the door.**
+A ~two-minute nav / localization sweep degraded to ~eight hours (~240×)
+because agents slept, backed off, and rebuilt around 429s instead of
+turning limiting off for the lab profile. The iteration loop is a
+first-class deliverable: disable limiting first, then sweep at full
+speed; never absorb a slow loop by skipping verification.
