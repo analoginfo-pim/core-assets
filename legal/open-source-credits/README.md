@@ -13,14 +13,14 @@ from real lockfiles and harvested LICENSE copies. See `inventory.json`
 
 | Metric | Value |
 | --- | ---: |
-| Entries (third-party) | 1311 |
-| With license text | 1311 |
+| Entries (third-party) | 1312 |
+| With license text | 1312 |
 | BLOCKED (OSS gaps) | 0 |
 | Commercial / proprietary | 5 |
-| Cargo third-party | 991 |
+| Cargo third-party | 992 |
 | npm production | 321 |
 | Incorporated assets | 4 |
-| Cargo path (first-party, excluded) | 73 |
+| Cargo path (first-party, excluded) | 72 |
 
 ## Files
 
@@ -39,4 +39,4 @@ python scripts/generate-open-source-credits.py
 Then sync into `pim-offline-server` via this script (auto) or
 `scripts/sync-to-projects.ps1`.
 
-Inventory SHA-256: `0021834ce3cde1954c45668f80140a88c64b1111ce0d91115a7307b4e4796cb5`
+Inventory SHA-256: `3acea6790678fdbe67846378ebbed0271d2d862bb261971316a04c217b3e0141`

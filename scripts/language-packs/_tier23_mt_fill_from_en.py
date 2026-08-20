@@ -93,23 +93,52 @@ def restore(text: str, held: List[str]) -> str:
 
 
 def translate_batch(translator: Any, texts: List[str], sleep_s: float) -> List[str]:
-    out: List[str] = []
+    """Translate texts; prefer API batch when available, else one-by-one."""
+    if not texts:
+        return []
+    protected_list: List[str] = []
+    held_list: List[List[str]] = []
     for t in texts:
         if not t.strip():
-            out.append(t)
+            protected_list.append(t)
+            held_list.append([])
             continue
-        protected, held = protect(t)
+        p, h = protect(t)
+        protected_list.append(p)
+        held_list.append(h)
+
+    results: List[str] = []
+    # deep_translator GoogleTranslator supports translate_batch for list[str]
+    try:
+        if hasattr(translator, "translate_batch"):
+            chunk = [p for p in protected_list]
+            batch_out = translator.translate_batch(chunk)
+            if isinstance(batch_out, list) and len(batch_out) == len(chunk):
+                for tr, held in zip(batch_out, held_list):
+                    text = tr if isinstance(tr, str) else str(tr)
+                    if held:
+                        text = restore(text, held)
+                    results.append(text)
+                time.sleep(sleep_s)
+                return results
+    except Exception as exc:  # noqa: BLE001
+        print(f"WARN batch translate fail ({exc!s:.100}); falling back per-string", file=sys.stderr)
+
+    for t, held in zip(protected_list, held_list):
+        if not t.strip():
+            results.append(t)
+            continue
         try:
-            translated = translator.translate(protected)
+            translated = translator.translate(t)
         except Exception as exc:  # noqa: BLE001
             print(f"WARN translate fail: {exc!s:.120} — keeping English temporarily", file=sys.stderr)
             translated = t
             held = []
         if held:
             translated = restore(translated, held)
-        out.append(translated)
+        results.append(translated)
         time.sleep(sleep_s)
-    return out
+    return results
 
 
 def main() -> int:
