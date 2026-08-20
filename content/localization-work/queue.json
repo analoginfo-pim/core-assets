@@ -34,10 +34,10 @@
       "kind": "help-manual",
       "title": "Live session file-transfer honesty",
       "added": "2026-08-17",
-      "updated": "2026-08-18",
+      "updated": "2026-08-20",
       "source_repo": "pim-offline-server",
       "source_path": "ui/src/components/pam/LiveSessionChrome.tsx",
-      "source_sha256": "32e9fd43d3dc173168cc45f269dc7677368877aaac346803830e6ab7fc4df5a1",
+      "source_sha256": "21562e6630c1e03942859aaf4c23f484d3f153ce498c3b3811f2b15d090a0d18",
       "product_route": "/pam/live",
       "required_tags": [
         "de",
@@ -49,7 +49,7 @@
       "draft_tags": [
         "de"
       ],
-      "notes": "Send delivers to the host (SFTP or SMB). VNC cannot receive files. Draft DE landed; other Tier 1 tags remain open. Not Met. Source changed 2026-08-18 (hash b5d2abede1f2 → 32e9fd43d3dc)."
+      "notes": "Send delivers to the host (SFTP or SMB). VNC cannot receive files. Draft DE landed; other Tier 1 tags remain open. Not Met. Source changed 2026-08-18 (hash b5d2abede1f2 → 32e9fd43d3dc). Source changed 2026-08-20 (hash 32e9fd43d3dc → 21562e6630c1)."
     },
     {
       "id": "spa.live-session-leftover-en",
@@ -955,6 +955,119 @@
       ],
       "draft_tags": [],
       "notes": "Global AppBar load-status chip + data-app-state DOM attribute. Catalog keys under common:loadStatus.* for all seven shipped tags. Agent drafts land with this change set; professional review still required to close."
+    },
+    {
+      "id": "spa.appbar-tooltips",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "help-manual",
+      "title": "AppBar rollover explanations",
+      "added": "2026-08-20",
+      "updated": "2026-08-20",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/i18n/locales/en/help.json",
+      "source_sha256": "4d19f83d2e428cd12c07cf55d73c034916a81b866cae8775b7a2952bb2876b31",
+      "product_route": "/",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [],
+      "notes": "Unique operator explanations for every AIC Server top-bar control; drafts in all Tier 1 tags. Quality parked."
+    },
+    {
+      "id": "spa.pick-list-field",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "spa-chrome",
+      "title": "Shared pick-list plus manual-entry control",
+      "added": "2026-08-20",
+      "updated": "2026-08-20",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/components/PickListField.tsx",
+      "source_sha256": "c390536418f59eb57d139f2a1df44563235c781b0f2bac5942fa5c1cd3af3186",
+      "product_route": "/enclave/risk-register",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "notes": "Agent draft catalogs for components.pickList.* in every Tier 1 tag. First adopter is Risk Register link fields. Reviewer must close; agent draft does not close."
+    },
+    {
+      "id": "spa.principal-field-pick-list",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "must-localize",
+      "title": "Principal field pick list plus manual entry",
+      "added": "2026-08-20",
+      "updated": "2026-08-20",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/i18n/locales/en/components.json",
+      "source_sha256": "54c55c1eb7e685ca415bd242f73ba75144af1b1c8519aec64feca3a3494ecd52",
+      "product_route": "/enclave/risk-register",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "notes": "PrincipalField now wraps PickListField. New components.principalField.helper and manualHint. Agent drafts landed in every shipped tag; they do not close. Not Met."
+    },
+    {
+      "id": "spa.pick-list-p0-remaining-fields",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "spa-chrome",
+      "title": "P0 pick-list field helpers (machine, endpoint, connection, workstation, identity, tenant, system group)",
+      "added": "2026-08-20",
+      "updated": "2026-08-20",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/i18n/locales/en/components.json",
+      "source_sha256": "f65116ecdb4a68c8dfb6fa00a675c5f4dfdaeb183e03c6c8b208be5776213904",
+      "product_route": "/pam/command-governance",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "notes": "Agent draft catalogs for components.machineScopeField, endpointField, connectionPointField, workstationField, endpointIdentityField, tenantField, systemGroupField. Reviewer must close; agent draft does not close. Not Met."
     }
   ]
 }
