@@ -1208,5 +1208,123 @@
       "text": "从目录中选择人员；如果目录中没有该人员，请输入其标识符。",
       "source_sha256": "02def31c66f9faa5087feff6c098aefc29bf4e005eb714c245f7b57527435220"
     }
+  },
+  "frameworkTagsField": {
+    "helper": {
+      "text": "仅为标记 — 不会将任何控制项标为已满足。请选择已发布的框架，或输入登记册未收录的标记。",
+      "source_sha256": "5619ca2b69a7a16f201829de383f5b4c5472e6db711767752325319e86d358db"
+    },
+    "manualHint": {
+      "text": "请选择框架，或输入标记（例如 cmmc-l2）。",
+      "source_sha256": "88a05feaa1dad2ab729cd934855c2ec2826bd234e5e0275744d6cac2eb43cca5"
+    }
+  },
+  "controlTagsField": {
+    "helper": {
+      "text": "仅为关联标记。请选择目录中的控制项，或输入目录未收录的引用。",
+      "source_sha256": "d6124fcb522e6bcb449899fcff413e9481963e428bacc8af786a2cc4506c070b"
+    }
+  },
+  "iamRoleField": {
+    "helper": {
+      "text": "此策略适用的 IAM 角色。",
+      "source_sha256": "e4893fb5a3dc859ae2cb1b6262f4d5520a744c4556cde77a5d0cb2deb55b9def"
+    },
+    "manualHint": {
+      "text": "请选择角色，或在未列出时输入其短名称。",
+      "source_sha256": "b3d93a8bc66a52dbc6145337f5edf1be7b200245d8d56e572474bac3ccf5c61b"
+    }
+  },
+  "enclaveField": {
+    "helper": {
+      "text": "此数据流使用的已记录飞地边界。",
+      "source_sha256": "3bd7d68e203f8cf290c92a36b52ea95954f822f878631062a2ebdcc45f3d2edd"
+    },
+    "manualHint": {
+      "text": "请选择飞地，或在尚未列出时输入其标识符。",
+      "source_sha256": "072824fe9bf49ac002af3b746dd955aef70659aa34071311ac972c03b8472ed2"
+    }
+  },
+  "incidentTicketField": {
+    "helper": {
+      "text": "此请求的可选事件或外部工单标识符。",
+      "source_sha256": "7e7c731accadefbb96ecc3aa17c63afa998c79a248c446b20efbf39dd0fae003"
+    },
+    "manualHint": {
+      "text": "请选择事件案例，或在未列出时输入外部工单标识符。",
+      "source_sha256": "76fc0d45eb5b61e293185d6d85815175aad8befa1f228afff324b10fffe463f4"
+    }
+  },
+  "tenantNameField": {
+    "helper": {
+      "text": "登记令牌上使用的租户名称。",
+      "source_sha256": "426dfc9cd61c8a7471fa1f8851482021203160bdb3e43072f61cc83dfd1e8cce"
+    },
+    "manualHint": {
+      "text": "请选择租户，或在未列出时输入其名称。",
+      "source_sha256": "db530e4ea84c4158b56e3974f7fc081df447a496b8676413a58dd348cf06a0b6"
+    }
+  },
+  "endpointNameField": {
+    "helper": {
+      "text": "用于安装说明和令牌描述。按名称匹配 — 不是 UUID。",
+      "source_sha256": "e2e26837de092e2bf1237043253b506181877da6a9092a8129c8de427983a633"
+    },
+    "manualHint": {
+      "text": "请选择计算机名称，或在未列出时输入主机名。",
+      "source_sha256": "db286ffaa28488c5eddb01e555c53cdaf7bc54f6e4217179014d3627d5b1f860"
+    }
+  },
+  "commandLaunchField": {
+    "helper": {
+      "text": "基名按不区分大小写的方式与此范围的启动允许列表匹配。",
+      "source_sha256": "13f1ff0d52ce2b73373073939d4de54c5f02cdc1c4765d71e893f7a761ff6531"
+    },
+    "manualHint": {
+      "text": "请选择允许的映像，或输入允许列表未收录的路径。",
+      "source_sha256": "91b3d15971a19e821eb42220c8cb83a4df099dc18efe3b1fca899cc34774caac"
+    }
+  },
+  "commandPatternField": {
+    "helper": {
+      "text": "仅安全预览 — 不会执行该命令。请选择受治理的模式，或输入任意命令行。",
+      "source_sha256": "3684fc70d156c6d6a68b444e5d93c3c37b0fdecfb00359512c3015de47e578ff"
+    },
+    "manualHint": {
+      "text": "请选择现行策略中的模式，或输入要测试的命令行。",
+      "source_sha256": "682b8afb778a33b1575a1c43e0ccf9e074c8fd2fa1f831a6522fe013bf5a8f0f"
+    }
+  },
+  "trainingDocumentField": {
+    "helper": {
+      "text": "此证明所覆盖的计划文档。",
+      "source_sha256": "c90e8535a1fd449cbfc617d31bc081d070790d8f9def0c632938c0cba21aa14d"
+    },
+    "manualHint": {
+      "text": "请选择计划文档，或在未列出时输入其项目标识符。",
+      "source_sha256": "ccd104ea789ce767fc1e7203fabd2eb591fa4796110f82b0cfcd1d90feb3286e"
+    }
+  },
+  "auditFilterEndpointField": {
+    "helper": {
+      "text": "将日志限制为单个已登记终结点。",
+      "source_sha256": "6873e0bd4febb670a0bb43f9da96a704898a3211915ef0c65037e37c8c9b4dfb"
+    }
+  },
+  "auditFilterUserField": {
+    "helper": {
+      "text": "将日志限制为目录中的一个人。",
+      "source_sha256": "5e91aec900c79ea8d4721acc903ea58c8d9f5cf4c0af9afa798138a406280c59"
+    }
+  },
+  "waCheckField": {
+    "helper": {
+      "text": "跳过或软失败的检查标识。恶意软件或拒绝列表失败不可豁免。",
+      "source_sha256": "519c49891a92dae9278a3f9ca7b3fd22c4a69411095ba5a69c2e431d6648b0f2"
+    },
+    "manualHint": {
+      "text": "请选择此工作站上的检查，或在未列出时输入检查标识。",
+      "source_sha256": "e3f247d4f937fff6e6577f37afb0ca8546f46d6b78d333a07ff8a6516e3cae7d"
+    }
   }
 }

@@ -1148,5 +1148,123 @@
       "text": "Elija una persona del directorio, o escriba su identificador si no aparece en la lista.",
       "source_sha256": "02def31c66f9faa5087feff6c098aefc29bf4e005eb714c245f7b57527435220"
     }
+  },
+  "frameworkTagsField": {
+    "helper": {
+      "text": "Solo etiquetas: ningún control se marca como cumplido. Elija un marco publicado, o escriba una etiqueta que el registro no incluye.",
+      "source_sha256": "5619ca2b69a7a16f201829de383f5b4c5472e6db711767752325319e86d358db"
+    },
+    "manualHint": {
+      "text": "Elija un marco, o escriba una etiqueta como cmmc-l2.",
+      "source_sha256": "88a05feaa1dad2ab729cd934855c2ec2826bd234e5e0275744d6cac2eb43cca5"
+    }
+  },
+  "controlTagsField": {
+    "helper": {
+      "text": "Solo etiquetas de asociación. Elija un control del catálogo, o escriba una referencia que el catálogo no incluye.",
+      "source_sha256": "d6124fcb522e6bcb449899fcff413e9481963e428bacc8af786a2cc4506c070b"
+    }
+  },
+  "iamRoleField": {
+    "helper": {
+      "text": "El rol de IAM al que se aplica esta política.",
+      "source_sha256": "e4893fb5a3dc859ae2cb1b6262f4d5520a744c4556cde77a5d0cb2deb55b9def"
+    },
+    "manualHint": {
+      "text": "Elija un rol, o escriba su identificador corto si no aparece en la lista.",
+      "source_sha256": "b3d93a8bc66a52dbc6145337f5edf1be7b200245d8d56e572474bac3ccf5c61b"
+    }
+  },
+  "enclaveField": {
+    "helper": {
+      "text": "El límite de enclave registrado que usa este flujo.",
+      "source_sha256": "3bd7d68e203f8cf290c92a36b52ea95954f822f878631062a2ebdcc45f3d2edd"
+    },
+    "manualHint": {
+      "text": "Elija un enclave, o escriba su identificador si aún no aparece en la lista.",
+      "source_sha256": "072824fe9bf49ac002af3b746dd955aef70659aa34071311ac972c03b8472ed2"
+    }
+  },
+  "incidentTicketField": {
+    "helper": {
+      "text": "Identificador opcional de incidente o de ticket externo para esta solicitud.",
+      "source_sha256": "7e7c731accadefbb96ecc3aa17c63afa998c79a248c446b20efbf39dd0fae003"
+    },
+    "manualHint": {
+      "text": "Elija un caso de incidente, o escriba un identificador de ticket externo si no aparece en la lista.",
+      "source_sha256": "76fc0d45eb5b61e293185d6d85815175aad8befa1f228afff324b10fffe463f4"
+    }
+  },
+  "tenantNameField": {
+    "helper": {
+      "text": "El nombre de inquilino usado en el token de inscripción.",
+      "source_sha256": "426dfc9cd61c8a7471fa1f8851482021203160bdb3e43072f61cc83dfd1e8cce"
+    },
+    "manualHint": {
+      "text": "Elija un inquilino, o escriba su nombre si no aparece en la lista.",
+      "source_sha256": "db530e4ea84c4158b56e3974f7fc081df447a496b8676413a58dd348cf06a0b6"
+    }
+  },
+  "endpointNameField": {
+    "helper": {
+      "text": "Se usa en las instrucciones de instalación y en la descripción del token. Basado en el nombre; no es un UUID.",
+      "source_sha256": "e2e26837de092e2bf1237043253b506181877da6a9092a8129c8de427983a633"
+    },
+    "manualHint": {
+      "text": "Elija un nombre de equipo, o escriba un nombre de host si no aparece en la lista.",
+      "source_sha256": "db286ffaa28488c5eddb01e555c53cdaf7bc54f6e4217179014d3627d5b1f860"
+    }
+  },
+  "commandLaunchField": {
+    "helper": {
+      "text": "El nombre base se compara sin distinguir mayúsculas con la lista de autorización de inicio de este alcance.",
+      "source_sha256": "13f1ff0d52ce2b73373073939d4de54c5f02cdc1c4765d71e893f7a761ff6531"
+    },
+    "manualHint": {
+      "text": "Elija una imagen permitida, o escriba una ruta que la lista de autorización no incluye.",
+      "source_sha256": "91b3d15971a19e821eb42220c8cb83a4df099dc18efe3b1fca899cc34774caac"
+    }
+  },
+  "commandPatternField": {
+    "helper": {
+      "text": "Solo vista previa segura: el comando nunca se ejecuta. Elija un patrón gobernado, o escriba cualquier línea de comando.",
+      "source_sha256": "3684fc70d156c6d6a68b444e5d93c3c37b0fdecfb00359512c3015de47e578ff"
+    },
+    "manualHint": {
+      "text": "Elija un patrón de la política vigente, o escriba una línea de comando para probar.",
+      "source_sha256": "682b8afb778a33b1575a1c43e0ccf9e074c8fd2fa1f831a6522fe013bf5a8f0f"
+    }
+  },
+  "trainingDocumentField": {
+    "helper": {
+      "text": "El documento del programa que cubre esta atestación.",
+      "source_sha256": "c90e8535a1fd449cbfc617d31bc081d070790d8f9def0c632938c0cba21aa14d"
+    },
+    "manualHint": {
+      "text": "Elija un documento del programa, o escriba su identificador de elemento si no aparece en la lista.",
+      "source_sha256": "ccd104ea789ce767fc1e7203fabd2eb591fa4796110f82b0cfcd1d90feb3286e"
+    }
+  },
+  "auditFilterEndpointField": {
+    "helper": {
+      "text": "Limita el registro a un punto de conexión inscrito.",
+      "source_sha256": "6873e0bd4febb670a0bb43f9da96a704898a3211915ef0c65037e37c8c9b4dfb"
+    }
+  },
+  "auditFilterUserField": {
+    "helper": {
+      "text": "Limita el registro a una persona del directorio.",
+      "source_sha256": "5e91aec900c79ea8d4721acc903ea58c8d9f5cf4c0af9afa798138a406280c59"
+    }
+  },
+  "waCheckField": {
+    "helper": {
+      "text": "Identificador de comprobación para omitir o tratar como error suave. Los fallos de malware o de la lista de denegación no se pueden eximir.",
+      "source_sha256": "519c49891a92dae9278a3f9ca7b3fd22c4a69411095ba5a69c2e431d6648b0f2"
+    },
+    "manualHint": {
+      "text": "Elija una comprobación de esta estación de trabajo, o escriba un identificador de comprobación si no aparece en la lista.",
+      "source_sha256": "e3f247d4f937fff6e6577f37afb0ca8546f46d6b78d333a07ff8a6516e3cae7d"
+    }
   }
 }

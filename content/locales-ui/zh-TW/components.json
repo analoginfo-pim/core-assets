@@ -1212,5 +1212,123 @@
       "text": "請從目錄選擇人員；若目錄中沒有該人員，請輸入其識別碼。",
       "source_sha256": "02def31c66f9faa5087feff6c098aefc29bf4e005eb714c245f7b57527435220"
     }
+  },
+  "frameworkTagsField": {
+    "helper": {
+      "text": "僅為標籤 — 不會將任何控制項標示為已符合。請選擇已發布的架構，或輸入登錄未收錄的標籤。",
+      "source_sha256": "5619ca2b69a7a16f201829de383f5b4c5472e6db711767752325319e86d358db"
+    },
+    "manualHint": {
+      "text": "請選擇架構，或輸入標籤（例如 cmmc-l2）。",
+      "source_sha256": "88a05feaa1dad2ab729cd934855c2ec2826bd234e5e0275744d6cac2eb43cca5"
+    }
+  },
+  "controlTagsField": {
+    "helper": {
+      "text": "僅為關聯標籤。請選擇目錄中的控制項，或輸入目錄未收錄的參照。",
+      "source_sha256": "d6124fcb522e6bcb449899fcff413e9481963e428bacc8af786a2cc4506c070b"
+    }
+  },
+  "iamRoleField": {
+    "helper": {
+      "text": "此原則套用的 IAM 角色。",
+      "source_sha256": "e4893fb5a3dc859ae2cb1b6262f4d5520a744c4556cde77a5d0cb2deb55b9def"
+    },
+    "manualHint": {
+      "text": "請選擇角色，或在未列出時輸入其短名稱。",
+      "source_sha256": "b3d93a8bc66a52dbc6145337f5edf1be7b200245d8d56e572474bac3ccf5c61b"
+    }
+  },
+  "enclaveField": {
+    "helper": {
+      "text": "此資料流使用的已記錄飛地邊界。",
+      "source_sha256": "3bd7d68e203f8cf290c92a36b52ea95954f822f878631062a2ebdcc45f3d2edd"
+    },
+    "manualHint": {
+      "text": "請選擇飛地，或在尚未列出時輸入其識別碼。",
+      "source_sha256": "072824fe9bf49ac002af3b746dd955aef70659aa34071311ac972c03b8472ed2"
+    }
+  },
+  "incidentTicketField": {
+    "helper": {
+      "text": "此要求的選用事件或外部工單識別碼。",
+      "source_sha256": "7e7c731accadefbb96ecc3aa17c63afa998c79a248c446b20efbf39dd0fae003"
+    },
+    "manualHint": {
+      "text": "請選擇事件個案，或在未列出時輸入外部工單識別碼。",
+      "source_sha256": "76fc0d45eb5b61e293185d6d85815175aad8befa1f228afff324b10fffe463f4"
+    }
+  },
+  "tenantNameField": {
+    "helper": {
+      "text": "登記權杖上使用的租戶名稱。",
+      "source_sha256": "426dfc9cd61c8a7471fa1f8851482021203160bdb3e43072f61cc83dfd1e8cce"
+    },
+    "manualHint": {
+      "text": "請選擇租戶，或在未列出時輸入其名稱。",
+      "source_sha256": "db530e4ea84c4158b56e3974f7fc081df447a496b8676413a58dd348cf06a0b6"
+    }
+  },
+  "endpointNameField": {
+    "helper": {
+      "text": "用於安裝說明與權杖描述。依名稱比對 — 不是 UUID。",
+      "source_sha256": "e2e26837de092e2bf1237043253b506181877da6a9092a8129c8de427983a633"
+    },
+    "manualHint": {
+      "text": "請選擇電腦名稱，或在未列出時輸入主機名稱。",
+      "source_sha256": "db286ffaa28488c5eddb01e555c53cdaf7bc54f6e4217179014d3627d5b1f860"
+    }
+  },
+  "commandLaunchField": {
+    "helper": {
+      "text": "基礎名稱會以不分大小寫的方式比對此範圍的啟動允許清單。",
+      "source_sha256": "13f1ff0d52ce2b73373073939d4de54c5f02cdc1c4765d71e893f7a761ff6531"
+    },
+    "manualHint": {
+      "text": "請選擇允許的映像，或輸入允許清單未收錄的路徑。",
+      "source_sha256": "91b3d15971a19e821eb42220c8cb83a4df099dc18efe3b1fca899cc34774caac"
+    }
+  },
+  "commandPatternField": {
+    "helper": {
+      "text": "僅安全預覽 — 不會執行該命令。請選擇受治理的模式，或輸入任意命令列。",
+      "source_sha256": "3684fc70d156c6d6a68b444e5d93c3c37b0fdecfb00359512c3015de47e578ff"
+    },
+    "manualHint": {
+      "text": "請選擇現行原則中的模式，或輸入要測試的命令列。",
+      "source_sha256": "682b8afb778a33b1575a1c43e0ccf9e074c8fd2fa1f831a6522fe013bf5a8f0f"
+    }
+  },
+  "trainingDocumentField": {
+    "helper": {
+      "text": "此證明所涵蓋的計畫文件。",
+      "source_sha256": "c90e8535a1fd449cbfc617d31bc081d070790d8f9def0c632938c0cba21aa14d"
+    },
+    "manualHint": {
+      "text": "請選擇計畫文件，或在未列出時輸入其項目識別碼。",
+      "source_sha256": "ccd104ea789ce767fc1e7203fabd2eb591fa4796110f82b0cfcd1d90feb3286e"
+    }
+  },
+  "auditFilterEndpointField": {
+    "helper": {
+      "text": "將紀錄限制為單一已登記端點。",
+      "source_sha256": "6873e0bd4febb670a0bb43f9da96a704898a3211915ef0c65037e37c8c9b4dfb"
+    }
+  },
+  "auditFilterUserField": {
+    "helper": {
+      "text": "將紀錄限制為目錄中的一個人。",
+      "source_sha256": "5e91aec900c79ea8d4721acc903ea58c8d9f5cf4c0af9afa798138a406280c59"
+    }
+  },
+  "waCheckField": {
+    "helper": {
+      "text": "略過或軟失敗的檢查識別碼。惡意程式或拒絕清單失敗不可豁免。",
+      "source_sha256": "519c49891a92dae9278a3f9ca7b3fd22c4a69411095ba5a69c2e431d6648b0f2"
+    },
+    "manualHint": {
+      "text": "請選擇此工作站上的檢查，或在未列出時輸入檢查識別碼。",
+      "source_sha256": "e3f247d4f937fff6e6577f37afb0ca8546f46d6b78d333a07ff8a6516e3cae7d"
+    }
   }
 }

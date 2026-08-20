@@ -1148,5 +1148,123 @@
       "text": "Pick a person from the directory, or type their identifier if they are not listed.",
       "source_sha256": "02def31c66f9faa5087feff6c098aefc29bf4e005eb714c245f7b57527435220"
     }
+  },
+  "frameworkTagsField": {
+    "helper": {
+      "text": "Tags only — no control is marked met. Pick a published framework, or type a tag the registry does not carry.",
+      "source_sha256": "5619ca2b69a7a16f201829de383f5b4c5472e6db711767752325319e86d358db"
+    },
+    "manualHint": {
+      "text": "Pick a framework, or type a tag such as cmmc-l2.",
+      "source_sha256": "88a05feaa1dad2ab729cd934855c2ec2826bd234e5e0275744d6cac2eb43cca5"
+    }
+  },
+  "controlTagsField": {
+    "helper": {
+      "text": "Association tags only. Pick a catalogue control, or type a reference the catalogue does not carry.",
+      "source_sha256": "d6124fcb522e6bcb449899fcff413e9481963e428bacc8af786a2cc4506c070b"
+    }
+  },
+  "iamRoleField": {
+    "helper": {
+      "text": "The IAM role this policy applies to.",
+      "source_sha256": "e4893fb5a3dc859ae2cb1b6262f4d5520a744c4556cde77a5d0cb2deb55b9def"
+    },
+    "manualHint": {
+      "text": "Pick a role, or type its slug if it is not listed.",
+      "source_sha256": "b3d93a8bc66a52dbc6145337f5edf1be7b200245d8d56e572474bac3ccf5c61b"
+    }
+  },
+  "enclaveField": {
+    "helper": {
+      "text": "The recorded enclave boundary this flow uses.",
+      "source_sha256": "3bd7d68e203f8cf290c92a36b52ea95954f822f878631062a2ebdcc45f3d2edd"
+    },
+    "manualHint": {
+      "text": "Pick an enclave, or type its identifier if it is not listed yet.",
+      "source_sha256": "072824fe9bf49ac002af3b746dd955aef70659aa34071311ac972c03b8472ed2"
+    }
+  },
+  "incidentTicketField": {
+    "helper": {
+      "text": "Optional incident or external ticket identifier for this request.",
+      "source_sha256": "7e7c731accadefbb96ecc3aa17c63afa998c79a248c446b20efbf39dd0fae003"
+    },
+    "manualHint": {
+      "text": "Pick an incident case, or type an external ticket identifier if it is not listed.",
+      "source_sha256": "76fc0d45eb5b61e293185d6d85815175aad8befa1f228afff324b10fffe463f4"
+    }
+  },
+  "tenantNameField": {
+    "helper": {
+      "text": "The tenant name used on the enrolment token.",
+      "source_sha256": "426dfc9cd61c8a7471fa1f8851482021203160bdb3e43072f61cc83dfd1e8cce"
+    },
+    "manualHint": {
+      "text": "Pick a tenant, or type its name if it is not listed.",
+      "source_sha256": "db530e4ea84c4158b56e3974f7fc081df447a496b8676413a58dd348cf06a0b6"
+    }
+  },
+  "endpointNameField": {
+    "helper": {
+      "text": "Used in install instructions and token description. Name-based — not a UUID.",
+      "source_sha256": "e2e26837de092e2bf1237043253b506181877da6a9092a8129c8de427983a633"
+    },
+    "manualHint": {
+      "text": "Pick a machine name, or type a hostname if it is not listed.",
+      "source_sha256": "db286ffaa28488c5eddb01e555c53cdaf7bc54f6e4217179014d3627d5b1f860"
+    }
+  },
+  "commandLaunchField": {
+    "helper": {
+      "text": "Basename is matched case-insensitively against the launch allow-list for this scope.",
+      "source_sha256": "13f1ff0d52ce2b73373073939d4de54c5f02cdc1c4765d71e893f7a761ff6531"
+    },
+    "manualHint": {
+      "text": "Pick an allowed image, or type a path the allow-list does not carry.",
+      "source_sha256": "91b3d15971a19e821eb42220c8cb83a4df099dc18efe3b1fca899cc34774caac"
+    }
+  },
+  "commandPatternField": {
+    "helper": {
+      "text": "Safe preview only — the command is never executed. Pick a governed pattern, or type any command line.",
+      "source_sha256": "3684fc70d156c6d6a68b444e5d93c3c37b0fdecfb00359512c3015de47e578ff"
+    },
+    "manualHint": {
+      "text": "Pick a pattern from the live policy, or type a command line to test.",
+      "source_sha256": "682b8afb778a33b1575a1c43e0ccf9e074c8fd2fa1f831a6522fe013bf5a8f0f"
+    }
+  },
+  "trainingDocumentField": {
+    "helper": {
+      "text": "The programme document this attestation covers.",
+      "source_sha256": "c90e8535a1fd449cbfc617d31bc081d070790d8f9def0c632938c0cba21aa14d"
+    },
+    "manualHint": {
+      "text": "Pick a programme document, or type its item identifier if it is not listed.",
+      "source_sha256": "ccd104ea789ce767fc1e7203fabd2eb591fa4796110f82b0cfcd1d90feb3286e"
+    }
+  },
+  "auditFilterEndpointField": {
+    "helper": {
+      "text": "Limit the log to one enrolled endpoint.",
+      "source_sha256": "6873e0bd4febb670a0bb43f9da96a704898a3211915ef0c65037e37c8c9b4dfb"
+    }
+  },
+  "auditFilterUserField": {
+    "helper": {
+      "text": "Limit the log to one directory person.",
+      "source_sha256": "5e91aec900c79ea8d4721acc903ea58c8d9f5cf4c0af9afa798138a406280c59"
+    }
+  },
+  "waCheckField": {
+    "helper": {
+      "text": "Skip or soft-fail check id. Malware / deny-list fails cannot be waived.",
+      "source_sha256": "519c49891a92dae9278a3f9ca7b3fd22c4a69411095ba5a69c2e431d6648b0f2"
+    },
+    "manualHint": {
+      "text": "Pick a check from this workstation, or type a check id if it is not listed.",
+      "source_sha256": "e3f247d4f937fff6e6577f37afb0ca8546f46d6b78d333a07ff8a6516e3cae7d"
+    }
   }
 }
