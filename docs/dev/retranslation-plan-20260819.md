@@ -1,5 +1,10 @@
 # Retranslation plan (preparation) — 2026-08-19
 
+**Locale program:** US English (`en`) is the source of truth. Every derived
+pack is required at equal weight: `en-GB`, `de`, `fr`, `es`, `zh-Hans`,
+`zh-TW`, and any later shipped tag. zh-TW is one derived pack (and one
+2026-08-19 banner example), not the product localization use case.
+
 **Slice scope:** Preparation only. No locale JSON rewrites in this change set
 except future Slice 1 ownership. No deploy.
 
@@ -100,8 +105,9 @@ string. Draft OK. Zero missing keys. See
 `content/localization-work/retranslation-20260819/sliceA-parity-after.json`.
 
 **Slice B — translation quality** — register, glossary, native review,
-real `en-GB`, `zh-TW` de-conversion. Still **2–4 weeks / 2–4 months** per
-audit. Not claimed done by Slice A.
+real `en-GB` identity pack, and de-conversion of any pack that was
+derived via German or Hans conversion (including `zh-TW`). Still
+**2–4 weeks / 2–4 months** per audit. Not claimed done by Slice A.
 
 ### Slice 1 — Reconstruct clean US English (GATE)
 

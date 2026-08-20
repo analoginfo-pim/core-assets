@@ -30,7 +30,8 @@ verified in-product. Separately, localization heal storms produced HTTP
 
 Trigger phrases (non-exhaustive): comprehensive UI test, all-pages
 crawl, full admin walk, nav crawl complete, console-clean matrix,
-locale walk for zh-TW / de / en, “every menu tested.”
+locale walk for every shipped pack derived from US English (`en`),
+“every menu tested.”
 
 Does **not** force a full nav crawl for a narrowly scoped single-page
 layout fix that explicitly scopes out comprehensive coverage (still must
@@ -40,7 +41,7 @@ not claim all-pages PASS).
 
 | # | Requirement | Pass condition |
 | --- | --- | --- |
-| 0 | **All-sources denominator** | Crawl leaf set is the **de-duplicated union** of: SPA router (parents, index, redirects, leaves, tabbed children, gated routes), sidebar + section landings + in-app links, docs/about/legal, error/edge probes, login/pre-auth. Helper: `ui/e2e/helpers/nav-crawl-routes.mjs`. Inventory evidence: `docs/dev/evidence/nav-crawl-zh-tw-20260819/ROUTE_INVENTORY_ALL_SOURCES.md`. **Menu-only or accordion-only lists are FAIL.** Shrinking the union vs prior inventory without an explicit exclusion note is FAIL. |
+| 0 | **All-sources denominator** | Crawl leaf set is the **de-duplicated union** of: SPA router (parents, index, redirects, leaves, tabbed children, gated routes), sidebar + section landings + in-app links, docs/about/legal, error/edge probes, login/pre-auth. Helper: `ui/e2e/helpers/nav-crawl-routes.mjs`. Inventory evidence: `docs/dev/evidence/nav-crawl-zh-tw-20260819/ROUTE_INVENTORY_ALL_SOURCES.md` (folder name is a **2026-08-19 incident label**, not the program — new runs use `docs/dev/evidence/nav-crawl-<YYYYMMDD>/` with per-tag matrices). **Menu-only or accordion-only lists are FAIL.** Shrinking the union vs prior inventory without an explicit exclusion note is FAIL. |
 | 1 | **Nav-driven** | Every union path is visited (goto or drawer click). Accordion expand is optional when the source inventory already lists every leaf — omitting a path because an accordion was collapsed is still FAIL |
 | 2 | **Locale in-product** | Header chip / `html.lang` / visible BCP-47 tag matches the intended pack for that run |
 | 3 | **Served bundle** | Record disk-or-served asset identity for the run (SPA hash) |
@@ -52,9 +53,19 @@ not claim all-pages PASS).
 | 9 | **≤10 s / page** | Each route must complete under a **hard 10 second** budget (`elapsed_ms` in the matrix). Exceeding the budget is **FAIL** with evidence — never raise the budget to green a slow page. Minutes per page is a **harness defect**. No `networkidle`, no fixed multi-second sleeps, no per-route re-auth |
 | 10 | **Safe dialogs** | Where a page's primary dialogs/drawers open without mutating (no mail/SMS/rotate/PIN), open and check strings; list separately from route count |
 
+**Locale program:** US English (`en`) is the source of truth. Every
+derived pack is required at equal weight: `en-GB`, `de`, `fr`, `es`,
+`zh-Hans`, `zh-TW`, and any later shipped tag. A missing key, stale
+served catalog, or placeholder mismatch in **any** derived pack is the
+same class of defect. A single-tag walk (including a historical zh-TW
+banner incident) is not the product use case.
+
 Canonical spec:
 `pim-offline-server/ui/e2e/nav-crawl-console-embedded-live.spec.ts`
-(evidence under `docs/dev/evidence/nav-crawl-zh-tw-20260819/`).
+(parameterized for every shipped tag). Historical 2026-08-19 matrices
+live under `docs/dev/evidence/nav-crawl-zh-tw-20260819/` — that folder
+name is a dated incident label; new evidence goes to
+`docs/dev/evidence/nav-crawl-<YYYYMMDD>/` with per-tag matrices inside.
 
 ## Missing-string banner = build/deploy gate failure
 
@@ -122,11 +133,13 @@ in English only; nested PAM / Configuration leaves never opened;
 `i18n: missing string` console lines ignored; 40× 429 during the walk
 called “rate-limit flake.”
 
-**Fix:** Run
-`nav-crawl-console-embedded-live.spec.ts` with `-g "locale=zh-TW"` (then
-`en` / `de`); expand entire drawer; fail on console / missing-string /
-blank / 429 storm; fix packs and client heal; record matrix under
-`docs/dev/evidence/nav-crawl-zh-tw-20260819/`.
+**Fix:** Run `nav-crawl-console-embedded-live.spec.ts` for **every**
+shipped tag derived from `en` (or `node e2e/run-nav-crawl-all-locales.mjs`);
+fail on console / missing-string / blank / 429 storm; fix packs and
+client heal; record per-tag matrices under
+`docs/dev/evidence/nav-crawl-<YYYYMMDD>/`. A 2026-08-19 zh-TW banner
+is one worked example of the same defect class — not the crawl’s
+canonical locale.
 
 ## Origin
 

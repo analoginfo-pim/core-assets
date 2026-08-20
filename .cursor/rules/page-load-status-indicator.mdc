@@ -36,10 +36,13 @@ Operator directive (Phil, 2026-08-19):
 
 This rule is **binding policy now**. Implementation of the indicator is
 the improvement slice **after** the localization pass across all pages
-completes and verifies. Until that slice lands, do not claim the
-attribute exists in the product; do not rewrite nav-crawl waits onto a
-missing attribute. Once implemented, the indicator binds **all** pages
-from that point — including every page added afterward.
+completes and verifies. That pass is **every shipped pack derived from
+US English (`en`)** — `en-GB`, `de`, `fr`, `es`, `zh-Hans`, `zh-TW`, and
+any later tag — at equal weight. A single-tag walk is not the gate.
+Until that slice lands, do not claim the attribute exists in the
+product; do not rewrite nav-crawl waits onto a missing attribute. Once
+implemented, the indicator binds **all** pages from that point —
+including every page added afterward.
 
 Do **not** treat this rule file as delivery of the indicator
 ([`shipped-means-served.mdc`](shipped-means-served.mdc)).

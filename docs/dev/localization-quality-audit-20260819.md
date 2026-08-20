@@ -1,5 +1,10 @@
 # Localization quality audit (content, 2026-08-19)
 
+**Locale program:** US English (`en`) is the source of truth. Every derived
+pack (`en-GB`, `de`, `fr`, `es`, `zh-Hans`, `zh-TW`, later tags) has equal
+weight. Per-tag scorecards below are examples of the same quality class —
+not a Traditional Chinese–only program.
+
 **Scope:** Content quality of Tier 1 packs — whether a native speaker would
 find the product credible. Structural correctness (key parity, sidecar
 manifest, normalization, served-pack verification) is out of scope; a sibling
@@ -48,7 +53,7 @@ clean US English**. Evidence:
 2. **The same keys in `de` are clean German** (proper umlauts, Sie-register,
    coherent grammar) — e.g. *“Verbinden autorisiert eine aufgezeichnete
    Sitzung … und öffnet dann den Desktop-Viewer.”*
-3. **`zh-TW` (and other packs) inherit the broken English/German mash** —
+3. **Derived packs inherit the broken English/German mash** (worked example `zh-TW`) —
    *“將 autorisiert 連接到 aufgezeichnete 會話 (Sie bestaetigen the
    Aufzeichnung) …”*
 
@@ -374,8 +379,9 @@ modified; 42 open items). Enqueueing now would collide. Propose:
 
 1. **US English source is poisoned** — German chips and reverse-MT sentences
    in `en` (and thus every pack that copied them).
-2. **zh-TW (and Romance) packs show DE+EN mash** — evaluator-visible on My
-   Workstations / docs paths; destroys credibility instantly.
+2. **Derived packs show DE+EN mash** (Romance and both Chinese tags in this
+   scan) — evaluator-visible on My Workstations / docs paths; destroys
+   credibility instantly.
 3. **No locked terminology + fake en-GB** — multiple renderings per concept
    and a 91% identical “UK” pack signal “machine completeness,” not
    localization.

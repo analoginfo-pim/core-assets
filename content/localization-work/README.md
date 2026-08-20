@@ -5,6 +5,11 @@ Help, manuals, or other must-localize strings are added or changed, a work
 item is recorded here so translators see new work instead of discovering it
 by accident.
 
+**Locale program:** US English (`en`) is the source of truth. Every derived
+pack is required at equal weight: `en-GB`, `de`, `fr`, `es`, `zh-Hans`,
+`zh-TW`, and any later shipped tag. Historical item ids that mention
+`zh-TW` are incident labels, not the localization program.
+
 There is no separate localization GitHub repository. **`core-assets` is the
 localization home.** Catalogs live under `content/locales/`,
 `content/locales-ui/`, and `content/i18n-native/`. This queue tracks what
@@ -31,7 +36,7 @@ python3 scripts/localization-work/localization_work.py add ^
   --source-path ui/src/pages/docs/example.ts ^
   --source-file ../pim-offline-server/ui/src/pages/docs/example.ts ^
   --product-route /docs/auditor#chapter-example ^
-  --required-tags de fr es en-GB zh-Hans ^
+  --required-tags en-GB de fr es zh-Hans zh-TW ^
   --notes "Why this is new work."
 ```
 
@@ -52,7 +57,8 @@ row in `surfaces.json`.
 
 Set `"status": "closed"` in `queue.json` only when every `required_tags`
 entry has a reviewed catalog. Agent draft strings do **not** close work.
-Missing Tier 1 tags (`en-GB`, `zh-Hans` today) keep the item open.
+Missing required derived tags (`en-GB`, `de`, `fr`, `es`, `zh-Hans`,
+`zh-TW`, and any later shipped tag) keep the item open.
 
 Then run `render` so `queue.md` matches.
 

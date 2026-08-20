@@ -1,5 +1,9 @@
 # Proposed localization-work queue items (retranslation 2026-08-19)
 
+Per-tag ids (`quality.zh-TW-retranslation`, `quality.fr-retranslation`, …)
+are **equal-weight derived packs from `en`**, not a Traditional Chinese
+program.
+
 **Do not close these on agent drafts.** Closing requires reviewed catalogs
 per `localization-work-queue.mdc`.
 

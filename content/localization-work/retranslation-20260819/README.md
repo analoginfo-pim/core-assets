@@ -2,6 +2,10 @@
 
 Standing kit for Tier 1 retranslation **after** clean US English is verified.
 
+**Locale program:** `en` is the source. Packets under
+`en-GB` / `de` / `fr` / `es` / `zh-Hans` / `zh-TW` are **equal-weight
+derived packs**, not a Traditional Chinese–only program.
+
 | File / dir | Role |
 | --- | --- |
 | `english-source-corpus.json` | Full EN key inventory + context + contamination flags |
