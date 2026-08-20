@@ -99,6 +99,49 @@
       "title": {
         "text": "Koontinäyttö",
         "source_sha256": "67b696468610b879ed7f224dbf6b0861f27e39d20454cb9d7af1ec52d3e5eeaa"
+      },
+      "helpAriaLabel": {
+        "text": "Avaa ohje: Koontinäyttö",
+        "source_sha256": "5471d553e22bc57b3a20fe8c63ec6964a0dc5078f99e12f85589ac93469eb4f1"
+      },
+      "summary": {
+        "text": "Johdon toimitusruudut ryhminä Näyttöpeitto, Riski ja altistus sekä Suoritettu työ. Luvut kuvaavat vain tuotteen toimitusta — eivät peittoprosentteja eivätkä arviointipäätelmiä. Tehtäväpikavalinnat ovat nyt Suosikeissa.",
+        "source_sha256": "bb87867dc88fb681f41e026a8d85f842d6b19ed8e07331db6fbff72068ab7783"
+      }
+    },
+    "licensing": {
+      "helpAriaLabel": {
+        "text": "Avaa ohje: Lisenssi ja laskutus",
+        "source_sha256": "abce5b7962dfe0c1f86427551dd2e702ea223a116ed649c4370c49b2169ac564"
+      },
+      "summary": {
+        "text": "Näytä tämän palvelimen lisenssi, aktivoi uusi tai tuo allekirjoitettu avain AIC-lisenssienhallinnasta.",
+        "source_sha256": "6148d72516f49d9e199a85d872616e2a3598f6880e2d49d9cc31e0fbd0000fd0"
+      },
+      "title": {
+        "text": "Lisenssi ja laskutus",
+        "source_sha256": "7b1d769c2e04a874c13481b74a183c1edcc67fbf8c8ed6a070ce0894992b2dac"
+      },
+      "bullets": {
+        "text": [
+          {
+            "text": "Aktivointi kopioi sivuston tunnuksen, jonka liität lisenssienhallinnan sivustolle.",
+            "source_sha256": "c6b644e0e451433364e8daa48bb0ffb77be449b088d08919d260cff51166636c"
+          },
+          {
+            "text": "Tuonti korvaa nykyisen avaimen. Käytä tätä laajennuksiin.",
+            "source_sha256": "844743aad34c683ecd409ce1eacd3d7f06ad185a0d5f093155ad8543b9e6ccfc"
+          },
+          {
+            "text": "Käyttö ja laskutus ovat arvioita. Markkinapaikan tarjous määrää laskutetun hinnan.",
+            "source_sha256": "b2a67e386cfda468cb97b2ad9121fdc769ed26750248564dd0741a316f5ab45a"
+          },
+          {
+            "text": "Lisenssienhallinta on erillinen AIC-sivusto. Ostot ja talousilmoitukset ovat siellä.",
+            "source_sha256": "3b4dd894a176f63ad77bcd29f51d03c8cd4288a502fe71b1c6e46bccde992d82"
+          }
+        ],
+        "source_sha256": "2adda0a6ddc2a0b156180a45c053997b44fcfa078bce46ce24a88b63277458f3"
       }
     }
   },
@@ -225,6 +268,786 @@
       "dialogTestSmsMediaHelper": {
         "text": "Välilyönnillä tai pilkuilla erotetut HTTPS-URL-osoitteet",
         "source_sha256": "c749254ad80d1858e5f019e254a916528294d192faa5b4170a44de48a2fe1643"
+      }
+    },
+    "licensing": {
+      "activateStep1Body": {
+        "text": "Kopioi tämä sivuston tunnus. Liität sen AIC-lisenssienhallinnan sivustolle. Tunnus ei sisällä isäntänimiä eikä IP-osoitteita.",
+        "source_sha256": "71a04c471e4916e9250aea9b17e6ce0481360af3bb73e4f09588e70aa09b7df9"
+      },
+      "activateStep2Body": {
+        "text": "Avaa AIC-lisenssienhallinta, liitä sivuston tunnus ja lataa allekirjoitettu paketti tälle palvelimelle.",
+        "source_sha256": "7e22fc5390fdabec7b234ca61bd53f333a50164732376922227e41d28f68d826"
+      },
+      "activateStep3Body": {
+        "text": "Liitä tai valitse lataamasi allekirjoitettu paketti ja asenna se.",
+        "source_sha256": "8701e2e635717d133ab7cf51f738325bb19f5ed502716c1cb62c19ddd2210650"
+      },
+      "activateStep4Body": {
+        "text": "Aktivointi on valmis. Sulje tämä ikkuna tarkistaaksesi nykyisen lisenssin.",
+        "source_sha256": "6977b57f077dcf532b39f119ca98732fd4751788b20050d9aa2e3498c2d5754f"
+      },
+      "activateStepDone": {
+        "text": "Valmis",
+        "source_sha256": "11a6767d5674c7e45f7e00dc525762275b3a48491ad6045427d2609cc496c516"
+      },
+      "activateStepImport": {
+        "text": "Tuo avain",
+        "source_sha256": "d5e68a5908bd486ffe958792a1ac6f6a7cb465806e6710c29642372a0df6b9a8"
+      },
+      "activateStepSite": {
+        "text": "Aktivoi verkossa",
+        "source_sha256": "91e2580b4caf7a138f126bdee94d82b23dcedb18ca075713526e15c3e673430f"
+      },
+      "activateStepToken": {
+        "text": "Kopioi tunnus",
+        "source_sha256": "d35b4ef7c618415a60fcda6b86da99202cf4a087104868db2470f0ea98aa5921"
+      },
+      "activateTitle": {
+        "text": "Aktivoi lisenssi",
+        "source_sha256": "8aec53c8c2cda77bc8550846a9ea59a529cda957ef15bbd3505fe2ecbcca4d81"
+      },
+      "activateUrlMissing": {
+        "text": "Tällä palvelimella ei ole vielä aktivointiosoitetta. Avaa Lisenssienhallinta-sivusto ja käytä Aktivointi-sivua.",
+        "source_sha256": "050ec8a7d9b1c6cd332e1a51a7cd20055c55956f8cdc8c4bb1a09292bec708b7"
+      },
+      "activeModels": {
+        "text": "Aktiiviset mallit",
+        "source_sha256": "641bf09ffd4624c8f6694b22d5365c92f89b90979a8422e7bb3a1f21e208cdef"
+      },
+      "back": {
+        "text": "Takaisin",
+        "source_sha256": "76900f1bfd16c8d4dd3d25e6f46638d7165aee23883ccea6bfe071c514421769"
+      },
+      "billingCadence": {
+        "text": "Jakso",
+        "source_sha256": "316d43c021472bb1e64fe9fdcb409b0097adb3acc6d0254c6b22853787330a0b"
+      },
+      "billingCadenceValue": {
+        "text": "Tunneittain (markkinapaikka) · Määräaikainen lisenssi (paikan päällä)",
+        "source_sha256": "306d7421748b911d79c72a6a83f12324a8c87864559c95b026c23188e16533d1"
+      },
+      "billingPrivacy": {
+        "text": "Käyttöraportit lähettävät vain tunnisteita, komponenttien nimiä, kulunutta aikaa, päivämääriä ja määriä. Ne eivät sisällä asiakkaan työkuorman tietoja.",
+        "source_sha256": "ccd25ea3ef2ebd6505dc27bced1b190a9479b4888d6a76771bd1184d4b7b5482"
+      },
+      "billingTitle": {
+        "text": "Laskutus",
+        "source_sha256": "3ac8bbca9a74cfbd627307e9d650a132610e64f42f984817a488daf5f2f3d750"
+      },
+      "capacities": {
+        "text": "Kapasiteetit",
+        "source_sha256": "8c6877b7ba9fd4b08d5ea49a828bfd9da20b422844e54b43c538f1eaf833edb6"
+      },
+      "channel": {
+        "direct": {
+          "text": "Suora",
+          "source_sha256": "002c7c68468b4f550fbaa7fb8588155c58f8b5760fde69b3fe1773ae2a197ba2"
+        },
+        "eval": {
+          "text": "Arviointi",
+          "source_sha256": "163e44b102626149bbbfb058eee4fcfa7748b40949629e0a1a4ff058f3bb548b"
+        },
+        "marketplace": {
+          "text": "Markkinapaikka",
+          "source_sha256": "c608981d8d68fa4f7cc130ea31b777349cd235bcce1d9dfd35789630bdd67f18"
+        },
+        "marketplace_byol": {
+          "text": "Markkinapaikka (oma lisenssi)",
+          "source_sha256": "11c94dbf6abe1ffeff695320f7c74bc64d2ba2f0b294b06db7b7c740ce64d1a1"
+        },
+        "partner": {
+          "text": "Kumppani",
+          "source_sha256": "29035e784f9305c0eb62aa33662b296306f6a77bedaca7c67f2e3432dd43ace2"
+        }
+      },
+      "chooseFile": {
+        "text": "Valitse tiedosto",
+        "source_sha256": "b09c73d9d3f802101ab763e35a520ed14101c966c87ef6f2130171b121db8b51"
+      },
+      "close": {
+        "text": "Sulje",
+        "source_sha256": "7d9eb7acb13e24625c404401d8e88b2350e32162455885f18276cf802f7701ed"
+      },
+      "colAccepted": {
+        "text": "Hyväksytty",
+        "source_sha256": "a00fb0c50741f81bb51d35b4475a4357f8039aabd896a21036bc516839401595"
+      },
+      "colAllowed": {
+        "text": "Sallittu",
+        "source_sha256": "1bb201d188352e9b4633f85e4fb8a31ea93fd14dec702443fd3e2713d657fd2d"
+      },
+      "colCapacity": {
+        "text": "Kapasiteetti",
+        "source_sha256": "ae65d096550ff4eb2a643d022dad2f3f511876d7720f2cbe7a9f5a71c3e91f77"
+      },
+      "colDimension": {
+        "text": "Ulottuvuus",
+        "source_sha256": "0bc70684cf306b3ed9ab68fd40654349b8fdf96b2e6cdce61edc53442d7f738f"
+      },
+      "colExpectedUsd": {
+        "text": "Odotettu USD",
+        "source_sha256": "95c28b1a64512c6dcc8d8fc14f0a669c03d1407b56a66ed15e632243678d82b2"
+      },
+      "colFeature": {
+        "text": "Ominaisuus",
+        "source_sha256": "3d377ae910dce03ac324d1f4391c0d4d175825e630baf9c5b93d414d7106cfd8"
+      },
+      "colLineHour": {
+        "text": "Rivi (USD / tunti)",
+        "source_sha256": "701332edce4de25e5382f901800a3edef4f12ac5ff723a019a7c100c16e30340"
+      },
+      "colModel": {
+        "text": "Malli",
+        "source_sha256": "5e2c614c23f02239bc03c6c04fcb681950f9e72bf8fdff6be79c79841cbb10c0"
+      },
+      "colOutcome": {
+        "text": "Viimeisin tulos",
+        "source_sha256": "1287c851288cbe96994d734bd8e6e3fb5016fa64ae9c782b0e38f04d112e5900"
+      },
+      "colProvider": {
+        "text": "Tarjoaja",
+        "source_sha256": "472590ae974d4c1f44b3780df0b152d9119f076c61bfb3e8cb6affd7889ac0a8"
+      },
+      "colQtyHour": {
+        "text": "Määrä / tunti",
+        "source_sha256": "0b6bfa2b0f55154fbc8d0476a1c236c42488acff361534e6679f7ed6100138ba"
+      },
+      "colRejects": {
+        "text": "Hylkäykset",
+        "source_sha256": "5134a4ef3ae0843b2ef36b90ba7a13b55fcb0d8c155609763dc951d147da6df1"
+      },
+      "colStatus": {
+        "text": "Tila",
+        "source_sha256": "920e413c7d411b61ef3e8c63b1cb6ad058d5f95f8b481dbafe60248387d8c355"
+      },
+      "colSummary": {
+        "text": "Yhteenveto",
+        "source_sha256": "8e76a94ac8320d515375e625bef1829238b097ecbd33611b59eeefd4ffefebfb"
+      },
+      "colUnitPrice": {
+        "text": "Yksikköhinta (USD)",
+        "source_sha256": "2790c8eafa59b34bff8053a9086cfc0361d933280a2f9f12c349563b89117b40"
+      },
+      "colUsed": {
+        "text": "Käytetty",
+        "source_sha256": "ae7d8dfac9ff5e0fc9aee0d70b174a16d556f7759ed94b7a9f7b88c3dd3230a9"
+      },
+      "commAirGap": {
+        "text": "Ilmarako",
+        "source_sha256": "d79024087bc9eb22038ba9806b4d1aea8dc4459fa9924771e7dccb4c15e1b9cc"
+      },
+      "commDegraded": {
+        "text": "Heikentynyt",
+        "source_sha256": "a8494c12f2243903aef9b01ba16142e6a4e592304f981d4b6ea5f46d99036cba"
+      },
+      "commNotConfigured": {
+        "text": "Ei määritetty",
+        "source_sha256": "dd1841d295024256e8884cb898d863cb17333ef927fefae59368238e401c6ef0"
+      },
+      "commOk": {
+        "text": "Yhdistetty",
+        "source_sha256": "22965568d22a14ee17af055d2870b50afcfe9fd94a83eec3196e266932297bb2"
+      },
+      "commUnreachable": {
+        "text": "Ei tavoitettavissa",
+        "source_sha256": "abaa46adb4e13ab2e7202ad1480a4182fde02f70e2e8ac27eb8b8dd04dc3c427"
+      },
+      "consumptionIntro": {
+        "text": "Arvio nykyisistä mittarimääristä. Markkinapaikan tarjous määrää laskutetun hinnan.",
+        "source_sha256": "28d99e05f9b38e85f0c8cac486cc458133e37bb994fd61c2997ca5cb454bf6c2"
+      },
+      "consumptionTitle": {
+        "text": "Pilvikäytön arvio",
+        "source_sha256": "9b5a1c5124d01e52f4ae3b92818d3094e5b5341e9b8e239b2bc3ce48c2d3968c"
+      },
+      "copyToken": {
+        "text": "Kopioi sivuston tunnus",
+        "source_sha256": "bf692d69572f8fb03d6e09ce394f496b44cab84302318754044cf6453cab07a0"
+      },
+      "currentLicense": {
+        "text": "Nykyinen lisenssi",
+        "source_sha256": "b5b3d57a3b19d75673db545c061bb8b998cec2d25d5cecc387ff099d26a6651d"
+      },
+      "cycle": {
+        "text": "Jakso",
+        "source_sha256": "518653530449cca8e2fb27b7d3c3d3c10394feac2cfa74769e6c125206477d81"
+      },
+      "edition": {
+        "text": "Painos",
+        "source_sha256": "f37695a23c899c5215f84a9b8fd71359fc3dc3d1f33c363c3ac32deea88d4d8a"
+      },
+      "editionDemo": {
+        "text": "Demoarviointi (itse myönnetty)",
+        "source_sha256": "f85c41e3fb27e610c95259428060f95ab492975afb24f56984c589b7ae284285"
+      },
+      "editionEvalVerified": {
+        "text": "Arviointioikeudet (palvelimen vahvistamat)",
+        "source_sha256": "d95a9ae4100efbede4d1165bdf3fb9be4ca96ba4adc6c911acb9364840d321f2"
+      },
+      "editionImportedEval": {
+        "text": "Tuodut arviointioikeudet",
+        "source_sha256": "8d95854a779fc3c22dec6b68925ba83894d078b2d2badd6ed1dc50a91ce35c2a"
+      },
+      "editionLicensed": {
+        "text": "Lisensoidut oikeudet",
+        "source_sha256": "d7d47ff2b379e99db02151dce79dbed4bf201de27610e619c603b63a4697a767"
+      },
+      "enabled": {
+        "text": "Käytössä",
+        "source_sha256": "92c1cdfdf4cb9cf6fcca962f206de36fd5d60db1178bc9461052f8de703a0e06"
+      },
+      "errCopyToken": {
+        "text": "Sivuston tunnusta ei voitu kopioida. Valitse teksti ja kopioi se itse.",
+        "source_sha256": "fba1ededdf1f72f38d7d12f4ea425916059ead48aad63454e455273a9517f53d"
+      },
+      "errNeedPackage": {
+        "text": "Liitä ensin lisenssiavain tai valitse lisenssitiedosto.",
+        "source_sha256": "45d46d2b50baacbce712b991ed4feb1a1e1d052fcb0521e8b13badf4fcebb520"
+      },
+      "errNoPermission": {
+        "text": "Tililläsi ei ole oikeutta tuoda lisenssiavaimia. Pyydä järjestelmänvalvojaa, jolla on palvelinasetusten oikeudet.",
+        "source_sha256": "a35050fba845313bc12cc485a9ff18271aaec8e606ceda3569cc1c253837b44e"
+      },
+      "errNoToken": {
+        "text": "Sivuston tunnus ei ole vielä valmis. Sulje tämä ikkuna ja yritä hetken kuluttua uudelleen.",
+        "source_sha256": "64e83b27b0d634c4df5e511bf10bd6121f90ad685af5e0d7b01ebd21e6a5d18f"
+      },
+      "errReadFile": {
+        "text": "Lisenssitiedostoa ei voitu lukea.",
+        "source_sha256": "efa0194bc2bb9d2d393ce9b7a3bf2b9e5a35c631970b2c26fc35f0d2159dbb8d"
+      },
+      "estDay": {
+        "text": "Arvioitu päivä (×24)",
+        "source_sha256": "8fabd3332334a8caad0d0e617e6115baa16cc74ed3ce786de3f8705b78475f47"
+      },
+      "estHour": {
+        "text": "Arvioitu tunti",
+        "source_sha256": "b049c87daa70eed9c5f39f5e605baf406f45c5ed38e27a78bbe7076653f4475b"
+      },
+      "estMonth": {
+        "text": "Arvioitu 30 päivän kuukausi",
+        "source_sha256": "52d3367aff7d8e188b0e4a94abd350b3b2a210a8fbc778ba5e87faa657782d5f"
+      },
+      "expectedRevenue": {
+        "text": "Odotettu tuotto tällä jaksolla",
+        "source_sha256": "c7e0ffe2557406c6f72bb3fdad4f17ee8e28cdfbc6bc257830b35e1848a811b4"
+      },
+      "features": {
+        "text": "Ominaisuudet",
+        "source_sha256": "5697d03daef4de9cf8db7cb11755f71358a32b4acca94909a9d449f71040d2dd"
+      },
+      "fileLoaded": {
+        "text": "Ladattu {{name}} ({{count}} merkkiä).",
+        "source_sha256": "be14e5e07ef3af1dfda4af0c7d1653e0b77f905fa0eb393563ec471049c8e95e"
+      },
+      "importConfirm": {
+        "text": "Tuo ja korvaa",
+        "source_sha256": "d3e15435875bd4ddff6a110391449837c85a936b33e8339ba0ba6fa46613b4fc"
+      },
+      "importEvalOk": {
+        "text": "Arviointipaketti asennettu. Käytä AIC-lisenssienhallintaa, kun olet valmis ostamaan lisenssin.",
+        "source_sha256": "038d4ed4b83230ba5503279146b300adda960c14c831b4d4469998019404a5b7"
+      },
+      "importFailed": {
+        "text": "Lisenssin tuonti epäonnistui. Tarkista paketti ja yritä uudelleen.",
+        "source_sha256": "b0bec4fb6ad7d1ba45abbb3a3bac5425d5a4523f83973a3af89378dfd09665fb"
+      },
+      "importNeedsPermission": {
+        "text": "Tuonti edellyttää palvelinasetusten hallintaoikeutta.",
+        "source_sha256": "d80b2e2fbd6307e6093656d497cb61ca0db59375fea908e9934d69388c27d7ba"
+      },
+      "importOk": {
+        "text": "Lisenssipaketti asennettu tälle palvelimelle.",
+        "source_sha256": "5660423aa2bebb10d02cce4b86133462256cc259cae6e4b2222d0bbee490cb48"
+      },
+      "importStep1Body": {
+        "text": "Liitä allekirjoitettu paketti tai valitse vastaanottamasi tiedosto. Tuonti korvaa tällä palvelimella olevan avaimen.",
+        "source_sha256": "4361a224b4781787ffc98a91e66d22a8a46250ddde01197098d40cf629be8479"
+      },
+      "importStep2Body": {
+        "text": "Valmis asentamaan tämä paketti ({{count}} merkkiä). Tämän palvelimen aiempi avain korvataan.",
+        "source_sha256": "d2deed59b1d940ad94f9ce6ab6d3dd665724aacccfad1d656de6738b72b75d8e"
+      },
+      "importStep3Body": {
+        "text": "Voit sulkea tämän ikkunan ja tarkistaa lisenssin Yleiskatsaus-välilehdellä.",
+        "source_sha256": "76291bfa4bc87bf628e945b3bcd35b7ffa9f0b47f8a80bce7cc95739438f0bb1"
+      },
+      "importStepConfirm": {
+        "text": "Vahvista",
+        "source_sha256": "eebdd24a77d9ad32222660c07777163bf5f6732df2b172351f3f8d5783e4f529"
+      },
+      "importStepDone": {
+        "text": "Valmis",
+        "source_sha256": "11a6767d5674c7e45f7e00dc525762275b3a48491ad6045427d2609cc496c516"
+      },
+      "importStepProvide": {
+        "text": "Anna paketti",
+        "source_sha256": "a49369e6678eaccfedd843337c4be175a874758aa11caea51415383d3df6da83"
+      },
+      "importTitle": {
+        "text": "Tuo lisenssiavain",
+        "source_sha256": "7c227b62db47c3486d85ec8754da698b5fbfbb07b103e5069d184b48acdf7f5a"
+      },
+      "importing": {
+        "text": "Tuodaan…",
+        "source_sha256": "c01c4324f1fa14fc76957936626e11a5150c24e748dbd08cc46848dfcbe37d00"
+      },
+      "incidentsCycle": {
+        "text": "Tällä jaksolla ilmoitetut tapaukset",
+        "source_sha256": "b4adc4375a4bc8b35c143ca09fc760a6bccad01582031d04bf226ed707c926fd"
+      },
+      "integrityIntro": {
+        "text": "Epäonnistuneet allekirjoitukset, sormenjälkien ristiriidat ja lisensoimattomat ominaisuusyritykset ilmoitetaan ilman asiakkaan työkuorman tietoja. Ilmaraon sivustot jonottavat raportit myöhempää vientiä varten.",
+        "source_sha256": "bb56f640df2c4c4a25b944cf03d8ab07ecb2f77b2b8235e21321506be809e425"
+      },
+      "integrityTitle": {
+        "text": "Lisenssien eheys",
+        "source_sha256": "6d16fb94173ede6112e8dcdc5d32dafde173ac482fd39bcced3f6ca02ad18af2"
+      },
+      "kind": {
+        "contract": {
+          "text": "Sopimus",
+          "source_sha256": "a6f5b0e592fa68e4ba8014ad5f62214f41153de6a5d51c78fc6148c54a1d6deb"
+        },
+        "eval": {
+          "text": "Arviointi",
+          "source_sha256": "163e44b102626149bbbfb058eee4fcfa7748b40949629e0a1a4ff058f3bb548b"
+        },
+        "hybrid": {
+          "text": "Hybridi",
+          "source_sha256": "6c67dc13f83949fe089ca86225b136b5f40ac5268ebf92fbefe45f1f94e8064b"
+        },
+        "metered": {
+          "text": "Mitattu",
+          "source_sha256": "40311e42068d7d436d3790a6551ad19dd8169d1168a2e98c667a5c6299771fb9"
+        },
+        "perpetual": {
+          "text": "Pysyvä",
+          "source_sha256": "2d34320fbbddfb8150b22835b3653701993aa10029da90caa65665229832dda2"
+        },
+        "subscription": {
+          "text": "Tilaus",
+          "source_sha256": "4999c6c6c7badf456f5b0053b09a2076bdb2391a09ab10c9064a680f8f9a0b30"
+        }
+      },
+      "lastAttempt": {
+        "text": "Viimeisin yritys",
+        "source_sha256": "967533ec1d195c95ee04a8eb71d9669f57c8ffda02d8dcbf1c4caf85cfc227d9"
+      },
+      "lastAttemptClass": {
+        "text": "Viimeisimmän yrityksen luokka",
+        "source_sha256": "d4f119c547133594c080f9b1d8ec8156df8b5ad851f784564e3d0bd45c073645"
+      },
+      "lastRemittanceAlert": {
+        "text": "Viimeisin tilityshälytys",
+        "source_sha256": "5dde6335c24aa75c3b9ccca5486e201c23d3d6fd87620d98d78a431f64d0a564"
+      },
+      "lastReport": {
+        "text": "Viimeisin onnistunut raportti",
+        "source_sha256": "3cd67f5b55695dfc63d3b04e0e794fbe4b384200287de76c0652698217082785"
+      },
+      "licenseId": {
+        "text": "Lisenssitunnus",
+        "source_sha256": "067f1fa541a96a01c0db9c1c1a4bfc858413349f3d611a47c3ef01da3294a503"
+      },
+      "model": {
+        "a2a_clients": {
+          "label": {
+            "text": "Ei-inhimilliset / A2A-asiakkaat",
+            "source_sha256": "0c9a2811ebf0f55f630b2a531f099fa3c66c5290f796f775e15203641ee3fab6"
+          },
+          "summary": {
+            "text": "Sovellusten väliset salaisuuksien asiakkaat.",
+            "source_sha256": "83c50a4ec71f74a50145b31a8e060c1220cc6bc6381686d52be31ed50dbd4092"
+          }
+        },
+        "auditor_seats": {
+          "label": {
+            "text": "Tarkastajan / toimeksiannon paikat",
+            "source_sha256": "65ff88aacddd72a5d9f00e675e23e52a91f6f60e503586d33febc6d8e3173e79"
+          },
+          "summary": {
+            "text": "Sidontainstanssit tai samanaikaiset arvioijapaikat.",
+            "source_sha256": "e19fe49a9c02d8eacacd2a820f3651f12eccb57f04f2142a8bc1cf618b28a515"
+          }
+        },
+        "byol": {
+          "label": {
+            "text": "Oma lisenssi (BYOL)",
+            "source_sha256": "c28a738ec08fbcae7ea8b72067d8ef1738bdf07e68bb3ce893a21adcf65ed0b9"
+          },
+          "summary": {
+            "text": "Tuo allekirjoitettu paketti asiakkaan pilveen; ei markkinapaikan mittaria.",
+            "source_sha256": "6cda8571aeb55754f720348f4fa820d05e02ee44183095df88189559894161ef"
+          }
+        },
+        "concurrent_session": {
+          "label": {
+            "text": "Samanaikainen istunto",
+            "source_sha256": "a78db4aa5e22ff663ced191b8a0a9abe68020476d97668f2eb03400ee575a5a8"
+          },
+          "summary": {
+            "text": "Live-Connect- / bastion-istuntojen varanto; vapautuu suljettaessa.",
+            "source_sha256": "fd4d73da20b5beafea1390b2ba711ba25c101e9d77669ee052d7db0aa333aa43"
+          }
+        },
+        "contract_private_offer": {
+          "label": {
+            "text": "Sopimus / yksityinen tarjous",
+            "source_sha256": "4e163e5f8780e3fb51726a9a1aea0b5c31678e3594358ef09e196936876aad27"
+          },
+          "summary": {
+            "text": "Ennakkoon maksettu tai yksityinen oikeus määräajaksi.",
+            "source_sha256": "f11dc3a6d04c5725114a93c683d7ef3fbaa23d172eb197e30b42cdc40b8dbcd7"
+          }
+        },
+        "endpoint_agent": {
+          "label": {
+            "text": "Päätepiste/agentti",
+            "source_sha256": "46b0f488ba56fe6db124f9bae5f35b52511c6eb6f5cb9838f4db8046c7095c95"
+          },
+          "summary": {
+            "text": "Hallitun agentin rekisteröintikapasiteetti.",
+            "source_sha256": "0b7d358ecfc4dc9f9b2c93774dfab35a6bb86e150f51680a358412228084e95f"
+          }
+        },
+        "enterprise_infra": {
+          "label": {
+            "text": "Yritysinfrastruktuurin avaukset",
+            "source_sha256": "41e0dbace95aac2801f8bfbc807e0e4894f6afdcd367c601639aee2ffa6308a9"
+          },
+          "summary": {
+            "text": "HA-tietokanta, yritystietokantasovittimet, HSM/KMS.",
+            "source_sha256": "1121fb54ae4c051d8e81fc4f4bbad2e55daf2c8868551741add8cd324c161f67"
+          }
+        },
+        "eval": {
+          "label": {
+            "text": "Arviointi",
+            "source_sha256": "163e44b102626149bbbfb058eee4fcfa7748b40949629e0a1a4ff058f3bb548b"
+          },
+          "summary": {
+            "text": "Aikarajoitettu arviointilisenssi pienemmällä kapasiteetilla.",
+            "source_sha256": "8938e922951949175a286b79002eb88d681ab3808786c1b394d52d0fed64c3dc"
+          }
+        },
+        "floating_ha": {
+          "label": {
+            "text": "Kelluva / HA-varanto",
+            "source_sha256": "303d8ca0d0e654d95115b8d9d0a7e8998d8f3b37d1b5ef7f0a71551e1bcadcab"
+          },
+          "summary": {
+            "text": "Klusterin sormenjäljet ja vikasietoisuusvara.",
+            "source_sha256": "856592071e977f47869f5ba6bd83bd868995467b15b39606de402f94b2075b67"
+          }
+        },
+        "jit_role_scope": {
+          "label": {
+            "text": "JIT- / etuoikeutetun roolin laajuus",
+            "source_sha256": "2a26b182e7828f547b59fa509e2be0ac803d01f07ff0c08d05318df71b280f63"
+          },
+          "summary": {
+            "text": "Oikeutetut vastaan pysyvät etuoikeutetun roolin sidokset.",
+            "source_sha256": "2d6d403e1193cabaf189c6614ff3d2ae33641415d3b26e1f21df9c3070714da6"
+          }
+        },
+        "jump_capacity": {
+          "label": {
+            "text": "Jump- / tallennuskapasiteetti",
+            "source_sha256": ""
+          },
+          "summary": {
+            "text": "Jump-solmut ja kuormantasatut välityspalvelinkalustot.",
+            "source_sha256": "072082e18d68449125066110095be9dcdfe6ac8ec4e6a1302f7c4864b2457d78"
+          }
+        },
+        "marketplace_metered": {
+          "label": {
+            "text": "Markkinapaikan mittaus",
+            "source_sha256": "7461ba49602e5eb4e767d3a03a97f096a69834499bed36022fbde79904b40fc9"
+          },
+          "summary": {
+            "text": "Tuntikohtaiset pilviulottuvuudet kaksinkertaisella tilitysraportoinnilla.",
+            "source_sha256": "b22d0ebca62c5f9b5b5500014a6d894af5e3333d4a1a27e2d7cb608d8e9a467b"
+          }
+        },
+        "module_pack": {
+          "label": {
+            "text": "Moduuli- / ominaisuuspaketti",
+            "source_sha256": "e01ca500296798550cf75f42657e2afa3830edd92a20be23c92460a653bfaa04"
+          },
+          "summary": {
+            "text": "Tuotemoduulit (PAM, tarkastaja, HSM, Jump-kuormantasaus ja muut).",
+            "source_sha256": "8c5ee319f0b435252b3fd51a3d242061be4b55efe22f984beec5c63c61593c42"
+          }
+        },
+        "msp_pool": {
+          "label": {
+            "text": "MSP-monivuokralaisvaranto",
+            "source_sha256": "5820bd723b2b3230f894c7ca098317cb5ed42c720500de32bfeb3266f067efa0"
+          },
+          "summary": {
+            "text": "Ylävaranto ja alipaketit vuokralaissivustoille.",
+            "source_sha256": "e27b8261faeb32ba64c9e93b40dd735ba9c35ffb1ec8f74a38cb29dc8426fae4"
+          }
+        },
+        "named_user": {
+          "label": {
+            "text": "Nimetty käyttäjä",
+            "source_sha256": "e00a114942e7d29e8487bf577a06c0d5dc0ad63b7aad07dbecfbf0edafe548b3"
+          },
+          "summary": {
+            "text": "Erilliset lisensoidut henkilöt.",
+            "source_sha256": "2a98e6e97f01c4dd3007b5fbc58b1a4b19852bbe168cf70d845a8ec2f1c96258"
+          }
+        },
+        "perpetual_maintenance": {
+          "label": {
+            "text": "Pysyvä + ylläpito",
+            "source_sha256": "131582ded283b7034c8f40655ef7ed73a05b32b652769886b30dc98c4f375f03"
+          },
+          "summary": {
+            "text": "Ominaisuudet säilyvät; tuki- tai päivitysikkuna voi päättyä erikseen.",
+            "source_sha256": "b37df30ffeafe3ef620d8bff005519cade1e242c6bb7f12dc7bf9ea772b2cfaa"
+          }
+        },
+        "privileged_accounts": {
+          "label": {
+            "text": "Hallinnassa olevat etuoikeutetut tilit",
+            "source_sha256": "554f1973bac628fa30783d05b0d3e0cbbc76f96b7f89b7292bf38952f2078b7a"
+          },
+          "summary": {
+            "text": "Holvissa olevien / hallittujen etuoikeutettujen tilien määrä.",
+            "source_sha256": "822291c5596558756fc96b2e3dd5de85d28d2dbe0b0f99e8b58faf3d9e56b308"
+          }
+        },
+        "protected_resources": {
+          "label": {
+            "text": "Suojatut resurssit",
+            "source_sha256": "dac1fa533b32be39cec2221dda6db5001e4aec34c04b60ec575264ce86cf6995"
+          },
+          "summary": {
+            "text": "PAM-inventaarion laitteet, sovellukset ja palvelimet.",
+            "source_sha256": "f6fdc936ee0cf6dd9fe6785dbd191e92d1f765f0593b584059190d9f6f0d46ee"
+          }
+        },
+        "secrets_api_tier": {
+          "label": {
+            "text": "Salaisuus-API-taso",
+            "source_sha256": "ecb86600e64e01285daed29c41ccb0f7e051f58c43f3f871073a19e16909736a"
+          },
+          "summary": {
+            "text": "Kuukausittainen salaisuus-API-toimintojen pehmeä tai kova raja.",
+            "source_sha256": "0b38051aa4277628bcb2cd0686882f74a814ed3c81c9342df305ba4b74a3c9fe"
+          }
+        },
+        "site_activation": {
+          "label": {
+            "text": "Sivuston / laitteen aktivointi",
+            "source_sha256": "8dea26b8239858ef25538d01843b2214d595c3ed88bfea35f51afefbaa9bef8a"
+          },
+          "summary": {
+            "text": "Ohjaimen sormenjälki, sitten allekirjoitetun paketin tuonti.",
+            "source_sha256": "a14d27d3ef68a37e96dd43282d50214a0608eb99b3d18d307c5f02742f4b4eca"
+          }
+        },
+        "subscription_term": {
+          "label": {
+            "text": "Tilauskausi",
+            "source_sha256": "0400571a6345387fe7a3113c5da1b0c4200938027be19004372d3b673b434cfc"
+          },
+          "summary": {
+            "text": "Toistuva kausi alku- ja loppupäivällä.",
+            "source_sha256": "0c7f1d133f47cd7fcce330967306ed4e5a8b90bdc16a5777f284ab86762a85b8"
+          }
+        },
+        "workstation_seat": {
+          "label": {
+            "text": "Työasemapaikka",
+            "source_sha256": "23094d262d923988f66d8762ac53f44c8285fbcbab23b24b2fc5ee1b8b76beff"
+          },
+          "summary": {
+            "text": "Omistetut työasemapaikat (pk-enclaavi 1–25).",
+            "source_sha256": "d294e89ae6d49df21b1a168792abfcc7006ce7d3f7d225f694ad8f8f4b09ba61"
+          }
+        }
+      },
+      "modelsIntro": {
+        "text": "Yksi allekirjoitettu paketti voi yhdistää useita näitä muotoja. Nykyisen paketin mallit on merkitty.",
+        "source_sha256": "5dc586bc8f66d9c00c3cddd3f076c1dc2daa91a7a351af3400fcd170e759c2b1"
+      },
+      "modelsTitle": {
+        "text": "Lisenssimallit",
+        "source_sha256": "4ec68690377856ed78dbff5a820f6758d6d6085498c3d48dd83330e6dbed17b6"
+      },
+      "never": {
+        "text": "Ei koskaan",
+        "source_sha256": "6300ef800bb884295b0b4b35682b75cecd7cc550d202db56d04a0643b8fb873f"
+      },
+      "next": {
+        "text": "Seuraava",
+        "source_sha256": "1ff57a29d7c9d11bdf61c1b80f2b289b44c1ea844824d4b94a0d52b6ba5fc858"
+      },
+      "no": {
+        "text": "Ei",
+        "source_sha256": "1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da161c6099be3691d"
+      },
+      "notLicensed": {
+        "text": "Ei lisensoitu",
+        "source_sha256": "a259bc95039fb53778ab70694f8aef1910d9171af3984947640f332912c0c4be"
+      },
+      "offerProfile": {
+        "text": "Tarjous",
+        "source_sha256": "0cf57c63eb976556a273198f34e8816a586471aefa434f80dab8b77667c0a981"
+      },
+      "onThisPackage": {
+        "text": "Tässä paketissa",
+        "source_sha256": "b5a7084a7a4528a8eca0255c0c095612832ee5997a42b7a5291b3753c3bbaa1a"
+      },
+      "openActivateSite": {
+        "text": "Avaa lisenssienhallinta",
+        "source_sha256": "2df19580b52a567dddeee88dd990ccec5faefd1fb2556db80b538bba4636763b"
+      },
+      "outcomeAccepted": {
+        "text": "Hyväksytty",
+        "source_sha256": "a00fb0c50741f81bb51d35b4475a4357f8039aabd896a21036bc516839401595"
+      },
+      "outcomeFailed": {
+        "text": "Epäonnistui",
+        "source_sha256": "031a8f0f659df890dfd53c92e45295b0f14c997185bae46e168831e403b273f7"
+      },
+      "outcomeNotConfigured": {
+        "text": "Ei määritetty",
+        "source_sha256": "dd1841d295024256e8884cb898d863cb17333ef927fefae59368238e401c6ef0"
+      },
+      "outcomePending": {
+        "text": "Odottaa",
+        "source_sha256": "331551b0de4157c9abc7b72b61b96a2a928fd6db3cdf029c1fc44b08ad633aa6"
+      },
+      "outcomeRejected": {
+        "text": "Hylätty",
+        "source_sha256": "aea4a04a80426ed865ec2058b16854b9146166d22c1f3282a18f285941c42eba"
+      },
+      "packageLabel": {
+        "text": "Lisenssipaketti",
+        "source_sha256": "503fe8ffdf10c8d2ad4f152e6be5883cd1e711d0b28582cfadfc4e34abc7bd89"
+      },
+      "postState": {
+        "failed": {
+          "text": "Epäonnistui",
+          "source_sha256": "031a8f0f659df890dfd53c92e45295b0f14c997185bae46e168831e403b273f7"
+        },
+        "none": {
+          "text": "Ei mitään",
+          "source_sha256": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+        },
+        "not_configured": {
+          "text": "Ei määritetty",
+          "source_sha256": "dd1841d295024256e8884cb898d863cb17333ef927fefae59368238e401c6ef0"
+        },
+        "ok": {
+          "text": "OK",
+          "source_sha256": "565339bc4d33d72817b583024112eb7f5cdf3e5eef0252d6ec1b9c9a94e12bb3"
+        },
+        "queued": {
+          "text": "Jonossa",
+          "source_sha256": "661ff40a07e037bbd5f7d4ec97a4df1503096ca910e7c9e2d7a4e9abd4e4e1a0"
+        }
+      },
+      "privateServer": {
+        "text": "Yksityinen lisenssipalvelin",
+        "source_sha256": "c82070b71b98edb49368dcdfaf194fac615bdf78454b47996f8bcb2ac9468511"
+      },
+      "products": {
+        "text": "Tuotteet",
+        "source_sha256": "4edc8bfafc6bd936b849f38c009454eac0febc8982f990e734724156584d56f9"
+      },
+      "publicServer": {
+        "text": "Julkinen lisenssipalvelin",
+        "source_sha256": "b858ddc59dbde48e82fe02bcfc178a174bc56bd715ec72cc5cf36bea36f4d985"
+      },
+      "remittanceTitle": {
+        "text": "Markkinapaikan tilitys",
+        "source_sha256": "145b52787c202cf078a372a46c408d218ca43915210945da56daeb0897515d37"
+      },
+      "reportState": {
+        "text": "Raportin tila",
+        "source_sha256": "db798be1cd6f2d604d75057fe852949046989feb98efbd5c0b709eee03da5727"
+      },
+      "siteToken": {
+        "text": "Sivuston tunnus",
+        "source_sha256": "a3fbaf7d7116325887610cb6c6a8f7cebaa9e6482a5d94ae093ee2a791485d9d"
+      },
+      "tabBilling": {
+        "text": "Käyttö ja laskutus",
+        "source_sha256": "52096d73f69e0211747f27b47db1428e58bb460081c2508cecd85d9b18fca8b7"
+      },
+      "tabIntegrity": {
+        "text": "Eheys",
+        "source_sha256": "ad5ea6aae7ca18f5f3823bfd0a0f0e400434b701dd4325c2810eba1e826d7618"
+      },
+      "tabModels": {
+        "text": "Lisenssimallit",
+        "source_sha256": "4ec68690377856ed78dbff5a820f6758d6d6085498c3d48dd83330e6dbed17b6"
+      },
+      "tabOverview": {
+        "text": "Yleiskatsaus",
+        "source_sha256": "d4b1ea5708dd532930a85188b45aff6f0a3ed458500c7577e0127a538eb0d100"
+      },
+      "tabsAria": {
+        "text": "Lisenssiosiot",
+        "source_sha256": "9b2dccc8f7a81e63d199a1667cf77cb74919e9fc69925c80400e3356fcf3ff0d"
+      },
+      "tamperClass": {
+        "capacity_bypass": {
+          "text": "Kapasiteetin ohitus",
+          "source_sha256": "e791fbf5e527e395bea0cd75c25544730ad84d88aa74c0c3ddba8933e434e7dd"
+        },
+        "eval_stripped": {
+          "text": "Arviointi poistettu",
+          "source_sha256": "1ddef05200cfa8c3147954b934c7758964c951c5781fa3429000bd34ceb39309"
+        },
+        "expired_or_not_yet_valid": {
+          "text": "Vanhentunut tai ei vielä voimassa",
+          "source_sha256": "2c93883aa5c4666404d3b888e9663e05308d84c63bbb52d7f5c2693f6793dae3"
+        },
+        "fingerprint_mismatch": {
+          "text": "Sormenjälki ei täsmää",
+          "source_sha256": "2b948d7fb4d1a05d5468b6f2246ed2ff142d08484adb19b3e79d3012dedd8511"
+        },
+        "none": {
+          "text": "Ei mitään",
+          "source_sha256": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+        },
+        "replay_or_clone": {
+          "text": "Uusinta tai klooni",
+          "source_sha256": "d62f2f6377f65e4551f3dd0185348ed69203e3a4a56e51cf8152fc2bc090c858"
+        },
+        "signature_invalid": {
+          "text": "Virheellinen allekirjoitus",
+          "source_sha256": "97b096319f1c128b42060a680a731b8e41205641a477bc1730bfca4a5cb06c92"
+        },
+        "unlicensed_feature": {
+          "text": "Lisensoimaton ominaisuus",
+          "source_sha256": "f0bdc6aafacae55ae56e59f3a20a5dde963eb054081182b40263018895289ea6"
+        }
+      },
+      "tokenCopied": {
+        "text": "Sivuston tunnus kopioitu leikepöydälle.",
+        "source_sha256": "d1f31bc0df8f863d2cf9e593cbe7d85d7f676b26053e56f63e9e5ce401062524"
+      },
+      "tokenPending": {
+        "text": "Sivuston tunnusta ladataan yhä.",
+        "source_sha256": "145e418446ff011308ca6e97afb20c7aad02b5c4fcf76580a74ee1ed1f52bede"
+      },
+      "valid": {
+        "text": "Voimassa",
+        "source_sha256": "f5162206318ee96491108354ae7361db244d6a013aa32185216b5f15ac544f4c"
+      },
+      "yes": {
+        "text": "Kyllä",
+        "source_sha256": "85a39ab345d672ff8ca9b9c6876f3adcacf45ee7c1e2dbd2408fd338bd55e07e"
       }
     }
   }
