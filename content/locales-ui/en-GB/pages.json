@@ -1216,8 +1216,8 @@
         "source_sha256": "f31852a4d7f347209a794e8cafee499d07a81de9bee784ec21a4f7905b66412d"
       },
       "emptyHostFilter": {
-        "text": "No connection points match host ",
-        "source_sha256": "f0ce0532d6e3dc89859faba7f6911f8550ef4d2695d8754f4c5ed565b2adad6b"
+        "text": "No connection points match host \"{{host}}\". Add one above or clear the filter.",
+        "source_sha256": "3bfb5e324bd674b8faa451d3afb1e534be81556e3d4bbfd21ccf34fb28789b82"
       },
       "emptyNone": {
         "text": "No connection points registered yet. Add one above, then set its credential and launch a recorded session.",
@@ -1236,8 +1236,8 @@
         "source_sha256": "8dfc7a66ba5359fbc461efcc21cdfd69bcfd3e2a03ceb75320e084cb096ab372"
       },
       "hostFilter": {
-        "text": "Showing connection points matching host ",
-        "source_sha256": "8829d99d92defe01a862f5a1ee4de6d14b8a96c6db6265cb381e489f2a9a76ae"
+        "text": "Showing connection points matching host \"{{host}}\" ({{shown}} of {{total}}).",
+        "source_sha256": "ea628fdb0a1ea015ac9dbc1d6bf4dbbaf70e11a2f24ccfcc8a061532d4039c7a"
       },
       "inputBlocked": {
         "text": "Input blocked (moderated start)",
@@ -1920,8 +1920,8 @@
         "source_sha256": "e2d0a54968ead24efc0dffa6ac78fc606dceec34a0f586177a74a54cc2272cf8"
       },
       "deleteConfirm": {
-        "text": "Delete encrypted credential ",
-        "source_sha256": "387d235b9f800490b7c0bfaf8043e08b80f48abdb9d2706565e4633b4e86f98f"
+        "text": "Delete encrypted credential \"{{name}}\"?",
+        "source_sha256": "9251563dfb32f7eb53f91d8151e74af614a8bfe3c96b9f051437ac9d28200108"
       },
       "deleteFailed": {
         "text": "Delete failed",
@@ -3078,8 +3078,8 @@
         "source_sha256": "f53c9652cbbd56f033dc3339690d41f2ac2b6f7d792513921fc6d7ef0da0ca33"
       },
       "diagramCaption": {
-        "text": "Role-emphasized steps use a filled blue box; other steps use a gray outline. The open ticket's current phase adds an orange triangle marker, thicker border, bold label, and the word ",
-        "source_sha256": "58bf89d643d36a6a3bd5186af7a9425b84bc834b676b5bf9ede62db3fafcc4ca"
+        "text": "Role-emphasized steps use a filled blue box; other steps use a gray outline. The open ticket's current phase adds an orange triangle marker, thicker border, bold label, and the word \"Current\" under the step (not color alone). Meaning is also in the caption{{suffix}}.",
+        "source_sha256": "cad337ff96fe868095502362b2faf7f9c82e0c8edacce47826bdf749a6c24e68"
       },
       "diagramCaptionCurrent": {
         "text": " (current phase: {{phase}})",
@@ -6612,8 +6612,8 @@
         "source_sha256": "1afb8fd9f42f5449bc0b6d8fc623d7a96f41a4edf5701a68bb91659822d140b4"
       },
       "noPoint": {
-        "text": "{{name}} ({{host}}): no PAM connection point is registered for this host. Add one under Privileged Access → Connection points (SSH/RDP/VNC with a vaulted credential), then Connect can open a live session. Inventory channel ",
-        "source_sha256": "3bcd4b87a225fae5ddea75e743269cad670e108b87632ff1b71bdd4eefa05b54"
+        "text": "{{name}} ({{host}}): no PAM connection point is registered for this host. Add one under Privileged Access → Connection points (SSH/RDP/VNC with a vaulted credential), then Connect can open a live session. Inventory channel \"{{method}}\" is not itself a session broker.",
+        "source_sha256": "bb036b72b46cb04b5ccea94fb354cf2bc9be280ea5b75c1691d333a6a783e3ab"
       },
       "noVault": {
         "text": " (no vaulted credential)",
@@ -7720,8 +7720,8 @@
         "source_sha256": "6007acbe30b2cd98703e83350ea665c06009fcd51f26dd73b309294235f45f21"
       },
       "confirmBody": {
-        "text": "Action ",
-        "source_sha256": "4de725b22f7dbf743be59c066257ac092d634515643cdb1acb1cd529dcdb0b8b"
+        "text": "Action \"{{action}}\" for this session. Enter a reason (required).",
+        "source_sha256": "692070bfe6f1d35abba3ce8855399a51bb55ecbd2b0e8964afa5c46a61f8612d"
       },
       "confirmTitle": {
         "text": "Confirm session action",
@@ -9156,8 +9156,8 @@
         "source_sha256": "87e6d00bbf53ec5ae251de23ace84d5cf01c69deae04cfff08a5fe353a9853bb"
       },
       "revokeConfirm": {
-        "text": "Revoke multi-tenant ",
-        "source_sha256": "f1567225bdb0a07175051ca82f6cd5ee2e443e3d9bc0a70ddedac6f4a5e133a8"
+        "text": "Revoke multi-tenant \"{{name}}\"? Agents using this multi-tenant's bootstrap secret will no longer authenticate.",
+        "source_sha256": "178880c338286669daa8273b1fdbf917c1f35e4ff9e467f3cc03fa8bdfebdeb4"
       },
       "revokeTenant": {
         "text": "Revoke multi-tenant",
@@ -14050,8 +14050,8 @@
       "source_sha256": "7c0ddc8f5b37bbecf44dc596116b59b52039a1a135a306a1c3199f209af08b24"
     },
     "ipRangeHelper": {
-      "text": "Enter an IP, range, or CIDR, then Add.",
-      "source_sha256": "c00fc852fd5fed3a3d2681cc03828b97ed07e569561adf967ca322132be7ed28"
+      "text": "IPv4 or IPv6 address, CIDR, link-local with zone (fe80::1%12), or ipv6-neighbors. IPv4 at most /16. IPv6 enumeration up to {{maxHosts}} hosts (/{{minPrefix}} or narrower); wider prefixes use discovery, not a full sweep.",
+      "source_sha256": "4f961ec18072cda8a6f4dab69ad08d608d3d0567dceafa75aa35b2fac007c6d3"
     },
     "ipRangePlaceholder": {
       "text": "192.168.1.0/24",
@@ -14194,8 +14194,8 @@
       "source_sha256": "74194daf383a263dadbd1c763a9894371c5ad91e32d9a14b9aff3200e85a3378"
     },
     "probing": {
-      "text": "Probing {{current}} of {{total}}",
-      "source_sha256": "0be4291a587437b599bf90761ac0af31731fd0301b4e820d0dc420e73d845cab"
+      "text": "Probing {{probe}}",
+      "source_sha256": "9db4208410030651e4592ace95d3974fb089a6dbe76995cd5384641207c1b555"
     },
     "profileCommon": {
       "text": "Common",
@@ -14238,12 +14238,12 @@
       "source_sha256": "19e923dfec23b2363a1379758006c58b99f5bc77c1593995ef7c4484dc35baf2"
     },
     "removeTargetAria": {
-      "text": "Remove scan target {{target}}",
-      "source_sha256": "79a03d396cc6bf89bf03b886454bd8f6effd0653f51391532bfcc9c371ed6ab6"
+      "text": "Remove scan target {{cidr}}",
+      "source_sha256": "376454137489a36ad1900c14659569471fd7a9771fba4a29f95a78aadb4dc4e3"
     },
     "resultStats": {
-      "text": "{{online}} online · {{unknown}} unknown",
-      "source_sha256": "6feae0a0005184e442a77239f18d91c51bad76b1c2f3ba63273b33ab402574ca"
+      "text": "{{ips}} address(es) · {{ports}} open port(s) · {{secs}}s",
+      "source_sha256": "546b137e43e7dc36eb232d23c3f801a6d8169a8e68a24dc9e410993fe8b8af5a"
     },
     "resultsLive": {
       "text": "Live results",
@@ -14262,8 +14262,8 @@
       "source_sha256": "a576af76c92ba8e7fccc36189bfe0c7b1d7deaa3dcaa123104403ceb515876ac"
     },
     "savedImport": {
-      "text": "{{count}} saved to import queue",
-      "source_sha256": "905bce6415aacc87e35ae1910dd65c662ddb671dadb55e8d4f175c56048e112d"
+      "text": "saved as inventory import {{id}}",
+      "source_sha256": "15cc6d9be7901bdd74f653db33e0dede07d710282eb22efa241fb759277751dc"
     },
     "scan": {
       "text": "Scan",
@@ -14382,8 +14382,8 @@
       "source_sha256": "cd5c8b03cecab18093e95c563cd0b24e4308b66353f9deccf948501c4db92142"
     },
     "workersHelper": {
-      "text": "How many TCP connect attempts run at once (default 64, max 500).",
-      "source_sha256": "f295b29a0833d7882acfdca2809e09d94c0ad5fdc09ec5ba88557ca445c439d6"
+      "text": "{{min}}–{{max}} concurrent probes (default {{default}}).",
+      "source_sha256": "f4572af47f981ce14b38611a65253e4e7a604599486e90aacf714b71f6a690de"
     }
   },
   "defense": {

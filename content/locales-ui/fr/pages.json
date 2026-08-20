@@ -1216,8 +1216,8 @@
         "source_sha256": "f31852a4d7f347209a794e8cafee499d07a81de9bee784ec21a4f7905b66412d"
       },
       "emptyHostFilter": {
-        "text": "Aucun point de connexion ne correspond à l'hôte",
-        "source_sha256": "f0ce0532d6e3dc89859faba7f6911f8550ef4d2695d8754f4c5ed565b2adad6b"
+        "text": "No connection points match host \"{{host}}\". Add one above or clear the filter.",
+        "source_sha256": "3bfb5e324bd674b8faa451d3afb1e534be81556e3d4bbfd21ccf34fb28789b82"
       },
       "emptyNone": {
         "text": "Aucun point de connexion enregistré pour l'instant. Ajoutez-en un ci-dessus, puis définissez ses informations d'identification et lancez une session enregistrée.",
@@ -1236,8 +1236,8 @@
         "source_sha256": "8dfc7a66ba5359fbc461efcc21cdfd69bcfd3e2a03ceb75320e084cb096ab372"
       },
       "hostFilter": {
-        "text": "Affichage des points de connexion correspondant à l'hôte",
-        "source_sha256": "8829d99d92defe01a862f5a1ee4de6d14b8a96c6db6265cb381e489f2a9a76ae"
+        "text": "Showing connection points matching host \"{{host}}\" ({{shown}} of {{total}}).",
+        "source_sha256": "ea628fdb0a1ea015ac9dbc1d6bf4dbbaf70e11a2f24ccfcc8a061532d4039c7a"
       },
       "inputBlocked": {
         "text": "Entrée bloquée (démarrage modéré)",
@@ -1920,8 +1920,8 @@
         "source_sha256": "5e5d0216ce0b5b9ef8c015800730294a0ae3fb3f153f3015423b908dbe579d63"
       },
       "deleteConfirm": {
-        "text": "Supprimer encrypted credential ",
-        "source_sha256": "afaeebab98294d05f933ae307de2fe861b7d7453810fc551714be88b24a6ea38"
+        "text": "Delete encrypted credential \"{{name}}\"?",
+        "source_sha256": "9251563dfb32f7eb53f91d8151e74af614a8bfe3c96b9f051437ac9d28200108"
       },
       "deleteFailed": {
         "text": "Supprimer failed",
@@ -2484,12 +2484,12 @@
         "source_sha256": "f12ae65fe93cea51ae89894d8f8e3d442ffdd088d39d8d915ce02b2411cb44b6"
       },
       "driftMandatory": {
-        "text": "Diese angehefteten Seiten sind jetzt Pflichtfavoriten and wurden in the oberen Bereich verschoben: {{keys}}.",
-        "source_sha256": "6ff26c46f5c38c48f0e3e03af8208516007d3656498ea514126d09236ee9f4b5"
+        "text": "These pinned pages are now required favorites and were moved to the top section: {{keys}}.",
+        "source_sha256": "42f6352b0f726c25c2e7f4468a0f5d19e5d79e8c000683bbf0e265f4cb9662fc"
       },
       "driftUnknown": {
-        "text": "Einige angeheftete Seiten gehoeren not to diesem Server-Build: {{keys}}. Sie werden uebersprungen, not geloescht.",
-        "source_sha256": "589a7b0cbda0d0cc84c7bc4a940072b840569a7eb1564b251064ead7342e9962"
+        "text": "Some pinned pages are not part of this server build: {{keys}}. They are skipped, not deleted.",
+        "source_sha256": "2e85140ddc9a8ce8eab36fbb0bf29cfa1713ff94121f8565c880bf68ef9b3262"
       },
       "loadFailed": {
         "text": "Impossible de charger les favoris : {{error}}",
@@ -3078,8 +3078,8 @@
         "source_sha256": "f53c9652cbbd56f033dc3339690d41f2ac2b6f7d792513921fc6d7ef0da0ca33"
       },
       "diagramCaption": {
-        "text": "Les étapes axées sur le rôle utilisent une case bleue remplie ; les autres étapes utilisent un contour gris. La phase actuelle du ticket ouvert ajoute un marqueur triangulaire orange, une bordure plus épaisse, une étiquette en gras et le mot",
-        "source_sha256": "58bf89d643d36a6a3bd5186af7a9425b84bc834b676b5bf9ede62db3fafcc4ca"
+        "text": "Role-emphasized steps use a filled blue box; other steps use a gray outline. The open ticket's current phase adds an orange triangle marker, thicker border, bold label, and the word \"Current\" under the step (not color alone). Meaning is also in the caption{{suffix}}.",
+        "source_sha256": "cad337ff96fe868095502362b2faf7f9c82e0c8edacce47826bdf749a6c24e68"
       },
       "diagramCaptionCurrent": {
         "text": "(phase actuelle : {{phase}})",
@@ -5144,8 +5144,8 @@
         "source_sha256": "99a2556cad4ebaae13929904a078db0fdcdd937947f0ed2d2cbcfa849ac210e4"
       },
       "emailSaveFailed": {
-        "text": "Enregistrer failed: {{message}}",
-        "source_sha256": "f55cb9c3f24b4719e969d778eab3c6b4506147abfaa942073305c245827071cb"
+        "text": "Save failed: {{message}}",
+        "source_sha256": "1081c9d5d20e90f8ddeea79ea0e9a6baf353b05f25c5f962c74eb8b3c0762981"
       },
       "emailSendEncrypted": {
         "text": "Send encrypted (CUI)",
@@ -5658,7 +5658,7 @@
     },
     "myWorkstations": {
       "assignedReady": {
-        "text": "{{count}} poste de travail{{plural}} qui vous est attribué, {{ready}} prêt à se connecter.",
+        "text": "{{count}} workstation{{plural}} assigned to you, {{ready}} ready to connect.",
         "source_sha256": "16cb4baa32af5cc7fed02f78f7ac21b2fc00d0a2cd71617a0c1b3588f1a308ab"
       },
       "authorizingSession": {
@@ -6612,8 +6612,8 @@
         "source_sha256": "c23715f3494b40b7d40bf04822fe111a02bd0bf1f81ff260e8b9c3a2ddadb323"
       },
       "noPoint": {
-        "text": "{{name}} ({{host}}): no PAM connection point is registered for this host. Add one under Privileged Access → Connection points (SSH/RDP/VNC with a vaulted credential), then Connexion can open a live session. Inventory channel ",
-        "source_sha256": "b47995a4eb3b75f9c747846236803ae38c87661bd911eb459379bb8c7038fd77"
+        "text": "{{name}} ({{host}}): no PAM connection point is registered for this host. Add one under Privileged Access → Connection points (SSH/RDP/VNC with a vaulted credential), then Connect can open a live session. Inventory channel \"{{method}}\" is not itself a session broker.",
+        "source_sha256": "bb036b72b46cb04b5ccea94fb354cf2bc9be280ea5b75c1691d333a6a783e3ab"
       },
       "noVault": {
         "text": "(pas d'informations d'identification sécurisées)",
@@ -7720,8 +7720,8 @@
         "source_sha256": "6007acbe30b2cd98703e83350ea665c06009fcd51f26dd73b309294235f45f21"
       },
       "confirmBody": {
-        "text": "Action ",
-        "source_sha256": "4de725b22f7dbf743be59c066257ac092d634515643cdb1acb1cd529dcdb0b8b"
+        "text": "Action \"{{action}}\" for this session. Enter a reason (required).",
+        "source_sha256": "692070bfe6f1d35abba3ce8855399a51bb55ecbd2b0e8964afa5c46a61f8612d"
       },
       "confirmTitle": {
         "text": "Confirm session action",
@@ -7764,7 +7764,7 @@
         "source_sha256": "7f9e9b04f8b63d858c926499c2c71e8b11b11e467d8fa3b42300ca775c2d9d1a"
       },
       "outcomeStatus": {
-        "text": "Séance {{outcome}}. Demandez {{requestId}}.",
+        "text": "Session {{outcome}}. Request {{requestId}}.",
         "source_sha256": "263fa258c40c20aa6e81abbb35299675ba3b15ed625becdde11b5c3a6163532f"
       },
       "pending": {
@@ -9156,8 +9156,8 @@
         "source_sha256": "87e6d00bbf53ec5ae251de23ace84d5cf01c69deae04cfff08a5fe353a9853bb"
       },
       "revokeConfirm": {
-        "text": "Revoke multi-tenant ",
-        "source_sha256": "f1567225bdb0a07175051ca82f6cd5ee2e443e3d9bc0a70ddedac6f4a5e133a8"
+        "text": "Revoke multi-tenant \"{{name}}\"? Agents using this multi-tenant's bootstrap secret will no longer authenticate.",
+        "source_sha256": "178880c338286669daa8273b1fdbf917c1f35e4ff9e467f3cc03fa8bdfebdeb4"
       },
       "revokeTenant": {
         "text": "Revoke multi-tenant",
@@ -14072,8 +14072,8 @@
       "source_sha256": "4e3f266a4f583862e4b5dcfbf91191d6a1a1b37b900bb2c316a57e6d55dfefa3"
     },
     "ipRangeHelper": {
-      "text": "Saisissez une IP, une plage ou un CIDR, puis Ajouter.",
-      "source_sha256": "09fb9a84ab449e970dc5784fbc0281412e5f94f5fd7418787b182b8846902abc"
+      "text": "IPv4 or IPv6 address, CIDR, link-local with zone (fe80::1%12), or ipv6-neighbors. IPv4 at most /16. IPv6 enumeration up to {{maxHosts}} hosts (/{{minPrefix}} or narrower); wider prefixes use discovery, not a full sweep.",
+      "source_sha256": "4f961ec18072cda8a6f4dab69ad08d608d3d0567dceafa75aa35b2fac007c6d3"
     },
     "ipRangePlaceholder": {
       "text": "192.168.1.0/24",
@@ -14124,8 +14124,8 @@
       "source_sha256": "b09caa7232e6603cf98ca62edb88496fe5c3a36af5777f53f2c084f49fb26bed"
     },
     "removeTargetAria": {
-      "text": "Retirer la cible {{target}}",
-      "source_sha256": "4893c908d0ecdef91ccbc6905663f00ec7b154459d7decea687882ce5a8cec22"
+      "text": "Remove scan target {{cidr}}",
+      "source_sha256": "376454137489a36ad1900c14659569471fd7a9771fba4a29f95a78aadb4dc4e3"
     },
     "resultsTitle": {
       "text": "Scan results",
@@ -14156,8 +14156,8 @@
       "source_sha256": "4706abd21b2270991bb4330c252913b7d7736c55be7b7fc2e4dff10c46866298"
     },
     "workersHelper": {
-      "text": "{{min}}â{{max}} concurrent probes (default {{default}}).",
-      "source_sha256": "89e02a14078c889fc7736d28d4c702e505561978e97406431824426077f587d8"
+      "text": "{{min}}–{{max}} sondes simultanées (défaut {{default}}).",
+      "source_sha256": "756c3f32996075464090d9275d074ac7ee68422d9cad91dc3b5cadf4565d4e71"
     },
     "allNetworksAria": {
       "text": "Utiliser tous les réseaux locaux comme cibles d’analyse",
@@ -14376,8 +14376,8 @@
       "source_sha256": "68859d6de21af2625479cf022395db10528338852388f3e699d785ef6caf0559"
     },
     "probing": {
-      "text": "Sondage…",
-      "source_sha256": "7eeb96c2ff4c4217d7cc4e3e54b748b7c097d41cdd3aa918a88d9be72e93b509"
+      "text": "Sondage de {{probe}}",
+      "source_sha256": "3842e83d187650919cbeeae9ffee3b61cb991f9283f6c55fb79c66d5e3625362"
     },
     "progressLogAria": {
       "text": "Journal de progression de l’analyse",
@@ -14392,8 +14392,8 @@
       "source_sha256": "789ac73fe180e851192515024aa28623be2aa3e674df154339277f60707f8b38"
     },
     "resultStats": {
-      "text": "{{online}} en ligne · {{known}} connus · {{unknown}} inconnus",
-      "source_sha256": "774e405122c9876bb1f3ec601eb02ad2544d66c54d9e19ba2f29b7e50dd4ee88"
+      "text": "{{ips}} adresse(s) · {{ports}} port(s) ouvert(s) · {{secs}}s",
+      "source_sha256": "e06a3aa995f2a8ee190984bdf9673c5a53af0b30ed7aca9d86034f813bdc6fc0"
     },
     "resultsLive": {
       "text": "Résultats (mise à jour en direct)",
@@ -14408,8 +14408,8 @@
       "source_sha256": "f02eaf5f9243990331669fc936d01b589eb2c63afb2c12d869c3e4988dd740d2"
     },
     "savedImport": {
-      "text": "Import enregistré.",
-      "source_sha256": "974403ace626f30e85116c57b56457ade440dbb80a7acc3595e5c42c71132d07"
+      "text": "enregistré comme import d'inventaire {{id}}",
+      "source_sha256": "6f86c1ec113ab2aef42ec517c89fd432d3696a48f8dc88a3eb3864f32168412b"
     },
     "scanFailed": {
       "text": "Échec de l’analyse.",
