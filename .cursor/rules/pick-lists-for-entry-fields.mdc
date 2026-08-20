@@ -1,0 +1,71 @@
+---
+description: >-
+  Hard rule - entry fields that resolve to an existing set must offer a
+  pick list and still allow manual entry.
+alwaysApply: true
+---
+
+# Pick lists for entry fields (hard rule)
+
+Operator directive (Phil, 2026-08-19), verbatim intent:
+
+> **When there is a link option ... provide a pick list to choose from as
+> well as allowing manual entry. All entry fields ... should provide pick
+> lists where they would logically exist.**
+
+## The rule
+
+> **If an entry field's value is drawn from a resolvable set (catalog,
+> roster, inventory, plan-of-action items, principals, connection points),
+> the operator picks from that set and may still type a value the product
+> has never seen. A bare text box for a value that exists in a list is a
+> defect. A pick list that refuses a legitimate new value is the opposite
+> defect.**
+
+## Required pattern
+
+Use `PickListField` in `pim-offline-server/ui/src/components/PickListField.tsx`
+(MUI `Autocomplete` `freeSolo`). Option hooks live in
+`pickListSources.ts` so a second adopter of the same set cannot drift.
+
+| Requirement | Detail |
+| --- | --- |
+| Options | From the real API for that set |
+| Typeahead | Client filter; cap the open list when the set is large |
+| Manual entry | Default on. Emit `{ kind: 'option', id }` vs `{ kind: 'manual', text }` |
+| Fetch failure | Visible error + Retry. The field stays typeable |
+| i18n | `components.pickList.*` in `en` and every derived pack |
+
+```tsx
+<PickListField
+  label={t('…')}
+  testId="risk-control-ref"
+  value={controlRef}
+  onChange={setControlRef}
+  options={controlOptions.options}
+  loading={controlOptions.loading}
+  loadFailed={controlOptions.loadFailed}
+  onRetry={controlOptions.retry}
+  allowManualEntry
+/>
+```
+
+## Forbidden
+
+- A free-text field whose value is a catalog id, UUID, finding reference,
+  or other resolvable identifier with no pick list
+- A select / Autocomplete that cannot accept a typed-new value when the
+  product allows records the list does not yet carry
+- Silently rendering an empty list when the option fetch failed
+- Storing display text in an id column because the control did not say
+  which half the operator used
+- Lab hostnames, lab accounts, or agent thinking in helper text
+- Converting every field in one slice — first adopter is Risk Register
+  **link** (control reference, POA&M item). Remaining logical pick lists
+  (risk owner, accepted-by principal, and other resolvable entry fields)
+  wait for their own slice
+
+## Origin
+
+2026-08-19 — operator: link options need a pick list plus manual entry;
+apply that shape wherever an entry field would logically have a list.
