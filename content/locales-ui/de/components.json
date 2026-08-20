@@ -508,6 +508,62 @@
       "blocked_attacks": {
         "text": "Blockierte Angriffe",
         "source_sha256": "e972a94b98b73d4b6680d9e326e6ddb1bde41d92508676bfb2075b90c3d305db"
+      },
+      "application_groups": {
+        "text": "Name a set of apps and bind people, groups, or systems to that set.",
+        "source_sha256": "f64618b2e846a696fde2409a6f32cf4740c60ee8a7d2bfbe500392082be57d7b"
+      },
+      "workstation_prompt": {
+        "text": "On-demand elevate helper: pick an app, see allow versus approval, finish connected or disconnected.",
+        "source_sha256": "6932ad92afb560fdd876b25da5a9e8f2376c77498f20f961de745d48ebf0862b"
+      },
+      "unix_privilege": {
+        "text": "sudo, pbrun, and dzdo as first-class elevation targets.",
+        "source_sha256": "9066f779bcd088cf7eb0a36256ef2d5dd4a17486b92cce72c7fd299fd6ddd508"
+      },
+      "elevation_approvals": {
+        "text": "Request, approve, or deny time-limited elevation for approval-required apps.",
+        "source_sha256": "902547bc6f31c9d232ac243ebcae4c095bfda7eef1fe488c9b74b86b4546500d"
+      },
+      "disconnected_tokens": {
+        "text": "Mint or exchange tokens so an agent can elevate while disconnected.",
+        "source_sha256": "32087a18b9283f5bf2f1f3e24599e40e9790d2260900829d5a18ab6d1cff2c6d"
+      },
+      "secure_share": {
+        "text": "secure share",
+        "source_sha256": "4c608724614d6cdcf8da349f3419298a9d5ad80138ff8e2fe72344cd0c706431"
+      },
+      "my_local_account": {
+        "text": "my local account",
+        "source_sha256": "5cc092e197ee89ee62fe1e202939c7741153b5c920730af1432d90ed0275b6e2"
+      },
+      "reveal_a_password": {
+        "text": "reveal a password",
+        "source_sha256": "605ddddd4edd567879d18594d7fd8b23f0268ec6f0358b15038d830ecfd24107"
+      },
+      "get_an_elevation_code": {
+        "text": "get an elevation code",
+        "source_sha256": "080febc1dc62cb22aff73ef6741c1c4d1b6e9540deaba58678b7ef63dbc9dce9"
+      },
+      "generate_config_file": {
+        "text": "generate config file",
+        "source_sha256": "373cfb350ffd62c4c341e593cce8bc715972e0602052a127c09726bbf363bed7"
+      },
+      "compliance": {
+        "text": "compliance",
+        "source_sha256": "29a3e14798aa2363dc0ca5d6cf18f3a0cf9003c8824cf66fde7804867e8ceee9"
+      },
+      "events": {
+        "text": "events",
+        "source_sha256": "862417b9e7c3720bcb3263cd873b09892d787823b6f9a0f453e42824c5a4d4b6"
+      },
+      "settings": {
+        "text": "settings",
+        "source_sha256": "cde0fb0dec1400c54a0f7e7eafa73624c53e4da258bbd34b3380a0defeba95c1"
+      },
+      "dashboard": {
+        "text": "dashboard",
+        "source_sha256": "66cd9688a2ae068244ea01e70f0e230f5623b7fa4cdecb65070a09ec06452262"
       }
     },
     "group": {
@@ -596,6 +652,48 @@
       "platform": {
         "text": "Konfiguration für diesen AIC-Serverprozess: Betriebseinstellungen, TLS, Identitätsanbieter, Kryptoanbieter und HSM-Verbindungen.",
         "source_sha256": "3bd7c55da8e5a1d7a343a6c58fcb7721fe1a3a41e1902cac01a3d4059bbe8674"
+      }
+    },
+    "groupDesc": {
+      "credentials": {
+        "text": "Reveal and manage managed local identities.",
+        "source_sha256": "ddf2fc29b053e6fd35eac3e33090fb8f18662fba6e562afa96991e63edf3ad14"
+      },
+      "privilege_elevation": {
+        "text": "One-time token elevation and direct privileged membership activations.",
+        "source_sha256": "b3fa78236de633696cba5ab03fffbc8d38a76f6900cab7f9ce193b0aaa6ff861"
+      },
+      "directory": {
+        "text": "Local users, groups, enrollment, and workstation assignments.",
+        "source_sha256": "244b58026554ffbf9d1829c4bcae657f1ad8146fe53a64231d794048aadf8cfa"
+      },
+      "ot_surfaces": {
+        "text": "Security add-on for OT inventory, discovery, Connect (PDU timeline), and credentials.",
+        "source_sha256": "709215f13f9dcf9e891db5d0af835da13ea32e62166a7b11757ce6a001fd8e31"
+      },
+      "sessions": {
+        "text": "Brokered SSH/RDP sessions, recordings, and live session control.",
+        "source_sha256": "132264e7ee341c76a79a0dbeba7eaac3be9082765c7b9059f7ad01eff41c958e"
+      },
+      "jump_capacity": {
+        "text": "Jump / recording-proxy fleet capacity and load-balancing probes.",
+        "source_sha256": "0db9f6afb815fb159b7b7a8811ed0414c975d644b0143407ee4615642e17771f"
+      },
+      "recording_ops": {
+        "text": "Recording agents, OCR metadata, and storage locations.",
+        "source_sha256": "a9d0f00f7a9cd339e1bcc4041e06f0dd5bab5080c0c451ec90abd70f11266bfc"
+      },
+      "policy": {
+        "text": "SSH command filtering, entitlements, and session I/O policy.",
+        "source_sha256": "8fd2cb1c524bc798e78f1b8fe8007f1d3c3f620c4400664b45ec1aa4c76c5d28"
+      },
+      "approvals": {
+        "text": "Approvals and approver contact profile.",
+        "source_sha256": "2804ef48b5cc2e3b2781c06d3a14a8b2942fd14d7335ecc980558282f0bf1f72"
+      },
+      "configuration_scope": {
+        "text": "Agent settings are what endpoints receive; server settings apply to this host only.",
+        "source_sha256": "19338068adf64d0bf58828fe9cceb499b65308e3ced203f413bd47caa55b2049"
       }
     }
   },

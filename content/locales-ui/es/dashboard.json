@@ -623,6 +623,22 @@
     "unknownCountry": {
       "text": "Unbekannt",
       "source_sha256": "276ffa1fb4f970104fc7873c371e0af2c6b10b8375e7104b6ca3708c487163f0"
+    },
+    "legendPoint": {
+      "text": "Attack point",
+      "source_sha256": "fa68d4e63ed7e5ccc4a9927ced10211c568c4b03f23688153f5b6dfea12db113"
+    },
+    "unlocatedOrigin": {
+      "text": "Unlocated origin",
+      "source_sha256": "dda30f1833188a8e11a827b4c45077f41cb4af3589bdc8c28cfdb2de358259c1"
+    },
+    "tacticTotal": {
+      "text": "Total",
+      "source_sha256": "c9b3c38247f744e17dd26fda097d6a9ba9332586b6bdaa038bf8f313a863f2b8"
+    },
+    "clearCountry": {
+      "text": "Clear Country Filter",
+      "source_sha256": "db91578116d75baaf5c5d7b466568c40dfcf01aee19e3e285d54fc1d8b218d92"
     }
   },
   "honestyNotes": {
@@ -703,6 +719,70 @@
         "text": "Recuentos del búfer de eventos en proceso en este momento. No es historial duradero ni una tendencia 7/30/90 — el tamaño del búfer limita lo que ve.",
         "source_sha256": "260d7582bad3557747bfacc83be9d06e2fef0f3134c76d6fefe9a4a79c6bb527"
       }
+    },
+    "env.systems_count": {
+      "text": "Count of enrolled enclave systems at this moment. Trend lines use sampled history; before the first sample the series is empty and history starts at that sample. Not a coverage percentage and not an assessment conclusion.",
+      "source_sha256": "69db030a51534b9f1c94b4fc22caa29a357b0ec4f5103a77832e90ae82f4f420"
+    },
+    "env.probe_enabled_count": {
+      "text": "How many enrolled systems have probing turned on right now. Trend lines use sampled history; empty until the first sample. Enabled probing is not evidence that a control passed.",
+      "source_sha256": "6b4019cc538d7e6452bba4d7e522f9a461163c02db6bc0e7aef58edcb84d3619"
+    },
+    "env.physical_vs_log": {
+      "text": "Split of latest evidence rows tagged physical_host versus log_derived. Trend lines use sampled history; empty until the first sample. Composition of collected evidence only — not a pass rate.",
+      "source_sha256": "2855f98debf6941663aedc64b7d515611ce8065d6126f3bbbefb7e54e93d7710"
+    },
+    "training.framework_coverage": {
+      "text": "Covered means a training document exists and cites a clause of that standard. It does not mean anyone has read the document, and it is not a control assessment. Trend lines use sampled history; empty until the first sample.",
+      "source_sha256": "a8be8f3e73b4b91f364a40d87d643ac04e08d3ab20383238fef47a64d8ad5a15"
+    },
+    "compliance.pack_readiness": {
+      "text": "Counts of Report Center families in available, partial, planned, or blocked delivery states. Readiness of product collectors — never a CMMC or FedRAMP verdict. Trend lines use sampled history; empty until the first sample.",
+      "source_sha256": "9beb070ca0de42316f2835009cf5f98bb8253d564e55ed2cd3c21c5ae8400f8c"
+    },
+    "env.punch_list_open": {
+      "text": "Open findings and partial outcomes from the latest fleet evidence. Delivery backlog for operators — not a residual risk score. Trend lines use sampled history; empty until the first sample.",
+      "source_sha256": "892e38b032e917ebc3e1f700df18c4531b2fbb56c67a8f4992a3738468d7531f"
+    },
+    "compliance.poam_open": {
+      "text": "Count of POA&M rows in open, in_progress, or deferred status. Tracks recorded remediation work — not whether exposure is acceptable. Trend lines use sampled history; empty until the first sample.",
+      "source_sha256": "5a896b5deb083d047b45798d2968c20f5eb14923a05d1ca423b64f19e8aacf4b"
+    },
+    "pum.violations_24h": {
+      "text": "Privileged-use management violation events recorded in the last 24 hours at each sample. Trend lines use that sampled history over the selected 7/30/90 window; empty until the first sample. Not a severity score.",
+      "source_sha256": "fa97fb2f5cb07cc43edb78acfb4d18d6c15c5742f59f234b75f96d508ac3d0dd"
+    },
+    "training.uncovered_frameworks": {
+      "text": "Frameworks that oblige workforce awareness but have no covering document in the library yet. A document gap — not a finding that personnel are untrained. Trend lines use sampled history; empty until the first sample.",
+      "source_sha256": "784464ec9f7d460d2ca6834bb60f8c8ae28c5bbd2684625a205de9d1d7481aa2"
+    },
+    "ir.open_cases": {
+      "text": "Count of IR cases with status open or processing whose opened_at falls in the selected 7/30/90-day window (default 30). Workload backlog from offline_ir_cases — not a judgment that incident response is effective. Line charts have no daily history until the metric sampler lands; an empty series is explicit, not a fabricated zero trend.",
+      "source_sha256": "a91e296ab260af632c2660d7067801347d7cb3d18e92e1c86b64fbbb0322ca49"
+    },
+    "defense.blocked_attempts": {
+      "text": "Failed and denied logons plus blocked API requests in the selected 7/30/90-day window. Counts of denied attempts only — not a claim that attackers ran commands or that malware was captured. Opens the Blocked Attacks page.",
+      "source_sha256": "142c4df58a904c676ac11691195f2c9b92b506f8e5540446b4fdd8c680f23543"
+    },
+    "ir.cases_opened_closed": {
+      "text": "Cases with opened_at or closed_at inside the selected 7/30/90-day window (default 30), from offline_ir_cases. Throughput of recorded case work — not response quality or control effectiveness.",
+      "source_sha256": "7ade5f268580015310b250936cd9867ca900607fa7ef4c9eadd204b93f29b9fc"
+    },
+    "events.by_type": {
+      "text": "Counts from the in-process event ring buffer right now. Not durable history and not a 7/30/90 trend — buffer size limits what you see.",
+      "source_sha256": "260d7582bad3557747bfacc83be9d06e2fef0f3134c76d6fefe9a4a79c6bb527"
+    },
+    "pum.endpoints_enrolled": {
+      "text": "Endpoints with a PUM policy assignment at this moment. Trend lines use sampled history; empty until the first sample. Enrollment count only — not enforcement quality.",
+      "source_sha256": "f9782cd71f65e67c68227b52dc200d793849ce54eec82bf92c9fb6ba0a12e5af"
+    },
+    "env.discovered_systems": {
+      "text": "Enrolled systems whose identity came from discovery (import / scan / directory). Trend lines use sampled history of that enrollment-origin count; empty until the first sample — never invent pre-history points.",
+      "source_sha256": "de19ba275f78d499fb3efa2f0526d1449bffa600d502c0b7de15f1102c865e6c"
+    },
+    "compliance.attestations_recorded": {
+      "text": "Count of rows in offline_compliance_attestations whose attested_at falls in the selected 7/30/90-day window (default 30). Proof that attestation records were written — not that every required attestation is done.",
+      "source_sha256": "a54857fb8f45e50b3e5423ad1825b8e6d061f9ba89707a729577c5494235ac68"
     }
   },
   "chartLabels": {

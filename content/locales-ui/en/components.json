@@ -330,6 +330,386 @@
       "mitm_dev_only": {
         "text": "Optional mitmproxy integration for development debugging.",
         "source_sha256": "724541d770d749c8acfd8248c1f60e14cfd961a6f14676e7d3921fbc96beb261"
+      },
+      "reveal_password": {
+        "text": "Recover managed identity passwords on a selected endpoint.",
+        "source_sha256": "7eddfb4e6b3df7ed702393762e8e1c1c582dba3efdd611af243d3a1512b6039d"
+      },
+      "managed_identities": {
+        "text": "Manage local accounts and password policy on each endpoint.",
+        "source_sha256": "9cb5c0884d0d4ddca402c949b1acf3ef5bcf18ee7c045f2da446193e519ea953"
+      },
+      "applications": {
+        "text": "Sensitive-apps catalog with Duration; import bundled or customer CSV.",
+        "source_sha256": "570b022f4e09bf2cc4e95738f8966575f0a5a16bfe26681c43a65209bd4c4d70"
+      },
+      "application_groups": {
+        "text": "Name a set of apps and bind people, groups, or systems to that set.",
+        "source_sha256": "f64618b2e846a696fde2409a6f32cf4740c60ee8a7d2bfbe500392082be57d7b"
+      },
+      "workstation_prompt": {
+        "text": "On-demand elevate helper: pick an app, see allow versus approval, finish connected or disconnected.",
+        "source_sha256": "6932ad92afb560fdd876b25da5a9e8f2376c77498f20f961de745d48ebf0862b"
+      },
+      "unix_privilege": {
+        "text": "sudo, pbrun, and dzdo as first-class elevation targets.",
+        "source_sha256": "9066f779bcd088cf7eb0a36256ef2d5dd4a17486b92cce72c7fd299fd6ddd508"
+      },
+      "who_may_elevate": {
+        "text": "Bind IAM users, groups, or systems to apps. Set Default allow or Approval required.",
+        "source_sha256": "60c69bb1c0e2360c6fed6f0e92bcbb68af1787875eabc383e0acd6da1756446c"
+      },
+      "elevation_approvals": {
+        "text": "Request, approve, or deny time-limited elevation for approval-required apps.",
+        "source_sha256": "902547bc6f31c9d232ac243ebcae4c095bfda7eef1fe488c9b74b86b4546500d"
+      },
+      "elevation_policy": {
+        "text": "OS-group offers, duration tiers, and Modes 1–3 channel toggles.",
+        "source_sha256": "ab25d96e4f44c4ef8cdbae8ed602b647dde09b9e405ff48497fa0c09395296e9"
+      },
+      "privileged_user_management": {
+        "text": "WDAC / AppLocker pack assignment, effective hash monitoring, and exception approvals.",
+        "source_sha256": "d736d991c0fc72232cca0c81bbaf19c984ea15229a67089db660283a77f4b433"
+      },
+      "disconnected_tokens": {
+        "text": "Mint or exchange tokens so an agent can elevate while disconnected.",
+        "source_sha256": "32087a18b9283f5bf2f1f3e24599e40e9790d2260900829d5a18ab6d1cff2c6d"
+      },
+      "direct_elevation": {
+        "text": "Time-bound privileged membership activations on connected endpoints.",
+        "source_sha256": "45f4f0866c488abedc0f3287b240a698d8bb16f8e8e1495331872e6420d4e559"
+      },
+      "local_iam_administration": {
+        "text": "Users, groups, role capabilities, Secure Share decisions, and workstation assets in one console.",
+        "source_sha256": "431202562bc3235d469f293107ba921895730985578a76e14b3674c661b0f4cb"
+      },
+      "local_user_groups": {
+        "text": "Name-based groups for entitlements and access governance (Groups tab).",
+        "source_sha256": "bc7a7f78b6a39509f3e711944a2421175961954e1c7c6e8b331693db23d0e402"
+      },
+      "workstation_assignments": {
+        "text": "Assign IAM users to inventory workstations that appear on My Workstations (Assets tab).",
+        "source_sha256": "adcd6e16ab15cd8b797642834c3b25b7d027c57d586e139c79e01f0632573068"
+      },
+      "enrollment_and_access_control": {
+        "text": "Assessor matrix: who may edit enrollment fields and which audit events prove the changes.",
+        "source_sha256": "b6bd740989a56cec772518655a0775a142575ff3ce339419c3c403711dfa8c4f"
+      },
+      "proxied_access": {
+        "text": "Live vs planned status for session brokering and privileged command controls.",
+        "source_sha256": "4724bfc58f551c60e82ea67a4ed7cdb34f1f0f50b637af56c6e8e3306c3e2226"
+      },
+      "connection_points": {
+        "text": "Define SSH and RDP targets, launch proxied sessions, and manage credentials.",
+        "source_sha256": "dd347e3f6e315957614e6c449247c0d3dc6827352d7110a8c78c562219d81497"
+      },
+      "session_recordings": {
+        "text": "Browse and replay recorded proxied sessions.",
+        "source_sha256": "10ab3ca886bfaf4e49ce625fb41106f8725580b0102543293e40c252b80685f3"
+      },
+      "session_control": {
+        "text": "Monitor and terminate active privileged sessions.",
+        "source_sha256": "5d29a050f7dca58b6143955935a1b1e05e1419727b4bf63b66e346327e8a0523"
+      },
+      "jump_fleet_load_balancing": {
+        "text": "Configure external Jump hosts and aic-server-local capacity, drain/weight, Probe placement, and push.",
+        "source_sha256": "0968ba511a21832d4a9735a581bd56865de9f7ada48ecb0164b790cf7caee3ef"
+      },
+      "recording_agents_health": {
+        "text": "Enrolled agents with check-in health and proxy vs target-local recording support.",
+        "source_sha256": "2e5cf76e7cc5719c4e78c0f82e3f5446e96dec2cca1762eee62da29eed746160"
+      },
+      "deploy_recording_agent": {
+        "text": "Mint an enrollment token and follow install steps for recording on a target.",
+        "source_sha256": "a2667bb3db57fb6e8ef543f586e0e27a4620a1d46f861adc74a3c63e1513be9c"
+      },
+      "rdp_ocr_metadata": {
+        "text": "Lab Tesseract job queue, search hits, and per-machine metadata (Live for lab). Production OCR engines beyond Tesseract remain Planned (P2-7). SSH terminal indexing remains out of scope.",
+        "source_sha256": "aef97f5f47d2c1d08ff4793ca3a094fb326f2794ce8dc770c434c5ce5c55d4ea"
+      },
+      "recording_storage": {
+        "text": "Effective paths for encrypted recordings and OCR metadata (AppConfig-backed).",
+        "source_sha256": "48901944e6f80e38d4dc6bf4dff9c8d99251ecd4c41a6dd7061667ff5f0c1b6b"
+      },
+      "credential_vault": {
+        "text": "Stored credentials used when launching connection targets.",
+        "source_sha256": "a7ed8eceaf46e4c99932196a10d9b6c4ccd569688dcf60db9bd7ffac242c8f4b"
+      },
+      "ssh_command_filtering": {
+        "text": "Command sets, assignments, and normalization for session filtering.",
+        "source_sha256": "348a9cc723dba17bebcfd57c33350a459788cf909a70b8a5b22367b0b2d626ae"
+      },
+      "entitlements": {
+        "text": "Who may request or launch which connection targets.",
+        "source_sha256": "943d3a69d2c742f5890ab37b40dbe7eab5b4d6ae49c502900662a92cadbeaeed"
+      },
+      "active_grants": {
+        "text": "Submit and track your own access requests; sign off when finished.",
+        "source_sha256": "2dc6b446db3eb0e21ce78ddfde018f6950b7317578cd3505aab0d55713ebdf10"
+      },
+      "approvals": {
+        "text": "Approve or deny pending access requests assigned to you.",
+        "source_sha256": "0a51d96fc956b6d6ed1dea7947f1b83b365adf0aca05175a4a0e06a9fe1ab653"
+      },
+      "approver_profile": {
+        "text": "Contact channels used when you are asked to approve access.",
+        "source_sha256": "67441e8b53a97ff5f820f1d4efe3c483281527da611696a243d3b964782695c1"
+      },
+      "startup_wizard": {
+        "text": "Guided path from empty OT environment to discovered and enrolled assets.",
+        "source_sha256": "42ce330934f71a8f998f1ec3886da7e4561fdd84fc3f03ddde65eb80f8cdf0f8"
+      },
+      "discovery_jobs": {
+        "text": "Run discovery jobs, manage scan schedules, and review the Asset list.",
+        "source_sha256": "44554ec552cc2b67fd945625a943d2c8a70914159261dda2cce2efb0ffcd0f62"
+      },
+      "inventory": {
+        "text": "Browse OT targets, status, and Connect or Configure per row.",
+        "source_sha256": "9a107c9a088465a2119422f41e7105429e3f761f188c42f8e5ddbdc56e1cf723"
+      },
+      "connect": {
+        "text": "Open OT protocol sessions from the Asset list (not SSH, RDP, or VNC).",
+        "source_sha256": "403fe40ac478526d373ce6908f144f53165d3d93772f20c7429b5df6aff8c791"
+      },
+      "credentials": {
+        "text": "Rotate passwords on demand, request break-glass reveal, and open per-target schedules.",
+        "source_sha256": "2acf4e700163584d85e51066320b8eb4bfbffb031cffc3efc74152ca789e2eb3"
+      },
+      "sessions_evidence": {
+        "text": "Review open OT sessions and session evidence.",
+        "source_sha256": "a48b11497240464d54dee92d43944d9b723acb1807c1d6d87d3114f1dc6d387e"
+      },
+      "systems_list": {
+        "text": "Every known system, agent or not, with reachability, collection state, and agent health.",
+        "source_sha256": "c319ec756f4e30813ca99d72bb30157d38ae202d9316aab292049e263b8b2199"
+      },
+      "remote_access": {
+        "text": "Operator connect for systems with a session channel (requires connection-target rights). End users use My Workstations.",
+        "source_sha256": "f0a79e1216a9496f8d16f37e7441a71c80a17b6830511dcfdbe03f42ec145526"
+      },
+      "my_workstations": {
+        "text": "Seats assigned to you. Connect starts a recorded session; no workstation password needed.",
+        "source_sha256": "b91b13699ea900d3fcd1f4d9e744e3961a6e63928ecc4dab7dbce470accf26df"
+      },
+      "vm_management": {
+        "text": "Hypervisor connections and VM pools for power scheduling (admin only — not My Workstations).",
+        "source_sha256": "506912dafe97e4e16e3a3dbba308bec4889c745c9cae24be9d4bc2475688ff67"
+      },
+      "system_groups": {
+        "text": "Shared password policy, identity templates, and wizard defaults.",
+        "source_sha256": "46ca542e60ebf97be99ea5660af2dca831f57ba2802f1df05840474b8be09291"
+      },
+      "multi_tenancy": {
+        "text": "Customer organizations and bootstrap secrets for agent authentication.",
+        "source_sha256": "a849d76dc8a867ea7ff31394849b26acba3dd50c7ef0d0a2ee77e5d9d48e8852"
+      },
+      "report_center": {
+        "text": "Catalog, schedules, delivery, and archive for operational evidence.",
+        "source_sha256": "567312062ba233e56f58047cc51a5883b1f828b853d97103a7ad11c52e88f7e2"
+      },
+      "report_templates": {
+        "text": "Shipped report definitions and custom presentation overlays.",
+        "source_sha256": "6207e80eb570d2f2536e4dcdac3ed53ef7823e1d1a46d724381018eeca992620"
+      },
+      "current_state_compliance": {
+        "text": "Per-machine posture and findings for enclave hosts.",
+        "source_sha256": "fee2872f9cc88c9b545cebd2c36428e0bb57d3ab1c660d9dd6eacb49e77c3356"
+      },
+      "operations_compliance": {
+        "text": "Family delivery and named work remaining. Not an assessment verdict.",
+        "source_sha256": "b33d68dd2b4795696ed711df85d73e2192e7927ed8c0c553041ac6c9c28b2a54"
+      },
+      "external_workstation_readiness": {
+        "text": "ERASG — connecting VDI / viewing clients. Posture before admit. Legacy /enclave/workstation-assurance redirects here.",
+        "source_sha256": "2271cc97c28dc083a0b5bf874bbc5b8f34ec2ac0b8a3ab273b1a374fe427e7eb"
+      },
+      "wa_probe_packs": {
+        "text": "Upload and activate Workspace Agent probe content packs the fleet pulls.",
+        "source_sha256": "10f08e236cdcfcf92ada8e976b7c6b6907706848d5883a3af1c316a7eb98175d"
+      },
+      "assessment_binder": {
+        "text": "Living CMMC enclave assessment binder with export formats.",
+        "source_sha256": "02c87d154cc77d69e76e643ac4d24a5883f782fbac10639a92c1bac420a6050d"
+      },
+      "auditor_text_playbooks": {
+        "text": "Reusable binder playbooks and regenerate steps for assessor workflows.",
+        "source_sha256": "2e87cc4011a7ed8235ac52bca108f730cfcbd9e6c56fe46fd3e6b09fb63e7d25"
+      },
+      "data_flow_mapping": {
+        "text": "Enclave boundaries and data flows with derived exposure controls. Obligations only — not Met or certified.",
+        "source_sha256": "4363d56a743e8653515d9054477f101de949e7331cb090377946f93df78b3f4e"
+      },
+      "training_and_awareness_packs": {
+        "text": "Editable awareness source documents you customize and distribute. Rendering a document is not training delivery and carries no completion record.",
+        "source_sha256": "984357b38f49cf6a653894651156dd0126aaaead5ace48983b00983506f28a80"
+      },
+      "poa_m": {
+        "text": "Plan of Action and Milestones for compliance findings. Lifecycle tracking only — not Met or certified.",
+        "source_sha256": "63be8a922cab93181c27e42473dea84f48542b6e192d036093bf247f041a3336"
+      },
+      "control_catalog": {
+        "text": "Browse NIST SP 800-171 practices, 800-53 controls, and 800-172 enhanced requirements with crosswalk mappings.",
+        "source_sha256": "ba128d2c2272453d22dbfbddd759ff58619b5bfca166e462f3790cf0aa535414"
+      },
+      "audit_frameworks": {
+        "text": "Published standards (NERC CIP, FERC, IEC 62443, HIPAA, PCI DSS, ISO 27001, and more) with NIST SP 800-53 crosswalk mappings.",
+        "source_sha256": "025588b23def3f17d21b2e435ff24e0b0935f7d8243399e7b5119af0dbd2179f"
+      },
+      "probe_packs": {
+        "text": "Scripted compliance probe packs and test results.",
+        "source_sha256": "09006c3974335239dc78581fc5112d9fe19c0891db3eab4388f8c216de73c636"
+      },
+      "live_events": {
+        "text": "Near-real-time operational feed from agents and this server.",
+        "source_sha256": "6cfe41bea28c4edca595035af4c1a0136570a531b2ba2e69095dc2ab3639a308"
+      },
+      "incidents": {
+        "text": "Incident Detection & Response cases (Phase 0 Partial) — severity, stage, timeline.",
+        "source_sha256": "03b5cf793adfcca411ca0aa3f8b02596701d5ffb05eb5f127198584508b2e552"
+      },
+      "audit_log": {
+        "text": "Durable compliance trail stored in PostgreSQL.",
+        "source_sha256": "2d11bf2042cd180790c07e6d455bdd8f23f62d5cc0355edf68eaa4e1ebc8523c"
+      },
+      "event_sharing": {
+        "text": "SIEM, ServiceNow, Jira, and generic HTTPS webhook forward plus built-in sinks.",
+        "source_sha256": "8913dfe6ff1aa12bed9e3bc3eee74d585d39db319737b8719aa91dd17e488d72"
+      },
+      "agent_overview": {
+        "text": "Settings files, provisioning, and the defaults endpoints receive.",
+        "source_sha256": "2ee00140318aef2bf647986447acf1d71de9c98c7e8b71e513775867c6d99b9e"
+      },
+      "server_configuration": {
+        "text": "How this offline server runs: TLS, identity, crypto, and control.",
+        "source_sha256": "e57e4c230cb43fd193da244063eedb784756ad4d3d62c332affbb7052ee40514"
+      },
+      "messaging": {
+        "text": "Email templates, SMTP, and SMS provider credentials for notify.",
+        "source_sha256": "2057920db27f23e21669d00484e4f2a6bb991542d49dbd87ca0967fa7ad96492"
+      },
+      "lab_advanced": {
+        "text": "Manifest readout, MITM lab tools, and demo data utilities.",
+        "source_sha256": "b8ec8b6ea4ae447b5e64a7c146d1201f36c90f01732bd557c95b182497c13ddf"
+      },
+      "create_settings_file": {
+        "text": "Issue agent settings JSON with an enrollment token.",
+        "source_sha256": "5c2481841dc172063327aa4f80ec9bd3e2757f653dd51a5d707a8e96f1b2a876"
+      },
+      "bulk_provision": {
+        "text": "Provision many endpoints from a CSV or spreadsheet upload.",
+        "source_sha256": "f50b2e3a7183752fb6817320c3f93f15eb7eef394146c54d16ee4e81c42abcbb"
+      },
+      "manage_issuances": {
+        "text": "Rotate, revoke, and re-download issued settings packages.",
+        "source_sha256": "daea005b8fe47e6e5c9c80dd025d3040c06bcac7baa067f9396ccedb6226e516"
+      },
+      "import_settings_files": {
+        "text": "Validate legacy settings JSON for migration review.",
+        "source_sha256": "57556bba1ab4ccf781472806e9f8124c87b6b4625bf3994a5783fe42ae2f67c4"
+      },
+      "identity_template": {
+        "text": "Edit which managed accounts are seeded on new group members.",
+        "source_sha256": "840dc45eab9350b936620345ded58273c72a472c19dc1366445ec3cb38c764f8"
+      },
+      "password_defaults": {
+        "text": "Program-level password policy at the bottom of the inheritance chain.",
+        "source_sha256": "44ae1e5803c460002a29f69ee42f2d34c130c18e330690d0ae942afa5ec326cc"
+      },
+      "password_policy_presets": {
+        "text": "Named policy bundles operators apply from defaults or group dialogs.",
+        "source_sha256": "7857d28e81de0c4d258857e12e44813f356b213b489ae1f5cfd75317e39cbe29"
+      },
+      "group_defaults": {
+        "text": "Default password policy applied to new system groups.",
+        "source_sha256": "13cc103f9c62f940c59e371d713029da764b1d623b2a47d539ba110b577efa8f"
+      },
+      "identity_defaults": {
+        "text": "Identity-template and seeding options for managed accounts.",
+        "source_sha256": "144616e316f6b393f54a76bd3c2c45e9115f6d5b5e3c327c14c0b68a9aafc5e7"
+      },
+      "operator_disclosures": {
+        "text": "Standard disclosure text before sensitive operator actions.",
+        "source_sha256": "d5f9f7e80ba9c7a94547851054af6e5aae9d31ad877c40b21db26b312072bec0"
+      },
+      "server_disclosures": {
+        "text": "Classification banner and footer prose for this web admin only.",
+        "source_sha256": "e944ad46ee4228d6c42c5cebb6b42426757fff138897a1cbb02ca104bcf5482a"
+      },
+      "agent_event_forwarding": {
+        "text": "Default event-log and syslog keys in minted agent settings.",
+        "source_sha256": "e5e83c7e4e52bd5e01c729efca850b169c1e3aa4fcd1ee910df590a35918a6ad"
+      },
+      "propagation_templates": {
+        "text": "Propagation script catalog, connected push, and air-gap export.",
+        "source_sha256": "016d3f143877e192f32db0d16bd13196a29e8299ce06710c2a07ec69952ed014"
+      },
+      "agent_management": {
+        "text": "Connected-agent overview, allowlisted settings, Push diagnostics, and capability map.",
+        "source_sha256": "e83240305b70c9ddf6d0d47c1156728e7ae3bb4cf0869cc14ec25641f742aa23"
+      },
+      "fleet_agent_versions": {
+        "text": "Read-only agent versions, check-in age, Push reachability, and runtime warnings from Systems List.",
+        "source_sha256": "0aa47529159a7db311642a79c16ea5e0651177767c1cb88d51983d71b0e20453"
+      },
+      "message_templates": {
+        "text": "Reusable notification bodies for operator-facing email.",
+        "source_sha256": "52fad2871fd7cffa3614e1b44d943ec5b7f95a82fe2c4c63e4fc2cfb20d70778"
+      },
+      "message_snippets": {
+        "text": "Shared text fragments included in multiple templates.",
+        "source_sha256": "4ca9819621456aab13598577529d2a0967798d70baf9d12da2a5a5177daa96db"
+      },
+      "email_settings": {
+        "text": "SMTP relay and sender identity for outbound mail.",
+        "source_sha256": "5da59380cb69129e14d89ae577a5d3fa2fd3621f46b3b96b9fe76a2b9002ee67"
+      },
+      "sms_settings": {
+        "text": "Twilio or HTTP SMS webhook credentials for credential notify.",
+        "source_sha256": "c195ebb6e8bef0dd128952e124cffa4bd617d7fad8f297ae985db7d40e744179"
+      },
+      "elevation_mocks": {
+        "text": "Static prototypes for multi-channel elevation (agentserver admin).",
+        "source_sha256": "2bebc8a3c8a8f88ccc641cd6d4795b3093eb5347b58e2439eb6b1bc356175d47"
+      },
+      "demo_data": {
+        "text": "Development utilities to seed or reset sample data.",
+        "source_sha256": "82f18737ae8110fe59ef90f56f673b06bf9bd3788919c3461e67fa40e7212aaf"
+      },
+      "secure_share": {
+        "text": "secure share",
+        "source_sha256": "4c608724614d6cdcf8da349f3419298a9d5ad80138ff8e2fe72344cd0c706431"
+      },
+      "my_local_account": {
+        "text": "my local account",
+        "source_sha256": "5cc092e197ee89ee62fe1e202939c7741153b5c920730af1432d90ed0275b6e2"
+      },
+      "reveal_a_password": {
+        "text": "reveal a password",
+        "source_sha256": "605ddddd4edd567879d18594d7fd8b23f0268ec6f0358b15038d830ecfd24107"
+      },
+      "get_an_elevation_code": {
+        "text": "get an elevation code",
+        "source_sha256": "080febc1dc62cb22aff73ef6741c1c4d1b6e9540deaba58678b7ef63dbc9dce9"
+      },
+      "generate_config_file": {
+        "text": "generate config file",
+        "source_sha256": "373cfb350ffd62c4c341e593cce8bc715972e0602052a127c09726bbf363bed7"
+      },
+      "compliance": {
+        "text": "compliance",
+        "source_sha256": "29a3e14798aa2363dc0ca5d6cf18f3a0cf9003c8824cf66fde7804867e8ceee9"
+      },
+      "events": {
+        "text": "events",
+        "source_sha256": "862417b9e7c3720bcb3263cd873b09892d787823b6f9a0f453e42824c5a4d4b6"
+      },
+      "settings": {
+        "text": "settings",
+        "source_sha256": "cde0fb0dec1400c54a0f7e7eafa73624c53e4da258bbd34b3380a0defeba95c1"
+      },
+      "dashboard": {
+        "text": "dashboard",
+        "source_sha256": "66cd9688a2ae068244ea01e70f0e230f5623b7fa4cdecb65070a09ec06452262"
       }
     },
     "intro": {
@@ -368,6 +748,90 @@
       "messaging": {
         "text": "Templates, snippets, SMTP, and SMS settings for operator credential notify.",
         "source_sha256": "9099c8f834ae1b834c7c5cee0228e31756447d67bef595bbfbf4a271043c5b86"
+      }
+    },
+    "group": {
+      "credentials": {
+        "text": "Credentials",
+        "source_sha256": "d48a617c7da5163c44f117b9b23d8c920e69b4aa83d7b6570d71a66f3a857183"
+      },
+      "privilege_elevation": {
+        "text": "Privilege Elevation",
+        "source_sha256": "f867cc041a57522981913cc9ffe2c2a2aa00237e6d95cac3b3110d8f1d659579"
+      },
+      "directory": {
+        "text": "Directory",
+        "source_sha256": "c8f84c3c5378b920b0ec2702cd9963a470098638b0c8aae249f74ec1a857633a"
+      },
+      "ot_surfaces": {
+        "text": "OT Surfaces",
+        "source_sha256": "4720c6d96abce245edcfaa00e28dc5dd8ddae3d57d1bd6f1e7be3f4d5911b75c"
+      },
+      "sessions": {
+        "text": "Sessions",
+        "source_sha256": "6fa3cbf451b2a1d54159d42c3ea5ab8725b0c8620d831f8c1602676b38ab00e6"
+      },
+      "jump_capacity": {
+        "text": "Jump & Capacity",
+        "source_sha256": "15916f05652111450d893aa415b1ae45968776cd180806a34041cae4ade499ca"
+      },
+      "recording_ops": {
+        "text": "Recording Ops",
+        "source_sha256": "35f5d18ad403950802c3fe44ad7abfeae14d22154df4988e668dc84c1a9ceb6a"
+      },
+      "policy": {
+        "text": "Policy",
+        "source_sha256": "c611981fab983bc648368eb81240f5a5a1eff07f40aa4c9fd155600a98eeb6af"
+      },
+      "approvals": {
+        "text": "Approvals",
+        "source_sha256": "2bfc3471571e5c008cb26bd839b0d4cbcb1132fc9d6c8206bb595fa26e83a45b"
+      },
+      "configuration_scope": {
+        "text": "Configuration scope",
+        "source_sha256": "bed2ec8ae3d6341303152b94dd6efc652b28d19199a29a0e236ea11101c43a8d"
+      }
+    },
+    "groupDesc": {
+      "credentials": {
+        "text": "Reveal and manage managed local identities.",
+        "source_sha256": "ddf2fc29b053e6fd35eac3e33090fb8f18662fba6e562afa96991e63edf3ad14"
+      },
+      "privilege_elevation": {
+        "text": "One-time token elevation and direct privileged membership activations.",
+        "source_sha256": "b3fa78236de633696cba5ab03fffbc8d38a76f6900cab7f9ce193b0aaa6ff861"
+      },
+      "directory": {
+        "text": "Local users, groups, enrollment, and workstation assignments.",
+        "source_sha256": "244b58026554ffbf9d1829c4bcae657f1ad8146fe53a64231d794048aadf8cfa"
+      },
+      "ot_surfaces": {
+        "text": "Security add-on for OT inventory, discovery, Connect (PDU timeline), and credentials.",
+        "source_sha256": "709215f13f9dcf9e891db5d0af835da13ea32e62166a7b11757ce6a001fd8e31"
+      },
+      "sessions": {
+        "text": "Brokered SSH/RDP sessions, recordings, and live session control.",
+        "source_sha256": "132264e7ee341c76a79a0dbeba7eaac3be9082765c7b9059f7ad01eff41c958e"
+      },
+      "jump_capacity": {
+        "text": "Jump / recording-proxy fleet capacity and load-balancing probes.",
+        "source_sha256": "0db9f6afb815fb159b7b7a8811ed0414c975d644b0143407ee4615642e17771f"
+      },
+      "recording_ops": {
+        "text": "Recording agents, OCR metadata, and storage locations.",
+        "source_sha256": "a9d0f00f7a9cd339e1bcc4041e06f0dd5bab5080c0c451ec90abd70f11266bfc"
+      },
+      "policy": {
+        "text": "SSH command filtering, entitlements, and session I/O policy.",
+        "source_sha256": "8fd2cb1c524bc798e78f1b8fe8007f1d3c3f620c4400664b45ec1aa4c76c5d28"
+      },
+      "approvals": {
+        "text": "Approvals and approver contact profile.",
+        "source_sha256": "2804ef48b5cc2e3b2781c06d3a14a8b2942fd14d7335ecc980558282f0bf1f72"
+      },
+      "configuration_scope": {
+        "text": "Agent settings are what endpoints receive; server settings apply to this host only.",
+        "source_sha256": "19338068adf64d0bf58828fe9cceb499b65308e3ced203f413bd47caa55b2049"
       }
     }
   },

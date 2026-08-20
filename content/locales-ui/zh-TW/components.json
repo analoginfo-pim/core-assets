@@ -542,6 +542,202 @@
       "syslog_forwarding": {
         "text": "將 EPIM 事件從此伺服器轉送到遠端系統日誌收集器。",
         "source_sha256": "ec0c45b0cd4faf173a949559608f96e82ef6eb8c824d2dc5daee1cb833f3ce52"
+      },
+      "reveal_password": {
+        "text": "顯示密碼。",
+        "source_sha256": "2082d05b1cab701acf82a8e3fe6d083dd8451a999660aa018faa32b6aaef311f"
+      },
+      "managed_identities": {
+        "text": "受管理身分。",
+        "source_sha256": "cc077895eef3ac490ade4e66a59f06ebc3fb3e66d10b59a4a0c78c15baf9ca36"
+      },
+      "applications": {
+        "text": "敏感應用程式目錄。",
+        "source_sha256": "cf353bbaf81260e54f533ea61c64cb58766b6f2b76dbee75372233c890183ca4"
+      },
+      "application_groups": {
+        "text": "應用程式群組。",
+        "source_sha256": "29ea69521dcd475bce0f58b26246df044b2a4590dc68e763381b30f29da2600c"
+      },
+      "workstation_prompt": {
+        "text": "工作站提示設定。",
+        "source_sha256": "b905c27a5c0ae8f24b29bf378d404f36684e5195058b6faf379331c6ca45e658"
+      },
+      "unix_privilege": {
+        "text": "Unix 提升權限原則。",
+        "source_sha256": "18cff9a612ebcd8710265c685555027f96ce8141e702f8e152fcf5d589551ef8"
+      },
+      "who_may_elevate": {
+        "text": "誰可以提升權限。",
+        "source_sha256": "d432515924c6d13e22fb0850a05b275c0c5bbb6a352272f318e39ab6e84ddfc6"
+      },
+      "elevation_approvals": {
+        "text": "提升權限核准佇列。",
+        "source_sha256": "dabb46e7e63391c86247e43038765a55deaa5c17400395426590df42a1e7553d"
+      },
+      "elevation_policy": {
+        "text": "提升權限原則。",
+        "source_sha256": "20f9da5ac5c948eb0961c5cab38aef129e0609cd0a3d786a8975d0b5782bfd60"
+      },
+      "privileged_user_management": {
+        "text": "特殊權限使用者管理。",
+        "source_sha256": "e646e003f6dcb004b1a6a26cab7a4244810c3f38d8d52962ff293b24a5d9baca"
+      },
+      "disconnected_tokens": {
+        "text": "離線權杖。",
+        "source_sha256": "60227f7b1cf964da537712c15d25296fc0e09c055854919d0a04432e15506492"
+      },
+      "direct_elevation": {
+        "text": "直接提升權限。",
+        "source_sha256": "0d0322123312ecd29061e112dd233f3f28046136f271fdc00c28f57ac00fc180"
+      },
+      "local_iam_administration": {
+        "text": "本機身分與存取管理主體、角色與權限。",
+        "source_sha256": "6f9466814f0799c1c8e1f9399f4c037d8a0a3092d6194bde3e66436c3a48e1a6"
+      },
+      "local_user_groups": {
+        "text": "本機使用者群組與成員資格。",
+        "source_sha256": "4d2f0c7ee53840c66aba763990e505271668fc42172c2e4ff0d7c888f1f4d4c9"
+      },
+      "workstation_assignments": {
+        "text": "將工作站座位指派給人員。",
+        "source_sha256": "c9b9fd0bf6b6562f61ece381c7468136a8e18f5cec27f8870aeb4ca2ce83c0f6"
+      },
+      "enrollment_and_access_control": {
+        "text": "註冊存取控制與誰可加入環境。",
+        "source_sha256": "9333e7eed418a9225104331947bf0a237cb960a79d0eb99f54e6b5a464a1a7bc"
+      },
+      "credential_vault": {
+        "text": "Stored credentials used when launching connection targets.",
+        "source_sha256": "a7ed8eceaf46e4c99932196a10d9b6c4ccd569688dcf60db9bd7ffac242c8f4b"
+      },
+      "active_grants": {
+        "text": "Submit and track your own access requests; sign off when finished.",
+        "source_sha256": "2dc6b446db3eb0e21ce78ddfde018f6950b7317578cd3505aab0d55713ebdf10"
+      },
+      "report_center": {
+        "text": "Catalog, schedules, delivery, and archive for operational evidence.",
+        "source_sha256": "567312062ba233e56f58047cc51a5883b1f828b853d97103a7ad11c52e88f7e2"
+      },
+      "report_templates": {
+        "text": "Shipped report definitions and custom presentation overlays.",
+        "source_sha256": "6207e80eb570d2f2536e4dcdac3ed53ef7823e1d1a46d724381018eeca992620"
+      },
+      "current_state_compliance": {
+        "text": "Per-machine posture and findings for enclave hosts.",
+        "source_sha256": "fee2872f9cc88c9b545cebd2c36428e0bb57d3ab1c660d9dd6eacb49e77c3356"
+      },
+      "operations_compliance": {
+        "text": "Family delivery and named work remaining. Not an assessment verdict.",
+        "source_sha256": "b33d68dd2b4795696ed711df85d73e2192e7927ed8c0c553041ac6c9c28b2a54"
+      },
+      "external_workstation_readiness": {
+        "text": "ERASG — connecting VDI / viewing clients. Posture before admit. Legacy /enclave/workstation-assurance redirects here.",
+        "source_sha256": "2271cc97c28dc083a0b5bf874bbc5b8f34ec2ac0b8a3ab273b1a374fe427e7eb"
+      },
+      "wa_probe_packs": {
+        "text": "Upload and activate Workspace Agent probe content packs the fleet pulls.",
+        "source_sha256": "10f08e236cdcfcf92ada8e976b7c6b6907706848d5883a3af1c316a7eb98175d"
+      },
+      "assessment_binder": {
+        "text": "Living CMMC enclave assessment binder with export formats.",
+        "source_sha256": "02c87d154cc77d69e76e643ac4d24a5883f782fbac10639a92c1bac420a6050d"
+      },
+      "auditor_text_playbooks": {
+        "text": "Reusable binder playbooks and regenerate steps for assessor workflows.",
+        "source_sha256": "2e87cc4011a7ed8235ac52bca108f730cfcbd9e6c56fe46fd3e6b09fb63e7d25"
+      },
+      "data_flow_mapping": {
+        "text": "Enclave boundaries and data flows with derived exposure controls. Obligations only — not Met or certified.",
+        "source_sha256": "4363d56a743e8653515d9054477f101de949e7331cb090377946f93df78b3f4e"
+      },
+      "training_and_awareness_packs": {
+        "text": "Editable awareness source documents you customize and distribute. Rendering a document is not training delivery and carries no completion record.",
+        "source_sha256": "984357b38f49cf6a653894651156dd0126aaaead5ace48983b00983506f28a80"
+      },
+      "poa_m": {
+        "text": "Plan of Action and Milestones for compliance findings. Lifecycle tracking only — not Met or certified.",
+        "source_sha256": "63be8a922cab93181c27e42473dea84f48542b6e192d036093bf247f041a3336"
+      },
+      "control_catalog": {
+        "text": "Browse NIST SP 800-171 practices, 800-53 controls, and 800-172 enhanced requirements with crosswalk mappings.",
+        "source_sha256": "ba128d2c2272453d22dbfbddd759ff58619b5bfca166e462f3790cf0aa535414"
+      },
+      "audit_frameworks": {
+        "text": "Published standards (NERC CIP, FERC, IEC 62443, HIPAA, PCI DSS, ISO 27001, and more) with NIST SP 800-53 crosswalk mappings.",
+        "source_sha256": "025588b23def3f17d21b2e435ff24e0b0935f7d8243399e7b5119af0dbd2179f"
+      },
+      "probe_packs": {
+        "text": "Scripted compliance probe packs and test results.",
+        "source_sha256": "09006c3974335239dc78581fc5112d9fe19c0891db3eab4388f8c216de73c636"
+      },
+      "live_events": {
+        "text": "即時事件監控。",
+        "source_sha256": "6baae78ff12f5767ba41aab7919052993715280dbd9dd28251b157f433c18a4d"
+      },
+      "incidents": {
+        "text": "事件回應案例。",
+        "source_sha256": "488cecf688928263c4b860d49f801f490d4936549d68b42b0a8bddd536d37f48"
+      },
+      "audit_log": {
+        "text": "稽核記錄。",
+        "source_sha256": "3c94e9451cabf667c775bc2c6bbf2d101bc63b817e7f5e9352d68feaa775dfd3"
+      },
+      "event_sharing": {
+        "text": "事件共用。",
+        "source_sha256": "790f36f15b7c6dbdf15a6d9f449eb8e8174f6a1a4155124c1d12e3d17b86e629"
+      },
+      "agent_overview": {
+        "text": "代理程式總覽。",
+        "source_sha256": "6d0d85778d2ed751286e4751ea1c954fcaad572703e69f5942d812f4792eae72"
+      },
+      "server_configuration": {
+        "text": "伺服器設定。",
+        "source_sha256": "119c90f958a9e613253ad292d250029b40af9acf5e2a00d7fff817fa0bdd68ff"
+      },
+      "messaging": {
+        "text": "訊息與範本。",
+        "source_sha256": "08dac72fffe297679c4b9983ed71f4e5a4dd2d183b213e08c2c4be6cdc444277"
+      },
+      "lab_advanced": {
+        "text": "進階實驗室工具。",
+        "source_sha256": "f2fd1d6b68bfcbf048828d1b5da8f60ac7876a667bc80cd34770062f9dfbf5c9"
+      },
+      "secure_share": {
+        "text": "環境內的加密共用保管庫。",
+        "source_sha256": "4e703eb95a6fd52684074b79fd2a36ccc18a4be10d00ee50f770a2d4e21c9c9d"
+      },
+      "my_local_account": {
+        "text": "您的本機帳戶設定檔、密碼與多重要素驗證。",
+        "source_sha256": "36e9c5ec780983535e8191ba1353feed67e537edc8273af030e89608a919e035"
+      },
+      "reveal_a_password": {
+        "text": "在選取的端點上復原受管理身分密碼。",
+        "source_sha256": "2d82f5a07aed646f99ac838cf43772f0d6530051e3b6ba706dfde02a3220d9ff"
+      },
+      "get_an_elevation_code": {
+        "text": "取得提升權限代碼以在端點上使用。",
+        "source_sha256": "a53ebee48bbeeec4f9ef5ac389e1bb604ca1603db2f22b44f1946db8ffef17b8"
+      },
+      "generate_config_file": {
+        "text": "產生代理程式設定檔。",
+        "source_sha256": "a494019720ccb92d98ca22fd1036bde6969c8a04be5750026dd834bdeb3b1347"
+      },
+      "compliance": {
+        "text": "合規與稽核交付頁面。",
+        "source_sha256": "993f0dab56aba3fd66546e1b99aac11a50f95400e0d93540287d4632b2b20d7d"
+      },
+      "events": {
+        "text": "事件監控與共用。",
+        "source_sha256": "383f35401250321f7e5d360b3367ebd0f2c1f2e36034409bf561adea26321fdb"
+      },
+      "settings": {
+        "text": "伺服器與代理程式設定。",
+        "source_sha256": "b812c728c33044b11783b319d403e6f8eca1b69c3c2b8bc88d3aa4ede34a44c2"
+      },
+      "dashboard": {
+        "text": "執行交付資訊主頁。",
+        "source_sha256": "b2616d4c4afbf4e84cd9d7a13a68030747b7a89cc7567bcce6f5b70e7df251d5"
       }
     },
     "group": {
@@ -568,6 +764,26 @@
       "sessions": {
         "text": "會議",
         "source_sha256": "6fa3cbf451b2a1d54159d42c3ea5ab8725b0c8620d831f8c1602676b38ab00e6"
+      },
+      "credentials": {
+        "text": "認證資料",
+        "source_sha256": "d2427b4f547a424eb8cc3d455d7b89f08229c5ef4698406b5e4141930d2318dd"
+      },
+      "privilege_elevation": {
+        "text": "Privilege Elevation",
+        "source_sha256": "f867cc041a57522981913cc9ffe2c2a2aa00237e6d95cac3b3110d8f1d659579"
+      },
+      "directory": {
+        "text": "目錄",
+        "source_sha256": "4c9dda33d3e13f31629a9c9f61d62dc84fe8158a5dcc84b56c5c83da00fef678"
+      },
+      "configuration_scope": {
+        "text": "Configuration scope",
+        "source_sha256": "bed2ec8ae3d6341303152b94dd6efc652b28d19199a29a0e236ea11101c43a8d"
+      },
+      "elevation": {
+        "text": "提升權限",
+        "source_sha256": "94448165777e4cd2bde6bca12a4e2b49883e52a09f4fcf6bd6acda865c1b3cd7"
       }
     },
     "groupDesc": {
@@ -594,6 +810,22 @@
       "sessions": {
         "text": "現場會議和會議證據。",
         "source_sha256": "65638c307c81285518e1ff487eaa3dceb3e49bc2969369fe1e857ee3dc064735"
+      },
+      "credentials": {
+        "text": "Reveal and manage managed local identities.",
+        "source_sha256": "ddf2fc29b053e6fd35eac3e33090fb8f18662fba6e562afa96991e63edf3ad14"
+      },
+      "privilege_elevation": {
+        "text": "One-time token elevation and direct privileged membership activations.",
+        "source_sha256": "b3fa78236de633696cba5ab03fffbc8d38a76f6900cab7f9ce193b0aaa6ff861"
+      },
+      "directory": {
+        "text": "本機 IAM 目錄、群組與工作站指派。",
+        "source_sha256": "81e36b4f3f72cff0df8b6ad816cfddd48ec0d2607e7c50460230bcb6c1183320"
+      },
+      "configuration_scope": {
+        "text": "Agent settings are what endpoints receive; server settings apply to this host only.",
+        "source_sha256": "19338068adf64d0bf58828fe9cceb499b65308e3ced203f413bd47caa55b2049"
       }
     },
     "intro": {

@@ -226,6 +226,22 @@
       "versionTitle": {
         "text": "Version Information",
         "source_sha256": "75a33f90fd5e4ae1f055102aef32f670d097009d5e986b612c36ab21d42f568f"
+      },
+      "creditsListHeading": {
+        "text": "Components",
+        "source_sha256": "a150ce22160259313c47bc66940b905a9c2196924fd447f802cff12dbb1e9702"
+      },
+      "creditsPagePrev": {
+        "text": "Previous",
+        "source_sha256": "a57b08a480b822a0a572b993391c292ede593bf8000b406675b180bbb16260fa"
+      },
+      "creditsPageNext": {
+        "text": "Next",
+        "source_sha256": "1ff57a29d7c9d11bdf61c1b80f2b289b44c1ea844824d4b94a0d52b6ba5fc858"
+      },
+      "creditsPageStatus": {
+        "text": "Page {{page}} of {{pages}}",
+        "source_sha256": "d55bb8fc336926c3120a0e2cf3b4b12bd617f242fae3c8bcf1f56c8d4eb83ca3"
       }
     },
     "auditLog": {
@@ -3452,8 +3468,8 @@
         "source_sha256": "521d32b7dd6eed5deff1efb6e70ec4176672894a478150f6ea9bf67aa64340ba"
       },
       "disablePlane": {
-        "text": "Disable plane",
-        "source_sha256": "8e1eeee250b1bf91c5dd975dd8d723a0cd6798dea18a36d256b714695ffcb438"
+        "text": "Ebene ausschalten",
+        "source_sha256": "a582d751d14f5b06e2b295b870550c3dbafb8f616d1b81819e2278e4dd92e719"
       },
       "displayName": {
         "text": "Display name",
@@ -3488,8 +3504,8 @@
         "source_sha256": "6bb2acf1f617fa1bc0dd51d36174c9f8a4e84ac8a60cc22ae4fc4e82f5fc81ad"
       },
       "enablePlane": {
-        "text": "Enable plane",
-        "source_sha256": "da30f9bf47265d470952ad7e247676215cbe9079da95bbf698b6560eb56cf948"
+        "text": "Ebene einschalten",
+        "source_sha256": "3eb58324cc81481d465df9f168341d72768b0cc91ae1c49dafb72a542e9f35fe"
       },
       "enabled": {
         "text": "Enabled",
@@ -3512,32 +3528,32 @@
         "source_sha256": "2359c2735fed553e83c04401ea79d365c6e3802b6d24b2cb928ac3fe150e40a5"
       },
       "gridAria": {
-        "text": "Jump fleet and capacity",
-        "source_sha256": "66333e460cb79f242eef128d02784ea8303dd1ed2f69ce6aa5059cab7a451647"
+        "text": "Jump-Flotte and Kapazitaet",
+        "source_sha256": "f8504f69d97fe2976063d20b3e754db82fc8633668ad6fa4f8f9be0e202e0ab7"
       },
       "healthAria": {
         "text": "Health {{health}}",
         "source_sha256": "4342f9119d346eb522ad581d7956637ce79546b5df450f01979b772fda3085eb"
       },
       "healthDisabled": {
-        "text": "disabled",
-        "source_sha256": "17eb3c0168d0d7b21ede5481150f17233427d89833ec121b4dbc4fb96cfab71e"
+        "text": "deaktiviert",
+        "source_sha256": "10f33e562ffac7d76a6c0b41d5029092e851cc6217e8e24a8448c441b1cbb861"
       },
       "healthHealthy": {
-        "text": "healthy",
-        "source_sha256": "87695fdac81728b9d7f2d4a1335c2632bb5e6ba1bed21d2dff0254fba31c7d5b"
+        "text": "gesund",
+        "source_sha256": "35c86777491b25c55e49aecf036dace29f83c45b3a6c0fc40ad79975f7fd72bd"
       },
       "healthStale": {
-        "text": "stale",
-        "source_sha256": "a03f2386ae06b21109577020844df367857b72c2fcce384c1896fed98a89c82b"
+        "text": "veraltet",
+        "source_sha256": "ab2cbd984c9ffd81a220ec2bdb5b4315645be43c68afe142cc21904564984a8b"
       },
       "healthUnhealthy": {
-        "text": "unhealthy",
-        "source_sha256": "85826072c3d4c3a4be8b8e4f205e19547d3f6fce81173d14779812a69b978ae2"
+        "text": "ungesund",
+        "source_sha256": "603131d0f81190afa36ceba268b8668d001aca8c870f29dfff585d626153bf28"
       },
       "healthUnknown": {
-        "text": "unknown",
-        "source_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+        "text": "unbekannt",
+        "source_sha256": "a418e69e9fbe3f5ee539498f036d24184da4562539491ddb884e1c6e47778c60"
       },
       "howLbWorksBody": {
         "text": "New sessions pick the least-loaded accepting host with capacity headroom (external Jump PAWs and the local aic-server-local row). Drain or disable a host to remove it from placement. SSH/RDP brokering stays on Connection points — this surface is Jump / recording-proxy capacity only.",
@@ -3756,12 +3772,8 @@
         "source_sha256": "091a9998f4e7df3e9829244560e3fefcd9a188922e03aa3047e93b0145cdd2d2"
       },
       "kind_aic_server_local": {
-        "text": "AIC Server (local)",
-        "source_sha256": "e1d499205e770b7147cbfe9177bde0c4ab2b46651eff947a3f1d78511ed1fa0a"
-      },
-      "kind_external_jump": {
-        "text": "External Jump host",
-        "source_sha256": "e9c2416fceea84fe55f9b90047a9cfd63da4fc6fb97b1876a9f5e457d4f956eb"
+        "text": "kind_aic_server_local",
+        "source_sha256": "1981369c651e973365cbb5f4eb2e871a6bbd64598edf2ba3668aa1ce167b297e"
       }
     },
     "licensing": {
@@ -7826,16 +7838,16 @@
         "source_sha256": "e2b0a4fe7adbfd603e88aed6d6ecc4d9cea02c486832d911aa838db046ab8601"
       },
       "clipboard_bidirectional": {
-        "text": "Both directions",
-        "source_sha256": "f2aefdbf0128155cef2116a78f902d088104c9e32ac774bd1df24a259c2dc7f5"
+        "text": "Beide Richtungen",
+        "source_sha256": "07f3adcfc2e1385b3069886c633a9f08136d347ae2644a5e907b1557eb53e196"
       },
       "clipboard_client_to_target": {
         "text": "Browser to target",
         "source_sha256": "6bb0d6e1b678e0ce7f59dfa1a25987ce3e586fca6da96b53c29278a37540637d"
       },
       "clipboard_none": {
-        "text": "Denied",
-        "source_sha256": "da404deb110f7cc92a5b2c85c8e8ab103bd48837cf300f8387d13d54f3adea65"
+        "text": "Verweigert",
+        "source_sha256": "83ee93bd9f94039bbde3fbefbc4da41f686dd2416bbef91897b407cca9ead917"
       },
       "clipboard_target_to_client": {
         "text": "Target to browser",
@@ -7890,20 +7902,20 @@
         "source_sha256": "ecb42e10270b152b4333a34c6dc8cc438ecae9a1c776ae9d2e16bdf8bce9c7e6"
       },
       "fileTransfer_bidirectional": {
-        "text": "Both directions",
-        "source_sha256": "f2aefdbf0128155cef2116a78f902d088104c9e32ac774bd1df24a259c2dc7f5"
+        "text": "Beide Richtungen",
+        "source_sha256": "07f3adcfc2e1385b3069886c633a9f08136d347ae2644a5e907b1557eb53e196"
       },
       "fileTransfer_deny": {
-        "text": "Denied",
-        "source_sha256": "da404deb110f7cc92a5b2c85c8e8ab103bd48837cf300f8387d13d54f3adea65"
+        "text": "Verweigert",
+        "source_sha256": "83ee93bd9f94039bbde3fbefbc4da41f686dd2416bbef91897b407cca9ead917"
       },
       "fileTransfer_download_only": {
-        "text": "Download only",
-        "source_sha256": "31fbbe754b9e00855261a7a8180e7e92e5de5267b1c0dcae1e5582898d71c00d"
+        "text": "Nur Herunterladen",
+        "source_sha256": "4ec1f5ff26e888657e9d68f823acdda2fca381a47dcd46eddee6bfe7a4b88ab5"
       },
       "fileTransfer_upload_only": {
-        "text": "Upload only",
-        "source_sha256": "571691f310a6590386df81a2932b2855cbbe0520cc603d9c90b2357d13b14580"
+        "text": "Nur Hochladen",
+        "source_sha256": "d5d04b3dac7321cfa27e81a3d10e3eb7c0ec844ccb3f3616a3cc1ca4d6bdda73"
       },
       "formHeading": {
         "text": "Add or replace policy",
@@ -7962,28 +7974,28 @@
         "source_sha256": "465b5967e292896bee2bbe8a67298bf1eec40ae84cf2ea96990cedcf87630442"
       },
       "role_credential_operator": {
-        "text": "Credential Operator",
-        "source_sha256": "d5f9e266f6b5809547a5b6c318f5645095efbcab17087e7712214fa30f1620e2"
+        "text": "Zugangsdaten-Operator",
+        "source_sha256": "e8a4fa572bd077df397f46621283c2d03d5c27a314deb26a8671bd56afbcad95"
       },
       "role_developer": {
         "text": "Developer",
         "source_sha256": "3fb7b39416f1d067268747fc214494d759d2609f863ace1a8a76705618d5c80b"
       },
       "role_enclave_user": {
-        "text": "Enclave User",
-        "source_sha256": "86b2d5ddd69a1af0400571da6f8de4e986ba74d0089f670366ff32a76ee046b0"
+        "text": "Enclave-User",
+        "source_sha256": "3fb3a79ca3a319aa8a31c9b510264189e3f518e2c51d204401b86e0d1dbe7395"
       },
       "role_pam_approver": {
-        "text": "PAM Approver",
-        "source_sha256": "4e9adcb7733641aeb77fa7e4b5c8445fe54cc2f8560c271565311c0a582d5fea"
+        "text": "PAM-Genehmiger",
+        "source_sha256": "557048661d89e473f0733e15997e4f39722e084ee5c6b5e74351f35693151fbc"
       },
       "role_pam_requester": {
         "text": "PAM requester",
         "source_sha256": "59cf3b96898e3236d48b1f507fc8ad09aff045127d7cb1684b032f00c5adc14f"
       },
       "role_server_administrator": {
-        "text": "Server Administrator",
-        "source_sha256": "3a6383efa8fe76377d1732319e3739365defeda054c48a4d3a9dcdd13f8ecbc1"
+        "text": "Serveradministrator",
+        "source_sha256": "9a6474c838b412dae0fb927472f1ef11702b00ccfbc4aaadc963b059d783359f"
       },
       "role_super_admin": {
         "text": "Super administrator",
@@ -8876,12 +8888,8 @@
         "source_sha256": "5c4bb05c10b926aed5f1e63bbf4948477dad9e03a7479b9d5da7c062513b52f4"
       },
       "unencryptedConnectionBanner": {
-        "text": "Unencrypted connection — suitable for development only",
-        "source_sha256": "78fbb02fcd539934b74f7b03d59cdbde6a97997381b3abf01bf954a313413917"
-      },
-      "demoCompanyIdentityHeading": {
-        "text": "Demo company identity",
-        "source_sha256": "ccdffdbf73bfbcb33b4780f2cef08e5027822816f1338c1d14c174908ed109f5"
+        "text": "Connection is not encrypted — use HTTPS",
+        "source_sha256": "b3d78c46148fce035e98d90e1e2da0b617cb2c112082ef79c0e0656c6bf5b52e"
       }
     },
     "systemsList": {
@@ -8920,6 +8928,10 @@
       "colHealth": {
         "text": "Health",
         "source_sha256": "55898449eb74fb2e348d13e5a5d84ab019bb87ea92687b50b3d3302eb409b784"
+      },
+      "colLastCheckIn": {
+        "text": "Letzter Check-in",
+        "source_sha256": "39d860478a6e6aac95c13242f74bfcd6a28af7d3edb7a66cdb5c49eb7e25f87c"
       },
       "colLastCheckin": {
         "text": "Last check-in",
@@ -10789,23 +10801,24 @@
         "text": "Control Catalog",
         "source_sha256": "31d80b8f41778b7abb0e92b2c2fb0cccb93a78625f60fd78c8fb94e102dfc9b6"
       },
-      "bullets": {
-        "text": [
-          {
-            "text": "Open from Compliance & Evidence → Assessments → Control Catalog.",
-            "source_sha256": "f1237bc89fc67bd49b020160b25c1c5d43359841adf3c028d3b25d46968c3789"
-          },
-          {
-            "text": "Each practice shows its 800-53 crosswalk. This is published control text, not an assessment verdict.",
-            "source_sha256": "ee2fbf15d3ac9985a2a1e4459ed0ffb3a44e6582c136f48df10013899794ec95"
-          },
-          {
-            "text": "ISO Annex A identifiers stay short titles only — licensed control body text is not translated.",
-            "source_sha256": "2903f2a6887fa7f6e0c9c81c8514e2e3532228f54e17e3d5afc3f8ca866103ce"
-          }
-        ],
-        "source_sha256": "79377b9435f2308ea66e81694ddb1f9b6954d4d870b068f5667dde6cbb2b63bc"
-      }
+      "bullets": [
+        {
+          "text": "Controls list short multilingual titles next to each identifier.",
+          "source_sha256": "494de52c80c537a63db7b088cc37a3997c0ab65e1e479f7dcafaa309db06ac05"
+        },
+        {
+          "text": "Delivery states are Live, Partial, Absent, or BLOCKED — not Met.",
+          "source_sha256": "a66b0632341d5789517fd8953a7db2125fab1b1e3096ff1da547641563ee9bcd"
+        },
+        {
+          "text": "Licensed content gaps stay BLOCKED with a stated reason.",
+          "source_sha256": "5eedc3ee95f73a625c86361e8608d7a991ce2bd361138719e1665c5d0529856a"
+        },
+        {
+          "text": "Export and search do not change the underlying control set.",
+          "source_sha256": "cd29002162675c5f40f1210d4ebfc7eb0111285bb2fa78fa235f08c96aef744a"
+        }
+      ]
     },
     "compliance__frameworks": {
       "helpAriaLabel": {
@@ -11138,27 +11151,28 @@
         "text": "Assessment Binder",
         "source_sha256": "edce73881ba543a19ed06b9eaee2c7998fb127db9bf6232dc805423bed35f519"
       },
-      "bullets": {
-        "text": [
-          {
-            "text": "Open from Compliance & Evidence → Assessments → Assessment Binder (same Compliance & Evidence section as Report Center and Current State Compliance).",
-            "source_sha256": "84bbe7db96e1fe93ab1429221e4e7eac081b7d7ae99b9ba45d67d82ea7091346"
-          },
-          {
-            "text": "Create an instance, regenerate current-state gaps from the auditor report, and add justifications.",
-            "source_sha256": "2a9e2260257b0746c251210cbfa4b51b58c649115647cae07e42b1ce822a6b59"
-          },
-          {
-            "text": "Status chips are gap-oriented — never a false-green compliance score.",
-            "source_sha256": "a6efdf26d3251274ba098a9143264f04435f7aef839f52d33cc43cb7f6747606"
-          },
-          {
-            "text": "Export (Word, RTF, workbook, HTML, print/PDF) remains visible; requires Binder export permission.",
-            "source_sha256": "7197994af91ff8016914dc9eb1bcd2b3d43286dc0eb48df5faede8482e27aea8"
-          }
-        ],
-        "source_sha256": "2928bd78a6c7d16d107f23c10f56b2797d355ebf4431e852e2e395c2eff0f2cb"
-      }
+      "bullets": [
+        {
+          "text": "Binder sections derive from live program state at render time.",
+          "source_sha256": "2b9b17b744132e708d9d93479b776cf82869904f2875f6f7e99e381aedba4605"
+        },
+        {
+          "text": "Export includes honesty framing — delivery is not Met.",
+          "source_sha256": "6f69ab22eb0ef935fc8d60298bfc2bfc4f44d7d47d33223661f864cc7561f634"
+        },
+        {
+          "text": "IAM session required — Admin-Token-only binder opens are not auditor proof.",
+          "source_sha256": "40ae4682958f4dfe3d27610aafb327b2f6126e4936655ebf3c0fb189fb93c9b8"
+        },
+        {
+          "text": "Playbooks list available outlines before you open an instance.",
+          "source_sha256": "20907a84edbad8f9e1bffecc22cbb8f56a815b14d8094e9071f35e70cd381982"
+        },
+        {
+          "text": "History and params tabs keep prior renders addressable.",
+          "source_sha256": "fa4edf9f93585299e0ac65b06829cc5e1d43166f823fd0669eb2c2cdde72b300"
+        }
+      ]
     },
     "enclave__auditor-binder__playbooks": {
       "helpAriaLabel": {
@@ -11196,27 +11210,28 @@
         "text": "Current State Compliance",
         "source_sha256": "da5e4759c452cc21dc10cea951de8032d207f64d9b6805dd4e4f6d8710680932"
       },
-      "bullets": {
-        "text": [
-          {
-            "text": "Open from Compliance & Evidence → Assessments → Current State Compliance.",
-            "source_sha256": "a3708c5b8d565d48441a44d2980b210145b2929fd42c484ebde8b5059e831fab"
-          },
-          {
-            "text": "Rescan all (or selected) machines in the System Group filter; each row has Rescan and links to the detail report.",
-            "source_sha256": "502d06f74926610accc85ea478bd0c36ee1e8ee8a873ff403fdf910bb763b5c7"
-          },
-          {
-            "text": "Machine inventory comes from Systems + System Groups — this page is the compliance summary only.",
-            "source_sha256": "a7841a95651aba099e72b2cb3200723c3e1d6cd3129c8d1d9e3079b01fedffe6"
-          },
-          {
-            "text": "Legacy URL /enclave/environment redirects here.",
-            "source_sha256": "6b37e0efb7a56ee272eaa4494f51c1a430004402576fce5a37a521b2c4456fa1"
-          }
-        ],
-        "source_sha256": "c6e5b3915ee43e8579811db12c9acdede87c8a3460885f50c22179fe9180daf0"
-      }
+      "bullets": [
+        {
+          "text": "Current State Compliance lists controls with short multilingual titles.",
+          "source_sha256": "b4f5b78b1aca85a2d8d98fa47f950b87b08982272e7a0fec25f3d5b05667e0a8"
+        },
+        {
+          "text": "Rescan is the primary per-row action and stays visible at 1024.",
+          "source_sha256": "41e32f791bd0c3282a03028f11ecf197b32e0b5c79103c68930b8d7b0a172a09"
+        },
+        {
+          "text": "Partial and Absent are product delivery states — not assessment Met.",
+          "source_sha256": "67c32717a9a65410087fc088f4c171c2c02181dde73036cb88518e9a4b554a36"
+        },
+        {
+          "text": "Export and evidence links stay on the same page.",
+          "source_sha256": "ff6d20b8fdd6864fde0e3fe762e8412b95271ba0cf0fe221f2bf8ed6961a9298"
+        },
+        {
+          "text": "Filter and search do not change the underlying control set.",
+          "source_sha256": "b2ce0656b23946c3ea948cea96879bd63740e68acf85b91123450c457302662c"
+        }
+      ]
     },
     "enclave__control-state-history": {
       "helpAriaLabel": {
@@ -11518,23 +11533,24 @@
         "text": "Endpoint Privilege",
         "source_sha256": "f4bb514769304a816dc46987df62db260032f1d2fbd3e37717771f7e003c5bd0"
       },
-      "bullets": {
-        "text": [
-          {
-            "text": "Tab Anwendungen listet the Katalog sensibler Apps with Dauerregeln.",
-            "source_sha256": "c8bd86d071ca96bbabfc73e61f2e9a07f28d862e74a71dc8651db45a358e15d9"
-          },
-          {
-            "text": "Wer elevieren darf bindet IAM-User an Anwendungsregeln.",
-            "source_sha256": "693bdaf21f00ee000592c226290d34476ab4cc11bfa9b0668cc1fc4931bf1d7a"
-          },
-          {
-            "text": "Token-Elevation erstellt Einmalcodes; Direkte Elevation fuehrt serverinitiierte Jobs aus.",
-            "source_sha256": "f8f212b14a2ea4a135d669d0fc3f9e8fb3c8641ac3250d3ce9ec8e3169852525"
-          }
-        ],
-        "source_sha256": "2b684f2b381adacdb75ca6411e8cf6a0f85f682311f83d23fd036f84a90f4b39"
-      }
+      "bullets": [
+        {
+          "text": "Applications catalog, who may elevate, and approvals live here.",
+          "source_sha256": "b8c8dfe048816536d1b2b3b1bab8aa9c01489d2d7b07f99bcae2933c031ead2a"
+        },
+        {
+          "text": "Duration and justification gates follow enclave policy.",
+          "source_sha256": "1060827e95d8e1f2aa2f5521e1fde874de4eecd6b9e6327424a5b4e8e43d33f3"
+        },
+        {
+          "text": "Unix privilege is a sibling surface under the same landing.",
+          "source_sha256": "7b7b3a4968577f6c372e5bf6c1036e3f117488af07a5910728b30139d39b82d3"
+        },
+        {
+          "text": "Disconnected tokens cover offline elevation grants.",
+          "source_sha256": "e7c5e957463f7a1a10ed7810d920be07a8597cca7b8141ae88308f530c962240"
+        }
+      ]
     },
     "endpoints": {
       "summary": {
@@ -11829,24 +11845,24 @@
       "bullets": {
         "text": [
           {
-            "text": "Connect authorizes a recorded session (you confirm recording) and then opens the desktop viewer.",
-            "source_sha256": "15453e6a8cb7fd00285a4c2eece98b49cb7adf0bebca783cda1f09846bcf9c2a"
+            "text": "Connect autorisiert a aufgezeichnete Session (Sie bestaetigen the Aufzeichnung) and oeffnet dann the Desktop-Viewer.",
+            "source_sha256": "575b30c5357400e06be5614337aa558dc3e26ed8cd8462df7c8ef217218a1339"
           },
           {
             "text": "Open session appears only when Connect finished but the viewer did not navigate.",
             "source_sha256": "eff074be67c2277d0b3f2651b665be7253add28333d7372b8e617e6d6aff2431"
           },
           {
-            "text": "Wake required / Waking… — start the VM first; Connect stays disabled until Ready — Connect.",
-            "source_sha256": "4c42bda755266e51876575b7f65bbeed110ef807590d5544a494d87a9b90df77"
+            "text": "Aufwecken erforderlich / Wird aufgeweckt… — VM zuerst starten; Connect bleibt deaktiviert bis Bereit — Connect.",
+            "source_sha256": "7d3ba4ced062a82eae0f19fb5939ba40f18c7f470e4f7f910f39a00d4e16256e"
           },
           {
-            "text": "Recording proxy required — Connect stays blocked until the enclave can place a recording.",
-            "source_sha256": "d455263944d2cdef159712f483f9f50d467f40a847ebbdc412fc8b56c2697e43"
+            "text": "Aufzeichnungs-Proxy erforderlich — Connect bleibt blockiert, bis the Enclave a Aufzeichnung platzieren kann.",
+            "source_sha256": "81d133a47ec62ab703637d5573159d61af275ed0c818367bdf0561d13d5ffe12"
           },
           {
-            "text": "Power and sleep (Sleep now / Keep awake) is secondary to Connect / Wake.",
-            "source_sha256": "2550f714e06933ddbd876ee4045854c3a0d0efb9486b111d8442e7f2ea2e6d08"
+            "text": "Energie & Ruhezustand (Jetzt schlafen / Wachhalten) ist sekundaer to Connect / Aufwecken.",
+            "source_sha256": "b36863287943a96f8ca340a141700a9b7c13d73ee98990c1fdd2dbb1489e9d90"
           },
           {
             "text": "You never need the workstation password — the enclave signs you in.",
@@ -11869,19 +11885,20 @@
         "text": "Operational Technology",
         "source_sha256": "90655f621c2d73f2014c6d54725037b46f79f92acf6f94b32587b8ac2928644a"
       },
-      "bullets": {
-        "text": [
-          {
-            "text": "Startup-Wizard fuehrt durch Erkennung and Enroll in the verwalteten Bestand.",
-            "source_sha256": "fabb70b7f6642dcb74b1017f35d58b3891ac75836955bb66d9986a241fa9c051"
-          },
-          {
-            "text": "Erkennung scannt Ziele; Bestand listet Assets with Status and Actions.",
-            "source_sha256": "c7441b3aaa38c5aa498082affde2fb308374ab0a4400a1b3a177f483de8bd117"
-          }
-        ],
-        "source_sha256": "7d8db9056fd9581e4f65b1efa383923126bba82dff51f54001358fd57da8be36"
-      }
+      "bullets": [
+        {
+          "text": "OT inventory, discovery, credentials, and sessions.",
+          "source_sha256": "476654e75a5e8d528cfdd26ebd9714123211f77c7b8bcdd8481187d416f813a2"
+        },
+        {
+          "text": "Rotation and connect stay on dedicated OT pages.",
+          "source_sha256": "9e6434fae8376d6961f9848aaf84924a7dcfa74b4a5bd51f7ce3919cb4f30536"
+        },
+        {
+          "text": "Network scan feeds inventory — it does not rotate passwords.",
+          "source_sha256": "39c8a111168f43d751df7db0785ba9e09a2d06167304001b9aeb5f4491b47293"
+        }
+      ]
     },
     "pam": {
       "summary": {
@@ -11909,12 +11926,12 @@
       "bullets": {
         "text": [
           {
-            "text": "Separation of duties prevents you from approving your own requests.",
-            "source_sha256": "bff31e1b1d3fcb339d65b201cc918e4900f3dd19daa61537ca6bcbe958297c8e"
+            "text": "Funktionstrennung verhindert, dass Sie eigene Anfragen genehmigen.",
+            "source_sha256": "36e99ac69a8725e7480d141953704f0ea426c3778b8e864df8073bc934dd5ae1"
           },
           {
-            "text": "A deny-wins policy can end the request when an approver declines.",
-            "source_sha256": "0e572ff9f90d9834833764c56eecbd167722743c25e1f2f8f11cfab3d031250b"
+            "text": "Deny-wins-Policy kann the Anfrage beenden, wenn a Genehmiger ablehnt.",
+            "source_sha256": "c0bdc894dac20cf912fb865099767416a3469dbf1e85924326291b44dbec7df5"
           }
         ],
         "source_sha256": "782578f73889a95f5cb38e43ee37dc09f366868ec70fcb7de122b526f91302c5"
@@ -11936,8 +11953,8 @@
       "bullets": {
         "text": [
           {
-            "text": "Keep email and phone current so approval notifications can reach you.",
-            "source_sha256": "9ecffb068cd4e8f24e4705ade11b7b84a2b68361b99e84b755af32f1102fc5d5"
+            "text": "E-Mail and Telefon aktuell halten, damit Genehmigungsbenachrichtigungen Sie erreichen.",
+            "source_sha256": "e16b3a0d7083775b200e5ee830df955817ec9efa14db6d2fe7a02781ddd2377a"
           },
           {
             "text": "Erreichbarkeit in the Tab Mein Benachrichtigungsprofil testen.",
@@ -11971,8 +11988,8 @@
             "source_sha256": "7511d413d36d1b9fed38d4b8281339860ae0cad2a039fdffa2d6a00ce8ced20c"
           },
           {
-            "text": "Every opened session is recorded by default (proxy or target-local).",
-            "source_sha256": "f69b30fc951755024b946a9bbfb98a1f457ed8754eba95a630e86bbf22b8a0d3"
+            "text": "Jede geoeffnete Session wird standardmaessig aufgezeichnet (Proxy or ziel-lokal).",
+            "source_sha256": "ebd643b9e61ad5066e970b7094898ea170f89a65540a46beb277f55d2c767ddd"
           }
         ],
         "source_sha256": "381860fc6f55babcb4ffc718eab5ac92d34a0bad77c6be216cc6ed84d38be172"
@@ -12025,8 +12042,8 @@
             "source_sha256": "0263b91f43f4ea8e984b378775146515dc663a139ea2a6591bfeea7fb3db59c6"
           },
           {
-            "text": "Ensure internal creates or updates the aic-server-local capacity row.",
-            "source_sha256": "9a4782421b1c8dfd36d287252ff5abd5a258a849343982bd5bcc0be5f9cc3f73"
+            "text": "Intern sicherstellen legt the Kapazitaetszeile aic-server-local an or aktualisiert sie.",
+            "source_sha256": "2d01a6b0cd61371a94f5beb943f57d0827c06d34dc4c813136de8280841a2346"
           },
           {
             "text": "Probe placement performs a dry run selection with lightest load (does not open a user session).",
@@ -12054,14 +12071,14 @@
         "source_sha256": "a8a5d564e478d031fa187464dd632d77f853389e40464b262dcf6501f85c0941"
       },
       "title": {
-        "text": "Live OT session",
-        "source_sha256": "a540305f3945a426d6739d4be1d30d08794bc63caa520c968d48846aedbee41a"
+        "text": "Live-OT-Session",
+        "source_sha256": "8440d38cb4237d200544e57b3079e76e37e285dfe9be04bcee91466eb4117152"
       },
       "bullets": {
         "text": [
           {
-            "text": "Recording continues until the session ends.",
-            "source_sha256": "7e7a7fa6c3bb954cd6c048d2605b90d620ecb447b8b5616df7a33d0dac733426"
+            "text": "Die Aufzeichnung laeuft, bis the Session endet.",
+            "source_sha256": "79f4544505936e9e78b5f35d6d9f6709aa1232c16313c13e0964bf15681ea9d3"
           },
           {
             "text": "After exiting, a new connect/open is required - this page does not continue a closed channel.",
@@ -12081,14 +12098,14 @@
         "source_sha256": "a8a5d564e478d031fa187464dd632d77f853389e40464b262dcf6501f85c0941"
       },
       "title": {
-        "text": "Live RDP session",
-        "source_sha256": "7965a291e0debb4c1186772e34f13d1622be27de0cc6d5fb096c72a6312399c2"
+        "text": "Live-RDP-Session",
+        "source_sha256": "f92175ae9525df488a6da8a08e863b9f93370e2decd2a6302fa778a865e4d2c4"
       },
       "bullets": {
         "text": [
           {
-            "text": "Recording continues until the session ends.",
-            "source_sha256": "7e7a7fa6c3bb954cd6c048d2605b90d620ecb447b8b5616df7a33d0dac733426"
+            "text": "Die Aufzeichnung laeuft, bis the Session endet.",
+            "source_sha256": "79f4544505936e9e78b5f35d6d9f6709aa1232c16313c13e0964bf15681ea9d3"
           },
           {
             "text": "After exiting, a new connect/open is required - this page does not continue a closed channel.",
@@ -12108,14 +12125,14 @@
         "source_sha256": "a8a5d564e478d031fa187464dd632d77f853389e40464b262dcf6501f85c0941"
       },
       "title": {
-        "text": "Live SSH session",
-        "source_sha256": "088548b1fda8f27dbc9ef802add0a3e83c2ae1a886c1b3a02c24aaa938176a56"
+        "text": "Live-SSH-Session",
+        "source_sha256": "ea6200de21d17871e3ad620c5d9dbb49c244e883df7955b92a5031366ac4b9a4"
       },
       "bullets": {
         "text": [
           {
-            "text": "Recording continues until the session ends.",
-            "source_sha256": "7e7a7fa6c3bb954cd6c048d2605b90d620ecb447b8b5616df7a33d0dac733426"
+            "text": "Die Aufzeichnung laeuft, bis the Session endet.",
+            "source_sha256": "79f4544505936e9e78b5f35d6d9f6709aa1232c16313c13e0964bf15681ea9d3"
           },
           {
             "text": "After exiting, a new connect/open is required - this page does not continue a closed channel.",
@@ -12135,14 +12152,14 @@
         "source_sha256": "a8a5d564e478d031fa187464dd632d77f853389e40464b262dcf6501f85c0941"
       },
       "title": {
-        "text": "Live VNC session",
-        "source_sha256": "dd0a7b3b9a44eb69724ec7e04e2a0d70576a5882d46bfd1f8387841267a65252"
+        "text": "Live-VNC-Session",
+        "source_sha256": "5ffb66048c48c34cb96620fe515e9316e3a418063e4e5c3c51afd1bd39cfb5a0"
       },
       "bullets": {
         "text": [
           {
-            "text": "Recording continues until the session ends.",
-            "source_sha256": "7e7a7fa6c3bb954cd6c048d2605b90d620ecb447b8b5616df7a33d0dac733426"
+            "text": "Die Aufzeichnung laeuft, bis the Session endet.",
+            "source_sha256": "79f4544505936e9e78b5f35d6d9f6709aa1232c16313c13e0964bf15681ea9d3"
           },
           {
             "text": "After exiting, a new connect/open is required - this page does not continue a closed channel.",
@@ -12172,8 +12189,8 @@
             "source_sha256": "d4e20b8bd9e3c7322159127ea8e6506df405afa681281c827983a863d63aee53"
           },
           {
-            "text": "Separation of duties prevents you from approving your own requests.",
-            "source_sha256": "bff31e1b1d3fcb339d65b201cc918e4900f3dd19daa61537ca6bcbe958297c8e"
+            "text": "Funktionstrennung verhindert, dass Sie eigene Anfragen genehmigen.",
+            "source_sha256": "36e99ac69a8725e7480d141953704f0ea426c3778b8e864df8073bc934dd5ae1"
           }
         ],
         "source_sha256": "0a237ae9ce5193e7ca1488e98b30cdf5a7d5559735b275a53f14695d367d45f6"
@@ -12203,8 +12220,8 @@
             "source_sha256": "8c8063f745ac15f3b534a39ca7856ff1e4ec75983efa3686d91511a2cae1b07b"
           },
           {
-            "text": "With bound vault credentials, Connect can use them for the session.",
-            "source_sha256": "9a89d1c5f56e6be347e1aed9ee416f9dfc567696552208842d22f002e04db7b5"
+            "text": "Mit gebundener Vault-Zugangsdaten kann Connect sie for the Session nutzen.",
+            "source_sha256": "b800b2db1907a137a8234d42e97e66f4b4ef575ec4347f8dc95fa82c28665585"
           }
         ],
         "source_sha256": "5f61bf568420a2fb0507f793942f7a2d0645b3b5911d47387d54829f8f33a285"
@@ -12280,8 +12297,8 @@
       "bullets": {
         "text": [
           {
-            "text": "Connect opens an OT protocol session — not SSH, RDP, or VNC.",
-            "source_sha256": "640fcb82a76e51000a9807f34e997c61f81891a3296d14b64704dab5e03d7658"
+            "text": "Connect oeffnet a OT-Protokollsitzung — not SSH, RDP or VNC.",
+            "source_sha256": "cc16bcc2efbda2cac14194f20637bcb52450b9239e04b054f77bfd32c383db7f"
           },
           {
             "text": "Configure opens emergency secret target settings.",
@@ -12415,12 +12432,12 @@
       "bullets": {
         "text": [
           {
-            "text": "Each row links to a detail view that is decrypted and read in the browser.",
-            "source_sha256": "df2c4a21f9cf22869115b1d2fcd0e510313c99f54e3e42f1920d421b199dfa60"
+            "text": "Jede Zeile verlinkt to einer Detailansicht, the in the Browser entschluesselt and gelesen wird.",
+            "source_sha256": "f3448ea457b57b5d55380c82988750be5657c2065a43bd42f36d5e177afd0958"
           },
           {
-            "text": "Decision chips show Allowed or Denied at recording time — not a compliance verdict.",
-            "source_sha256": "8fff41f3dab44952869ad741137f2c24eb6fd03997c0fe4d48960253be0fdb37"
+            "text": "Entscheidungs-Chips zeigen Erlaubt or Verweigert zum Aufzeichnungszeitpunkt — kein Compliance-Urteil.",
+            "source_sha256": "ecb0c7950f44d76260a9fa087a9dcbbac25b27a41e4a08c90f06cd0c93135bb6"
           }
         ],
         "source_sha256": "edb5e999f25aff2eeccdb8f389004d6aee9df9e057dcc748c14f9c00b71cf87f"
@@ -12483,8 +12500,8 @@
       "bullets": {
         "text": [
           {
-            "text": "Connect opens a recorded proxy session when a PAM connection point matches the host.",
-            "source_sha256": "088eb8168b6ca9711cd4bad660749df63cddb609e75fb78d1f63e79b182c3682"
+            "text": "Connect oeffnet a aufgezeichnete Proxy-Session, wenn a PAM-Verbindungspunkt zum Host passt.",
+            "source_sha256": "4d00e91a6742ed747a4b107b3a8de34434b4a3536baf3ebb0f2dfdb636fc4e9f"
           },
           {
             "text": "Favorites and Recents are only saved in this browser.",
@@ -12959,19 +12976,20 @@
         "text": "Settings — Service logs",
         "source_sha256": "f75e03e991f0183a9f40da6fed32c3d41e0b6e167547827699810fb6528fe94a"
       },
-      "bullets": {
-        "text": [
-          {
-            "text": "stdout traegt Application-Tracing; stderr traegt Panics and native Error (with Zeitstempel-Praefix).",
-            "source_sha256": "7514d0ea044318a8cccdceeac12f05f740a0f5e85b4abffbe968caf22693977e"
-          },
-          {
-            "text": "Live-Tail pausieren, wenn the Windows-Dienst stoppt; Tail neu laden, sobald the Dienst wieder laeuft.",
-            "source_sha256": "3d7c952feb4a0d13210771ce0ad95dd2539761f2bf9d73e5942a0f792a8b1860"
-          }
-        ],
-        "source_sha256": "4c5af1bb5de03e639c14398c3381cea262e457fefe838b4045197f3c3327851a"
-      }
+      "bullets": [
+        {
+          "text": "Service logs for AIC Server and related agents.",
+          "source_sha256": "971d8a30dd195400ec85fa0288315043286846fef6e18254e6d77a5a059a03eb"
+        },
+        {
+          "text": "Download and filter without changing retention policy here.",
+          "source_sha256": "96dda24c25c9a92913bf8a77c74f4eb9f52f70c8c25b2c1ca98b71d938bc38f5"
+        },
+        {
+          "text": "Security-relevant actions still go to Windows Event Log and audit tables.",
+          "source_sha256": "6f637f066709f509a44f59f341b9490ef9fbc2f766c3e6acd3e0b55e35eebfdc"
+        }
+      ]
     },
     "settings__startup-wizard": {
       "summary": {
@@ -13505,6 +13523,310 @@
             "source_sha256": "709741e95ece4ea12db3f6ed824264fcb6b0f423e7768fa8cee9401911cc5ea9"
           }
         ]
+      }
+    },
+    "settings__defaults": {
+      "title": {
+        "text": "Defaults",
+        "source_sha256": "610b7468ce69872ffa3636f975a3d340022b33c89c6eea659dc8bd2b0466a5dd"
+      },
+      "summary": {
+        "text": "Default policies applied to new systems, groups, and identities unless overridden.",
+        "source_sha256": "9e4fadb338c0cca13673742e646ce8705c0054e58a2501c8ac3a356af5f04bdf"
+      },
+      "helpAriaLabel": {
+        "text": "Open help for Defaults",
+        "source_sha256": "d875c83e86805315c5fc802bcaf6892ed298231b686775697841531098b194d7"
+      },
+      "bullets": [
+        {
+          "text": "Password, identity, group, disclosures, agent events, and sensitive-access sections.",
+          "source_sha256": "84df70c5e04bd62860820a5798721b6d5a0b9668e5efad45c8849433d487120e"
+        }
+      ]
+    },
+    "settings__defaults__group": {
+      "title": {
+        "text": "Defaults — Group",
+        "source_sha256": "340d64b892f8f49a4e5fc9edec86c61a39687de9085cb0030c72a68a2706c17f"
+      },
+      "summary": {
+        "text": "Default password policy applied to new system groups unless overridden per group.",
+        "source_sha256": "6fac38d458addecda9a08391897e276f3d2cdc5cb88655433d36a30f59e2481d"
+      }
+    },
+    "settings__defaults__identity": {
+      "title": {
+        "text": "Defaults — Identity",
+        "source_sha256": "14e843bd8cb16be98912a54b07c00143a7f5b22b22b05e73864f08e0af7311d7"
+      },
+      "summary": {
+        "text": "Default identity-template and seeding options for managed accounts on new endpoints.",
+        "source_sha256": "c55e47eb6ab01961041e9bad24b52dff58e75523c6dc87bc12839d53237ba5cb"
+      }
+    },
+    "settings__defaults__agent-events": {
+      "title": {
+        "text": "Defaults — Agent Event Forwarding",
+        "source_sha256": "a0ac5694e68346c9a321ccc0151cd23b8699b8c03a4d5df8427fba3b3e977055"
+      },
+      "summary": {
+        "text": "Default event-log and syslog keys written into agent settings at provision time.",
+        "source_sha256": "671f8467d47f805f49b683b0537ef8ee3ddec8a0aa1503ff0937c067c06c8c14"
+      }
+    },
+    "settings__defaults__sensitive-access": {
+      "title": {
+        "text": "Defaults — Sensitive Access",
+        "source_sha256": "1d8e48761b95975cc3b0ed44af225f9f79ac8b2565f9644a1449c37670827fe0"
+      },
+      "summary": {
+        "text": "Justification gates and audit sink policy for elevation mint and password recovery.",
+        "source_sha256": "eaa1dcada0019c768f459c6627462cd830241ed4d3d7448ada7520a5a0a6f762"
+      }
+    },
+    "settings__defaults__other": {
+      "title": {
+        "text": "Defaults — Other",
+        "source_sha256": "dee6293570de57518c9887e4b246e3d4ed540f8bed12e1314c94a8af436415d9"
+      },
+      "summary": {
+        "text": "Global toggles including password recovery enablement and lab-only options.",
+        "source_sha256": "75cf3c38705396521528cef064c56011347af9f55e7163e180916d42e28ad7c1"
+      }
+    },
+    "settings__policy": {
+      "title": {
+        "text": "Settings — Policy",
+        "source_sha256": "ec8a360e20e86f1e551ccbf30e0e39c6b6fcf30eed468d07f94730a210a1fbaa"
+      },
+      "summary": {
+        "text": "Opens the password defaults section used as the enclave policy home.",
+        "source_sha256": "81c9a9a4722590998f27f74b0cf08870c99075b10dc2053ae5b46e579b7a04fb"
+      },
+      "helpAriaLabel": {
+        "text": "Open help for Settings — Policy",
+        "source_sha256": "f2b733eaa2d5aea0638b466de80343e9b1288962d27e08be11ef8e908474f859"
+      },
+      "bullets": [
+        {
+          "text": "Legacy bookmark — lands on Defaults → Password.",
+          "source_sha256": "eab5b09dc9acb478bc6f0b340cd65cea5fdeb0934b35aad1c862f0cbcf8f8696"
+        }
+      ]
+    },
+    "settings__disclosures": {
+      "title": {
+        "text": "Settings — Disclosures",
+        "source_sha256": "6e3d9a6ce6a5a7e6cb24d0871ee425ab152995528bbd11cb14b86598772e2fab"
+      },
+      "summary": {
+        "text": "Operator and server disclosure text operators must acknowledge before sensitive actions.",
+        "source_sha256": "e12e4194ce737fb68618c537cc3b9d8f8cf9071ca2d544c5f654438bb26df5fc"
+      },
+      "helpAriaLabel": {
+        "text": "Open help for Settings — Disclosures",
+        "source_sha256": "3b8b7046924839416f38498164a637f3fcb348bd84a871f3edc8ec599897c6ff"
+      },
+      "bullets": [
+        {
+          "text": "Consent banner and system-use notification text (NIST SP 800-53 AC-8).",
+          "source_sha256": "3bd9a7ec75e4f3c9683b84f2a99a1fd1d68f5d1d741cc9172a609ed9e22f717c"
+        }
+      ]
+    },
+    "settings__agent__connected-settings": {
+      "title": {
+        "text": "Connected agent settings",
+        "source_sha256": "24dbc8abef6098736432d1bb86bcaad494cff05e05b8c6f1823fde4c7319c7b3"
+      },
+      "summary": {
+        "text": "Live settings reported by connected agents for review and comparison.",
+        "source_sha256": "31bd1f4a74c0ed192d0c20c8c077062b41b1c6bceca0d7edd4485e66ef8cae49"
+      }
+    },
+    "settings__crypto__backup": {
+      "title": {
+        "text": "Settings — Encryption settings",
+        "source_sha256": "97f28106b20a6284a5ccf7ddfe7234269f07b08d8a4d634767df8d6d1d57c6aa"
+      },
+      "summary": {
+        "text": "Opens Backup & restore on the encryption hub (export, import, and optional super-admin plaintext export).",
+        "source_sha256": "0899c7e9dd3984df04afa9a6771b91ba98b9f381965711e4c98258dd26f8d751"
+      }
+    },
+    "settings__crypto__master-key-export": {
+      "title": {
+        "text": "Settings — Encryption settings",
+        "source_sha256": "97f28106b20a6284a5ccf7ddfe7234269f07b08d8a4d634767df8d6d1d57c6aa"
+      },
+      "summary": {
+        "text": "Legacy URL — redirects to Backup & restore on the encryption hub.",
+        "source_sha256": "ba7cf53feec39e21218e82623f8499cb72b40f409a075d8ee5ff57907275f987"
+      }
+    },
+    "settings__access-control__logon-policies": {
+      "title": {
+        "text": "Access Control — Logon policies",
+        "source_sha256": "4d105fef5bab963a0cc03ac1004281fb71c412dad4b84829d83c0729ff08a623"
+      },
+      "summary": {
+        "text": "MFA, password policy, lockout, and related logon controls for local IAM principals.",
+        "source_sha256": "6d1aa65ec95035eddcb37f750e2be9f1b2211d6e1d7d0dce0e9f3728f3edbd0f"
+      },
+      "helpAriaLabel": {
+        "text": "Open help for Access Control — Logon policies",
+        "source_sha256": "83c17e38735949b371291a874cd804f00317a8466da42d6042dc1cd349f7dcae"
+      },
+      "bullets": [
+        {
+          "text": "Forced logoff and session limits also live under Session Timeout And Logoff.",
+          "source_sha256": "c1e5037a069ea7e067c5b8ee71e69201d385f46cda1b1bae7f5e3802b6c0f4fa"
+        },
+        {
+          "text": "Changes apply to new logons; existing sessions keep their prior grant until refresh.",
+          "source_sha256": "98865ecc91620578162eb971692a4e9f85fd35e24a1e6c8455e610d61935df8b"
+        }
+      ]
+    },
+    "settings__access-control__permissions": {
+      "title": {
+        "text": "Access Control — Permissions",
+        "source_sha256": "9993f4aea8743bdb34aca14ed1d270d9e936441df8fad162fce5cb57227faa6b"
+      },
+      "summary": {
+        "text": "Permission catalog used by roles for admin and enclave APIs.",
+        "source_sha256": "aefc03785dba07ec3a5400ec345c8ec31f8b5a7a73a9038e1bec85704fea7b20"
+      },
+      "helpAriaLabel": {
+        "text": "Open help for Access Control — Permissions",
+        "source_sha256": "e2c008cd4af6661fc6b39baf9e6558c01d4582b3c6834dab10881cabec984aba"
+      },
+      "bullets": [
+        {
+          "text": "Roles bind these permissions; assign roles to principals under Principals.",
+          "source_sha256": "1fd2f1e3b58ffe28093cac9796c0ad216a6640d77aba2c1f2ac7e8b92d922463"
+        },
+        {
+          "text": "Missing permissions fail closed — the API returns 403 or 404 per contract.",
+          "source_sha256": "f8b3562760bf4a10c6cc32739e0a8ee7b858b7bd0d0cfb38313df33311dcedb3"
+        }
+      ]
+    },
+    "settings__access-control__roles": {
+      "title": {
+        "text": "Access Control — Roles",
+        "source_sha256": "faf04a73866f0691fe3a0213ca7d562a3275f554b8417e0468f676c61e8d7051"
+      },
+      "summary": {
+        "text": "Role definitions that group permissions for local IAM principals.",
+        "source_sha256": "e9ed9bdc7fe93c378cc6852359ace0adfe43ddc3cfa1919c7d1e9e4c4a5f10ac"
+      },
+      "helpAriaLabel": {
+        "text": "Open help for Access Control — Roles",
+        "source_sha256": "3e018131f08e5ccec8e3dba1ecd95fd0a079d032e296cf755627f631898c3bfa"
+      },
+      "bullets": [
+        {
+          "text": "Assign roles on the Principals tab.",
+          "source_sha256": "d7614637e60df63087ac6f89aee77b97e5d475ed49acf4009bc8ada51062d220"
+        },
+        {
+          "text": "Built-in roles ship with the product; custom roles stay in this enclave.",
+          "source_sha256": "f83999d1964a11e14db05f3c1d15d751192e68809af69a836d461ec32b7b94b2"
+        }
+      ]
+    },
+    "settings__session-policy": {
+      "bullets": [
+        {
+          "text": "Idle and absolute session limits (NIST SP 800-53 AC-12 / SC-23).",
+          "source_sha256": "5346d58fc5b586c0c968539190efeb5ee701050da94cda0fae4336f9493c9325"
+        },
+        {
+          "text": "Forced logoff paths emit distinct audit events.",
+          "source_sha256": "d459962c2b536c3eb07323479051ba4c9f15c6690fa38f4815ea205613ccb281"
+        }
+      ],
+      "helpAriaLabel": {
+        "text": "Open help for settings / session-policy",
+        "source_sha256": "98ae53cb87dc2d1a024b3ea79e745658456be9ebd909465b6d2fdef7328ef599"
+      },
+      "title": {
+        "text": "Session policy",
+        "source_sha256": "39bf442d465f3a5f77a82ebc6e72ee97091885a789a80eaaabd0c8027bd654ef"
+      },
+      "summary": {
+        "text": "Idle and absolute session limits for signed-in operators.",
+        "source_sha256": "3d9ca43951ab3d62a8bca5dd9d27b93493d5cf6fd2e5daf6e62887d47f0c5ba5"
+      }
+    },
+    "systems__known-default-credentials": {
+      "bullets": [
+        {
+          "text": "Catalog of known default credentials for posture review.",
+          "source_sha256": "4e65df48c610bede4aba237845996e724c5365cb228d9e2fdc098810396dd1ed"
+        },
+        {
+          "text": "Search and filter without exporting secrets in clear text by default.",
+          "source_sha256": "785dd9d19f9e15b39b2e26b61e6191bcfdb9c293370fd8f35745fcb637bc6075"
+        },
+        {
+          "text": "Sources list which pack provided each row.",
+          "source_sha256": "86f7a812f630dc6451dc70b57d902a7c53c600d57dc08e77433fae6143622f60"
+        }
+      ],
+      "helpAriaLabel": {
+        "text": "Open help for systems / known-default-credentials",
+        "source_sha256": "a2e415ad5f70425467f5147b9d4e6ea872db2e30af4cdd8a712db0b2e692af6f"
+      },
+      "title": {
+        "text": "Known default credentials",
+        "source_sha256": "20c39738f6f812f70ba7e0e72416dc2cf92587931363057a1b03fbf6f87b6ddf"
+      },
+      "summary": {
+        "text": "Catalog of known default credentials for posture review.",
+        "source_sha256": "4e65df48c610bede4aba237845996e724c5365cb228d9e2fdc098810396dd1ed"
+      }
+    },
+    "settings__crypto": {
+      "title": {
+        "text": "Encryption settings",
+        "source_sha256": "ddeb0854a83cc06f581491b227c1dbd2fb73fc9854d2ff07907d2196fdd548aa"
+      },
+      "summary": {
+        "text": "Key custody, backup, and crypto adapters for AIC Server.",
+        "source_sha256": "a9b57afb925b7c53979ba9616d2b82e1a0a4eef6aa1a06b0cd502bc6b9e29dce"
+      }
+    },
+    "settings__crypto__key-sets": {
+      "title": {
+        "text": "Key sets",
+        "source_sha256": "747f9353141f0b922ceddeac13c8f74f26061411bca18c1ea3e23a492984edff"
+      },
+      "summary": {
+        "text": "Named key sets and wrap keys used by encryption features.",
+        "source_sha256": "0e60c8dd1fd9a5e8e19606fbff952abe10898c6abe40d0c55635a4860505f716"
+      }
+    },
+    "settings__defaults__disclosures": {
+      "title": {
+        "text": "Disclosures",
+        "source_sha256": "6fd148a14be1d00a1b0d91f099374f670a06f1dc964758d465a72d2ef3980457"
+      },
+      "summary": {
+        "text": "Default disclosure text shown to operators and end users.",
+        "source_sha256": "f6d36edb6525fe545ab6bc085d30ae0f093c47ecd49743d13f66e9d24306a373"
+      }
+    },
+    "settings__defaults__server-disclosures": {
+      "title": {
+        "text": "Server disclosures",
+        "source_sha256": "b58f4640a44477eac992ab13a6739fa5778fd61050669e83d5d9662578ce3ed6"
+      },
+      "summary": {
+        "text": "Server-side disclosure defaults for this deployment.",
+        "source_sha256": "c145cd10224381fd5c15eaa67cc472319515453c85c3b427fbc45ecd3d330509"
       }
     }
   },
@@ -14063,5 +14385,91 @@
       "text": "How many TCP connect attempts run at once (default 64, max 500).",
       "source_sha256": "f295b29a0833d7882acfdca2809e09d94c0ad5fdc09ec5ba88557ca445c439d6"
     }
+  },
+  "defense": {
+    "geoAbsentBefore": {
+      "text": "geo Absent Before",
+      "source_sha256": "809fb1bfefeaf3da18ac11270d485042d06a5290f4b15a83a59bc08ae92a3bd3"
+    },
+    "accessControl": {
+      "text": "access Control",
+      "source_sha256": "4d8ef5ba140a545fbac0155e03d3ae64cd271a22911db05908224cca933ffdcd"
+    },
+    "geoAbsentAfter": {
+      "text": "geo Absent After",
+      "source_sha256": "72dd7a5e46500fa4db28a9796c6bbc6c14116476ca0225a290bc526457dcacc0"
+    },
+    "heatMapAria": {
+      "text": "heat Map Aria",
+      "source_sha256": "ac810eca583be027ba7c1618dc036d9c3016357e5cc759e7cf730954754a4a97"
+    },
+    "legendPoint": {
+      "text": "legend Point",
+      "source_sha256": "9f84538e872c7cb0708d476564d8fde2703f295f6a23d5a6b3ef2c9c76e68bcc"
+    },
+    "legendNone": {
+      "text": "legend None",
+      "source_sha256": "246bfb906257bf7315ea95bc623ab2eb9e5f8ecd88a75724b49af624fdb25c55"
+    },
+    "legendLow": {
+      "text": "legend Low",
+      "source_sha256": "c79085505b661fdeb35e9137de46ea4ea74d12f351fdc7dc7ddf873e4d9f577f"
+    },
+    "legendHigh": {
+      "text": "legend High",
+      "source_sha256": "86c47c4bd1037c2a5710addf3e6de8b470f2506df13eeaa9a77136868f819149"
+    },
+    "heatMapCaption": {
+      "text": "heat Map Caption",
+      "source_sha256": "f4de6d539ecf256382be2bfd219f165b5d9b816cdbed3dc9766c30ec67ef832e"
+    },
+    "countryTableAria": {
+      "text": "country Table Aria",
+      "source_sha256": "557840a6ace61338ce0c1920913c9edd85725ba23420c04844f4a262c9b96743"
+    },
+    "colCountry": {
+      "text": "col Country",
+      "source_sha256": "5baeed6129573ccc9cafd4fd3e495058102e5a00b3b595d9d82845ba28503cd4"
+    },
+    "colCode": {
+      "text": "col Code",
+      "source_sha256": "262376f4a78d15b066808b5944f1d15d843ec7054958c95bd03bfa6e61480e79"
+    },
+    "colBlocked": {
+      "text": "col Blocked",
+      "source_sha256": "f77f9f3079d97bf973bc98d84113fa4618870082e36624794b008ff37966ee74"
+    },
+    "colFailed": {
+      "text": "col Failed",
+      "source_sha256": "343af14c52219c65057d1ad04f21f1605fd79c97e168616abcf2302f6230e2fb"
+    },
+    "colUnique": {
+      "text": "col Unique",
+      "source_sha256": "34c51a33f831d61ca5d05db41f16f5bd06baffef8a54e382195fff9e24c41315"
+    },
+    "noCountryRows": {
+      "text": "no Country Rows",
+      "source_sha256": "dd5578af0daf4384975b9bdea5b66251a061abde74e29b97bf59544d94f1e8f7"
+    },
+    "countryTooltipEmpty": {
+      "text": "country Tooltip Empty",
+      "source_sha256": "488342117d6d395d05611125941804b8747e1f9fb62ee50d5c6f92103a9be263"
+    },
+    "unlocatedOrigin": {
+      "text": "unlocated Origin",
+      "source_sha256": "04cb1935ec634c0e639dfbda7b178c1bb85cd26d926d1082b084c23aa007c325"
+    },
+    "unknownCountry": {
+      "text": "unknown Country",
+      "source_sha256": "4b3c448e7f139758acc2b3462de545eb84053b9e4dea447a6285ff808b7d6b34"
+    },
+    "tacticTotal": {
+      "text": "tactic Total",
+      "source_sha256": "2a4f7e9bcbc891365972dc1de36448eda8241e0caba9c0e5fcb0691c750a85b5"
+    }
+  },
+  "openapi": {
+    "text": "OpenAPI",
+    "source_sha256": "cf2c9e2180334830f7e995b1084be3ac857f6733464548f77ab952d45773203a"
   }
 }

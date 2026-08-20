@@ -527,6 +527,90 @@
     "noWorkRows": {
       "text": "无剩余工作行。",
       "source_sha256": "e5c2a8eef1925db15b9670d470194971c1aad3e97d8b854459343b4fd0e7d1ea"
+    },
+    "geoAbsentBefore": {
+      "text": "国家对照数据不存在。地图框架仍会显示。请从以下位置安装 GeoIP 数据库：",
+      "source_sha256": "196804297ef4400147c1031234990eb8db6da25e412c5218adab0e01361707d3"
+    },
+    "accessControl": {
+      "text": "访问控制",
+      "source_sha256": "01c04016fbdf90fa3aa5e3c74706710c237cc1a5520cf8922b5d774e50ad7b70"
+    },
+    "geoAbsentAfter": {
+      "text": "。攻击地理位置不会被捏造。",
+      "source_sha256": "9850517dc2ccfbfe192224cb53e4dfe8db9879773f3f4f26f53fa783aeb56f32"
+    },
+    "heatMapAria": {
+      "text": "按国家显示封锁与失败尝试的世界热图。排名表格是无障碍来源。",
+      "source_sha256": "c701c0d27e4f73eb356de3a24dc57399f7b2983ac7603d8f464c4e6438b8181b"
+    },
+    "legendPoint": {
+      "text": "攻击点",
+      "source_sha256": "8df21c6e25a35c6198469ca1c7da7700ec0d73e52123b99019df4bf6549bb97f"
+    },
+    "legendNone": {
+      "text": "无事件",
+      "source_sha256": "6a10a96f6e9d788c7133aee170ed6dc94d1f61df9a591af8db83cb4b426bbd6e"
+    },
+    "legendLow": {
+      "text": "低",
+      "source_sha256": "aa9e366f68d3d097d4890b65882090beea51c8bcec6eece03c78c007fd81c8d1"
+    },
+    "legendHigh": {
+      "text": "高",
+      "source_sha256": "b1c27820fec23edbd70cecde2f968ad3f392c5be332a7606c7ea8d9fa75c846f"
+    },
+    "heatMapCaption": {
+      "text": "封锁与失败访问尝试的来源",
+      "source_sha256": "a01476f618a685a63ceaba466c1106017b9beb84b74fbb3af38e096ca06d3762"
+    },
+    "countryTableAria": {
+      "text": "按国家的封锁尝试",
+      "source_sha256": "3f4bd2f59598681572dfe94152846985e42cdbcac9c10674dfe39e8846dbf0cf"
+    },
+    "colCountry": {
+      "text": "国家",
+      "source_sha256": "0cc659a9f57c24934d08e517f1aeadfd4908ca355759523dc513d2b901ff3f40"
+    },
+    "colCode": {
+      "text": "代码",
+      "source_sha256": "e6f04ffbaa424001e9716a18813eab4adf46f4e54528f5613915ee7d4d6453ca"
+    },
+    "colBlocked": {
+      "text": "已封锁",
+      "source_sha256": "efa061e17b90884cfd55ab9945c86f065f735b9997ab3278bd481040fc670e5d"
+    },
+    "colFailed": {
+      "text": "失败",
+      "source_sha256": "28384d7afd2e4fa66084f6803b9d3cb3b1c1ebb0a4ecc4cc97706745405e5df4"
+    },
+    "colUnique": {
+      "text": "不重复地址",
+      "source_sha256": "a3ed94380c7797a617633bab518dfa8dee46d2826e951a03d19052087396618e"
+    },
+    "noCountryRows": {
+      "text": "没有可显示的国家行",
+      "source_sha256": "62fa8f684faa35f4adc4c837d2b5ecf5879123cee5d9df6e408c0d1ca631f2b6"
+    },
+    "countryTooltipEmpty": {
+      "text": "此点没有国家数据",
+      "source_sha256": "e48a53b6a4f32a95f1f55c7c1f87eef29704f6fc359c5a0e2539a0b3f614e189"
+    },
+    "unlocatedOrigin": {
+      "text": "无法定位的来源",
+      "source_sha256": "65dd20257d85fd8199ed151e3c6590d422390523e2c9adefd09657ebb6403f16"
+    },
+    "unknownCountry": {
+      "text": "未知",
+      "source_sha256": "4d8c1c5b42830791a4ce99f630fb9f02ba08c67c5299d46d6cf76661bfd03584"
+    },
+    "tacticTotal": {
+      "text": "合计",
+      "source_sha256": "e009c148d1890dac9d22d8a714b36ceb2e944367e5cb6cfac8cc8bbf2163eee9"
+    },
+    "clearCountry": {
+      "text": "清除国家筛选",
+      "source_sha256": "a641397d6caa902126981357c367329303b26538ade8700b5139a20e7d66474d"
     }
   },
   "honestyNotes": {
@@ -607,6 +691,70 @@
         "text": "当前进程内事件环形缓冲区中的计数。不是持久历史，也不是 7/30/90 趋势 — 缓冲区大小限制了您所见内容。",
         "source_sha256": "260d7582bad3557747bfacc83be9d06e2fef0f3134c76d6fefe9a4a79c6bb527"
       }
+    },
+    "env.systems_count": {
+      "text": "Count of enrolled enclave systems at this moment. Trend lines use sampled history; before the first sample the series is empty and history starts at that sample. Not a coverage percentage and not an assessment conclusion.",
+      "source_sha256": "69db030a51534b9f1c94b4fc22caa29a357b0ec4f5103a77832e90ae82f4f420"
+    },
+    "env.probe_enabled_count": {
+      "text": "How many enrolled systems have probing turned on right now. Trend lines use sampled history; empty until the first sample. Enabled probing is not evidence that a control passed.",
+      "source_sha256": "6b4019cc538d7e6452bba4d7e522f9a461163c02db6bc0e7aef58edcb84d3619"
+    },
+    "env.physical_vs_log": {
+      "text": "Split of latest evidence rows tagged physical_host versus log_derived. Trend lines use sampled history; empty until the first sample. Composition of collected evidence only — not a pass rate.",
+      "source_sha256": "2855f98debf6941663aedc64b7d515611ce8065d6126f3bbbefb7e54e93d7710"
+    },
+    "training.framework_coverage": {
+      "text": "Covered means a training document exists and cites a clause of that standard. It does not mean anyone has read the document, and it is not a control assessment. Trend lines use sampled history; empty until the first sample.",
+      "source_sha256": "a8be8f3e73b4b91f364a40d87d643ac04e08d3ab20383238fef47a64d8ad5a15"
+    },
+    "compliance.pack_readiness": {
+      "text": "Counts of Report Center families in available, partial, planned, or blocked delivery states. Readiness of product collectors — never a CMMC or FedRAMP verdict. Trend lines use sampled history; empty until the first sample.",
+      "source_sha256": "9beb070ca0de42316f2835009cf5f98bb8253d564e55ed2cd3c21c5ae8400f8c"
+    },
+    "env.punch_list_open": {
+      "text": "Open findings and partial outcomes from the latest fleet evidence. Delivery backlog for operators — not a residual risk score. Trend lines use sampled history; empty until the first sample.",
+      "source_sha256": "892e38b032e917ebc3e1f700df18c4531b2fbb56c67a8f4992a3738468d7531f"
+    },
+    "compliance.poam_open": {
+      "text": "Count of POA&M rows in open, in_progress, or deferred status. Tracks recorded remediation work — not whether exposure is acceptable. Trend lines use sampled history; empty until the first sample.",
+      "source_sha256": "5a896b5deb083d047b45798d2968c20f5eb14923a05d1ca423b64f19e8aacf4b"
+    },
+    "pum.violations_24h": {
+      "text": "Privileged-use management violation events recorded in the last 24 hours at each sample. Trend lines use that sampled history over the selected 7/30/90 window; empty until the first sample. Not a severity score.",
+      "source_sha256": "fa97fb2f5cb07cc43edb78acfb4d18d6c15c5742f59f234b75f96d508ac3d0dd"
+    },
+    "training.uncovered_frameworks": {
+      "text": "Frameworks that oblige workforce awareness but have no covering document in the library yet. A document gap — not a finding that personnel are untrained. Trend lines use sampled history; empty until the first sample.",
+      "source_sha256": "784464ec9f7d460d2ca6834bb60f8c8ae28c5bbd2684625a205de9d1d7481aa2"
+    },
+    "ir.open_cases": {
+      "text": "Count of IR cases with status open or processing whose opened_at falls in the selected 7/30/90-day window (default 30). Workload backlog from offline_ir_cases — not a judgment that incident response is effective. Line charts have no daily history until the metric sampler lands; an empty series is explicit, not a fabricated zero trend.",
+      "source_sha256": "a91e296ab260af632c2660d7067801347d7cb3d18e92e1c86b64fbbb0322ca49"
+    },
+    "defense.blocked_attempts": {
+      "text": "Failed and denied logons plus blocked API requests in the selected 7/30/90-day window. Counts of denied attempts only — not a claim that attackers ran commands or that malware was captured. Opens the Blocked Attacks page.",
+      "source_sha256": "142c4df58a904c676ac11691195f2c9b92b506f8e5540446b4fdd8c680f23543"
+    },
+    "ir.cases_opened_closed": {
+      "text": "Cases with opened_at or closed_at inside the selected 7/30/90-day window (default 30), from offline_ir_cases. Throughput of recorded case work — not response quality or control effectiveness.",
+      "source_sha256": "7ade5f268580015310b250936cd9867ca900607fa7ef4c9eadd204b93f29b9fc"
+    },
+    "events.by_type": {
+      "text": "Counts from the in-process event ring buffer right now. Not durable history and not a 7/30/90 trend — buffer size limits what you see.",
+      "source_sha256": "260d7582bad3557747bfacc83be9d06e2fef0f3134c76d6fefe9a4a79c6bb527"
+    },
+    "pum.endpoints_enrolled": {
+      "text": "Endpoints with a PUM policy assignment at this moment. Trend lines use sampled history; empty until the first sample. Enrollment count only — not enforcement quality.",
+      "source_sha256": "f9782cd71f65e67c68227b52dc200d793849ce54eec82bf92c9fb6ba0a12e5af"
+    },
+    "env.discovered_systems": {
+      "text": "Enrolled systems whose identity came from discovery (import / scan / directory). Trend lines use sampled history of that enrollment-origin count; empty until the first sample — never invent pre-history points.",
+      "source_sha256": "de19ba275f78d499fb3efa2f0526d1449bffa600d502c0b7de15f1102c865e6c"
+    },
+    "compliance.attestations_recorded": {
+      "text": "Count of rows in offline_compliance_attestations whose attested_at falls in the selected 7/30/90-day window (default 30). Proof that attestation records were written — not that every required attestation is done.",
+      "source_sha256": "a54857fb8f45e50b3e5423ad1825b8e6d061f9ba89707a729577c5494235ac68"
     }
   },
   "chartLabels": {
