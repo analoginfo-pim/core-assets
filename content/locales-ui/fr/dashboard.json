@@ -821,6 +821,54 @@
     "value": {
       "text": "Valeur",
       "source_sha256": "8e37953d23daca5ff01b8282c33f4e0a2152f1d1885f94c06418617e3ee1d24e"
+    },
+    "physical_host": {
+      "text": "Hôte physique",
+      "source_sha256": "6e68f5e4d3d9082f59e013a34c9bed2753cb03bbffd3bf65c20ff1a15dcbe312"
+    },
+    "log_derived": {
+      "text": "Dérivé du journal",
+      "source_sha256": "72198d18fa10f1cfb7a848b40f0b5430911586740c3ba8741bf187b43f26e2e7"
+    },
+    "covered": {
+      "text": "Couvert",
+      "source_sha256": "da69bf500ed87251c00ce3f0ba81a58c0351cd352f9777a910e2776615baa3f4"
+    },
+    "uncovered": {
+      "text": "Non couvert",
+      "source_sha256": "2e5ea64bd7730f71f6a50541030109a889c1d8e85c3e9d7aa595c5b5d0b24bc2"
+    },
+    "available": {
+      "text": "Disponible",
+      "source_sha256": "e674447337e83c1346f6122ed69f35bf5526e2a11842b2f2b788f3fb67d714ca"
+    },
+    "failed": {
+      "text": "Échec",
+      "source_sha256": "031a8f0f659df890dfd53c92e45295b0f14c997185bae46e168831e403b273f7"
+    },
+    "blocked": {
+      "text": "Bloqué",
+      "source_sha256": "18f2a0947f9d6523991b29b450307f22773f57d65f7efb98d48a167df04d6b1d"
+    },
+    "opened": {
+      "text": "Ouvert",
+      "source_sha256": "b19fb8d1b395b333251f40be2909ca37a0b0a007b3c4c4b34b726be71f715daa"
+    },
+    "closed": {
+      "text": "Clos",
+      "source_sha256": "c21ead0614e7e1b70edb3759e1d19ca1e12e6036980d10bfb73052fb1a018efa"
+    },
+    "partial": {
+      "text": "Partiel",
+      "source_sha256": "a4d50fb85403654840e078e3ffe72dffe37df3ae280c6d98f39a41d346c88a14"
+    },
+    "planned": {
+      "text": "Planifié",
+      "source_sha256": "fb6f7c93e6bf3dfac450d268bf57844ae92b9c93f7d027b07f715bfbc467d225"
+    },
+    "window_days": {
+      "text": "Jours",
+      "source_sha256": "e08c0aa8f558f39fa99077e92036cf7d2210fe88ffae4d3b30fd489d9ac99e02"
     }
   },
   "honestyNoteAria": {
@@ -834,5 +882,215 @@
   "chartNoValuesInPayload": {
     "text": "Aucune valeur numérique dans ces données.",
     "source_sha256": "b5acb4fa352b7af334dbf3009170f350f04617a262905dcb0bbc940cb5c81c7f"
+  },
+  "windowDefault": {
+    "text": "Fenêtre : 7 / 30 / 90 jours lorsque des données sont disponibles.",
+    "source_sha256": "69150119161cbef5e35d43b4d28a61ee2e0a88f1ed044db45dd122c16d945104"
+  },
+  "windowSnapshot": {
+    "text": "État actuel (instantané — aucune fenêtre d'historique).",
+    "source_sha256": "ce8c376dc106b57947e29d9ea25f1599702476f51d0edeaeda34f6e55074d404"
+  },
+  "windowLastDays": {
+    "text": "Fenêtre : {{days}} derniers jours.",
+    "source_sha256": "ca4085c0c190f67a8102d8c4f52ca2a75343150af1b55669c2c1b50f69de7588"
+  },
+  "tileDeepLinkHint": {
+    "text": "{{action}} — comptages de livraison uniquement, pas une conclusion d'évaluation.",
+    "source_sha256": "24cac5315012982d27f77e466bc68de3c55b40cd6b6eb734e40c0fcdaa2c944c"
+  },
+  "tilePartial": {
+    "text": "Partiel",
+    "source_sha256": "a4d50fb85403654840e078e3ffe72dffe37df3ae280c6d98f39a41d346c88a14"
+  },
+  "tileCountsOnly": {
+    "text": "Comptages de livraison uniquement — pas une conclusion d'évaluation.",
+    "source_sha256": "79c301893ca498e97b7cb2d4071aaabd647439a88ba4b9f8ae6f5f13d54386c5"
+  },
+  "tileNotAvailableYet": {
+    "text": "Pas encore disponible",
+    "source_sha256": "787406ddea2a10a482aadb0a7af672d2621eef25af4aba9af33d4ae4ed135509"
+  },
+  "chartCurrentCount": {
+    "text": "Nombre actuel",
+    "source_sha256": "f03cb301db23ffc4446eb5d9e5f39d1fa5e1ba1e73dff4bde2773be83ad7d8ed"
+  },
+  "empty": {
+    "partialSnapshotOnly": {
+      "text": "Livraison partielle — instantané du tampon actuel uniquement, pas un historique durable ni une tendance.",
+      "source_sha256": "b85e630ff2416bbbb639ca7b436a7af3053f5557a432ee811d4dcbaed16d7457"
+    },
+    "deliveryStatusAbsent": {
+      "text": "Cette source de données n'est pas encore connectée. Il n'y a rien à compter.",
+      "source_sha256": "82bc9ed94dcdaf1458ae6e260a82ffb0f02ec3f244a88a46514265a60c633743"
+    },
+    "collectorFailed": {
+      "text": "Le collecteur de données a échoué. Aucun nombre n'est affiché, car inventer un zéro serait trompeur.",
+      "source_sha256": "f52c1dc9b63730eff93d911a49257d6bb0e06d1cc4b76169ff18e8379fca2222"
+    },
+    "noData": {
+      "text": "Aucune donnée n'est disponible pour cette tuile.",
+      "source_sha256": "f0b1afc56e9f5c98a42efc6dc5762a0a29d178e719b0cbd7b73326a7ec630bc7"
+    }
+  },
+  "tiles": {
+    "env": {
+      "systems_count": {
+        "text": "Systèmes de l'enclave",
+        "source_sha256": "ced01e89406902eb53a14cab40be7e5aec323e15d1a1e024e4d1c032b11dbafb"
+      },
+      "probe_enabled_count": {
+        "text": "Systèmes avec sondage activé",
+        "source_sha256": "63ac71199ff423059b114c584f0f49253d35cbcd614c7070fca390c20d1e4537"
+      },
+      "physical_vs_log": {
+        "text": "Physique vs. journal",
+        "source_sha256": "eff5a9a443f5332b72480b48844c04ddc86454e2d10ab14cccf4d6f4645d20a0"
+      },
+      "punch_list_open": {
+        "text": "Points ouverts de la liste de contrôle",
+        "source_sha256": "dc358afe24c02eec250f5a726b0051e5c0385f9613485d38f6d8c6c138e87e1c"
+      },
+      "discovered_systems": {
+        "text": "Systèmes découverts",
+        "source_sha256": "f603fc62f77c7a8ca50292e672799d27b42f308a517364e400554dd2d35c2e7f"
+      }
+    },
+    "training": {
+      "framework_coverage": {
+        "text": "Couverture des référentiels de formation",
+        "source_sha256": "16393c204c632069e6f81f71ab03a8c200365a23367957197c47f958ef05b0f6"
+      },
+      "uncovered_frameworks": {
+        "text": "Référentiels non couverts",
+        "source_sha256": "423f49c9f554ac6af15d3a9397be872f80b6b7ee1fc3248a136ea589bea78aae"
+      }
+    },
+    "compliance": {
+      "pack_readiness": {
+        "text": "Préparation des packs",
+        "source_sha256": "77c41ec25b0e67f63b5a67fea12714a5f14bade3c2fe52f20762abd191ae11e0"
+      },
+      "poam_open": {
+        "text": "Éléments POA&M ouverts",
+        "source_sha256": "cb492b36eee28f487a68a747a29ad26e1679817a5c1c2df5390c37cac8f50c8d"
+      },
+      "attestations_recorded": {
+        "text": "Attestations enregistrées",
+        "source_sha256": "c4bb3b29bed881e16edff964bde0b35df39b1ae00e7c6df79bb5df345849d572"
+      }
+    },
+    "pum": {
+      "violations_24h": {
+        "text": "Violations PUM (24 h)",
+        "source_sha256": "82aa9c8f88c450b040c70b71564696eb35f5bc54835799a34b18764e3d2e9f35"
+      },
+      "endpoints_enrolled": {
+        "text": "Points de terminaison PUM inscrits",
+        "source_sha256": "f485461b8fec947c1d0ecb24fb423ef03075c4a52ea679fce84205728ad0ae25"
+      }
+    },
+    "ir": {
+      "open_cases": {
+        "text": "Incidents ouverts",
+        "source_sha256": "0021b3e95793e696574a5d329c0f909a0bf857d1bde289f044e2fda60630552c"
+      },
+      "cases_opened_closed": {
+        "text": "Incidents ouverts / clos",
+        "source_sha256": "822919598dc11eef4ca88b219474c0514c67c9ce4fe03d7f8cb6a22bf9fad877"
+      }
+    },
+    "events": {
+      "by_type": {
+        "text": "Événements par type",
+        "source_sha256": "d3444a6107996dced07158c4a770e1d3c99aac84dc844386fb512b189a448061"
+      }
+    },
+    "defense": {
+      "blocked_attempts": {
+        "text": "Tentatives bloquées",
+        "source_sha256": "d2994427d1062d247c0d0e3861c229864f724416b13a9dc372ec0e4a63160b9d"
+      }
+    }
+  },
+  "tileLinkActions": {
+    "env": {
+      "systems_count": {
+        "text": "Ouvrir la liste des systèmes",
+        "source_sha256": "79c69b8201c70f6a1bbb0cd32bf60238c1d8fe57a6fa953fd769219431027d53"
+      },
+      "probe_enabled_count": {
+        "text": "Ouvrir la liste des systèmes",
+        "source_sha256": "79c69b8201c70f6a1bbb0cd32bf60238c1d8fe57a6fa953fd769219431027d53"
+      },
+      "physical_vs_log": {
+        "text": "Ouvrir l'état de conformité actuel",
+        "source_sha256": "e7c6e0a003ca4549ff75bb9b73a8980adba1246e61773b1c0e18ede86ba257a1"
+      },
+      "punch_list_open": {
+        "text": "Ouvrir l'état de conformité actuel",
+        "source_sha256": "e7c6e0a003ca4549ff75bb9b73a8980adba1246e61773b1c0e18ede86ba257a1"
+      },
+      "discovered_systems": {
+        "text": "Ouvrir la liste des systèmes",
+        "source_sha256": "79c69b8201c70f6a1bbb0cd32bf60238c1d8fe57a6fa953fd769219431027d53"
+      }
+    },
+    "training": {
+      "framework_coverage": {
+        "text": "Ouvrir les packs de formation",
+        "source_sha256": "6e5003aa13f6463cf9da7dfaba149fbf0535a127976a6d4dba6dc5ff066fd47c"
+      },
+      "uncovered_frameworks": {
+        "text": "Ouvrir les packs de formation",
+        "source_sha256": "6e5003aa13f6463cf9da7dfaba149fbf0535a127976a6d4dba6dc5ff066fd47c"
+      }
+    },
+    "compliance": {
+      "pack_readiness": {
+        "text": "Ouvrir le centre de rapports",
+        "source_sha256": "187792ae484ab91b49981c9d3dd9e5a2a4b0385357f8ff163f7a8daebba59cfb"
+      },
+      "poam_open": {
+        "text": "Ouvrir le POA&M",
+        "source_sha256": "8609b74b88f3ff55c87eed725bb2c4979f5f908aac3f9a1101e449a93b599fed"
+      },
+      "attestations_recorded": {
+        "text": "Ouvrir l'état de conformité actuel",
+        "source_sha256": "e7c6e0a003ca4549ff75bb9b73a8980adba1246e61773b1c0e18ede86ba257a1"
+      }
+    },
+    "pum": {
+      "violations_24h": {
+        "text": "Ouvrir PUM",
+        "source_sha256": "31bd0c5f3043e90cadb11f51b8d90c346d50711a2257c200b68a72f1b574aad1"
+      },
+      "endpoints_enrolled": {
+        "text": "Ouvrir PUM",
+        "source_sha256": "31bd0c5f3043e90cadb11f51b8d90c346d50711a2257c200b68a72f1b574aad1"
+      }
+    },
+    "ir": {
+      "open_cases": {
+        "text": "Ouvrir les incidents",
+        "source_sha256": "b744508a45ef9f712d66215f0255c8542c1cdd5a1ec1a5a7892b4aff33d5354e"
+      },
+      "cases_opened_closed": {
+        "text": "Ouvrir les incidents",
+        "source_sha256": "b744508a45ef9f712d66215f0255c8542c1cdd5a1ec1a5a7892b4aff33d5354e"
+      }
+    },
+    "events": {
+      "by_type": {
+        "text": "Ouvrir le journal des événements",
+        "source_sha256": "793adc62bcf881ad9187b4d7a89ba4a69f894ecfc12cbd043b4b01b0fdcba503"
+      }
+    },
+    "defense": {
+      "blocked_attempts": {
+        "text": "Ouvrir les attaques bloquées",
+        "source_sha256": "7e91b681457f14f1a5577efd979546b2be5be30ae463a5cd9df411553b2cf0a2"
+      }
+    }
   }
 }

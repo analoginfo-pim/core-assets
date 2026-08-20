@@ -202,69 +202,83 @@
     "source_sha256": "4fbb7585ca17462b7156fff1b540cfd1e27be6715832dc3aa3dd2e8a57dc0d13"
   },
   "tiles": {
-    "env.systems_count": {
-      "text": "Systeme in der Enclave",
-      "source_sha256": ""
+    "env": {
+      "systems_count": {
+        "text": "Systeme in der Enclave",
+        "source_sha256": ""
+      },
+      "probe_enabled_count": {
+        "text": "Systeme mit aktiver Sonde",
+        "source_sha256": ""
+      },
+      "physical_vs_log": {
+        "text": "Physisch vs. protokollbasiert",
+        "source_sha256": ""
+      },
+      "punch_list_open": {
+        "text": "Offene Punch-List-Punkte",
+        "source_sha256": ""
+      },
+      "discovered_systems": {
+        "text": "Entdeckte Systeme",
+        "source_sha256": ""
+      }
     },
-    "env.probe_enabled_count": {
-      "text": "Systeme mit aktiver Sonde",
-      "source_sha256": ""
+    "training": {
+      "framework_coverage": {
+        "text": "Schulungs-Framework-Abdeckung",
+        "source_sha256": ""
+      },
+      "uncovered_frameworks": {
+        "text": "Nicht abgedeckte Frameworks",
+        "source_sha256": ""
+      }
     },
-    "env.physical_vs_log": {
-      "text": "Physisch vs. protokollbasiert",
-      "source_sha256": ""
+    "compliance": {
+      "pack_readiness": {
+        "text": "Paket-Bereitschaft",
+        "source_sha256": ""
+      },
+      "poam_open": {
+        "text": "Offene POA&M-Einträge",
+        "source_sha256": ""
+      },
+      "attestations_recorded": {
+        "text": "Erfasste Attestierungen",
+        "source_sha256": ""
+      }
     },
-    "training.framework_coverage": {
-      "text": "Schulungs-Framework-Abdeckung",
-      "source_sha256": ""
+    "pum": {
+      "violations_24h": {
+        "text": "PUM-Verstöße (24 h)",
+        "source_sha256": ""
+      },
+      "endpoints_enrolled": {
+        "text": "PUM-Endpunkte registriert",
+        "source_sha256": ""
+      }
     },
-    "compliance.pack_readiness": {
-      "text": "Paket-Bereitschaft",
-      "source_sha256": ""
+    "ir": {
+      "open_cases": {
+        "text": "Offene Vorfälle",
+        "source_sha256": ""
+      },
+      "cases_opened_closed": {
+        "text": "Vorfälle eröffnet / geschlossen",
+        "source_sha256": ""
+      }
     },
-    "env.punch_list_open": {
-      "text": "Offene Punch-List-Punkte",
-      "source_sha256": ""
+    "events": {
+      "by_type": {
+        "text": "Ereignisse nach Typ",
+        "source_sha256": ""
+      }
     },
-    "compliance.poam_open": {
-      "text": "Offene POA&M-Einträge",
-      "source_sha256": ""
-    },
-    "pum.violations_24h": {
-      "text": "PUM-Verstöße (24 h)",
-      "source_sha256": ""
-    },
-    "training.uncovered_frameworks": {
-      "text": "Nicht abgedeckte Frameworks",
-      "source_sha256": ""
-    },
-    "ir.open_cases": {
-      "text": "Offene Vorfälle",
-      "source_sha256": ""
-    },
-    "ir.cases_opened_closed": {
-      "text": "Vorfälle eröffnet / geschlossen",
-      "source_sha256": ""
-    },
-    "events.by_type": {
-      "text": "Ereignisse nach Typ",
-      "source_sha256": ""
-    },
-    "pum.endpoints_enrolled": {
-      "text": "PUM-Endpunkte registriert",
-      "source_sha256": ""
-    },
-    "env.discovered_systems": {
-      "text": "Entdeckte Systeme",
-      "source_sha256": ""
-    },
-    "compliance.attestations_recorded": {
-      "text": "Erfasste Attestierungen",
-      "source_sha256": ""
-    },
-    "defense.blocked_attempts": {
-      "text": "Blockierte Angriffe",
-      "source_sha256": ""
+    "defense": {
+      "blocked_attempts": {
+        "text": "Blockierte Angriffe",
+        "source_sha256": ""
+      }
     }
   },
   "chartNoValues": {
@@ -458,69 +472,83 @@
     "source_sha256": ""
   },
   "tileLinkActions": {
-    "defense.blocked_attempts": {
-      "text": "Blockierte Angriffe öffnen",
-      "source_sha256": ""
+    "defense": {
+      "blocked_attempts": {
+        "text": "Blockierte Angriffe öffnen",
+        "source_sha256": ""
+      }
     },
-    "env.systems_count": {
-      "text": "Systemliste öffnen",
-      "source_sha256": ""
+    "env": {
+      "systems_count": {
+        "text": "Systemliste öffnen",
+        "source_sha256": ""
+      },
+      "probe_enabled_count": {
+        "text": "Systemliste öffnen",
+        "source_sha256": ""
+      },
+      "physical_vs_log": {
+        "text": "Aktuellen Compliance-Stand öffnen",
+        "source_sha256": ""
+      },
+      "punch_list_open": {
+        "text": "Aktuellen Compliance-Stand öffnen",
+        "source_sha256": ""
+      },
+      "discovered_systems": {
+        "text": "Systemliste öffnen",
+        "source_sha256": ""
+      }
     },
-    "env.probe_enabled_count": {
-      "text": "Systemliste öffnen",
-      "source_sha256": ""
+    "training": {
+      "framework_coverage": {
+        "text": "Schulungspakete öffnen",
+        "source_sha256": ""
+      },
+      "uncovered_frameworks": {
+        "text": "Schulungspakete öffnen",
+        "source_sha256": ""
+      }
     },
-    "env.physical_vs_log": {
-      "text": "Aktuellen Compliance-Stand öffnen",
-      "source_sha256": ""
+    "compliance": {
+      "pack_readiness": {
+        "text": "Report Center öffnen",
+        "source_sha256": ""
+      },
+      "poam_open": {
+        "text": "POA&M öffnen",
+        "source_sha256": ""
+      },
+      "attestations_recorded": {
+        "text": "Aktuellen Compliance-Stand öffnen",
+        "source_sha256": ""
+      }
     },
-    "training.framework_coverage": {
-      "text": "Schulungspakete öffnen",
-      "source_sha256": ""
+    "pum": {
+      "violations_24h": {
+        "text": "PUM öffnen",
+        "source_sha256": ""
+      },
+      "endpoints_enrolled": {
+        "text": "PUM öffnen",
+        "source_sha256": ""
+      }
     },
-    "compliance.pack_readiness": {
-      "text": "Report Center öffnen",
-      "source_sha256": ""
+    "ir": {
+      "open_cases": {
+        "text": "Vorfälle öffnen",
+        "source_sha256": ""
+      },
+      "cases_opened_closed": {
+        "text": "Vorfälle öffnen",
+        "source_sha256": ""
+      }
     },
-    "env.punch_list_open": {
-      "text": "Aktuellen Compliance-Stand öffnen",
-      "source_sha256": ""
-    },
-    "compliance.poam_open": {
-      "text": "POA&M öffnen",
-      "source_sha256": ""
-    },
-    "pum.violations_24h": {
-      "text": "PUM öffnen",
-      "source_sha256": ""
-    },
-    "training.uncovered_frameworks": {
-      "text": "Schulungspakete öffnen",
-      "source_sha256": ""
-    },
-    "ir.open_cases": {
-      "text": "Vorfälle öffnen",
-      "source_sha256": ""
-    },
-    "ir.cases_opened_closed": {
-      "text": "Vorfälle öffnen",
-      "source_sha256": ""
-    },
-    "events.by_type": {
-      "text": "Ereignisprotokoll öffnen",
-      "source_sha256": ""
-    },
-    "pum.endpoints_enrolled": {
-      "text": "PUM öffnen",
-      "source_sha256": ""
-    },
-    "env.discovered_systems": {
-      "text": "Systemliste öffnen",
-      "source_sha256": ""
-    },
-    "compliance.attestations_recorded": {
-      "text": "Aktuellen Compliance-Stand öffnen",
-      "source_sha256": ""
+    "events": {
+      "by_type": {
+        "text": "Ereignisprotokoll öffnen",
+        "source_sha256": ""
+      }
     }
   },
   "defense": {
