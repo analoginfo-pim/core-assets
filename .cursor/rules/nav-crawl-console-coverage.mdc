@@ -40,7 +40,8 @@ not claim all-pages PASS).
 
 | # | Requirement | Pass condition |
 | --- | --- | --- |
-| 1 | **Nav-driven** | Expand every left-nav section and nested submenu; click every leaf link (not only a static allow-list that omits nested items) |
+| 0 | **All-sources denominator** | Crawl leaf set is the **de-duplicated union** of: SPA router (parents, index, redirects, leaves, tabbed children, gated routes), sidebar + section landings + in-app links, docs/about/legal, error/edge probes, login/pre-auth. Helper: `ui/e2e/helpers/nav-crawl-routes.mjs`. Inventory evidence: `docs/dev/evidence/nav-crawl-zh-tw-20260819/ROUTE_INVENTORY_ALL_SOURCES.md`. **Menu-only or accordion-only lists are FAIL.** Shrinking the union vs prior inventory without an explicit exclusion note is FAIL. |
+| 1 | **Nav-driven** | Every union path is visited (goto or drawer click). Accordion expand is optional when the source inventory already lists every leaf — omitting a path because an accordion was collapsed is still FAIL |
 | 2 | **Locale in-product** | Header chip / `html.lang` / visible BCP-47 tag matches the intended pack for that run |
 | 3 | **Served bundle** | Record disk-or-served asset identity for the run (SPA hash) |
 | 4 | **Console / pageerror** | Product console errors and `pageerror` → **FAIL** (known third-party noise may filter; `TypeError`, `Missing string:`, error-boundary text may not) |
@@ -49,6 +50,7 @@ not claim all-pages PASS).
 | 7 | **429 storms** | Elevated 429 counts are a **product defect** (fix client storm or name BLOCKED) — not flaky test noise |
 | 8 | **Wall-clock** | A single-locale full-leaf crawl that cannot finish in a **reasonable** time (order of **~2 minutes** on a healthy unlimited lab, not hours) is itself a **defect** — usually lab rate limiting still on, or an inefficient crawl→fix→rebuild→retest loop. Slow verification is what leads to skipped verification |
 | 9 | **≤10 s / page** | Each route must complete under a **hard 10 second** budget (`elapsed_ms` in the matrix). Exceeding the budget is **FAIL** with evidence — never raise the budget to green a slow page. Minutes per page is a **harness defect**. No `networkidle`, no fixed multi-second sleeps, no per-route re-auth |
+| 10 | **Safe dialogs** | Where a page's primary dialogs/drawers open without mutating (no mail/SMS/rotate/PIN), open and check strings; list separately from route count |
 
 Canonical spec:
 `pim-offline-server/ui/e2e/nav-crawl-console-embedded-live.spec.ts`
@@ -57,6 +59,7 @@ Canonical spec:
 ## Forbidden “false green”
 
 - Hardcoded route arrays that never expand nested drawer groups
+- **MenuItems-only** or **accordion-only** denominators that omit router parents (`/access`), redirects (`/events`), messaging children, `/login`, docs/about, or 404 edge chrome
 - Heading-visible / nav-label asserts without body render checks
 - Collecting console errors as notes while still exiting 0
 - Passing blank pages (deploy bounce, AuthBound shell, empty main)
@@ -67,6 +70,8 @@ Canonical spec:
 - “Passing” a crawl that spent hours sleeping / backing off around 429s
   instead of turning lab rate limiting off first
   ([`rate-limiting-off-for-testing.mdc`](rate-limiting-off-for-testing.mdc))
+- Reporting PASS with a **smaller** route total than the last all-sources
+  inventory without naming each removed path and why
 
 ## Required agent behavior
 
