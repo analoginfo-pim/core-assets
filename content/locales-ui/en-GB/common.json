@@ -193,8 +193,8 @@
   },
   "actions": {
     "add": {
-      "text": "Hinzufügen",
-      "source_sha256": "cbb95cf02b7d0216731add80f69d9fc11edac11bd2d07b5b47be70faa4b74ff5"
+      "text": "Add",
+      "source_sha256": ""
     },
     "cancel": {
       "text": "Abbrechen",
@@ -213,12 +213,12 @@
       "source_sha256": "84e45ee7341134db76d539d9ea4806d7ef7c23f846c73063848335a3f481c6bd"
     },
     "import": {
-      "text": "Importieren",
-      "source_sha256": "b0b045d64b415dc2ddd161e2ea53770810701508fd820300c073c1afc44e2527"
+      "text": "Import",
+      "source_sha256": ""
     },
     "refresh": {
-      "text": "Aktualisieren",
-      "source_sha256": "96bf0098166f6c3ee6ba53efd62eef89ed686741de9f9f934ad51cfffe849abe"
+      "text": "Refresh",
+      "source_sha256": ""
     },
     "search": {
       "text": "Suchen",
@@ -344,451 +344,479 @@
     }
   },
   "auditorSetup": {
+    "title": {
+      "text": "Auditor Setup and Configuration Guide",
+      "source_sha256": "413a1f0e37613e52268654ca1b71fc9e49baddfe83a9f31ca7682e2ecc54c45c"
+    },
+    "summary": {
+      "text": "How to set up auditors on the same sign-in page, which groups to use, and where to change settings.",
+      "source_sha256": "172442cde1d756a371bdf47178813ad6e6c397be223dbd72ae19f007bfa8c97f"
+    },
+    "productLabel": {
+      "text": "Open Local IAM Management",
+      "source_sha256": "15e4df6041a4fad0eea0899b46702e44503afe86b0a15d854cc2b867aa96f4b8"
+    },
+    "configLinksTitle": {
+      "text": "Where to change these settings",
+      "source_sha256": "0e3f253d56ce97a8af0bc47555b912b82fd4fabe3ca4abfb22591c7e153ea73a"
+    },
     "body": {
       "0": {
-        "text": "auditorSetup.body.0",
-        "source_sha256": "b898254dddd7c66f2dea19552dffb8faec52303be8e735bea744fa1f57b517e2"
+        "text": "Everyone logs in to the same login page. There is no separate examiner portal. Menus and rights come from the groups you assign. This corresponds to the Thoropass model: an examiner examines evidence; An audit administrator (management) can also set up other auditors. Identity administrators create accounts that are not validators. This is not the job of an auditor.",
+        "source_sha256": "fe5e718998d34e73aa396601781f548f4960cd864828836427de532b71065800"
       },
       "1": {
-        "text": "auditorSetup.body.1",
-        "source_sha256": "bd812da22ba4030fcc8e3742a04ffe44aabb537a9e6d635476afc3b8727f75e1"
+        "text": "Demonstration environments include three starting accounts so you can try out each task. Change these passwords before each joint demonstration. Production environments create their own people and assign them to the groups below. This guide describes how to set up the product. It is not a certification claim.",
+        "source_sha256": "1588afb7ee4753cff6b34d99ceefde61744ca5619bac1eeca60450567c82b543"
+      }
+    },
+    "steps": {
+      "0": {
+        "text": "Open the local IAM administration and create or select the person.",
+        "source_sha256": "74218568bb6ab85a4b766f47fd67f5f6305e83c891be656af67ebc4a184cd5e4"
+      },
+      "1": {
+        "text": "Add the person to the groups for their role in the table below.",
+        "source_sha256": "c75affe5a031cfc47080a36a211f60ebb0423186e0a0e503eb6229980cc7b63c"
+      },
+      "2": {
+        "text": "Or create them with the matching enrollment template.",
+        "source_sha256": "9281b903b18c034652f3534705f6f04b8921fbeb93198a075f6a3de15337defd"
+      },
+      "3": {
+        "text": "Ask them to sign in on the normal sign-in page.",
+        "source_sha256": "5a27cb5dc45e04d33afb3cfa2d7680de83d371992c8588992c5ce0e9aff2a44e"
+      },
+      "4": {
+        "text": "Open audit engagements to invite them to an engagement if your process uses invitations.",
+        "source_sha256": "9e0f6ab2c160dd38a32b7c59a1eb55fe45e24e07e6e3710362667be62d1ace8b"
+      }
+    },
+    "tables": {
+      "jobs": {
+        "caption": {
+          "text": "稽核職務、群組與限制",
+          "source_sha256": "c64a2fc6fae3b07eb50815da7f4b6c2d59a5853706adf33ef343723ee83d2271"
+        },
+        "headers": [
+          {
+            "text": "Job",
+            "source_sha256": "ad617a0fdd57e3f4b8ebb27f6f60470bc4468aadec290db57e612f751767745d"
+          },
+          {
+            "text": "Groups",
+            "source_sha256": "39bbb719fa2b9d2251039cbf2cd072e1120a414278263e2f11d99af0236c4262"
+          },
+          {
+            "text": "Enrollment preset",
+            "source_sha256": "a17f139a800b40ba79072e64cadb7a194d4e9c53938806d6fadf9a67b4b995e8"
+          },
+          {
+            "text": "Can do",
+            "source_sha256": "2de2c8f7e0f142fc595dfc3b82b8ce30841e6a9ca3a7560742c1e10823786b41"
+          },
+          {
+            "text": "Must not",
+            "source_sha256": "718e628f3829d259821ebdd30c7c5f43d0d99378ee8a120e16df2b366a601b70"
+          }
+        ],
+        "rows": [
+          [
+            {
+              "text": "Read-only observer",
+              "source_sha256": "124a075178664d2ee91ff8fc4b9105d0836a437049fc24111597b6155b208eda"
+            },
+            {
+              "text": "Read-Only Assessors and Documentation Users",
+              "source_sha256": "b9850db67366f8e12d47aca92555920fcb1fb9c5627a1f58254c67feecf2ca1d"
+            },
+            {
+              "text": "read-only-assessor",
+              "source_sha256": "78218efaecc299d8937a7ccb02b5218dcbb87b5817793e358b7e009245532e47"
+            },
+            {
+              "text": "View Assessment Binder and reports",
+              "source_sha256": "9d46e9a523253882459bbfe2fcdb69c3dc2e943f89f6a3334fad58bd3ad446ec"
+            },
+            {
+              "text": "Write binder content, Fix-It, or manage identities",
+              "source_sha256": "82fd8376cc83606a3a7e1fd9e5c91a5b8331dbdd60447019613ac890b785f017"
+            }
+          ],
+          [
+            {
+              "text": "Working auditor (Auditor)",
+              "source_sha256": "944d1f7fee040102f42afef4a10b48a4992a6f40fefbaa0e98a0ec7c941cc6ab"
+            },
+            {
+              "text": "CMMC Assessors, Assessment Team, and Documentation Users",
+              "source_sha256": "b48d7428c73de6aa422f5de2de8d6eef73c438fec280ac7916831ee0a9494838"
+            },
+            {
+              "text": "cmmc-assessor",
+              "source_sha256": "6613533426ca2300e9c63eeb209573f98c115704d96509ebe7fd95e42560526d"
+            },
+            {
+              "text": "Write binder content, review engagements, maintain risks",
+              "source_sha256": "e6d4700c06f8b2c0571430eeef7a57778c7c1a0f7093b3c898f6f4cd37c28549"
+            },
+            {
+              "text": "Create accounts, reset passwords, Fix-It, or accept residual risk",
+              "source_sha256": "7ed48f8d001148d1a523e82d8e19089fa9bd91d315a39d408e194ffd0fb238e4"
+            }
+          ],
+          [
+            {
+              "text": "Lead auditor (Audit Admin)",
+              "source_sha256": "ad327d82e6d729f67843d72b3dc5d3820b11479f40abd170d786e44a537595f1"
+            },
+            {
+              "text": "Lead Auditors, CMMC Assessors, Assessment Team, and Documentation Users",
+              "source_sha256": "5f38ef6b0333ece489762dd38e800f99608fddcfa85dfd6d07cdca9721b00d28"
+            },
+            {
+              "text": "lead-auditor",
+              "source_sha256": "4012403d359f568308ee40454e0f6062e277496074f12d38353777ac7e185f51"
+            },
+            {
+              "text": "Same as working auditor, plus create auditor-class accounts, add them to auditor groups, reset only those passwords, and manage engagements",
+              "source_sha256": "a7c2351fa40bcbee672810e7cb7fa60ada50db21e8dabc927841136e12c822f6"
+            },
+            {
+              "text": "Reset administrator passwords, grant Super Admin, manage identity providers, or Fix-It",
+              "source_sha256": "8e7a60df7c9f329660a9a05c3c3d20c7f9f5daf7e7689e3ea4dfa2d631296a3c"
+            }
+          ]
+        ]
+      },
+      "seeds": {
+        "caption": {
+          "text": "Startkonten for Demonstrationen",
+          "source_sha256": "9905bc2f948fc6e8cef528c7ddc50fda78927ecf44b142fb4701ff316bc504de"
+        },
+        "headers": [
+          {
+            "text": "Username",
+            "source_sha256": "e3b89e9d33f88e523083d8b4436adcc3726c89e97fd3179a2e102d765d1b16ed"
+          },
+          {
+            "text": "Job",
+            "source_sha256": "ad617a0fdd57e3f4b8ebb27f6f60470bc4468aadec290db57e612f751767745d"
+          },
+          {
+            "text": "Groups",
+            "source_sha256": "39bbb719fa2b9d2251039cbf2cd072e1120a414278263e2f11d99af0236c4262"
+          },
+          {
+            "text": "Notes",
+            "source_sha256": "8a7525b1492fb84833f5c4a69b30f4bfbb134f9b666b61a2c1872d63d234c085"
+          }
+        ],
+        "rows": [
+          [
+            {
+              "text": "readonly",
+              "source_sha256": "8171bacf32668a8f44b90087ad107ed63170f57154763ba7e44047bf9e5a7be3"
+            },
+            {
+              "text": "Read-only observer",
+              "source_sha256": "124a075178664d2ee91ff8fc4b9105d0836a437049fc24111597b6155b208eda"
+            },
+            {
+              "text": "Read-Only Assessors and Documentation Users",
+              "source_sha256": "b9850db67366f8e12d47aca92555920fcb1fb9c5627a1f58254c67feecf2ca1d"
+            },
+            {
+              "text": "Looks at evidence. Cannot write the binder.",
+              "source_sha256": "27839d8b11fa383c7fe37fd9e33d99e9dc638c8c0358e214646bb59aef08f611"
+            }
+          ],
+          [
+            {
+              "text": "auditor",
+              "source_sha256": "c5a62ce3fa7f6d86af0009389ccd815277691ea64da0c5c98e302bb13dd59248"
+            },
+            {
+              "text": "Working auditor",
+              "source_sha256": "58d435f21971d98b40f82858d61661e4d363036d489343ae3c08ada7777e8b6d"
+            },
+            {
+              "text": "CMMC Assessors, Assessment Team, and Documentation Users",
+              "source_sha256": "b48d7428c73de6aa422f5de2de8d6eef73c438fec280ac7916831ee0a9494838"
+            },
+            {
+              "text": "Reviews and writes evidence. Cannot create accounts.",
+              "source_sha256": "968b8b65538d8507f6de909b0a33bdaf12d5c29222234065ef4907cb72ec1bf5"
+            }
+          ],
+          [
+            {
+              "text": "auditorlead",
+              "source_sha256": "1a8d1136f1985da433c71c7cc281c939d5edcc0dbf723728d3d963905df5a8d0"
+            },
+            {
+              "text": "Lead auditor (Audit Admin)",
+              "source_sha256": "ad327d82e6d729f67843d72b3dc5d3820b11479f40abd170d786e44a537595f1"
+            },
+            {
+              "text": "Lead Auditors, CMMC Assessors, Assessment Team, and Documentation Users",
+              "source_sha256": "5f38ef6b0333ece489762dd38e800f99608fddcfa85dfd6d07cdca9721b00d28"
+            },
+            {
+              "text": "Can staff other auditors. Cannot reset administrator passwords.",
+              "source_sha256": "b6f29d2ee3f02b96a866d57b1c9f9361dc1f7b89b980acf131c9eb7dbefff276"
+            }
+          ]
+        ]
+      },
+      "screens": {
+        "caption": {
+          "text": "Screens and who may use them",
+          "source_sha256": "5b8f008bc5e1bfdfa0b79b3e5ec6f85f44662566152dc6eada79a40147d9e141"
+        },
+        "headers": [
+          {
+            "text": "Screen",
+            "source_sha256": "6e56137e21d3222a2e3135fc3458286fc3fb6b2e2c679e9ae28db268fe982af7"
+          },
+          {
+            "text": "Read-only",
+            "source_sha256": "72bb90897ab1eadc924fa1358773c5949372c1f06d8dd53d730bbfa3b0c5b695"
+          },
+          {
+            "text": "Working auditor",
+            "source_sha256": "58d435f21971d98b40f82858d61661e4d363036d489343ae3c08ada7777e8b6d"
+          },
+          {
+            "text": "Lead (Audit Admin)",
+            "source_sha256": "1685b42da1cdfa387a514be7496c5bc21d19be003538f84c069ec4f49951442a"
+          }
+        ],
+        "rows": [
+          [
+            {
+              "text": "Sign in",
+              "source_sha256": "bfd402b2f6f3812529b55596136d3a11c51616317e3b1cd999928e2d4eae7d3f"
+            },
+            {
+              "text": "Yes",
+              "source_sha256": "85a39ab345d672ff8ca9b9c6876f3adcacf45ee7c1e2dbd2408fd338bd55e07e"
+            },
+            {
+              "text": "Yes",
+              "source_sha256": "85a39ab345d672ff8ca9b9c6876f3adcacf45ee7c1e2dbd2408fd338bd55e07e"
+            },
+            {
+              "text": "Yes",
+              "source_sha256": "85a39ab345d672ff8ca9b9c6876f3adcacf45ee7c1e2dbd2408fd338bd55e07e"
+            }
+          ],
+          [
+            {
+              "text": "Assessment Binder",
+              "source_sha256": "edce73881ba543a19ed06b9eaee2c7998fb127db9bf6232dc805423bed35f519"
+            },
+            {
+              "text": "View",
+              "source_sha256": "dcc839a4015c4b7dd9db959a8f757833b8adb92462a751b973386e453c6d58a3"
+            },
+            {
+              "text": "View and write",
+              "source_sha256": "e1beccffdde72f01743aa0438c9890669246d1065ee7781588fce5dc3f8dd355"
+            },
+            {
+              "text": "View and write",
+              "source_sha256": "e1beccffdde72f01743aa0438c9890669246d1065ee7781588fce5dc3f8dd355"
+            }
+          ],
+          [
+            {
+              "text": "Report Center",
+              "source_sha256": "77ecbfb06f1a609280278311cc52101ed3552be5670a1b26e4c17a7a6d17b475"
+            },
+            {
+              "text": "View and download",
+              "source_sha256": "b1890a96a69125b85bba329c4540d45ebb0172a761893e967131bb15ff210c6c"
+            },
+            {
+              "text": "View and download",
+              "source_sha256": "b1890a96a69125b85bba329c4540d45ebb0172a761893e967131bb15ff210c6c"
+            },
+            {
+              "text": "View and download",
+              "source_sha256": "b1890a96a69125b85bba329c4540d45ebb0172a761893e967131bb15ff210c6c"
+            }
+          ],
+          [
+            {
+              "text": "Audit Engagements",
+              "source_sha256": "66475087ed4fbe6ae258f0858964351c2d5baadf694ca6847697806bddde463c"
+            },
+            {
+              "text": "View when invited",
+              "source_sha256": "537ff38038962427ccf260a5147d4193a87517c9520cef8e51d2069b0ce6221c"
+            },
+            {
+              "text": "Review",
+              "source_sha256": "aff0766a5290e117b8433c351bae7b7b23bed682b2369bd822d88a647cc58512"
+            },
+            {
+              "text": "Review and manage",
+              "source_sha256": "813498bfc6706e15b224722d67493ad52c2148b9649bb7506114dcc9faa7eea3"
+            }
+          ],
+          [
+            {
+              "text": "Current State Compliance",
+              "source_sha256": "da5e4759c452cc21dc10cea951de8032d207f64d9b6805dd4e4f6d8710680932"
+            },
+            {
+              "text": "Read",
+              "source_sha256": "9b9a8d05a7ec353bda84f9c1bb3178c299de3001b5e970508ddc889c487f92ca"
+            },
+            {
+              "text": "Read",
+              "source_sha256": "9b9a8d05a7ec353bda84f9c1bb3178c299de3001b5e970508ddc889c487f92ca"
+            },
+            {
+              "text": "Read",
+              "source_sha256": "9b9a8d05a7ec353bda84f9c1bb3178c299de3001b5e970508ddc889c487f92ca"
+            }
+          ],
+          [
+            {
+              "text": "Auditing",
+              "source_sha256": "ca3a7a351944964bf9c0ba7f5fbcb1b351a87377090745434ab7444105843722"
+            },
+            {
+              "text": "Read",
+              "source_sha256": "9b9a8d05a7ec353bda84f9c1bb3178c299de3001b5e970508ddc889c487f92ca"
+            },
+            {
+              "text": "Read",
+              "source_sha256": "9b9a8d05a7ec353bda84f9c1bb3178c299de3001b5e970508ddc889c487f92ca"
+            },
+            {
+              "text": "Read",
+              "source_sha256": "9b9a8d05a7ec353bda84f9c1bb3178c299de3001b5e970508ddc889c487f92ca"
+            }
+          ],
+          [
+            {
+              "text": "Local IAM Administration",
+              "source_sha256": "da7112e436c16cb8ec3a5dabc864d11e81aa2717f84c27e5eb789aac51849662"
+            },
+            {
+              "text": "No",
+              "source_sha256": "1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da161c6099be3691d"
+            },
+            {
+              "text": "No",
+              "source_sha256": "1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da161c6099be3691d"
+            },
+            {
+              "text": "Auditor-class accounts only",
+              "source_sha256": "5c23b232bfcf4f8e377d9698a2b92249d70d8edf4963a57908eaea215c7b588c"
+            }
+          ],
+          [
+            {
+              "text": "Enrollment And Access Control",
+              "source_sha256": "383bc9f7a5709b9c659a1850e4acf50997c7c4f5ff79db8aa2538d977d9beeec"
+            },
+            {
+              "text": "Read the matrix",
+              "source_sha256": "30d6b1e55b3ac35b02e9cd8b13245881b2036c9aa049c0061437bb2e538b32c0"
+            },
+            {
+              "text": "Read the matrix",
+              "source_sha256": "30d6b1e55b3ac35b02e9cd8b13245881b2036c9aa049c0061437bb2e538b32c0"
+            },
+            {
+              "text": "Read the matrix",
+              "source_sha256": "30d6b1e55b3ac35b02e9cd8b13245881b2036c9aa049c0061437bb2e538b32c0"
+            }
+          ],
+          [
+            {
+              "text": "Server settings / Fix-It",
+              "source_sha256": "1b10762f249a7ebb0d459149eee1059a1b75fef135e3c5ddb81d645495336860"
+            },
+            {
+              "text": "No",
+              "source_sha256": "1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da161c6099be3691d"
+            },
+            {
+              "text": "No",
+              "source_sha256": "1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da161c6099be3691d"
+            },
+            {
+              "text": "No",
+              "source_sha256": "1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da161c6099be3691d"
+            }
+          ]
+        ]
       }
     },
     "configLinks": {
       "0": {
         "label": {
-          "text": "auditorSetup.configLinks.0.label",
-          "source_sha256": "71e47ebd998712e8a668a5600303bc37c1eaf016b4ac64e1146d25d70a1fe6e0"
+          "text": "Register",
+          "source_sha256": "bb7234ec12451361e6f35bcbe76de58e4350657fe60d1b96ace0947f59194083"
         },
         "note": {
-          "text": "auditorSetup.configLinks.0.note",
-          "source_sha256": "c72221204261377a6fceecb779d444eb019db6a42a235dcb7b637f472aadc805"
+          "text": "The only login page. Auditors use this site like everyone else.",
+          "source_sha256": "7c1772680987eb0810879683657437c5ca711dca2eb24ad4b44bfdd1d75c4754"
         }
       },
       "1": {
         "label": {
-          "text": "auditorSetup.configLinks.1.label",
-          "source_sha256": "9fe7986b87b8afbad1d62de69d42d649577c389802d16c916a80bc5415300276"
+          "text": "Local IAM Management",
+          "source_sha256": "996527dea286c5955c0e95ef37c3a5be2e6cf9b772b74f3df13f167ce4fd2040"
         },
         "note": {
-          "text": "auditorSetup.configLinks.1.note",
-          "source_sha256": "4b6edb30c3745339fe8d160e9a6d5455ad9640876333f1cfd0df567803faa0cc"
+          "text": "Access and Identity → Directory → Local IAM Management. Create people, assign groups and reset auditor-related passwords (line only).",
+          "source_sha256": "9fec7d41b1ecc877bdbc95218fd2220dfcb81730be30f0719906f0e3aa95b907"
         }
       },
       "2": {
         "label": {
-          "text": "auditorSetup.configLinks.2.label",
-          "source_sha256": "38b92a7480924f2c4e554e7c7d87e7ef500a7c84f643e02cd04897cd0b9da2c9"
+          "text": "Enrollment and Access Control",
+          "source_sha256": "12e572e9d85eaa384cf67874b4cf41b22b8312ac83e5311d99cc06344472301c"
         },
         "note": {
-          "text": "auditorSetup.configLinks.2.note",
-          "source_sha256": "82ed4786b3a2160851f1db8b4d9611ca919214afe11dcdfc94c404c5183f7a12"
+          "text": "Access and Identity → Directory → Enrollment and Access Control. Shows the enrollment requirements (read-only-assessor, cmmc-assessor, lead-auditor).",
+          "source_sha256": "182512ee39ef91dc376dd76adb5d4b99c82cbe71ff84211e6e899c3b1d2eb1fd"
         }
       },
       "3": {
         "label": {
-          "text": "auditorSetup.configLinks.3.label",
-          "source_sha256": "5d06552e379db2218b6806015b3fed7e6525b814e4b5d8c2c96686c528806055"
+          "text": "Audit engagements",
+          "source_sha256": "df4038d742034aa4140b88db2a878ad693fdb503b1f5926b3e45995626393959"
         },
         "note": {
-          "text": "auditorSetup.configLinks.3.note",
-          "source_sha256": "f0ac0914b0d77bb43579fb6ec49003a5c52ae87db3acb9a09a2314e12554faa9"
+          "text": "Compliance → Audit engagements. Invite auditors and manage the engagement.",
+          "source_sha256": "69da63cd0def7a2239d62539bd4ee0140396fbf4b4cecfd4cbaeb588c505d6c5"
         }
       },
       "4": {
         "label": {
-          "text": "auditorSetup.configLinks.4.label",
-          "source_sha256": "add29cc893eef91b315fb0c3aa4e83d109fff6c3e5858ddb5d8070ffbc8e69b6"
+          "text": "Assessment Binder",
+          "source_sha256": "edce73881ba543a19ed06b9eaee2c7998fb127db9bf6232dc805423bed35f519"
         },
         "note": {
-          "text": "auditorSetup.configLinks.4.note",
-          "source_sha256": "4e2a34557eec5b34be75fd2f446273394b556520959fb55d344914eaf4176399"
+          "text": "Compliance → Assessment folder. Write or review control narratives and evidence.",
+          "source_sha256": "2c3766e276c7ceb65823e60fef8c3f696b83ae8a15b98085b5bcaa9bcc368bfb"
         }
       },
       "5": {
         "label": {
-          "text": "auditorSetup.configLinks.5.label",
-          "source_sha256": "80c3ad4c24af4bd5a2d1df2578dcd8bae302efb15fba88b3b54c2ac9f696602d"
+          "text": "Auditor manuals",
+          "source_sha256": "6623ff55741761694cc60ea3e767301b9c1d248b65de5f46d388d0c9a1d9ab56"
         },
         "note": {
-          "text": "auditorSetup.configLinks.5.note",
-          "source_sha256": "3cfb7d3ad79659735631597bd872f2aa5954d84a360abb08a00abe2d357ea23c"
-        }
-      }
-    },
-    "steps": {
-      "0": {
-        "text": "auditorSetup.steps.0",
-        "source_sha256": "db77a8515a9bac7962a581e64819db99bcefba1f60a0f968cc9afb3bf12a3e3c"
-      },
-      "1": {
-        "text": "auditorSetup.steps.1",
-        "source_sha256": "179029391f3db02809fb1d34a137d6dd5bcfdc0231f93f14dd5d0ca691ee3af5"
-      },
-      "2": {
-        "text": "auditorSetup.steps.2",
-        "source_sha256": "5f31267dc59941a7483ab1b756fc0e6c9654fe8ffdf2e2a6590595a08b92ee2e"
-      },
-      "3": {
-        "text": "auditorSetup.steps.3",
-        "source_sha256": "fd9aec848f84a5a0647283f80825f39add97f279721d91d37e7fc5b462f53ad9"
-      },
-      "4": {
-        "text": "auditorSetup.steps.4",
-        "source_sha256": "3386c476f08329a81e1148e86120e9229a7814daee5866d368c0c1f3c37c58f6"
-      }
-    },
-    "tables": {
-      "jobs": {
-        "headers": {
-          "0": {
-            "text": "auditorSetup.tables.jobs.headers.0",
-            "source_sha256": "e47f71314329c72e86bc53aefb313a5217ee63f5aae23d93deac42b779fc9482"
-          },
-          "1": {
-            "text": "auditorSetup.tables.jobs.headers.1",
-            "source_sha256": "8f1504624320c06448d49388ed751181df0a111d0c90a8779979afc3230acb55"
-          },
-          "2": {
-            "text": "auditorSetup.tables.jobs.headers.2",
-            "source_sha256": "38374936afb4edd1aec7bb46b8a175c3917784be7d7e59ca2f415179f0900f47"
-          },
-          "3": {
-            "text": "auditorSetup.tables.jobs.headers.3",
-            "source_sha256": "7f7e0cc7d9e1b367a4bfe181911fa97d36a512841977ec7aa0aa9a733c92e710"
-          },
-          "4": {
-            "text": "auditorSetup.tables.jobs.headers.4",
-            "source_sha256": "63ab1dc37a9586928377a843375791c90fab23ce742099aaa6f7ed66e35141f2"
-          }
-        },
-        "rows": {
-          "0": {
-            "0": {
-              "text": "auditorSetup.tables.jobs.rows.0.0",
-              "source_sha256": "b3cc03d99c2a8824e28816881a1ab36b39ac4d6137a58c744ebb923ab1a12881"
-            },
-            "1": {
-              "text": "auditorSetup.tables.jobs.rows.0.1",
-              "source_sha256": "9cddc6f5965e274c1921ac220624a8c24fff7259186df57dcef4087f2e36ff95"
-            },
-            "2": {
-              "text": "auditorSetup.tables.jobs.rows.0.2",
-              "source_sha256": "17cc93de874d98642d67c939fffd0e68695cfd67a1136b5728b353e42cc384fd"
-            },
-            "3": {
-              "text": "auditorSetup.tables.jobs.rows.0.3",
-              "source_sha256": "456eca25c89838a132dee656bf6d571f57aced85fd5b9b25b4b34b9e837c307f"
-            },
-            "4": {
-              "text": "auditorSetup.tables.jobs.rows.0.4",
-              "source_sha256": "ac826c124cee33029a3981726770d9c2810ea5fcd03fc584ec88c3c3d93f1372"
-            }
-          },
-          "1": {
-            "0": {
-              "text": "auditorSetup.tables.jobs.rows.1.0",
-              "source_sha256": "db2d170ccef99633657d0d23f1791ad045468e6c09916e80494efb09690a4b12"
-            },
-            "1": {
-              "text": "auditorSetup.tables.jobs.rows.1.1",
-              "source_sha256": "039b8186fe846da6c4b6464927e9baea4d1917504f77fe1004f527cf7fc41cfa"
-            },
-            "2": {
-              "text": "auditorSetup.tables.jobs.rows.1.2",
-              "source_sha256": "59c45d089fa8d0cd30479bd63a310c4330840d69aec99ca52d87dc36bc61f600"
-            },
-            "3": {
-              "text": "auditorSetup.tables.jobs.rows.1.3",
-              "source_sha256": "b9ec3df9bc94ababae9f91781b2784040636f727fab5ee969f751a3f29574159"
-            },
-            "4": {
-              "text": "auditorSetup.tables.jobs.rows.1.4",
-              "source_sha256": "55715255d10c4011d9372b1590e0b7f6d6feb20ce3ad0164279c38add0ea4925"
-            }
-          },
-          "2": {
-            "0": {
-              "text": "auditorSetup.tables.jobs.rows.2.0",
-              "source_sha256": "92de1b1b538c29421647fbb5d033e3592f070465b1c563798f5f7c082d81bf5e"
-            },
-            "1": {
-              "text": "auditorSetup.tables.jobs.rows.2.1",
-              "source_sha256": "5671564fe892c677b1c2909ff7983369925308d5dc71e558d1348fb6b91d5675"
-            },
-            "2": {
-              "text": "auditorSetup.tables.jobs.rows.2.2",
-              "source_sha256": "bec1ce1616bb0ba646409702008bf1deafa753a04a54b7a85c32983b81010e25"
-            },
-            "3": {
-              "text": "auditorSetup.tables.jobs.rows.2.3",
-              "source_sha256": "f963fbf593af5e4f7de5c11ba8df8f60fda9c673b3ce8a9097efb3e81232d817"
-            },
-            "4": {
-              "text": "auditorSetup.tables.jobs.rows.2.4",
-              "source_sha256": "76a182564a8643a15ac765aaad2c64cb0c08c96e070ec5947fa855c825d70937"
-            }
-          }
-        }
-      },
-      "screens": {
-        "headers": {
-          "0": {
-            "text": "auditorSetup.tables.screens.headers.0",
-            "source_sha256": "e3b18983ca3eafeaf769b8f79021c857f390199da43a1583dc1046811a5b1055"
-          },
-          "1": {
-            "text": "auditorSetup.tables.screens.headers.1",
-            "source_sha256": "1e7b19335198675aecb9b6e9b070647153f203d1905a7d8cf06d09329f9fdad7"
-          },
-          "2": {
-            "text": "auditorSetup.tables.screens.headers.2",
-            "source_sha256": "a948d99e498d28b4d94f0bd146975fe1ba75ba69b294bc7bef64c0d5e338bc72"
-          },
-          "3": {
-            "text": "auditorSetup.tables.screens.headers.3",
-            "source_sha256": "ef0ecaad47f28d8651bdb180362a3944b09f380c7d54135b2965b8fec182e84a"
-          }
-        },
-        "rows": {
-          "0": {
-            "0": {
-              "text": "auditorSetup.tables.screens.rows.0.0",
-              "source_sha256": "516c7ac2ab8a1f2b7667d7622e3a5876c0307e243428131cb5b1ea273d944381"
-            },
-            "1": {
-              "text": "auditorSetup.tables.screens.rows.0.1",
-              "source_sha256": "2ab575f12b15d04f6c1b1fcccce9b3cec8befbda7de5dec01792fc1012623cd2"
-            },
-            "2": {
-              "text": "auditorSetup.tables.screens.rows.0.2",
-              "source_sha256": "a1b558ad10231f94440109d85c03a085520a43b4d43482957d32e969f43f4283"
-            },
-            "3": {
-              "text": "auditorSetup.tables.screens.rows.0.3",
-              "source_sha256": "bbbbe73228502db6d471fe91776d1b8808b0b61ee899cfc6dd84d7dd6d8917c3"
-            }
-          },
-          "1": {
-            "0": {
-              "text": "auditorSetup.tables.screens.rows.1.0",
-              "source_sha256": "57dfdf883b9a1b2b4ebe5d70570c1bf8fb3a88ec46da242c58c58590fa23a191"
-            },
-            "1": {
-              "text": "auditorSetup.tables.screens.rows.1.1",
-              "source_sha256": "b770e818b5055d7e009d5561467726040e2ab88c306800b21f7f8b6c97e018f8"
-            },
-            "2": {
-              "text": "auditorSetup.tables.screens.rows.1.2",
-              "source_sha256": "83c85d6b4ad5021d8d27f1705d6d923f02133d3bdf7af517222e90acafb93da0"
-            },
-            "3": {
-              "text": "auditorSetup.tables.screens.rows.1.3",
-              "source_sha256": "72546f6a8ac180619b5cae817b1769f8c6b0fe69acf2ce3d2f066c807a7e826a"
-            }
-          },
-          "2": {
-            "0": {
-              "text": "auditorSetup.tables.screens.rows.2.0",
-              "source_sha256": "f084dcb835fb700d01823ded6fb9e7f1bdec8c8467ab286ac1bcd20b25b1f437"
-            },
-            "1": {
-              "text": "auditorSetup.tables.screens.rows.2.1",
-              "source_sha256": "2e91c06abdc4329626acd8ecf4c08735c9d92d7d32fb20d982c25afbe709f56f"
-            },
-            "2": {
-              "text": "auditorSetup.tables.screens.rows.2.2",
-              "source_sha256": "498a62326df7819ab43c319f2a2397091b1b14202283ec1837152421b8bd049d"
-            },
-            "3": {
-              "text": "auditorSetup.tables.screens.rows.2.3",
-              "source_sha256": "dd2f0c04c680c589cbf5cc0bb1de27d522006c28d3c9f41c23e34d6598c8afa8"
-            }
-          },
-          "3": {
-            "0": {
-              "text": "auditorSetup.tables.screens.rows.3.0",
-              "source_sha256": "d73891f60c722468775c09d0aa7afabcf34b39dbd0ee4e5fd65616654f89ae12"
-            },
-            "1": {
-              "text": "auditorSetup.tables.screens.rows.3.1",
-              "source_sha256": "442b941ccb3298aadfef105678475c997c7221c82c6054031cc05a72b867f875"
-            },
-            "2": {
-              "text": "auditorSetup.tables.screens.rows.3.2",
-              "source_sha256": "b16e034959593e6245846dbf8c430521e9f8692725eaf214ca2f06bf44b168d0"
-            },
-            "3": {
-              "text": "auditorSetup.tables.screens.rows.3.3",
-              "source_sha256": "a9df34e98d4cbafed4ff1a1dbf03d24abde96f55464fb3ab592339214aac4833"
-            }
-          },
-          "4": {
-            "0": {
-              "text": "auditorSetup.tables.screens.rows.4.0",
-              "source_sha256": "495994bac5f955055bbbddcb84b9a53baed2c6c86b91c5fdc8c4485ae7222935"
-            },
-            "1": {
-              "text": "auditorSetup.tables.screens.rows.4.1",
-              "source_sha256": "7b697c279d3543a750c029e0325785aa33dd79cdeb1bacc6b4bce54a0d0507d8"
-            },
-            "2": {
-              "text": "auditorSetup.tables.screens.rows.4.2",
-              "source_sha256": "a16214f3f5f32ec55647287e69366edf937d555e93fc47b44f811b2fe9dd5af3"
-            },
-            "3": {
-              "text": "auditorSetup.tables.screens.rows.4.3",
-              "source_sha256": "90630ddfc833dee3987572b57bb8d29c09f0da1a67898fb62346f10e88d95a10"
-            }
-          },
-          "5": {
-            "0": {
-              "text": "auditorSetup.tables.screens.rows.5.0",
-              "source_sha256": "f58df0c96826e7bbee011270fbe22003381c4be372d1a3e717abf7de90b53b57"
-            },
-            "1": {
-              "text": "auditorSetup.tables.screens.rows.5.1",
-              "source_sha256": "7139a89ea44cb80129862da8a1a349a89a558cee3cd8ab66c958e53f5f1c4fbd"
-            },
-            "2": {
-              "text": "auditorSetup.tables.screens.rows.5.2",
-              "source_sha256": "a811c8f407c76033f8f45ae91460cd95d397393f94256c96612686480b7c51a5"
-            },
-            "3": {
-              "text": "auditorSetup.tables.screens.rows.5.3",
-              "source_sha256": "b31a902becfb9de2eb9ad00a277ce9deb821bfa539c353123b896af1ce6a87e9"
-            }
-          },
-          "6": {
-            "0": {
-              "text": "auditorSetup.tables.screens.rows.6.0",
-              "source_sha256": "0be03fda84dba669deea26967adb74ca76afa8cec2eeea8fac74285495987d19"
-            },
-            "1": {
-              "text": "auditorSetup.tables.screens.rows.6.1",
-              "source_sha256": "23826ea0853dbd1c71a6408aef9b49f5a56126ce74237c09db60f5d248e67530"
-            },
-            "2": {
-              "text": "auditorSetup.tables.screens.rows.6.2",
-              "source_sha256": "fa82dccd45174bfaad4d0c25aa8857f6b18de4265587df2672c34e060311f93c"
-            },
-            "3": {
-              "text": "auditorSetup.tables.screens.rows.6.3",
-              "source_sha256": "be1aee462a43c3ee5ce63f42dc3cdbbd54eca3679f63c94845569eef7f173365"
-            }
-          },
-          "7": {
-            "0": {
-              "text": "auditorSetup.tables.screens.rows.7.0",
-              "source_sha256": "6ba4696513c32ebbee8d054262385d6a0216fd4a39fc11352cfb19790206ccc3"
-            },
-            "1": {
-              "text": "auditorSetup.tables.screens.rows.7.1",
-              "source_sha256": "1e6a270cf0d6e38f53e94f6cb98e31935aa39ad773a1758861656c974d7c8700"
-            },
-            "2": {
-              "text": "auditorSetup.tables.screens.rows.7.2",
-              "source_sha256": "a2d2538d8eb898d484475c3819726fbcc89942f1336a04a2e27be34b5c95f090"
-            },
-            "3": {
-              "text": "auditorSetup.tables.screens.rows.7.3",
-              "source_sha256": "3417d5b5246c15ea95f69c3b15fe472a81cd965ea40888754e6cb965df4986b3"
-            }
-          },
-          "8": {
-            "0": {
-              "text": "auditorSetup.tables.screens.rows.8.0",
-              "source_sha256": "aedd2fe46899b266ab2f1e8b64a1d6a2db8f3dd41c795ea9ced61bc58f6ffa6e"
-            },
-            "1": {
-              "text": "auditorSetup.tables.screens.rows.8.1",
-              "source_sha256": "9dee6ff0e664a8e12833c8e25b35573c80da47da28501d9f55c0a9c7d2a6ea8b"
-            },
-            "2": {
-              "text": "auditorSetup.tables.screens.rows.8.2",
-              "source_sha256": "649ea06997bccb2df10aace70ae397c89c5f74d54bbd6f160b2a764e6f396df1"
-            },
-            "3": {
-              "text": "auditorSetup.tables.screens.rows.8.3",
-              "source_sha256": "58925bd72ad560d3dc0d183f76a35892fe7420acfc447d3c1bad84de519f7890"
-            }
-          }
-        }
-      },
-      "seeds": {
-        "headers": {
-          "0": {
-            "text": "auditorSetup.tables.seeds.headers.0",
-            "source_sha256": "964592e2ab386bb3b9855a77bdd94bc2a071a43234f9170f3d6700df3725ee50"
-          },
-          "1": {
-            "text": "auditorSetup.tables.seeds.headers.1",
-            "source_sha256": "4ab13c5f617486e3bd19d07ce044ac49c5f434752a8973fba92809e61382b817"
-          },
-          "2": {
-            "text": "auditorSetup.tables.seeds.headers.2",
-            "source_sha256": "6ccef631760434a9c166b4219d2346803514766579ffb41cad5368dab640a4db"
-          },
-          "3": {
-            "text": "auditorSetup.tables.seeds.headers.3",
-            "source_sha256": "4e855dba97f093419cdb62a39288c581b98ecc51b49aac1c8ff8932ef2f385f4"
-          }
-        },
-        "rows": {
-          "0": {
-            "0": {
-              "text": "auditorSetup.tables.seeds.rows.0.0",
-              "source_sha256": "24c3c9862d1d2129e5c7c4b1b888bd55fd59277c62e50062fb6bc527c757c2dd"
-            },
-            "1": {
-              "text": "auditorSetup.tables.seeds.rows.0.1",
-              "source_sha256": "13a5a4b86ab0465eb307eb2f18ffe54b1ff0706b80ad179d28915c97e64ce8fc"
-            },
-            "2": {
-              "text": "auditorSetup.tables.seeds.rows.0.2",
-              "source_sha256": "3377d70e9238d1791f1ee569d246d89481ac458b7a89eed9f865a5aeca528f94"
-            },
-            "3": {
-              "text": "auditorSetup.tables.seeds.rows.0.3",
-              "source_sha256": "a2fd700735148105e4c5c471592267fa79e917dd2bd3ba7dd4af3d28e22f868e"
-            }
-          },
-          "1": {
-            "0": {
-              "text": "auditorSetup.tables.seeds.rows.1.0",
-              "source_sha256": "abfab3cb6e74ca983f6e981874ea6ba4bdaf81a0d94c4eb04a423a0e6bf7b7b8"
-            },
-            "1": {
-              "text": "auditorSetup.tables.seeds.rows.1.1",
-              "source_sha256": "6b468e9fc4bca5b4ea99230d855469a5b0336900547cc503ac66f6d188b0c750"
-            },
-            "2": {
-              "text": "auditorSetup.tables.seeds.rows.1.2",
-              "source_sha256": "93c796e14402c2745b1de027dec6e1af2520df1b510d21d255b0fa54a3b132b2"
-            },
-            "3": {
-              "text": "auditorSetup.tables.seeds.rows.1.3",
-              "source_sha256": "325bb6d29585ba8bdf30a3b75d64060816aa6eb34f11a71bc854f419f5e3fe2c"
-            }
-          },
-          "2": {
-            "0": {
-              "text": "auditorSetup.tables.seeds.rows.2.0",
-              "source_sha256": "001052ee532dfefd99b576700ff22f7f5e65889c46e142fc93114f27054dcbde"
-            },
-            "1": {
-              "text": "auditorSetup.tables.seeds.rows.2.1",
-              "source_sha256": "9894089b807c0f865b224c64ec529e589444169d0bf04f339afcf6f3fe9e277f"
-            },
-            "2": {
-              "text": "auditorSetup.tables.seeds.rows.2.2",
-              "source_sha256": "930fd773f39f60b81e0c7f3b63c6dc3899b7317afabd8fd3d291b490b5fb5406"
-            },
-            "3": {
-              "text": "auditorSetup.tables.seeds.rows.2.3",
-              "source_sha256": "020556f813bff5a1f6c415489b61d0bcb2e4e75554e79e364349229a8e957898"
-            }
-          }
+          "text": "Documentation → Auditor Manual. This guide and the chapter on assessor work.",
+          "source_sha256": "218f342d87adcb72b661780061dfce0382379c7c642c9a66df95da067d50faa7"
         }
       }
     }
@@ -859,100 +887,100 @@
   },
   "knownDefaults": {
     "colActions": {
-      "text": "Aktionen",
-      "source_sha256": "5656f92db78df688863354be0c8795c8a786d2ee742231e0e8e6d99a430f240d"
+      "text": "Actions",
+      "source_sha256": ""
     },
     "colOs": {
-      "text": "Betriebssystem",
-      "source_sha256": "d73575eec0014b6172e403c3f5222074338e1568aae0f2fbebe6995927e96811"
+      "text": "Operating system",
+      "source_sha256": ""
     },
     "colPassword": {
-      "text": "Veröffentlichter Standard",
-      "source_sha256": "c9747501923a239ae4eaf23f717245abe6210e7d22d32e7b58fe64835205e523"
+      "text": "Published default",
+      "source_sha256": ""
     },
     "colPlatform": {
-      "text": "Plattform",
-      "source_sha256": "cdf648878bc01354ece4ab85c12169b13babf2d32b13dddcbb04c47dc8055a70"
+      "text": "Platform",
+      "source_sha256": ""
     },
     "colProduct": {
-      "text": "Produkt",
-      "source_sha256": "34b157607524c11c50670fe9194082bfed9e5fe45c0ecb7a435eab7d01856d0e"
+      "text": "Product",
+      "source_sha256": ""
     },
     "colProtocol": {
-      "text": "Dienst",
-      "source_sha256": "ecc4f77cf213133424a79389981368da6d212ef84d247a91be12da532863062f"
+      "text": "Service",
+      "source_sha256": ""
     },
     "colUsedFor": {
-      "text": "Verwendung",
-      "source_sha256": "947c0a678ed5984608fec8d1e424029d8eb4655b023782858ab519a7b90f5315"
+      "text": "Used for",
+      "source_sha256": ""
     },
     "colUsername": {
       "text": "Username",
-      "source_sha256": "fc309e30dbbe8a435efbdd0b7e382595932509ed56f140aa1759256b00485a18"
+      "source_sha256": ""
     },
     "colVendor": {
-      "text": "Hersteller",
-      "source_sha256": "32da517562d9698ec58c77afe07b0bb898efff69125543cd0be5e54999934120"
+      "text": "Vendor",
+      "source_sha256": ""
     },
     "intro": {
-      "text": "Öffentlich dokumentierte Werkskennwörter der Hersteller zur Haltungsbewertung. Ein Treffer bedeutet, dass ein gefährliches Standardkennwort noch in Gebrauch ist — auf ein plattformgerechtes Zufallskennwort wechseln. Das ist Liefernachweis, kein Met- oder Zertifizierungsanspruch.",
-      "source_sha256": "3abb7981b7daac33b576f9b5a8b0068bc1d54fa03706067701e9c308c8a7b8fe"
+      "text": "Publicly documented vendor factory passwords for posture assessment. A match means a dangerous default password is still in use — change it to a platform-appropriate random password. This is delivery evidence, not a Met or certification claim.",
+      "source_sha256": ""
     },
     "maskPasswords": {
-      "text": "Veröffentlichte Kennwörter ausblenden",
-      "source_sha256": "a11fe1af6f41b128052b9b2a24ba39576245fba623fd177efad1c1e96b59d1ee"
+      "text": "Mask passwords",
+      "source_sha256": ""
     },
     "searchAll": {
-      "text": "Alle Felder",
-      "source_sha256": "e976f86136b97771de0db83b5058db6f4f2eaf0b03274a03af7d02e084c4fd70"
+      "text": "All fields",
+      "source_sha256": ""
     },
     "searchField": {
-      "text": "Suchfeld",
-      "source_sha256": "f7561dd68da4bfb8b0de14000409f0ac2a6f47ae39cd942ecc854ca954816e3e"
+      "text": "Search field",
+      "source_sha256": ""
     },
     "searchOs": {
-      "text": "Betriebssystem",
-      "source_sha256": "d73575eec0014b6172e403c3f5222074338e1568aae0f2fbebe6995927e96811"
+      "text": "Operating system",
+      "source_sha256": ""
     },
     "searchPassword": {
-      "text": "Veröffentlichtes Kennwort",
-      "source_sha256": "38c390e3bc159d782d8c20ecceba4f4566e45c2881a31cf1f2751d1137e2f367"
+      "text": "Published password",
+      "source_sha256": ""
     },
     "searchPlatform": {
-      "text": "Plattform",
-      "source_sha256": "cdf648878bc01354ece4ab85c12169b13babf2d32b13dddcbb04c47dc8055a70"
+      "text": "Platform",
+      "source_sha256": ""
     },
     "searchQuery": {
-      "text": "Suchen",
-      "source_sha256": "dd097e77dd737a2ac71a1f2faa492711111dd78d77d8ae7d9067c57b01e78810"
+      "text": "Search",
+      "source_sha256": ""
     },
     "searchService": {
-      "text": "Dienst",
-      "source_sha256": "ecc4f77cf213133424a79389981368da6d212ef84d247a91be12da532863062f"
+      "text": "Service",
+      "source_sha256": ""
     },
     "searchUsername": {
       "text": "Username",
-      "source_sha256": "fc309e30dbbe8a435efbdd0b7e382595932509ed56f140aa1759256b00485a18"
+      "source_sha256": ""
     },
     "searchVendor": {
-      "text": "Hersteller",
-      "source_sha256": "32da517562d9698ec58c77afe07b0bb898efff69125543cd0be5e54999934120"
+      "text": "Vendor",
+      "source_sha256": ""
     },
     "tabCatalog": {
-      "text": "Kennwortkatalog",
-      "source_sha256": "891c293e94be7d73eee82c5fe4cb62d6cbecf52f6d2b99fac7a0c27bc16b0a02"
+      "text": "Password catalog",
+      "source_sha256": ""
     },
     "tabPatterns": {
-      "text": "Plattform-Kennwortmuster",
-      "source_sha256": "cd5721a9e1ea08c9e4e9c2beddebacf91dcb3beda04d198962fb5387dd2894c2"
+      "text": "Platform password patterns",
+      "source_sha256": ""
     },
     "tabSources": {
-      "text": "Wörterbuchquellen",
-      "source_sha256": "b5af253be991c96710bf8dd57e11265cbffaebb3034a7485aa67529c1844ec8c"
+      "text": "Dictionary sources",
+      "source_sha256": ""
     },
     "title": {
-      "text": "Bekannte Standardkennwörter",
-      "source_sha256": "1d15845e9a49496acd72b8156e5a3255f4c2d5e1d65921baa58d56216314083e"
+      "text": "Known default credentials",
+      "source_sha256": ""
     }
   },
   "quickSearch": {
@@ -1030,40 +1058,124 @@
     }
   },
   "technical": {
+    "resourceLabel": {
+      "text": "technical documentation",
+      "source_sha256": "5be516e52c11480489df05733e82c94464c15cbbaaf0a4f5acb9338cbea8fbba"
+    },
+    "title": {
+      "text": "Technical Documentation",
+      "source_sha256": "d9e472f50948919b7de17f323845791003026e68cd5487bccb650edfbdff625d"
+    },
+    "gateIntro": {
+      "text": "OpenAPI and Swagger UI are limited to Super Administrators and members of the well-known Developers group (",
+      "source_sha256": "42f4e635cf35461e265fe9540bf3dc868d49a17df3a6060d877168bac4afc505"
+    },
+    "gateIntroAfter": {
+      "text": "). Ordinary admins and auditors do not receive this class.",
+      "source_sha256": "6c38c2560d5c020f7ea58192dd740c91847a09a00d0e588d18f1179ae5269f95"
+    },
+    "honestyAlert": {
+      "text": "Technical reference for super administrators and developers. Use Swagger / OpenAPI for current route forms. Auth models follow docs/auth-architecture.md (admin session/token, agent-HMAC dual_mode inflow, enrollment bootstrap rest). The OpenAPI download is not a FedRAMP, CMMC, or FIPS certification package.",
+      "source_sha256": "aaba56621561634537c7ad64e9b5d71692d6050cb299179c17d457909e95e8d8"
+    },
+    "audience": {
+      "text": "This class is aimed at API users and developers who integrate with AIC Server. Operator runbooks are located under admin manuals. Assessor procedures lie beneath auditor manuals. Prefer those classes when the task is configuration or proof checking and not route forms.",
+      "source_sha256": "1a8c11712a0403bf7bb11b0678a045d6898a729fd675c3b929b2e2331b7e3f8f"
+    },
+    "howToTitle": {
+      "text": "How to use this class",
+      "source_sha256": "6dbd8e0f815db2418b91288bd2b949932527d86de88519287c2b180c2f843a43"
+    },
+    "howTo[0]": {
+      "text": "Open Swagger UI to check authenticated routes with your current session cookie or admin token header as documented in the security schemas.",
+      "source_sha256": "151822b33deb1f914edebe8ad173c4b78696b8a6e88173ca129cd6987d8e7264"
+    },
+    "howTo[1]": {
+      "text": "Download OpenAPI JSON for offline testing or client generation. Get it again after each server deployment, the routes changed.",
+      "source_sha256": "18774cbb4ebf64d08e962c1bded853277d3d881c5317ff6707a7bd4bb8b3d341"
+    },
+    "howTo[2]": {
+      "text": "Agent-Drahtrouten erwarten HMAC-Header, wenn Agenten signieren. Unsigniert wird nur akzeptiert, solange AGENT_HMAC_ENFORCE_MODE=dual_mode gilt.",
+      "source_sha256": "39646376bd78b7c28e590bab1cb648c621129254820461a2e00ae5d22fbf07db"
+    },
+    "howTo[3]": {
+      "text": "Startup wizard admin routes live under /api/admin/startup-wizard. Storage paths for messaging secrets stay in AppConfig — never in wizard response JSON.",
+      "source_sha256": "b93629c813d42a2ef864bb83d9e5f5549eac2b61fa9d96d7811bc6c2e3263c53"
+    },
+    "howTo[4]": {
+      "text": "Prefer docs under /docs/admin for operator runbooks. This page is for API users and developers.",
+      "source_sha256": "1253e2b0db2f4a6194e30257c028842f4dd3efc8af6f8a646b2c0f6e780d7a0d"
+    },
+    "limitsTitle": {
+      "text": "Ehrliche Grenzen",
+      "source_sha256": "265914c30906eef21589562a0f96cfb55880e629470b59cc83a8fd9d0b7bb546"
+    },
+    "limits[0]": {
+      "text": "OpenAPI coverage follows declared routes. A missing operation in the UI is not proven just by downloading this file.",
+      "source_sha256": "774d1ff0ca38b6ee7f49e97fab74eff6c2db37ba707b7a7e54e8fa767ee29147"
+    },
+    "limits[1]": {
+      "text": "Dual-mode agent HMAC is a run-in stance, not an assertion that every agent is already signed.",
+      "source_sha256": "6af0bf1a58b6f500e8d64fd9f3080d1d8fd3fe0574aba1519b656144658583da"
+    },
+    "limits[2]": {
+      "text": "Don’t treat successful Swagger calls as evidence of a completed ATO — keep this work in the assessment binder and in your SSP process.",
+      "source_sha256": "8db541e1a096c4efcf68c0bada5dc0549bf9f5060c854d88cd7edc103dbd76b8"
+    },
+    "swaggerUi": {
+      "text": "Swagger UI",
+      "source_sha256": "d841a6545e7f784bf7a21f6b5bfe0f069fb9651a701279cbba4232f06bcb39f6"
+    },
+    "downloadOpenApi": {
+      "text": "OpenAPI-JSON herunterladen",
+      "source_sha256": "d6b98770f09a01bb95be1ff165a8703ab71baa2605657107fa2337a7b6af5d1c"
+    },
+    "viewRaw": {
+      "text": "OpenAPI roh anzeigen",
+      "source_sha256": "edb3f19b664956a3d4ffe1338d03ca52028d993e0e23159bca74867698791e95"
+    },
+    "loadError": {
+      "text": "OpenAPI JSON could not be loaded. Confirm that you have technical docs permission and the session is still valid.",
+      "source_sha256": "b1a413e0885799b0c30faa7c403607e72abc21abf35cec5980713e3758e678d7"
+    },
+    "loaded": {
+      "text": "OpenAPI-Dokument geladen ({{count}} Zeichen).",
+      "source_sha256": "5d567a28ed0277e3db3ecaec1cf42d24e1d31ecaf727344f52e7f020faa91ee8"
+    },
     "howTo": {
       "0": {
-        "text": "technical.howTo.0",
-        "source_sha256": "c49199e605eec01c58c9e5b4438cb2b33f4f6cf0572e509d8783599aea526315"
+        "text": "Open Swagger UI to try authenticated routes with your current session cookie or admin token header as documented in the security schemes.",
+        "source_sha256": "455a79a02f04ad7248d8a5a02c779031cd1005fe3176120a1bc5fe76ab37220c"
       },
       "1": {
-        "text": "technical.howTo.1",
-        "source_sha256": "b4ba313b3efc8f55a03aa0debc5d8ccae54619ecf66dc9a627491b1390dca4bc"
+        "text": "Download OpenAPI JSON for offline review or client generation; re-fetch after each server deploy that touches routes.",
+        "source_sha256": "97e4fb65711ff740df64cd1e0222d6460f283cb2ea8941b7c193fb721fcb36b3"
       },
       "2": {
-        "text": "technical.howTo.2",
-        "source_sha256": "19eaaba4886b3ef89ea3e31b0ea33ef0cc2cd363e7aad33bf5a09cdb035b10f9"
+        "text": "Agent wire routes expect HMAC headers when agents sign; unsigned is still accepted only while AGENT_HMAC_ENFORCE_MODE=dual_mode.",
+        "source_sha256": "b6119999574f9244c951c36c3281995c78bde67a5c217d49a6d419e4720cb411"
       },
       "3": {
-        "text": "technical.howTo.3",
-        "source_sha256": "87df08db2ef5d06ca0b037ab3e469539a93c8ea1b0a6f1e405767d0a53440cb6"
+        "text": "Startup wizard admin routes are under /api/admin/startup-wizard; Messaging email save paths remain /api/offline/messaging/email*.",
+        "source_sha256": "0cb2e44ab491db274f7001a79df736c7cb55d2b5ff6f22c6bb39472be8ae93b1"
       },
       "4": {
-        "text": "technical.howTo.4",
-        "source_sha256": "151212c0c20b559b8165fcf0ac9a08a0951b60f43048d93d07ec2d2fa96e5a72"
+        "text": "Prefer docs under /docs/admin for operator runbooks; this page is for API consumers and developers.",
+        "source_sha256": "a2402179d7a2342edbfb8bc4b6885613e20b28b4aa2297015f257c402e530b98"
       }
     },
     "limits": {
       "0": {
-        "text": "technical.limits.0",
-        "source_sha256": "d15af354a33ee4686ebacab1d2cd9556620050eb97f76633835007679841f966"
+        "text": "OpenAPI coverage tracks declared routes; a missing operation in the UI is not proven by downloading this file alone.",
+        "source_sha256": "a7cece47cc7c818cb4f7ef46df31be252842e7c5d63e733b90f048d227b24f93"
       },
       "1": {
-        "text": "technical.limits.1",
-        "source_sha256": "232fdc50e3f9081224dcd2fca1c8f824ac016df7e85869d279df120cfba1117b"
+        "text": "Examples may omit lab-only or feature-gated routes until they are declared in the OpenAPI set.",
+        "source_sha256": "87cf0af998043d5e1bc94f4b1175f8b2322309104816d728a1db981f129d7141"
       },
       "2": {
-        "text": "technical.limits.2",
-        "source_sha256": "fbbb82dfc4d3089b7995bb118d2821fd10adac4bf058b2f8f917d4b6197a242e"
+        "text": "This page is not a certification package — keep SSP evidence in the Assessment Binder.",
+        "source_sha256": "da732f454edd8d9203e41694e233b4b03cbd71c73872ed9525621aa3d217911a"
       }
     }
   },
