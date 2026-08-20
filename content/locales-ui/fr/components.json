@@ -235,8 +235,108 @@
       "source_sha256": "e87ba7a0b779d8b797f86d19604504496f23b4d1e31ed4721d9dc8634172b723"
     },
     "fileTransferHint": {
-      "text": "Envoyer copie le fichier vers l'ordinateur distant. SSH utilise SFTP vers aic-transfer dans le répertoire personnel du compte. Bureau à distance Windows utilise le dossier aic-transfer du profil utilisateur.",
-      "source_sha256": "806c26756dc9086a8690c957832613077db17d3368365840c6fb955f1ec2c0d7"
+      "text": "Envoyer copie le fichier sur l’ordinateur distant. SSH utilise SFTP vers aic-transfer dans le répertoire personnel du compte. Le Bureau à distance Windows utilise le dossier aic-transfer du profil. Les noms en double sont renommés par défaut (report-1.pdf). Les fichiers système et sensibles ne peuvent pas être écrasés.",
+      "source_sha256": "401a131faa76f0da7e90b37204561c1a23f3616c5180cccae9f6c35b42f4d4cf"
+    },
+    "targetDirectoryBefore": {
+      "text": "Dossier cible avant l’envoi ({{path}})",
+      "source_sha256": "27a26320b40290e6ca774738e239ada3d693ad4ceb5a08331f82900a1bf68032"
+    },
+    "targetDirectoryAfter": {
+      "text": "Dossier cible après l’envoi",
+      "source_sha256": "91e7cde23fce41a48108b515f7fd3bc1339283f7ccfe3cdd38b0046d4ce6ee36"
+    },
+    "targetDirectoryEmpty": {
+      "text": "Ce dossier est vide.",
+      "source_sha256": "bd88d713ecd33916fd3cc729c91257813f1306ea31e4ccc814b7722591ec63d1"
+    },
+    "targetDirectoryLoadFailed": {
+      "text": "Le dossier cible n’a pas pu être répertorié. Le fichier n’a pas été envoyé.",
+      "source_sha256": "288c6fcb8b794029e154f33047eea602fc18ca32ace0c3309163b0eea9733173"
+    },
+    "targetDirectoryListedAt": {
+      "text": "Répertorié {{when}}",
+      "source_sha256": "df1674250eeb6401b818435cbab0fa3055532c7b55b76838df54381a10557c02"
+    },
+    "targetDirectoryTable": {
+      "text": "Contenu du dossier cible",
+      "source_sha256": "92eb0d336c009b21b112e2b5e42a1d70c3c0bfc1cdb7ff8dc703b921a51b0400"
+    },
+    "colName": {
+      "text": "Nom",
+      "source_sha256": "dcd1d5223f73b3a965c07e3ff5dbee3eedcfedb806686a05b9b3868a2c3d6d50"
+    },
+    "colType": {
+      "text": "Type",
+      "source_sha256": "baaddf70fb5d432b8bd948ef91d6f910124a6d138edae4d5f000c4610ddc8eae"
+    },
+    "colSize": {
+      "text": "Taille",
+      "source_sha256": "1af851907331c0ed99e7c63b4e55df808bc5fc4c990a1cf80ca8c0f76daf1f3b"
+    },
+    "colModified": {
+      "text": "Modifié",
+      "source_sha256": "e8ce5dcaf408935ff76747226d2e8bee4319a2f593c1d7a838115e56183d1f37"
+    },
+    "colDelta": {
+      "text": "Changement",
+      "source_sha256": "c0bf75bd78bf9572596720d596bd5a20a5b9145cde0fe50dec1e783cb184d69b"
+    },
+    "typeFile": {
+      "text": "Fichier",
+      "source_sha256": "50009ce1da4d15e1c4a04024df691eed5f0d598e2c4c67092f205366d0adf99e"
+    },
+    "typeDirectory": {
+      "text": "Dossier",
+      "source_sha256": "74ccd43303847f2655300641a934959cdb11689ce171aa0f00faa92917fbd340"
+    },
+    "conflictPolicy": {
+      "text": "Si le nom existe déjà",
+      "source_sha256": "f75b36ad950f3091f666b029e020c34c4b8c27e645ebf7b07e01c27b1266f919"
+    },
+    "conflictPolicyAria": {
+      "text": "Règle de conflit lorsque le nom de fichier existe déjà",
+      "source_sha256": "2d7ebcf1b4c541e09799a03f0e4dc0aac167e5ac257419cb79d2bd3a23d86507"
+    },
+    "conflictRename": {
+      "text": "Renommer (report-1.pdf)",
+      "source_sha256": "6bd59ae473cbe0d36c324f15c007a80a6ecaa659cb74daed1f40c407ce829b78"
+    },
+    "conflictOverwrite": {
+      "text": "Remplacer (jamais un fichier système ou sensible)",
+      "source_sha256": "3d4cf3e19b69548ec19de85e655576ab409bb9bd67bddf4428ba1b5de3b8120c"
+    },
+    "conflictSkip": {
+      "text": "Ignorer",
+      "source_sha256": "28d03596d24eeb4eab2d6fe21ca1cb95be7cb1fa6f92933db05e2cc4f4cdfa06"
+    },
+    "conflictFail": {
+      "text": "Arrêter et signaler le conflit",
+      "source_sha256": "d1965e241626543b9996562755831e751ae07bd6d6ce39c5d0b08daac4ae4e4d"
+    },
+    "uploadSkipped": {
+      "text": "{{name}} a été ignoré car ce nom existe déjà",
+      "source_sha256": "3555b8e27aab1d0b3e36dba68e7aae76fb6bb013892f3012bd6757f1f5dc77b6"
+    },
+    "deltaAdded": {
+      "text": "Ajouté",
+      "source_sha256": "6b02e0d363a4af1c95eef50364bb0202c8b250aa05a48a69e68fd7787b4b0632"
+    },
+    "deltaReplaced": {
+      "text": "Remplacé",
+      "source_sha256": "27386b1c065f138e428168700e9e6086653b6fce13cac696bada813cd6248ebb"
+    },
+    "deltaRenamed": {
+      "text": "Renommé",
+      "source_sha256": "05487af3f074b4f31e4f9a1ec75044ab182f037a7978e1a8909c42103fb1297a"
+    },
+    "deltaUnchanged": {
+      "text": "Inchangé",
+      "source_sha256": "88b6f7429ce74e858aaf5913d19440c3cc49af1ef44e53ac6dccaf30c01f4fd0"
+    },
+    "deltaSkipped": {
+      "text": "Ignoré",
+      "source_sha256": "12698ce1ea5cd4ab13ff4b7e6b1239908c41a4b2dfa0c2661cfb53fc2aa71bd0"
     },
     "fileTransferBlocked": {
       "text": "Ce protocole ne peut pas recevoir de fichiers",
@@ -963,6 +1063,80 @@
         "text": "Email and SMS messaging configuration.",
         "source_sha256": ""
       }
+    }
+  },
+  "pickList": {
+    "useTyped": {
+      "text": "Utiliser la valeur saisie",
+      "source_sha256": "5b8e3344366732f64e460184834fc1ad8972b3cdaac147d9a337182553d72d12"
+    },
+    "loading": {
+      "text": "Chargement de la liste des options…",
+      "source_sha256": "23deb5d89c4e6aafa17cdd41d449a518b47f50866539ba7b99e9ea1e83fa360e"
+    },
+    "loadFailedTypeable": {
+      "text": "La liste des options n'a pas pu être chargée. Rien ne manque dans l'enregistrement — saisissez la valeur.",
+      "source_sha256": "2e2a132d4fda6e73708e4849accb82fa17f0233235430f1a88183a60889a7c3d"
+    },
+    "loadFailed": {
+      "text": "La liste des options n'a pas pu être chargée. Réessayez dans un instant.",
+      "source_sha256": "79a99f7fb578eefa132bb3d8e5a6b55f3692156af5542cf095a707950d5886ba"
+    },
+    "selected": {
+      "text": "Choisi dans la liste : {{label}}",
+      "source_sha256": "dd73dc107db06809090c1fc84f3c42a938135958da05fc1534bb4e02b5c2d34e"
+    },
+    "typedValue": {
+      "text": "Valeur saisie utilisée : {{text}}. Elle ne figure pas parmi les enregistrements listés.",
+      "source_sha256": "ea0d98b2f9fae03b66f006352f913e5f2f5b4182a227c3e0b675e2d92a8a9e35"
+    },
+    "emptyTypeable": {
+      "text": "Aucune option n'est encore disponible. Vous pouvez saisir une valeur.",
+      "source_sha256": "5b5d5ce1b989800d37fb5099bee6ec1cc6dfa3d4807e31cda9f5bdb6a3cace17"
+    },
+    "empty": {
+      "text": "Aucune option n'est encore disponible.",
+      "source_sha256": "4edf0329bddd4305d9b3063e31fbae68cbb48297df6f7a2ce33925c728bb9b96"
+    },
+    "readyTypeable": {
+      "text": "Choisissez l'une des {{count}} options, ou saisissez votre propre valeur.",
+      "source_sha256": "e1b7915a48a5c63b3ca8130aaaca30c551eb8069c1bf461089bae9fdc53d20f3"
+    },
+    "ready": {
+      "text": "Choisissez l'une des {{count}} options.",
+      "source_sha256": "6aaa6f6221a515c96ce3fb5ef7036ed9223c09c892abdd4ff47c418407577c93"
+    },
+    "loadFailedShort": {
+      "text": "Options indisponibles",
+      "source_sha256": "0b241147ff5f6cf5fd61f0d6e06e1f111e8420caee81199a45608e073aef9ff3"
+    },
+    "noMatchTypeable": {
+      "text": "Aucune correspondance — la valeur saisie sera utilisée telle quelle",
+      "source_sha256": "72de3a9a48f98b65c108f9d56becdba02ab57bf05117f5a8099a7d9bf13eec47"
+    },
+    "noMatch": {
+      "text": "Aucune correspondance",
+      "source_sha256": "cd8d844d2c3dedc1f6d5c56924a9f743bba1fc43278772da035935446c2db0f5"
+    },
+    "open": {
+      "text": "Afficher les options",
+      "source_sha256": "8c4cc2a5a0c9bb18a701c378b1b61606a1d46d139d8ca868bac79c9c0f40cb4c"
+    },
+    "close": {
+      "text": "Masquer les options",
+      "source_sha256": "e548dcb812c8b0623b8b031fd9fd106e90a9909a3f56ba280c5c3dac0009bffd"
+    },
+    "clear": {
+      "text": "Effacer",
+      "source_sha256": "83b12c2216efb4fdc924e1deb5182e905e4926ed0c1c324d467107f46d5a26a9"
+    },
+    "retry": {
+      "text": "Réessayer",
+      "source_sha256": "942087cc2d41e01304b7195558d093d10c72af8e838c7556d6a02d471ee71852"
+    },
+    "retryHint": {
+      "text": "Recharger cette liste",
+      "source_sha256": "51be24e6651461a5824ec371a5b1bf5c7c6e7f84a0a90af5438e3c05d4403aec"
     }
   }
 }
