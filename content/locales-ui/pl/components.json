@@ -914,6 +914,30 @@
       "sessions": {
         "text": "Sesje na żywo i dowody sesji.",
         "source_sha256": "65638c307c81285518e1ff487eaa3dceb3e49bc2969369fe1e857ee3dc064735"
+      },
+      "credentials": {
+        "text": "Reveal and manage managed local identities.",
+        "source_sha256": "ddf2fc29b053e6fd35eac3e33090fb8f18662fba6e562afa96991e63edf3ad14"
+      },
+      "privilege_elevation": {
+        "text": "One-time token elevation and direct privileged membership activations.",
+        "source_sha256": "b3fa78236de633696cba5ab03fffbc8d38a76f6900cab7f9ce193b0aaa6ff861"
+      },
+      "directory": {
+        "text": "Local users, groups, enrollment, and workstation assignments.",
+        "source_sha256": "244b58026554ffbf9d1829c4bcae657f1ad8146fe53a64231d794048aadf8cfa"
+      },
+      "configuration_scope": {
+        "text": "Agent settings are what endpoints receive; server settings apply to this host only.",
+        "source_sha256": "19338068adf64d0bf58828fe9cceb499b65308e3ced203f413bd47caa55b2049"
+      },
+      "lab_advanced": {
+        "text": "Advanced lab surfaces for discovery and drills.",
+        "source_sha256": "f7108d6e82d6f95e1daf6e717065a0a3e044c5f7deffaa1f40ef16c3946ae5b2"
+      },
+      "operator_communications": {
+        "text": "Email and SMS messaging configuration.",
+        "source_sha256": "a6223f5e01e38c80f720c7df4691bf5cd1b49662eae9ebc2ff1e733ec0fbd2c9"
       }
     },
     "intro": {
@@ -940,6 +964,18 @@
       "agent": {
         "text": "Agent",
         "source_sha256": "11b39c93777e8f1f3983bdba7c72b22fe68cfea20c677e9de53e17cb7dbfb19f"
+      },
+      "platform": {
+        "text": "Configuration for this AIC Server process: operational settings, TLS, identity providers, crypto providers, and HSM connections.",
+        "source_sha256": "5d261d6667101b66f45f4be99de5acaad2e232a6c7c441473c1285577aa4c042"
+      },
+      "access": {
+        "text": "Access and identity surfaces for this enclave.",
+        "source_sha256": "e2f8a299f5911a3822dafcb896e2e0c0ce4218715fe2d024310e7e6f302fab82"
+      },
+      "auditing": {
+        "text": "Audit, evidence, and assessor-facing surfaces.",
+        "source_sha256": "74440d3a3924790dfadc5bc88d8fcce515dd51123052b94124e9a43df2e259ae"
       }
     }
   },
@@ -1051,6 +1087,334 @@
     "loadingAria": {
       "text": "Ładowanie {{label}}",
       "source_sha256": "e3a1d5c26a1c67c9dd315de464e8eb146b6485f5a51b6833665ed696a7d0d1d1"
+    },
+    "httpStatus": {
+      "text": "HTTP {{status}}",
+      "source_sha256": "1ff765218238b55d8a52932e2f7f3e7d5795e71613a4877f9898b12a070d02f5"
+    },
+    "serverCode": {
+      "text": "code {{code}}",
+      "source_sha256": "5cba9c18c6796cabf47e0bcbf16e4f419ec20bcbf7e7ee290b37807503126071"
+    },
+    "requiredPermission": {
+      "text": "permission {{permission}}",
+      "source_sha256": "21bb6439d4d2994588728c105cf52d4c6bc9dd76d4c8e2252d7b214fd736ed3f"
+    },
+    "requestId": {
+      "text": "request {{id}}",
+      "source_sha256": "2080b094bffdeaaa98c2e81ca3225dc161ac0e557956a29eaaefefd8f0aef9ae"
+    },
+    "unavailableDetailed": {
+      "text": "Access to {{resource}} could not be verified. The server did not respond successfully. Refresh the page or try again.",
+      "source_sha256": "111fc8236203cb86bdfec327df1a26dd1d3160d0ac304af18e89ba28c3d4731f"
+    },
+    "denied": {
+      "text": "You do not have permission to view {{resource}}. Contact an administrator if you need access.",
+      "source_sha256": "af6b19b1b262212bf0ac75d46bdcbefed2c7341d189a4686cc2e64dcf2d6f029"
+    },
+    "unavailable": {
+      "text": "Access to {{resource}} could not be verified. The server did not respond. Refresh the page or try again.",
+      "source_sha256": "fbd742fa6153cfb8d717dfe9e7e10d795185184f43f0ace26e35711760ea5c14"
+    },
+    "defaultResource": {
+      "text": "this page",
+      "source_sha256": "270e420dd35f9c27db37b181c6ed4e478216044423f94afbfe6ca4946523af2b"
+    },
+    "loadingLabel": {
+      "text": "page permissions",
+      "source_sha256": "c08dbfdf9887b0bcfd833ef0f1c44c83ecc3911440b80abb5c853b5389a1d8d5"
+    }
+  },
+  "pickList": {
+    "useTyped": {
+      "text": "Use what you typed",
+      "source_sha256": "5b8e3344366732f64e460184834fc1ad8972b3cdaac147d9a337182553d72d12"
+    },
+    "loading": {
+      "text": "Loading the list of options…",
+      "source_sha256": "23deb5d89c4e6aafa17cdd41d449a518b47f50866539ba7b99e9ea1e83fa360e"
+    },
+    "loadFailedTypeable": {
+      "text": "The list of options could not be loaded. Nothing is missing from the record — type the value instead.",
+      "source_sha256": "2e2a132d4fda6e73708e4849accb82fa17f0233235430f1a88183a60889a7c3d"
+    },
+    "loadFailed": {
+      "text": "The list of options could not be loaded. Try again in a moment.",
+      "source_sha256": "79a99f7fb578eefa132bb3d8e5a6b55f3692156af5542cf095a707950d5886ba"
+    },
+    "selected": {
+      "text": "Chosen from the list: {{label}}",
+      "source_sha256": "dd73dc107db06809090c1fc84f3c42a938135958da05fc1534bb4e02b5c2d34e"
+    },
+    "typedValue": {
+      "text": "Using the value you typed: {{text}}. It is not one of the listed records.",
+      "source_sha256": "ea0d98b2f9fae03b66f006352f913e5f2f5b4182a227c3e0b675e2d92a8a9e35"
+    },
+    "emptyTypeable": {
+      "text": "There is nothing to choose from yet. You can type a value.",
+      "source_sha256": "5b5d5ce1b989800d37fb5099bee6ec1cc6dfa3d4807e31cda9f5bdb6a3cace17"
+    },
+    "empty": {
+      "text": "There is nothing to choose from yet.",
+      "source_sha256": "4edf0329bddd4305d9b3063e31fbae68cbb48297df6f7a2ce33925c728bb9b96"
+    },
+    "readyTypeable": {
+      "text": "Pick one of {{count}} options, or type your own value.",
+      "source_sha256": "e1b7915a48a5c63b3ca8130aaaca30c551eb8069c1bf461089bae9fdc53d20f3"
+    },
+    "ready": {
+      "text": "Pick one of {{count}} options.",
+      "source_sha256": "6aaa6f6221a515c96ce3fb5ef7036ed9223c09c892abdd4ff47c418407577c93"
+    },
+    "loadFailedShort": {
+      "text": "Options unavailable",
+      "source_sha256": "0b241147ff5f6cf5fd61f0d6e06e1f111e8420caee81199a45608e073aef9ff3"
+    },
+    "noMatchTypeable": {
+      "text": "No match — what you typed will be used as entered",
+      "source_sha256": "72de3a9a48f98b65c108f9d56becdba02ab57bf05117f5a8099a7d9bf13eec47"
+    },
+    "noMatch": {
+      "text": "No match",
+      "source_sha256": "cd8d844d2c3dedc1f6d5c56924a9f743bba1fc43278772da035935446c2db0f5"
+    },
+    "open": {
+      "text": "Show options",
+      "source_sha256": "8c4cc2a5a0c9bb18a701c378b1b61606a1d46d139d8ca868bac79c9c0f40cb4c"
+    },
+    "close": {
+      "text": "Hide options",
+      "source_sha256": "e548dcb812c8b0623b8b031fd9fd106e90a9909a3f56ba280c5c3dac0009bffd"
+    },
+    "clear": {
+      "text": "Clear",
+      "source_sha256": "83b12c2216efb4fdc924e1deb5182e905e4926ed0c1c324d467107f46d5a26a9"
+    },
+    "retry": {
+      "text": "Retry",
+      "source_sha256": "942087cc2d41e01304b7195558d093d10c72af8e838c7556d6a02d471ee71852"
+    },
+    "retryHint": {
+      "text": "Retry loading this list",
+      "source_sha256": "51be24e6651461a5824ec371a5b1bf5c7c6e7f84a0a90af5438e3c05d4403aec"
+    }
+  },
+  "principalField": {
+    "helper": {
+      "text": "The person this decision is attributed to.",
+      "source_sha256": "a82cdb7f1733661f365b73b17c264af63de025b10adae0d02c3cbbe7eda0bac3"
+    },
+    "manualHint": {
+      "text": "Pick a person from the directory, or type their identifier if they are not listed.",
+      "source_sha256": "02def31c66f9faa5087feff6c098aefc29bf4e005eb714c245f7b57527435220"
+    }
+  },
+  "controlRefField": {
+    "helper": {
+      "text": "The catalog control this finding tracks. The identifier is an association, not a verdict.",
+      "source_sha256": "ed4ea7ca37a36664401d0f91c78553dbb459e963b9a525351c70bdb6c466d180"
+    },
+    "manualHint": {
+      "text": "Pick a control from the catalog, or type a reference the catalog does not carry, for example AC-6.",
+      "source_sha256": "f02f35aea36509654696e2a5017209ad21f0447efeb4ec1e51573097cde53c9d"
+    }
+  },
+  "iamUserGroupField": {
+    "helper": {
+      "text": "The IAM user group this policy applies to.",
+      "source_sha256": "eb9d139813fc6fb3c9910aba5f53ecdeb388e5c8deb6d6aa1d674dca49d0bc52"
+    },
+    "manualHint": {
+      "text": "Pick a user group, or type its identifier if it is not listed.",
+      "source_sha256": "bfa451a90905d55505bbeb529e31936085fe863f1b8f7b1cb284b9a5ab667090"
+    }
+  },
+  "machineScopeField": {
+    "helper": {
+      "text": "When set, uses that machine's effective session-control policy. Leave empty for the global policy.",
+      "source_sha256": "df027359637d7fb4bd105c1fd9ba3b0cdcc050a903f9a9880883b06b3dfd3865"
+    },
+    "manualHint": {
+      "text": "Pick a machine, or type its identifier if it is not listed.",
+      "source_sha256": "3e944c1672f9d3ad4ddfed69b4382d515cf34f6e67d86d8d13eb25c03201c379"
+    }
+  },
+  "endpointField": {
+    "helper": {
+      "text": "The enrolled endpoint this assignment applies to.",
+      "source_sha256": "3b447258c4232bccdab6f66651e5c31cac230036e705065c084244487def0030"
+    },
+    "manualHint": {
+      "text": "Pick an endpoint, or type its machine identifier if it is not listed.",
+      "source_sha256": "14cd3016f7592db0997e25ac88e4e87d7351b442b49f75258767dabd175ecb6b"
+    }
+  },
+  "connectionPointField": {
+    "helper": {
+      "text": "The SSH, RDP, or VNC connection target this right applies to.",
+      "source_sha256": "4d59581efcd8babd3e457bf6e65af8cad28cf357faf2a6d75ea76f4f990c125d"
+    },
+    "manualHint": {
+      "text": "Pick a connection point, or type its identifier if it is not listed.",
+      "source_sha256": "28b7167c3cefd481ba9f0f1d2920d39a425b78d9b131e1dd3c53bb1bd9ca6d45"
+    }
+  },
+  "workstationField": {
+    "helper": {
+      "text": "Assignable end-user workstation (PAM target).",
+      "source_sha256": "674fc16a633f6da22bdccd86853e3f40a4e31c09ce4d6ba022a2a5016e76a7f0"
+    },
+    "manualHint": {
+      "text": "Pick a workstation, or type its system key if it is not listed.",
+      "source_sha256": "7fba7e21b7591fc04f493beaf03165426d60fefb6c05744410beb61fc67d6a2b"
+    }
+  },
+  "endpointIdentityField": {
+    "helper": {
+      "text": "A local account on the selected machine.",
+      "source_sha256": "9e2915b217d6e5e927535d0cd55c3667f17a5a262c7fe87d1ce8d8622c9a2973"
+    },
+    "manualHint": {
+      "text": "Pick a managed account, or type a local or domain account name if it is not listed.",
+      "source_sha256": "27baf0130f433b3f48e0991200e5fa60a185b852af4a302aea6b533995b77f4d"
+    }
+  },
+  "tenantField": {
+    "helper": {
+      "text": "The multi-tenant record this marking applies to.",
+      "source_sha256": "5f7405545172f5fce4898ba8e47b342c3bede3dad693c80612b1ad6e7bb68922"
+    },
+    "manualHint": {
+      "text": "Pick a tenant, or type its identifier if it is not listed.",
+      "source_sha256": "f9f88f4d19a811093719dadf3ff4b6c23e2ea6f1439d99c31d03c53e13ec3374"
+    }
+  },
+  "systemGroupField": {
+    "helper": {
+      "text": "The system group this marking applies to.",
+      "source_sha256": "db3603c3cc89b0c0f0a096e22faf4dfe3c9d35e4ce22bad0942e187f99b6de2b"
+    },
+    "manualHint": {
+      "text": "Pick a system group, or type its identifier if it is not listed.",
+      "source_sha256": "745669330be4e07e1ee2a43061c6d2b8db4cd3e13fbab567390d1a98d62d07d9"
+    }
+  },
+  "frameworkTagsField": {
+    "helper": {
+      "text": "Tags only — no control is marked met. Pick a published framework, or type a tag the registry does not carry.",
+      "source_sha256": "5619ca2b69a7a16f201829de383f5b4c5472e6db711767752325319e86d358db"
+    },
+    "manualHint": {
+      "text": "Pick a framework, or type a tag such as cmmc-l2.",
+      "source_sha256": "88a05feaa1dad2ab729cd934855c2ec2826bd234e5e0275744d6cac2eb43cca5"
+    }
+  },
+  "controlTagsField": {
+    "helper": {
+      "text": "Association tags only. Pick a catalog control, or type a reference the catalog does not carry.",
+      "source_sha256": "d6124fcb522e6bcb449899fcff413e9481963e428bacc8af786a2cc4506c070b"
+    }
+  },
+  "iamRoleField": {
+    "helper": {
+      "text": "The IAM role this policy applies to.",
+      "source_sha256": "e4893fb5a3dc859ae2cb1b6262f4d5520a744c4556cde77a5d0cb2deb55b9def"
+    },
+    "manualHint": {
+      "text": "Pick a role, or type its slug if it is not listed.",
+      "source_sha256": "b3d93a8bc66a52dbc6145337f5edf1be7b200245d8d56e572474bac3ccf5c61b"
+    }
+  },
+  "enclaveField": {
+    "helper": {
+      "text": "The recorded enclave boundary this flow uses.",
+      "source_sha256": "3bd7d68e203f8cf290c92a36b52ea95954f822f878631062a2ebdcc45f3d2edd"
+    },
+    "manualHint": {
+      "text": "Pick an enclave, or type its identifier if it is not listed yet.",
+      "source_sha256": "072824fe9bf49ac002af3b746dd955aef70659aa34071311ac972c03b8472ed2"
+    }
+  },
+  "incidentTicketField": {
+    "helper": {
+      "text": "Optional incident or external ticket identifier for this request.",
+      "source_sha256": "7e7c731accadefbb96ecc3aa17c63afa998c79a248c446b20efbf39dd0fae003"
+    },
+    "manualHint": {
+      "text": "Pick an incident case, or type an external ticket identifier if it is not listed.",
+      "source_sha256": "76fc0d45eb5b61e293185d6d85815175aad8befa1f228afff324b10fffe463f4"
+    }
+  },
+  "tenantNameField": {
+    "helper": {
+      "text": "The tenant name used on the enrollment token.",
+      "source_sha256": "426dfc9cd61c8a7471fa1f8851482021203160bdb3e43072f61cc83dfd1e8cce"
+    },
+    "manualHint": {
+      "text": "Pick a tenant, or type its name if it is not listed.",
+      "source_sha256": "db530e4ea84c4158b56e3974f7fc081df447a496b8676413a58dd348cf06a0b6"
+    }
+  },
+  "endpointNameField": {
+    "helper": {
+      "text": "Used in install instructions and token description. Name-based — not a UUID.",
+      "source_sha256": "e2e26837de092e2bf1237043253b506181877da6a9092a8129c8de427983a633"
+    },
+    "manualHint": {
+      "text": "Pick a machine name, or type a hostname if it is not listed.",
+      "source_sha256": "db286ffaa28488c5eddb01e555c53cdaf7bc54f6e4217179014d3627d5b1f860"
+    }
+  },
+  "commandLaunchField": {
+    "helper": {
+      "text": "Basename is matched case-insensitively against the launch allow-list for this scope.",
+      "source_sha256": "13f1ff0d52ce2b73373073939d4de54c5f02cdc1c4765d71e893f7a761ff6531"
+    },
+    "manualHint": {
+      "text": "Pick an allowed image, or type a path the allow-list does not carry.",
+      "source_sha256": "91b3d15971a19e821eb42220c8cb83a4df099dc18efe3b1fca899cc34774caac"
+    }
+  },
+  "commandPatternField": {
+    "helper": {
+      "text": "Safe preview only — the command is never executed. Pick a governed pattern, or type any command line.",
+      "source_sha256": "3684fc70d156c6d6a68b444e5d93c3c37b0fdecfb00359512c3015de47e578ff"
+    },
+    "manualHint": {
+      "text": "Pick a pattern from the live policy, or type a command line to test.",
+      "source_sha256": "682b8afb778a33b1575a1c43e0ccf9e074c8fd2fa1f831a6522fe013bf5a8f0f"
+    }
+  },
+  "trainingDocumentField": {
+    "helper": {
+      "text": "The program document this attestation covers.",
+      "source_sha256": "c90e8535a1fd449cbfc617d31bc081d070790d8f9def0c632938c0cba21aa14d"
+    },
+    "manualHint": {
+      "text": "Pick a program document, or type its item identifier if it is not listed.",
+      "source_sha256": "ccd104ea789ce767fc1e7203fabd2eb591fa4796110f82b0cfcd1d90feb3286e"
+    }
+  },
+  "auditFilterEndpointField": {
+    "helper": {
+      "text": "Limit the log to one enrolled endpoint.",
+      "source_sha256": "6873e0bd4febb670a0bb43f9da96a704898a3211915ef0c65037e37c8c9b4dfb"
+    }
+  },
+  "auditFilterUserField": {
+    "helper": {
+      "text": "Limit the log to one directory person.",
+      "source_sha256": "5e91aec900c79ea8d4721acc903ea58c8d9f5cf4c0af9afa798138a406280c59"
+    }
+  },
+  "waCheckField": {
+    "helper": {
+      "text": "Skip or soft-fail check id. Malware / deny-list fails cannot be waived.",
+      "source_sha256": "519c49891a92dae9278a3f9ca7b3fd22c4a69411095ba5a69c2e431d6648b0f2"
+    },
+    "manualHint": {
+      "text": "Pick a check from this workstation, or type a check id if it is not listed.",
+      "source_sha256": "e3f247d4f937fff6e6577f37afb0ca8546f46d6b78d333a07ff8a6516e3cae7d"
     }
   }
 }

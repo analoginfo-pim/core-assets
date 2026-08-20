@@ -106,5 +106,3803 @@
   "actionDetails": {
     "text": "Öppnar detaljvyn för det här objektet.",
     "source_sha256": "1bdec3c989e7746e8342e0f5c40c66a1e75e6b24013ba9f0b3e3a071ea730ece"
+  },
+  "tenantDisplayName": {
+    "text": "Human-readable label for this organization. Becomes permanent after create; agents reference the multi-tenant by GUID, not this name.",
+    "source_sha256": "d4a4f9a34b9b9dedccc49a2841a25cdbe64c78d2146fe813820fb0c3fe681f54"
+  },
+  "tenantAuthPolicy": {
+    "text": "How offline agents authenticate to this multi-tenant. Only HMAC is supported today; the server validates request signatures with the bootstrap secret.",
+    "source_sha256": "d62cdbd9ff7c72229aef3d4520b92b860ddb50dbb7055e1eccf9c2880f224630"
+  },
+  "identityId": {
+    "text": "Stable identifier for this managed account on the endpoint. Use a GUID or short unique name; cannot change after create.",
+    "source_sha256": "6a6353a453e53e66304ba519804bc5b6a43d8240b5db8cafedcb559aecff18e1"
+  },
+  "accountBinding": {
+    "text": "Explicit: you name the local account (Administrator, root). Well-known: the agent maps a catalog key to the correct account for the OS.",
+    "source_sha256": "5040472b1ee3e010653b96cf8c097f93f41b44df310d370dcc9cf480e17283e1"
+  },
+  "wellKnownAccount": {
+    "text": "Catalog entry the agent resolves at runtime (e.g. Windows built-in Administrator). Pick the platform-appropriate key.",
+    "source_sha256": "d40fb6b68f7843705d2dce84008f102d075a634852ffbd758d287484c3fbc9b1"
+  },
+  "accountName": {
+    "text": "Exact local account name on the endpoint OS. Must match what the agent will rotate (Administrator, root, svc-backup, etc.).",
+    "source_sha256": "f517f4d6da3ed9885c7033d7fa3d10ed1ceba95c3a56251b3c23d49e028d50f3"
+  },
+  "identityDescription": {
+    "text": "Optional note for operators (purpose, owner, ticket). Not sent to the agent as a secret.",
+    "source_sha256": "6f521f2557bb607f222e0c806251ace047334908e8565114e9d8f32f589a9695"
+  },
+  "rotationStartOffset": {
+    "text": "Delay from secret minting time before this identity’s first rotation (DD:HH:MM:SS). Staggers password changes within a group.",
+    "source_sha256": "71f4cd31315bed20c7734b52b7054881414270fb26969229f8d87ffc3b8dd4a6"
+  },
+  "rotationOffsetDays": {
+    "text": "Days to delay this identity’s first rotation after the anchor, so identities in a group do not all rotate at once.",
+    "source_sha256": "5d38362ce9a60cc37de86102303669f3eeb727b98777fcb54c489b0577465449"
+  },
+  "rotationOffsetHours": {
+    "text": "Additional hours on top of rotation offset days (0–23). Combined delay staggers password changes.",
+    "source_sha256": "c676ef612417d288b009dd0d4215aca8449c6b41134815199ddce47870e50bf9"
+  },
+  "rotationOffsetMinutes": {
+    "text": "Additional minutes on top of rotation offset days and hours (0–59). Combined delay staggers password changes.",
+    "source_sha256": "c6854d33bad98d0c9f3e8e2b06f1f7641913027bd498011b1580d392fd11fc24"
+  },
+  "machineName": {
+    "text": "Hostname or label reported by the agent. Used in lists and elevation; should match what operators recognize.",
+    "source_sha256": "07f4a65529d200594db6aa4eaba10b8af9a86e0f570c9491a2c473614b590cd5"
+  },
+  "macAddress": {
+    "text": "Hardware MAC the agent presents at registration. Format AA:BB:CC:DD:EE:FF or with hyphens.",
+    "source_sha256": "4af2a37b5479d25f42da28f6e19e362b52412e2d67ac5b01b2153578a8ea7b64"
+  },
+  "ipAddress": {
+    "text": "Last known IPv4 or IPv6 address for this endpoint. Used for display and connectivity hints.",
+    "source_sha256": "eadd8ab747fea8f43a8f480405eda62986dc67539a42511e8eb4b258bc812366"
+  },
+  "platformType": {
+    "text": "Operating system family. Drives well-known account catalog and agent behavior.",
+    "source_sha256": "3293f067b3a0b0fea79a62c1c8068710c656dba55acdb7a62190ceeb456bfdd7"
+  },
+  "tenantName": {
+    "text": "Multi-Tenant display name this endpoint belongs to. Must match a multi-tenant created under Multi-Tenancy (or server default).",
+    "source_sha256": "edabb2c905256180f11ab310d4a1671766a24bbe8bc3a088e4e66b61541d5ff5"
+  },
+  "domainName": {
+    "text": "Windows or LDAP domain when the machine is domain-joined. Leave empty for standalone/workgroup hosts.",
+    "source_sha256": "b901417b69dda9e3c7cdf0bf439d6dd3c18c083aed787af0eb66beb23b750ac3"
+  },
+  "systemGroupName": {
+    "text": "Optional group to place the endpoint in at registration. Group policy and identity templates apply from this group.",
+    "source_sha256": "17419cfcb51659821c38ae224682894881b21bc1b01ec9b12454bc45470cc34b"
+  },
+  "groupName": {
+    "text": "Unique group key (letters, numbers, hyphens, underscores). Endpoints inherit policy and templates from their group.",
+    "source_sha256": "3363df28b67aa3625b9ee3caebcf50968d5cd9e6f258e88ab1adc98ed1e1101a"
+  },
+  "groupDescription": {
+    "text": "Optional operator note describing who or what this group is for (production servers, lab VMs, etc.).",
+    "source_sha256": "0dfaa9e90669a033256a9e829d306dab719ce6375b0b02092cd89753fb18c5eb"
+  },
+  "wizardUsageType": {
+    "text": "ConnectedManaged: online sync. OneShotProvisioning: single bootstrap file. AirGappedPermanent: no check-in expected.",
+    "source_sha256": "6e90549fff8e625acace1fc4831b6b6ac37e59a3cf9c5af44b25ea1c7f22431b"
+  },
+  "wizardTenant": {
+    "text": "Multi-Tenant whose bootstrap secret and GUID are embedded in issued settings. Create a multi-tenant first if the list is empty.",
+    "source_sha256": "e1a5805bcbc1a9167d637f24fd8fed7480a67002595c67ec24f250e46def42b7"
+  },
+  "wizardGroup": {
+    "text": "System group whose password policy, identity template, and elevation settings are copied into the issuance.",
+    "source_sha256": "f3bc2942ca8ffb5f37314aa958681bbd1766675e19f961f7893172f9b175d80b"
+  },
+  "passwordLength": {
+    "text": "Minimum generated password length (8–128). Longer values improve strength; some legacy apps cap acceptable length.",
+    "source_sha256": "59fb86c7a519dcda2deb687150af2c8b14c73a6b1fc30be67f27fb32b7a4b948"
+  },
+  "rotationDays": {
+    "text": "Days until the next scheduled password rotation for identities using this policy level.",
+    "source_sha256": "b44b8f26dd9853a5d72ae6353d12250d326947983e6d0ea42d8b4086c8a1c45b"
+  },
+  "maxDriftSeconds": {
+    "text": "Maximum clock skew (seconds) allowed between server and agent before drift warnings appear.",
+    "source_sha256": "8363a230469326a47083b2a416d8f223b8f081e51a982d0380ec9b47f17482fb"
+  },
+  "secretUpdateFrequencyHours": {
+    "text": "How often agents poll the server for password updates when connected.",
+    "source_sha256": "9630682f67ed5842b00e9eadfcd00471b97e555e45ed790090dfc10b17ab1b1f"
+  },
+  "allowedSpecialChars": {
+    "text": "Characters permitted in generated passwords. Leave default for full ASCII symbol set unless a target app restricts symbols.",
+    "source_sha256": "4835117fa0ddab865ff5a879153d163ea493c50e48ba82c99caf1492c0f5e6ff"
+  },
+  "policyVersion": {
+    "text": "Optional label for audit trails when you change policy shape (e.g. v2-2026-q1).",
+    "source_sha256": "0324ee98401e481f3e388df38ce85ef6a0bf0d0f21b968ce24137c9020027947"
+  },
+  "caFilePath": {
+    "text": "CA bundle path embedded in issued settings for agents in this group. Leave empty for domain-joined machines or platform trust store.",
+    "source_sha256": "150e11d0b1af3aea9606b18bf59e85ed7f39960dc2597f9aa0df9b72dd0f9ade"
+  },
+  "localAccountName": {
+    "text": "Default local account name in generated settings (Administrator, root). Leave empty for platform defaults.",
+    "source_sha256": "6169f09188815f6b3de53e6c61c2171d875f47e6ec7fa396a21894a379c6b958"
+  },
+  "machinePolicyOverride": {
+    "text": "Overrides group and global defaults for this endpoint only. Every field is required — the server stores a fully resolved policy.",
+    "source_sha256": "af86c41d40563bbcb72449ded4f4ad8159446470ad49d352d74a3ba3d36104ce"
+  },
+  "seedDefaultIdentity": {
+    "text": "When enabled, template rows are applied automatically when new endpoints join this group.",
+    "source_sha256": "b2d0a4871b8c07682158e3a96236ed4a740b1563e9c7b4fdd70589f4f3a8f732"
+  },
+  "elevationTemplateEnabled": {
+    "text": "When enabled, settings.json issued for this group includes elevation_secret so operators can mint elevation codes.",
+    "source_sha256": "2e7e73c0f28897c38caa51fb96ee1c3d57373f17d6dc087193192501c1cd5c83"
+  },
+  "templatePolicyInherit": {
+    "text": "When on, the row uses the group password policy (Edit policy). Turn off to define rules only for identities seeded from this row.",
+    "source_sha256": "4a394e7e2414a21b729c70ec96cbc37eb82b67ca84970abff07155ff95ace8fc"
+  },
+  "elevationEndpoint": {
+    "text": "Endpoint that accepts the code through the offline agent elevation channel.",
+    "source_sha256": "c67179191f74b5f4311d948ec6c8241b08ebb29512135b5f01896e123ccdf813"
+  },
+  "elevationTargetGroup": {
+    "text": "OS group added during elevation. Pick from the elevation platform policy for this endpoint OS, or type a custom group name.",
+    "source_sha256": "e9371a9f0472b8eeccd421c0751ef464611e08a571cbc6fd13fe3a173d002f31"
+  },
+  "elevationDuration": {
+    "text": "Minutes the elevation stays active after activation (1–480).",
+    "source_sha256": "9a111f0d9e050b381a89c095a650cd9c158718ec61b2c9bfcea4c39cf85a0c29"
+  },
+  "elevationScheduled": {
+    "text": "Future activation time on the endpoint. Must be at least one minute from now.",
+    "source_sha256": "b16464928e3f74562cfcc2fd69b423962c7a4a9b401f7f1b93ec3795fa35def2"
+  },
+  "privilegeJobEndpoint": {
+    "text": "Endpoint whose offline agent runs the privilege execute handler over the admin pipe.",
+    "source_sha256": "8cc79a67037e0031e6812faf64a4ed8b3de6254e1500f14794b3a35ea90cbaef"
+  },
+  "privilegeJobMember": {
+    "text": "Qualified account added at activate time (for example DOMAIN\\\\user or a local user name).",
+    "source_sha256": "fe3884513a216df84beecb26b30f1e85ccafc78dee56368ca0fd58cd7d444ebb"
+  },
+  "privilegeJobTargetGroup": {
+    "text": "Qualified local group on the endpoint (for example BUILTIN\\\\Administrators on Windows).",
+    "source_sha256": "25f2b56304c4efec061dc006818618acaf174023c3f17f684ad2a159334203a4"
+  },
+  "privilegeJobDelay": {
+    "text": "Minutes from now until the apply step is eligible (0 = as soon as the processor claims it).",
+    "source_sha256": "99539e2d425643c44a80d37ccc7dbd9e3042d8e11328d08bcb57c14eff6f911d"
+  },
+  "privilegeJobDuration": {
+    "text": "Minutes the membership stays after apply; revoke runs when this window ends.",
+    "source_sha256": "dd32babd79026b315fc8eadb23b9a446c4a9c80b03eae6dfc7ae939125284fdd"
+  },
+  "wizardMachineDns": {
+    "text": "Hostname or DNS label for the single machine receiving one-shot or air-gapped settings. Pre-allocates an endpoint id.",
+    "source_sha256": "41b05ddff43a75ec965abef92da4185d68e14574f2d65010ea33bc8211a9dbad"
+  },
+  "wizardDescription": {
+    "text": "Optional operator note on the issuance record (ticket, owner, site).",
+    "source_sha256": "73866759838299228602a92629d47b45d31a0f268647e6fd35ac8095fe0edbce"
+  },
+  "wizardTtlHours": {
+    "text": "Hours until the enrollment token expires. Leave empty for the server default.",
+    "source_sha256": "7ebf418f302686302fca357adad6fd9166f48c74ce8e74a14d65cb581a0108c5"
+  },
+  "loginUsername": {
+    "text": "Your AIC Server account name (local IAM or federated subject). Used with your password for this logon.",
+    "source_sha256": "686b46a167aa4b6f6809ed505004ced6169ce6ac76ba7cb60b850419fbd6d32a"
+  },
+  "loginPassword": {
+    "text": "Password for this account. AIC Server never shows the value; failed attempts are audited.",
+    "source_sha256": "06d8569713bc0b3fd38aa7fbeb2e63084f82778390e675f8e993059e240f440c"
+  },
+  "loginProvider": {
+    "text": "Which identity path to use for this logon (local password, PIV, or other configured providers).",
+    "source_sha256": "4ece07972fdb0c1e9acac5779e67b1eb14f8570b8481c0cb0dc8e6b1366ba468"
+  },
+  "loginTotpCode": {
+    "text": "Six-digit code from your authenticator app for this account. Codes expire about every 30 seconds.",
+    "source_sha256": "46216782c609d9be668bcbc5c92a825570e72a03feea2c6999320382f541ca2a"
+  },
+  "loginRadiusPasscode": {
+    "text": "One-time passcode or response from your RADIUS token for the second step of this logon.",
+    "source_sha256": "a7b5b3c958bcd118ed8e9556e124c1a7183c9e960a0f262fa7836f2e377d7ef6"
+  },
+  "loginNewPassword": {
+    "text": "Choose a new password that meets the organization password policy shown on this page.",
+    "source_sha256": "c2c797a959bc619b9a70279c0af362bdd0d2b4062a078995582071cecc35bc60"
+  },
+  "loginConfirmPassword": {
+    "text": "Type the same new password again to confirm there are no typing mistakes.",
+    "source_sha256": "fe285f648bc82e96068223be372bdcd7d308e83cec734f6dcff5aa3bdcb95fbf"
+  },
+  "loginResetToken": {
+    "text": "One-time token from your password-reset email. Paste it here to set a new password.",
+    "source_sha256": "5af28c47fb36f5617285ae9faa75ede24b24a45d245ee65fcb8aa90bc1ddd8da"
+  },
+  "loginWebAuthn": {
+    "text": "Use a security key or platform authenticator registered to this account.",
+    "source_sha256": "60439b2d56b5150809c5041ed41d7ff2bf500b388a60a474e61455d64235f5e6"
+  },
+  "principalUsername": {
+    "text": "Login name for this principal in local IAM. Must be unique within this server.",
+    "source_sha256": "53ff5a38b8d7ae43243815df1d46d56da52d2027063fd9f737b2064575013eea"
+  },
+  "principalDisplayName": {
+    "text": "Name shown in lists and audit records. Prefer a real person name operators recognize.",
+    "source_sha256": "9ab7a0b3b399f92e2975aa883370471de8b4613432e07f7b6360a46a4ce5241d"
+  },
+  "principalEmail": {
+    "text": "Email used for reset links and notifications. Not used as the durable identity key.",
+    "source_sha256": "8ea356c636c0467ae87128aa08c6397e704854d9083f522a87e91f0f4e938922"
+  },
+  "principalRoles": {
+    "text": "Roles that grant permissions in the admin console. Least privilege: assign only what this person needs.",
+    "source_sha256": "c10e47d383ddb2ae2d1a19c88343b5e40272e621beaf541a6828f5cc53d3536f"
+  },
+  "principalEnabled": {
+    "text": "When off, this principal cannot log on. Disable instead of delete to keep audit history.",
+    "source_sha256": "c9fd8c7a44ea4b5f3ca2619a990cf666ee3d792e1f193693cab8296fc3007177"
+  },
+  "sessionIdleTimeout": {
+    "text": "Minutes of inactivity before the console session ends. Shorter values reduce unattended console risk.",
+    "source_sha256": "6f5dfd884311eb816fdebf40660da987e7c84eb998cc3faa97bf461eb6ecd95f"
+  },
+  "sessionAbsoluteTimeout": {
+    "text": "Maximum session lifetime in minutes regardless of activity. Forces periodic re-authentication.",
+    "source_sha256": "2b2b85ef7dba3c5cafb936db3aa9d347843c83d50d41884f1e3298ba47edcb95"
+  },
+  "profileRecoveryPhone": {
+    "text": "Optional phone in E.164 format for administrator-assisted recovery of this local account.",
+    "source_sha256": "469f49999f3eb86e14089c2238884b0d1a9886ca09269f2ecf62263b2c255159"
+  },
+  "profileUiTheme": {
+    "text": "Color scheme for the whole site. Saved on this user profile so it follows you on any browser.",
+    "source_sha256": "54a36cfcdf12b094926b92854064306384f6628b1a6f4372c179aa41141653c7"
+  },
+  "profileDefenseSkin": {
+    "text": "Color scheme for the Attack / Threat Report page only. Default follows the site scheme. Black is the dark report look.",
+    "source_sha256": "8c2c22a5f82d091634c21e0b48b66c9e4c2b7f3c608294aa65edab38e502a855"
+  },
+  "currentPassword": {
+    "text": "Your current local-account password. Required to prove you own the account before changing it.",
+    "source_sha256": "4e89ca8fd65bdb7c0894366ee1a7357f1a71224e6a4ec5b13af9fdec7e883c63"
+  },
+  "elevationJustification": {
+    "text": "Ticket or incident id explaining why elevation is needed. Required when sensitive-access justification policy is on.",
+    "source_sha256": "f630afa46e98bb5a950d4a8b80f8314e68d355744737e5149547213595b52be9"
+  },
+  "elevationStrategy": {
+    "text": "How the activation code is built (alphabet, length). Must match the strategy the endpoint agent was provisioned with.",
+    "source_sha256": "eb3803c0f9548395d77fc6773dcbd272ac3713a9f4397f0b3decb917951b4080"
+  },
+  "encryptedSecret": {
+    "text": "One-time encrypted bootstrap secret for the agent. Copy and store it securely; it is not shown again.",
+    "source_sha256": "a178273e8e225f2435d8cfef87c56168f575be65153dec611fd4d7a25423e67c"
+  },
+  "networkCidr": {
+    "text": "IPv4 or IPv6 CIDR (for example 10.0.0.0/8) that this allow or deny rule applies to.",
+    "source_sha256": "abf6f6a936af0d372db074b18fb2d359384bc75db312c73924dd6a4d1b0eaf01"
+  },
+  "networkRuleNote": {
+    "text": "Optional operator note for why this network rule exists (site, VPN pool, ticket).",
+    "source_sha256": "d07a2b2289fcd0527802ba31009efafc166b98a3c4c43ccfc9c58ffe67ec357f"
+  },
+  "threatIntelCidr": {
+    "text": "Network range to allow or suppress in threat-intel decisions. Use CIDR notation.",
+    "source_sha256": "4bd87b6f99cc9f3f1599bb5c310dbe9967463fed905ab33ff321b6f4baa16bba"
+  },
+  "threatIntelComment": {
+    "text": "Operator note for this threat-intel override. Keep it short and free of secrets.",
+    "source_sha256": "c99dd565462cf7b3bf8d0341ddc03035834f242a48ce51b710f61e7b5f59eca5"
+  },
+  "bootstrapAdminUsername": {
+    "text": "Username for the first local administrator created during bootstrap. Must be unique on this server.",
+    "source_sha256": "80a97af6634abe6784867aabdbb29eb832a68aea32c7598e59749a90ab41d2ae"
+  },
+  "bootstrapAdminPassword": {
+    "text": "Initial password for the bootstrap administrator. Change it after first logon.",
+    "source_sha256": "639051e1d9bce1bfd4b6001ca9e47155b961d1d8961b83368ac2cd577696bdaf"
+  },
+  "bootstrapAdminEmail": {
+    "text": "Recovery email for the bootstrap administrator. Used for password-reset links.",
+    "source_sha256": "555d6039ba9b84beb830e47290a2b9ef4c229e2423dd60a08c201fa773dc4a9c"
+  },
+  "idpIssuerUrl": {
+    "text": "OpenID Connect issuer URL. Discovery uses this to load authorize, token, and JWKS endpoints.",
+    "source_sha256": "655d7e8ce5413f3906d229de7926068e2dc5cda0918904f9fac4133362d58a53"
+  },
+  "idpClientId": {
+    "text": "OAuth / OIDC client id registered with the identity provider for this server.",
+    "source_sha256": "4221f13528588aff027f10009243f9184c8f031f7fb97c5623c545d08323eee5"
+  },
+  "idpClientSecret": {
+    "text": "Client secret for confidential OIDC clients. Stored as a secret; never paste into tickets.",
+    "source_sha256": "e551b309847b606bd42fe279aaf05380da9dcd019b8fc18d39e38055056a5475"
+  },
+  "idpDisplayName": {
+    "text": "Label operators see when choosing this identity provider on the logon page.",
+    "source_sha256": "8e2f55f3b944b971232343f1fc1fc56c5fd8d3319f59b501a30c058e77fc8e77"
+  },
+  "adTrustDomain": {
+    "text": "Active Directory domain or realm this trust entry covers (for example CORP.EXAMPLE).",
+    "source_sha256": "0788114546dee232785706c61f19ec1756c40eac8c24178d9c7d66b9788c6086"
+  },
+  "adTrustHost": {
+    "text": "Domain controller or LDAP host used to validate directory logons for this trust.",
+    "source_sha256": "471454851e7c0a1d1d9ce289984b7a67a2c40647e9dfe71c20c14cbd25ac09e6"
+  },
+  "webAuthnCredentialName": {
+    "text": "Friendly name for this security key or platform authenticator so you can tell devices apart.",
+    "source_sha256": "3f3b06b8a4646c6a2648fcba9dba1d90128f8777f1b57a5a4479c15071efd75e"
+  },
+  "accessMapLabel": {
+    "text": "Short label for this access-map entry. Shown on the map and in audit lists.",
+    "source_sha256": "7fdb109aa80159f07294189267c115de933b846b6256514a3d0894e696bbeb9c"
+  },
+  "mfaGraceMinutes": {
+    "text": "Minutes after logon before MFA is required again for this policy. Zero means every new session.",
+    "source_sha256": "d90b2bb6b474ca91f28b44f2054fb63e41dc29e00fcc25f8e70504fcc9001755"
+  },
+  "localPwMinLength": {
+    "text": "Minimum length for local IAM passwords under this policy.",
+    "source_sha256": "fc43543a8d3c024e910762ad2d28fcdf16fdb50d07e2468042b93ac73eb3c095"
+  },
+  "localPwMaxAgeDays": {
+    "text": "Days until a local password expires. Zero turns age expiry off.",
+    "source_sha256": "60bf7d84addb680b56fe9304454dd8c3515ac01d6b5d55c0b2a69028c0c7878d"
+  },
+  "localPwMinAgeDays": {
+    "text": "Minimum days between local password changes. Prevents rapid recycle of history.",
+    "source_sha256": "1ddacdf4dcfb9d71f040eb83e8d0b4282356727ad9ae5e78b69a632f43844212"
+  },
+  "localPwHistoryCount": {
+    "text": "How many prior local passwords are remembered and cannot be reused.",
+    "source_sha256": "6fe5639c43034a3cd8658211af8541f37262c341e04fb9d2d5e2cc98091a7864"
+  },
+  "totpIssuer": {
+    "text": "Name shown in authenticator apps for TOTP enrollment. Empty uses this server hostname.",
+    "source_sha256": "fa1e9f1700e1ef97e19f34aa6f5a83327d4c6c0fd9087fff07b17287bb595372"
+  },
+  "adHomeDomain": {
+    "text": "Prime Active Directory DNS domain for this trust policy (for example contoso.local).",
+    "source_sha256": "f1e35b0af278c15daa931ff37312f02434a6c42c64124b8320d900ec2f15817b"
+  },
+  "adFederatedDomains": {
+    "text": "Comma-separated domains allowed to log on. Elevated claims from these domains are suppressed.",
+    "source_sha256": "3272e2f5cf7b51dc4a537501fe114e2a001bfe7bf95c098e32da9baa1f358c0e"
+  },
+  "adElevatedGroups": {
+    "text": "Group names or SIDs that confer elevated roles when asserted by the home domain only.",
+    "source_sha256": "acb64da2879b033e97906056e5bcef57f2bf6657c32193db7b1308c3d5fb7cab"
+  },
+  "adEvalDomain": {
+    "text": "Principal domain to evaluate against the trust policy for diagnostics.",
+    "source_sha256": "79500feb4dda69478f0d7fac588e4123b35fa583509615b5ffb1214e8cc716e3"
+  },
+  "adEvalGroups": {
+    "text": "Comma-separated groups to evaluate for elevated mapping under the trust policy.",
+    "source_sha256": "7b4dcc8f82a49b0a0018bd7680c54598b9933b2e6c59123161f71f9c300eb611"
+  },
+  "countryAllowList": {
+    "text": "Countries allowed for this geo access rule. Clear the chips to remove a country.",
+    "source_sha256": "e1772419816920e75f4f33e354dc1d6d2fbe504e92dfccd1214b002235298cf8"
+  },
+  "pivCertificatePem": {
+    "text": "Public leaf certificate in PEM form. Private keys are refused and never stored.",
+    "source_sha256": "d2d50bfb4fb158f0133ced74a3199c1f2c7df99f67602f90da1aef57c529acd9"
+  },
+  "connectivityHost": {
+    "text": "Hostname or IP to probe for this connectivity test. Does not change saved provider settings.",
+    "source_sha256": "3bf41c2edb75cbb8f7e5e9aff92545cfdada1b5bd52d02989c500ffb2c711c36"
+  },
+  "connectivityPort": {
+    "text": "TCP port to probe for this connectivity test.",
+    "source_sha256": "af9ccd82d0de4e5f5c47f85bf6d4d1d1954d4949b79802d5e8c99155d924dde7"
+  },
+  "logonPolicyName": {
+    "text": "Name of this logon policy. Principals and roles reference it by this label.",
+    "source_sha256": "b88dbe46d12742724617e7815677dc1dd7a0f1d493c84d51f4824588ee877e02"
+  },
+  "logonPolicyValue": {
+    "text": "Value for this logon policy setting. Format depends on the setting key shown in the row.",
+    "source_sha256": "57afae51685e02cf6d20384a5a2098d80b1c04dc12d661b3851f0d2eb07d310f"
+  },
+  "ipRuleCidr": {
+    "text": "CIDR allowed or denied for console logon from this rule.",
+    "source_sha256": "be2b1334855b2d77a0ed96475ec3b0b171194f34b7d65cc6199fa059c75758f1"
+  },
+  "ipRuleComment": {
+    "text": "Optional note describing who or what this IP rule is for.",
+    "source_sha256": "4d67ebc85cc0e97109c49fe1b42804711d5ad8cf85a61cb0133d3a67baf58966"
+  },
+  "idpClaimFilterMode": {
+    "text": "How primary claims from this identity provider are filtered before role mapping.",
+    "source_sha256": "c1e05e9cbd883c20bd277c5352f9106921b6da58896583f791bc696187f7963b"
+  },
+  "idpRedirectUri": {
+    "text": "OAuth redirect URI registered with the identity provider for this server callback.",
+    "source_sha256": "03cb6517c6ac0608879b1db2aa6bba5932ee1331f7151ba6a98b968b489b4420"
+  },
+  "idpScopes": {
+    "text": "Comma-separated OIDC scopes requested at logon (for example openid profile email).",
+    "source_sha256": "b01de7bc7d089ae21a30252abf10284df85ef7f7877d5c0b24d287999465ffba"
+  },
+  "idpClaimNames": {
+    "text": "Comma-separated claim names used for role or group mapping from this provider.",
+    "source_sha256": "d87a4a195f737bc18af8850e5cbc6e7f2f67c5bfb917546a2af51f1b085459a1"
+  },
+  "idpTrustedIssuer": {
+    "text": "Issuer URL trusted for validating tokens from this identity provider.",
+    "source_sha256": "7a27f63a9b7a72ceb6729e52d1fb40aad2eb3069c18adcd95cbaa8f19978b73b"
+  },
+  "idpTrustClaimAllowlist": {
+    "text": "Comma-separated claims allowed from this trusted issuer. Others are ignored.",
+    "source_sha256": "eda27c79da0ef8802641f5593abe4d17ada7c36b5cbffdb0e0c964e69c03b8a0"
+  },
+  "idpKind": {
+    "text": "Identity provider kind (OIDC or other supported federation type).",
+    "source_sha256": "3f87fef61adfd56df2b739cc70fd2d337c39c222305fb1848972aa0badd8ee75"
+  },
+  "windowsSpn": {
+    "text": "Kerberos service principal name used for Windows integrated authentication.",
+    "source_sha256": "a8068e48c40fee644c124b0eb66fc478d422d2ee404bebe02f07e346292757cc"
+  },
+  "windowsMapAttribute": {
+    "text": "Directory attribute mapped to the local principal username.",
+    "source_sha256": "697cec0b8d3bfcd4c09926efaba126459601ecfee6208c98c345d085b6f44c34"
+  },
+  "threatIntelEditValue": {
+    "text": "Edited value for this threat-intel override entry.",
+    "source_sha256": "98ff93c116afd140ee70ec3d6cd1d8e272fa703960eae4ea67c00002a9ecf13d"
+  },
+  "maxmindAccountId": {
+    "text": "Optional MaxMind account id override for geo IP lookups on this server.",
+    "source_sha256": "a610896a79f1758e3877b407a653fda5b52491fc35ec2ea0ef4f2e367d0e4119"
+  },
+  "maxmindLicenseKey": {
+    "text": "Optional MaxMind license key override. Stored as a secret; never paste into tickets.",
+    "source_sha256": "d81eab3bccdb9edc17e15ce95eb1ea28c3f08058832c1df3042096af794b8ce7"
+  },
+  "fourEyesPrincipalId": {
+    "text": "UUID of the principal who needs a second-person acknowledgment.",
+    "source_sha256": "5d96bad10498ff2ac7fc7a37e9f7f9a6780537ab33ecefc8b44f99aa7dcc7778"
+  },
+  "fourEyesManagerEmail": {
+    "text": "Email of the manager or second person who must acknowledge.",
+    "source_sha256": "7a81e8728214385171a9d63c819ff6910599f34d9d4f5c4578b5120df4f0a80b"
+  },
+  "fourEyesHours": {
+    "text": "Hours until the four-eyes request expires if not acknowledged.",
+    "source_sha256": "345860c998215fb90563f814e7c32cb0ab7520c8e1a323b15a41cc499b067cd0"
+  },
+  "fourEyesAckBy": {
+    "text": "Identity of the second person completing the acknowledgment.",
+    "source_sha256": "0da4b86ea57f36faf9e30f55a9b9f5f821aa442f050aede42ee9ac6b2501197e"
+  },
+  "dryRunSourceIp": {
+    "text": "Source IP used for a dry-run access-map evaluation. Does not change live rules.",
+    "source_sha256": "1f86e42b66c6646037b64ce15cf1503f2851f984a8bd00d692dc89a859304705"
+  },
+  "pamConnectionPointName": {
+    "text": "Label operators see when opening a session. Prefer the machine or service name they already know.",
+    "source_sha256": "1ca129a40992b4224702486a43f130fd246c7fb234152fce33fd08f573f7f825"
+  },
+  "pamProtocol": {
+    "text": "Session protocol for this connection point (SSH, RDP, VNC, or OT). Must match what the target listens for.",
+    "source_sha256": "cabf923bd46e8a1dcfc3ef1d250f4a3c02d80358bcae7105a71276b7fc54085c"
+  },
+  "pamHost": {
+    "text": "Hostname or IP the jump or proxy uses to reach the target. Must resolve from the capacity host.",
+    "source_sha256": "b6beff17cf8c38943e48fb0b6cd624c493cdc8dcda62d6dc7d88ee6bd8ea98fe"
+  },
+  "pamPort": {
+    "text": "TCP port on the target for this protocol. Common defaults: SSH 22, RDP 3389, VNC 5900.",
+    "source_sha256": "ac79ece36bf1979418177587756d993c6dae0b25dac641125ab1f9251621d8bc"
+  },
+  "pamSessionAccount": {
+    "text": "OS account name used when the session opens. For exclusive CUI seats this is usually the assigned user’s username.",
+    "source_sha256": "f5b0adf0cef267e77b1a610a41b68e66542e714cf11a0a75467320cbc8e60dd6"
+  },
+  "pamCredential": {
+    "text": "Which vaulted or managed credential supplies the password or key for this Open.",
+    "source_sha256": "69bc7b08c02ad5fe7f1f540252620c9dcaf4d94a0bb7d384942105611ab83dc1"
+  },
+  "myWorkstationConnect": {
+    "text": "Opens an interactive session to this assigned workstation using the configured protocol and account.",
+    "source_sha256": "49f1f9d62f5ff95d4ecb07435afcbffd327bee264094312599c6a572ab3cc177"
+  },
+  "myWorkstationPower": {
+    "text": "Starts or stops the workstation VM or container when power control is available for this seat.",
+    "source_sha256": "13a00a13d58c3f42da5022cd163e4f5e15ee38b0b5804f82ba76eb972083003a"
+  },
+  "myWorkstationKeepAwakeReason": {
+    "text": "Plain-language reason to pause auto-sleep for a long task. Audited; never enter passwords or tokens.",
+    "source_sha256": "0ad7b34e309ade6c66d47c7d2a7c06195152541c655cb510758a72306c0570df"
+  },
+  "myWorkstationOpenSession": {
+    "text": "Opens the recorded session viewer for a session that Connect already authorized.",
+    "source_sha256": "755244d114f70220955b152ea4bf9706b69624a559b1abde9040d5ede6f13839"
+  },
+  "jumpFleetHost": {
+    "text": "Jump / session capacity host that proxies interactive sessions. Health and load affect Open success.",
+    "source_sha256": "673eb4f1a49fb256076beadfbf079e05cecb541a65371cfe7255f11772919765"
+  },
+  "jumpMaxSessions": {
+    "text": "Maximum simultaneous sessions this capacity host should accept before the fleet balancer prefers another node.",
+    "source_sha256": "dbb9335c286ebd890dad762980a6c3cf826f7211a33f62b9cbce65fb4e631f42"
+  },
+  "jumpNodeDisplayName": {
+    "text": "Operator label for this jump / capacity node in the fleet list.",
+    "source_sha256": "8616d179acd30b05f51886307a29b333220f9c040d337e36a568b7be4d1b08e5"
+  },
+  "jumpNodeAddress": {
+    "text": "Network address operators and the control plane use to reach this capacity host.",
+    "source_sha256": "947dbbf55b6e2c7fab920c2976ed7ed8288b1f4dfde60a7f49561853938da896"
+  },
+  "jumpNodeWeight": {
+    "text": "Relative load-balancing weight for this node. Higher values attract more new sessions when healthy.",
+    "source_sha256": "28ff301a5c20f89d877e9b6f15d4ad285a05c091be63ef789705557f9a08d39a"
+  },
+  "jumpDrainMode": {
+    "text": "When draining, this node accepts no new sessions so existing ones can finish before maintenance.",
+    "source_sha256": "bf21aa1fc827d923711106376eae02bb2ecbfe30151a17db7b82117bfa704436"
+  },
+  "jumpAcceptingSessions": {
+    "text": "When checked, this node accepts new interactive sessions.",
+    "source_sha256": "c19cd4115869d0099b13c0a70599a082af5d7b8840145571badc37828e5db767"
+  },
+  "assignmentPrincipal": {
+    "text": "Signed-in principal who receives this workstation seat. Assignments bind the person record, not a shared token.",
+    "source_sha256": "29d6e90a6ef077b4c910a3a31437cdaee4f39299233473e04107edc8b8016cad"
+  },
+  "assignmentWorkstation": {
+    "text": "Workstation or connection target assigned to the principal for exclusive or shared use.",
+    "source_sha256": "c28836b8e58173d47b1d6fd14d4f813e2ce35c9d46ede2ad71db319306977ad6"
+  },
+  "assignmentNotes": {
+    "text": "Optional operator note on this assignment (ticket, seat purpose). Not a secret.",
+    "source_sha256": "ef152b95acaf68d31fca3e2127ce51b9b2ef2c1b923f817cb87c88ae8d3829df"
+  },
+  "pamDenyReason": {
+    "text": "Required reason when denying an approval. Stored in the audit trail and shown to the requester when policy allows.",
+    "source_sha256": "dac1c586c679b94f50950216e129f18b00414b234379b8b35ec799d7503f876b"
+  },
+  "pamAccessJustification": {
+    "text": "Why you need this access. Approvers and auditors read this text; keep it specific and non-secret.",
+    "source_sha256": "e49cbe77b75c802a8bd6ca373903139c3b4ce007ac1443ab7b0130cfb9c726b6"
+  },
+  "pamAccessDuration": {
+    "text": "How long the approved access should last. Shorter windows reduce standing privilege.",
+    "source_sha256": "a2b5886127a332315c3aaa1f159c1c6f229520b69564d3bcbc7be6cc6580cd47"
+  },
+  "pamAccessTicket": {
+    "text": "Optional ITSM or ticket ID for this access request. Helps approvers and auditors correlate.",
+    "source_sha256": "a5c214360a5bf66b3252093d2bc3065c66090e02a656876097ffa9f428d16df2"
+  },
+  "pamCredentialConfirm": {
+    "text": "Re-enter the same password to confirm before it is sealed at rest.",
+    "source_sha256": "4f4f2b5754f699e2f4b2818e27ca8b68f7583254d15c405234c5f09de874ee1c"
+  },
+  "pamRecordingMode": {
+    "text": "Proxy records every interactive session on the capacity host. Target-local requires endpoint attestation.",
+    "source_sha256": "dc7562dadd18fd4ec1cb6da4632b7e701f8a2d2993e9d479bc5b136f8f46bcda"
+  },
+  "pamClipboardPolicy": {
+    "text": "Clipboard direction allowed for this live session, within the admin-configured I/O ceiling.",
+    "source_sha256": "f1e568d840ba72c3c0f89777ae7035e6eab6330d81b6490f060e6a0d30b98fe0"
+  },
+  "pamFileTransferPolicy": {
+    "text": "File transfer direction allowed for this live session, within the admin-configured I/O ceiling.",
+    "source_sha256": "ad6ac2fa0d2efbc5fba736586d24e9131b9368bcfdbef2a59f12db891f936c2c"
+  },
+  "pamKeyboardLayout": {
+    "text": "Keyboard layout sent to the remote session for typed input.",
+    "source_sha256": "c49bfc508d7edc408b02ab1826b7f46a1a49d098dbafb3e2ca9772f44914315b"
+  },
+  "pamSessionChatMessage": {
+    "text": "Message sent to other participants in this live session chat.",
+    "source_sha256": "9b0c211130e37bd01f8954a98a7eca34d89527ff1132afe2a24908b10b51e668"
+  },
+  "pamMonitorPicker": {
+    "text": "Which remote monitor to show when the session has more than one display.",
+    "source_sha256": "64a1b9c4da1c06b2464728402159871b866fbe4654109cf5cd930eb689984abd"
+  },
+  "pamCredentialUsername": {
+    "text": "Username stored with this connection credential. Used when the session opens.",
+    "source_sha256": "6a4b577df6aa7022202f0d35c1772c04860d7f3e2d555bfe67946c1685c4819b"
+  },
+  "pamCredentialSecret": {
+    "text": "Password or private key material for this credential. Stored sealed; reveals are audited.",
+    "source_sha256": "f6300d7da4a5f04827f470c4e2ca629e65333e76eced9eb85f49adb15d6f074b"
+  },
+  "remoteAccessSearch": {
+    "text": "Filters connection targets by name or host so you can open the one you need.",
+    "source_sha256": "b56cab03417d836ef622ba33fbcc5f7466ae565f900d4af670d0bf425814b792"
+  },
+  "commandSetName": {
+    "text": "Name of this command governance set. Shown when assigning sets to targets or principals.",
+    "source_sha256": "68372e0b765e9f117c6b46d6e646f1de0a5f63a64e0a8a8f59d7367fa08d54d5"
+  },
+  "commandSetDescription": {
+    "text": "What this command set is for (baseline SSH allow list, OT deny list, etc.).",
+    "source_sha256": "8df094a0f23105b5218dba698d22cece0cac7537c5a1b565393c85f6193a70bf"
+  },
+  "commandRulePattern": {
+    "text": "Pattern matched against the submitted command. Exact or glob rules depending on the set mode.",
+    "source_sha256": "1324aaa6b3d8f8c7cab532eeb7984e1d234888736bdc7604b403ccd329dfad87"
+  },
+  "commandRuleExplanation": {
+    "text": "Plain-language reason this rule allows or blocks a command. Shown to operators and in audit.",
+    "source_sha256": "daf6969ec008d832956bd27e4ffb6d634ecc86e1e9ca5b990a0e495e0f5ebb4c"
+  },
+  "commandDefaultAction": {
+    "text": "What happens when no rule matches: deny (allowlist) or allow (blocklist). Deny is least privilege.",
+    "source_sha256": "064e0fc1c22e182d678f8e3d92271dd8f007d6d3ef86b28b84dddb972c3ba59f"
+  },
+  "commandRuleAction": {
+    "text": "Whether this rule allows or denies a matching command. Deny always wins when rules conflict.",
+    "source_sha256": "10433668bdae83c95f0356d5e5ab4d8d62ab3b66d27638eab7521bcfbce64847"
+  },
+  "commandRuleRisk": {
+    "text": "Optional risk label for this rule (low / medium / high). Helps operators review the set.",
+    "source_sha256": "8b0f0702069a7232bca1b7820e4379f13a70a34b3e92894e6b889c6e19b5ed48"
+  },
+  "commandRuleOverrideable": {
+    "text": "When on, an approved command entitlement may override this deny for matching commands.",
+    "source_sha256": "b9611f00063744cda7473bc5702578eaad5be5febf2cf98f739423e6d380508f"
+  },
+  "commandAssignmentSet": {
+    "text": "Command governance set to attach. Its allow and deny patterns apply in the chosen scope.",
+    "source_sha256": "f4eeb4d8914dd8e3c6840dbb0aaf945074a73e6c36e69f637b3ef0f839ee108a"
+  },
+  "commandAssignmentScope": {
+    "text": "Global applies to all connection points; one-point scope limits the set to a single target.",
+    "source_sha256": "8a09e6cf45fbde378463ecff7c379bc6bc6348fa7333740f01c575a8be972d0a"
+  },
+  "commandEntitlementSubjectKind": {
+    "text": "Whether this additional-command right is granted to one principal or an IAM role.",
+    "source_sha256": "c98b7fd041b35333691d1e99fd8d76efc2939500f6e1a12117b6958a2cf773c7"
+  },
+  "commandEntitlementPrincipal": {
+    "text": "Principal who receives the additional-command entitlement.",
+    "source_sha256": "3d498104015f0062b45ba688f397230e319fed249dba66f4bdac7d2fbeaa15f4"
+  },
+  "commandEntitlementRole": {
+    "text": "IAM role that receives the additional-command entitlement for all members.",
+    "source_sha256": "e7c0f6016141e6b2df1c10c4d0dbc9dc6332351f9575e86dab515337d3da4b94"
+  },
+  "commandEntitlementScope": {
+    "text": "Whether the entitlement applies to all connection points or one named point.",
+    "source_sha256": "e1aac6d51e6d85035c86065308115d42f396b933157197c9d2d725efa37a9fdf"
+  },
+  "commandEntitlementConnectionPoint": {
+    "text": "Connection point where this entitlement is in effect.",
+    "source_sha256": "4ea5e9fa771a149e0487dfd7b8d0b4679f8647390a8655d1240768ba619b8ec2"
+  },
+  "commandEntitlementCommandSet": {
+    "text": "Command set whose allow patterns are granted as additional rights under this entitlement.",
+    "source_sha256": "b8533063ec35c9e7bb1096aa37bfb6c2ac088246b39bf8df1a367462e3ab0fca"
+  },
+  "commandEntitlementAccessKind": {
+    "text": "Standing stays live; JIT requires an approved time-bounded grant.",
+    "source_sha256": "6cb758e0d52223f628d71d15ba2995ff5423eff6c15a362dba54ef6cfb4cecc4"
+  },
+  "commandEntitlementMaxDuration": {
+    "text": "Maximum lifetime in seconds for a JIT grant under this entitlement.",
+    "source_sha256": "16fd9e68795c0e1691d45e0a527598df485a609e5c1a8cafe5a76d0961d48db9"
+  },
+  "commandEntitlementNotes": {
+    "text": "Optional operator note on why this entitlement exists. Not a secret.",
+    "source_sha256": "73d9c6ca63f04cf1f3a02c801ad3fcc7a63fb99b88ac210e8a9630bd5f4802f5"
+  },
+  "commandPreviewRaw": {
+    "text": "Command text to canonicalize and evaluate. The server never executes it from this preview.",
+    "source_sha256": "dd67b70387d29fde15f5c532391fe3943f6d5ad252e3420d5a5bc78aa33d8f2a"
+  },
+  "commandPreviewTarget": {
+    "text": "Optional connection point used when deciding allow or deny for the preview.",
+    "source_sha256": "54eea9e312ad763f880e343b94e9002307fa204393d7008deb172a2a0dd7bc07"
+  },
+  "commandAssignmentTarget": {
+    "text": "Target system, principal, or group this command set applies to.",
+    "source_sha256": "6e1fd57d0d15debebfc8bdfac9f5a10ccf6dd51266bde53705dac285124a72fd"
+  },
+  "jumpEnrollmentTtl": {
+    "text": "Hours this one-time Jump enrollment code remains valid (1–720). Shorter is safer.",
+    "source_sha256": "34b29cb4e0538b149bf380631868d683a7277e2f3b0dc0073ce0f66d6d757df2"
+  },
+  "jumpEnrollmentDescription": {
+    "text": "Optional note so you can tell enrollment codes apart in the audit record.",
+    "source_sha256": "0dbf91c23e9d273fab88b9aff68d4bdfc994d6939398645b626e840d1c9177a6"
+  },
+  "jumpEnrollmentPool": {
+    "text": "Optional capacity pool for the joining host. Leave empty to use the default pool.",
+    "source_sha256": "a481b055868357f77352f94281a1d6d5adbc12497719ffea76571e3c53cada0a"
+  },
+  "jumpEnrollmentCode": {
+    "text": "One-time enrollment plaintext. Copy now — it cannot be looked up again.",
+    "source_sha256": "0c7baa61387f28df1eaec3165c3a985bb6f3523898b3afd612245dab976b6deb"
+  },
+  "jumpBaseUrl": {
+    "text": "External Jump accept URL (for example http://10.55.0.12:9443). Leave empty for AIC Server local capacity.",
+    "source_sha256": "578e8ba829d4100c2a55f54d8195c9521c6a510111f1d1c6777059ecab01b9fe"
+  },
+  "remoteAccessFavoritesOnly": {
+    "text": "Shows only systems you marked as favorites in this browser.",
+    "source_sha256": "ab93d6fbe5cee48be6488a7a6558683dcee4028a936b2b053cd81c8524464a49"
+  },
+  "searchFilter": {
+    "text": "Filters the list as you type. Matches visible labels and common identifiers; clear to show all rows.",
+    "source_sha256": "ef7cedd6dc3cd8c43225f946b7dd3f49ece3a6610951d1ad754c979cb0af3b41"
+  },
+  "quickFilter": {
+    "text": "Quick filter for this grid. Same as search: narrows visible rows without changing saved data.",
+    "source_sha256": "9f42e4e3c75ab4d7e8903d3131693ceaded1fbb10ebc0a1596a1357817f29d67"
+  },
+  "genericFormField": {
+    "text": "Enter the value for this field. Hover or focus for context from the label and surrounding section.",
+    "source_sha256": "b0afe19f9653ab4db820491afb0a31a9ba122196dec7dffc09cdb39e75d671e9"
+  },
+  "genericCheckbox": {
+    "text": "Turns this option on or off for the current form.",
+    "source_sha256": "cb2385efc470acf6a9713f22f3a0f0208405992164df61d05ac9f37e0304258e"
+  },
+  "genericToggle": {
+    "text": "Enables or disables this feature. The nearby label describes the effect.",
+    "source_sha256": "3f9767bd662d3c0c86a45785f11523492610085cd447bd8b53c3711bcf444880"
+  },
+  "genericSelect": {
+    "text": "Choose one option from the list for this setting.",
+    "source_sha256": "2bb194d13cf8f6c673dc16de34eb38228c8b66416183f278c6819e6c0b2be951"
+  },
+  "emailGraphTenantId": {
+    "text": "Microsoft Entra (Azure AD) tenant ID used for Graph sendMail with modern auth.",
+    "source_sha256": "38a94f06e2de5534e4613b05cbdf0497e9bdf3198b0151447f6cce516e2b5e85"
+  },
+  "emailGraphClientId": {
+    "text": "App registration client ID allowed to send mail as the From mailbox.",
+    "source_sha256": "7f1af8ceb20439cbf5dad126e9bc00cbac20b8691406390c1d07d5fa70e8e761"
+  },
+  "emailGraphClientSecret": {
+    "text": "Client secret for the Graph app. Stored as a secret; enter a new value only to replace it.",
+    "source_sha256": "1128458770f09e5c323978ebb058158ab3abc92cf8a67d71e412899aa3f5b3a7"
+  },
+  "emailGraphFrom": {
+    "text": "Mailbox UPN used in the Graph users/{UPN}/sendMail path.",
+    "source_sha256": "db800ad0f4297b45f453e74df1e614daad986e70aa553119e14ad8c381145f5a"
+  },
+  "emailApiKey": {
+    "text": "API key for this email provider. Stored as a secret; never paste into tickets.",
+    "source_sha256": "9fb08135ba3ff2ab247ee317a54c931c64f9d4372d24db0920660580a81bcaa6"
+  },
+  "emailFromAddress": {
+    "text": "From address the provider will use on outbound messages.",
+    "source_sha256": "f0cfc2be30ef5d781123079aae9379cd6d61f6885cd7d0c5ce1955ccdeef6f3e"
+  },
+  "emailMailgunDomain": {
+    "text": "Mailgun sending domain configured for this organization.",
+    "source_sha256": "51cbcf51b86c355dfcfae7a9b64487ca6706d3578ee2f6d18f96bc77d7cbb84f"
+  },
+  "emailMailgunBase": {
+    "text": "Mailgun API base URL (US or EU). Use the region that matches your Mailgun account.",
+    "source_sha256": "653d697facde084575187a8ac982643c3eedaa676c8a402f30f7f7202286d6e6"
+  },
+  "emailSmtpHost": {
+    "text": "SMTP server hostname that accepts outbound mail for this organization.",
+    "source_sha256": "402efb05f4f34a75a5dee828e079972ccc06420cd0f46fc3186cfe55cbe1414f"
+  },
+  "emailSmtpPort": {
+    "text": "TCP port for SMTP (common values: 587 STARTTLS, 465 TLS, 25 relay).",
+    "source_sha256": "36a1a189957c0a654f115e391c7fbbe9360a351fa329aab6c4ee8ca4a1aa8a5a"
+  },
+  "emailSubject": {
+    "text": "Subject line for this test or encrypted message.",
+    "source_sha256": "fe8262ce95dff1899c28680b29a11a217c5f1af83b3bb2fe04c01b2f987e1042"
+  },
+  "emailCuiPlaintext": {
+    "text": "CUI plaintext placed only in the encrypted attachment — not in the clear body.",
+    "source_sha256": "904c8e54f076fe40bb4fc306f8ebfbdc70ac43236db71e6b4e309563d92bbe53"
+  },
+  "emailPassphrase": {
+    "text": "Passphrase that wraps the encrypted CUI payload. Share out of band with the recipient.",
+    "source_sha256": "a464cb8d6ef1bed4504e59968c1edd3499221a822b34364794146b6875910be5"
+  },
+  "emailRecipientCert": {
+    "text": "Recipient S/MIME certificate in PEM form used to encrypt this message.",
+    "source_sha256": "300e343e9cd332af74aa4a8ef0a15402bf7b1543f19b8756c0561944e2ff2e05"
+  },
+  "emailRecipientPgp": {
+    "text": "Recipient OpenPGP public key used to encrypt this message.",
+    "source_sha256": "e66e86ddb0caef25c7bcbea879b50e97a18d408c8507893d4458bc5122afb861"
+  },
+  "messagingProbeLog": {
+    "text": "Read-only step log from the last connectivity or authentication probe. Secrets are never shown.",
+    "source_sha256": "6477266304a1846d73860ea1928b514d960570d32700b23903f318685a1072c0"
+  },
+  "smsProvider": {
+    "text": "Which SMS send system to use (Twilio, MessageBird, Vonage, Plivo, Telnyx, or SNS).",
+    "source_sha256": "fbb59b097afb994b89dc1bc747fd15e5c151794d7a070a099929843c25ab1f01"
+  },
+  "smsTwilioSid": {
+    "text": "Twilio Account SID for this messaging project.",
+    "source_sha256": "76d78906b381b3a0f16b2aa8ad308bebcc405947b1d6d5b899dffc6bd686d523"
+  },
+  "smsTwilioApiKeySid": {
+    "text": "Twilio API Key SID (preferred over auth token for least privilege).",
+    "source_sha256": "4ba926399cc23b521854d05210da344c872e40a384621cde0752ec73abfe0942"
+  },
+  "smsTwilioToken": {
+    "text": "Twilio auth token. Optional when an API Key SID and secret are set.",
+    "source_sha256": "5ac0f594dd4764f644f693beee1d7b6360038d5cf2905324b73ff425415cfe2f"
+  },
+  "smsMessagebirdApiKey": {
+    "text": "MessageBird AccessKey used to authenticate API calls.",
+    "source_sha256": "9a3fc433bb754d25932632f1a7763bf077370973da3421703919e21eb4f0e3d8"
+  },
+  "smsMessagebirdWorkspace": {
+    "text": "MessageBird Channels API workspace ID.",
+    "source_sha256": "dce8403611dba11d9f7d31f7f78cbb3b8aa74fce66c85a5345788eee52489b88"
+  },
+  "smsMessagebirdChannel": {
+    "text": "MessageBird Channels API channel ID used for outbound SMS.",
+    "source_sha256": "133600c04f31cc6a90a730b1e80511762aa2979857bef29ff0bc1d1593586a7a"
+  },
+  "smsVonageSecret": {
+    "text": "Vonage (Nexmo) API secret paired with the API key.",
+    "source_sha256": "dd62fb912a79eedf72ce756d011de510f6ba9a5218bf8355b9611549eadaa00e"
+  },
+  "smsPlivoAuthId": {
+    "text": "Plivo Auth ID for this account.",
+    "source_sha256": "5b6ed7fb7dd735e5da7c506c367e3c8705bd387f05f04d480efa3070da8c8863"
+  },
+  "smsPlivoToken": {
+    "text": "Plivo Auth Token. Stored as a secret.",
+    "source_sha256": "ff3eff9f6331f67397030557832362594261cf9a374ba09d892e5c5618db2c8d"
+  },
+  "smsTelnyxProfile": {
+    "text": "Optional Telnyx messaging profile ID that routes outbound SMS.",
+    "source_sha256": "9ba57b315ed24f891cdb1a8a3c5b3cf297c09f971e5b7079326badd46cf2a8c8"
+  },
+  "smsSnsSecret": {
+    "text": "AWS SNS secret access key. Stored as a secret; pair with the access key id.",
+    "source_sha256": "d44039514db28265c632088697e6fb2099d65db03b803d826d1e7f7b3f1e62ec"
+  },
+  "elevationOffer": {
+    "text": "Elevation offer (channel and policy package) used when minting a code for this endpoint.",
+    "source_sha256": "cfb276cab824921da50eeaa9c9781f68dcb6a2a879e4fec5dbb523cc4f5f2082"
+  },
+  "elevationChallengeId": {
+    "text": "Challenge identifier returned by the agent. Paste it to compute a response.",
+    "source_sha256": "4c0781f2b6f37469f739db850d23d44c6045c48a3990df8595f9619b3b266fe6"
+  },
+  "elevationResponse": {
+    "text": "Computed challenge response to paste back into the elevation client.",
+    "source_sha256": "bd1995fc266c0d87a07415dcb783200223e6ea39c39adb3a6fc39a6d7e0ca094"
+  },
+  "auditEngagementName": {
+    "text": "Display name for this audit engagement. Shown in lists and the binder.",
+    "source_sha256": "2b3eaba6a71126c12f247bfa64bc24c0d26bf30ca2a8ceb9432937d1ea4b0af6"
+  },
+  "auditFramework": {
+    "text": "Framework or assessment segment this engagement covers (for example CMMC Level 2).",
+    "source_sha256": "13ca7068de62c605864f328bbb43bab7632a49ceceee1fba046e35a8f9fc7b7a"
+  },
+  "auditEngagementType": {
+    "text": "Whether this is an internal, customer, or external-firm engagement.",
+    "source_sha256": "1e83f747d891cd4ec397354e2615b84e04e08c422c32dd0447b7571d30854b25"
+  },
+  "auditFirm": {
+    "text": "Assessment firm record linked to this engagement.",
+    "source_sha256": "64b5ac7cc8600019cc39835d841151ebc08a2ed64e7c09aa63e78fb9d2c0de19"
+  },
+  "auditFirmName": {
+    "text": "Name of a new assessment firm to create and attach.",
+    "source_sha256": "90196595318a6fc1c98d1e5b57fc75c82e4c46a84fe210b1acc69182cfc8f275"
+  },
+  "auditWindowStart": {
+    "text": "First day of the assessment window (inclusive).",
+    "source_sha256": "63474bda8b414b12d11a456423ebee41bb5ef7c8b23139cd55d8253a9b8e8ee0"
+  },
+  "auditWindowEnd": {
+    "text": "Last day of the assessment window (inclusive).",
+    "source_sha256": "6b47b301acd5e22f86b4c0c242c59c0853bb3d3671afb1c6d5fff8fe690237d3"
+  },
+  "auditRequestUniqueId": {
+    "text": "Stable unique id for this evidence request (often from the assessor tracker).",
+    "source_sha256": "e75543f6c0be0a8aa46832c493d63e49e5359ba774fd418726f9d8aaecc7f0a7"
+  },
+  "auditRequestDescription": {
+    "text": "What evidence or artifact the assessor is asking for.",
+    "source_sha256": "3054a896dee29e8548bc3d02d860ac67847ad1bff16088e6abdb564354f20254"
+  },
+  "auditOwnerPrincipal": {
+    "text": "Principal UUID responsible for fulfilling this request.",
+    "source_sha256": "34f31d0c0957448e95d318f243f59a8aff73b4f64e36b4950ad20a95548e2f9c"
+  },
+  "auditFlagReason": {
+    "text": "Why this request is flagged for attention. Stored in the audit trail.",
+    "source_sha256": "2fcfd96f4c69266e2bce49e15314bb95f838f06d66395b93dd7a59f3c14dcfe9"
+  },
+  "auditEvidenceText": {
+    "text": "Observation or evidence narrative attached to this request.",
+    "source_sha256": "049bbdf6eae396f13a009b83c02217edd5146356242a245b60a29edca65726ac"
+  },
+  "auditCitationKind": {
+    "text": "Kind of citation (control, procedure, finding, or other source).",
+    "source_sha256": "dbd2dc04c8ad3b51c8747881d5fe64731f953ed7117ebfda3ff7ac99ab232059"
+  },
+  "auditCitationSource": {
+    "text": "Identifier of the cited source (control id, document id, or ticket).",
+    "source_sha256": "5e6998895d1eac2876079ca1be3863403fe75900fd8b0dbbcc5f827d9624fb8f"
+  },
+  "auditCitationSummary": {
+    "text": "Frozen observation text captured at citation time.",
+    "source_sha256": "c123443d7a2feac4a725799cea22ad79ea38bd0c0bc8125c41705a49a88f5d78"
+  },
+  "auditCommentThread": {
+    "text": "Which discussion thread receives this comment.",
+    "source_sha256": "5776b159f501a7541767da9c20fa615469dfe72e654267245c2ee82ce424549c"
+  },
+  "auditCommentBody": {
+    "text": "Comment text posted to the selected thread. Visible to engagement participants.",
+    "source_sha256": "0287dc5f69754b2d25da66b4194c0803806428aa740c2d18a9e72249cc51aca2"
+  },
+  "riskTitle": {
+    "text": "Short title for this risk. Shown in the register and reports.",
+    "source_sha256": "7961ddc885daa11a761d91461bf10d070b4aafcbb20a8ffcd27beebfdc50e8b4"
+  },
+  "riskCategory": {
+    "text": "Category used to group related risks (for example access, change, vendor).",
+    "source_sha256": "9bd3500208c828042439edd8cbb2f45f7a6b6de48f9dbe490c385af948fbe7b2"
+  },
+  "riskLikelihood": {
+    "text": "Inherent likelihood before treatment (1–5 or the scale your program uses).",
+    "source_sha256": "e6d9c29ee5140437679dc241e7516c10c8c90c9021cf5450dd6f0d3289f81593"
+  },
+  "riskImpact": {
+    "text": "Inherent impact before treatment (1–5 or the scale your program uses).",
+    "source_sha256": "0aa3d03d73207c357e31b5de5e205dc2cbe699a313f4266654ee346151214752"
+  },
+  "riskTreatment": {
+    "text": "Treatment decision (mitigate, accept, transfer, avoid).",
+    "source_sha256": "2853b30b1c90249ae54492a4e5ec82e2d4ff0352570cebb4de4c9773e8335e9b"
+  },
+  "riskTreatmentSummary": {
+    "text": "Plain-language summary of the treatment plan and owners.",
+    "source_sha256": "06b93949456352ecb2d2a7dd8ad85f2e937cc8c62381a5858ab1811cee344681"
+  },
+  "riskResidualLikelihood": {
+    "text": "Likelihood remaining after the recorded treatment.",
+    "source_sha256": "15bddef00a1085d2919c076e9da6fb10ae2863e06ffb1ac4f9022d6384d8fdc6"
+  },
+  "riskResidualImpact": {
+    "text": "Impact remaining after the recorded treatment.",
+    "source_sha256": "8dbbd05570f2173b36a2e751740cbff3eb41331c828655b24a5486ad6e897e3c"
+  },
+  "riskNextReview": {
+    "text": "Date the next formal risk review is due.",
+    "source_sha256": "b9ce9ed3e89984af2a459b6c4a23b9086f0612e711b3400c34ad24fdb0464eed"
+  },
+  "riskRationale": {
+    "text": "Why this risk is being accepted, closed, or reopened. Required for the audit trail.",
+    "source_sha256": "8be514fa04f1f6154fcbe1478b52cb1dc06ec3850e5e92d02c78055f6e5f634c"
+  },
+  "riskReopenStatus": {
+    "text": "Status to assign when reopening a closed risk.",
+    "source_sha256": "53435314fc5c17f26b27805db6222efe8d4a1bf3bad7e078f894f5309696a4f3"
+  },
+  "riskControlRef": {
+    "text": "Control or safeguard reference linked to this risk.",
+    "source_sha256": "d0274a05f227db3f128f1aac005c23037d575714c5ca19033069e2bdad2d9476"
+  },
+  "riskPoamId": {
+    "text": "POA&M item identifier linked to this risk.",
+    "source_sha256": "20511cb42a17370a19452ef0ee48429f3c378d18eeda148f7c738c6215060cfa"
+  },
+  "eventsWebhookUrl": {
+    "text": "HTTPS URL that receives event webhooks. Must be reachable from this server.",
+    "source_sha256": "334543bc3a255d3a58fe547d61e137e8c8cf9ccb963eccc5322aa3afaf2caad7"
+  },
+  "eventsBasicUser": {
+    "text": "Username for HTTP basic authentication to the webhook destination.",
+    "source_sha256": "4219aa93407bb70c741de3bd7cd41036d1ae7070d59100417bc20a3c47ce6631"
+  },
+  "eventsDdTags": {
+    "text": "Datadog ddtags string attached to forwarded events.",
+    "source_sha256": "0c6beab3ad324f5bbcd5094398099fa4849f8ba9c3f1445aecf1d696aec80342"
+  },
+  "eventsDestName": {
+    "text": "Operator label for this HTTP event destination.",
+    "source_sha256": "b5eb46ce73f64b32d5d76cfefdb24517a8e88080bf8461416a326d17744ea6dd"
+  },
+  "eventsTypeFilter": {
+    "text": "Comma-separated event type names to forward. Leave empty to use routing defaults.",
+    "source_sha256": "35c615f5d719cef81517b2dff13d1f92671d867fafc5a6be01b7890d6a190ffb"
+  },
+  "knownDefaultFilterVendor": {
+    "text": "Filters catalog rows by vendor name.",
+    "source_sha256": "d134e6db43f9b10f69a3512aa09d2ba318d0384bde5cb2a5dfc34cd7468ad63d"
+  },
+  "knownDefaultFilterPlatform": {
+    "text": "Filters catalog rows by platform or OS family.",
+    "source_sha256": "1040bd2be123cb0484f2a9991b99d3476f0ddf634c8cb02c285997fd3d40030e"
+  },
+  "knownDefaultSearchField": {
+    "text": "Limits catalog search to one column (vendor, platform, OS, username, published password, or service).",
+    "source_sha256": "1f4ac3d1d97a6940ccbc69ecd644d94bf72af8861fd6e768d4aa23ae1f955710"
+  },
+  "knownDefaultSearchQuery": {
+    "text": "Search text applied to the selected catalog field. Leave empty to list every row.",
+    "source_sha256": "4ec3f229dd270bf7ee13520bf7573d083d43dc7a9677f3388324a653a03868dc"
+  },
+  "knownDefaultMaskPasswords": {
+    "text": "When on, hides published factory passwords in the grid. Turn off to confirm the documented default.",
+    "source_sha256": "d71b449d8cbad53f8ae82ef5bb634825fe16106f2801d30dd144e6b21e09e6e9"
+  },
+  "knownDefaultCustomerCsv": {
+    "text": "Customer-supplied CSV of known-default credential rows to import.",
+    "source_sha256": "3a9c7592c38c22612d607ad68685e8b6736adac0fb1863741c2b4c5c8bc00333"
+  },
+  "knownDefaultGenPlatform": {
+    "text": "Platform sample used when generating a rotation password example.",
+    "source_sha256": "c52879a4ca2116b2dc44c1c077ca23dd967ebce66aa8ccd3e7389535c4757e4e"
+  },
+  "knownDefaultProduct": {
+    "text": "Product or appliance name for this known-default credential row.",
+    "source_sha256": "1a4cd3b00ce4de314a2db0ca14ba823ed934fd748cf9e5e526364e9843c891d4"
+  },
+  "knownDefaultUsername": {
+    "text": "Default username commonly shipped for this product.",
+    "source_sha256": "bc0275e5095b95527e59001135807359cdc71fb3f804df7e64007d6a7f8302f7"
+  },
+  "knownDefaultPlatformPattern": {
+    "text": "Platform family this row applies to (linux, windows, network, bmc, ot_plc, or *).",
+    "source_sha256": "cfd88f1caf5af5f18879986c1998da491f81cb5c1c7eccf66c32ac2b872d5ff2"
+  },
+  "knownDefaultVendor": {
+    "text": "Equipment or software vendor name for this factory-default row.",
+    "source_sha256": "de3498b40598a3889f76a4877cbbf0a8573c7e16d54cb06bcb3caa072a4b4d28"
+  },
+  "knownDefaultPublishedPassword": {
+    "text": "Public vendor default password from documentation — not a live endpoint secret.",
+    "source_sha256": "678328a2b51141f1be351a21ae44be0147369b11948a080a96fca2b898ea6513"
+  },
+  "knownDefaultBannerMatchHint": {
+    "text": "Banner tokens separated by | used to match scan signatures.",
+    "source_sha256": "99892d717603d82df3f40cc15ff72b65c89b4a7bbe7380bb902271157e283c7d"
+  },
+  "knownDefaultNotes": {
+    "text": "Operator notes about this catalog row. Not sent to endpoints as secrets.",
+    "source_sha256": "cab616d823db80655a172b1461d0103919938c14e0eb73004390444caf730e40"
+  },
+  "knownDefaultEnabled": {
+    "text": "When off, scanners ignore this catalog row.",
+    "source_sha256": "953b4f1cff392847e454c879dbbfa504a125f2517e781084155abc64fdd205ec"
+  },
+  "knownDefaultReloadSource": {
+    "text": "Reloads bundled dictionary rows from the shipped source file on this server.",
+    "source_sha256": "fd67e63a669d34b56c55e69cdf6a090fa4e4833a001fa3fe201209693647ee5f"
+  },
+  "knownDefaultFetchLatest": {
+    "text": "Downloads the latest redistributable source and merges rows into the catalog.",
+    "source_sha256": "0785c7e3fa193c2eeee426653ce233d862c30f272dd6bf4a9064ed0f083bd1cd"
+  },
+  "settingsMitmProxyPort": {
+    "text": "TCP port for the optional diagnostic MITM proxy on this server.",
+    "source_sha256": "59c6bce8026492414d637d8b36feca5a074b8ce22ed875fca4bb66331a3974e7"
+  },
+  "settingsPreferredIdp": {
+    "text": "Identity provider this browser prefers on the logon page (stored per operator).",
+    "source_sha256": "cdeca4554ed17e22b9cb42ab9b1b09b2d5d6cc99417c0d1cca77040affa5bb0a"
+  },
+  "otScanNetworks": {
+    "text": "IPv4 networks to scan during discovery. Enter one CIDR per line. The first network is used for the next run.",
+    "source_sha256": "5834f4649a122340da8fe196ddd7122f64e6074c366edda5a68d92e020cc329a"
+  },
+  "otDiscoveryInterval": {
+    "text": "Minutes between automatic discovery scans when the schedule is enabled.",
+    "source_sha256": "b056281184da2820a3170c4a992c6df7def9a5740c824710f1d37873b8131e9f"
+  },
+  "otRotateTarget": {
+    "text": "Protocol family for password rotation (modbus or opcua). Pick the target type that matches the asset.",
+    "source_sha256": "220383db92e484891352e4b811c1e7e8698c9943bef9c0a746684b39a75df8b8"
+  },
+  "otRotateOldPassword": {
+    "text": "Current password on the target. Leave empty to use the password already stored for this asset.",
+    "source_sha256": "3bc2a0eb877e00bac5d848c1fbeccd405e0fc9e095d7832f59fdf0a6f8045d85"
+  },
+  "otRotateNewPassword": {
+    "text": "New password to apply on the target after rotation and vault propagation complete.",
+    "source_sha256": "213300940e2783c85cbb2f3a7bf3f713e589f9bb61bfd604816051b9d9f81927"
+  },
+  "otBreakGlassReason": {
+    "text": "Business reason for one-time password reveal. Required for audit; at least eight characters.",
+    "source_sha256": "e1f960ef75f5257da4cb83980df4e6615d62e19d912335e80971b4897c4992da"
+  },
+  "otBreakGlassPassword": {
+    "text": "One-shot revealed password. Copy if needed, then dismiss — not stored in the browser.",
+    "source_sha256": "9f7744d8b46400e24f696881bc9dd063a6aafc00d9604ed3ccacb30f32611963"
+  },
+  "actionCancel": {
+    "text": "Closes without saving changes made in this dialog or form.",
+    "source_sha256": "ec753fe9b81d88029caa46c5ebee137fc0c29dce744a43a3694a739874211381"
+  },
+  "actionRefresh": {
+    "text": "Reloads data from the server so the list shows the latest state.",
+    "source_sha256": "8948bb81eb8d7009d30e29def107049944502788c38f6cdcbdc3a2043f24c342"
+  },
+  "actionBack": {
+    "text": "Returns to the previous page or step.",
+    "source_sha256": "0b1f782a8f76b9c064bb2c25430699af7acd47fd28c2e07cc5c2daf72a4f5be2"
+  },
+  "actionNext": {
+    "text": "Continues to the next step in this wizard or flow.",
+    "source_sha256": "99831355a0773be581c72921bc2a383a1bb2c4cf25c3fa12d57b04bdfccec8b8"
+  },
+  "actionCopy": {
+    "text": "Copies this value to the clipboard.",
+    "source_sha256": "173fdba46f17f05edaf02dd8e065a5c53f5ac3929b86aa3b509d8ca3375e4e9f"
+  },
+  "actionReveal": {
+    "text": "Shows or hides the secret value. Reveals are audited.",
+    "source_sha256": "e7cf05b8447a4345270a3840f66b8b3bc0dbb92b37cb9df20791884aa28f11db"
+  },
+  "actionDownload": {
+    "text": "Downloads this file or export to your computer.",
+    "source_sha256": "9c880fd2b1019f753c17b2e92bfc564894350a0930a079f2070f76b1826a8320"
+  },
+  "actionUpload": {
+    "text": "Chooses a file to upload to the server.",
+    "source_sha256": "57e39b4b33f8abec5518160b82917a8a56c6ce2d0ba52cfc5cb1da0870ee995c"
+  },
+  "actionSearch": {
+    "text": "Runs or focuses search for this list.",
+    "source_sha256": "41ee4952d93449e7584447a85b8202f6ee2f04fefa3fb715dbc1f8fc82b60d96"
+  },
+  "actionFilter": {
+    "text": "Opens or clears filters for this view.",
+    "source_sha256": "4734c41ec87a43257d2a291b053669e1d96f2b79f69d3f09f711a049f99d8f7d"
+  },
+  "genericText": {
+    "text": "Plain text for this field. Use concise operator-facing wording.",
+    "source_sha256": "3cb0e63587932d2cafefd33958e2ca757d261e972b3521ae0784afacbef83ef4"
+  },
+  "actionHelp": {
+    "text": "Shows help for this page or control.",
+    "source_sha256": "dd475d5bcee8d36980fde3473276414770d482cd03fdfc8c81944104870251a1"
+  },
+  "demoLicenseBannerCancel": {
+    "text": "Hide this demo license notice for the rest of this browser session.",
+    "source_sha256": "1f50e67b7dd2e3cebe46868fcd9757906cfbbe9d8c7f5f02ad4d3c7da03341f7"
+  },
+  "demoLicenseBannerRequest": {
+    "text": "Open disconnected licensing to request or install a purchased license.",
+    "source_sha256": "b203dc8f6eb6faebb03f372d890a355700663a51485ce06b2fd9646ebe3578de"
+  },
+  "licensingSiteToken": {
+    "text": "Opaque site token for AIC License Management. It does not include host names or IP addresses. Copy it, then paste it on the Activate page.",
+    "source_sha256": "85bd718791f0aa7c7b5234a7b11b7ba22462b302ac45222701985689a74262a3"
+  },
+  "licensingPackage": {
+    "text": "Paste the signed license package or choose the file you received. Import replaces the key now on this server.",
+    "source_sha256": "6be29d169a471dfe879e2ad82868c632f684a6e162fd41aa87bb374173abbd22"
+  },
+  "actionLogin": {
+    "text": "Signs you in with the credentials on this form.",
+    "source_sha256": "68df5f081525b0fc36938a18388555e84b29a598bf26aef599dd177ba7ac58d2"
+  },
+  "actionConnect": {
+    "text": "Opens a live session to the selected workstation or connection point.",
+    "source_sha256": "dc1793ece3a992889fbd11f7c0bcb2b148334c29768e5d161e9f802cdb6d7cbb"
+  },
+  "actionDisconnect": {
+    "text": "Ends the live remote session and returns you to the workstation list. You stay signed in to AIC Server. The remote computer may stay signed in.",
+    "source_sha256": "e4f0a8f2bf9db05e57bd4997b4e5c43b30c6645d725cb9d99453f29d870171da"
+  },
+  "actionLogoffDisconnect": {
+    "text": "Tries to sign the remote computer off, then closes this view. You stay signed in to AIC Server. If logoff cannot run, the dialog says so.",
+    "source_sha256": "05c7cb773b0edeb36af03f8736af27bf42001dc5f5fae681709bed6f6aee0aed"
+  },
+  "pamLiveSessionDisconnectLogoff": {
+    "text": "Unused. Disconnect from a live SSH, RDP, or VNC session always returns to the workstation list and leaves your AIC Server sign-in in place.",
+    "source_sha256": "4708f6cb7bd582d663da8a32eb732a04c1539db4a7e828294310a2237504a243"
+  },
+  "actionApprove": {
+    "text": "Approves this pending request.",
+    "source_sha256": "caf86a6ca4f598a484fc75dba6abe13c547f3a9144b6b5881b28b83a64b51098"
+  },
+  "actionDeny": {
+    "text": "Denies this pending request.",
+    "source_sha256": "8bf383d6d5761179e18e0c2ec55ef32592c0244d62d2740b353991e8be3cbc57"
+  },
+  "actionRescan": {
+    "text": "Runs the probe or scan again for this target.",
+    "source_sha256": "e117dbed5ef0c50a36d225de882042a9aa93bd99e9269e7644f8d1d35f78f184"
+  },
+  "actionExport": {
+    "text": "Exports the current view or package for download.",
+    "source_sha256": "9117149138efbbc49710ce36271cbd5eda2832062dafb164a26b1fac20dff74a"
+  },
+  "actionTest": {
+    "text": "Runs a connectivity or validation test without saving unrelated edits.",
+    "source_sha256": "07e588e83cb02b49add39e8cbc32f71baf2274d1ca3ee1bc2344f05e0ca6c868"
+  },
+  "actionPush": {
+    "text": "Pushes the current Jump config to this external capacity host.",
+    "source_sha256": "bf4c1c056cd9427ea88c1266537b7866fb35646beee10cffa0d0ffa52eb6a09d"
+  },
+  "actionEnsure": {
+    "text": "Creates or repairs the AIC Server local Jump capacity endpoint.",
+    "source_sha256": "40c5418937d1c5767c64da016819567ec0cdbe9b7d159f0a104fdaaa4aa7c489"
+  },
+  "actionProbe": {
+    "text": "Runs a placement or OCR probe without changing fleet membership.",
+    "source_sha256": "c4068d6d9bbabd8b7fa1672936d70813e7e3782ef52e7d8aeec742f4de5a37cc"
+  },
+  "actionMintToken": {
+    "text": "Creates a one-time enrollment code for a new Jump host.",
+    "source_sha256": "dde5ddb368694202f414e3cd80ea5a541f61d1a9e8b34c5a79fb998fcec57159"
+  },
+  "actionPlaneOn": {
+    "text": "Enables the jump recording plane so redirects are accepted.",
+    "source_sha256": "d1c69a28862a11441de57063f7d151b6918c4b92be17d6d50655c81e3e63fff9"
+  },
+  "actionPlaneOff": {
+    "text": "Disables the jump recording plane.",
+    "source_sha256": "d5d652866187edff919ba761e2a50da3c4917db46939d9122a1c684d69518765"
+  },
+  "actionFavorite": {
+    "text": "Adds or removes this system from your favorites list.",
+    "source_sha256": "cbf62b7de6f03653e1fe953b9bd45b86dc6e4a0175b3be2a8f34fceef75cfa70"
+  },
+  "actionUnassign": {
+    "text": "Removes this workstation assignment from the selected user.",
+    "source_sha256": "98c47bdcdc8167aa1059406ef167212ffaa3299b4def0af7256d4b9e4da0da75"
+  },
+  "actionGrantAll": {
+    "text": "Assigns every eligible end-user workstation to this principal.",
+    "source_sha256": "fff68cf287876f16863dfa389925db183b79ad40001af0722b983d87ed5fe6fb"
+  },
+  "actionAssign": {
+    "text": "Creates the assignment using the selections on this form.",
+    "source_sha256": "2e3a8f4e1228641d6f6dfc70cbca54014c068065ffbea25725829a79b36188e1"
+  },
+  "actionDrain": {
+    "text": "Starts or stops drain mode so this node stops accepting new sessions.",
+    "source_sha256": "c5b95dfcaaf9b521e9e9deebda0bbf40b1197e02b3d70ee5f049d8f4db1c2d93"
+  },
+  "actionJoin": {
+    "text": "Joins an existing live session as a supervisor (view and Kill).",
+    "source_sha256": "7b11510e10662ee68f5957a613cb21330f5f61019379599fc0898a57377252db"
+  },
+  "actionKill": {
+    "text": "Terminates this live session for all participants.",
+    "source_sha256": "f7969ab3d837edb42de27161b4b766a3482b2b8d87ddccaa39dd9aec3012c5bb"
+  },
+  "actionAttest": {
+    "text": "Records or refreshes attestation that target-local recording is active.",
+    "source_sha256": "df69868ac193278ded950bd09ebe31b8bdaeee2add60f712774823f3a88d60b8"
+  },
+  "actionSubmit": {
+    "text": "Submits this request or form to the server.",
+    "source_sha256": "f80ac3529006d1ff0513421d782c88eb5b1b7b753121b7be79b9c70608ea92ad"
+  },
+  "otTargetDisplayName": {
+    "text": "Friendly name shown in the OT inventory and Connect lists. Operators see this label — not the hostname alone.",
+    "source_sha256": "73c2fea3175a35aa717099f8b1083c80f45b55b2ebad967b9640c1782ae318aa"
+  },
+  "otTargetHost": {
+    "text": "IPv4 address or hostname the server uses for discovery probes and Connect dial attempts.",
+    "source_sha256": "7787af782fb7482209839f713459f0ca70d2b6b12c50cd4a07a0a30f4c0ff1e4"
+  },
+  "otTargetPort": {
+    "text": "TCP port for the OT protocol on this target (for example Modbus 502 or OPC UA 4840).",
+    "source_sha256": "afb63430ef7375cf50aedb6b0713e20a4a0fcaec5cf741ba7b336ef31602df03"
+  },
+  "otTargetVendor": {
+    "text": "Equipment vendor name for operator context (for example Siemens, Rockwell). Not sent to the device.",
+    "source_sha256": "e98bf7b5fd26e539e0bc1a50cb89e13a8a9590802bf52a77a1db93a73b8aa2c6"
+  },
+  "otTargetZone": {
+    "text": "Purdue or site zone label grouping this target in inventory views.",
+    "source_sha256": "027cdbed06f7ce7200fa581d883d416d7082206d1ccc0fdd3e8a55f7be03b456"
+  },
+  "otRotationIntervalMinutes": {
+    "text": "How often to rotate after you save with scheduling enabled. Minimum 5 minutes. Next run is computed in UTC.",
+    "source_sha256": "28cd9f4e5529ec32dd6223aa3564fc7181195fae27cf49632aef5784bc966263"
+  },
+  "otRotationProtocolTarget": {
+    "text": "Which protocol job path to use for the scheduled rotation (Modbus TCP or OPC UA).",
+    "source_sha256": "414751dbfe6cda431e61e05a39b045fd1fafc04b50f71a05a21067520e26ef57"
+  },
+  "otDiscoveryScanNetworks": {
+    "text": "One IPv4 network per line in CIDR form. Discovery uses the first network when you run a job.",
+    "source_sha256": "052a70d4eaeb9056d38dca4342f66deb224f915582841490ae4ae75286254f33"
+  },
+  "enclaveSystemVersion": {
+    "text": "Optional OS or firmware version string for this manually added system.",
+    "source_sha256": "9d8ffd3ce389a098fb83794cc5c55ec1ea94515c0e8a43461357a5a52eb19968"
+  },
+  "enclaveSystemNotes": {
+    "text": "Optional operator notes about this system (purpose, location, ticket). Not used for automated policy.",
+    "source_sha256": "98ebe3ec010bb924705c1272ddd338f62aec511d3c14ab5fc3f93b488ab167c8"
+  },
+  "otWizardScanNetworks": {
+    "text": "One IPv4 network per line in CIDR form. Discovery uses the first network when you start the wizard scan.",
+    "source_sha256": "7c1eebed82458eff2b9f07bec680019f48cfad0f13a48b56cb946e95cb7d7e6a"
+  },
+  "defaultPolicyVersion": {
+    "text": "Version tag stamped on new password policy rows created from these defaults.",
+    "source_sha256": "2951723378d7d80bc58f4fb1531577a308bb7b172d250a20f144baa00fab4e9b"
+  },
+  "actionStoreCredential": {
+    "text": "Seals the entered credential at rest for use at Open.",
+    "source_sha256": "4daa01b41177bd85534a07642b613e232e60e1d124c582a4615b5f2a871478fb"
+  },
+  "actionWake": {
+    "text": "Powers on or wakes this workstation so Connect can open a session.",
+    "source_sha256": "fb00c1d5ff0d0071f5a46d876983a194e3ce65c4d691ef3c927303056a936b3c"
+  },
+  "actionSleep": {
+    "text": "Puts this workstation to sleep now (ends the power hold if one is active).",
+    "source_sha256": "f0a710bb0dbede47ff99cb542c52938b3af1734a7d12854bdd445a4c18f84c87"
+  },
+  "actionKeepAwake": {
+    "text": "Pauses auto-sleep while you run a long task. Requires an audited reason.",
+    "source_sha256": "c58d0f2d36a66f7fa37eff09181b812c98ad3334c335dda63a987a7e8d72a7bb"
+  },
+  "actionClearKeepAwake": {
+    "text": "Ends the keep-awake hold so normal auto-sleep rules apply again.",
+    "source_sha256": "cf2c79414b8478b7b80302f63a6a1194bb9c3b3ce18c6b9bc0923801f91e3cf2"
+  },
+  "actionRemediate": {
+    "text": "Runs the automatic fix that prepares this seat for Connect.",
+    "source_sha256": "76a41684381ebd00b54625ddf5e771ecdf2e3c2637c5e7016334321cd554eabe"
+  },
+  "actionOpenSession": {
+    "text": "Opens the recorded session viewer for an already-authorized session.",
+    "source_sha256": "dec3fcc9e26cdf607f19198a540b7cd07fca97cef957d75d206ad8de5f7ca5b8"
+  },
+  "actionTryAgain": {
+    "text": "Retries the last failed load or action.",
+    "source_sha256": "556f087b46912d887acd556e013e6e1e3815432165c483d94eaa04f6bffe754c"
+  },
+  "actionClone": {
+    "text": "Creates a copy of this command list under a new name.",
+    "source_sha256": "0b74b66e4d560b74a0b00e90dbd810c890cdb860b3905db7c6087c1d61d79fc7"
+  },
+  "actionView": {
+    "text": "Opens this command list. Shipped lists are editable here too.",
+    "source_sha256": "180259b350501da5073989393e50dcdd7d832a37534e2e226301bb3124fa2aca"
+  },
+  "actionRestoreDefault": {
+    "text": "Replaces this shipped list with the factory rules. Your edits to this list are discarded. Assignments stay.",
+    "source_sha256": "5caf4a4207d1edf4d3625438289fe47bd1e364ccd9f72298a54017a94f881f25"
+  },
+  "actionAcknowledge": {
+    "text": "Confirms you understand the notice and continues to the next step.",
+    "source_sha256": "d4436b7fc0c8132e96f46b10d131192e2d036e79c0a7d86a97bff2fedc6ca903"
+  },
+  "actionRequestAccess": {
+    "text": "Submits an access request for approval.",
+    "source_sha256": "7161f23af662f8169dafaa614b3507f14a4ebde85763b8336c417932ba97cb43"
+  },
+  "actionSetCredential": {
+    "text": "Sets or updates the credential used when opening this connection.",
+    "source_sha256": "296ba4800e1c1861fa6221d1f3f8c4384ae866ca9a2ee3ba008d9287b5eab9c5"
+  },
+  "actionClipboard": {
+    "text": "Copies session clipboard content into this browser.",
+    "source_sha256": "2c8b9ddba775564fc5cbb6629b1fe2aa2f7250416833a26d06388d6385479a97"
+  },
+  "actionFileTransfer": {
+    "text": "Opens the file-copy panel. Send delivers the file to the remote computer (SSH: SFTP into aic-transfer in the account home; Windows Remote Desktop: the user-profile aic-transfer folder). VNC cannot receive files.",
+    "source_sha256": "a1256df16367813ab049f6e8720153a891d70f6cca9e16e5eaf9bc4f45969a85"
+  },
+  "actionSoftKeyboard": {
+    "text": "Shows an on-screen keyboard for the remote session.",
+    "source_sha256": "7fce158cc24a242db03e1ee06b75c57536c1f0cd3a975223c83fc9ed9c9d99ce"
+  },
+  "actionChatSend": {
+    "text": "Sends this chat message to session participants.",
+    "source_sha256": "a8d4500a0d73ce0266d3454982e15afd94bced97f857054ed0585c323b07d60b"
+  },
+  "actionCtrlAltDel": {
+    "text": "Sends Ctrl+Alt+Del to the remote graphical session.",
+    "source_sha256": "54305d641107247f907d7de245df19083df593306110e052931ed09e88a866be"
+  },
+  "actionSoftKey": {
+    "text": "Injects this key into the remote session through the soft keyboard.",
+    "source_sha256": "731e72ce5856353d6a4fac5fc572bb10f9978f5473a14ced8ca8036b98e250d3"
+  },
+  "actionFileUpload": {
+    "text": "Sends a file to the remote computer. SSH uses SFTP into aic-transfer in the account home. Windows Remote Desktop uses the user-profile aic-transfer folder. VNC cannot receive files. A failed send is an error, not a success.",
+    "source_sha256": "3cb9d9511ec7c4a6d5bacfce007e3d2215fd3273b2abc85246513dcd519ab754"
+  },
+  "actionFileDownload": {
+    "text": "Downloads a copy this console kept after a successful send, or a file previously pulled. That is not a live pull from the remote computer.",
+    "source_sha256": "c57134c51751815e93e0f8e6c0e7d23ab6a1de5b5a741b1b7d218cfeabd16019"
+  },
+  "actionEnable": {
+    "text": "Enables this item so it participates in routing or policy.",
+    "source_sha256": "1adcddefd77ecfc3e9beace913deba592851e928bc0f8bce2c5ac28818df155c"
+  },
+  "actionElevate": {
+    "text": "Opens the dialog to mint an elevation activation code for this identity.",
+    "source_sha256": "7aa0deac97686cc408a4de10f7c6f00c770735c720a7b3b78583d98592fa48b6"
+  },
+  "actionRecoverPassword": {
+    "text": "Opens password recovery / reveal for this managed identity. Reveals are audited.",
+    "source_sha256": "10429b8aab00a1e7d63235fa07f0dc65ae944fc4b408042005b38e5be75173fd"
+  },
+  "actionGenerate": {
+    "text": "Generates the elevation activation code with the settings on this form.",
+    "source_sha256": "c67c4f7a4b46fa7b91e39ef417872a72f6ae72bebebe2c36b61f609328361c0d"
+  },
+  "actionRegister": {
+    "text": "Registers this endpoint and returns a machine id and encrypted secret.",
+    "source_sha256": "db39e3e94c2ebb45f25ca7f5d79691eb1566f0e16e6d68ceedad993b8c548bfb"
+  },
+  "actionDone": {
+    "text": "Closes this success view after you have copied any secrets you need.",
+    "source_sha256": "d672f173f283dc56de8571db6765f564192b96cf5b07d8e2ddd776c23043118d"
+  },
+  "actionNotify": {
+    "text": "Opens email or SMS delivery for this credential or code.",
+    "source_sha256": "594c0dbbe927c1dfddaaf1c6aa999fa0e6f2a0aff85620ecc36ac091b281dc95"
+  },
+  "actionPhonetic": {
+    "text": "Shows or hides the NATO phonetic spelling for verbal read-back of the code.",
+    "source_sha256": "e5f80868f995de3e5bf6041115945d13ce70c423380548d700c196275b2fa507"
+  },
+  "actionCustomizePolicy": {
+    "text": "Stops inheriting group or machine policy and edits password rules for this identity only.",
+    "source_sha256": "b46691393b9305b577ccd4d028f61070f6a98841a284edc1a195e170f3d0962a"
+  },
+  "actionRevertPolicy": {
+    "text": "Discards custom password rules and inherits group or machine policy again.",
+    "source_sha256": "526e5508f7829a149cd17c617691d5363a0c35b15910643c80869a9ce9dadacb"
+  },
+  "actionResetMfa": {
+    "text": "Clears enrolled MFA factors for this principal after you confirm. They must re-enroll.",
+    "source_sha256": "9453fbd9dcab7d49b296617bb4ea9a43b3fc8c041075430df02f56fbfc42b300"
+  },
+  "actionRevoke": {
+    "text": "Revokes this credential or session so it can no longer be used.",
+    "source_sha256": "799216167d1da1e806b50e03204dba54d5154384a693e65fa89c844c43de1ecf"
+  },
+  "actionAddRule": {
+    "text": "Adds a new allow or deny rule to this command set.",
+    "source_sha256": "cbff74cb1a701e73a4c83ceebacbc9da0dc87ccf2a2ecba3598010ea290717b6"
+  },
+  "actionPreview": {
+    "text": "Evaluates the command against policy without executing it.",
+    "source_sha256": "90df032eb92b96e8b7461dba254449a5f441aade324ce8b55999073c795fdfcc"
+  },
+  "actionManageSets": {
+    "text": "Opens command governance rule sets for create, edit, or clone.",
+    "source_sha256": "9f95b6a528d5a0ee556d26c7990d757e2418e1a387ea8388722e9dee19a11ff4"
+  },
+  "actionManageAssignments": {
+    "text": "Opens command-set assignments for connection points.",
+    "source_sha256": "3ac9c548f788f9125f41b00099863034ed5becab8b44c0b2ea42b660d1fa4b05"
+  },
+  "actionMoveUp": {
+    "text": "Moves this rule earlier in evaluation order.",
+    "source_sha256": "8ad228c314166fb7358693d17a796dbb5640631391988e75e957c35ebca45d90"
+  },
+  "actionMoveDown": {
+    "text": "Moves this rule later in evaluation order.",
+    "source_sha256": "23443bbfb9c1becadea7d7cb3209a532f71ee869b0f8e9eb845581ac34d99821"
+  },
+  "actionEditPolicy": {
+    "text": "Opens the password and rotation policy editor for this group.",
+    "source_sha256": "56f8961b51aeda9d51e3676983f389c819c62fc527072ed2aa2564ec783368c6"
+  },
+  "actionInheritance": {
+    "text": "Shows effective policy and which group or default each setting comes from.",
+    "source_sha256": "e955a1d0edda8f8aa3059195b0fc090a31b69db3f5bb9386eaaf6656b855878d"
+  },
+  "actionViewConfig": {
+    "text": "Shows the config.json that agents in this group would receive.",
+    "source_sha256": "aa735ea240173258268c4dbb6c48ed83fb26b39775a39eb448c2fa49f0f8a32e"
+  },
+  "actionDeploymentTemplate": {
+    "text": "Edits deployment template defaults for each usage type in this group.",
+    "source_sha256": "5db5825dd4f0d666823385f1a521fe90e44a651ea6e79cbc0fa8379dc65701a0"
+  },
+  "actionSettingsWizard": {
+    "text": "Runs the settings wizard to create settings.json for an endpoint in this group.",
+    "source_sha256": "64a466d14a94290f3d467ccd4e250889ab419f0ab8aebc22a579597f8d31d4b4"
+  },
+  "actionManageIssuances": {
+    "text": "Lists, rotates, revokes, or re-downloads issued settings for this group.",
+    "source_sha256": "625f08c74122b79d16c7a5219a8cf81b474c5fe9de9b3928a833d5473a9daa69"
+  },
+  "actionIdentityTemplate": {
+    "text": "Edits the managed-identity template applied when new endpoints join this group.",
+    "source_sha256": "a63bbbfdb57fae1c7cdf0bdc92dbfe1aa772925c5a103b1d1e4ace06d4b6c3b8"
+  },
+  "actionMove": {
+    "text": "Moves this system to another system group.",
+    "source_sha256": "d2c36e1f34ecf8148b659e66daf80e6846f8c6ff1ed31ce0fe057d2173691cfd"
+  },
+  "actionConfirmDelete": {
+    "text": "Confirms permanent deletion after you typed the required name.",
+    "source_sha256": "ece5c352e7c61bae0cd8f7d014a127383a9236ef5d8bb51404b489d610767432"
+  },
+  "actionResetField": {
+    "text": "Resets this field to the default value.",
+    "source_sha256": "761127478f228dcf6f430cb4d7292669b2c07da2adc64de3af81d88444008e7b"
+  },
+  "actionRecryptPreview": {
+    "text": "Previews re-encryption of group secrets under the assigned key set without writing.",
+    "source_sha256": "1fdf1476e5485f7bd7f2825bdc14df58d7c850002d750f6b485070e88b0e1487"
+  },
+  "actionRecryptApply": {
+    "text": "Re-encrypts group secrets under the assigned key set and writes the new envelopes.",
+    "source_sha256": "940aedbfec20956b5b7d9b269c49af05a1ac0e4a4dfa51c27e9febb2846b3bfc"
+  },
+  "actionAssignKeySet": {
+    "text": "Saves which encryption key set this group uses for wrapping secrets.",
+    "source_sha256": "c4759518ea0ef92ee969ede748e14bf0f27fd55e489890f6bb931e4004d7f133"
+  },
+  "loginForgotPassword": {
+    "text": "Starts local-account password reset using email or recovery options.",
+    "source_sha256": "537c04aa9644f699dd4be365b734e84f02568b6e460402d033df498978f7592a"
+  },
+  "loginTotpEnroll": {
+    "text": "Opens authenticator-app enrollment for this account.",
+    "source_sha256": "3005eed48914be4563bb70e873c05c0be88cd098ad0bb41bcd1ceea4bed55828"
+  },
+  "loginSkipEnroll": {
+    "text": "Continues without enrolling MFA now. You can enroll later from Account security.",
+    "source_sha256": "0c57cb4fb232025a2de6668726b047b979fbaa98368d29ed2938453e92f86c1e"
+  },
+  "loginUsePasskey": {
+    "text": "Completes sign-in with a registered passkey or security key.",
+    "source_sha256": "2178efb0cde74bd1e916e9157119b6eb87783db9b44c68d65b17e8009757515f"
+  },
+  "loginOidcStart": {
+    "text": "Redirects to the selected external identity provider to finish sign-in.",
+    "source_sha256": "e4f31501030fbcf6412a85e19980b06034a9002bcae4dc8655fad55e63d347dc"
+  },
+  "loginPivStart": {
+    "text": "Starts smart-card (PIV) certificate logon for this browser.",
+    "source_sha256": "89058df282d9590f719015b3c6df9c0bd012c711ec41b1d016e6d0fd11b1b37b"
+  },
+  "loginWindowsIa": {
+    "text": "Starts Windows integrated authentication (Negotiate) for this browser.",
+    "source_sha256": "3cd347aad5e6142912ac5629ad4f5841aef55dd1f335908f272adb63975b82d8"
+  },
+  "loginProviderSelect": {
+    "text": "Which identity path to use for this logon (local password, PIV, or other configured providers).",
+    "source_sha256": "4ece07972fdb0c1e9acac5779e67b1eb14f8570b8481c0cb0dc8e6b1366ba468"
+  },
+  "sessionRefreshEnabled": {
+    "text": "When on, the console may refresh the session Bearer before absolute expiry.",
+    "source_sha256": "d0ee0c18c50be19f97c9958f72905ab3f8fec4f79631faf0af5c34922289d323"
+  },
+  "sessionRotateOnRefresh": {
+    "text": "When on, each refresh issues a new token and the prior Bearer is rejected.",
+    "source_sha256": "cea9bf47f845461b955f0a50b1b0a2d494487aeea2d3a5fbe6243c41a35de5d3"
+  },
+  "sessionAllowMultiTab": {
+    "text": "When on, the same session may be shared across browser tabs via localStorage.",
+    "source_sha256": "5354673228c6a98f0f0d035c9187289f25eb26eb0721c93bab7b2b40131078a3"
+  },
+  "sessionForceLogoff": {
+    "text": "Hardens logoff against back-button and cached-page reuse after sign-out.",
+    "source_sha256": "d08860f3329d5d3aca6a77454f49afcb393773b34055ab37ea24ccd4a361c7fd"
+  },
+  "sessionHttpOnlyCookie": {
+    "text": "Stores the session in an HttpOnly cookie so script cannot read the token.",
+    "source_sha256": "9e922eeac33fa3de0e0b32d7ecb02aba0b8a94c425f512109e53bd7e33a710ac"
+  },
+  "sessionClientStorage": {
+    "text": "Where the browser keeps session material when multi-tab sharing is off.",
+    "source_sha256": "019812bbbd5a96c9fcabf79e9c82b4481bf05074fae646118322d8cf9a3bf0fb"
+  },
+  "threatIntelEnabled": {
+    "text": "Turns threat-intelligence lookups on or off for access decisions.",
+    "source_sha256": "a998d6ea1ea490177c462aa2af7c2d0662809967dea1586c5a6e2b7838446413"
+  },
+  "threatIntelFailClosed": {
+    "text": "When on, missing intel results deny access instead of allowing.",
+    "source_sha256": "72beafe32a28260d59c207fddfd04333522b55015637df7b69c3f36d59f7b41b"
+  },
+  "threatIntelProvider": {
+    "text": "Which threat-intelligence provider supplies lookups for this server.",
+    "source_sha256": "ffd9c74ffbc309e6bd15e5c23122aeeb88327d6d27381e912f36204870dfd3e2"
+  },
+  "threatIntelBrowseFeed": {
+    "text": "Feed shown in the browse list below.",
+    "source_sha256": "41d0b36548219220c037b073367803a6084a6fec1c785bbe8fcc7b1ba2b0f09f"
+  },
+  "threatIntelImportFeed": {
+    "text": "Feed that receives the imported indicators.",
+    "source_sha256": "ef78ab987acc4735a691974b8baecc3ca68e1e90fd0e269ac232007690c6134a"
+  },
+  "localPwRequireUpper": {
+    "text": "Require at least one uppercase letter in local IAM passwords.",
+    "source_sha256": "e44355e09cd33bbc766a0ad1f6d2464f6c12984a53623c69d4b8a1cc0131d529"
+  },
+  "localPwRequireLower": {
+    "text": "Require at least one lowercase letter in local IAM passwords.",
+    "source_sha256": "d02a7562d0e932497fd7aee2e7c4172082f68ca0fd248345e2711ab07a0ee9e0"
+  },
+  "localPwRequireDigit": {
+    "text": "Require at least one digit in local IAM passwords.",
+    "source_sha256": "68917c2071862cd1b3933ec6c84980a822cb8b3f1dbf8d7384b7f6c828a6177d"
+  },
+  "localPwRequireSpecial": {
+    "text": "Require at least one special character in local IAM passwords.",
+    "source_sha256": "75da28b44c593671c43fd5be0b60f7d0d06d3d3b54933a55cb955958d817fb82"
+  },
+  "defaultIdpSelect": {
+    "text": "Identity provider used when the operator does not pick one on the logon page.",
+    "source_sha256": "76261c18cdc17725445a2e35e5bea8fbd924917a8699435a898b4b2b595ee81e"
+  },
+  "providerToggle": {
+    "text": "Enables or disables this authentication provider for console logon.",
+    "source_sha256": "32022659a3968ca56b3e983c6b78227ae64d96967a69b7df828db7ef581f1855"
+  },
+  "windowsIaEnabled": {
+    "text": "Allows Windows integrated authentication (Negotiate) for console logon.",
+    "source_sha256": "91c89f98ef1e30656693d6ee535536cbe08e3528f98a79f54b2d2e4f33ab105f"
+  },
+  "windowsIaAllowNtlm": {
+    "text": "When on, NTLM is accepted as a fallback for Windows IA. Prefer Kerberos only when possible.",
+    "source_sha256": "bca37c2c970c75a442198c574b9889960196083465ea95ff37e9cb9546394e55"
+  },
+  "accessMapDryRun": {
+    "text": "Runs an access-map evaluation for the source IP without changing live rules.",
+    "source_sha256": "dec7871f3504e94743ed8a664e43ec491ba1b39b1348793599e46105171db8ba"
+  },
+  "ipRuleKind": {
+    "text": "Whether this rule allows or denies console logon from the CIDR.",
+    "source_sha256": "775d462ddfb490b231218ef1d7f784630641cfeabc7dd861c0d1a1dd1c690134"
+  },
+  "ipRuleEnabled": {
+    "text": "When off, this IP rule is ignored until you enable it again.",
+    "source_sha256": "b89cd2cecc6ad1505a126d75c764e7fe60f9b55479101144f0fb07fb31f3cac0"
+  },
+  "webAuthnRequireUv": {
+    "text": "Require user verification or PIN on the authenticator for WebAuthn.",
+    "source_sha256": "e4379662412244ff4bceea1971a070261d0d6aee611d4fb26e43968db81831e2"
+  },
+  "webAuthnRequired": {
+    "text": "Require passkey enrollment before this principal can finish logon.",
+    "source_sha256": "9f7a3a2767cc5bd9316d8d28b131236e3afae422436d975e0d26abbc611bbe14"
+  },
+  "webAuthnAllowPasswordless": {
+    "text": "Allow passkey-only logon without a password when enrollment exists.",
+    "source_sha256": "00721bb30bc775264e1f094ba00f00b146729968e9731de749ced2f1c4f3892d"
+  },
+  "accessMapGeoEnabled": {
+    "text": "Turns geography-based access rules on or off for console logon.",
+    "source_sha256": "9c34d8edf0c5961cdc5c8b701918ce29f4ac8a14012ee3cc568eede835fc9c2d"
+  },
+  "accessMapTodEnabled": {
+    "text": "Turns time-of-day access rules on or off for console logon.",
+    "source_sha256": "9666167cd4b14cb7d1929b56359d65309e8bc98b3f26fb67360ec6a91535c828"
+  },
+  "accessMapFourEyesNotify": {
+    "text": "When on, sends the manager notify email for four-eyes acknowledgments.",
+    "source_sha256": "78246c1bd940da2becb68659ec90ee20454a5785993be5f8f812211c0b694ee2"
+  },
+  "mfaTotpEnabled": {
+    "text": "Turns TOTP multi-factor authentication on for local IAM logon.",
+    "source_sha256": "bac75c6026bb538caad624a53f6fdd79d08494425f7772ec5b1afef5497bc830"
+  },
+  "mfaTotpRequired": {
+    "text": "When on, enrolled users must enter a TOTP code after their password.",
+    "source_sha256": "bf5de3a9e4ec141115f31bf7e10a4cedd1af2b8079d8e33098d33c7a26b050ad"
+  },
+  "idpDropUnlistedClaims": {
+    "text": "When on, claims not listed for this identity provider are ignored.",
+    "source_sha256": "9880b056f8395c709301c590e47fa549a1ea8ab5db38ffb57221b0f0a859a5cb"
+  },
+  "idpEnabled": {
+    "text": "When off, this identity provider is not offered on the logon page.",
+    "source_sha256": "a270e2c386863e475d30e2d8272e86912ad0549e7a69b5d8d0065ed52a9dab3f"
+  },
+  "idpIsPrimary": {
+    "text": "Marks this identity provider as the default when more than one is configured.",
+    "source_sha256": "58029d445db758c6d5e4585b3e7199c01bfbe1d432c07e65b3cdd9c6ad3186b3"
+  },
+  "logonOutcomeFilter": {
+    "text": "Filters the append-only logon audit list by outcome (success, failure, or all).",
+    "source_sha256": "3ac26b1705795d51ffc2c55c07f4c56f8c717cc3a683f2d90bd9bca0e124a453"
+  },
+  "logonPolicyBool": {
+    "text": "Enables or disables this boolean logon policy setting.",
+    "source_sha256": "ac8a8b3dc5f4a20b0a1b266b228ff94e502acf6b2193cc46215f68d3c7e0ef12"
+  },
+  "networkAclReverseDns": {
+    "text": "When on, domain ACL rules may use reverse DNS. Prefer IP matching for air-gapped hosts.",
+    "source_sha256": "20bf6c59fc40feebf7289662b064c0214974201a756248c85de785c10d1c61a0"
+  },
+  "networkAclRuleEnabled": {
+    "text": "When off, this network ACL rule is ignored until you enable it again.",
+    "source_sha256": "16a47b5a9d880e5120f8067242705fa1f1895e7aaec981d506b2a3bff8f806e8"
+  },
+  "principalInitialRole": {
+    "text": "Role assigned to the new principal at create time. Least privilege: pick only what they need.",
+    "source_sha256": "a77e75c0b5c7310889c64c34a45dc04deb83ecad5a8b0468e957079e032481ac"
+  },
+  "principalAddRole": {
+    "text": "Role to bind to this principal in addition to any roles already assigned.",
+    "source_sha256": "cca5233279b3a1c4295e42a6b166bd00b79f109b645c1c10dfbc801bb0141f3f"
+  },
+  "identitiesEndpointSelect": {
+    "text": "Endpoint whose local identities you are viewing or editing. Identities are always scoped to one endpoint.",
+    "source_sha256": "ab545349ed38ac836921ad28dbd82189978c1e0573b544c441f3f153a314e9fc"
+  },
+  "countryAllowPick": {
+    "text": "Search and select countries for this geography allow or deny list.",
+    "source_sha256": "88ede33b9e0d4fde1ee796a249672b59445ea0a5d995b3027669b4dfec4c5c30"
+  },
+  "elevationActivateImmediately": {
+    "text": "When on, the elevation applies as soon as the agent accepts the code.",
+    "source_sha256": "5f593e1cc071669654aab17beddddc2097569a017bc5b26fe34a807cfe0f4b38"
+  },
+  "elevationTargetGroupSelect": {
+    "text": "OS group added during elevation. Pick a catalog option or type a custom name.",
+    "source_sha256": "e97c7fa2074c1ec4f91d4fde6dc238c8b3372634a537aa9626ca58e7456caad9"
+  },
+  "elevationStrategySelect": {
+    "text": "How the activation code is built. Must match the strategy the endpoint agent uses.",
+    "source_sha256": "06dc20d504b41885572ce1467081f7cd728c487bd2d11cd2780885732e4aca33"
+  },
+  "deploymentUsageType": {
+    "text": "Usage type whose deployment template defaults you are editing.",
+    "source_sha256": "43240c6bd702693aaf3a216b010a27154971a629e2613a31383a5a0f90138e30"
+  },
+  "importSettingsGroup": {
+    "text": "System group that receives the imported settings and identities.",
+    "source_sha256": "9aa2ce034c0cde70c3c0936d855b0755bbaffeb1f3d425701cce26d940cafe61"
+  },
+  "importSettingsUsage": {
+    "text": "Usage type stamped on the imported issuance record.",
+    "source_sha256": "63c3e7e33b110178f3d30c303dab60b803f4c0404a217e001a46924fde033f5c"
+  },
+  "importSettingsReplace": {
+    "text": "When on, matching identities on the endpoint are replaced by the import.",
+    "source_sha256": "b8038fe2a59188178d282c95eb41c833e1dd15a8cb72184ee9b20d2ddbd6164d"
+  },
+  "issuanceFilter": {
+    "text": "Filters the issuances list by status or search text.",
+    "source_sha256": "5bcff3825ab7568523f7089f0e6f08f5daaaf3295f92a95035a3a4625d91dd6b"
+  },
+  "issuanceStatusFilter": {
+    "text": "Limits the list to issuances in this status.",
+    "source_sha256": "443843f65efad1d2f79f5668c1347c02db07ecbfd108fa67fff805536b0c9171"
+  },
+  "configJsonPreview": {
+    "text": "Read-only preview of the group config.json. Download to save a copy.",
+    "source_sha256": "d86789c9b9a57c30f3082852eecf90ee400739807580802f23a616790818761f"
+  },
+  "deleteConfirmName": {
+    "text": "Type the exact machine or group name to enable the delete button.",
+    "source_sha256": "b302703b31c718098c92286c439dad343431d12267e2778ffae1fd14b8b7288f"
+  },
+  "globalSearchMachine": {
+    "text": "Search text matched against machine names across all groups.",
+    "source_sha256": "c8d189e9d169a0ca51382b2b54c9ef5d7abcb238e5710729fb92d49cebfbb1b2"
+  },
+  "groupEncryptionKeySet": {
+    "text": "Key set used to wrap secrets for endpoints in this group.",
+    "source_sha256": "35003650d969e7375fe1b920a991c730f034f4519d0829e6c25c57d880da7677"
+  },
+  "templateSeedDefault": {
+    "text": "When enabled, template rows apply automatically when new endpoints join this group.",
+    "source_sha256": "4d33dcfae3f8da6868008c3e74ec7fe18e68165aa1856b757115db06e8b4e781"
+  },
+  "templateElevationEnabled": {
+    "text": "When enabled, issued settings include elevation_secret for this group.",
+    "source_sha256": "fe0c08fe293132ed1241de7fa85d3f89fb57e3dd18be6d957fa944a44c06d2a1"
+  },
+  "gridSelectRow": {
+    "text": "Selects this row for bulk actions.",
+    "source_sha256": "3a7297146127ef2cdfa99d55528abc5a398eb63f2ab8ee99f90f9efafae92d72"
+  },
+  "gridOpenRow": {
+    "text": "Opens the detail view for this row.",
+    "source_sha256": "503f30de045c49b34debfc52db434c3b09697d51c2ca29c54a62f405a7efda69"
+  },
+  "hsmEncrypt": {
+    "text": "Encrypts the plaintext with the selected AES key on the HSM token.",
+    "source_sha256": "70d43ac2e33e2aceddbf7b9b0527faba62aec324d53896f79f13598bb57082f0"
+  },
+  "hsmDecrypt": {
+    "text": "Decrypts the ciphertext with the selected AES key on the HSM token.",
+    "source_sha256": "f3deb52a0fa8fe371926bfc410c6bebb56b6f5802503bf62598b2d12419bca7c"
+  },
+  "hsmInitPin": {
+    "text": "Sets or changes a PIN on the selected HSM token. Requires the correct current PIN.",
+    "source_sha256": "97f46ce91531726ac65a3813c52308d7a5ca9998c120be36bcce175b622500c4"
+  },
+  "hsmUserPin": {
+    "text": "Token user PIN for this HSM operation. Stored PINs may be used when configured for the slot.",
+    "source_sha256": "a7186f3feb248da6dd91e984b299cd93cec2487c8ba763c22536c21392c1b4c4"
+  },
+  "hsmKeyLabel": {
+    "text": "Label of the key object on the token. Must match an existing key or the name for a new key.",
+    "source_sha256": "c2ca2ba714d49816d0d8952d27ccc8ea29ad4cca56f3e30f2bbba117e08b97a1"
+  },
+  "hsmCryptoText": {
+    "text": "Plaintext to encrypt or base64 ciphertext to decrypt with the selected HSM key.",
+    "source_sha256": "2f40af4d8bcf2e46a88c5c64c3f7e3bd8fdb3b5d3c06f741141b28611c8a76fa"
+  },
+  "hsmSlotSelect": {
+    "text": "PKCS#11 slot on this HSM connection. Pick the token that holds the keys you need.",
+    "source_sha256": "51c5525c06bc14e018f05ffd2c3ea1636e3386742e8b8e7f0e36a9c36e084f50"
+  },
+  "hsmVendorSelect": {
+    "text": "HSM vendor profile. Drives library path defaults and capability queries.",
+    "source_sha256": "4cd16bec355bfa6edc63c65e04f1c573b05aa8e36b3ccea2d1816e3419dc4c0a"
+  },
+  "hsmKeySizeSelect": {
+    "text": "Key size in bits for the key being generated on the token.",
+    "source_sha256": "e3ab54b7e40c5995df0490535156ddba444759aceb702711c2e011fff8f513a4"
+  },
+  "secretField": {
+    "text": "Secret value for this form. Reveals and changes are audited.",
+    "source_sha256": "360d4d7d084e3162203316a6b50d187b1dddcb1d865fff0d3741bc85599c0d2b"
+  },
+  "displayNameField": {
+    "text": "Human-readable name shown in lists and detail pages.",
+    "source_sha256": "bc7ac272f8402fb2e37cf3454f312aa125ff67e1df56467a9a7b79af369f1c5c"
+  },
+  "notesField": {
+    "text": "Optional operator note. Use product language; do not put lab host or account recipes here.",
+    "source_sha256": "a2b5d5aa19efa868448977a695e0dafff57f34b7e7571c835ab7bd591c03065b"
+  },
+  "hostField": {
+    "text": "Hostname or IP address used to reach this target.",
+    "source_sha256": "06cd3c357d3777d8b15dd667c9e2bba28100d38db9f7086094dcab970726b98f"
+  },
+  "portField": {
+    "text": "TCP port used to reach this target service.",
+    "source_sha256": "5770aedf56e198a75a22d35074c6e60f1e468667630f5c7408a81cb60c0094b0"
+  },
+  "scheduleIntervalField": {
+    "text": "How often this scheduled job runs (minutes, seconds, or cron when advanced mode is on).",
+    "source_sha256": "605a7fadfdf030ce402f3bc2287e3144d736bf28036497fb62d451f08d97c840"
+  },
+  "pathField": {
+    "text": "Filesystem or module path used by this configuration.",
+    "source_sha256": "d7a12c3ed68abea26009c51a58e4bb5f9e020186ac37cd2ade8531b80f774ea9"
+  },
+  "cloudField": {
+    "text": "Cloud provider setting for this HSM or KMS connection (region, resource, or account id).",
+    "source_sha256": "af1cbbd5c12ab08604e1a9a2d5a1864d39af7c5d02476085a5e0362bf6a30918"
+  },
+  "vendorField": {
+    "text": "Vendor or manufacturer label for this asset or connection.",
+    "source_sha256": "e75f4b41c76d248cf56d2536e4661a6bb62d3e1139611538078f11882d28e1b1"
+  },
+  "hashField": {
+    "text": "Content hash or digest used to verify file integrity.",
+    "source_sha256": "8636ca7960b4615e67cb7e230e85cb91a5fd6c63784c341fc65a09c4114b59f8"
+  },
+  "brandColorField": {
+    "text": "Brand color for report output (#RRGGBB). Leave blank to use the default theme.",
+    "source_sha256": "bb0a625ef88cf6fc4d393cbc966a922e11f2a77d9d6bb18aea65c1e0670555e5"
+  },
+  "customerNameField": {
+    "text": "Customer or organization name stamped on the generated report cover.",
+    "source_sha256": "669f2cf44aef3bcdf9d77620fcd157ef77d78239ee4f28c946f173adf99e8fd3"
+  },
+  "principalField": {
+    "text": "Identity or principal this action applies to (account, owner, or member).",
+    "source_sha256": "a0089c80a3d4002471fe8bc0a20044207afcc40d2bac7ffb502a85439568aca2"
+  },
+  "dateField": {
+    "text": "Date or time boundary for this filter or lifecycle rule (UTC unless labeled otherwise).",
+    "source_sha256": "d17f2b65ef12eeb78e95c54ebbbb3c18596443a5b19b8600e1b6136d2978710b"
+  },
+  "numericField": {
+    "text": "Numeric limit for this setting (rows, duration, attempts, or similar).",
+    "source_sha256": "a9fec45b006d7bac4e2a1b1ca81ffc4637b8a76a222437928bf73e603f871c71"
+  },
+  "genericTextField": {
+    "text": "Enter the value for this field. Hover or focus for context on the surrounding form.",
+    "source_sha256": "3ebd361b27a16af0b1e99cab860250ca3d09abea6bd53f88b82c4e15a7e98be3"
+  },
+  "genericSwitch": {
+    "text": "Enables or disables this behavior for the current form.",
+    "source_sha256": "d55cb4151ff293e8bfa80797f0f0c82285c68ee1a0561cdf5b44a1f28bcedd48"
+  },
+  "genericAutocomplete": {
+    "text": "Type to search and select a value from the suggestions.",
+    "source_sha256": "07104906d18e750e67ff8c5e12a71a5382994d2926530bed2fe82c86e0f56e23"
+  },
+  "genericControl": {
+    "text": "Interactive control for this form. Complete the field before saving.",
+    "source_sha256": "b691ad0fd19063566bcede8db0b4cb77fe6fbd0c1fcb325cf6de8c026be6e52f"
+  },
+  "enclavePurposeSelect": {
+    "text": "What role new machines get in the enclave inventory (CUI workstation, PAM seat, and so on).",
+    "source_sha256": "d86db8a4f4c51210549017260c413a81c8319d3928ae101c2d4c4c0244a6aa81"
+  },
+  "importFormatSelect": {
+    "text": "Whether the pasted list is CSV or JSON.",
+    "source_sha256": "f09a9943f3b01965554ed6b05217db3f391d5a87593116f861c9aa92e1731c8b"
+  },
+  "platformSelect": {
+    "text": "Operating system family for this machine or rule.",
+    "source_sha256": "09778a6455f9cbaf37810960d13e47541ae45f0844231d442fbbbe66703ba33c"
+  },
+  "vmPoolSelect": {
+    "text": "VM pool, capacity role, or connection target for this instance.",
+    "source_sha256": "acea7e2ed6def2ecf86a96a5212d10a4722a718acd58c73207e407862387b5ac"
+  },
+  "privilegeJobSelect": {
+    "text": "Group scope or transport used when applying this privilege activation.",
+    "source_sha256": "6a3da15a420f126829f273f743d5a99bac0d8aaad117f7598b9ce5f999cc4530"
+  },
+  "elevationMatchSelect": {
+    "text": "How the agent recognizes the application (publisher, path, hash, or package).",
+    "source_sha256": "d544ef3a5a52c6245bae6b743237338098432552ed1d786c7e5cc200756cd6ef"
+  },
+  "cryptoProviderKind": {
+    "text": "Which crypto provider backs new wraps (software, PKCS#11 HSM, or cloud KMS).",
+    "source_sha256": "8bda80dde1af015446547295c84576971450d2765d548f7d47e4d4b424c2b52b"
+  },
+  "reportFilterField": {
+    "text": "Limits which audit rows are included in this report run.",
+    "source_sha256": "fa07c568abf8b670db080961b88276f3066646115c515137824b6c1ac0d62796"
+  },
+  "validateOnlyCheckbox": {
+    "text": "When on, checks the list for errors without adding systems.",
+    "source_sha256": "30bb37f47acb247ed316561aa49cf0dd2b8db2d6fa9fc678a28e8a072a29c770"
+  },
+  "requireApprovalCheckbox": {
+    "text": "When on, this activation waits for an approver before it runs.",
+    "source_sha256": "eff387343076c05db0c1c83022a3dfadf25741acd4751c7937d85fa161eb4179"
+  },
+  "forceLogoffCheckbox": {
+    "text": "When on, forces a logoff after privilege revoke so the old group membership ends.",
+    "source_sha256": "862fa822ba560a82b41a900ccd254b804af67e19a1fdd76209ac174905bc2587"
+  },
+  "platformCheckbox": {
+    "text": "Includes this OS platform in the application rule.",
+    "source_sha256": "1348baa8b18823d9ff3a439dd3f39f3d796d8420926e66181aa052f63bfb255b"
+  },
+  "scheduleEnabledSwitch": {
+    "text": "Turns the schedule on or off without deleting the interval.",
+    "source_sha256": "98bd67083022911edc32ca0cf16bdd55a5f7f711109aa638dc929ded9422f178"
+  },
+  "propagateSwitch": {
+    "text": "When on, pushes the new secret to the device after rotation.",
+    "source_sha256": "e03d272dccd7e3ed7d1facd060a78d566447dfd699dac925dadbe2afe50b2dcd"
+  },
+  "elevateSwitch": {
+    "text": "Allows this application to run with elevated rights when matched.",
+    "source_sha256": "06251fc787e8302ee800ad609218ecc00717cdf3ab579c417012faebfc138e3f"
+  },
+  "allowChildProcessesSwitch": {
+    "text": "Also allows programs that this application starts.",
+    "source_sha256": "48e85aaac50b81a4c60cdec3efaec0dfc3dd197145c3f1adb779b146ea03ef35"
+  },
+  "complianceRunnerSwitch": {
+    "text": "Shows or includes cross-platform scripted compliance checks in this view.",
+    "source_sha256": "f57c3fc77903f4b21b5ef0845d7e7d9dca51ea98250db3075147483908984058"
+  },
+  "settingsWizardUpdatePreview": {
+    "text": "Re-runs the dry-run preview with the current wizard answers. Secrets stay masked until Generate.",
+    "source_sha256": "5242dfe89997e7cf8b2e501ef9632147147c88513b8bdcd51cbeb2196c37699b"
+  },
+  "settingsWizardEnrollmentToken": {
+    "text": "One-time enrollment token for the agent. Copy it now; it is not shown again after you leave this step.",
+    "source_sha256": "2f95ed8a641f4c5cdfb49c832646e5501b4bc206129968c3b8167c72f0eef05a"
+  },
+  "syslogOptionalFieldsSelect": {
+    "text": "Optional syslog extension fields to include beyond the required set. Leave empty for defaults only.",
+    "source_sha256": "1bced162d0e2938d297bc47d95c92c21778586d903515504d292b0b59e27b664"
+  },
+  "syslogPresetCorrelation": {
+    "text": "Selects correlation and multi-tenant optional syslog fields.",
+    "source_sha256": "e51c6f9cf2285a871da7289809b98f37a7031c2c70b20ed4c8c45706cb1a7e0c"
+  },
+  "syslogPresetFull": {
+    "text": "Selects every field in the optional syslog fields catalog.",
+    "source_sha256": "352c98946380c658d4b82d9f3e642fe3db7cd94710fadb75f816f69027ff99e5"
+  },
+  "syslogPresetClear": {
+    "text": "Clears all optional syslog field selections.",
+    "source_sha256": "09ad43cd3f0661035e01cae6532be9f93def575a55953ef5f7e1a91ec2b8be04"
+  },
+  "syslogFieldCheckbox": {
+    "text": "Includes this optional syslog field in outbound messages when selected.",
+    "source_sha256": "afe860e3e719625c89b8253ddd7fbfdd0b1572d33497fc0ae8996b9eb59a78ff"
+  },
+  "hsmConfigKey": {
+    "text": "Unique key name for this HSM config setting. Cannot change after create.",
+    "source_sha256": "796cc0edf79e3775f138c2e7f83411577d70e7ae7fe46a72e9e66dea449433d5"
+  },
+  "hsmConfigValue": {
+    "text": "Value stored for this HSM config key. Encrypted values are stored sealed at rest.",
+    "source_sha256": "99c947ba3039fa99096361d61c6ea623b1fe851584297756f63fb162c2a4fbd7"
+  },
+  "hsmConfigCategory": {
+    "text": "Optional category label used to group related HSM config settings.",
+    "source_sha256": "8dc0057d156d838207b83a01457b576118b04e94d18e7b9ac409ab1103072c54"
+  },
+  "hsmConfigDescription": {
+    "text": "Short description of what this HSM config setting controls.",
+    "source_sha256": "7ce221d98bd817cbe37863923f4529cb8ba0fa94302b186aa111414d4a89e373"
+  },
+  "hsmConfigEncrypted": {
+    "text": "When on, the value is stored encrypted at rest.",
+    "source_sha256": "70164b412753a03154325c5079854ca558cfb76ee0cc7dc9a9b184d0873c1f8a"
+  },
+  "binderOpenDetail": {
+    "text": "Opens the related compliance or inventory detail for this finding.",
+    "source_sha256": "3c8193e0739ff10ef44112c0e77b3eb0ffe3ed49ab70c526fec9efed48c18f0a"
+  },
+  "binderStatusSelect": {
+    "text": "Sets the status for this binder finding (open, closed, or waived).",
+    "source_sha256": "4369847fbdcab7f733cb44b70d08a8fcce3d73e3f7ed55f3e7db28ef38f748a5"
+  },
+  "binderEvidenceNotes": {
+    "text": "Operator notes or evidence summary recorded with this finding status.",
+    "source_sha256": "e4fcdff4d89d7d4cd101af219fec20e0771a01ca1eb57f4c4da26f51698592d4"
+  },
+  "binderRationaleWizard": {
+    "text": "Opens the guided rationale wizard for documenting this finding decision.",
+    "source_sha256": "2ae5bd66d84e923d7ec2d550631c6b039e12759c950e44c2b1b09a1f7182f57e"
+  },
+  "binderSaveFinding": {
+    "text": "Saves the status and notes for this binder finding.",
+    "source_sha256": "35833559df954bf4bd3b0ba32cb3e3075fd413f32f18a74950bbca402e29c712"
+  },
+  "binderApplyFix": {
+    "text": "Opens confirmation to run Fix-It remediation for this finding on the host.",
+    "source_sha256": "b0870d8fe9c76171d94f339aedb3af8b06134fc26de30176da8b41aa071051d7"
+  },
+  "binderConfirmFix": {
+    "text": "Confirms you understand Fix-It will change host configuration.",
+    "source_sha256": "581e00bd3215be068ecf29613f6be5b44f5d72b6509238006a7ba8f685ec0cf9"
+  },
+  "binderRunFix": {
+    "text": "Runs the Fix-It remediation after you confirm.",
+    "source_sha256": "c864adf1e16b125697c582aa316cf91021d246d96b36a6c3db080023b63901be"
+  },
+  "dashboardMoveTileUp": {
+    "text": "Moves this dashboard tile earlier in the layout order.",
+    "source_sha256": "91221152f7ce401d547bd473b4cac5a551245aadecc8eb6349ce5bf41cda2ad2"
+  },
+  "dashboardMoveTileDown": {
+    "text": "Moves this dashboard tile later in the layout order.",
+    "source_sha256": "4b1f0cf045045a54315984a4a7bc74e2b74cb80458c188377306af135edef086"
+  },
+  "dashboardRemoveTile": {
+    "text": "Removes this tile from your customized dashboard layout.",
+    "source_sha256": "ab8ceb891b459b88b321e2bb00cf680bc579bc6d2131974cc384333b80c9a59b"
+  },
+  "dashboardTileTitle": {
+    "text": "Optional title overlay shown on this dashboard tile.",
+    "source_sha256": "e39d1ebdeddf98ee81f6e687126c84e5eb34026cac8099f976fcef61e95e9cdb"
+  },
+  "dashboardTileSize": {
+    "text": "Width of this tile in the dashboard grid.",
+    "source_sha256": "c5a7641254f4e53532315c5150316f865138375b202862015018213c53c8fcee"
+  },
+  "dashboardAddTile": {
+    "text": "Adds a tile from the catalog to your dashboard layout.",
+    "source_sha256": "3ea795c6130a243e2fda022930aeaa73e63e942f1d405dc28cd6651b8a82c8c4"
+  },
+  "dashboardSaveLayout": {
+    "text": "Saves your customized dashboard tile layout.",
+    "source_sha256": "ae1762e1e6ce2a1bebe65d5a49caa7f893d5bb8d65cc608f269407be29fcc9a1"
+  },
+  "dashboardResetLayout": {
+    "text": "Restores the default dashboard tile layout.",
+    "source_sha256": "46f2e4efa243efa8014bd9049641a99218baae75b3d3cacecbeec10060b1e90d"
+  },
+  "secureShareGrantAccess": {
+    "text": "Grants temporary access to this secure share for the selected principal.",
+    "source_sha256": "e2aa9e23acab095be04fb2810a0ff9b87f6b86c2d5453b0f7a49a0d33033004e"
+  },
+  "secureShareRevokeAccess": {
+    "text": "Revokes access for this principal on the secure share.",
+    "source_sha256": "77ca66a2c2e411b96a4ffe73b0046730974d25fb7e1c9658eb109361452705b9"
+  },
+  "secureSharePrincipal": {
+    "text": "Principal that receives or loses access to this secure share.",
+    "source_sha256": "4320d6ec5d07dfb2c31d20a8386f3afe5bd16416aed1a03e2b65baf0d9e3c8da"
+  },
+  "secureShareExpires": {
+    "text": "When this grant expires. Leave blank only if the share policy allows open-ended access.",
+    "source_sha256": "d3da3d69a23aff30008fb14bc1dbb5ddb45d28656bda2c43e417b837c2045a08"
+  },
+  "reportTemplateName": {
+    "text": "Display name for this custom report template.",
+    "source_sha256": "ff5171270797ebd68a772aa8d1f8d51cb657b4172fcc7b24ec9185b1483e20dd"
+  },
+  "reportTemplateBody": {
+    "text": "Template body or query definition used when generating the report.",
+    "source_sha256": "92dca636dff2d68d121faec5c8e28e0d8a9e141c264751360524c7eedfbdc4bd"
+  },
+  "reportTemplateSave": {
+    "text": "Saves changes to this custom report template.",
+    "source_sha256": "8ee6fd4d8449f96ef74b3532d0f22fe75eaa78684ae66dc6770a4e1a5d12b8d6"
+  },
+  "reportTemplateClone": {
+    "text": "Creates an editable copy of this report template.",
+    "source_sha256": "2e8c75ca8098e070600a2ab684500b8198495c87e5ae5bfd028d58b6432ba490"
+  },
+  "reportTemplateDelete": {
+    "text": "Deletes this custom report template after confirmation.",
+    "source_sha256": "c6f347ca41d3367d402c98545b5b0b1bda4018dbd76257a77999bd7705bfb606"
+  },
+  "graphicsFullscreen": {
+    "text": "Toggles fullscreen for the remote graphics viewport.",
+    "source_sha256": "d43e07c4bae4a6ec5532c994a91a1ca03ef33a04e3dde18856e29557f0ca732b"
+  },
+  "graphicsFitWindow": {
+    "text": "Scales the remote desktop to fit the browser viewport.",
+    "source_sha256": "c1cf059bb6e5649a0537f332a27cbf895d5b0faf6b8c1157af7207b0fe78f8e6"
+  },
+  "graphicsSendCad": {
+    "text": "Sends Ctrl+Alt+Del to the remote graphical session.",
+    "source_sha256": "54305d641107247f907d7de245df19083df593306110e052931ed09e88a866be"
+  },
+  "graphicsClipboard": {
+    "text": "Opens clipboard transfer for this graphical session.",
+    "source_sha256": "bbb9045430fab663adc89aa3cd2c70b05cabcf18b9513fa435eb963cb94c2e71"
+  },
+  "graphicsFileTransfer": {
+    "text": "Opens the file-copy panel for this graphical session. Send delivers the file to the remote computer when the protocol can receive files. Windows Remote Desktop uses the user-profile aic-transfer folder. VNC cannot receive files.",
+    "source_sha256": "1bfcd710f9229dfd379a3ac160b9074b0cb669f0122af5f75a13d4a15ffe8fa7"
+  },
+  "graphicsSoftKeyboard": {
+    "text": "Shows the on-screen keyboard for the remote session.",
+    "source_sha256": "542e617c82097fdbe5dda219808d54ebc82d45ef099461aaa8ff226c62fdde4d"
+  },
+  "graphicsDisconnect": {
+    "text": "Ends this graphical session and returns to the previous page.",
+    "source_sha256": "3e4b129a29887f473dbcfc1e907a58d6ee0d232e77922201e6e83835be580849"
+  },
+  "graphicsQuality": {
+    "text": "Adjusts display quality versus bandwidth for this session.",
+    "source_sha256": "658113c7356e4204a9b50ca650fa8bdab822399995f6724dda9bc08787d1871e"
+  },
+  "hsmVendorName": {
+    "text": "Display name for this HSM vendor profile.",
+    "source_sha256": "a8adf5a91b6378b99ee7678e8e3c61e2584e29ae7dd2f57042db4e26564151a3"
+  },
+  "hsmVendorLibrary": {
+    "text": "PKCS#11 library path used for this vendor on this host.",
+    "source_sha256": "f1df5c4bf23689fa178d5b796299bd511da5695777ef6fbb567fa7631c00783e"
+  },
+  "hsmVendorSave": {
+    "text": "Saves the HSM vendor profile.",
+    "source_sha256": "ee9718a461ea1d57abec7342d6e6088b064f26daf5bd492643ba2ae5cdb1c9c6"
+  },
+  "classificationMode": {
+    "text": "How classification labels are enforced for this enclave.",
+    "source_sha256": "72e6c1c09718966d313d73a600372671c4b6d513340e14371072599d2972a02c"
+  },
+  "classificationDefaultLabel": {
+    "text": "Default classification label applied when none is set.",
+    "source_sha256": "d96ea3d01b53a114af33abf9de4b74a2e07a79033f06890495553ea47a57e055"
+  },
+  "classificationSave": {
+    "text": "Saves classification policy settings.",
+    "source_sha256": "579f2b541a72c6b8545171af5759984041cba5fbc79923fb0a8e5ee9ab8a84b4"
+  },
+  "migrateSecretsSource": {
+    "text": "Source key set or provider to decrypt secrets from during migration.",
+    "source_sha256": "a681425234f46d636f7784ac40b851fb219179815ee1e8a9f93ae4dd9bc8e322"
+  },
+  "migrateSecretsTarget": {
+    "text": "Target key set or provider that will wrap secrets after migration.",
+    "source_sha256": "2e0547c794db9ae0c7dd3e04c0553451c5f086bbdeb9b2d62a06a26e694f5284"
+  },
+  "migrateSecretsPreview": {
+    "text": "Previews which secrets would be re-wrapped without writing changes.",
+    "source_sha256": "3fab5c181cc3da91188e8f2d0bb03ac7a9b40215639e327102a0d058e6c6f6c6"
+  },
+  "migrateSecretsApply": {
+    "text": "Re-wraps secrets under the target key set and writes the new envelopes.",
+    "source_sha256": "1a62892be0790da8433f7a91fad7877664b8909c9376490c1a26cf650d1e6319"
+  },
+  "demoDataSeed": {
+    "text": "Loads demo fixtures into the lab database. Not for production enclaves.",
+    "source_sha256": "72ce2867bb45d0fc8df1e634e292b4a296253cfcefb81578058b7ab501b7026b"
+  },
+  "demoDataClear": {
+    "text": "Removes demo fixtures that this page previously seeded.",
+    "source_sha256": "0b09240e0990c331dcf0573303265f8aea732162057923ffedc70100bdc42782"
+  },
+  "demoDataConfirm": {
+    "text": "Confirms the destructive demo-data action before it runs.",
+    "source_sha256": "445f61615aef5cbbdcf48bf6f985e4ce189c837cf195457b6d5ef5dc51dd41cb"
+  },
+  "enrollmentTokenLabel": {
+    "text": "Optional label so operators can recognize this enrollment token later.",
+    "source_sha256": "ca5c87340516051db602f2bc071e3744009551d5a75bdfbf8a5b4c528350a69a"
+  },
+  "enrollmentTokenTtl": {
+    "text": "How long this enrollment token remains valid before it expires.",
+    "source_sha256": "520ffcc1fdd9f9b7144557f4a240f7f1512d394fb1e3bdfe412dd82f4c124c59"
+  },
+  "enrollmentTokenMint": {
+    "text": "Creates a one-time enrollment token for agents joining this tenant.",
+    "source_sha256": "a931910636b54c0827462ff37171ebd73fe59ae7736dcd9356d5c10e0ce0d4bc"
+  },
+  "enrollmentTokenPlaintext": {
+    "text": "One-time enrollment token plaintext. Copy it now; it is not shown again.",
+    "source_sha256": "ee2752057ce69a0c88e8ad69956590d6340446334d42bef43257c60a1f98a45f"
+  },
+  "enrollmentTokenRevoke": {
+    "text": "Revokes this enrollment token so new agents cannot use it.",
+    "source_sha256": "a3b81d74e8d21803653164db58ed1f28bd41cd50af118d516b54cdd6bb8e185c"
+  },
+  "serverIdentityPort": {
+    "text": "TCP port advertised in agent settings and enrollment URLs.",
+    "source_sha256": "592d2da682b9b3be98b7fb6b801abc575fc218103d9d1514c15da38d32886aad"
+  },
+  "serverIdentityScheme": {
+    "text": "URL scheme (https or http) used in the advertised server identity.",
+    "source_sha256": "1d8e4776d86a20b239d10b2aab8db4c0237e30a4b23259103d52a4798b30e152"
+  },
+  "serverIdentitySave": {
+    "text": "Saves the advertised server identity used in settings and enrollment.",
+    "source_sha256": "4a319bf62ef80d19c1f0b3a69ec45642915bae26fe0fc83663156b32888b9a22"
+  },
+  "serverIdentityReset": {
+    "text": "Reloads server identity fields from the last saved values.",
+    "source_sha256": "74c0de8e15ded782c9988576cb1cf718214da9b680d4a1bae48647f3863c0a36"
+  },
+  "serverIdentityProbe": {
+    "text": "Tests reachability of the advertised URL without saving unrelated edits.",
+    "source_sha256": "1f6fa082135622433be8ddeedaaa025c8497c165aff2049906051678ce125b63"
+  },
+  "serverIdentityResolvedUrl": {
+    "text": "Read-only resolved advertised URL from the current port and scheme.",
+    "source_sha256": "70c39d2cfce2058fa9fab3705d76a638c6d8f43f4dce7457d70cb55b0c389737"
+  },
+  "messageTemplateRefresh": {
+    "text": "Reloads message templates from the server.",
+    "source_sha256": "9810f815977a6e82bc91cb95cd31a97e5e1b246db5bec45afc778f4b3e37216c"
+  },
+  "messageTemplateCreate": {
+    "text": "Opens the form to create a custom message template.",
+    "source_sha256": "5782052a86ce12c389159b6cb6bbf44506f843332948140782ffbbf508a91fc3"
+  },
+  "messageTemplateDelete": {
+    "text": "Deletes this custom message template. Built-in templates cannot be deleted.",
+    "source_sha256": "ba52f4411a60b49955c0a0771e8f3bf8cf4bae62487b00a2c7d330239883c086"
+  },
+  "messageTemplateSave": {
+    "text": "Saves this message template body and metadata.",
+    "source_sha256": "f3bd6df1a992539b62a6c3994065735be890a37edaa86372948f10cef96b1867"
+  },
+  "messageTemplateBuiltin": {
+    "text": "Built-in templates are read-only and cannot be deleted.",
+    "source_sha256": "52bd22147a3ced999700797ef353b9b3166c97fd8480ce1e9ab9c003b1aeba31"
+  },
+  "waProbePublishSample": {
+    "text": "Publishes the sample workstation-assurance probe pack to the server catalog.",
+    "source_sha256": "727b1b3469f8f6535f886cbbf02b4581f9e220313b5f8f4aba87f985ae1375a2"
+  },
+  "waProbeUpload": {
+    "text": "Uploads and publishes a probe pack JSON file to the server catalog.",
+    "source_sha256": "88e7216170a3079e8238379d3965200299dfc442d67536c7346f0016979a513b"
+  },
+  "waProbeDownloadSample": {
+    "text": "Downloads a sample probe pack JSON for editing offline.",
+    "source_sha256": "438e2f3bc4b25b74afd34aa99b49ed0ad750bfeddb3d9ce68aaf20ec703cc88c"
+  },
+  "waProbePackJson": {
+    "text": "Probe pack JSON preview. Publish writes it to the server catalog.",
+    "source_sha256": "9f07d39caacdaa41106d14f795490782ecc10c1d0e13808ae0fd026cea7d0e58"
+  },
+  "waProbeActivate": {
+    "text": "Makes this probe pack the active pack for workstation assurance.",
+    "source_sha256": "a2a68b3dee01d9459773bd42f1495db538ad55886910b0811f38f386d341958c"
+  },
+  "policyApprovalOpen": {
+    "text": "Opens this policy document to record an approval decision.",
+    "source_sha256": "a273f1cdd125cda1a3e7789284d7bc5e5b59433c9dab813b533fca7fcbe15c90"
+  },
+  "policyDecisionVersion": {
+    "text": "Document version this approval decision applies to.",
+    "source_sha256": "5d8a5ed54b4a62edf4485ffede51b82420682124e45f82d24e1d56c4f8253978"
+  },
+  "policyDecisionOutcome": {
+    "text": "Approve or reject this policy version for the selected principal scope.",
+    "source_sha256": "2b212df045add750d049833b88fa39f00af5a3628097a0ad41a79ce62f450321"
+  },
+  "policyDecisionRationale": {
+    "text": "Why this decision was made. Required for audit and binder review.",
+    "source_sha256": "84f4c0437c3c7370274d0379c0e1a9e656bfb4ecf280fdb459629614dc8263be"
+  },
+  "policyDecisionDate": {
+    "text": "UTC date the decision is recorded as effective.",
+    "source_sha256": "7d42f69f42e276e12306ac774dd08c8ba4ef2368f9cba6f0bafec2a6be76ad1f"
+  },
+  "policyClassificationAssign": {
+    "text": "Assigns a classification label to the selected policy document.",
+    "source_sha256": "6ad36132f812b60d1e8625f5ed408793350b380324094a55c14d93e7977e6335"
+  },
+  "ocrEnqueueJob": {
+    "text": "Queues OCR processing for the selected session recording.",
+    "source_sha256": "1af7a9374f4c0c690fbe80da539b204b1d3717db4d66192679be1782389d4d71"
+  },
+  "ocrSearchText": {
+    "text": "Searches OCR text across processed recordings.",
+    "source_sha256": "d88063df6ff44d4f1b0df892d6ac1f20f102a38675e6583fdf3e24d36b639728"
+  },
+  "ocrOpenRecording": {
+    "text": "Opens the recording detail for this OCR job or hit.",
+    "source_sha256": "cf12f609529bed1412d5f5c4133a012433e45287abe8eb870221bbcc99c0615e"
+  },
+  "ocrAssignMachine": {
+    "text": "Assigns or changes which machine processes OCR for this recording.",
+    "source_sha256": "8015018071797183d6bda2fb384ef66b2c20f009fbf6d1a57b267dea77948aca"
+  },
+  "ocrRecordingSelect": {
+    "text": "Recording to enqueue for OCR by target and start time.",
+    "source_sha256": "d2214d9c92b466a48487442d7f4d8b948693d9353028bc661e13c9cdc46fac26"
+  },
+  "waFleetOpenDetail": {
+    "text": "Opens workstation assurance findings for this fleet row.",
+    "source_sha256": "6370cf61bfd564b8f8ca3ae182cbe4e668675ff2266847cd536519d1455e3e31"
+  },
+  "waFleetWaive": {
+    "text": "Opens the waiver dialog for this finding.",
+    "source_sha256": "6a325aab96f7f5a4def522ee691d65d59fd0f663a2ab38bcccce1001266ae5c3"
+  },
+  "waFleetRevokeWaiver": {
+    "text": "Revokes an active waiver so the finding becomes open again.",
+    "source_sha256": "96bf9d40fa58625eb8a582e19280f16a466827510a20e8d53c26099e6d88a59c"
+  },
+  "waFleetRunScan": {
+    "text": "Runs or refreshes assurance scanning for this workstation.",
+    "source_sha256": "13cae108c8e2da62d5411bbbde9d17bfa9b39b88f73f7deabf66eb0eb943bbbe"
+  },
+  "waiverApprover": {
+    "text": "Name of the person authorizing this waiver.",
+    "source_sha256": "97dec938be56dee6b532e28317eaef3f07fb54c0b3f83d2118912ee2970b236d"
+  },
+  "waiverReason": {
+    "text": "Why this finding is waived and for how long.",
+    "source_sha256": "1dc8f0995d4039dd26bc4b68c0d0943b2a605149f3241e724a057c42c19cf867"
+  },
+  "waiverExpires": {
+    "text": "When this waiver expires and the finding must be re-reviewed.",
+    "source_sha256": "19e00dacff4be806f0db036e9ab5dbc15354d2bd74fd919215fe144b5d18020c"
+  },
+  "actionUnenrollTotp": {
+    "text": "Removes your authenticator app enrollment. You must re-enroll to use TOTP again. This action is audited.",
+    "source_sha256": "94c4f9501e21d3e8594a9fb1a51744fdd1785d13fd04c8121c66df5709a274d3"
+  },
+  "actionOpenSettings": {
+    "text": "Opens Server Configuration where administrator secrets and auth settings are managed.",
+    "source_sha256": "7318bc810306cce65979510316310c1b71e80035659aab94149ca1ec6cfce9ce"
+  },
+  "actionSignIn": {
+    "text": "Goes to the Sign in page so you can start a console session.",
+    "source_sha256": "5fe036ba97b0e760062e9f479bdeb642419423edd84b9e1c0a214293ceebf70f"
+  },
+  "actionToggleDetails": {
+    "text": "Shows or hides additional explanation for the selected item.",
+    "source_sha256": "d8fb876700de849e2cad242ab11ada89782b615ea94b155147c61bb32fd2b73f"
+  },
+  "actionPublishNow": {
+    "text": "Runs one auditor-tier publish cycle now without waiting for the schedule.",
+    "source_sha256": "79a361d6f8c98feeb5473556271abeb1c783600dd178320d70fd357bc4aba1b3"
+  },
+  "actionDrainOutbox": {
+    "text": "Applies pending assessor actions from the auditor outbox to the operations tier.",
+    "source_sha256": "e18117db1460c783c33eac6875c3efbf3f65317393c4a692a477004dff90fcf9"
+  },
+  "actionVerifyChain": {
+    "text": "Checks that the publish log hash chain is intact (AU-9 integrity).",
+    "source_sha256": "4585f3ecffed6ccdbbb3952da0d276bc59a47e5400fba27e59f552522c133394"
+  },
+  "actionInviteAuditor": {
+    "text": "Creates an invite so an external auditor can open this engagement.",
+    "source_sha256": "70cffab919c4320ffc6034e7d3d7c2a783a2c68d26c3aaac4b653f05eef94879"
+  },
+  "actionRevokeAuditor": {
+    "text": "Removes this auditor’s access to the engagement after you confirm.",
+    "source_sha256": "809e3fb8f6d04ba0f7e0118286877c4992ba926a477f1e7123734298fa3d2028"
+  },
+  "actionApplyPreset": {
+    "text": "Applies this framework or disclosure preset to the current selection.",
+    "source_sha256": "696d0c8ce843171ea4f2a95e6ed9c8da502b3be187adb472b67798dbed566675"
+  },
+  "actionClearAll": {
+    "text": "Clears every selected item in this list.",
+    "source_sha256": "e84ca6635243582d1f95af676df628d9f228ccb5c8008457cea241b048d541c5"
+  },
+  "actionSelectAll": {
+    "text": "Selects every available item in this list.",
+    "source_sha256": "092cf0d228a6d9908925374e005f8bd6dd1bdf09693b5ba9d929fdccf2b0034b"
+  },
+  "actionSendNotify": {
+    "text": "Sends the credential or code through the selected email or SMS channel.",
+    "source_sha256": "b1ea5f844a1f2e679b4cd5fbd682f118ecb11eedf652ac2be0c20762ff7db388"
+  },
+  "actionScheduleElevation": {
+    "text": "Schedules remote non-agent local elevation with the selected identity and window.",
+    "source_sha256": "fbe08e896914082f945597e3b755150a6bf8b945e3c64e6e2eda9eeae5cd1a5a"
+  },
+  "actionRunProbe": {
+    "text": "Runs this diagnostic probe against the selected endpoint.",
+    "source_sha256": "cfbab0a9dfaff054088dd3b4848beff119590d07cf4ef2086990836a4b20d2f5"
+  },
+  "actionFillDemo": {
+    "text": "Fills the form with lab demo values. Does not submit until you confirm.",
+    "source_sha256": "3e26c7bfde6814e85939e1582e9b70d7ebd02f6400d23273992d4ed2ce5a048d"
+  },
+  "actionBrowseFile": {
+    "text": "Opens the file picker to choose a file for upload.",
+    "source_sha256": "56189d9d8a09d001cef05d9040ce6eba46b1dc7308258811f24a59d84fe8a1f8"
+  },
+  "actionResetColors": {
+    "text": "Restores branding colors to the product defaults.",
+    "source_sha256": "02aa1027e7b6c5f608cbb7b61d6d85174158621ae112843abbbfa3f481dac4ea"
+  },
+  "actionPreviewImport": {
+    "text": "Previews the import without writing changes to the server.",
+    "source_sha256": "6d5cd16d4e72ffe4a2a19f20d02ad26879a44749f4e557ce99e6b6ec3d5349d1"
+  },
+  "actionContinueWizard": {
+    "text": "Continues to the next step in this wizard.",
+    "source_sha256": "e2ab857b4d3caf9df67433f28add15bb1ca0a2c53c4ea13e0fe829af5adf3669"
+  },
+  "actionApplyDisclosureStandard": {
+    "text": "Opens the wizard to apply a regulatory disclosure standard to these fields.",
+    "source_sha256": "410a7e1d15f99b10d95e59bdf2a0272cea5a95b64160ff24c8341ca58b94af87"
+  },
+  "actionPreviewResolved": {
+    "text": "Shows how disclosure messages resolve with current company profile values.",
+    "source_sha256": "aa3c7ad6f6e14b0f018d8bddc29641a1ca82c1dd5f46759ee1fb269598dabd9f"
+  },
+  "actionCopyAll": {
+    "text": "Copies all visible resolved text to the clipboard.",
+    "source_sha256": "7636900fc664c37f7ccf998338407ad2618eaa3b04e1bbd452894e069286037a"
+  },
+  "actionExpandHonesty": {
+    "text": "Expands or collapses the honesty notice about training and assessment claims.",
+    "source_sha256": "819df9e97e20bf2f6fa1fbf67785149739d7a7d7b318452bfbd4a97e2c65afe5"
+  },
+  "dataGridRowAction": {
+    "text": "Performs this row action. Hover for the specific verb for this control.",
+    "source_sha256": "a7e3c58602be84bdf8302baa74658f16d87a25178d9fdb1d3186ea9cae1605ca"
+  },
+  "assessmentStandardSelect": {
+    "text": "Which assessment packaging standard this view is testing against.",
+    "source_sha256": "e49d179d06f0e3aa0e53a6d61fc25771e931fd4cbad52261c8d7d1e5bd6b2155"
+  },
+  "assessmentLevelSelect": {
+    "text": "Level or baseline within the selected assessment standard.",
+    "source_sha256": "f900920050610a6f3757519baea87ca68280160a89409620626f64c97503ad56"
+  },
+  "inviteAuditorFirm": {
+    "text": "Audit firm that will receive engagement access for this invite.",
+    "source_sha256": "8497ee06cbf4accfe4aeba13310aa005d4d3bbf08a74edc9d8fae4d5ac7781ae"
+  },
+  "inviteAuditorName": {
+    "text": "Full name of the auditor being invited.",
+    "source_sha256": "d4980a92198986cff9c395804e78d84754b3e4ffb9c21e52d4b7cc216810c180"
+  },
+  "notifyChannel": {
+    "text": "Whether to deliver by email or SMS for this notification.",
+    "source_sha256": "9fcc0e63c47207e5b5353f4c3e7068b55cea9c9535c1a2b040f6bc77cb78b192"
+  },
+  "notifyDestination": {
+    "text": "Email address or phone number that receives the notification.",
+    "source_sha256": "96f939b81fa8cb58942f9863b959a4b33845b9a8e8dfeab59d7d418d12204595"
+  },
+  "notifyIncludeSecret": {
+    "text": "When checked, the message includes the secret value (still masked in audit logs).",
+    "source_sha256": "7349f51995cb760d6c0a851309c1a19c2f700d6852867b9604306ba08a32ac00"
+  },
+  "remoteElevationIdentity": {
+    "text": "Managed identity used for the scheduled remote local elevation.",
+    "source_sha256": "981edb26a804a8237d069994731d3bb17f93a4626eeeae9b4b0505f869663ecf"
+  },
+  "eventTypeInclude": {
+    "text": "When checked, this event type is included in the filter set.",
+    "source_sha256": "51bb90a2d207b9b3ee988cefea6f606e99ab27b003c80e9ec5ea589582173919"
+  },
+  "showPasswordToggle": {
+    "text": "Shows or hides the recovered password characters on screen.",
+    "source_sha256": "e164b8fb3d21b7a1f2e090781e1897652a2ea3bf4d7320f0defcb4d88dc7bb5a"
+  },
+  "selectFieldStack": {
+    "text": "Chooses a value for this labeled setting.",
+    "source_sha256": "aa6ca6da9be2ea39c1e169c527f6297fbb787e1b9c6e54a94c05e7e07c18aae6"
+  },
+  "iamToolbarAccount": {
+    "text": "Opens account security or session options for the signed-in operator.",
+    "source_sha256": "933a8fe2f176c8119a189ec15b6cee490938c50dd1a088276f17fdbb75b2aa79"
+  },
+  "iamToolbarLogout": {
+    "text": "Ends your console session on this browser.",
+    "source_sha256": "905ad0db8071d988fd436425dd481acca3ad664cd1c3b9fec353a70d41819fef"
+  },
+  "ianaTimezone": {
+    "text": "IANA time zone used for scheduling and display (for example America/New_York).",
+    "source_sha256": "e3f38cce93dc47bd1be7d22c5c10417b2888008cde36c22770225b9d15f1b72c"
+  },
+  "identityPickSearch": {
+    "text": "Search directory identities by name or address to add to this list.",
+    "source_sha256": "a588f08af038e68e1631fd8ac75304cffef19362b1c63f9e655b8c369ff4d8ab"
+  },
+  "identityAdvancedUuid": {
+    "text": "When on, lets you paste a principal UUID instead of picking from search.",
+    "source_sha256": "981f881988f7a6925f607d0504b2dc587a270851e7e3fc13b28b0ddaa4b6df83"
+  },
+  "identityUuidField": {
+    "text": "Principal UUID when advanced entry is enabled.",
+    "source_sha256": "630a706994baa3425b0230a5f6d1ffdebd2fbee6a88de4eee251668280733793"
+  },
+  "labFillAccount": {
+    "text": "Fills logon fields with this lab test account. Does not submit until you sign in.",
+    "source_sha256": "c486334f5523727d173c7f766a5d43d59160d47675e0a4f25950a8ac8c720102"
+  },
+  "machinePolicyLength": {
+    "text": "Minimum password length for identities on this machine.",
+    "source_sha256": "e2da158889fccbfe841775c126eae777e200a491e80dacb45c7004579c2f27be"
+  },
+  "machinePolicySecretHours": {
+    "text": "How often managed secrets on this machine must rotate (hours).",
+    "source_sha256": "fed42bbc56ed62acdefec59b0b338438d0f8725fcf98e8379d18999412d74b9c"
+  },
+  "machinePolicyMaxDrift": {
+    "text": "Maximum allowed clock drift in seconds for this machine.",
+    "source_sha256": "6bc91e8030e9dcfbec48a693a3bba61a032fcf86f02aaf4eabb55e5a0ad68acc"
+  },
+  "machinePolicyInherit": {
+    "text": "When checked, this setting inherits from group or enclave defaults.",
+    "source_sha256": "67916fbebde50f3f68fe85f98cbcfc64cd04686d5c5af29d5cd0e76126b42cb0"
+  },
+  "mainNavDocs": {
+    "text": "Opens product documentation in a new browser tab.",
+    "source_sha256": "a102de2a02634bb0168347a614118f9e2f87e42a85e96f6bc685fc34476c1692"
+  },
+  "mainNavAbout": {
+    "text": "Opens About and copyright information for this console.",
+    "source_sha256": "cb47cfc77ff505e9eb686f8267262217a5b219d74d0e5ff2b009583b43fc9d29"
+  },
+  "mainNavOpenSourceCredits": {
+    "text": "Opens the complete open-source credits inventory (licenses for every incorporated third-party component).",
+    "source_sha256": "137f861df77d61c0b01a764676b898c0dcb55570b2d517dcbec4b5a3cf7c84bc"
+  },
+  "aboutCreditsFilter": {
+    "text": "Narrow the open-source credits list by project name, license, or copyright.",
+    "source_sha256": "775f9f5103d1a72deb94a27ed490dd4419a8ec26cfbee8d8625e5e84547fb2f8"
+  },
+  "aboutCreditsDownloadAppendix": {
+    "text": "Download the full Cargo.lock name and version appendix as JSON.",
+    "source_sha256": "37b98f1228a3cbb0967534585ecb5d0773c80d253336ef4a2e81739f6b78b1fb"
+  },
+  "aboutCreditsDownloadInventory": {
+    "text": "Download the complete open-source credits inventory JSON, including honesty metadata and generation SHAs.",
+    "source_sha256": "3f4a7659b0d83957dea18233fbecab679d5f2e9b055900972d21b5d02aa51062"
+  },
+  "aboutCreditsDownloadBlocked": {
+    "text": "Download the list of packages that are BLOCKED because no license text could be harvested.",
+    "source_sha256": "6413e73c0f2e11c7ebdd8dcb7c948232ee7c0709c52e3233d2bbe3afa900f860"
+  },
+  "aboutCreditsPagePrev": {
+    "text": "Show the previous page of open-source credit entries.",
+    "source_sha256": "340d08d68b80fc5f9239450e44423f86620512f41acb43cd4267fd316ab1669b"
+  },
+  "aboutCreditsPageNext": {
+    "text": "Show the next page of open-source credit entries.",
+    "source_sha256": "86996298b33341878555e0cb3fdd3cfd422eb8a5d05af703eb8065dc001abcd6"
+  },
+  "ipScannerIpRange": {
+    "text": "Enter an IPv4 or IPv6 address, CIDR, link-local with zone (fe80::1%12), or ipv6-neighbors. Wide IPv6 prefixes use discovery, not a full sweep.",
+    "source_sha256": "2d19a09bfa37e198619b800837a67735b46a1d174d3652c1aff6936b3ccae50f"
+  },
+  "ipScannerAddTarget": {
+    "text": "Add the draft IP range or CIDR to the scan target list.",
+    "source_sha256": "feaf66dc6606d04c634194b51578ae0dea9f1f47b757892d72d6ec449eff37ca"
+  },
+  "ipScannerIpv6Neighbors": {
+    "text": "Adds the ipv6-neighbors discovery target (OS neighbor cache and link-local). Not a full network sweep.",
+    "source_sha256": "26af63518f9c123473b1335d785763bb8edd822cb8dab6ce1391d3b00022f59b"
+  },
+  "ipScannerProgressLog": {
+    "text": "Show or hide the cooperative scan progress log.",
+    "source_sha256": "4e88a38be9bf0410f74a5ff712ba973e510dcc382b8e1d7958b8b5922225b68e"
+  },
+  "ipScannerUseNetwork": {
+    "text": "Include or exclude this local network from the scan targets.",
+    "source_sha256": "d8fabbde11e33883d62f78fd8856f7f7a23cfe9a9b38a99eac5ea7425c1d60ff"
+  },
+  "ipScannerSelectAllNetworks": {
+    "text": "Select or clear every network shown in the local networks list.",
+    "source_sha256": "3c7013ab1c7b902e1299682ceb93d9bd27c822053699f8333d86ddbe893bcb4c"
+  },
+  "demoEnclaveExtend": {
+    "text": "Extend the shared demo lease so the enclave stays available longer.",
+    "source_sha256": "3c27cf878fafaf48a2fb9c732b10da7443ab95a2f0264f69bf8f7df3cf5404f9"
+  },
+  "demoEnclaveEnd": {
+    "text": "End the shared demo lease and sleep the enclave.",
+    "source_sha256": "f9740fb59b7aad860437d8e421c7a4a4e1e890c4bf548f90a0f05eab4d43bd84"
+  },
+  "demoEnclaveEndCancel": {
+    "text": "Keep the demo lease and close this confirmation.",
+    "source_sha256": "a1ca221a69e5fa04418883402e11038b0d8f00b82d3d20a76e71a24ae6bfc7b2"
+  },
+  "demoEnclaveEndConfirm": {
+    "text": "Confirm ending the demo lease. The enclave sleeps and this cannot be undone.",
+    "source_sha256": "406df7c47739ae624eccb39550db0a3db3de22cdfbf2b98540086c04facc0dd1"
+  },
+  "elevationMockEndpoint": {
+    "text": "Demo endpoint name shown in this elevation mock panel.",
+    "source_sha256": "180284e07ecff18abbce0ccda328fb2f6f5ab1d9d9102e097cc003deb41970de"
+  },
+  "elevationMockCode": {
+    "text": "Demo activation or challenge code for this mock panel.",
+    "source_sha256": "5d7afebc2b06b1e35dab1425270f4450f694abdde218d9076d48d5c21dccd43e"
+  },
+  "elevationMintScope": {
+    "text": "Scope offered when minting an elevation activation code (mock).",
+    "source_sha256": "01b74c1d81db4e653560e5945f19721584f1b8e86c083a75001fe10a9641bf81"
+  },
+  "elevationPolicyMock": {
+    "text": "Demo elevation policy field for this mock panel.",
+    "source_sha256": "e6e23298a11552e6a52292a0a3c6b7796bbaa54d326468876e7d939e9c5f748b"
+  },
+  "elevationQueueAction": {
+    "text": "Mock workflow action for a queued elevation request.",
+    "source_sha256": "c592d523e986f8db6781e09d8d9f33e8a188b9456f6e515738c6fddbc93aed4c"
+  },
+  "netscanStart": {
+    "text": "Starts a network discovery scan with the current panel settings.",
+    "source_sha256": "9dd17a9704dea768b7b75f2162bdcb9d8bbbe437b8d703a01f0cdb73e897dc6f"
+  },
+  "netscanStop": {
+    "text": "Stops the in-progress network discovery scan.",
+    "source_sha256": "708dba6b9328315f2a1d981299fdaee376e090c57dfb153cb3732ed46deffceb"
+  },
+  "ipScannerStart": {
+    "text": "Starts a concurrent IP range scan. Results and log lines stream in while it runs.",
+    "source_sha256": "e96d1832ad35756d4b0965b12819d34b207bed7de482915099afb0f21487ecff"
+  },
+  "ipScannerStop": {
+    "text": "Requests a cooperative stop. Workers finish the probe they already started.",
+    "source_sha256": "88fb6e00ba7946f215ab32e700407290194f8ff57308883ba7626c874ef1196a"
+  },
+  "ipScannerWorkerCount": {
+    "text": "How many TCP connect attempts run at once (default 64, max 500). Lower this on slow links.",
+    "source_sha256": "97be9dfc6a36beedf90601ef2b91dc5c83ba59d0a279235e7081e68bbc11e5b0"
+  },
+  "ipScannerCredentialCatalog": {
+    "text": "Opens the Known Default Credentials catalog used by Check Defaults on scan rows.",
+    "source_sha256": "11b6ab50dd2710772b17a3075fd993aad78217aed51309594179bea42b86827d"
+  },
+  "ipScannerTargets": {
+    "text": "IPv4 or IPv6 address, CIDR, link-local with zone, or ipv6-neighbors — one target per chip.",
+    "source_sha256": "13edd5d3598ebaa47ef0cbe9b304dadf07263c4c4563b9f13083729b48a771f4"
+  },
+  "ipScannerProfile": {
+    "text": "Which TCP port set to probe: quick, common services, or your own list.",
+    "source_sha256": "8225771d5d6a8f145b97ea7fbf6b55c06e65af5f0e73b34d49436d91655fb9cd"
+  },
+  "ipScannerCustomPorts": {
+    "text": "Comma-separated ports when the profile is Custom.",
+    "source_sha256": "c598d42cf9f125f29e3ddf6cefaa6a926ade756c818fa280c78216279a6d008c"
+  },
+  "ipScannerLocalNetwork": {
+    "text": "Adds or removes this adapter or virtualization network from the scan targets.",
+    "source_sha256": "297fa8bd3b4417d96583f7397c770fc434b4c5934cdddffdf54365416f04bdd2"
+  },
+  "ipScannerUseAllLocal": {
+    "text": "Fills the target box with every local adapter network except loopback.",
+    "source_sha256": "380d8530e2b4c4675693ae5c10b5366dcf5c05f64c0e4d5c9b91a0405a8c453c"
+  },
+  "ipScannerUseVirt": {
+    "text": "Fills the target box with Docker, Hyper-V, WSL, and other virtualization ranges.",
+    "source_sha256": "79bb1f517f3f90ae63d0c7e33ad8bdf88c5eff67fdd610ed15384c538d288e03"
+  },
+  "ipScannerRefreshNetworks": {
+    "text": "Reloads adapter and inventory networks from this server.",
+    "source_sha256": "723a073a97657537c8715efdbfcaa504ead4675bfe5f658d2d96fbf66ebafd14"
+  },
+  "ipScannerAnalyze": {
+    "text": "Compares finished scan hosts to inventory and opens posture findings.",
+    "source_sha256": "c04ac0f5f35274fc6ad22453dcd1e1e234880f85f2dd389221c022f12c564fb9"
+  },
+  "ipScannerRowCheckDefaults": {
+    "text": "Tries published factory credentials from the catalog against this host.",
+    "source_sha256": "9b67a2c8e7b62e372f88903bee83eac6c26317ce95f8384da27259e871669c9d"
+  },
+  "notificationDismiss": {
+    "text": "Dismisses this notification from the console banner.",
+    "source_sha256": "6ac48c428e4b65b92c25d28a8114d49fe2b1ea660d940b696608eda64e4bb41a"
+  },
+  "passwordPolicyAdvanced": {
+    "text": "Advanced password complexity and history settings for this policy.",
+    "source_sha256": "a77932559feeadc4e1806cce919aa869230b18003da1b7b5bde6ddb73ddf85c4"
+  },
+  "passwordPolicyBasic": {
+    "text": "Basic length and character-class requirements for this policy.",
+    "source_sha256": "24783942045b34c5aad5c34495676864c3b7b8d1ae2240142cd1bcc0fce43de9"
+  },
+  "passwordPolicyInheritBool": {
+    "text": "When on, this boolean inherits from the parent policy instead of overriding.",
+    "source_sha256": "d3b6fed78a11fb851f978399c7cc8f113fb22fd25cc966702f29a7f86e2a9c6c"
+  },
+  "passwordPolicyPreset": {
+    "text": "Applies a named password-policy preset to the form fields.",
+    "source_sha256": "32c88eb1c9da6c6532a4b28ab6154626c8cb982390311cde0cb43b475ee1fd0f"
+  },
+  "passwordPolicyPresetPick": {
+    "text": "Which password-policy preset to load into the editor.",
+    "source_sha256": "d57a9ce7071f6c1813bb216b7a8be5a8ff16f7fbdfae91f663754063a5114b6a"
+  },
+  "rotationInterval": {
+    "text": "How often passwords must rotate under this policy.",
+    "source_sha256": "9b31fcfa0ef43b760fb0ab1e14ff909b8690777c95b4361a9a5c79dfeac51c89"
+  },
+  "phoneE164": {
+    "text": "Phone number in E.164 format (plus country code, digits only after +).",
+    "source_sha256": "c8a3b26fd221ae53df6f94dffb1650ebb1180e7dd2f8cdb9982ba7e629e28239"
+  },
+  "agentEventTierOverride": {
+    "text": "Override agent event forwarding tiers for this inheritance scope.",
+    "source_sha256": "3021fa65e8e5f13e541641ac8e06c5c426ab5e041da734cea8711ec58baaa54a"
+  },
+  "groupPolicyInheritance": {
+    "text": "Opens or edits group-level password policy inheritance.",
+    "source_sha256": "7055d00a34cfe68bd5269e91a4d6772be022dfd9e8dc2fa8776642d696a23e85"
+  },
+  "machinePolicyInheritance": {
+    "text": "Opens or edits machine-level password policy inheritance.",
+    "source_sha256": "dc671a59aeb3b1d8455fa526197e7aed556364fd346c50e7f3fc34ed39d6ef3d"
+  },
+  "policyInheritanceTable": {
+    "text": "Shows which parent supplies each effective policy setting.",
+    "source_sha256": "a77712fc80ba1e18346be3ca48407c44319dd1b147478085fcdbd4a5561d012a"
+  },
+  "privilegeJobDetail": {
+    "text": "Shows detail for this privilege job run.",
+    "source_sha256": "dedeeb6fe91e37eb471c2738f0e6818c08eeca8e126932d1cbd853cb396bdbee"
+  },
+  "quickAccessSearch": {
+    "text": "Search console tasks and machines by name, then open the selected action.",
+    "source_sha256": "6312b93bacac666aa2a8bd306b41cdf7463867f420379052ee562609c850b288"
+  },
+  "endpointOverviewAction": {
+    "text": "Opens or refreshes details for this endpoint in the resource hub.",
+    "source_sha256": "c3c28bcab62d0ad1dce8cf5287d52d14b4ea0fff88226fefab52b7fe4afd65d2"
+  },
+  "serverDisclosureChrome": {
+    "text": "Shows or hides server disclosure chrome for this view.",
+    "source_sha256": "3915960a92d2d8f0e4e3c65c61562b95b4e9c9d778eb87d2bc699de3c4854c1e"
+  },
+  "sshTerminalAction": {
+    "text": "Control for the embedded SSH terminal session.",
+    "source_sha256": "0267747e3813d878c73b53453ab1b1db96458ca7789f38b6258b67231393275f"
+  },
+  "vncPlayerAction": {
+    "text": "Control for the VNC session recording player.",
+    "source_sha256": "8701ab20a6138b740302afa6913622c5258390b27e7b87f22c755f7fe482838c"
+  },
+  "agentSyslogEnabled": {
+    "text": "When on, the agent forwards events to the configured syslog collector.",
+    "source_sha256": "e1e69d46a033816d57737cd1e70147d7734da5e7ba833499346ba56e80ef4bd7"
+  },
+  "agentSyslogHost": {
+    "text": "Hostname or address of the remote syslog collector.",
+    "source_sha256": "b46af73db808a261604d2d9198e47db3174d1d90fcb284824ac606463d816c99"
+  },
+  "agentSyslogProtocol": {
+    "text": "Transport protocol for syslog (UDP, TCP, or TCP with TLS).",
+    "source_sha256": "6bc01d341cfc78aea9e4c22ed89e0e51e47cb34e926a3401aef2be0d93f5c047"
+  },
+  "agentSyslogFraming": {
+    "text": "Message framing for TCP syslog streams.",
+    "source_sha256": "66bb8de9f775dee3c0a8f6f28723cb99636b996e63bf1f9fc4ca97f626a3b7d7"
+  },
+  "agentSyslogFormat": {
+    "text": "Syslog message format (RFC 5424 or related).",
+    "source_sha256": "b109852db5c27adad3a71120e3b1f7b2e60ad033ac2622a844649cf4dda07bc0"
+  },
+  "agentSyslogTlsVerify": {
+    "text": "When on, verifies the syslog collector TLS certificate.",
+    "source_sha256": "e69b41e697d242e5af54377d6f132112a8da4080406810c94dba639d623f5b9c"
+  },
+  "disclosureWizardField": {
+    "text": "Field value used while applying a disclosure standard preset.",
+    "source_sha256": "a34e87755879e07f79fa2145c88df855b6fd34e115a71700d184f11b545a2e5d"
+  },
+  "brandingSave": {
+    "text": "Saves branding colors and uploaded assets to the server.",
+    "source_sha256": "9d6fa27e34f7f101ad04a3cb68142c5bc8e2ebae015d0f69e7ed7be5d5b366df"
+  },
+  "companyProfileSave": {
+    "text": "Saves company profile fields used in disclosure templates.",
+    "source_sha256": "0d9d0ee7345dbafa7a2fd7b5bbb5c2d61989f34e411defa5a14d1864bf04df21"
+  },
+  "cryptoBackupExport": {
+    "text": "Creates an encrypted crypto backup for download.",
+    "source_sha256": "7207d73378ae000f429d0d85f703d3d894f654266bef20183eb8ebaf891e292c"
+  },
+  "cryptoBackupImport": {
+    "text": "Restores crypto material from a previously exported backup file.",
+    "source_sha256": "cc854540343d91a60c813df0d6d8de2af7e75d45f3e6bead9971274071c3574a"
+  },
+  "cryptoBackupDryRun": {
+    "text": "When checked, import only validates the backup without writing keys.",
+    "source_sha256": "4be786c94bef0c88a9e17f69f3efc3d9694ea5cf5c34548d9c1bed364d0ebe0a"
+  },
+  "cryptoMasterExport": {
+    "text": "Exports the software master encryption key under break-glass controls.",
+    "source_sha256": "bf6b730cb291b29190e17e6232cb77a5d332bc66a1e299bb2930e86318601323"
+  },
+  "linkHsmAdapter": {
+    "text": "Which HSM adapter connection to use for linking crypto custody.",
+    "source_sha256": "80ea4544efdbc53a3b7e9f337dd242beb9d67b7992c5ed4a59205e9f934e983e"
+  },
+  "linkHsmActivate": {
+    "text": "When on, activates the linked HSM key for new wraps after linking.",
+    "source_sha256": "1a281c6b67cd3fd2c19e1d34f08005c3f9f6e6c48163fa913f610911150176df"
+  },
+  "localCryptoSetup": {
+    "text": "Creates or switches to local software crypto custody on this server.",
+    "source_sha256": "61a85cff9982d94c62f827b3bc6fe1beba2ca580654eab7d8fbbec2f0c4232f0"
+  },
+  "maskedPassphrase": {
+    "text": "Passphrase that protects this export or import. Characters are masked on screen.",
+    "source_sha256": "e080f24cabf6c1959ee6059df60c70e257e6fbf7406e8be66b44f7d8cb411f02"
+  },
+  "maskedPassphraseToggle": {
+    "text": "Shows or hides the passphrase characters.",
+    "source_sha256": "b6930287479d1d1fe423cdbba1819c0d7604251cd075e0c1494dfd898999f0fb"
+  },
+  "migrateFromHsm": {
+    "text": "Runs or continues migration of crypto custody from HSM to software.",
+    "source_sha256": "715533e725ee8ab91d7158ec8bbad8948d9b09b9c65489a237a0f8b44418a39d"
+  },
+  "moveToHsm": {
+    "text": "Runs or continues migration of crypto custody from software to HSM.",
+    "source_sha256": "2ea98d0c95d4e0c06d34e21f5110439e33b6746f64bd31510d6874675ae54d80"
+  },
+  "cryptoMigrationTarget": {
+    "text": "Destination custody or keyring for this re-encryption migration.",
+    "source_sha256": "3d7d3444c0dbca3e31db19b0cee5fd3070e3ead4015563a60ba088850e7e059d"
+  },
+  "cryptoVerifyRoundTrip": {
+    "text": "Encrypts and decrypts a sample to verify the selected custody path.",
+    "source_sha256": "2d4762b3ef88419d38930c7a22cf79dbd0965587f24c05cca7cf64f7df5f25b2"
+  },
+  "cryptoPreviewRewrap": {
+    "text": "Counts rows that would be re-encrypted without writing changes.",
+    "source_sha256": "28ff71ad585a25899f729dd8c708292b2d9ed1caf3046080e9b04df8296d8367"
+  },
+  "cryptoRunRewrap": {
+    "text": "Re-encrypts stored secrets under the selected custody target.",
+    "source_sha256": "7dcd8a8fa067319a44d01286693e125c94a806d282166f5e6f6aff7d24606891"
+  },
+  "defaultPwRequireUpper": {
+    "text": "Require at least one uppercase letter in the enclave default password policy.",
+    "source_sha256": "d853eb3f55204b654c0579d37db9118142af6a95d4841c320f33729e915bdb7a"
+  },
+  "defaultPwRequireLower": {
+    "text": "Require at least one lowercase letter in the enclave default password policy.",
+    "source_sha256": "88252e11a0a2ad56465d1cb004eb3f45b1a093a848308aeb0b9be07fcc073884"
+  },
+  "defaultPwRequireDigit": {
+    "text": "Require at least one digit in the enclave default password policy.",
+    "source_sha256": "418a2962a771f87a05a43412faf6588f9e35d0d2135b91454fe2d2003735cfb1"
+  },
+  "defaultPwRequireSymbol": {
+    "text": "Require at least one symbol in the enclave default password policy.",
+    "source_sha256": "bee4ccb88c7fbeffe188d54d7e3733d107f485756beaff1a9e00718545d42063"
+  },
+  "defaultPwSave": {
+    "text": "Saves the enclave default password policy.",
+    "source_sha256": "ebecb2b2c350acc73c1208e629067f5f0505d94437099ef894395020e9759e80"
+  },
+  "complianceIndustry": {
+    "text": "Industry packaging used to suggest disclosure defaults.",
+    "source_sha256": "de29070442b75650e4b00fcb33ebf4d2c487c5fa8c8a12c4c7a0e2215c331f7d"
+  },
+  "complianceCmmcLevel": {
+    "text": "CMMC level packaging used to suggest disclosure defaults.",
+    "source_sha256": "6df4a0f7175c60dd91ea41a1453dc5a9f3c399920eafa8ed3911b894c2e489ed"
+  },
+  "complianceCustomNotes": {
+    "text": "Optional notes stored with these compliance packaging defaults.",
+    "source_sha256": "08a94489b298d28e4256d8798e0beff103a285a7c8e20710953e4616d236397f"
+  },
+  "programDisclosureTemplate": {
+    "text": "Template text for this program disclosure field (supports replaceable tokens).",
+    "source_sha256": "c3d898bdb11a4827d59d56872afde1db89c5327038c685c99ab3eb8583a1e9d6"
+  },
+  "programDisclosureVariable": {
+    "text": "Replaceable variable value used when rendering disclosure templates.",
+    "source_sha256": "2ec28da0b20c2165b24cc181fa66908d13340ddf9296e6d98d8133a7675e0183"
+  },
+  "regulatoryStandard": {
+    "text": "Regulatory standard selected for this disclosure or assessment step.",
+    "source_sha256": "1c360620746d5a58e82c959e80d0346f8df4b0960e912b07e82332a2d1dc6a6c"
+  },
+  "settingsEnvelopeField": {
+    "text": "Value written into the settings envelope for this key.",
+    "source_sha256": "44904272571837c25a08d4e4af2929672634251b49c2e3c6f8f609381335557f"
+  },
+  "trainingFrameworkToggle": {
+    "text": "When on, this framework is included in training coverage reporting.",
+    "source_sha256": "6b8691a510b43513f4e6eae9818118c8c9677d1106ee33dab75fa98310fc2cd0"
+  },
+  "frameworkCoverageSwitch": {
+    "text": "Includes or excludes this framework row from the coverage summary.",
+    "source_sha256": "41b1847db597ef578a273bf0f483569f49320702a1eb0261275893f95b020c30"
+  },
+  "accountSecurityDialogCtrl3": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "accountSecurityDialogCtrl2": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "complianceAssessmentProfileSwitcherCtrl2": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "complianceAuditorSyncPanelCtrl2": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "complianceAuditorSyncPanelCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "complianceEngagementAuditorsPanelCtrl4": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "complianceEngagementAuditorsPanelCtrl3": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "complianceEngagementAuditorsPanelCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "complianceFrameworksComplianceFrameworksEditorCtrl7": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "complianceFrameworksComplianceFrameworksEditorCtrl6": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "credentialNotifyDialogCtrl3": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "credentialNotifyDialogCtrl2": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "credentialNotifyDialogCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "elevationRemoteNonAgentLocalElevationPanelCtrl4": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "elevationRemoteNonAgentLocalElevationPanelCtrl2": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "elevationRemoteNonAgentLocalElevationPanelCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "endpointsPushIpcProbeDialogCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "eventTypeFilterEventTypeFilterEditorCtrl5": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "eventTypeFilterEventTypeFilterEditorCtrl4": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "eventTypeFilterEventTypeFilterEditorCtrl3": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "formRecoveredPasswordDisplayCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "identityPickListCtrl3": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "identityPickListCtrl2": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "labTestAccountsPanelCtrl2": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "labTestAccountsPanelCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "machinePolicyDialogCtrl4": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "machinePolicyDialogCtrl3": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "machinePolicyDialogCtrl2": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "machinePolicyDialogCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "mocksElevationChallengeMockPanelCtrl3": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "mocksElevationChallengeMockPanelCtrl2": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "mocksElevationChallengeMockPanelCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "mocksElevationMintOfferMockPanelCtrl4": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "mocksElevationMintOfferMockPanelCtrl3": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "mocksElevationMintOfferMockPanelCtrl2": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "mocksElevationMintOfferMockPanelCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "mocksElevationPolicyMockPanelCtrl3": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "mocksElevationPolicyMockPanelCtrl2": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "mocksElevationPolicyMockPanelCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "mocksElevationWorkflowQueueMockCtrl4": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "mocksElevationWorkflowQueueMockCtrl3": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "mocksElevationWorkflowQueueMockCtrl2": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "mocksElevationWorkflowQueueMockCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "netscanNetworkScanPanelCtrl2": {
+    "text": "Port profile: quick (top 100), common services, or a custom comma-separated list.",
+    "source_sha256": "f7ff2df43d2ce7d0788d8aba25d2d79dbcb12e384e11900ea513fb620402e3f4"
+  },
+  "netscanNetworkScanPanelCtrl1": {
+    "text": "IPv4 targets to scan — one address or CIDR per line, at most /16 wide.",
+    "source_sha256": "50faece63c2a1b84eb70056495fad5604bf86ca0375d2aed9d86760dee25d3db"
+  },
+  "passwordPolicyAdvancedPasswordPolicyFieldsCtrl4": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "passwordPolicyAdvancedPasswordPolicyFieldsCtrl3": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "passwordPolicyAdvancedPasswordPolicyFieldsCtrl2": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "passwordPolicyAdvancedPasswordPolicyFieldsCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "passwordPolicyBasicPasswordPolicyFieldsCtrl2": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "passwordPolicyBasicPasswordPolicyFieldsCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "passwordPolicyPasswordPolicyPresetDialogCtrl4": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "passwordPolicyPasswordPolicyPresetDialogCtrl3": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "passwordPolicyPasswordPolicyPresetDialogCtrl2": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "passwordPolicyPasswordPolicyPresetDialogCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "passwordPolicyRotationIntervalFieldsCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "phoneE164TextFieldCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "policyInheritanceGroupPolicyInheritanceDialogCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "policyInheritancePolicyInheritanceTableCtrl2": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "policyInheritancePolicyInheritanceTableCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "resourceHubEndpointOverviewPanelCtrl2": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "resourceHubEndpointOverviewPanelCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "sessionsSshTerminalViewportCtrl4": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "sessionsSshTerminalViewportCtrl3": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "sessionsSshTerminalViewportCtrl2": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "sessionsSshTerminalViewportCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "sessionsVncFramesPlayerCtrl2": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "sessionsVncFramesPlayerCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsAgentEventDefaultsFormCtrl7": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsAgentEventDefaultsFormCtrl6": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsAgentEventDefaultsFormCtrl5": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsAgentEventDefaultsFormCtrl4": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsAgentEventDefaultsFormCtrl3": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsAgentEventDefaultsFormCtrl2": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsAgentEventDefaultsFormCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsApplyDisclosureStandardWizardCtrl5": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsCryptoCryptoBackupToolsCtrl3": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsCryptoLinkHsmCryptoDialogCtrl4": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsCryptoLinkHsmCryptoDialogCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsCryptoLocalCryptoSetupDialogCtrl2": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsCryptoMaskedPassphraseFieldCtrl2": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsCryptoMaskedPassphraseFieldCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsCryptoMigrateFromHsmCustodyWizardCtrl6": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsCryptoMigrateFromHsmCustodyWizardCtrl2": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsCryptoMoveToHsmCustodyWizardCtrl6": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsCryptoMoveToHsmCustodyWizardCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsCryptoMigrationPanelCtrl4": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsCryptoMigrationPanelCtrl3": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsCryptoMigrationPanelCtrl2": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsCryptoMigrationPanelCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsDefaultPasswordPolicyFormCtrl5": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsDefaultPasswordPolicyFormCtrl4": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsDefaultPasswordPolicyFormCtrl3": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsDefaultPasswordPolicyFormCtrl2": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsDefaultPasswordPolicyFormCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsOperatorDisclosuresDefaultsFormCtrl6": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsOperatorDisclosuresDefaultsFormCtrl5": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsOperatorDisclosuresDefaultsFormCtrl4": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsOperatorDisclosuresDefaultsFormCtrl2": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsOperatorDisclosuresDefaultsFormCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsProgramDisclosureDefaultsPanelCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsRegulatoryStandardPickerCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsServerDisclosuresDefaultsFormCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "trainingFrameworkCoveragePanelCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "trainingTrainingHonestyBannerCtrl1": {
+    "text": "Purpose help for this control on the operator console.",
+    "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
+  },
+  "settingsCryptoMigrateFromHsmConfirm": {
+    "text": "Type the confirmation phrase to authorize moving crypto custody from HSM back to software.",
+    "source_sha256": "bec317f018d737e90c234fbc3306a85454c5225502e4b97cc6d4127eaf120183"
+  },
+  "settingsCryptoMigrateFromHsmApply": {
+    "text": "Applies the migration from HSM custody back to software after confirmation. This is audited.",
+    "source_sha256": "cb2c97eb9b986cda6ab2af3104b58167c26f27d1ee05d7281584856a0aae1e56"
+  },
+  "defenseKpiCard": {
+    "text": "Count of blocked or failed events for this measure, or Absent when the source has no rows in the window.",
+    "source_sha256": "5bcd306683e2edbea3b171ad45f80dfc2b46e44cb564867a32035b5bc0e09f8f"
+  },
+  "defenseWindow7": {
+    "text": "Show blocked-attack counts for the last 7 days.",
+    "source_sha256": "c532676f174e5a19b8ce220853576775aa551f6496a7b0b778e0f1707ef325d7"
+  },
+  "defenseWindow30": {
+    "text": "Show blocked-attack counts for the last 30 days.",
+    "source_sha256": "45acd19772200b2be82d0326d88f0a98746ef96cd3887a9df79ad2aab8da1b89"
+  },
+  "defenseWindow90": {
+    "text": "Show blocked-attack counts for the last 90 days.",
+    "source_sha256": "85fa107ed3b2119996d1ff0c7a303dd5b2f6b228600d36bfc5b4e0b62a393a94"
+  },
+  "defenseSkinAic": {
+    "text": "Use the standard AIC admin colors on this dashboard.",
+    "source_sha256": "5c02e5e4393d4c97b4d36f051d36dd6d69fd08c19c3745a16e0930f63907ab46"
+  },
+  "defenseSkinDark": {
+    "text": "Use the dark operations-center colors on this dashboard only.",
+    "source_sha256": "3e8739d7099c56b31744ba22a0591157d2583d99ec1d96d149edac1b604f0ad5"
+  },
+  "defenseExport": {
+    "text": "Download this dashboard snapshot as a JSON file. Password values are never included.",
+    "source_sha256": "f0c96095e26d6461a41e72c3f2b00625724d3f41c0d1eb7506c4f642c28c2be2"
+  },
+  "defenseClearCountry": {
+    "text": "Clear the country filter and show all blocked events again.",
+    "source_sha256": "dea79faee9baea392983fb06ee78a0687d370305d0fc2f84eef5fa20a44b995f"
+  },
+  "defenseCountryRow": {
+    "text": "Select this country to filter the technique cards and volume bars.",
+    "source_sha256": "fbd972413e21a590125bd5ac3139e5c419e0d5d19a9d67ac6d7e85a69468bae3"
+  },
+  "defenseHeatMap": {
+    "text": "World map of blocked and failed attempts by country. The ranked table is the accessible source.",
+    "source_sha256": "23766f8e4111351f0cdbb8820eea08bae39802f0a6cb8d4a8d74b44245ff3e5c"
+  },
+  "defenseOpenFamily": {
+    "text": "Open Current State Compliance for this family.",
+    "source_sha256": "3b19be536aeb8ccdc0ca37479b219d4f25e584b8ca652d00383b1cbe20ab6e87"
+  },
+  "cmmcHonestyBanner": {
+    "text": "These numbers describe product delivery and recorded work. They are not an assessment verdict.",
+    "source_sha256": "3421c9d54a1b550787715678393407e9c69b601af6bb86ff0c456665821a8401"
+  },
+  "cmmcOpenFamily": {
+    "text": "Open Current State Compliance to continue the named work for this family.",
+    "source_sha256": "3af5066b0b91f57d03606768d1ee86773727c960b7e9219be388f6e1cd721939"
+  },
+  "cmmcOpenPoam": {
+    "text": "Open the POA&M register to continue this recorded finding.",
+    "source_sha256": "5ba29b0e67df860eee912793c1d9dabdac078327f1128df0416caa7a8f2a7be3"
+  },
+  "cmmcOpenBinder": {
+    "text": "Open the Assessment Binder to write auditor-usable section content.",
+    "source_sha256": "f19c5dead064384efa5f64b62ea73bac2055ae7201235a1dbf354f7f57c8214e"
+  },
+  "otRunDiscovery": {
+    "text": "Starts an OT discovery scan using the networks entered above.",
+    "source_sha256": "e9e83f8e6a7eb28068d0043ff8a0dcc40e398ecde2ffbdc98ecd8602ec359026"
+  },
+  "otSaveDiscoverySchedule": {
+    "text": "Saves the automatic discovery schedule and interval.",
+    "source_sha256": "be04d87519efb639660d7dd1b6aae0efeb9e55d702a8a37ed126e082516e7e98"
+  },
+  "otCheckConnectivity": {
+    "text": "Probes TCP reachability on each target dial port. Connect stays disabled until a probe succeeds.",
+    "source_sha256": "081126c5b263f1cee1778436344796b772559b3b822d06b03131eeb99145444c"
+  },
+  "otConnectAsset": {
+    "text": "Opens an OT protocol session to this target and navigates to the PDU timeline.",
+    "source_sha256": "5ad2bc776122756b36fe159159d5c9a92885e4db0fc65283adf2a99470fc51c2"
+  },
+  "otConfigureAsset": {
+    "text": "Opens target configuration for non-secret inventory fields and rotation schedule.",
+    "source_sha256": "488c241a470cbecb151a5d164b58b95ae83b218149545e9ad16756b868a4f40a"
+  },
+  "otSelectAsset": {
+    "text": "Selects this row for rotation or break-glass on the Credentials page.",
+    "source_sha256": "e420b5129147091b6a843a777e6c7491db04883ab3340bdca53a3886a6a2e233"
+  },
+  "otStartRotation": {
+    "text": "Starts a password rotation and vault propagation job for the selected target.",
+    "source_sha256": "c3ccf9fb2b98c1bd3206c132ff7b41e10786a1fd7e130b31b6ec80949e0fb117"
+  },
+  "otBreakGlassReveal": {
+    "text": "Requests audited one-time reveal of the stored password for the selected asset.",
+    "source_sha256": "5364a57e0e108793746a0945ec25e989cab3bbd0bb0c4236cc415828d49171a9"
+  },
+  "otDismissReveal": {
+    "text": "Closes the reveal dialog. The password is not kept on this page.",
+    "source_sha256": "d7586cf48797f452d870835475417458e4081fb81550da61ece09480444dd494"
+  },
+  "otOpenSession": {
+    "text": "Opens the OT PDU Live timeline for this recorded session.",
+    "source_sha256": "f5d1abfe6d8ea918ccd529af8d131dfd9f8e6181dd4b0266f250de9a08c52283"
+  },
+  "otTryDefaults": {
+    "text": "Attempts published default credentials on this discovered host.",
+    "source_sha256": "e285826d6198aceebec32fd4c63da6598835e89c046397b5daf52c05a4ef04b7"
+  },
+  "gdprRopaKind": {
+    "text": "Controller rows follow Article 30(1); processor rows follow Article 30(2).",
+    "source_sha256": "7bc5d00d7a864e73894b67f188538a24a87756666bc850ab84ae6eccc6e3c446"
+  },
+  "gdprRopaActivityName": {
+    "text": "Short name for this processing activity in the register.",
+    "source_sha256": "95f4fad1d037ac1e8a9e645c0886d0fb392497d341b4d495856b8b148dbf583d"
+  },
+  "gdprRopaControllerName": {
+    "text": "Legal name of the controller responsible for this activity.",
+    "source_sha256": "9b4ceb3a435d8e16f5090603d57e0ba431cbaa84da38f537849e2e7439a6979a"
+  },
+  "gdprRopaControllerContact": {
+    "text": "Contact details for the controller (privacy inbox or DPO).",
+    "source_sha256": "4f1964e239401b7569d8ec1aa4b485770b433e2a172e76146585261065cf9102"
+  },
+  "gdprRopaJointController": {
+    "text": "Name of any joint controller, if processing is jointly determined.",
+    "source_sha256": "884ea6763a3e748b7841d3881a9f29886a4cf72ae853a3bf97ea373b8e395703"
+  },
+  "gdprRopaJointControllerContact": {
+    "text": "Contact details for the joint controller.",
+    "source_sha256": "e404276d16308a1fdfadd88a7b5e8af15d7540c89e89676436142ef1839ad89b"
+  },
+  "gdprRopaProcessorName": {
+    "text": "Name of the processor acting on the controller's instructions.",
+    "source_sha256": "c2c44b8b84112fc3f8078757d6a1667c95a910b3322588e525a71fe8f0c8cac4"
+  },
+  "gdprRopaProcessorContact": {
+    "text": "Contact details for the processor.",
+    "source_sha256": "01c6d5919d69f3eaf3e16a0dd3fbc6ea8f10f096a02ba530c03f06c8c54a97d6"
+  },
+  "gdprRopaDpoName": {
+    "text": "Name of the data protection officer when one is designated.",
+    "source_sha256": "fc4a3c0348f46ccaf8710cead3c4eec74921226df7d28d1343dc0ff838bb4e0b"
+  },
+  "gdprRopaDpoContact": {
+    "text": "Contact details for the data protection officer.",
+    "source_sha256": "79b0bf7762fcc2d7ed477be2c749a9cbcbe1df343293c4256999d6aeab154e2a"
+  },
+  "gdprRopaPurposes": {
+    "text": "Why personal data is processed for this activity.",
+    "source_sha256": "4ff395e24747fc659d0e3ffa66dda70713765ed49bd2deb7f204c16d8b5338ef"
+  },
+  "gdprRopaDataSubjects": {
+    "text": "Who the data is about (for example employees, customers, or visitors).",
+    "source_sha256": "5c245dd01ac3aa4d6024ee6271ad5095c4476513014fb046ebd4528602a3911d"
+  },
+  "gdprRopaPersonalData": {
+    "text": "What kinds of personal data are processed.",
+    "source_sha256": "9fc7efd29389ff6729b0a2e36743942c784fb2a695f0918940666fafad4d5f57"
+  },
+  "gdprRopaRecipients": {
+    "text": "Who receives the data (teams, vendors, or authorities).",
+    "source_sha256": "fd83d4af9c19e66fee70480d5f53d99a3d8dbe272b6cc90a390d30b4f323149b"
+  },
+  "gdprRopaTransfers": {
+    "text": "Whether data is transferred outside the EEA and to which countries.",
+    "source_sha256": "bd0b92f6515e2b844b05568e0d416f594c1d949f99ab9f81f8a4fae577615415"
+  },
+  "gdprRopaTransferSafeguards": {
+    "text": "Safeguards relied on for third-country transfers.",
+    "source_sha256": "b8cadde8b2915b28998939d8ce97c1ecd2b692ee41d1a6a155ea44ef454a40d0"
+  },
+  "gdprRopaRetention": {
+    "text": "How long each category of data is kept.",
+    "source_sha256": "29b734fdc86cadf76643883abed2d9d484108b18137cdf4dc25e443cbcfac234"
+  },
+  "gdprRopaSecurity": {
+    "text": "General technical and organizational measures that protect this processing.",
+    "source_sha256": "56485b8f82b6b4cb015aeba1cd152a0b7d83127a1f38fa5fbfe50854123ee6ee"
+  },
+  "gdprRopaReviewCycle": {
+    "text": "How often this register row must be reviewed (days).",
+    "source_sha256": "ed14b5be2ebfb2c645fd7144dd996debc73029d8b0bc6265b42010d3271eb694"
+  },
+  "gdprRopaReview": {
+    "text": "Record that this register row was reviewed on schedule.",
+    "source_sha256": "6be40977fbf3758f3aa0882147caffa33fec839a698a589f4ae5833f8ac92478"
+  },
+  "gdprRopaExport": {
+    "text": "Download the active register as JSON for supervisory authority review.",
+    "source_sha256": "057ba68f1f3ffe9e5d7c72e8f093f837a24b39106341b5c91dcb44d6bdb282d0"
+  },
+  "gdprDpiaTitle": {
+    "text": "Name of the processing operation being assessed.",
+    "source_sha256": "168cc6e5a5e58feede1d71a92fe6abf87586f11bc3def32f12b6af2805398d25"
+  },
+  "gdprDpiaStatus": {
+    "text": "Where this DPIA is in the workflow (threshold, assessment, DPO review, and so on).",
+    "source_sha256": "845c8e5209edbeff58efeac2bf805672f8cf46edffc2be0dc82a2cf9ee9e3eae"
+  },
+  "gdprDpiaThreshold": {
+    "text": "Explain why a DPIA is required or why it is not.",
+    "source_sha256": "adb3c943f11c6d41771a2fae1dc38eb59c8f55f8c4272699e21708c4f02d1c86"
+  },
+  "gdprDpiaArt353Triggers": {
+    "text": "Which Article 35(3) criteria apply, if any.",
+    "source_sha256": "8d0a8a736c4abc6d40d9985d8485bc173b1ff98843e0256d4ff86188cdffdec9"
+  },
+  "gdprDpiaProcessing": {
+    "text": "Describe the processing operation systematically.",
+    "source_sha256": "302fe375a7268db8ac01b1854b6af2a4b11da5d14eb73f5f98db9650b84cedbe"
+  },
+  "gdprDpiaNecessity": {
+    "text": "Explain whether the processing is necessary and proportionate.",
+    "source_sha256": "ae204da4c4d0e4f0120c5f9382a3d7e73f03c23289d8f1952f168c502017d504"
+  },
+  "gdprDpiaRisk": {
+    "text": "Explain risks to the rights and freedoms of people.",
+    "source_sha256": "f58e5252f99127bd80789495b432eeaecb9594c021c3ea57356a712291febeae"
+  },
+  "gdprDpiaMitigation": {
+    "text": "List measures chosen to reduce or remove those risks.",
+    "source_sha256": "ca6d5eb607896cc4addaa62db0a839dcc002432512668719e4a69aca38f78d75"
+  },
+  "gdprDpiaDpoAdvice": {
+    "text": "Record advice from the data protection officer when one is designated.",
+    "source_sha256": "d73a214ec10cb28c2b3805057f1049d0260c1e21de3d2e67fd8297c430ef062c"
+  },
+  "gdprDpiaPriorConsultationNotes": {
+    "text": "Record consultation with the supervisory authority under Article 36.",
+    "source_sha256": "9f944ca05cfedb38af0a3e78cd1c8e02db2419948d964375c10578e5cfa0af8b"
+  },
+  "gdprDpiaPriorConsultationAt": {
+    "text": "When prior consultation with the authority took place (UTC).",
+    "source_sha256": "458d7659d2896f4a4e060b23938f98953900f15a26a78799847265c74ddd9e9c"
+  },
+  "gdprDpiaDecision": {
+    "text": "Final outcome of the DPIA workflow.",
+    "source_sha256": "a9ea27916a8700b26c123927e2f1ef520f1c2be5bfc520e22fa8b8bc02af527e"
+  },
+  "gdprDpiaDecisionReason": {
+    "text": "Plain-language reason for the DPIA outcome.",
+    "source_sha256": "5dcaddcd0e8c431b12e74431e5b66ae835e1666300d9ed5b60898931b0641905"
+  },
+  "gdprDsrIntake": {
+    "text": "Open a new data-subject request and start the one-month response clock.",
+    "source_sha256": "f1e212e80a1a212723693fc90cbca915980c02a59f3d522fad46b0657cc919e4"
+  },
+  "gdprDsrRight": {
+    "text": "Which Chapter III right the person asked to use.",
+    "source_sha256": "96842e69880abc4f9b5912f3eee0e7f2a62b7c5d93668d03179e458b9d8a6cc1"
+  },
+  "gdprDsrStatus": {
+    "text": "Where this request is in intake, verification, fulfillment, or closure.",
+    "source_sha256": "a0d544eba8677ed66c67b2b3f3fb54c186bb8b121a54cb5705dc3a26b4142b52"
+  },
+  "gdprDsrVerifyIdentity": {
+    "text": "Record Article 12(6) identity verification before handing over personal data.",
+    "source_sha256": "30f601b751759591bf3e7d8062b411f4877c993b63ba10ce065dd399393ddc4d"
+  },
+  "gdprDsrVerifyMethod": {
+    "text": "How the requester proved who they are (ID check, account challenge, and so on).",
+    "source_sha256": "fef3a9bb5e92ff88b7a26d9aa2eb33901e5c024263f0fbedfcf614ce68862e11"
+  },
+  "gdprDsrVerifyEvidence": {
+    "text": "What evidence you relied on — kept in the append-only event ledger.",
+    "source_sha256": "54af8a8214bb98f6f700c638f7be12b6b7a146b1ce3c299415d6c8c79590dd57"
+  },
+  "gdprDsrRefuseVerification": {
+    "text": "Record when verification failed or must be paused — closes the request as refused.",
+    "source_sha256": "0df5b15e4cfd1b7a5a538d9a3c96b14f98638cbc116b2889ea2f3ca8cee2034b"
+  },
+  "gdprDsrWorkforceLink": {
+    "text": "Link to a workforce roster row when the requester is in scope; leave empty for external data subjects.",
+    "source_sha256": "85708970619c07c6d2c4d27ca7d02e50dd8857c976f266ce0654c661b8429dd7"
+  },
+  "gdprDpiaThresholdRequired": {
+    "text": "Record whether Article 35 requires a DPIA for this processing.",
+    "source_sha256": "31a84ba5a19ae2270a31045c06ffc5fcce11be0aeddd1e8ec4957759bd7a5def"
+  },
+  "gdprDpiaPriorConsultationRequired": {
+    "text": "Mark when residual high risk requires Article 36 prior consultation.",
+    "source_sha256": "8ef35b4ef330c68e8219f867bf4d23638faed9164c84ebf3e7ad20dd7c29de9b"
+  },
+  "gdprDsrLocated": {
+    "text": "Where relevant data was found and which systems hold it.",
+    "source_sha256": "a8dc8dc7649fefbc58b42fc658dc19227b1e65b0a1ce810239187882aa9efa27"
+  },
+  "gdprDsrDelivery": {
+    "text": "What was actually sent or done for the requester.",
+    "source_sha256": "6103655e7bc5bdd79049b4a28fb05bba72b3a10c6d0f0a5c01edd72891f68e94"
+  },
+  "gdprDsrDecision": {
+    "text": "Final decision and plain-language reason, including any exemption relied on.",
+    "source_sha256": "725db5bfab4336423cd78c4c1b0e48ce0b46e11700020b405ed6774fee8b9457"
+  },
+  "gdprDsrExtend": {
+    "text": "Record a two-month extension with reason when the request is complex.",
+    "source_sha256": "d7c96086615ca697044ee91d0c9c530b228967e75368ed4b22fa2a498b91926c"
+  },
+  "admin_handb_cher": {
+    "text": "admin handb cher",
+    "source_sha256": "6436a452b4a5110820f08f14e2cad066156d40ebc8fffecc60649081a0a525b3"
+  },
+  "agent_event_forwarding": {
+    "text": "agent event forwarding",
+    "source_sha256": "43f8594688ff1fddad8f06bf71e1d2dc9cd7d1b54e716e917abc71ab864e1c6e"
+  },
+  "app_manifest": {
+    "text": "app manifest",
+    "source_sha256": "53e79bfafb61e2bf1149dfea775f58583a8a801a841cc6a45677174b1cbdb52e"
+  },
+  "auditor_handb_cher": {
+    "text": "auditor handb cher",
+    "source_sha256": "10b0011e4956c37b25ec453a9a88ab648885e0b54105b5ff169d1ae9ce13f53e"
+  },
+  "create_settings_file": {
+    "text": "create settings file",
+    "source_sha256": "31baff1bc05b3aa62e4f0e3f933801f3ec2425fe5c0bfa5e0fa86ae348adcb36"
+  },
+  "demo_data": {
+    "text": "demo data",
+    "source_sha256": "b39fc3131b5458ae9061f6d042a5c799ac2826a7f572714acef559427fd8202e"
+  },
+  "elevation_mocks": {
+    "text": "elevation mocks",
+    "source_sha256": "db0c9ca2e09f44a8e5271d3d16e4f42108d4654a310344e966336af313dfb20e"
+  },
+  "elevation_policy": {
+    "text": "elevation policy",
+    "source_sha256": "ab2fd552f699a87e970576c5627a92109d3b763c86f395bf6a710a6bfab0248d"
+  },
+  "general_settings": {
+    "text": "general settings",
+    "source_sha256": "ff7df4da1984acaf1a02b3e9a2a998025e5cda57f66df4fdddce3b744b6331bb"
+  },
+  "group_defaults": {
+    "text": "group defaults",
+    "source_sha256": "d56bf8879e3b02854e9040f72211c0a1a22381d7fd0ee868036ef765a9a10be4"
+  },
+  "identifierColumns": {
+    "Annex A": {
+      "text": "Annex A",
+      "source_sha256": "236f99243bb904f30805afa046b18f3ee84babeb7634613fb330a6b286e72992"
+    }
+  },
+  "identity_defaults": {
+    "text": "identity defaults",
+    "source_sha256": "33acbf2a25420dbc83e771d2d1e784d87450937be01984ea51a889cbe4596e30"
+  },
+  "import_settings_files": {
+    "text": "import settings files",
+    "source_sha256": "d916619b974e125f0c71d77adc55296567c677c3e2188f26bedb04bbc461c9d3"
+  },
+  "lab_advanced": {
+    "text": "lab advanced",
+    "source_sha256": "dacbf75672f58b687a2e2a95fdd79dd336e56cc89c5ff38865984de7e4dcc79a"
+  },
+  "local_user_groups": {
+    "text": "local user groups",
+    "source_sha256": "c0c22545efe2749b71b0edcbff3d8b5974e36903f9ca78eb5c4805c022fe9381"
+  },
+  "mitm_dev_only": {
+    "text": "mitm dev only",
+    "source_sha256": "d7436b09bd93f52affbe48ffe1dc22061c3f3327a6e3a35afe5c4748a4a042ba"
+  },
+  "password_defaults": {
+    "text": "password defaults",
+    "source_sha256": "b4170e9a5f2c737ebeb4206962e68ccef47f5d0bc648c2e6ca7543fec67c3eae"
+  },
+  "password_policy_presets": {
+    "text": "password policy presets",
+    "source_sha256": "c72306ad6a2496cf822f63f54d9b7cd6b6a96b32e06ffcfa7b5bc4596c07eafd"
+  },
+  "rbac_lab": {
+    "text": "rbac lab",
+    "source_sha256": "042bfa2a5c890ecf79d97e8362c54e17b50c7e6a65360dd86289ae49c655d0e4"
+  },
+  "server_control": {
+    "text": "server control",
+    "source_sha256": "7554cde0585062738e75679d1232cdc971c2f85f95edc231c7eca3af9753029d"
+  },
+  "technische_dokumentation": {
+    "text": "technical documentation",
+    "source_sha256": "5be516e52c11480489df05733e82c94464c15cbbaaf0a4f5acb9338cbea8fbba"
+  },
+  "tls_security": {
+    "text": "tls security",
+    "source_sha256": "d23be7e1b45b105d4159ed16b0cb1c9e589330fa4ebe7aa1ba080e906bf99b1b"
+  },
+  "unix_privilege": {
+    "text": "unix privilege",
+    "source_sha256": "ab0a0fc7a9b0cfe9d7842d6e29cc04474776b95195e0ad77a864508250b6f8be"
+  },
+  "user_handb_cher": {
+    "text": "user handb cher",
+    "source_sha256": "c0af8f0cfbfa2e5d47545fdf5a8c3310c6a7ea28562bf9e5cfe8376c061510b7"
+  },
+  "workstation_assignments": {
+    "text": "workstation assignments",
+    "source_sha256": "333ca829b11ffd37a2ec96f5767c96c343d05d572a205827aaee51b5f7810617"
+  },
+  "workstation_prompt": {
+    "text": "workstation prompt",
+    "source_sha256": "fa898611921ec027377a5d123e89bb238156ffc4e0fb129f1a2838208192a177"
+  },
+  "loginDemoFill": {
+    "text": "Fills the logon form with this sample account. Does not submit until you click Sign in.",
+    "source_sha256": "dfcc728329f9879e71f2c8791a5adcee8f4ab0745eac14d137eedab88888daf9"
+  },
+  "notFoundGoHome": {
+    "text": "Returns to the console home page from an unknown address.",
+    "source_sha256": "74a970224a239578f02056fe0d82fbdf62a4e0e6b8bfacb16d5d12eef9958656"
+  },
+  "sessionIoScopeField": {
+    "text": "Who this clipboard and file-transfer ceiling applies to: organization default, a user, an IAM role, or an IAM user group.",
+    "source_sha256": "2c7039e5fca7a68c6e6da2c6e9d7261c543498dbf3b1a3124bc992b3c225abbc"
+  },
+  "sessionIoClipboardField": {
+    "text": "Maximum clipboard direction allowed for live sessions under this scope.",
+    "source_sha256": "1d5c9f7054eb6a1825b8e33fba4d1f9ab35c3b1ff07e8ab37c3c37ac18445805"
+  },
+  "sessionIoFileTransferField": {
+    "text": "Maximum file-transfer direction allowed for live sessions under this scope.",
+    "source_sha256": "dca70207fdc08303a5fcd3e069cfa86aea189fd45952e483052214e9b3dd6f99"
   }
 }

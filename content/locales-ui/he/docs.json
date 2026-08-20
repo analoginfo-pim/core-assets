@@ -275,6 +275,100 @@
         "text": "תיעוד → Auditor-Handbuecher. דיסר לייטפדן והקפל לשומה.",
         "source_sha256": "b9e89deab82e7bffc02e6f434542ad9354d5e780cf9fb5af3c3b314eb1e85cf1"
       }
+    },
+    "body": {
+      "0": {
+        "text": "Everyone logs in to the same login page. There is no separate examiner portal. Menus and rights come from the groups you assign. This corresponds to the Thoropass model: an examiner examines evidence; An audit administrator (management) can also set up other auditors. Identity administrators create accounts that are not validators. This is not the job of an auditor.",
+        "source_sha256": "fe5e718998d34e73aa396601781f548f4960cd864828836427de532b71065800"
+      },
+      "1": {
+        "text": "Demonstration environments include three starting accounts so you can try out each task. Change these passwords before each joint demonstration. Production environments create their own people and assign them to the groups below. This guide describes how to set up the product. It is not a certification claim.",
+        "source_sha256": "1588afb7ee4753cff6b34d99ceefde61744ca5619bac1eeca60450567c82b543"
+      }
+    },
+    "steps": {
+      "0": {
+        "text": "Open the local IAM administration and create or select the person.",
+        "source_sha256": "74218568bb6ab85a4b766f47fd67f5f6305e83c891be656af67ebc4a184cd5e4"
+      },
+      "1": {
+        "text": "Add the person to the groups for their role in the table below.",
+        "source_sha256": "c75affe5a031cfc47080a36a211f60ebb0423186e0a0e503eb6229980cc7b63c"
+      },
+      "2": {
+        "text": "Or create them with the matching enrollment template.",
+        "source_sha256": "9281b903b18c034652f3534705f6f04b8921fbeb93198a075f6a3de15337defd"
+      },
+      "3": {
+        "text": "Ask them to sign in on the normal sign-in page.",
+        "source_sha256": "5a27cb5dc45e04d33afb3cfa2d7680de83d371992c8588992c5ce0e9aff2a44e"
+      },
+      "4": {
+        "text": "Open audit engagements to invite them to an engagement if your process uses invitations.",
+        "source_sha256": "9e0f6ab2c160dd38a32b7c59a1eb55fe45e24e07e6e3710362667be62d1ace8b"
+      }
+    },
+    "configLinks": {
+      "0": {
+        "label": {
+          "text": "Register",
+          "source_sha256": "bb7234ec12451361e6f35bcbe76de58e4350657fe60d1b96ace0947f59194083"
+        },
+        "note": {
+          "text": "The only login page. Auditors use this site like everyone else.",
+          "source_sha256": "7c1772680987eb0810879683657437c5ca711dca2eb24ad4b44bfdd1d75c4754"
+        }
+      },
+      "1": {
+        "label": {
+          "text": "Local IAM Management",
+          "source_sha256": "996527dea286c5955c0e95ef37c3a5be2e6cf9b772b74f3df13f167ce4fd2040"
+        },
+        "note": {
+          "text": "Access and Identity → Directory → Local IAM Management. Create people, assign groups and reset auditor-related passwords (line only).",
+          "source_sha256": "9fec7d41b1ecc877bdbc95218fd2220dfcb81730be30f0719906f0e3aa95b907"
+        }
+      },
+      "2": {
+        "label": {
+          "text": "Enrollment and Access Control",
+          "source_sha256": "12e572e9d85eaa384cf67874b4cf41b22b8312ac83e5311d99cc06344472301c"
+        },
+        "note": {
+          "text": "Access and Identity → Directory → Enrollment and Access Control. Shows the enrollment requirements (read-only-assessor, cmmc-assessor, lead-auditor).",
+          "source_sha256": "182512ee39ef91dc376dd76adb5d4b99c82cbe71ff84211e6e899c3b1d2eb1fd"
+        }
+      },
+      "3": {
+        "label": {
+          "text": "Audit engagements",
+          "source_sha256": "df4038d742034aa4140b88db2a878ad693fdb503b1f5926b3e45995626393959"
+        },
+        "note": {
+          "text": "Compliance → Audit engagements. Invite auditors and manage the engagement.",
+          "source_sha256": "69da63cd0def7a2239d62539bd4ee0140396fbf4b4cecfd4cbaeb588c505d6c5"
+        }
+      },
+      "4": {
+        "label": {
+          "text": "Assessment Binder",
+          "source_sha256": "edce73881ba543a19ed06b9eaee2c7998fb127db9bf6232dc805423bed35f519"
+        },
+        "note": {
+          "text": "Compliance → Assessment folder. Write or review control narratives and evidence.",
+          "source_sha256": "2c3766e276c7ceb65823e60fef8c3f696b83ae8a15b98085b5bcaa9bcc368bfb"
+        }
+      },
+      "5": {
+        "label": {
+          "text": "Auditor manuals",
+          "source_sha256": "6623ff55741761694cc60ea3e767301b9c1d248b65de5f46d388d0c9a1d9ab56"
+        },
+        "note": {
+          "text": "Documentation → Auditor Manual. This guide and the chapter on assessor work.",
+          "source_sha256": "218f342d87adcb72b661780061dfce0382379c7c642c9a66df95da067d50faa7"
+        }
+      }
     }
   },
   "user": {
@@ -1404,5 +1498,13 @@
   "technische_dokumentation": {
     "text": "תיעוד טכני",
     "source_sha256": "d9e472f50948919b7de17f323845791003026e68cd5487bccb650edfbdff625d"
+  },
+  "openapiLabel": {
+    "text": "OpenAPI",
+    "source_sha256": "cf2c9e2180334830f7e995b1084be3ac857f6733464548f77ab952d45773203a"
+  },
+  "openapiResourceLabel": {
+    "text": "OpenAPI-Explorer",
+    "source_sha256": "84aec404e7c3226303f0bd0eb6424a919ba981bcdf0fba365bc7f6802882fe2b"
   }
 }

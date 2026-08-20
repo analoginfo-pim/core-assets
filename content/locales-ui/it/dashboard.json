@@ -366,6 +366,34 @@
       "blocked_routes": {
         "text": "Percorsi API bloccati",
         "source_sha256": "090be1aa7a6af319a9827f5f3cdd6ce7480357d950ce961913d3cb9d4de7140a"
+      },
+      "families_live": {
+        "text": "Families Live",
+        "source_sha256": "ae4c2c9b755c7a4dc36e206c6ea0db794340e469ca17bcedca974bdb87ef2443"
+      },
+      "families_partial": {
+        "text": "Families Partial",
+        "source_sha256": "4df2846422bf65468a70f54b7330bcdea9e8ba3856edbd9cdf5300ac4bf6e89e"
+      },
+      "families_planned": {
+        "text": "Families Planned",
+        "source_sha256": "407dc7f90ff2c24341028f52ca74e06b5f503ab160c74370e664cddd91f2e7f6"
+      },
+      "families_blocked": {
+        "text": "Families Blocked",
+        "source_sha256": "c589ca0006d4fb5cac71512ea657a6476aa724976a44350f5bbc129a7d919c5a"
+      },
+      "poam_open": {
+        "text": "Open POA&M items",
+        "source_sha256": "cb492b36eee28f487a68a747a29ad26e1679817a5c1c2df5390c37cac8f50c8d"
+      },
+      "attestations": {
+        "text": "Recorded attestations",
+        "source_sha256": "c4bb3b29bed881e16edff964bde0b35df39b1ae00e7c6df79bb5df345849d572"
+      },
+      "binder_gaps": {
+        "text": "Binder sections needing content",
+        "source_sha256": "f7456fc41d6d6bb18056627e21ac057c3b28d414185cee38700325e08fdf45f9"
       }
     },
     "kpiHelp": {
@@ -437,6 +465,76 @@
         "absent": {
           "text": "In questa finestra non è stato registrato alcun rifiuto del percorso API.",
           "source_sha256": "03a2ef4b5a6628f3c2b234e36ba363ef2172c70915a681bf338e59c66922fc8f"
+        }
+      },
+      "families_live": {
+        "live": {
+          "text": "Control families this product currently delivers live evidence for. Delivery counts only, not an assessment conclusion.",
+          "source_sha256": "d96ef0bfc207ad74ded3b0bf4c63db84b94cfa4578291606babddedd6fbcd6e9"
+        },
+        "absent": {
+          "text": "No control family is marked live in this window.",
+          "source_sha256": "58ba3d101ba638274c7d20efec4fe920e20cf94fedf3505e33e02cd2e1e81fec"
+        }
+      },
+      "families_partial": {
+        "live": {
+          "text": "Control families with partial delivery in this window. Delivery counts only, not an assessment conclusion.",
+          "source_sha256": "42bb32c6b6133edd08343219ddfa1910aa9110d2371c078578d8354f0162faf8"
+        },
+        "absent": {
+          "text": "No control family is marked partial in this window.",
+          "source_sha256": "9c6006ceb5a67bca902960b5bb9dba6d0fb821c5300854c194cc9c4d066cbf57"
+        }
+      },
+      "families_planned": {
+        "live": {
+          "text": "Control families planned but not yet delivering evidence in this window.",
+          "source_sha256": "aedc73b9dfb44baf7d9feaeb956b4edb750d635d398cb28c4dbbd5fa7e004b9b"
+        },
+        "absent": {
+          "text": "No control family is marked planned in this window.",
+          "source_sha256": "d0dab52ed9dd3a3e038784e130233cee473e9e15b5df4c7a954e8f76f4faffe0"
+        }
+      },
+      "families_blocked": {
+        "live": {
+          "text": "Control families blocked from delivery in this window.",
+          "source_sha256": "f2476fc53f99df54a2e34f9ad7866dec8480c6dddfda502a98bb918b9eb4e0dc"
+        },
+        "absent": {
+          "text": "No control family is marked blocked in this window.",
+          "source_sha256": "b8650f31e54050a9997dc5734c4a75ee67ff9c9d808f4963feae0a236ef2d184"
+        }
+      },
+      "poam_open": {
+        "live": {
+          "text": "Open POA&M items recorded in this window. Delivery counts only, not an assessment conclusion.",
+          "source_sha256": "74089e924f730f09cbe52a893968e204c4be0b403ee90930e035e73691f5ee14"
+        },
+        "absent": {
+          "text": "No open POA&M items are recorded in this window.",
+          "source_sha256": "2a207648400577f439e966b97cf2b212b550ada7ca225b91b1fd7132d5b40c28"
+        }
+      },
+      "attestations": {
+        "live": {
+          "text": "Attestations recorded in this window. Delivery counts only, not an assessment conclusion.",
+          "source_sha256": "a739d0cd58091c95810a2ea9ab0c69a1bea8bdea6588b52fdb6f8db2f75b3f34"
+        },
+        "absent": {
+          "text": "No attestations are recorded in this window.",
+          "source_sha256": "38a4f54fd3244975e5f813b9c243b717173d19a603604f102635b266bbce8c35"
+        }
+      },
+      "binder_gaps": {
+        "live": {
+          "text": "Binder sections that still lack auditor-usable content in this window.",
+          "source_sha256": "82d5b832a552a4544eee38a283e4fbd50fb235059a220df9418347482f3d55f2"
+        },
+        "absent": {
+          "text": "No binder section is marked as lacking content in this window.",
+          "source_sha256": "d9e02fab96ac078482c08ee80f816c80a35bbf9de4b796f3f797d0417a8dd957"
         }
       }
     },
@@ -527,6 +625,90 @@
     "noWorkRows": {
       "text": "Nessuna riga di lavoro rimanente.",
       "source_sha256": "e5c2a8eef1925db15b9670d470194971c1aad3e97d8b854459343b4fd0e7d1ea"
+    },
+    "geoAbsentBefore": {
+      "text": "Country lookup is Absent. The map frame stays visible. Install the GeoIP database from",
+      "source_sha256": "215f8898ca457cce5740e0bb35500ffac584c4eecf88a0379ae0cff073290799"
+    },
+    "accessControl": {
+      "text": "Access Control",
+      "source_sha256": "c3ceee351e98114e44cbeadab233966c7ecb2a4685d750b683c4c9421b1fd40c"
+    },
+    "geoAbsentAfter": {
+      "text": ". Attack geography is not invented.",
+      "source_sha256": "d2ca15ff52304645a80c84454e64c6823d2b63bd512c74de0e6cc104ce105597"
+    },
+    "heatMapAria": {
+      "text": "World heat map of blocked and failed attempts by country. The ranked table is the accessible source.",
+      "source_sha256": "79a8f003f0af39a58d0eacf06b93cf621c4c82da84efb19fb70a00ea2b2e7a97"
+    },
+    "legendPoint": {
+      "text": "Attack point",
+      "source_sha256": "fa68d4e63ed7e5ccc4a9927ced10211c568c4b03f23688153f5b6dfea12db113"
+    },
+    "legendNone": {
+      "text": "No events",
+      "source_sha256": "2197f6207922f4c874531e989af842ab8ceeea3afb6873a3306ed26d22a9a049"
+    },
+    "legendLow": {
+      "text": "Low",
+      "source_sha256": "f793de205ead5ac302c4a1627829dea41f176b1068b993a32373fc869918374b"
+    },
+    "legendHigh": {
+      "text": "High",
+      "source_sha256": "c4ebc6d4a5832cd9415f906ad03661110c705a72381c8b8b145761d02e2dd23a"
+    },
+    "heatMapCaption": {
+      "text": "Origins of blocked and failed access attempts",
+      "source_sha256": "436ce1b95f5c2e219f964854ad308c9ff347f0285c3ccbc129d48890a847eb91"
+    },
+    "countryTableAria": {
+      "text": "Blocked attempts by country",
+      "source_sha256": "79a0629566794f18689f229fe98cecb12b514da187ec42dfc6905037cffcb37d"
+    },
+    "colCountry": {
+      "text": "Country",
+      "source_sha256": "701d021d08c54579f23343581e45b65ffb1150b2c99f94352fdac4b7036dbbd5"
+    },
+    "colCode": {
+      "text": "Code",
+      "source_sha256": "340f463033e0fd5ddeabb922df4d4f1b5747494d0f5ed9894f13b6e13ca831f5"
+    },
+    "colBlocked": {
+      "text": "Blocked",
+      "source_sha256": "18f2a0947f9d6523991b29b450307f22773f57d65f7efb98d48a167df04d6b1d"
+    },
+    "colFailed": {
+      "text": "Failed",
+      "source_sha256": "031a8f0f659df890dfd53c92e45295b0f14c997185bae46e168831e403b273f7"
+    },
+    "colUnique": {
+      "text": "Unique Addresses",
+      "source_sha256": "6c0d109a41be97984e2c50cc0970fba69d5db2b98b69b6512c96c1a4d84371a4"
+    },
+    "noCountryRows": {
+      "text": "No country rows to display",
+      "source_sha256": "00dad8b810d894470745bb4ba5e9aca92ceaf09aa1d427fec2f64d008f4768ed"
+    },
+    "countryTooltipEmpty": {
+      "text": "{{name}}: no country data for this point",
+      "source_sha256": "7ea82beddc9c142df2c2fd0a8e7fd09396d8f0ae3a23c37be9770339c805aad0"
+    },
+    "unlocatedOrigin": {
+      "text": "Unlocated origin",
+      "source_sha256": "dda30f1833188a8e11a827b4c45077f41cb4af3589bdc8c28cfdb2de358259c1"
+    },
+    "unknownCountry": {
+      "text": "Unknown",
+      "source_sha256": "b764cdc0eab7137467211272fa539f1260d1bf2e71bcf6ff3bdc960f5c16aa14"
+    },
+    "tacticTotal": {
+      "text": "Total",
+      "source_sha256": "c9b3c38247f744e17dd26fda097d6a9ba9332586b6bdaa038bf8f313a863f2b8"
+    },
+    "clearCountry": {
+      "text": "Clear Country Filter",
+      "source_sha256": "db91578116d75baaf5c5d7b466568c40dfcf01aee19e3e285d54fc1d8b218d92"
     }
   },
   "honestyNotes": {
@@ -952,5 +1134,17 @@
   "chartNoValuesInPayload": {
     "text": "Nessun valore numerico in questi dati.",
     "source_sha256": "b5acb4fa352b7af334dbf3009170f350f04617a262905dcb0bbc940cb5c81c7f"
+  },
+  "windowLastDays": {
+    "text": "Window: last {{days}} days.",
+    "source_sha256": "ca4085c0c190f67a8102d8c4f52ca2a75343150af1b55669c2c1b50f69de7588"
+  },
+  "tileCountsOnly": {
+    "text": "Delivery counts only — not an assessment conclusion.",
+    "source_sha256": "79c301893ca498e97b7cb2d4071aaabd647439a88ba4b9f8ae6f5f13d54386c5"
+  },
+  "tileNotAvailableYet": {
+    "text": "Not available yet",
+    "source_sha256": "787406ddea2a10a482aadb0a7af672d2621eef25af4aba9af33d4ae4ed135509"
   }
 }
