@@ -178,6 +178,34 @@
         ],
         "source_sha256": "a77c31337a2e16fe494dd637358e9b2e608a7db0dce10d1abcafb7f338026202"
       }
+    },
+    "secure-share": {
+      "helpAriaLabel": {
+        "text": "Avaa ohje: Secure Share",
+        "source_sha256": "7aece7d2e8234a4581dd0070c616d00216b3826fd3373d0bd651bf2cb62703ed"
+      },
+      "summary": {
+        "text": "Salattu holvi kirjautumistiedoille, muistiinpanoille ja tiedostoille. Jaa tämän suojatun alueen sisällä komennolla Hallitse käyttöoikeuksia. Viedyt .json-paketit käyttävät AIC UniversalEnvelope -salausta (eivät OpenPGP:tä); tuonti toimii vain AIC-palvelimella, jolla on samat holviavaimet.",
+        "source_sha256": "186154eb4445b7dc457dc78dbffa10e69a92b58b62e13a1835f216b9f6c80021"
+      },
+      "title": {
+        "text": "Secure Share",
+        "source_sha256": "c2b1d79f4ae639052940dccfcbb6d0146e3661b36ca208d1cae0b50b22a019f4"
+      },
+      "bullets": {
+        "0": {
+          "text": "Katso sivun kohdasta ”Miten salaus toimii” muodot, avainten säilytys sekä jakamisen ja viennin ero.",
+          "source_sha256": "a5c5ce3c9abf509dd6e3ed47c28efd6c7de6411553483f1c8444987df02de663"
+        },
+        "1": {
+          "text": "CUI ei saa lähteä selväkielisenä vientinä — vain salattu vaihto tai ACL suojatun alueen sisällä.",
+          "source_sha256": "753d85306813faafa2a2197e050594d735a802411a23b8ef6083b4598444ddc2"
+        },
+        "2": {
+          "text": "Suojattu vienti on sama paketti ASCII-kuorella liittämiskanavia varten, ei PGP-viesti julkisella avaimella.",
+          "source_sha256": "d09a8b9acf288762f595134a62c958da2947744a4f072583880b31251376b7e5"
+        }
+      }
     }
   },
   "chrome": {
@@ -1161,6 +1189,352 @@
       "saving": {
         "text": "Tallennetaan suosikkeja…",
         "source_sha256": "7cf9c6ca1e0d1d331d2ac336d602020ff30a0b41c59988a1a723d450f3eda14e"
+      }
+    },
+    "secureShare": {
+      "addFavorite": {
+        "text": "Lisää suosikkeihin",
+        "source_sha256": "7f3c0782afd7e95577665f17f90a5890669c0f3a33850a85278c7432e5b00fec"
+      },
+      "addFavoriteAria": {
+        "text": "Lisää {{title}} suosikkeihin",
+        "source_sha256": "4b76b149911ceb222693992433cf4dcadbfb5dd6562b8836bd9571704cb400bc"
+      },
+      "adminTools": {
+        "text": "Järjestelmänvalvojan työkalut",
+        "source_sha256": "6586948feb5830ced04825b7ecf913eb2e83d6434e2566fcb304089faee1b00f"
+      },
+      "breakGlassAria": {
+        "text": "Avaa hätäpalautus kohteelle {{title}}",
+        "source_sha256": "e1c015ea2e9c30ecedcd96f0ed9af87f164cefd5722ca1c0302f0f2ce72a0228"
+      },
+      "breakGlassTooltip": {
+        "text": "Avaa hätäpalautus",
+        "source_sha256": "e92f383fb4d83acc3729037a555db367630fd95337c8ece29354c2931b25b5ed"
+      },
+      "cancel": {
+        "text": "Peruuta",
+        "source_sha256": "19766ed6ccb2f4a32778eed80d1928d2c87a18d7c275ccb163ec6709d3eb2e27"
+      },
+      "close": {
+        "text": "Sulje",
+        "source_sha256": "7d9eb7acb13e24625c404401d8e88b2350e32162455885f18276cf802f7701ed"
+      },
+      "colClassification": {
+        "text": "Luokitus",
+        "source_sha256": "72f049954fdd06c875fef2a15bf89e95c7a28db5c4910643dbd7ac38a3e0db13"
+      },
+      "colFav": {
+        "text": "Suos",
+        "source_sha256": "4bede8ceb84d5c9ec76f9c2bc3d3614d4f79c982b01e3c3d4b33682c87b7e041"
+      },
+      "colFlags": {
+        "text": "Liput",
+        "source_sha256": "f38d9950af4f9fa900a7d326505740a942352e173f1f9dc85cbf17b5aca95c55"
+      },
+      "colKind": {
+        "text": "Laji",
+        "source_sha256": "f5387f9bb6ed70315a77fdcb9335facc27a9bf241f35955bd2755c55e0c016c7"
+      },
+      "colName": {
+        "text": "Nimi",
+        "source_sha256": "dcd1d5223f73b3a965c07e3ff5dbee3eedcfedb806686a05b9b3868a2c3d6d50"
+      },
+      "colOwner": {
+        "text": "Omistaja",
+        "source_sha256": "4b1b8aa3608a26da451ae0630d75b60ab1bc2dd229c41a80838fc7993e835c46"
+      },
+      "colSize": {
+        "text": "Koko",
+        "source_sha256": "1af851907331c0ed99e7c63b4e55df808bc5fc4c990a1cf80ca8c0f76daf1f3b"
+      },
+      "colUpdated": {
+        "text": "Päivitetty",
+        "source_sha256": "3a5ecca188c0579c00ee24cf3cab21bd02c15a06f7a70cc8e0a8ff2381dcbbfd"
+      },
+      "create": {
+        "text": "Luo",
+        "source_sha256": "4759498ac2a719c619e2c8cf8ee60af2d2407425e95d308eb208425b2a6d427a"
+      },
+      "createBreakGlass": {
+        "text": "Salli hätäpalautus",
+        "source_sha256": "fc75c29736598e5a080381c08146858e7e3d8eb79fed152df9301a65f7d19066"
+      },
+      "createClassificationHelper": {
+        "text": "CUI pysyy salattuna; ei selväkielistä vientiä",
+        "source_sha256": "ffbfaf5622760da2d0952bb54fcee966ee248c950eae8d1c5bb82a369d393da1"
+      },
+      "createFavorite": {
+        "text": "Lisää suosikkeihin",
+        "source_sha256": "7f3c0782afd7e95577665f17f90a5890669c0f3a33850a85278c7432e5b00fec"
+      },
+      "createGenerator": {
+        "text": "Generaattori",
+        "source_sha256": "1ade60abe93f5cfce908a10bb2d1b474f024779843faba4bb1f2ef06f277d3c7"
+      },
+      "createItemTitle": {
+        "text": "Otsikko",
+        "source_sha256": "7e8cd2056da73a7fefb6cd91f4e5d199d08d9058c517b9a2476b1b520324d674"
+      },
+      "createNotes": {
+        "text": "Muistiinpanot",
+        "source_sha256": "8a7525b1492fb84833f5c4a69b30f4bfbb134f9b666b61a2c1872d63d234c085"
+      },
+      "createPassword": {
+        "text": "Salasana",
+        "source_sha256": "e7cf3ef4f17c3999a94f2c6f612e8a888e5b1026878e4e19398b23bd38ec221a"
+      },
+      "createSecureNote": {
+        "text": "Suojattu muistiinpano",
+        "source_sha256": "2278c41a35dc2459b50bc13e79602a37cdda3ca7be7db4b98e8fb717d549a955"
+      },
+      "createTitle": {
+        "text": "Uusi Secure Share -kohde",
+        "source_sha256": "769e1d3ee0579bfbaba0004cb244aea5c83e788346ea14d8dc17911ca30f3c8c"
+      },
+      "createUris": {
+        "text": "Sivuston URI:t (yksi riville)",
+        "source_sha256": "52e4a67eef2b0f48f7338783898318751047bbc50fa5ebc3ea55f306505916ad"
+      },
+      "createUsername": {
+        "text": "Käyttäjänimi",
+        "source_sha256": "e3b89e9d33f88e523083d8b4436adcc3726c89e97fd3179a2e102d765d1b16ed"
+      },
+      "deleteSelectedCount": {
+        "text": "Poista valitut ({{count}})",
+        "source_sha256": "fcfe83a0d3a6cd25840738722ed1b1be3e920d876e81d08f239684bdba61cb52"
+      },
+      "downloadSelectedCount": {
+        "text": "Lataa valitut ({{count}})",
+        "source_sha256": "34b778f5c8056ffcfff8f9e679942bd32e51189872cf7e68f09532208601a45b"
+      },
+      "generatePassword": {
+        "text": "Luo salasana",
+        "source_sha256": "bd5bede8e183f5e756780fe4de4fc5c4c1c643323fa4c5d850b4989d25bb4ba2"
+      },
+      "groupDescription": {
+        "text": "Kuvaus",
+        "source_sha256": "526e0087cc3f254d9f86f6c7d8e23d954c4dfda2b312efc29194ae8a860106ba"
+      },
+      "groupName": {
+        "text": "Nimi",
+        "source_sha256": "dcd1d5223f73b3a965c07e3ff5dbee3eedcfedb806686a05b9b3868a2c3d6d50"
+      },
+      "groupsEmpty": {
+        "text": "Ei ryhmiä vielä. Luo yksi alla.",
+        "source_sha256": "8d276af824aef37f6882ed6224a8a5533a86c3803ce2c06d8f7d69856215e669"
+      },
+      "groupsIntro": {
+        "text": "Yhteistyöryhmillä voit jakaa holvikohteita useille päämiehille kerralla. Jäsenyysmuutokset käärittävät ryhmän jaetun salakirjoituksen uudelleen. Vaatii Secure Share -jakamisluvan.",
+        "source_sha256": "88addcbb50a288e4c888b3b13f7fe75928e9c7eb415f6ebe76635e068a6e8026"
+      },
+      "groupsTitle": {
+        "text": "Secure Share -ryhmät",
+        "source_sha256": "93f44c547cd9d9df22aeaed2d2f63c0c02714b8303fe66cf9179fda31eadba36"
+      },
+      "howEncryptionWorks": {
+        "text": "Miten salaus toimii",
+        "source_sha256": "e0430d8969a81f2eb1c8b48acb85e7f5015516019bb6175bb591ded628e81f9c"
+      },
+      "kindFile": {
+        "text": "Tiedosto",
+        "source_sha256": "50009ce1da4d15e1c4a04024df691eed5f0d598e2c4c67092f205366d0adf99e"
+      },
+      "kindLabel": {
+        "text": "Laji",
+        "source_sha256": "f5387f9bb6ed70315a77fdcb9335facc27a9bf241f35955bd2755c55e0c016c7"
+      },
+      "kindLogin": {
+        "text": "Kirjautuminen",
+        "source_sha256": "9d6322c1f4d9d3f38aed8bfbe0b2bcadf66ad82c008476fa62541fa069138e94"
+      },
+      "kindNote": {
+        "text": "Suojattu muistiinpano",
+        "source_sha256": "2278c41a35dc2459b50bc13e79602a37cdda3ca7be7db4b98e8fb717d549a955"
+      },
+      "kindSecret": {
+        "text": "Salaisuus",
+        "source_sha256": "e23ff1ba0abfe7c6d5f03e824e66baf819d1e2f6bdc4d45e6bd9d536f5f277bf"
+      },
+      "kindSecretLegacy": {
+        "text": "Vanha salaisuus / muistiinpano",
+        "source_sha256": "826c26fdc943c38540743ada1af71bf10f8174d084139528bcd41b97b24c7402"
+      },
+      "loadingAria": {
+        "text": "Ladataan Secure Share",
+        "source_sha256": "7bb2c3ee534f4993a9f155230c6210e0e216fc8c76e83229af03f5dd7b1ab07e"
+      },
+      "markingUnclassified": {
+        "text": "Luokittelematon",
+        "source_sha256": "1372a3810da5224a8d1007de41ff5f9bc16030f824f09ed65e954e00a1ade1a6"
+      },
+      "newItem": {
+        "text": "Uusi kohde",
+        "source_sha256": "b84cad41b23175e8528559a7e78836154449e7b69ae54cc53e52404288f27ceb"
+      },
+      "railAll": {
+        "text": "Kaikki kohteet",
+        "source_sha256": "51107686754a31d258064ff193f18ac2125040a21fa6ce49c748f702f7680cc3"
+      },
+      "railAllMarkings": {
+        "text": "Kaikki merkinnät",
+        "source_sha256": "22574222a2306c8b79d5f93a43a8553ed822ec8abd37ea7a476c3bcc4bfd69ed"
+      },
+      "railAria": {
+        "text": "Secure Share -holvin suodattimet",
+        "source_sha256": "c006920438da88b07d6e8068419c417ce5b4d3caf4def5288590f4a20cb56446"
+      },
+      "railCaption": {
+        "text": "Kohteet pysyvät salattuina levossa. CUI ei voi poistua suojatulta alueelta selväkielisenä vientinä.",
+        "source_sha256": "d1a505aea6b010b641340d20a0caa8b108e9f1c3e03a733ff78b698dcd9c26fb"
+      },
+      "railClassification": {
+        "text": "Luokitus",
+        "source_sha256": "72f049954fdd06c875fef2a15bf89e95c7a28db5c4910643dbd7ac38a3e0db13"
+      },
+      "railFavorites": {
+        "text": "Suosikit",
+        "source_sha256": "7a1f2a83aca9a0819f244d5b4a7a0e7f6b779eb709dd4744136b22e724dbb10b"
+      },
+      "railFiles": {
+        "text": "Tiedostot",
+        "source_sha256": "abc7e9892806b047b4d4786b3685285543f76ca314c4c76246d5f6544c7856c9"
+      },
+      "railGroups": {
+        "text": "Ryhmät",
+        "source_sha256": "39bbb719fa2b9d2251039cbf2cd072e1120a414278263e2f11d99af0236c4262"
+      },
+      "railGroupsSecondary": {
+        "text": "Secure Share -yhteistyö",
+        "source_sha256": "e6ef917a81968ef53cc5f14a79a7957012ef9f7aa98d79accc3dadc1e64f9da4"
+      },
+      "railLogins": {
+        "text": "Kirjautumiset",
+        "source_sha256": "543eb6e59b2d9076bcd19e7217a2437aa8f9f26de4e313560f4ca0827225a787"
+      },
+      "railNotes": {
+        "text": "Suojatut muistiinpanot",
+        "source_sha256": "6dd6738e4abf3f7fda8ac613a9e147c469b690750fb2004ed2f5cde26d0108c9"
+      },
+      "railShared": {
+        "text": "Jaettu minulle",
+        "source_sha256": "0fd8abc26061bac76ae1dea7ce60f54d2765fb569c29ca78eadc4ab91a51d32f"
+      },
+      "railTrash": {
+        "text": "Roskakori",
+        "source_sha256": "c560122ac4706dcb19bcb43defe2afa6e84809176688807abd297bf17cd76388"
+      },
+      "searchGroupHelper": {
+        "text": "Hae Secure Share -yhteistyöryhmiä nimen perusteella.",
+        "source_sha256": "48baebc3271acca554626502bab81cc9e7a29858ce8622ece6be7334f5b888f2"
+      },
+      "searchUserHelper": {
+        "text": "Hae näyttönimellä tai käyttäjänimellä.",
+        "source_sha256": "f43292f99fda492758685e6f5ab8b89859df263d35cfe3f02d30cec9bd89cced"
+      },
+      "shareWithGroup": {
+        "text": "Jaa ryhmän kanssa",
+        "source_sha256": "0421192996edd3510be8fc8eb25f9c01f8961085b3d6fd8c7944f4b548e4b7f2"
+      },
+      "shareWithUser": {
+        "text": "Jaa käyttäjän kanssa",
+        "source_sha256": "a05f037fc323c881fc1746055ccc1e742a2be66f55dbb39e9f71d37a79ad178e"
+      },
+      "sharedWithYou": {
+        "text": "Jaettu sinulle",
+        "source_sha256": "b447129c6d6bb8557b04f054c4535cf9ef181b8fdd30979578b0e03530364bbd"
+      },
+      "sharedWithYouAria": {
+        "text": "Jaettu sinulle: {{title}}",
+        "source_sha256": "b90c9e21bd15e38ee8c7841686a8640f15c107d3c3e89568b72670872820ea3d"
+      },
+      "toolbarSubtitle": {
+        "text": "Salatut holvikohteet (vain metatiedot; sisältö pysyy sinetöitynä)",
+        "source_sha256": "8e776f16c4706cf34605bb212a26cd1c0246628fdcb1c237f9819b87694f7947"
+      },
+      "toolbarTitle": {
+        "text": "Secure Share -kohteet",
+        "source_sha256": "b8414e7e712bcab65b229eab04ea248584afc5eaeafb26510145144bbcfd8cd2"
+      },
+      "vaultHint": {
+        "text": "Suosi <strong>Hallitse käyttöoikeuksia</strong> tämän suojatun alueen henkilöille. Viedyt paketit ovat AIC-UniversalEnvelope-JSON (eivät OpenPGP) varmuuskopiointiin tai vertais-AIC-palvelimelle, jolla on samat holviavaimet.",
+        "source_sha256": "594c3683e330b650a89a080fabd72ffd7fe23a160670e80503549bf78f91e134"
+      },
+      "addPrincipal": {
+        "text": "Lisää päämies",
+        "source_sha256": "ecc9e8a5e971ba4738f90a6d7063db499627c39382350c0dd83db8d63abca290"
+      },
+      "cryptoNotReady": {
+        "text": "Salauspalvelut eivät ole valmiita. Pyydä järjestelmänvalvojaa tarkistamaan salauksen tila järjestelmänvalvojan työkaluista.",
+        "source_sha256": "eea8dd0d34e6ba85e17f96795141696a5688222d2476e608d95c0730465d5fe4"
+      },
+      "deletePermanentlyCount": {
+        "text": "Poista pysyvästi ({{count}})",
+        "source_sha256": "cac675de71022e5b10275aa6facbc07bbea4fd9245cefc25b025e16811a533fc"
+      },
+      "emptyTrash": {
+        "text": "Tyhjennä roskakori",
+        "source_sha256": "b85cf0888f791b8d77d510340e0dd1fcfd47485d04623e1a17ed5f4cc4ed84e5"
+      },
+      "emptyTrashView": {
+        "text": "Roskakori on tyhjä.",
+        "source_sha256": "4ff140671613ca585173d87a19892346cdbdd14a41c7bd5d40769ebe0184322e"
+      },
+      "emptyView": {
+        "text": "Ei kohteita tässä näkymässä. Lisää salattu salaisuus, muistiinpano tai tiedosto komennolla <strong>Uusi kohde</strong>.",
+        "source_sha256": "7ad82e11989d07880e3c86c8fbcb3b71cd02aeffc746ff5bc19b02b781b92f16"
+      },
+      "existingAccess": {
+        "text": "Nykyinen käyttöoikeus",
+        "source_sha256": "3064b6b6f875c8c2718d8e6c5098df9153f602c1502aff747cc1d1bf44d8c104"
+      },
+      "existingAccessHelp": {
+        "text": "Omistajan käyttöoikeus on pakollinen eikä sitä voi poistaa. Muuta jaetun vastaanottajan bittimaskia komennolla Muokkaa käyttöoikeuksia (ACL upsert).",
+        "source_sha256": "c50e8dae9f6c4fd2ad25887168bc97b22ac1405099b0f09b88c6b1c75e19fe56"
+      },
+      "featureDisabled": {
+        "text": "Ominaisuus poistettu käytöstä",
+        "source_sha256": "055d9a02753530d8ac89ea15e3930b0836278430eb7e36fc35982ab5a0ecd5aa"
+      },
+      "generatePassphrase": {
+        "text": "Luo tunnuslause",
+        "source_sha256": "8e79ec6ccf38ff6daabab398d4d1d22cd2ee5ecc03e966e303d77315c18b09e6"
+      },
+      "grantablePermissions": {
+        "text": "Myönnettävissä olevat käyttöoikeudet",
+        "source_sha256": "3d436219d9490264176baaacb482728f5155fa3c72bff0dba8220f18a6e6bb22"
+      },
+      "identityProvider": {
+        "text": "Identiteetin tarjoaja",
+        "source_sha256": "d8a43dbfd9a920e9205f106b22267028df42401263e19848be01cbf6f9604b45"
+      },
+      "manageAccess": {
+        "text": "Hallitse käyttöoikeuksia",
+        "source_sha256": "a90527b63530c6123075393625b3c2f7b11096a4a82864106f5395de6e185653"
+      },
+      "permissionPreset": {
+        "text": "Käyttöoikeuksien esiasetus",
+        "source_sha256": "44269ea744639d6868e34c6f6b5818e44f6dbbbeb9a48a0569313695acde8374"
+      },
+      "permissionsNewGrants": {
+        "text": "Käyttöoikeudet uusille myönnöille",
+        "source_sha256": "5b2134063274d2c3e7ee483b809ce1f44074e9f1a1c981985dc2d68a18f99dd5"
+      },
+      "pickGroup": {
+        "text": "Valitse ryhmä, jonka kanssa jaetaan",
+        "source_sha256": "afd64affcac60b7c2d73bfb45a07c4f4ff7e824f84f49f97cd818a84cd62b9af"
+      },
+      "pickUser": {
+        "text": "Valitse käyttäjä, jonka kanssa jaetaan",
+        "source_sha256": "6259e5567367addfec51ecf2b09c4e9d40cf53e0298ca18352e882186bdbd383"
+      },
+      "removeFavorite": {
+        "text": "Poista suosikeista",
+        "source_sha256": "18720329ca307c792fee6c6c1f707145c981d07c2b5a1b7127732ccd6e7203eb"
+      },
+      "removeFavoriteAria": {
+        "text": "Poista {{title}} suosikeista",
+        "source_sha256": "5e830523efc645f71f9d9672c97b2edeb991ade948adce657e04cbb96a421b38"
       }
     }
   }
