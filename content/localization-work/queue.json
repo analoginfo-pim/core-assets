@@ -1146,6 +1146,31 @@
         "de"
       ],
       "notes": "Partial. US English source plus agent-draft German (formal Sie) for installer chrome. Other Tier 1 tags later. Do not claim Tier 1 complete. Do not close until reviewed catalogs exist for every required tag. Source changed 2026-08-20 (hash c40959e64c47 → 0f468ca27e06)."
+    },
+    {
+      "id": "installer.aic-suite-enterprise-chrome",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "installer",
+      "title": "AIC suite enterprise installer chrome (shared)",
+      "added": "2026-08-20",
+      "updated": "2026-08-20",
+      "source_repo": "pim-installers",
+      "source_path": "windows/shared/enterprise.en-us.wxl",
+      "source_sha256": "d058aa2e94364eb2d5d17a93e9b1b2e71dbbefff28fe28ae90848954db817ac0",
+      "product_route": "",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [
+        "de"
+      ],
+      "notes": "Shared WiX chrome for Agent, WA, DB, Jump, Recording, and License Management. US English source. German formal Sie is a draft. Partial until remaining Tier 1 tags are reviewed. Does not close installer.aic-server-service."
     }
   ]
 }
