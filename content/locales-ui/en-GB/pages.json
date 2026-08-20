@@ -10654,8 +10654,8 @@
       "bullets": {
         "text": [
           {
-            "text": "Erfordert aktivierte Passwortwiederherstellung unter Vorgaben → Sonstiges and passende Autorisierung.",
-            "source_sha256": "2f582a86171d1efe6d366717f7ff09444aaac44bcc469ad35a4c7de6f00e12b3"
+            "text": "Requires password recovery enabled under Defaults → Miscellaneous and matching authorization.",
+            "source_sha256": "a327bae65c5d6194753db7635c3548b058eea1894182faaa454ac57aa373ab76"
           },
           {
             "text": "Use historical slot 0 for the first rotated password; leave empty for the current value.",
@@ -13295,6 +13295,216 @@
       "helpAriaLabel": {
         "text": "Open help for Open Source Credits",
         "source_sha256": "4bee1bb4f4a0ec90ad94bc691b5e28b3b3329118bbc45b70303d14f1d867957c"
+      }
+    },
+    "pam__recording-agents": {
+      "title": {
+        "text": "Recording Agents",
+        "source_sha256": "b00151aaf9a231f43923f6d8b7eb12f690e499a63bd5e5b8efcb2cd2f924fac0"
+      },
+      "summary": {
+        "text": "Fleet of session-recording agents that capture proxied SSH, RDP, and VNC evidence for later review.",
+        "source_sha256": "6407a1881084fd13b642f0a64b6cfbad1eca273dabb70ae7b7eb5849ba9aa45f"
+      },
+      "helpAriaLabel": {
+        "text": "Open help for Recording Agents",
+        "source_sha256": "95d4127acbdb97e17c9cf73c528e91f91873e35217198e76ea81137f14661504"
+      },
+      "bullets": {
+        "text": [
+          {
+            "text": "Each row shows agent health, capacity, and last heartbeat.",
+            "source_sha256": "8daf6b6050af067f885f3d6525d4b569b30f5ecdc7099a9cc490dfa778dd6f31"
+          },
+          {
+            "text": "Deploy and storage settings live on the sibling Recording pages.",
+            "source_sha256": "c3f32d5d2d3a2d291909305c7e6f22476b436523b132659abee92cda78bb95fa"
+          },
+          {
+            "text": "This page configures capture capacity — it does not open a live session.",
+            "source_sha256": "cfd03e8492958a8b1e017b4f39cbd48583c1833fb3992cb77fb6b8d28b8f900d"
+          }
+        ]
+      }
+    },
+    "pam__recording-agents__deploy": {
+      "title": {
+        "text": "Deploy Recording Agents",
+        "source_sha256": "db2d1e31162015e26064c3b1f5eeb1f7523a3aa2087e198e500de0fab6430ef2"
+      },
+      "summary": {
+        "text": "Install or update recording-agent packages on jump and capacity hosts that capture privileged sessions.",
+        "source_sha256": "903a6513d7ab571a78fa58d90f6ef21de3a02396bb65582b6bcb1c2b8c80a4e6"
+      },
+      "helpAriaLabel": {
+        "text": "Open help for Deploy Recording Agents",
+        "source_sha256": "0f80ec82d6df2041ad77b05a878fc84d22cb32fd4b41f99f2abbc52b7a8d5e6d"
+      },
+      "bullets": {
+        "text": [
+          {
+            "text": "Choose a target host and package channel before deploying.",
+            "source_sha256": "a767e278d32f706bd48692f80cda96326dd1669240e04ba3bd4e94055ba11236"
+          },
+          {
+            "text": "Failed deploys leave an error you can retry — they do not silently succeed.",
+            "source_sha256": "411dcd9726e81f47ba1eede437c9489b28455cf5fd1c039e9eef431efceb7129"
+          },
+          {
+            "text": "After deploy, confirm the agent appears healthy on Recording Agents.",
+            "source_sha256": "1f2a388b543a6f28fd1b5f6a9cf9b284bfcdbc79f76f93398e9a6d55af61698b"
+          }
+        ]
+      }
+    },
+    "pam__recording-ocr": {
+      "title": {
+        "text": "Recording OCR",
+        "source_sha256": "3da94624655a927a6588987550f90e932c4903fb318410c69f2e4623edea420f"
+      },
+      "summary": {
+        "text": "Optical character recognition over recorded session video and stills so operators can search visible text in evidence.",
+        "source_sha256": "6ba909d31eb15490bc8a2a7d980b99ce8f658322aae2887910e664ca4a085dbf"
+      },
+      "helpAriaLabel": {
+        "text": "Open help for Recording OCR",
+        "source_sha256": "8ba7a949bccb730c8ee2b41c3c63ff2e8fbc92a15f6fe7a3bf506037874919f9"
+      },
+      "bullets": {
+        "text": [
+          {
+            "text": "Queue OCR for a recording, then search the extracted text.",
+            "source_sha256": "a1f71c2e20b14d17723eb01656fea4266a0542d5266cef90539f3bb48fa56ddc"
+          },
+          {
+            "text": "OCR status is delivery evidence, not a compliance verdict.",
+            "source_sha256": "7dee6c44975c482c3d1cd807d3490d94f772e77b3d890ff5fdeb1c6cdd648373"
+          },
+          {
+            "text": "Assign processing capacity when a dedicated OCR worker is required.",
+            "source_sha256": "c474171a7f39f5c490933801bbba0d60158c36773b9c25486b7fc0d482ecd9f7"
+          }
+        ]
+      }
+    },
+    "pam__recording-storage": {
+      "title": {
+        "text": "Recording Storage",
+        "source_sha256": "37610f66e34f38dfb0c4f63e58e3eca5bb7bd059f3d98ffcfb9ca84b5ce64704"
+      },
+      "summary": {
+        "text": "Where encrypted session recordings are stored, retention limits, and capacity warnings for the recording plane.",
+        "source_sha256": "a6d9fc3e3b071d88a44866e3dbc49063b82accf91ee9b9248239b3155054a369"
+      },
+      "helpAriaLabel": {
+        "text": "Open help for Recording Storage",
+        "source_sha256": "449f5f86fe45953f7ee9a4b4c0b745b997caf0ad39ac7790ac89d5eab9317eed"
+      },
+      "bullets": {
+        "text": [
+          {
+            "text": "Storage paths and retention apply to new recordings after save.",
+            "source_sha256": "cd072cdd657c3ad40d7d5726baa45e415aa7c311f675e879f38c6a1a103fde5f"
+          },
+          {
+            "text": "Capacity warnings are operational — free space before the plane fills.",
+            "source_sha256": "20890101daee89ded5514bf1e7b44b2a2a5a089bf00cb278fb48696b69e9d011"
+          },
+          {
+            "text": "Changing storage does not rewrite existing sealed recordings.",
+            "source_sha256": "4c6dfea7451e16745c4190a6a667881654c0fc62f65efc478d3f9c36bc94587f"
+          }
+        ]
+      }
+    },
+    "pam__command-governance": {
+      "title": {
+        "text": "Command Governance",
+        "source_sha256": "3b474bc2634bd0d0cc53171a28abb46ff1176473ae1d80d10b627e54f83e1212"
+      },
+      "summary": {
+        "text": "SSH command allow and deny rules in effect for governed sessions, with preview of what a command line would do.",
+        "source_sha256": "0bc2958b17b5d6b051329ec2905961b13061c278c2a939f33357c243d2403c10"
+      },
+      "helpAriaLabel": {
+        "text": "Open help for Command Governance",
+        "source_sha256": "c3619d7ea7cff129d8df1c493731195665427cd3dd68442526a0fa04b933a29d"
+      },
+      "bullets": {
+        "text": [
+          {
+            "text": "Rule sets attach to principals, groups, or roles; fail-closed deny is explicit.",
+            "source_sha256": "028e0590f931f171da2a01839a269eac5abd4fd8b9c1c69520a9c488f5d14f0b"
+          },
+          {
+            "text": "Preview normalizes a command line before matching — it does not run the command.",
+            "source_sha256": "f2a46cc889e717fc7d861939b6bf920472549e12c22754dc6d076420245a492f"
+          },
+          {
+            "text": "Why this rule explains the matched pattern in plain language.",
+            "source_sha256": "5924c34f6e2eeb028dea2106fc33ac44243038d53c97b2ffda54af11b4d07fe1"
+          }
+        ]
+      }
+    },
+    "pam__session-io-policy": {
+      "title": {
+        "text": "Session I/O Policy",
+        "source_sha256": "faf3aa3a16410ecc74c853ad029a2f233906876ffccaf2ddd656960b39ee5e0d"
+      },
+      "summary": {
+        "text": "Clipboard and file-transfer ceilings for live Interactive RDP, SSH, and VNC sessions.",
+        "source_sha256": "3672a74faa8169810cc4538c170ece0b2e4c2bdef497d542dbd4f942a3143bad"
+      },
+      "helpAriaLabel": {
+        "text": "Open help for Session I/O Policy",
+        "source_sha256": "fa2ea5707945035772c1fbc41defe031c60f480bfecbd14f65b9e91b2a6225cb"
+      },
+      "bullets": {
+        "text": [
+          {
+            "text": "Resolution order: principal → group → role → tenant → fail-closed deny.",
+            "source_sha256": "6f40b977c98ac0965bf17c273caf3e367dd1f51b474708f58d408b91d1e9c8a9"
+          },
+          {
+            "text": "Save here; open a new live session to pick up ceilings.",
+            "source_sha256": "638a3a584db02b7268f4fc847850c14ec8d8ab053932e79967183b20d51198c8"
+          },
+          {
+            "text": "Existing sessions keep the policy they were seeded with.",
+            "source_sha256": "9d658d9c129dd266607c2a90b134ff1dc02a3ecb7917908bfd7e01dd04d26306"
+          }
+        ]
+      }
+    },
+    "pam__credential-vault": {
+      "title": {
+        "text": "Credential Vault",
+        "source_sha256": "bbf6a83734f4b820554a23f12a150906b5f4630ea26f051065f0b2e7a82642ee"
+      },
+      "summary": {
+        "text": "Privileged credential vault entries used by PAM checkout, rotation, and session injection — distinct from Secure Share.",
+        "source_sha256": "53d19cfadfe55da701184a59c79e7e7adb4f7c6bf3720cbe534e33ff08637856"
+      },
+      "helpAriaLabel": {
+        "text": "Open help for Credential Vault",
+        "source_sha256": "d5e3d0d149064e7337a8447c4f79e7f294b488767934edfcabf501be8999c19e"
+      },
+      "bullets": {
+        "text": [
+          {
+            "text": "Checkout and reveal write audit events with the requesting principal.",
+            "source_sha256": "67324755f50dfcd79ea3dcdaa25201bae701a86e16b5c8a01a496977fd51066b"
+          },
+          {
+            "text": "Rotation schedules and heartbeats show delivery state, not Met.",
+            "source_sha256": "a5633e7bfff71cd8267b80451297b9a77b6f081a6baacd1e851ae49eab38bb90"
+          },
+          {
+            "text": "Access requires vault permissions; personal Secure Share is a separate page.",
+            "source_sha256": "709741e95ece4ea12db3f6ed824264fcb6b0f423e7768fa8cee9401911cc5ea9"
+          }
+        ]
       }
     }
   },

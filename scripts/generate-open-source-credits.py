@@ -1168,13 +1168,16 @@ def main(argv: list[str] | None = None) -> int:
         + sorted(npm_entries, key=lambda e: (e["name"].lower(), e["version"]))
     )
 
-    oss_blocked = [e for e in all_entries if e.get("disclosure_status") == "BLOCKED"]
+    # Commercial / proprietary packages are NOT open source. Keep them in a
+    # separate commercial_packages section for operator awareness, but exclude
+    # them from the OSS entry list and from Live/BLOCKED status math.
     commercial = [e for e in all_entries if e.get("disclosure_status") == "commercial"]
+    oss_entries = [e for e in all_entries if e.get("disclosure_status") != "commercial"]
+    all_entries = oss_entries
+    oss_blocked = [e for e in all_entries if e.get("disclosure_status") == "BLOCKED"]
     with_text = sum(1 for e in all_entries if e.get("license_text_path"))
     if oss_blocked:
         status = "BLOCKED"
-    elif commercial:
-        status = "Partial"
     else:
         status = "Live"
     honesty = (
@@ -1185,8 +1188,11 @@ def main(argv: list[str] | None = None) -> int:
         "directory leaf), and incorporated on-disk assets (including "
         "lipis/flag-icons). First-party workspace path crates, AIC-named / "
         "proprietary crates, and @analoginfo-pim/* npm packages are excluded as "
-        "AIC-owned code, not third-party open source. License bodies were "
-        "harvested from local Cargo registry / git / vendor checkouts, "
+        "AIC-owned code, not third-party open source. Commercial / proprietary "
+        "dependencies (for example MUI X Pro/Premium) are excluded from this "
+        "open-source inventory and listed separately under commercial_packages; "
+        "they do not set Partial/BLOCKED on the OSS disclosure. License bodies "
+        "were harvested from local Cargo registry / git / vendor checkouts, "
         "node_modules LICENSE files, and in-tree LICENSE copies; common SPDX "
         "identifiers use the stored published license text when a package-local "
         "file was a pointer or absent. No package or license was invented. "
@@ -1195,22 +1201,18 @@ def main(argv: list[str] | None = None) -> int:
             "text (Live)."
             if status == "Live"
             else (
-                (
-                    f"{len(oss_blocked)} package(s) are BLOCKED because no license "
-                    "identity and/or redistributable license text could be harvested; "
-                    "they remain listed and are not silently omitted. "
-                )
-                if oss_blocked
-                else ""
+                f"{len(oss_blocked)} package(s) are BLOCKED because no license "
+                "identity and/or redistributable license text could be harvested; "
+                "they remain listed and are not silently omitted. "
             )
-            + (
-                (
-                    f"{len(commercial)} commercial / proprietary package(s) are "
-                    "listed without redistributable license text (Partial — not Live)."
-                )
-                if commercial
-                else ""
+        )
+        + (
+            (
+                f" {len(commercial)} commercial / proprietary package(s) are noted "
+                "separately (not part of the OSS Live status)."
             )
+            if commercial
+            else ""
         )
     )
 

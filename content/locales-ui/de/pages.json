@@ -2804,6 +2804,216 @@
         "text": "Öffnen Sie die Hilfe für Open-Source-Credits",
         "source_sha256": "8311047ad6e3531ca27d79cf811822b61d099eb782f47598a25ba94dd68495fb"
       }
+    },
+    "pam__recording-agents": {
+      "title": {
+        "text": "Aufzeichnungsagenten",
+        "source_sha256": "351596b15ab450cc78e3822108918c98b43e47300d8e0065b38606c1b2c9a494"
+      },
+      "summary": {
+        "text": "Flotte der Sitzungsaufzeichnungsagenten, die proxierte SSH-, RDP- und VNC-Nachweise erfassen.",
+        "source_sha256": "425d141883f8c24258e3823faf743c88d5fb07c0713c941c1ded283d99cfc642"
+      },
+      "helpAriaLabel": {
+        "text": "Hilfe für Aufzeichnungsagenten öffnen",
+        "source_sha256": "b4e92f77b56db421d009dd782f73611ce54062cafa184cf431124d3767910236"
+      },
+      "bullets": {
+        "text": [
+          {
+            "text": "Jede Zeile zeigt Agentenzustand, Kapazität und letzten Heartbeat.",
+            "source_sha256": "2eee81718477ff5e48d7e23c35dab6dcf2bf7c3f1e6c9714016aea9e02ef8707"
+          },
+          {
+            "text": "Bereitstellung und Speicher liegen auf den benachbarten Aufzeichnungsseiten.",
+            "source_sha256": "f5b6b44c0135560d7c5ed7e9e4a54213da77b7f22e4cf3e315fa918f58519234"
+          },
+          {
+            "text": "Diese Seite konfiguriert Erfassungskapazität — sie öffnet keine Live-Sitzung.",
+            "source_sha256": "700be22cac0547c7c59be1c48b2eeb262acde85253869d78fe1d5f174d9d96d6"
+          }
+        ]
+      }
+    },
+    "pam__recording-agents__deploy": {
+      "title": {
+        "text": "Aufzeichnungsagenten bereitstellen",
+        "source_sha256": "9d65e46624b89727bfbb918fa105c65f289c658cc6841d3772bb7c570d5fe0bc"
+      },
+      "summary": {
+        "text": "Pakete für Aufzeichnungsagenten auf Jump- und Kapazitätshosts installieren oder aktualisieren.",
+        "source_sha256": "1b71d80e565d45b0a3ff87508cf0902d112b61d48c9f8d717310e057fad4ea35"
+      },
+      "helpAriaLabel": {
+        "text": "Hilfe für Bereitstellung von Aufzeichnungsagenten öffnen",
+        "source_sha256": "d94565965c947a8a85dc887902d36304b0e660e5496fe0e0d2150b403f188a9c"
+      },
+      "bullets": {
+        "text": [
+          {
+            "text": "Zielhost und Paketkanal vor der Bereitstellung wählen.",
+            "source_sha256": "15847e00b7da0a5c8d88ab9ee18c48c067562f987a097972149f6996fe00f89a"
+          },
+          {
+            "text": "Fehlgeschlagene Bereitstellungen melden einen Fehler zum erneuten Versuch.",
+            "source_sha256": "ce89012a2fdc4bd071aaf60f1536503fe2b589952d02e96927f0f69b980b7f0e"
+          },
+          {
+            "text": "Nach der Bereitstellung den Agenten unter Aufzeichnungsagenten als gesund bestätigen.",
+            "source_sha256": "c72c893c5e7ac400cd92e02bab1e0026e64671242c44965f610d9668f6a04d14"
+          }
+        ]
+      }
+    },
+    "pam__recording-ocr": {
+      "title": {
+        "text": "Aufzeichnungs-OCR",
+        "source_sha256": "b38574d9f3f49320a73e23157f89e7d7580b80a0ee4fc982ca8bf592d2ab649b"
+      },
+      "summary": {
+        "text": "Texterkennung in aufgezeichneten Sitzungsvideos und Standbildern zur Suche in sichtbarem Text.",
+        "source_sha256": "a06af673d21b1e3a36c416d3fc90db12cc54db6982cd12894965a33dce99a94b"
+      },
+      "helpAriaLabel": {
+        "text": "Hilfe für Aufzeichnungs-OCR öffnen",
+        "source_sha256": "b44f4cc080b20bf0cc4ba4bc8f72fbd130c362611e7943d68e9773056fc5a816"
+      },
+      "bullets": {
+        "text": [
+          {
+            "text": "OCR für eine Aufzeichnung anfordern und den extrahierten Text durchsuchen.",
+            "source_sha256": "dbdccd1433ee6c23f6ab5a9973bbdf693cab4e7b8007437266051d7665c7723d"
+          },
+          {
+            "text": "OCR-Status ist Liefernachweis, kein Compliance-Urteil.",
+            "source_sha256": "770bb557a7a894fab20421851cb902b7e1a813a500b3c243c8e609bb4d6ac19c"
+          },
+          {
+            "text": "Verarbeitungskapazität zuweisen, wenn ein eigener OCR-Worker nötig ist.",
+            "source_sha256": "e79afc5c16f52e596f837f87765d7977d6964ba9253a62d8c122a2f81e5ab7f1"
+          }
+        ]
+      }
+    },
+    "pam__recording-storage": {
+      "title": {
+        "text": "Aufzeichnungsspeicher",
+        "source_sha256": "db6f4c468ff490e4f8811ac3a1e3310ddcb4b66c72fc30854a5c4b2708ee3b6b"
+      },
+      "summary": {
+        "text": "Speicherort verschlüsselter Sitzungsaufzeichnungen, Aufbewahrung und Kapazitätswarnungen.",
+        "source_sha256": "2b76653fe9f54e61d2d4d170d23cd844cd26ddbfdeb5de9339f14c5502fe3922"
+      },
+      "helpAriaLabel": {
+        "text": "Hilfe für Aufzeichnungsspeicher öffnen",
+        "source_sha256": "0751d0a9cc1b004e919eba0a54a77fdb10cbb531edd4f7f16a1a9bc49e66fffd"
+      },
+      "bullets": {
+        "text": [
+          {
+            "text": "Pfade und Aufbewahrung gelten nach dem Speichern für neue Aufzeichnungen.",
+            "source_sha256": "8a2b63e126ad67cc8fe826f6a4236250110b1cf1087d6450dc74f42ae0c9fc61"
+          },
+          {
+            "text": "Kapazitätswarnungen sind betrieblich — Speicherplatz freigeben, bevor die Ebene voll ist.",
+            "source_sha256": "cdaab72dd59023cc1852ea9fd739a3686dd49ff5dedb6b8547e09c7ce4ee2087"
+          },
+          {
+            "text": "Speicheränderungen schreiben bestehende versiegelte Aufzeichnungen nicht um.",
+            "source_sha256": "6656029d36a98a7f67b05c72b13a49bc351352f5727a0574afbbedf0b7230f0d"
+          }
+        ]
+      }
+    },
+    "pam__command-governance": {
+      "title": {
+        "text": "Befehlssteuerung",
+        "source_sha256": "6c3c2a8c755bc54273feca08dcb0376291b282698ec8ff30a9a252255f75a13d"
+      },
+      "summary": {
+        "text": "SSH-Zulassen- und Verweigern-Regeln für gesteuerte Sitzungen, mit Vorschau einer Befehlszeile.",
+        "source_sha256": "a5583415ec6e118dc35c5fce8b8bbab5336bdb4581c34f8cc8986ebd4328393f"
+      },
+      "helpAriaLabel": {
+        "text": "Hilfe für Befehlssteuerung öffnen",
+        "source_sha256": "69c52c8a475fcd6d066131d6f6b882d566c6bcf114096d00377edd7d098e013e"
+      },
+      "bullets": {
+        "text": [
+          {
+            "text": "Regelsätze hängen an Prinzipalen, Gruppen oder Rollen; fail-closed Verweigern ist explizit.",
+            "source_sha256": "e28d1baad9ccd73c1310014b43e822ac57094518c6f2a11efc2f7bd04d670370"
+          },
+          {
+            "text": "Die Vorschau normalisiert eine Befehlszeile vor dem Abgleich — sie führt den Befehl nicht aus.",
+            "source_sha256": "0298a2e0b61fff8a9f7d7e41e7c3a2c7b6467605e1b2f79d7946b989a0d69e7a"
+          },
+          {
+            "text": "Warum diese Regel erklärt das passende Muster in klarer Sprache.",
+            "source_sha256": "4736c352761e484e2530183ae923f2dd4590e28426d055675dde510e5c52a4a5"
+          }
+        ]
+      }
+    },
+    "pam__session-io-policy": {
+      "title": {
+        "text": "Sitzungs-E/A-Richtlinie",
+        "source_sha256": "ec8348700c439ddf7c91cf0ae2ab86d604a2702c76516d7e87fbdc14e3f660cc"
+      },
+      "summary": {
+        "text": "Zwischenablage- und Dateiübertragungsgrenzen für Live-RDP-, SSH- und VNC-Sitzungen.",
+        "source_sha256": "a5c0d5ac3161918789b2444965acfcc1efefdf581a1b290efa62690eb512ee9b"
+      },
+      "helpAriaLabel": {
+        "text": "Hilfe für Sitzungs-E/A-Richtlinie öffnen",
+        "source_sha256": "b1b8c05b93e733b2808fbc423739b22627f6d5ee320757534abe5ba2f001f6c2"
+      },
+      "bullets": {
+        "text": [
+          {
+            "text": "Auflösungsreihenfolge: Prinzipal → Gruppe → Rolle → Mandant → fail-closed Verweigern.",
+            "source_sha256": "5abf8e2593dff68358c827339a006ee06b5bddbb08c2b7622c23c3d4083e24bd"
+          },
+          {
+            "text": "Hier speichern; eine neue Live-Sitzung übernimmt die Grenzen.",
+            "source_sha256": "291f9a590792470553abac9a1fed52506aababde6f8d1a2a3e69428baaf88a8a"
+          },
+          {
+            "text": "Bestehende Sitzungen behalten die Richtlinie, mit der sie gestartet wurden.",
+            "source_sha256": "f4886597383061d5c7b13b107347b36db44c9716092cd646d890d484ebcf67dc"
+          }
+        ]
+      }
+    },
+    "pam__credential-vault": {
+      "title": {
+        "text": "Anmeldedaten-Tresor",
+        "source_sha256": "551068bc02311d8745b9dcd703580c42883e4c7e6cff3db80dca7dbeb58b5182"
+      },
+      "summary": {
+        "text": "Privilegierte Tresor-Einträge für PAM-Checkout, Rotation und Sitzungsinjektion — getrennt von Secure Share.",
+        "source_sha256": "e5dc6b469ecee86977ad268c728ff9b606771b51a78d7fd6deaf88ae1d9b0f8d"
+      },
+      "helpAriaLabel": {
+        "text": "Hilfe für Anmeldedaten-Tresor öffnen",
+        "source_sha256": "c6c3ce83e39d34657acf1933bcad2e5f416b054ffefc834479e0530ae4353dae"
+      },
+      "bullets": {
+        "text": [
+          {
+            "text": "Checkout und Anzeige schreiben Audit-Ereignisse mit dem anfordernden Prinzipal.",
+            "source_sha256": "89a889229bbcd89fb4de137dcb4febbea930788e78c5e49cf87a19d874ec45f1"
+          },
+          {
+            "text": "Rotationspläne und Heartbeats zeigen Lieferstatus, nicht Met.",
+            "source_sha256": "3e36a4c5aef0298d3c765981069c7d25e00afbd778a618d22249ae47d52e03ef"
+          },
+          {
+            "text": "Zugriff erfordert Tresorrechte; persönliches Secure Share ist eine eigene Seite.",
+            "source_sha256": "74ab3fba6b3648931f65135d6bb6effbca7afc4bbcf4f429507366446c3072f4"
+          }
+        ]
+      }
     }
   },
   "chrome": {
