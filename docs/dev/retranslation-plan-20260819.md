@@ -92,7 +92,16 @@ Server catalogs are cleaner (audit: Partial) — do **not** greenwash the SPA
 
 ---
 
-## Revised sequence
+## Operator sequencing update (2026-08-19 evening)
+
+**Slice A (P0 credibility) — key completeness — SHIP FIRST.**
+Every key in cleaned `en` exists in every pack with a real grammatical
+string. Draft OK. Zero missing keys. See
+`content/localization-work/retranslation-20260819/sliceA-parity-after.json`.
+
+**Slice B — translation quality** — register, glossary, native review,
+real `en-GB`, `zh-TW` de-conversion. Still **2–4 weeks / 2–4 months** per
+audit. Not claimed done by Slice A.
 
 ### Slice 1 — Reconstruct clean US English (GATE)
 
