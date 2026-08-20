@@ -3,7 +3,7 @@
   "schema_version": 2,
   "status": "Live",
   "honesty": "This inventory lists every third-party open-source component incorporated into AIC Server from the production Cargo graph (registry, git, and vendored path crates under vendor/), the npm production graph (package-lock.json, non-dev; lockfile package name preferred over directory leaf), and incorporated on-disk assets (including lipis/flag-icons). First-party workspace path crates, AIC-named / proprietary crates, and @analoginfo-pim/* npm packages are excluded as AIC-owned code, not third-party open source. Commercial / proprietary dependencies (for example MUI X Pro/Premium) are excluded from this open-source inventory and listed separately under commercial_packages; they do not set Partial/BLOCKED on the OSS disclosure. License bodies were harvested from local Cargo registry / git / vendor checkouts, node_modules LICENSE files, and in-tree LICENSE copies; common SPDX identifiers use the stored published license text when a package-local file was a pointer or absent. No package or license was invented. Every listed open-source package has a license identity and license text (Live). 5 commercial / proprietary package(s) are noted separately (not part of the OSS Live status).",
-  "generated_utc": "2026-08-20T00:04:08Z",
+  "generated_utc": "2026-08-20T04:40:24Z",
   "generation": {
     "tool": "core-assets/scripts/generate-open-source-credits.py",
     "cargo_lock_path": "pim-offline-server/Cargo.lock",
@@ -12,10 +12,10 @@
     "npm_lock_sha256": "fedaded112e5e7635df94a0f65eff28240e40046cbfa9fd2da78dfd7c5107882",
     "sbom_path": "pim-offline-server/sbom/pim-offline-server.cdx.json",
     "sbom_sha256": "3b7a617e42792f9252c240cdde28ea5a3caa33070baa1ef1181f8b111b733d2c",
-    "cargo_third_party_count": 992,
-    "cargo_third_party_with_license_text": 992,
+    "cargo_third_party_count": 991,
+    "cargo_third_party_with_license_text": 991,
     "cargo_third_party_blocked": 0,
-    "cargo_path_packages_excluded_first_party": 72,
+    "cargo_path_packages_excluded_first_party": 73,
     "cargo_git_or_named_first_party_excluded": 6,
     "cargo_lock_package_count": 1070,
     "cargo_registry_roots_used": 2,
@@ -24,11 +24,11 @@
     "npm_production_blocked": 0,
     "npm_production_commercial": 5,
     "incorporated_count": 4,
-    "entries_with_license_text": 1312,
+    "entries_with_license_text": 1311,
     "blocked_count": 0,
     "commercial_count": 5
   },
-  "entry_count": 1312,
+  "entry_count": 1311,
   "blocked_count": 0,
   "commercial_count": 5,
   "blocked_packages": [],
@@ -10344,23 +10344,6 @@
       "notes": null,
       "direct": false,
       "cargo_source_kind": "registry",
-      "disclosure_status": "ok"
-    },
-    {
-      "id": "cargo:rsa@0.10.0-rc.12",
-      "name": "rsa",
-      "version": "0.10.0-rc.12",
-      "ecosystem": "cargo",
-      "license_spdx": "MIT OR Apache-2.0",
-      "license_name": "MIT OR Apache-2.0",
-      "copyright": "RustCrypto Developers; dignifiedquire <dignifiedquire@gmail.com>",
-      "homepage": null,
-      "license_text_path": "license-texts/by-sha256/dad18a76a4271a2fdf9b783c45c94d8baeb23246b5877124212534d9770658f0.txt",
-      "license_text_sha256": "dad18a76a4271a2fdf9b783c45c94d8baeb23246b5877124212534d9770658f0",
-      "source": "pim-offline-server/Cargo.lock + vendored path crate (vendor/) / cargo metadata",
-      "notes": null,
-      "direct": false,
-      "cargo_source_kind": "path",
       "disclosure_status": "ok"
     },
     {
@@ -22051,6 +22034,6 @@
     }
   ],
   "appendix": {
-    "notes": "Complete third-party disclosure is in entries[]. First-party Cargo path packages excluded: 72. Vendored third-party path crates under vendor/ are included. CycloneDX SBOM remains a companion artifact for hashes/purls."
+    "notes": "Complete third-party disclosure is in entries[]. First-party Cargo path packages excluded: 73. Vendored third-party path crates under vendor/ are included. CycloneDX SBOM remains a companion artifact for hashes/purls."
   }
 }
