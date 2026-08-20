@@ -1,0 +1,149 @@
+---
+description: >-
+  Hard rule — every operator-facing component (WA, agents, configurators,
+  elevate helpers, launchers, installers) ships an in-AIC-Server operation
+  manual with graphics/screenshots, PDF export, and Tier 1 localization.
+alwaysApply: true
+---
+
+# Operator manuals in AIC Server (hard rule)
+
+Operator directive (Phil, 2026-08-19), verbatim intent:
+
+> **All of the workstation assurance, agents, configuration programs,
+> installers all require manuals for their operation that should include
+> graphics and screen shots. The manuals should be included in the AIC
+> Server. All manuals should have an export to PDF option as well as be
+> localized.**
+
+## The rule
+
+> **Every operator-facing component — Workstation Assurance, agents,
+> configurators, elevate helpers, launchers, and installers — ships an
+> operation manual that lives in AIC Server (reachable in-product), includes
+> current graphics and screenshots with meaningful alt text, offers PDF
+> export, and is localized per Tier 1 language catalogs. Loose files beside
+> the product are not delivery. A chapter that describes unimplemented
+> behavior is forbidden.**
+
+## Governing register (explicit)
+
+These are **operator / administrator manuals**. Localization quality and
+register follow [`enterprise-localization.mdc`](enterprise-localization.mdc)
+and the must-localize / installer catalog rules in
+[`compliance-artifacts-must-localize.mdc`](compliance-artifacts-must-localize.mdc)
+and [`multilingual-tier-1-installer.mdc`](multilingual-tier-1-installer.mdc).
+
+The sixth-grade plain-language bar in
+[`training-materials-plain-language-and-images.mdc`](training-materials-plain-language-and-images.mdc)
+governs **workforce training and welcome letters**, not operator manuals.
+Do **not** rewrite operator manuals to grade 6. The **image-rich**
+requirement here is parallel to that training rule’s illustration
+requirement, but it is a separate obligation for operator documentation.
+
+## When it applies
+
+Trigger phrases (non-exhaustive): operator manual, product manuals,
+configurator / elevate / installer / WA / agent documentation for
+operators, “manuals in the server,” PDF export for manuals, screenshot
+runbooks.
+
+Does **not** force a full manual rewrite for a narrowly scoped chrome
+fix that explicitly scopes out documentation (still must not claim
+manuals are complete). Internal `docs/dev` engineer runbooks are not a
+substitute for in-product operator manuals.
+
+## Required
+
+1. **Coverage** — One operation manual (or named chapter set under
+   Documentation) for each family: Workstation Assurance; endpoint /
+   recording / Jump / DB / related **agents**; **configuration programs**
+   (server, agent, Jump, DB, WA, recording configurators); **elevate
+   helpers**; **product launchers**; **installers / MSI deployment**.
+2. **In AIC Server** — Manuals are reachable from the admin SPA
+   Documentation (or equivalent in-product surface). Shipping only a repo
+   Markdown file, a README next to an MSI, or a PDF on a share is **not**
+   delivery.
+3. **Graphics and screenshots** — Required, not optional. At least one
+   current screenshot or original diagram per major procedure. Screenshots
+   must carry load-bearing alt text (Section 508 / WCAG 1.1.1) and captions
+   that teach the step. Images must survive PDF export (embedded in the
+   export package, not browser-only decoration).
+4. **Image provenance** — Original captures from a clean demo state, or
+   original / public-domain / permissively licensed art with license
+   recorded. Branding marks from `core-assets` only
+   ([`branding-assets.mdc`](branding-assets.mdc)). Never third-party
+   copyrighted screenshots or stock art under unclear licenses.
+5. **No lab leaks in images or captions** — No lab hostnames, lab account
+   names, SoftHSM PINs, Mailpit wiring, agent commentary, or other
+   internal lab configuration
+   ([`no-lab-config-in-operator-ui.mdc`](no-lab-config-in-operator-ui.mdc)).
+   Capture from a clean demo / product-language state.
+6. **PDF export** — Every manual offers an operator-visible export to PDF
+   (server-rendered when available; honest refusal + documented fallback
+   only when the engine is not compiled — never silent format substitution).
+7. **Localized** — English source plus catalogs for every required Tier 1
+   tag; catalogs ship with the installer. New or changed English manual
+   source enqueues a localization-work item in the same change set
+   ([`localization-work-queue.mdc`](localization-work-queue.mdc)).
+8. **Honesty** — Describe what ships today. Do not document unimplemented
+   behavior as live ([`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc)).
+9. **Support-program Tier 1 honesty** — When the underlying support
+   program UI is only Partial multilingual (see
+   `core-assets/docs/dev/support-programs-multilingual-audit-20260819.md`),
+   manuals for that program must not claim Tier 1 localization ahead of
+   the software. Report **Partial** / **BLOCKED** honestly.
+
+## Forbidden
+
+- Claiming manuals “done” because engineer `docs/dev` or crate READMEs exist
+- Operator manuals only as loose files beside an MSI or Desktop shortcut
+- Text-only chapters with no graphics/screenshots when the surface is GUI
+- Screenshots without alt text, or screenshots that leak lab configuration
+- Third-party copyrighted images or reworded competitor manuals
+- Advertising PDF export when the server cannot deliver PDF bytes (false
+  green) — gate on engine availability like Assessment Binder
+- Shipping English-only operator manuals when other Tier 1 packs already
+  ship for Documentation
+- Closing localization-work with agent-draft catalogs only
+- Applying the workforce grade-6 training rule as the operator-manual
+  reading-level bar
+- Describing unimplemented features as available in a manual
+
+## Worked violation to fix
+
+**Violation.** Agent and WA MSIs ship; operators get a README on the
+install share. Admin Manuals under `/docs/admin` mention “Agent
+Configuration” in prose with no screenshots, no PDF button, and no WA
+or installer chapters. Support-program UIs are Partial multilingual, but
+a status note claims “all manuals Tier 1 complete.”
+
+**Fix.** Author in-product manuals under Documentation (extend the
+existing manual chapter model or a dedicated family section), embed
+current demo-state screenshots with alt text, wire PDF export through
+the existing binder PDF seam (or an honest Print/PDF path until the
+engine is on), enqueue localization-work for new English source, stage
+locale catalogs in the Server installer, and keep status Partial for any
+family whose UI is not yet Tier 1.
+
+## Cross-references
+
+| Rule / doc | Role |
+| --- | --- |
+| [`enterprise-localization.mdc`](enterprise-localization.mdc) | Operator/admin register (governing) |
+| [`training-materials-plain-language-and-images.mdc`](training-materials-plain-language-and-images.mdc) | Workforce only — do not misapply |
+| [`compliance-artifacts-must-localize.mdc`](compliance-artifacts-must-localize.mdc) | Tier 1 tags / must-localize |
+| [`multilingual-tier-1-installer.mdc`](multilingual-tier-1-installer.mdc) | Catalogs in installer |
+| [`localization-work-queue.mdc`](localization-work-queue.mdc) | Enqueue on English change |
+| [`branding-assets.mdc`](branding-assets.mdc) / [`no-noise-desktop-icons.mdc`](no-noise-desktop-icons.mdc) | Image provenance |
+| [`no-lab-config-in-operator-ui.mdc`](no-lab-config-in-operator-ui.mdc) | Clean demo captures |
+| [`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc) | No fake Live / Met |
+| [`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc) | Export control visible |
+| `pim-offline-server/docs/dev/operator-manuals-plan.md` | Sequenced implementation plan |
+| `core-assets/docs/dev/support-programs-multilingual-audit-20260819.md` | Support-program Partial multilingual |
+
+## Origin
+
+2026-08-19 — operator hard rule: WA, agents, configuration programs, and
+installers require in-AIC-Server operation manuals with graphics /
+screenshots, PDF export, and localization.
