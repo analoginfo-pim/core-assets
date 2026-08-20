@@ -933,6 +933,28 @@
       ],
       "draft_tags": [],
       "notes": ""
+    },
+    {
+      "id": "spa.app-load-status",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "chrome",
+      "title": "Page load status indicator (busy/ready/error)",
+      "added": "2026-08-19",
+      "updated": "2026-08-19",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/components/AppLoadStatus.tsx",
+      "source_sha256": "ace63e50fa2fbf114aff02f72cdd3a0cb7ab21c11362fef0f28ef6a691b07d32",
+      "product_route": "/",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans"
+      ],
+      "draft_tags": [],
+      "notes": "Global AppBar load-status chip + data-app-state DOM attribute. Catalog keys under common:loadStatus.* for all seven shipped tags. Agent drafts land with this change set; professional review still required to close."
     }
   ]
 }
