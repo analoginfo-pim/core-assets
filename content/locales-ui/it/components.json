@@ -638,6 +638,206 @@
       "server_disclosures": {
         "text": "Divulgazioni del server",
         "source_sha256": "33c20751c2f32e95da1ace42aecc6cdce90a5780828479eea52f26958b002e3d"
+      },
+      "syslog_forwarding": {
+        "text": "Inoltra gli eventi EPIM da questo server a un collector syslog remoto.",
+        "source_sha256": "7bfce338cfec390330de3e5f7109da6cf80bcc5bd5c2dfbcfe1dd3a5e1212634"
+      },
+      "reveal_password": {
+        "text": "Recupera le password delle identità gestite su un endpoint selezionato.",
+        "source_sha256": "7eddfb4e6b3df7ed702393762e8e1c1c582dba3efdd611af243d3a1512b6039d"
+      },
+      "managed_identities": {
+        "text": "Gestisci account locali e criteri password su ogni endpoint.",
+        "source_sha256": "9cb5c0884d0d4ddca402c949b1acf3ef5bcf18ee7c045f2da446193e519ea953"
+      },
+      "applications": {
+        "text": "Catalogo app sensibili con durata; importa CSV in dotazione o del cliente.",
+        "source_sha256": "570b022f4e09bf2cc4e95738f8966575f0a5a16bfe26681c43a65209bd4c4d70"
+      },
+      "application_groups": {
+        "text": "Name a set of apps and bind people, groups, or systems to that set.",
+        "source_sha256": "f64618b2e846a696fde2409a6f32cf4740c60ee8a7d2bfbe500392082be57d7b"
+      },
+      "workstation_prompt": {
+        "text": "On-demand elevate helper: pick an app, see allow versus approval, finish connected or disconnected.",
+        "source_sha256": "6932ad92afb560fdd876b25da5a9e8f2376c77498f20f961de745d48ebf0862b"
+      },
+      "unix_privilege": {
+        "text": "sudo, pbrun, and dzdo as first-class elevation targets.",
+        "source_sha256": "9066f779bcd088cf7eb0a36256ef2d5dd4a17486b92cce72c7fd299fd6ddd508"
+      },
+      "who_may_elevate": {
+        "text": "Bind IAM users, groups, or systems to apps. Set Default allow or Approval required.",
+        "source_sha256": "60c69bb1c0e2360c6fed6f0e92bcbb68af1787875eabc383e0acd6da1756446c"
+      },
+      "elevation_approvals": {
+        "text": "Request, approve, or deny time-limited elevation for approval-required apps.",
+        "source_sha256": "902547bc6f31c9d232ac243ebcae4c095bfda7eef1fe488c9b74b86b4546500d"
+      },
+      "elevation_policy": {
+        "text": "OS-group offers, duration tiers, and Modes 1–3 channel toggles.",
+        "source_sha256": "ab25d96e4f44c4ef8cdbae8ed602b647dde09b9e405ff48497fa0c09395296e9"
+      },
+      "privileged_user_management": {
+        "text": "WDAC / AppLocker pack assignment, effective hash monitoring, and exception approvals.",
+        "source_sha256": "d736d991c0fc72232cca0c81bbaf19c984ea15229a67089db660283a77f4b433"
+      },
+      "disconnected_tokens": {
+        "text": "Emetti o scambia token così un agente può elevare da disconnesso.",
+        "source_sha256": "32087a18b9283f5bf2f1f3e24599e40e9790d2260900829d5a18ab6d1cff2c6d"
+      },
+      "direct_elevation": {
+        "text": "Attivazioni di appartenenza privilegiata a tempo su endpoint connessi.",
+        "source_sha256": "45f4f0866c488abedc0f3287b240a698d8bb16f8e8e1495331872e6420d4e559"
+      },
+      "local_iam_administration": {
+        "text": "Utenti, gruppi, capacità dei ruoli, decisioni Secure Share e asset workstation in una sola console.",
+        "source_sha256": "431202562bc3235d469f293107ba921895730985578a76e14b3674c661b0f4cb"
+      },
+      "local_user_groups": {
+        "text": "Name-based groups for entitlements and access governance (Groups tab).",
+        "source_sha256": "bc7a7f78b6a39509f3e711944a2421175961954e1c7c6e8b331693db23d0e402"
+      },
+      "workstation_assignments": {
+        "text": "Assign IAM users to inventory workstations that appear on My Workstations (Assets tab).",
+        "source_sha256": "adcd6e16ab15cd8b797642834c3b25b7d027c57d586e139c79e01f0632573068"
+      },
+      "enrollment_and_access_control": {
+        "text": "Assessor matrix: who may edit enrollment fields and which audit events prove the changes.",
+        "source_sha256": "b6bd740989a56cec772518655a0775a142575ff3ce339419c3c403711dfa8c4f"
+      },
+      "credential_vault": {
+        "text": "Stored credentials used when launching connection targets.",
+        "source_sha256": "a7ed8eceaf46e4c99932196a10d9b6c4ccd569688dcf60db9bd7ffac242c8f4b"
+      },
+      "active_grants": {
+        "text": "Submit and track your own access requests; sign off when finished.",
+        "source_sha256": "2dc6b446db3eb0e21ce78ddfde018f6950b7317578cd3505aab0d55713ebdf10"
+      },
+      "report_center": {
+        "text": "Catalog, schedules, delivery, and archive for operational evidence.",
+        "source_sha256": "567312062ba233e56f58047cc51a5883b1f828b853d97103a7ad11c52e88f7e2"
+      },
+      "report_templates": {
+        "text": "Shipped report definitions and custom presentation overlays.",
+        "source_sha256": "6207e80eb570d2f2536e4dcdac3ed53ef7823e1d1a46d724381018eeca992620"
+      },
+      "current_state_compliance": {
+        "text": "Per-machine posture and findings for enclave hosts.",
+        "source_sha256": "fee2872f9cc88c9b545cebd2c36428e0bb57d3ab1c660d9dd6eacb49e77c3356"
+      },
+      "operations_compliance": {
+        "text": "Family delivery and named work remaining. Not an assessment verdict.",
+        "source_sha256": "b33d68dd2b4795696ed711df85d73e2192e7927ed8c0c553041ac6c9c28b2a54"
+      },
+      "external_workstation_readiness": {
+        "text": "ERASG — connecting VDI / viewing clients. Posture before admit. Legacy /enclave/workstation-assurance redirects here.",
+        "source_sha256": "2271cc97c28dc083a0b5bf874bbc5b8f34ec2ac0b8a3ab273b1a374fe427e7eb"
+      },
+      "wa_probe_packs": {
+        "text": "Upload and activate Workspace Agent probe content packs the fleet pulls.",
+        "source_sha256": "10f08e236cdcfcf92ada8e976b7c6b6907706848d5883a3af1c316a7eb98175d"
+      },
+      "assessment_binder": {
+        "text": "Living CMMC enclave assessment binder with export formats.",
+        "source_sha256": "02c87d154cc77d69e76e643ac4d24a5883f782fbac10639a92c1bac420a6050d"
+      },
+      "auditor_text_playbooks": {
+        "text": "Reusable binder playbooks and regenerate steps for assessor workflows.",
+        "source_sha256": "2e87cc4011a7ed8235ac52bca108f730cfcbd9e6c56fe46fd3e6b09fb63e7d25"
+      },
+      "data_flow_mapping": {
+        "text": "Enclave boundaries and data flows with derived exposure controls. Obligations only — not Met or certified.",
+        "source_sha256": "4363d56a743e8653515d9054477f101de949e7331cb090377946f93df78b3f4e"
+      },
+      "training_and_awareness_packs": {
+        "text": "Editable awareness source documents you customize and distribute. Rendering a document is not training delivery and carries no completion record.",
+        "source_sha256": "984357b38f49cf6a653894651156dd0126aaaead5ace48983b00983506f28a80"
+      },
+      "poa_m": {
+        "text": "Plan of Action and Milestones for compliance findings. Lifecycle tracking only — not Met or certified.",
+        "source_sha256": "63be8a922cab93181c27e42473dea84f48542b6e192d036093bf247f041a3336"
+      },
+      "control_catalog": {
+        "text": "Browse NIST SP 800-171 practices, 800-53 controls, and 800-172 enhanced requirements with crosswalk mappings.",
+        "source_sha256": "ba128d2c2272453d22dbfbddd759ff58619b5bfca166e462f3790cf0aa535414"
+      },
+      "audit_frameworks": {
+        "text": "Published standards (NERC CIP, FERC, IEC 62443, HIPAA, PCI DSS, ISO 27001, and more) with NIST SP 800-53 crosswalk mappings.",
+        "source_sha256": "025588b23def3f17d21b2e435ff24e0b0935f7d8243399e7b5119af0dbd2179f"
+      },
+      "probe_packs": {
+        "text": "Scripted compliance probe packs and test results.",
+        "source_sha256": "09006c3974335239dc78581fc5112d9fe19c0891db3eab4388f8c216de73c636"
+      },
+      "live_events": {
+        "text": "Feed operativo quasi in tempo reale da agenti e da questo server.",
+        "source_sha256": "6cfe41bea28c4edca595035af4c1a0136570a531b2ba2e69095dc2ab3639a308"
+      },
+      "incidents": {
+        "text": "Casi di rilevamento e risposta agli incidenti (fase 0 parziale) — gravità, stadio, sequenza temporale.",
+        "source_sha256": "03b5cf793adfcca411ca0aa3f8b02596701d5ffb05eb5f127198584508b2e552"
+      },
+      "audit_log": {
+        "text": "Traccia di conformità duratura archiviata in PostgreSQL.",
+        "source_sha256": "2d11bf2042cd180790c07e6d455bdd8f23f62d5cc0355edf68eaa4e1ebc8523c"
+      },
+      "event_sharing": {
+        "text": "Inoltro SIEM, ServiceNow, Jira e webhook HTTPS generico più sink incorporati.",
+        "source_sha256": "8913dfe6ff1aa12bed9e3bc3eee74d585d39db319737b8719aa91dd17e488d72"
+      },
+      "agent_overview": {
+        "text": "File di impostazioni, provisioning e valori predefiniti ricevuti dagli endpoint.",
+        "source_sha256": "2ee00140318aef2bf647986447acf1d71de9c98c7e8b71e513775867c6d99b9e"
+      },
+      "server_configuration": {
+        "text": "Come gira questo server: TLS, identità, crittografia e controllo.",
+        "source_sha256": "e57e4c230cb43fd193da244063eedb784756ad4d3d62c332affbb7052ee40514"
+      },
+      "messaging": {
+        "text": "Modelli e-mail, SMTP e credenziali provider SMS per le notifiche.",
+        "source_sha256": "2057920db27f23e21669d00484e4f2a6bb991542d49dbd87ca0967fa7ad96492"
+      },
+      "lab_advanced": {
+        "text": "Lettura manifest, strumenti lab MITM e utilità dati demo.",
+        "source_sha256": "b8ec8b6ea4ae447b5e64a7c146d1201f36c90f01732bd557c95b182497c13ddf"
+      },
+      "secure_share": {
+        "text": "Condivisione sicura",
+        "source_sha256": "4c608724614d6cdcf8da349f3419298a9d5ad80138ff8e2fe72344cd0c706431"
+      },
+      "my_local_account": {
+        "text": "Il mio account locale",
+        "source_sha256": "5cc092e197ee89ee62fe1e202939c7741153b5c920730af1432d90ed0275b6e2"
+      },
+      "reveal_a_password": {
+        "text": "Rivela una password",
+        "source_sha256": "605ddddd4edd567879d18594d7fd8b23f0268ec6f0358b15038d830ecfd24107"
+      },
+      "get_an_elevation_code": {
+        "text": "Ottieni un codice di elevazione",
+        "source_sha256": "080febc1dc62cb22aff73ef6741c1c4d1b6e9540deaba58678b7ef63dbc9dce9"
+      },
+      "generate_config_file": {
+        "text": "Genera file di configurazione",
+        "source_sha256": "373cfb350ffd62c4c341e593cce8bc715972e0602052a127c09726bbf363bed7"
+      },
+      "compliance": {
+        "text": "Conformità",
+        "source_sha256": "4a109cc49467be33772416ac924cc5729dcea700b8b4a0ba12f10bc595e2fa2c"
+      },
+      "events": {
+        "text": "Eventi",
+        "source_sha256": "8d14f6e72de8f18ab1ee5c5330f00653c0c3ce099e63024454f80af97e72d333"
+      },
+      "settings": {
+        "text": "Impostazioni",
+        "source_sha256": "74a883a037bc227f91891ab654a753d3a99f31ab06ae5b5d2b6e594a692b41f8"
+      },
+      "dashboard": {
+        "text": "Dashboard",
+        "source_sha256": "67b696468610b879ed7f224dbf6b0861f27e39d20454cb9d7af1ec52d3e5eeaa"
       }
     },
     "group": {
@@ -664,6 +864,30 @@
       "sessions": {
         "text": "Sessioni",
         "source_sha256": "6fa3cbf451b2a1d54159d42c3ea5ab8725b0c8620d831f8c1602676b38ab00e6"
+      },
+      "credentials": {
+        "text": "Credenziali",
+        "source_sha256": "d48a617c7da5163c44f117b9b23d8c920e69b4aa83d7b6570d71a66f3a857183"
+      },
+      "privilege_elevation": {
+        "text": "Elevazione privilegi",
+        "source_sha256": "f867cc041a57522981913cc9ffe2c2a2aa00237e6d95cac3b3110d8f1d659579"
+      },
+      "directory": {
+        "text": "Directory",
+        "source_sha256": "c8f84c3c5378b920b0ec2702cd9963a470098638b0c8aae249f74ec1a857633a"
+      },
+      "configuration_scope": {
+        "text": "Ambito di configurazione",
+        "source_sha256": "bed2ec8ae3d6341303152b94dd6efc652b28d19199a29a0e236ea11101c43a8d"
+      },
+      "lab_advanced": {
+        "text": "Lab avanzato",
+        "source_sha256": "3344b36dc1f34d2253c56ea36d5143808f57bcf9d4172565fd9aeef64f779caa"
+      },
+      "operator_communications": {
+        "text": "Comunicazioni operatore",
+        "source_sha256": "b9e9fffec12e97e671d249601cd2d6ed9eaf4bf35248026657c9792855044010"
       }
     },
     "groupDesc": {
