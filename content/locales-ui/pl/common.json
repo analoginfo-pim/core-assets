@@ -211,6 +211,10 @@
     "approvalsAria": {
       "text": "Znakomite atesty",
       "source_sha256": "d58cd3d597b1e6c14eb4b811607d170ee89df77eb2f9c7e7ccb536b1f4385112"
+    },
+    "homeTooltip": {
+      "text": "Wraca do pulpitu startowego tej konsoli.",
+      "source_sha256": "1280a4be7b5cb065d28fb4d0c52b7ec8e2b7d9f8733a4e3ba9d9f821b894dcf2"
     }
   },
   "iamToolbar": {
@@ -237,6 +241,14 @@
     "logOffAria": {
       "text": "Wyloguj się",
       "source_sha256": "97eeef04e09601e058486c43d9647031f1ded6ed64d9042e9f8704e2c41d42ed"
+    },
+    "identityTooltip": {
+      "text": "Zalogowany operator: {{name}}. Działania i rekordy audytu na tej konsoli używają tego konta.",
+      "source_sha256": "e94c86f0a448477aa64aa8f714d551609b23e166509316a9d040229b1537cb31"
+    },
+    "securityTooltip": {
+      "text": "Otwiera zabezpieczenia konta zalogowanego operatora. Przejrzyj lub zmień ustawienia wieloskładnikowe tego konta.",
+      "source_sha256": "42064d575d6e690e87cab60f67eca70d30cafcbd71b9fab9a1d7170522682ae0"
     }
   },
   "grid": {
@@ -353,6 +365,10 @@
     "endpoint": {
       "text": "Punkt końcowy",
       "source_sha256": "3df9726c68ba76d6c8bb02b65e572df8dca251481bb6cb3c99c808b3f5087c13"
+    },
+    "tooltip": {
+      "text": "Wyszukaj codzienne zadanie lub zarządzaną stację i przejdź do tej strony.",
+      "source_sha256": "e16029b7e0d4338fdf00629d88cbaee478212fe2cdaf633491bd10ab2b87de44"
     }
   },
   "chrome": {
@@ -485,6 +501,60 @@
     "banner": {
       "text": "Po ponownym załadowaniu w katalogu języka brakuje jednego lub więcej ciągów. Identyfikatory: {{ids}}. To nie jest tłumaczenie — klucza nie ma w dostarczonym pakiecie.",
       "source_sha256": "ed69a6777ac09e90ab75ad0d0dd333b7224b53d23b035e7b9c081598f1cdafdf"
+    }
+  },
+  "loadStatus": {
+    "busy": {
+      "text": "Ładowanie",
+      "source_sha256": "dc380888c4e2c7762212480ff86eb39150ec70b45009c33bc6adcbd0041384b1"
+    },
+    "ready": {
+      "text": "Gotowe",
+      "source_sha256": "5fa7aac5375c5815787fba3f49559f9b45b14023147ce0652803387974144e5f"
+    },
+    "error": {
+      "text": "Błąd",
+      "source_sha256": "54a0e8c17ebb21a11f8a25b8042786ef7efe52441e6cc87e92c67e0c4c0c6e78"
+    },
+    "busyStalled": {
+      "text": "Nadal trwa ładowanie…",
+      "source_sha256": "daf7506028463a954fa4451bea344b74bf4d9687068a5b4b4d5455c9d1607bab"
+    },
+    "busyAria": {
+      "text": "Strona jest ładowana",
+      "source_sha256": "80b24c0abfb9fa03acee0512bf6fe68a096f9d92ed1f7c354094cc222cbcb325"
+    },
+    "readyAria": {
+      "text": "Strona jest gotowa",
+      "source_sha256": "c49550f777879b02043eb85534029c406bf93952242587050cbcccce53da2016"
+    },
+    "errorAria": {
+      "text": "Nie udało się załadować strony",
+      "source_sha256": "3623b695b842176181ce80167784bf25edc05877f92e10eb17dd205f993962de"
+    },
+    "busyStalledAria": {
+      "text": "Strona jest nadal ładowana",
+      "source_sha256": "d741f3f7daa567affe15873b9fe583be5f0aa99a99971aee9d3fe190b4d53f20"
+    },
+    "busyTooltip": {
+      "text": "Ta strona ładuje dane z serwera. Poczekaj na stan Gotowe, zanim użyjesz wartości na ekranie.",
+      "source_sha256": "2a81a1837b3ea3af965d76b930ae13bd88c2d5afba7b9aed203b528df534d55a"
+    },
+    "readyTooltip": {
+      "text": "Ta strona zakończyła ładowanie. Dane na bieżącym ekranie są dostępne.",
+      "source_sha256": "2a38720900f4cb021d5a00c166dd60ad080a6fe9c358410ed80059fc4ee5f628"
+    },
+    "errorTooltip": {
+      "text": "Żądanie na tej stronie nie powiodło się ({{detail}}). Ponów ostatnią czynność lub otwórz stronę ponownie.",
+      "source_sha256": "1d3068b7b997b01e469d598b9e91fe1ef74f80c8c6e0cf9cf2b9477acd8b4d4e"
+    },
+    "errorTooltipUnknown": {
+      "text": "Żądanie na tej stronie nie powiodło się. Ponów ostatnią czynność lub otwórz stronę ponownie.",
+      "source_sha256": "a79c1c01bf26b611b032239e7005eb6111076d1ae49367f81268e0e9cc6b76a2"
+    },
+    "busyStalledTooltip": {
+      "text": "Ta strona ładuje się dłużej niż dozwolone. Żądanie nie zostało zakończone. Odśwież stronę lub ponów ostatnią czynność.",
+      "source_sha256": "ccc4c37be80d06cb83b562eb547586073f8c308df6af1aebb1586809258ec202"
     }
   }
 }
