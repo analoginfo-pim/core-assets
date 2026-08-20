@@ -1,0 +1,187 @@
+---
+description: >-
+  Product-wide top-bar page load-status indicator with three states
+  (busy / ready / error), one data-layer source of truth, and a
+  machine-readable DOM attribute for tests. Implementation is gated
+  after the localization pass verifies.
+alwaysApply: true
+---
+
+# Page load-status indicator (hard rule)
+
+Operator directive (Phil, 2026-08-19):
+
+> **Load status indicator on the top bar is a hard rule for all pages
+> in the product.**
+>
+> **Expose it as a DOM attribute for tests, not just a spinner** —
+> something like `data-app-busy="true|false"` on a stable root element.
+> Tests wait on the attribute; operators see the indicator. One source
+> of truth, no duplicate logic.
+>
+> **Make it three states, not two: busy, ready, and error.** If error
+> collapses into ready, a page that failed its fetch will satisfy the
+> wait and the crawl will move on having "verified" a broken page.
+
+## The rule
+
+> **Every operator page inherits a global top-bar load-status indicator
+> derived from the shared data layer — never hand-wired per page. The
+> same state drives a visible operator indicator and a stable DOM
+> attribute for tests. There are three states: `busy`, `ready`, and
+> `error`. An `error` state must never satisfy a readiness wait. Adding
+> a new page must not require remembering to wire the indicator.**
+
+## Sequencing (implementation gate)
+
+This rule is **binding policy now**. Implementation of the indicator is
+the improvement slice **after** the localization pass across all pages
+completes and verifies. Until that slice lands, do not claim the
+attribute exists in the product; do not rewrite nav-crawl waits onto a
+missing attribute. Once implemented, the indicator binds **all** pages
+from that point — including every page added afterward.
+
+Do **not** treat this rule file as delivery of the indicator
+([`shipped-means-served.mdc`](shipped-means-served.mdc)).
+
+## When it applies
+
+Any admin SPA (or other React operator shell) page that loads or mutates
+data through the shared query / mutation client. Comprehensive UI /
+nav-crawl / e2e claims that wait for a page to be "ready." New pages
+and layout chrome that sit under the product shell.
+
+Does **not** excuse skipping the indicator on "simple" pages, chrome-
+only landings, or dialogs that own their own fetch — the shell still
+reflects global fetch / mutation / error state.
+
+## Required
+
+1. **Three states, never two** — `busy` | `ready` | `error`. Map them
+   onto a stable root attribute (for example
+   `data-app-state="busy|ready|error"` and/or
+   `data-app-busy="true|false"` where `true` means busy only — never
+   treat `error` as not-busy / ready). Tests that wait for readiness
+   MUST require `ready` explicitly and MUST fail or BLOCK on `error`.
+
+2. **One source of truth** — derive globally from the data layer
+   (React Query `useIsFetching()` / `useIsMutating()` plus query /
+   mutation error state, or the equivalent shared client). **Not**
+   per-page `useState(busy)` flags, **not** route-local spinners as the
+   authority, **not** duplicated "is this page ready?" helpers that
+   diverge from the indicator.
+
+3. **Machine-readable + human-visible from the same state** — one
+   derivation feeds both:
+   - a DOM attribute on a **stable root** element (shell / AppBar
+     container) that Playwright and nav-crawl can wait on;
+   - a **visible top-bar** indicator operators can see.
+   No parallel logic for the two consumers.
+
+4. **Automatic inheritance** — mount once in the product shell (layout
+   / AppBar). New pages inherit it without a checklist item to "add
+   the busy flag."
+
+5. **Accessibility** — the visible indicator uses `role="status"` with
+   an appropriate `aria-live` region; meets Section 508 / WCAG 2.0 AA;
+   never distinguishes the three states by color alone
+   ([`enterprise-compliance.mdc`](enterprise-compliance.mdc) §2,
+   [`operator-ui-credibility.mdc`](operator-ui-credibility.mdc)).
+
+6. **Localized** — indicator text is catalog-driven for every shipped
+   tag, not hardcoded English
+   ([`compliance-artifacts-must-localize.mdc`](compliance-artifacts-must-localize.mdc)).
+   New keys land with EN + every required Tier 1 tag in the same
+   change set when the implementation slice ships.
+
+7. **Honest failure** — a busy state that never clears is a product
+   defect to surface, not to hide. A failed fetch shows `error`, never
+   a silent `ready`
+   ([`silent-failure-is-a-bug.mdc`](silent-failure-is-a-bug.mdc)).
+
+8. **Tests consume the attribute** — once the attribute exists, e2e /
+   nav-crawl waits on it (and on `ready` specifically). Heuristic
+   waits are then forbidden for readiness (see Forbidden).
+
+9. **Mirror** this rule to `core-assets/.cursor/rules/` in the same
+   change set when editing the workspace copy
+   ([`auto-commit-push.mdc`](auto-commit-push.mdc)).
+
+## Forbidden
+
+- Two-state busy/ready (or busy/idle) where **error collapses into
+  ready** or into "not busy."
+- Per-page hand-wired flags as the **source of truth** for global
+  readiness (local dialog busy for a submit button is fine; claiming
+  the page is ready from that flag is not).
+- A test-only attribute with no operator-visible top-bar indicator, or
+  a spinner / bar with no test-observable attribute.
+- Duplicate logic: one code path for the DOM attribute and a different
+  path for the visible chrome.
+- Waiting on `networkidle`, fixed multi-second sleeps, or content-
+  marker heuristics **once the attribute exists** — use the attribute
+  ([`nav-crawl-console-coverage.mdc`](nav-crawl-console-coverage.mdc)).
+- Claiming a page verified, crawled, or PASS when the readiness signal
+  was `error` or never resolved to `ready`.
+- Shipping the implementation before the gated localization pass has
+  completed and verified, then back-filling locale keys later as an
+  afterthought.
+
+## Prior art (reuse-robert-core-first)
+
+Surveyed read-only under `mix-server` / `crates/massman` and shared
+`pim-ui-kit` (2026-08-19). **No reusable global page-load three-state
+indicator exists.** Closest pieces:
+
+| Location | What it is | Verdict |
+| --- | --- | --- |
+| Per-view `busy` / `CircularProgress` across `mix-server/ui/packages/pro` | Hand-wired dialog and page busy flags | **Partial pattern** — formalize and **supersede** for global readiness; keep local submit busy where appropriate |
+| `pim-ui-kit` `ServerStatusIndicators` / `ServerConnectionBanner` | AppBar WebSocket / dispatch / zone connectivity | **Adjacent only** — not page fetch readiness; do not overload |
+| `mix-server/ui/packages/app/.../SetupProgress.tsx` | Onboarding checklist card | **Unrelated** |
+| `massman` MCP `ProgressSender` | Long-running job progress notifications | **Unrelated** (ops progress, not SPA page load) |
+| `mix-server` test pacing (`networkidle` / `domcontentloaded`) | Heuristic waits | **Anti-pattern** this rule replaces once the attribute exists |
+
+At implementation time: prefer a thin AIC shell component (React Query
+hooks + AppBar mount). If extensive mix-server changes were required to
+reuse Robert's tree, [`fork-locked-robert-repos.mdc`](fork-locked-robert-repos.mdc)
+would apply — current survey does **not** justify a fork; there is
+nothing to pin as-is.
+
+## Worked violation → fix
+
+**Violation:** Nav crawl uses `networkidle` and a heading assert. A
+page's list query fails; the route still paints chrome; the crawl
+marks PASS. Separately, each new page adds its own `const [loading,
+setLoading] = useState(true)` spinner that is forgotten on the next
+page — tests have nothing stable to wait on.
+
+**Fix (implementation slice, after localization verifies):** Mount one
+`AppLoadStatus` (name flexible) in the shell AppBar. Derive
+`busy` / `ready` / `error` from `useIsFetching`, `useIsMutating`, and
+error state. Set `data-app-state` (and related busy attribute) on the
+stable root from that value; render the same state as a top-bar
+`role="status"` indicator with localized strings and non-color cues.
+Nav-crawl waits for `data-app-state="ready"`; `error` fails the route.
+No per-page wiring.
+
+## Cross-references
+
+| Rule | Overlap |
+| --- | --- |
+| [`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc) | Layout / visibility proof still required; this rule adds readiness honesty |
+| [`nav-crawl-console-coverage.mdc`](nav-crawl-console-coverage.mdc) | Crawl consumes this signal once implemented; ≤10 s / page remains |
+| [`silent-failure-is-a-bug.mdc`](silent-failure-is-a-bug.mdc) | Failed fetch → `error`, never silent ready |
+| [`operator-ui-credibility.mdc`](operator-ui-credibility.mdc) | Visible, professional top-bar chrome |
+| [`enterprise-compliance.mdc`](enterprise-compliance.mdc) §2 | Section 508 / WCAG 2.0 AA; no color-alone |
+| [`compliance-artifacts-must-localize.mdc`](compliance-artifacts-must-localize.mdc) | Indicator text catalog-driven |
+| [`reuse-robert-core-first.mdc`](reuse-robert-core-first.mdc) | Prior art survey; no pin-as-is candidate |
+| [`shipped-means-served.mdc`](shipped-means-served.mdc) | Rule text ≠ served indicator |
+| [`rate-limiting-off-for-testing.mdc`](rate-limiting-off-for-testing.mdc) | Lab unlimited posture so busy can clear |
+
+## Origin
+
+2026-08-19 — operator hard rule. Recorded alongside the nav-crawl work:
+heuristic readiness waits (`networkidle`, fixed sleeps, content markers)
+were a primary cause of a ~2 minute sweep degrading to hours, and of
+pages being "verified" while broken or still loading. Three-state
+requirement exists so `error` cannot satisfy a ready wait.
