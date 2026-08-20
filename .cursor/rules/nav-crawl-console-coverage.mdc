@@ -56,7 +56,23 @@ Canonical spec:
 `pim-offline-server/ui/e2e/nav-crawl-console-embedded-live.spec.ts`
 (evidence under `docs/dev/evidence/nav-crawl-zh-tw-20260819/`).
 
+## Missing-string banner = build/deploy gate failure
+
+A visible `Missing string:` / missing-key banner in operator chrome means
+an incomplete pack **already shipped**. That is not an i18n content chore
+for the crawl — it is a **fail-closed build/deploy defect**.
+
+| Gate | Where |
+| --- | --- |
+| Key parity (code→`en`, `en`→all tags) | `ui/scripts/assert-ui-locale-key-parity.mjs` (prebuild `--keys-only`; full shape/placeholder mode available) |
+| Served pack = install artifact | `scripts/Assert-ServedUiLocalePacks.ps1` (end of `Deploy-OfflineServerDev.ps1`) |
+
+Bundle hash `disk=served` proves **JS only** — it does not prove
+`/locales/ui` JSON. Always run the served-pack assert after deploy.
+RCA: `docs/dev/localization-fixes-lost-on-deploy-rca-20260819.md`.
+
 ## Forbidden “false green”
+
 
 - Hardcoded route arrays that never expand nested drawer groups
 - **MenuItems-only** or **accordion-only** denominators that omit router parents (`/access`), redirects (`/events`), messaging children, `/login`, docs/about, or 404 edge chrome
