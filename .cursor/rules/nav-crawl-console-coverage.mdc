@@ -48,6 +48,7 @@ not claim all-pages PASS).
 | 6 | **Missing strings** | Visible `Missing string:` / missing-key banner / raw key chrome → **FAIL** |
 | 7 | **429 storms** | Elevated 429 counts are a **product defect** (fix client storm or name BLOCKED) — not flaky test noise |
 | 8 | **Wall-clock** | A single-locale full-leaf crawl that cannot finish in a **reasonable** time (order of **~2 minutes** on a healthy unlimited lab, not hours) is itself a **defect** — usually lab rate limiting still on, or an inefficient crawl→fix→rebuild→retest loop. Slow verification is what leads to skipped verification |
+| 9 | **≤10 s / page** | Each route must complete under a **hard 10 second** budget (`elapsed_ms` in the matrix). Exceeding the budget is **FAIL** with evidence — never raise the budget to green a slow page. Minutes per page is a **harness defect**. No `networkidle`, no fixed multi-second sleeps, no per-route re-auth |
 
 Canonical spec:
 `pim-offline-server/ui/e2e/nav-crawl-console-embedded-live.spec.ts`
