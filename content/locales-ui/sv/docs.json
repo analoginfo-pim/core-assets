@@ -43,6 +43,46 @@
     "configLinks": {
       "text": "Var kan man ändra dessa inställningar",
       "source_sha256": "0e3f253d56ce97a8af0bc47555b912b82fd4fabe3ca4abfb22591c7e153ea73a"
+    },
+    "exportAria": {
+      "text": "Export this material",
+      "source_sha256": ""
+    },
+    "exportHeading": {
+      "text": "Offline copy",
+      "source_sha256": ""
+    },
+    "pdfAvailable": {
+      "text": "Export to PDF downloads a server-rendered copy for offline viewing. This is not a certification package.",
+      "source_sha256": ""
+    },
+    "pdfUnavailableHint": {
+      "text": "Server-rendered PDF is not available in this build. The Export to PDF control stays visible and explains that. Use Print / Save as PDF for an offline copy.",
+      "source_sha256": ""
+    },
+    "exportPdf": {
+      "text": "Export to PDF",
+      "source_sha256": ""
+    },
+    "printSavePdf": {
+      "text": "Print / Save as PDF",
+      "source_sha256": ""
+    },
+    "pdfProbeFailed": {
+      "text": "This server could not report PDF capability. Use Print / Save as PDF.",
+      "source_sha256": ""
+    },
+    "pdfRefusedMismatch": {
+      "text": "The server did not deliver PDF bytes. Use Print / Save as PDF. No file was saved as PDF.",
+      "source_sha256": ""
+    },
+    "pdfDownloaded": {
+      "text": "{{filename}} downloaded for offline viewing.",
+      "source_sha256": ""
+    },
+    "pdfUnavailable": {
+      "text": "PDF rendering is unavailable in this release. Use Print / Save as PDF.",
+      "source_sha256": ""
     }
   },
   "landing": {
@@ -96,6 +136,46 @@
       "description": {
         "text": "OpenAPI, Swagger UI och teknisk referens för utvecklare.",
         "source_sha256": "d217c243ddabf6e58c845519ed53d2b1cd220f84b3ebb9588a243ff27700a9e6"
+      }
+    },
+    "manuals": {
+      "label": {
+        "text": "Handböcker",
+        "source_sha256": ""
+      },
+      "description": {
+        "text": "CMMC Level 1, 2, and 3 first. NIST SP 800-53 is the enterprise option. User, auditor, and admin manuals.",
+        "source_sha256": ""
+      }
+    },
+    "recipes": {
+      "label": {
+        "text": "Recept",
+        "source_sha256": ""
+      },
+      "description": {
+        "text": "Short procedures: auditor text playbooks and the CMMC Agent seed recipe.",
+        "source_sha256": ""
+      }
+    },
+    "cookbooks": {
+      "label": {
+        "text": "Kokböcker",
+        "source_sha256": ""
+      },
+      "description": {
+        "text": "CMMC Agent, enclave scripts, and scripted-build procedures.",
+        "source_sha256": ""
+      }
+    },
+    "guides": {
+      "label": {
+        "text": "Guider",
+        "source_sha256": ""
+      },
+      "description": {
+        "text": "MSP / C3PAO demo walkthrough and Auditor Setup.",
+        "source_sha256": ""
       }
     }
   },
@@ -561,12 +641,12 @@
   },
   "auditor": {
     "title": {
-      "text": "Using AIC Server as an assessor",
-      "source_sha256": "eed9c29530edb36366f4668df1f229a6b28fc20d86ab833ffff82df0937e7a42"
+      "text": "Auditor manuals",
+      "source_sha256": "6623ff55741761694cc60ea3e767301b9c1d248b65de5f46d388d0c9a1d9ab56"
     },
     "intro": {
-      "text": "Read-oriented guides for people who review evidence, binders, and audit trails without Fix-It privileges. Staff accounts with the Auditor Setup Guide. Use the CMMC Level 1, 2, and 3 manuals for framework overviews. Binder status labels must stay honest (Implemented / Partial / Planned). This product does not invent FedRAMP, CMMC, or FIPS certification claims for you.",
-      "source_sha256": "58ab7e1ff155a0228f52fea6bcdde4a690a209128c336cc4ea581ec62b9ec3cd"
+      "text": "Börja med Auditor Setup and Configuration Guide när du ställer in bedömare. De senare kapitlen är läsguider för personer som granskar bevis, pärmar och revisionsspår utan fix-it-rättigheter. Pärmstatusetiketter måste förbli ärliga (Implementerad / Delvis / Planerad). Den här produkten uppfinner inga FedRAMP-, CMMC- eller FIPS-certifieringskrav åt dig.",
+      "source_sha256": "03b50a7cf0587fd4ee40804b78cbfac251d448306964d217a6a540b7727bf2f5"
     },
     "chapters": {
       "assessment-binder": {
@@ -1485,13 +1565,35 @@
     "text": "Technical Documentation",
     "source_sha256": "d9e472f50948919b7de17f323845791003026e68cd5487bccb650edfbdff625d"
   },
-  "openapiLabel": {
-    "text": "OpenAPI",
-    "source_sha256": "cf2c9e2180334830f7e995b1084be3ac857f6733464548f77ab952d45773203a"
+  "auditorCmmcL2": {
+    "title": {
+      "text": "Auditing CMMC Level 2",
+      "source_sha256": "0f2b3fcbf9c61a8491528a004a2547c89976f1dd13b2ad1821f925bd6f13b062"
+    },
+    "intro": {
+      "text": "Overview of CMMC Level 2 (NIST SP 800-171 practices for CUI) and how to use AIC Server to support each family. This is a starting outline. Practice-level product steps will be added later. The product does not certify your organization.",
+      "source_sha256": "d03284b1803adb04b8651d785d2e798eb20ea59564fece603ebd56097fafed44"
+    }
   },
-  "openapiResourceLabel": {
-    "text": "OpenAPI-Explorer",
-    "source_sha256": "84aec404e7c3226303f0bd0eb6424a919ba981bcdf0fba365bc7f6802882fe2b"
+  "auditorCmmcL1": {
+    "title": {
+      "text": "Auditing CMMC Level 1",
+      "source_sha256": "cae42d1e4e3aca096014d70d7567b8b45b7a91aaa33e03b8194ff4c0ab179ef4"
+    },
+    "intro": {
+      "text": "Overview of CMMC Level 1 (Federal Contract Information / FAR 52.204-21 practices) and how to use AIC Server to support each family. This is a starting outline. Practice-level product steps will be added later. The product does not certify your organization.",
+      "source_sha256": "ce17b46ded95539201055e89c6785cba05efe4a234d585ad660302baa39cb166"
+    }
+  },
+  "auditorSetupPage": {
+    "title": {
+      "text": "Auditor Setup Guide",
+      "source_sha256": "66eed74ada8a3d046c4bf3c5fa21eee29a19ef442ba7b9970ed1f8ad77cdfa5b"
+    },
+    "intro": {
+      "text": "How to staff auditors on the shared Sign in page, which groups to assign, and where to configure them. CMMC level manuals and the assessor working guide live under Auditor Manuals.",
+      "source_sha256": "52617ca34065a34064aa837205b5977c209635374943bbf188b6b8a7f1b6dc31"
+    }
   },
   "auditorIndex": {
     "title": {
@@ -1555,36 +1657,6 @@
       }
     }
   },
-  "auditorSetupPage": {
-    "title": {
-      "text": "Auditor Setup Guide",
-      "source_sha256": "66eed74ada8a3d046c4bf3c5fa21eee29a19ef442ba7b9970ed1f8ad77cdfa5b"
-    },
-    "intro": {
-      "text": "How to staff auditors on the shared Sign in page, which groups to assign, and where to configure them. CMMC level manuals and the assessor working guide live under Auditor Manuals.",
-      "source_sha256": "52617ca34065a34064aa837205b5977c209635374943bbf188b6b8a7f1b6dc31"
-    }
-  },
-  "auditorCmmcL1": {
-    "title": {
-      "text": "Auditing CMMC Level 1",
-      "source_sha256": "cae42d1e4e3aca096014d70d7567b8b45b7a91aaa33e03b8194ff4c0ab179ef4"
-    },
-    "intro": {
-      "text": "Overview of CMMC Level 1 (Federal Contract Information / FAR 52.204-21 practices) and how to use AIC Server to support each family. This is a starting outline. Practice-level product steps will be added later. The product does not certify your organization.",
-      "source_sha256": "ce17b46ded95539201055e89c6785cba05efe4a234d585ad660302baa39cb166"
-    }
-  },
-  "auditorCmmcL2": {
-    "title": {
-      "text": "Auditing CMMC Level 2",
-      "source_sha256": "0f2b3fcbf9c61a8491528a004a2547c89976f1dd13b2ad1821f925bd6f13b062"
-    },
-    "intro": {
-      "text": "Overview of CMMC Level 2 (NIST SP 800-171 practices for CUI) and how to use AIC Server to support each family. This is a starting outline. Practice-level product steps will be added later. The product does not certify your organization.",
-      "source_sha256": "d03284b1803adb04b8651d785d2e798eb20ea59564fece603ebd56097fafed44"
-    }
-  },
   "auditorCmmcL3": {
     "title": {
       "text": "Auditing CMMC Level 3",
@@ -1593,6 +1665,204 @@
     "intro": {
       "text": "Overview of CMMC Level 3 (selected NIST SP 800-172 enhancements). Level 3 is not Level 2 plus a product toggle. Use Enhanced Controls honesty notes. The product never reports Met for Level 3 and never claims Level 3 certification.",
       "source_sha256": "982000e54d4ed4c9b207243de7ad6648d4b234bccfd14caeb36101a0965f49d2"
+    }
+  },
+  "family": {
+    "manuals": {
+      "title": {
+        "text": "Handböcker",
+        "source_sha256": ""
+      },
+      "intro": {
+        "text": "Operator manuals in AIC Server. CMMC Levels 1, 2, and 3 are listed first. NIST SP 800-53 is the enterprise option with full visibility. These pages describe what the product does today. They are not a certification claim.",
+        "source_sha256": ""
+      },
+      "cards": {
+        "cmmcL1": {
+          "text": "Auditing CMMC Level 1",
+          "source_sha256": ""
+        },
+        "cmmcL1Desc": {
+          "text": "Priority package. Federal Contract Information overview (Partial outline).",
+          "source_sha256": ""
+        },
+        "cmmcL2": {
+          "text": "Auditing CMMC Level 2",
+          "source_sha256": ""
+        },
+        "cmmcL2Desc": {
+          "text": "Priority package. CUI / NIST SP 800-171 overview (Partial outline).",
+          "source_sha256": ""
+        },
+        "cmmcL3": {
+          "text": "Auditing CMMC Level 3",
+          "source_sha256": ""
+        },
+        "cmmcL3Desc": {
+          "text": "Priority package. Selected 800-172 overlay. Not Level 2 plus a toggle.",
+          "source_sha256": ""
+        },
+        "nist": {
+          "text": "NIST SP 800-53",
+          "source_sha256": ""
+        },
+        "nistDesc": {
+          "text": "Enterprise option. Full visibility. This landing is Partial.",
+          "source_sha256": ""
+        }
+      }
+    },
+    "recipes": {
+      "title": {
+        "text": "Recept",
+        "source_sha256": ""
+      },
+      "intro": {
+        "text": "Recipes are short, reusable procedures. Auditor text playbooks stay on their existing Assessment Binder page. The Agent seed recipe packages the existing Agent — not a second product.",
+        "source_sha256": ""
+      },
+      "cards": {
+        "playbooks": {
+          "text": "Auditor text playbooks",
+          "source_sha256": ""
+        },
+        "playbooksDesc": {
+          "text": "Existing recipe surface: text playbooks the operator applies in Assessment Binder.",
+          "source_sha256": ""
+        },
+        "agentSeed": {
+          "text": "CMMC Agent seed",
+          "source_sha256": ""
+        },
+        "agentSeedDesc": {
+          "text": "Reuse the existing Agent. Always connected. Elevation included.",
+          "source_sha256": ""
+        }
+      }
+    },
+    "cookbooks": {
+      "title": {
+        "text": "Kokböcker",
+        "source_sha256": ""
+      },
+      "intro": {
+        "text": "Cookbooks are longer operator procedures for CMMC package work. Status words stay Live, Partial, Absent, or BLOCKED. Never Met.",
+        "source_sha256": ""
+      },
+      "cards": {
+        "agentEnclave": {
+          "text": "CMMC Agent and enclave scripts",
+          "source_sha256": ""
+        },
+        "agentEnclaveDesc": {
+          "text": "Which script to open. Host-safety rules in product language.",
+          "source_sha256": ""
+        },
+        "enclaveBuild": {
+          "text": "CMMC enclave scripted build",
+          "source_sha256": ""
+        },
+        "enclaveBuildDesc": {
+          "text": "Local lab seats versus customer cloud. Build order by package level.",
+          "source_sha256": ""
+        },
+        "agentConfig": {
+          "text": "CMMC Agent configuration",
+          "source_sha256": ""
+        },
+        "agentConfigDesc": {
+          "text": "Internal enclave Agent versus external workstation posture Agent.",
+          "source_sha256": ""
+        }
+      }
+    },
+    "guides": {
+      "title": {
+        "text": "Guider",
+        "source_sha256": ""
+      },
+      "intro": {
+        "text": "Guides walk a role through a demonstration or setup. Bodies are US English and prepared for localization. Surrounding chrome is localized.",
+        "source_sha256": ""
+      },
+      "cards": {
+        "mspC3pao": {
+          "text": "MSP and C3PAO demo guide",
+          "source_sha256": ""
+        },
+        "mspC3paoDesc": {
+          "text": "Learn the demo. This is not a certified enclave.",
+          "source_sha256": ""
+        },
+        "auditorSetup": {
+          "text": "Auditor Setup Guide",
+          "source_sha256": ""
+        },
+        "auditorSetupDesc": {
+          "text": "Staff auditors on the shared Sign in page. Jobs, groups, and starter accounts.",
+          "source_sha256": ""
+        }
+      }
+    }
+  },
+  "nist80053": {
+    "title": {
+      "text": "NIST SP 800-53",
+      "source_sha256": ""
+    },
+    "intro": {
+      "text": "NIST SP 800-53 Revision 5 is the enterprise package option: full visibility. This page is Partial. It is not a control-by-control operator manual yet, and it is not a Met or certified claim.",
+      "source_sha256": ""
+    }
+  },
+  "recipeAgentSeed": {
+    "title": {
+      "text": "CMMC Agent seed",
+      "source_sha256": ""
+    },
+    "intro": {
+      "text": "Packages the existing AIC Agent. No second Agent product. Always connected is the package default. Offline mode is not the default.",
+      "source_sha256": ""
+    }
+  },
+  "cookbookAgentEnclave": {
+    "title": {
+      "text": "CMMC Agent and enclave scripts",
+      "source_sha256": ""
+    },
+    "intro": {
+      "text": "Which cookbook to open, and which actions this kit refuses. Product language only.",
+      "source_sha256": ""
+    }
+  },
+  "cookbookEnclaveBuild": {
+    "title": {
+      "text": "CMMC enclave scripted build",
+      "source_sha256": ""
+    },
+    "intro": {
+      "text": "Local lab seats versus customer-paid cloud virtual machines. Build order by package level.",
+      "source_sha256": ""
+    }
+  },
+  "cookbookAgentConfig": {
+    "title": {
+      "text": "CMMC Agent configuration",
+      "source_sha256": ""
+    },
+    "intro": {
+      "text": "Two roles, one Agent product: internal enclave versus external workstation posture.",
+      "source_sha256": ""
+    }
+  },
+  "guideMspC3pao": {
+    "title": {
+      "text": "MSP and C3PAO demo guide",
+      "source_sha256": ""
+    },
+    "intro": {
+      "text": "You are here to learn. This is not a certified enclave. CMMC assesses the organization, not this software SKU.",
+      "source_sha256": ""
     }
   }
 }

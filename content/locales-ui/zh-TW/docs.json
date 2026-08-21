@@ -43,6 +43,46 @@
     "configLinks": {
       "text": "Wo Sie diese 設定前",
       "source_sha256": "39925ad5019b7fed9c5070e4831c840a4769df844e14e8e9f622152a259c074a"
+    },
+    "exportAria": {
+      "text": "匯出此材料",
+      "source_sha256": ""
+    },
+    "exportHeading": {
+      "text": "離線副本",
+      "source_sha256": ""
+    },
+    "pdfAvailable": {
+      "text": "Export to PDF 會下載伺服器產生的副本供離線檢視。這不是認證套件。",
+      "source_sha256": ""
+    },
+    "pdfUnavailableHint": {
+      "text": "此版本無法提供伺服器 PDF。Export to PDF 仍可見並說明原因。請使用 Print / Save as PDF。",
+      "source_sha256": ""
+    },
+    "exportPdf": {
+      "text": "Export to PDF",
+      "source_sha256": ""
+    },
+    "printSavePdf": {
+      "text": "Print / Save as PDF",
+      "source_sha256": ""
+    },
+    "pdfProbeFailed": {
+      "text": "此伺服器無法報告 PDF 能力。請使用 Print / Save as PDF。",
+      "source_sha256": ""
+    },
+    "pdfRefusedMismatch": {
+      "text": "伺服器未交付 PDF 位元組。請使用 Print / Save as PDF。沒有檔案被存為 PDF。",
+      "source_sha256": ""
+    },
+    "pdfDownloaded": {
+      "text": "{{filename}} 已下載供離線檢視。",
+      "source_sha256": ""
+    },
+    "pdfUnavailable": {
+      "text": "此版本無法產生 PDF。請使用 Print / Save as PDF。",
+      "source_sha256": ""
     }
   },
   "landing": {
@@ -96,6 +136,46 @@
       "description": {
         "text": "OpenAPI、Swagger UI 與開發者技術參考。",
         "source_sha256": "ef573fb72484fe0a966bb350ed4d5aee672b3f88d3a6b3e867515bdabb21cb90"
+      }
+    },
+    "manuals": {
+      "label": {
+        "text": "手冊",
+        "source_sha256": ""
+      },
+      "description": {
+        "text": "先列出 CMMC 1、2、3 級。NIST SP 800-53 為企業選項。使用者、稽核員和管理員手冊。",
+        "source_sha256": ""
+      }
+    },
+    "recipes": {
+      "label": {
+        "text": "配方",
+        "source_sha256": ""
+      },
+      "description": {
+        "text": "短流程：稽核員文字 playbooks 與 CMMC Agent seed 配方。",
+        "source_sha256": ""
+      }
+    },
+    "cookbooks": {
+      "label": {
+        "text": "操作手冊",
+        "source_sha256": ""
+      },
+      "description": {
+        "text": "CMMC Agent、飛地指令碼與指令碼化建置流程。",
+        "source_sha256": ""
+      }
+    },
+    "guides": {
+      "label": {
+        "text": "指南",
+        "source_sha256": ""
+      },
+      "description": {
+        "text": "MSP / C3PAO 示範與稽核員設定。",
+        "source_sha256": ""
       }
     }
   },
@@ -925,12 +1005,12 @@
   },
   "auditor": {
     "title": {
-      "text": "Using AIC Server as an assessor",
-      "source_sha256": "eed9c29530edb36366f4668df1f229a6b28fc20d86ab833ffff82df0937e7a42"
+      "text": "稽核員手冊",
+      "source_sha256": "d3c7864c5c04747ffbb0faf622b7391e1bdabe47a94f7471f163727af7020cff"
     },
     "intro": {
-      "text": "Read-oriented guides for people who review evidence, binders, and audit trails without Fix-It privileges. Staff accounts with the Auditor Setup Guide. Use the CMMC Level 1, 2, and 3 manuals for framework overviews. Binder status labels must stay honest (Implemented / Partial / Planned). This product does not invent FedRAMP, CMMC, or FIPS certification claims for you.",
-      "source_sha256": "58ab7e1ff155a0228f52fea6bcdde4a690a209128c336cc4ea581ec62b9ec3cd"
+      "text": "設定評估員時，請從 Auditor 設定和設定指南開始。後面的章節是為那些沒有修復權的人審查證據、活頁夾和審計追蹤的閱讀指南。 Binder 狀態標籤必須保持誠實（已實施/部分/計劃）。本產品不會為您發明任何 FedRAMP、CMMC 或 FIPS 認證聲明。",
+      "source_sha256": "03b50a7cf0587fd4ee40804b78cbfac251d448306964d217a6a540b7727bf2f5"
     },
     "chapters": {
       "assessment-binder": {
@@ -2357,6 +2437,36 @@
     "text": "OpenAPI 瀏覽器",
     "source_sha256": "84aec404e7c3226303f0bd0eb6424a919ba981bcdf0fba365bc7f6802882fe2b"
   },
+  "auditorCmmcL2": {
+    "title": {
+      "text": "Auditing CMMC Level 2",
+      "source_sha256": "0f2b3fcbf9c61a8491528a004a2547c89976f1dd13b2ad1821f925bd6f13b062"
+    },
+    "intro": {
+      "text": "Overview of CMMC Level 2 (NIST SP 800-171 practices for CUI) and how to use AIC Server to support each family. This is a starting outline. Practice-level product steps will be added later. The product does not certify your organization.",
+      "source_sha256": "d03284b1803adb04b8651d785d2e798eb20ea59564fece603ebd56097fafed44"
+    }
+  },
+  "auditorCmmcL1": {
+    "title": {
+      "text": "Auditing CMMC Level 1",
+      "source_sha256": "cae42d1e4e3aca096014d70d7567b8b45b7a91aaa33e03b8194ff4c0ab179ef4"
+    },
+    "intro": {
+      "text": "Overview of CMMC Level 1 (Federal Contract Information / FAR 52.204-21 practices) and how to use AIC Server to support each family. This is a starting outline. Practice-level product steps will be added later. The product does not certify your organization.",
+      "source_sha256": "ce17b46ded95539201055e89c6785cba05efe4a234d585ad660302baa39cb166"
+    }
+  },
+  "auditorSetupPage": {
+    "title": {
+      "text": "Auditor Setup Guide",
+      "source_sha256": "66eed74ada8a3d046c4bf3c5fa21eee29a19ef442ba7b9970ed1f8ad77cdfa5b"
+    },
+    "intro": {
+      "text": "How to staff auditors on the shared Sign in page, which groups to assign, and where to configure them. CMMC level manuals and the assessor working guide live under Auditor Manuals.",
+      "source_sha256": "52617ca34065a34064aa837205b5977c209635374943bbf188b6b8a7f1b6dc31"
+    }
+  },
   "auditorIndex": {
     "title": {
       "text": "Auditor manuals",
@@ -2419,36 +2529,6 @@
       }
     }
   },
-  "auditorSetupPage": {
-    "title": {
-      "text": "Auditor Setup Guide",
-      "source_sha256": "66eed74ada8a3d046c4bf3c5fa21eee29a19ef442ba7b9970ed1f8ad77cdfa5b"
-    },
-    "intro": {
-      "text": "How to staff auditors on the shared Sign in page, which groups to assign, and where to configure them. CMMC level manuals and the assessor working guide live under Auditor Manuals.",
-      "source_sha256": "52617ca34065a34064aa837205b5977c209635374943bbf188b6b8a7f1b6dc31"
-    }
-  },
-  "auditorCmmcL1": {
-    "title": {
-      "text": "Auditing CMMC Level 1",
-      "source_sha256": "cae42d1e4e3aca096014d70d7567b8b45b7a91aaa33e03b8194ff4c0ab179ef4"
-    },
-    "intro": {
-      "text": "Overview of CMMC Level 1 (Federal Contract Information / FAR 52.204-21 practices) and how to use AIC Server to support each family. This is a starting outline. Practice-level product steps will be added later. The product does not certify your organization.",
-      "source_sha256": "ce17b46ded95539201055e89c6785cba05efe4a234d585ad660302baa39cb166"
-    }
-  },
-  "auditorCmmcL2": {
-    "title": {
-      "text": "Auditing CMMC Level 2",
-      "source_sha256": "0f2b3fcbf9c61a8491528a004a2547c89976f1dd13b2ad1821f925bd6f13b062"
-    },
-    "intro": {
-      "text": "Overview of CMMC Level 2 (NIST SP 800-171 practices for CUI) and how to use AIC Server to support each family. This is a starting outline. Practice-level product steps will be added later. The product does not certify your organization.",
-      "source_sha256": "d03284b1803adb04b8651d785d2e798eb20ea59564fece603ebd56097fafed44"
-    }
-  },
   "auditorCmmcL3": {
     "title": {
       "text": "Auditing CMMC Level 3",
@@ -2457,6 +2537,204 @@
     "intro": {
       "text": "Overview of CMMC Level 3 (selected NIST SP 800-172 enhancements). Level 3 is not Level 2 plus a product toggle. Use Enhanced Controls honesty notes. The product never reports Met for Level 3 and never claims Level 3 certification.",
       "source_sha256": "982000e54d4ed4c9b207243de7ad6648d4b234bccfd14caeb36101a0965f49d2"
+    }
+  },
+  "family": {
+    "manuals": {
+      "title": {
+        "text": "手冊",
+        "source_sha256": ""
+      },
+      "intro": {
+        "text": "AIC Server 中的操作员手册。CMMC 1、2、3 级列在最前。NIST SP 800-53 为企业全可见选项。這些頁面說明產品今天的行為。它們不是認證聲明。",
+        "source_sha256": ""
+      },
+      "cards": {
+        "cmmcL1": {
+          "text": "Auditing CMMC Level 1",
+          "source_sha256": ""
+        },
+        "cmmcL1Desc": {
+          "text": "優先套件。Federal Contract Information 概覽（Partial 大綱）。",
+          "source_sha256": ""
+        },
+        "cmmcL2": {
+          "text": "Auditing CMMC Level 2",
+          "source_sha256": ""
+        },
+        "cmmcL2Desc": {
+          "text": "優先套件。CUI / NIST SP 800-171 概覽（Partial 大綱）。",
+          "source_sha256": ""
+        },
+        "cmmcL3": {
+          "text": "Auditing CMMC Level 3",
+          "source_sha256": ""
+        },
+        "cmmcL3Desc": {
+          "text": "優先套件。選定 800-172 疊加。不是 2 級加開關。",
+          "source_sha256": ""
+        },
+        "nist": {
+          "text": "NIST SP 800-53",
+          "source_sha256": ""
+        },
+        "nistDesc": {
+          "text": "企業選項。全部可見。此頁為 Partial。",
+          "source_sha256": ""
+        }
+      }
+    },
+    "recipes": {
+      "title": {
+        "text": "配方",
+        "source_sha256": ""
+      },
+      "intro": {
+        "text": "配方是可重用的短流程。稽核員文字 playbooks 仍在現有 Assessment Binder 頁。Agent seed 重用現有 Agent，不是第二個產品。",
+        "source_sha256": ""
+      },
+      "cards": {
+        "playbooks": {
+          "text": "Auditor text playbooks",
+          "source_sha256": ""
+        },
+        "playbooksDesc": {
+          "text": "現有配方介面：操作員在 Assessment Binder 中套用的文字 playbooks。",
+          "source_sha256": ""
+        },
+        "agentSeed": {
+          "text": "CMMC Agent seed",
+          "source_sha256": ""
+        },
+        "agentSeedDesc": {
+          "text": "重用現有 Agent。始終連線。包含提升。",
+          "source_sha256": ""
+        }
+      }
+    },
+    "cookbooks": {
+      "title": {
+        "text": "操作手冊",
+        "source_sha256": ""
+      },
+      "intro": {
+        "text": "操作手册是更长的 CMMC 包流程。状态词保持 Live、Partial、Absent 或 BLOCKED。绝不用 Met。",
+        "source_sha256": ""
+      },
+      "cards": {
+        "agentEnclave": {
+          "text": "CMMC Agent and enclave scripts",
+          "source_sha256": ""
+        },
+        "agentEnclaveDesc": {
+          "text": "開啟哪個指令碼。主機安全規則用產品語言。",
+          "source_sha256": ""
+        },
+        "enclaveBuild": {
+          "text": "CMMC enclave scripted build",
+          "source_sha256": ""
+        },
+        "enclaveBuildDesc": {
+          "text": "本機實驗室席位與客戶雲端。依套件層級的建置順序。",
+          "source_sha256": ""
+        },
+        "agentConfig": {
+          "text": "CMMC Agent configuration",
+          "source_sha256": ""
+        },
+        "agentConfigDesc": {
+          "text": "內部飛地 Agent 與外部工作站態勢 Agent。",
+          "source_sha256": ""
+        }
+      }
+    },
+    "guides": {
+      "title": {
+        "text": "指南",
+        "source_sha256": ""
+      },
+      "intro": {
+        "text": "指南帶領一個角色完成示範或設定。正文為美式英語並已準備在地化。周圍介面已在地化。",
+        "source_sha256": ""
+      },
+      "cards": {
+        "mspC3pao": {
+          "text": "MSP and C3PAO demo guide",
+          "source_sha256": ""
+        },
+        "mspC3paoDesc": {
+          "text": "學習示範。這不是已認證的飛地。",
+          "source_sha256": ""
+        },
+        "auditorSetup": {
+          "text": "Auditor Setup Guide",
+          "source_sha256": ""
+        },
+        "auditorSetupDesc": {
+          "text": "在共用登入頁設定稽核員。職務、群組和起始帳戶。",
+          "source_sha256": ""
+        }
+      }
+    }
+  },
+  "nist80053": {
+    "title": {
+      "text": "NIST SP 800-53",
+      "source_sha256": ""
+    },
+    "intro": {
+      "text": "NIST SP 800-53 第 5 版是企業套件選項：全部可見。此頁為 Partial。還不是逐項控制操作手冊，也不是 Met 或認證聲明。",
+      "source_sha256": ""
+    }
+  },
+  "recipeAgentSeed": {
+    "title": {
+      "text": "CMMC Agent seed",
+      "source_sha256": ""
+    },
+    "intro": {
+      "text": "打包現有 AIC Agent。沒有第二個 Agent 產品。始終連線是套件預設。離線模式不是預設。",
+      "source_sha256": ""
+    }
+  },
+  "cookbookAgentEnclave": {
+    "title": {
+      "text": "CMMC Agent and enclave scripts",
+      "source_sha256": ""
+    },
+    "intro": {
+      "text": "打开哪本操作手册，以及此套件拒绝哪些操作。仅产品语言。",
+      "source_sha256": ""
+    }
+  },
+  "cookbookEnclaveBuild": {
+    "title": {
+      "text": "CMMC enclave scripted build",
+      "source_sha256": ""
+    },
+    "intro": {
+      "text": "本地实验室席位与客户付费云虚拟机。按包级别的构建顺序。",
+      "source_sha256": ""
+    }
+  },
+  "cookbookAgentConfig": {
+    "title": {
+      "text": "CMMC Agent configuration",
+      "source_sha256": ""
+    },
+    "intro": {
+      "text": "两个角色，一个 Agent 产品：内部飞地与外部工作站态势。",
+      "source_sha256": ""
+    }
+  },
+  "guideMspC3pao": {
+    "title": {
+      "text": "MSP and C3PAO demo guide",
+      "source_sha256": ""
+    },
+    "intro": {
+      "text": "您在此學習。這不是已認證飛地。CMMC 評估的是組織，不是此軟體 SKU。",
+      "source_sha256": ""
     }
   }
 }

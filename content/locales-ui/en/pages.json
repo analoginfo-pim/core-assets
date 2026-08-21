@@ -11022,8 +11022,8 @@
         "source_sha256": "f445f6e76f462e7fb73a099145a1e0d2d22fcb972d634d71ad6f9074b19a2b42"
       },
       "summary": {
-        "text": "RBAC-gated manuals by class: User, Auditor, Admin, and Technical (OpenAPI / Swagger). Technical docs require Super Admin or the Developers well-known group.",
-        "source_sha256": "8ac362bd76a7e83baa1f0090dd031a8a17dc48e0ffb3365eaa5cc540e16775de"
+        "text": "Manuals, recipes, cookbooks, and guides in AIC Server. CMMC Levels 1, 2, and 3 first; NIST SP 800-53 is the enterprise option. Export to PDF when the engine is available.",
+        "source_sha256": "5646569927b9c7f18524e9645dfa70287d4c8c0053dd352c368604a35ae74358"
       },
       "title": {
         "text": "Documentation Home",
@@ -11032,19 +11032,19 @@
       "bullets": {
         "text": [
           {
-            "text": "User manuals: Documentation Users group (`rbac.offline.docs.user.view`).",
-            "source_sha256": "6fd723f3f9b164c8ebe5665aeafc2faba85d2c5e6ec185bca1a6b5ba22f3e92a"
+            "text": "Manuals: CMMC L1/L2/L3, NIST SP 800-53 (Partial), User, Auditor, Admin.",
+            "source_sha256": "5ee4e2a7f78809da616d79268dc360ec74452b080dc02ebfd93f6e9d0f2bdffc"
           },
           {
-            "text": "Auditor manuals / Admin manuals: respective auditor and admin role permissions.",
-            "source_sha256": "507dbec6b97b049fdf5cb9b0ecc007a2de90611786922077eafa2322db4e08d9"
+            "text": "Recipes: auditor text playbooks plus CMMC Agent seed.",
+            "source_sha256": "ddccbd347cc5909be72d3e5c1ec7c523cba7d2ee847d52f4bacc353bbffdedb5"
           },
           {
-            "text": "Technical documentation: `rbac.offline.docs.technical.view` (+ reusable `rbac.offline.developer.tools`).",
-            "source_sha256": "1d13d2ff58e6cf64bef960f839ca9f370c6c83f1f1c94b7f71aff40f32bcf556"
+            "text": "Cookbooks and Guides: CMMC operator procedures and the MSP/C3PAO demo.",
+            "source_sha256": "2002e4f468ffb2b192caa5d82a40476a72c987724c20f036112897006de3c7e5"
           }
         ],
-        "source_sha256": "e4909ba81d280fa57b216e6d7adf38576bb56045665d5fea9a3930254fe35c54"
+        "source_sha256": "e24182766b269ee5c019472701ddbf1edd700de7713243efc6f8390447951479"
       }
     },
     "docs__admin": {
@@ -13904,6 +13904,106 @@
       "summary": {
         "text": "CMMC Level 3 overview (selected NIST SP 800-172). Not Level 2 plus a toggle. Enhanced Controls honesty notes.",
         "source_sha256": "c757afc8bca515cfb367ffb82c308071bead2b5e46a9efd888b5ff99fe0b422e"
+      }
+    },
+    "docs__manuals": {
+      "title": {
+        "text": "Manuals",
+        "source_sha256": "613634acece6e01a7493c8ccf52355e950abb422e130186330c04a140dd6aea4"
+      },
+      "summary": {
+        "text": "Operator manuals: CMMC Levels 1, 2, and 3 first, then NIST SP 800-53 (enterprise / Partial), User, Auditor, and Admin.",
+        "source_sha256": "986921ac24f68b2fa9171ee37f824b3ee18b6d1f920290d0db19b6aed90e803c"
+      }
+    },
+    "docs__enterprise__nist-sp-800-53": {
+      "title": {
+        "text": "NIST SP 800-53",
+        "source_sha256": "2c8cae03f30fab0b8a30bbea566d264a76f93797a963653e6711af0d98348719"
+      },
+      "summary": {
+        "text": "Enterprise package option with full visibility. This landing is Partial — not a control-by-control manual and not a Met claim.",
+        "source_sha256": "5d5b022a78e31a3093e0dffb82a1ab26eb9ef3353413afff66a7b1d6796a3123"
+      }
+    },
+    "docs__recipes": {
+      "title": {
+        "text": "Recipes",
+        "source_sha256": "d664282e62e41a19c7da870c34eb840886fd0bbeb3aa36e96ac8b9aafce25d97"
+      },
+      "summary": {
+        "text": "Short procedures: auditor text playbooks (existing Assessment Binder surface) and the CMMC Agent seed recipe.",
+        "source_sha256": "c1959a0948ae587c029da294f5bd14330c6754a8956bab2351cbe4b7d4766a62"
+      }
+    },
+    "docs__recipes__cmmc-agent-seed": {
+      "title": {
+        "text": "CMMC Agent seed",
+        "source_sha256": "439e317b9d18eefb0a7e48ecde884e76449e03a83ae12fbd9a5fd043d1f2e2d9"
+      },
+      "summary": {
+        "text": "Reuse the existing Agent. Always connected. Elevation included.",
+        "source_sha256": "13ee2c2f78d7806333ca060eca6589d122b35d2a49f68cc6dd6af9e160eba025"
+      }
+    },
+    "docs__cookbooks": {
+      "title": {
+        "text": "Cookbooks",
+        "source_sha256": "9a0d9d2b049b60f912c2c028f7b4654265e7a085d0e08274b27682f2de87719b"
+      },
+      "summary": {
+        "text": "CMMC Agent, enclave scripts, and scripted-build cookbooks.",
+        "source_sha256": "b9728c6913601ec54ade4a979b685e4fff0e8f7cbef26a4af7e767949cd57f09"
+      }
+    },
+    "docs__cookbooks__cmmc-agent-and-enclave": {
+      "title": {
+        "text": "CMMC Agent and enclave scripts",
+        "source_sha256": "e7a17e9293cffdd40c751925390990e2bd7d1d06b05ce8259c2e7775307e4aa4"
+      },
+      "summary": {
+        "text": "Which cookbook to open and which kit actions are refused.",
+        "source_sha256": "5649e6150b3747e8c7d5eec379d592035a6545bc63f98523cd6f78b7ca821534"
+      }
+    },
+    "docs__cookbooks__cmmc-enclave-build": {
+      "title": {
+        "text": "CMMC enclave scripted build",
+        "source_sha256": "df71a02325f9773b0837c7c910c82edc85c3ceaefd57bcfec0a651359971a2e4"
+      },
+      "summary": {
+        "text": "Local lab seats versus customer cloud. Build order by package level.",
+        "source_sha256": "0584b129096afe527fb99fdb690ca1cce605cf09d61c58add6a6a4a0a75734fb"
+      }
+    },
+    "docs__cookbooks__cmmc-agent-configuration": {
+      "title": {
+        "text": "CMMC Agent configuration",
+        "source_sha256": "267e8c11027c9660e3c5f4aec1233b080c405f22fcc06edb87383643c486cc2f"
+      },
+      "summary": {
+        "text": "Internal enclave Agent versus external workstation posture Agent.",
+        "source_sha256": "b131d975651026bff46eda01836e39613451a70e8374265943935ac30263dc12"
+      }
+    },
+    "docs__guides": {
+      "title": {
+        "text": "Guides",
+        "source_sha256": "572cd72feb9a84e0c639af3ccae73f3a4406f69fe193eac69ab0678eee32baff"
+      },
+      "summary": {
+        "text": "MSP / C3PAO demo walkthrough and Auditor Setup.",
+        "source_sha256": "97e0714424f0e1512bcabefe0f61d554a156dc6c1c86f58daec27854389b6127"
+      }
+    },
+    "docs__guides__msp-c3pao-demo": {
+      "title": {
+        "text": "MSP and C3PAO demo guide",
+        "source_sha256": "b712115e3c3fc88ad5ea86b2c4124371167802ace19bbe311e70770fc109b8ac"
+      },
+      "summary": {
+        "text": "Learn the demo. This is not a certified enclave.",
+        "source_sha256": "d37e9f58daba632568c13e38523bf34bdcd13b31ba2044e05b68269984e1c40d"
       }
     }
   },
