@@ -376,10 +376,10 @@
       "kind": "help-manual",
       "title": "Settings language packs and flag chrome",
       "added": "2026-08-18",
-      "updated": "2026-08-19",
+      "updated": "2026-08-20",
       "source_repo": "pim-offline-server",
       "source_path": "ui/src/i18n/locales/en/common.json",
-      "source_sha256": "25c07b09324da667c922f96356e32c6caeceefde67877149ce784237f36ed245",
+      "source_sha256": "569d53d308cffaf992534a78ee170f9f9e7a5b4c1de12df0d54b6ba3115bf611",
       "product_route": "",
       "required_tags": [
         "de",
@@ -389,7 +389,7 @@
         "zh-Hans"
       ],
       "draft_tags": [],
-      "notes": "Source changed 2026-08-19 (hash d85466fa5a14 → 25c07b09324d)."
+      "notes": "Source changed 2026-08-19 (hash d85466fa5a14 → 25c07b09324d). Source changed 2026-08-20 (hash 25c07b09324d → 569d53d308cf)."
     },
     {
       "id": "about.open-source-credits",
@@ -1171,6 +1171,30 @@
         "de"
       ],
       "notes": "Shared WiX chrome for Agent, WA, DB, Jump, Recording, and License Management. US English source. German formal Sie is a draft. Partial until remaining Tier 1 tags are reviewed. Does not close installer.aic-server-service."
+    },
+    {
+      "id": "spa.localization-settings",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "spa-chrome",
+      "title": "Settings Localization page chrome",
+      "added": "2026-08-20",
+      "updated": "2026-08-20",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/i18n/locales/en/common.json",
+      "source_sha256": "569d53d308cffaf992534a78ee170f9f9e7a5b4c1de12df0d54b6ba3115bf611",
+      "product_route": "/settings/localization",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans"
+      ],
+      "draft_tags": [
+        "de"
+      ],
+      "notes": "New Localization page chrome. Agent draft de only; other Tier 1 tags remain open. Enabling a language is not Met or certified."
     }
   ]
 }
