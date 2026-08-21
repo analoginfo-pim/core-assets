@@ -1,0 +1,63 @@
+{
+  "format": "aic-auditor-playbook/v1",
+  "package_version": 1,
+  "slug": "cmmc-agent-seed",
+  "title": "CMMC Agent seed (always connected)",
+  "description": "Packaging playbook for seeding the existing AIC Agent in a well-known Cybersecurity Maturity Model Certification environment. Points at official NIST SP 800-53 short titles already in the product (CM-2 Baseline Configuration, AC-6 Least Privilege, CM-6 Configuration Settings, IA-5 Authenticator Management). Does not invent unofficial CMMC control bodies. Does not mark Met.",
+  "company_name": "",
+  "target_standard": "cmmc",
+  "target_level": "1",
+  "catalog_coverage": "scaffold",
+  "is_system": true,
+  "locale": "en-US",
+  "sections": [
+    {
+      "section_key": "cover",
+      "title": "Cover sheet",
+      "field_kind": "section_narrative",
+      "completeness": "complete",
+      "ordinal": 0,
+      "response_text": "<h2 class=\"binder-rt-lg\">CMMC Agent seed</h2>\n<p>Prepared by <strong>{auditor_name}</strong> (<strong>{company}</strong>) on <strong>{date}</strong>.</p>\n<p>This playbook packages the <strong>existing</strong> Agent, elevation helper, and workstation desktop recipe. It is not a second Agent and not a certification.</p>\n<p>Two roles use the same installer: an <strong>enclave security-management Agent</strong> on isolated seats, and an <strong>external posture Agent</strong> on user workstations and laptops. External install is generally <strong>manual plus the existing settings.json v3 file</strong> from the settings wizard. Windows Group Policy or Microsoft Entra / Microsoft Intune may also deploy that same file when the customer already has those tools.</p>\n<p>Status words are Live, Partial, Absent, BLOCKED, and N/A. An assessor decides Met after evidence review.</p>\n<p>Follow the operator cookbook: seed creates the first secure connection; the Agent installs; the Agent checks in; the server pushes remaining settings; the Agent may sleep but stays enrolled. Offline mode is not the package default.</p>"
+    },
+    {
+      "section_key": "architecture",
+      "title": "Architecture and operating model",
+      "field_kind": "section_narrative",
+      "completeness": "complete",
+      "ordinal": 1,
+      "response_text": "<h2 class=\"binder-rt-lg\">What to cite (existing product pages)</h2>\n<p>Organization: <strong>{org_legal_name}</strong>. System: <strong>{system_enclave_name}</strong>.</p>\n<ul>\n<li><strong>CM-2 — Baseline Configuration</strong> — Tenants / settings wizard enrollment token; Agent settings import; Systems list first check-in.</li>\n<li><strong>CM-6 — Configuration Settings</strong> — Agent Management connected settings after check-in (server remote config).</li>\n<li><strong>IA-5 — Authenticator Management</strong> — Enrollment token shown once; Agent service identity; no everyday-user Agent login.</li>\n<li><strong>AC-6 — Least Privilege</strong> — Elevation helper on the same workstation. Everyday user is not a standing administrator. Request, approve or allow by policy, record, then end.</li>\n</ul>\n<p>CMMC packaged posture: always connected. Sleep is allowed. Offline mode is not the default.</p>\n<p>Do not invent unofficial practice text. Official short titles stay in the authority language.</p>"
+    },
+    {
+      "section_key": "external_device_install",
+      "title": "External device — manual install + configuration file",
+      "field_kind": "section_narrative",
+      "completeness": "complete",
+      "ordinal": 2,
+      "response_text": "<h2 class=\"binder-rt-lg\">External device — manual install + configuration file</h2>\n<p>The <strong>external</strong> posture Agent is the same customer installer as the enclave Agent. The first secure connection is the existing wizard <strong>settings.json v3</strong> file (connected managed). The operator downloads it from the settings wizard or Manage issuances, copies it onto the laptop, installs the Agent, and imports the file. Runtime after import is the product configuration store — not an environment variable.</p>\n<p>Two more external paths reuse the customer’s tools (we do not replace them):</p>\n<ul>\n<li>Windows Group Policy software install plus a SYSTEM import of the same file. Do not put the token in a user-readable share.</li>\n<li>Microsoft Entra / Microsoft Intune (or another mobile device manager) Win32 or line-of-business install plus the same import. Entra console sign-in is not fleet enrollment.</li>\n</ul>\n<p>A standing domain administrator on a home laptop is not the default. Check-in on the systems list is the proof. Install success alone is not Met.</p>"
+    },
+    {
+      "section_key": "current_state_gaps",
+      "title": "Current-state compliance and gaps",
+      "field_kind": "section_narrative",
+      "completeness": "complete",
+      "ordinal": 8,
+      "response_text": "<h2 class=\"binder-rt-lg\">Honest delivery status</h2>\n<ul>\n<li><strong>Live</strong> — Enrollment token mint; connected-managed settings issue; Agent register and check-in; lab elevation mint on the known Windows lab path; LibreOffice and Thunderbird <em>install recipes</em>; AIC Server desktop-link helper.</li>\n<li><strong>Partial</strong> — Remote connected-settings write (allowlisted scalars); encrypted Controlled Unclassified Information mail beyond notifications (often Level 2 / Level 3); systems-list <code>agent.version</code> may stay null after a live check-in until stored enrichment has <code>/agent/version</code>.</li>\n<li><strong>Absent</strong> — Organization required Agent version and organization-owned update policy (how new versions are downloaded and installed). The organization decides download and install (manual, Group Policy, or Microsoft Entra). Do not invent a second updater.</li>\n<li><strong>BLOCKED</strong> — Golden-image apply of workstation apps from the server host this session; Mac Agent unless a named seat checked in; Microsoft Entra / Intune prove when the lab has no Entra tenant.</li>\n</ul>\n<p>Checkboxes for the operator (not Met):</p>\n<ul>\n<li>[ ] Enrollment token or settings file issued (first secure connection).</li>\n<li>[ ] Agent installed and checked in on the named workstation.</li>\n<li>[ ] Server pushed remaining settings or Partial is recorded.</li>\n<li>[ ] Elevation helper installed; one lab-identity elevation recorded (liebsoft or lanicu only).</li>\n<li>[ ] LibreOffice installed on the workstation, or image apply marked BLOCKED.</li>\n<li>[ ] Desktop shortcut named AIC Server uses the real AIC icon and the configured public URL.</li>\n<li>[ ] Thunderbird (encrypted-mail client) installed, or image apply marked BLOCKED. Shortcut named Encrypted mail.</li>\n</ul>"
+    },
+    {
+      "section_key": "evidence_index",
+      "title": "Evidence index by practice",
+      "field_kind": "section_narrative",
+      "completeness": "complete",
+      "ordinal": 10,
+      "response_text": "<h2 class=\"binder-rt-lg\">Evidence index</h2>\n<p>Cite product pages — not unofficial control bodies.</p>\n<ul>\n<li>Tenants enrollment tokens; settings wizard issuances.</li>\n<li>Systems / endpoints last check-in and enrollment state.</li>\n<li>Agent Management connected settings.</li>\n<li>Elevation platform requests and audit rows.</li>\n<li>Current State Compliance Next Steps (get Agents in; elevation included).</li>\n</ul>\n<p>Workstation apps (LibreOffice, Thunderbird, AIC Server desktop link) are environment packaging. They are not a Met stamp for any control.</p>"
+    },
+    {
+      "section_key": "assessor_notes",
+      "title": "Assessor notes and interview log",
+      "field_kind": "section_narrative",
+      "completeness": "complete",
+      "ordinal": 13,
+      "response_text": "<h2 class=\"binder-rt-lg\">Assessor notes</h2>\n<p>Ask how the first secure connection was minted and whether the Agent stayed in connected mode after check-in.</p>\n<p>Ask whether elevation is the included helper on the same workstation, and which identities were used for a recorded test (lab identities only in the lab).</p>\n<p>Ask whether LibreOffice and Thunderbird were applied on the seat or remain a documented recipe. Encrypted mail capability of the client is not proof that Controlled Unclassified Information mail is in use.</p>\n<p>This text does not mark a control Met.</p>"
+    }
+  ]
+}

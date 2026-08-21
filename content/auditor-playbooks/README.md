@@ -49,6 +49,7 @@ Current package series: **`package_version` = 8** (structured rich HTML section 
 | `scaffold-gdpr` | `gdpr` | _(empty)_ | **scaffold** | No binder section catalog yet |
 | `scaffold-california` | `california` | _(empty)_ | **scaffold** | CCPA/CPRA — no binder catalog yet |
 | `scaffold-spec-24` | `ata_spec_2400` | _(empty)_ | **scaffold** | Spec 24 / ATA Spec 2400 public-documentation alignment — **not a licensed standard**; mapping not guaranteed; not endorsed by licensors |
+| `cmmc-agent-seed` | `cmmc` | `1` | **scaffold** | Existing Agent seed (always connected), elevation on the workstation, LibreOffice / Thunderbird / AIC Server desktop recipe. Points at CM-2, AC-6, CM-6, IA-5 short titles. Not Met. |
 
 Section keys match `default_section_outline()` in `src/auditor_binder/defaults.rs`.
 Level-specific packs include only keys the binder profile includes for that level

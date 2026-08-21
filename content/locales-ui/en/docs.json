@@ -74,8 +74,8 @@
         "source_sha256": "6623ff55741761694cc60ea3e767301b9c1d248b65de5f46d388d0c9a1d9ab56"
       },
       "description": {
-        "text": "Guide to auditor setup and configuration, plus chapters on reviewing evidence.",
-        "source_sha256": "0912028a5e5c2ff09a9f8c53278974f7124623d928e20bacccb20502b4156e60"
+        "text": "CMMC Level 1, 2, and 3 auditor manuals, plus the assessor working guide. Setup is a separate page below Auditor Manuals.",
+        "source_sha256": "80af5a993ae8790517e89c7f1b94b170bd72c251308f53e29bd0f358ebea3d67"
       }
     },
     "admin": {
@@ -925,12 +925,12 @@
   },
   "auditor": {
     "title": {
-      "text": "Auditor manuals",
-      "source_sha256": "6623ff55741761694cc60ea3e767301b9c1d248b65de5f46d388d0c9a1d9ab56"
+      "text": "Using AIC Server as an assessor",
+      "source_sha256": "eed9c29530edb36366f4668df1f229a6b28fc20d86ab833ffff82df0937e7a42"
     },
     "intro": {
-      "text": "Start with the Auditor Setup and Configuration Guide when setting up assessors. The later chapters are reading guides for people reviewing evidence, binders and audit trails without fix-it rights. Binder status labels must remain honest (Implemented / Partial / Planned). This product does not invent any FedRAMP, CMMC, or FIPS certification claims for you.",
-      "source_sha256": "03b50a7cf0587fd4ee40804b78cbfac251d448306964d217a6a540b7727bf2f5"
+      "text": "Read-oriented guides for people who review evidence, binders, and audit trails without Fix-It privileges. Staff accounts with the Auditor Setup Guide. Use the CMMC Level 1, 2, and 3 manuals for framework overviews. Binder status labels must stay honest (Implemented / Partial / Planned). This product does not invent FedRAMP, CMMC, or FIPS certification claims for you.",
+      "source_sha256": "58ab7e1ff155a0228f52fea6bcdde4a690a209128c336cc4ea581ec62b9ec3cd"
     },
     "chapters": {
       "assessment-binder": {
@@ -2356,5 +2356,107 @@
   "openapiResourceLabel": {
     "text": "OpenAPI-Explorer",
     "source_sha256": "84aec404e7c3226303f0bd0eb6424a919ba981bcdf0fba365bc7f6802882fe2b"
+  },
+  "auditorIndex": {
+    "title": {
+      "text": "Auditor manuals",
+      "source_sha256": "6623ff55741761694cc60ea3e767301b9c1d248b65de5f46d388d0c9a1d9ab56"
+    },
+    "intro": {
+      "text": "Choose a CMMC level manual or the assessor working guide. Staff accounts with the Auditor Setup Guide, which is a separate page under Documentation.",
+      "source_sha256": "41908f58a3b133c54c5f45b3c5199f448a6845c9fd1e3236319df7a6ed212d96"
+    },
+    "cards": {
+      "cmmcL1": {
+        "label": {
+          "text": "Auditing CMMC Level 1",
+          "source_sha256": "cae42d1e4e3aca096014d70d7567b8b45b7a91aaa33e03b8194ff4c0ab179ef4"
+        },
+        "description": {
+          "text": "Foundational FAR 52.204-21 / CMMC Level 1 practices for Federal Contract Information, and how AIC Server can support each family.",
+          "source_sha256": "7182d40f81504e4f1e85b7ab5d22d42b8a9950ff79018dae4d946cc5c07615bd"
+        }
+      },
+      "cmmcL2": {
+        "label": {
+          "text": "Auditing CMMC Level 2",
+          "source_sha256": "0f2b3fcbf9c61a8491528a004a2547c89976f1dd13b2ad1821f925bd6f13b062"
+        },
+        "description": {
+          "text": "NIST SP 800-171 / CMMC Level 2 families for Controlled Unclassified Information, and how to use the product for each family.",
+          "source_sha256": "b1a6d4283497066b80f65860e1ca3a3ba324a8dd7cfd7cc7fe069d9db4285801"
+        }
+      },
+      "cmmcL3": {
+        "label": {
+          "text": "Auditing CMMC Level 3",
+          "source_sha256": "ba5434c6dac48290089152b933ee44282772051573923a07bdb32396af61e9a2"
+        },
+        "description": {
+          "text": "Selected NIST SP 800-172 enhancements. Level 3 is not Level 2 plus a toggle. Read Enhanced Controls honesty notes.",
+          "source_sha256": "d46a11432a778c51ed89197dc459e57112ef67e51c861f17e3833e279ffbc64b"
+        }
+      },
+      "working": {
+        "label": {
+          "text": "Using AIC Server as an assessor",
+          "source_sha256": "eed9c29530edb36366f4668df1f229a6b28fc20d86ab833ffff82df0937e7a42"
+        },
+        "description": {
+          "text": "Binder, reports, Current State, auditing, Enhanced Controls, and export hygiene for read-oriented assessor work.",
+          "source_sha256": "3e05de24305555056acd3a2c72740e634228fb1c8a7127076a25bf3bdeffcacb"
+        }
+      },
+      "setup": {
+        "label": {
+          "text": "Auditor Setup Guide",
+          "source_sha256": "66eed74ada8a3d046c4bf3c5fa21eee29a19ef442ba7b9970ed1f8ad77cdfa5b"
+        },
+        "description": {
+          "text": "How to staff auditors on the shared Sign in page, which groups to assign, and where to configure them.",
+          "source_sha256": "6e057636f7d0406eabdb497fcc542ea3f6e49dacb024974ff836826cb12b48bd"
+        }
+      }
+    }
+  },
+  "auditorSetupPage": {
+    "title": {
+      "text": "Auditor Setup Guide",
+      "source_sha256": "66eed74ada8a3d046c4bf3c5fa21eee29a19ef442ba7b9970ed1f8ad77cdfa5b"
+    },
+    "intro": {
+      "text": "How to staff auditors on the shared Sign in page, which groups to assign, and where to configure them. CMMC level manuals and the assessor working guide live under Auditor Manuals.",
+      "source_sha256": "52617ca34065a34064aa837205b5977c209635374943bbf188b6b8a7f1b6dc31"
+    }
+  },
+  "auditorCmmcL1": {
+    "title": {
+      "text": "Auditing CMMC Level 1",
+      "source_sha256": "cae42d1e4e3aca096014d70d7567b8b45b7a91aaa33e03b8194ff4c0ab179ef4"
+    },
+    "intro": {
+      "text": "Overview of CMMC Level 1 (Federal Contract Information / FAR 52.204-21 practices) and how to use AIC Server to support each family. This is a starting outline. Practice-level product steps will be added later. The product does not certify your organization.",
+      "source_sha256": "ce17b46ded95539201055e89c6785cba05efe4a234d585ad660302baa39cb166"
+    }
+  },
+  "auditorCmmcL2": {
+    "title": {
+      "text": "Auditing CMMC Level 2",
+      "source_sha256": "0f2b3fcbf9c61a8491528a004a2547c89976f1dd13b2ad1821f925bd6f13b062"
+    },
+    "intro": {
+      "text": "Overview of CMMC Level 2 (NIST SP 800-171 practices for CUI) and how to use AIC Server to support each family. This is a starting outline. Practice-level product steps will be added later. The product does not certify your organization.",
+      "source_sha256": "d03284b1803adb04b8651d785d2e798eb20ea59564fece603ebd56097fafed44"
+    }
+  },
+  "auditorCmmcL3": {
+    "title": {
+      "text": "Auditing CMMC Level 3",
+      "source_sha256": "ba5434c6dac48290089152b933ee44282772051573923a07bdb32396af61e9a2"
+    },
+    "intro": {
+      "text": "Overview of CMMC Level 3 (selected NIST SP 800-172 enhancements). Level 3 is not Level 2 plus a product toggle. Use Enhanced Controls honesty notes. The product never reports Met for Level 3 and never claims Level 3 certification.",
+      "source_sha256": "982000e54d4ed4c9b207243de7ad6648d4b234bccfd14caeb36101a0965f49d2"
+    }
   }
 }
