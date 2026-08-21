@@ -1,0 +1,74 @@
+---
+description: AIC repos stay on main; never use local/reporting-integration; branch only on Robert’s repos
+alwaysApply: true
+---
+
+# Work on `main` except Robert’s repos (hard rule)
+
+Operator directive (Phil, 2026-08-21), verbatim intent:
+
+> **It was an error to develop on `local/reporting-integration`. Hard
+> rule: stop using `local/reporting-integration` and stick to `main`.**
+
+## The rule
+
+> **AIC-owned repos under `c:\analog-pim` take new work on `main` only.
+> `local/reporting-integration` and any other AIC feature branch are
+> forbidden for new work. Branch only on Robert’s repos (mix-server,
+> massman, pim-disc, and siblings). Never check out
+> `local/reporting-integration` to continue CMMC or AIC Server work.**
+
+## AIC repos — `main` only
+
+Applies especially to `pim-offline-server`, `pim-offline-client`,
+`pim-installers`, and `core-assets`, and to every other AIC-owned repo
+in this workspace.
+
+| Action | Required |
+| --- | --- |
+| New CMMC / server / client / installer / assets work | On `main` |
+| Continue leftover CMMC files not already on `origin/main` | Worktree or cherry-pick **those paths only** onto `main` |
+| Current branch check | `git status -sb` / `git branch --show-current` before edits |
+
+## Forbidden
+
+- `git checkout local/reporting-integration` (or any equivalent) to
+  “continue” CMMC, PAM, or AIC Server work
+- Starting or landing new AIC work on `local/reporting-integration` or
+  any other AIC feature branch
+- `git push --force` / `--force-with-lease` to `main` / `master`
+- `git reset --hard` on the shared dirty tree
+  ([`shared-working-tree-is-not-yours.mdc`](shared-working-tree-is-not-yours.mdc))
+
+## Exception — Robert’s repos only
+
+Feature branches are allowed **only** in Robert’s trees: `mix-server`,
+`massman`, `pim-disc`, and siblings. Prefer reuse, then AIC-owned fork
+when locked ([`reuse-robert-core-first.mdc`](reuse-robert-core-first.mdc),
+[`fork-locked-robert-repos.mdc`](fork-locked-robert-repos.mdc)). Do not
+treat that exception as permission to branch AIC Server or `core-assets`.
+
+## Recovering leftover CMMC files
+
+If paths exist only on `local/reporting-integration` and are **not** on
+`origin/main`:
+
+1. Stay on (or return to) `main` in the shared working tree.
+2. Use a **separate worktree** or `git cherry-pick` / `git checkout
+   <sha> -- <path>` for **those paths only**.
+3. Stage explicit paths; commit on `main`; never `git add -A`.
+4. Never force-push. Never `reset --hard`.
+
+## Worked violation → fix
+
+**Violation:** Agent checks out `local/reporting-integration` to finish a
+CMMC seed or server UI slice, then commits there.
+
+**Fix:** `git switch main`. If the files are not on `origin/main`, bring
+**those paths only** via worktree or cherry-pick. Leave sibling dirty
+files untouched.
+
+## Origin
+
+2026-08-21 — operator: developing on `local/reporting-integration` was
+an error; AIC work stays on `main`; that branch is banned.
