@@ -29,6 +29,19 @@ Operator clones and edited playbooks are **never** wiped on boot.
 
 Current package series: **`package_version` = 8** (structured rich HTML section narratives — headings, short paragraphs, and lists — plus deep binder-instance wall refresh on ensure / admin API).
 
+## Preconfigured operating packages (select these; do not fork the product)
+
+CMMC Level 1 / 2 / 3 are the **priority** demo packages. NIST SP 800-53 is the enterprise fourth option (full product menu). Same four choices for **lab** and **cloud**. Empty operating level = chooser / full menu. `nist-800-53` explicitly selects full visibility. Never Met / certified / High Met.
+
+| Operator option | `CMMC_OPERATING_LEVEL` | Binder playbook slug | Menu |
+| --- | --- | --- | --- |
+| **CMMC Level 1 Fast** | `l1-fast` | `generic-cmmc-l1` | Shortest demo menu |
+| **CMMC Level 2** | `l2-isolated` | `generic-cmmc-l2` | Tailored Level 2 |
+| **CMMC Level 3** | `l3-overlay` | `generic-cmmc-l3` | Overlay; not Level 2 plus a toggle |
+| **NIST SP 800-53** | `nist-800-53` | `generic-nist-800-53-moderate` | Everything visible and enabled |
+
+`generic-nist-800-53-high` remains a catalog pack for High *packaging*. It is **not** the enterprise operating option and is **not** a High Met claim. 800-53 moderate is the floor.
+
 ## Profile mapping (consume these in product)
 
 | File slug | Binder `target_standard` | `target_level` | Catalog | Notes |
