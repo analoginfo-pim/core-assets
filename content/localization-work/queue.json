@@ -1195,6 +1195,75 @@
         "de"
       ],
       "notes": "New Localization page chrome. Agent draft de only; other Tier 1 tags remain open. Enabling a language is not Met or certified."
+    },
+    {
+      "id": "spa.demo-license-banner",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "spa-chrome",
+      "title": "Demo evaluation license banner",
+      "added": "2026-08-20",
+      "updated": "2026-08-20",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/i18n/locales/en/components.json",
+      "source_sha256": "0185a76ad6f8402a2d4daa70f20ab37b4969cb40380b2d0b3b13c48acb117e14",
+      "product_route": "/",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW",
+        "ar",
+        "fi",
+        "sv",
+        "tr",
+        "nl",
+        "ja",
+        "he",
+        "it",
+        "ko",
+        "pl",
+        "pt-BR"
+      ],
+      "notes": "US English demoLicenseBanner.title/body/requestLicense/cancel added; agent drafts in every picker pack. Access/session warning chrome labels were already catalog-driven. Banner body English leak is server disclosure content (locales/*/disclosures.json + stored profile), not missing SPA keys. Agent drafts do not close. Enabling a language is not Met."
+    },
+    {
+      "id": "spa.localization-page-headers",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "spa-chrome",
+      "title": "Settings Localization page headers",
+      "added": "2026-08-20",
+      "updated": "2026-08-20",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/i18n/locales/en/pages.json",
+      "source_sha256": "cb97beeeb07c533c511215a38d4221bdfb9af45bc8d6e38a6f1363bf2f424cc5",
+      "product_route": "/settings/localization",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [
+        "it",
+        "ja",
+        "ko",
+        "pt-BR"
+      ],
+      "notes": "New EN headers.settings__localization keys. Agent drafts landed in derived packs; review required. Not closed."
     }
   ]
 }
