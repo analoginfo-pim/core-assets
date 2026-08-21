@@ -1,0 +1,57 @@
+---
+description: Do not damage BEAVIS2 or the phil account — host is not a disposable enclave
+alwaysApply: true
+---
+
+# Do not damage BEAVIS2 or the phil account
+
+Operator hard rule (Phil, 2026-08-21): **Do not damage BEAVIS2 or the phil account.**
+
+This rule **does not weaken**
+[`beavis2-lab-hard-rules.mdc`](beavis2-lab-hard-rules.mdc) (rotation
+identities, SoftHSM, never rotate `phil`) or
+[`host-session-safety.mdc`](host-session-safety.mdc) (no surprise reboot,
+startup wipe, or desktop-session damage). It adds a ship/QA ban: the
+lab **host** is not a disposable enclave image.
+
+## The rule
+
+> **Beavis2 is the operator console and AIC Server host. `phil` stays in
+> local Administrators. Never rotate, rename, disable, or remove `phil`.
+> Never treat the host Agent or host desktop as a throwaway enclave
+> seat. Shipping scripts, cookbooks, or “make the kit reachable” is not
+> permission to reset the lab, kill services, or uninstall the host
+> Agent.**
+
+## Forbidden without explicit same-message consent
+
+- Destructive lab reset (`db-init --confirm`, `Restore-Beavis2Lab.ps1`
+  except when the operator named that restore, `seed-dev --reset`)
+- Stopping or recycling `aic-server-service` / `aic-offline-agent-service`
+  “to ship scripts” or “to prove the kit”
+- Host Agent uninstall / `-Uninstall` / service delete on Beavis2
+- `Deploy-OfflineAgentDev.ps1` against the operator daily desktop as if
+  it were an enclave image
+- Password rotation, group membership, or `--force` rotate against `phil`
+- Public-demo terraform / `deploy/azure/deploy.sh` / cargo clean
+
+## Required
+
+- Rotation / elevation lab identities remain **`liebsoft`** and **`lanicu`**
+  only ([`beavis2-lab-hard-rules.mdc`](beavis2-lab-hard-rules.mdc)).
+- Prefer leaving `aic-server-service` Running.
+- Enclave seats are Docker / Hyper-V / customer VMs — **not** Beavis2.
+
+## Worked violation → fix
+
+**Violation:** An agent uninstalls `aic-offline-agent-service` on Beavis2
+to “test the CMMC seed script,” or runs `db-init` so a cookbook looks
+clean.
+
+**Fix:** Document and stage scripts only. Run `-?` / parse / required-list
+grep. Live Agent QA stays on a **named seat**, never the host.
+
+## Origin
+
+2026-08-21 — operator: do not damage BEAVIS2 or the phil account while
+shipping enclave/agent scripts.

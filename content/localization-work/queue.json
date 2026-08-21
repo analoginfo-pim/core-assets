@@ -7,25 +7,22 @@
       "priority": "tier-1",
       "kind": "help-manual",
       "title": "Auditor Setup and Configuration Guide",
-      "added": "2026-08-17",
-      "updated": "2026-08-19",
+      "added": "2026-08-21",
+      "updated": "2026-08-21",
       "source_repo": "pim-offline-server",
       "source_path": "ui/src/pages/docs/auditorSetupGuide.ts",
-      "source_sha256": "4560141b05548ca76bf2af819db417992592e47f3696de91011c937f4fe43814",
-      "product_route": "/docs/auditor#chapter-setup",
+      "source_sha256": "11f0c97258e8b3bd848a89db937783440ac9b2572d24bfa117d0ad6f7b83465b",
+      "product_route": "/docs/auditor/setup",
       "required_tags": [
         "de",
         "fr",
         "es",
         "en-GB",
-        "zh-Hans"
+        "zh-Hans",
+        "zh-TW"
       ],
-      "draft_tags": [
-        "de",
-        "fr",
-        "es"
-      ],
-      "notes": "New Help chapter for auditor RBAC tiers, seed accounts, and configuration links. Agent drafts exist for de/fr/es; they need professional review. en-GB and zh-Hans catalogs are missing — do not claim Tier 1 complete. Source changed 2026-08-19 (hash e3f8e805d101 → 4560141b0554)."
+      "draft_tags": [],
+      "notes": "Setup is now a sibling page under Documentation, below Auditor Manuals. Agent drafts do not close this item."
     },
     {
       "id": "spa.live-session-file-transfer",
@@ -1264,6 +1261,254 @@
         "pt-BR"
       ],
       "notes": "New EN headers.settings__localization keys. Agent drafts landed in derived packs; review required. Not closed."
+    },
+    {
+      "id": "docs.auditor-cmmc-level-1",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "help-manual",
+      "title": "Auditing CMMC Level 1",
+      "added": "2026-08-21",
+      "updated": "2026-08-21",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/pages/docs/cmmcLevelManuals.ts",
+      "source_sha256": "fee9b6e8e443e3f81906861dde07898cc17af20ff986c011c8cbea30cd8eb776",
+      "product_route": "/docs/auditor/cmmc-level-1",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [],
+      "notes": "Family-level stub. Practice-level product steps come later. Agent English drafts in catalogs are not close."
+    },
+    {
+      "id": "docs.auditor-cmmc-level-2",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "help-manual",
+      "title": "Auditing CMMC Level 2",
+      "added": "2026-08-21",
+      "updated": "2026-08-21",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/pages/docs/cmmcLevelManuals.ts",
+      "source_sha256": "fee9b6e8e443e3f81906861dde07898cc17af20ff986c011c8cbea30cd8eb776",
+      "product_route": "/docs/auditor/cmmc-level-2",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [],
+      "notes": "Family-level stub for 800-171 / CMMC L2. Agent drafts do not close."
+    },
+    {
+      "id": "docs.auditor-cmmc-level-3",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "help-manual",
+      "title": "Auditing CMMC Level 3",
+      "added": "2026-08-21",
+      "updated": "2026-08-21",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/pages/docs/cmmcLevelManuals.ts",
+      "source_sha256": "fee9b6e8e443e3f81906861dde07898cc17af20ff986c011c8cbea30cd8eb776",
+      "product_route": "/docs/auditor/cmmc-level-3",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [],
+      "notes": "800-172 enhanced stub. L3 is not L2 plus toggles. Agent drafts do not close."
+    },
+    {
+      "id": "docs.auditor-manuals-index",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "help-manual",
+      "title": "Auditor Manuals index",
+      "added": "2026-08-21",
+      "updated": "2026-08-21",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/pages/docs/AuditorManualsIndexPage.tsx",
+      "source_sha256": "ac2076c144e96b1e03a758c2e9513874bfac677218d37666229e98081f1d3cff",
+      "product_route": "/docs/auditor",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [],
+      "notes": "Index of multiple auditor manuals. Setup is a sibling route."
+    },
+    {
+      "id": "cmmc.cookbooks",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "help-manual",
+      "title": "CMMC customer-environment cookbooks (US English source)",
+      "added": "2026-08-21",
+      "updated": "2026-08-21",
+      "source_repo": "pim-offline-server",
+      "source_path": "docs/dev/msp-identity-environment-cookbooks-20260821.md",
+      "source_sha256": "8b11746b1021a5d3da21deee249c2de0b710723ec4a311b28439ec68f0c15d21",
+      "product_route": "",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [],
+      "notes": "Source is US English only for now. Serve en regardless of ui_locale or DISPLAY language. Do not close until reviewed catalogs exist. Do not invent translations this slice. Official CMMC/NIST control bodies stay English. Other standards later means other framework packs, not unofficial CMMC translations. Source changed 2026-08-21 (hash 63a2903e27b1 → 8b11746b1021)."
+    },
+    {
+      "id": "cmmc.demo-training-guide",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "help-manual",
+      "title": "MSP and C3PAO demo training guide (US English source)",
+      "added": "2026-08-21",
+      "updated": "2026-08-21",
+      "source_repo": "pim-offline-server",
+      "source_path": "docs/ops/sop-demo-msp-c3pao-training-guide.md",
+      "source_sha256": "9d26b47e5a3130917bdda8e87faca02c24aa7a8f773025369a4a0d76a609207b",
+      "product_route": "",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [],
+      "notes": "Prepared for localization. Catalogs not shipped yet. Do not author agent-draft de/fr/es packs this slice. Do not close until reviewed catalogs exist. Operator manual register, not workforce grade-6."
+    },
+    {
+      "id": "docs.cmmc-agent-seed-sop",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "help-manual",
+      "title": "CMMC Agent seed always-connected SOP",
+      "added": "2026-08-21",
+      "updated": "2026-08-21",
+      "source_repo": "pim-offline-server",
+      "source_path": "docs/ops/sop-cmmc-agent-seed-always-connected.md",
+      "source_sha256": "585d460966e7aca019b57602d8e01df2c057ee0cdb12e28db764b997fe4791ff",
+      "product_route": "",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans"
+      ],
+      "draft_tags": [],
+      "notes": "US English source only. Do not close with agent-draft translations. Manuals exception: prepared, not localized. Source changed 2026-08-21 (hash add485a28f60 → e6759e3d939e). Source changed 2026-08-21 (hash e6759e3d939e → 9446853c0465). Source changed 2026-08-21 (hash 9446853c0465 → 585d460966e7)."
+    },
+    {
+      "id": "docs.cmmc-agent-lifecycle-sop",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "help-manual",
+      "title": "CMMC Agent lifecycle and admin access SOP",
+      "added": "2026-08-21",
+      "updated": "2026-08-21",
+      "source_repo": "pim-offline-server",
+      "source_path": "docs/ops/sop-cmmc-agent-lifecycle-admin-access.md",
+      "source_sha256": "64879a774ebe1618a86da8ade0db31b91d4fafe650c24deb148c2ffc34496ed7",
+      "product_route": "",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans"
+      ],
+      "draft_tags": [],
+      "notes": "US English source only. Prepared, not localized. Covers enclave vs external, settings.json v3, Group Policy, Microsoft Entra. Source changed 2026-08-21 (hash 9d40590994d7 → ecc8cbfd05f1). Source changed 2026-08-21 (hash ecc8cbfd05f1 → 64879a774ebe)."
+    },
+    {
+      "id": "cmmc.agent-configuration",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "help-manual",
+      "title": "CMMC internal and external Agent configuration SOP",
+      "added": "2026-08-21",
+      "updated": "2026-08-21",
+      "source_repo": "pim-offline-server",
+      "source_path": "docs/ops/sop-cmmc-internal-and-external-agent-configuration.md",
+      "source_sha256": "7864795cefaf3b5ff6d6d8789a45b4e779eeab8a050b640f4aa6ce02c6a09287",
+      "product_route": "",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans"
+      ],
+      "draft_tags": [],
+      "notes": "US English source only. Prepared, not localized. Covers enclave and external Agent configuration. Do not close with agent-draft translations. Not an in-product Documentation chapter."
+    },
+    {
+      "id": "cmmc.enclave-scripted-build",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "help-manual",
+      "title": "CMMC enclave scripted-build SOP",
+      "added": "2026-08-21",
+      "updated": "2026-08-21",
+      "source_repo": "pim-offline-server",
+      "source_path": "docs/ops/sop-cmmc-enclave-scripted-build.md",
+      "source_sha256": "8500426370e2fdb21d9ce165923062740729ed19bc5b8e4bc47a7abdbe31585d",
+      "product_route": "",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans"
+      ],
+      "draft_tags": [],
+      "notes": "US English source only. Prepared, not localized. Do not close with agent-draft translations. Covers scripted Windows/Linux/local/cloud enclave build and MSI kit."
+    },
+    {
+      "id": "cmmc.agent-enclave-script-cookbook",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "help-manual",
+      "title": "CMMC Agent and enclave script cookbook index",
+      "added": "2026-08-21",
+      "updated": "2026-08-21",
+      "source_repo": "pim-offline-server",
+      "source_path": "docs/ops/cookbook-cmmc-agent-and-enclave-scripts.md",
+      "source_sha256": "d152577c5717bac2201266af80a30728b38bdc55af047f71ddfdf8f4033baa22",
+      "product_route": "",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans"
+      ],
+      "draft_tags": [],
+      "notes": "US English source only. Prepared, not localized. Index of Agent and enclave runbooks plus shipped script kit."
     }
   ]
 }
