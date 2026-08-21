@@ -1,0 +1,154 @@
+---
+description: New code and UI must localize every currently shipped language in the same change set; installers are en+de only for now; manuals are queued English.
+alwaysApply: true
+---
+
+# New UI must localize all current languages (hard rule)
+
+Operator directive (Phil, 2026-08-21), verbatim intent:
+
+> **Hard Rule: when implementing new code and UI interfaces, they must all
+> support full localization of all current languages. We do not want any
+> leakage. The exception is training guides and manuals for the moment
+> which are prepared for localization but don't have localized text yet.**
+
+Same-day clarification:
+
+> **All agents support all language localization. Installers are
+> configured only for English and German for the moment.**
+
+“All agents” means **product** agents (AIC Agent, Workstation Assurance,
+Jump / recording / DB agents, elevate helpers, and their shipping GUI/CLI
+chrome) — **not** Cursor AI agents.
+
+## The rule
+
+> **New code and operator UI ship with catalogs for every currently shipped
+> content language in the same change set. English-only chrome is leakage.
+> Product agents follow that bar. Installer wizard / setup languages are
+> English and German only for now (Partial — not Tier 1 complete). Training
+> guides and operator manuals are prepared (US English source +
+> localization-work queue) without localized body text yet. Product chrome
+> around those manuals still localizes.**
+
+## Three-way split (do not collapse)
+
+| Surface | Languages now | Status word |
+| --- | --- | --- |
+| **Product agents, admin SPA, configurators, elevate helpers, API chrome** | Every **currently shipped** content language, same change set | Full current-language coverage required. Do not invent a shorter list. |
+| **Installers** (MSI / WiX / setup wizard / installer language picker / installer-configured UI) | **`en` and `de` only** for this phase | **Partial.** Do **not** claim Tier 1 installer complete. Do not add `fr` / `es` / `zh-*` / `en-GB` wizard catalogs in this phase. |
+| **Training guides and operator manuals** (repo SOPs under `docs/ops/`, future in-product Documentation chapters, MSP/C3PAO demo training guide) | US English source + queue row; **no** localized body text required yet | Prepared, not localized. Do **not** claim the manual is localized or Tier 1 complete. |
+
+## 1. No leakage — new code and UI
+
+Shipped / current tags are those **already in the product catalogs**. Do
+not invent a shorter list. See
+[`compliance-artifacts-must-localize.mdc`](compliance-artifacts-must-localize.mdc)
+and [`enterprise-localization.mdc`](enterprise-localization.mdc).
+
+Typical admin SPA: `en` plus every derived pack already on disk (`en-GB`,
+`de`, `fr`, `es`, `zh-Hans`, `zh-TW`, and any later shipped tag). Native
+GUIs and product agents: every tag `pim-app-config-i18n` already ships.
+
+| Required | Forbidden |
+| --- | --- |
+| New SPA / configurator / API chrome keys land in US English source **and every currently shipped content language** in the same change set | English-only new operator UI; “we’ll translate later” for code/UI |
+| Missing string → reload once, then named string-ID error + log | Silent English fallback in a loaded non-English pack; raw keys in chrome |
+| Product agent GUI/CLI chrome matches the same current-language set | Shipping a new agent string in English only |
+
+Missing-string healer:
+[`release-data-self-heal.mdc`](release-data-self-heal.mdc). Lab /
+identity / agent-thinking strings in browser-shipped UI:
+[`no-lab-config-in-operator-ui.mdc`](no-lab-config-in-operator-ui.mdc)
+(cross-ref only — do not duplicate that rule).
+
+## 2. Installers — `en` + `de` only for now
+
+Keep this **distinct** from
+[`multilingual-tier-1-installer.mdc`](multilingual-tier-1-installer.mdc):
+
+- That rule still requires **spec packs and product locale catalogs** to
+  live in `core-assets` and be harvestable into the install tree.
+- **This** rule’s installer exception is **wizard / setup language
+  configuration** = `en` + `de` only **for the moment**.
+- If product runtime catalogs (SPA `locales/ui`, server `locales`, agent
+  `pim-app-config-i18n` packs) already ship extra tags **inside** the MSI
+  payload, **do not delete them** to “match” the wizard. Wizard config ≠
+  strip runtime packs. Honest report: wizard `en`+`de`; runtime
+  agents/UI still all current languages.
+
+## 3. Training guides and manuals — prepared, not translated yet
+
+Narrow, **temporary** exception. Applies to:
+
+- Operator manuals and repo SOPs under `docs/ops/`
+- Future in-product Documentation chapters
+- MSP / C3PAO demo **training guide** (the CMMC demo guide)
+
+**Prepared for localization** means, in the **same change set**: US
+English source **and** a `core-assets/content/localization-work/` queue
+row ([`localization-work-queue.mdc`](localization-work-queue.mdc)).
+
+Do **not** require full Tier-1 / all-current-language catalogs for that
+body text **for now**. Do **not** close the queue item with agent-draft
+translations. Do **not** claim the manual is localized.
+
+**Product chrome around them is still UI** and follows §1: nav labels,
+PDF export button, chapter list chrome — all current languages.
+
+**Workforce training / welcome letters** are a **different** surface
+([`training-materials-plain-language-and-images.mdc`](training-materials-plain-language-and-images.mdc)).
+If those ship in product UI, they follow §1 (full current-language
+catalogs), not this manuals exception — unless they are only English repo
+drafts queued the same way.
+
+## Forbidden constructs
+
+- New operator UI, API chrome, configurator, or **product agent** string
+  in English only
+- Silent English fallback or raw i18n keys in a loaded non-English pack
+- “We’ll translate later” for new code/UI (manuals exception only)
+- Adding installer **wizard** catalogs beyond `en` and `de` in this phase,
+  **or** claiming the installer is Tier 1 complete
+- Deleting extra runtime locale packs from the MSI so the wizard and
+  runtime “match”
+- Closing a manuals queue row with agent-draft translations, or claiming
+  a manual is localized
+- Claiming Met / certified from catalogs existing
+  ([`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc))
+
+## Required agent behavior
+
+1. New SPA / configurator / API / **product agent** strings: US English
+   source plus every currently shipped tag in the **same change set**.
+2. New installer wizard / setup strings: `en` and `de` only; mark
+   installer locale **Partial**; do not claim Tier 1 installer complete.
+3. New training guide / operator manual body: English + localization-work
+   queue row; do not ship or close full catalogs for that body yet.
+   Localize surrounding chrome per §1.
+4. Do not strip runtime packs already in the MSI to match the wizard.
+5. Mirror this rule to `core-assets/.cursor/rules/` in the same change
+   set ([`auto-commit-push.mdc`](auto-commit-push.mdc)) — the workspace
+   `.cursor` directory is not a git root.
+
+## Worked violation → fix
+
+**Violation.** An agent adds a “Retry scan” button on an admin page and a
+new AIC Agent tray string, both hardcoded English. The MSI wizard is
+extended with French. A new operator manual chapter ships English-only
+with no queue row. The report says “Tier 1 installer complete.”
+
+**Fix.** Land `Retry scan` / tray strings in `en` and every current SPA /
+`pim-app-config-i18n` tag in the same change set. Leave the installer
+language picker at `en`+`de` (Partial). Keep any extra runtime locale
+files already in the MSI. Author the manual in US English, add a
+localization-work queue row, and do not claim the chapter is localized.
+Nav / PDF button labels for that chapter still go into all current UI
+packs.
+
+## Origin
+
+2026-08-21 — operator Phil: new code and UI must localize all current
+languages with no leakage; training guides and manuals prepared but not
+yet translated. Same day: product agents use all current languages;
+installers configured for English and German only for the moment.
