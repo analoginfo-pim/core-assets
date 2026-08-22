@@ -368,10 +368,10 @@ a table for a feature. Detail:
 | Local obligation / catalog change log | **Live** (code) / **Partial** not served — boot + on-demand compare of compiled-in catalog bytes; not a cloud feed. Never Met. |
 | Document library (plain-language rewrite in progress) | **Live** (authoring layer) |
 | Scope determinations — basis, decider, timestamp, review date, rationale, considered exclusions | **Live** (code) / **Partial** not served — `POST` workforce scope routes write `003000050` |
-| Identity bindings — plural per person, federated keyed on issuer+subject, unlink recorded not deleted | **Schema only** (`003000050`), same probe run |
+| Identity bindings — plural per person, federated keyed on issuer+subject, unlink recorded not deleted | **Live (code)** / **Partial** not served — T-11 writes `003000050`; email is never the federated key |
 | Welcome letter documents (employee + contractor) | **Live** (code) / **Partial** not served — templates compiled in; program create prepends both as required `read` items. Trainee portal **Partial (code)**. Never Met. |
 | Grading, testing, scores, thresholds, attempt history | **Live** (code) / **Partial** not served — `003000079` + heal + API + program-detail UI. Stored pass decision at attempt time. Acknowledgement is not a grade. Not an LMS. Never Met. |
-| Domain layer, HTTP API, scheduler, UI for any of the above | **Partial** — programs, roster, attestations, reminders, scope, grading, welcome-letter auto-include, binder `workforce_training` fill, trainee education portal, policy-acknowledgement pins, access gate, group auto-enrollment, first-party access-review campaigns, and the local catalog change log are Live in code; identity bindings remain schema-only |
+| Domain layer, HTTP API, scheduler, UI for any of the above | **Partial** — programs, roster, attestations, reminders, scope, grading, welcome-letter auto-include, binder `workforce_training` fill, trainee education portal, policy-acknowledgement pins, access gate, group auto-enrollment, first-party access-review campaigns, the local catalog change log, and identity bindings are Live in code |
 | Binder section derived from live program state | **Live** (code) / **Partial** not served — `workforce_training` filled from assignment + intake ledgers at render; never Met |
 
 **Applied to the lab database; still undelivered on the running binary.**
@@ -381,7 +381,7 @@ server heal SQL so a tag bump is not required. Domain + API + thin UI are
 **Live in code** for roster, attestations, reminders, scope writes, grading,
 and the supplier register. They are **Partial** until served (running binary
 stays `57715d1fc`; no `-AllowStaleOverwrite`). Trainee portal is Live in code /
-**Partial** not served. Access gate, auto-enrollment, access-review campaigns, and the catalog change log are Live in code / Partial not served (defaults off where applicable). Identity bindings remain schema-only.
+**Partial** not served. Access gate, auto-enrollment, access-review campaigns, the catalog change log, and identity bindings are Live in code / Partial not served (defaults off where applicable).
 
 Tables existing is **not** delivery. Do not read "the migration is applied" as
 evidence that a capability is served.
