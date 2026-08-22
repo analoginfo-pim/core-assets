@@ -1757,6 +1757,75 @@
       ],
       "draft_tags": [],
       "notes": "Shared numbered-step + run-through checklist + in-product route links + numbered original diagrams. Manual bodies stay US English. Chrome keys docs.chrome.checklist/figures* landed as drafts in all shipped tags. Agent drafts do not close. Live DemoCorp screenshots remain BLOCKED. Not Met."
+    },
+    {
+      "id": "docs.admin-cmmc-fci-cui",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "help-manual",
+      "title": "Admin manual: CMMC FCI and CUI",
+      "added": "2026-08-22",
+      "updated": "2026-08-22",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/pages/docs/classificationManuals.ts",
+      "source_sha256": "fe66293661c4d1eaf415314ea401faf60804e6122f7789100adc4bd7e0a6259d",
+      "product_route": "/docs/admin",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [],
+      "notes": "Operator manual for Unclassified, FCI, and CUI intake, tagging, sharing, and no-export. US English source; agent drafts do not close."
+    },
+    {
+      "id": "docs.admin-classified-files",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "help-manual",
+      "title": "Admin manual: classified and sensitive files",
+      "added": "2026-08-22",
+      "updated": "2026-08-22",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/pages/docs/classificationManuals.ts",
+      "source_sha256": "fe66293661c4d1eaf415314ea401faf60804e6122f7789100adc4bd7e0a6259d",
+      "product_route": "/docs/admin",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [],
+      "notes": "Operator manual for US/foreign classified markings, MACL, formal release, and no spill. US English source; agent drafts do not close."
+    },
+    {
+      "id": "spa.classification-gov",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "spa-chrome",
+      "title": "Classification catalog and MACL chrome",
+      "added": "2026-08-22",
+      "updated": "2026-08-22",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/pages/ClassificationPanel.tsx",
+      "source_sha256": "aa9c2f03da61e538cad7603dc41ea011f2b0f2263ef6b34fe95d5281aee871c2",
+      "product_route": "/settings/access-control",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [],
+      "notes": "New classificationGov keys. en and de landed; remaining tags need reviewed catalogs. Do not close on agent drafts."
     }
   ]
 }
