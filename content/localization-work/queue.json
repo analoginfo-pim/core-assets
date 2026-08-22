@@ -1658,7 +1658,7 @@
       "updated": "2026-08-22",
       "source_repo": "pim-offline-server",
       "source_path": "pim-offline-server-cmmc-main/ui/src/i18n/locales/en/docs.json",
-      "source_sha256": "9b96bcf5d5e20c37f7567bfd524a57e8d8649e1e8518a948f6efb427ebd3216e",
+      "source_sha256": "c1b2dbec7298b884988d247e4c238d8f6ddf8ad3973f5e4163055f692a250d60",
       "product_route": "/docs/user",
       "required_tags": [
         "de",
@@ -1669,7 +1669,7 @@
         "zh-TW"
       ],
       "draft_tags": [],
-      "notes": "US English docs keyed leftovers and page header bullets were still German. Restored US English. de kept German. Other tags received completeness drafts. Agent drafts do not close. Source changed 2026-08-22 (hash d09f54a776f9 → 4257ec2f8ade). Source changed 2026-08-22 (hash 4257ec2f8ade → 9b96bcf5d5e2)."
+      "notes": "US English docs keyed leftovers and page header bullets were still German. Restored US English. de kept German. Other tags received completeness drafts. Agent drafts do not close. Source changed 2026-08-22 (hash d09f54a776f9 → 4257ec2f8ade). Source changed 2026-08-22 (hash 4257ec2f8ade → 9b96bcf5d5e2). Source changed 2026-08-22 (hash 9b96bcf5d5e2 → c1b2dbec7298)."
     },
     {
       "id": "spa.en-check-a-german-leak-20260822",
@@ -1711,6 +1711,29 @@
       ],
       "draft_tags": [],
       "notes": "EN unchanged. Derived packs: agent-draft formal translations for named/policy stopgaps and leaked-German leftovers (binder notes/history/print, remote access, credential operator, docs headers, nav). Remaining Check B identical-to-en is mostly product names and untranslated body copy. Agent drafts do not close. Not Met."
+    },
+    {
+      "id": "docs.auditor-manuals-german-leak-20260822",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "help-manual",
+      "title": "Auditor manuals leftover German and Denglish",
+      "added": "2026-08-22",
+      "updated": "2026-08-22",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/i18n/locales/en/docs.json",
+      "source_sha256": "eeee39a224a7b2799cba999ea057e00d3589711d6e68dc845d895e82d30c40a1",
+      "product_route": "/docs/auditor",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [],
+      "notes": "US English auditor/manual catalogs still had Denglish (Auditoraufgaben, Grenzen) and leftover German in derived non-de packs. Restored US English source. de kept German. Other tags received English source drafts where leftovers were German. Agent drafts do not close. Source changed 2026-08-22 (hash c1b2dbec7298 → eeee39a224a7)."
     }
   ]
 }

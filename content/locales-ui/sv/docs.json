@@ -21,7 +21,7 @@
       "source_sha256": "620e5f51c531d115e1fcf1ee42440fe76ff8315edf9d87cce5b40c24055148e2"
     },
     "honestyAlert": {
-      "text": "Bruksanvisningar för denna dokumentationsklass. Kapitlen beskriver på tydlig amerikansk engelska vad produkten gör idag. De är inte en systemsäkerhetsplan, ett FedRAMP-paket eller ett certifieringskrav – kartlägg kontrollerna i din pärm till bevisen du faktiskt samlar in.",
+      "text": "Operating manuals for this documentation class. The chapters describe in clear US English what the product does today. They are not a System Security Plan, a FedRAMP package, or a certification claim — map controls in your binder to the evidence you actually collect.",
       "source_sha256": "5c01a0ed089bf80ac08c539097812d485c391ff8e05b8c572c4c8403b49a3abe"
     },
     "contentsAria": {
@@ -57,7 +57,7 @@
       "source_sha256": "da44daddf83999d4cd88f0866c5f8ccb8cf06fb7f37dcc8894971ad0717e98be"
     },
     "pdfUnavailableHint": {
-      "text": "Serverrenderad PDF är inte tillgänglig i den här versionen. Kontrollen Exportera till PDF förblir synlig och förklarar det. Använd Skriv ut / Spara som PDF för en offlinekopia.",
+      "text": "Server-rendered PDF is not available in this build. The Export to PDF control stays visible and explains that. Use Print / Save as PDF for an offline copy.",
       "source_sha256": "a4238f468eb70261bd4ed7e61f222596a3d54315fab7f66e8340bfae1de9f71d"
     },
     "exportPdf": {
@@ -83,6 +83,34 @@
     "pdfUnavailable": {
       "text": "PDF rendering är unavailable i denna release. Använd Skriv ut / Spara som PDF.",
       "source_sha256": "eb75dbacf2176c1ef9c9534de55fde6f79383e4083f0c5b0d1052bc0b2e6dad3"
+    },
+    "checklist": {
+      "text": "Kontrollista",
+      "source_sha256": "d498304eadbecbffeb92319c213a074a7e8ec7f786da6fa8d13533e937d33518"
+    },
+    "checklistAria": {
+      "text": "Kontrollista för {{title}}",
+      "source_sha256": "d200bfc40621f6238557492f42a623c450ef80d82d393115c28039043ddf3b94"
+    },
+    "checkItemAria": {
+      "text": "Markera steget som klart: {{item}}",
+      "source_sha256": "8751ddf660cf7ad1344ceaaa041de27721843dd20a815eed3c4a6d819d3ffa8e"
+    },
+    "figuresHeading": {
+      "text": "Procedurfigurer",
+      "source_sha256": "70aecba9f65cd26745b5e44e4f3687c31c15e80fec5056db5b9b7c28c5090352"
+    },
+    "figureStep": {
+      "text": "Steg {{n}}",
+      "source_sha256": "8b871bb2eb7cb1e2150c0031cede1906e45c8f7fa7c062059124a2918555d184"
+    },
+    "figureCaption": {
+      "text": "Steg {{n}} — {{caption}}",
+      "source_sha256": "5e53b9ad32815276d258f1eb6064543a5b4435ede2124c95d78d885f00de38d0"
+    },
+    "figureOriginalNote": {
+      "text": "Originaldiagram. Det är inte skärmbilder i realtid. Varje bildtext lär ut det numrerade steget.",
+      "source_sha256": "ac05e10587ac2e32e909f49d9e4c95d8e31f595be950f4ca4b437207c4de1afb"
     }
   },
   "landing": {
@@ -95,7 +123,7 @@
       "source_sha256": "317451090a6c8e9db801a81da04d2380a219eebc60fa309132ee43a56fb9b36a"
     },
     "empty": {
-      "text": "Det finns inga dokumentationsklasser tillgängliga för ditt konto.",
+      "text": "There are no documentation classes available for your account.",
       "source_sha256": "caca2933b28ccb79666b4180437338411a89ab67173ea158bc941c4f7a1c1652"
     },
     "user": {
@@ -327,8 +355,8 @@
       },
       "seeds": {
         "caption": {
-          "text": "Startkonten för Demonstrationen",
-          "source_sha256": "9905bc2f948fc6e8cef528c7ddc50fda78927ecf44b142fb4701ff316bc504de"
+          "text": "Starter accounts for demonstrations",
+          "source_sha256": "4392854c114367c749ad7207cc2015e6762f2ab46fda84e353d8b30231277e16"
         },
         "headers": {
           "0": {
@@ -397,11 +425,11 @@
       },
       "2": {
         "label": {
-          "text": "Einschreibung och Zugriffskontrolle",
-          "source_sha256": "2fd02dace2cb256f9260feb7e51309d8160f06046f526609060fe702defecb8a"
+          "text": "Enrollment and Access Control",
+          "source_sha256": "12e572e9d85eaa384cf67874b4cf41b22b8312ac83e5311d99cc06344472301c"
         },
         "note": {
-          "text": "Åtkomst och identitet → Katalog → Registrering och åtkomstkontroll. Visar registreringskraven (read-only-assessor, cmmc-assessor, lead-auditor).",
+          "text": "Access and Identity → Directory → Enrollment and Access Control. Shows the enrollment requirements (read-only-assessor, cmmc-assessor, lead-auditor).",
           "source_sha256": "182512ee39ef91dc376dd76adb5d4b99c82cbe71ff84211e6e899c3b1d2eb1fd"
         }
       },
@@ -421,7 +449,7 @@
           "source_sha256": "edce73881ba543a19ed06b9eaee2c7998fb127db9bf6232dc805423bed35f519"
         },
         "note": {
-          "text": "Efterlevnad → Utvärderingsmapp. Skriv eller granska kontrollberättelser och bevis.",
+          "text": "Compliance → Assessment folder. Write or review control narratives and evidence.",
           "source_sha256": "2c3766e276c7ceb65823e60fef8c3f696b83ae8a15b98085b5bcaa9bcc368bfb"
         }
       },
@@ -431,7 +459,7 @@
           "source_sha256": "6623ff55741761694cc60ea3e767301b9c1d248b65de5f46d388d0c9a1d9ab56"
         },
         "note": {
-          "text": "Dokumentation → Revisormanual. Denna guide och kapitlet om bedömararbete.",
+          "text": "Documentation → Auditor Manual. This guide and the chapter on assessor work.",
           "source_sha256": "218f342d87adcb72b661780061dfce0382379c7c642c9a66df95da067d50faa7"
         }
       }
@@ -443,7 +471,7 @@
       "source_sha256": "2725143e17ddf246ae9bd7d5021e8a286f190113c21fa46f2d74cb7c786ccbc6"
     },
     "intro": {
-      "text": "Dessa kapitel är avsedda för personer som loggar in för att använda tilldelade platser, säker delning och sitt eget konto – inte serveradministratörer. Följ stegen i produktgränssnittet. Om en kontroll saknas är den inte en del av din roll.",
+      "text": "These chapters are intended for people logging in to use assigned seats, secure sharing, and their own account—not server administrators. Follow the steps in the product interface. If a control is missing, it is not part of your role.",
       "source_sha256": "ec1313dbc64c939dffa51a096b84aaee53e954cb3bd206f0535f89e2a76a306f"
     },
     "chapters": {
@@ -457,7 +485,7 @@
           "source_sha256": "1596626afc90c4adf6ca7d904cef542b6de88e0fff737bca78504710693ee5d8"
         },
         "body[0]": {
-          "text": "AIC Server visar en inloggningssida i webbläsaren. Använd den identitet som din organisation gav dig (lokalt konto eller katalog). Om webbplatsen kräver multifaktorautentisering, slutför den innan du förväntar dig arbetsplatskontroller.",
+          "text": "AIC Server displays a login page in the browser. Use the identity your organization gave you (local account or directory). If the site requires multi-factor authentication, complete it before expecting workplace controls.",
           "source_sha256": "0680e640f10998cd727c657066edcee92a722167ba8e31802c97cf108778ab92"
         },
         "body[1]": {
@@ -495,11 +523,11 @@
           "source_sha256": "a1b4fb5a6e9624a2f3a6fe252f48e2add42c5baf05d7924a710acdde8b74cbf1"
         },
         "summary": {
-          "text": "Energiezustand, erneutes Connect and the Vorgehen, wenn en Host schlaeft.",
+          "text": "Power state, reconnecting, and what to do when a host is asleep.",
           "source_sha256": "63ad9e4dc69ae289f371f92f94bdacb0850c8d67ee1e6427b1ecbd3a2e899a90"
         },
         "body[0]": {
-          "text": "Ein- och Aufwecksteuerungen gelten nur för Ihnen zugewiesene Maschinen. Schlafende eller offline Zustaende sind normalt, när en Host ausgeschaltet ist. Warten Sie auf the Aufwecken eller fragen Sie a Admin, bevor Sie wiederholt neu versuchen.",
+          "text": "Power-on and wake controls apply only to machines assigned to you. Sleeping or offline states are normal when a host is powered off. Wait for the wake to finish, or ask an administrator, before retrying repeatedly.",
           "source_sha256": "6e28429879e643758984cfeef03e390323e0d1dc426116ccb50f7ae46de528a8"
         },
         "body[1]": {
@@ -507,15 +535,15 @@
           "source_sha256": "f051906594b38b28a5445245cf4fe00d1b2060d09208a0ab558098a9f659b13a"
         },
         "steps[0]": {
-          "text": "Använd endast de visade påslagnings- eller väckningskontrollerna för dina tilldelade maskiner.",
+          "text": "Use the displayed turn-on or wake-up controls only for your assigned machines.",
           "source_sha256": "2034be5fd85fcbdbde152eb481037722c9af70f959c7280c3c2d338073b74217"
         },
         "steps[1]": {
-          "text": "Se till att statusen schlafend eller offline, varten Sie kurz och fragen Sie a Admin, wenn Zustand bleibt.",
+          "text": "If the status shows sleeping or offline, wait briefly and ask an administrator if the state persists.",
           "source_sha256": "21814b8d8777ec791e56538b597e3b6112064bda0950ace12d72a2532b41bed4"
         },
         "steps[2]": {
-          "text": "Beenden Sie Sessionen i Vermittler, wenn Sie fertig sind.",
+          "text": "End the session in the broker when you are finished.",
           "source_sha256": "a928a0f0864148c7651b10d817e1b6de5993f53276851ad7033906be1409dbc4"
         },
         "steps[3]": {
@@ -553,7 +581,7 @@
           "source_sha256": "40bfcfcab5646f9079e9ec5572259904c4c664cf63f1890dd867c78928eaa5f3"
         },
         "steps[2]": {
-          "text": "Laddar Sie nur herunter, wenn the Paket es erlaubt.",
+          "text": "Download only when the package allows it.",
           "source_sha256": "4cc1e31fea7a6a51974f80a72769a486c791184e8be45fb7e5ef998aecd6fc6b"
         },
         "steps[3]": {
@@ -605,8 +633,8 @@
       },
       "get-help": {
         "title": {
-          "text": "Wenn etwas fehlschlaegt",
-          "source_sha256": "f43efc94bca5d08e18172241cfa0ebf56e2ce0ebde6e9826d2c0bdcb3445196d"
+          "text": "When something fails",
+          "source_sha256": "bf5407bf86c90632493afa4f5664a20cb6f45b6de4e3f88bacf6263db3b84dc7"
         },
         "summary": {
           "text": "Vad du ska spela in innan du kontaktar en administratör.",
@@ -659,7 +687,7 @@
           "source_sha256": "a76d0ac4a28076ca793f685e7e7faec93b63215f20b23faf602823e045cfc09f"
         },
         "body[0]": {
-          "text": "Bedömningspärmen är produktytan för att organisera kontrollberättelser och länka bevis som enklaven redan har genererat. Skapa eller välj en pärm för din organisations angivna bedömningsfönster.",
+          "text": "The assessment binder is the product surface to organize control narratives and link evidence that the enclave has already generated. Create or select a Binder for your organization's designated assessment window.",
           "source_sha256": "ca4235c225a6ca7e01822302088a75ffd52ef600eb1ea4121bc98addd601c8a7"
         },
         "body[1]": {
@@ -675,7 +703,7 @@
           "source_sha256": "3cca9d9d54aedee15fae19d8c6249bea19687b27ecf3c14e3780185253175cd6"
         },
         "steps[2]": {
-          "text": "Fill kontroll narratives med an honest status (Implemented / Partial / Planned).",
+          "text": "Fill control narratives with an honest status (Implemented / Partial / Planned).",
           "source_sha256": "7acc5d4d87e8eb15d3f9d6166c93209c236f9b60f7f373c8df13d995cd3c894c"
         },
         "steps[3]": {
@@ -705,7 +733,7 @@
           "source_sha256": "1473033d64827222555d8c68c4033ca87b523fe0399e399627514791c94c0525"
         },
         "body[1]": {
-          "text": "Revisorroller tar inte emot åtgärder för att fixa det eller skanna om det. Be operatörerna att köra dem och kontrollera resultaten igen efteråt.",
+          "text": "Auditor roles do not receive fix-it or rescan actions. Ask operators to run them and check the results again afterwards.",
           "source_sha256": "2dd392e651620f8489fdca0f845f7fdf131f75f8353397e578ac5f2c4d569a93"
         },
         "steps[0]": {
@@ -713,7 +741,7 @@
           "source_sha256": "3a9070f4e0b0f00b397e52fcea89c48424d3d4fb5157391e1e45d21579e676dd"
         },
         "steps[1]": {
-          "text": "Fuehren Sie the Bericht aus och laden Sie the of Ihrer Organization erlaubte Paket herunter.",
+          "text": "Run the report and download the package your organization allows.",
           "source_sha256": "dc82e8ab6a7d56f9b8f1822df0253bed8f44b776495d6f1efcaed6044326a80c"
         },
         "steps[2]": {
@@ -773,15 +801,15 @@
           "source_sha256": "56a1e53bbfb7d5c525176b6f0fe8d20a553d7b06552ca26a9c6ebca1456e281a"
         },
         "summary": {
-          "text": "Kontrollera granskningsbevis utan att konfigurera mottagare.",
+          "text": "Check audit evidence without configuring sinks.",
           "source_sha256": "9dba4f4a6f5154c90af77097162dfdb3477f39e275411252cb0a334085f7d5d8"
         },
         "body[0]": {
-          "text": "Revisionssökningen stödjer aktör, handling och period. Detaljlinjer bär korrelationsfält såsom begäran-ID och resultat för en AU-liknande kontroll.",
+          "text": "The audit search supports actor, action and period. Detail lines carry correlation fields such as request ID and result for an AU-like check.",
           "source_sha256": "686a83f7778923100a0c85d7264c6561d6dd8912eea6aec704e3fae8e794ef00"
         },
         "body[1]": {
-          "text": "Larmhistoriken används för kontroll och eskalering. Konfigurering av diskbänkar och visningshemligheter kvarstår hos administratörer.",
+          "text": "The alarm history is used for checking and escalation. Configuring sinks and viewing secrets remain with administrators.",
           "source_sha256": "d28013b331abb3b0908a8264ff5bf5f476ab5b678d5a6aa2a4266262f0ebeb72"
         },
         "steps[0]": {
@@ -793,7 +821,7 @@
           "source_sha256": "72257cb5cc08d6cebf3bec7a723b8a4a44fa4af3463a1c2ac1de3cfce77e57af"
         },
         "steps[2]": {
-          "text": "Kontrollera larmhistorik. Eskalera konfigurationsluckor till en administratör.",
+          "text": "Check alarm history. Escalate the configuration gaps to an administrator.",
           "source_sha256": "3ca9b8372726e6c0cbd01e2e9e194b56586c09399b8a955cf080002f13d37d21"
         },
         "steps[3]": {
@@ -807,7 +835,7 @@
       },
       "enhanced-controls": {
         "title": {
-          "text": "Förbättrade kontroller (800-172 / Höga förbättringar)",
+          "text": "Enhanced controls (800-172 / High enhancements)",
           "source_sha256": "471427127464a4fd46d0dcba135905cd97e2f42d27911263d941f8989f90155d"
         },
         "summary": {
@@ -815,7 +843,7 @@
           "source_sha256": "33b680f75fc9a4a4729d26dadd30453c9fe8a3a82eb57d09ac3ae6880367c796"
         },
         "body[0]": {
-          "text": "Förbättrade kontroller listar alla förbättrade krav som produkten känner till från NIST SP 800-172 och de namngivna NIST SP 800-53 High-förbättringarna. Statusetiketter förblir ärliga (Implementerad / Delvis / Planerad). Denna inventering är inte ett Met- eller certifieringsanspråk.",
+          "text": "Enhanced controls list every enhanced requirement the product knows from NIST SP 800-172 and the named NIST SP 800-53 High enhancements. Status labels stay honest (Implemented / Partial / Planned). This inventory is not a Met or certification claim.",
           "source_sha256": "83de4f391692c4777d4b4160ca82e0f57857e32ac8a7222a16d66a5354ebb183"
         },
         "body[1]": {
@@ -823,7 +851,7 @@
           "source_sha256": "12721b9771d5b54692a3c9c89e729cc89bcacfdab3eb94897256da898fc29d60"
         },
         "steps[0]": {
-          "text": "Öppna Avancerade kontroller och granska statuskolumnen för kravfamiljen du utvärderar.",
+          "text": "Open Advanced Controls and review the status column for the requirement family you are evaluating.",
           "source_sha256": "2d51aa11e36fc8e9f0e40fc9a7a7ca24cf5fa14033423600bcadda3e47eef6b3"
         },
         "steps[1]": {
@@ -831,7 +859,7 @@
           "source_sha256": "3128c9fe2c43a90fe1a7592eebc12796fc186ad03cca9e965f8e67ac5c72bb6b"
         },
         "steps[2]": {
-          "text": "Behandeln Sie Blockiert-Zeilen als Organisationsarbeit Ihrer Organisation, not as Produktdefekte.",
+          "text": "Treat Blocked rows as organizational work owned by your organization, not as product defects.",
           "source_sha256": "c70180bc448ca81eea2430d2a600512f1ce7f34c2c3a8e539670d5f9ae17d91f"
         },
         "steps[3]": {
@@ -839,11 +867,11 @@
           "source_sha256": "95cddfd8f12cc533917318a3cfe7ebbf70d0a4d16ae8da4eb93c91e81e0187b2"
         },
         "steps[4]": {
-          "text": "Lehnen Sie jedes Narrativ ab, diese Zeilen auf Met hebt eller en Level-3-Zertifizierung behauptet.",
-          "source_sha256": "5345361251d0a986996c56401cd8ec96eaed984f66acc993675b8343fc57ac72"
+          "text": "Reject any narrative that elevates these rows to Met or claims a Level 3 certification.",
+          "source_sha256": "143444daa47e1f957c4bbdb6328bb7110c6d352e65ec8ce644a14dfb73166d6c"
         },
         "productLabel": {
-          "text": "Öppna utökade kontroller",
+          "text": "Open Enhanced controls",
           "source_sha256": "7389bf477453f77480ebac6974f75516d4662e634856ce14a557cbf1557bd994"
         }
       },
@@ -861,12 +889,12 @@
           "source_sha256": "3b46f940bfb2043ca357004f4110c1d735a343b1605415e0b3a739edcca711fa"
         },
         "body[1]": {
-          "text": "Gör inte anspråk på FedRAMP-auktorisering, CMMC-certifiering eller FIPS-validering från dessa guider. Organisera kontroller i din pärm efter vad du faktiskt spelade in. Be operatörer om undertecknade release-artefakter om du behöver ett bevis på integritet för installatörer.",
+          "text": "Do not claim FedRAMP authorization, CMMC certification or FIPS validation from these guides. Organize controls in your binder according to what you actually recorded. Ask operators for signed release artifacts if you need a proof of integrity for installers.",
           "source_sha256": "e2ddf4e8c3f58fafd03a8a1f485eeb3c17e3a8b40b139ba0ee2e113f2381d6e2"
         },
         "steps[0]": {
-          "text": "Export Sie of Produktflaechen, wenn verfuegbar.",
-          "source_sha256": "c566d8276c589d70988b5f67497173e798ae266bce2851f32342623172a905e7"
+          "text": "Export from product surfaces when available.",
+          "source_sha256": "8a1f6cc753ba5d0cbedfe4f70a40959e2ef2e5f3207e08b0da5288b4a53c767e"
         },
         "steps[1]": {
           "text": "Observera SHA-256-manifestet för externa publikationer.",
@@ -889,7 +917,7 @@
       "source_sha256": "57526945334a81bb1af826e563c4dbba8c6c1644b488051e82706cedc98eaed9"
     },
     "intro": {
-      "text": "Operatörskörböcker för att ställa in AIC Server, identitet, agenter, referenser, förmedlade sessioner, meddelanden och dag 2-kontroller. Kombinera det med Konfiguration → Server → Installationsguide vid den första installationen. Dessa kapitel beskriver vad produkten gör och vilka poster den skapar – de är inte en systemsäkerhetsplan och certifierar inte din organisation.",
+      "text": "Operator runbooks to set up AIC Server, identity, agents, credentials, brokered sessions, messaging and Day 2 checks. Combine that with Configuration → Server → Setup Wizard on the first installation. These chapters describe what the product does and what records it creates — they are not a system security plan and do not certify your organization.",
       "source_sha256": "cf63a62193aa6b1fb2ecc1f8afaa48d029340f9bed1a5139975dd39fcbea5408"
     },
     "chapters": {
@@ -919,15 +947,15 @@
           "source_sha256": "721455ef34e77f55fb4cbabbc80ceef846b09cbea16a7919faef28291f880deb"
         },
         "steps[2]": {
-          "text": "Setzen Sie the Unternehmensprofil, bevor Sie Agenteneinstellungen exportieren.",
+          "text": "Set the company profile before you export agent settings.",
           "source_sha256": "c2c3d3d93bfa13bca672f4df5eab009123bb99242c8da292c6fec45193737ce3"
         },
         "steps[3]": {
-          "text": "Bestaetigen Sie, dass COMPLIANCE_PROFILE och ADMIN_AUTH_MODE Einsatzabsicht entsprechen.",
+          "text": "Confirm that COMPLIANCE_PROFILE and ADMIN_AUTH_MODE match the deployment intent.",
           "source_sha256": "64a30d77497ab17ab20f10d4f65fea924029fb0849b5c4ede667b166befe8d2d"
         },
         "steps[4]": {
-          "text": "Bestaetigen Sie nach dienstrelevanten Aenderungen, där aic-offline-server-service RUNNING ist och runtime-status.json aktuell ist.",
+          "text": "After service-relevant changes, confirm that aic-offline-server-service is RUNNING and runtime-status.json is current.",
           "source_sha256": "fe010858d036edcd1121492c3e86aa87c1cb22342d0a04d7c038e142516bcbef"
         },
         "productLabel": {
@@ -945,15 +973,15 @@
           "source_sha256": "610aa22b81e69028219fb06683360bd08a6685e1b8659c888ab53f4a9ce15574"
         },
         "body[0]": {
-          "text": "Daglig användar- och grupphantering finns under Access & Identity → Directory → Local IAM Management. Konfiguration → Säkerhet → Åtkomstkontroll förblir tillgänglig för lokala huvudmän och kataloganslutningar i konfigurationspanelen. Tilldela välkända grupper (ägare, utvecklare, revisorer) med minsta privilegier. Föredrar session MFA för produktion. Den delade administratörstoken är endast för nödsituationer.",
+          "text": "Daily user and group management is located under Access & Identity → Directory → Local IAM Management. Configuration → Security → Access Control remains available for local principals and directory connections in the configuration panel. Assign well-known groups (owners, developers, auditors) with least privileges. Prefer session MFA for production. The shared admin token is only for emergencies.",
           "source_sha256": "3e1be4c3f44fd992be8141df97b307d6437960a4e2d9c6a5c6a670a280ac74f7"
         },
         "body[1]": {
-          "text": "Registreringstokens för agenter skapas under System → Multitenancy om du använder token bootstrap. Rotera kända ADMIN_TOKEN-värden före varje delad eller kundinriktad demo. Registrering och åtkomstkontroll under Access & Identity är en bedömarorienterad matris, inte en andra CRUD-konsol.",
+          "text": "Enrollment tokens for agents are created under Systems → Multitenancy if you use token bootstrap. Rotate known ADMIN_TOKEN values ​​before every shared or customer-facing demo. Enrollment and Access Control under Access & Identity is an assessor-oriented matrix, not a second CRUD console.",
           "source_sha256": "eddede5e5680a5488e23be12b49250a57a723113209358ce50651aea6c91ab6c"
         },
         "steps[0]": {
-          "text": "Skapa eller underhåll principer under Åtkomst och identitet → Katalog → Lokal IAM-hantering (eller Konfiguration → Säkerhet → Åtkomstkontroll om det är ditt flöde).",
+          "text": "Create or maintain principals under Access & Identity → Directory → Local IAM Management (or Configuration → Security → Access Control if that is your flow).",
           "source_sha256": "d4b2ad72f72409a0fa1fb15cb5bc9ccbf124cb82895b51818975110fcb0a39a6"
         },
         "steps[1]": {
@@ -983,11 +1011,11 @@
           "source_sha256": "1757181923d604ae8c29d2186c7d226b75f096ef27eb50f0de03681c3956b76a"
         },
         "summary": {
-          "text": "Agentenvorgaben, Offenlegungen och Bereitstellungsablaeufe unter Konfiguration → Agent.",
+          "text": "Agent defaults, disclosures, and propagation workflows under Configuration → Agent.",
           "source_sha256": "58df4af8c0f45fe34ca613d002816dc82f6a997c67c4c5d7a8ba7d63e81616e8"
         },
         "body[0]": {
-          "text": "Export or uebertragen Sie Agenteneinstellungen erst, wenn the Unternehmensoffenlegungen vollstaendig sind. Se till att installera Agent-Check-in och Gesundheit under Systeme → Systemlista.",
+          "text": "Do not export or propagate agent settings until the company disclosures are complete. After installation, check agent check-in and health under Systems → System List.",
           "source_sha256": "adcb38115aaa6d932a7114fcc1c17940c64bb6104dad4dfc4ea34aa372d6354b"
         },
         "body[1]": {
@@ -995,7 +1023,7 @@
           "source_sha256": "cff9f9beb4cbc6d1fd34d41d2ad56f4921e1bcd734d58e32fe8da7384c4a2303"
         },
         "steps[0]": {
-          "text": "Exportera eller uebertragen Sie Inställningar för Konfiguration → Agent, nachdem the Unternehmensoffenlegungen vollstaendig sind.",
+          "text": "Export or propagate settings from Configuration → Agent after the company disclosures are complete.",
           "source_sha256": "05504c31f7891389b17ec403360cdc93e7b52ea2d0418f7e21c03c799f80088f"
         },
         "steps[1]": {
@@ -1011,7 +1039,7 @@
           "source_sha256": "36ce582b3931268087ae1368abbd8efb2c8be15a76851aba8d49f88c2f9c7e30"
         },
         "steps[4]": {
-          "text": "Bestaetigen Sie Elevation-Pipe och elevation_configured, bevor Sie Elevation-Codes erzeugen.",
+          "text": "Confirm the elevation pipe and elevation_configured before you mint elevation codes.",
           "source_sha256": "1430d7be6eff3f3a9948364135a8f53862338cdaf3189fb5832fba5447492483"
         },
         "productLabel": {
@@ -1033,7 +1061,7 @@
           "source_sha256": "6e4d589cb2fc26c59cfde83d72a51e9876ced4bd81120205a0c960dc236466c1"
         },
         "body[1]": {
-          "text": "Kör tillgänglighetskontroller innan de sätts igång. Privata mål och metadatamål är låsta utanför utvecklingsprofiler. Lagra API-nycklar endast i plattformshemligheter - aldrig i biljetter eller chatt. En lyckad kontroll eller testsändning bevisar leveranskonfigurationen. Det bevisar inte att bedömningskontroll är nödvändig.",
+          "text": "Run availability checks before go-live. Private and metadata targets are locked outside of development profiles. Store API keys only in platform secrets - never in tickets or chat. A successful check or test sending proves the delivery configuration. It does not prove that assessment control is necessary.",
           "source_sha256": "78311c2264b91106b665ca91886d3eba438d1fdca35898c121b1e80abe4bc266"
         },
         "steps[0]": {
@@ -1045,7 +1073,7 @@
           "source_sha256": "2421f13dd0cbddfb4d028020b5cd650ed9a6226354977495994208d39740eee4"
         },
         "steps[2]": {
-          "text": "Kör tillgänglighetskontroller. Räkna med låsningar på privata/metadatamål utanför utvecklingsprofiler.",
+          "text": "Run accessibility checks. Expect locks on private/metadata targets outside of development profiles.",
           "source_sha256": "d3ff9784bfe87610c807e639c69c79dcaf310441f27cdb0b7963eace176811e7"
         },
         "steps[3]": {
@@ -1059,8 +1087,8 @@
       },
       "credentials-elevation": {
         "title": {
-          "text": "Zugangsdaten och Höjd",
-          "source_sha256": "7f057416430f1fe036484cb5f5e6d61c6b6dd2aef42400e0689f759369a8a302"
+          "text": "Credentials and elevation",
+          "source_sha256": "691f46a524cab55737633c735997d26dbc41ab728a7bd7a6c6de7af727afaf65"
         },
         "summary": {
           "text": "Se lösenord, hanterade identiteter, inloggningsvalv och höjd under Åtkomst och identitet.",
@@ -1071,7 +1099,7 @@
           "source_sha256": "9a02950130229772fe38dcc62692628bd452f1c5b0f14d5b74bed20700ebd4b5"
         },
         "body[1]": {
-          "text": "Åtkomst och identitet → Elevation inkluderar Token Elevation (engångskoder som slutpunktsagenten löser in), Elevation Platform, Direct Elevation (serverinitierade tidsbegränsade medlemskap via lokal agent eller fjärrstyrd icke-agent lokal höjd via WinRM) och Privileged User Management. Domängruppshöjning förblir otillgänglig tills en domänkontrollant har konfigurerats. Skapa inte höjd förrän agentens höjdkanal är frisk. Varje skapelse och inlösen ska visas under Efterlevnad och bevis → Revisionsspår.",
+          "text": "Access & Identity → Elevation includes Token Elevation (one-time codes that the endpoint agent redeems), Elevation Platform, Direct Elevation (server-initiated time-limited memberships via Local Agent or Remote Non-Agent Local Elevation via WinRM) and Privileged User Management. Domain group elevation remains unavailable until a domain controller is configured. Do not create elevation until the agent elevation channel is healthy. Each creation and redemption should appear under Compliance & Evidence → Audit Trail.",
           "source_sha256": "2c0c1e848203a2603d4ba1e173b23ebca331abf2c8f7b663a6f9f78ec622fdca"
         },
         "steps[0]": {
@@ -1083,7 +1111,7 @@
           "source_sha256": "aa7b64f13afea1636b6f265a3e86883a4677f3c92d5be89d8783a9461aaceb17"
         },
         "steps[2]": {
-          "text": "Kontrollera Credential Vault-inventeringen under Access & Identity → Credentials → Credential Vault.",
+          "text": "Check the Credential Vault inventory under Access & Identity → Credentials → Credential Vault.",
           "source_sha256": "1ae64ed3107d649f2a37b92cfdb7e5a8216ab65b97fa9f0900b6efc0795e28c4"
         },
         "steps[3]": {
@@ -1109,11 +1137,11 @@
           "source_sha256": "2b8927529e01dded24ddc47a8d3baab1f166decae46c822bb19e11737bbc50df"
         },
         "body[0]": {
-          "text": "Mäklare med förmedlad åtkomst registrerade SSH, RDP och relaterade sessioner. Kopplingspunkter definierar mål. Sessionskontroller och sessionsinspelningar visar live och sparade sessionsbevis. Recording Ops inkluderar inspelningsagentens hälsa, distribution, RDP OCR/metadata och inspelningslagring. Behörigheter och sessions-I/O-policyer avgör vem som kan öppna vilka mål och vilka I/O-regler som gäller.",
+          "text": "Brokered access brokers recorded SSH, RDP and related sessions. Connection points define goals. Session controls and session recordings show live and saved session evidence. Recording Ops includes recording agent health, deployment, RDP OCR/metadata and recording storage. Permissions and session I/O policies decide who can open which targets and which I/O rules apply.",
           "source_sha256": "1f4b41dd54e865fc4eb2c99ad37071e44b51f22c8d02be3b9486fe30c47c0220"
         },
         "body[1]": {
-          "text": "Jump & Capacity → Jump Fleet & Load Balancing konfigurerar Jump/Recording Proxy-kapacitet över externa Jump-värdar och den lokala AIC-serverns slutpunkt. Använd Kontrollera placering för ett torrkörningsval av den minst belastade noden — den öppnar inte en användarsession. SSH Kommandofiltrering under Brokered Access → Policy kontrollerar vilka kommandon en förmedlad SSH-session får köras när ett filter är bundet. Ett tillåtet kommando som lyckas och ett begränsat kommando som avvisas är beviset för denna policy. Godkännanden och Approver Profile hanterar åtkomstförfrågningar när din enklav kräver dem.",
+          "text": "Jump & Capacity → Jump Fleet & Load Balancing configures Jump/Recording Proxy capacity across external Jump hosts and the local AIC server endpoint. Use Check Placement for a dry run selection of the least loaded node — the does not open a user session. SSH Command Filtering under Brokered Access → Policy controls which commands a brokered SSH session is allowed to execute when a filter is bound. A permitted command that succeeds and a restricted command that is rejected are the live evidence of this policy. Approvals and Approver Profile handle access requests when your enclave requires them.",
           "source_sha256": "5b38f4afbc8773e0de30d3e9fc0cdd87c747dfb8918e301826ed04d8bed847ac"
         },
         "body[2]": {
@@ -1121,23 +1149,23 @@
           "source_sha256": "997c4b4f10b9f9ca36fbb02031e37b7fa9b1ec713a41df42b31e57729248e9d5"
         },
         "steps[0]": {
-          "text": "Definiera eller kontrollera mål under Brokered Access → Sessions → Connection Points.",
+          "text": "Define or check targets under Brokered Access → Sessions → Connection Points.",
           "source_sha256": "4fd9d714ab299ca22cf2f9d0c06de4c2204cf24da3c78ff4cd854d76697b06ce"
         },
         "steps[1]": {
-          "text": "Se till att Jump-flottan och lastbalanseringen har användbar kapacitet. Kontrollera placeringen innan du tillskriver klienten anslutningsfelet.",
+          "text": "Ensure Jump fleet & load balancing have usable capacity. Check the placement before attributing the connect error to the client.",
           "source_sha256": "567d4b0cfa3d5190d39b61cec8c2c2a9a91f10353dbb535fde8271bd45b198b0"
         },
         "steps[2]": {
-          "text": "Bestaetigen Sie Recording-Agenten — Gesundheit och Recording-Speicher, bevor Sie aufgezeichnete Sessions verlangen.",
+          "text": "Confirm recording agents — health and recording storage — before you require recorded sessions.",
           "source_sha256": "14bab5ea3cd8e41c7ff3688f22a9f7b618532b8b57ca7ca76758cfb40b1a3172"
         },
         "steps[3]": {
-          "text": "Binden Sie SSH-Befehlsfilterung, då Sie Befehlssteuerung need. Ueben Sie i ener Live-Session en Erlauben och en Ablehnen.",
+          "text": "Bind SSH command filtering when you need command governance. Practice an allow and a deny in a live session.",
           "source_sha256": "bd8ccfc457de6b38c55a9159619ebb187e06f71e32705c69fce55d979686b8cb"
         },
         "steps[4]": {
-          "text": "Använd behörigheter när åtkomstförfrågningar ställs till policyn. Kontrollera sedan sessionsinspelningar för den förväntade bevisningen.",
+          "text": "Use permissions when access requests are raised to the policy. Then check session recordings for the expected line of evidence.",
           "source_sha256": "e179925eea8232ed2bbc179c1c50953b04dd4274112d7664c434194fb7e050dc"
         },
         "productLabel": {
@@ -1183,7 +1211,7 @@
           "source_sha256": "12ae0e9d4c81e3fdb76277acefc51016f94a0ddf7f52a1ae9149ebed92ced64a"
         },
         "steps[4]": {
-          "text": "Konfigurera Sie Syslog-Weiterleitung nur, då Sie a Collector harben. Pruefen Sie the Zustellung getrennt vom Seitenladen.",
+          "text": "Configure syslog forwarding only when you have a collector. Verify delivery separately from the page load.",
           "source_sha256": "790bc004eb5ea39bb275aeb9f148e5ebe85d0169027659d980345eeb0b29580c"
         },
         "productLabel": {
@@ -1193,15 +1221,15 @@
       },
       "enhanced-controls": {
         "title": {
-          "text": "Uebungen till erweiterten Steuerungen",
+          "text": "Enhanced Controls Exercises",
           "source_sha256": "ca52815ba68890decbb44481ea58e1e49ba393b2f2b6972ed122720eef81d31c"
         },
         "summary": {
-          "text": "Hunt-Detektoren, CIRT-Uebungen och Stempel erweiterter Steuerungen ausfuehren.",
+          "text": "Run hunt detectors, CIRT exercises, and enhanced control stamps.",
           "source_sha256": "3802aeab1adf568b2a00bb7c69b99af1b80d16886a63cc16beeda07595129941"
         },
         "body[0]": {
-          "text": "Förbättrade kontroller visar inventeringen av förbättrade krav (NIST SP 800-172 plus namngivna NIST SP 800-53 Höga förbättringar). Operatörer registrerar leveransstatus; bedömare fäller domen.",
+          "text": "Enhanced controls show the inventory of enhanced requirements (NIST SP 800-172 plus named NIST SP 800-53 High enhancements). Operators record delivery state; assessors render the verdict.",
           "source_sha256": "17611e835aa28099f155ec7a4d750af5c8a5ce09e18d55275bc624de2358604d"
         },
         "body[1]": {
@@ -1209,7 +1237,7 @@
           "source_sha256": "af50a635b99a8146439b4acb6ebc3f5278eab76e54634f1f0e775454bd729dbf"
         },
         "steps[0]": {
-          "text": "Öppna Avancerade kontroller under Efterlevnad och bevis → Incidenter → Avancerade kontroller.",
+          "text": "Open Advanced Controls under Compliance & Evidence → Incidents → Advanced Controls.",
           "source_sha256": "703c85099199b38b027e3806904a1aff7310659a3fbb7eda438d5162b3046e4e"
         },
         "steps[1]": {
@@ -1217,7 +1245,7 @@
           "source_sha256": "1491b972463f2e9646bb460f02475d9d8379a7faf2d16a160bb4447d677dcb86"
         },
         "steps[2]": {
-          "text": "Fuehren Sie Hunt-Detektoren från, sedan CIRT-Uebung aufzeichnen, sedan Benachrichtigung / SIEM-Stempel ueben.",
+          "text": "Run hunt detectors, then record a CIRT exercise, then practice the notification / SIEM stamp.",
           "source_sha256": "4fc22202a55b1f759425beb61cf30eb757163ece20173ff1d11cec368a75ac42"
         },
         "steps[3]": {
@@ -1229,7 +1257,7 @@
           "source_sha256": "39aaf4b58a84b37e47330fbe4ae2743c5f5f1c4564b018e31a656bcc2cbe67d4"
         },
         "productLabel": {
-          "text": "Öppna utökade kontroller",
+          "text": "Open Enhanced controls",
           "source_sha256": "7389bf477453f77480ebac6974f75516d4662e634856ce14a557cbf1557bd994"
         }
       },
@@ -1281,7 +1309,7 @@
           "source_sha256": "89c80540352249939137b86ec7fce814cce36c73c4965b6fe65e807d42960bb8"
         },
         "body[0]": {
-          "text": "Efter distributioner eller konfigurationsändringar bekräftar du HTTPS-hälsa och att din administratörssession fortfarande fungerar. Kontrollera Efterlevnad och bevis → Granskningsspår efter oväntade fel. Konfiguration → Server → Tjänstloggar hjälper till att kontrollera tjänstsidans loggutdata vid start- eller körningsproblem.",
+          "text": "After deployments or configuration changes, ensure you ensure HTTPS health and that your admin session is still working. Check compliance & evidence → audit trail for unexpected errors. Configuration → Server → Service Logs helps check service-side log output in the event of startup or runtime problems.",
           "source_sha256": "c65eab49104e3b50c97a7b5874c722f3959e20b65f495a30ce038062cfbee28a"
         },
         "body[1]": {
@@ -1293,11 +1321,11 @@
           "source_sha256": "e7d5f2a977c7df4dfdec6c72bb9fdc12c3530137718ade73d8aeead542d21202"
         },
         "steps[0]": {
-          "text": "Bestaetigen Sie nach the Bereitstellung HTTPS-Gesundheit och Admin-Session.",
+          "text": "After deployment, confirm HTTPS health and the admin session.",
           "source_sha256": "02495b3d91b83dc9182b63a507132fbe3eabc443e0a3ca0220b8f6642eaca10b"
         },
         "steps[1]": {
-          "text": "Efter konfigurationsändringar kontrollerar du Efterlevnad och bevis → Granskningsspår efter oväntade fel.",
+          "text": "After configuration changes, check Compliance & Evidence → Audit Trail for unexpected errors.",
           "source_sha256": "9398fee7e8be535d7475c4db5f74527bff15ab5bb5783929a86c27a312c287df"
         },
         "steps[2]": {
@@ -1305,11 +1333,11 @@
           "source_sha256": "b943e7ec6e06d270fab40c759847b8180f8384c6eb22606098571357f9fb277a"
         },
         "steps[3]": {
-          "text": "Efter en stor distribution, kontrollera att slutpunktsregistrering, lösenordsåterställning och elevationskanalen fortfarande fungerar.",
+          "text": "After a large deployment, check that endpoint enrollment, password recovery and the elevation channel are still working.",
           "source_sha256": "754d3f177f252a231b3c6680f21806ca854d0e4990f2c364d530ea8037887ec4"
         },
         "steps[4]": {
-          "text": "Lassen Sie a zerstoerende Datenbankinitialisierung niemals utan Wiederherstellungsschritt.",
+          "text": "Never leave a destructive database initialization without the restore step.",
           "source_sha256": "966c6ae20783ee8845240eafc2d9d2a83fab2f212682e20b5437d10659099efb"
         },
         "productLabel": {
@@ -1341,7 +1369,7 @@
       "source_sha256": "aaba56621561634537c7ad64e9b5d71692d6050cb299179c17d457909e95e8d8"
     },
     "audience": {
-      "text": "Denna klass riktar sig till API-användare och utvecklare som integrerar med AIC Server. Operatörskörböcker finns under administratörsmanualer. Bedömarrutiner finns under revisorsmanualer. Föredrar dessa klasser när uppgiften är konfiguration eller korrekturkontroll och inte ruttformulär.",
+      "text": "This class is aimed at API users and developers who integrate with AIC Server. Operator runbooks are located under admin manuals. Assessor procedures lie beneath auditor manuals. Prefer those classes when the task is configuration or proof checking and not route forms.",
       "source_sha256": "1a8c11712a0403bf7bb11b0678a045d6898a729fd675c3b929b2e2331b7e3f8f"
     },
     "howToTitle": {
@@ -1349,7 +1377,7 @@
       "source_sha256": "6dbd8e0f815db2418b91288bd2b949932527d86de88519287c2b180c2f843a43"
     },
     "howTo[0]": {
-      "text": "Öppna Swagger UI för att kontrollera autentiserade rutter med din nuvarande sessionscookie eller administratörstoken, enligt vad som dokumenteras i säkerhetsschemana.",
+      "text": "Open Swagger UI to check authenticated routes with your current session cookie or admin token header as documented in the security schemas.",
       "source_sha256": "151822b33deb1f914edebe8ad173c4b78696b8a6e88173ca129cd6987d8e7264"
     },
     "howTo[1]": {
@@ -1357,7 +1385,7 @@
       "source_sha256": "18774cbb4ebf64d08e962c1bded853277d3d881c5317ff6707a7bd4bb8b3d341"
     },
     "howTo[2]": {
-      "text": "Agent-Drahtrouten erwarten HMAC-Header, när Agenten signieren. Osignerad wird nur akzeptiert, solange AGENT_HMAC_ENFORCE_MODE=dual_mode gilt.",
+      "text": "Agent wire routes expect HMAC headers when agents sign. Unsigned is accepted only while AGENT_HMAC_ENFORCE_MODE=dual_mode applies.",
       "source_sha256": "39646376bd78b7c28e590bab1cb648c621129254820461a2e00ae5d22fbf07db"
     },
     "howTo[3]": {
@@ -1393,7 +1421,7 @@
       "source_sha256": "d6b98770f09a01bb95be1ff165a8703ab71baa2605657107fa2337a7b6af5d1c"
     },
     "viewRaw": {
-      "text": "OpenAPI roh anzeigen",
+      "text": "View raw OpenAPI",
       "source_sha256": "edb3f19b664956a3d4ffe1338d03ca52028d993e0e23159bca74867698791e95"
     },
     "loadError": {
@@ -1471,7 +1499,7 @@
       "source_sha256": "be0c95a901c176c3503761eaff2351166bd5b5638d8aa63b07b40322e1ec8d43"
     },
     "loading": {
-      "text": "Swagger UI wird laddad...",
+      "text": "Loading Swagger UI…",
       "source_sha256": "e4b0195f3e7bdfca83e1b52cb3dc1794d737c5ca72763cc423ee3b4a6f88aa76"
     },
     "hostAria": {
@@ -1621,7 +1649,7 @@
           "source_sha256": "0f2b3fcbf9c61a8491528a004a2547c89976f1dd13b2ad1821f925bd6f13b062"
         },
         "description": {
-          "text": "NIST SP 800-171 / CMMC nivå 2-familjer för kontrollerad oklassificerad information och hur produkten används för varje familj.",
+          "text": "NIST SP 800-171 / CMMC Level 2 families for Controlled Unclassified Information, and how to use the product for each family.",
           "source_sha256": "b1a6d4283497066b80f65860e1ca3a3ba324a8dd7cfd7cc7fe069d9db4285801"
         }
       },
@@ -1641,7 +1669,7 @@
           "source_sha256": "eed9c29530edb36366f4668df1f229a6b28fc20d86ab833ffff82df0937e7a42"
         },
         "description": {
-          "text": "Pärm, rapporter, aktuellt läge, granskning, utökade kontroller och exporthygien för läsorienterat bedömningsarbete.",
+          "text": "Binder, reports, Current State, auditing, Enhanced Controls, and export hygiene for read-oriented assessor work.",
           "source_sha256": "3e05de24305555056acd3a2c72740e634228fb1c8a7127076a25bf3bdeffcacb"
         }
       },
@@ -1811,7 +1839,7 @@
       "source_sha256": ""
     },
     "intro": {
-      "text": "NIST SP 800-53 Revision 5 är företagsalternativet: full synlighet. Den här sidan är delvis. Den är ännu inte en kontroll-för-kontroll-operatörsmanual och den är inte ett uppfylld- eller certifierat påstående.",
+      "text": "NIST SP 800-53 Revision 5 is the enterprise package option: full visibility. This page is Partial. It is not a control-by-control operator manual yet, and it is not a Met or certified claim.",
       "source_sha256": "876ef1f6f45a553a6f200937ec47dfcf185950b6af41f58143276adbad39fa08"
     }
   },
