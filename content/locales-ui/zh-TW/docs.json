@@ -21,7 +21,7 @@
       "source_sha256": "500dda43878adeb09d02336f750716e37ad9eea435c1bda25f6e5263a03506c3"
     },
     "honestyAlert": {
-      "text": "該文檔類別的操作手冊。這些章節用清晰的德語描述了該產品目前的用途。它們不是系統安全計畫、FedRAMP 套件或認證聲明 - 將活頁夾中的控制項對應到您實際收集的證據。",
+      "text": "該文檔類別的操作手冊。這些章節用清晰的美式英語描述了該產品目前的用途。它們不是系統安全計畫、FedRAMP 套件或認證聲明 - 將活頁夾中的控制項對應到您實際收集的證據。",
       "source_sha256": "3e762f775b05ee1ffd517d3e34805bb82de8528b4711102a3ab0deddee34d6c9"
     },
     "contentsAria": {
@@ -41,8 +41,8 @@
       "source_sha256": "a9b430cb13e8d9914bdbd0e9b01ace1fadc56fd6daf991bcb0cb01386f0d81b5"
     },
     "configLinks": {
-      "text": "Wo Sie diese 設定前",
-      "source_sha256": "39925ad5019b7fed9c5070e4831c840a4769df844e14e8e9f622152a259c074a"
+      "text": "Where to change these settings",
+      "source_sha256": "0e3f253d56ce97a8af0bc47555b912b82fd4fabe3ca4abfb22591c7e153ea73a"
     },
     "exportAria": {
       "text": "匯出此材料",
@@ -61,12 +61,12 @@
       "source_sha256": ""
     },
     "exportPdf": {
-      "text": "Export to PDF",
-      "source_sha256": ""
+      "text": "匯出為 PDF",
+      "source_sha256": "ccd4fda2f60776da3700ab9349601e6fb2058888d091d6bad6dd7ffb9b32bd75"
     },
     "printSavePdf": {
-      "text": "Print / Save as PDF",
-      "source_sha256": ""
+      "text": "列印 / 另存為 PDF",
+      "source_sha256": "8a62efb9d6f8b68c6f584e4c5bc04dbf43a07be6138f40f29d310e0d622a204f"
     },
     "pdfProbeFailed": {
       "text": "此伺服器無法報告 PDF 能力。請使用 Print / Save as PDF。",
@@ -83,6 +83,34 @@
     "pdfUnavailable": {
       "text": "此版本無法產生 PDF。請使用 Print / Save as PDF。",
       "source_sha256": ""
+    },
+    "checklist": {
+      "text": "操作核對清單",
+      "source_sha256": "b448d439d393782ae000bcbb5318012a279ff56fbf7f83f6f6aa859a4735f107"
+    },
+    "checklistAria": {
+      "text": "{{title}}操作核對清單",
+      "source_sha256": "aea77091b07f4e1bd54c29e8cabb1f9363e5a64f9559c19438c53c1f5bb3f282"
+    },
+    "checkItemAria": {
+      "text": "將步驟標示為完成：{{item}}",
+      "source_sha256": "f9ade3a16fdf8bd3cd5d861efecc1a122d2bfa7fa4fe5b98c7fa8785441b2aa3"
+    },
+    "figuresHeading": {
+      "text": "操作示意圖",
+      "source_sha256": "2915ef1adf9e6b46e6b66764b5759c5a4110131ce462db7a2575cf79f6964edb"
+    },
+    "figureStep": {
+      "text": "第 {{n}} 步",
+      "source_sha256": "07e07f123f8be236b307a0fff13ba08b95ef263726c91a5fb888a11d6b24fc88"
+    },
+    "figureCaption": {
+      "text": "第 {{n}} 步 — {{caption}}",
+      "source_sha256": "0644d68f8eef0b2653874cb9317fb5bbccda9be7f0c62a17db7b4cfa3c7ec93b"
+    },
+    "figureOriginalNote": {
+      "text": "原創示意圖。不是現場螢幕擷取。每條圖說說明對應的編號步驟。",
+      "source_sha256": "0472cc16ba001dba461bf86027cdc3b2debed089bd969e6cde6990578dae598a"
     }
   },
   "landing": {
@@ -114,7 +142,7 @@
         "source_sha256": "d3c7864c5c04747ffbb0faf622b7391e1bdabe47a94f7471f163727af7020cff"
       },
       "description": {
-        "text": "CMMC Level 1, 2, and 3 auditor manuals, plus the assessor working guide. Setup is a separate page below Auditor Manuals.",
+        "text": "CMMC 第 1、2、3 級稽核人員手冊以及評鑑員工作指南。設定是「稽核人員手冊」下方的獨立頁面。",
         "source_sha256": "80af5a993ae8790517e89c7f1b94b170bd72c251308f53e29bd0f358ebea3d67"
       }
     },
@@ -236,11 +264,11 @@
         },
         "headers": [
           {
-            "text": "Job",
+            "text": "工作",
             "source_sha256": "ad617a0fdd57e3f4b8ebb27f6f60470bc4468aadec290db57e612f751767745d"
           },
           {
-            "text": "Groups",
+            "text": "群組",
             "source_sha256": "39bbb719fa2b9d2251039cbf2cd072e1120a414278263e2f11d99af0236c4262"
           },
           {
@@ -259,7 +287,7 @@
         "rows": [
           [
             {
-              "text": "Read-only observer",
+              "text": "唯讀觀察者",
               "source_sha256": "124a075178664d2ee91ff8fc4b9105d0836a437049fc24111597b6155b208eda"
             },
             {
@@ -303,7 +331,7 @@
           ],
           [
             {
-              "text": "Lead auditor (Audit Admin)",
+              "text": "首席稽核人員（稽核系統管理員）",
               "source_sha256": "ad327d82e6d729f67843d72b3dc5d3820b11479f40abd170d786e44a537595f1"
             },
             {
@@ -332,19 +360,19 @@
         },
         "headers": [
           {
-            "text": "Username",
+            "text": "使用者名稱",
             "source_sha256": "e3b89e9d33f88e523083d8b4436adcc3726c89e97fd3179a2e102d765d1b16ed"
           },
           {
-            "text": "Job",
+            "text": "工作",
             "source_sha256": "ad617a0fdd57e3f4b8ebb27f6f60470bc4468aadec290db57e612f751767745d"
           },
           {
-            "text": "Groups",
+            "text": "群組",
             "source_sha256": "39bbb719fa2b9d2251039cbf2cd072e1120a414278263e2f11d99af0236c4262"
           },
           {
-            "text": "Notes",
+            "text": "備註",
             "source_sha256": "8a7525b1492fb84833f5c4a69b30f4bfbb134f9b666b61a2c1872d63d234c085"
           }
         ],
@@ -355,7 +383,7 @@
               "source_sha256": "8171bacf32668a8f44b90087ad107ed63170f57154763ba7e44047bf9e5a7be3"
             },
             {
-              "text": "Read-only observer",
+              "text": "唯讀觀察者",
               "source_sha256": "124a075178664d2ee91ff8fc4b9105d0836a437049fc24111597b6155b208eda"
             },
             {
@@ -373,7 +401,7 @@
               "source_sha256": "c5a62ce3fa7f6d86af0009389ccd815277691ea64da0c5c98e302bb13dd59248"
             },
             {
-              "text": "Working auditor",
+              "text": "在崗稽核員",
               "source_sha256": "58d435f21971d98b40f82858d61661e4d363036d489343ae3c08ada7777e8b6d"
             },
             {
@@ -391,7 +419,7 @@
               "source_sha256": "1a8d1136f1985da433c71c7cc281c939d5edcc0dbf723728d3d963905df5a8d0"
             },
             {
-              "text": "Lead auditor (Audit Admin)",
+              "text": "首席稽核人員（稽核系統管理員）",
               "source_sha256": "ad327d82e6d729f67843d72b3dc5d3820b11479f40abd170d786e44a537595f1"
             },
             {
@@ -412,15 +440,15 @@
         },
         "headers": [
           {
-            "text": "Screen",
+            "text": "畫面",
             "source_sha256": "6e56137e21d3222a2e3135fc3458286fc3fb6b2e2c679e9ae28db268fe982af7"
           },
           {
-            "text": "Read-only",
+            "text": "唯讀",
             "source_sha256": "72bb90897ab1eadc924fa1358773c5949372c1f06d8dd53d730bbfa3b0c5b695"
           },
           {
-            "text": "Working auditor",
+            "text": "在崗稽核員",
             "source_sha256": "58d435f21971d98b40f82858d61661e4d363036d489343ae3c08ada7777e8b6d"
           },
           {
@@ -435,51 +463,51 @@
               "source_sha256": "bfd402b2f6f3812529b55596136d3a11c51616317e3b1cd999928e2d4eae7d3f"
             },
             {
-              "text": "Yes",
+              "text": "是",
               "source_sha256": "85a39ab345d672ff8ca9b9c6876f3adcacf45ee7c1e2dbd2408fd338bd55e07e"
             },
             {
-              "text": "Yes",
+              "text": "是",
               "source_sha256": "85a39ab345d672ff8ca9b9c6876f3adcacf45ee7c1e2dbd2408fd338bd55e07e"
             },
             {
-              "text": "Yes",
+              "text": "是",
               "source_sha256": "85a39ab345d672ff8ca9b9c6876f3adcacf45ee7c1e2dbd2408fd338bd55e07e"
             }
           ],
           [
             {
-              "text": "Assessment Binder",
+              "text": "評估活頁夾",
               "source_sha256": "edce73881ba543a19ed06b9eaee2c7998fb127db9bf6232dc805423bed35f519"
             },
             {
-              "text": "View",
+              "text": "檢視",
               "source_sha256": "dcc839a4015c4b7dd9db959a8f757833b8adb92462a751b973386e453c6d58a3"
             },
             {
-              "text": "View and write",
+              "text": "檢視與寫入",
               "source_sha256": "e1beccffdde72f01743aa0438c9890669246d1065ee7781588fce5dc3f8dd355"
             },
             {
-              "text": "View and write",
+              "text": "檢視與寫入",
               "source_sha256": "e1beccffdde72f01743aa0438c9890669246d1065ee7781588fce5dc3f8dd355"
             }
           ],
           [
             {
-              "text": "Report Center",
+              "text": "報告中心",
               "source_sha256": "77ecbfb06f1a609280278311cc52101ed3552be5670a1b26e4c17a7a6d17b475"
             },
             {
-              "text": "View and download",
+              "text": "檢視並下載",
               "source_sha256": "b1890a96a69125b85bba329c4540d45ebb0172a761893e967131bb15ff210c6c"
             },
             {
-              "text": "View and download",
+              "text": "檢視並下載",
               "source_sha256": "b1890a96a69125b85bba329c4540d45ebb0172a761893e967131bb15ff210c6c"
             },
             {
-              "text": "View and download",
+              "text": "檢視並下載",
               "source_sha256": "b1890a96a69125b85bba329c4540d45ebb0172a761893e967131bb15ff210c6c"
             }
           ],
@@ -493,7 +521,7 @@
               "source_sha256": "537ff38038962427ccf260a5147d4193a87517c9520cef8e51d2069b0ce6221c"
             },
             {
-              "text": "Review",
+              "text": "審查",
               "source_sha256": "aff0766a5290e117b8433c351bae7b7b23bed682b2369bd822d88a647cc58512"
             },
             {
@@ -503,51 +531,51 @@
           ],
           [
             {
-              "text": "Current State Compliance",
+              "text": "目前狀態合規",
               "source_sha256": "da5e4759c452cc21dc10cea951de8032d207f64d9b6805dd4e4f6d8710680932"
             },
             {
-              "text": "Read",
+              "text": "讀取",
               "source_sha256": "9b9a8d05a7ec353bda84f9c1bb3178c299de3001b5e970508ddc889c487f92ca"
             },
             {
-              "text": "Read",
+              "text": "讀取",
               "source_sha256": "9b9a8d05a7ec353bda84f9c1bb3178c299de3001b5e970508ddc889c487f92ca"
             },
             {
-              "text": "Read",
+              "text": "讀取",
               "source_sha256": "9b9a8d05a7ec353bda84f9c1bb3178c299de3001b5e970508ddc889c487f92ca"
             }
           ],
           [
             {
-              "text": "Auditing",
+              "text": "稽核",
               "source_sha256": "ca3a7a351944964bf9c0ba7f5fbcb1b351a87377090745434ab7444105843722"
             },
             {
-              "text": "Read",
+              "text": "讀取",
               "source_sha256": "9b9a8d05a7ec353bda84f9c1bb3178c299de3001b5e970508ddc889c487f92ca"
             },
             {
-              "text": "Read",
+              "text": "讀取",
               "source_sha256": "9b9a8d05a7ec353bda84f9c1bb3178c299de3001b5e970508ddc889c487f92ca"
             },
             {
-              "text": "Read",
+              "text": "讀取",
               "source_sha256": "9b9a8d05a7ec353bda84f9c1bb3178c299de3001b5e970508ddc889c487f92ca"
             }
           ],
           [
             {
-              "text": "Local IAM Administration",
+              "text": "本機 IAM 管理",
               "source_sha256": "da7112e436c16cb8ec3a5dabc864d11e81aa2717f84c27e5eb789aac51849662"
             },
             {
-              "text": "No",
+              "text": "否",
               "source_sha256": "1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da161c6099be3691d"
             },
             {
-              "text": "No",
+              "text": "否",
               "source_sha256": "1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da161c6099be3691d"
             },
             {
@@ -557,19 +585,19 @@
           ],
           [
             {
-              "text": "Enrollment And Access Control",
+              "text": "註冊與存取控制",
               "source_sha256": "383bc9f7a5709b9c659a1850e4acf50997c7c4f5ff79db8aa2538d977d9beeec"
             },
             {
-              "text": "Read the matrix",
+              "text": "閱讀矩陣",
               "source_sha256": "30d6b1e55b3ac35b02e9cd8b13245881b2036c9aa049c0061437bb2e538b32c0"
             },
             {
-              "text": "Read the matrix",
+              "text": "閱讀矩陣",
               "source_sha256": "30d6b1e55b3ac35b02e9cd8b13245881b2036c9aa049c0061437bb2e538b32c0"
             },
             {
-              "text": "Read the matrix",
+              "text": "閱讀矩陣",
               "source_sha256": "30d6b1e55b3ac35b02e9cd8b13245881b2036c9aa049c0061437bb2e538b32c0"
             }
           ],
@@ -579,15 +607,15 @@
               "source_sha256": "1b10762f249a7ebb0d459149eee1059a1b75fef135e3c5ddb81d645495336860"
             },
             {
-              "text": "No",
+              "text": "否",
               "source_sha256": "1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da161c6099be3691d"
             },
             {
-              "text": "No",
+              "text": "否",
               "source_sha256": "1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da161c6099be3691d"
             },
             {
-              "text": "No",
+              "text": "否",
               "source_sha256": "1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da161c6099be3691d"
             }
           ]
@@ -617,8 +645,8 @@
       },
       "2": {
         "label": {
-          "text": "Einschreibung 和 Zugriffskontrolle",
-          "source_sha256": "2fd02dace2cb256f9260feb7e51309d8160f06046f526609060fe702defecb8a"
+          "text": "Enrollment and Access Control",
+          "source_sha256": "12e572e9d85eaa384cf67874b4cf41b22b8312ac83e5311d99cc06344472301c"
         },
         "note": {
           "text": "存取和身分 → 目錄 → 註冊和存取控制。顯示註冊要求（唯讀評估員、cmmc 評估員、首席審核員）。",
@@ -631,8 +659,8 @@
           "source_sha256": "dfcaba173519aee109c924095aa988b1a5824cad0057d441b2459f513227e23a"
         },
         "note": {
-          "text": "合規 → 審計活動。 Auditoren einladen 和 Engagement verwalten。",
-          "source_sha256": "ce71519ef6836ac4b01029aa14780320240dab405ca9b79fee5693d12bdcacd8"
+          "text": "Compliance → Audit engagements. Invite auditors and manage the engagement.",
+          "source_sha256": "69da63cd0def7a2239d62539bd4ee0140396fbf4b4cecfd4cbaeb588c505d6c5"
         }
       },
       "4": {
@@ -641,13 +669,13 @@
           "source_sha256": "f6b38b0d06b1d601b62003ce6d3b5cb52447b4598bdb96151a213a9535b28d7f"
         },
         "note": {
-          "text": "合規性 → 評估黏合劑。 Steuerungsnarrative 和 Nachweise schreiben 或 pruefen。",
-          "source_sha256": "16bbc2b7290931fd3763e95c32069cff700f89a87946c87919286fb0f9d02c66"
+          "text": "Compliance → Assessment folder. Write or review control narratives and evidence.",
+          "source_sha256": "2c3766e276c7ceb65823e60fef8c3f696b83ae8a15b98085b5bcaa9bcc368bfb"
         }
       },
       "5": {
         "label": {
-          "text": "Auditor manuals",
+          "text": "稽核人員手冊",
           "source_sha256": "6623ff55741761694cc60ea3e767301b9c1d248b65de5f46d388d0c9a1d9ab56"
         },
         "note": {
@@ -677,28 +705,28 @@
           "source_sha256": "1596626afc90c4adf6ca7d904cef542b6de88e0fff737bca78504710693ee5d8"
         },
         "body[0]": {
-          "text": "AIC Server zeigt 在浏览器中的 Anmeldeseite。 Nutzen Sie the Identitaet，Ihre 組織 Ihnen gegeben hat（lokales Konto 或 Verzeichnis）。請造訪 Mehrfaktor-Authentifizierung verlangt、schliessen Sie sie ab、bevor Sie Arbeitsplatzsteuerungen erwarten。",
-          "source_sha256": "3bb16e12b874f50e7ecbf49aa4e67d66092ed54498146cb16742f5a1821af747"
+          "text": "AIC Server displays a login page in the browser. Use the identity your organization gave you (local account or directory). If the site requires multi-factor authentication, complete it before expecting workplace controls.",
+          "source_sha256": "0680e640f10998cd727c657066edcee92a722167ba8e31802c97cf108778ab92"
         },
         "body[1]": {
           "text": "我的工作場所列出了分配給您的機器。您無法發明對不在此列表中的主機的存取權限 - 請管理員分配它，而不是無休止地重試。",
           "source_sha256": "0220bae51ce71a2ce0a7d5cabf268ffcce5f4c9c869516b7f75a4c621477cf41"
         },
         "steps[0]": {
-          "text": "Melden Sie sich an 和 schliessen Sie MFA ab，wenn Sie dazu aufgefordert werden。",
-          "source_sha256": "b17c7be99851c8f927b5e5678e5b5a4eca0089db8515b689a489c6d36d8f1f0f"
+          "text": "Log in and complete MFA when prompted.",
+          "source_sha256": "e12c6650d3d92c8f5c82ca707cb6acda7c81761835bae59a6308fee3c3c4f991"
         },
         "steps[1]": {
-          "text": "位於 Hauptnavigation 的 Oeffnen Sie Meine Arbeitsplaetze。",
-          "source_sha256": "411fd808343f1ddc7eaab58903ff8ccdb568d41cdae3fd636302bcf3daf1d5cd"
+          "text": "Open My Workspaces in the main navigation.",
+          "source_sha256": "b8166bcb4db08369728119d95d4804a4ac6678867d68ac3b9f254af3b9c1a9c4"
         },
         "steps[2]": {
           "text": "選擇指派的工作站並啟動會話輔助程式。",
           "source_sha256": "7567a3b116cef57725e22990ed16699950e95ad15cd5b4546488b844d96acc05"
         },
         "steps[3]": {
-          "text": "Lassen Sie 瀏覽器標籤 geoeffnet，waehrend 會話啟動。關閉 Trenn 之前的位置。",
-          "source_sha256": "5b0f4c1d183230872859ea82d34f3c2080af5711f9896f59957b770c92b23a0d"
+          "text": "Leave the browser tab open while the session starts. Close it only after you disconnect.",
+          "source_sha256": "6f0029055d7ebfd9bae8c399684643943130fcd0e2db65f7bc5f0d44295a3a29"
         },
         "steps[4]": {
           "text": "作為一個機器，作為一個管理員，將會話設定為一個人。",
@@ -710,8 +738,8 @@
         },
         "body": [
           {
-            "text": "AIC Server zeigt 在浏览器中的 Anmeldeseite。 Nutzen Sie the Identitaet，Ihre 組織 Ihnen gegeben hat（lokales Konto 或 Verzeichnis）。請造訪 Mehrfaktor-Authentifizierung verlangt、schliessen Sie sie ab、bevor Sie Arbeitsplatzsteuerungen erwarten。",
-            "source_sha256": "3bb16e12b874f50e7ecbf49aa4e67d66092ed54498146cb16742f5a1821af747"
+            "text": "AIC Server displays a login page in the browser. Use the identity your organization gave you (local account or directory). If the site requires multi-factor authentication, complete it before expecting workplace controls.",
+            "source_sha256": "0680e640f10998cd727c657066edcee92a722167ba8e31802c97cf108778ab92"
           },
           {
             "text": "我的工作場所列出了分配給您的機器。您無法發明對不在此列表中的主機的存取權限 - 請管理員分配它，而不是無休止地重試。",
@@ -720,19 +748,19 @@
         ],
         "steps": [
           {
-            "text": "Melden Sie sich an 和 schliessen Sie MFA ab，wenn Sie dazu aufgefordert werden。",
-            "source_sha256": "b17c7be99851c8f927b5e5678e5b5a4eca0089db8515b689a489c6d36d8f1f0f"
+            "text": "Log in and complete MFA when prompted.",
+            "source_sha256": "e12c6650d3d92c8f5c82ca707cb6acda7c81761835bae59a6308fee3c3c4f991"
           },
           {
-            "text": "位於 Hauptnavigation 的 Oeffnen Sie Meine Arbeitsplaetze。",
-            "source_sha256": "411fd808343f1ddc7eaab58903ff8ccdb568d41cdae3fd636302bcf3daf1d5cd"
+            "text": "Open My Workspaces in the main navigation.",
+            "source_sha256": "b8166bcb4db08369728119d95d4804a4ac6678867d68ac3b9f254af3b9c1a9c4"
           },
           {
             "text": "選擇指派的工作站並啟動會話輔助程式。",
             "source_sha256": "7567a3b116cef57725e22990ed16699950e95ad15cd5b4546488b844d96acc05"
           },
           {
-            "text": "Lassen Sie 瀏覽器標籤 geoeffnet，waehrend 會話啟動。關閉 Trenn 之前的位置。",
+            "text": "Leave the browser tab open while the session starts. Close it only after you disconnect.",
             "source_sha256": "5b0f4c1d183230872859ea82d34f3c2080af5711f9896f59957b770c92b23a0d"
           },
           {
@@ -751,7 +779,7 @@
           "source_sha256": "63ad9e4dc69ae289f371f92f94bdacb0850c8d67ee1e6427b1ecbd3a2e899a90"
         },
         "body[0]": {
-          "text": "Ein- 和 Aufwecksteuerungen gelten nur 用於 Ihnen zugewiesene Maschinen。 Schlafende 或離線 Zustaende 正常，是 Host ausgeschaltet ist。 Warten Sie auf the Aufwecken 或 fragen Sie a Admin，bevor Sie wiederholt neu versuchen。",
+          "text": "Power-on and wake controls apply only to machines assigned to you. Sleeping or offline states are normal when a host is powered off. Wait for the wake to finish, or ask an administrator, before retrying repeatedly.",
           "source_sha256": "6e28429879e643758984cfeef03e390323e0d1dc426116ccb50f7ae46de528a8"
         },
         "body[1]": {
@@ -759,20 +787,20 @@
           "source_sha256": "f051906594b38b28a5445245cf4fe00d1b2060d09208a0ab558098a9f659b13a"
         },
         "steps[0]": {
-          "text": "Nutzen Sie angezeigte Ein- 或 Aufwecksteuerungen nur for Ihre zugewiesenen Maschinen。",
-          "source_sha256": "d9cfdc2286aab81d1a9b91c9cc67d5566f4175ad4e81826bcaa4dd5e982afe68"
+          "text": "Use the displayed turn-on or wake-up controls only for your assigned machines.",
+          "source_sha256": "2034be5fd85fcbdbde152eb481037722c9af70f959c7280c3c2d338073b74217"
         },
         "steps[1]": {
-          "text": "Zeigt 狀態 schlafend 或離線，warten Sie kurz 和 fragen Sie 管理員，wenn Zustand bleibt。",
+          "text": "If the status shows sleeping or offline, wait briefly and ask an administrator if the state persists.",
           "source_sha256": "21814b8d8777ec791e56538b597e3b6112064bda0950ace12d72a2532b41bed4"
         },
         "steps[2]": {
-          "text": "賓登·謝 (Beenden Sie) 在維密特勒 (Vermittler) 舉行的會議，文恩·謝 (Wenn Sie) fertig sind。",
+          "text": "End the session in the broker when you are finished.",
           "source_sha256": "a928a0f0864148c7651b10d817e1b6de5993f53276851ad7033906be1409dbc4"
         },
         "steps[3]": {
-          "text": "Fuegen Sie Sitzungs-聊天或電子郵件中的 URLs",
-          "source_sha256": "76141efae53b83608509d67e93e7f0119357495bafcaae8e71b947554a57e980"
+          "text": "Never paste session URLs into chat or email.",
+          "source_sha256": "81b9ab726dada611ceb2dc8a680acc2ee45ffd206c0149ea19e8a65d8988ac97"
         },
         "productLabel": {
           "text": "我的工作廣場",
@@ -780,7 +808,7 @@
         },
         "body": [
           {
-            "text": "Ein- 和 Aufwecksteuerungen gelten nur 用於 Ihnen zugewiesene Maschinen。 Schlafende 或離線 Zustaende 正常，是 Host ausgeschaltet ist。 Warten Sie auf the Aufwecken 或 fragen Sie a Admin，bevor Sie wiederholt neu versuchen。",
+            "text": "Power-on and wake controls apply only to machines assigned to you. Sleeping or offline states are normal when a host is powered off. Wait for wake to finish, or ask an administrator, before retrying repeatedly.",
             "source_sha256": "6e28429879e643758984cfeef03e390323e0d1dc426116ccb50f7ae46de528a8"
           },
           {
@@ -790,20 +818,20 @@
         ],
         "steps": [
           {
-            "text": "Nutzen Sie angezeigte Ein- 或 Aufwecksteuerungen nur for Ihre zugewiesenen Maschinen。",
-            "source_sha256": "d9cfdc2286aab81d1a9b91c9cc67d5566f4175ad4e81826bcaa4dd5e982afe68"
+            "text": "Use the displayed turn-on or wake-up controls only for your assigned machines.",
+            "source_sha256": "2034be5fd85fcbdbde152eb481037722c9af70f959c7280c3c2d338073b74217"
           },
           {
-            "text": "Zeigt 狀態 schlafend 或離線，warten Sie kurz 和 fragen Sie 管理員，wenn Zustand bleibt。",
+            "text": "If status shows sleeping or offline, wait briefly and ask an administrator if the state does not change.",
             "source_sha256": "21814b8d8777ec791e56538b597e3b6112064bda0950ace12d72a2532b41bed4"
           },
           {
-            "text": "賓登·謝 (Beenden Sie) 在維密特勒 (Vermittler) 舉行的會議，文恩·謝 (Wenn Sie) fertig sind。",
+            "text": "End the session in the broker when you are finished.",
             "source_sha256": "a928a0f0864148c7651b10d817e1b6de5993f53276851ad7033906be1409dbc4"
           },
           {
-            "text": "Fuegen Sie Sitzungs-聊天或電子郵件中的 URLs",
-            "source_sha256": "76141efae53b83608509d67e93e7f0119357495bafcaae8e71b947554a57e980"
+            "text": "Never paste session URLs into chat or email.",
+            "source_sha256": "81b9ab726dada611ceb2dc8a680acc2ee45ffd206c0149ea19e8a65d8988ac97"
           }
         ]
       },
@@ -813,24 +841,24 @@
           "source_sha256": "5c1f7312ba9b044f4b5b92a0f0b6258c293a033a68abba7cc1f7808cbbefa06f"
         },
         "summary": {
-          "text": "Geteilte Elemente empfangen 和 oeffnen，沒有 Admin-Rechte。",
-          "source_sha256": "0cce0c39b8c9e6abd2016a7055c32de94dc8f070a4affd629061e4da0c8152bb"
+          "text": "Receive and open shared items without admin rights.",
+          "source_sha256": "95d6950ec4fa15ad0ca477a004d29ac69bb6c95daeaa5f11974dd8557699d9dd"
         },
         "body[0]": {
-          "text": "Sicheres Teilen erscheint，wenn Ihre Rolle es erlaubt。 Produktbetrachter 中的 Sie gerichtete Pakete oeffnen sich。下載是nur moeglich，位於 Paketrichtlinie ihn zulaesst。",
-          "source_sha256": "12aecf8b1c688a5b602a37a07fdd0ebc13f74ea402238a2cc31c9f75ff8ba8fe"
+          "text": "Safe sharing appears if your role allows it. Packages addressed to you open in the product viewer. A download is only possible if the package policy allows it.",
+          "source_sha256": "aed73c6645aee111e84a12c77c16607138b408189933c54d9a60e092d0f5783b"
         },
         "body[1]": {
           "text": "將意外版本視為支援問題：將其回報給管理員。不要轉發一次性連結。",
           "source_sha256": "b5997371072b282baa3ded90e47d8230d6b26ad65000e131afd46c38b46e77f2"
         },
         "steps[0]": {
-          "text": "Oeffnen Sie Sicheres Teilen 在 Benutzermenue 中，wenn es verfuegbar ist。",
-          "source_sha256": "416cbe980fb9c113b42007fd428bbceeb23d8cd9e1cb54aef984114454dfa4c0"
+          "text": "Open secure sharing in the user menu if it's available.",
+          "source_sha256": "0bf74bf24cf13e250d09bdd05b17472ece71d9d832ced8a1820acf37a57123a6"
         },
         "steps[1]": {
-          "text": "Nehmen Sie 和 Sie gerichtete Pakete 以及 oeffnen Sie sie 在 Betrachter 中。",
-          "source_sha256": "79922d18824ef760c8b8133e6e8e136453483f6c848f38206277dd60546490eb"
+          "text": "Accept packages addressed to you and open them in the viewer.",
+          "source_sha256": "40bfcfcab5646f9079e9ec5572259904c4c664cf63f1890dd867c78928eaa5f3"
         },
         "steps[2]": {
           "text": "現在正在加載，請參閱 Paket es erlaubt。",
@@ -846,8 +874,8 @@
         },
         "body": [
           {
-            "text": "Sicheres Teilen erscheint，wenn Ihre Rolle es erlaubt。 Produktbetrachter 中的 Sie gerichtete Pakete oeffnen sich。下載是nur moeglich，位於 Paketrichtlinie ihn zulaesst。",
-            "source_sha256": "12aecf8b1c688a5b602a37a07fdd0ebc13f74ea402238a2cc31c9f75ff8ba8fe"
+            "text": "Safe sharing appears if your role allows it. Packages addressed to you open in the product viewer. A download is only possible if the package policy allows it.",
+            "source_sha256": "aed73c6645aee111e84a12c77c16607138b408189933c54d9a60e092d0f5783b"
           },
           {
             "text": "將意外版本視為支援問題：將其回報給管理員。不要轉發一次性連結。",
@@ -856,12 +884,12 @@
         ],
         "steps": [
           {
-            "text": "Oeffnen Sie Sicheres Teilen 在 Benutzermenue 中，wenn es verfuegbar ist。",
-            "source_sha256": "416cbe980fb9c113b42007fd428bbceeb23d8cd9e1cb54aef984114454dfa4c0"
+            "text": "Open secure sharing in the user menu if it's available.",
+            "source_sha256": "0bf74bf24cf13e250d09bdd05b17472ece71d9d832ced8a1820acf37a57123a6"
           },
           {
-            "text": "Nehmen Sie 和 Sie gerichtete Pakete 以及 oeffnen Sie sie 在 Betrachter 中。",
-            "source_sha256": "79922d18824ef760c8b8133e6e8e136453483f6c848f38206277dd60546490eb"
+            "text": "Accept packages addressed to you and open them in the viewer.",
+            "source_sha256": "40bfcfcab5646f9079e9ec5572259904c4c664cf63f1890dd867c78928eaa5f3"
           },
           {
             "text": "現在正在加載，請參閱 Paket es erlaubt。",
@@ -883,12 +911,12 @@
           "source_sha256": "70313b51825740746b2e7a8b630224d6293ff8f4d284ce6906e90aef2c7a8228"
         },
         "body[0]": {
-          "text": "Ihre Profilseite enthaelt Anzeigename 和 Kontaktdaten。 Passwortaenderungen folgen the Laengen- 和 Verlaufsrichtlinie 組織。 MFA-Authenticatoren werden registriert 或 ersetzt，位於 Sicherheitsseite Sie dazu auffordert 中。",
-          "source_sha256": "c241b9507fd31189278007ebea840c33d127f8aa5fd97630bdab24e2c1995a12"
+          "text": "您的個人資料頁包含顯示名稱與連絡資訊。密碼變更遵循組織的長度與歷程原則。當安全性頁面提示時，會登錄或更換 MFA 驗證器。",
+          "source_sha256": "fd19565202ac719ba3ee1f8810c0fc651f1da12620aa1cba3edf4c543906a157"
         },
         "body[1]": {
-          "text": "Melden Sie sich an einer geteilten Konsole ab, wenn Sie fertig sind, damit naechste Person Ihre Session not uebernimt.",
-          "source_sha256": "aa1f3eb47d973b6651eaacad451dac6d6a78837a3e536be1652f30b3dee56170"
+          "text": "From a shared console, log out when you're finished so the next person doesn't take over your session.",
+          "source_sha256": "ee77eb077224bf187d1e3831fd29ed43b584278e2662fa94ba2025182978d4c6"
         },
         "steps[0]": {
           "text": "刷新 Sie Anzeigename 和 Kontaktdaten auf Ihrer Profilseite。",
@@ -903,8 +931,8 @@
           "source_sha256": "7fb45592eb6e81c4719ecee5a3d0caccfd0dd09574886c3b93916214bf802c12"
         },
         "steps[3]": {
-          "text": "Melden Sie sich an geteilten Konsolen ab, wenn Sie fertig sind。",
-          "source_sha256": "e5c0b14c5eccd7e3732c83d9865b7a95b9688c60bf5cad6c2da781e7bd7f0159"
+          "text": "Sign out of shared consoles when you're finished.",
+          "source_sha256": "461b07c137e01f8a67bf48a059be853e84f5013a2d5875fd46025657e5442873"
         },
         "productLabel": {
           "text": "控制概要",
@@ -912,12 +940,12 @@
         },
         "body": [
           {
-            "text": "Ihre Profilseite enthaelt Anzeigename 和 Kontaktdaten。 Passwortaenderungen folgen the Laengen- 和 Verlaufsrichtlinie 組織。 MFA-Authenticatoren werden registriert 或 ersetzt，位於 Sicherheitsseite Sie dazu auffordert 中。",
-            "source_sha256": "c241b9507fd31189278007ebea840c33d127f8aa5fd97630bdab24e2c1995a12"
+            "text": "您的個人資料頁包含顯示名稱與連絡資訊。密碼變更遵循組織的長度與歷程原則。當安全性頁面提示時，會登錄或更換 MFA 驗證器。",
+            "source_sha256": "fd19565202ac719ba3ee1f8810c0fc651f1da12620aa1cba3edf4c543906a157"
           },
           {
-            "text": "Melden Sie sich an einer geteilten Konsole ab, wenn Sie fertig sind, damit naechste Person Ihre Session not uebernimt.",
-            "source_sha256": "aa1f3eb47d973b6651eaacad451dac6d6a78837a3e536be1652f30b3dee56170"
+            "text": "From a shared console, log out when you're finished so the next person doesn't take over your session.",
+            "source_sha256": "ee77eb077224bf187d1e3831fd29ed43b584278e2662fa94ba2025182978d4c6"
           }
         ],
         "steps": [
@@ -934,8 +962,8 @@
             "source_sha256": "7fb45592eb6e81c4719ecee5a3d0caccfd0dd09574886c3b93916214bf802c12"
           },
           {
-            "text": "Melden Sie sich an geteilten Konsolen ab, wenn Sie fertig sind。",
-            "source_sha256": "e5c0b14c5eccd7e3732c83d9865b7a95b9688c60bf5cad6c2da781e7bd7f0159"
+            "text": "Sign out of shared consoles when you're finished.",
+            "source_sha256": "461b07c137e01f8a67bf48a059be853e84f5013a2d5875fd46025657e5442873"
           }
         ]
       },
@@ -969,8 +997,8 @@
           "source_sha256": "1394f7d17cc1aec007ac675248ffd8a629279b1fb2a5c5330db69573bcd18260"
         },
         "steps[3]": {
-          "text": "Halten Sie Geheimnisse aus 門票與聊天 Heraus。",
-          "source_sha256": "e42914b2be5ce605f61495bfe1e537ab504e41b17564dafaef3633b40a31124a"
+          "text": "Keep secrets out of tickets and chat.",
+          "source_sha256": "ea7470fcc0a844ee3d6b78966718ffe5361022d0dee47d22ca00aaeaa77ca73d"
         },
         "body": [
           {
@@ -996,8 +1024,8 @@
             "source_sha256": "1394f7d17cc1aec007ac675248ffd8a629279b1fb2a5c5330db69573bcd18260"
           },
           {
-            "text": "Halten Sie Geheimnisse aus 門票與聊天 Heraus。",
-            "source_sha256": "e42914b2be5ce605f61495bfe1e537ab504e41b17564dafaef3633b40a31124a"
+            "text": "Keep secrets out of tickets and chat.",
+            "source_sha256": "ea7470fcc0a844ee3d6b78966718ffe5361022d0dee47d22ca00aaeaa77ca73d"
           }
         ]
       }
@@ -1031,28 +1059,28 @@
           "source_sha256": "4b3d69d0aaaeb661876cb393605eb57985afc90cef156be62771b5f646e9da13"
         },
         "steps[0]": {
-          "text": "Oeffnen Sie 評估活頁夾合規性或文件選單，Ihre Rolle erlaubt。",
-          "source_sha256": "87ec87dc970c0029d24a2d2b8b1bea236a28fd9613e45b66f2acfe6d32b25cb8"
+          "text": "Open the assessment binder from the compliance or documentation menus that your role allows.",
+          "source_sha256": "ef74e0178cd60cd2a3c7bf683d747111c70a752a2bb6fa0dda042c4b5c5caa99"
         },
         "steps[1]": {
           "text": "為評估視窗建立或選擇一個 Binder 實例。",
           "source_sha256": "3cca9d9d54aedee15fae19d8c6249bea19687b27ecf3c14e3780185253175cd6"
         },
         "steps[2]": {
-          "text": "Fuellen Sie Steuerungsnarrative with ehrlichem Status (Umgesetzt / Teilweise / Geplant)。",
-          "source_sha256": "749cf7779132a19e3f652c401dce7f82658c8aab985b515ea7d822b1276b2b75"
+          "text": "Fill control narratives with an honest status (Implemented / Partial / Planned).",
+          "source_sha256": "7acc5d4d87e8eb15d3f9d6166c93209c236f9b60f7f373c8df13d995cd3c894c"
         },
         "steps[3]": {
-          "text": "Haengen Sie Nachweise 或 verknuepfen Sie Nachweise，即 Enklave bereits erzeugt 帽。",
-          "source_sha256": "221057df685280aeef46d9924c0301c272ff2bfb55906d7aef9be49c2c422667"
+          "text": "附加或連結飛地已建立的證據。",
+          "source_sha256": "0c7104f3246f492516b11bcfe17c5a38573dff588d28a14efc05daf4b80795a6"
         },
         "steps[4]": {
           "text": "出口 Sie Nachweispaket。請注意 SHA-256-Manifeste，請注意外部因素。",
           "source_sha256": "c323fc7e06fed66631f91ee99ddbc1b19dfbb6f948f7bdf5741e3209126f2c6f"
         },
         "productLabel": {
-          "text": "評估-Binder oeffnen",
-          "source_sha256": "7c524247d3041b32cc9bd3a09addaeb77ea42c14ade82e00ed15841cbbec7dbe"
+          "text": "Open Assessment Binder",
+          "source_sha256": "323df1f14fe0b611f3a66750fbae4298236196df27eec87acf3ce0e9ba3d55af"
         },
         "body": [
           {
@@ -1066,20 +1094,20 @@
         ],
         "steps": [
           {
-            "text": "Oeffnen Sie 評估活頁夾合規性或文件選單，Ihre Rolle erlaubt。",
-            "source_sha256": "87ec87dc970c0029d24a2d2b8b1bea236a28fd9613e45b66f2acfe6d32b25cb8"
+            "text": "Open the assessment binder from the compliance or documentation menus that your role allows.",
+            "source_sha256": "ef74e0178cd60cd2a3c7bf683d747111c70a752a2bb6fa0dda042c4b5c5caa99"
           },
           {
             "text": "為評估視窗建立或選擇一個 Binder 實例。",
             "source_sha256": "3cca9d9d54aedee15fae19d8c6249bea19687b27ecf3c14e3780185253175cd6"
           },
           {
-            "text": "Fuellen Sie Steuerungsnarrative with ehrlichem Status (Umgesetzt / Teilweise / Geplant)。",
+            "text": "Fill control narratives with honest status (Implemented / Partial / Planned).",
             "source_sha256": "749cf7779132a19e3f652c401dce7f82658c8aab985b515ea7d822b1276b2b75"
           },
           {
-            "text": "Haengen Sie Nachweise 或 verknuepfen Sie Nachweise，即 Enklave bereits erzeugt 帽。",
-            "source_sha256": "221057df685280aeef46d9924c0301c272ff2bfb55906d7aef9be49c2c422667"
+            "text": "附加或連結飛地已建立的證據。",
+            "source_sha256": "0c7104f3246f492516b11bcfe17c5a38573dff588d28a14efc05daf4b80795a6"
           },
           {
             "text": "出口 Sie Nachweispaket。請注意 SHA-256-Manifeste，請注意外部因素。",
@@ -1093,8 +1121,8 @@
           "source_sha256": "c00d15d06f9f8a6d21f124cd85ebf6f2bf5197b8cb5dbb1572eb8966e164c6ef"
         },
         "summary": {
-          "text": "Katalogberichte ausfuehren 和 Nachweise without Fix-It-Rechte herunterladen。",
-          "source_sha256": "de6f444bd16ccbb34d2f817a39b4cf9e3e7b7d99f742beb991e1ee0e8aa4fa70"
+          "text": "執行目錄報表，並在沒有修復權限的情況下下載證據。",
+          "source_sha256": "4ca64c094e0e42deb0dddca9ff00113b339dfffbbdaf483fa7fb40379f4a8a43"
         },
         "body[0]": {
           "text": "Filters in the Report Center catalog help you find SSP, inventory, and access reports. Prefer encrypted package downloads if the content may contain CUI.",
@@ -1106,10 +1134,10 @@
         },
         "steps[0]": {
           "text": "過濾目錄，使其成為受益人的家族。",
-          "source_sha256": "c0f1e32684c0480798e9f1daa5a10ea1a03b12d56329e5b5a0e36004023fc7bd"
+          "source_sha256": "3a9070f4e0b0f00b397e52fcea89c48424d3d4fb5157391e1e45d21579e676dd"
         },
         "steps[1]": {
-          "text": "Fuehren Sie 是 Ihrer 組織的負責人和負載 Sie 的負責人。",
+          "text": "Run the report and download the package your organization allows.",
           "source_sha256": "dc82e8ab6a7d56f9b8f1822df0253bed8f44b776495d6f1efcaed6044326a80c"
         },
         "steps[2]": {
@@ -1118,7 +1146,7 @@
         },
         "steps[3]": {
           "text": "Eskalieren Sie fehlende Operatoraktionen, statt self to beheben。",
-          "source_sha256": "ab93a9fb83becdf12fa674e4c81c0a300f0415071c8aa923fdd0efeff601a108"
+          "source_sha256": "d159fbfb31a54224570c4b14a59ad0b55b90eedfd86f49c4993851110d032128"
         },
         "productLabel": {
           "text": "聯邦法庭",
@@ -1126,8 +1154,8 @@
         },
         "body": [
           {
-            "text": "在 Berichtszentrum-Katalog helfen Ihnen、SSP-、Bestands- 和 Zugriffsberichte 中進行篩選以查找。 Bevorzugen Sie verschluesselte Paketdownloads，透過 Inhalt CUI enthalten kann。",
-            "source_sha256": "a5a3868aefedc7720ebea3f1ac5b979a5c7ceb50390f5515a4bae236babebf89"
+            "text": "Filters in the Report Center catalog help you find SSP, inventory, and access reports. Prefer encrypted package downloads if the content may contain CUI.",
+            "source_sha256": "1473033d64827222555d8c68c4033ca87b523fe0399e399627514791c94c0525"
           },
           {
             "text": "Auditor roles do not receive fix-it or rescan actions. Ask operators to run them and check the results again afterwards.",
@@ -1140,7 +1168,7 @@
             "source_sha256": "c0f1e32684c0480798e9f1daa5a10ea1a03b12d56329e5b5a0e36004023fc7bd"
           },
           {
-            "text": "Fuehren Sie 是 Ihrer 組織的負責人和負載 Sie 的負責人。",
+            "text": "Run the report and download the package your organization allows.",
             "source_sha256": "dc82e8ab6a7d56f9b8f1822df0253bed8f44b776495d6f1efcaed6044326a80c"
           },
           {
@@ -1159,32 +1187,32 @@
           "source_sha256": "2210bc8eacce374ea4e26a616403006ae88aff7e5297053af05f61ea197499a0"
         },
         "summary": {
-          "text": "Lage 和 Feststellungen pruefen，無需 beheben。",
-          "source_sha256": "3f00051000ead72da4e9e878d75428e7b5185dd3f667a7948d6c7a05e179a328"
+          "text": "Review posture and findings without applying fixes.",
+          "source_sha256": "77aa78b1c57dec83b4d8306d95bb783a110cf71af740c7187eae77c081f9bae9"
         },
         "body[0]": {
-          "text": "Aktueller 合規性-Stand zeigt Lage 和 Feststellungen，wenn Ihre Rolle Leserechte umfasst。適用於 Rolle、Feststellungskategorie 或 Maschine 的 Nutzen Sie 濾鏡。",
-          "source_sha256": "8fadf5351c4e0e50156742ef41e17ca66f2b0c286e66d35ef196afdef9efd298"
+          "text": "Current compliance status shows situation and findings if your role includes reading rights. Use filters for role, detection category or machine.",
+          "source_sha256": "d8f0446788e9e9b9be1d93a444f3304290b4fb8916a1e761e1733aee5162d764"
         },
         "body[1]": {
           "text": "捕捉活頁夾敘述中的空白。更改生產設定是操作員的任務。",
           "source_sha256": "258430a03be7d12d71196ae2cd53d57e9699266db8f5233133c2ed18aba3616f"
         },
         "steps[0]": {
-          "text": "Oeffnen Sie Aktueller 合規立場與 einer lesefaehigen Rolle。",
-          "source_sha256": "30fe2e4d0f33738239a332b48a0e745f729a3e896a9d5204921354a56b592482"
+          "text": "Open the current compliance status with a readable role.",
+          "source_sha256": "fc6d0d7288387f2edbe6a075340c4d400dca4aeea9329a8f91e0272e7cc618b8"
         },
         "steps[1]": {
-          "text": "篩選 gepruefte 人口。",
-          "source_sha256": "36ed28a3b9c16d59c42a48f9de4c2639152488468e63c15e2c849063e75eefe4"
+          "text": "Filter to the reviewed population.",
+          "source_sha256": "43cc4458d187cacf64a1f02f470973049dd9ddc34f3749b42da08039aa2b67ae"
         },
         "steps[2]": {
-          "text": "Behandeln Sie Erneut scannen / Fix-It als Operatoraktionen。",
-          "source_sha256": "563a4d5ecf290c3c3296a93c80bd49bd7559b97ee359ba5df06c64793831b118"
+          "text": "Treat Rescan / Fix-It as operator actions.",
+          "source_sha256": "2dd9e35c18a541f432e1283bf96f1c5094967e558b2241e65a6330c4f76df3ee"
         },
         "steps[3]": {
-          "text": "Halten Sie Luecken 在 Binder fest 中，statt 設定到 aendern。",
-          "source_sha256": "ae8e38397fff6294f6a6c8e5b108cb7995bc212a43cb35892d6b47e4f96850a3"
+          "text": "Record gaps in the binder instead of changing settings.",
+          "source_sha256": "cf4be3b5e6f8e7489061d82a22ae0144c4ccfacfd35b4c6581371b174d446ca0"
         },
         "productLabel": {
           "text": "通知合規性標準",
@@ -1192,8 +1220,8 @@
         },
         "body": [
           {
-            "text": "Aktueller 合規性-Stand zeigt Lage 和 Feststellungen，wenn Ihre Rolle Leserechte umfasst。適用於 Rolle、Feststellungskategorie 或 Maschine 的 Nutzen Sie 濾鏡。",
-            "source_sha256": "8fadf5351c4e0e50156742ef41e17ca66f2b0c286e66d35ef196afdef9efd298"
+            "text": "Current compliance status shows situation and findings if your role includes reading rights. Use filters for role, detection category or machine.",
+            "source_sha256": "d8f0446788e9e9b9be1d93a444f3304290b4fb8916a1e761e1733aee5162d764"
           },
           {
             "text": "捕捉活頁夾敘述中的空白。更改生產設定是操作員的任務。",
@@ -1202,20 +1230,20 @@
         ],
         "steps": [
           {
-            "text": "Oeffnen Sie Aktueller 合規立場與 einer lesefaehigen Rolle。",
-            "source_sha256": "30fe2e4d0f33738239a332b48a0e745f729a3e896a9d5204921354a56b592482"
+            "text": "Open the current compliance status with a readable role.",
+            "source_sha256": "fc6d0d7288387f2edbe6a075340c4d400dca4aeea9329a8f91e0272e7cc618b8"
           },
           {
-            "text": "篩選 gepruefte 人口。",
+            "text": "Filter to the population under review.",
             "source_sha256": "36ed28a3b9c16d59c42a48f9de4c2639152488468e63c15e2c849063e75eefe4"
           },
           {
-            "text": "Behandeln Sie Erneut scannen / Fix-It als Operatoraktionen。",
+            "text": "Treat Rescan / Fix-It as operator actions.",
             "source_sha256": "563a4d5ecf290c3c3296a93c80bd49bd7559b97ee359ba5df06c64793831b118"
           },
           {
-            "text": "Halten Sie Luecken 在 Binder fest 中，statt 設定到 aendern。",
-            "source_sha256": "ae8e38397fff6294f6a6c8e5b108cb7995bc212a43cb35892d6b47e4f96850a3"
+            "text": "Record gaps in the binder instead of changing settings.",
+            "source_sha256": "cf4be3b5e6f8e7489061d82a22ae0144c4ccfacfd35b4c6581371b174d446ca0"
           }
         ]
       },
@@ -1225,8 +1253,8 @@
           "source_sha256": "56a1e53bbfb7d5c525176b6f0fe8d20a553d7b06552ca26a9c6ebca1456e281a"
         },
         "summary": {
-          "text": "審計-Nachweise pruefen，沒有 Senken 到 konfigurieren。",
-          "source_sha256": "7ca4ab858f2de7def349b25066b0fbfe0d7b4791ab7335860ae724a3ee881180"
+          "text": "在不設定接收端的情況下檢查稽核證據。",
+          "source_sha256": "9dba4f4a6f5154c90af77097162dfdb3477f39e275411252cb0a334085f7d5d8"
         },
         "body[0]": {
           "text": "審計搜索支持參與者、行動和時期。詳細資訊行攜帶相關字段，例如請求 ID 和類似 AU 檢查的結果。",
@@ -1241,20 +1269,20 @@
           "source_sha256": "c67a366b71a676ffe19e74c7bf88e11b5df7c6e91de5040bb23b4f1858776e14"
         },
         "steps[1]": {
-          "text": "Oeffnen Sie Detailzeilen for Korrelationsfelder (Anfrage-ID, Ergebnis)。",
-          "source_sha256": "5116162ff2dceffcded62ee83ba2cb1b5347e811211bd6b7a1422442db39e796"
+          "text": "Open detail rows for correlation fields (Request ID, Result).",
+          "source_sha256": "72257cb5cc08d6cebf3bec7a723b8a4a44fa4af3463a1c2ac1de3cfce77e57af"
         },
         "steps[2]": {
-          "text": "Pruefen Sie 警報器。 Eskalieren Sie 配置sluecken 管理員。",
-          "source_sha256": "90259c2cf0a7a4dde59ae0c41416ffa40af36e01380ccd6b1ebc3f7d0b7c0e1f"
+          "text": "Check alarm history. Escalate the configuration gaps to an administrator.",
+          "source_sha256": "3ca9b8372726e6c0cbd01e2e9e194b56586c09399b8a955cf080002f13d37d21"
         },
         "steps[3]": {
           "text": "切勿透過審核員角色請求顯示秘密。",
           "source_sha256": "ea4966127ce5c12f316cf43cc164a99bfcfba9c7ee5f25f21ff6b5fc7c395986"
         },
         "productLabel": {
-          "text": "Audit oeffnen",
-          "source_sha256": "5156e9e6c0eddeb2d17327a195fb6fa7d29e25cf9f96ad7761d498d5c098bb71"
+          "text": "Open Audit",
+          "source_sha256": "c4f66b77033b01d4d7842e4cb9edc50cde6a8796c2a59eae7505d085cc85b878"
         },
         "body": [
           {
@@ -1272,12 +1300,12 @@
             "source_sha256": "c67a366b71a676ffe19e74c7bf88e11b5df7c6e91de5040bb23b4f1858776e14"
           },
           {
-            "text": "Oeffnen Sie Detailzeilen for Korrelationsfelder (Anfrage-ID, Ergebnis)。",
-            "source_sha256": "5116162ff2dceffcded62ee83ba2cb1b5347e811211bd6b7a1422442db39e796"
+            "text": "Open detail rows for correlation fields (Request ID, Result).",
+            "source_sha256": "72257cb5cc08d6cebf3bec7a723b8a4a44fa4af3463a1c2ac1de3cfce77e57af"
           },
           {
-            "text": "Pruefen Sie 警報器。 Eskalieren Sie 配置sluecken 管理員。",
-            "source_sha256": "90259c2cf0a7a4dde59ae0c41416ffa40af36e01380ccd6b1ebc3f7d0b7c0e1f"
+            "text": "Check alarm history. Escalate the configuration gaps to an administrator.",
+            "source_sha256": "3ca9b8372726e6c0cbd01e2e9e194b56586c09399b8a955cf080002f13d37d21"
           },
           {
             "text": "切勿透過審核員角色請求顯示秘密。",
@@ -1303,15 +1331,15 @@
           "source_sha256": "12721b9771d5b54692a3c9c89e729cc89bcacfdab3eb94897256da898fc29d60"
         },
         "steps[0]": {
-          "text": "Oeffnen Sie Erweiterte Steuerungen 和 pruefen Sie 是 Anforderungsfamilie 的 Statusspalte，即 Sie bewerten。",
-          "source_sha256": "d67c927473fa350f35081e53519dfc4217435f30d7cfd08a4658641c5fb8b583"
+          "text": "Open Advanced Controls and review the status column for the requirement family you are evaluating.",
+          "source_sha256": "2d51aa11e36fc8e9f0e40fc9a7a7ca24cf5fa14033423600bcadda3e47eef6b3"
         },
         "steps[1]": {
           "text": "Lesen Sie the Ehrlichkeitshinweis, bevor Sie a Zeile zitieren. Er nennt the Produktgrenze。",
-          "source_sha256": "d91195c4bbb4a155895d4d7c309a77ae75031f9cb9d8f8ec6db488f8e8709c96"
+          "source_sha256": "3128c9fe2c43a90fe1a7592eebc12796fc186ad03cca9e965f8e67ac5c72bb6b"
         },
         "steps[2]": {
-          "text": "Behandeln Sie Blockiert-Zeilen 是 Organizationsarbeit Ihrer Organization，而不是 Produktdefekte。",
+          "text": "Treat Blocked rows as organizational work owned by your organization, not as product defects.",
           "source_sha256": "c70180bc448ca81eea2430d2a600512f1ce7f34c2c3a8e539670d5f9ae17d91f"
         },
         "steps[3]": {
@@ -1319,8 +1347,8 @@
           "source_sha256": "f4e19ce8a48b2961ff6925103b68f57b7ee8977fbe7cb2cf49ed0f6ddebc0b6c"
         },
         "steps[4]": {
-          "text": "Lehnen Sie jedes Narrativ ab，diese Zeilen auf Met hebt 或 3 級 Zertifizierung behauptet。",
-          "source_sha256": "5345361251d0a986996c56401cd8ec96eaed984f66acc993675b8343fc57ac72"
+          "text": "Reject any narrative that elevates these rows to Met or claims a Level 3 certification.",
+          "source_sha256": "143444daa47e1f957c4bbdb6328bb7110c6d352e65ec8ce644a14dfb73166d6c"
         },
         "productLabel": {
           "text": "警告",
@@ -1338,15 +1366,15 @@
         ],
         "steps": [
           {
-            "text": "Oeffnen Sie Erweiterte Steuerungen 和 pruefen Sie 是 Anforderungsfamilie 的 Statusspalte，即 Sie bewerten。",
-            "source_sha256": "d67c927473fa350f35081e53519dfc4217435f30d7cfd08a4658641c5fb8b583"
+            "text": "Open Advanced Controls and review the status column for the requirement family you are evaluating.",
+            "source_sha256": "2d51aa11e36fc8e9f0e40fc9a7a7ca24cf5fa14033423600bcadda3e47eef6b3"
           },
           {
             "text": "Lesen Sie the Ehrlichkeitshinweis, bevor Sie a Zeile zitieren. Er nennt the Produktgrenze。",
             "source_sha256": "d91195c4bbb4a155895d4d7c309a77ae75031f9cb9d8f8ec6db488f8e8709c96"
           },
           {
-            "text": "Behandeln Sie Blockiert-Zeilen 是 Organizationsarbeit Ihrer Organization，而不是 Produktdefekte。",
+            "text": "Treat Blocked rows as work for your organization, not as product defects.",
             "source_sha256": "c70180bc448ca81eea2430d2a600512f1ce7f34c2c3a8e539670d5f9ae17d91f"
           },
           {
@@ -1354,8 +1382,8 @@
             "source_sha256": "f4e19ce8a48b2961ff6925103b68f57b7ee8977fbe7cb2cf49ed0f6ddebc0b6c"
           },
           {
-            "text": "Lehnen Sie jedes Narrativ ab，diese Zeilen auf Met hebt 或 3 級 Zertifizierung behauptet。",
-            "source_sha256": "5345361251d0a986996c56401cd8ec96eaed984f66acc993675b8343fc57ac72"
+            "text": "Reject any narrative that elevates these rows to Met or claims a Level 3 certification.",
+            "source_sha256": "143444daa47e1f957c4bbdb6328bb7110c6d352e65ec8ce644a14dfb73166d6c"
           }
         ]
       },
@@ -1377,12 +1405,12 @@
           "source_sha256": "e2ddf4e8c3f58fafd03a8a1f485eeb3c17e3a8b40b139ba0ee2e113f2381d6e2"
         },
         "steps[0]": {
-          "text": "產品出口 Sie，wenn verfuegbar。",
-          "source_sha256": "c566d8276c589d70988b5f67497173e798ae266bce2851f32342623172a905e7"
+          "text": "Export from product surfaces when available.",
+          "source_sha256": "8a1f6cc753ba5d0cbedfe4f70a40959e2ef2e5f3207e08b0da5288b4a53c767e"
         },
         "steps[1]": {
-          "text": "Behalten Sie SHA-256-Manifeste bei externen Freigaben。",
-          "source_sha256": "68c654cc11f6efa7161d30d8316f295369ae3161c3fb803947088b1aea88a8a6"
+          "text": "Please note the SHA-256 manifest for external publications.",
+          "source_sha256": "a13731624ccde0e2d97d87ccdd78dfb9aa51802afa556691d833f2b9351f87a4"
         },
         "steps[2]": {
           "text": "避免不支持證明的證明語言。",
@@ -1404,12 +1432,12 @@
         ],
         "steps": [
           {
-            "text": "產品出口 Sie，wenn verfuegbar。",
-            "source_sha256": "c566d8276c589d70988b5f67497173e798ae266bce2851f32342623172a905e7"
+            "text": "Export from product surfaces when available.",
+            "source_sha256": "8a1f6cc753ba5d0cbedfe4f70a40959e2ef2e5f3207e08b0da5288b4a53c767e"
           },
           {
-            "text": "Behalten Sie SHA-256-Manifeste bei externen Freigaben。",
-            "source_sha256": "68c654cc11f6efa7161d30d8316f295369ae3161c3fb803947088b1aea88a8a6"
+            "text": "Please note the SHA-256 manifest for external publications.",
+            "source_sha256": "a13731624ccde0e2d97d87ccdd78dfb9aa51802afa556691d833f2b9351f87a4"
           },
           {
             "text": "避免不支持證明的證明語言。",
@@ -1439,8 +1467,8 @@
           "source_sha256": "3ef29db99e18f6a1ad90b185f54ba58d0d2bf1ce30d036993242242186b6bf6f"
         },
         "summary": {
-          "text": "配置集、Unternehmensprofile 和 Einrichtungsassistent。",
-          "source_sha256": "c60fffeca5d78e940a1e1fe929f8ffeb24c76fe9f8638b0b3c01f2c7d711cd97"
+          "text": "Configuration hubs, company profile and setup wizard.",
+          "source_sha256": "e4ef216e95f9ce603e1250291f24b6248ec445d029cf158e346de398d82e6056"
         },
         "body[0]": {
           "text": "在新的 enclave 中，開啟設定 → 伺服器 → 設定精靈。此精靈將引導您完成合規性設定檔、加密首選項、選用電子郵件提供者選擇和選用電子郵件伺服器安裝（透過設定→伺服器→訊息傳遞/AppConfig 的 SMTP 或 API 機密）。它從不執行破壞性的資料庫初始化。",
@@ -1451,19 +1479,19 @@
           "source_sha256": "bba090671dffe28a1bc80cd217c28c01415f4694ed08eda4c68c31b4c69a395c"
         },
         "steps[0]": {
-          "text": "Fuehren Sie 是設定 → 伺服器的合規性、驗證和可選電子郵件的支援。",
-          "source_sha256": "dbced799688450951c39b4052f7daa6de747c36dce37ff921a9026631bcb8b3b"
+          "text": "Run the setup wizard under Configuration → Compliance, Encryption, and Optional Email Server.",
+          "source_sha256": "974a67560c25080c2a9a688aad5e16795119d7edcef2c1c296fa39715e361ee2"
         },
         "steps[1]": {
-          "text": "在電子郵件伺服器安裝 SMTP 或 Cloud-API-Geheimnisse 中儲存 Sie，wenn Sie bereit sind（或 schliessen Sie unter Konfiguration → Server → Messaging ab）。",
-          "source_sha256": "afe7699accc12b93e091294a7536e12d4b1b6519c5f3f58929f548a2ae47c3fb"
+          "text": "When installing email server, save the SMTP or Cloud API secrets when you're ready (or complete it in Configuration → Server → Messaging).",
+          "source_sha256": "721455ef34e77f55fb4cbabbc80ceef846b09cbea16a7919faef28291f880deb"
         },
         "steps[2]": {
-          "text": "Setzen Sie the Unternehmensprofile, bevor Sie Agenteneinstellungen exportieren.",
+          "text": "Set the company profile before you export agent settings.",
           "source_sha256": "c2c3d3d93bfa13bca672f4df5eab009123bb99242c8da292c6fec45193737ce3"
         },
         "steps[3]": {
-          "text": "請注意，請使用 COMPLIANCE_PROFILE 和 ADMIN_AUTH_MODE 進行 Einsatzabsicht entsprechen。",
+          "text": "Confirm that COMPLIANCE_PROFILE and ADMIN_AUTH_MODE match the deployment intent.",
           "source_sha256": "64a30d77497ab17ab20f10d4f65fea924029fb0849b5c4ede667b166befe8d2d"
         },
         "steps[4]": {
@@ -1486,19 +1514,19 @@
         ],
         "steps": [
           {
-            "text": "Fuehren Sie 是設定 → 伺服器的合規性、驗證和可選電子郵件的支援。",
-            "source_sha256": "dbced799688450951c39b4052f7daa6de747c36dce37ff921a9026631bcb8b3b"
+            "text": "Run the setup wizard under Configuration → Compliance, Encryption, and Optional Email Server.",
+            "source_sha256": "974a67560c25080c2a9a688aad5e16795119d7edcef2c1c296fa39715e361ee2"
           },
           {
-            "text": "在電子郵件伺服器安裝 SMTP 或 Cloud-API-Geheimnisse 中儲存 Sie，wenn Sie bereit sind（或 schliessen Sie unter Konfiguration → Server → Messaging ab）。",
-            "source_sha256": "afe7699accc12b93e091294a7536e12d4b1b6519c5f3f58929f548a2ae47c3fb"
+            "text": "When installing email server, save the SMTP or Cloud API secrets when you're ready (or complete it in Configuration → Server → Messaging).",
+            "source_sha256": "721455ef34e77f55fb4cbabbc80ceef846b09cbea16a7919faef28291f880deb"
           },
           {
-            "text": "Setzen Sie the Unternehmensprofile, bevor Sie Agenteneinstellungen exportieren.",
+            "text": "Set the organization profile before you export agent settings.",
             "source_sha256": "c2c3d3d93bfa13bca672f4df5eab009123bb99242c8da292c6fec45193737ce3"
           },
           {
-            "text": "請注意，請使用 COMPLIANCE_PROFILE 和 ADMIN_AUTH_MODE 進行 Einsatzabsicht entsprechen。",
+            "text": "Confirm that COMPLIANCE_PROFILE and ADMIN_AUTH_MODE match the deployment intent.",
             "source_sha256": "64a30d77497ab17ab20f10d4f65fea924029fb0849b5c4ede667b166befe8d2d"
           },
           {
@@ -1533,8 +1561,8 @@
           "source_sha256": "69ec5fab5862578438a464f39310956886c01483258f8bdb9aa30457fbc0bd27"
         },
         "steps[2]": {
-          "text": "Erzeugen Sie Enrollment-Token unter Systeme → Mandantenfaehigkeit，wenn Sie Token-Bootstrap nutzen。",
-          "source_sha256": "a72776cbaa39549281844b5390e22e13c85cc77d7216d8ae17e2b9ffa85e8ff4"
+          "text": "Create enrollment tokens under Systems → Multitenancy when you use token bootstrap.",
+          "source_sha256": "72e066a7d048fab36cbcc95994e0abbd6ec5bf7bcd360f5419cad578cdadd7d0"
         },
         "steps[3]": {
           "text": "Prefer session MFA. Treat the shared Admin Token as break-glass only.",
@@ -1568,12 +1596,12 @@
             "source_sha256": "69ec5fab5862578438a464f39310956886c01483258f8bdb9aa30457fbc0bd27"
           },
           {
-            "text": "Erzeugen Sie Enrollment-Token unter Systeme → Mandantenfaehigkeit，wenn Sie Token-Bootstrap nutzen。",
-            "source_sha256": "a72776cbaa39549281844b5390e22e13c85cc77d7216d8ae17e2b9ffa85e8ff4"
+            "text": "Create enrollment tokens under Systems → Multitenancy when you use token bootstrap.",
+            "source_sha256": "72e066a7d048fab36cbcc95994e0abbd6ec5bf7bcd360f5419cad578cdadd7d0"
           },
           {
-            "text": "Bevorzugen Sie Sitzungs-MFA。 Behandeln Sie 取得管理令牌為 Notfallmittel。",
-            "source_sha256": "0848c784405cc62dca60cf75c1605c89a2ad31b34c7d5dfb8fb457ef5f7696d0"
+            "text": "Prefer session MFA. Treat the shared Admin Token as break-glass only.",
+            "source_sha256": "fae1962141444406d40a789855be618b919af3612be5c1cffddbcf85a368b6dd"
           },
           {
             "text": "Rotieren Sie ADMIN_TOKEN 或 geteilten 示範。",
@@ -1587,11 +1615,11 @@
           "source_sha256": "1757181923d604ae8c29d2186c7d226b75f096ef27eb50f0de03681c3956b76a"
         },
         "summary": {
-          "text": "Agentenvorgaben、Offenleungen 和 Bereitstellungsablaeufe unter Konfiguration → Agent。",
+          "text": "Agent defaults, disclosures, and propagation workflows under Configuration → Agent.",
           "source_sha256": "58df4af8c0f45fe34ca613d002816dc82f6a997c67c4c5d7a8ba7d63e81616e8"
         },
         "body[0]": {
-          "text": "出口或 uebertragen Sie Agenteneinstellungen erst，wenn Unternehmensoffenleungen vollstaendig sind。 Pruefen Sie 在 Systeme → Systemliste 下安裝代理簽入和 Gesundheit。",
+          "text": "Do not export or propagate agent settings until the company disclosures are complete. After installation, check agent check-in and health under Systems → System List.",
           "source_sha256": "adcb38115aaa6d932a7114fcc1c17940c64bb6104dad4dfc4ea34aa372d6354b"
         },
         "body[1]": {
@@ -1599,11 +1627,11 @@
           "source_sha256": "cff9f9beb4cbc6d1fd34d41d2ad56f4921e1bcd734d58e32fe8da7384c4a2303"
         },
         "steps[0]": {
-          "text": "匯出或開啟配置 → 代理程式的設置，然後執行 Unternehmensoffenleungen vollstaendig sind。",
+          "text": "Export or propagate settings from Configuration → Agent after the company disclosures are complete.",
           "source_sha256": "05504c31f7891389b17ec403360cdc93e7b52ea2d0418f7e21c03c799f80088f"
         },
         "steps[1]": {
-          "text": "Pruefen Sie 包括安裝、代理簽入和完全系統清單。",
+          "text": "After installation, check agent check-in and health in the System List.",
           "source_sha256": "a2c44839bae1d6328bbc7671be194c34698b224687a895a88318434ea46011fc"
         },
         "steps[2]": {
@@ -1615,8 +1643,8 @@
           "source_sha256": "2e6134cdc3e958d2305f6a74fd5b1831f5d26f657ef5e16a01588f8aba492537"
         },
         "steps[4]": {
-          "text": "Bestaetigen Sie Elevation-Pipe 和levation_configured，bevor Sie Elevation-Codes erzeugen。",
-          "source_sha256": "d8b1ac754c08f89d2c0d9e4c1a798a33d1debe955e1e5bf4718da076cb797b92"
+          "text": "Confirm the elevation pipe and elevation_configured before you mint elevation codes.",
+          "source_sha256": "1430d7be6eff3f3a9948364135a8f53862338cdaf3189fb5832fba5447492483"
         },
         "productLabel": {
           "text": "系統列表",
@@ -1624,7 +1652,7 @@
         },
         "body": [
           {
-            "text": "出口或 uebertragen Sie Agenteneinstellungen erst，wenn Unternehmensoffenleungen vollstaendig sind。 Pruefen Sie 在 Systeme → Systemliste 下安裝代理簽入和 Gesundheit。",
+            "text": "Export or transfer agent settings only after organization disclosures are complete. After install, check agent check-in and health under Systems → System list.",
             "source_sha256": "adcb38115aaa6d932a7114fcc1c17940c64bb6104dad4dfc4ea34aa372d6354b"
           },
           {
@@ -1634,11 +1662,11 @@
         ],
         "steps": [
           {
-            "text": "匯出或開啟配置 → 代理程式的設置，然後執行 Unternehmensoffenleungen vollstaendig sind。",
+            "text": "Export or transfer settings from Configuration → Agent after organization disclosures are complete.",
             "source_sha256": "05504c31f7891389b17ec403360cdc93e7b52ea2d0418f7e21c03c799f80088f"
           },
           {
-            "text": "Pruefen Sie 包括安裝、代理簽入和完全系統清單。",
+            "text": "After install, check agent check-in and health on the system list.",
             "source_sha256": "a2c44839bae1d6328bbc7671be194c34698b224687a895a88318434ea46011fc"
           },
           {
@@ -1650,14 +1678,14 @@
             "source_sha256": "2e6134cdc3e958d2305f6a74fd5b1831f5d26f657ef5e16a01588f8aba492537"
           },
           {
-            "text": "Bestaetigen Sie Elevation-Pipe 和levation_configured，bevor Sie Elevation-Codes erzeugen。",
+            "text": "Confirm the elevation pipe and elevation_configured before you mint elevation codes.",
             "source_sha256": "d8b1ac754c08f89d2c0d9e4c1a798a33d1debe955e1e5bf4718da076cb797b92"
           }
         ]
       },
       "messaging": {
         "title": {
-          "text": "訊息傳遞和 Wiederherstellungsbenachrichtigung",
+          "text": "Messaging and Recovery Notification",
           "source_sha256": "b2db4a7085ac2cd594a8a6178d237ac805652d1e7acbb57cdbff8e0e48db869a"
         },
         "summary": {
@@ -1698,8 +1726,8 @@
             "source_sha256": "6e4d589cb2fc26c59cfde83d72a51e9876ced4bd81120205a0c960dc236466c1"
           },
           {
-            "text": "Fuehren Sie Erreichbarkeitspruefungen 或 Go-Live aus。 Entwicklungsprofilen gesperrt 的私人和 Metadaten-Ziele sind ausserhalb。將 Sie API-Schluessel nur 儲存在 Plattformgeheimnissen 中 — 門票或聊天中的 niemals。 Eine erfolgreiche Pruefung 或 Testsenden 預示著 Zustellkonfiguration。這並不意味著，需要進行評估。",
-            "source_sha256": "a2c215160d6a28b521380577f7ad42999f17c4ee4a1fd93fb4ff8397fd1b4d42"
+            "text": "Run availability checks before go-live. Private and metadata targets are locked outside of development profiles. Store API keys only in platform secrets - never in tickets or chat. A successful check or test sending proves the delivery configuration. It does not prove that assessment control is necessary.",
+            "source_sha256": "78311c2264b91106b665ca91886d3eba438d1fdca35898c121b1e80abe4bc266"
           }
         ],
         "steps": [
@@ -1712,8 +1740,8 @@
             "source_sha256": "7400fd9d13e48adbb05ce46b7442b48773cd2ddec12d42f2ec5c4e25175b7ff8"
           },
           {
-            "text": "Fuehren Sie Erreichbarkeitspruefungen aus。 Erwarten Sie Sperren 為 Entwicklungsprofilen 的私人/Metadaten-Ziele ausserhalb。",
-            "source_sha256": "66de378e588ca56abddf3ba0088753b3e42948bebb88eb86a38c6c3d84c80554"
+            "text": "Run accessibility checks. Expect locks on private/metadata targets outside of development profiles.",
+            "source_sha256": "d3ff9784bfe87610c807e639c69c79dcaf310441f27cdb0b7963eace176811e7"
           },
           {
             "text": "在使用非生產郵箱上線之前測試通知。",
@@ -1813,7 +1841,7 @@
           "source_sha256": "5b38f4afbc8773e0de30d3e9fc0cdd87c747dfb8918e301826ed04d8bed847ac"
         },
         "body[2]": {
-          "text": "My Workspaces (under My Workspace) is the end-user connection area for assigned spaces. Remote access is the operator connection area if you have rights to connection destinations. Just opening the page interface is not proof of session - a real session shows a non-empty session ID and a connecting or connected log area.",
+          "text": "「我的工作區」（在「我的工作區」下）是已指派空間的一般使用者連線區。若您有連線目的地權限，遠端存取是操作員連線區。只開啟頁面介面不能證明工作階段——實際工作階段會顯示非空的工作階段識別碼，以及狀態為連線中或已連線的記錄區。",
           "source_sha256": "997c4b4f10b9f9ca36fbb02031e37b7fa9b1ec713a41df42b31e57729248e9d5"
         },
         "steps[0]": {
@@ -1821,24 +1849,24 @@
           "source_sha256": "4fd9d714ab299ca22cf2f9d0c06de4c2204cf24da3c78ff4cd854d76697b06ce"
         },
         "steps[1]": {
-          "text": "Stellen Sie sicher、dass Jump-Flotte 和 Lastverteilung nutzbare Kapazitaet 帽子。 Fuehren Sie Platzierung pruefen aus，bevor Sie Connect-Error the Client zuschreiben。",
-          "source_sha256": "1f5386e65c8c31cd7e3c1df323c43cc74f7a23a745224f0ac25475719599de13"
+          "text": "Ensure Jump fleet & load balancing have usable capacity. Check the placement before attributing the connect error to the client.",
+          "source_sha256": "567d4b0cfa3d5190d39b61cec8c2c2a9a91f10353dbb535fde8271bd45b198b0"
         },
         "steps[2]": {
-          "text": "Bestaetigen Sie Recording-Agenten — Gesundheit 和 Recording-Speicher，在 Sie aufgezeichnete Sessions verlangen 之前。",
+          "text": "Confirm recording agents — health and recording storage — before you require recorded sessions.",
           "source_sha256": "14bab5ea3cd8e41c7ff3688f22a9f7b618532b8b57ca7ca76758cfb40b1a3172"
         },
         "steps[3]": {
-          "text": "Binden Sie SSH-Befehlsfilterung，wenn Sie Befehlssteuerung brauchen。 Ueben Sie 在 Erlauben 和 Ablehnen 的每場現場會議中。",
+          "text": "Bind SSH command filtering when you need command governance. Practice an allow and a deny in a live session.",
           "source_sha256": "bd8ccfc457de6b38c55a9159619ebb187e06f71e32705c69fce55d979686b8cb"
         },
         "steps[4]": {
-          "text": "Nutzen Sie Genehmigungen，wenn Zugriffsanfragen zur 政策 gehoeren。 Pruefen Sie danach Sitzungsaufzeichnungen auf the erwartete Nachweiszeile。",
-          "source_sha256": "a2f3f085c7fc755b76aceace67ad3e7c257e865149801473d05847d2a15e8e13"
+          "text": "Use permissions when access requests are raised to the policy. Then check session recordings for the expected line of evidence.",
+          "source_sha256": "e179925eea8232ed2bbc179c1c50953b04dd4274112d7664c434194fb7e050dc"
         },
         "productLabel": {
-          "text": "Jump-Flotte 和 Lastverteilung oeffnen",
-          "source_sha256": "9c8bcccd09851f6877bb5c83dcb0729201b31340c954779caa15ff77712c0bd1"
+          "text": "Open Jump Fleet & Load Balancing",
+          "source_sha256": "810beb0c8bec4cfaa8299243d319267daf3ccbe545d933966047faa95d817144"
         },
         "body": [
           {
@@ -1850,8 +1878,8 @@
             "source_sha256": "5b38f4afbc8773e0de30d3e9fc0cdd87c747dfb8918e301826ed04d8bed847ac"
           },
           {
-            "text": "Meine Arbeitsplaetze (unter Mein Arbeitsbereich) 是 zugewiesene Plaetze 的 Endbenutzer-Verbindungsflaeche。 Fernzugriff 是運營商-Verbindungsflaeche，wenn Sie Rechte auf Verbindungsziele haben。 Nur Seitenoberflaeche to oeffnen ist kein Sitzungsnachweis — 一個 echte Session zeigt 一個非 leere Sitzungs-ID 和一個 verbindende 或 verbundene Protokollflaeche。",
-            "source_sha256": "e42d54032e6be91c9e790fc6db8b9a366214f8ae597cd984600e4c9bea0690f7"
+            "text": "「我的工作區」（在「我的工作區」下）是已指派空間的一般使用者連線區。若您有連線目的地權限，遠端存取是操作員連線區。只開啟頁面介面不能證明工作階段——實際工作階段會顯示非空的工作階段識別碼，以及狀態為連線中或已連線的記錄區。",
+            "source_sha256": "997c4b4f10b9f9ca36fbb02031e37b7fa9b1ec713a41df42b31e57729248e9d5"
           }
         ],
         "steps": [
@@ -1860,35 +1888,35 @@
             "source_sha256": "4fd9d714ab299ca22cf2f9d0c06de4c2204cf24da3c78ff4cd854d76697b06ce"
           },
           {
-            "text": "Stellen Sie sicher、dass Jump-Flotte 和 Lastverteilung nutzbare Kapazitaet 帽子。 Fuehren Sie Platzierung pruefen aus，bevor Sie Connect-Error the Client zuschreiben。",
-            "source_sha256": "1f5386e65c8c31cd7e3c1df323c43cc74f7a23a745224f0ac25475719599de13"
+            "text": "Ensure Jump fleet & load balancing have usable capacity. Check the placement before attributing the connect error to the client.",
+            "source_sha256": "567d4b0cfa3d5190d39b61cec8c2c2a9a91f10353dbb535fde8271bd45b198b0"
           },
           {
-            "text": "Bestaetigen Sie Recording-Agenten — Gesundheit 和 Recording-Speicher，在 Sie aufgezeichnete Sessions verlangen 之前。",
+            "text": "Confirm recording-agent health and recording storage before you require recorded sessions.",
             "source_sha256": "14bab5ea3cd8e41c7ff3688f22a9f7b618532b8b57ca7ca76758cfb40b1a3172"
           },
           {
-            "text": "Binden Sie SSH-Befehlsfilterung，wenn Sie Befehlssteuerung brauchen。 Ueben Sie 在 Erlauben 和 Ablehnen 的每場現場會議中。",
+            "text": "Bind SSH command filtering when you need command governance. In a live session, exercise one allow and one deny.",
             "source_sha256": "bd8ccfc457de6b38c55a9159619ebb187e06f71e32705c69fce55d979686b8cb"
           },
           {
-            "text": "Nutzen Sie Genehmigungen，wenn Zugriffsanfragen zur 政策 gehoeren。 Pruefen Sie danach Sitzungsaufzeichnungen auf the erwartete Nachweiszeile。",
-            "source_sha256": "a2f3f085c7fc755b76aceace67ad3e7c257e865149801473d05847d2a15e8e13"
+            "text": "Use permissions when access requests are raised to the policy. Then check session recordings for the expected line of evidence.",
+            "source_sha256": "e179925eea8232ed2bbc179c1c50953b04dd4274112d7664c434194fb7e050dc"
           }
         ]
       },
       "evidence-audit": {
         "title": {
-          "text": "Nachweise 和審計普魯豐",
-          "source_sha256": "3fbeb131aed9aacf6ab5c7b5935e3af2dee441420b500b96649e39772818237e"
+          "text": "證據與稽核審查",
+          "source_sha256": "639537e0abde0d4ccca6b3e254617230433e38c9dec22c85f44c52b3022b7460"
         },
         "summary": {
-          "text": "操作員的審計激勵、Berichtszentrum、Aktueller 合規標準和評估活頁夾。",
-          "source_sha256": "d9fcf4cca06475783d13c3a14db45d7fc372c35c128a588b4f3edef746953155"
+          "text": "Audit trail, reporting center, current compliance status and assessment binder for operators.",
+          "source_sha256": "cf96e202677c7a753728533d0bb0f1ac82664277a84db3021d8eccc4b95d76b2"
         },
         "body[0]": {
-          "text": "合規性和 Nachweise → 審計刺激概覽、Live-Ereignisse、審計協議、Ereignisteilung 和 Syslog-Weiterleitung。搜尋 Sie nach Akteur、Action 和 Zeitraum。詳細說明 tragen Korrelationsfelder wie Anfrage-ID 和 Ergebnis。 Syslog 或 Ereignisteilung to konfigurieren erzeugt a Zustellweg — sich kein Assessor-Urteil 的 erfuellt。",
-          "source_sha256": "2d563d2a60a8f938674224928e39b85bf9c87a560190c27c5a1dcf3df7760271"
+          "text": "法規遵循與證據 → 稽核軌跡包含概觀、即時事件、稽核記錄、事件回報與 syslog 轉送。依操作者、動作與期間搜尋。詳細列帶有要求識別碼與結果等關聯欄位。設定 syslog 或事件共用會建立投遞路徑——這本身並不構成評核判定。",
+          "source_sha256": "57ba4a87ee0e4513b5c5f346762bffd00a64ea10893d39a15f82dea7b3042134"
         },
         "body[1]": {
           "text": "報告中心運行目錄報告和包。目前合規狀態顯示每台機器的狀況和結果。重新掃描和修復是刷新產品憑證（而不是合規性證書）的操作員操作。評估活頁夾組織敘述並連結飛地已經產生的證據。寫下誠實的狀態已實施/部分/計劃（或同等）。不要發明人工製品來強迫大都會博物館聲稱。",
@@ -1899,23 +1927,23 @@
           "source_sha256": "ae3f0b0e561b7f2004e0348a27f42aba96b8398e8c89522944c0c03d1cd52fed"
         },
         "steps[0]": {
-          "text": "Oeffnen Sie nach sensiblen Admin-Actions 合規性和 Nachweise → Audit-Spur → Audit-Protokoll 和 bestaetigen Sie erwarteten Akteur 和操作。",
-          "source_sha256": "df0e712cd91fbbaf27a8771306d54eed222415f9ef14b2d2e41676aef6cadd46"
+          "text": "在有意義的管理動作之後，開啟法規遵循與證據 → 稽核軌跡 → 稽核記錄，並確認預期的操作者與動作。",
+          "source_sha256": "c928e678550843ec5ac6cfcbabe814dc0c75c8943e3eab1ddace26e916c9bf02"
         },
         "steps[1]": {
-          "text": "Fuehren Sie benoetigte Berichte unter Compliance & Nachweise → Berichte → Berichtszentrum aus。",
-          "source_sha256": "5478831abbe39125c9c2ea3080c35922244985ec3242f1d53be93679dbf7a689"
+          "text": "在法規遵循與證據 → 報表 → 報表中心執行所需報表。",
+          "source_sha256": "5de10f3fe8131ad9d9bbe9cca686e2d2be152dbf5baf6431b968c2887e704207"
         },
         "steps[2]": {
-          "text": "Nutzen Sie Aktueller 合規立場，um Feststellungen to pruefen。 Behandeln Sie Erneut scannen / Fix-It 是 Lieferauffrischungen，而不是 Assessment-Schlussfolgerungen。",
-          "source_sha256": "ceceb81542d7d2900d959fd310c0cfd7c745f6d87161c3328106c122a197850d"
+          "text": "Use the current compliance status to review findings. Treat Rescan/Fix-It as delivery refreshers, not assessment conclusions.",
+          "source_sha256": "63b62123529cf2ebed76a9c12f9ebc9a0fd7b4a37c4d46430714f1efa1cc9316"
         },
         "steps[3]": {
           "text": "讓評估活頁夾敘述與您可以展示的證據保持一致。如果證據不完整，則保留部分空白或已規劃。",
           "source_sha256": "12ae0e9d4c81e3fdb76277acefc51016f94a0ddf7f52a1ae9149ebed92ced64a"
         },
         "steps[4]": {
-          "text": "Konfigurieren Sie Syslog-Weiterleitung nur，wenn Sie a Collector haben。 Pruefen Sie the Zustellung getrennt vom Seitenladen。",
+          "text": "Configure syslog forwarding only when you have a collector. Verify delivery separately from the page load.",
           "source_sha256": "790bc004eb5ea39bb275aeb9f148e5ebe85d0169027659d980345eeb0b29580c"
         },
         "productLabel": {
@@ -1924,8 +1952,8 @@
         },
         "body": [
           {
-            "text": "合規性和 Nachweise → 審計刺激概覽、Live-Ereignisse、審計協議、Ereignisteilung 和 Syslog-Weiterleitung。搜尋 Sie nach Akteur、Action 和 Zeitraum。詳細說明 tragen Korrelationsfelder wie Anfrage-ID 和 Ergebnis。 Syslog 或 Ereignisteilung to konfigurieren erzeugt a Zustellweg — sich kein Assessor-Urteil 的 erfuellt。",
-            "source_sha256": "2d563d2a60a8f938674224928e39b85bf9c87a560190c27c5a1dcf3df7760271"
+            "text": "法規遵循與證據 → 稽核軌跡包含概觀、即時事件、稽核記錄、事件回報與 syslog 轉送。依操作者、動作與期間搜尋。詳細列帶有要求識別碼與結果等關聯欄位。設定 syslog 或事件共用會建立投遞路徑——這本身並不構成評核判定。",
+            "source_sha256": "57ba4a87ee0e4513b5c5f346762bffd00a64ea10893d39a15f82dea7b3042134"
           },
           {
             "text": "報告中心運行目錄報告和包。目前合規狀態顯示每台機器的狀況和結果。重新掃描和修復是刷新產品憑證（而不是合規性證書）的操作員操作。評估活頁夾組織敘述並連結飛地已經產生的證據。寫下誠實的狀態已實施/部分/計劃（或同等）。不要發明人工製品來強迫大都會博物館聲稱。",
@@ -1938,34 +1966,34 @@
         ],
         "steps": [
           {
-            "text": "Oeffnen Sie nach sensiblen Admin-Actions 合規性和 Nachweise → Audit-Spur → Audit-Protokoll 和 bestaetigen Sie erwarteten Akteur 和操作。",
-            "source_sha256": "df0e712cd91fbbaf27a8771306d54eed222415f9ef14b2d2e41676aef6cadd46"
+            "text": "在有意義的管理動作之後，開啟法規遵循與證據 → 稽核軌跡 → 稽核記錄，並確認預期的操作者與動作。",
+            "source_sha256": "c928e678550843ec5ac6cfcbabe814dc0c75c8943e3eab1ddace26e916c9bf02"
           },
           {
-            "text": "Fuehren Sie benoetigte Berichte unter Compliance & Nachweise → Berichte → Berichtszentrum aus。",
-            "source_sha256": "5478831abbe39125c9c2ea3080c35922244985ec3242f1d53be93679dbf7a689"
+            "text": "在法規遵循與證據 → 報表 → 報表中心執行所需報表。",
+            "source_sha256": "5de10f3fe8131ad9d9bbe9cca686e2d2be152dbf5baf6431b968c2887e704207"
           },
           {
-            "text": "Nutzen Sie Aktueller 合規立場，um Feststellungen to pruefen。 Behandeln Sie Erneut scannen / Fix-It 是 Lieferauffrischungen，而不是 Assessment-Schlussfolgerungen。",
-            "source_sha256": "ceceb81542d7d2900d959fd310c0cfd7c745f6d87161c3328106c122a197850d"
+            "text": "Use the current compliance status to review findings. Treat Rescan/Fix-It as delivery refreshers, not assessment conclusions.",
+            "source_sha256": "63b62123529cf2ebed76a9c12f9ebc9a0fd7b4a37c4d46430714f1efa1cc9316"
           },
           {
             "text": "讓評估活頁夾敘述與您可以展示的證據保持一致。如果證據不完整，則保留部分空白或已規劃。",
             "source_sha256": "12ae0e9d4c81e3fdb76277acefc51016f94a0ddf7f52a1ae9149ebed92ced64a"
           },
           {
-            "text": "Konfigurieren Sie Syslog-Weiterleitung nur，wenn Sie a Collector haben。 Pruefen Sie the Zustellung getrennt vom Seitenladen。",
+            "text": "Configure syslog forwarding only when you have a collector. Verify delivery separately from loading the page.",
             "source_sha256": "790bc004eb5ea39bb275aeb9f148e5ebe85d0169027659d980345eeb0b29580c"
           }
         ]
       },
       "enhanced-controls": {
         "title": {
-          "text": "於本根 (Uebungen) 到 erweiterten Steuerungen",
+          "text": "Enhanced Controls Exercises",
           "source_sha256": "ca52815ba68890decbb44481ea58e1e49ba393b2f2b6972ed122720eef81d31c"
         },
         "summary": {
-          "text": "Hunt-Detektoren、CIRT-Uebungen 和 Stempel erweiterter Steuerungen ausfuehren。",
+          "text": "Run hunt detectors, CIRT exercises, and enhanced control stamps.",
           "source_sha256": "3802aeab1adf568b2a00bb7c69b99af1b80d16886a63cc16beeda07595129941"
         },
         "body[0]": {
@@ -1977,15 +2005,15 @@
           "source_sha256": "af50a635b99a8146439b4acb6ebc3f5278eab76e54634f1f0e775454bd729dbf"
         },
         "steps[0]": {
-          "text": "Oeffnen Sie Erweiterte Steuerungen 下的Compliance & Nachweise → Vorfaelle → Erweiterte Steuerungen。",
-          "source_sha256": "b5c69982a9f1aceb8df145ef9595200b2ec8b6ee9ef3807b6c79024dcd8af4f7"
+          "text": "在法規遵循與證據 → 事件 → 進階控制中開啟進階控制。",
+          "source_sha256": "703c85099199b38b027e3806904a1aff7310659a3fbb7eda438d5162b3046e4e"
         },
         "steps[1]": {
-          "text": "在 CIRT-Uebung aufzeichnen 之前設定 Bereitstellungsfenster。",
-          "source_sha256": "8b3d971fe9275afc98694085e35f9960462d5f74b2a0608a850e7fb319a18a49"
+          "text": "Set the deployment window before you record a CIRT exercise.",
+          "source_sha256": "1491b972463f2e9646bb460f02475d9d8379a7faf2d16a160bb4447d677dcb86"
         },
         "steps[2]": {
-          "text": "Fuehren Sie Hunt-Detektoren aus、CIRT-Uebung aufzeichnen、Benachrichtigung / SIEM-Stempel ueben。",
+          "text": "Run hunt detectors, then record a CIRT exercise, then practice the notification / SIEM stamp.",
           "source_sha256": "4fc22202a55b1f759425beb61cf30eb757163ece20173ff1d11cec368a75ac42"
         },
         "steps[3]": {
@@ -2012,15 +2040,15 @@
         ],
         "steps": [
           {
-            "text": "Oeffnen Sie Erweiterte Steuerungen 下的Compliance & Nachweise → Vorfaelle → Erweiterte Steuerungen。",
-            "source_sha256": "b5c69982a9f1aceb8df145ef9595200b2ec8b6ee9ef3807b6c79024dcd8af4f7"
+            "text": "在法規遵循與證據 → 事件 → 進階控制中開啟進階控制。",
+            "source_sha256": "703c85099199b38b027e3806904a1aff7310659a3fbb7eda438d5162b3046e4e"
           },
           {
-            "text": "在 CIRT-Uebung aufzeichnen 之前設定 Bereitstellungsfenster。",
+            "text": "Set the delivery window before you record a CIRT exercise.",
             "source_sha256": "8b3d971fe9275afc98694085e35f9960462d5f74b2a0608a850e7fb319a18a49"
           },
           {
-            "text": "Fuehren Sie Hunt-Detektoren aus、CIRT-Uebung aufzeichnen、Benachrichtigung / SIEM-Stempel ueben。",
+            "text": "Run hunt detectors, then record the CIRT exercise, then practice notification / SIEM stamping.",
             "source_sha256": "4fc22202a55b1f759425beb61cf30eb757163ece20173ff1d11cec368a75ac42"
           },
           {
@@ -2039,8 +2067,8 @@
           "source_sha256": "4e358c22ccda54824effcd63ed7e42a11ae010f987d5621f0182f442a0177ab1"
         },
         "summary": {
-          "text": "版本資訊、EULA、Urheberrecht sowie Lizenz 和 Abrechnung unter Info & Lizenzierung。",
-          "source_sha256": "5b2533f6b17a464321cf7b39d49be769a295b89910a79990e9d7eb5a85c576ae"
+          "text": "Version information, EULA, copyright, plus license and billing under About & Licensing.",
+          "source_sha256": "790c78bb9c985b9ea53a929e6e5a2d030bd393a90199107356b28b45456e6860"
         },
         "body[0]": {
           "text": "資訊和許可是頂層的一個單獨部分。版本資訊顯示管理控制台的套件版本和支援案例的 AIC 伺服器二進位套件的建置版本。 EULA 和版權聲明此控制台提供的許可協議和版權聲明 - 該軟體是許可的，而不是出售的。",
@@ -2051,16 +2079,16 @@
           "source_sha256": "0de5ec869c25e72e2c82f4c62964cf323ae08b5ace1a7109514cf1c707db93c7"
         },
         "steps[0]": {
-          "text": "Oeffnen Sie Info & Lizenzierung → 版本訊息，wenn Sie a Supportfall eroeffnen。 Kopieren Sie Konsolen- 和伺服器版本。",
-          "source_sha256": "b037ce6f3c8abd57cae579162e4bdccc9c9f01e5573c5eaf1a849748c33e3a75"
+          "text": "Open Information & Licensing → Version Information when requesting a support case. Copy console and server versions.",
+          "source_sha256": "c56e9a110155dc61d7de2cdeef5b388ee481ea86ce44a69553da48f898080aea"
         },
         "steps[1]": {
           "text": "在未經您同意的情況下分發或提供之前，請閱讀同一部分中的 EULA 和版權。",
           "source_sha256": "ef1fd494ebc0fd6c83765a4d442baa180c12dca7e1b2ca66ae8cf3592b53226a"
         },
         "steps[2]": {
-          "text": "導入 Siesignierte Lizenzschluessel unter Info & Lizenzierung → Lizenz 和 Abrechnung，wenn Sie On-Prem-Berechtigungen verlaengern。",
-          "source_sha256": "d27d985d0a190e603bfc750594e2f7ed81e654d6b7e609b6693cbfb7396002f2"
+          "text": "Import signed license keys under About & Licensing → License and billing when you renew on-prem entitlements.",
+          "source_sha256": "6ffb6d44d46c7bbc31f81a69f0d37676c238cbc0a423c861645f87b631a08ac3"
         },
         "steps[3]": {
           "text": "Use the official license management site for activation sheets, which does not host this console.",
@@ -2082,16 +2110,16 @@
         ],
         "steps": [
           {
-            "text": "Oeffnen Sie Info & Lizenzierung → 版本訊息，wenn Sie a Supportfall eroeffnen。 Kopieren Sie Konsolen- 和伺服器版本。",
-            "source_sha256": "b037ce6f3c8abd57cae579162e4bdccc9c9f01e5573c5eaf1a849748c33e3a75"
+            "text": "Open Information & Licensing → Version Information when requesting a support case. Copy console and server versions.",
+            "source_sha256": "c56e9a110155dc61d7de2cdeef5b388ee481ea86ce44a69553da48f898080aea"
           },
           {
             "text": "在未經您同意的情況下分發或提供之前，請閱讀同一部分中的 EULA 和版權。",
             "source_sha256": "ef1fd494ebc0fd6c83765a4d442baa180c12dca7e1b2ca66ae8cf3592b53226a"
           },
           {
-            "text": "導入 Siesignierte Lizenzschluessel unter Info & Lizenzierung → Lizenz 和 Abrechnung，wenn Sie On-Prem-Berechtigungen verlaengern。",
-            "source_sha256": "d27d985d0a190e603bfc750594e2f7ed81e654d6b7e609b6693cbfb7396002f2"
+            "text": "Import signed license keys under About & Licensing → License and billing when you renew on-prem entitlements.",
+            "source_sha256": "6ffb6d44d46c7bbc31f81a69f0d37676c238cbc0a423c861645f87b631a08ac3"
           },
           {
             "text": "Nutzen Sie 是 Aktivierungsablaeufe 的 Oeffentliche 許可證管理站點，該站點不是主機。",
@@ -2109,35 +2137,35 @@
           "source_sha256": "89c80540352249939137b86ec7fce814cce36c73c4965b6fe65e807d42960bb8"
         },
         "body[0]": {
-          "text": "最好使用 HTTPS-Gesundheit 和組態管理會話功能。 Pruefen Sie 合規性和 Nachweise → 審計引發錯誤。設定 → 伺服器 → 啟動協議，啟動協議或啟動問題。",
-          "source_sha256": "a62c3709ad462ab710d55355fd380ed72d8a7c730dc011d3194e4a8667abdd92"
+          "text": "部署或設定變更後，確認 HTTPS 正常且管理工作階段仍可用。檢查法規遵循與證據 → 稽核軌跡是否有非預期錯誤。設定 → 伺服器 → 服務記錄可協助檢查啟動或執行階段問題的服務端記錄輸出。",
+          "source_sha256": "c65eab49104e3b50c97a7b5874c722f3959e20b65f495a30ce038062cfbee28a"
         },
         "body[1]": {
-          "text": "配置 → Sicherheit → Verschluesselungseinstellungen enthaelt Verschluesselungsmaterial 的備份和 Wiederherstellung（匯出、匯入和可選的超級管理員-Klartextexport，wenn Ihre Rolle es erlaubt）。 Verschluesselungsschluessel-Saetze 包含 Serverstandard 和 benannte Master-Verschluesselungsschluessel ab、einschliesslich Rotieren 和 Neu-Verschluesseln nach Schluesselaenderungen。 Diese Flaechen schuetzen the kryptografische Verwahrung — sie sind kein vollstaendiges Anwendungsdatenbank-Backupgeraet。請先停止 PostgreSQL 的外部 Wiederherstellungsweg 和主機配置，然後再進行資料銀行初始化。",
-          "source_sha256": "ecb1ce3b075da52f9fc0f150621288af3fa186e50a2213a3e4222e04dfa87fae"
+          "text": "Configuration → Security → Encryption Settings includes backup and restore for encryption material (export, import and optional super admin plain text export if your role allows it). Encryption key sets cover the server standard and named master encryption keys, including rotating and re-encrypting after key changes. These bottles protect cryptographic custody - they are not a complete application database backup device. Have an external recovery path available for PostgreSQL and host configuration before performing a destructive database initialization.",
+          "source_sha256": "9c81e9b8e29b0797635aa4e524a852120c35944832d5a19ded3cfe0a53ed9064"
         },
         "body[2]": {
-          "text": "請注意，在系統啟動之前，請先準備好銀行初始化、最終註冊、密碼和海拔通道功能。 Fuehren Sie 會在沒有啟動 Wiederherstellungsweg vorzubereiten 的情況下進行 zerstoerende Datenbankinitialisierung aus。",
-          "source_sha256": "730574cc8c4608344c781c190b854301f27c9f4531431bef9bfcec75209e849f"
+          "text": "After a large deployment or a destructive database initialization, verify that endpoint enrollment, password recovery, and the elevation channel are still working before treating the system as ready. Never perform a destructive database initialization without first preparing a recovery path.",
+          "source_sha256": "e7d5f2a977c7df4dfdec6c72bb9fdc12c3530137718ade73d8aeead542d21202"
         },
         "steps[0]": {
-          "text": "Bestaetigen Sie nach Bereitstellung HTTPS-Gesundheit 和管理會話。",
+          "text": "After deployment, confirm HTTPS health and the admin session.",
           "source_sha256": "02495b3d91b83dc9182b63a507132fbe3eabc443e0a3ca0220b8f6642eaca10b"
         },
         "steps[1]": {
-          "text": "Pruefen Sie nach Konfigurationsaenderungen 合規性和 Nachweise → 審計刺激 auf unerwartete 錯誤。",
-          "source_sha256": "83e3e75b05e24aa880923b9280506d3fbc753d0cd98d8eeef5997d16edcd6adb"
+          "text": "設定變更後，檢查法規遵循與證據 → 稽核軌跡是否有非預期錯誤。",
+          "source_sha256": "9398fee7e8be535d7475c4db5f74527bff15ab5bb5783929a86c27a312c287df"
         },
         "steps[2]": {
-          "text": "Nutzen Sie 設定 → 安全性 → 備份和保存，我們可以匯出或匯入材料。 Halten Sie Datenbank 備援產品。",
-          "source_sha256": "d3dd6aab8bbad14aa56513a92ca01c128982635fdaea64385e3fe9b1ae42ff80"
+          "text": "Use Configuration → Security → Encryption settings → Backup and Restore for key material procedures.",
+          "source_sha256": "b943e7ec6e06d270fab40c759847b8180f8384c6eb22606098571357f9fb277a"
         },
         "steps[3]": {
           "text": "大規模部署後，檢查端點註冊、密碼恢復和提升通道是否仍在運作。",
           "source_sha256": "754d3f177f252a231b3c6680f21806ca854d0e4990f2c364d530ea8037887ec4"
         },
         "steps[4]": {
-          "text": "Lassen Sie 是在沒有 Wiederherstellungsschritt 的情況下進行資料銀行初始化的。",
+          "text": "Never leave a destructive database initialization without the restore step.",
           "source_sha256": "966c6ae20783ee8845240eafc2d9d2a83fab2f212682e20b5437d10659099efb"
         },
         "productLabel": {
@@ -2146,37 +2174,37 @@
         },
         "body": [
           {
-            "text": "最好使用 HTTPS-Gesundheit 和組態管理會話功能。 Pruefen Sie 合規性和 Nachweise → 審計引發錯誤。設定 → 伺服器 → 啟動協議，啟動協議或啟動問題。",
-            "source_sha256": "a62c3709ad462ab710d55355fd380ed72d8a7c730dc011d3194e4a8667abdd92"
+            "text": "部署或設定變更後，確認 HTTPS 正常且管理工作階段仍可用。檢查法規遵循與證據 → 稽核軌跡是否有非預期錯誤。設定 → 伺服器 → 服務記錄可協助檢查啟動或執行階段問題的服務端記錄輸出。",
+            "source_sha256": "c65eab49104e3b50c97a7b5874c722f3959e20b65f495a30ce038062cfbee28a"
           },
           {
-            "text": "配置 → Sicherheit → Verschluesselungseinstellungen enthaelt Verschluesselungsmaterial 的備份和 Wiederherstellung（匯出、匯入和可選的超級管理員-Klartextexport，wenn Ihre Rolle es erlaubt）。 Verschluesselungsschluessel-Saetze 包含 Serverstandard 和 benannte Master-Verschluesselungsschluessel ab、einschliesslich Rotieren 和 Neu-Verschluesseln nach Schluesselaenderungen。 Diese Flaechen schuetzen the kryptografische Verwahrung — sie sind kein vollstaendiges Anwendungsdatenbank-Backupgeraet。請先停止 PostgreSQL 的外部 Wiederherstellungsweg 和主機配置，然後再進行資料銀行初始化。",
-            "source_sha256": "ecb1ce3b075da52f9fc0f150621288af3fa186e50a2213a3e4222e04dfa87fae"
+            "text": "Configuration → Security → Encryption Settings includes backup and restore for encryption material (export, import and optional super admin plain text export if your role allows it). Encryption key sets cover the server standard and named master encryption keys, including rotating and re-encrypting after key changes. These bottles protect cryptographic custody - they are not a complete application database backup device. Have an external recovery path available for PostgreSQL and host configuration before performing a destructive database initialization.",
+            "source_sha256": "9c81e9b8e29b0797635aa4e524a852120c35944832d5a19ded3cfe0a53ed9064"
           },
           {
-            "text": "請注意，在系統啟動之前，請先準備好銀行初始化、最終註冊、密碼和海拔通道功能。 Fuehren Sie 會在沒有啟動 Wiederherstellungsweg vorzubereiten 的情況下進行 zerstoerende Datenbankinitialisierung aus。",
-            "source_sha256": "730574cc8c4608344c781c190b854301f27c9f4531431bef9bfcec75209e849f"
+            "text": "After a large deployment or a destructive database initialization, verify that endpoint enrollment, password recovery, and the elevation channel are still working before treating the system as ready. Never perform a destructive database initialization without first preparing a recovery path.",
+            "source_sha256": "e7d5f2a977c7df4dfdec6c72bb9fdc12c3530137718ade73d8aeead542d21202"
           }
         ],
         "steps": [
           {
-            "text": "Bestaetigen Sie nach Bereitstellung HTTPS-Gesundheit 和管理會話。",
+            "text": "After deployment, confirm HTTPS health and the admin session.",
             "source_sha256": "02495b3d91b83dc9182b63a507132fbe3eabc443e0a3ca0220b8f6642eaca10b"
           },
           {
-            "text": "Pruefen Sie nach Konfigurationsaenderungen 合規性和 Nachweise → 審計刺激 auf unerwartete 錯誤。",
-            "source_sha256": "83e3e75b05e24aa880923b9280506d3fbc753d0cd98d8eeef5997d16edcd6adb"
+            "text": "設定變更後，檢查法規遵循與證據 → 稽核軌跡是否有非預期錯誤。",
+            "source_sha256": "9398fee7e8be535d7475c4db5f74527bff15ab5bb5783929a86c27a312c287df"
           },
           {
-            "text": "Nutzen Sie 設定 → 安全性 → 備份和保存，我們可以匯出或匯入材料。 Halten Sie Datenbank 備援產品。",
-            "source_sha256": "d3dd6aab8bbad14aa56513a92ca01c128982635fdaea64385e3fe9b1ae42ff80"
+            "text": "Use Configuration → Security → Encryption settings → Backup and Restore for key material procedures.",
+            "source_sha256": "b943e7ec6e06d270fab40c759847b8180f8384c6eb22606098571357f9fb277a"
           },
           {
             "text": "大規模部署後，檢查端點註冊、密碼恢復和提升通道是否仍在運作。",
             "source_sha256": "754d3f177f252a231b3c6680f21806ca854d0e4990f2c364d530ea8037887ec4"
           },
           {
-            "text": "Lassen Sie 是在沒有 Wiederherstellungsschritt 的情況下進行資料銀行初始化的。",
+            "text": "Never run a destructive database initialization without the restore step.",
             "source_sha256": "966c6ae20783ee8845240eafc2d9d2a83fab2f212682e20b5437d10659099efb"
           }
         ]
@@ -2193,12 +2221,12 @@
       "source_sha256": "ac81875d0a3603868b276e6cf4e6231f9e1f339f29e6875d07f31d99a7458baf"
     },
     "gateIntro": {
-      "text": "OpenAPI 和 Swagger UI 是超級管理員和 Mitglieder wohlbekannten Group Entwickler beschraenkt (",
-      "source_sha256": "5afc7b8923848b86975f84e6843e3bd291f65262751d05615bfde53ac2b949da"
+      "text": "OpenAPI and Swagger UI are limited to Super Administrators and members of the well-known Developers group (",
+      "source_sha256": "42f4e635cf35461e265fe9540bf3dc868d49a17df3a6060d877168bac4afc505"
     },
     "gateIntroAfter": {
-      "text": "）。 Gewoehnliche Admins 和 Auditoren erhalten diese Klasse 不是。",
-      "source_sha256": "fd892efaf48844c22a6f74bea131f8bd7795af9a3b27e1febd6d1d8373e7b727"
+      "text": "). Ordinary admins and auditors do not receive this class.",
+      "source_sha256": "6c38c2560d5c020f7ea58192dd740c91847a09a00d0e588d18f1179ae5269f95"
     },
     "honestyAlert": {
       "text": "超級管理員和 Entwickler 的技術參考。 Nutzen Sie Swagger / OpenAPI 用於 aktuelle Routenformen。 Auth-Modelle folgen docs/auth-architecture.md（管理會話/令牌、代理-HMAC 雙模式-Einlauf、註冊-Bootstrap-Rest）。 OpenAPI 下載包含 FedRAMP、CMMC 或 FIPS 認證協定。",
@@ -2209,19 +2237,19 @@
       "source_sha256": "1a8c11712a0403bf7bb11b0678a045d6898a729fd675c3b929b2e2331b7e3f8f"
     },
     "howToTitle": {
-      "text": "So nutzen Sie diese Klasse",
-      "source_sha256": "3c767cf28d54f3af09639bbad33e7ada6796e4619df8ec941152dfffc496c5c1"
+      "text": "How to use this class",
+      "source_sha256": "6dbd8e0f815db2418b91288bd2b949932527d86de88519287c2b180c2f843a43"
     },
     "howTo[0]": {
-      "text": "Oeffnen Sie Swagger UI，um authentifizierte Routen with Ihrem aktuellen Sitzungscookie or Admin-Token-Header to pruefen, wie in the Sicherheitsschemata dokumentiert.",
-      "source_sha256": "fc2ef4a323c432ac0788fc5400c6dec9c9472224b628c6b43e293bd9b39606ac"
+      "text": "Open Swagger UI to check authenticated routes with your current session cookie or admin token header as documented in the security schemas.",
+      "source_sha256": "151822b33deb1f914edebe8ad173c4b78696b8a6e88173ca129cd6987d8e7264"
     },
     "howTo[1]": {
       "text": "Download OpenAPI JSON for offline testing or client generation. Get it again after each server deployment, the routes changed.",
       "source_sha256": "18774cbb4ebf64d08e962c1bded853277d3d881c5317ff6707a7bd4bb8b3d341"
     },
     "howTo[2]": {
-      "text": "Agent-Drahtrouten erwarten HMAC-Header，是 Agenten 標誌。 Unsigniert wird nur akzeptiert, solange AGENT_HMAC_ENFORCE_MODE=dual_mode gilt.",
+      "text": "Agent wire routes expect HMAC headers when agents sign. Unsigned is accepted only while AGENT_HMAC_ENFORCE_MODE=dual_mode applies.",
       "source_sha256": "39646376bd78b7c28e590bab1cb648c621129254820461a2e00ae5d22fbf07db"
     },
     "howTo[3]": {
@@ -2254,10 +2282,10 @@
     },
     "downloadOpenApi": {
       "text": "OpenAPI-JSON 說明",
-      "source_sha256": "e6078e0829854570a6e036c199ac9f9fa33640217aad23d015655f016f3c0157"
+      "source_sha256": "d6b98770f09a01bb95be1ff165a8703ab71baa2605657107fa2337a7b6af5d1c"
     },
     "viewRaw": {
-      "text": "OpenAPI roh anzeigen",
+      "text": "View raw OpenAPI",
       "source_sha256": "edb3f19b664956a3d4ffe1338d03ca52028d993e0e23159bca74867698791e95"
     },
     "loadError": {
@@ -2315,8 +2343,8 @@
       "source_sha256": "d841a6545e7f784bf7a21f6b5bfe0f069fb9651a701279cbba4232f06bcb39f6"
     },
     "backToTechnical": {
-      "text": "Zurueck zur technischen 文檔",
-      "source_sha256": "9bf1bfd0186dbfee4686d0601d558b83331c6b38929ba339c35b7e2ccf73f3e5"
+      "text": "Back to technical documentation",
+      "source_sha256": "a4ca6b6475c63af662dcb377350fd4b9684b539fe4d918f7cf471e5a65048149"
     },
     "openapiExplorer": {
       "text": "OpenAPI 瀏覽器",
@@ -2361,8 +2389,8 @@
       "source_sha256": "84aec404e7c3226303f0bd0eb6424a919ba981bcdf0fba365bc7f6802882fe2b"
     },
     "backToTechnical": {
-      "text": "Zurueck zur technischen 文檔",
-      "source_sha256": "9bf1bfd0186dbfee4686d0601d558b83331c6b38929ba339c35b7e2ccf73f3e5"
+      "text": "Back to technical documentation",
+      "source_sha256": "a4ca6b6475c63af662dcb377350fd4b9684b539fe4d918f7cf471e5a65048149"
     },
     "swaggerUi": {
       "text": "招搖的使用者介面",
@@ -2373,8 +2401,8 @@
       "source_sha256": "b4c0e482e5ed236fae2cd92c60243e262a30555b77cc86a6027b9b5d5b3d58d3"
     },
     "loaded": {
-      "text": "{{title}}{{version}} — {{ops}} 在 {{paths}} 普法登運作。真實性文件； kein FedRAMP- 或 CMMC-Paket。",
-      "source_sha256": "28381d80e0527045fb3ae82c73901301246a6ebf1eb25ce9fe5865dfb998fc15"
+      "text": "{{title}}{{version}} — {{ops}} operations in {{paths}} paths. Authenticated document; not a FedRAMP or CMMC package.",
+      "source_sha256": "39bfaf9f6fa7bbeaa2ab8e0560b8fda28fc2c625921e9e2694206d112ab9c75d"
     },
     "filterLabel": {
       "text": "操作過濾器",
@@ -2439,91 +2467,91 @@
   },
   "auditorCmmcL2": {
     "title": {
-      "text": "Auditing CMMC Level 2",
+      "text": "CMMC 第 2 級稽核",
       "source_sha256": "0f2b3fcbf9c61a8491528a004a2547c89976f1dd13b2ad1821f925bd6f13b062"
     },
     "intro": {
-      "text": "Overview of CMMC Level 2 (NIST SP 800-171 practices for CUI) and how to use AIC Server to support each family. This is a starting outline. Practice-level product steps will be added later. The product does not certify your organization.",
+      "text": "CMMC 第 2 級概觀（針對 CUI 的 NIST SP 800-171 實務）以及如何用 AIC Server 支援每個系列。這是起始大綱。實務級產品步驟稍後補充。本產品不認證您的組織。",
       "source_sha256": "d03284b1803adb04b8651d785d2e798eb20ea59564fece603ebd56097fafed44"
     }
   },
   "auditorCmmcL1": {
     "title": {
-      "text": "Auditing CMMC Level 1",
+      "text": "CMMC 第 1 級稽核",
       "source_sha256": "cae42d1e4e3aca096014d70d7567b8b45b7a91aaa33e03b8194ff4c0ab179ef4"
     },
     "intro": {
-      "text": "Overview of CMMC Level 1 (Federal Contract Information / FAR 52.204-21 practices) and how to use AIC Server to support each family. This is a starting outline. Practice-level product steps will be added later. The product does not certify your organization.",
+      "text": "CMMC 第 1 級概觀（聯邦合約資訊 / FAR 52.204-21 實務）以及如何用 AIC Server 支援每個系列。這是起始大綱。實務級產品步驟稍後補充。本產品不認證您的組織。",
       "source_sha256": "ce17b46ded95539201055e89c6785cba05efe4a234d585ad660302baa39cb166"
     }
   },
   "auditorSetupPage": {
     "title": {
-      "text": "Auditor Setup Guide",
+      "text": "稽核人員設定指南",
       "source_sha256": "66eed74ada8a3d046c4bf3c5fa21eee29a19ef442ba7b9970ed1f8ad77cdfa5b"
     },
     "intro": {
-      "text": "How to staff auditors on the shared Sign in page, which groups to assign, and where to configure them. CMMC level manuals and the assessor working guide live under Auditor Manuals.",
+      "text": "如何在共用登入頁上配置稽核人員、應指派哪些群組以及在何處設定。CMMC 層級手冊與評鑑員工作指南位於「稽核人員手冊」下。",
       "source_sha256": "52617ca34065a34064aa837205b5977c209635374943bbf188b6b8a7f1b6dc31"
     }
   },
   "auditorIndex": {
     "title": {
-      "text": "Auditor manuals",
+      "text": "稽核人員手冊",
       "source_sha256": "6623ff55741761694cc60ea3e767301b9c1d248b65de5f46d388d0c9a1d9ab56"
     },
     "intro": {
-      "text": "Choose a CMMC level manual or the assessor working guide. Staff accounts with the Auditor Setup Guide, which is a separate page under Documentation.",
+      "text": "選擇 CMMC 層級手冊或評估員工作指南。員工帳戶對應《稽核員設定指南》，位於文件下的獨立頁面。",
       "source_sha256": "41908f58a3b133c54c5f45b3c5199f448a6845c9fd1e3236319df7a6ed212d96"
     },
     "cards": {
       "cmmcL1": {
         "label": {
-          "text": "Auditing CMMC Level 1",
+          "text": "CMMC 第 1 級稽核",
           "source_sha256": "cae42d1e4e3aca096014d70d7567b8b45b7a91aaa33e03b8194ff4c0ab179ef4"
         },
         "description": {
-          "text": "Foundational FAR 52.204-21 / CMMC Level 1 practices for Federal Contract Information, and how AIC Server can support each family.",
+          "text": "針對聯邦合約資訊的 FAR 52.204-21 / CMMC 第 1 級基礎實務，以及 AIC Server 如何支援每個系列。",
           "source_sha256": "7182d40f81504e4f1e85b7ab5d22d42b8a9950ff79018dae4d946cc5c07615bd"
         }
       },
       "cmmcL2": {
         "label": {
-          "text": "Auditing CMMC Level 2",
+          "text": "CMMC 第 2 級稽核",
           "source_sha256": "0f2b3fcbf9c61a8491528a004a2547c89976f1dd13b2ad1821f925bd6f13b062"
         },
         "description": {
-          "text": "NIST SP 800-171 / CMMC Level 2 families for Controlled Unclassified Information, and how to use the product for each family.",
+          "text": "針對受控非機密資訊的 NIST SP 800-171 / CMMC 第 2 級系列，以及如何將產品用於每個系列。",
           "source_sha256": "b1a6d4283497066b80f65860e1ca3a3ba324a8dd7cfd7cc7fe069d9db4285801"
         }
       },
       "cmmcL3": {
         "label": {
-          "text": "Auditing CMMC Level 3",
+          "text": "CMMC 第 3 級稽核",
           "source_sha256": "ba5434c6dac48290089152b933ee44282772051573923a07bdb32396af61e9a2"
         },
         "description": {
-          "text": "Selected NIST SP 800-172 enhancements. Level 3 is not Level 2 plus a toggle. Read Enhanced Controls honesty notes.",
+          "text": "選定的 NIST SP 800-172 增強項目。第 3 級不是第 2 級加上一個開關。請閱讀增強控制的誠實說明。",
           "source_sha256": "d46a11432a778c51ed89197dc459e57112ef67e51c861f17e3833e279ffbc64b"
         }
       },
       "working": {
         "label": {
-          "text": "Using AIC Server as an assessor",
+          "text": "以評估人員身分使用 AIC Server",
           "source_sha256": "eed9c29530edb36366f4668df1f229a6b28fc20d86ab833ffff82df0937e7a42"
         },
         "description": {
-          "text": "Binder, reports, Current State, auditing, Enhanced Controls, and export hygiene for read-oriented assessor work.",
+          "text": "活頁夾、報告、目前狀態、稽核、增強控制以及面向唯讀評鑑工作的匯出衛生。",
           "source_sha256": "3e05de24305555056acd3a2c72740e634228fb1c8a7127076a25bf3bdeffcacb"
         }
       },
       "setup": {
         "label": {
-          "text": "Auditor Setup Guide",
+          "text": "稽核人員設定指南",
           "source_sha256": "66eed74ada8a3d046c4bf3c5fa21eee29a19ef442ba7b9970ed1f8ad77cdfa5b"
         },
         "description": {
-          "text": "How to staff auditors on the shared Sign in page, which groups to assign, and where to configure them.",
+          "text": "如何在共用登入頁上配置稽核人員、應指派哪些群組以及在何處設定。",
           "source_sha256": "6e057636f7d0406eabdb497fcc542ea3f6e49dacb024974ff836826cb12b48bd"
         }
       }
@@ -2531,11 +2559,11 @@
   },
   "auditorCmmcL3": {
     "title": {
-      "text": "Auditing CMMC Level 3",
+      "text": "CMMC 第 3 級稽核",
       "source_sha256": "ba5434c6dac48290089152b933ee44282772051573923a07bdb32396af61e9a2"
     },
     "intro": {
-      "text": "Overview of CMMC Level 3 (selected NIST SP 800-172 enhancements). Level 3 is not Level 2 plus a product toggle. Use Enhanced Controls honesty notes. The product never reports Met for Level 3 and never claims Level 3 certification.",
+      "text": "CMMC 第 3 級概觀（選定的 NIST SP 800-172 增強項目）。第 3 級不是第 2 級加上一個產品開關。請使用增強控制誠實說明。本產品從不將第 3 級回報為 Met，也從不聲稱第 3 級認證。",
       "source_sha256": "982000e54d4ed4c9b207243de7ad6648d4b234bccfd14caeb36101a0965f49d2"
     }
   },
@@ -2551,24 +2579,24 @@
       },
       "cards": {
         "cmmcL1": {
-          "text": "Auditing CMMC Level 1",
-          "source_sha256": ""
+          "text": "CMMC 第 1 級稽核",
+          "source_sha256": "cae42d1e4e3aca096014d70d7567b8b45b7a91aaa33e03b8194ff4c0ab179ef4"
         },
         "cmmcL1Desc": {
           "text": "優先套件。Federal Contract Information 概覽（Partial 大綱）。",
           "source_sha256": ""
         },
         "cmmcL2": {
-          "text": "Auditing CMMC Level 2",
-          "source_sha256": ""
+          "text": "CMMC 第 2 級稽核",
+          "source_sha256": "0f2b3fcbf9c61a8491528a004a2547c89976f1dd13b2ad1821f925bd6f13b062"
         },
         "cmmcL2Desc": {
           "text": "優先套件。CUI / NIST SP 800-171 概覽（Partial 大綱）。",
           "source_sha256": ""
         },
         "cmmcL3": {
-          "text": "Auditing CMMC Level 3",
-          "source_sha256": ""
+          "text": "CMMC 第 3 級稽核",
+          "source_sha256": "ba5434c6dac48290089152b933ee44282772051573923a07bdb32396af61e9a2"
         },
         "cmmcL3Desc": {
           "text": "優先套件。選定 800-172 疊加。不是 2 級加開關。",
@@ -2595,16 +2623,16 @@
       },
       "cards": {
         "playbooks": {
-          "text": "Auditor text playbooks",
-          "source_sha256": ""
+          "text": "稽核人員文字手冊",
+          "source_sha256": "e148e3954565ff17659ce8cdb53f8bb3eacb9feaeb9e54fbc730b728e2366e29"
         },
         "playbooksDesc": {
           "text": "現有配方介面：操作員在 Assessment Binder 中套用的文字 playbooks。",
           "source_sha256": ""
         },
         "agentSeed": {
-          "text": "CMMC Agent seed",
-          "source_sha256": ""
+          "text": "CMMC 代理程式種子",
+          "source_sha256": "439e317b9d18eefb0a7e48ecde884e76449e03a83ae12fbd9a5fd043d1f2e2d9"
         },
         "agentSeedDesc": {
           "text": "重用現有 Agent。始終連線。包含提升。",
@@ -2623,24 +2651,24 @@
       },
       "cards": {
         "agentEnclave": {
-          "text": "CMMC Agent and enclave scripts",
-          "source_sha256": ""
+          "text": "CMMC 代理程式與飛地指令碼",
+          "source_sha256": "e7a17e9293cffdd40c751925390990e2bd7d1d06b05ce8259c2e7775307e4aa4"
         },
         "agentEnclaveDesc": {
           "text": "開啟哪個指令碼。主機安全規則用產品語言。",
           "source_sha256": ""
         },
         "enclaveBuild": {
-          "text": "CMMC enclave scripted build",
-          "source_sha256": ""
+          "text": "CMMC 飛地指令碼建置",
+          "source_sha256": "df71a02325f9773b0837c7c910c82edc85c3ceaefd57bcfec0a651359971a2e4"
         },
         "enclaveBuildDesc": {
           "text": "本機實驗室席位與客戶雲端。依套件層級的建置順序。",
           "source_sha256": ""
         },
         "agentConfig": {
-          "text": "CMMC Agent configuration",
-          "source_sha256": ""
+          "text": "CMMC 代理程式設定",
+          "source_sha256": "267e8c11027c9660e3c5f4aec1233b080c405f22fcc06edb87383643c486cc2f"
         },
         "agentConfigDesc": {
           "text": "內部飛地 Agent 與外部工作站態勢 Agent。",
@@ -2659,16 +2687,16 @@
       },
       "cards": {
         "mspC3pao": {
-          "text": "MSP and C3PAO demo guide",
-          "source_sha256": ""
+          "text": "MSP 與 C3PAO 示範指南",
+          "source_sha256": "b712115e3c3fc88ad5ea86b2c4124371167802ace19bbe311e70770fc109b8ac"
         },
         "mspC3paoDesc": {
           "text": "學習示範。這不是已認證的飛地。",
           "source_sha256": ""
         },
         "auditorSetup": {
-          "text": "Auditor Setup Guide",
-          "source_sha256": ""
+          "text": "稽核人員設定指南",
+          "source_sha256": "66eed74ada8a3d046c4bf3c5fa21eee29a19ef442ba7b9970ed1f8ad77cdfa5b"
         },
         "auditorSetupDesc": {
           "text": "在共用登入頁設定稽核員。職務、群組和起始帳戶。",
@@ -2689,8 +2717,8 @@
   },
   "recipeAgentSeed": {
     "title": {
-      "text": "CMMC Agent seed",
-      "source_sha256": ""
+      "text": "CMMC 代理程式種子",
+      "source_sha256": "439e317b9d18eefb0a7e48ecde884e76449e03a83ae12fbd9a5fd043d1f2e2d9"
     },
     "intro": {
       "text": "打包現有 AIC Agent。沒有第二個 Agent 產品。始終連線是套件預設。離線模式不是預設。",
@@ -2699,8 +2727,8 @@
   },
   "cookbookAgentEnclave": {
     "title": {
-      "text": "CMMC Agent and enclave scripts",
-      "source_sha256": ""
+      "text": "CMMC 代理程式與飛地指令碼",
+      "source_sha256": "e7a17e9293cffdd40c751925390990e2bd7d1d06b05ce8259c2e7775307e4aa4"
     },
     "intro": {
       "text": "打开哪本操作手册，以及此套件拒绝哪些操作。仅产品语言。",
@@ -2709,8 +2737,8 @@
   },
   "cookbookEnclaveBuild": {
     "title": {
-      "text": "CMMC enclave scripted build",
-      "source_sha256": ""
+      "text": "CMMC 飛地指令碼建置",
+      "source_sha256": "df71a02325f9773b0837c7c910c82edc85c3ceaefd57bcfec0a651359971a2e4"
     },
     "intro": {
       "text": "本地实验室席位与客户付费云虚拟机。按包级别的构建顺序。",
@@ -2719,8 +2747,8 @@
   },
   "cookbookAgentConfig": {
     "title": {
-      "text": "CMMC Agent configuration",
-      "source_sha256": ""
+      "text": "CMMC 代理程式設定",
+      "source_sha256": "267e8c11027c9660e3c5f4aec1233b080c405f22fcc06edb87383643c486cc2f"
     },
     "intro": {
       "text": "两个角色，一个 Agent 产品：内部飞地与外部工作站态势。",
@@ -2729,8 +2757,8 @@
   },
   "guideMspC3pao": {
     "title": {
-      "text": "MSP and C3PAO demo guide",
-      "source_sha256": ""
+      "text": "MSP 與 C3PAO 示範指南",
+      "source_sha256": "b712115e3c3fc88ad5ea86b2c4124371167802ace19bbe311e70770fc109b8ac"
     },
     "intro": {
       "text": "您在此學習。這不是已認證飛地。CMMC 評估的是組織，不是此軟體 SKU。",

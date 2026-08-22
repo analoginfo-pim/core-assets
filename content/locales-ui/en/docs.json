@@ -83,6 +83,34 @@
     "pdfUnavailable": {
       "text": "PDF rendering is unavailable in this release. Use Print / Save as PDF.",
       "source_sha256": "eb75dbacf2176c1ef9c9534de55fde6f79383e4083f0c5b0d1052bc0b2e6dad3"
+    },
+    "checklist": {
+      "text": "Run-through checklist",
+      "source_sha256": "851587e8ca37171e8ddde630a6d391baca93f6f8e00374f9ad39a98f3f675d67"
+    },
+    "checklistAria": {
+      "text": "{{title}} run-through checklist",
+      "source_sha256": "cbe9221aacae43691af89dc61dc3e2224a83a3c709004f8d4f2849d6d38047da"
+    },
+    "checkItemAria": {
+      "text": "Mark step complete: {{item}}",
+      "source_sha256": "61f2405426d0453404640199c85e898b7dd0bd784ef6e4827f058b6461b6f2b0"
+    },
+    "figuresHeading": {
+      "text": "Procedure figures",
+      "source_sha256": "9795c39115c0b4c6e06be1092172928e88adf3f37fdf0613db690afb2a544f6b"
+    },
+    "figureStep": {
+      "text": "Step {{n}}",
+      "source_sha256": "b2d5a484bc311809c58cfbd3432b8e957d4641f352128f3f747b7679be3be67f"
+    },
+    "figureCaption": {
+      "text": "Step {{n}} — {{caption}}",
+      "source_sha256": "8f70c10f74aac846804fa220698ab89fe30e9641740cb64dc576e12410b3eecf"
+    },
+    "figureOriginalNote": {
+      "text": "Original diagrams. They are not live screen captures. Each caption teaches the numbered step.",
+      "source_sha256": "556dd65a95998d4b39ab44d124a23e4f85aa582e144c86b18fe0a5ebba8d3cb5"
     }
   },
   "landing": {
@@ -231,7 +259,7 @@
     "tables": {
       "jobs": {
         "caption": {
-          "text": "稽核職務、群組與限制",
+          "text": "Auditor jobs, groups, and limits",
           "source_sha256": "c64a2fc6fae3b07eb50815da7f4b6c2d59a5853706adf33ef343723ee83d2271"
         },
         "headers": [
@@ -327,8 +355,8 @@
       },
       "seeds": {
         "caption": {
-          "text": "Startkonten for Demonstrationen",
-          "source_sha256": "9905bc2f948fc6e8cef528c7ddc50fda78927ecf44b142fb4701ff316bc504de"
+          "text": "Starter accounts for demonstrations",
+          "source_sha256": "4392854c114367c749ad7207cc2015e6762f2ab46fda84e353d8b30231277e16"
         },
         "headers": [
           {
@@ -697,8 +725,8 @@
           "source_sha256": "7567a3b116cef57725e22990ed16699950e95ad15cd5b4546488b844d96acc05"
         },
         "steps[3]": {
-          "text": "Lassen Sie the Browser-Tab geoeffnet, waehrend the Session startet. Close Sie ihn erst nach the Trennen.",
-          "source_sha256": "5b0f4c1d183230872859ea82d34f3c2080af5711f9896f59957b770c92b23a0d"
+          "text": "Leave the browser tab open while the session starts. Close it only after you disconnect.",
+          "source_sha256": "6f0029055d7ebfd9bae8c399684643943130fcd0e2db65f7bc5f0d44295a3a29"
         },
         "steps[4]": {
           "text": "If a machine is missing, contact an administrator instead of sharing the session with someone else.",
@@ -751,7 +779,7 @@
           "source_sha256": ""
         },
         "body[0]": {
-          "text": "Ein- and Aufwecksteuerungen gelten nur for Ihnen zugewiesene Maschinen. Schlafende or offline Zustaende sind normal, wenn a Host ausgeschaltet ist. Warten Sie auf the Aufwecken or fragen Sie a Admin, bevor Sie wiederholt neu versuchen.",
+          "text": "Power-on and wake controls apply only to machines assigned to you. Sleeping or offline states are normal when a host is powered off. Wait for the wake to finish, or ask an administrator, before retrying repeatedly.",
           "source_sha256": "6e28429879e643758984cfeef03e390323e0d1dc426116ccb50f7ae46de528a8"
         },
         "body[1]": {
@@ -763,11 +791,11 @@
           "source_sha256": "2034be5fd85fcbdbde152eb481037722c9af70f959c7280c3c2d338073b74217"
         },
         "steps[1]": {
-          "text": "Zeigt the Status schlafend or offline, warten Sie kurz and fragen Sie a Admin, wenn the Zustand bleibt.",
+          "text": "If the status shows sleeping or offline, wait briefly and ask an administrator if the state persists.",
           "source_sha256": "21814b8d8777ec791e56538b597e3b6112064bda0950ace12d72a2532b41bed4"
         },
         "steps[2]": {
-          "text": "Beenden Sie the Session in the Vermittler, wenn Sie fertig sind.",
+          "text": "End the session in the broker when you are finished.",
           "source_sha256": "a928a0f0864148c7651b10d817e1b6de5993f53276851ad7033906be1409dbc4"
         },
         "steps[3]": {
@@ -833,7 +861,7 @@
           "source_sha256": "40bfcfcab5646f9079e9ec5572259904c4c664cf63f1890dd867c78928eaa5f3"
         },
         "steps[2]": {
-          "text": "Loading Sie nur herunter, wenn the Paket es erlaubt.",
+          "text": "Download only when the package allows it.",
           "source_sha256": "4cc1e31fea7a6a51974f80a72769a486c791184e8be45fb7e5ef998aecd6fc6b"
         },
         "steps[3]": {
@@ -875,8 +903,8 @@
       },
       "account": {
         "title": {
-          "text": "Mein lokales Konto",
-          "source_sha256": "34b705251f341711def5cd5db46beb3ba25b8ff692ee11f82d07a255847f7097"
+          "text": "My local account",
+          "source_sha256": "d5d19b236d88ad58aeeb70067db66755d5018467acc03b193486cfc60f695169"
         },
         "summary": {
           "text": "Profile, password and MFA self-service.",
@@ -1039,8 +1067,8 @@
           "source_sha256": "3cca9d9d54aedee15fae19d8c6249bea19687b27ecf3c14e3780185253175cd6"
         },
         "steps[2]": {
-          "text": "Fuellen Sie Steuerungsnarrative with ehrlichem Status (Umgesetzt / Teilweise / Geplant).",
-          "source_sha256": "749cf7779132a19e3f652c401dce7f82658c8aab985b515ea7d822b1276b2b75"
+          "text": "Fill control narratives with an honest status (Implemented / Partial / Planned).",
+          "source_sha256": "7acc5d4d87e8eb15d3f9d6166c93209c236f9b60f7f373c8df13d995cd3c894c"
         },
         "steps[3]": {
           "text": "Attach or link evidence that the enclave has already created.",
@@ -1105,11 +1133,11 @@
           "source_sha256": "2dd392e651620f8489fdca0f845f7fdf131f75f8353397e578ac5f2c4d569a93"
         },
         "steps[0]": {
-          "text": "Filter Sie the Katalog nach the benoetigten Berichtsfamilie.",
-          "source_sha256": "c0f1e32684c0480798e9f1daa5a10ea1a03b12d56329e5b5a0e36004023fc7bd"
+          "text": "Filter the catalog to the report family you need.",
+          "source_sha256": "3a9070f4e0b0f00b397e52fcea89c48424d3d4fb5157391e1e45d21579e676dd"
         },
         "steps[1]": {
-          "text": "Fuehren Sie the Bericht aus and laden Sie the of Ihrer Organisation erlaubte Paket herunter.",
+          "text": "Run the report and download the package your organization allows.",
           "source_sha256": "dc82e8ab6a7d56f9b8f1822df0253bed8f44b776495d6f1efcaed6044326a80c"
         },
         "steps[2]": {
@@ -1117,8 +1145,8 @@
           "source_sha256": "55407d6d5151a250d54d57b7e1ad05ee6fe2954f68ea3cb6edb7105cf794cbe3"
         },
         "steps[3]": {
-          "text": "Eskalieren Sie fehlende Operatoraktionen, statt selbst to beheben.",
-          "source_sha256": "ab93a9fb83becdf12fa674e4c81c0a300f0415071c8aa923fdd0efeff601a108"
+          "text": "Escalate missing operator actions instead of fixing them yourself.",
+          "source_sha256": "d159fbfb31a54224570c4b14a59ad0b55b90eedfd86f49c4993851110d032128"
         },
         "productLabel": {
           "text": "Open Report Center",
@@ -1175,12 +1203,12 @@
           "source_sha256": "fc6d0d7288387f2edbe6a075340c4d400dca4aeea9329a8f91e0272e7cc618b8"
         },
         "steps[1]": {
-          "text": "Filter Sie auf the gepruefte Population.",
-          "source_sha256": "36ed28a3b9c16d59c42a48f9de4c2639152488468e63c15e2c849063e75eefe4"
+          "text": "Filter to the reviewed population.",
+          "source_sha256": "43cc4458d187cacf64a1f02f470973049dd9ddc34f3749b42da08039aa2b67ae"
         },
         "steps[2]": {
-          "text": "Behandeln Sie Erneut scannen / Fix-It als Operatoraktionen.",
-          "source_sha256": "563a4d5ecf290c3c3296a93c80bd49bd7559b97ee359ba5df06c64793831b118"
+          "text": "Treat Rescan / Fix-It as operator actions.",
+          "source_sha256": "2dd9e35c18a541f432e1283bf96f1c5094967e558b2241e65a6330c4f76df3ee"
         },
         "steps[3]": {
           "text": "Record gaps in the binder instead of changing settings.",
@@ -1307,11 +1335,11 @@
           "source_sha256": "2d51aa11e36fc8e9f0e40fc9a7a7ca24cf5fa14033423600bcadda3e47eef6b3"
         },
         "steps[1]": {
-          "text": "Lesen Sie the Ehrlichkeitshinweis, bevor Sie a Zeile zitieren. Er nennt the Produktgrenze.",
-          "source_sha256": "d91195c4bbb4a155895d4d7c309a77ae75031f9cb9d8f8ec6db488f8e8709c96"
+          "text": "Read the honesty notice before you quote a row. It names the product boundary.",
+          "source_sha256": "3128c9fe2c43a90fe1a7592eebc12796fc186ad03cca9e965f8e67ac5c72bb6b"
         },
         "steps[2]": {
-          "text": "Behandeln Sie Blockiert-Zeilen als Organisationsarbeit Ihrer Organisation, not als Produktdefekte.",
+          "text": "Treat Blocked rows as organizational work owned by your organization, not as product defects.",
           "source_sha256": "c70180bc448ca81eea2430d2a600512f1ce7f34c2c3a8e539670d5f9ae17d91f"
         },
         "steps[3]": {
@@ -1435,8 +1463,8 @@
     "chapters": {
       "server-config": {
         "title": {
-          "text": "Serverkonfiguration",
-          "source_sha256": "3ef29db99e18f6a1ad90b185f54ba58d0d2bf1ce30d036993242242186b6bf6f"
+          "text": "Server configuration",
+          "source_sha256": "92bf3e60907d34b684b4b85a5c60b07f6d53dfdaba6d28ba6df97c59195d0bbf"
         },
         "summary": {
           "text": "Configuration hubs, company profile and setup wizard.",
@@ -1459,15 +1487,15 @@
           "source_sha256": "721455ef34e77f55fb4cbabbc80ceef846b09cbea16a7919faef28291f880deb"
         },
         "steps[2]": {
-          "text": "Setzen Sie the Unternehmensprofil, bevor Sie Agenteneinstellungen exportieren.",
+          "text": "Set the company profile before you export agent settings.",
           "source_sha256": "c2c3d3d93bfa13bca672f4df5eab009123bb99242c8da292c6fec45193737ce3"
         },
         "steps[3]": {
-          "text": "Bestaetigen Sie, dass COMPLIANCE_PROFILE and ADMIN_AUTH_MODE the Einsatzabsicht entsprechen.",
+          "text": "Confirm that COMPLIANCE_PROFILE and ADMIN_AUTH_MODE match the deployment intent.",
           "source_sha256": "64a30d77497ab17ab20f10d4f65fea924029fb0849b5c4ede667b166befe8d2d"
         },
         "steps[4]": {
-          "text": "Bestaetigen Sie nach dienstrelevanten Aenderungen, dass aic-offline-server-service RUNNING ist and runtime-status.json aktuell ist.",
+          "text": "After service-relevant changes, confirm that aic-offline-server-service is RUNNING and runtime-status.json is current.",
           "source_sha256": "fe010858d036edcd1121492c3e86aa87c1cb22342d0a04d7c038e142516bcbef"
         },
         "productLabel": {
@@ -1583,15 +1611,15 @@
       },
       "agents": {
         "title": {
-          "text": "Agentenkonfiguration",
-          "source_sha256": "1757181923d604ae8c29d2186c7d226b75f096ef27eb50f0de03681c3956b76a"
+          "text": "Agent configuration",
+          "source_sha256": "b8844d09e586617483c24df8c5295a2c8a7621c0b7506a5f20d34324e4f31fd4"
         },
         "summary": {
-          "text": "Agentenvorgaben, Offenlegungen and Bereitstellungsablaeufe unter Konfiguration → Agent.",
+          "text": "Agent defaults, disclosures, and propagation workflows under Configuration → Agent.",
           "source_sha256": "58df4af8c0f45fe34ca613d002816dc82f6a997c67c4c5d7a8ba7d63e81616e8"
         },
         "body[0]": {
-          "text": "Export or uebertragen Sie Agenteneinstellungen erst, wenn the Unternehmensoffenlegungen vollstaendig sind. Pruefen Sie nach the Installation the Agent-Check-in and the Gesundheit unter Systeme → Systemliste.",
+          "text": "Do not export or propagate agent settings until the company disclosures are complete. After installation, check agent check-in and health under Systems → System List.",
           "source_sha256": "adcb38115aaa6d932a7114fcc1c17940c64bb6104dad4dfc4ea34aa372d6354b"
         },
         "body[1]": {
@@ -1599,11 +1627,11 @@
           "source_sha256": "cff9f9beb4cbc6d1fd34d41d2ad56f4921e1bcd734d58e32fe8da7384c4a2303"
         },
         "steps[0]": {
-          "text": "Export or uebertragen Sie Settings of Konfiguration → Agent, nachdem the Unternehmensoffenlegungen vollstaendig sind.",
+          "text": "Export or propagate settings from Configuration → Agent after the company disclosures are complete.",
           "source_sha256": "05504c31f7891389b17ec403360cdc93e7b52ea2d0418f7e21c03c799f80088f"
         },
         "steps[1]": {
-          "text": "Pruefen Sie nach the Installation the Agent-Check-in and the Gesundheit the Systemliste.",
+          "text": "After installation, check agent check-in and health in the System List.",
           "source_sha256": "a2c44839bae1d6328bbc7671be194c34698b224687a895a88318434ea46011fc"
         },
         "steps[2]": {
@@ -1615,8 +1643,8 @@
           "source_sha256": "36ce582b3931268087ae1368abbd8efb2c8be15a76851aba8d49f88c2f9c7e30"
         },
         "steps[4]": {
-          "text": "Bestaetigen Sie Elevation-Pipe and elevation_configured, bevor Sie Elevation-Codes erzeugen.",
-          "source_sha256": "d8b1ac754c08f89d2c0d9e4c1a798a33d1debe955e1e5bf4718da076cb797b92"
+          "text": "Confirm the elevation pipe and elevation_configured before you mint elevation codes.",
+          "source_sha256": "1430d7be6eff3f3a9948364135a8f53862338cdaf3189fb5832fba5447492483"
         },
         "productLabel": {
           "text": "Open Systems list",
@@ -1657,11 +1685,11 @@
       },
       "messaging": {
         "title": {
-          "text": "Messaging and Wiederherstellungsbenachrichtigung",
+          "text": "Messaging and Recovery Notification",
           "source_sha256": "b2db4a7085ac2cd594a8a6178d237ac805652d1e7acbb57cdbff8e0e48db869a"
         },
         "summary": {
-          "text": "E-Mail- / SMS-Anbieter for Wiederherstellung and Operatoralarme.",
+          "text": "Email and SMS providers for recovery and operator alerts.",
           "source_sha256": "1475fd47a80d26b34394dbda3230f55f09efdbfd14371a68bf3044a02f6fc3bd"
         },
         "body[0]": {
@@ -1723,8 +1751,8 @@
       },
       "credentials-elevation": {
         "title": {
-          "text": "Zugangsdaten and Elevation",
-          "source_sha256": "7f057416430f1fe036484cb5f5e6d61c6b6dd2aef42400e0689f759369a8a302"
+          "text": "Credentials and elevation",
+          "source_sha256": "691f46a524cab55737633c735997d26dbc41ab728a7bd7a6c6de7af727afaf65"
         },
         "summary": {
           "text": "View Password, Managed Identities, Credential Vault and Elevation under Access & Identity.",
@@ -1825,11 +1853,11 @@
           "source_sha256": "567d4b0cfa3d5190d39b61cec8c2c2a9a91f10353dbb535fde8271bd45b198b0"
         },
         "steps[2]": {
-          "text": "Bestaetigen Sie Recording-Agenten — Gesundheit and Recording-Speicher, bevor Sie aufgezeichnete Sessions verlangen.",
+          "text": "Confirm recording agents — health and recording storage — before you require recorded sessions.",
           "source_sha256": "14bab5ea3cd8e41c7ff3688f22a9f7b618532b8b57ca7ca76758cfb40b1a3172"
         },
         "steps[3]": {
-          "text": "Binden Sie SSH-Befehlsfilterung, wenn Sie Befehlssteuerung brauchen. Ueben Sie in einer Live-Session a Erlauben and a Ablehnen.",
+          "text": "Bind SSH command filtering when you need command governance. Practice an allow and a deny in a live session.",
           "source_sha256": "bd8ccfc457de6b38c55a9159619ebb187e06f71e32705c69fce55d979686b8cb"
         },
         "steps[4]": {
@@ -1915,7 +1943,7 @@
           "source_sha256": "12ae0e9d4c81e3fdb76277acefc51016f94a0ddf7f52a1ae9149ebed92ced64a"
         },
         "steps[4]": {
-          "text": "Konfigurieren Sie Syslog-Weiterleitung nur, wenn Sie a Collector haben. Pruefen Sie the Zustellung getrennt vom Seitenladen.",
+          "text": "Configure syslog forwarding only when you have a collector. Verify delivery separately from the page load.",
           "source_sha256": "790bc004eb5ea39bb275aeb9f148e5ebe85d0169027659d980345eeb0b29580c"
         },
         "productLabel": {
@@ -1961,11 +1989,11 @@
       },
       "enhanced-controls": {
         "title": {
-          "text": "Uebungen to erweiterten Steuerungen",
+          "text": "Enhanced Controls Exercises",
           "source_sha256": "ca52815ba68890decbb44481ea58e1e49ba393b2f2b6972ed122720eef81d31c"
         },
         "summary": {
-          "text": "Hunt-Detektoren, CIRT-Uebungen and Stempel erweiterter Steuerungen ausfuehren.",
+          "text": "Run hunt detectors, CIRT exercises, and enhanced control stamps.",
           "source_sha256": "3802aeab1adf568b2a00bb7c69b99af1b80d16886a63cc16beeda07595129941"
         },
         "body[0]": {
@@ -1981,11 +2009,11 @@
           "source_sha256": "703c85099199b38b027e3806904a1aff7310659a3fbb7eda438d5162b3046e4e"
         },
         "steps[1]": {
-          "text": "Setzen Sie the Bereitstellungsfenster, bevor Sie a CIRT-Uebung aufzeichnen.",
-          "source_sha256": "8b3d971fe9275afc98694085e35f9960462d5f74b2a0608a850e7fb319a18a49"
+          "text": "Set the deployment window before you record a CIRT exercise.",
+          "source_sha256": "1491b972463f2e9646bb460f02475d9d8379a7faf2d16a160bb4447d677dcb86"
         },
         "steps[2]": {
-          "text": "Fuehren Sie Hunt-Detektoren aus, dann CIRT-Uebung aufzeichnen, dann Benachrichtigung / SIEM-Stempel ueben.",
+          "text": "Run hunt detectors, then record a CIRT exercise, then practice the notification / SIEM stamp.",
           "source_sha256": "4fc22202a55b1f759425beb61cf30eb757163ece20173ff1d11cec368a75ac42"
         },
         "steps[3]": {
@@ -2101,8 +2129,8 @@
       },
       "backup-ops": {
         "title": {
-          "text": "Day-2-Betrieb",
-          "source_sha256": "234be2bb838fb479b23e725c0ee0da105d353f6e777cbc03d8811f4b4edcc9aa"
+          "text": "Day-2 operations",
+          "source_sha256": "2ba8181a504974b900703d2b27f4294ead5a8e72e0f11d0b0b6ac900c4a8ae96"
         },
         "summary": {
           "text": "Service health, encryption backup and restore, and post-change auditing.",
@@ -2121,7 +2149,7 @@
           "source_sha256": "e7d5f2a977c7df4dfdec6c72bb9fdc12c3530137718ade73d8aeead542d21202"
         },
         "steps[0]": {
-          "text": "Bestaetigen Sie nach the Bereitstellung HTTPS-Gesundheit and Admin-Session.",
+          "text": "After deployment, confirm HTTPS health and the admin session.",
           "source_sha256": "02495b3d91b83dc9182b63a507132fbe3eabc443e0a3ca0220b8f6642eaca10b"
         },
         "steps[1]": {
@@ -2137,7 +2165,7 @@
           "source_sha256": "754d3f177f252a231b3c6680f21806ca854d0e4990f2c364d530ea8037887ec4"
         },
         "steps[4]": {
-          "text": "Lassen Sie a zerstoerende Datenbankinitialisierung niemals without the Wiederherstellungsschritt.",
+          "text": "Never leave a destructive database initialization without the restore step.",
           "source_sha256": "966c6ae20783ee8845240eafc2d9d2a83fab2f212682e20b5437d10659099efb"
         },
         "productLabel": {
@@ -2221,7 +2249,7 @@
       "source_sha256": "18774cbb4ebf64d08e962c1bded853277d3d881c5317ff6707a7bd4bb8b3d341"
     },
     "howTo[2]": {
-      "text": "Agent-Drahtrouten erwarten HMAC-Header, wenn Agenten signieren. Unsigniert wird nur akzeptiert, solange AGENT_HMAC_ENFORCE_MODE=dual_mode gilt.",
+      "text": "Agent wire routes expect HMAC headers when agents sign. Unsigned is accepted only while AGENT_HMAC_ENFORCE_MODE=dual_mode applies.",
       "source_sha256": "39646376bd78b7c28e590bab1cb648c621129254820461a2e00ae5d22fbf07db"
     },
     "howTo[3]": {
@@ -2233,8 +2261,8 @@
       "source_sha256": "1253e2b0db2f4a6194e30257c028842f4dd3efc8af6f8a646b2c0f6e780d7a0d"
     },
     "limitsTitle": {
-      "text": "Ehrliche Grenzen",
-      "source_sha256": "265914c30906eef21589562a0f96cfb55880e629470b59cc83a8fd9d0b7bb546"
+      "text": "Honest limits",
+      "source_sha256": "41c193393b620a458f7aaab5d51edfb1edd2f65aab4f0c7025ea91d83fd674e5"
     },
     "limits[0]": {
       "text": "OpenAPI coverage follows declared routes. A missing operation in the UI is not proven just by downloading this file.",
@@ -2253,11 +2281,11 @@
       "source_sha256": "d841a6545e7f784bf7a21f6b5bfe0f069fb9651a701279cbba4232f06bcb39f6"
     },
     "downloadOpenApi": {
-      "text": "Download OpenAPI JSON",
-      "source_sha256": "e6078e0829854570a6e036c199ac9f9fa33640217aad23d015655f016f3c0157"
+      "text": "OpenAPI-JSON herunterladen",
+      "source_sha256": "d6b98770f09a01bb95be1ff165a8703ab71baa2605657107fa2337a7b6af5d1c"
     },
     "viewRaw": {
-      "text": "OpenAPI roh anzeigen",
+      "text": "View raw OpenAPI",
       "source_sha256": "edb3f19b664956a3d4ffe1338d03ca52028d993e0e23159bca74867698791e95"
     },
     "loadError": {
@@ -2335,7 +2363,7 @@
       "source_sha256": "be0c95a901c176c3503761eaff2351166bd5b5638d8aa63b07b40322e1ec8d43"
     },
     "loading": {
-      "text": "Swagger UI wird geladen…",
+      "text": "Loading Swagger UI…",
       "source_sha256": "e4b0195f3e7bdfca83e1b52cb3dc1794d737c5ca72763cc423ee3b4a6f88aa76"
     },
     "hostAria": {
@@ -2386,23 +2414,23 @@
     },
     "downloadJson": {
       "text": "Download JSON",
-      "source_sha256": "77cac2a3b8dd7542ac9ae4b226e90fb1e7d423a69a27efc3dca8dda16d15035b"
+      "source_sha256": "49e0e6d56e345316a709f20b340aecf39a14714925cbd4806a6f8abc8c4c203b"
     },
     "showRaw": {
-      "text": "Roh-JSON anzeigen",
+      "text": "Show raw JSON",
       "source_sha256": "6f20b03fd4cfb5ab02bfb05abb5e2e3e1a52ef88039863882473bc53b2579175"
     },
     "hideRaw": {
-      "text": "Roh-JSON ausblenden",
-      "source_sha256": "e5e5292385b40b60a5725aa20359757cfa1e5ae7b2c231b60c2e9231f0f5ca08"
+      "text": "Hide raw JSON",
+      "source_sha256": "217daa28e50530bf33520619d50a7237ce687d29b9c8b7e0d6dbe982f448a1bd"
     },
     "showing": {
       "text": "Showing {{shown}} of {{matching}} matching{{totalPart}} operations{{capped}}",
       "source_sha256": "499bd5b4d9a362b0973270957e17ef123bf2a84c2a6a8a894dac9ecb4e388a82"
     },
     "totalPart": {
-      "text": " ({{total}} gesamt)",
-      "source_sha256": "635d04f5ed8e7dfa1eac4757092e65c251df516dd67c73fe8d0e73583dd7b2b6"
+      "text": " ({{total}} total)",
+      "source_sha256": "d69d18c4ff811f4aa392ed06752d068f1cf6324dd8e1ab9673316e19806c3514"
     },
     "capped": {
       "text": " (Seitenliste auf 500 begrenzt)",
