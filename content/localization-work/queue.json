@@ -1611,7 +1611,7 @@
       "updated": "2026-08-22",
       "source_repo": "pim-offline-server",
       "source_path": "pim-offline-server/ui/src/i18n/locales/en/pages.json",
-      "source_sha256": "9e7dcf5973908885b409ced2f4f7a5bc9aa0fc14f23d0a871d84c76e4d0faf7c",
+      "source_sha256": "8146d7f42195a81cd1e3feff8bbf703b00f9d5b92c450f178519c71da1d108f7",
       "product_route": "/enclave/my-incident-reports",
       "required_tags": [
         "de",
@@ -1622,7 +1622,7 @@
         "zh-TW"
       ],
       "draft_tags": [],
-      "notes": "English USA showed Melder, Eingang, and Abschluss on My Incident Reports. US English source restored to Reporter, Intake, Closing. Other tags received domain translations; de kept German. Agent drafts do not close."
+      "notes": "English USA showed Melder, Eingang, and Abschluss on My Incident Reports. US English source restored to Reporter, Intake, Closing. Other tags received domain translations; de kept German. Agent drafts do not close. Source changed 2026-08-22 (hash 9e7dcf597390 → 8146d7f42195)."
     },
     {
       "id": "spa.ir-process-diagram-chrome",
@@ -1634,7 +1634,7 @@
       "updated": "2026-08-22",
       "source_repo": "pim-offline-server",
       "source_path": "ui/src/components/ir/IrProcessDiagram.tsx",
-      "source_sha256": "eecdf496ed8fc527eac6d31a892bd5617b2eb79b0bcc0fac67f0f4ef7df3a87f",
+      "source_sha256": "41c1ebd4b7ad3d37a6aadab84d70c6b377026abc77db9c396e6e73d0197b000f",
       "product_route": "/enclave/my-incident-reports",
       "required_tags": [
         "de",
@@ -1645,7 +1645,30 @@
         "zh-TW"
       ],
       "draft_tags": [],
-      "notes": "New EN keys: diagramNoOpenTicket, diagramCaptionEmpty, diagramLegendRole/Current/Upcoming/Completed, plus corrected Reporter/Intake/Disposition. Agent drafts in derived packs do not close this item."
+      "notes": "New EN keys: diagramNoOpenTicket, diagramCaptionEmpty, diagramLegendRole/Current/Upcoming/Completed, plus corrected Reporter/Intake/Disposition. Agent drafts in derived packs do not close this item. Source changed 2026-08-22 (hash eecdf496ed8f → 41c1ebd4b7ad)."
+    },
+    {
+      "id": "spa.en-docs-headers-german-leak-20260822",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "spa-catalog",
+      "title": "English docs and header chrome leftover German",
+      "added": "2026-08-22",
+      "updated": "2026-08-22",
+      "source_repo": "pim-offline-server",
+      "source_path": "pim-offline-server-cmmc-main/ui/src/i18n/locales/en/docs.json",
+      "source_sha256": "d09f54a776f97035f831370d08533894b1f22fc36256967571cec00c79b3da98",
+      "product_route": "/docs/user",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [],
+      "notes": "US English docs keyed leftovers and page header bullets were still German. Restored US English. de kept German. Other tags received completeness drafts. Agent drafts do not close."
     }
   ]
 }
