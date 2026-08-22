@@ -1600,6 +1600,52 @@
       ],
       "draft_tags": [],
       "notes": "US English source compiled in (grade 6, original illustrations). Program create auto-includes both letters. Agent drafts do not close. Trainee portal Absent. Never Met."
+    },
+    {
+      "id": "spa.ir-en-german-leak-20260822",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "spa-catalog",
+      "title": "IR flowchart German leftovers in English",
+      "added": "2026-08-22",
+      "updated": "2026-08-22",
+      "source_repo": "pim-offline-server",
+      "source_path": "pim-offline-server/ui/src/i18n/locales/en/pages.json",
+      "source_sha256": "9e7dcf5973908885b409ced2f4f7a5bc9aa0fc14f23d0a871d84c76e4d0faf7c",
+      "product_route": "/enclave/my-incident-reports",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [],
+      "notes": "English USA showed Melder, Eingang, and Abschluss on My Incident Reports. US English source restored to Reporter, Intake, Closing. Other tags received domain translations; de kept German. Agent drafts do not close."
+    },
+    {
+      "id": "spa.ir-process-diagram-chrome",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "spa-chrome",
+      "title": "IR process diagram chrome (role, steps, current-phase legend)",
+      "added": "2026-08-22",
+      "updated": "2026-08-22",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/components/ir/IrProcessDiagram.tsx",
+      "source_sha256": "eecdf496ed8fc527eac6d31a892bd5617b2eb79b0bcc0fac67f0f4ef7df3a87f",
+      "product_route": "/enclave/my-incident-reports",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [],
+      "notes": "New EN keys: diagramNoOpenTicket, diagramCaptionEmpty, diagramLegendRole/Current/Upcoming/Completed, plus corrected Reporter/Intake/Disposition. Agent drafts in derived packs do not close this item."
     }
   ]
 }
