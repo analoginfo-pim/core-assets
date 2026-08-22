@@ -116,7 +116,7 @@
     "source_sha256": "d62cdbd9ff7c72229aef3d4520b92b860ddb50dbb7055e1eccf9c2880f224630"
   },
   "identityId": {
-    "text": "Stable identifier for this managed account on the endpoint. Use a GUID or short unique name; cannot change after create.",
+    "text": "معرّف ثابت لهذا الحساب المُدار على نقطة النهاية. استخدم GUID أو اسمًا فريدًا قصيرًا؛ لا يمكن تغييره بعد الإنشاء.",
     "source_sha256": "6a6353a453e53e66304ba519804bc5b6a43d8240b5db8cafedcb559aecff18e1"
   },
   "accountBinding": {
@@ -132,7 +132,7 @@
     "source_sha256": "f517f4d6da3ed9885c7033d7fa3d10ed1ceba95c3a56251b3c23d49e028d50f3"
   },
   "identityDescription": {
-    "text": "Optional note for operators (purpose, owner, ticket). Not sent to the agent as a secret.",
+    "text": "ملاحظة اختيارية للمشغّلين (الغرض، المالك، التذكرة). لا تُرسل إلى الوكيل كسر.",
     "source_sha256": "6f521f2557bb607f222e0c806251ace047334908e8565114e9d8f32f589a9695"
   },
   "rotationStartOffset": {
@@ -204,7 +204,7 @@
     "source_sha256": "59fb86c7a519dcda2deb687150af2c8b14c73a6b1fc30be67f27fb32b7a4b948"
   },
   "rotationDays": {
-    "text": "Days until the next scheduled password rotation for identities using this policy level.",
+    "text": "الأيام حتى التدوير المجدول التالي لكلمة المرور للهويات التي تستخدم مستوى السياسة هذا.",
     "source_sha256": "b44b8f26dd9853a5d72ae6353d12250d326947983e6d0ea42d8b4086c8a1c45b"
   },
   "maxDriftSeconds": {
@@ -212,7 +212,7 @@
     "source_sha256": "8363a230469326a47083b2a416d8f223b8f081e51a982d0380ec9b47f17482fb"
   },
   "secretUpdateFrequencyHours": {
-    "text": "How often agents poll the server for password updates when connected.",
+    "text": "عدد مرات استعلام الوكلاء للخادم عن تحديثات كلمة المرور عند الاتصال.",
     "source_sha256": "9630682f67ed5842b00e9eadfcd00471b97e555e45ed790090dfc10b17ab1b1f"
   },
   "allowedSpecialChars": {
@@ -256,7 +256,7 @@
     "source_sha256": "e9371a9f0472b8eeccd421c0751ef464611e08a571cbc6fd13fe3a173d002f31"
   },
   "elevationDuration": {
-    "text": "Minutes the elevation stays active after activation (1–480).",
+    "text": "الدقائق التي يبقى فيها الرفع نشطًا بعد التفعيل (1–480).",
     "source_sha256": "9a111f0d9e050b381a89c095a650cd9c158718ec61b2c9bfcea4c39cf85a0c29"
   },
   "elevationScheduled": {
@@ -304,7 +304,7 @@
     "source_sha256": "06d8569713bc0b3fd38aa7fbeb2e63084f82778390e675f8e993059e240f440c"
   },
   "loginProvider": {
-    "text": "Which identity path to use for this logon (local password, PIV, or other configured providers).",
+    "text": "مسار الهوية المستخدم لهذا تسجيل الدخول (كلمة مرور محلية أو PIV أو موفرون آخرون مُهيأون).",
     "source_sha256": "4ece07972fdb0c1e9acac5779e67b1eb14f8570b8481c0cb0dc8e6b1366ba468"
   },
   "loginTotpCode": {
@@ -652,11 +652,11 @@
     "source_sha256": "28ff301a5c20f89d877e9b6f15d4ad285a05c091be63ef789705557f9a08d39a"
   },
   "jumpDrainMode": {
-    "text": "When draining, this node accepts no new sessions so existing ones can finish before maintenance.",
+    "text": "عند التصريف لا يقبل هذا العقد جلسات جديدة حتى تتمكن الجلسات الحالية من الانتهاء قبل الصيانة.",
     "source_sha256": "bf21aa1fc827d923711106376eae02bb2ecbfe30151a17db7b82117bfa704436"
   },
   "jumpAcceptingSessions": {
-    "text": "When checked, this node accepts new interactive sessions.",
+    "text": "عند التحديد يقبل هذا العقد جلسات تفاعلية جديدة.",
     "source_sha256": "c19cd4115869d0099b13c0a70599a082af5d7b8840145571badc37828e5db767"
   },
   "assignmentPrincipal": {
@@ -1684,7 +1684,7 @@
     "source_sha256": "3cd347aad5e6142912ac5629ad4f5841aef55dd1f335908f272adb63975b82d8"
   },
   "loginProviderSelect": {
-    "text": "Which identity path to use for this logon (local password, PIV, or other configured providers).",
+    "text": "مسار الهوية المستخدم لهذا تسجيل الدخول (كلمة مرور محلية أو PIV أو موفرون آخرون مُهيأون).",
     "source_sha256": "4ece07972fdb0c1e9acac5779e67b1eb14f8570b8481c0cb0dc8e6b1366ba468"
   },
   "sessionRefreshEnabled": {
