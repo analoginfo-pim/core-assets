@@ -1,0 +1,54 @@
+---
+description: New GUI features ship all operator strings in catalogs; en+de same change set; plan missing translations via the localization-work queue.
+alwaysApply: true
+---
+
+# GUI features must localize (hard rule)
+
+Operator directive (Phil, 2026-08-22), verbatim intent:
+
+> **When implementing new features for the GUI, always build it with
+> localization of all strings. Build US English and German support in
+> localization, and provide a plan for missing translations.**
+
+## The rule
+
+> **New GUI features ship every operator-visible string through locale
+> catalogs — never hardcoded English-only TSX. US English (`en`) and
+> German (`de`) land in the same change set. Missing translations are
+> a recorded plan (localization-work queue), not a later surprise.
+> Agent draft catalogs do not close the item.**
+
+## Same change set
+
+| Required | Forbidden |
+| --- | --- |
+| New chrome keys in `en` **and** `de` | English-only new buttons, hints, dialogs, empty states |
+| Queue row in `core-assets/content/localization-work/` | “We’ll translate later” with no queue item |
+| Status **open** until required tags are reviewed | Closing on agent DE drafts |
+
+## Plan for missing translations
+
+Record `required_tags` for remaining Tier 1 (`en-GB`, `zh-Hans`, `zh-TW`)
+and any other shipped tags. Notes state: data add later, not a code
+rewrite. Do **not** close the item when only draft `de` exists.
+
+## Cross-references
+
+[`enterprise-localization.mdc`](enterprise-localization.mdc) (quality /
+register) ·
+[`localization-work-queue.mdc`](localization-work-queue.mdc) (how to
+record) ·
+[`compliance-artifacts-must-localize.mdc`](compliance-artifacts-must-localize.mdc)
+(Tier 1 tags) ·
+[`new-ui-must-localize-all-current-languages.mdc`](new-ui-must-localize-all-current-languages.mdc)
+(current-language coverage; this rule pins the **en+de + queue plan**
+floor for every new GUI feature)
+
+Mirror this file to `core-assets/.cursor/rules/` in the same change set
+([`auto-commit-push.mdc`](auto-commit-push.mdc)).
+
+## Origin
+
+2026-08-22 — operator hard rule: new GUI features always localize;
+en+de in the same change set; plan missing translations.

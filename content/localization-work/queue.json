@@ -30,23 +30,24 @@
       "priority": "tier-1",
       "kind": "help-manual",
       "title": "Live session file-transfer honesty",
-      "added": "2026-08-17",
-      "updated": "2026-08-20",
+      "added": "2026-08-22",
+      "updated": "2026-08-22",
       "source_repo": "pim-offline-server",
       "source_path": "ui/src/components/pam/LiveSessionChrome.tsx",
-      "source_sha256": "21562e6630c1e03942859aaf4c23f484d3f153ce498c3b3811f2b15d090a0d18",
+      "source_sha256": "9e49ef13b4ca8a76ada4b7efb63007006bd73fcbeb2939e9942824b8109038f5",
       "product_route": "/pam/live",
       "required_tags": [
         "de",
         "fr",
         "es",
         "en-GB",
-        "zh-Hans"
+        "zh-Hans",
+        "zh-TW"
       ],
       "draft_tags": [
         "de"
       ],
-      "notes": "Send delivers to the host (SFTP or SMB). VNC cannot receive files. Draft DE landed; other Tier 1 tags remain open. Not Met. Source changed 2026-08-18 (hash b5d2abede1f2 → 32e9fd43d3dc). Source changed 2026-08-20 (hash 32e9fd43d3dc → 21562e6630c1)."
+      "notes": "Secure Store preferred; host drop RBAC-gated (rbac.pam.session.file_transfer). VNC has no native file channel; alternate is same-host SFTP/SMB when granted. Missing Tier 1 (en-GB, zh-Hans, zh-TW) and other shipped tags are data adds later, not a code rewrite. Agent DE drafts do not close. Not Met."
     },
     {
       "id": "spa.live-session-leftover-en",
