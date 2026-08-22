@@ -475,6 +475,292 @@
       "source_sha256": "a796297fbead179adbfdde0f052fdcafa9d485e8b5499c2d4cfc35017fc1c3fa"
     }
   },
+  "coverageIntake": {
+    "title": {
+      "text": "إدخال الأدلة",
+      "source_sha256": "3c9f82f12af195e85fc062e610f1e6207e1fa6f87f90cbc68ff8a9b3b67e214f"
+    },
+    "summary": {
+      "text": "سجّل فعلاً خارج النظام أو ارفع ملفًا. يحفظ الخادم SHA-256. هذا بيان وليس Met وليس شهادة.",
+      "source_sha256": "9468316cc614c9af132787f3598e50f644a583142e700292d18e2e4168b28e0d"
+    },
+    "honesty": {
+      "text": "إقرار بأن فعلاً خارج النظام وقع يثبت فقط أن شخصًا مسمّى قال ذلك مع وقت الخادم. ليس Met أبدًا وليس شهادة.",
+      "source_sha256": "4d050aaf65e26109667f534f1843e269895e02f9ef3f9bb39b821295c0a31868"
+    },
+    "family": {
+      "text": "العائلة",
+      "source_sha256": "bd2d677b2ed4381b48bb1d0841052c6d076e7d634d5052e85dcbe0b8a0dedd80"
+    },
+    "titleField": {
+      "text": "العنوان",
+      "source_sha256": "7e8cd2056da73a7fefb6cd91f4e5d199d08d9058c517b9a2476b1b520324d674"
+    },
+    "reason": {
+      "text": "السبب",
+      "source_sha256": "f81ab834de5f84918dc040b884267c2b61cb1a52d46442de10e97f35a94d0500"
+    },
+    "reasonHelp": {
+      "text": "ثمانية أحرف على الأقل. اذكر سبب هذا السجل.",
+      "source_sha256": "a286822a102fc9dc9d86a9a8e715a3ec4f078efc2aff1eb31f6be20f40f84596"
+    },
+    "statement": {
+      "text": "ماذا حدث",
+      "source_sha256": "483bd49023ae2bfb08da43eea2757a0e5490f7b0fe2964f49273cc25215d61f4"
+    },
+    "controlRef": {
+      "text": "الضبط",
+      "source_sha256": "32d7e82082479b8cb546187ff0af11e4915e4d17bc28e02dca7425288b79badd"
+    },
+    "binderSection": {
+      "text": "معرّف قسم الملف",
+      "source_sha256": "882019cbc07aa128972d35797113d4994243e2b6d2f0361d38e9d21546471d04"
+    },
+    "expires": {
+      "text": "ينتهي (RFC 3339)",
+      "source_sha256": "ac669fd06c95c3b61fdefb1a8fdf0b334f516b99f95c2113f61c2e83a3ec58db"
+    },
+    "artifact": {
+      "text": "اختيار ملف",
+      "source_sha256": "da7da3667ae8114a4f7032d121ea8a1fb21ab5a4d8cbdc843e16045bbac1ff09"
+    },
+    "record": {
+      "text": "تسجيل",
+      "source_sha256": "bfdd510698ef3ccbf17f2c67fc47790e1ba72894fb74fe284bbc136b47ef73e6"
+    },
+    "sweep": {
+      "text": "تسجيل تذكيرات الاستحقاق",
+      "source_sha256": "342bac73c4d9eee60ef9b9723bbf0e72828700bca2a03b83b1e3b6f12065fc99"
+    },
+    "sweepDone": {
+      "text": "سُجّل {{logged}} تذكيرًا من {{scanned}} صفًا مستحقًا. هذا سجل وليس بريدًا.",
+      "source_sha256": "fd5fd92a868723472eb8bef9380f598a29d343af54dfdecf52ca634b722b0719"
+    },
+    "empty": {
+      "text": "لا سجلات بعد.",
+      "source_sha256": "5d9ae0627ee22c6513ada52ffda97f5b1822550172f90ca902d04d96d5e0f047"
+    },
+    "loadFailed": {
+      "text": "تعذّر تحميل إدخال الأدلة.",
+      "source_sha256": "a29dcfb2295d239664f73148600498f5ef8ace856acf8595998d2a56eb234607"
+    },
+    "retry": {
+      "text": "إعادة المحاولة",
+      "source_sha256": "942087cc2d41e01304b7195558d093d10c72af8e838c7556d6a02d471ee71852"
+    },
+    "sha256": {
+      "text": "SHA-256",
+      "source_sha256": "bbd07c4fc02c99b97124febf42c7b63b5011c0df28d409fbb486b5a9d2e615ea"
+    },
+    "actor": {
+      "text": "الفاعل",
+      "source_sha256": "449995c4fe8fab389053dac72d77798c094dd4a3b7b3cfe69c4d78d119308dce"
+    },
+    "renewal": {
+      "text": "التجديد",
+      "source_sha256": "f4a9133d791782c1d6c1729e52e2738cd03a6467fe1e01bf574a970edda1e13c"
+    },
+    "recorded": {
+      "text": "تم التسجيل",
+      "source_sha256": "c97ac679c9da5f7b34c6f673a3963c5c728a006ee1c7faf653f888ae42c9e987"
+    },
+    "state": {
+      "current": {
+        "text": "ساري",
+        "source_sha256": "e0d1b68224bf0b31ef16b206c65b5f8f6b89d18161f4a7cdcb8d0ac8d952549a"
+      },
+      "due": {
+        "text": "مستحق",
+        "source_sha256": "9071738f145962a67ca1f1db834560031606ced93aa9161f48c493afe31d0a7c"
+      },
+      "overdue": {
+        "text": "متأخر",
+        "source_sha256": "d660945bc299132062a8e487e69bba66ca9088298103b8a63daa71b910305627"
+      },
+      "no_expiry": {
+        "text": "بلا انتهاء",
+        "source_sha256": "fe06351db8da70412dd4d5a51545d68503554eb9d1bf074aff5009a027e8f2b4"
+      }
+    },
+    "procedure": {
+      "text": "الإجراء",
+      "source_sha256": "9c280284ef2669a2be7280a58557e553942fb2e0d2154e3f5949dc153c029bcf"
+    },
+    "procedureRequired": {
+      "text": "Choose a procedure لـ هذا family الصفحة.",
+      "source_sha256": "7c0ed8b8a4cb8b6da91e54f163b53edd9c543a16c62524dcc7f64d1c63d9ad1f"
+    },
+    "procedures": {
+      "visitor_log": {
+        "text": "سجل الزوار",
+        "source_sha256": "42cf93b0de06849183e3f91294e96c3f101315fef7d616fc2ee87e3cd27f2b59"
+      },
+      "escort": {
+        "text": "المرافق",
+        "source_sha256": "4cc2da8a6ad3b75b9604b5f987108e5313bde95155e849647cd95656ae36639f"
+      },
+      "supplier_questionnaire": {
+        "text": "استبيان المورّد",
+        "source_sha256": "a810baeae4b76d1a97b413bb457d3c6961e3fd365556eedb62d22b75710bfceb"
+      },
+      "signed_flowdown": {
+        "text": "تمرير موقّع",
+        "source_sha256": "01a3af0828cbd50cc84c149208bb25c58c1feb240f139153a0c43d4f6f2504fe"
+      },
+      "witnessed_destruction": {
+        "text": "إتلاف مشهود",
+        "source_sha256": "993a3f91bdbd7eed89e907b1c8a91ea7442b0b6986fa62ff334a8a5c8c968f5d"
+      }
+    },
+    "familyPages": {
+      "pe": {
+        "text": "استلام الأدلة PE",
+        "source_sha256": "0cdf154526d6f32a3e6818195d4aa2da7c46e20cf44f4723695bd547cda78e5e"
+      },
+      "sr": {
+        "text": "استلام الأدلة SR",
+        "source_sha256": "1184bb272d0b053f8858d441374a72ef2c5020adf7a67c465d3b00b2a58bfb23"
+      },
+      "mp": {
+        "text": "استلام الأدلة MP",
+        "source_sha256": "5449ef9e5a7951454c3ed9c6d61e28cc0503fb6c4667d669f667fc72690e727a"
+      }
+    },
+    "visitorName": {
+      "text": "اسم الزائر",
+      "source_sha256": "8d9178364056d91c6af5efa2894dc3e6529f4be6b37ac42a40c311ac21c9a20f"
+    },
+    "escortName": {
+      "text": "اسم المرافق",
+      "source_sha256": "4fc59a5226f6959fa59645ff9ab99316e676c6509c551ea7639a9bc4e0cbbfde"
+    },
+    "supplierName": {
+      "text": "اسم المورّد",
+      "source_sha256": "5b386986996ea3c99b50a643aad127e65929c37ec7d9942137e86aa8deeeb7e5"
+    },
+    "mediaDesc": {
+      "text": "وصف الوسائط",
+      "source_sha256": "2e22cefe8cb83e7cd9a34c403addd81e25a268eb9aaba77a7faff45338ddfeb9"
+    },
+    "method": {
+      "text": "طريقة الإتلاف",
+      "source_sha256": "d86b869ac0dc888817d61b4b97b846ec50220d20f60105ce6640c5c9b197eec7"
+    },
+    "witnessName": {
+      "text": "اسم الشاهد",
+      "source_sha256": "f8c969e164b4d205abeb9b6967f3945ccd8450d77b9492682bea10a414c784e8"
+    }
+  },
+  "supplierRegister": {
+    "title": {
+      "text": "سجل المورّدين",
+      "source_sha256": "6b4fbf19defb318ea4f3b3761e964b85c8880f557fc2edf76577f5fa693c944d"
+    },
+    "summary": {
+      "text": "سمّ كل مورّد وسبب دخوله النطاق. سجّل دورة تقييم هنا. الاستبيانات وملفات التدفق الموقع تبقى في Evidence Intake SR.",
+      "source_sha256": "ce52a9e1b2cb2bc2be10034343722bae3f815777890ed94e47c15f85fe255172"
+    },
+    "honesty": {
+      "text": "صف السجل يسمّي مورّدًا ونطاقًا مسجَّلًا. نتيجة التقييم بيان مشغّل بطابع زمني من الخادم. ليست Met وليست معتمدة.",
+      "source_sha256": "8c0fd3b19bdd50121295baed01bd85f940d98d43fdae9eb589ff698947d4da05"
+    },
+    "addSupplier": {
+      "text": "إضافة مورّد",
+      "source_sha256": "c35d34e15817c69255ab4ada85a4177a879f4a9fe3075797e5e1eabdca6be430"
+    },
+    "name": {
+      "text": "الاسم",
+      "source_sha256": "52ab09847cf82787c5387305af3cc48d5b5e885b2f8340910478aeaedcaab56d"
+    },
+    "organization": {
+      "text": "المنظمة",
+      "source_sha256": "2befd9ff5be76daeac18b6fd0cd792bd771a34fdba96e36efbe59400ba18e76c"
+    },
+    "scopeBasis": {
+      "text": "أساس النطاق",
+      "source_sha256": "286d6b3c77c097a76858386580739309f680e5d9a28a0efb502f644a856aa56f"
+    },
+    "scopeHelp": {
+      "text": "ثمانية أحرف على الأقل. اذكر العمل المنظم الذي يمكن لهذا المورّد بلوغه.",
+      "source_sha256": "3f9c9a4abd347863489842275d9f32117acf41058163457e41edabc2f5d195c9"
+    },
+    "contactEmail": {
+      "text": "بريد الاتصال",
+      "source_sha256": "eb789738a45287a504f468438797dbe06c401c84c9f9617dfe177d0def84de88"
+    },
+    "record": {
+      "text": "تسجيل",
+      "source_sha256": "dcf52d4105c1aad888c2295cff645a9f248adbe41808c5f4898905571157a016"
+    },
+    "recorded": {
+      "text": "سُجِّل المورّد.",
+      "source_sha256": "748dc0bb1326aa1436a2f5eace440420a22c00ecd9c880744ade493c8bf7b8a5"
+    },
+    "archive": {
+      "text": "أرشفة",
+      "source_sha256": "fd59618fd6aafe38f8eae34ed18279030cc5d66104d1895abe3e70251131f550"
+    },
+    "archived": {
+      "text": "أُرشف المورّد.",
+      "source_sha256": "9f47346898d686637b347da6a1165ae20a636a06f197855a513fc4b5890ec07e"
+    },
+    "status": {
+      "text": "الحالة",
+      "source_sha256": "c3a4749caed4a3286083a30be2254377df9e74981028d6e078d68b425d101535"
+    },
+    "lastAssessed": {
+      "text": "آخر تقييم",
+      "source_sha256": "50251af0884df853d7f1700825ee702c3a414b44e0086362634d8878930dd8e0"
+    },
+    "actions": {
+      "text": "إجراءات",
+      "source_sha256": "9f0a0f7226011f778a8141aa128ec0be62a2590cc8a048d23e43a27ae0bdad32"
+    },
+    "assessments": {
+      "text": "التقييمات",
+      "source_sha256": "aea9a89d0733c49989b3dcc9b812af06909daa7000fcc67f5ac008f73b3ba61c"
+    },
+    "outcome": {
+      "text": "النتيجة",
+      "source_sha256": "3c64ba0afab6c4a808228a7d356321f40b866accb1413af51e204dacdc625e10"
+    },
+    "outcomePass": {
+      "text": "ناجح",
+      "source_sha256": "049e74f99b5ae41b559a2c9ad9a93a6c692ef7e8350f4f7162ff4c9177365c4a"
+    },
+    "outcomeFail": {
+      "text": "غير ناجح",
+      "source_sha256": "78ddfa61e8a3b2407635fbcedab88ad5298090bdbe381667c0bee24fbf135ead"
+    },
+    "outcomeConditional": {
+      "text": "مشروط",
+      "source_sha256": "6575ab65e3bda69ff9f72aaa8dfcba72ffc93eed1689a0accc391ff427cd745f"
+    },
+    "notes": {
+      "text": "ملاحظات",
+      "source_sha256": "d446d2dc6b81b07a2da81ca1fc5c09151624ca9045d8804212d00d3e415b5ecb"
+    },
+    "recordAssessment": {
+      "text": "تسجيل التقييم",
+      "source_sha256": "e3a10cc14d90756541cf68ce27ccadaeb3cd302d50f94253db14049e9a9ccaad"
+    },
+    "assessmentRecorded": {
+      "text": "سُجِّل التقييم.",
+      "source_sha256": "d456c1821d3ec7137ac6a4c08775acc1a28beddabf5d8325957ab23d63c5294b"
+    },
+    "noAssessments": {
+      "text": "لا توجد تقييمات لهذا المورّد بعد.",
+      "source_sha256": "47445ec9ee59313a9b9ad38c2908c89854ceb74745bd731177a5dc4f38da4c06"
+    },
+    "loadFailed": {
+      "text": "تعذر تحميل سجل المورّدين.",
+      "source_sha256": "af51eb9e5d2e4fe25e110b3b6a01eec7483a23147603881cc4435e6136fe160b"
+    },
+    "noPermission": {
+      "text": "ليست لديك صلاحية عرض سجل المورّدين.",
+      "source_sha256": "66565651d0b78ef68503477fa546e99b933de14970e29a0d9dffb8c4a1f0a0dd"
+    }
+  },
   "coverageWorkflow": {
     "honesty": {
       "text": "يسجل سير عمل التغطية أن المشغل جدول فعلاً أو شهد عليه. هذا دليل تسليم بطابع زمني من الخادم. وهو ليس Met وليس شهادة.",
@@ -650,6 +936,30 @@
       "visitor_cycle": {
         "text": "دورة زوار",
         "source_sha256": "b434ac46d87234c3f0f1de0d2b1ba3cfb85f3cc183cb8963676655d0c5eb45d0"
+      },
+      "witnessed_destruction": {
+        "text": "إتلاف بشاهد",
+        "source_sha256": "80fb22a1d51ff6c6a60ac3e33f26de5dc6ab2ccc6c597dec93d50f6b2037ca04"
+      },
+      "degauss_certificate": {
+        "text": "شهادة إزالة مغناطيسية",
+        "source_sha256": "a64bf35ce7028736da769e85914f6e137e29d459ffa5612326443b6d2c7dda9b"
+      },
+      "retention_attestation": {
+        "text": "إقرار احتفاظ",
+        "source_sha256": "abacc52d7a8194932ccaacdcb76ad65e5fb4f6176c23e355579ce7f776505a0d"
+      },
+      "export_delivery": {
+        "text": "تسليم تصدير",
+        "source_sha256": "fd85ee96eca92995e2191b1f272f04d9f268172dde63c8fc65e46e9963253bbc"
+      },
+      "exception_record": {
+        "text": "سجل استثناء",
+        "source_sha256": "464188ae48a8a06be880dea1d70f17f89409b3b5e03743d683bd9b1daefed715"
+      },
+      "posture_review": {
+        "text": "مراجعة الوضع",
+        "source_sha256": "d1e0e23c8f814685123a359ad95e228a26507200ce305ba7bb560173a834f705"
       }
     },
     "eventKinds": {
@@ -692,6 +1002,18 @@
       "attested": {
         "text": "أُشهد",
         "source_sha256": "02b35a4389710f3a1d80fe9a02b75f32847ccba14389cc35b3cdef00e7ad1a01"
+      },
+      "certificate_attached": {
+        "text": "أُرفقت الشهادة",
+        "source_sha256": "c5f79e0546e0efcd98e479f9af2e7e13e02afa9fb90976b6a919820f3a5b7f84"
+      },
+      "delivered": {
+        "text": "تم التسليم",
+        "source_sha256": "5f7b65d542302dc96d54e6fee0e08c42e3e0f20ef07b5b8eb7255101f3f550b8"
+      },
+      "exception_recorded": {
+        "text": "سُجّل الاستثناء",
+        "source_sha256": "b1755d85cc766395b905a7fe6ad7c709f8973b294cf92bc28811e1808989cd56"
       }
     },
     "cp": {
@@ -734,6 +1056,48 @@
       "add": {
         "text": "جدولة مراجعة",
         "source_sha256": "36f23ad389b5f89c67abbfa2a99aaca45ff4ca0243ebd2a3afeb18c90f6371e0"
+      }
+    },
+    "mp": {
+      "title": {
+        "text": "إتلاف الوسائط",
+        "source_sha256": "1383aa1327604a3d752f7e26ccdc293fc130e6f231001bf19454fdf23bccbaeb"
+      },
+      "summary": {
+        "text": "جدول إتلافًا بشاهد أو شهادة إزالة مغناطيسية وسجّل الإكمال مع تجزئة الشهادة. المنتج لا يشغّل آلة التقطيع. هذا ليس Met.",
+        "source_sha256": "65988c9fa39e501611866e4473457095b68d63f3c72b023e5cb37a9666d8009a"
+      },
+      "add": {
+        "text": "جدول الإتلاف",
+        "source_sha256": "2df61810f2a5c99bb0ae60cf6bbc14ffffadcbf918efb1d0c1d1e4882f875302"
+      }
+    },
+    "au": {
+      "title": {
+        "text": "سجلات الاحتفاظ",
+        "source_sha256": "528fe358f228941af925dddcfb3302317306f0afea903cb60435bdf82f3dd84d"
+      },
+      "summary": {
+        "text": "سجّل إقرار احتفاظ أو تسليم تصدير مع تجزئة. تشغيل تخزين WORM يبقى لدى المؤسسة. هذا ليس Met.",
+        "source_sha256": "999e0fdd4b1ceb362ade07f8c2bf4cf4d88ecef24363223c39af35858075df7d"
+      },
+      "add": {
+        "text": "سجّل الاحتفاظ",
+        "source_sha256": "d0e16685edaf6907624ddd0ea0e5cccbe0d10c4d29a8b8c0b172a197c77053be"
+      }
+    },
+    "si": {
+      "title": {
+        "text": "استثناءات الوضع",
+        "source_sha256": "40c149977ef7c3520275f8183b89114ded5e7f615f28447d5a6010358e048dc3"
+      },
+      "summary": {
+        "text": "سجّل استثناء تغطية نقطة نهاية أو مراجعة وضع. المنتج لا يشغّل EDR المؤسسة ولا أداة التصحيح. هذا ليس Met.",
+        "source_sha256": "830f731137271faab6394a182c1c43ba7a6e1ac6bc71419d315a712922bc269f"
+      },
+      "add": {
+        "text": "سجّل الاستثناء",
+        "source_sha256": "80794b88934cafd094dc1faca453f212ed8abbb0fa663be310095fe56d58eba7"
       }
     }
   }

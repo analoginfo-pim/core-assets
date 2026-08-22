@@ -89,46 +89,6 @@
     "loadError": {
       "text": "언어 설정을 불러올 수 없습니다. 서버 설정을 관리할 권한이 있는 계정으로 로그인했는지 확인하십시오.",
       "source_sha256": "59a8e15fa422f316162d802df0dbfa6be8dd053e190275684e8835f4fbd38ab2"
-    },
-    "pageTitle": {
-      "text": "현지화",
-      "source_sha256": "031c2d79d71a06afcb07712e2125db23368a1f14dd96ce0140027b36bdfb5d30"
-    },
-    "honestyBanner": {
-      "text": "언어를 사용하도록 설정해도 번역 품질이 인증되지 않습니다. 불완전한 팩에는 영어 초안이나누락된 문자열이 계속 표시될 수 있습니다. 공식 통제 본문은 발행 기관의 언어로 유지됩니다.언어를 켜는 것은 Met 또는 인증 주장이 아닙니다.",
-      "source_sha256": "11c27aa01a66c33b5c23d0444d734af57588187b7f03368fe3b8b61f750db188"
-    },
-    "readOnlyBanner": {
-      "text": "슈퍼 관리자만 사용 언어를 변경할 수 있습니다.",
-      "source_sha256": "a6a18c711f82287d9f843d6b18bb83a002684d0ff18aa9e839045ddac6051a8e"
-    },
-    "disabledLocaleNotice": {
-      "text": "이 계정의 기본 언어가 이 조직에서 사용되도록 설정되어 있지 않습니다.이 콘솔은 영어(미국)를 사용합니다.",
-      "source_sha256": "104d2bcd89907b263403491dfb9e169fceee783bc4a42853b71d8db5f7b07d0f"
-    },
-    "colVersion": {
-      "text": "팩 버전",
-      "source_sha256": "7c8fdbd0c53c87e7988812c664349effac0312630553cdf235710cda08ef773a"
-    },
-    "colEnabled": {
-      "text": "사용",
-      "source_sha256": "92c1cdfdf4cb9cf6fcca962f206de36fd5d60db1178bc9461052f8de703a0e06"
-    },
-    "versionUnavailable": {
-      "text": "사용할 수 없음",
-      "source_sha256": "ca184496974204a0bd3fd4925e0540bc4b0df6fcc232994d29754272b7183812"
-    },
-    "defaultEnOnlyHelper": {
-      "text": "새 설치에서는 영어(미국)만 사용됩니다. 슈퍼 관리자가 추가 제공 팩을 사용하도록 설정합니다.사용하지 않도록 설정해도 팩은 디스크에 유지됩니다.",
-      "source_sha256": "1d378bfc195597fd57033fc15a45dda2e44ab58ba84d96b3d1a501d12984e538"
-    },
-    "managedOnLocalizationPage": {
-      "text": "언어 팩은 현지화에서 관리합니다.",
-      "source_sha256": "8230d0a684352db8c5e5f7a2a38e2ce5005ab549b65a2e977bffd63e9a42aa3b"
-    },
-    "openLocalization": {
-      "text": "현지화 열기",
-      "source_sha256": "65a69435a8d59e3880fd37379e5e66f3de825283959adbde665bb0d6d753f22c"
     }
   },
   "appBar": {
@@ -252,9 +212,37 @@
       "text": "뛰어난 승인",
       "source_sha256": "d58cd3d597b1e6c14eb4b811607d170ee89df77eb2f9c7e7ccb536b1f4385112"
     },
-    "homeTooltip": {
-      "text": "이 콘솔의 홈 대시보드로 돌아갑니다.",
-      "source_sha256": "1280a4be7b5cb065d28fb4d0c52b7ec8e2b7d9f8733a4e3ba9d9f821b894dcf2"
+    "operatingLevelChip": {
+      "text": "운영: {{label}}",
+      "source_sha256": "3fed05482df855632c83a77fd9eb13630618e5036868dc12b1fbed30fc49eda4"
+    },
+    "operatingLevelUnset": {
+      "text": "Operating: choose a package",
+      "source_sha256": "979dd9c6fe1568f179b76189424edb14398353d879be696e13fe7316829c06fa"
+    },
+    "operatingLevelAria": {
+      "text": "Configured operating package: {{label}}",
+      "source_sha256": "6f99e5d0d3712a404f7c9906ae904fe621b2884b6c5288c2bf4ad08024b27fad"
+    },
+    "demoReportBanner": {
+      "text": "이것은 데모 보고서입니다. 실제 고객 평가가 아니며 Met 또는 인증 주장이 아닙니다.",
+      "source_sha256": "1381bf0ce69e6cb31cfe1d3ed7fc39deca386cc928c3217196137b7f49c001d5"
+    },
+    "demoReportSystems": {
+      "text": "시스템 증거",
+      "source_sha256": "0fda4beed27c39e2378386a4fcad46bcb5044e473266f0aeb9cb3dd862dec4f6"
+    },
+    "demoReportProcess": {
+      "text": "프로세스 증거",
+      "source_sha256": "2ed6993b61b6651728436cd9e43780caec854802622eb39febe13a18f5f5ae45"
+    },
+    "demoReportEmployees": {
+      "text": "직원 증거",
+      "source_sha256": "8bda029a2ed55173e28879d6374e21093965cda29410e63a6e979a38faa7591b"
+    },
+    "demoReportCustomer": {
+      "text": "이것은 고객 워크북입니다. 수치는 이 환경에서 나옵니다. Met 또는 인증 주장이 아닙니다.",
+      "source_sha256": "6bffaa1e57113e1c6452c8d9e9f8fef4a561b18e027db8a26ed32364e8154ebf"
     }
   },
   "iamToolbar": {
@@ -281,14 +269,6 @@
     "logOffAria": {
       "text": "로그오프",
       "source_sha256": "97eeef04e09601e058486c43d9647031f1ded6ed64d9042e9f8704e2c41d42ed"
-    },
-    "identityTooltip": {
-      "text": "로그인한 운영자: {{name}}. 이 콘솔의 작업과 감사 기록은 이 계정을 사용합니다.",
-      "source_sha256": "e94c86f0a448477aa64aa8f714d551609b23e166509316a9d040229b1537cb31"
-    },
-    "securityTooltip": {
-      "text": "로그인한 운영자의 계정 보안을 엽니다. 이 계정의 다중 요소 설정을 검토하거나 변경합니다.",
-      "source_sha256": "42064d575d6e690e87cab60f67eca70d30cafcbd71b9fab9a1d7170522682ae0"
     }
   },
   "grid": {
@@ -307,30 +287,6 @@
     "filters": {
       "text": "필터",
       "source_sha256": "546ebb8eb993ea561029d9febd84c363bdb09010bb2cb915a8287762b76b9a64"
-    },
-    "quickFilterPlaceholder": {
-      "text": "검색…",
-      "source_sha256": "7336265a0467a2551d6a88f1661d8c4397c71e6bd68e77882973e0eb52fb2de8"
-    },
-    "quickFilterLabel": {
-      "text": "검색",
-      "source_sha256": "49c266baaaa70981ea188fa714d5c40cf13830d786a861c9943ae0d26a7f3fe9"
-    },
-    "quickFilterAria": {
-      "text": "{{title}} 빠른 필터",
-      "source_sha256": "03b7a7cf466128371758434ab7d83f42161515d84ff510d4028c2baa5495a98f"
-    },
-    "footerTotalRows": {
-      "text": "총 행:",
-      "source_sha256": "5cd54e390a871df7168298a3fd73c59a0ded407903378d9bba9bb8616e0cf483"
-    },
-    "footerRowSelected": {
-      "text": "{{count}}개 행 선택됨",
-      "source_sha256": "bb59cf4b923e94cf7480901b47c8543b4f007412ce9688707bbd7fa3af4522c4"
-    },
-    "footerTotalVisibleRows": {
-      "text": "{{visible}} / {{total}}",
-      "source_sha256": "4091963f2d8306d4e382493b35f363c20bd5b49dde4a785a774a53a3b71deb94"
     }
   },
   "chrome": {
@@ -525,44 +481,12 @@
     "endpoint": {
       "text": "엔드포인트",
       "source_sha256": "3df9726c68ba76d6c8bb02b65e572df8dca251481bb6cb3c99c808b3f5087c13"
-    },
-    "tooltip": {
-      "text": "일상 작업 또는 관리 대상 컴퓨터를 검색한 다음 해당 페이지로 이동합니다.",
-      "source_sha256": "e16029b7e0d4338fdf00629d88cbaee478212fe2cdaf633491bd10ab2b87de44"
     }
   },
   "actions": {
     "close": {
       "text": "닫기",
       "source_sha256": "7d9eb7acb13e24625c404401d8e88b2350e32162455885f18276cf802f7701ed"
-    },
-    "add": {
-      "text": "추가",
-      "source_sha256": "9fd728c66c9a256b121472dabf32a34317aed01d8427d70ec830289cf23a7cc8"
-    },
-    "import": {
-      "text": "가져오기",
-      "source_sha256": "2cff9baabf56ca002610e113bc94deb6ededddfc3c130365b6e88ed5195bf774"
-    },
-    "refresh": {
-      "text": "새로 고침",
-      "source_sha256": "0e91610117029a62a478b7fa7df0b8598bebe3ab1e192d4b1882e310719c9671"
-    },
-    "cancel": {
-      "text": "취소",
-      "source_sha256": "19766ed6ccb2f4a32778eed80d1928d2c87a18d7c275ccb163ec6709d3eb2e27"
-    },
-    "delete": {
-      "text": "삭제",
-      "source_sha256": "e2d0a54968ead24efc0dffa6ac78fc606dceec34a0f586177a74a54cc2272cf8"
-    },
-    "edit": {
-      "text": "편집",
-      "source_sha256": "464c4ffd019e1e9691dcf0537c797353ef2b1c1d4833d3d463e5b74ae4547344"
-    },
-    "search": {
-      "text": "검색",
-      "source_sha256": "49c266baaaa70981ea188fa714d5c40cf13830d786a861c9943ae0d26a7f3fe9"
     }
   },
   "missingI18nKeys": {
@@ -571,156 +495,110 @@
       "source_sha256": "ed69a6777ac09e90ab75ad0d0dd333b7224b53d23b035e7b9c081598f1cdafdf"
     }
   },
-  "loadStatus": {
-    "busy": {
-      "text": "로드 중",
-      "source_sha256": "dc380888c4e2c7762212480ff86eb39150ec70b45009c33bc6adcbd0041384b1"
-    },
-    "ready": {
-      "text": "준비됨",
-      "source_sha256": "5fa7aac5375c5815787fba3f49559f9b45b14023147ce0652803387974144e5f"
-    },
-    "error": {
-      "text": "오류",
-      "source_sha256": "54a0e8c17ebb21a11f8a25b8042786ef7efe52441e6cc87e92c67e0c4c0c6e78"
-    },
-    "busyStalled": {
-      "text": "아직 로드 중…",
-      "source_sha256": "daf7506028463a954fa4451bea344b74bf4d9687068a5b4b4d5455c9d1607bab"
-    },
-    "busyAria": {
-      "text": "페이지를 로드하는 중입니다",
-      "source_sha256": "80b24c0abfb9fa03acee0512bf6fe68a096f9d92ed1f7c354094cc222cbcb325"
-    },
-    "readyAria": {
-      "text": "페이지가 준비되었습니다",
-      "source_sha256": "c49550f777879b02043eb85534029c406bf93952242587050cbcccce53da2016"
-    },
-    "errorAria": {
-      "text": "페이지를 로드하지 못했습니다",
-      "source_sha256": "3623b695b842176181ce80167784bf25edc05877f92e10eb17dd205f993962de"
-    },
-    "busyStalledAria": {
-      "text": "페이지를 아직 로드하는 중입니다",
-      "source_sha256": "d741f3f7daa567affe15873b9fe583be5f0aa99a99971aee9d3fe190b4d53f20"
-    },
-    "busyTooltip": {
-      "text": "이 페이지는 서버에서 데이터를 로드합니다. 화면의 값을 사용하기 전에 준비됨을 기다리십시오.",
-      "source_sha256": "2a81a1837b3ea3af965d76b930ae13bd88c2d5afba7b9aed203b528df534d55a"
-    },
-    "readyTooltip": {
-      "text": "이 페이지 로드가 완료되었습니다. 현재 화면의 데이터를 사용할 수 있습니다.",
-      "source_sha256": "2a38720900f4cb021d5a00c166dd60ad080a6fe9c358410ed80059fc4ee5f628"
-    },
-    "errorTooltip": {
-      "text": "이 페이지의 요청이 실패했습니다({{detail}}). 마지막 작업을 다시 시도하거나 페이지를 다시 여십시오.",
-      "source_sha256": "1d3068b7b997b01e469d598b9e91fe1ef74f80c8c6e0cf9cf2b9477acd8b4d4e"
-    },
-    "errorTooltipUnknown": {
-      "text": "이 페이지의 요청이 실패했습니다. 마지막 작업을 다시 시도하거나 페이지를 다시 여십시오.",
-      "source_sha256": "a79c1c01bf26b611b032239e7005eb6111076d1ae49367f81268e0e9cc6b76a2"
-    },
-    "busyStalledTooltip": {
-      "text": "이 페이지가 허용 시간보다 오래 로드되고 있습니다. 요청이 끝나지 않았습니다. 페이지를 새로 고치거나 마지막 작업을 다시 시도하십시오.",
-      "source_sha256": "ccc4c37be80d06cb83b562eb547586073f8c308df6af1aebb1586809258ec202"
-    }
-  },
-  "knownDefaults": {
-    "colUsername": {
-      "text": "사용자 이름",
-      "source_sha256": "e3b89e9d33f88e523083d8b4436adcc3726c89e97fd3179a2e102d765d1b16ed"
-    },
-    "colPassword": {
-      "text": "Published default",
-      "source_sha256": "37d8b63224c66426197d1c1187a19c91f964ab4053ea30c93d591fd31eec88bf"
-    },
-    "colVendor": {
-      "text": "공급업체",
-      "source_sha256": "f8aa82b42d07d108ed357335c9ac0d1a88cafb7292d61b30e0bdb224f20fd480"
-    },
-    "colPlatform": {
-      "text": "플랫폼",
-      "source_sha256": "c78ffe19571018fbc93a78873969046fe1a80c3d21e5d20fbb2ca17c7c53a144"
-    },
-    "colProduct": {
-      "text": "Product",
-      "source_sha256": "fb9ef894175c327470f768d95ca7bee65e19853a0eaace3805f8a7b8a12270da"
-    },
-    "colOs": {
-      "text": "Operating system",
-      "source_sha256": "0fcabfe6e097cd4064a08313b4b7da807f5ea3c59d056acc46289467bd2216e4"
-    },
-    "colUsedFor": {
-      "text": "Used for",
-      "source_sha256": "9cd881a5aac2fa5d9b7a1b4210a55eb0b29dd6ff23c8240d840999aac006563d"
-    },
-    "colProtocol": {
-      "text": "서비스",
-      "source_sha256": "d677190e0a9990e7d5fa9e4c1bbde44271fb8959c4acb6d43e02ed991128b4bf"
-    },
-    "colActions": {
-      "text": "동작",
-      "source_sha256": "ff8059dc6752afdd30d275932b1d5031a2ec854b387a8c57ecc6689915293a43"
-    },
+  "agentsDownload": {
     "title": {
-      "text": "알려진 기본 자격 증명",
-      "source_sha256": "20c39738f6f812f70ba7e0e72416dc2cf92587931363057a1b03fbf6f87b6ddf"
+      "text": "Agents 다운로드",
+      "source_sha256": "3005ea18d31ce72c8c4d8dda850f357416f9127710289ceb62ed6bbb9a85daea"
     },
     "intro": {
-      "text": "Publicly documented vendor factory passwords for posture assessment. A match means a dangerous default password is still in use — change it to a platform-appropriate random password. This is delivery evidence, not a Met or certification claim.",
-      "source_sha256": "15ae877136a3fe2bcfa8d4a0040d2b4e4e04486cd0d8d33ca8cadb721abc23a5"
+      "text": "이 AIC Server 인스턴스의 Agents와 설정 파일을 다운로드하십시오. CMMC in a Box는 통합 툴킷입니다. Agent를 설치해도 조직이 인증되지 않습니다.",
+      "source_sha256": "c5fd2edb9a21131fa70db1725d8ecb11f6118682f0bc2f7eac2ded429cbd2ada"
     },
-    "tabCatalog": {
-      "text": "Password catalog",
-      "source_sha256": "8c8e7e710251d40e53ca97fb7836753613df6b8c43cfdd4d8d300c25341ae6b0"
+    "inventoryPurpose": {
+      "text": "이 Agents는 좌석을 인벤토리하고 시행 중인 CMMC 표준의 필수 상태를 검증합니다. 시행 중인 표준은 구성된 운영 패키지({{package}})입니다. 인벤토리와 필수 상태 검증은 제품 기여입니다. Met가 아니며, 좌석을 인증하지 않고, 평가자를 대체하지 않습니다.",
+      "source_sha256": "e46e25ee07d3c64e1de324a6a21c4d8b23781278bca06e3fb0ea6bc7ea6834ab"
     },
-    "tabSources": {
-      "text": "Dictionary sources",
-      "source_sha256": "9b483223bb765fb23794a8814caeee14bf38001fcae1e281a94e3ecefd6f79a6"
+    "inventoryPurposeUnset": {
+      "text": "이 Agents는 좌석을 인벤토리하고 시행 중인 CMMC 표준의 필수 상태를 검증합니다. 운영 패키지가 설정되지 않았습니다. 설정에서 L1 Fast, L2 Isolated, L3 Overlay 또는 NIST SP 800-53을 선택하십시오. 그때까지 Agents는 좌석을 인벤토리하며, 필수 상태 검증은 구성한 패키지를 따릅니다. 인벤토리와 필수 상태 검증은 제품 기여입니다. Met가 아니며, 좌석을 인증하지 않고, 평가자를 대체하지 않습니다.",
+      "source_sha256": "85b08599fe45f8bee749857079830c53ec2ff16566d9330df72c04122bba63af"
     },
-    "tabPatterns": {
-      "text": "Platform password patterns",
-      "source_sha256": "1bea79bd5141e7f86e9957319918ee3b27528126e8946bae436082aa603b4032"
+    "honesty": {
+      "text": "인벤토리와 필수 상태 검증은 제품 기여입니다(Live 또는 Partial). Met가 아니며, 인증된 좌석이 아니며, 평가자를 대체하지 않습니다.",
+      "source_sha256": "cab91b9871fd3af64d74f5bdb0f837b247b902de38895632ae09a4dfd80c35d0"
     },
-    "searchField": {
-      "text": "Search field",
-      "source_sha256": "d6e80812acddfc2d45da752f98af2ef0820abf4e404558452147d05a53e0050d"
+    "settingsTitle": {
+      "text": "설정 파일",
+      "source_sha256": "86e17bb7088eebff5046fb73546c3b464fac04fff87bce6f257d9e2c83cbf53e"
     },
-    "searchAll": {
-      "text": "All fields",
-      "source_sha256": "b2525b1e37fccd0dff28251cc111418a88744225ad4850262e1f813504aaf0b1"
+    "settingsBody": {
+      "text": "설정 파일은 일반 구성 목록이 아닙니다. 최초 보안 연결을 시작하는 고유 암호 자료를 포함합니다. Agent가 등록하고 최초 체크인한 후 서버가 해당 자료를 업데이트하고 나머지 설정을 푸시합니다. 사용자 인터페이스는 개인 키, PIN 또는 토큰을 표시하지 않습니다.",
+      "source_sha256": "69975636ae30e0279cf912c9cf5c3f7ace1310c21c01c689acaf947213dbab4e"
     },
-    "searchVendor": {
-      "text": "공급업체",
-      "source_sha256": "f8aa82b42d07d108ed357335c9ac0d1a88cafb7292d61b30e0bdb224f20fd480"
+    "settingsWizard": {
+      "text": "설치 프로그램용 컴퓨터별 고유 구성 파일을 만들려면 설정 마법사를 여십시오.",
+      "source_sha256": "9f9ccb91cc27289b8c88a3377b477a89440e68dd70352a37f2d89a089186113e"
     },
-    "searchPlatform": {
-      "text": "플랫폼",
-      "source_sha256": "c78ffe19571018fbc93a78873969046fe1a80c3d21e5d20fbb2ca17c7c53a144"
+    "installersTitle": {
+      "text": "플랫폼 설치 프로그램",
+      "source_sha256": "5dd3ea5ea2b9670dca57655553e1c9f90bb829bdc748a29d19757c1991a50539"
     },
-    "maskPasswords": {
-      "text": "Mask passwords",
-      "source_sha256": "2ca052090548a7819a0052be4f4bf8288166f907987fa81c3eb8fffb24f369ff"
+    "installersHelp": {
+      "text": "각 행은 이 인스턴스가 제공할 수 있는 출하 설치 프로그램입니다. 버전과 SHA-256은 디스크의 파일에서 옵니다. 없는 플랫폼은 차단된 상태로 유지됩니다. 이 서버는 바이너리나 해시를 만들지 않습니다.",
+      "source_sha256": "e6805ec131175421b1a17b01dd5fb54c3beec6bebc4b07a72163fa9bcc8fd591"
     },
-    "searchOs": {
-      "text": "Operating system",
-      "source_sha256": "0fcabfe6e097cd4064a08313b4b7da807f5ea3c59d056acc46289467bd2216e4"
+    "colVersion": {
+      "text": "버전",
+      "source_sha256": "dd167905de0defcaf72de673ee44c07431770d129ccffab286bd2edfdaf62396"
     },
-    "searchPassword": {
-      "text": "Published password",
-      "source_sha256": "536e3cefb53a773f411d17d9af486c6543f7e33b79f42403c5595335fb360956"
+    "download": {
+      "text": "다운로드",
+      "source_sha256": "d6eafe82359100423c93c5ce53c352c1b51ca1e699215fcec3f5c5dd9bf12d24"
     },
-    "searchQuery": {
-      "text": "검색",
-      "source_sha256": "49c266baaaa70981ea188fa714d5c40cf13830d786a861c9943ae0d26a7f3fe9"
+    "downloadFailed": {
+      "text": "해당 설치 프로그램을 다운로드할 수 없습니다. 파일이 인스턴스 공유에 있는지 확인한 다음 다시 시도하십시오.",
+      "source_sha256": "413dae048671e5fe19cedff9bd23cc84f7174dcaab0451d6dc852f27a7d8f072"
     },
-    "searchService": {
-      "text": "서비스",
-      "source_sha256": "d677190e0a9990e7d5fa9e4c1bbde44271fb8959c4acb6d43e02ed991128b4bf"
+    "blocked": {
+      "text": "차단됨 — 이 인스턴스에 파일 없음",
+      "source_sha256": "bc4a7878833b14d878f4211b26a42c66588a336b1777ce2c56f9cb1d3a777358"
     },
-    "searchUsername": {
-      "text": "사용자 이름",
-      "source_sha256": "e3b89e9d33f88e523083d8b4436adcc3726c89e97fd3179a2e102d765d1b16ed"
+    "retry": {
+      "text": "다시 시도",
+      "source_sha256": "942087cc2d41e01304b7195558d093d10c72af8e838c7556d6a02d471ee71852"
+    },
+    "loadFailed": {
+      "text": "Agents 다운로드 카탈로그를 불러올 수 없습니다.",
+      "source_sha256": "569f771e918f1b075a791ea64ca22939f0aeaf7bb16926fce5a47b64eb5a6408"
+    },
+    "whereTitle": {
+      "text": "Agents가 표시되는 위치",
+      "source_sha256": "684a0c5bedf219062fd9b7ec97295855d4a4cf9dc70a71cbe1c1cb9fd2d0beda"
+    },
+    "whereBody": {
+      "text": "체크인 후 좌석은 시스템, 플릿 Agent 버전, Workstation Assurance에 나타납니다. 상승 및 녹화 화면은 좌석에 이미 있는 Agent를 사용합니다. 해당 페이지는 전달 상태를 보여 주며 Met가 아닙니다.",
+      "source_sha256": "52a92e8ab6759a00c26e0e0176c4aeea3f4eab12220fae3efd630cd12f344134"
+    },
+    "whyTitle": {
+      "text": "Agents가 필요한 이유",
+      "source_sha256": "f5eaa11a201043085b090aef19a251d61c89b07067406e70182387b351a5ef0e"
+    },
+    "whyBody": {
+      "text": "Agents는 엔드포인트 존재, 체크인, 인벤토리 및 시행 중인 운영 패키지의 필수 상태 증거를 제공합니다. 이는 툴킷 기여입니다. 조직이 평가를 통과했음을 의미하지 않습니다.",
+      "source_sha256": "7b8a9efa155870c4a0136513245b066ca23c51082347120813b9e0a78a68a8b7"
+    },
+    "shareDir": {
+      "text": "인스턴스 다운로드 디렉터리",
+      "source_sha256": "09a10472fddee667c6720483a29995bf3103ce74c6e204a7cf98c5014fe5b695"
+    },
+    "packageChip": {
+      "text": "운영 패키지",
+      "source_sha256": "8c5298902d5c4864671bca47ba21757b3437737d65be3f6b3586381f2079381e"
+    },
+    "packageUnset": {
+      "text": "설정되지 않음",
+      "source_sha256": "4895f73177ab5d67c30c183a49d2477e014a2ef69b65150762d17e877f4f5b95"
+    },
+    "available": {
+      "text": "사용 가능",
+      "source_sha256": "e674447337e83c1346f6122ed69f35bf5526e2a11842b2f2b788f3fb67d714ca"
+    },
+    "linkSystems": {
+      "text": "시스템",
+      "source_sha256": "d9148b16c1107bd3b371165e897a11620fc58e6c9d274550488b73200616bdeb"
+    },
+    "linkFleet": {
+      "text": "플릿 Agent 버전",
+      "source_sha256": "abc1d82b276555a7d67dd5cd188b17c515ae337cb9f6eeb97b5cb5c5de8f8b66"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "dashboard": {
-    "text": "대시보드",
+    "text": "계기반",
     "source_sha256": "67b696468610b879ed7f224dbf6b0861f27e39d20454cb9d7af1ec52d3e5eeaa"
   },
   "overview": {
@@ -34,6 +34,10 @@
   "secure_share": {
     "text": "보안 공유",
     "source_sha256": "c2b1d79f4ae639052940dccfcbb6d0146e3661b36ca208d1cae0b50b22a019f4"
+  },
+  "access_reviews": {
+    "text": "액세스 검토",
+    "source_sha256": "1d82265234595cf2b8e3abfd6a37d0fa1c26553215d461f3c853360435968317"
   },
   "active_grants": {
     "text": "활성 보조금",
@@ -343,6 +347,10 @@
     "text": "데이터 주체 권리",
     "source_sha256": "4fb40566c92076fe0826b86c7e900837f6f3fbcbe3177d91700c711bf95d3469"
   },
+  "catalog_changes": {
+    "text": "카탈로그 변경",
+    "source_sha256": "3e3f6110f339e9b2c0a5d8e81cd35d37ab16741618e1b473b8f7e453d3050e7c"
+  },
   "audit_frameworks": {
     "text": "감사 프레임워크",
     "source_sha256": "b50639ec1e78fab2beabd27b8915d90635d97c1b1d27f149cb9d3417540fbe9d"
@@ -596,8 +604,8 @@
     "source_sha256": "7b1d769c2e04a874c13481b74a183c1edcc67fbf8c8ed6a070ce0894992b2dac"
   },
   "settings": {
-    "text": "설정",
-    "source_sha256": "74a883a037bc227f91891ab654a753d3a99f31ab06ae5b5d2b6e594a692b41f8"
+    "text": "개요",
+    "source_sha256": "d4b1ea5708dd532930a85188b45aff6f0a3ed458500c7577e0127a538eb0d100"
   },
   "getting_started": {
     "text": "시작하기",
@@ -763,128 +771,104 @@
     "text": "비밀번호 정책 사전 설정",
     "source_sha256": "7a8e7f4ad1e10c55e800c33b90463abd402cd49d41e51ff6bfb8ee1c6c136786"
   },
-  "reveal_a_password": {
-    "text": "암호 표시",
-    "source_sha256": "e11479883524cc9f17b2005b78946a001bc4495af04204367f00c09abc5cb874"
-  },
-  "get_an_elevation_code": {
-    "text": "권한 상승 코드 받기",
-    "source_sha256": "f67c4e273e62b353399ec93afd8796fb9d7a0f079b0caf02133c73d03d54983e"
-  },
-  "generate_config_file": {
-    "text": "구성 파일 생성",
-    "source_sha256": "c7050d9c01718c5389be0db1498aec96c3dec069951dbda5eb30d18b757b96b3"
-  },
-  "compliance": {
-    "text": "규정 준수",
-    "source_sha256": "4a109cc49467be33772416ac924cc5729dcea700b8b4a0ba12f10bc595e2fa2c"
-  },
-  "events": {
-    "text": "이벤트",
-    "source_sha256": "8d14f6e72de8f18ab1ee5c5330f00653c0c3ce099e63024454f80af97e72d333"
-  },
-  "local_user_groups": {
-    "text": "로컬 사용자 그룹",
-    "source_sha256": "8bead648483fccb7bf2b98193e68b886ca20ecd7c7672b3f8ac799b2686e0d46"
-  },
-  "workstation_assignments": {
-    "text": "워크스테이션 할당",
-    "source_sha256": "7515161b41e28e69aaa1245c6df12857d57e4eafd8cb47a0b2565dc5d6e9d6d0"
-  },
-  "workstation_prompt": {
-    "text": "워크스테이션 프롬프트",
-    "source_sha256": "647e99fbb544f4d11bf345cbeb1ab838eefb64385af86498bbc701eefa1f2381"
-  },
-  "unix_privilege": {
-    "text": "Unix 권한",
-    "source_sha256": "5ddbf5ad83044db8fc82f456291843a1138bd51c43faf8b36a077a7ff5a2b9a1"
-  },
-  "elevation_policy": {
-    "text": "승격 정책",
-    "source_sha256": "80a176c04768987ce279df2af46e49fcd7b83613603b1feb694f9651bef52b2e"
-  },
-  "lab_advanced": {
-    "text": "고급 랩",
-    "source_sha256": "264eddbc2564570da641530c0af97139e13c6e559bf441ce0ef7ffd3aa1cfe1c"
-  },
-  "openapi": {
-    "text": "OpenAPI",
-    "source_sha256": "cf2c9e2180334830f7e995b1084be3ac857f6733464548f77ab952d45773203a"
-  },
-  "auditor_handbuecher": {
-    "text": "감사인 설명서",
-    "source_sha256": "6623ff55741761694cc60ea3e767301b9c1d248b65de5f46d388d0c9a1d9ab56"
-  },
-  "user_handbuecher": {
-    "text": "사용자 설명서",
-    "source_sha256": "2725143e17ddf246ae9bd7d5021e8a286f190113c21fa46f2d74cb7c786ccbc6"
-  },
-  "admin_handbuecher": {
-    "text": "관리자 설명서",
-    "source_sha256": "57526945334a81bb1af826e563c4dbba8c6c1644b488051e82706cedc98eaed9"
-  },
-  "auditor": {
-    "text": "감사인 설명서",
-    "source_sha256": "6623ff55741761694cc60ea3e767301b9c1d248b65de5f46d388d0c9a1d9ab56"
-  },
-  "user": {
-    "text": "사용자 설명서",
-    "source_sha256": "2725143e17ddf246ae9bd7d5021e8a286f190113c21fa46f2d74cb7c786ccbc6"
-  },
-  "admin": {
-    "text": "관리자 설명서",
-    "source_sha256": "57526945334a81bb1af826e563c4dbba8c6c1644b488051e82706cedc98eaed9"
-  },
-  "openapi_explorer": {
-    "text": "OpenAPI 탐색기",
-    "source_sha256": "919d69c0e436e497e11c14ad0b481bfe4784089278533ad69fa203ad4b19334b"
-  },
-  "swagger_ui": {
-    "text": "Swagger UI",
-    "source_sha256": "d841a6545e7f784bf7a21f6b5bfe0f069fb9651a701279cbba4232f06bcb39f6"
-  },
-  "auditor_handb_cher": {
-    "text": "감사인 설명서",
-    "source_sha256": "6623ff55741761694cc60ea3e767301b9c1d248b65de5f46d388d0c9a1d9ab56"
-  },
-  "benutzerhandb_cher": {
-    "text": "사용자 설명서",
-    "source_sha256": "2725143e17ddf246ae9bd7d5021e8a286f190113c21fa46f2d74cb7c786ccbc6"
-  },
-  "admin_handb_cher": {
-    "text": "관리자 설명서",
-    "source_sha256": "57526945334a81bb1af826e563c4dbba8c6c1644b488051e82706cedc98eaed9"
-  },
-  "documentation_technique": {
-    "text": "기술 문서",
-    "source_sha256": "d840d4304655319d1be89fdd4dab748c462896f970f4d34d9441af17be9f24ea"
-  },
-  "documentaci_n_t_cnica": {
-    "text": "기술 문서",
-    "source_sha256": "7bfee194b65b4c43a2944e8eb4d1e4169436272f9b43ee44dbd63536654229ab"
-  },
-  "user_handb_cher": {
-    "text": "사용자 설명서",
-    "source_sha256": "2725143e17ddf246ae9bd7d5021e8a286f190113c21fa46f2d74cb7c786ccbc6"
-  },
   "all_auditor_manuals": {
     "text": "모든 감사인 설명서",
     "source_sha256": "3cb01ca11b4837565978cc463e482aeeb94e067ab1126cab1538013dd3164029"
-  },
-  "auditing_cmmc_level_1": {
-    "text": "CMMC 수준 1 감사",
-    "source_sha256": "cae42d1e4e3aca096014d70d7567b8b45b7a91aaa33e03b8194ff4c0ab179ef4"
-  },
-  "auditing_cmmc_level_2": {
-    "text": "CMMC 수준 2 감사",
-    "source_sha256": "0f2b3fcbf9c61a8491528a004a2547c89976f1dd13b2ad1821f925bd6f13b062"
   },
   "auditing_cmmc_level_3": {
     "text": "CMMC 수준 3 감사",
     "source_sha256": "ba5434c6dac48290089152b933ee44282772051573923a07bdb32396af61e9a2"
   },
+  "auditing_cmmc_level_1": {
+    "text": "CMMC 수준 1 감사",
+    "source_sha256": "cae42d1e4e3aca096014d70d7567b8b45b7a91aaa33e03b8194ff4c0ab179ef4"
+  },
   "using_aic_server_as_an_assessor": {
     "text": "평가자로 AIC Server 사용",
     "source_sha256": "eed9c29530edb36366f4668df1f229a6b28fc20d86ab833ffff82df0937e7a42"
+  },
+  "auditing_cmmc_level_2": {
+    "text": "CMMC 수준 2 감사",
+    "source_sha256": "0f2b3fcbf9c61a8491528a004a2547c89976f1dd13b2ad1821f925bd6f13b062"
+  },
+  "manuals": {
+    "text": "매뉴얼",
+    "source_sha256": ""
+  },
+  "all_manuals": {
+    "text": "모든 매뉴얼",
+    "source_sha256": ""
+  },
+  "nist_sp_800_53": {
+    "text": "NIST SP 800-53",
+    "source_sha256": ""
+  },
+  "recipes": {
+    "text": "레시피",
+    "source_sha256": ""
+  },
+  "all_recipes": {
+    "text": "모든 레시피",
+    "source_sha256": ""
+  },
+  "cmmc_agent_seed": {
+    "text": "CMMC 에이전트 시드",
+    "source_sha256": "439e317b9d18eefb0a7e48ecde884e76449e03a83ae12fbd9a5fd043d1f2e2d9"
+  },
+  "cookbooks": {
+    "text": "쿡북",
+    "source_sha256": ""
+  },
+  "all_cookbooks": {
+    "text": "모든 쿡북",
+    "source_sha256": ""
+  },
+  "cmmc_agent_and_enclave_scripts": {
+    "text": "CMMC 에이전트 및 엔클레이브 스크립트",
+    "source_sha256": "e7a17e9293cffdd40c751925390990e2bd7d1d06b05ce8259c2e7775307e4aa4"
+  },
+  "cmmc_enclave_scripted_build": {
+    "text": "CMMC 엔클레이브 스크립트 구축",
+    "source_sha256": "df71a02325f9773b0837c7c910c82edc85c3ceaefd57bcfec0a651359971a2e4"
+  },
+  "cmmc_agent_configuration": {
+    "text": "CMMC 에이전트 구성",
+    "source_sha256": "267e8c11027c9660e3c5f4aec1233b080c405f22fcc06edb87383643c486cc2f"
+  },
+  "guides": {
+    "text": "가이드",
+    "source_sha256": ""
+  },
+  "all_guides": {
+    "text": "모든 가이드",
+    "source_sha256": ""
+  },
+  "msp_and_c3pao_demo_guide": {
+    "text": "MSP 및 C3PAO 데모 가이드",
+    "source_sha256": "b712115e3c3fc88ad5ea86b2c4124371167802ace19bbe311e70770fc109b8ac"
+  },
+  "evidence_intake": {
+    "text": "증거 접수",
+    "source_sha256": "3c9f82f12af195e85fc062e610f1e6207e1fa6f87f90cbc68ff8a9b3b67e214f"
+  },
+  "evidence_intake_pe": {
+    "text": "증거 접수 PE",
+    "source_sha256": "0cdf154526d6f32a3e6818195d4aa2da7c46e20cf44f4723695bd547cda78e5e"
+  },
+  "evidence_intake_sr": {
+    "text": "증거 접수 SR",
+    "source_sha256": "1184bb272d0b053f8858d441374a72ef2c5020adf7a67c465d3b00b2a58bfb23"
+  },
+  "evidence_intake_mp": {
+    "text": "증거 접수 MP",
+    "source_sha256": "5449ef9e5a7951454c3ed9c6d61e28cc0503fb6c4667d669f667fc72690e727a"
+  },
+  "supplier_register": {
+    "text": "공급자 등록부",
+    "source_sha256": "511c66ac61fe6a2e42a26878b7abebe5f9fcd1a415055b975c34460a4f4aaa23"
+  },
+  "agents_download": {
+    "text": "Agents 다운로드",
+    "source_sha256": "3005ea18d31ce72c8c4d8dda850f357416f9127710289ceb62ed6bbb9a85daea"
   }
 }

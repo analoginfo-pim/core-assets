@@ -512,8 +512,8 @@
         "source_sha256": "ef5942ac2ea13500a9d637b4e078123c18e004de2b783f1c5516d2491afbe47b"
       },
       "rbac_lab": {
-        "text": "Rbac Lab",
-        "source_sha256": "81db3ad1d933a1fd9704ebddd009af0ea7e80838317265e5176e52bcc8290188"
+        "text": "RBAC-testitila ja stub-profiilit — omistajan käyttöoikeus oletuksena.",
+        "source_sha256": "082b0c4962cb79b0c133306aebbfe946ef68f7cd8c60f54c61d91d5afbf07526"
       },
       "rdp_ocr_metadata": {
         "text": "Rdp Ocr Metadata",
@@ -668,7 +668,7 @@
         "source_sha256": "9066f779bcd088cf7eb0a36256ef2d5dd4a17486b92cce72c7fd299fd6ddd508"
       },
       "who_may_elevate": {
-        "text": "Bind IAM users, groups, or systems to apps. Set Default allow or Approval required.",
+        "text": "Bind IAM käyttäjät, ryhmät, tai systems to apps. Set oletus allow tai Approval pakollinen.",
         "source_sha256": "60c69bb1c0e2360c6fed6f0e92bcbb68af1787875eabc383e0acd6da1756446c"
       },
       "elevation_approvals": {
@@ -676,11 +676,11 @@
         "source_sha256": "902547bc6f31c9d232ac243ebcae4c095bfda7eef1fe488c9b74b86b4546500d"
       },
       "elevation_policy": {
-        "text": "OS-group offers, duration tiers, and Modes 1–3 channel toggles.",
+        "text": "OS-group offers, duration tiers, ja Modes 1–3 channel toggles.",
         "source_sha256": "ab25d96e4f44c4ef8cdbae8ed602b647dde09b9e405ff48497fa0c09395296e9"
       },
       "privileged_user_management": {
-        "text": "WDAC / AppLocker pack assignment, effective hash monitoring, and exception approvals.",
+        "text": "WDAC / AppLocker pack assignment, effective hash monitoring, ja exception approvals.",
         "source_sha256": "d736d991c0fc72232cca0c81bbaf19c984ea15229a67089db660283a77f4b433"
       },
       "disconnected_tokens": {
@@ -696,15 +696,15 @@
         "source_sha256": "431202562bc3235d469f293107ba921895730985578a76e14b3674c661b0f4cb"
       },
       "local_user_groups": {
-        "text": "Name-based groups for entitlements and access governance (Groups tab).",
+        "text": "Name-based ryhmät for entitlements ja access governance (ryhmät tab).",
         "source_sha256": "bc7a7f78b6a39509f3e711944a2421175961954e1c7c6e8b331693db23d0e402"
       },
       "workstation_assignments": {
-        "text": "Assign IAM users to inventory workstations that appear on My Workstations (Assets tab).",
+        "text": "Assign IAM käyttäjät to inventory workstations tuo appear on Omat työasemat (Assets tab).",
         "source_sha256": "adcd6e16ab15cd8b797642834c3b25b7d027c57d586e139c79e01f0632573068"
       },
       "enrollment_and_access_control": {
-        "text": "Assessor matrix: who may edit enrollment fields and which audit events prove the changes.",
+        "text": "Assessor matrix: who may edit enrollment fields ja which audit events prove the changes.",
         "source_sha256": "b6bd740989a56cec772518655a0775a142575ff3ce339419c3c403711dfa8c4f"
       },
       "credential_vault": {
@@ -1301,119 +1301,119 @@
   },
   "frameworkTagsField": {
     "helper": {
-      "text": "Tags only — no control is marked met. Pick a published framework, or type a tag the registry does not carry.",
+      "text": "Vain tunnisteet — yhtään hallintakeinoa ei merkitä täytetyksi. Valitse julkaistu kehys tai kirjoita tunniste, jota rekisteri ei sisällä.",
       "source_sha256": "5619ca2b69a7a16f201829de383f5b4c5472e6db711767752325319e86d358db"
     },
     "manualHint": {
-      "text": "Pick a framework, or type a tag such as cmmc-l2.",
+      "text": "Pick a framework, tai type a tag such as cmmc-l2.",
       "source_sha256": "88a05feaa1dad2ab729cd934855c2ec2826bd234e5e0275744d6cac2eb43cca5"
     }
   },
   "controlTagsField": {
     "helper": {
-      "text": "Association tags only. Pick a catalog control, or type a reference the catalog does not carry.",
+      "text": "Association tags vain. Pick a catalog hallintakeino, tai type a reference the catalog does ei carry.",
       "source_sha256": "d6124fcb522e6bcb449899fcff413e9481963e428bacc8af786a2cc4506c070b"
     }
   },
   "iamRoleField": {
     "helper": {
-      "text": "The IAM role this policy applies to.",
+      "text": "The IAM role tämä käytäntö applies to.",
       "source_sha256": "e4893fb5a3dc859ae2cb1b6262f4d5520a744c4556cde77a5d0cb2deb55b9def"
     },
     "manualHint": {
-      "text": "Pick a role, or type its slug if it is not listed.",
+      "text": "Pick a role, tai type its slug jos it on ei listed.",
       "source_sha256": "b3d93a8bc66a52dbc6145337f5edf1be7b200245d8d56e572474bac3ccf5c61b"
     }
   },
   "enclaveField": {
     "helper": {
-      "text": "The recorded enclave boundary this flow uses.",
+      "text": "The recorded enclave boundary tämä flow uses.",
       "source_sha256": "3bd7d68e203f8cf290c92a36b52ea95954f822f878631062a2ebdcc45f3d2edd"
     },
     "manualHint": {
-      "text": "Pick an enclave, or type its identifier if it is not listed yet.",
+      "text": "Pick an enclave, tai type its identifier jos it on ei listed yet.",
       "source_sha256": "072824fe9bf49ac002af3b746dd955aef70659aa34071311ac972c03b8472ed2"
     }
   },
   "incidentTicketField": {
     "helper": {
-      "text": "Optional incident or external ticket identifier for this request.",
+      "text": "valinnainen incident tai external ticket identifier for tämä request.",
       "source_sha256": "7e7c731accadefbb96ecc3aa17c63afa998c79a248c446b20efbf39dd0fae003"
     },
     "manualHint": {
-      "text": "Pick an incident case, or type an external ticket identifier if it is not listed.",
+      "text": "Pick an incident case, tai type an external ticket identifier jos it on ei listed.",
       "source_sha256": "76fc0d45eb5b61e293185d6d85815175aad8befa1f228afff324b10fffe463f4"
     }
   },
   "tenantNameField": {
     "helper": {
-      "text": "The tenant name used on the enrollment token.",
+      "text": "The tenant nimi used on the enrollment token.",
       "source_sha256": "426dfc9cd61c8a7471fa1f8851482021203160bdb3e43072f61cc83dfd1e8cce"
     },
     "manualHint": {
-      "text": "Pick a tenant, or type its name if it is not listed.",
+      "text": "Pick a tenant, tai type its nimi jos it on ei listed.",
       "source_sha256": "db530e4ea84c4158b56e3974f7fc081df447a496b8676413a58dd348cf06a0b6"
     }
   },
   "endpointNameField": {
     "helper": {
-      "text": "Used in install instructions and token description. Name-based — not a UUID.",
+      "text": "Used in install instructions ja token description. Name-based — ei a UUID.",
       "source_sha256": "e2e26837de092e2bf1237043253b506181877da6a9092a8129c8de427983a633"
     },
     "manualHint": {
-      "text": "Pick a machine name, or type a hostname if it is not listed.",
+      "text": "Pick a machine nimi, tai type a hostname jos it on ei listed.",
       "source_sha256": "db286ffaa28488c5eddb01e555c53cdaf7bc54f6e4217179014d3627d5b1f860"
     }
   },
   "commandLaunchField": {
     "helper": {
-      "text": "Basename is matched case-insensitively against the launch allow-list for this scope.",
+      "text": "Basename on matched kirjainkoosta riippumatonly against the launch allow-list for tämä scope.",
       "source_sha256": "13f1ff0d52ce2b73373073939d4de54c5f02cdc1c4765d71e893f7a761ff6531"
     },
     "manualHint": {
-      "text": "Pick an allowed image, or type a path the allow-list does not carry.",
+      "text": "Pick an allowed image, tai type a path the allow-list does ei carry.",
       "source_sha256": "91b3d15971a19e821eb42220c8cb83a4df099dc18efe3b1fca899cc34774caac"
     }
   },
   "commandPatternField": {
     "helper": {
-      "text": "Safe preview only — the command is never executed. Pick a governed pattern, or type any command line.",
+      "text": "Vain turvallinen esikatselu — komentoa ei koskaan suoriteta. Valitse hallittu malli tai kirjoita mikä tahansa komentorivi.",
       "source_sha256": "3684fc70d156c6d6a68b444e5d93c3c37b0fdecfb00359512c3015de47e578ff"
     },
     "manualHint": {
-      "text": "Pick a pattern from the live policy, or type a command line to test.",
+      "text": "Pick a pattern from the live käytäntö, tai type a command line to test.",
       "source_sha256": "682b8afb778a33b1575a1c43e0ccf9e074c8fd2fa1f831a6522fe013bf5a8f0f"
     }
   },
   "trainingDocumentField": {
     "helper": {
-      "text": "The program document this attestation covers.",
+      "text": "The program asiakirja tämä attestation covers.",
       "source_sha256": "c90e8535a1fd449cbfc617d31bc081d070790d8f9def0c632938c0cba21aa14d"
     },
     "manualHint": {
-      "text": "Pick a program document, or type its item identifier if it is not listed.",
+      "text": "Pick a program asiakirja, tai type its item identifier jos it on ei listed.",
       "source_sha256": "ccd104ea789ce767fc1e7203fabd2eb591fa4796110f82b0cfcd1d90feb3286e"
     }
   },
   "auditFilterEndpointField": {
     "helper": {
-      "text": "Limit the log to one enrolled endpoint.",
+      "text": "Limit the log to one enrolled päätepiste.",
       "source_sha256": "6873e0bd4febb670a0bb43f9da96a704898a3211915ef0c65037e37c8c9b4dfb"
     }
   },
   "auditFilterUserField": {
     "helper": {
-      "text": "Limit the log to one directory person.",
+      "text": "Rajoita loki yhteen hakemiston henkilöön.",
       "source_sha256": "5e91aec900c79ea8d4721acc903ea58c8d9f5cf4c0af9afa798138a406280c59"
     }
   },
   "waCheckField": {
     "helper": {
-      "text": "Skip or soft-fail check id. Malware / deny-list fails cannot be waived.",
+      "text": "Skip tai soft-fail check id. Malware / deny-list fails cannot be waived.",
       "source_sha256": "519c49891a92dae9278a3f9ca7b3fd22c4a69411095ba5a69c2e431d6648b0f2"
     },
     "manualHint": {
-      "text": "Pick a check from this workstation, or type a check id if it is not listed.",
+      "text": "Pick a check from tämä workstation, tai type a check id jos it on ei listed.",
       "source_sha256": "e3f247d4f937fff6e6577f37afb0ca8546f46d6b78d333a07ff8a6516e3cae7d"
     }
   },

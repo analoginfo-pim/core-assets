@@ -564,79 +564,151 @@
     }
   },
   "appBar": {
-    "homeTooltip": {
-      "text": "Returns to the home dashboard for this console.",
-      "source_sha256": "1280a4be7b5cb065d28fb4d0c52b7ec8e2b7d9f8733a4e3ba9d9f821b894dcf2"
+    "operatingLevelChip": {
+      "text": "Operating: {{label}}",
+      "source_sha256": "3fed05482df855632c83a77fd9eb13630618e5036868dc12b1fbed30fc49eda4"
     },
-    "themeTooltip": {
-      "text": "Opens appearance options. Choose light, dark, deuteranopia, or high-contrast colors for this console.",
-      "source_sha256": "833a36cc0222cbb439822032bac22773b9b47c023b1e01d7ab1126a18d6c5ea3"
+    "operatingLevelUnset": {
+      "text": "Operating: choose a package",
+      "source_sha256": "979dd9c6fe1568f179b76189424edb14398353d879be696e13fe7316829c06fa"
     },
-    "themeAria": {
-      "text": "Opens appearance options. Choose light, dark, deuteranopia, or high-contrast colors for this console.",
-      "source_sha256": "833a36cc0222cbb439822032bac22773b9b47c023b1e01d7ab1126a18d6c5ea3"
+    "operatingLevelAria": {
+      "text": "Configured operating package: {{label}}",
+      "source_sha256": "6f99e5d0d3712a404f7c9906ae904fe621b2884b6c5288c2bf4ad08024b27fad"
     },
-    "approvalsTooltip": {
-      "text": "Opens outstanding privileged-access approvals that wait for your decision.",
-      "source_sha256": "6a7f63669122c76f9687c77aca223da21ccc0f70e6ef805d4f78731dbe486a87"
+    "about": {
+      "text": "About",
+      "source_sha256": "4efca0d10c5feb8e9b35eb1d994f2905bb71714e6a271f511d713b539ea5faa1"
+    },
+    "aboutMenuAria": {
+      "text": "About menu",
+      "source_sha256": "e55d6304c422aae01cd1a8c7e90b72f4ba8888341bd55685c4c61a84211993a4"
+    },
+    "aboutMenuListAria": {
+      "text": "About",
+      "source_sha256": "4efca0d10c5feb8e9b35eb1d994f2905bb71714e6a271f511d713b539ea5faa1"
+    },
+    "activateLicense": {
+      "text": "Activate license",
+      "source_sha256": "8aec53c8c2cda77bc8550846a9ea59a529cda957ef15bbd3505fe2ecbcca4d81"
     },
     "approvalsAria": {
-      "text": "Opens outstanding privileged-access approvals that wait for your decision.",
-      "source_sha256": "6a7f63669122c76f9687c77aca223da21ccc0f70e6ef805d4f78731dbe486a87"
+      "text": "Pending approvals",
+      "source_sha256": "0405f4b67edd2784ed8b1309dd7aae68ec5ec408c8a3d65ed1dd5b19dae2911a"
     },
-      "approvalsAriaCount": {
-        "text": "Opens outstanding privileged-access approvals. {{count}} requests wait for your decision.",
-        "source_sha256": "f2708040d7cea909f11f97f67c36331aa7e60cf01685eacdf1def42e5e0133b3"
-      },
-      "aboutMenuAria": {
-        "text": "About menu",
-        "source_sha256": "e55d6304c422aae01cd1a8c7e90b72f4ba8888341bd55685c4c61a84211993a4"
-      },
-      "activateLicense": {
-        "text": "Activate license",
-        "source_sha256": "8aec53c8c2cda77bc8550846a9ea59a529cda957ef15bbd3505fe2ecbcca4d81"
-      },
-      "currentLicense": {
-        "text": "Current license",
-        "source_sha256": "b5b3d57a3b19d75673db545c061bb8b998cec2d25d5cecc387ff099d26a6651d"
-      },
-      "docsAria": {
-        "text": "Open documentation",
-        "source_sha256": "61139361bf482fdac179223c099011f17fbd7c69aa734e97c00abedcd00c14aa"
-      },
-      "importLicenseKey": {
-        "text": "Import license key",
-        "source_sha256": "7c227b62db47c3486d85ec8754da698b5fbfbb07b103e5069d184b48acdf7f5a"
-      },
-      "licenseAndBilling": {
-        "text": "License and billing",
-        "source_sha256": "c4040dac2a59390a45044bd92d02b8f19d063f0283b9fac1336c71d1c1c0ecf3"
-      },
-      "licenseIntegrity": {
-        "text": "License integrity",
-        "source_sha256": "6d16fb94173ede6112e8dcdc5d32dafde173ac482fd39bcced3f6ca02ad18af2"
-      },
-      "licenseModels": {
-        "text": "License models",
-        "source_sha256": "4ec68690377856ed78dbff5a820f6758d6d6085498c3d48dd83330e6dbed17b6"
-      },
-      "licensing": {
-        "text": "Licensing",
-        "source_sha256": "75b38c876a58011b075a7173dc8f84f5fbc4fb0ca90e1ddc0e6dd469c76929bd"
-      },
-      "licensingMenuAria": {
-        "text": "Licensing menu",
-        "source_sha256": "9e7b16d9597629cb7a34889392d7861a71a71f3bd5175c5bc4e0d2bfe9061c74"
-      },
-      "licensingMenuListAria": {
-        "text": "Licensing",
-        "source_sha256": "75b38c876a58011b075a7173dc8f84f5fbc4fb0ca90e1ddc0e6dd469c76929bd"
-      },
-      "usageAndBilling": {
-        "text": "Usage and billing",
-        "source_sha256": "52096d73f69e0211747f27b47db1428e58bb460081c2508cecd85d9b18fca8b7"
-      }
+    "approvalsTooltip": {
+      "text": "Pending PAM approvals",
+      "source_sha256": "220a71c5238675f89224e14a8238b40906e524804255c883b6bc86584a53c5dd"
     },
+    "copyright": {
+      "text": "Copyright",
+      "source_sha256": "8dfc77ab4089e09d4397e12306086c19767ffd4bbf6e239240bde83fe537a4a7"
+    },
+    "currentLicense": {
+      "text": "Current license",
+      "source_sha256": "b5b3d57a3b19d75673db545c061bb8b998cec2d25d5cecc387ff099d26a6651d"
+    },
+    "docs": {
+      "text": "Docs",
+      "source_sha256": "7af023c43013b9a53fbff7dd4b5821588bba3319308878229740489152c43f6d"
+    },
+    "docsAria": {
+      "text": "Open documentation",
+      "source_sha256": "61139361bf482fdac179223c099011f17fbd7c69aa734e97c00abedcd00c14aa"
+    },
+    "drawerTitle": {
+      "text": "AIC Server",
+      "source_sha256": "7dcbd2ffbb7a272b6ce96fbfd8262cc645c6112ebff668ec31ede027749ed722"
+    },
+    "eula": {
+      "text": "EULA",
+      "source_sha256": "98e4a4ccc8b3ca907527613721ddfd4d5e6ed64f9b8d4e583719f2bee08b19a8"
+    },
+    "importLicenseKey": {
+      "text": "Import license key",
+      "source_sha256": "7c227b62db47c3486d85ec8754da698b5fbfbb07b103e5069d184b48acdf7f5a"
+    },
+    "licenseAndBilling": {
+      "text": "License and billing",
+      "source_sha256": "c4040dac2a59390a45044bd92d02b8f19d063f0283b9fac1336c71d1c1c0ecf3"
+    },
+    "licenseIntegrity": {
+      "text": "License integrity",
+      "source_sha256": "6d16fb94173ede6112e8dcdc5d32dafde173ac482fd39bcced3f6ca02ad18af2"
+    },
+    "licenseModels": {
+      "text": "License models",
+      "source_sha256": "4ec68690377856ed78dbff5a820f6758d6d6085498c3d48dd83330e6dbed17b6"
+    },
+    "licensing": {
+      "text": "Licensing",
+      "source_sha256": "75b38c876a58011b075a7173dc8f84f5fbc4fb0ca90e1ddc0e6dd469c76929bd"
+    },
+    "licensingMenuAria": {
+      "text": "Licensing menu",
+      "source_sha256": "9e7b16d9597629cb7a34889392d7861a71a71f3bd5175c5bc4e0d2bfe9061c74"
+    },
+    "licensingMenuListAria": {
+      "text": "Licensing",
+      "source_sha256": "75b38c876a58011b075a7173dc8f84f5fbc4fb0ca90e1ddc0e6dd469c76929bd"
+    },
+    "openSourceCredits": {
+      "text": "Open source credits",
+      "source_sha256": "3a2309ea1ce1ba09f458493bbee25407576773a62748c9a64501075ad969746e"
+    },
+    "serverProduct": {
+      "text": "Server",
+      "source_sha256": "aef7de28d52977f1b5cd0fecfdc151717610adf41e0aa33b4d9f7522a43337ef"
+    },
+    "themeAria": {
+      "text": "Change appearance",
+      "source_sha256": "2521a1a3a4a542d88b9e83777c310b68ba9cbdc48983063dd58151f5481284f8"
+    },
+    "themeDark": {
+      "text": "Dark",
+      "source_sha256": "60acc53f13a5d1bf115878c4a785e9a43e8286c4139a8402a6ac7d23966f9153"
+    },
+    "themeDeuteranopia": {
+      "text": "Deuteranopia",
+      "source_sha256": "e38c1b3cedaa2cd689c4568ddde4dc2d8962684f91b914470f59bbc6c234da5e"
+    },
+    "themeHighContrast": {
+      "text": "High contrast",
+      "source_sha256": "415a8336713e6a3bb61660818c7ae7691e2246b94bcbc61a3f92dd33408d5488"
+    },
+    "themeLight": {
+      "text": "Light",
+      "source_sha256": "dbcd5e7bb7a0f538810de44c3efbd813037ee3fa358747bb71fa58e157af45f7"
+    },
+    "themeTooltip": {
+      "text": "Change appearance",
+      "source_sha256": "2521a1a3a4a542d88b9e83777c310b68ba9cbdc48983063dd58151f5481284f8"
+    },
+    "usageAndBilling": {
+      "text": "Usage and billing",
+      "source_sha256": "52096d73f69e0211747f27b47db1428e58bb460081c2508cecd85d9b18fca8b7"
+    },
+    "versionInformation": {
+      "text": "Version information",
+      "source_sha256": "99b6ee3277ad1058348046d86e32b828748e0634b3b5f4c9b1268bda01ed02dc"
+    },
+    "supportedCommercialShapes": {
+      "text": "License models",
+      "source_sha256": "4ec68690377856ed78dbff5a820f6758d6d6085498c3d48dd83330e6dbed17b6"
+    },
+    "remittanceSupervisor": {
+      "text": "Marketplace billing",
+      "source_sha256": "0196b8e9c5fee47e6e539da161cebc63868aacebd85ddcc2c70e94bd212b4b0f"
+    },
+    "cloudConsumptionAndPricing": {
+      "text": "Cloud consumption and pricing",
+      "source_sha256": "43db86fb3c3ad9f3036bcfbbc6d844c6c617b79841ef8c259b0f575a5054fc4f"
+    },
+    "approvalsAriaCount": {
+      "text": "Pending approvals, {{count}} waiting",
+      "source_sha256": "91591b817bb5e11d2516ca8d0afce2ffd1af1f5f6d5685d3941e7dfbd1adb4b5"
+    }
+  },
   "iamToolbar": {
     "identityTooltip": {
       "text": "Signed-in operator: {{name}}. Actions and audit records on this console use this account.",
@@ -653,20 +725,22 @@
     "logOffAria": {
       "text": "Ends your signed-in session on this browser and returns you to the sign-in page.",
       "source_sha256": "6381722967dc6e1fee25b3ad2525f55721523530e6158e000ee88a2bbb60b31d"
-    }
-  },
-  "appBar": {
-    "operatingLevelChip": {
-      "text": "Operating: {{label}}",
-      "source_sha256": "3fed05482df855632c83a77fd9eb13630618e5036868dc12b1fbed30fc49eda4"
     },
-    "operatingLevelUnset": {
-      "text": "Operating: choose a package",
-      "source_sha256": "979dd9c6fe1568f179b76189424edb14398353d879be696e13fe7316829c06fa"
+    "logOff": {
+      "text": "Log off",
+      "source_sha256": "97eeef04e09601e058486c43d9647031f1ded6ed64d9042e9f8704e2c41d42ed"
     },
-    "operatingLevelAria": {
-      "text": "Configured operating package: {{label}}",
-      "source_sha256": "6f99e5d0d3712a404f7c9906ae904fe621b2884b6c5288c2bf4ad08024b27fad"
+    "security": {
+      "text": "Security",
+      "source_sha256": "8f6fb4eb7f42c0e245e29e63f5b82cc3ba19852681d1ed9aed291f59cf75ec0e"
+    },
+    "signIn": {
+      "text": "Sign in",
+      "source_sha256": "bfd402b2f6f3812529b55596136d3a11c51616317e3b1cd999928e2d4eae7d3f"
+    },
+    "signedIn": {
+      "text": "Signed in",
+      "source_sha256": "ca566c8968e7e881d55617e7caaf0c126924ab1cb64ca80edb2f37ef386492d8"
     }
   }
 }
