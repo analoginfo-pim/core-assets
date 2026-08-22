@@ -1,0 +1,55 @@
+---
+description: >-
+  Default operator service logs must stay useful — security-relevant
+  (AU-2/3) and real state changes or failures only. No debug-by-default,
+  OK polls, or IF NOT EXISTS notices.
+alwaysApply: true
+---
+
+# Service logs must be useful (hard rule)
+
+Operator principle (Phil, 2026-08-21):
+
+> **When logging is filled with garbage entries with no security or
+> operational usefulness, the log value is near worthless.**
+
+## The rule
+
+> **Default Settings → Service logs (`/settings/service-logs`) is an
+> operator stream. It carries security-relevant actions (NIST AU-2 / AU-3)
+> and real operational state changes or failures only. Successful polls,
+> heartbeats, empty ticks, IF NOT EXISTS / already-exists-skipping
+> notices, and debug chatter must not appear at the default level.**
+
+## Default stream
+
+| May appear at `info`+ | Must not appear by default |
+| --- | --- |
+| Startup / shutdown / drain (`service.started` / `.stopping` / `.stopped`) | `sqlx::postgres::notice` / `already exists, skipping` |
+| Real state change (one line, before → after) | Successful Hyper-V / Docker / inventory polls |
+| Security-relevant mutate, authz deny, secret/custody events | “polled N VMs / N containers, ok”, empty list, “no work” |
+| Failures (`warn` / `error` + recovery) | Catalog already loaded, schema IF NOT EXISTS, websocket ping |
+
+Default filter is **not debug**. Do not invent product env vars for this
+([`no-environment-variables.mdc`](no-environment-variables.mdc)). Use the
+shipping `EnvFilter` (`sqlx::postgres::notice=off`) and `debug!` / `trace!`
+or no log for ignore-safe polls.
+
+## Hyper-V / Docker
+
+- Successful poll with no change: **no log**.
+- Appeared / disappeared / started / stopped / failed: **one** `info`
+  line naming the guest and before → after. Never dump the inventory.
+- Controller / spawn failures: `warn` / `error` + recovery
+  ([`silent-failure-is-a-bug.mdc`](silent-failure-is-a-bug.mdc)).
+
+## Forbidden
+
+- Default `info` on OK polls, ticks, or IF NOT EXISTS DDL
+- Dropping real errors to hide noise
+- Claiming Service logs “quiet” while the live page is still a wall of skip/poll/notice
+
+## Origin
+
+2026-08-21 — operator: service-logs noise (sqlx notices, Hyper-V/Docker
+polls) made the stream worthless; default must stay operator-useful.
