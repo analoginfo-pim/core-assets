@@ -474,5 +474,181 @@
       "text": "Asiakkailla ja yleisöllä ei useinkaan ole työvoimaluetteloa. Linkki listamerkintään, jos sellainen on olemassa; Muussa tapauksessa nimi ja sähköpostiosoite tallennetaan tilannekuvana vastaanoton yhteydessä ja uudelleen henkilöllisyyden tarkistuksen aikana.",
       "source_sha256": "a796297fbead179adbfdde0f052fdcafa9d485e8b5499c2d4cfc35017fc1c3fa"
     }
+  },
+  "coverageWorkflow": {
+    "honesty": {
+      "text": "Kattavuustyönkulku kirjaa, että operaattori aikataulutti tai todisti teon. Se on toimitustodiste palvelimen aikaleimalla. Se ei ole Met eikä sertifioitu.",
+      "source_sha256": "3a3e8d34570534a71a723fa7819c24474619b64f5b4493cee3a467af2a467e73"
+    },
+    "recorded": {
+      "text": "Työnkulku kirjattu.",
+      "source_sha256": "349e81c8f939a0f71c2d3d5d850c8c17f0f5f2e47b9d263bbe69b5468930d4cd"
+    },
+    "cancelled": {
+      "text": "Työnkulku peruttu.",
+      "source_sha256": "0a89e3908e0ea2f73f50278bbf992b753bfcc783ec032a14409e4b8793da4114"
+    },
+    "eventRecorded": {
+      "text": "Tapahtuma kirjattu.",
+      "source_sha256": "d84644440575fa16fc16b9dc397e16f643351a56eb4ccf33098b1f4ec03a5b84"
+    },
+    "titleCol": {
+      "text": "Otsikko",
+      "source_sha256": "1cb62cc706156e1371e194af29bf637f7b585fc6d93c4296e9d1e708d40a509f"
+    },
+    "kind": {
+      "text": "Laji",
+      "source_sha256": "ef7304c182141943dfd4384fcb7aa8acfbed32004d58826b96ebd007fda6abb1"
+    },
+    "subject": {
+      "text": "Kohde",
+      "source_sha256": "9447e7b6eb637e953fe6fdd30c27339e9925e473d8df956ee3404e7aa6b89576"
+    },
+    "subjectHelp": {
+      "text": "Nimeä henkilö, ryhmä tai omaisuus. Voit kirjoittaa nimen, jota ei vielä ole luettelossa.",
+      "source_sha256": "364f063f9c6142eab3349a2a3c8baffdc81a8c102e0ed27231f9d2fc5645a030"
+    },
+    "status": {
+      "text": "Tila",
+      "source_sha256": "f0f96145817844043bef450b11e681eb0de113b8f9f6dc84e8a8fa12ad3bb996"
+    },
+    "actions": {
+      "text": "Toiminnot",
+      "source_sha256": "e9e7ccb95c42bda93ec2f6e363891497460dcb6831ae83d69668d5438e7c53d9"
+    },
+    "cancel": {
+      "text": "Peruuta",
+      "source_sha256": "2f5c3b9cd7fee26bfecb367e205f061e9b1e84b56c1bd6f1a18f1d599cb9d237"
+    },
+    "record": {
+      "text": "Kirjaa",
+      "source_sha256": "24b6af70271661b6b486fd6f39fa1ed92d8bd021925a02d39a19073adfc44bce"
+    },
+    "events": {
+      "text": "Tapahtumat",
+      "source_sha256": "5fb3f6dde3a6ed9be3e7e63e06d24e74281ba00223d1c68204723932fcf260f4"
+    },
+    "eventKind": {
+      "text": "Tapahtuma",
+      "source_sha256": "af3c3b8e035ceaedec86ef2ced47455ca87838d99aa2c39552d2545cccf36f98"
+    },
+    "statement": {
+      "text": "Lausuma",
+      "source_sha256": "dc499940c6c517349f9a5fca002d89465273bc960b31c5fd80db0c931e1e6ce4"
+    },
+    "extraLabel": {
+      "text": "Toimittajan, osallistujan tai teknikon nimi",
+      "source_sha256": "58ebca1ca07544774caa506abc0a6b7c4c042e3a3288fb2906a1dcae62f6500d"
+    },
+    "recordEvent": {
+      "text": "Kirjaa tapahtuma",
+      "source_sha256": "4933b4d40dea9933eb840cfcaa3d3a7e2c7f4466417f4cb13ee131edd7ce882d"
+    },
+    "loadFailed": {
+      "text": "Kattavuustyönkulkuja ei voitu ladata.",
+      "source_sha256": "d0e13510577eec34886b7418a358eecbf28f9f65f159e85b232bf869351f44b1"
+    },
+    "noPermission": {
+      "text": "Sinulla ei ole oikeutta tarkastella tätä työnkulkuluetteloa.",
+      "source_sha256": "2aa6dc348a30fac82a24d81050cf649f241cc2ed44cb3cbac32b1b7fb30da7e4"
+    },
+    "noEvents": {
+      "text": "Tälle työnkululle ei ole vielä tapahtumia.",
+      "source_sha256": "2839707de4a0d9c18bfafca346e1447cdb7a8136fd6fb846a92b6b7f240518e6"
+    },
+    "ps": {
+      "title": {
+        "text": "Henkilöstön seulonta",
+        "source_sha256": "cf6596dbbb57ebc7b4fe1fb6a690d812411dec31b8b6b6f61b187bf2a0820ade"
+      },
+      "summary": {
+        "text": "Aikatauluta perehdytys, lähtö tai määräaikainen seulonta. Kirjaa valmistuminen ja toimittajakirjeen tiiviste. Työllistämispäätös jää organisaatiolle.",
+        "source_sha256": "41960bf174a057d19777cdf30d5e46e5ea218e038e176f5da45678ed33c4f6f9"
+      },
+      "add": {
+        "text": "Aikatauluta seulonta",
+        "source_sha256": "c9fbaffe5a212d3d92491e21aaa41028dd53ca621b6f69a2446ce811c7544a3d"
+      }
+    },
+    "at": {
+      "title": {
+        "text": "Tabletop-harjoitukset",
+        "source_sha256": "aa0330bdacbf09119389a8667cfc962df773119177bf616360e667ef29709267"
+      },
+      "summary": {
+        "text": "Aikatauluta tabletop- tai käytännön harjoitus ja kirjaa osallistujat. Tämä sivu ei suorita harjoitusta eikä ole Met.",
+        "source_sha256": "eb1927bcbfee866fe68896171da56ac61e315b828a26819bd283dda8e52e824f"
+      },
+      "add": {
+        "text": "Aikatauluta harjoitus",
+        "source_sha256": "6b7463e0e0978cbc6ea78286c7c268d71c8199b3fadd1539bffaa11ec8d10d41"
+      }
+    },
+    "ma": {
+      "title": {
+        "text": "Aikataulutettu huolto",
+        "source_sha256": "a85b145b7c36e1a8ea7e233acc87cdce059de982c11262fe3c4431a461ec36c6"
+      },
+      "summary": {
+        "text": "Aikatauluta paikallinen tai etähuolto. Kirjaa hyväksyntä ja saattajatodistus. Teknikon käynti jää organisaatiolle.",
+        "source_sha256": "60dc825609df316d1df57e0fe54187f108660c663710e7b0f65cd2843c008164"
+      },
+      "add": {
+        "text": "Aikatauluta huolto",
+        "source_sha256": "5559049dbf08f76e8f2ade749f23191ea12afcdda9992cc3b575c5a725b16398"
+      }
+    },
+    "kinds": {
+      "onboarding": {
+        "text": "Perehdytys",
+        "source_sha256": "dd1ba4dadb93c5638ea9e9adf2f283c934cc18afdf43c40838cca26e9ec8e6bb"
+      },
+      "offboarding": {
+        "text": "Lähtö",
+        "source_sha256": "eec7c7a39257f1407e1263561a834f19e62cf95eeb6a13b74a9dee65c71c8b76"
+      },
+      "periodic_screening": {
+        "text": "Määräaikainen seulonta",
+        "source_sha256": "55f76eb6ef269fa11a65e9b19936ce8669f6480cc5415ae1afeb9dfa2a65cbf2"
+      },
+      "tabletop": {
+        "text": "Tabletop",
+        "source_sha256": "c3dee2da944918b328910be93ca354a273b30f1efe417eea4830435b33d4f771"
+      },
+      "practical_exercise": {
+        "text": "Käytännön harjoitus",
+        "source_sha256": "3f3be29a58f37786bfb989917b5759889e7a1af6a16db41e5dbddd5f9f0e4d6f"
+      },
+      "local_maintenance": {
+        "text": "Paikallinen huolto",
+        "source_sha256": "0e4dc9afbe281632a0410eb3f253d062d84f6afa9d782b819af699c6b5bc0b05"
+      },
+      "nonlocal_maintenance": {
+        "text": "Etähuolto",
+        "source_sha256": "f1ff16ca90457c9e00535f2ec66ddc53e0064ff795d887a182f5b18dba0ba519"
+      }
+    },
+    "eventKinds": {
+      "completed": {
+        "text": "Valmis",
+        "source_sha256": "b25f14ee4b92bdc9af3a161e149ef10a0729998510d8de3c59c26fce23d520c0"
+      },
+      "letter_attached": {
+        "text": "Kirje liitetty",
+        "source_sha256": "0a746b04fc1ce1cfcee06bd7336f90896d7abaca7f923d91ec129d5036544f79"
+      },
+      "participated": {
+        "text": "Osallistui",
+        "source_sha256": "9f104d5a0dab9382c7a11d4ac5c275af85ea800b5913fbee1e94ddff60efd79d"
+      },
+      "approved": {
+        "text": "Hyväksytty",
+        "source_sha256": "89b797a2aae09a26ba162c31954dc5c1b19926a197da1e7be1066e9fe2e8d573"
+      },
+      "escort_attested": {
+        "text": "Saattaja todistettu",
+        "source_sha256": "f060bde55169073bd7abb705427caa5fd45b8e2d738e202f3184c87a3c1ac834"
+      }
+    }
   }
 }

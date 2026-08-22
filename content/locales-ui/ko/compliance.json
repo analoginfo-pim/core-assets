@@ -474,5 +474,181 @@
       "text": "Kunden과 Angehoerige는 Oeffentlichkeit haben oft keinen Workforce-Roster-Eintrag입니다. Verknuepfen Sie a Roster-Eintrag, wenn einer exigeniert; andernfalls werden 이름 및 이메일 bei Eingang 및 erneut bei the Identitaetspruefung als Momentaufnahme gespeichert.",
       "source_sha256": "1f188206cac498c30f122b2eaa7a521e7bd72beb9dca22289824d4bc03a7f36a"
     }
+  },
+  "coverageWorkflow": {
+    "honesty": {
+      "text": "커버리지 워크플로는 운영자가 행위를 예약하거나 증언했음을 기록합니다. 서버 타임스탬프가 있는 제공 증거입니다. Met가 아니며 인증도 아닙니다.",
+      "source_sha256": "80942b7c139b8f8eaf78f321351aa3aee4eaa3f757c704a7d35d1743d7f50573"
+    },
+    "recorded": {
+      "text": "워크플로가 기록되었습니다.",
+      "source_sha256": "27658e0535d8f5a21893b098c5b312865dadf32577f0ff992218771303ecd64d"
+    },
+    "cancelled": {
+      "text": "워크플로가 취소되었습니다.",
+      "source_sha256": "8e3157b8a89fa226fbdf5dad34f064680a9c0ba217f4bc8c02ed65fb9a533065"
+    },
+    "eventRecorded": {
+      "text": "이벤트가 기록되었습니다.",
+      "source_sha256": "6b60864a9a776550cf041d359aba0d56c45df55aefe7831d2c2433fc15fb5b96"
+    },
+    "titleCol": {
+      "text": "제목",
+      "source_sha256": "08b17e433630742bc70022e9e0e1e11a91bd43383b33226afab9a5bdaf778bbf"
+    },
+    "kind": {
+      "text": "종류",
+      "source_sha256": "2e6adf4ec98d68239960607e3c29f6ee648e5c5b10665d1502e14c5a1d2d836d"
+    },
+    "subject": {
+      "text": "대상",
+      "source_sha256": "8c609debc12c2cd08ebde99d0d4f80137bd62074c4821a4bcb3e3fdaec279f95"
+    },
+    "subjectHelp": {
+      "text": "사람, 그룹 또는 자산 이름을 입력하십시오. 목록에 없는 이름도 입력할 수 있습니다.",
+      "source_sha256": "c6ad8a5d1b1a001a07dc2de7dee15c36d6ea6ad08bfd3435de5da37af575bb78"
+    },
+    "status": {
+      "text": "상태",
+      "source_sha256": "e10195a1239fb321327bafbe0397ebfcf7f0985a6e3bc28661a65132025b6808"
+    },
+    "actions": {
+      "text": "작업",
+      "source_sha256": "01dfd369cfa718dda5f1906bbfe64d4dbd50dd2c62251854cd300a6c0d1e789e"
+    },
+    "cancel": {
+      "text": "취소",
+      "source_sha256": "be876433993ab7ba221512b5703b32060626f390aa50d7ed464a847a34539a6c"
+    },
+    "record": {
+      "text": "기록",
+      "source_sha256": "6e8b375a38c1e33c5a5425051e00432aa4db51edbe6300eb8d5610e1214a12fb"
+    },
+    "events": {
+      "text": "이벤트",
+      "source_sha256": "46b289bb0a9e2a002985007cea757de883ff09dd885b2d91f5f1f2452f7208cb"
+    },
+    "eventKind": {
+      "text": "이벤트",
+      "source_sha256": "46b289bb0a9e2a002985007cea757de883ff09dd885b2d91f5f1f2452f7208cb"
+    },
+    "statement": {
+      "text": "진술",
+      "source_sha256": "3a78ba87b0dad50e7fdeb1ea369152eb9adccf046a7e5b9169812ce8d739fd7f"
+    },
+    "extraLabel": {
+      "text": "제공자, 참가자 또는 기술자 이름",
+      "source_sha256": "9b8950125a72c868f3b44adb194525dbef0a83b3349c0f2284ca590f253c1e37"
+    },
+    "recordEvent": {
+      "text": "이벤트 기록",
+      "source_sha256": "187a274cc87da944859c74e9dff574a1013f45ee6b9b35685459d9d4a042afab"
+    },
+    "loadFailed": {
+      "text": "커버리지 워크플로를 불러올 수 없습니다.",
+      "source_sha256": "2a5e1fff9cfbaca3160d7111383e044a19d1ed2e81f5c26e1dee11f16627ddf8"
+    },
+    "noPermission": {
+      "text": "이 워크플로 목록을 볼 권한이 없습니다.",
+      "source_sha256": "b61f50ddeada8a330993a61dc2dbac89ca25660a01434aaaf13955211bb6f9e6"
+    },
+    "noEvents": {
+      "text": "이 워크플로에 아직 이벤트가 없습니다.",
+      "source_sha256": "bfb8d91cea7c4b1050abf894207dbeb83aa12119acd9f0766788a28099e8d5a6"
+    },
+    "ps": {
+      "title": {
+        "text": "인사 심사",
+        "source_sha256": "24b625fe4162784b5f5dace13d1dc15e020954ca194471c1f60a0281f13b655b"
+      },
+      "summary": {
+        "text": "입사, 퇴사 또는 정기 심사를 예약하고 완료와 제공자 문서 해시를 기록합니다. 고용 결정은 조직에 남습니다.",
+        "source_sha256": "b28d018389dfcd8d51f57963bdc967d3337149d32a2222bf666ca19e7cbfec9b"
+      },
+      "add": {
+        "text": "심사 예약",
+        "source_sha256": "c4b56063fc5bc061f17ccd2cb1466cad255a625929fdbf84cd7d86a948971b36"
+      }
+    },
+    "at": {
+      "title": {
+        "text": "테이블탑 훈련",
+        "source_sha256": "71b35d03616b2f128f583056612b00cb16e866084dd776c5f39fbb842e51e6db"
+      },
+      "summary": {
+        "text": "테이블탑 또는 실습 훈련을 예약하고 참가자를 기록합니다. 이 페이지는 훈련을 실행하지 않으며 Met가 아닙니다.",
+        "source_sha256": "4243426bf140dbbb29f7e6cc96d9c8db285a2eaac680a5f52f4286025b0402a2"
+      },
+      "add": {
+        "text": "훈련 예약",
+        "source_sha256": "9227e6e1f599261d8feadfc113560ebe338580dd00ce66c5d35725b3289d77b3"
+      }
+    },
+    "ma": {
+      "title": {
+        "text": "예정 유지보수",
+        "source_sha256": "211ff5ea94149005124962d71bad43bcc5ed0ca7c4a3992e5fe8527ae821a3d6"
+      },
+      "summary": {
+        "text": "로컬 또는 원격 유지보수를 예약하고 승인과 동행 증언을 기록합니다. 기술자 방문은 조직의 행위입니다.",
+        "source_sha256": "287f54bdaa5203a94eac46238d92e6a36be2c543affc2bf961b3ab35add43fbe"
+      },
+      "add": {
+        "text": "유지보수 예약",
+        "source_sha256": "2f30d3b4f535673421b78a23c22e00aeaf879795d7200c82a78a218e8a63b0bb"
+      }
+    },
+    "kinds": {
+      "onboarding": {
+        "text": "입사",
+        "source_sha256": "2c3f068ff3c9486b8cd6c249d929fd818df3fe0a6a162b016edb924c0fcc873e"
+      },
+      "offboarding": {
+        "text": "퇴사",
+        "source_sha256": "b530f10765dbb00d037431e17a0bfeaeb1e88e86e7eb3493f1125a9544efc279"
+      },
+      "periodic_screening": {
+        "text": "정기 심사",
+        "source_sha256": "1554d9dd3900df6e778d6b41687731de0125a8bb025e7ed0ebbc9ceeee061a0e"
+      },
+      "tabletop": {
+        "text": "테이블탑",
+        "source_sha256": "b0bf0db8b7940bad61b6d38600e1919b31c00fb6cb9c822f80587f80ad2e6737"
+      },
+      "practical_exercise": {
+        "text": "실습 훈련",
+        "source_sha256": "59e47df381a23bcfeba07bfddc3f5303daff3d986658e370d150f540355b82ff"
+      },
+      "local_maintenance": {
+        "text": "로컬 유지보수",
+        "source_sha256": "a6e1b11f112651f44194bf3260d7a2de570c456e63eda751197642da16a99e0a"
+      },
+      "nonlocal_maintenance": {
+        "text": "원격 유지보수",
+        "source_sha256": "5a01ad041957eda8c8459ec469a6e6b8983108be15979c5df0d0da2d668b2125"
+      }
+    },
+    "eventKinds": {
+      "completed": {
+        "text": "완료됨",
+        "source_sha256": "39fcd1f6f46527630d05a0a800cfe9aef1a0c9146450b4e8cbb4074911eceb3f"
+      },
+      "letter_attached": {
+        "text": "문서 첨부됨",
+        "source_sha256": "3c2aebdf2faad83f34fffc9bb2fd79324bd8dbf6602f42202d9164f137fef9cd"
+      },
+      "participated": {
+        "text": "참가함",
+        "source_sha256": "8f63e222496f9491fe1364f4c9e5d6efd64c2b74e3d3ed7cb6e8f651f29242fb"
+      },
+      "approved": {
+        "text": "승인됨",
+        "source_sha256": "4131b9418c92d707da5563d53bc7c67a1695a2c4227b7cb848d3c7e620b12aed"
+      },
+      "escort_attested": {
+        "text": "동행 증언됨",
+        "source_sha256": "699ddbeaba0f1071ee38ad21a718560429cc7e055d8041dcee9417fdd2017fec"
+      }
+    }
   }
 }

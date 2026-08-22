@@ -474,5 +474,181 @@
       "text": "客戶和公眾通常沒有員工名冊條目。連結到名冊條目（如果存在）；否則，姓名和電子郵件將在收到時儲存為快照，並在身分檢查期間再次儲存。",
       "source_sha256": "7ba24d88f03ed653ce1f9484ec950e9b1038cc930ebd366424b281ebb9269e10"
     }
+  },
+  "coverageWorkflow": {
+    "honesty": {
+      "text": "涵蓋工作流程記錄操作人員已排程或證明某項行動。這是帶有伺服器時間戳記的交付證據。不是 Met，也不是認證。",
+      "source_sha256": "744ed815a0a46ee9366b9e44f07d9386132288700819cf43114036f10758a45e"
+    },
+    "recorded": {
+      "text": "已記錄工作流程。",
+      "source_sha256": "893e0a76148f6b00c19f9d55e2d82db967a7826c90b11dbd015a14986b284dfd"
+    },
+    "cancelled": {
+      "text": "已取消工作流程。",
+      "source_sha256": "1a4721fbd6142cae24393058e6b0d022a21d8d065dd3e6adea7c0fd487f19e0a"
+    },
+    "eventRecorded": {
+      "text": "已記錄事件。",
+      "source_sha256": "17f5521b611a548b7a210ec5d834928406f03368296181a8a313147f393f12b2"
+    },
+    "titleCol": {
+      "text": "標題",
+      "source_sha256": "6fe38ed1ee10422a8666ff36bbffd5fe69c56e0d23f30dfb1f5062ccb9c59d25"
+    },
+    "kind": {
+      "text": "類型",
+      "source_sha256": "1588dd8c9e731787ac2d1c1d8bdb277e6b54dd514ba91784f2c7f22b234e4cfd"
+    },
+    "subject": {
+      "text": "對象",
+      "source_sha256": "c865f9a60fbbbbc37c12c09a830f67959f63629a4eb0e0b661d07e931d1fb793"
+    },
+    "subjectHelp": {
+      "text": "填寫人員、群組或資產名稱。可以輸入尚未出現在清單中的名稱。",
+      "source_sha256": "b89bbee8383850b60e4fd7c8c00bc1159184636aa58bed5c4541420f5ab6cbe2"
+    },
+    "status": {
+      "text": "狀態",
+      "source_sha256": "e01b94ddd5d5b9ba337af8b47ae73df2f596ba5748876b60c2632dbad68f656e"
+    },
+    "actions": {
+      "text": "動作",
+      "source_sha256": "ea3a27bc20be716a3f5fb8519abd153683cc7340be1b99804d906e9d87c0ffad"
+    },
+    "cancel": {
+      "text": "取消",
+      "source_sha256": "2cd0f3be8738a86cede1a1452f874f31d569864bbb00cacd4130990f4610cb5c"
+    },
+    "record": {
+      "text": "記錄",
+      "source_sha256": "ae628c54db83089666ea9fc98800201668f55faff4efb04a6e015dce0a6f366e"
+    },
+    "events": {
+      "text": "事件",
+      "source_sha256": "c560201b331c54435b445baebe03b8922d6ef6a80065411ed3f379eb8bef9848"
+    },
+    "eventKind": {
+      "text": "事件",
+      "source_sha256": "c560201b331c54435b445baebe03b8922d6ef6a80065411ed3f379eb8bef9848"
+    },
+    "statement": {
+      "text": "聲明",
+      "source_sha256": "0bffedfc784091e93409651a295e0e4b1e66ddd812618bc694f1e74e290001e9"
+    },
+    "extraLabel": {
+      "text": "提供方、參與者或技術人員姓名",
+      "source_sha256": "2a9c90b6c41576b544ab40bdd231cd99567a13cc59aa5d30a19a689b7f7415ed"
+    },
+    "recordEvent": {
+      "text": "記錄事件",
+      "source_sha256": "49ef15fbc2cd75ec8ff53688ff6fdba38f65e0bd93c9d97fa1d7270347b8923e"
+    },
+    "loadFailed": {
+      "text": "無法載入涵蓋工作流程。",
+      "source_sha256": "13aa44bfdc9be2f2c90f2c651d7800c91e28859d5884bb2d1d79a6505580288d"
+    },
+    "noPermission": {
+      "text": "您沒有檢視此工作流程清單的權限。",
+      "source_sha256": "7ddd635ed3ebc798c3b7dbabee541a9248091bdd1122a9790d79adbb4487adc6"
+    },
+    "noEvents": {
+      "text": "此工作流程尚無事件記錄。",
+      "source_sha256": "970c58b72abf2f3f249ab0f3744f81d8cac989da31b8185f348e60a412355199"
+    },
+    "ps": {
+      "title": {
+        "text": "人員審查",
+        "source_sha256": "fec6205e38ea34d9928fd8a6e4bb7be8fd67ca4def164d01a53c8fe635cc4387"
+      },
+      "summary": {
+        "text": "排程到職、離職或定期審查。記錄完成情況與提供方信函雜湊。僱用決定仍由組織作出。",
+        "source_sha256": "430bb15f2c93046dfec435105411ce683e4fe4a173a018b2b1a21d6060e5662b"
+      },
+      "add": {
+        "text": "排程審查",
+        "source_sha256": "e177980c8fe2386ff85b2e459aea9078c5050b3e9d85ef65d985c9830c6c7ad2"
+      }
+    },
+    "at": {
+      "title": {
+        "text": "桌面演練",
+        "source_sha256": "fb248b24c6818295fdad14ad427ddfa4696ed26a4d8ce1ed4a128b8a727d42a1"
+      },
+      "summary": {
+        "text": "排程桌面或實作演練並記錄參與者。此頁面不執行演練，也不是 Met。",
+        "source_sha256": "960abf7c6091ed83c9d372e2770e8f8da9080004bff8ae91bf84243b1f5c2414"
+      },
+      "add": {
+        "text": "排程演練",
+        "source_sha256": "e9449fc56b0249aec5ef9bd7f985c4037c4dbe4036f043d057efceab94dab144"
+      }
+    },
+    "ma": {
+      "title": {
+        "text": "排程維護",
+        "source_sha256": "7b2a50e184e7acf6cfeba3c09b4db21f6a9d2d3f22ebf8474b2f885298c19edc"
+      },
+      "summary": {
+        "text": "排程本地或遠端維護。記錄核准與陪同證明。技術人員到場仍由組織負責。",
+        "source_sha256": "0c0be0ad0e604538fd64113b9cff630fb553e99b371a17a2ed0336c9215a0646"
+      },
+      "add": {
+        "text": "排程維護",
+        "source_sha256": "7b2a50e184e7acf6cfeba3c09b4db21f6a9d2d3f22ebf8474b2f885298c19edc"
+      }
+    },
+    "kinds": {
+      "onboarding": {
+        "text": "到職",
+        "source_sha256": "ddcc40ae9fa68905d1e8a27bc65c01447e415d4f73af6d4c6574fd9edeac776a"
+      },
+      "offboarding": {
+        "text": "離職",
+        "source_sha256": "157b84616505cf15ce1019824ec692b7ab9913b773df1b3043ecdfddfa97184f"
+      },
+      "periodic_screening": {
+        "text": "定期審查",
+        "source_sha256": "a8ba6d5b1f65c693a15bafd31d15ce2b08c57dd3fb40af8d551235af00b0bd4a"
+      },
+      "tabletop": {
+        "text": "桌面演練",
+        "source_sha256": "fb248b24c6818295fdad14ad427ddfa4696ed26a4d8ce1ed4a128b8a727d42a1"
+      },
+      "practical_exercise": {
+        "text": "實作演練",
+        "source_sha256": "7e03bd6f42a99c895c133a99007abc39a2784745bc790de273722fc065da462a"
+      },
+      "local_maintenance": {
+        "text": "本地維護",
+        "source_sha256": "c2eaad5e3ed15815002b8f4e53d278b94a9b7944e88e12a07631cd610fe1f606"
+      },
+      "nonlocal_maintenance": {
+        "text": "遠端維護",
+        "source_sha256": "143bffb09b7ddf6e0c8aa0a3ce2b88401176c0c7cde3e60512de70117d9d1bcf"
+      }
+    },
+    "eventKinds": {
+      "completed": {
+        "text": "已完成",
+        "source_sha256": "f28461bb49c8564716309d575f90f72cf15b5c4667e40c2d037434bedb54a01a"
+      },
+      "letter_attached": {
+        "text": "已附加信函",
+        "source_sha256": "8db481298a5c558a8967ab833029f110e15dc24832aee37e15c4be7e539f65c6"
+      },
+      "participated": {
+        "text": "已參與",
+        "source_sha256": "d5c0c6bd1db777cc90dbd31aa3b3ec17d504bfa7747f85fbff1d9f1f262618ba"
+      },
+      "approved": {
+        "text": "已核准",
+        "source_sha256": "1625f6ba5f2cce332a7a01c35960996c7662be708442e248685438392d8f694c"
+      },
+      "escort_attested": {
+        "text": "已證明陪同",
+        "source_sha256": "5e3d8ea64a79620e2e2228ea0c6204436f6c6b6599615553c7612e5d1069f857"
+      }
+    }
   }
 }

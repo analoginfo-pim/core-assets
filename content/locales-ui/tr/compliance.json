@@ -474,5 +474,181 @@
       "text": "Kunden ve Angehoerige, çoğu zaman Workforce-Roster-Eintrag'da görev alıyor. Var olan bir kadroyu seçin; İsim ve E-Posta, Eingang'da ve Anlık Bilgiler için Kimlik Doğrulaması'nda yer alıyor.",
       "source_sha256": "1f188206cac498c30f122b2eaa7a521e7bd72beb9dca22289824d4bc03a7f36a"
     }
+  },
+  "coverageWorkflow": {
+    "honesty": {
+      "text": "Kapsam iş akışı, bir işlecin bir eylemi planladığını veya tanıklık ettiğini kaydeder. Sunucu zaman damgalı teslim kanıtıdır. Met değildir ve belgelendirilmiş değildir.",
+      "source_sha256": "0f28aa2cf6c64e847c93a2076d811feb50d30d6b21784e0b0dde41bfcd7e2bdf"
+    },
+    "recorded": {
+      "text": "İş akışı kaydedildi.",
+      "source_sha256": "1687380331764278b5716c5a96f9f1deb2d31d1e52c72bed31f6320a1d156971"
+    },
+    "cancelled": {
+      "text": "İş akışı iptal edildi.",
+      "source_sha256": "2fbac061eacef560904a23eef72c7122a8677cbc2e83256e7a799528d3b06c23"
+    },
+    "eventRecorded": {
+      "text": "Olay kaydedildi.",
+      "source_sha256": "ad17ce923427c59d818d17ce67c6a5e50bf9eca303cb76c5e8f050fb74fe95d4"
+    },
+    "titleCol": {
+      "text": "Başlık",
+      "source_sha256": "a3b8c0cb41b2b0fe831794d786f4ae6a84c31b277c80915decd75e177ce100ac"
+    },
+    "kind": {
+      "text": "Tür",
+      "source_sha256": "1cff8a95c840c89adb7b2cdbfc63d228355d76ec79cab441a86568ae4a0ef76d"
+    },
+    "subject": {
+      "text": "Konu",
+      "source_sha256": "6aa0e7df30a71620e543037f08cfb83c8c9955ff1800543808daed88a9bbc272"
+    },
+    "subjectHelp": {
+      "text": "Kişiyi, grubu veya varlığı adlandırın. Listede henüz olmayan bir ad yazabilirsiniz.",
+      "source_sha256": "d0d8e6a8f8d3564830acb27d8232e62eefa2ac4fac8492c0ba6992137b34f758"
+    },
+    "status": {
+      "text": "Durum",
+      "source_sha256": "8bd057388e28cfe927d5d3c2ae7ea46ceb0a46c9d4c9e9c1a922b724c3caeaff"
+    },
+    "actions": {
+      "text": "Eylemler",
+      "source_sha256": "fbaf1a761f0b5205b11d91d74d5c47ba73f7365eaef3e90cb0cc5978f0ba2a92"
+    },
+    "cancel": {
+      "text": "İptal",
+      "source_sha256": "72278748133ac996ce08434c37b3e51221d7cc6b1417944494484be57b9eb6f7"
+    },
+    "record": {
+      "text": "Kaydet",
+      "source_sha256": "c1fe2ecdff02ec1d91e53fbd137be03f8e833b142e69c5d63d15928aaf9bad62"
+    },
+    "events": {
+      "text": "Olaylar",
+      "source_sha256": "68fa618aeb8351c98dc521d0c4b56470ab9acee0ad72a0e11226ae17973a570d"
+    },
+    "eventKind": {
+      "text": "Olay",
+      "source_sha256": "623ed3e8ac0bedc53565a9e1f0b518deb2e34cc80dc86679f7f0eb4129b4ee8c"
+    },
+    "statement": {
+      "text": "Beyan",
+      "source_sha256": "73a38cd6cd2ce967ba6ac4e70d3e894a49aca3d9a21bb0ba69dfd0389c1615db"
+    },
+    "extraLabel": {
+      "text": "Sağlayıcı, katılımcı veya teknisyen adı",
+      "source_sha256": "cf8c838516a8c100efd7e8feff19dfe386d4e91596fc8ca2d974cc49eaa798b4"
+    },
+    "recordEvent": {
+      "text": "Olayı kaydet",
+      "source_sha256": "650056dea3fcbc47b8be9ef39d53149fa98a10d763058bdc98125a5b247e762d"
+    },
+    "loadFailed": {
+      "text": "Kapsam iş akışları yüklenemedi.",
+      "source_sha256": "d270899e29c25a7d7a22ade45ce841512c67c44db576971eaa8cef614e3298f2"
+    },
+    "noPermission": {
+      "text": "Bu iş akışı listesini görüntüleme izniniz yok.",
+      "source_sha256": "2a72a3464ed4b9af4a17ed050732b1c9d966e4853305e8f8023245b5c7ce2ba7"
+    },
+    "noEvents": {
+      "text": "Bu iş akışı için henüz olay kaydı yok.",
+      "source_sha256": "964fcf413e094975af21a670a0b2d62649c15ef8f0cd98cfc634a6f850f51fc3"
+    },
+    "ps": {
+      "title": {
+        "text": "Personel taraması",
+        "source_sha256": "8a095a0795874a3b301c445c769ed5c57e7994dbcb1e556345c8c7aab8713251"
+      },
+      "summary": {
+        "text": "İşe alım, işten çıkış veya periyodik taramayı planlayın. Tamamlamayı ve sağlayıcı mektubu karmasını kaydedin. İstihdam kararı kuruluşta kalır.",
+        "source_sha256": "8b05e16612131e47606a384ca3329e16c3a7cd53f992acb6eea6c186834e7af0"
+      },
+      "add": {
+        "text": "Tarama planla",
+        "source_sha256": "48a2372e0d67a432c2e70750cd2254353cd6c0e844418f0d61ab07c882fb3e13"
+      }
+    },
+    "at": {
+      "title": {
+        "text": "Masaüstü tatbikatları",
+        "source_sha256": "0ed7321976ce91fd7d9ea9d2b35e9524a7b8bac9a96b4eb2ae06059514d61f62"
+      },
+      "summary": {
+        "text": "Masaüstü veya uygulamalı tatbikat planlayın ve kimlerin katıldığını kaydedin. Bu sayfa tatbikatı yürütmez ve Met değildir.",
+        "source_sha256": "b9344d2d40666597f02825c5fae55e8b04c58c49efe95e570df4c809ca55df7c"
+      },
+      "add": {
+        "text": "Tatbikat planla",
+        "source_sha256": "29294cbb96ec343775996de788764b02fcdf48526dd03a0c72e88787e5ed95e9"
+      }
+    },
+    "ma": {
+      "title": {
+        "text": "Planlı bakım",
+        "source_sha256": "6144bcc371ec3e319c51218652084a5d3fb6044f2dd3e85e7b3504a62957d6e4"
+      },
+      "summary": {
+        "text": "Yerel veya yerel olmayan bakımı planlayın. Onayı ve refakat onayını kaydedin. Teknisyen ziyareti kuruluşta kalır.",
+        "source_sha256": "abbf7d667e720b15f72fb77b946c6672acce046b2e9c5b7a0f9cd133a57d915e"
+      },
+      "add": {
+        "text": "Bakım planla",
+        "source_sha256": "babeb7094c2b0bc5d7603f00b1127cdeee439e7587a093eb9c041b81daf40910"
+      }
+    },
+    "kinds": {
+      "onboarding": {
+        "text": "İşe alım",
+        "source_sha256": "88010883730a950a6590ff6ae001c54fe31138ea403836f2d01322847e663f47"
+      },
+      "offboarding": {
+        "text": "İşten çıkış",
+        "source_sha256": "656774d6de6fe91f051f2b688c2db0737b5a37ab3c67d7c6a7634c12ec488354"
+      },
+      "periodic_screening": {
+        "text": "Periyodik tarama",
+        "source_sha256": "2be08933e1c5dfff9c7b56e0069f6aba22d4d99925baa8a2c5aa5b5d92999cf9"
+      },
+      "tabletop": {
+        "text": "Masaüstü tatbikat",
+        "source_sha256": "b7a1fecbe29e984cb300692af0e14551d11a24dec75b3fda36294db4b4663013"
+      },
+      "practical_exercise": {
+        "text": "Uygulamalı tatbikat",
+        "source_sha256": "698b088504ea9794001fc9de8c812104e491d8fda0d600452df2439da57acfce"
+      },
+      "local_maintenance": {
+        "text": "Yerel bakım",
+        "source_sha256": "bc495e4f2228a4a63631d184fc956803bb2c76bfc8fa8a5a00ec9aefc66cb3d8"
+      },
+      "nonlocal_maintenance": {
+        "text": "Yerel olmayan bakım",
+        "source_sha256": "f96272349f3c14755dd26b572ed45d3323add9ac4111e410927e4dc0f9d86836"
+      }
+    },
+    "eventKinds": {
+      "completed": {
+        "text": "Tamamlandı",
+        "source_sha256": "7c6f3f5f37bcb676c6c3b7c06735e6b581cbd34bb77a9c6944e0da1f021fb019"
+      },
+      "letter_attached": {
+        "text": "Mektup eklendi",
+        "source_sha256": "d37aa8d963ced849779430fb4f5a4b71d25eb365d6b0aa32312187cc4c69b717"
+      },
+      "participated": {
+        "text": "Katıldı",
+        "source_sha256": "1cc7de5c875f8c8de36eb1974369e587fcf626097a4c4ec2d2a8dab80d353e1b"
+      },
+      "approved": {
+        "text": "Onaylandı",
+        "source_sha256": "67268a6f9d821c6f8be0522e69e0f7ad61b4be6a06f3c7534e6e94b286698835"
+      },
+      "escort_attested": {
+        "text": "Refakat onaylandı",
+        "source_sha256": "354df422bd064244e13cff27a47d86237691ec35bf1bb7b7f4195839ee688deb"
+      }
+    }
   }
 }
