@@ -8622,7 +8622,7 @@
         "source_sha256": ""
       },
       "subtitle": {
-        "text": "Nur-Lesen-Versionen und Check-in-Alter aus der Systemliste — kein Live-Fern-AppConfig-Abbild",
+        "text": "Gemeldete Versionen aus der Systemliste plus die Richtlinie der Organisation zur erforderlichen Version. AIC Server lädt den Agent nicht herunter und installiert ihn nicht.",
         "source_sha256": ""
       },
       "honesty": {
@@ -8659,6 +8659,126 @@
       },
       "loading": {
         "text": "Wird geladen…",
+        "source_sha256": ""
+      },
+      "colCheckin": {
+        "text": "Check-in-Alter",
+        "source_sha256": ""
+      },
+      "colMachine": {
+        "text": "Computer",
+        "source_sha256": ""
+      },
+      "colPush": {
+        "text": "Push erreichbar",
+        "source_sha256": ""
+      },
+      "colState": {
+        "text": "Agent-Status",
+        "source_sha256": ""
+      },
+      "colVersion": {
+        "text": "Agent-Version",
+        "source_sha256": ""
+      },
+      "colWarnings": {
+        "text": "Warnungen",
+        "source_sha256": ""
+      },
+      "dueUtc": {
+        "text": "Erforderlich bis (UTC)",
+        "source_sha256": ""
+      },
+      "dueUtcHelp": {
+        "text": "RFC-3339-Zeitpunkt. Nur bei der Methode „Bis Datum erforderlich“.",
+        "source_sha256": ""
+      },
+      "howEntra": {
+        "text": "Microsoft Entra / Intune",
+        "source_sha256": ""
+      },
+      "howGroupPolicy": {
+        "text": "Gruppenrichtlinie",
+        "source_sha256": ""
+      },
+      "howManual": {
+        "text": "Manuelle Dateikopie",
+        "source_sha256": ""
+      },
+      "howRemind": {
+        "text": "Betreiber erinnern (manuelle Installation)",
+        "source_sha256": ""
+      },
+      "howReportOnly": {
+        "text": "Nur aufzeichnen (keine Installationserinnerung)",
+        "source_sha256": ""
+      },
+      "howRequireByDate": {
+        "text": "Bis Datum erforderlich (manuelle Installation)",
+        "source_sha256": ""
+      },
+      "howUnset": {
+        "text": "Nicht festgelegt",
+        "source_sha256": ""
+      },
+      "installHow": {
+        "text": "So werden Updates installiert",
+        "source_sha256": ""
+      },
+      "policyHelp": {
+        "text": "Legen Sie die Version fest, die diese Organisation verlangt. Der Agent zeichnet erforderlich gegenüber aktuell beim Check-in auf. AIC Server lädt den Agent nicht herunter und installiert ihn nicht. Die Installation folgt der hier gewählten Methode.",
+        "source_sha256": ""
+      },
+      "policyHonesty": {
+        "text": "Teilweise. Download und Installation bleiben manuell oder über das hier genannte Organisationswerkzeug. Dies ist kein stiller Updater und kein Met.",
+        "source_sha256": ""
+      },
+      "policyLoadFailed": {
+        "text": "Die Richtlinie zur erforderlichen Version konnte nicht geladen werden. Der laufende Server stellt diese API möglicherweise noch nicht bereit. Die gemeldeten Versionen darunter werden weiter geladen.",
+        "source_sha256": ""
+      },
+      "policySaveFailed": {
+        "text": "Die Richtlinie zur erforderlichen Version konnte nicht gespeichert werden. {{error}}",
+        "source_sha256": ""
+      },
+      "policySaved": {
+        "text": "Richtlinie zur erforderlichen Version gespeichert",
+        "source_sha256": ""
+      },
+      "policyTitle": {
+        "text": "Erforderliche Agent-Version der Organisation",
+        "source_sha256": ""
+      },
+      "requiredVersion": {
+        "text": "Erforderliche Version",
+        "source_sha256": ""
+      },
+      "requiredVersionHelp": {
+        "text": "Beispiel 1.0.1. Leer lassen, wenn die Organisation keine Anforderung festgelegt hat.",
+        "source_sha256": ""
+      },
+      "savePolicy": {
+        "text": "Richtlinie zur erforderlichen Version speichern",
+        "source_sha256": ""
+      },
+      "vsBehind": {
+        "text": "Hinter der Anforderung",
+        "source_sha256": ""
+      },
+      "vsMeets": {
+        "text": "Erfüllt die Anforderung",
+        "source_sha256": ""
+      },
+      "vsRequired": {
+        "text": "Gegenüber Anforderung",
+        "source_sha256": ""
+      },
+      "vsUnknown": {
+        "text": "Nicht verglichen",
+        "source_sha256": ""
+      },
+      "vsUnset": {
+        "text": "Keine erforderliche Version",
         "source_sha256": ""
       }
     },

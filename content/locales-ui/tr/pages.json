@@ -5596,8 +5596,8 @@
         "source_sha256": "5c28a219ed26f43ad2cc36bf27952c05461a44fdabe9212aef54e0c0ad1420e4"
       },
       "subtitle": {
-        "text": "Sistem Listesinden salt okunur sürümler ve giriş yaşı - canlı uzaktan AppConfig anlık görüntüsü yok",
-        "source_sha256": "82f616c0a95fbcf570e85809826c4fc858c96d9c398b10778ca3a6a8801aae0d"
+        "text": "Sistem listesinden bildirilen sürümler ve kuruluşun gerekli sürüm ilkesi. AIC Server ajanı indirmez veya kurmaz.",
+        "source_sha256": "8a3f2e04d65e077743c6a7cb6573cedf489a15fd5d83f4e4fe6be322aafb2c66"
       },
       "systemsHonesty": {
         "text": "Sistem Listesi dürüstlüğü: {{honesty}}",
@@ -5610,6 +5610,126 @@
       "unknownError": {
         "text": "Bilinmeyen hata",
         "source_sha256": "27c2ccd962c2b8dccb52fe3688ab236f186f7a41fd57d810478712048e9ad3f8"
+      },
+      "colCheckin": {
+        "text": "Check-in yaşı",
+        "source_sha256": "1eaade0dc057e33cd90306660ce96e9a8dd13aadbe3e8d8b214d33f7d56a3c1b"
+      },
+      "colMachine": {
+        "text": "Bilgisayar",
+        "source_sha256": "8f1cc42d7c1ceb0c41a2ae900de606db6f694d94a409ad362d5fbfa5e84e3d71"
+      },
+      "colPush": {
+        "text": "Push erişilebilir",
+        "source_sha256": "0ef11d382377bd6fa7d46e28c6cb24b420f5bf171f6f962ab8375b64de2b0069"
+      },
+      "colState": {
+        "text": "Ajan durumu",
+        "source_sha256": "b31c9b2cc2fb4baee0acd6751ad17be65a0d7dea8c72333ad66a52273cee186b"
+      },
+      "colVersion": {
+        "text": "Ajan sürümü",
+        "source_sha256": "4ab6ac4ad9a90a76916e59f0ad274ea74b56627c860341979e05265549533274"
+      },
+      "colWarnings": {
+        "text": "Uyarılar",
+        "source_sha256": "0e04cd10f9afd7e546e176b34b56a243d8c741198aa0bfee27d7661a370dc043"
+      },
+      "dueUtc": {
+        "text": "Son tarih (UTC)",
+        "source_sha256": "837d80725d8b37ddd9ea2d6293b0cafc108910ddaf52168a47b16686a4e02db2"
+      },
+      "dueUtcHelp": {
+        "text": "RFC 3339 anı. Yalnızca yöntem Tarihe kadar zorunlu olduğunda kullanılır.",
+        "source_sha256": "5cddbb212f9f16cf821dc17675ee35a4399be6159ffc79d52c593f6a7f719cf0"
+      },
+      "howEntra": {
+        "text": "Microsoft Entra / Intune",
+        "source_sha256": "92496f6a368eb434af9217a36c0401099af1569625e9100bab4ae18c0b7824ae"
+      },
+      "howGroupPolicy": {
+        "text": "Grup İlkesi",
+        "source_sha256": "befe31d7c1202a47157cb38b1929d11f0795bbf2ed4c503954dd4f2e385a02d1"
+      },
+      "howManual": {
+        "text": "Manuel dosya kopyası",
+        "source_sha256": "3f1c90cd459a947ea1580c654e2502c0b5cedbb6bd2891c4a39ace496ba38287"
+      },
+      "howRemind": {
+        "text": "Operatörleri hatırlat (manuel kurulum)",
+        "source_sha256": "69d24be365e6059db60bb9b142a4ab357b9b021f86e6d9a0978ba6f900fc4f12"
+      },
+      "howReportOnly": {
+        "text": "Yalnızca kaydet (kurulum hatırlatması yok)",
+        "source_sha256": "9fac44d54ce6d56df96a5ea287f8c45c490e5eeddf37c5344ea37ff164952657"
+      },
+      "howRequireByDate": {
+        "text": "Tarihe kadar zorunlu (manuel kurulum)",
+        "source_sha256": "94522b52e3dd962066af143afea502b2fc7203ea48e31f505c0d24c85f980b87"
+      },
+      "howUnset": {
+        "text": "Ayarlanmadı",
+        "source_sha256": "4895f73177ab5d67c30c183a49d2477e014a2ef69b65150762d17e877f4f5b95"
+      },
+      "installHow": {
+        "text": "Güncellemeler nasıl kurulur",
+        "source_sha256": "b47752ef67d59adf02f71cd54dca13a495d3dacf8e34f9d196745cee0c1fd586"
+      },
+      "policyHelp": {
+        "text": "Bu kuruluşun istediği sürümü ayarlayın. Ajan, check-in sırasında istenen ile geçerli sürümü kaydeder. AIC Server ajanı indirmez veya kurmaz. Operatörler burada seçilen yöntemle kurar.",
+        "source_sha256": "1d777185724d11b431aaf2216f7a5ded261de695c8acf625841839bf6be97e55"
+      },
+      "policyHonesty": {
+        "text": "Kısmi. İndirme ve kurulum manuel kalır veya burada adlı kuruluş aracıyla yapılır. Bu sessiz bir güncelleyici değildir ve Met değildir.",
+        "source_sha256": "56f0bee3ebc0759d6ad5dee1570c10f87a965d0284409ba677f6403815b283c5"
+      },
+      "policyLoadFailed": {
+        "text": "Gerekli sürüm ilkesi yüklenemedi. Çalışan sunucu bu API’yi henüz sunmuyor olabilir. Aşağıdaki bildirilen sürümler yine de yüklenir.",
+        "source_sha256": "9b97fd8d50ac033eb59c8394d0aed512c8d6259b41b0245e91b6b1b142e4cda7"
+      },
+      "policySaveFailed": {
+        "text": "Gerekli sürüm ilkesi kaydedilemedi. {{error}}",
+        "source_sha256": "14dbab3f2e6176e2153ba28a9dc339dc7d08fc2c5ecb7f312ddbe304199dc0c2"
+      },
+      "policySaved": {
+        "text": "Gerekli sürüm ilkesi kaydedildi",
+        "source_sha256": "ae9e9ccd17e419bf01adee324a414a51a728bd1be1827bfaba854fd5b2d4b46b"
+      },
+      "policyTitle": {
+        "text": "Kuruluşun istediği ajan sürümü",
+        "source_sha256": "3016c26c13a299c117618a61fd8c50b0e6d4c50afb6073adeaa3ffa762f7a243"
+      },
+      "requiredVersion": {
+        "text": "Gerekli sürüm",
+        "source_sha256": "3e3092f8423735b442a5aa4ec2a90ca8caea858ef20bdbdfd747ea0e214e719d"
+      },
+      "requiredVersionHelp": {
+        "text": "Örnek 1.0.1. Kuruluş bir gereksinim ayarlamadıysa boş bırakın.",
+        "source_sha256": "7795ebb87f8e7da0d40ef6807f82ceb5fb233352c0c3620dc75b144737d3502e"
+      },
+      "savePolicy": {
+        "text": "Gerekli sürüm ilkesini kaydet",
+        "source_sha256": "e77c83cc82204067d4b08889f1c1de4c8acd8cc584dcdc85d20b2d50d8db8772"
+      },
+      "vsBehind": {
+        "text": "Gerekenin altında",
+        "source_sha256": "9743971e986952b1b7789857c8a9b2c4323b52f04f0b46efcf7847b2b81062c2"
+      },
+      "vsMeets": {
+        "text": "Gerekeni karşılıyor",
+        "source_sha256": "2a022cbdbaef4f41e9bb0ba5f5809f625cb048d00a5288902319dfbe58cc0f52"
+      },
+      "vsRequired": {
+        "text": "Gerekene göre",
+        "source_sha256": "d156891c97449982f8f43ecaae08b759d375b59905378e6b78e6a4b1f4f9ad10"
+      },
+      "vsUnknown": {
+        "text": "Karşılaştırılmadı",
+        "source_sha256": "18e7c18acb7117360e654c9c3926aea681100ab0cda5976bc1287c82f9826de9"
+      },
+      "vsUnset": {
+        "text": "Gerekli sürüm yok",
+        "source_sha256": "29728d7fef86ff11cdaf7bb4db53fa067fa54044ca3327d6359062e020d2d459"
       }
     },
     "hsm": {
