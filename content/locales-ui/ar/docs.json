@@ -575,7 +575,7 @@
           "source_sha256": "70313b51825740746b2e7a8b630224d6293ff8f4d284ce6906e90aef2c7a8228"
         },
         "body[0]": {
-          "text": "تحتوي صفحة ملفك الشخصي على أسماء العرض ومعلومات الاتصال. تتبع تغييرات كلمة المرور سياسة الطول والتاريخ الخاصة بالمؤسسة. يتم تسجيل موثقي MFA أو استبدالهم عندما تطالبك صفحة الأمان بذلك.",
+          "text": "تحتوي صفحة ملفك على أسماء العرض ومعلومات الاتصال. تتبع تغييرات كلمة المرور سياسة الطول والسجل الخاصة بالمؤسسة. تُسجَّل مصادقات MFA أو تُستبدل عندما تطالبك صفحة الأمان بذلك.",
           "source_sha256": "fd19565202ac719ba3ee1f8810c0fc651f1da12620aa1cba3edf4c543906a157"
         },
         "body[1]": {
@@ -679,7 +679,7 @@
           "source_sha256": "7acc5d4d87e8eb15d3f9d6166c93209c236f9b60f7f373c8df13d995cd3c894c"
         },
         "steps[3]": {
-          "text": "قم بإرفاق أو ربط الأدلة التي قام الجيب بإنشائها بالفعل.",
+          "text": "أرفق أو اربط أدلة أنشأها النطاق المعزول بالفعل.",
           "source_sha256": "0c7104f3246f492516b11bcfe17c5a38573dff588d28a14efc05daf4b80795a6"
         },
         "steps[4]": {
@@ -697,7 +697,7 @@
           "source_sha256": "90e6b3e0c5223933aa22c0e94b949f269ff8bd8e22d8e1ae87f993e9f242b54b"
         },
         "summary": {
-          "text": "قم بتشغيل تقارير الكتالوج وتنزيل الأدلة بدون حقوق Fix-It.",
+          "text": "تشغيل تقارير الكتالوج وتنزيل الأدلة دون حقوق الإصلاح.",
           "source_sha256": "4ca64c094e0e42deb0dddca9ff00113b339dfffbbdaf483fa7fb40379f4a8a43"
         },
         "body[0]": {
@@ -773,7 +773,7 @@
           "source_sha256": "56a1e53bbfb7d5c525176b6f0fe8d20a553d7b06552ca26a9c6ebca1456e281a"
         },
         "summary": {
-          "text": "التحقق من أدلة التدقيق دون تكوين المصارف.",
+          "text": "تحقق من أدلة التدقيق دون تكوين مصارف.",
           "source_sha256": "9dba4f4a6f5154c90af77097162dfdb3477f39e275411252cb0a334085f7d5d8"
         },
         "body[0]": {
@@ -1117,7 +1117,7 @@
           "source_sha256": "5b38f4afbc8773e0de30d3e9fc0cdd87c747dfb8918e301826ed04d8bed847ac"
         },
         "body[2]": {
-          "text": "مساحات العمل الخاصة بي (ضمن مساحة العمل الخاصة بي) هي منطقة اتصال المستخدم النهائي للمساحات المخصصة. الوصول عن بعد هو منطقة اتصال المشغل إذا كان لديك حقوق الوصول إلى وجهات الاتصال. مجرد فتح واجهة الصفحة لا يعد دليلاً على الجلسة - فالجلسة الحقيقية تعرض معرف جلسة غير فارغ ومنطقة سجل متصلة أو متصلة.",
+          "text": "مساحات العمل (ضمن مساحة العمل) هي منطقة اتصال المستخدم النهائي للمساحات المعيّنة. الوصول البعيد هو منطقة اتصال المشغّل إذا كانت لديك صلاحيات على الوجهات. مجرد فتح الصفحة ليس إثباتًا للجلسة — الجلسة الحقيقية تعرض معرف جلسة غير فارغ ومنطقة سجل بحالة جارٍ الاتصال أو متصل.",
           "source_sha256": "997c4b4f10b9f9ca36fbb02031e37b7fa9b1ec713a41df42b31e57729248e9d5"
         },
         "steps[0]": {
@@ -1155,7 +1155,7 @@
           "source_sha256": "cf96e202677c7a753728533d0bb0f1ac82664277a84db3021d8eccc4b95d76b2"
         },
         "body[0]": {
-          "text": "الامتثال والأدلة → يتضمن مسار التدقيق نظرة عامة والأحداث المباشرة وسجل التدقيق وإعداد تقارير الأحداث وإعادة توجيه سجل النظام. البحث حسب الممثل والعمل والفترة الزمنية. تحمل صفوف التفاصيل حقول الارتباط مثل معرف الطلب والنتيجة. سجل النظام أو مشاركة الحدث لتكوين مسار التسليم - وهو في حد ذاته لا يرضي حكم المقيم.",
+          "text": "الامتثال والأدلة → مسار التدقيق يشمل النظرة العامة والأحداث المباشرة وسجل التدقيق وإبلاغ الأحداث وإعادة توجيه syslog. ابحث حسب الفاعل والإجراء والفترة. تحمل صفوف التفاصيل حقول ارتباط مثل معرف الطلب والنتيجة. تكوين syslog أو مشاركة الأحداث ينشئ مسار تسليم — وهذا وحده لا يُرضي حكم المقيّم.",
           "source_sha256": "57ba4a87ee0e4513b5c5f346762bffd00a64ea10893d39a15f82dea7b3042134"
         },
         "body[1]": {
@@ -1167,11 +1167,11 @@
           "source_sha256": "ae3f0b0e561b7f2004e0348a27f42aba96b8398e8c89522944c0c03d1cd52fed"
         },
         "steps[0]": {
-          "text": "بعد اتخاذ إجراءات إدارية ذات معنى، افتح الامتثال والأدلة → تتبع التدقيق → سجل التدقيق وقم بتأكيد الممثل والإجراء المتوقع.",
+          "text": "بعد إجراءات إدارة ذات معنى، افتح الامتثال والأدلة → مسار التدقيق → سجل التدقيق وأكد الفاعل والإجراء المتوقعين.",
           "source_sha256": "c928e678550843ec5ac6cfcbabe814dc0c75c8943e3eab1ddace26e916c9bf02"
         },
         "steps[1]": {
-          "text": "قم بتشغيل التقارير المطلوبة ضمن الامتثال والأدلة → التقارير → مركز التقارير.",
+          "text": "شغّل التقارير المطلوبة ضمن الامتثال والأدلة → التقارير → مركز التقارير.",
           "source_sha256": "5de10f3fe8131ad9d9bbe9cca686e2d2be152dbf5baf6431b968c2887e704207"
         },
         "steps[2]": {
@@ -1209,7 +1209,7 @@
           "source_sha256": "af50a635b99a8146439b4acb6ebc3f5278eab76e54634f1f0e775454bd729dbf"
         },
         "steps[0]": {
-          "text": "افتح عناصر التحكم المتقدمة ضمن الامتثال والأدلة → الحوادث → عناصر التحكم المتقدمة.",
+          "text": "افتح الضوابط المتقدمة ضمن الامتثال والأدلة → الحوادث → الضوابط المتقدمة.",
           "source_sha256": "703c85099199b38b027e3806904a1aff7310659a3fbb7eda438d5162b3046e4e"
         },
         "steps[1]": {
@@ -1281,7 +1281,7 @@
           "source_sha256": "89c80540352249939137b86ec7fce814cce36c73c4965b6fe65e807d42960bb8"
         },
         "body[0]": {
-          "text": "بعد عمليات النشر أو تغييرات التكوين، تأكد من سلامة HTTPS وأن جلسة الإدارة الخاصة بك لا تزال تعمل. التحقق من الامتثال والأدلة ← مسار التدقيق بحثًا عن الأخطاء غير المتوقعة. يساعد التكوين → الخادم → سجلات الخدمة في التحقق من إخراج السجل من جانب الخدمة في حالة حدوث مشكلات في بدء التشغيل أو وقت التشغيل.",
+          "text": "بعد عمليات النشر أو تغييرات التكوين، أكد صحة HTTPS وأن جلسة الإدارة ما زالت تعمل. راجع الامتثال والأدلة → مسار التدقيق بحثًا عن أخطاء غير متوقعة. التكوين → الخادم → سجلات الخدمة يساعد في فحص مخرجات السجل من جهة الخدمة عند مشكلات البدء أو التشغيل.",
           "source_sha256": "c65eab49104e3b50c97a7b5874c722f3959e20b65f495a30ce038062cfbee28a"
         },
         "body[1]": {
@@ -1297,7 +1297,7 @@
           "source_sha256": "02495b3d91b83dc9182b63a507132fbe3eabc443e0a3ca0220b8f6642eaca10b"
         },
         "steps[1]": {
-          "text": "بعد تغييرات التكوين، تحقق من الامتثال والأدلة → مسار التدقيق بحثًا عن الأخطاء غير المتوقعة.",
+          "text": "بعد تغييرات التكوين، راجع الامتثال والأدلة → مسار التدقيق بحثًا عن أخطاء غير متوقعة.",
           "source_sha256": "9398fee7e8be535d7475c4db5f74527bff15ab5bb5783929a86c27a312c287df"
         },
         "steps[2]": {
@@ -1455,7 +1455,7 @@
       "source_sha256": "a4ca6b6475c63af662dcb377350fd4b9684b539fe4d918f7cf471e5a65048149"
     },
     "openapiExplorer": {
-      "text": "OpenAPI-Explorer",
+      "text": "مستكشف OpenAPI",
       "source_sha256": "84aec404e7c3226303f0bd0eb6424a919ba981bcdf0fba365bc7f6802882fe2b"
     },
     "honestyAlert": {
@@ -1489,11 +1489,11 @@
   },
   "openapi": {
     "resourceLabel": {
-      "text": "OpenAPI-Explorer",
+      "text": "مستكشف OpenAPI",
       "source_sha256": "84aec404e7c3226303f0bd0eb6424a919ba981bcdf0fba365bc7f6802882fe2b"
     },
     "title": {
-      "text": "OpenAPI-Explorer",
+      "text": "مستكشف OpenAPI",
       "source_sha256": "84aec404e7c3226303f0bd0eb6424a919ba981bcdf0fba365bc7f6802882fe2b"
     },
     "backToTechnical": {
@@ -1567,7 +1567,7 @@
   },
   "auditorCmmcL2": {
     "title": {
-      "text": "Auditing CMMC Level 2",
+      "text": "تدقيق CMMC المستوى 2",
       "source_sha256": "0f2b3fcbf9c61a8491528a004a2547c89976f1dd13b2ad1821f925bd6f13b062"
     },
     "intro": {
@@ -1577,7 +1577,7 @@
   },
   "auditorCmmcL1": {
     "title": {
-      "text": "Auditing CMMC Level 1",
+      "text": "تدقيق CMMC المستوى 1",
       "source_sha256": "cae42d1e4e3aca096014d70d7567b8b45b7a91aaa33e03b8194ff4c0ab179ef4"
     },
     "intro": {
@@ -1587,7 +1587,7 @@
   },
   "auditorSetupPage": {
     "title": {
-      "text": "Auditor Setup Guide",
+      "text": "دليل إعداد المراجع",
       "source_sha256": "66eed74ada8a3d046c4bf3c5fa21eee29a19ef442ba7b9970ed1f8ad77cdfa5b"
     },
     "intro": {
@@ -1597,7 +1597,7 @@
   },
   "auditorIndex": {
     "title": {
-      "text": "Auditor manuals",
+      "text": "أدلة المراجع",
       "source_sha256": "6623ff55741761694cc60ea3e767301b9c1d248b65de5f46d388d0c9a1d9ab56"
     },
     "intro": {
@@ -1607,7 +1607,7 @@
     "cards": {
       "cmmcL1": {
         "label": {
-          "text": "Auditing CMMC Level 1",
+          "text": "تدقيق CMMC المستوى 1",
           "source_sha256": "cae42d1e4e3aca096014d70d7567b8b45b7a91aaa33e03b8194ff4c0ab179ef4"
         },
         "description": {
@@ -1617,7 +1617,7 @@
       },
       "cmmcL2": {
         "label": {
-          "text": "Auditing CMMC Level 2",
+          "text": "تدقيق CMMC المستوى 2",
           "source_sha256": "0f2b3fcbf9c61a8491528a004a2547c89976f1dd13b2ad1821f925bd6f13b062"
         },
         "description": {
@@ -1627,7 +1627,7 @@
       },
       "cmmcL3": {
         "label": {
-          "text": "Auditing CMMC Level 3",
+          "text": "تدقيق CMMC المستوى 3",
           "source_sha256": "ba5434c6dac48290089152b933ee44282772051573923a07bdb32396af61e9a2"
         },
         "description": {
@@ -1637,7 +1637,7 @@
       },
       "working": {
         "label": {
-          "text": "Using AIC Server as an assessor",
+          "text": "استخدام AIC Server كمقيّم",
           "source_sha256": "eed9c29530edb36366f4668df1f229a6b28fc20d86ab833ffff82df0937e7a42"
         },
         "description": {
@@ -1647,7 +1647,7 @@
       },
       "setup": {
         "label": {
-          "text": "Auditor Setup Guide",
+          "text": "دليل إعداد المراجع",
           "source_sha256": "66eed74ada8a3d046c4bf3c5fa21eee29a19ef442ba7b9970ed1f8ad77cdfa5b"
         },
         "description": {
@@ -1659,7 +1659,7 @@
   },
   "auditorCmmcL3": {
     "title": {
-      "text": "Auditing CMMC Level 3",
+      "text": "تدقيق CMMC المستوى 3",
       "source_sha256": "ba5434c6dac48290089152b933ee44282772051573923a07bdb32396af61e9a2"
     },
     "intro": {
@@ -1679,24 +1679,24 @@
       },
       "cards": {
         "cmmcL1": {
-          "text": "Auditing CMMC Level 1",
-          "source_sha256": ""
+          "text": "تدقيق CMMC المستوى 1",
+          "source_sha256": "cae42d1e4e3aca096014d70d7567b8b45b7a91aaa33e03b8194ff4c0ab179ef4"
         },
         "cmmcL1Desc": {
           "text": "Priority package. Federal Contract Information overview (Partial outline).",
           "source_sha256": ""
         },
         "cmmcL2": {
-          "text": "Auditing CMMC Level 2",
-          "source_sha256": ""
+          "text": "تدقيق CMMC المستوى 2",
+          "source_sha256": "0f2b3fcbf9c61a8491528a004a2547c89976f1dd13b2ad1821f925bd6f13b062"
         },
         "cmmcL2Desc": {
           "text": "Priority package. CUI / NIST SP 800-171 overview (Partial outline).",
           "source_sha256": ""
         },
         "cmmcL3": {
-          "text": "Auditing CMMC Level 3",
-          "source_sha256": ""
+          "text": "تدقيق CMMC المستوى 3",
+          "source_sha256": "ba5434c6dac48290089152b933ee44282772051573923a07bdb32396af61e9a2"
         },
         "cmmcL3Desc": {
           "text": "Priority package. Selected 800-172 overlay. Not Level 2 plus a toggle.",
@@ -1723,16 +1723,16 @@
       },
       "cards": {
         "playbooks": {
-          "text": "Auditor text playbooks",
-          "source_sha256": ""
+          "text": "أدلة نصية للمراجع",
+          "source_sha256": "e148e3954565ff17659ce8cdb53f8bb3eacb9feaeb9e54fbc730b728e2366e29"
         },
         "playbooksDesc": {
           "text": "Existing recipe surface: text playbooks the operator applies in Assessment Binder.",
           "source_sha256": ""
         },
         "agentSeed": {
-          "text": "CMMC Agent seed",
-          "source_sha256": ""
+          "text": "بذرة وكيل CMMC",
+          "source_sha256": "439e317b9d18eefb0a7e48ecde884e76449e03a83ae12fbd9a5fd043d1f2e2d9"
         },
         "agentSeedDesc": {
           "text": "Reuse the existing Agent. Always connected. Elevation included.",
@@ -1751,24 +1751,24 @@
       },
       "cards": {
         "agentEnclave": {
-          "text": "CMMC Agent and enclave scripts",
-          "source_sha256": ""
+          "text": "برامج وكيل CMMC والجيوب",
+          "source_sha256": "e7a17e9293cffdd40c751925390990e2bd7d1d06b05ce8259c2e7775307e4aa4"
         },
         "agentEnclaveDesc": {
           "text": "Which script to open. Host-safety rules in product language.",
           "source_sha256": ""
         },
         "enclaveBuild": {
-          "text": "CMMC enclave scripted build",
-          "source_sha256": ""
+          "text": "بناء الجيب CMMC بالبرامج النصية",
+          "source_sha256": "df71a02325f9773b0837c7c910c82edc85c3ceaefd57bcfec0a651359971a2e4"
         },
         "enclaveBuildDesc": {
           "text": "Local lab seats versus customer cloud. Build order by package level.",
           "source_sha256": ""
         },
         "agentConfig": {
-          "text": "CMMC Agent configuration",
-          "source_sha256": ""
+          "text": "تكوين وكيل CMMC",
+          "source_sha256": "267e8c11027c9660e3c5f4aec1233b080c405f22fcc06edb87383643c486cc2f"
         },
         "agentConfigDesc": {
           "text": "Internal enclave Agent versus external workstation posture Agent.",
@@ -1787,16 +1787,16 @@
       },
       "cards": {
         "mspC3pao": {
-          "text": "MSP and C3PAO demo guide",
-          "source_sha256": ""
+          "text": "دليل عرض MSP وC3PAO",
+          "source_sha256": "b712115e3c3fc88ad5ea86b2c4124371167802ace19bbe311e70770fc109b8ac"
         },
         "mspC3paoDesc": {
           "text": "Learn the demo. This is not a certified enclave.",
           "source_sha256": ""
         },
         "auditorSetup": {
-          "text": "Auditor Setup Guide",
-          "source_sha256": ""
+          "text": "دليل إعداد المراجع",
+          "source_sha256": "66eed74ada8a3d046c4bf3c5fa21eee29a19ef442ba7b9970ed1f8ad77cdfa5b"
         },
         "auditorSetupDesc": {
           "text": "Staff auditors on the shared Sign in page. Jobs, groups, and starter accounts.",
@@ -1817,8 +1817,8 @@
   },
   "recipeAgentSeed": {
     "title": {
-      "text": "CMMC Agent seed",
-      "source_sha256": ""
+      "text": "بذرة وكيل CMMC",
+      "source_sha256": "439e317b9d18eefb0a7e48ecde884e76449e03a83ae12fbd9a5fd043d1f2e2d9"
     },
     "intro": {
       "text": "Packages the existing AIC Agent. No second Agent product. Always connected is the package default. Offline mode is not the default.",
@@ -1827,8 +1827,8 @@
   },
   "cookbookAgentEnclave": {
     "title": {
-      "text": "CMMC Agent and enclave scripts",
-      "source_sha256": ""
+      "text": "برامج وكيل CMMC والجيوب",
+      "source_sha256": "e7a17e9293cffdd40c751925390990e2bd7d1d06b05ce8259c2e7775307e4aa4"
     },
     "intro": {
       "text": "Which cookbook to open, and which actions this kit refuses. Product language only.",
@@ -1837,8 +1837,8 @@
   },
   "cookbookEnclaveBuild": {
     "title": {
-      "text": "CMMC enclave scripted build",
-      "source_sha256": ""
+      "text": "بناء الجيب CMMC بالبرامج النصية",
+      "source_sha256": "df71a02325f9773b0837c7c910c82edc85c3ceaefd57bcfec0a651359971a2e4"
     },
     "intro": {
       "text": "Local lab seats versus customer-paid cloud virtual machines. Build order by package level.",
@@ -1847,8 +1847,8 @@
   },
   "cookbookAgentConfig": {
     "title": {
-      "text": "CMMC Agent configuration",
-      "source_sha256": ""
+      "text": "تكوين وكيل CMMC",
+      "source_sha256": "267e8c11027c9660e3c5f4aec1233b080c405f22fcc06edb87383643c486cc2f"
     },
     "intro": {
       "text": "Two roles, one Agent product: internal enclave versus external workstation posture.",
@@ -1857,8 +1857,8 @@
   },
   "guideMspC3pao": {
     "title": {
-      "text": "MSP and C3PAO demo guide",
-      "source_sha256": ""
+      "text": "دليل عرض MSP وC3PAO",
+      "source_sha256": "b712115e3c3fc88ad5ea86b2c4124371167802ace19bbe311e70770fc109b8ac"
     },
     "intro": {
       "text": "You are here to learn. This is not a certified enclave. CMMC assesses the organization, not this software SKU.",

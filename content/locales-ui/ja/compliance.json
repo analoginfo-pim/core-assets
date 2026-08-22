@@ -1,7 +1,7 @@
 {
   "floorNote": {
-    "text": "NIST SP 800-53 Rev. 5 は、Untere Kontrollgrenze です。 CMMC / 800-171 / 800-172 は Verpackungs-Overlays、Enclave-Nachweise wiederverwenden を指します。",
-    "source_sha256": "0048952b2a6ac67f8ae95fdf95b7387804a8bd10a4aff7f798a5bdaced68c379"
+    "text": "NIST SP 800-53 Rev. 5 はコントロール設計の下限です。CMMC / 800-171 / 800-172 は、エンクレーブの証拠を再利用するパッケージ重ね合わせです。",
+    "source_sha256": "4bc5812cc7e52766fe0a68db6e0bceb55d8790fae70f4de2182f3ba2387588fe"
   },
   "switchEffect": {
     "text": "評価基準の変更により、パンチ リストと証拠ビューがこのオーバーレイに割り当てられます。すでに収集されたエンクレーブの証拠は再割り当てされますが、削除されません。",
@@ -179,8 +179,8 @@
       "source_sha256": "65cf5967ecbb7d0b43d05a9c9a41be2f749dcf6c080cd5e6957f01e5dff8a584"
     },
     "nist_800_53": {
-      "text": "NIST SP 800-53 Rev. 5 は、Kontroll-Design-Floor ダイ製品 (中程度のベースライン、ggf. 高) です。 CMMC / 800-171 / 800-172 シンドオーバーレイ、ディーゼルベン Enclave-Nachweise ナッツン。",
-      "source_sha256": "384c1ab4a364b3f9888884a203cca7770cdc412ac1811bdf256bafd219a50c8c"
+      "text": "NIST SP 800-53 Rev. 5 はこの製品のコントロール設計の下限です（中程度ベースライン、該当する場合は高）。CMMC / 800-171 / 800-172 は同じエンクレーブ証拠を使う重ね合わせです。",
+      "source_sha256": "78e5f81c2759de85921f435bb9e498c40affd56902849f322ff4b11839669ef2"
     }
   },
   "cscRescanAll": {
@@ -349,7 +349,7 @@
       "source_sha256": "1702bf1378190e21485803a97f8fb72a727c5382e25effcb4448fb0384b013bf"
     },
     "gridActions": {
-      "text": "Actions",
+      "text": "アクション",
       "source_sha256": "ff8059dc6752afdd30d275932b1d5031a2ec854b387a8c57ecc6689915293a43"
     },
     "gridActionsButton": {
@@ -397,8 +397,8 @@
       "source_sha256": "a762ce58c94a178d902ab11395c4aa29dced6e09afdb54d492e4e5890e39f82b"
     },
     "alertEvidenceNotScore": {
-      "text": "— ナハヴァイゼ、ケイン スコア。",
-      "source_sha256": "95d9ec56690a48445ea21dfe7d7990d332e440fc15439606148ec428b2b31589"
+      "text": "— 証拠であり、スコアではありません。",
+      "source_sha256": "bf6ba8a5ccbf9f55a001640fbfc6fe65a79ad75ba81636fea42e4c8cd56d42ea"
     },
     "machinesChip_one": {
       "text": "{{count}} システム",
@@ -471,8 +471,8 @@
       "source_sha256": "1c5800c0185eb585be21878f4ddb54d92db5162dae698b8113e9b25fa4c3a416"
     },
     "dsrNonWorkforceNote": {
-      "text": "Kunden と Angehoerige は、Oeffentlichkeit の従業員名簿と組織を担当しています。 Verknuepfen Sie a Roster-Eintrag、wenn einer exitiert; andernfalls は、名前と電子メールを Eingang に登録し、erneut は、Identitaetspruefung als Momentaufnahme gespeichert を登録します。",
-      "source_sha256": "1f188206cac498c30f122b2eaa7a521e7bd72beb9dca22289824d4bc03a7f36a"
+      "text": "顧客と一般の方には、多くの場合ワークフォース名簿の行がありません。行があればリンクしてください。ない場合、氏名とメールは受領時と身元確認時にスナップショットとして保存されます。",
+      "source_sha256": "a796297fbead179adbfdde0f052fdcafa9d485e8b5499c2d4cfc35017fc1c3fa"
     }
   },
   "coverageWorkflow": {

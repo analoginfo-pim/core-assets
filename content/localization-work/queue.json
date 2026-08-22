@@ -1612,7 +1612,7 @@
       "updated": "2026-08-22",
       "source_repo": "pim-offline-server",
       "source_path": "pim-offline-server/ui/src/i18n/locales/en/pages.json",
-      "source_sha256": "7b8cc6e6a469f80903ee7bea5f708e7b6aa792964c6221ea2cf397de6b55b558",
+      "source_sha256": "80588668787ea440da87b10a4cb79022bbfc2fa83f1614d190152478e5839479",
       "product_route": "/enclave/my-incident-reports",
       "required_tags": [
         "de",
@@ -1623,7 +1623,7 @@
         "zh-TW"
       ],
       "draft_tags": [],
-      "notes": "English USA showed Melder, Eingang, and Abschluss on My Incident Reports. US English source restored to Reporter, Intake, Closing. Other tags received domain translations; de kept German. Agent drafts do not close. Source changed 2026-08-22 (hash 9e7dcf597390 → 8146d7f42195). Source changed 2026-08-22 (hash 8146d7f42195 → 7b8cc6e6a469)."
+      "notes": "English USA showed Melder, Eingang, and Abschluss on My Incident Reports. US English source restored to Reporter, Intake, Closing. Other tags received domain translations; de kept German. Agent drafts do not close. Source changed 2026-08-22 (hash 9e7dcf597390 → 8146d7f42195). Source changed 2026-08-22 (hash 8146d7f42195 → 7b8cc6e6a469). Source changed 2026-08-22 (hash 7b8cc6e6a469 → 80588668787e)."
     },
     {
       "id": "spa.ir-process-diagram-chrome",
@@ -1693,6 +1693,24 @@
       ],
       "draft_tags": [],
       "notes": "Full Check A sweep: 391 German-in-English findings down to 0. US English restored for docs steps, page headers, licensing chrome, training chrome, and missing en appBar/nav keys. en-GB leftover German/CJK replaced. de kept German. Other tags: German leftovers replaced with English stopgap or kept native. Agent drafts do not close. Not Met. Source changed 2026-08-22 (hash 7b8cc6e6a469 → 80588668787e)."
+    },
+    {
+      "id": "spa.check-b-stopgap-fill-20260822",
+      "status": "open",
+      "priority": "p2",
+      "kind": "spa",
+      "title": "Check B English stopgaps filled with domain drafts",
+      "added": "2026-08-22",
+      "updated": "2026-08-22",
+      "source_repo": "pim-offline-server",
+      "source_path": "pim-offline-server/ui/src/i18n/locales/en/pages.json",
+      "source_sha256": "80588668787ea440da87b10a4cb79022bbfc2fa83f1614d190152478e5839479",
+      "product_route": "",
+      "required_tags": [
+        "zh-TW"
+      ],
+      "draft_tags": [],
+      "notes": "EN unchanged. Derived packs: agent-draft formal translations for named/policy stopgaps and leaked-German leftovers (binder notes/history/print, remote access, credential operator, docs headers, nav). Remaining Check B identical-to-en is mostly product names and untranslated body copy. Agent drafts do not close. Not Met."
     }
   ]
 }

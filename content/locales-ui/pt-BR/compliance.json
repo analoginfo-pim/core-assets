@@ -1,7 +1,7 @@
 {
   "floorNote": {
-    "text": "NIST SP 800-53 Rev. 5 é o untere Kontrollgrenze. CMMC / 800-171 / 800-172 são Verpackungs-Overlays, o Enclave-Nachweise wiederverwenden.",
-    "source_sha256": "0048952b2a6ac67f8ae95fdf95b7387804a8bd10a4aff7f798a5bdaced68c379"
+    "text": "NIST SP 800-53 Rev. 5 é o piso de projeto dos controles. CMMC / 800-171 / 800-172 são sobreposições de empacotamento que reutilizam evidências do enclave.",
+    "source_sha256": "4bc5812cc7e52766fe0a68db6e0bceb55d8790fae70f4de2182f3ba2387588fe"
   },
   "switchEffect": {
     "text": "Uma mudança no padrão de avaliação atribui a lista de pendências e a visualização de evidências a essa sobreposição. As evidências do enclave já coletadas são reatribuídas – não excluídas.",
@@ -179,8 +179,8 @@
       "source_sha256": "65cf5967ecbb7d0b43d05a9c9a41be2f749dcf6c080cd5e6957f01e5dff8a584"
     },
     "nist_800_53": {
-      "text": "NIST SP 800-53 Rev. 5 é o produto Kontroll-Design-Floor (linha de base moderada, ggf. alta). CMMC / 800-171 / 800-172 são sobreposições, o dieselben Enclave-Nachweise nutzen.",
-      "source_sha256": "384c1ab4a364b3f9888884a203cca7770cdc412ac1811bdf256bafd219a50c8c"
+      "text": "NIST SP 800-53 Rev. 5 é o piso de projeto dos controles deste produto (linha de base moderada, alta se aplicável). CMMC / 800-171 / 800-172 são sobreposições que usam a mesma evidência do enclave.",
+      "source_sha256": "78e5f81c2759de85921f435bb9e498c40affd56902849f322ff4b11839669ef2"
     }
   },
   "cscRescanAll": {
@@ -397,8 +397,8 @@
       "source_sha256": "a762ce58c94a178d902ab11395c4aa29dced6e09afdb54d492e4e5890e39f82b"
     },
     "alertEvidenceNotScore": {
-      "text": "— Nachweise, nenhuma pontuação.",
-      "source_sha256": "95d9ec56690a48445ea21dfe7d7990d332e440fc15439606148ec428b2b31589"
+      "text": "— Evidência, não uma pontuação.",
+      "source_sha256": "bf6ba8a5ccbf9f55a001640fbfc6fe65a79ad75ba81636fea42e4c8cd56d42ea"
     },
     "machinesChip_one": {
       "text": "{{count}} Sistema",
@@ -471,8 +471,8 @@
       "source_sha256": "501a57d0643532adfd9cd69da4c919bc8ee365c07bbd33885071b78ebf6c6993"
     },
     "dsrNonWorkforceNote": {
-      "text": "Kunden e Angehoerige, o Oeffentlichkeit, muitas vezes não têm nenhuma lista de força de trabalho. Verknuepfen Sie a Roster-Eintrag, wenn einer existiert; andernfalls werden Name and E-Mail bei Eingang e erneut bei Identitaetspruefung als Momentaufnahme gespeichert.",
-      "source_sha256": "1f188206cac498c30f122b2eaa7a521e7bd72beb9dca22289824d4bc03a7f36a"
+      "text": "Clientes e o público muitas vezes não têm uma linha no registro da força de trabalho. Vincule uma linha se existir; caso contrário, o nome e o e-mail serão salvos como instantâneo no recebimento e novamente na verificação de identidade.",
+      "source_sha256": "a796297fbead179adbfdde0f052fdcafa9d485e8b5499c2d4cfc35017fc1c3fa"
     }
   },
   "coverageWorkflow": {
