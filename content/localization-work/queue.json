@@ -1540,10 +1540,10 @@
       "kind": "help-manual",
       "title": "In-product CMMC cookbooks, recipes, guides, and NIST SP 800-53 stub",
       "added": "2026-08-21",
-      "updated": "2026-08-21",
+      "updated": "2026-08-22",
       "source_repo": "pim-offline-server",
       "source_path": "ui/src/pages/docs/operatorMaterials.ts",
-      "source_sha256": "d153dea1eebd26833bac8da33002ac08eef3e198d11a38eeb1c79a4ccd9ef35f",
+      "source_sha256": "99b225e097907fd6a1c155c0fa331eefeef440987b75fc9ef5c555749c8fcf2c",
       "product_route": "/docs/manuals",
       "required_tags": [
         "de",
@@ -1554,7 +1554,7 @@
         "zh-TW"
       ],
       "draft_tags": [],
-      "notes": "US English in-product bodies for cookbooks, recipes, MSP/C3PAO guide, and NIST SP 800-53 Partial stub. Chrome is localized this change set. Prepared, not localized. Do not close with agent-draft translations. Operator manual register, not workforce grade-6."
+      "notes": "US English in-product bodies for cookbooks, recipes, MSP/C3PAO guide, and NIST SP 800-53 Partial stub. Chrome is localized this change set. Prepared, not localized. Do not close with agent-draft translations. Operator manual register, not workforce grade-6. Source changed 2026-08-22 (hash d153dea1eebd → 99b225e09790)."
     },
     {
       "id": "spa.coverage-intake",
@@ -1734,6 +1734,29 @@
       ],
       "draft_tags": [],
       "notes": "US English auditor/manual catalogs still had Denglish (Auditoraufgaben, Grenzen) and leftover German in derived non-de packs. Restored US English source. de kept German. Other tags received English source drafts where leftovers were German. Agent drafts do not close. Source changed 2026-08-22 (hash c1b2dbec7298 → eeee39a224a7)."
+    },
+    {
+      "id": "docs.procedure-pattern",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "help-manual",
+      "title": "In-product manual procedure pattern (numbered steps, checkboxes, figures)",
+      "added": "2026-08-22",
+      "updated": "2026-08-22",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/pages/docs/ChapterProcedure.tsx",
+      "source_sha256": "107a46f0cc74f5d5de58fe57310c57e72c506951d80c7a5254ff7eedef02b89e",
+      "product_route": "/docs",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [],
+      "notes": "Shared numbered-step + run-through checklist + in-product route links + numbered original diagrams. Manual bodies stay US English. Chrome keys docs.chrome.checklist/figures* landed as drafts in all shipped tags. Agent drafts do not close. Live DemoCorp screenshots remain BLOCKED. Not Met."
     }
   ]
 }
