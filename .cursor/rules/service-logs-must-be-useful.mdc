@@ -35,6 +35,43 @@ Default filter is **not debug**. Do not invent product env vars for this
 shipping `EnvFilter` (`sqlx::postgres::notice=off`) and `debug!` / `trace!`
 or no log for ignore-safe polls.
 
+## Three live streams (quiet each)
+
+Settings → Service logs has **three** tail types. A prior pass that only
+quieted stderr is incomplete. Apply the same default-stream bar to every
+emit path and to the tail display filter:
+
+| Stream | On-disk file | Emit path |
+| --- | --- | --- |
+| **stderr** | `service-stderr.log` | SCM-captured tracing (shipping `EnvFilter`) |
+| **rolling** | `pim-offline-server.log` | Same tracing filter, pim-diag JSON file |
+| **stdout** | `service-stdout.log` | SCM stdout pipe (usually empty; still rotate/archive) |
+
+`/settings/syslog` is a forwarding settings page, not a fourth tail.
+
+Display chatter filter (`service_log_view::filter_operator_chatter`) runs
+on all three tails unless the operator chooses Debug or Trace.
+
+## Archive and policy (not chrome-only)
+
+Competitor default (CyberArk / Delinea / BeyondTrust / Windows Event Viewer):
+keep N days and/or max size, **rotate into a ZIP archive** (never a silent
+drop), list and download prior archives, delete only with confirm (and/or
+automatic retention) — both recorded (AU-2 / AU-3).
+
+| Key | Role |
+| --- | --- |
+| `SERVICE_LOG_RETENTION_DAYS` | Age before rotate / archive scavenge |
+| `SERVICE_LOG_ARCHIVE_ENABLED` | Rotate into ZIP; when false, skip auto-rotate (no silent drop) |
+| `SERVICE_LOG_MAX_FILE_SIZE_MB` | Size trigger for rotate |
+| `SERVICE_LOG_MAX_ARCHIVES` | Cap; oldest removed with an audit / `info` record |
+| `SERVICE_LOG_DELETE_ALLOWED` | Operator delete after confirm; still audited |
+
+Policy is `pim-app-config` / Settings API — never an environment variable.
+Debug stays off by default; saving policy must not raise the default stream
+to debug. Archives live beside the live files in
+`pim_diag::daemon::server_log_dir()`.
+
 ## Hyper-V / Docker
 
 - Successful poll with no change: **no log**.
@@ -48,8 +85,14 @@ or no log for ignore-safe polls.
 - Default `info` on OK polls, ticks, or IF NOT EXISTS DDL
 - Dropping real errors to hide noise
 - Claiming Service logs “quiet” while the live page is still a wall of skip/poll/notice
+- Quiet only one of the three streams
+- Archive / retention / delete chrome that does not persist or rotate
+- Silent purge of live files or archives
 
 ## Origin
 
 2026-08-21 — operator: service-logs noise (sqlx notices, Hyper-V/Docker
 polls) made the stream worthless; default must stay operator-useful.
+
+2026-08-22 — operator: quiet **all three** log types; implement archive,
+policy, and delete (not chrome-only).
