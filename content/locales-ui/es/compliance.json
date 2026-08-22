@@ -626,6 +626,30 @@
       "nonlocal_maintenance": {
         "text": "Mantenimiento no local",
         "source_sha256": "4081f671ab57ace875f5d829ec2ad68f7c214df2e07361f434c825d784994798"
+      },
+      "facility_drill": {
+        "text": "Simulacro de instalación",
+        "source_sha256": "f72886d68b8cd8a319c97da4e1ab7a8de264c3cbc9b18a3b20fa55ce567319ff"
+      },
+      "contingency_drill": {
+        "text": "Simulacro de contingencia",
+        "source_sha256": "a5bc4cb2693c518f6ffd406ab7217deda8181a669e6501afad88f999d74a5307"
+      },
+      "pen_test_engagement": {
+        "text": "Encargo de prueba de penetración",
+        "source_sha256": "b8387efcbe5fa5f366a2fc6bc1cf5b896432a5074c3750f6b69d5e311319a1f9"
+      },
+      "remediation_followup": {
+        "text": "Seguimiento de remediación",
+        "source_sha256": "938e695009ff1748d9e22403481f5e8b36ebc635d782fdc2b9e5133c6a7ba97e"
+      },
+      "facility_access_review": {
+        "text": "Revisión de acceso a las instalaciones",
+        "source_sha256": "017cf84b3ce84fefc94c456cbc0c621354d899fcc20b1de0e42b91c99b0b6999"
+      },
+      "visitor_cycle": {
+        "text": "Ciclo de visitantes",
+        "source_sha256": "c09df1edb6c0be2cf5c1e7585affb127766aaddaa626f0989cfc5a203d41f8a9"
       }
     },
     "eventKinds": {
@@ -648,6 +672,68 @@
       "escort_attested": {
         "text": "Escolta atestiguada",
         "source_sha256": "d3f807f160a1d4bf93293db5368a2639646451dea5b3ebf35c986d5cc1d50eb8"
+      },
+      "after_action_attached": {
+        "text": "Informe posterior adjunto",
+        "source_sha256": "28ab40e59dc1588e17570b5a975c7d11cdf776cffb43dcf12d9dd7a8714b0c33"
+      },
+      "report_attached": {
+        "text": "Informe adjunto",
+        "source_sha256": "2525959f983f4de4d70bdd1c756da29f1a0bc0dfc0c090f802fcb5c7f50d6987"
+      },
+      "finding_linked": {
+        "text": "Hallazgo vinculado",
+        "source_sha256": "322a88797185f107338a48776a271f0aa179fd542915bbd51f78bca5d885a248"
+      },
+      "reviewed": {
+        "text": "Revisado",
+        "source_sha256": "4962dfe610fb74d0273ff478f5b87c212b4b79571c84a05ce6b2d9d8aa6aa9e0"
+      },
+      "attested": {
+        "text": "Atestiguado",
+        "source_sha256": "9d8e8a7e7736a73369f1b997105d5669edfdd0040d7a785add724be43b2d1d74"
+      }
+    },
+    "cp": {
+      "title": {
+        "text": "Simulacros de contingencia",
+        "source_sha256": "8aff554f7f8e866b3321f38450256c642b9700c439c391b239304c831370970d"
+      },
+      "summary": {
+        "text": "Programe un simulacro de instalación o de contingencia y registre la finalización más el hash del informe posterior. Esta página no ejecuta el simulacro y no es Met.",
+        "source_sha256": "dfe43abe5fd1d4241bb2c05ec54903379d5c7da82bbfb676dae351f242f7e7b2"
+      },
+      "add": {
+        "text": "Programar simulacro",
+        "source_sha256": "7a9b0ec853a3a177e547216fe69eddb1245c49a80e6f2093d0453dabd176b0ba"
+      }
+    },
+    "ca": {
+      "title": {
+        "text": "Encargos de evaluación",
+        "source_sha256": "e11575d314d914457b9cf37ff2597741ebbacfa82748fdabfaa605f9e3c307d0"
+      },
+      "summary": {
+        "text": "Registre un encargo de prueba de penetración o un seguimiento de remediación y adjunte el hash del informe. El producto no realiza la prueba y no es Met.",
+        "source_sha256": "0b0022c6a2bb2ae6ca068ff3d8171edc66290cd0267c8b39c66ea4d7b14ee678"
+      },
+      "add": {
+        "text": "Registrar encargo",
+        "source_sha256": "d3bedf2c642bcac99fbc42392277e179f3cfa2453f7f2117d1f3a53a66aacc1c"
+      }
+    },
+    "pe": {
+      "title": {
+        "text": "Revisiones de acceso a las instalaciones",
+        "source_sha256": "01924ea4bee94ce02fb80b635cbadae8932b4d4ac39ad9b23fe4816a8ffee9e2"
+      },
+      "summary": {
+        "text": "Programe una revisión de acceso a las instalaciones o un ciclo de visitantes y registre la revisión. Instalar puertas y credenciales permanece en la organización. Esto no es Met.",
+        "source_sha256": "f37e2128bdaec356f2ddc740a9bae66e28b6c0ab6ccb7774fa7186c74a5b5b13"
+      },
+      "add": {
+        "text": "Programar revisión",
+        "source_sha256": "9426518a54d5f63c7727e31178ed0a2861469dabeb666dbfbc358de64eb0f11f"
       }
     }
   }

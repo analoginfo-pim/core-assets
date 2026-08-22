@@ -626,6 +626,30 @@
       "nonlocal_maintenance": {
         "text": "遠隔保守",
         "source_sha256": "bd88a1b600a286ff5037cb48ae53ce374d1e99b5231d3be3eaa577aa5f88c15d"
+      },
+      "facility_drill": {
+        "text": "施設訓練",
+        "source_sha256": "a8bb67d62d0f953e085827b1cf79c5d4802e1d53deac79e99a7c6d939befa80a"
+      },
+      "contingency_drill": {
+        "text": "緊急時訓練",
+        "source_sha256": "cba4b4f201f1b9bf7ace2a45030c90c9d27a69d383a6bad370fc084a8528b061"
+      },
+      "pen_test_engagement": {
+        "text": "ペネトレーションテスト業務",
+        "source_sha256": "7669d91d2cbc2a2e48665f7f81a2d09bac56d307a29ccbb1aa2680f3899010f3"
+      },
+      "remediation_followup": {
+        "text": "是正フォロー",
+        "source_sha256": "69d798035daa1976a7cd62506e2d85ae69455888726db34fd76e9952426059ff"
+      },
+      "facility_access_review": {
+        "text": "施設アクセスレビュー",
+        "source_sha256": "60bb0527a04f0d2b815bf973477c02db98eddde054d14e8d1d7f35ea05c15688"
+      },
+      "visitor_cycle": {
+        "text": "来訪者サイクル",
+        "source_sha256": "bd2618f73c317be47ef4e18a751e62d408b60bd14385c1d78f4d8783995a6147"
       }
     },
     "eventKinds": {
@@ -648,6 +672,68 @@
       "escort_attested": {
         "text": "付き添いを証明",
         "source_sha256": "c1da2bb2abf75da181b93a1bdbde92c08e0ce6be80d9c7b5d327b888893284e4"
+      },
+      "after_action_attached": {
+        "text": "アフターアクションを添付",
+        "source_sha256": "d1b7e44051eb82b1194c849063624e436e1f7c971f594c47d2619ac49fcff848"
+      },
+      "report_attached": {
+        "text": "報告書を添付",
+        "source_sha256": "4491618453b09c07695e29460576f4ffee422e91f7db463dfe5f06fc6ecdcdba"
+      },
+      "finding_linked": {
+        "text": "指摘を関連付け",
+        "source_sha256": "1837563897ce471851ceb5725ee3fa38cf72e13683353a3a5899c073a5a95f88"
+      },
+      "reviewed": {
+        "text": "レビュー済み",
+        "source_sha256": "90f99a13f79aa1fdf6888a35271f3f25659962febf6080b0407e490eaff115c6"
+      },
+      "attested": {
+        "text": "宣誓済み",
+        "source_sha256": "8112bcc2e7f4827b29bc811990dc2b9c018de0bc8e2fb1e46fc47c9e556fb180"
+      }
+    },
+    "cp": {
+      "title": {
+        "text": "緊急時訓練",
+        "source_sha256": "cba4b4f201f1b9bf7ace2a45030c90c9d27a69d383a6bad370fc084a8528b061"
+      },
+      "summary": {
+        "text": "施設または緊急時訓練を予定し、完了とアフターアクションのハッシュを記録します。このページは訓練を実施せず、Met ではありません。",
+        "source_sha256": "c96d24995c1e993e0f92e07af0cb347320893b930fb242493f90b13219f449d2"
+      },
+      "add": {
+        "text": "訓練を予定",
+        "source_sha256": "9b81de55bec3857ba97c48008706a0ebbddc4a468530dd1edd1f896eeb14040b"
+      }
+    },
+    "ca": {
+      "title": {
+        "text": "評価業務",
+        "source_sha256": "c88195c58dd3ce5b4fe5cea1608b599e32483deea7411ab78426de4e8559f9fe"
+      },
+      "summary": {
+        "text": "ペネトレーションテスト業務または是正フォローを記録し、報告書ハッシュを添付します。製品はテストを実施せず、Met ではありません。",
+        "source_sha256": "2a1115d4643af63e10e33eca778c200fee6c72874d3a9648f24130349e600ae4"
+      },
+      "add": {
+        "text": "業務を記録",
+        "source_sha256": "4501a7c9f7bea4643b8c72436e164f27360662173695b3d3c10cef56ec35b8e9"
+      }
+    },
+    "pe": {
+      "title": {
+        "text": "施設アクセスレビュー",
+        "source_sha256": "60bb0527a04f0d2b815bf973477c02db98eddde054d14e8d1d7f35ea05c15688"
+      },
+      "summary": {
+        "text": "施設アクセスレビューまたは来訪者サイクルを予定し、レビューを記録します。扉とバッジの設置は組織側です。これは Met ではありません。",
+        "source_sha256": "d29a211f544d24dbfb59d9e9cf291286f355628a9fc860349b8d39b15541cc74"
+      },
+      "add": {
+        "text": "レビューを予定",
+        "source_sha256": "1ca64e528de6e4c992f7126975c819abab6fd1e9c4e39765d7fc5217ddfe496f"
       }
     }
   }

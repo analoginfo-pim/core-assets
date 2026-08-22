@@ -626,6 +626,30 @@
       "nonlocal_maintenance": {
         "text": "원격 유지보수",
         "source_sha256": "5a01ad041957eda8c8459ec469a6e6b8983108be15979c5df0d0da2d668b2125"
+      },
+      "facility_drill": {
+        "text": "시설 훈련",
+        "source_sha256": "fa03ea8785891ffabfc3a7cf507eeff385308dbe47a65d219ec75eebd1ff589c"
+      },
+      "contingency_drill": {
+        "text": "비상 훈련",
+        "source_sha256": "a94352816d1c0f452cefb35d0bbdcd8b42bc771d56923796f22e194b71fd577e"
+      },
+      "pen_test_engagement": {
+        "text": "침투 테스트 업무",
+        "source_sha256": "ed139a59534efde29117c8b67c1491e20557d522f8568448be271defe894ccad"
+      },
+      "remediation_followup": {
+        "text": "조치 후속",
+        "source_sha256": "b9ea644a26adab76ac50a2dc727f05a0114cdb17e40b65de70962cced220811f"
+      },
+      "facility_access_review": {
+        "text": "시설 접근 검토",
+        "source_sha256": "68589c9df4c7cc9f730529429686b4660f1d0fc580f9db95e3abed452789d1a6"
+      },
+      "visitor_cycle": {
+        "text": "방문자 주기",
+        "source_sha256": "7d1da768addd8f98aeb4b913b5ab3c0c48b4ab1da0bd6119e98e7eef2984f4d5"
       }
     },
     "eventKinds": {
@@ -648,6 +672,68 @@
       "escort_attested": {
         "text": "동행 증언됨",
         "source_sha256": "699ddbeaba0f1071ee38ad21a718560429cc7e055d8041dcee9417fdd2017fec"
+      },
+      "after_action_attached": {
+        "text": "사후 조치 첨부됨",
+        "source_sha256": "6a87987ad98d57da4161a3418d463afb22893b4309d4a284c7e38f3db9fd5358"
+      },
+      "report_attached": {
+        "text": "보고서 첨부됨",
+        "source_sha256": "8f3ae30b571b084e4bdfb7beec6f043fe2ceb15f8b2973efcf138ee8e46bac15"
+      },
+      "finding_linked": {
+        "text": "발견 사항 연결됨",
+        "source_sha256": "b9af4a1fa9709ac2584f9fbceb5ad61b8d72dc93b839b273e7383fb2cdb4ed3c"
+      },
+      "reviewed": {
+        "text": "검토됨",
+        "source_sha256": "8ea881746aeef415f3f9ddc1ee2f1bd5909cc208258a6ca3d323d8a9bb05d35c"
+      },
+      "attested": {
+        "text": "진술됨",
+        "source_sha256": "0409fc0c87b1751ffe1a9a4239d18b271f1f7ad5b5ffe795e86bc844766c982a"
+      }
+    },
+    "cp": {
+      "title": {
+        "text": "비상 훈련",
+        "source_sha256": "a94352816d1c0f452cefb35d0bbdcd8b42bc771d56923796f22e194b71fd577e"
+      },
+      "summary": {
+        "text": "시설 또는 비상 훈련을 예약하고 완료와 사후 조치 해시를 기록합니다. 이 페이지는 훈련을 실행하지 않으며 Met가 아닙니다.",
+        "source_sha256": "5e63180253691a8167225b79fda03e82c91060619e45b0f7762bc4d5c1529f51"
+      },
+      "add": {
+        "text": "훈련 예약",
+        "source_sha256": "9227e6e1f599261d8feadfc113560ebe338580dd00ce66c5d35725b3289d77b3"
+      }
+    },
+    "ca": {
+      "title": {
+        "text": "평가 업무",
+        "source_sha256": "4e57b6bc1ab352ce83441bae277207c199bde9a87dfecaaf0e09758a7f8ffe46"
+      },
+      "summary": {
+        "text": "침투 테스트 업무 또는 조치 후속을 기록하고 보고서 해시를 첨부합니다. 제품은 테스트를 수행하지 않으며 Met가 아닙니다.",
+        "source_sha256": "767a10d7b06bee501569b16ac56292b50979c132d295126e3acd1212f718144d"
+      },
+      "add": {
+        "text": "업무 기록",
+        "source_sha256": "5f250212fbf2207a4064f6895ba721ab52a3a6e3e944f93493494becc6faef80"
+      }
+    },
+    "pe": {
+      "title": {
+        "text": "시설 접근 검토",
+        "source_sha256": "68589c9df4c7cc9f730529429686b4660f1d0fc580f9db95e3abed452789d1a6"
+      },
+      "summary": {
+        "text": "시설 접근 검토 또는 방문자 주기를 예약하고 검토를 기록합니다. 문과 배지 설치는 조직이 담당합니다. 이것은 Met가 아닙니다.",
+        "source_sha256": "652594a65539451cf68464ccda954542adda520dd005ff03e1ff0aadcd6afd26"
+      },
+      "add": {
+        "text": "검토 예약",
+        "source_sha256": "affe0dfd121b1bf26901dc664cb07da82d913af456a6390902aeb6f9ea145be6"
       }
     }
   }

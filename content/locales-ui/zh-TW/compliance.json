@@ -626,6 +626,30 @@
       "nonlocal_maintenance": {
         "text": "遠端維護",
         "source_sha256": "143bffb09b7ddf6e0c8aa0a3ce2b88401176c0c7cde3e60512de70117d9d1bcf"
+      },
+      "facility_drill": {
+        "text": "設施演練",
+        "source_sha256": "e6887a024ea5bb282b550b5b46e02b366012f51612620263d6169b8fc14aa073"
+      },
+      "contingency_drill": {
+        "text": "應變演練",
+        "source_sha256": "0f5f8f93fa7fdbfa3d31e57a807c654fe3b0733163a952635939afb7aaf48243"
+      },
+      "pen_test_engagement": {
+        "text": "滲透測試任務",
+        "source_sha256": "167d582e359c0b6181dab631c099e1cd63d4c9711d23c85813e8fa95c43b65d3"
+      },
+      "remediation_followup": {
+        "text": "矯正追蹤",
+        "source_sha256": "1024dce642b488273eab111b6e57f2e3cf705221d49fb733ffcee6d7cb202336"
+      },
+      "facility_access_review": {
+        "text": "設施存取審查",
+        "source_sha256": "684eace7ba86910d3a42086ed9a17e284c4f7b438fcddbebd238d6890e447a5b"
+      },
+      "visitor_cycle": {
+        "text": "訪客週期",
+        "source_sha256": "44d223cc163c7bd3dc9d793e729fc3d33a2980f80274f3d4706842665dc3a184"
       }
     },
     "eventKinds": {
@@ -648,6 +672,68 @@
       "escort_attested": {
         "text": "已證明陪同",
         "source_sha256": "5e3d8ea64a79620e2e2228ea0c6204436f6c6b6599615553c7612e5d1069f857"
+      },
+      "after_action_attached": {
+        "text": "已附加事後報告",
+        "source_sha256": "1c3735f5023f4d9d1d0f131154cc1a20577637f2f79fe41c24e461ae388df08f"
+      },
+      "report_attached": {
+        "text": "已附加報告",
+        "source_sha256": "127726c0ec37c7d537ff6e28105237bebfbce88bf6d6d0540ebf61fa839f31f0"
+      },
+      "finding_linked": {
+        "text": "已關聯發現",
+        "source_sha256": "cf271a759e679a3333aaffb12b6591c50a7db998ae0914492039e94355ed0f75"
+      },
+      "reviewed": {
+        "text": "已審查",
+        "source_sha256": "37e1becebaa890756e80db5b143557a90edee5e079a935ed98d6760754c35d8f"
+      },
+      "attested": {
+        "text": "已聲明",
+        "source_sha256": "7fbfaee5897c6985982769dcf7c4669261ca401ff969b830a3210a8a5b08a039"
+      }
+    },
+    "cp": {
+      "title": {
+        "text": "應變演練",
+        "source_sha256": "0f5f8f93fa7fdbfa3d31e57a807c654fe3b0733163a952635939afb7aaf48243"
+      },
+      "summary": {
+        "text": "排程設施或應變演練，並記錄完成情形以及事後報告雜湊。本頁不執行演練，也不是 Met。",
+        "source_sha256": "8c0f43eb52e3922996e26fefcefe73a8fd406a355a8246517e3968a7f94ed2d1"
+      },
+      "add": {
+        "text": "排程演練",
+        "source_sha256": "e9449fc56b0249aec5ef9bd7f985c4037c4dbe4036f043d057efceab94dab144"
+      }
+    },
+    "ca": {
+      "title": {
+        "text": "評估任務",
+        "source_sha256": "f2307aba8d6909764dda0d07f84fcfd25ab0d1fb40c1e708301677cf39badcf5"
+      },
+      "summary": {
+        "text": "記錄滲透測試任務或矯正追蹤，並附加報告雜湊。產品不執行測試，也不是 Met。",
+        "source_sha256": "5f8b24b47ec13172a70944c2a8626218465c343ea574e80c609c5067f4b1992c"
+      },
+      "add": {
+        "text": "記錄任務",
+        "source_sha256": "2f6b6e3ba1f9ace62f7ffff61caa18ecfbc372cc9d75c2c27df513495ec09b85"
+      }
+    },
+    "pe": {
+      "title": {
+        "text": "設施存取審查",
+        "source_sha256": "684eace7ba86910d3a42086ed9a17e284c4f7b438fcddbebd238d6890e447a5b"
+      },
+      "summary": {
+        "text": "排程設施存取審查或訪客週期並記錄審查。安裝門禁與識別證仍由本組織負責。這不是 Met。",
+        "source_sha256": "417bd94760c45090dc787b9793e426e39cd46575a897b0120d16c678e3fc4da3"
+      },
+      "add": {
+        "text": "排程審查",
+        "source_sha256": "e177980c8fe2386ff85b2e459aea9078c5050b3e9d85ef65d985c9830c6c7ad2"
       }
     }
   }
