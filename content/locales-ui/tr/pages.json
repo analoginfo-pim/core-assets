@@ -128,23 +128,23 @@
       "bullets": {
         "text": [
           {
-            "text": "Eksik kutucuklar Henüz kullanılamıyor der ve asla uydurma bir sıfır göstermez.",
+            "text": "Absent tiles say Not available yet and never show a fabricated zero.",
             "source_sha256": "945a6ac23ca5db7eb374d90f3244c553a499d159100a0cad5f39b45279d21f17"
           },
           {
-            "text": "Kısmi kutucuklar, düz bir dille gerekçe ile Kısmi olarak işaretlenir (örneğin yalnızca tampon anlık görüntüsü).",
+            "text": "Partial tiles are marked Partial with a plain-language reason (for example buffer snapshot only).",
             "source_sha256": "fd61988cb65ff1900dcb19623ad5f378c4707699c45af971eb7e2cd4f6971572"
           },
           {
-            "text": "Yukarı taşı / Aşağı taşı ile özelleştirin (önce klavye). Kuruluş varsayılanını yayımlamak dashboard.publish; kişisel kayıt dashboard.personalize gerektirir.",
+            "text": "Customize with Move up / Move down (keyboard-first). Publish organization default requires dashboard.publish; personal save requires dashboard.personalize.",
             "source_sha256": "ed93d51a2d8fe95be8fa4f5d53187a952a0d3fbec97b23f05c6cc8b83d49a31c"
           },
           {
-            "text": "İş İstasyonlarım veya Parolayı göster mi arıyorsunuz? Favorilerdedir.",
+            "text": "Looking for My Workstations or Reveal A Password? They are on Favorites.",
             "source_sha256": "89193a25b206956414b2a74329b269c4c161cf119fc2548531a8850c6a47e02f"
           },
           {
-            "text": "dashboard.view olmadan bu sayfanın gösterecek bir şeyi yoktur; Favoriler'e yönlendirilirsiniz.",
+            "text": "Without dashboard.view this page has nothing to show, so you are sent to Favorites instead.",
             "source_sha256": "be0c280be23979edd80969ca5452046ca2159abbce0e457710061fa4d1314d1a"
           }
         ],
@@ -175,11 +175,11 @@
             "source_sha256": "6ca27711b857d38d6633aadfb597909ab9301c4527ddf4b6d6239006080dc468"
           },
           {
-            "text": "Sabiti kaldırmak öğeyi silmez, arşivler; denetim izi bozulmaz.",
+            "text": "Removing a pin archives it rather than deleting it, so the audit trail stays intact.",
             "source_sha256": "9fccdc958ff9bbbbc893240998b27dfa0e06ffd2195aad02e9af82eb7996fff2"
           },
           {
-            "text": "Daha yeni bir sunucunun artık göndermediği sabitlenmiş sayfa burada bildirilir ve atlanır, sessizce düşürülmez.",
+            "text": "A pinned page that a newer server no longer ships is reported here and skipped, never silently dropped.",
             "source_sha256": "f0f59c4c708b222d34633437bdd9e0d380fae585951ed93a1a14f252b905777a"
           }
         ],
@@ -202,7 +202,7 @@
       "bullets": {
         "text": [
           {
-            "text": "Etkinleştirme, lisans yönetimi sitesine yapıştıracağınız bir site belirtecini kopyalar.",
+            "text": "Activate copies a site token that you paste on the license management website.",
             "source_sha256": "c6b644e0e451433364e8daa48bb0ffb77be449b088d08919d260cff51166636c"
           },
           {
@@ -210,11 +210,11 @@
             "source_sha256": "844743aad34c683ecd409ce1eacd3d7f06ad185a0d5f093155ad8543b9e6ccfc"
           },
           {
-            "text": "Kullanım ve faturalama tahminidir. Faturalanan ücreti pazar yeri teklifi belirler.",
+            "text": "Usage and billing are estimates. The marketplace offer sets the billed rate.",
             "source_sha256": "b2a67e386cfda468cb97b2ad9121fdc769ed26750248564dd0741a316f5ab45a"
           },
           {
-            "text": "Lisans Yönetimi ayrı bir AIC sitesidir. Satın alma ve mali notlar oradadır.",
+            "text": "License Management ist a eigene AIC-Website. Kauf and Finanzhinweise liegen dort.",
             "source_sha256": "3b4dd894a176f63ad77bcd29f51d03c8cd4288a502fe71b1c6e46bccde992d82"
           }
         ],
@@ -373,7 +373,7 @@
       "bullets": {
         "0": {
           "text": "Connections tab — register providers, test, enumerate, and synchronize.",
-          "source_sha256": "95ae4747bea3e693a109fc2ada95fb3a2cdf477591ca06ad4ddc9d304c641e6c"
+          "source_sha256": "fd776b47182cff38873605e1181653493898c7aa194012c31ba16f2d50ba71bc"
         },
         "1": {
           "text": "Tab Pools — Gaeste zuordnen, Verbindungsziele verknuepfen, Lab-Canaries steuern.",
@@ -461,7 +461,7 @@
         },
         "1": {
           "text": "Customer-owned obligations remain with the organization.",
-          "source_sha256": "a2f3faf0e18eedb23004d53a3a941df9516a69998eeb49b4ced7e299023be458"
+          "source_sha256": "255c03e9c7e7fbc4243d8b991f2339eea2fb0a4f768aefafd31611924b7800a2"
         }
       }
     },
@@ -597,7 +597,7 @@
         },
         "1": {
           "text": "Counters cover denied and failed events only. Empty sources show Absent.",
-          "source_sha256": "4e220197442dbd7ca30c79867d2292e1eee125307eeaf64e78867a5fac756c88"
+          "source_sha256": "61c8ca368d46dfc598e0fdaf9807dc0d73ed5cd2873a9d79f3e5e65f42e34371"
         },
         "2": {
           "text": "Password bars show class and length. Values ​​are never saved or displayed.",
@@ -765,7 +765,7 @@
       "bullets": {
         "0": {
           "text": "Playbooks populate Assessment Binder sections; live counts still come from the instance at render time.",
-          "source_sha256": "abe11ae8e87ba4d4f115bb1ac2db3b228890034925c7eef13d1fc07be54d698f"
+          "source_sha256": "6c678b43aea89ecd25c1b989cd0b8dbc9eeb7e6c657fe44d72f10672c5ddd9c3"
         }
       }
     },
@@ -799,7 +799,7 @@
       "bullets": {
         "0": {
           "text": "Control and Title are separate columns. The Control column sorts by catalog ID (AC-2 before AC-11).",
-          "source_sha256": "4b8d1816458c34fe3db954148f390a0f8a40bf8221118f834c6afadc14faeb12"
+          "source_sha256": "590163f3d942d7b3b13827cf6bf0e3ec6b571dc46e61866c6518f23065e5b9eb"
         },
         "1": {
           "text": "Record Sweep saves the current delivery observation. Drift means the delivery has fallen behind - not that a control has failed.",
@@ -831,7 +831,7 @@
         },
         "1": {
           "text": "Create and edit data flows and enclaves; the diagram shows source and destination by shape (not color alone).",
-          "source_sha256": "97336ba2c219f1c9ea09544b5622938b8827c4b367a1dcb73aea1379439a860c"
+          "source_sha256": "491720d4bf22ba586673aeb5a0fd14ca79963d235a68ac8b334d854c59415b92"
         },
         "2": {
           "text": "Derived controls and risk levels are computed by the server and shown read-only.",
@@ -955,11 +955,11 @@
         },
         "2": {
           "text": "Each gap names the work still outstanding and links to Current State Compliance.",
-          "source_sha256": "244729e4be310ce135af114b1e7e0f9aeaafc4ef4399b6d3c6f5386801e5b759"
+          "source_sha256": "de3c32a766dd9f5f08da7a50ab1d31e3637923316fd0d45219647622a700802a"
         },
         "3": {
           "text": "A sibling page to Current State Compliance, not a replacement.",
-          "source_sha256": "37a348bd20f897956c677d07df4ebf72ccf59b384e3e0c40d0a7479db083f987"
+          "source_sha256": "5435764623b6e7e8e22a54631cd73735b3603ada44605bbbab2a23979432f53a"
         }
       }
     },
@@ -1007,7 +1007,7 @@
       "bullets": {
         "0": {
           "text": "Without an activated pack, agents keep only their embedded default version.",
-          "source_sha256": "42eada9462191bcc94c1056c8f858f8acbb57f0b5d97afddd93c58de0a881a5a"
+          "source_sha256": "b0f6290b7bad1a84dae8464ae2f1765922248487cf141542d2fe29bcf9133907"
         },
         "1": {
           "text": "Upload pack JSON, check parsed content, then publish. The first pack activates automatically.",
@@ -1333,7 +1333,7 @@
         },
         "1": {
           "text": "A deny-wins policy can end the request when an approver declines.",
-          "source_sha256": "0e572ff9f90d9834833764c56eecbd167722743c25e1f2f8f11cfab3d031250b"
+          "source_sha256": "5715d152d67f264dfb805153be2dec75de9a4522eb7616e48c171669ac61a657"
         }
       }
     },
@@ -1357,7 +1357,7 @@
         },
         "1": {
           "text": "Test reachability in the My Notification Profile tab.",
-          "source_sha256": "e1b0794615f89872c60fe2231fa3fa558b42ccae041c0c01628335cbb47e86d5"
+          "source_sha256": "23dd29efb2d7d272c36327ed2aef560e39cf434564a98855cc8a363876b44544"
         }
       }
     },
@@ -1637,11 +1637,11 @@
       "bullets": {
         "0": {
           "text": "Enter IPv4 CIDR networks, then choose Start discovery for an immediate scan.",
-          "source_sha256": "17d120f7fbee6475e08fc3d407d03b161aec0a1d2f833ad5b0463ebe6d543613"
+          "source_sha256": "d344d0656cfea81a28542088a99f97a12ac76effaf3769c1cfa02a21e84148c7"
         },
         "1": {
           "text": "A Partial status explains the gap and the next action in the tooltip.",
-          "source_sha256": "a0829456fd39fb5a5061ff03117ac19293ba984dea2ff14d929a6545921d93de"
+          "source_sha256": "0ab3cf5876ce63a7109cd777066460cdbf77e4eaa97364e19020a7138e0c90af"
         }
       }
     },
@@ -1733,7 +1733,7 @@
       "bullets": {
         "0": {
           "text": "Enroll writes audit records (ot_inventory_enroll) for every accepted asset.",
-          "source_sha256": "8fb55bc50749e981b2e43a24a1157e9ca152d31945eb61ea00d95724bb12f8c9"
+          "source_sha256": "70fa9158f18517654a6a186a28d407426d1338995c6987f547c1c1e914d25dea"
         },
         "1": {
           "text": "Status chips use Live, Partial, or Blocked — delivery evidence, not a compliance verdict.",
@@ -1757,7 +1757,7 @@
       "bullets": {
         "0": {
           "text": "Every action requires a documented justification and writes an audit event.",
-          "source_sha256": "d749cda84337290e87e212d6da4e98e9bf43632877c0a66cca93252062fc7290"
+          "source_sha256": "526eda8dcfdf69c89c67e619fac98046ec01d92c25124e3e5c91e2abf59cdfcf"
         },
         "1": {
           "text": "Pending and active counters appear in the banner above the grid.",
@@ -1813,7 +1813,7 @@
         },
         "2": {
           "text": "The WinRM form is also available under /elevation at Remote Non-Agent Local Elevation.",
-          "source_sha256": "57879444bb5846f049f3240ac6c1360c92a5d30c3bcecdd5ccbeef4018e0dda6"
+          "source_sha256": "c38d68fa939bf2a2de22fdf2c30f17fe4700226f274f9cb4e420fe85ec8889f6"
         }
       }
     },
@@ -1883,7 +1883,7 @@
         },
         "3": {
           "text": "External Workstation Readiness: ERASG-connecting clients (under Assessments; legacy workstation-assurance bookmarks redirect there).",
-          "source_sha256": "dc97f32cbc99d1391770a85c7eca5658fd1470867292c096ef41957a190858c7"
+          "source_sha256": "3b0d00510204437a24850208e815f9e49f306060c4abeb2fda92d43fb998aba1"
         },
         "4": {
           "text": "Report templates (this report group) / sample packs (under assessments): presentation overlays and scripted evidence.",
@@ -1915,11 +1915,11 @@
         },
         "1": {
           "text": "Custom overlays may change labels, columns, and wording; the data source and collector stay as shipped.",
-          "source_sha256": "26fde712f608613f02a8505732e6a03dc2f9b531cecc24b6778d428822ff3c3c"
+          "source_sha256": "832625f4f33974da6974c03c994e60fbc7e14e266e9562615c27387d717cfd36"
         },
         "2": {
           "text": "Drift notices appear when the source version advances the shipped copy; archiving is soft delete only.",
-          "source_sha256": "c1d833819a30f19429dc6764f61149b5884145c33440fb5beaf17887e46a8d2a"
+          "source_sha256": "4a209b0e62bcf905265057740e21355159fd6d9c60772dda341b7afd0e8e4afa"
         }
       }
     },
@@ -1943,7 +1943,7 @@
         },
         "2": {
           "text": "Company Profile holds the organization name and contacts for notices; the Initial Setup Wizard walks through first-time enclave setup.",
-          "source_sha256": "45aef79a7f2bb807e64cffab39938f9b607b63af8ed4fac918f4ad2bec8b0d0f"
+          "source_sha256": "e091d4ddc0c7829fd8fa9680d25fccf432861f51e5a17216ad78d43134d7d07d"
         },
         "3": {
           "text": "Use the Quick Search (Ctrl+K) to jump directly to any configuration page.",
@@ -1977,7 +1977,7 @@
       "bullets": {
         "0": {
           "text": "Data is Partial / Live — assembled from /admin/systems check-in enrichment; not a live AppConfig snapshot.",
-          "source_sha256": "f795b78f7c2f5aebb6ab6c3f293cbc0f51d11163669e7c992a0190ebedcb6bf6"
+          "source_sha256": "4169be66fa663182e6f451e3b132f3f761a117380cc832a07c2827d62aeab57e"
         },
         "1": {
           "text": "Push accessibility can only be checked for co-located Push-IPC; removed lines show self-reporting or not-of-this-server.",
@@ -1985,7 +1985,7 @@
         },
         "2": {
           "text": "Deep links to Propagation, Disclosures, Recording Agents, and Password Recovery stay on the existing pages.",
-          "source_sha256": "f4c3297b6c22b560f39f13c218b7f7f41242c5b70f9345827773533519cf7c50"
+          "source_sha256": "b5fc8a4c3b95452b77b17f9895f1a3f6eb8cc8c740bd9bd881672258f98f3b9f"
         }
       }
     },
@@ -2013,7 +2013,7 @@
         },
         "2": {
           "text": "Fleet Agent Versions is a separate read-only table built from System List enrichment.",
-          "source_sha256": "8ea639aa0911ffa1ce676cf1509c85b20af051a1613e4b97d1a57f0eec100e61"
+          "source_sha256": "f30542bc8681c39a6ca7cb4400a60dae6510d797b7c7fb5c5d4dc0ac26cb24cf"
         }
       }
     },
@@ -2037,7 +2037,7 @@
         },
         "1": {
           "text": "Phases: pre-rotate (quiesce) → password change → verify (post-rotate). Test uses the agent copy after the push.",
-          "source_sha256": "391e4f62d3d96adb847a1e793bf2c8046c3834928bb1d089d87de96137a8ac97"
+          "source_sha256": "b1d98a7acba0715cf7df7e693ae27521f5b753a09884364ecf41f95ca432d7d2"
         },
         "2": {
           "text": "Scripts run in lifecycle phases (pre-rotate, verify, and so on) — not at session brokerage (see Proxy access).",
@@ -2065,7 +2065,7 @@
       "bullets": {
         "0": {
           "text": "Classification and notice colors apply to the sign-in chrome and admin disclosure banners.",
-          "source_sha256": "0d491468b02298f98e14121e25ebc7b8db573ba4e91521e53f143ef96d536afa"
+          "source_sha256": "207b27d607079b3ae60a3e2b7bc726e339b8ced6fb14871516758582c20a1413"
         },
         "1": {
           "text": "Default colors follow AIC navy and steel blue from core-assets (no orange brand chrome).",
@@ -2073,7 +2073,7 @@
         },
         "2": {
           "text": "Disclosure banner text stays under Server Disclosures / Operator Disclosures.",
-          "source_sha256": "d45f152daceeff0d19692e685f2b073f152b3884443adb459f269f2065d9d577"
+          "source_sha256": "ccf4571f689a6f9150f1e462d92c9eac3e74c8ea0a4dbbf4a29584293442671c"
         }
       }
     },
@@ -4038,8 +4038,8 @@
         "source_sha256": "0e91610117029a62a478b7fa7df0b8598bebe3ab1e192d4b1882e310719c9671"
       },
       "retry": {
-        "text": "Erneut versuchen",
-        "source_sha256": "948643cb59e8274f40500593ac6029afcf419fc434c870fb8177b5185e0a2e9b"
+        "text": "Yeniden dene",
+        "source_sha256": "1f30ff52f9d5e535582c74b3e4381c1e8290c3902db4d28c42228a6d736decf1"
       },
       "save": {
         "text": "Kaydetmek",
@@ -4171,11 +4171,11 @@
       },
       "cancelCredential": {
         "text": "Kısaltılmış veriler",
-        "source_sha256": "3116e24f8092ee9d5b25298036a5593073bdacce14f8c965b8612d054256e6cd"
+        "source_sha256": "c759a62f7ce934df527b16880047de3c0ce8a50f1c0acb9f88bf1d0aec031dd3"
       },
       "cancelRequest": {
         "text": "Kısaltmayı kızdırın",
-        "source_sha256": "caf640d34f5e28c88ef4c8eff646da37786a54c2c07aef0d5a7f15ad03af5492"
+        "source_sha256": "56196683592dab4dd8fee3b001f87e50ac53fba0a2c05a7a935ef1c92449d546"
       },
       "clearFilter": {
         "text": "Filtreyi temizle",
@@ -4540,8 +4540,8 @@
         "source_sha256": "72c5c82629fd9492b9dd66d0b616b1a44926f30e89885d0cda187c1f73c8b4a5"
       },
       "submitRequest": {
-        "text": "Zugriffsanfrage senden",
-        "source_sha256": "55ae6b24fc9a2563c13a37eca84a0b7c909c1ccf446235659e17fac70f9abf3f"
+        "text": "Submit access request",
+        "source_sha256": "fd3a478d9eeb8e7b1215480bccb71ad42bb3b3a2497b29a8b4fab3af91cc3194"
       },
       "supervisorChip": {
         "text": "Danışman: {{name}}",
@@ -5010,8 +5010,8 @@
         "source_sha256": "bbf6a83734f4b820554a23f12a150906b5f4630ea26f051065f0b2e7a82642ee"
       },
       "reveal": {
-        "text": "Anzeigen",
-        "source_sha256": "ccb27f03f03ed86659485a95d9940964513549cc06cff298b8dae691cf3b6762"
+        "text": "Reveal",
+        "source_sha256": "36b830bdb447f8c758a9b58f190eed468c4bd53e9c7662ee19bca9c53d3a3e3d"
       },
       "rotate": {
         "text": "Döndür",
@@ -5064,8 +5064,8 @@
         "source_sha256": "4f145f7636d6bb2f47b0a0f9b0180a5db43ce5d386b769e6bb6b34c68cfdd196"
       },
       "mintCode": {
-        "text": "Yükseklik kodu erstellen",
-        "source_sha256": "fdfc7849b07a1e944431caa27f37505d7cff7e527b6323e0fcb9fa4911ae9edd"
+        "text": "Mint elevation code",
+        "source_sha256": "452803488353b20e5ba24dc8e0b577b0537d2845227255d9b15130dccaa6a259"
       },
       "mintPlatform": {
         "text": "Nane platform kodları",
@@ -6698,8 +6698,8 @@
         "source_sha256": "2359c2735fed553e83c04401ea79d365c6e3802b6d24b2cb928ac3fe150e40a5"
       },
       "gridAria": {
-        "text": "Jump-Flotte ve Kapazitaet",
-        "source_sha256": "f8504f69d97fe2976063d20b3e754db82fc8633668ad6fa4f8f9be0e202e0ab7"
+        "text": "Jump fleet and capacity",
+        "source_sha256": "66333e460cb79f242eef128d02784ea8303dd1ed2f69ce6aa5059cab7a451647"
       },
       "healthAria": {
         "text": "Sağlık {{health}}",
@@ -6707,7 +6707,7 @@
       },
       "healthDisabled": {
         "text": "etkisizleştirme",
-        "source_sha256": "10f33e562ffac7d76a6c0b41d5029092e851cc6217e8e24a8448c441b1cbb861"
+        "source_sha256": "17eb3c0168d0d7b21ede5481150f17233427d89833ec121b4dbc4fb96cfab71e"
       },
       "healthHealthy": {
         "text": "gesund",
@@ -7334,8 +7334,8 @@
             "source_sha256": "6f397c33dc9c6060922beea16a6d0ab79cd3b0c1add984f81546c5937c53025e"
           },
           "summary": {
-            "text": "Anwendung-to-Anwendung-Geheimnis-Müşterileri.",
-            "source_sha256": "d023f60d455ef3c5e844f236d32e3fa3d1c01a32a86276f70ab5afde04160dfa"
+            "text": "Application-to-application secrets clients.",
+            "source_sha256": "83c50a4ec71f74a50145b31a8e060c1220cc6bc6381686d52be31ed50dbd4092"
           }
         },
         "auditor_seats": {
@@ -7355,7 +7355,7 @@
           },
           "summary": {
             "text": "Kunden-Cloud paketindeki Signiertes Paketi; kein Pazaryeri-Zaehler.",
-            "source_sha256": "10647371f26a66b2ff0e82b21dff3dd350f9adef796bf33ff4e1f9448dd3804a"
+            "source_sha256": "6cda8571aeb55754f720348f4fa820d05e02ee44183095df88189559894161ef"
           }
         },
         "concurrent_session": {
@@ -7365,7 +7365,7 @@
           },
           "summary": {
             "text": "Havuz lebender Verbindungs- ve Bastion-Seansları; wird beim Frei'yi kapatın.",
-            "source_sha256": "b191d61c772d3af846739d4fb6e92c1f3d94d60bec03577b6cbac3b28cb93fee"
+            "source_sha256": "fd4d73da20b5beafea1390b2ba711ba25c101e9d77669ee052d7db0aa333aa43"
           }
         },
         "contract_private_offer": {
@@ -7384,8 +7384,8 @@
             "source_sha256": "46b0f488ba56fe6db124f9bae5f35b52511c6eb6f5cb9838f4db8046c7095c95"
           },
           "summary": {
-            "text": "Verwaltete Agent-Registrierung için Kapazitaet.",
-            "source_sha256": "e77fd26816be10381ba737e432230a608624dadfbd2c5906c21d21d2543b7e59"
+            "text": "Managed Agent enrollment capacity.",
+            "source_sha256": "0b7d358ecfc4dc9f9b2c93774dfab35a6bb86e150f51680a358412228084e95f"
           }
         },
         "enterprise_infra": {
@@ -7445,7 +7445,7 @@
           },
           "summary": {
             "text": "Doppelter Meldung ile Stuendliche Cloud-Dimensionen.",
-            "source_sha256": "65f9c1a8b20547a8327859ef2dc7c486e6c766573ad7bf12cdeb43ab7c927a59"
+            "source_sha256": "b22d0ebca62c5f9b5b5500014a6d894af5e3333d4a1a27e2d7cb608d8e9a467b"
           }
         },
         "module_pack": {
@@ -7495,17 +7495,17 @@
           },
           "summary": {
             "text": "Anzahl verwahrter veya verwalteter privilegierter Konten.",
-            "source_sha256": "a4390b172664c3e7fd79b834a06e2daaedbee4fa1393e6f6071feab1560198c8"
+            "source_sha256": "822291c5596558756fc96b2e3dd5de85d28d2dbe0b0f99e8b58faf3d9e56b308"
           }
         },
         "protected_resources": {
           "label": {
             "text": "Geschuetzte Kaynakları",
-            "source_sha256": "cd4b6211716f6a7b6a2a19957c26276311ded7aab2a5a20f92750a117900706b"
+            "source_sha256": "dac1fa533b32be39cec2221dda6db5001e4aec34c04b60ec575264ce86cf6995"
           },
           "summary": {
             "text": "Geraete, Anwendungen ve Server PAM-Bestand'da.",
-            "source_sha256": "60fab9616a2f3582a0b0cea15ca2b82106b75396a5bd1afda1a22bf07e8abc47"
+            "source_sha256": "f6fdc936ee0cf6dd9fe6785dbd191e92d1f765f0593b584059190d9f6f0d46ee"
           }
         },
         "secrets_api_tier": {
@@ -7611,8 +7611,8 @@
       },
       "postState": {
         "failed": {
-          "text": "Fehlgeschlagen",
-          "source_sha256": "1c47a9734b27dcd7009399a51e22226e7516c0429a81038923e82a7c95c597e9"
+          "text": "Failed",
+          "source_sha256": "031a8f0f659df890dfd53c92e45295b0f14c997185bae46e168831e403b273f7"
         },
         "none": {
           "text": "HAYIR",
@@ -7627,8 +7627,8 @@
           "source_sha256": "565339bc4d33d72817b583024112eb7f5cdf3e5eef0252d6ec1b9c9a94e12bb3"
         },
         "queued": {
-          "text": "Warteschlange'de",
-          "source_sha256": "a5dfc031d6bd42d7d6763fe43359e3546123ac736be737bb915135bd4d928e38"
+          "text": "Queued",
+          "source_sha256": "661ff40a07e037bbd5f7d4ec97a4df1503096ca910e7c9e2d7a4e9abd4e4e1a0"
         }
       },
       "privateServer": {
@@ -7677,16 +7677,16 @@
       },
       "tamperClass": {
         "capacity_bypass": {
-          "text": "Kapazitaetsumgehung",
-          "source_sha256": "a55e098590e1ae490aedc455e7a28d3e4f1aa378f9d948efdde5033d62dd0a94"
+          "text": "Capacity bypass",
+          "source_sha256": "e791fbf5e527e395bea0cd75c25544730ad84d88aa74c0c3ddba8933e434e7dd"
         },
         "eval_stripped": {
           "text": "Değerlendirilen girişim",
-          "source_sha256": "46314c0862cfa4d66110052ab9f66930070cb69d40b97e91f4ab6187bb38cc8d"
+          "source_sha256": "1ddef05200cfa8c3147954b934c7758964c951c5781fa3429000bd34ceb39309"
         },
         "expired_or_not_yet_valid": {
           "text": "Abgelaufen veya noch gueltig değil",
-          "source_sha256": "3243919cdb560123103c262a1268614195fd76407490b767282a4939d8f42cba"
+          "source_sha256": "2c93883aa5c4666404d3b888e9663e05308d84c63bbb52d7f5c2693f6793dae3"
         },
         "fingerprint_mismatch": {
           "text": "Fingerabdruck stimmt değil",
@@ -7698,7 +7698,7 @@
         },
         "replay_or_clone": {
           "text": "Wiederholung veya Klon",
-          "source_sha256": "483b6c06616b7da0306b996cad84ddf8a7b44311c02d465d6d5961f2edc1aff2"
+          "source_sha256": "d62f2f6377f65e4551f3dd0185348ed69203e3a4a56e51cf8152fc2bc090c858"
         },
         "signature_invalid": {
           "text": "Ungueltige İmzası",
@@ -8542,8 +8542,8 @@
         "source_sha256": "2d31179fe13adc64bdc799bd96a916280a382174f204e82dd1cff157248bb629"
       },
       "smsReload": {
-        "text": "Yeni yüklü",
-        "source_sha256": "55786148a69b44ee0a7a1aa3a229aa97e1e71b4cf8972857933f052c50c1bd73"
+        "text": "Reload",
+        "source_sha256": "bdc090ec61e3fcfc65f469951dfe00f3f2ecfc6003c44deac8e05b7237092de6"
       },
       "smsSave": {
         "text": "SMS ayarlarını kaydet",
@@ -8587,7 +8587,7 @@
       },
       "snippetsEdit": {
         "text": "Snippet ayı beiten",
-        "source_sha256": "a293a383066987198e5acb7b7453de46e2d1c3dbf7c67ec3b089fa91bbcd0a4b"
+        "source_sha256": "3bb69add7f8cedd554dafcf5dffa6b9e7f2ef850c2ffbb1625a894a89d086131"
       },
       "snippetsIntro": {
         "text": "Şablonlardan şu şekilde başvurulan yeniden kullanılabilir parçalar:",
@@ -8643,8 +8643,8 @@
           "source_sha256": "1d4dcb1def348f24722c1acbfbe05a2286510dd1bafb5f5017efca531fd6bf74"
         },
         "none": {
-          "text": "Kein TLS",
-          "source_sha256": "ad7abd2b8f3aef80964520200cde9287903a4e5d7337afc41612009f1d8b89b5"
+          "text": "No TLS",
+          "source_sha256": "759cc8e9b5a56d97bc4c61962b8e9eb85cf5547ce328420a8cd20976bc92f81a"
         },
         "starttls": {
           "text": "BAŞLANGIÇ TLS",
@@ -9299,11 +9299,11 @@
     "networkScan": {
       "analysisComplete": {
         "text": "Abgeschlossen'i analiz edin: {{findings}} Feststellung(en), {{unknown}} unbekannte(r) Ana Bilgisayar(lar).",
-        "source_sha256": "66a2fb649e7afb05d5710696d858674be75cbea21a183cdbf19330fb0a45dbd6"
+        "source_sha256": "adb6dce513ec48dd1b59db75c59960de753d85446557125f568ba56ee5bb44b5"
       },
       "analysisFailed": {
-        "text": "Fehlgeschlagen'i analiz edin",
-        "source_sha256": "c30667e7506bbfb8513740f02982be1a398da29ab9b3fcc9b81abb37443f2733"
+        "text": "Analysis failed",
+        "source_sha256": "4d6ac1bfe5d253f3b92020d11c775bf8c0ba29ece8050332a391950816378ca3"
       },
       "analyze": {
         "text": "Schwachstellen analizörleri",
@@ -10490,12 +10490,12 @@
         "source_sha256": "c21ead0614e7e1b70edb3759e1d19ca1e12e6036980d10bfb73052fb1a018efa"
       },
       "statusDraft": {
-        "text": "Entwurf",
-        "source_sha256": "2ba46e35bdfb6aff02b84727859c391a90560c737243b219852fd79c9b0fe4ea"
+        "text": "Draft",
+        "source_sha256": "ebf12ef47cf575b3ba9a3cc019c5310146fdac88f6d1be6618d6e91158c2f174"
       },
       "statusPaused": {
-        "text": "Pausiert",
-        "source_sha256": "02a733f1648a31265b9198b0ebfd612c52b52cdbd04fea60154e89f9375f2423"
+        "text": "Paused",
+        "source_sha256": "e159b06187d369a0615f66ce577582b5c983d4ea59b3a62b702049f61753f0bf"
       },
       "workforceAddMember": {
         "text": "Add Member",
@@ -11546,8 +11546,8 @@
         "source_sha256": "dd1841d295024256e8884cb898d863cb17333ef927fefae59368238e401c6ef0"
       },
       "title": {
-        "text": "Fernzugriff",
-        "source_sha256": "4b7b7a88b619885e44ba545a1e939eef841e853485ce9b83ddb28469d9cfa569"
+        "text": "Remote access",
+        "source_sha256": "66354a1d3225edbf01146504d06aaea1242dcf50424054c3001fc6fa2ddece0f"
       },
       "unknownError": {
         "text": "Unknown error",
@@ -12478,8 +12478,8 @@
         "source_sha256": "465b5967e292896bee2bbe8a67298bf1eec40ae84cf2ea96990cedcf87630442"
       },
       "role_credential_operator": {
-        "text": "Zugangsdaten-Operator",
-        "source_sha256": "e8a4fa572bd077df397f46621283c2d03d5c27a314deb26a8671bd56afbcad95"
+        "text": "Credential operator",
+        "source_sha256": "eee42627ae4ad26636f23a8a2c5f9ae0593b3adfcdd51e8d54a6898ffaae9f72"
       },
       "role_developer": {
         "text": "Developer",
@@ -12490,8 +12490,8 @@
         "source_sha256": "3fb3a79ca3a319aa8a31c9b510264189e3f518e2c51d204401b86e0d1dbe7395"
       },
       "role_pam_approver": {
-        "text": "PAM-Genehmiger",
-        "source_sha256": "557048661d89e473f0733e15997e4f39722e084ee5c6b5e74351f35693151fbc"
+        "text": "PAM approver",
+        "source_sha256": "749f7549ff8b9a5b1ae371157e7bb50c5bd02416a2ebef2b350afcd2956878a9"
       },
       "role_pam_requester": {
         "text": "PAM requester",

@@ -1611,7 +1611,7 @@
       "updated": "2026-08-22",
       "source_repo": "pim-offline-server",
       "source_path": "pim-offline-server/ui/src/i18n/locales/en/pages.json",
-      "source_sha256": "8146d7f42195a81cd1e3feff8bbf703b00f9d5b92c450f178519c71da1d108f7",
+      "source_sha256": "7b8cc6e6a469f80903ee7bea5f708e7b6aa792964c6221ea2cf397de6b55b558",
       "product_route": "/enclave/my-incident-reports",
       "required_tags": [
         "de",
@@ -1622,7 +1622,7 @@
         "zh-TW"
       ],
       "draft_tags": [],
-      "notes": "English USA showed Melder, Eingang, and Abschluss on My Incident Reports. US English source restored to Reporter, Intake, Closing. Other tags received domain translations; de kept German. Agent drafts do not close. Source changed 2026-08-22 (hash 9e7dcf597390 → 8146d7f42195)."
+      "notes": "English USA showed Melder, Eingang, and Abschluss on My Incident Reports. US English source restored to Reporter, Intake, Closing. Other tags received domain translations; de kept German. Agent drafts do not close. Source changed 2026-08-22 (hash 9e7dcf597390 → 8146d7f42195). Source changed 2026-08-22 (hash 8146d7f42195 → 7b8cc6e6a469)."
     },
     {
       "id": "spa.ir-process-diagram-chrome",
@@ -1657,7 +1657,7 @@
       "updated": "2026-08-22",
       "source_repo": "pim-offline-server",
       "source_path": "pim-offline-server-cmmc-main/ui/src/i18n/locales/en/docs.json",
-      "source_sha256": "d09f54a776f97035f831370d08533894b1f22fc36256967571cec00c79b3da98",
+      "source_sha256": "9b96bcf5d5e20c37f7567bfd524a57e8d8649e1e8518a948f6efb427ebd3216e",
       "product_route": "/docs/user",
       "required_tags": [
         "de",
@@ -1668,7 +1668,30 @@
         "zh-TW"
       ],
       "draft_tags": [],
-      "notes": "US English docs keyed leftovers and page header bullets were still German. Restored US English. de kept German. Other tags received completeness drafts. Agent drafts do not close."
+      "notes": "US English docs keyed leftovers and page header bullets were still German. Restored US English. de kept German. Other tags received completeness drafts. Agent drafts do not close. Source changed 2026-08-22 (hash d09f54a776f9 → 4257ec2f8ade). Source changed 2026-08-22 (hash 4257ec2f8ade → 9b96bcf5d5e2)."
+    },
+    {
+      "id": "spa.en-check-a-german-leak-20260822",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "spa-catalog",
+      "title": "English catalog Check A leftover German (docs, headers, licensing, nav, common)",
+      "added": "2026-08-22",
+      "updated": "2026-08-22",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/i18n/locales/en/pages.json",
+      "source_sha256": "80588668787ea440da87b10a4cb79022bbfc2fa83f1614d190152478e5839479",
+      "product_route": "/enclave/my-incident-reports",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [],
+      "notes": "Full Check A sweep: 391 German-in-English findings down to 0. US English restored for docs steps, page headers, licensing chrome, training chrome, and missing en appBar/nav keys. en-GB leftover German/CJK replaced. de kept German. Other tags: German leftovers replaced with English stopgap or kept native. Agent drafts do not close. Not Met. Source changed 2026-08-22 (hash 7b8cc6e6a469 → 80588668787e)."
     }
   ]
 }
