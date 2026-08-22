@@ -362,13 +362,13 @@ a table for a feature. Detail:
 | Append-only attestation ledger bound to the person record, denormalizing signer identity and document hash at signing | **Live** (code) / **Partial** not served — `operator_recorded` and `self` (education-link) |
 | Education access tokens (trainee needs no console seat) | **Live** (code) / **Partial** not served — minted at issue; SHA-256 stored; `/education` consumes; reusable until expiry/revoke per `003000048` |
 | Notification ladder (welcome / reminder / due / overdue) with append-only send log | **Live** (code) / **Partial** not served — training sweeper SMTP + log; coverage-intake sweep now SMTP + log (`sent`/`failed`/`suppressed`). Mailpit observation BLOCKED until served |
-| Access gate that can block on incomplete training with a recorded override reason | **Schema only** (`003000049`) |
+| Access gate that can block on incomplete training with a recorded override reason | **Live** (code) / **Partial** not served — evaluates JIT elevation and PAM session launch for bound principals; default off; mint-v3 not hooked. Denial log + override ledger. Never Met. |
 | Document library (plain-language rewrite in progress) | **Live** (authoring layer) |
 | Scope determinations — basis, decider, timestamp, review date, rationale, considered exclusions | **Live** (code) / **Partial** not served — `POST` workforce scope routes write `003000050` |
 | Identity bindings — plural per person, federated keyed on issuer+subject, unlink recorded not deleted | **Schema only** (`003000050`), same probe run |
 | Welcome letter documents (employee + contractor) | **Live** (code) / **Partial** not served — templates compiled in; program create prepends both as required `read` items. Trainee portal **Partial (code)**. Never Met. |
 | Grading, testing, scores, thresholds, attempt history | **Live** (code) / **Partial** not served — `003000079` + heal + API + program-detail UI. Stored pass decision at attempt time. Acknowledgement is not a grade. Not an LMS. Never Met. |
-| Domain layer, HTTP API, scheduler, UI for any of the above | **Partial** — programs, roster, attestations, reminders, scope, grading, welcome-letter auto-include, binder `workforce_training` fill, and trainee education portal are Live in code; access gate and identity bindings remain schema-only |
+| Domain layer, HTTP API, scheduler, UI for any of the above | **Partial** — programs, roster, attestations, reminders, scope, grading, welcome-letter auto-include, binder `workforce_training` fill, trainee education portal, policy-acknowledgement pins, and the access gate are Live in code; identity bindings remain schema-only |
 | Binder section derived from live program state | **Live** (code) / **Partial** not served — `workforce_training` filled from assignment + intake ledgers at render; never Met |
 
 **Applied to the lab database; still undelivered on the running binary.**
@@ -378,7 +378,7 @@ server heal SQL so a tag bump is not required. Domain + API + thin UI are
 **Live in code** for roster, attestations, reminders, scope writes, grading,
 and the supplier register. They are **Partial** until served (running binary
 stays `57715d1fc`; no `-AllowStaleOverwrite`). Trainee portal is Live in code /
-**Partial** not served. Access gate and identity bindings remain schema-only.
+**Partial** not served. Access gate is Live in code / Partial not served (default off). Identity bindings remain schema-only.
 
 Tables existing is **not** delivery. Do not read "the migration is applied" as
 evidence that a capability is served.
