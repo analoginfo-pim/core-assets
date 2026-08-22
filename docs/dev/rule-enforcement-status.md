@@ -361,15 +361,15 @@ a table for a feature. Detail:
 | Roster of employees and contractors, with vendor organization and archive semantics | **Live** (code) / **Partial** not served — domain + API + UI on `origin/main`; running binary `57715d1fc` predates this |
 | Append-only attestation ledger bound to the person record, denormalizing signer identity and document hash at signing | **Live** (code) / **Partial** not served — `operator_recorded` only; no trainee portal |
 | Single-use emailed access tokens (trainee needs no console seat) | **Schema only** (`003000048`) |
-| Notification ladder (welcome / reminder / due / overdue) with append-only send log | **Live** (code) / **Partial** not served — SMTP failures are logged rows |
+| Notification ladder (welcome / reminder / due / overdue) with append-only send log | **Live** (code) / **Partial** not served — training sweeper SMTP + log; coverage-intake sweep now SMTP + log (`sent`/`failed`/`suppressed`). Mailpit observation BLOCKED until served |
 | Access gate that can block on incomplete training with a recorded override reason | **Schema only** (`003000049`) |
 | Document library (plain-language rewrite in progress) | **Live** (authoring layer) |
 | Scope determinations — basis, decider, timestamp, review date, rationale, considered exclusions | **Live** (code) / **Partial** not served — `POST` workforce scope routes write `003000050` |
 | Identity bindings — plural per person, federated keyed on issuer+subject, unlink recorded not deleted | **Schema only** (`003000050`), same probe run |
-| Welcome letter documents (employee + contractor) | **Authoring content live** (`welcome-letter-employee`, `welcome-letter-contractor` in `src/training/templates_welcome_letters.rs`) — trainee portal still Absent |
+| Welcome letter documents (employee + contractor) | **Live** (code) / **Partial** not served — templates compiled in; program create prepends both as required `read` items. Trainee portal still Absent. Never Met. |
 | Grading, testing, scores, thresholds, attempt history | **Live** (code) / **Partial** not served — `003000079` + heal + API + program-detail UI. Stored pass decision at attempt time. Acknowledgement is not a grade. Not an LMS. Never Met. |
-| Domain layer, HTTP API, scheduler, UI for any of the above | **Partial** — programs, roster, attestations, reminders, scope, and grading are Live in code; access gate, identity bindings, trainee portal remain schema-only / Absent |
-| Binder section derived from live program state | **Absent** |
+| Domain layer, HTTP API, scheduler, UI for any of the above | **Partial** — programs, roster, attestations, reminders, scope, grading, welcome-letter auto-include, and binder `workforce_training` fill are Live in code; access gate, identity bindings, trainee portal remain schema-only / Absent |
+| Binder section derived from live program state | **Live** (code) / **Partial** not served — `workforce_training` filled from assignment + intake ledgers at render; never Met |
 
 **Applied to the lab database; still undelivered on the running binary.**
 Migrations `003000047`–`003000050` are in `_sqlx_migrations` on lab. `003000079`
