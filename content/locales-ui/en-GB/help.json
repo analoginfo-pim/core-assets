@@ -60,11 +60,11 @@
     "source_sha256": "6a6353a453e53e66304ba519804bc5b6a43d8240b5db8cafedcb559aecff18e1"
   },
   "accountBinding": {
-    "text": "Explicit: you name the local account (Administrator, root). Well-known: the agent maps a catalog key to the correct account for the OS.",
+    "text": "Explicit: you name the local account (Administrator, root). Well-known: the agent maps a catalogue key to the correct account for the OS.",
     "source_sha256": "5040472b1ee3e010653b96cf8c097f93f41b44df310d370dcc9cf480e17283e1"
   },
   "wellKnownAccount": {
-    "text": "Catalog entry the agent resolves at runtime (e.g. Windows built-in Administrator). Pick the platform-appropriate key.",
+    "text": "Catalogue entry the agent resolves at runtime (e.g. Windows built-in Administrator). Pick the platform-appropriate key.",
     "source_sha256": "d40fb6b68f7843705d2dce84008f102d075a634852ffbd758d287484c3fbc9b1"
   },
   "accountName": {
@@ -92,7 +92,7 @@
     "source_sha256": "c6854d33bad98d0c9f3e8e2b06f1f7641913027bd498011b1580d392fd11fc24"
   },
   "machineName": {
-    "text": "Hostname or label reported by the agent. Used in lists and elevation; should match what operators recognize.",
+    "text": "Hostname or label reported by the agent. Used in lists and elevation; should match what operators recognise.",
     "source_sha256": "07f4a65529d200594db6aa4eaba10b8af9a86e0f570c9491a2c473614b590cd5"
   },
   "macAddress": {
@@ -104,7 +104,7 @@
     "source_sha256": "eadd8ab747fea8f43a8f480405eda62986dc67539a42511e8eb4b258bc812366"
   },
   "platformType": {
-    "text": "Operating system family. Drives well-known account catalog and agent behavior.",
+    "text": "Operating system family. Drives well-known account catalogue and agent behaviour.",
     "source_sha256": "3293f067b3a0b0fea79a62c1c8068710c656dba55acdb7a62190ceeb456bfdd7"
   },
   "tenantName": {
@@ -232,7 +232,7 @@
     "source_sha256": "73866759838299228602a92629d47b45d31a0f268647e6fd35ac8095fe0edbce"
   },
   "wizardTtlHours": {
-    "text": "Hours until the enrollment token expires. Leave empty for the server default.",
+    "text": "Hours until the enrolment token expires. Leave empty for the server default.",
     "source_sha256": "7ebf418f302686302fca357adad6fd9166f48c74ce8e74a14d65cb581a0108c5"
   },
   "loginUsername": {
@@ -276,7 +276,7 @@
     "source_sha256": "53ff5a38b8d7ae43243815df1d46d56da52d2027063fd9f737b2064575013eea"
   },
   "principalDisplayName": {
-    "text": "Name shown in lists and audit records. Prefer a real person name operators recognize.",
+    "text": "Name shown in lists and audit records. Prefer a real person name operators recognise.",
     "source_sha256": "9ab7a0b3b399f92e2975aa883370471de8b4613432e07f7b6360a46a4ce5241d"
   },
   "principalEmail": {
@@ -304,11 +304,11 @@
     "source_sha256": "469f49999f3eb86e14089c2238884b0d1a9886ca09269f2ecf62263b2c255159"
   },
   "profileUiTheme": {
-    "text": "Color scheme for the whole site. Saved on this user profile so it follows you on any browser.",
+    "text": "Colour scheme for the whole site. Saved on this user profile so it follows you on any browser.",
     "source_sha256": "54a36cfcdf12b094926b92854064306384f6628b1a6f4372c179aa41141653c7"
   },
   "profileDefenseSkin": {
-    "text": "Color scheme for the Attack / Threat Report page only. Default follows the site scheme. Black is the dark report look.",
+    "text": "Colour scheme for the Attack / Threat Report page only. Default follows the site scheme. Black is the dark report look.",
     "source_sha256": "8c2c22a5f82d091634c21e0b48b66c9e4c2b7f3c608294aa65edab38e502a855"
   },
   "currentPassword": {
@@ -356,7 +356,7 @@
     "source_sha256": "555d6039ba9b84beb830e47290a2b9ef4c229e2423dd60a08c201fa773dc4a9c"
   },
   "idpIssuerUrl": {
-    "text": "OpenID Connect issuer URL. Discovery uses this to load authorize, token, and JWKS endpoints.",
+    "text": "OpenID Connect issuer URL. Discovery uses this to load authorise, token, and JWKS endpoints.",
     "source_sha256": "655d7e8ce5413f3906d229de7926068e2dc5cda0918904f9fac4133362d58a53"
   },
   "idpClientId": {
@@ -408,7 +408,7 @@
     "source_sha256": "6fe5639c43034a3cd8658211af8541f37262c341e04fb9d2d5e2cc98091a7864"
   },
   "totpIssuer": {
-    "text": "Name shown in authenticator apps for TOTP enrollment. Empty uses this server hostname.",
+    "text": "Name shown in authenticator apps for TOTP enrolment. Empty uses this server hostname.",
     "source_sha256": "fa1e9f1700e1ef97e19f34aa6f5a83327d4c6c0fd9087fff07b17287bb595372"
   },
   "adHomeDomain": {
@@ -508,11 +508,11 @@
     "source_sha256": "a610896a79f1758e3877b407a653fda5b52491fc35ec2ea0ef4f2e367d0e4119"
   },
   "maxmindLicenseKey": {
-    "text": "Optional MaxMind license key override. Stored as a secret; never paste into tickets.",
+    "text": "Optional MaxMind licence key override. Stored as a secret; never paste into tickets.",
     "source_sha256": "d81eab3bccdb9edc17e15ce95eb1ea28c3f08058832c1df3042096af794b8ce7"
   },
   "fourEyesPrincipalId": {
-    "text": "UUID of the principal who needs a second-person acknowledgment.",
+    "text": "UUID of the principal who needs a second-person acknowledgement.",
     "source_sha256": "5d96bad10498ff2ac7fc7a37e9f7f9a6780537ab33ecefc8b44f99aa7dcc7778"
   },
   "fourEyesManagerEmail": {
@@ -524,7 +524,7 @@
     "source_sha256": "345860c998215fb90563f814e7c32cb0ab7520c8e1a323b15a41cc499b067cd0"
   },
   "fourEyesAckBy": {
-    "text": "Identity of the second person completing the acknowledgment.",
+    "text": "Identity of the second person completing the acknowledgement.",
     "source_sha256": "0da4b86ea57f36faf9e30f55a9b9f5f821aa442f050aede42ee9ac6b2501197e"
   },
   "dryRunSourceIp": {
@@ -568,7 +568,7 @@
     "source_sha256": "0ad7b34e309ade6c66d47c7d2a7c06195152541c655cb510758a72306c0570df"
   },
   "myWorkstationOpenSession": {
-    "text": "Opens the recorded session viewer for a session that Connect already authorized.",
+    "text": "Opens the recorded session viewer for a session that Connect already authorised.",
     "source_sha256": "755244d114f70220955b152ea4bf9706b69624a559b1abde9040d5ede6f13839"
   },
   "jumpFleetHost": {
@@ -756,11 +756,11 @@
     "source_sha256": "6e1fd57d0d15debebfc8bdfac9f5a10ccf6dd51266bde53705dac285124a72fd"
   },
   "jumpEnrollmentTtl": {
-    "text": "Hours this one-time Jump enrollment code remains valid (1–720). Shorter is safer.",
+    "text": "Hours this one-time Jump enrolment code remains valid (1–720). Shorter is safer.",
     "source_sha256": "34b29cb4e0538b149bf380631868d683a7277e2f3b0dc0073ce0f66d6d757df2"
   },
   "jumpEnrollmentDescription": {
-    "text": "Optional note so you can tell enrollment codes apart in the audit record.",
+    "text": "Optional note so you can tell enrolment codes apart in the audit record.",
     "source_sha256": "0dbf91c23e9d273fab88b9aff68d4bdfc994d6939398645b626e840d1c9177a6"
   },
   "jumpEnrollmentPool": {
@@ -768,7 +768,7 @@
     "source_sha256": "a481b055868357f77352f94281a1d6d5adbc12497719ffea76571e3c53cada0a"
   },
   "jumpEnrollmentCode": {
-    "text": "One-time enrollment plaintext. Copy now — it cannot be looked up again.",
+    "text": "One-time enrolment plaintext. Copy now — it cannot be looked up again.",
     "source_sha256": "0c7baa61387f28df1eaec3165c3a985bb6f3523898b3afd612245dab976b6deb"
   },
   "jumpBaseUrl": {
@@ -1068,19 +1068,19 @@
     "source_sha256": "35c615f5d719cef81517b2dff13d1f92671d867fafc5a6be01b7890d6a190ffb"
   },
   "knownDefaultFilterVendor": {
-    "text": "Filters catalog rows by vendor name.",
+    "text": "Filters catalogue rows by vendor name.",
     "source_sha256": "d134e6db43f9b10f69a3512aa09d2ba318d0384bde5cb2a5dfc34cd7468ad63d"
   },
   "knownDefaultFilterPlatform": {
-    "text": "Filters catalog rows by platform or OS family.",
+    "text": "Filters catalogue rows by platform or OS family.",
     "source_sha256": "1040bd2be123cb0484f2a9991b99d3476f0ddf634c8cb02c285997fd3d40030e"
   },
   "knownDefaultSearchField": {
-    "text": "Limits catalog search to one column (vendor, platform, OS, username, published password, or service).",
+    "text": "Limits catalogue search to one column (vendor, platform, OS, username, published password, or service).",
     "source_sha256": "1f4ac3d1d97a6940ccbc69ecd644d94bf72af8861fd6e768d4aa23ae1f955710"
   },
   "knownDefaultSearchQuery": {
-    "text": "Search text applied to the selected catalog field. Leave empty to list every row.",
+    "text": "Search text applied to the selected catalogue field. Leave empty to list every row.",
     "source_sha256": "4ec3f229dd270bf7ee13520bf7573d083d43dc7a9677f3388324a653a03868dc"
   },
   "knownDefaultMaskPasswords": {
@@ -1120,11 +1120,11 @@
     "source_sha256": "99892d717603d82df3f40cc15ff72b65c89b4a7bbe7380bb902271157e283c7d"
   },
   "knownDefaultNotes": {
-    "text": "Operator notes about this catalog row. Not sent to endpoints as secrets.",
+    "text": "Operator notes about this catalogue row. Not sent to endpoints as secrets.",
     "source_sha256": "cab616d823db80655a172b1461d0103919938c14e0eb73004390444caf730e40"
   },
   "knownDefaultEnabled": {
-    "text": "When off, scanners ignore this catalog row.",
+    "text": "When off, scanners ignore this catalogue row.",
     "source_sha256": "953b4f1cff392847e454c879dbbfa504a125f2517e781084155abc64fdd205ec"
   },
   "knownDefaultReloadSource": {
@@ -1132,7 +1132,7 @@
     "source_sha256": "fd67e63a669d34b56c55e69cdf6a090fa4e4833a001fa3fe201209693647ee5f"
   },
   "knownDefaultFetchLatest": {
-    "text": "Downloads the latest redistributable source and merges rows into the catalog.",
+    "text": "Downloads the latest redistributable source and merges rows into the catalogue.",
     "source_sha256": "0785c7e3fa193c2eeee426653ce233d862c30f272dd6bf4a9064ed0f083bd1cd"
   },
   "settingsMitmProxyPort": {
@@ -1244,23 +1244,23 @@
     "source_sha256": "6381722967dc6e1fee25b3ad2525f55721523530e6158e000ee88a2bbb60b31d"
   },
   "demoLicenseBannerCancel": {
-    "text": "Hide this demo license notice for the rest of this browser session.",
+    "text": "Hide this demo licence notice for the rest of this browser session.",
     "source_sha256": "1f50e67b7dd2e3cebe46868fcd9757906cfbbe9d8c7f5f02ad4d3c7da03341f7"
   },
   "demoLicenseBannerRequest": {
-    "text": "Open disconnected licensing to request or install a purchased license.",
+    "text": "Open disconnected licensing to request or install a purchased licence.",
     "source_sha256": "b203dc8f6eb6faebb03f372d890a355700663a51485ce06b2fd9646ebe3578de"
   },
   "licensingActivate": {
-    "text": "Starts a short wizard: copy the site token, activate on the License Management website, then import the signed package.",
+    "text": "Starts a short wizard: copy the site token, activate on the Licence Management website, then import the signed package.",
     "source_sha256": "10b0bf6545a23edc95d82639450c654c54d5f98a1667fe5f4abfb9a43a50dfec"
   },
   "licensingSiteToken": {
-    "text": "Opaque site token for AIC License Management. It does not include host names or IP addresses. Copy it, then paste it on the Activate page.",
+    "text": "Opaque site token for AIC Licence Management. It does not include host names or IP addresses. Copy it, then paste it on the Activate page.",
     "source_sha256": "85bd718791f0aa7c7b5234a7b11b7ba22462b302ac45222701985689a74262a3"
   },
   "licensingPackage": {
-    "text": "Paste the signed license package or choose the file you received. Import replaces the key now on this server.",
+    "text": "Paste the signed licence package or choose the file you received. Import replaces the key now on this server.",
     "source_sha256": "6be29d169a471dfe879e2ad82868c632f684a6e162fd41aa87bb374173abbd22"
   },
   "actionLogin": {
@@ -1320,7 +1320,7 @@
     "source_sha256": "c4068d6d9bbabd8b7fa1672936d70813e7e3782ef52e7d8aeec742f4de5a37cc"
   },
   "actionMintToken": {
-    "text": "Creates a one-time enrollment code for a new Jump host.",
+    "text": "Creates a one-time enrolment code for a new Jump host.",
     "source_sha256": "dde5ddb368694202f414e3cd80ea5a541f61d1a9e8b34c5a79fb998fcec57159"
   },
   "actionPlaneOn": {
@@ -1640,11 +1640,11 @@
     "source_sha256": "537c04aa9644f699dd4be365b734e84f02568b6e460402d033df498978f7592a"
   },
   "loginTotpEnroll": {
-    "text": "Opens authenticator-app enrollment for this account.",
+    "text": "Opens authenticator-app enrolment for this account.",
     "source_sha256": "3005eed48914be4563bb70e873c05c0be88cd098ad0bb41bcd1ceea4bed55828"
   },
   "loginSkipEnroll": {
-    "text": "Continues without enrolling MFA now. You can enroll later from Account security.",
+    "text": "Continues without enrolling MFA now. You can enrol later from Account security.",
     "source_sha256": "0c57cb4fb232025a2de6668726b047b979fbaa98368d29ed2938453e92f86c1e"
   },
   "loginUsePasskey": {
@@ -1760,11 +1760,11 @@
     "source_sha256": "e4379662412244ff4bceea1971a070261d0d6aee611d4fb26e43968db81831e2"
   },
   "webAuthnRequired": {
-    "text": "Require passkey enrollment before this principal can finish logon.",
+    "text": "Require passkey enrolment before this principal can finish logon.",
     "source_sha256": "9f7a3a2767cc5bd9316d8d28b131236e3afae422436d975e0d26abbc611bbe14"
   },
   "webAuthnAllowPasswordless": {
-    "text": "Allow passkey-only logon without a password when enrollment exists.",
+    "text": "Allow passkey-only logon without a password when enrolment exists.",
     "source_sha256": "00721bb30bc775264e1f094ba00f00b146729968e9731de749ced2f1c4f3892d"
   },
   "accessMapGeoEnabled": {
@@ -1776,7 +1776,7 @@
     "source_sha256": "9666167cd4b14cb7d1929b56359d65309e8bc98b3f26fb67360ec6a91535c828"
   },
   "accessMapFourEyesNotify": {
-    "text": "When on, sends the manager notify email for four-eyes acknowledgments.",
+    "text": "When on, sends the manager notify email for four-eyes acknowledgements.",
     "source_sha256": "78246c1bd940da2becb68659ec90ee20454a5785993be5f8f812211c0b694ee2"
   },
   "mfaTotpEnabled": {
@@ -1836,7 +1836,7 @@
     "source_sha256": "5f593e1cc071669654aab17beddddc2097569a017bc5b26fe34a807cfe0f4b38"
   },
   "elevationTargetGroupSelect": {
-    "text": "OS group added during elevation. Pick a catalog option or type a custom name.",
+    "text": "OS group added during elevation. Pick a catalogue option or type a custom name.",
     "source_sha256": "e97c7fa2074c1ec4f91d4fde6dc238c8b3372634a537aa9626ca58e7456caad9"
   },
   "elevationStrategySelect": {
@@ -1988,7 +1988,7 @@
     "source_sha256": "a0089c80a3d4002471fe8bc0a20044207afcc40d2bac7ffb502a85439568aca2"
   },
   "dateField": {
-    "text": "Date or time boundary for this filter or lifecycle rule (UTC unless labeled otherwise).",
+    "text": "Date or time boundary for this filter or lifecycle rule (UTC unless labelled otherwise).",
     "source_sha256": "d17f2b65ef12eeb78e95c54ebbbb3c18596443a5b19b8600e1b6136d2978710b"
   },
   "numericField": {
@@ -2000,7 +2000,7 @@
     "source_sha256": "3ebd361b27a16af0b1e99cab860250ca3d09abea6bd53f88b82c4e15a7e98be3"
   },
   "genericSwitch": {
-    "text": "Enables or disables this behavior for the current form.",
+    "text": "Enables or disables this behaviour for the current form.",
     "source_sha256": "d55cb4151ff293e8bfa80797f0f0c82285c68ee1a0561cdf5b44a1f28bcedd48"
   },
   "genericAutocomplete": {
@@ -2032,7 +2032,7 @@
     "source_sha256": "6a3da15a420f126829f273f743d5a99bac0d8aaad117f7598b9ce5f999cc4530"
   },
   "elevationMatchSelect": {
-    "text": "How the agent recognizes the application (publisher, path, hash, or package).",
+    "text": "How the agent recognises the application (publisher, path, hash, or package).",
     "source_sha256": "d544ef3a5a52c6245bae6b743237338098432552ed1d786c7e5cc200756cd6ef"
   },
   "cryptoProviderKind": {
@@ -2084,7 +2084,7 @@
     "source_sha256": "5242dfe89997e7cf8b2e501ef9632147147c88513b8bdcd51cbeb2196c37699b"
   },
   "settingsWizardEnrollmentToken": {
-    "text": "One-time enrollment token for the agent. Copy it now; it is not shown again after you leave this step.",
+    "text": "One-time enrolment token for the agent. Copy it now; it is not shown again after you leave this step.",
     "source_sha256": "2f95ed8a641f4c5cdfb49c832646e5501b4bc206129968c3b8167c72f0eef05a"
   },
   "syslogOptionalFieldsSelect": {
@@ -2096,7 +2096,7 @@
     "source_sha256": "e51c6f9cf2285a871da7289809b98f37a7031c2c70b20ed4c8c45706cb1a7e0c"
   },
   "syslogPresetFull": {
-    "text": "Selects every field in the optional syslog fields catalog.",
+    "text": "Selects every field in the optional syslog fields catalogue.",
     "source_sha256": "352c98946380c658d4b82d9f3e642fe3db7cd94710fadb75f816f69027ff99e5"
   },
   "syslogPresetClear": {
@@ -2168,7 +2168,7 @@
     "source_sha256": "4b1f0cf045045a54315984a4a7bc74e2b74cb80458c188377306af135edef086"
   },
   "dashboardRemoveTile": {
-    "text": "Removes this tile from your customized dashboard layout.",
+    "text": "Removes this tile from your customised dashboard layout.",
     "source_sha256": "ab8ceb891b459b88b321e2bb00cf680bc579bc6d2131974cc384333b80c9a59b"
   },
   "dashboardTileTitle": {
@@ -2180,11 +2180,11 @@
     "source_sha256": "c5a7641254f4e53532315c5150316f865138375b202862015018213c53c8fcee"
   },
   "dashboardAddTile": {
-    "text": "Adds a tile from the catalog to your dashboard layout.",
+    "text": "Adds a tile from the catalogue to your dashboard layout.",
     "source_sha256": "3ea795c6130a243e2fda022930aeaa73e63e942f1d405dc28cd6651b8a82c8c4"
   },
   "dashboardSaveLayout": {
-    "text": "Saves your customized dashboard tile layout.",
+    "text": "Saves your customised dashboard tile layout.",
     "source_sha256": "ae1762e1e6ce2a1bebe65d5a49caa7f893d5bb8d65cc608f269407be29fcc9a1"
   },
   "dashboardResetLayout": {
@@ -2312,27 +2312,27 @@
     "source_sha256": "445f61615aef5cbbdcf48bf6f985e4ce189c837cf195457b6d5ef5dc51dd41cb"
   },
   "enrollmentTokenLabel": {
-    "text": "Optional label so operators can recognize this enrollment token later.",
+    "text": "Optional label so operators can recognise this enrolment token later.",
     "source_sha256": "ca5c87340516051db602f2bc071e3744009551d5a75bdfbf8a5b4c528350a69a"
   },
   "enrollmentTokenTtl": {
-    "text": "How long this enrollment token remains valid before it expires.",
+    "text": "How long this enrolment token remains valid before it expires.",
     "source_sha256": "520ffcc1fdd9f9b7144557f4a240f7f1512d394fb1e3bdfe412dd82f4c124c59"
   },
   "enrollmentTokenMint": {
-    "text": "Creates a one-time enrollment token for agents joining this tenant.",
+    "text": "Creates a one-time enrolment token for agents joining this tenant.",
     "source_sha256": "a931910636b54c0827462ff37171ebd73fe59ae7736dcd9356d5c10e0ce0d4bc"
   },
   "enrollmentTokenPlaintext": {
-    "text": "One-time enrollment token plaintext. Copy it now; it is not shown again.",
+    "text": "One-time enrolment token plaintext. Copy it now; it is not shown again.",
     "source_sha256": "ee2752057ce69a0c88e8ad69956590d6340446334d42bef43257c60a1f98a45f"
   },
   "enrollmentTokenRevoke": {
-    "text": "Revokes this enrollment token so new agents cannot use it.",
+    "text": "Revokes this enrolment token so new agents cannot use it.",
     "source_sha256": "a3b81d74e8d21803653164db58ed1f28bd41cd50af118d516b54cdd6bb8e185c"
   },
   "serverIdentityPort": {
-    "text": "TCP port advertised in agent settings and enrollment URLs.",
+    "text": "TCP port advertised in agent settings and enrolment URLs.",
     "source_sha256": "592d2da682b9b3be98b7fb6b801abc575fc218103d9d1514c15da38d32886aad"
   },
   "serverIdentityScheme": {
@@ -2340,7 +2340,7 @@
     "source_sha256": "1d8e4776d86a20b239d10b2aab8db4c0237e30a4b23259103d52a4798b30e152"
   },
   "serverIdentitySave": {
-    "text": "Saves the advertised server identity used in settings and enrollment.",
+    "text": "Saves the advertised server identity used in settings and enrolment.",
     "source_sha256": "4a319bf62ef80d19c1f0b3a69ec45642915bae26fe0fc83663156b32888b9a22"
   },
   "serverIdentityReset": {
@@ -2376,11 +2376,11 @@
     "source_sha256": "52bd22147a3ced999700797ef353b9b3166c97fd8480ce1e9ab9c003b1aeba31"
   },
   "waProbePublishSample": {
-    "text": "Publishes the sample workstation-assurance probe pack to the server catalog.",
+    "text": "Publishes the sample workstation-assurance probe pack to the server catalogue.",
     "source_sha256": "727b1b3469f8f6535f886cbbf02b4581f9e220313b5f8f4aba87f985ae1375a2"
   },
   "waProbeUpload": {
-    "text": "Uploads and publishes a probe pack JSON file to the server catalog.",
+    "text": "Uploads and publishes a probe pack JSON file to the server catalogue.",
     "source_sha256": "88e7216170a3079e8238379d3965200299dfc442d67536c7346f0016979a513b"
   },
   "waProbeDownloadSample": {
@@ -2388,7 +2388,7 @@
     "source_sha256": "438e2f3bc4b25b74afd34aa99b49ed0ad750bfeddb3d9ce68aaf20ec703cc88c"
   },
   "waProbePackJson": {
-    "text": "Probe pack JSON preview. Publish writes it to the server catalog.",
+    "text": "Probe pack JSON preview. Publish writes it to the server catalogue.",
     "source_sha256": "9f07d39caacdaa41106d14f795490782ecc10c1d0e13808ae0fd026cea7d0e58"
   },
   "waProbeActivate": {
@@ -2456,7 +2456,7 @@
     "source_sha256": "13cae108c8e2da62d5411bbbde9d17bfa9b39b88f73f7deabf66eb0eb943bbbe"
   },
   "waiverApprover": {
-    "text": "Name of the person authorizing this waiver.",
+    "text": "Name of the person authorising this waiver.",
     "source_sha256": "97dec938be56dee6b532e28317eaef3f07fb54c0b3f83d2118912ee2970b236d"
   },
   "waiverReason": {
@@ -2468,7 +2468,7 @@
     "source_sha256": "19e00dacff4be806f0db036e9ab5dbc15354d2bd74fd919215fe144b5d18020c"
   },
   "actionUnenrollTotp": {
-    "text": "Removes your authenticator app enrollment. You must re-enroll to use TOTP again. This action is audited.",
+    "text": "Removes your authenticator app enrolment. You must re-enroll to use TOTP again. This action is audited.",
     "source_sha256": "94c4f9501e21d3e8594a9fb1a51744fdd1785d13fd04c8121c66df5709a274d3"
   },
   "actionOpenSettings": {
@@ -2608,7 +2608,7 @@
     "source_sha256": "e164b8fb3d21b7a1f2e090781e1897652a2ea3bf4d7320f0defcb4d88dc7bb5a"
   },
   "selectFieldStack": {
-    "text": "Chooses a value for this labeled setting.",
+    "text": "Chooses a value for this labelled setting.",
     "source_sha256": "aa6ca6da9be2ea39c1e169c527f6297fbb787e1b9c6e54a94c05e7e07c18aae6"
   },
   "iamToolbarAccount": {
@@ -2664,11 +2664,11 @@
     "source_sha256": "cb47cfc77ff505e9eb686f8267262217a5b219d74d0e5ff2b009583b43fc9d29"
   },
   "mainNavOpenSourceCredits": {
-    "text": "Opens the complete open-source credits inventory (licenses for every incorporated third-party component).",
+    "text": "Opens the complete open-source credits inventory (licences for every incorporated third-party component).",
     "source_sha256": "137f861df77d61c0b01a764676b898c0dcb55570b2d517dcbec4b5a3cf7c84bc"
   },
   "aboutCreditsFilter": {
-    "text": "Narrow the open-source credits list by project name, license, or copyright.",
+    "text": "Narrow the open-source credits list by project name, licence, or copyright.",
     "source_sha256": "775f9f5103d1a72deb94a27ed490dd4419a8ec26cfbee8d8625e5e84547fb2f8"
   },
   "aboutCreditsDownloadAppendix": {
@@ -2680,7 +2680,7 @@
     "source_sha256": "3f4a7659b0d83957dea18233fbecab679d5f2e9b055900972d21b5d02aa51062"
   },
   "aboutCreditsDownloadBlocked": {
-    "text": "Download the list of packages that are BLOCKED because no license text could be harvested.",
+    "text": "Download the list of packages that are BLOCKED because no licence text could be harvested.",
     "source_sha256": "6413e73c0f2e11c7ebdd8dcb7c948232ee7c0709c52e3233d2bbe3afa900f860"
   },
   "aboutCreditsPagePrev": {
@@ -2772,7 +2772,7 @@
     "source_sha256": "97be9dfc6a36beedf90601ef2b91dc5c83ba59d0a279235e7081e68bbc11e5b0"
   },
   "ipScannerCredentialCatalog": {
-    "text": "Opens the Known Default Credentials catalog used by Check Defaults on scan rows.",
+    "text": "Opens the Known Default Credentials catalogue used by Check Defaults on scan rows.",
     "source_sha256": "11b6ab50dd2710772b17a3075fd993aad78217aed51309594179bea42b86827d"
   },
   "ipScannerTargets": {
@@ -2808,7 +2808,7 @@
     "source_sha256": "c04ac0f5f35274fc6ad22453dcd1e1e234880f85f2dd389221c022f12c564fb9"
   },
   "ipScannerRowCheckDefaults": {
-    "text": "Tries published factory credentials from the catalog against this host.",
+    "text": "Tries published factory credentials from the catalogue against this host.",
     "source_sha256": "9b67a2c8e7b62e372f88903bee83eac6c26317ce95f8384da27259e871669c9d"
   },
   "notificationDismiss": {
@@ -3456,7 +3456,7 @@
     "source_sha256": "50ee1d4a24228bde12522ac7c0b58be4299220c89bcf184f5d4cb3c73ffc8821"
   },
   "settingsCryptoMigrateFromHsmConfirm": {
-    "text": "Type the confirmation phrase to authorize moving crypto custody from HSM back to software.",
+    "text": "Type the confirmation phrase to authorise moving crypto custody from HSM back to software.",
     "source_sha256": "bec317f018d737e90c234fbc3306a85454c5225502e4b97cc6d4127eaf120183"
   },
   "settingsCryptoMigrateFromHsmApply": {
@@ -3504,7 +3504,7 @@
     "source_sha256": "23766f8e4111351f0cdbb8820eea08bae39802f0a6cb8d4a8d74b44245ff3e5c"
   },
   "defenseOpenFamily": {
-    "text": "Open Current State Compliance for this family.",
+    "text": "Open Current-state compliance for this family.",
     "source_sha256": "3b19be536aeb8ccdc0ca37479b219d4f25e584b8ca652d00383b1cbe20ab6e87"
   },
   "cmmcHonestyBanner": {
@@ -3512,7 +3512,7 @@
     "source_sha256": "3421c9d54a1b550787715678393407e9c69b601af6bb86ff0c456665821a8401"
   },
   "cmmcOpenFamily": {
-    "text": "Open Current State Compliance to continue the named work for this family.",
+    "text": "Open Current-state compliance to continue the named work for this family.",
     "source_sha256": "3af5066b0b91f57d03606768d1ee86773727c960b7e9219be388f6e1cd721939"
   },
   "cmmcOpenPoam": {
@@ -3892,7 +3892,7 @@
     "source_sha256": "74a970224a239578f02056fe0d82fbdf62a4e0e6b8bfacb16d5d12eef9958656"
   },
   "sessionIoScopeField": {
-    "text": "Who this clipboard and file-transfer ceiling applies to: organization default, a user, an IAM role, or an IAM user group.",
+    "text": "Who this clipboard and file-transfer ceiling applies to: organisation default, a user, an IAM role, or an IAM user group.",
     "source_sha256": "2c7039e5fca7a68c6e6da2c6e9d7261c543498dbf3b1a3124bc992b3c225abbc"
   },
   "sessionIoClipboardField": {
