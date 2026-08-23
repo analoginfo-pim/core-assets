@@ -389,6 +389,18 @@
     "approvalsAriaCount": {
       "text": "Opens outstanding privileged-access approvals. {{count}} requests wait for your decision.",
       "source_sha256": "f2708040d7cea909f11f97f67c36331aa7e60cf01685eacdf1def42e5e0133b3"
+    },
+    "operatingLevelChip": {
+      "text": "Operating: {{label}}",
+      "source_sha256": "3fed05482df855632c83a77fd9eb13630618e5036868dc12b1fbed30fc49eda4"
+    },
+    "operatingLevelUnset": {
+      "text": "Operating: choose a level",
+      "source_sha256": "1742973345ebd21c25a58d57286b642083cd8f5f2eeaeaf274872c871fd247df"
+    },
+    "operatingLevelAria": {
+      "text": "Configured operating level: {{label}}",
+      "source_sha256": "72e6fedf90fc116069e084ca8898d7af7c198ee769c35502551d63c589342641"
     }
   },
   "auditorSetup": {
@@ -1187,8 +1199,8 @@
       "source_sha256": "d841a6545e7f784bf7a21f6b5bfe0f069fb9651a701279cbba4232f06bcb39f6"
     },
     "downloadOpenApi": {
-      "text": "Download OpenAPI JSON",
-      "source_sha256": "e6078e0829854570a6e036c199ac9f9fa33640217aad23d015655f016f3c0157"
+      "text": "OpenAPI-JSON herunterladen",
+      "source_sha256": "d6b98770f09a01bb95be1ff165a8703ab71baa2605657107fa2337a7b6af5d1c"
     },
     "viewRaw": {
       "text": "View raw",
@@ -1199,8 +1211,8 @@
       "source_sha256": "b1a413e0885799b0c30faa7c403607e72abc21abf35cec5980713e3758e678d7"
     },
     "loaded": {
-      "text": "OpenAPI document loaded ({{count}} characters).",
-      "source_sha256": "0da6c866b884f82d9d0536dc5beed777caf0bee8b57c3591f0ce286cbce47e3a"
+      "text": "OpenAPI-Dokument geladen ({{count}} Zeichen).",
+      "source_sha256": "5d567a28ed0277e3db3ecaec1cf42d24e1d31ecaf727344f52e7f020faa91ee8"
     },
     "howTo": {
       "0": {
@@ -1317,6 +1329,268 @@
     "busyStalledTooltip": {
       "text": "This page has been loading longer than allowed. The request has not finished. Refresh the page or try the last action again.",
       "source_sha256": "ccc4c37be80d06cb83b562eb547586073f8c308df6af1aebb1586809258ec202"
+    }
+  },
+  "serviceLogs": {
+    "title": {
+      "text": "Service logs",
+      "source_sha256": "10f639e7d15be9ec23a7fd7f0033d85a75835ea7c4b503f3fb33d6375a87e152"
+    },
+    "intro": {
+      "text": "Live view of the three AIC Server process logs. Application tracing is on stderr (service capture) and the rolling application log file. stdout is usually empty. Secrets are masked. Debug stays off unless you choose Debug or Trace.",
+      "source_sha256": "7623d3b14ab7cca79395be158db37c4e722084989c3df5ddb384af19ef742512"
+    },
+    "stream": {
+      "text": "Stream",
+      "source_sha256": "1eec3071dd26e2245fc8077fb578244738865a889583d2f15a1fe7719138bf1c"
+    },
+    "stderr": {
+      "text": "stderr (application log / service capture)",
+      "source_sha256": "95c1af5d84ea708c5b609317868696f5db0da29fb9956ddf6f1b21c922497eaa"
+    },
+    "rolling": {
+      "text": "rolling (application log file)",
+      "source_sha256": "b781533d3e5b4efbcf9722543634c426292c42a9276910c6cbcc1aa768718864"
+    },
+    "stdout": {
+      "text": "stdout (service capture; usually empty)",
+      "source_sha256": "6b3649bcbdf572eaf9dc83bbc5c0f8d284f1f432300acd60d31c137d061d5a47"
+    },
+    "level": {
+      "text": "Minimum level",
+      "source_sha256": "b7bfe49aa148fc0b3b356e5a96f8227b2f9fec03c55364bda8724496fa699791"
+    },
+    "levelAll": {
+      "text": "All levels",
+      "source_sha256": "d9c85efd760244d1941f706afe927f36dd48a4e41315be94452064512f704bee"
+    },
+    "levelError": {
+      "text": "Error and above",
+      "source_sha256": "38d671d712bc176e62ca3c07e7a0b5e1cf641e82d2cfff03619b44422386eae5"
+    },
+    "levelWarn": {
+      "text": "Warn and above",
+      "source_sha256": "fc481b2222f2186e6d4c23c4759157ad2ec9a84bf9a829e2491bc1e8728ef277"
+    },
+    "levelInfo": {
+      "text": "Info and above",
+      "source_sha256": "fe6ff667b5960324944eae494b94f8b0779be7fe0c6be7dfbb0c557dbaca7a39"
+    },
+    "levelDebug": {
+      "text": "Debug and above",
+      "source_sha256": "cf06b014b6e00fd98088befc8f91f495a1e975663e0cd819f066939335b6d2ac"
+    },
+    "levelTrace": {
+      "text": "Trace",
+      "source_sha256": "7e14c3d7dd12bbd0947aa8cb491dff154a1644a85848fc28bd1997ef9ef54a2a"
+    },
+    "timeZone": {
+      "text": "Time zone",
+      "source_sha256": "b9fe1464783e1c0d3a12dbde2686e883482a4fa03f33351af3e576d7a9d32fe0"
+    },
+    "localTime": {
+      "text": "Local time",
+      "source_sha256": "2397ec601845e36c4239b6055dcd47c8efd19ff2c6d7bbdd6bc4036e80ff0d3b"
+    },
+    "gmtUtc": {
+      "text": "GMT (UTC)",
+      "source_sha256": "432aeb44c133a92edc240b5de17f1eba3459b5c8739ffc3f4634ebe7c1f4023b"
+    },
+    "policyTitle": {
+      "text": "Retention and archive policy",
+      "source_sha256": "2e863cbd2c6973fdddc929aa05b03a10ff3d30bde62941b4df7c9aaa121ad462"
+    },
+    "policyHelper": {
+      "text": "Keep live logs for the number of days you set, or until they reach the size limit. Then they rotate into a ZIP archive. They are not dropped silently.",
+      "source_sha256": "da821b03ef09e45e1489008b81be811cfdb8cfd6d2f6502b1f67aebd0a5aade0"
+    },
+    "retentionDays": {
+      "text": "Retention (days)",
+      "source_sha256": "b620b7e3aa117246b1b814f0d3fd8019b13196ff78f69189ca433857aaa8ac82"
+    },
+    "archiveEnabled": {
+      "text": "Rotate into archives",
+      "source_sha256": "c0f536c2cf7f584b036f9f826594fc04409daa6b7fd62ff397316203d6b180dd"
+    },
+    "maxSizeMb": {
+      "text": "Maximum live file size (MB)",
+      "source_sha256": "0d646c9fd4cd3f0e466fe7feb2f4c92478c6dcff8f20661e6e99ce451d5882cd"
+    },
+    "maxArchives": {
+      "text": "Maximum archives",
+      "source_sha256": "c1322e8d66c19d5c45e45dede93ea6c6cc94b9b6abfbaa1a39492a57740b044f"
+    },
+    "deleteAllowed": {
+      "text": "Allow operators to delete archives",
+      "source_sha256": "6283eb8be842a776c71f3c3a74651787777db9bf2004e91e96aae00ca7fe23e9"
+    },
+    "savePolicy": {
+      "text": "Save policy",
+      "source_sha256": "57ee14ce1425ca9b693df872d192e208370cd6abc7167ca0c3b01f990dcf28d3"
+    },
+    "policySaved": {
+      "text": "Policy saved.",
+      "source_sha256": "800631fe3a01ba1ba357c60826cf10f4663c8fe48c81259412863dabb3e581cd"
+    },
+    "archivesTitle": {
+      "text": "Archived logs",
+      "source_sha256": "84a85f39e31f882266ce30b2bf7c2337dff8edf3ef04aa862dc1231fa2165008"
+    },
+    "archivesEmpty": {
+      "text": "No archives yet. Rotate a live stream, or wait until a file reaches the size or age limit.",
+      "source_sha256": "9e1bc758ee1df88197ddf15f65e68bae395fd2f6f2f915a55d9baf74659cefcd"
+    },
+    "rotateNow": {
+      "text": "Rotate live logs now",
+      "source_sha256": "be06e97d05d3539ac114df78e08c77543e22af3783a57dbb63b0013523b6091b"
+    },
+    "colName": {
+      "text": "Archive",
+      "source_sha256": "66f4804ee23ddc092d1bae43cb88186aa541187fff7c1cc8a4aa17e59a9f4123"
+    },
+    "colStream": {
+      "text": "Stream",
+      "source_sha256": "1eec3071dd26e2245fc8077fb578244738865a889583d2f15a1fe7719138bf1c"
+    },
+    "colSize": {
+      "text": "Size",
+      "source_sha256": "1af851907331c0ed99e7c63b4e55df808bc5fc4c990a1cf80ca8c0f76daf1f3b"
+    },
+    "colWhen": {
+      "text": "Archived",
+      "source_sha256": "bdb86505f8062d15f152cef71dd4ca89609d5bf8e98771dcd2c9f70d247403da"
+    },
+    "colPath": {
+      "text": "Path",
+      "source_sha256": "62fa5a5b0d3c318835a213e22a4b335c42515443d598741d0413e8c47f9ecf67"
+    },
+    "download": {
+      "text": "Download",
+      "source_sha256": "d6eafe82359100423c93c5ce53c352c1b51ca1e699215fcec3f5c5dd9bf12d24"
+    },
+    "deleteArchive": {
+      "text": "Delete",
+      "source_sha256": "e2d0a54968ead24efc0dffa6ac78fc606dceec34a0f586177a74a54cc2272cf8"
+    },
+    "deleteConfirmTitle": {
+      "text": "Delete this archive?",
+      "source_sha256": "05fe469a84a32aca28f111e1031e16ccf1d242fc6dc6eb7a2df909ab7527768b"
+    },
+    "deleteConfirmBody": {
+      "text": "This permanently deletes {{name}}. The action is recorded in the audit log.",
+      "source_sha256": "9e6cf0ddc7763702cb7a4592c36fd97591319e881dc945cc8be1c9d0f8bb9505"
+    },
+    "confirmDelete": {
+      "text": "Delete archive",
+      "source_sha256": "8dfc6034cae13da2b5c88a2c117684476e79d95f9e51e0df363de3f63296557d"
+    },
+    "rotated": {
+      "text": "Live logs rotated into archives.",
+      "source_sha256": "503e64a392e2580ba99890702680563fd7c0991eff4a3a6486bd5c917d615e3d"
+    },
+    "reloadTail": {
+      "text": "Reload tail",
+      "source_sha256": "8ba7eb5bd4f4cb7c1a7fb43c68ec63094d19a5cc57b27d977af67cf1319ad75e"
+    },
+    "pauseTail": {
+      "text": "Pause live tail",
+      "source_sha256": "03fadcec0d884c3ce9fc3f2f6cbeb251c833a063da09a49a57f7dcdd167793d7"
+    },
+    "resumeTail": {
+      "text": "Resume live tail",
+      "source_sha256": "50084141ba3050233f9a6b952cd4e9180e68f603d001e148e0bf2c2994a27a6b"
+    },
+    "autoScrollOn": {
+      "text": "Auto-scroll on",
+      "source_sha256": "5ccfb9bfce9c1eaf67855d31503504bfb8054fb27ed7a29e76eb614349cbae31"
+    },
+    "autoScrollOff": {
+      "text": "Auto-scroll off",
+      "source_sha256": "1f39c7553cbd85beaa3f744f6eaefe3b53cdd51f3fa6b2579b3682be40315294"
+    },
+    "top": {
+      "text": "Top",
+      "source_sha256": "d5cdfcf7ff75338fa974145a13378ee35f7ea04cfabd74b8f5fb6df350cfbcca"
+    },
+    "bottom": {
+      "text": "Bottom",
+      "source_sha256": "479ad21ac9096236e921c228a511f12cc84758e21d9edda03ae82c501d367c93"
+    },
+    "clearLog": {
+      "text": "Clear log",
+      "source_sha256": "a8858ac749bc452bf02b34bb74d63f62b65d6da599124d4b25146ff94a7a3077"
+    },
+    "restartServer": {
+      "text": "Restart server",
+      "source_sha256": "51cd293a0b55d28e51b6f15a91764d8083a84266a0bb1bed607ac3125a2e27b3"
+    },
+    "retry": {
+      "text": "Retry",
+      "source_sha256": "942087cc2d41e01304b7195558d093d10c72af8e838c7556d6a02d471ee71852"
+    },
+    "cancel": {
+      "text": "Cancel",
+      "source_sha256": "19766ed6ccb2f4a32778eed80d1928d2c87a18d7c275ccb163ec6709d3eb2e27"
+    },
+    "close": {
+      "text": "Close",
+      "source_sha256": "7d9eb7acb13e24625c404401d8e88b2350e32162455885f18276cf802f7701ed"
+    },
+    "clearConfirmTitle": {
+      "text": "Clear service logs?",
+      "source_sha256": "84d184f3d8d93109a1a751facb6829149bd8e742b48c417faf639f174624b0c7"
+    },
+    "clearConfirmBody": {
+      "text": "This truncates the on-disk stdout, stderr, and application (rolling) log files and clears this view. Only entries written after you confirm will be shown. Archived ZIP files are not deleted.",
+      "source_sha256": "2c79b8e78a169d1687c9d2e68d79f2a3c01c65df810820c88f73d18c25fd6a53"
+    },
+    "clearing": {
+      "text": "Clearing…",
+      "source_sha256": "9a81378b00d70e669413ed91a709d5b23dd10a3f2d38cb15243bdc97dccb2ac6"
+    },
+    "restartConfirmTitle": {
+      "text": "Restart the server?",
+      "source_sha256": "43beecb63baa2dcadb9e06660144f3043298bcfa0475495822744deca529cbd9"
+    },
+    "restartConfirmBody": {
+      "text": "Schedules a service stop and start so you can capture a fresh start banner in the logs.",
+      "source_sha256": "2a5e864c6c4bfc395e08c5ad880c01025a01e40fffb46068a96ed5f721a210f5"
+    },
+    "restarting": {
+      "text": "Restarting…",
+      "source_sha256": "75d0f1469d166c8cc906cae019a298ae25df9a5198a099a0f2b54ff2c925d716"
+    },
+    "noLines": {
+      "text": "No log lines in this view. Try All levels, switch streams, or wait for new output.",
+      "source_sha256": "2580d29c06f2b26a6f08efb4a70b29531cd60dd4c7834b7d380735352a3811d6"
+    },
+    "fileMissing": {
+      "text": "Log file does not exist yet. Start or restart the service, then click Reload tail.",
+      "source_sha256": "71653c88c2c64025e33be000b290391feebd5e2122ac406a34d1a74486fb74aa"
+    },
+    "loadFailed": {
+      "text": "Log could not be loaded.",
+      "source_sha256": "a3909a533e648fc7697aea810a7aa6187f0b4f18a8aff064da1759141a0a1142"
+    },
+    "metaFailed": {
+      "text": "Could not load log metadata.",
+      "source_sha256": "b42680be777eae0d02fd43afec39f120cd274045595ad0e1c3e5e7606be7a515"
+    },
+    "policyFailed": {
+      "text": "Failed to save the service log policy.",
+      "source_sha256": "9bbd59f574a651a9a0447814f5781d836fd7ecad5e6241b8b6f6a93bfaeb40e0"
+    },
+    "rotateFailed": {
+      "text": "Failed to rotate live logs.",
+      "source_sha256": "d8a94eabdf39074203d2c5705f39db31ba76b103ac58bd7515caac808e588c09"
+    },
+    "deleteFailed": {
+      "text": "Failed to delete the archive.",
+      "source_sha256": "c1960ada9475dcea76761d4bcda0bcd9877e6b8347698c6169cdce6b0f0eb04a"
+    },
+    "downloadFailed": {
+      "text": "Failed to download the archive.",
+      "source_sha256": "1c90dee06b869d34fb45d9c44e74faa723b0742e05dda91385848ea762466dd2"
     }
   }
 }

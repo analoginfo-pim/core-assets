@@ -238,6 +238,22 @@
       "text": "Send copies the file to the remote computer. SSH uses SFTP into aic-transfer in the account home. Windows Remote Desktop uses the user profile aic-transfer folder. Duplicate names are renamed by default (report-1.pdf). Operating-system and sensitive files cannot be overwritten.",
       "source_sha256": "401a131faa76f0da7e90b37204561c1a23f3616c5180cccae9f6c35b42f4d4cf"
     },
+    "files": {
+      "text": "Files",
+      "source_sha256": "abc7e9892806b047b4d4786b3685285543f76ca314c4c76246d5f6544c7856c9"
+    },
+    "filesAria": {
+      "text": "Open the remote folder and send files",
+      "source_sha256": "445c041e0737490ad127f22e8326e5ceb2c099edbdabe9859888b3e70e55c8c8"
+    },
+    "remoteFolder": {
+      "text": "Remote folder ({{path}})",
+      "source_sha256": "b482c1801e13b3a92c0f25be34201902e6e0813df7e356a388c9508db79eb8c3"
+    },
+    "refreshFolder": {
+      "text": "Refresh",
+      "source_sha256": "0e91610117029a62a478b7fa7df0b8598bebe3ab1e192d4b1882e310719c9671"
+    },
     "targetDirectoryBefore": {
       "text": "Target folder before send ({{path}})",
       "source_sha256": "27a26320b40290e6ca774738e239ada3d693ad4ceb5a08331f82900a1bf68032"
@@ -357,6 +373,38 @@
     "deliveredPath": {
       "text": "on host {{path}}",
       "source_sha256": "c7c146d796e5e15fa227a254fc7dbe2a13469c354da867e93b695ab03f493711"
+    },
+    "preferredMoveStore": {
+      "text": "Preferred: send through Secure Share. The other person opens it inside the enclave.",
+      "source_sha256": "2e0b62b31e22f32de0e3732590ad014a64552d0ae032a4ae0111de179130c0a0"
+    },
+    "sendThroughSecureShare": {
+      "text": "Send through Secure Share",
+      "source_sha256": "7ec5a88e2ac7bc3dd536d590e10bf842cee03ba3e4a55b0e35248987f4ae01cb"
+    },
+    "alternateHostFolder": {
+      "text": "Alternate: when allowed, copy into the machine folder aic-transfer (SFTP or SMB). Not a VNC file channel.",
+      "source_sha256": "365b29ff17fcadbf111f30e07442add4dccba6a13f5e9d5f9d0ed03b314819c6"
+    },
+    "vncNoNativeChannel": {
+      "text": "This display session cannot receive files by itself.",
+      "source_sha256": "707fa5f1e7dc153e1726cf014e942daff3c63eca2e6c102edb22236a6b38c8de"
+    },
+    "hostUploadNotGranted": {
+      "text": "Direct copy to the machine is off unless an administrator grants it.",
+      "source_sha256": "b9523ea764ef1ead8aa40b2d5a727f6f6b7926862d814a570e831f8b624756cd"
+    },
+    "uploadTooLarge": {
+      "text": "This file is larger than the {{maxMb}} MB limit.",
+      "source_sha256": "9057d4cd03b0f7d688234421a33584f9d2059831a961061a40dd03504f587a11"
+    },
+    "uploadChunkFailed": {
+      "text": "A part of the file did not upload. Try again.",
+      "source_sha256": "afb698bf426660cdd7c8f90f5261816d7b4e10582660fcb04170922eefc597d6"
+    },
+    "helperHomeOnly": {
+      "text": "The on-demand helper lands only in this account home folder.",
+      "source_sha256": "a8d2c4563edecd593c81bed818bda9b0e7d08602a66e7438474c37bb7c0d9a4d"
     }
   },
   "landingPage": {
@@ -1151,6 +1199,96 @@
     "manualHint": {
       "text": "Pick a person from the directory, or type their identifier if they are not listed.",
       "source_sha256": "02def31c66f9faa5087feff6c098aefc29bf4e005eb714c245f7b57527435220"
+    }
+  },
+  "controlRefField": {
+    "helper": {
+      "text": "The catalogue control this finding tracks. The identifier is an association, not a verdict.",
+      "source_sha256": "ed4ea7ca37a36664401d0f91c78553dbb459e963b9a525351c70bdb6c466d180"
+    },
+    "manualHint": {
+      "text": "Pick a control from the catalogue, or type a reference the catalogue does not carry, for example AC-6.",
+      "source_sha256": "f02f35aea36509654696e2a5017209ad21f0447efeb4ec1e51573097cde53c9d"
+    }
+  },
+  "iamUserGroupField": {
+    "helper": {
+      "text": "The IAM user group this policy applies to.",
+      "source_sha256": "eb9d139813fc6fb3c9910aba5f53ecdeb388e5c8deb6d6aa1d674dca49d0bc52"
+    },
+    "manualHint": {
+      "text": "Pick a user group, or type its identifier if it is not listed.",
+      "source_sha256": "bfa451a90905d55505bbeb529e31936085fe863f1b8f7b1cb284b9a5ab667090"
+    }
+  },
+  "machineScopeField": {
+    "helper": {
+      "text": "When set, uses that machine's effective session-control policy. Leave empty for the global policy.",
+      "source_sha256": "df027359637d7fb4bd105c1fd9ba3b0cdcc050a903f9a9880883b06b3dfd3865"
+    },
+    "manualHint": {
+      "text": "Pick a machine, or type its identifier if it is not listed.",
+      "source_sha256": "3e944c1672f9d3ad4ddfed69b4382d515cf34f6e67d86d8d13eb25c03201c379"
+    }
+  },
+  "endpointField": {
+    "helper": {
+      "text": "The enrolled endpoint this assignment applies to.",
+      "source_sha256": "3b447258c4232bccdab6f66651e5c31cac230036e705065c084244487def0030"
+    },
+    "manualHint": {
+      "text": "Pick an endpoint, or type its machine identifier if it is not listed.",
+      "source_sha256": "14cd3016f7592db0997e25ac88e4e87d7351b442b49f75258767dabd175ecb6b"
+    }
+  },
+  "connectionPointField": {
+    "helper": {
+      "text": "The SSH, RDP, or VNC connection target this right applies to.",
+      "source_sha256": "4d59581efcd8babd3e457bf6e65af8cad28cf357faf2a6d75ea76f4f990c125d"
+    },
+    "manualHint": {
+      "text": "Pick a connection point, or type its identifier if it is not listed.",
+      "source_sha256": "28b7167c3cefd481ba9f0f1d2920d39a425b78d9b131e1dd3c53bb1bd9ca6d45"
+    }
+  },
+  "workstationField": {
+    "helper": {
+      "text": "Assignable end-user workstation (PAM target).",
+      "source_sha256": "674fc16a633f6da22bdccd86853e3f40a4e31c09ce4d6ba022a2a5016e76a7f0"
+    },
+    "manualHint": {
+      "text": "Pick a workstation, or type its system key if it is not listed.",
+      "source_sha256": "7fba7e21b7591fc04f493beaf03165426d60fefb6c05744410beb61fc67d6a2b"
+    }
+  },
+  "endpointIdentityField": {
+    "helper": {
+      "text": "A local account on the selected machine.",
+      "source_sha256": "9e2915b217d6e5e927535d0cd55c3667f17a5a262c7fe87d1ce8d8622c9a2973"
+    },
+    "manualHint": {
+      "text": "Pick a managed account, or type a local or domain account name if it is not listed.",
+      "source_sha256": "27baf0130f433b3f48e0991200e5fa60a185b852af4a302aea6b533995b77f4d"
+    }
+  },
+  "tenantField": {
+    "helper": {
+      "text": "The multi-tenant record this marking applies to.",
+      "source_sha256": "5f7405545172f5fce4898ba8e47b342c3bede3dad693c80612b1ad6e7bb68922"
+    },
+    "manualHint": {
+      "text": "Pick a tenant, or type its identifier if it is not listed.",
+      "source_sha256": "f9f88f4d19a811093719dadf3ff4b6c23e2ea6f1439d99c31d03c53e13ec3374"
+    }
+  },
+  "systemGroupField": {
+    "helper": {
+      "text": "The system group this marking applies to.",
+      "source_sha256": "db3603c3cc89b0c0f0a096e22faf4dfe3c9d35e4ce22bad0942e187f99b6de2b"
+    },
+    "manualHint": {
+      "text": "Pick a system group, or type its identifier if it is not listed.",
+      "source_sha256": "745669330be4e07e1ee2a43061c6d2b8db4cd3e13fbab567390d1a98d62d07d9"
     }
   },
   "frameworkTagsField": {

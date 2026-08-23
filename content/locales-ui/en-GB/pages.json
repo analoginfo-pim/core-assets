@@ -1145,11 +1145,11 @@
       },
       "cancelCredential": {
         "text": "Cancel credential",
-        "source_sha256": "3116e24f8092ee9d5b25298036a5593073bdacce14f8c965b8612d054256e6cd"
+        "source_sha256": "c759a62f7ce934df527b16880047de3c0ce8a50f1c0acb9f88bf1d0aec031dd3"
       },
       "cancelRequest": {
         "text": "Cancel request",
-        "source_sha256": "caf640d34f5e28c88ef4c8eff646da37786a54c2c07aef0d5a7f15ad03af5492"
+        "source_sha256": "56196683592dab4dd8fee3b001f87e50ac53fba0a2c05a7a935ef1c92449d546"
       },
       "clearFilter": {
         "text": "Clear filter",
@@ -1515,7 +1515,7 @@
       },
       "submitRequest": {
         "text": "Submit access request",
-        "source_sha256": "55ae6b24fc9a2563c13a37eca84a0b7c909c1ccf446235659e17fac70f9abf3f"
+        "source_sha256": "fd3a478d9eeb8e7b1215480bccb71ad42bb3b3a2497b29a8b4fab3af91cc3194"
       },
       "supervisorChip": {
         "text": "Supervisor: {{name}}",
@@ -1985,7 +1985,7 @@
       },
       "reveal": {
         "text": "Reveal",
-        "source_sha256": "ccb27f03f03ed86659485a95d9940964513549cc06cff298b8dae691cf3b6762"
+        "source_sha256": "36b830bdb447f8c758a9b58f190eed468c4bd53e9c7662ee19bca9c53d3a3e3d"
       },
       "rotate": {
         "text": "Rotate",
@@ -2039,7 +2039,7 @@
       },
       "mintCode": {
         "text": "Mint elevation code",
-        "source_sha256": "fdfc7849b07a1e944431caa27f37505d7cff7e527b6323e0fcb9fa4911ae9edd"
+        "source_sha256": "452803488353b20e5ba24dc8e0b577b0537d2845227255d9b15130dccaa6a259"
       },
       "mintPlatform": {
         "text": "Mint platform codes",
@@ -2570,8 +2570,8 @@
         "source_sha256": "899ae0be2939955ef0f9d612248940798c07c38a9ca25389d8f0191954608400"
       },
       "subtitle": {
-        "text": "Reported versions from Systems List, plus the organisation required-version policy. AIC Server does not download or install the Agent.",
-        "source_sha256": "8a3f2e04d65e077743c6a7cb6573cedf489a15fd5d83f4e4fe6be322aafb2c66"
+        "text": "Read-only versions and check-in age from Systems List — no live remote AppConfig snapshot",
+        "source_sha256": "d2f90e99008bcd2454ce43f5927c6519587172ec7fe58192b964a9e9e16d5978"
       },
       "systemsHonesty": {
         "text": "Systems List honesty: {{honesty}}",
@@ -2584,126 +2584,6 @@
       "unknownError": {
         "text": "Unknown error",
         "source_sha256": "27c2ccd962c2b8dccb52fe3688ab236f186f7a41fd57d810478712048e9ad3f8"
-      },
-      "colCheckin": {
-        "text": "Check-in age",
-        "source_sha256": "1eaade0dc057e33cd90306660ce96e9a8dd13aadbe3e8d8b214d33f7d56a3c1b"
-      },
-      "colMachine": {
-        "text": "Machine",
-        "source_sha256": "8f1cc42d7c1ceb0c41a2ae900de606db6f694d94a409ad362d5fbfa5e84e3d71"
-      },
-      "colPush": {
-        "text": "Push reachable",
-        "source_sha256": "0ef11d382377bd6fa7d46e28c6cb24b420f5bf171f6f962ab8375b64de2b0069"
-      },
-      "colState": {
-        "text": "Agent state",
-        "source_sha256": "b31c9b2cc2fb4baee0acd6751ad17be65a0d7dea8c72333ad66a52273cee186b"
-      },
-      "colVersion": {
-        "text": "Agent version",
-        "source_sha256": "4ab6ac4ad9a90a76916e59f0ad274ea74b56627c860341979e05265549533274"
-      },
-      "colWarnings": {
-        "text": "Warnings",
-        "source_sha256": "0e04cd10f9afd7e546e176b34b56a243d8c741198aa0bfee27d7661a370dc043"
-      },
-      "dueUtc": {
-        "text": "Required-by date (UTC)",
-        "source_sha256": "837d80725d8b37ddd9ea2d6293b0cafc108910ddaf52168a47b16686a4e02db2"
-      },
-      "dueUtcHelp": {
-        "text": "RFC 3339 instant. Used only when the method is Require by date.",
-        "source_sha256": "5cddbb212f9f16cf821dc17675ee35a4399be6159ffc79d52c593f6a7f719cf0"
-      },
-      "howEntra": {
-        "text": "Microsoft Entra / Intune",
-        "source_sha256": "92496f6a368eb434af9217a36c0401099af1569625e9100bab4ae18c0b7824ae"
-      },
-      "howGroupPolicy": {
-        "text": "Group Policy",
-        "source_sha256": "befe31d7c1202a47157cb38b1929d11f0795bbf2ed4c503954dd4f2e385a02d1"
-      },
-      "howManual": {
-        "text": "Manual file copy",
-        "source_sha256": "3f1c90cd459a947ea1580c654e2502c0b5cedbb6bd2891c4a39ace496ba38287"
-      },
-      "howRemind": {
-        "text": "Remind operators (manual install)",
-        "source_sha256": "69d24be365e6059db60bb9b142a4ab357b9b021f86e6d9a0978ba6f900fc4f12"
-      },
-      "howReportOnly": {
-        "text": "Record only (no install reminder)",
-        "source_sha256": "9fac44d54ce6d56df96a5ea287f8c45c490e5eeddf37c5344ea37ff164952657"
-      },
-      "howRequireByDate": {
-        "text": "Require by date (manual install)",
-        "source_sha256": "94522b52e3dd962066af143afea502b2fc7203ea48e31f505c0d24c85f980b87"
-      },
-      "howUnset": {
-        "text": "Not set",
-        "source_sha256": "4895f73177ab5d67c30c183a49d2477e014a2ef69b65150762d17e877f4f5b95"
-      },
-      "installHow": {
-        "text": "How to install updates",
-        "source_sha256": "b47752ef67d59adf02f71cd54dca13a495d3dacf8e34f9d196745cee0c1fd586"
-      },
-      "policyHelp": {
-        "text": "Set the version this organisation requires. The Agent records required versus current at check-in. AIC Server does not download or install the Agent. Operators install using the method chosen here.",
-        "source_sha256": "1d777185724d11b431aaf2216f7a5ded261de695c8acf625841839bf6be97e55"
-      },
-      "policyHonesty": {
-        "text": "Partial. Download and install stay manual or through the organisation tool named here. This is not a silent updater and not Met.",
-        "source_sha256": "56f0bee3ebc0759d6ad5dee1570c10f87a965d0284409ba677f6403815b283c5"
-      },
-      "policyLoadFailed": {
-        "text": "Could not load required-version policy. The running server may not serve this API yet. Reported versions below still load.",
-        "source_sha256": "9b97fd8d50ac033eb59c8394d0aed512c8d6259b41b0245e91b6b1b142e4cda7"
-      },
-      "policySaveFailed": {
-        "text": "Could not save required-version policy. {{error}}",
-        "source_sha256": "14dbab3f2e6176e2153ba28a9dc339dc7d08fc2c5ecb7f312ddbe304199dc0c2"
-      },
-      "policySaved": {
-        "text": "Required-version policy saved",
-        "source_sha256": "ae9e9ccd17e419bf01adee324a414a51a728bd1be1827bfaba854fd5b2d4b46b"
-      },
-      "policyTitle": {
-        "text": "Organisation required Agent version",
-        "source_sha256": "3016c26c13a299c117618a61fd8c50b0e6d4c50afb6073adeaa3ffa762f7a243"
-      },
-      "requiredVersion": {
-        "text": "Required version",
-        "source_sha256": "3e3092f8423735b442a5aa4ec2a90ca8caea858ef20bdbdfd747ea0e214e719d"
-      },
-      "requiredVersionHelp": {
-        "text": "Example 1.0.1. Leave empty when the organisation has not set a requirement.",
-        "source_sha256": "7795ebb87f8e7da0d40ef6807f82ceb5fb233352c0c3620dc75b144737d3502e"
-      },
-      "savePolicy": {
-        "text": "Save required-version policy",
-        "source_sha256": "e77c83cc82204067d4b08889f1c1de4c8acd8cc584dcdc85d20b2d50d8db8772"
-      },
-      "vsBehind": {
-        "text": "Behind required",
-        "source_sha256": "9743971e986952b1b7789857c8a9b2c4323b52f04f0b46efcf7847b2b81062c2"
-      },
-      "vsMeets": {
-        "text": "Meets required",
-        "source_sha256": "2a022cbdbaef4f41e9bb0ba5f5809f625cb048d00a5288902319dfbe58cc0f52"
-      },
-      "vsRequired": {
-        "text": "Versus required",
-        "source_sha256": "d156891c97449982f8f43ecaae08b759d375b59905378e6b78e6a4b1f4f9ad10"
-      },
-      "vsUnknown": {
-        "text": "Not compared",
-        "source_sha256": "18e7c18acb7117360e654c9c3926aea681100ab0cda5976bc1287c82f9826de9"
-      },
-      "vsUnset": {
-        "text": "No required version",
-        "source_sha256": "29728d7fef86ff11cdaf7bb4db53fa067fa54044ca3327d6359062e020d2d459"
       }
     },
     "hsm": {
@@ -3126,20 +3006,20 @@
         "source_sha256": "d17e9d45b87e974541072011f8d9afb620892aef1b90a071d66472a4a05310e0"
       },
       "blurbAdmin": {
-        "text": "Configure email and SMS alert groups, monitor all tickets, and ensure Messaging delivers reporter status mail plus group intake alerts.",
-        "source_sha256": "5d2c56fb9db3ca2a93954484de8cd512cdc525ca6bf9f2ba924ac5192fbea954"
+        "text": "Configure email and SMS alert groups, monitor all tickets and ensure messages deliver status emails to reporters and group alerts when received.",
+        "source_sha256": "9485bc4952b5daba597025db38b7fcd4825a9927e54de8dd51229cdc3a24a422"
       },
       "blurbAuditor": {
-        "text": "Read-only: find incidents, verify narrative substance and timeline (who/when/status), and use Auditor IR evidence packs for Assessment Binder review.",
-        "source_sha256": "cda9cc5e61ce297c3263f2fc6ee8c11409600a14b275c7ba1aafe01dcb549551"
+        "text": "Read only: find incidents, review the facts and timeline (who/when/status) and use IR evidence packages for the review in the assessment folder.",
+        "source_sha256": "bc45e64fe2e495269868ba46ca68fb5b7a848e552369518553f02ad5ded1c5b8"
       },
       "blurbHandler": {
-        "text": "Own the queue: triage → contain → eradicate → recover → lessons → close. Status badges show Open / Processing / Closed. Comments and actors are on the timeline; group alerts fan out on transitions.",
-        "source_sha256": "e9f9d4faf3e30d29eb337bc5fc04cf434a474f867724467037aa696e1a592398"
+        "text": "Take the queue: Triage → Containment → Remediation → Recovery → Insights → Close. Status indicators: Open / In progress / Closed. Comments and actors are in the timeline; Group alarms go off during transitions.",
+        "source_sha256": "3e46fd82e2218ad869c9edc06fe107abab477b6e96bef5d60202e8e2785a7082"
       },
       "blurbReporter": {
-        "text": "You submit a report (Open). IT/handlers process it. You receive status emails and can add discovery comments. When Closed, auditors can review evidence.",
-        "source_sha256": "ee2fa694e9d69c5113e08adf590c4b052540b3dc39f147c18e28622901725ca6"
+        "text": "You submit a report a (Open). IT processes them. You will receive status emails and can add discovery comments. After the close, auditors can examine the evidence.",
+        "source_sha256": "3cafca1f08a51003c65762be7d96b94e9d095a7a9a7c356e1a713e570d03f08f"
       },
       "cancel": {
         "text": "Cancel",
@@ -3198,8 +3078,8 @@
         "source_sha256": "f53c9652cbbd56f033dc3339690d41f2ac2b6f7d792513921fc6d7ef0da0ca33"
       },
       "diagramCaption": {
-        "text": "Numbered steps run left to right with arrows. Role-emphasised steps use a filled box. Upcoming steps use an outline. When a ticket is open, completed steps show a tick, and the current phase adds an orange triangle, a thick orange border, a bold label, and the word Current (not colour alone).{{suffix}}",
-        "source_sha256": "9463ed75df9adcca815434d9bf18b447d1b24f12cc7ff4e38ee389e95dada710"
+        "text": "Role-emphasized steps use a filled blue box; other steps use a gray outline. The open ticket's current phase adds an orange triangle marker, thicker border, bold label, and the word \"Current\" under the step (not color alone). Meaning is also in the caption{{suffix}}.",
+        "source_sha256": "cad337ff96fe868095502362b2faf7f9c82e0c8edacce47826bdf749a6c24e68"
       },
       "diagramCaptionCurrent": {
         "text": " (current phase: {{phase}})",
@@ -3218,12 +3098,12 @@
         "source_sha256": "465b5967e292896bee2bbe8a67298bf1eec40ae84cf2ea96990cedcf87630442"
       },
       "diagramRoleHandler": {
-        "text": "Handler",
-        "source_sha256": "53cae329634a4eaa67f565e1de442e3ed98d11f793681c424a168743651dfb67"
+        "text": "Bearbeiter",
+        "source_sha256": "c0f2f15055d2ce2d9eea8d65d4b2a71b7a33e804d4fc1ec8d48665e097ecd196"
       },
       "diagramRoleReporter": {
-        "text": "Reporter",
-        "source_sha256": "ed738fe883ac1dac44a02913295222f598671bb31d52a5224a50f972843e0ad8"
+        "text": "Melder",
+        "source_sha256": "be95084ad644661794f36aaf98c0b6d295a4125858167f253b74243a5ea4a743"
       },
       "diagramSvgTitle": {
         "text": "IR process for {{role}}",
@@ -3342,8 +3222,8 @@
         "source_sha256": "47cb102c6f3930bb4032a65af4000770bd6e058d0bbacaddc26929929be28723"
       },
       "stageClose": {
-        "text": "Close",
-        "source_sha256": "7d9eb7acb13e24625c404401d8e88b2350e32162455885f18276cf802f7701ed"
+        "text": "Abschluss",
+        "source_sha256": "e472800abcc26350e1138ba50421746215261093cf805336075bec38e59413ce"
       },
       "stageContain": {
         "text": "Contain",
@@ -3362,8 +3242,8 @@
         "source_sha256": "dad005403e2e20654565a6b9185e4e70fec4ea655532bad146ab1028d896b7c4"
       },
       "stageLessons": {
-        "text": "Lessons",
-        "source_sha256": "cb4ad503e340ebd1a921e3ed6dcbfc0a80660936d8bfc9d190f70694b9ccb51b"
+        "text": "Erkenntnisse",
+        "source_sha256": "39503b5af92d0450c4c7591df93f2ca67f36f5bb1f68842af4f975e5a7ca3d71"
       },
       "stageRecover": {
         "text": "Recover",
@@ -3386,20 +3266,20 @@
         "source_sha256": "c8e3e92a62ecf1811c7f4d5ec6efb3244e1bba785c5152b6cfac1af8eecbe2ae"
       },
       "stepAuditorEvidence": {
-        "text": "Auditor evidence",
-        "source_sha256": "f4879dff1be71257e15ed24b2bd2b26f62d1b990433613f598afdecf37dd6970"
+        "text": "Auditor proof",
+        "source_sha256": "47f26ada6d4c114e9597931a58bac879dbe435cb88196a3240f03fa0a74e8758"
       },
       "stepClose": {
         "text": "Close",
         "source_sha256": "7d9eb7acb13e24625c404401d8e88b2350e32162455885f18276cf802f7701ed"
       },
       "stepDisposition": {
-        "text": "Disposition",
-        "source_sha256": "8881fc89a1e249594630730bf0469ed3892903412af85db5a4e95f9730e6cd2e"
+        "text": "Abschluss",
+        "source_sha256": "e472800abcc26350e1138ba50421746215261093cf805336075bec38e59413ce"
       },
       "stepIntake": {
-        "text": "Intake",
-        "source_sha256": "6b627d1cb766c0d06d9e65c914a60409e5cfee93cb250d39ec6b2e9893a4d1ab"
+        "text": "Eingang",
+        "source_sha256": "d8af5ec4b4ff618a742fa013f137fa37afdb82228968330b48d91d7435633244"
       },
       "stepProcessing": {
         "text": "Processing",
@@ -3424,30 +3304,6 @@
       "titleAria": {
         "text": "Incident title",
         "source_sha256": "b1a94ddee16d0e41d4f7a2490f3c710fba7203d990430aa73642638f47c7db9a"
-      },
-      "diagramNoOpenTicket": {
-        "text": "No open ticket",
-        "source_sha256": "fabf7218059201ddc6846884d28ac7b0bbe85776f3e6968bf8f7903d37c40d89"
-      },
-      "diagramCaptionEmpty": {
-        "text": "No open ticket is on this list, so no step is marked Current. Filled boxes are role-emphasised steps, not the current phase.",
-        "source_sha256": "a29e5f2f75f71b00b7b2bda2642fa3ccdf5090cd5c8c6c50863919a77ee1be1f"
-      },
-      "diagramLegendRole": {
-        "text": "Role-emphasised",
-        "source_sha256": "ed06e474ae5af24beb0049e092df3c015fde06f497466e0f19f76bb965153968"
-      },
-      "diagramLegendCurrent": {
-        "text": "Current phase",
-        "source_sha256": "44c03cecc0322192dd4e7b3b4ec924d3210d84c02fca5a38ffda6821e4432bdb"
-      },
-      "diagramLegendUpcoming": {
-        "text": "Upcoming",
-        "source_sha256": "5f1a2542e4e4ca5ed784e15fb756dbfc32f4b68ae08bc1d44f957761566c8c41"
-      },
-      "diagramLegendCompleted": {
-        "text": "Completed",
-        "source_sha256": "22a970d2e5b1cc233e462be7c7b64e135a275bb09d83d87683bf4236c43113a1"
       }
     },
     "jumpFleet": {
@@ -3673,7 +3529,7 @@
       },
       "gridAria": {
         "text": "Jump fleet and capacity",
-        "source_sha256": "f8504f69d97fe2976063d20b3e754db82fc8633668ad6fa4f8f9be0e202e0ab7"
+        "source_sha256": "66333e460cb79f242eef128d02784ea8303dd1ed2f69ce6aa5059cab7a451647"
       },
       "healthAria": {
         "text": "Health {{health}}",
@@ -3681,7 +3537,7 @@
       },
       "healthDisabled": {
         "text": "disabled",
-        "source_sha256": "10f33e562ffac7d76a6c0b41d5029092e851cc6217e8e24a8448c441b1cbb861"
+        "source_sha256": "17eb3c0168d0d7b21ede5481150f17233427d89833ec121b4dbc4fb96cfab71e"
       },
       "healthHealthy": {
         "text": "healthy",
@@ -3991,8 +3847,8 @@
       },
       "channel": {
         "direct": {
-          "text": "Direct",
-          "source_sha256": "002c7c68468b4f550fbaa7fb8588155c58f8b5760fde69b3fe1773ae2a197ba2"
+          "text": "Direkt",
+          "source_sha256": "12b82b7b58a2777ed21d4da1d876f02b66d4610359990d5fb8afe36f1ec3dc46"
         },
         "eval": {
           "text": "Evaluation",
@@ -4257,8 +4113,8 @@
       },
       "kind": {
         "contract": {
-          "text": "Contract",
-          "source_sha256": "a6f5b0e592fa68e4ba8014ad5f62214f41153de6a5d51c78fc6148c54a1d6deb"
+          "text": "Vertrag",
+          "source_sha256": "a18e8dfaa76f46f8ab59e4df62b0af79f2d259eb90a89d5ce0be3f7db7b291ac"
         },
         "eval": {
           "text": "Evaluation",
@@ -4269,16 +4125,16 @@
           "source_sha256": "6c67dc13f83949fe089ca86225b136b5f40ac5268ebf92fbefe45f1f94e8064b"
         },
         "metered": {
-          "text": "Metered",
-          "source_sha256": "40311e42068d7d436d3790a6551ad19dd8169d1168a2e98c667a5c6299771fb9"
+          "text": "Verbrauchsabhaengig",
+          "source_sha256": "3b0bcb8baca8306df9c7bcb5b5b73967339bb2921ece8b50532a70ce34df045a"
         },
         "perpetual": {
-          "text": "Perpetual",
-          "source_sha256": "2d34320fbbddfb8150b22835b3653701993aa10029da90caa65665229832dda2"
+          "text": "Permanently",
+          "source_sha256": "d06138e2477e7e71ef148478e28bf0c43ff19aa827ad7c9ec714cb4e9d5607e2"
         },
         "subscription": {
-          "text": "Subscription",
-          "source_sha256": "4999c6c6c7badf456f5b0053b09a2076bdb2391a09ab10c9064a680f8f9a0b30"
+          "text": "Abonnement",
+          "source_sha256": "7013eaa1c28c9cd35c593c7834eed613e28fafc8c7f2d0906a913f82d60fa075"
         }
       },
       "lastAttempt": {
@@ -4304,8 +4160,8 @@
       "model": {
         "a2a_clients": {
           "label": {
-            "text": "Non-human / A2A clients",
-            "source_sha256": "0c9a2811ebf0f55f630b2a531f099fa3c66c5290f796f775e15203641ee3fab6"
+            "text": "Non-Human/A2A Clients",
+            "source_sha256": "6f397c33dc9c6060922beea16a6d0ab79cd3b0c1add984f81546c5937c53025e"
           },
           "summary": {
             "text": "Application-to-application secrets clients.",
@@ -4318,8 +4174,8 @@
             "source_sha256": "65ff88aacddd72a5d9f00e675e23e52a91f6f60e503586d33febc6d8e3173e79"
           },
           "summary": {
-            "text": "Binder instances or concurrent assessor seats.",
-            "source_sha256": "e19fe49a9c02d8eacacd2a820f3651f12eccb57f04f2142a8bc1cf618b28a515"
+            "text": "Binder-Instanzen or gleichzeitige Pruefersitze.",
+            "source_sha256": "802f9f1bd578f3582a7ae9f2514dd14eaa7237a369342e6c9c70054e84bec3be"
           }
         },
         "byol": {
@@ -4334,8 +4190,8 @@
         },
         "concurrent_session": {
           "label": {
-            "text": "Concurrent session",
-            "source_sha256": "a78db4aa5e22ff663ced191b8a0a9abe68020476d97668f2eb03400ee575a5a8"
+            "text": "Gleichzeitige Session",
+            "source_sha256": "3f552404b1b6a4b0e2ffab4f7851dd5d5af20099534b87240d7a31116e8b56d0"
           },
           "summary": {
             "text": "Pool of live Connect / bastion sessions; frees on close.",
@@ -4344,8 +4200,8 @@
         },
         "contract_private_offer": {
           "label": {
-            "text": "Contract / private offer",
-            "source_sha256": "4e163e5f8780e3fb51726a9a1aea0b5c31678e3594358ef09e196936876aad27"
+            "text": "Vertrag / privates Angebot",
+            "source_sha256": "741935979f7b14dcf4efb647d53cf46415ac9ef5f38b816b05659e795029fb11"
           },
           "summary": {
             "text": "Prepaid or private entitlement for a term.",
@@ -4358,18 +4214,18 @@
             "source_sha256": "46b0f488ba56fe6db124f9bae5f35b52511c6eb6f5cb9838f4db8046c7095c95"
           },
           "summary": {
-            "text": "Managed Agent enrollment capacity.",
-            "source_sha256": "0b7d358ecfc4dc9f9b2c93774dfab35a6bb86e150f51680a358412228084e95f"
+            "text": "Managed Agent enrolment capacity.",
+            "source_sha256": "190c78b75e2f21238ad69a3008afbf297a03bf1ed53ded8f11e8e87ffcea3290"
           }
         },
         "enterprise_infra": {
           "label": {
-            "text": "Enterprise infrastructure unlocks",
-            "source_sha256": "41e0dbace95aac2801f8bfbc807e0e4894f6afdcd367c601639aee2ffa6308a9"
+            "text": "Unternehmensinfrastruktur",
+            "source_sha256": "66673a99fa42b1a9814d2a6946e84db1e2244d9c15df91d919f191c87d79f56c"
           },
           "summary": {
-            "text": "HA database, enterprise DB adapters, HSM/KMS.",
-            "source_sha256": "1121fb54ae4c051d8e81fc4f4bbad2e55daf2c8868551741add8cd324c161f67"
+            "text": "HA-Datenbank, Unternehmens-Datenbankadapter, HSM/KMS.",
+            "source_sha256": "5ae2d2c541c77fe633838a24b6b1944403380961e6d33cdc90e98fe98ab4ff38"
           }
         },
         "eval": {
@@ -4384,18 +4240,18 @@
         },
         "floating_ha": {
           "label": {
-            "text": "Floating / HA pool",
-            "source_sha256": "303d8ca0d0e654d95115b8d9d0a7e8998d8f3b37d1b5ef7f0a71551e1bcadcab"
+            "text": "Gleitend / HA-Pool",
+            "source_sha256": "39fc10c36cf42dfed3a04474074cabcc19048ab9bfa6eef89d721cc7367547a7"
           },
           "summary": {
-            "text": "Cluster fingerprints with failover grace.",
-            "source_sha256": "856592071e977f47869f5ba6bd83bd868995467b15b39606de402f94b2075b67"
+            "text": "Cluster-Fingerabdruecke with Ausfallschonfrist.",
+            "source_sha256": "c00345d77692adc7a164d27d803319484ec92bd32b58edfa8853fdb086ece45d"
           }
         },
         "jit_role_scope": {
           "label": {
-            "text": "JIT / privileged-role scope",
-            "source_sha256": "2a26b182e7828f547b59fa509e2be0ac803d01f07ff0c08d05318df71b280f63"
+            "text": "JIT- / Rollenumfang",
+            "source_sha256": "77fce12704b252977793735f5de205c95fda67b5c28a875817e43ec50d5d9011"
           },
           "summary": {
             "text": "Entitled versus permanent privileged role ties.",
@@ -4408,14 +4264,14 @@
             "source_sha256": ""
           },
           "summary": {
-            "text": "Jump nodes and load-balanced proxy fleets.",
-            "source_sha256": "072082e18d68449125066110095be9dcdfe6ac8ec4e6a1302f7c4864b2457d78"
+            "text": "Jump-Knoten and lastverteilte Proxy-Flotten.",
+            "source_sha256": "82ccf8e1b5ddf6242e6dc47fee98c030b92f86204609a0862b9a13582ac171f5"
           }
         },
         "marketplace_metered": {
           "label": {
-            "text": "Marketplace metered",
-            "source_sha256": "7461ba49602e5eb4e767d3a03a97f096a69834499bed36022fbde79904b40fc9"
+            "text": "Marketplace nach Verbrauch",
+            "source_sha256": "a30c3c723574ff94f3e7fbddc0f3583ab9278c7826fa0bb4d7731ad69cc4fefa"
           },
           "summary": {
             "text": "Hourly cloud dimensions with dual-report remittance.",
@@ -4424,8 +4280,8 @@
         },
         "module_pack": {
           "label": {
-            "text": "Module / feature pack",
-            "source_sha256": "e01ca500296798550cf75f42657e2afa3830edd92a20be23c92460a653bfaa04"
+            "text": "Modul- / Funktionspaket",
+            "source_sha256": "4965edda015d00632e1d12d0b1e7da1b6e2d75356a51beda9f7497f9a4a35337"
           },
           "summary": {
             "text": "Product modules (PAM, auditor, HSM, jump load balancing, and more).",
@@ -4434,18 +4290,18 @@
         },
         "msp_pool": {
           "label": {
-            "text": "MSP multi-tenant pool",
-            "source_sha256": "5820bd723b2b3230f894c7ca098317cb5ed42c720500de32bfeb3266f067efa0"
+            "text": "MSP-Mandantenpool",
+            "source_sha256": "55e732b8e45e01b11f79663e1af1635c519598f5a9ebee697bf1930f1c3350a9"
           },
           "summary": {
-            "text": "Parent pool with child packages for tenant sites.",
-            "source_sha256": "e27b8261faeb32ba64c9e93b40dd735ba9c35ffb1ec8f74a38cb29dc8426fae4"
+            "text": "Eltern-Pool with Kindpaketen for Mandantenstandorte.",
+            "source_sha256": "bff68a73a1a59a121011ac21eeecac4aa94b659c31b4b9c542f2eef09aefb5b7"
           }
         },
         "named_user": {
           "label": {
-            "text": "Named user",
-            "source_sha256": "e00a114942e7d29e8487bf577a06c0d5dc0ad63b7aad07dbecfbf0edafe548b3"
+            "text": "Namensbenutzer",
+            "source_sha256": "4aaaf62f180546921417c9f266f69b8b98b80990c5ec29caad906272476fa628"
           },
           "summary": {
             "text": "Distinct licensed people.",
@@ -4454,18 +4310,18 @@
         },
         "perpetual_maintenance": {
           "label": {
-            "text": "Perpetual + maintenance",
-            "source_sha256": "131582ded283b7034c8f40655ef7ed73a05b32b652769886b30dc98c4f375f03"
+            "text": "Permanent plus maintenance",
+            "source_sha256": "1b8967856b7c4c38566c01b36aa0b53839b1a4b5b95f7f10f9b0dcd0c047bc85"
           },
           "summary": {
-            "text": "Features stay; support/update window may expire separately.",
-            "source_sha256": "b37df30ffeafe3ef620d8bff005519cade1e242c6bb7f12dc7bf9ea772b2cfaa"
+            "text": "functions remain; Support and update windows can end separately.",
+            "source_sha256": "70f7226d7f9e2e76933acb51a06314c46ac2cc3de9248c5769d03d1daa1d9d1b"
           }
         },
         "privileged_accounts": {
           "label": {
-            "text": "Privileged accounts under management",
-            "source_sha256": "554f1973bac628fa30783d05b0d3e0cbbc76f96b7f89b7292bf38952f2078b7a"
+            "text": "Verwaltete privilegierte Konten",
+            "source_sha256": "d91d50a095394a312385b17cb62db7fa056efa1dd5d64bd1f09123d63c81647f"
           },
           "summary": {
             "text": "Vaulted / managed privileged account count.",
@@ -4488,8 +4344,8 @@
             "source_sha256": "ecb86600e64e01285daed29c41ccb0f7e051f58c43f3f871073a19e16909736a"
           },
           "summary": {
-            "text": "Monthly secret API operations soft or hard cap.",
-            "source_sha256": "0b38051aa4277628bcb2cd0686882f74a814ed3c81c9342df305ba4b74a3c9fe"
+            "text": "Monatliche Geheimnis-API-Vorgaenge als weiche or harte Obergrenze.",
+            "source_sha256": "4826f3209cd98091ae7c827af50b57abf8d100efb59c1d821d7fb0bc98f993df"
           }
         },
         "site_activation": {
@@ -4514,12 +4370,12 @@
         },
         "workstation_seat": {
           "label": {
-            "text": "Workstation seat",
-            "source_sha256": "23094d262d923988f66d8762ac53f44c8285fbcbab23b24b2fc5ee1b8b76beff"
+            "text": "Arbeitsplatzsitz",
+            "source_sha256": "1b7837fc61b90aa26af7fe4da6366138985bde25e6e5131cbc3b7edfd5a3afe2"
           },
           "summary": {
-            "text": "Dedicated workstation seats (SMB enclave 1–25).",
-            "source_sha256": "d294e89ae6d49df21b1a168792abfcc7006ce7d3f7d225f694ad8f8f4b09ba61"
+            "text": "Feste Arbeitsplatzsitze (kleine Enclave 1–25).",
+            "source_sha256": "5f13b65e3bb57478a0d590ba8620bb8e36e29dfb93fb01bb2392cc0af2ef4e3d"
           }
         }
       },
@@ -4589,8 +4445,8 @@
           "source_sha256": "031a8f0f659df890dfd53c92e45295b0f14c997185bae46e168831e403b273f7"
         },
         "none": {
-          "text": "None",
-          "source_sha256": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+          "text": "No",
+          "source_sha256": "1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da161c6099be3691d"
         },
         "not_configured": {
           "text": "Not configured",
@@ -4663,20 +4519,20 @@
           "source_sha256": "2c93883aa5c4666404d3b888e9663e05308d84c63bbb52d7f5c2693f6793dae3"
         },
         "fingerprint_mismatch": {
-          "text": "Fingerprint mismatch",
-          "source_sha256": "2b948d7fb4d1a05d5468b6f2246ed2ff142d08484adb19b3e79d3012dedd8511"
+          "text": "Fingerabdruck stimmt not",
+          "source_sha256": "137c75eedd34080462a2cf987f2e186d8623059dbd4b3399e72e2d0f0a2608e6"
         },
         "none": {
-          "text": "None",
-          "source_sha256": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+          "text": "No",
+          "source_sha256": "1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da161c6099be3691d"
         },
         "replay_or_clone": {
           "text": "Replay or clone",
           "source_sha256": "d62f2f6377f65e4551f3dd0185348ed69203e3a4a56e51cf8152fc2bc090c858"
         },
         "signature_invalid": {
-          "text": "Invalid signature",
-          "source_sha256": "97b096319f1c128b42060a680a731b8e41205641a477bc1730bfca4a5cb06c92"
+          "text": "Ungueltige Signatur",
+          "source_sha256": "c313179992b9e3e3ec9672094645ff5ba2d2880a25c398b71bb095857948350b"
         },
         "unlicensed_feature": {
           "text": "Unlicensed feature",
@@ -5517,7 +5373,7 @@
       },
       "smsReload": {
         "text": "Reload",
-        "source_sha256": "55786148a69b44ee0a7a1aa3a229aa97e1e71b4cf8972857933f052c50c1bd73"
+        "source_sha256": "bdc090ec61e3fcfc65f469951dfe00f3f2ecfc6003c44deac8e05b7237092de6"
       },
       "smsSave": {
         "text": "Save SMS settings",
@@ -5561,7 +5417,7 @@
       },
       "snippetsEdit": {
         "text": "Edit snippet",
-        "source_sha256": "a293a383066987198e5acb7b7453de46e2d1c3dbf7c67ec3b089fa91bbcd0a4b"
+        "source_sha256": "3bb69add7f8cedd554dafcf5dffa6b9e7f2ef850c2ffbb1625a894a89d086131"
       },
       "snippetsIntro": {
         "text": "Reusable fragments referenced from templates as",
@@ -5618,7 +5474,7 @@
         },
         "none": {
           "text": "No TLS",
-          "source_sha256": "ad7abd2b8f3aef80964520200cde9287903a4e5d7337afc41612009f1d8b89b5"
+          "source_sha256": "759cc8e9b5a56d97bc4c61962b8e9eb85cf5547ce328420a8cd20976bc92f81a"
         },
         "starttls": {
           "text": "STARTTLS",
@@ -6273,11 +6129,11 @@
     "networkScan": {
       "analysisComplete": {
         "text": "Analysis complete: {{findings}} finding(s), {{unknown}} unknown host(s).",
-        "source_sha256": "66a2fb649e7afb05d5710696d858674be75cbea21a183cdbf19330fb0a45dbd6"
+        "source_sha256": "adb6dce513ec48dd1b59db75c59960de753d85446557125f568ba56ee5bb44b5"
       },
       "analysisFailed": {
         "text": "Analysis failed",
-        "source_sha256": "c30667e7506bbfb8513740f02982be1a398da29ab9b3fcc9b81abb37443f2733"
+        "source_sha256": "4d6ac1bfe5d253f3b92020d11c775bf8c0ba29ece8050332a391950816378ca3"
       },
       "analyze": {
         "text": "Schwachstellen analysieren",
@@ -6379,7 +6235,7 @@
       },
       "colEffect": {
         "text": "Effect",
-        "source_sha256": "d280e644bff4d1e8409a1412e97e716dd26efd1c36634de555e37b6dd969e490"
+        "source_sha256": "2252d5cf93767a43ecc53f07c8e49d76be0126e021c0397af8d51927e9c5e2e4"
       },
       "colSubject": {
         "text": "Subjekt",
@@ -6833,7 +6689,7 @@
       },
       "stateNeedsApproval": {
         "text": "Needs approval",
-        "source_sha256": "1512b5ec2ac550bac77bef41f3559a245c00793926706504f1cc894c07169e5c"
+        "source_sha256": "db0e960b68b57894a7a33ce69c53c58b7bc4e98ae59499824a2d3a43bb47a120"
       },
       "stateNotConfigured": {
         "text": "Not configured",
@@ -7243,7 +7099,7 @@
       },
       "runReport": {
         "text": "Run report",
-        "source_sha256": "99d2e6ef20baea4c184d0ebf7edef9ddeebc24d251cdcb121aa07e11cc085ec9"
+        "source_sha256": "6b5c209e013badfb65975ba696c9cea3c22e5c84d8aff64fd1713277b21cb266"
       },
       "runScheduleNow": {
         "text": "Run schedule now",
@@ -7913,7 +7769,7 @@
       },
       "pending": {
         "text": "Pending",
-        "source_sha256": "0b5e85dd25084cd86aa7fd9bbc130d07c0b633020398ccf29b1d5ae60b2fa566"
+        "source_sha256": "331551b0de4157c9abc7b72b61b96a2a928fd6db3cdf029c1fc44b08ad633aa6"
       },
       "pendingCount": {
         "text": "{{count}} pending",
@@ -7937,7 +7793,7 @@
       },
       "reasonRequired": {
         "text": "Reason required",
-        "source_sha256": "7bd0be8d44a801baebfdf781ec0e58d7c7fdfca084e70eff926f71f2d32e920f"
+        "source_sha256": "d1d079747615f202c98649127797a1cc7d8337098784a80f42be4faac189e90f"
       },
       "reportTitle": {
         "text": "Session Control",
@@ -7983,7 +7839,7 @@
       },
       "clipboard_bidirectional": {
         "text": "Both directions",
-        "source_sha256": "07f3adcfc2e1385b3069886c633a9f08136d347ae2644a5e907b1557eb53e196"
+        "source_sha256": "f2aefdbf0128155cef2116a78f902d088104c9e32ac774bd1df24a259c2dc7f5"
       },
       "clipboard_client_to_target": {
         "text": "Browser to target",
@@ -8047,7 +7903,7 @@
       },
       "fileTransfer_bidirectional": {
         "text": "Both directions",
-        "source_sha256": "07f3adcfc2e1385b3069886c633a9f08136d347ae2644a5e907b1557eb53e196"
+        "source_sha256": "f2aefdbf0128155cef2116a78f902d088104c9e32ac774bd1df24a259c2dc7f5"
       },
       "fileTransfer_deny": {
         "text": "Denied",
@@ -8359,7 +8215,7 @@
       },
       "colWhen": {
         "text": "When",
-        "source_sha256": "9d91e4d4f2637e520bc5596b68a50847140c9065ae3288d204acd065ba79622a"
+        "source_sha256": "cf9c7aa24a26aac4f0ec4b6395cbfdcc055677c3dac87bd6af898bccd66d4e17"
       },
       "connectOpenBody": {
         "text": "Sessions opened via Connect (My Workstations) or Open session (Connection points) land here after the session proxy / Jump recording plane captures them. This list is evidence replay — it does not start a new live session.",
@@ -9671,7 +9527,7 @@
       },
       "detailCompletedOf": {
         "text": "Completed {{done}} of {{total}} · {{rate}}",
-        "source_sha256": "64bbd2e598d656ba20077e91eaa6644dee0ed8c5a6abbf252ecd2417a97bb6b2"
+        "source_sha256": "510b80b9d3638e448fbbe3399e7f0c95aae2c18c85e1374d69938156779e3cbf"
       },
       "detailCreatedBy": {
         "text": " · angelegt of ",
@@ -9727,7 +9583,7 @@
       },
       "detailEnrolling": {
         "text": "Enrolling…",
-        "source_sha256": "c6b7a43a3e7c9bd3b85c3170c0d38a441b36e51e87a70673d406dced7903e4e5"
+        "source_sha256": "b153615252afbfa0db60ab311a523c80ef6ca1b782f7aa10c0b88dd0820ccefe"
       },
       "detailFailureReason": {
         "text": "Fehlergrund",
@@ -9779,11 +9635,11 @@
       },
       "detailNoNameRecorded": {
         "text": "(no name recorded)",
-        "source_sha256": "26ab986f42ebcdba4c73c8597202466cf3e803de0db174bfd64f719beef34447"
+        "source_sha256": "422cd7f0efb63b8501dc8feb239a229c0f9e9ca608b7dd8a9be9e8852d167c90"
       },
       "detailNoReason": {
         "text": "no reason recorded",
-        "source_sha256": "a6d7f98e0ee44cda8abe3bc6c0ceff0198393268d5f2aa835f4d39facc5f4b5b"
+        "source_sha256": "41e2687b3a09debf3541914457219de61d45233b7213930674eaf56ba4475302"
       },
       "detailNoReminders": {
         "text": "No memory attempts have yet been recorded for this program.",
@@ -9875,7 +9731,7 @@
       },
       "detailRecording": {
         "text": "Recording…",
-        "source_sha256": "b935a656fd77abb707a5ad0ce28aefafa885a8619eaf8ae178bdd83987529989"
+        "source_sha256": "7ea93caac0f5c1c962460012ca3ebf778145c4c4fcda1a64ba95f10745bfec9c"
       },
       "detailRecur": {
         "text": "· should be repeated every {{months}} months (nothing automatically opens a new cycle)",
@@ -10007,7 +9863,7 @@
       },
       "detailWaiving": {
         "text": "Waiving…",
-        "source_sha256": "69513329fb8011bce5a57068efef362d2f7562fb949ae304b1fee3817647f522"
+        "source_sha256": "4ab93b21862847dd6eedc98daf6d6446e39d18b231024709f2f26d52b4d18eb2"
       },
       "detailWhenRequired": {
         "text": "Enter when the person signed.",
@@ -10411,7 +10267,7 @@
       },
       "programsReadingDocs": {
         "text": "Reading program detail for the document list.",
-        "source_sha256": "c196753e28ec3f11312d0905ee59d9e78dedf992396d5718d5755b422b53dcb4"
+        "source_sha256": "7e69e20e43816963d09ff03810b8d272bb79d50f94565045535ad019d35af7f7"
       },
       "programsStatus": {
         "text": "Program status",
@@ -10531,7 +10387,7 @@
       },
       "workforceDepartment": {
         "text": "Department",
-        "source_sha256": "93e8a1467556664fe711d6c55bef96741b3f60bc0c916cd69b1337892d3b47d7"
+        "source_sha256": "5304ab98e5815a35d33c39ddd9557ecf39e7902f29f1c132da4e69c265e9b9bf"
       },
       "workforceEditDenied": {
         "text": "Needs permission to manage the directory",
@@ -10599,7 +10455,7 @@
       },
       "workforceJobTitle": {
         "text": "Job title",
-        "source_sha256": "bb8ad709b126edfc814473095c4b303c586fe078cbe937b429a3cebcf98f2762"
+        "source_sha256": "86db80a8096b8d93f3aa179138020ae2e44447faaea250723cb175dd6d025b0c"
       },
       "workforceLoadError": {
         "text": "The directory could not be loaded. Check your viewing permissions.",
@@ -10607,7 +10463,7 @@
       },
       "workforceNoName": {
         "text": "(no name recorded)",
-        "source_sha256": "26ab986f42ebcdba4c73c8597202466cf3e803de0db174bfd64f719beef34447"
+        "source_sha256": "422cd7f0efb63b8501dc8feb239a229c0f9e9ca608b7dd8a9be9e8852d167c90"
       },
       "workforceNoOrg": {
         "text": "No employer recorded for this person.",
@@ -10738,6 +10594,316 @@
       "home": {
         "text": "Go to home",
         "source_sha256": "41c60d19e14cc53d9b1cf5bd23f057804d010d95cd9317964e19afe76d773a14"
+      }
+    },
+    "operatingLevel": {
+      "title": {
+        "text": "Operating level",
+        "source_sha256": "7554fa1dcf31917962c9aecb3f24df1777d7a087a72b2a21462ebf4f62a1fc3e"
+      },
+      "helper": {
+        "text": "This setting tells operators and assessors which Cybersecurity Maturity Model Certification level this tenant is building and operating at. Leave empty to show a chooser. This is not a Met stamp and not a certification. Level 3 is not Level 2 plus a toggle.",
+        "source_sha256": "b69903df04b3b7c8772ecd7a8ec0ef475115f1ea8672b93c30f5c8ad1ff577a6"
+      },
+      "pawHelp": {
+        "text": "A privileged access workstation is a separate computer used only for powerful admin work: changing servers, rotating passwords, and opening recorded remote sessions. It is not AIC Server. It is not the everyday email or office computer. Why it is needed: malware on a daily computer can steal admin access. Starting admin work on a dedicated locked-down machine reduces that risk. Then connect through AIC Server with recording.",
+        "source_sha256": "3f5116d8f34ab11ffb2c9140c527c56e1a7b350ab0e43243422650cae096f708"
+      },
+      "chipHelpL1": {
+        "text": "This tenant is configured for Cybersecurity Maturity Model Certification Level 1 Fast: Agents on computers the organization already uses. Open Settings to change the package.",
+        "source_sha256": "6bb017fb3e58ea96b05b8a7b5a7bbeb2bff89d5b26a284ceb80e852d71fadc46"
+      },
+      "chipHelpNist": {
+        "text": "This tenant is configured for NIST SP 800-53 enterprise: the full product menu is visible. Moderate is the floor. This is not High Met and not a certification. Open Settings to change the package.",
+        "source_sha256": "a28361800113725a5ad2f1d1b134ed48aa8306da1c0a65a0dd5cb73285e41940"
+      },
+      "chipHelpUnset": {
+        "text": "Choose the operating package this tenant is building: Cybersecurity Maturity Model Certification Level 1 Fast, Level 2, Level 3, or NIST SP 800-53 (full menu). Open Settings to pick a package.",
+        "source_sha256": "754bef07990834014841e1b9e80f1b011ec4a6896b6fada9952bce88c451ea86"
+      },
+      "loadError": {
+        "text": "Could not load the operating level. Confirm you are signed in.",
+        "source_sha256": "6173fe43afe1edbdee364f5791eb610d76faf4ba136c06fed3d3aae35aea0e8b"
+      },
+      "label": {
+        "text": "Configured operating level",
+        "source_sha256": "1b6538e3fdf8efe8b9bde84ac6f8d0e24f51ed1c0922b395f36ec80846a58e28"
+      },
+      "chooser": {
+        "text": "Not set — chooser, full menu",
+        "source_sha256": "69fe036202558d7ec2bbfe1f90b89d35806425883a3b229cc0ba1a8f1711b450"
+      },
+      "label_l1_fast": {
+        "text": "CMMC Level 1 Fast — Agents on existing computers",
+        "source_sha256": "6a556b5ee9ee928e53920cdc24e81ef6748e96f8996007f10ca052227e6099ac"
+      },
+      "label_l2_isolated": {
+        "text": "CMMC Level 2 isolated — privileged access workstation required",
+        "source_sha256": "6c0beaf849a9b7308da0625877a21098cc72e31c9ba43abf17d94b71f82991aa"
+      },
+      "label_l3_overlay": {
+        "text": "CMMC Level 3 overlay — Level 2 plus extra privileged seats",
+        "source_sha256": "6f8ab08a50fa7775471da505eea96dfe4c26230ca081c8ce2a8b07afead8f853"
+      },
+      "label_nist_800_53": {
+        "text": "NIST SP 800-53 — full product menu",
+        "source_sha256": "107797555c0b19c755af6b3e4c5f5b261cbf5696297e50fc5f27c99a47b74f81"
+      },
+      "labelUnset": {
+        "text": "Not set",
+        "source_sha256": "4895f73177ab5d67c30c183a49d2477e014a2ef69b65150762d17e877f4f5b95"
+      },
+      "l1Help": {
+        "text": "Install the Agent on computers the organization already uses for Federal Contract Information. A dedicated privileged access workstation is recommended for first install. Isolated seats and session jump-host pages are not the primary path at this level.",
+        "source_sha256": "b221166e8cabbd8d369e8cde2335742ab79437eb6e49c0325d6c537c2255f184"
+      },
+      "l2Help": {
+        "text": "Isolated seats and My Workstations are in the primary menu. Privileged work must start from a privileged access workstation, then connect through AIC Server with recording.",
+        "source_sha256": "76f9f6270464ea4c9a8229ce8e76d9bd2b04729dbba1616a5568355935dc8c1b"
+      },
+      "l3Help": {
+        "text": "Adds extra isolated privileged seats and an enhanced-control honesty register. Level 3 is not Level 2 plus a toggle. Extra seats that do not exist yet stay blocked.",
+        "source_sha256": "54bc8d42f68f24c09cdffaa40c2ae1d4c8558adada903b729a116581d0428936"
+      },
+      "nistHelp": {
+        "text": "NIST SP 800-53 enterprise: every menu item stays visible. Moderate is the floor. This is not High Met and not a certification.",
+        "source_sha256": "e9a8fb123bd3be2de445c6f3319cafcf621b571aa742add69af29d27dba94441"
+      },
+      "chooserHelp": {
+        "text": "No package is stored. The header shows a chooser and the full enterprise menu. Pick a Cybersecurity Maturity Model Certification level to hide unused demo items, or NIST SP 800-53 to keep everything visible.",
+        "source_sha256": "d6ae612627019bfccaa453257aaa29fdb5568993f671ecda362ecb4e9ac0d784"
+      },
+      "save": {
+        "text": "Save operating level",
+        "source_sha256": "7a6ccffe56f183f722ee8f34ea9309e9d22c44faaea13bd8c0e13c5eb474a725"
+      },
+      "saveError": {
+        "text": "Could not save the operating level.",
+        "source_sha256": "9638a8c96d37ccc8b1020ddc7dc69fe5e2baeb8565c5c5add48a67adc29dd2eb"
+      },
+      "saved": {
+        "text": "Operating level saved. The header chip and menus now follow this setting.",
+        "source_sha256": "651c8665c99ded611c8b7bb4acbf9a001c92c630f54ecc7441ac816894946c7b"
+      }
+    },
+    "controlNextSteps": {
+      "title": {
+        "text": "Controls for this operating package",
+        "source_sha256": "2b4bd1ac66a58d5bcd5e0dc8ff0f2bc684f50dbfc7bba233cf7b03da96f82ef3"
+      },
+      "subtitle": {
+        "text": "Each row is a product page you can open. Live means the page and a record path exist. Partial, Absent, and Blocked need the next steps below. This is not Met and not a certification.",
+        "source_sha256": "b24790d3e15dc26ff5be5201a8b5eac879ce48258af3c65d400d6653b3866237"
+      },
+      "postureTitle": {
+        "text": "Get Agents in — packaged workstation",
+        "source_sha256": "4055005b1b58b6f50ab511d6a95f5944915487dd2418a64f905038fa6696d342"
+      },
+      "postureBody": {
+        "text": "Always connected. Sleep is allowed. Offline mode is not the Cybersecurity Maturity Model Certification package default. Elevation is included on the packaged workstation — it is not a separate product. Open the settings wizard first, then systems and elevation.",
+        "source_sha256": "07f2968b084d2a2f6a7f989fc832c89ed8dfae52a4a012c72b05ad138cb8808e"
+      },
+      "counts": {
+        "text": "{{live}} controls have a working page. {{next}} need next steps or an exception record.",
+        "source_sha256": "fcd4d99fdae98af9f7ed42ded216a444bcfbe8f9e1b07b119d902bb18a9f2a2f"
+      },
+      "colStatus": {
+        "text": "Product status",
+        "source_sha256": "33bdb50317a71a40d937873028a9232808a2f75b61eb74fba25ebd421653e744"
+      },
+      "colAction": {
+        "text": "Next step",
+        "source_sha256": "298a9207a732a11d42bba41239147e22ace14e6cbddb5bb022abd814e3e47472"
+      },
+      "openPage": {
+        "text": "Open page",
+        "source_sha256": "af0303342a01d272704e7bc58f4c85a162a8befc6a2baf575e4d34d9852c8cd9"
+      },
+      "exception": {
+        "text": "Document an exception",
+        "source_sha256": "60cda8f996a245bb1109c798268a0c662d61d92f1f832deb2f062ae2fae001d9"
+      },
+      "hookLive": {
+        "text": "Live",
+        "source_sha256": "b64ac05f17e64d037db81a98f51e2688216e292ae9748f979f04dfbac49fd7fc"
+      },
+      "hookPartial": {
+        "text": "Partial",
+        "source_sha256": "a4d50fb85403654840e078e3ffe72dffe37df3ae280c6d98f39a41d346c88a14"
+      },
+      "hookAbsent": {
+        "text": "Absent",
+        "source_sha256": "84fd36f7cbff12b9a0482c8f3ee782fbc60a87e2f08913509f71d71726f81cc1"
+      },
+      "hookBlocked": {
+        "text": "Blocked",
+        "source_sha256": "18f2a0947f9d6523991b29b450307f22773f57d65f7efb98d48a167df04d6b1d"
+      },
+      "step1": {
+        "text": "Open the managing page and finish the setup or record that is missing.",
+        "source_sha256": "df6f6e912db67c5047554fff936f8f352278b36c1d1c4930b89b6530dcda638f"
+      },
+      "step2": {
+        "text": "If the work cannot be done here, document an exception on the plan of action and milestones page.",
+        "source_sha256": "b87ca1db4e9da54d7eb5a68dc9ba5adcb693888177e0f116b0e2fa51f3dd790a"
+      },
+      "step3": {
+        "text": "Keep the Assessment Binder section in sync. Empty sections stay blocked — do not invent Met.",
+        "source_sha256": "e6a91b85bc5f973d26eeea338fef57d3be51f6c44d17fe0c4c0b9f34fd2d0a54"
+      },
+      "pageIam": {
+        "text": "Open identity administration",
+        "source_sha256": "cf54d1705c68599572fd4389ecf9d042126415bc50ebf175c89740e7e2909e59"
+      },
+      "pageSettings": {
+        "text": "Open Settings",
+        "source_sha256": "3f940108cb1ecd9c0090da0b51b45f9fe673f00b22c7ffe3d013319b97456674"
+      },
+      "pageDocuments": {
+        "text": "Open document lifecycle",
+        "source_sha256": "59f60b255c8817177648f220667e55c6a67a887e4d243c7ab37fa9f14e7c6071"
+      },
+      "pageWorkstations": {
+        "text": "Open My Workstations",
+        "source_sha256": "6f66350b625fd314d5314665d2b3bc132efe66e7c596e10c2aa5136e49372ca4"
+      },
+      "pageEvents": {
+        "text": "Open the event log",
+        "source_sha256": "5bdb79b5d97ae61ce9019eae4bc8f79e0e7a0bca249e4f850c890fbcde179b72"
+      },
+      "pageCsc": {
+        "text": "Open current control status",
+        "source_sha256": "8d55a268171db377a6ef807d296e2d577d3eefc5d2ef969192e99e12df0b6617"
+      },
+      "pageSystems": {
+        "text": "Open systems inventory",
+        "source_sha256": "b1c9c82ada414e822347c3385cbfde33499595bebacd193ba3b0592a86298066"
+      },
+      "pageIncidents": {
+        "text": "Open incidents",
+        "source_sha256": "0021b3e95793e696574a5d329c0f909a0bf857d1bde289f044e2fda60630552c"
+      },
+      "pageTraining": {
+        "text": "Open training packs",
+        "source_sha256": "1eedd9109c9d2a859a53d680a407e542cb6ec62a53f3fcf3d3535de2fbe4d341"
+      },
+      "pageRisks": {
+        "text": "Open the risk register",
+        "source_sha256": "4aba90a202c0c8cda012f9c69db79cdc5b641e140242f1f39cb902e3b7ed69f4"
+      },
+      "pageWa": {
+        "text": "Open workstation assurance probes",
+        "source_sha256": "2c11f757ef0250f0d8ca5f23b0212616fa422c0162af577e6ad55a864ce95b4d"
+      },
+      "pageWorkforce": {
+        "text": "Open the workforce roster",
+        "source_sha256": "11deb12fcf271a6035ce6ada2439c14a4729f11fd8e9088b4e72771660b969c1"
+      },
+      "pageEnhanced": {
+        "text": "Open enhanced controls",
+        "source_sha256": "5dccf9fb58238337d064dbde1ada2365603781909d57601624b3d54710a17dfa"
+      },
+      "pageWizard": {
+        "text": "Open the settings wizard",
+        "source_sha256": "4dd012e3d2644cf06a75c84b4b9ad69e2e0bcece743ef8882166addeae30cde0"
+      },
+      "pageTenants": {
+        "text": "Open tenants and enrollment",
+        "source_sha256": "7f1be2c4f25b0b9841dec5ee22cc0b66eddc01b892762c08f51928517fa25586"
+      },
+      "pageAgent": {
+        "text": "Open Agent configuration",
+        "source_sha256": "ffab06b6f90b8278f6e3e59c2f11f2a8d671375515a7fabebc49949a142771f1"
+      },
+      "pageElevation": {
+        "text": "Open elevation",
+        "source_sha256": "9f435abb1f5f11a78e1a00bdd5e130a34c930444f5367980dd394a2cc6f6e4d1"
+      },
+      "missing": {
+        "ac2": {
+          "text": "Account management lives in identity administration. Create and review local accounts there. This is not Met.",
+          "source_sha256": "11ef36d81ead098624fe374f9636f26956b4a6e63f815dd1824abe028f4966dc"
+        },
+        "ac7": {
+          "text": "Lockout after failed sign-in is a Settings control. Confirm the lockout policy is stored. This is not Met.",
+          "source_sha256": "bc0190c823d41ce85cdf8800a74be9f76f3467f8c43742682b5f5065badc3324"
+        },
+        "ac12": {
+          "text": "Session idle and absolute timeouts live in Settings. Confirm both are on. This is not Met.",
+          "source_sha256": "193d175a7c490a75b61cbeadb8273bbb4dcacf9273d88bf589ed745884866a79"
+        },
+        "ac16": {
+          "text": "Classification markings live on document lifecycle. Mark files that carry Controlled Unclassified Information. This is not Met.",
+          "source_sha256": "1f4e4a2f84faf552a346bab74d48f5bbf5d500ba4162ea0ce58b86ae94d180a2"
+        },
+        "ac17": {
+          "text": "Remote admin access starts on a privileged access workstation, then connects through AIC Server with recording. Open My Workstations. This is not Met.",
+          "source_sha256": "b83326615f12c15a4561ba1a2d17f2dfed49af4996db8fa0c8c3803e1e7e0a86"
+        },
+        "au2": {
+          "text": "Auditable events are listed in the event log. Confirm security-relevant actions write a row. This is not Met.",
+          "source_sha256": "18dfac4590e2613f726fed675d50dcc0496c7764f5ce82fcf12f469ee460ee61"
+        },
+        "au9": {
+          "text": "Audit protection and sharing settings live under Events. Confirm append-only delivery. This is not Met.",
+          "source_sha256": "1e5336945e1927195b42294e7f3ab1e41c903c35cdfd5ec7c946c94528bb18ae"
+        },
+        "ca2": {
+          "text": "Current control status and the Assessment Binder are the assessment views. Open them and keep section bodies filled. This is not Met.",
+          "source_sha256": "9474a8b67364e13fa2c4a6460fc978a278f16ba7e80455b388374297d5e92b8b"
+        },
+        "cm6": {
+          "text": "Configuration baselines live in systems inventory. Review the authorized setup for each system. This is not Met.",
+          "source_sha256": "a95e367b511b74fae86c3e2bf46c09a56c52d0b9aaf0e143a5394e6678e210ad"
+        },
+        "ia2": {
+          "text": "Identification and authentication live in identity administration. Confirm each operator proves who they are. This is not Met.",
+          "source_sha256": "b375acdcf01dcd6e221a926bd9d8f793cfd2c4c77217078c90d41d23001ea278"
+        },
+        "ia5": {
+          "text": "Authenticator management lives in identity administration. Review password and extra-step settings. This is not Met.",
+          "source_sha256": "3ef16a0c81606b2ff2853605dde557301bbf054f047f9b3727254e79ed0439e0"
+        },
+        "ir4": {
+          "text": "Incident handling lives on the incidents page. Open or record the incident. This is not Met.",
+          "source_sha256": "a482a2b0b6caaf6f346da809b80a19a9787b258c1577f74326df156f4ac0f051"
+        },
+        "at2": {
+          "text": "Awareness training packs are assigned from Training. Completion records are Partial until grading and reminders are live. This is not Met.",
+          "source_sha256": "ea12514c3bdabbb5a2d62e195db20a04d0ffcc910c78b900b5f07f05fb6080ff"
+        },
+        "ra5": {
+          "text": "Vulnerability and risk rows live on the risk register. Add a finding or document an exception. This is not Met.",
+          "source_sha256": "833c421e75c3f145b2b3f3026d0103df43f20c119995f7516ac477c9e61b46da"
+        },
+        "sc8": {
+          "text": "In-transit protection is the server TLS posture in Settings. Confirm the listener is using the approved module. This is not Met.",
+          "source_sha256": "ada5292b93778849632778555a2b2aeed441dcf316ff72c445fb254e68df69b0"
+        },
+        "si4": {
+          "text": "Host monitoring uses workstation assurance probes. Run a probe pack or record why it cannot run. This is not Met.",
+          "source_sha256": "015a0224e2d2de0e1d542577517d1ead4f12b7468528cb4fb61405fd05282935"
+        },
+        "pe2": {
+          "text": "Physical access cannot be Met in software. Record visitor and facility evidence on document lifecycle or the plan of action page.",
+          "source_sha256": "6f14487e1ebf244a3d963db8bf054b985b525551ea1b0c3c916e8b6e493e0a46"
+        },
+        "ps3": {
+          "text": "Personnel screening cannot be Met in software. Record the screening letter on the workforce roster or the plan of action page.",
+          "source_sha256": "17a2c6ee5952755f5f6e5b11bdce61e368b7a954ac867c711f7144839a670c37"
+        },
+        "ir4e1": {
+          "text": "This enhanced control is an overlay, not Level 2 plus a toggle. Extra privileged seats that do not exist stay blocked.",
+          "source_sha256": "f73ef12d9e90234d63a0b88d70c79053507db942c4cb94f3f6953eed44e586c4"
+        },
+        "cm2": {
+          "text": "The authorized setup lives in the settings wizard. Open the wizard and record the baseline. This is not Met.",
+          "source_sha256": "1d424ca1318428a15ff1ee3a5e6d1a222816159e70aba55b09ba989d28bdf37a"
+        },
+        "ac6": {
+          "text": "Least privilege for admin work lives in elevation. Open elevation and confirm the request path. This is not Met.",
+          "source_sha256": "69847c46b6a06799266e9e0c9eb7b2f582d942c7a061eaa1d97cfc7375d9f09a"
+        }
       }
     }
   },
@@ -10872,8 +11038,8 @@
       "bullets": {
         "text": [
           {
-            "text": "Connections tab — register providers, test, enumerate, and synchronize.",
-            "source_sha256": "ab089cf277d721daa4cd5cf3ae71ed6d4f6e0b35c208737ba15038e15c285433"
+            "text": "Connections tab — register, test, enumerate, and sync providers.",
+            "source_sha256": "fd776b47182cff38873605e1181653493898c7aa194012c31ba16f2d50ba71bc"
           },
           {
             "text": "Tab Pools — Gaeste zuordnen, Verbindungsziele verknuepfen, Lab-Canaries steuern.",
@@ -10984,8 +11150,8 @@
             "source_sha256": "b465cdf23338b8769fdf9844e4b9441118640098e95d36c95af7c0531c9855b3"
           },
           {
-            "text": "Customer-owned obligations remain with the organization.",
-            "source_sha256": "618cf89d3517659f0fdd89845893d8bd85bfaae47e6071100faa4f61462bc47c"
+            "text": "Customer-owned obligations stay with the organisation.",
+            "source_sha256": "101fa6ad4528af2f6312deecb425a9d4b52d29a0643cfd6b5717e172abd8350e"
           }
         ],
         "source_sha256": "f2b2e10f40901903b646e58977ec08b6ca354904b89c67ce9cbadb00aaa84c8c"
@@ -11008,7 +11174,7 @@
         "text": [
           {
             "text": "Link each DPIA to the processing activities it covers.",
-            "source_sha256": "4ae057de4425b523b3f1372a3f20bea6f100fc0dd3d3c27e62a4f0d78e31234e"
+            "source_sha256": "39949168726b17d677dc84919e9a1ba948293c060b898bbf8626ea5274d04063"
           },
           {
             "text": "The workflow records decisions and deadlines - it does not replace legal review.",
@@ -11016,7 +11182,7 @@
           },
           {
             "text": "Status fields describe product delivery, not an assessment verdict.",
-            "source_sha256": "480071fb23efb4a2deb1c7a1aafc15fec3b3ef4d74c760a3982b4a79b1dfae78"
+            "source_sha256": "7011018b336f70389846b8343379d096f83410f499fa9261d7e9fbfe831bfc02"
           }
         ],
         "source_sha256": "502064a09c1aeb65996e49095d4a854a874e202d9799ec075bb4eda575e6fef4"
@@ -11039,7 +11205,7 @@
         "text": [
           {
             "text": "Visible when GDPR is the active compliance standard.",
-            "source_sha256": "9e992718dfba6740a037391da63931d28241862ba0394b708fb170d4f3b9d7fd"
+            "source_sha256": "ea8e2615f5f138e8851356c1ad65e2f1220236d932aa343788e94c711f9f5421"
           },
           {
             "text": "Test cycles and export produce proof of delivery - no GDPR compliance or certification.",
@@ -11069,8 +11235,8 @@
       "bullets": {
         "text": [
           {
-            "text": "By default one month from receipt; record extensions of up to two more months with a reason.",
-            "source_sha256": "ecc42cf25ad00722a07676f822913fbbd5518d0b3004c7d0ad62366b51c84b61"
+            "text": "By default one month from intake. Record extensions of up to two more months with a reason.",
+            "source_sha256": "bdd946e7601aeb756c22dbdbbd8bde5efd9b090bf72b78711621f5ffc05b6b33"
           },
           {
             "text": "Track identity verification, data found, decision, exception, and what was delivered.",
@@ -11109,7 +11275,7 @@
           },
           {
             "text": "Status and risk are lifecycle fields only — not Met, compliant, or certified.",
-            "source_sha256": "16a3a05b98c22f6997910ed09ef98bf1ff423b0125e0038fda51f8affa417319"
+            "source_sha256": "8855a2dcb8599349cd1e09d7096274d32d8d43aa7bed0f5a718333de1ce1edeb"
           }
         ],
         "source_sha256": "693a0e6349d527b1edaad09308ba36a17466f9e736e5f1c7980e2908be28883a"
@@ -11135,8 +11301,8 @@
             "source_sha256": "f8be14579ae28baaebe90db20c162b13f9bdef130b6858997ece89a902bb069b"
           },
           {
-            "text": "Counters cover denied and failed events only. Empty sources show Absent.",
-            "source_sha256": "0a50d588b8c65ee46e5284bf2aaade9689d4e1d880a2ea7a42d2b2ff29b00d7c"
+            "text": "Counters are denied and failed events only. Empty sources show Absent.",
+            "source_sha256": "61c8ca368d46dfc598e0fdaf9807dc0d73ed5cd2873a9d79f3e5e65f42e34371"
           },
           {
             "text": "Password bars show class and length. Values ​​are never saved or displayed.",
@@ -11334,8 +11500,8 @@
       "bullets": {
         "text": [
           {
-            "text": "Playbooks populate Assessment Binder sections; live counts still come from the instance at render time.",
-            "source_sha256": "568deb9a3b1821a79a13285920ae69082630931c81fb316b2ff86e4f994d7ffc"
+            "text": "Playbooks fill Assessment Binder sections; live numbers still come from the instance at render time.",
+            "source_sha256": "6c678b43aea89ecd25c1b989cd0b8dbc9eeb7e6c657fe44d72f10672c5ddd9c3"
           }
         ],
         "source_sha256": "8e85d98f82f50373bc1aa8bd36f32b9d35dc76141acafe353c9bf984b0fce596"
@@ -11393,8 +11559,8 @@
       "bullets": {
         "text": [
           {
-            "text": "Control and Title are separate columns. The Control column sorts by catalog ID (AC-2 before AC-11).",
-            "source_sha256": "52734a6fbcc8da98b60373ba3c061af3c6084b8dec6722a0a85df5f8043af76d"
+            "text": "Control and Title are separate columns. The control column sorts by catalogue id (AC-2 before AC-11).",
+            "source_sha256": "bbeebc17f3369f50464f90642f8e25c53dd5562da04646cd250f49bd6f8aa4e7"
           },
           {
             "text": "Record Sweep saves the current delivery observation. Drift means the delivery has fallen behind - not that a control has failed.",
@@ -11428,8 +11594,8 @@
             "source_sha256": "a6f34d58128cf012220c5409fe4860fc7b2899156fe3388c22fcbaab47d1a93f"
           },
           {
-            "text": "Create and edit data flows and enclaves; the diagram shows source and destination by shape (not color alone).",
-            "source_sha256": "82640df9a465d1ee5ebfba217c26665f9b2d39cccc3955b31770e926d0d625d0"
+            "text": "Create and edit data flows and enclaves; the diagram shows source and destination with shape (not colour alone).",
+            "source_sha256": "152154fdb64674f934c2d33d76f66db2293adf65553f8f179236f9ca5aa48b40"
           },
           {
             "text": "Derived controls and risk levels are computed by the server and shown read-only.",
@@ -11534,7 +11700,7 @@
           },
           {
             "text": "Status describes delivery — not Met or certified.",
-            "source_sha256": "635658f36f906ee6ab708d45527fa3267ba6c0a5a61908e9c5c5753e030f9387"
+            "source_sha256": "c78e0fccf444516a10a44102fbcd7653f09cb81b3baf93c586262faea0599362"
           }
         ],
         "source_sha256": "5b0fd2c3f10d64a8fe26c6b1f6312e1441e3ac76bf3188b4bdc1695bfe062e3c"
@@ -11561,15 +11727,15 @@
           },
           {
             "text": "Status chips are Live, Partial, Absent, or Blocked — never Met.",
-            "source_sha256": "c5da7e908d0725c9aa87b9e95042603dca5a5e0f1d15aab7a0075345eac2a642"
+            "source_sha256": "2a73ae946c3f3cac16655d8c1878b85bc68c92cd56a3bafd03937df6581af99d"
           },
           {
-            "text": "Each gap names the work still outstanding and links to Current State Compliance.",
-            "source_sha256": "39f1cfce6864324040d4a0388c4a5ca479ce8ae20ec3530086a15a1edc9fdfd6"
+            "text": "Each gap names the remaining work and links to Current-state compliance.",
+            "source_sha256": "ba3cf7f1e6c2188985fc1d5d40cca83e49147ae4dcff055eebc23c5b546e72a0"
           },
           {
-            "text": "A sibling page to Current State Compliance, not a replacement.",
-            "source_sha256": "830b81fbb4af840221c0c668434c8e628e806451317bd099df9f14b86df62ffe"
+            "text": "Sibling page to Current-state compliance, not a replacement.",
+            "source_sha256": "df631f2c76bfd9d860d8659a5e23a833a896d98cbdbe8884c682a487d630a5f7"
           }
         ],
         "source_sha256": "8eb346e43e66d7fc4d00a6013dffff119cb7b97a14f69562eb45ba64b21d7db3"
@@ -11622,8 +11788,8 @@
       "bullets": {
         "text": [
           {
-            "text": "Without an activated pack, agents keep only their embedded default version.",
-            "source_sha256": "bd9d23a791b8d23c9feb41e2e7e2f9cbc44f23955a3aab47ec39635191ee3b8a"
+            "text": "Without an enabled pack, agents keep only their embedded default version.",
+            "source_sha256": "b0f6290b7bad1a84dae8464ae2f1765922248487cf141542d2fe29bcf9133907"
           },
           {
             "text": "Upload pack JSON, check parsed content, then publish. The first pack activates automatically.",
@@ -12074,8 +12240,8 @@
             "source_sha256": ""
           },
           {
-            "text": "A deny-wins policy can end the request when an approver declines.",
-            "source_sha256": "c0bdc894dac20cf912fb865099767416a3469dbf1e85924326291b44dbec7df5"
+            "text": "A deny-wins policy can end the request when an approver denies it.",
+            "source_sha256": "5715d152d67f264dfb805153be2dec75de9a4522eb7616e48c171669ac61a657"
           }
         ],
         "source_sha256": "782578f73889a95f5cb38e43ee37dc09f366868ec70fcb7de122b526f91302c5"
@@ -12101,8 +12267,8 @@
             "source_sha256": ""
           },
           {
-            "text": "Test reachability in the My Notification Profile tab.",
-            "source_sha256": "2c8bd189f328b8cb482e51ca74bbf4a712d7cd98ada1ea133435b978c352bf49"
+            "text": "Test reachability on the My notification profile tab.",
+            "source_sha256": "23dd29efb2d7d272c36327ed2aef560e39cf434564a98855cc8a363876b44544"
           }
         ],
         "source_sha256": "1485d74695071f46c74481f0c37401eec82da4b662fb032c3a1c85077ef8a237"
@@ -12414,12 +12580,12 @@
       "bullets": {
         "text": [
           {
-            "text": "Enter IPv4 CIDR networks, then choose Start discovery for an immediate scan.",
-            "source_sha256": "80cbef4bb0507b343a653e7b2464d714d7ef58781370c36e296080c8320d3114"
+            "text": "Enter IPv4 CIDR networks, then Start discovery for an immediate scan.",
+            "source_sha256": "d344d0656cfea81a28542088a99f97a12ac76effaf3769c1cfa02a21e84148c7"
           },
           {
-            "text": "A Partial status explains the gap and the next action in the tooltip.",
-            "source_sha256": "015f063c447d70a5fdc70b81a97e6da95f9b65eb05e69ee04fb53d799a079b7f"
+            "text": "Partial status explains the gap and the next action in the tooltip.",
+            "source_sha256": "0ab3cf5876ce63a7109cd777066460cdbf77e4eaa97364e19020a7138e0c90af"
           }
         ],
         "source_sha256": "e25eb87a71de418629dafabc646f72f53075e17bc837d0d61bd8545eab5f2d28"
@@ -12522,12 +12688,12 @@
       "bullets": {
         "text": [
           {
-            "text": "Enroll writes audit records (ot_inventory_enroll) for every accepted asset.",
-            "source_sha256": "de5c40dab2c992585d19ec5abf90bdb910e40184552b4ddb6bf3b3f93664d908"
+            "text": "Enrol writes audit entries (ot_inventory_enroll) for each accepted asset.",
+            "source_sha256": "a99c49c6204d930fa6d762033e7b441da2ee9288392f70c52d136003dc12f4cd"
           },
           {
             "text": "Status chips use Live, Partial, or Blocked — delivery evidence, not a compliance verdict.",
-            "source_sha256": "3a059029f49d5b47395f82c956b7e575adbadc494615dc55df2ee4ab745c1a94"
+            "source_sha256": "db1f7e0abf9c7157c5c4f217596ddc39c283310bbed0e6847dd45470d880ad27"
           }
         ],
         "source_sha256": "70b6b58524f82e85bd02f12eccfad6a21bf15e7f16b87adbc57a1a6286ed9a8c"
@@ -12549,8 +12715,8 @@
       "bullets": {
         "text": [
           {
-            "text": "Every action requires a documented justification and writes an audit event.",
-            "source_sha256": "1d8d6a10143a6a232f5887498453aac011f4c418a9364a6d2e04c364c57dc8bd"
+            "text": "Each action requires a documented justification and writes an audit event.",
+            "source_sha256": "526eda8dcfdf69c89c67e619fac98046ec01d92c25124e3e5c91e2abf59cdfcf"
           },
           {
             "text": "Pending and active counters appear in the banner above the grid.",
@@ -12577,7 +12743,7 @@
         "text": [
           {
             "text": "Each row links to a detail view that is decrypted and read in the browser.",
-            "source_sha256": "f3448ea457b57b5d55380c82988750be5657c2065a43bd42f36d5e177afd0958"
+            "source_sha256": "df2c4a21f9cf22869115b1d2fcd0e510313c99f54e3e42f1920d421b199dfa60"
           },
           {
             "text": "Decision chips show Allowed or Denied at recording time — not a compliance verdict.",
@@ -12611,8 +12777,8 @@
             "source_sha256": "1b2ea850818125b0dc274f4cb9dad01c4ac20d462932d88d30bb9bd28c8acea1"
           },
           {
-            "text": "The WinRM form is also available under /elevation at Remote Non-Agent Local Elevation.",
-            "source_sha256": "766741d901623c4d6999a74f3703487e858af6d3caffcd11f703c94ad7b7322b"
+            "text": "The WinRM form is also under /elevation for Remote Non-Agent Local Elevation.",
+            "source_sha256": "c38d68fa939bf2a2de22fdf2c30f17fe4700226f274f9cb4e420fe85ec8889f6"
           }
         ],
         "source_sha256": "03d40ee1904430c95dfd635c58b3a191100f5ed98ff0dec11a875f5e60fb24db"
@@ -12680,23 +12846,23 @@
           },
           {
             "text": "Assessment Binder: living CMMC enclave binder with export formats (under Assessments).",
-            "source_sha256": "187c074aea2155bae2bc2a919f82d28cff1b59ba5b70c20b757ebd73de35d079"
+            "source_sha256": "c849be78515ccef98155f09e47cc4158479b89241fe53ea967e6b55199fe1ef4"
           },
           {
             "text": "Current compliance state: posture and findings per machine (under Assessments).",
             "source_sha256": "b1144eb2ba6d9258fad11439afe4ce9802644ae27096000a623f91c50484550c"
           },
           {
-            "text": "External Workstation Readiness: ERASG-connecting clients (under Assessments; legacy workstation-assurance bookmarks redirect there).",
-            "source_sha256": "221b1d7199886325d73ad54bec040d3a2c73013809700a448ace25987de555c1"
+            "text": "External workstation readiness: ERASG-connecting clients (under Assessments; legacy workstation-assurance bookmarks redirect there).",
+            "source_sha256": "3b0d00510204437a24850208e815f9e49f306060c4abeb2fda92d43fb998aba1"
           },
           {
             "text": "Report templates (this report group) / sample packs (under assessments): presentation overlays and scripted evidence.",
             "source_sha256": "c69ad6e9191097a02ca8f3255651ef1c68ba795d112e55c177cf42ba856d41cd"
           },
           {
-            "text": "Catalog cards start PDF, CSV, or JSON runs with typed filters and classification.",
-            "source_sha256": "1aedafd4177480b72be8b4373fbf3cc72d6f18071beeb9c28b52fd5a2d97cd5a"
+            "text": "Catalogue cards start PDF, CSV, or JSON runs with typed filters and classification.",
+            "source_sha256": "c4b11bf70472ec4476f514130f64810af7cfe5c07b59fca7a1557047b44296a7"
           }
         ],
         "source_sha256": "330ac9ca3357d58898926a2a43a525d9816e952a83c232c599386e7956ffd5d3"
@@ -12722,12 +12888,12 @@
             "source_sha256": "5b2482ee69721edf3ab9641b792abbc6bae9f8fa29825fdb91e4611bced6b7f0"
           },
           {
-            "text": "Custom overlays may change labels, columns, and wording; the data source and collector stay as shipped.",
-            "source_sha256": "408f2d0be0dfa883465c0cdf444984f68a447badae3806d38b24639bfddeebc5"
+            "text": "Custom overlays may change labels, columns, and wording; the data source and collector stay shipped.",
+            "source_sha256": "832625f4f33974da6974c03c994e60fbc7e14e266e9562615c27387d717cfd36"
           },
           {
-            "text": "Drift notices appear when the source version advances the shipped copy; archiving is soft delete only.",
-            "source_sha256": "074d64eb653a064b5f3ef181ad0db8f2398d89e4dde024943ea6061b0fd369d9"
+            "text": "Drift notices appear when the origin version of the shipped pack advances; archive is soft-delete only.",
+            "source_sha256": "4a209b0e62bcf905265057740e21355159fd6d9c60772dda341b7afd0e8e4afa"
           }
         ],
         "source_sha256": "0f7d60fcef1687f62267e5b873698cf97891e9c1e015960a563aa6230a2c3af2"
@@ -12823,8 +12989,8 @@
             "source_sha256": "a4e56e47feea9677353c18e45b719e663ca6f0bb13aaae42305d4ce23cf77343"
           },
           {
-            "text": "Company Profile holds the organization name and contacts for notices; the Initial Setup Wizard walks through first-time enclave setup.",
-            "source_sha256": "765536f45af6709c1c359f4fdb97075ae84439a61c511d4ea56ab3510955e877"
+            "text": "Company profile holds organisation names and contacts for notices; the first-run wizard walks through enclave setup.",
+            "source_sha256": "2ab38996aa42b0f2a3e7bf24df88838733144de1b1a7eb2903a95277f9977f06"
           },
           {
             "text": "Use the Quick Search (Ctrl+K) to jump directly to any configuration page.",
@@ -12860,16 +13026,16 @@
       "bullets": {
         "text": [
           {
-            "text": "Data is Partial / Live — assembled from /admin/systems check-in enrichment; not a live AppConfig snapshot.",
-            "source_sha256": "e6ec1862d73434f4abc1f10cc5a9248d8fa0de26c45d26fe08279caa2c610215"
+            "text": "Data Partial / Live — composed from /admin/systems check-in enrichment; not a live AppConfig snapshot.",
+            "source_sha256": "4169be66fa663182e6f451e3b132f3f761a117380cc832a07c2827d62aeab57e"
           },
           {
             "text": "Push accessibility can only be checked for co-located Push-IPC; removed lines show self-reporting or not-of-this-server.",
             "source_sha256": "5c8d5ea67be672e0d11f11fd36db774db5ad0949d62fe9120f8bdb71f85353cb"
           },
           {
-            "text": "Deep links to Propagation, Disclosures, Recording Agents, and Password Recovery stay on the existing pages.",
-            "source_sha256": "1b65eade273f0ec61e1cff51590146609efa1b01ee257dca9c2e35be33a815bc"
+            "text": "Deep links to propagation, disclosures, recording agents, and password recovery stay on the existing pages.",
+            "source_sha256": "b5fc8a4c3b95452b77b17f9895f1a3f6eb8cc8c740bd9bd881672258f98f3b9f"
           }
         ],
         "source_sha256": "37ca44d59c011f2686e6fe2971edfead3385bd6fb67959d3925cf0f40fd3bf93"
@@ -12899,8 +13065,8 @@
             "source_sha256": "8671762af94920302100d30ec1f4de469a99eab44b6732262896aa2aae846655"
           },
           {
-            "text": "Fleet Agent Versions is a separate read-only table built from System List enrichment.",
-            "source_sha256": "6805793ae3e43db8b3afb0a2b376c40678136c76216459e25e2e92437bb38e3b"
+            "text": "Fleet Agent versions is a read-only table from system-list enrichment.",
+            "source_sha256": "f30542bc8681c39a6ca7cb4400a60dae6510d797b7c7fb5c5d4dc0ac26cb24cf"
           }
         ],
         "source_sha256": "03fc999c03ce5257470bfb0e7f79251d3c7eb4fb256a3b1783d8750706c54d74"
@@ -12926,8 +13092,8 @@
             "source_sha256": "06a5a00760e42597eb968677478b7659d9cb0d06f6e9f2423e2fd5a36737048e"
           },
           {
-            "text": "Phases: pre-rotate (quiesce) → password change → verify (post-rotate). Test uses the agent copy after the push.",
-            "source_sha256": "bb801bee89c44e6e814df5d669303e6b9db33ed1e4342a6a89ad24e1b649d1a8"
+            "text": "Phases: pre-rotate (quiet) → password change → verify (post-rotate). Test uses the Agent copy after the push.",
+            "source_sha256": "b1d98a7acba0715cf7df7e693ae27521f5b753a09884364ecf41f95ca432d7d2"
           },
           {
             "text": "Scripts run in lifecycle phases (pre-rotate, verify, and so on) — not at session brokerage (see Proxy access).",
@@ -12957,16 +13123,16 @@
       "bullets": {
         "text": [
           {
-            "text": "Classification and notice colors apply to the sign-in chrome and admin disclosure banners.",
-            "source_sha256": "feceef9f1c68dc2b877d5ed593ab034c7abc2fcc4e1645468a0306886c762de5"
+            "text": "Classification and notice colours apply to sign-in chrome and admin disclosure banners.",
+            "source_sha256": "d421002f5d78d9fc5e14c03cb6f1853e94d49e0e888b40768d17b6118ff6992f"
           },
           {
-            "text": "Default colors follow AIC navy and steel blue from core-assets (no orange brand chrome).",
-            "source_sha256": "a21e72bc6281b219fe306e72407803c05d79fd5de15161bb4f71524185b646c1"
+            "text": "Default colours follow AIC navy and steel blue from core-assets (no orange brand chrome).",
+            "source_sha256": "ebe671f736648cea917a9c69a38173d3846df6fa3b2692a7478978d120cac7a1"
           },
           {
-            "text": "Disclosure banner text stays under Server Disclosures / Operator Disclosures.",
-            "source_sha256": "d0c10fa0270609c84f52c7117e070980e225522196f57955e19aa073bf1e90bd"
+            "text": "Disclosure banner text stays under Server disclosures / Operator disclosures.",
+            "source_sha256": "ccf4571f689a6f9150f1e462d92c9eac3e74c8ea0a4dbbf4a29584293442671c"
           }
         ],
         "source_sha256": "c6e830bc41afa555a83127f6ad4abe9e8b5306c5976a148722f873c441055b4c"
@@ -12988,8 +13154,8 @@
             "source_sha256": "80f8b8cf72943689d7aa750e6885b83f8c270266a4c01713735ea1db45992132"
           },
           {
-            "text": "Logo, brand name, and banner colors are under Branding & Style.",
-            "source_sha256": "30eab20865ed01a7c64ca5bea5eaf494c68b020c79d4d3ad9b9f5e46e6919e92"
+            "text": "Logo, brand name, and banner colours are under Branding & Style.",
+            "source_sha256": "3e82cd913299d5fff49c651013ecb3ac9e40558a2db6f37a34ef673ff7373306"
           },
           {
             "text": "Extended template text remains under Server Disclosures / Operator Disclosures.",
@@ -13207,7 +13373,7 @@
           },
           {
             "text": "Legacy URLs under /endpoints redirect here.",
-            "source_sha256": "3e0b1ac10b8a63072e94f9fbdb378636a78861e6f8f6cd1ce23a2be33a0c81d1"
+            "source_sha256": "c0962f3df60ffac816447f5d0e28cab1171b201f15df63fce4e72f937c863680"
           }
         ],
         "source_sha256": "4ca780b5d599da2f4909af05e03d9890307e801c858ef07ac78d76c813b4504e"
@@ -13226,7 +13392,7 @@
         "text": [
           {
             "text": "Create a multi-tenant, then copy the bootstrap secret immediately; it is never shown again.",
-            "source_sha256": "8199c1f6ee4d73b0e9056acabb1d53e048bf77edb7c365078f324fecb9efe3ec"
+            "source_sha256": "8050262ea89b9600e561623e1c24482309ec9c6f4b7166d483cf5b5a4d858ee4"
           },
           {
             "text": "Agents and Assistentenausgabe referenzieren tenant_guid aus the Multi-Tenant-Datensatz.",
@@ -13973,51 +14139,14 @@
         "source_sha256": "c145cd10224381fd5c15eaa67cc472319515453c85c3b427fbc45ecd3d330509"
       }
     },
-    "settings__localization": {
+    "docs__auditor_cmmc_level_2": {
       "title": {
-        "text": "Localisation",
-        "source_sha256": "031c2d79d71a06afcb07712e2125db23368a1f14dd96ce0140027b36bdfb5d30"
+        "text": "Auditing CMMC Level 2",
+        "source_sha256": "0f2b3fcbf9c61a8491528a004a2547c89976f1dd13b2ad1821f925bd6f13b062"
       },
       "summary": {
-        "text": "Super Administrators enable shipped language packs for the sign-in and in-app picker. The installer still ships every pack.",
-        "source_sha256": "9f274f6fd0e6774c1770e01877ae8caf07e753b5afccd9ae2c48c94d90618fff"
-      },
-      "bullets": {
-        "text": [
-          {
-            "text": "English (USA) is always enabled and cannot be turned off.",
-            "source_sha256": "00d75958bd4e5067312aa97c84c9a7987ef9039e07f70627bf7d2db540c43fae"
-          },
-          {
-            "text": "Enabling a language does not certify translation quality and is not a Met claim.",
-            "source_sha256": "c3164bed71bb43f9c304310db26877a1142ad1abd5a72fbd6abeca302bb02d0c"
-          },
-          {
-            "text": "Official control text stays in the language the authority published.",
-            "source_sha256": "9bb165b566c41cdb352000417809d2b3a71b6bfa9719e7c3a72257f38fae5e8b"
-          }
-        ],
-        "source_sha256": "370c3bfead639c1c2d326c7244c1c0496e9ee9e9abaa617e4e6a3c53e5b8e063"
-      }
-    },
-    "docs__auditor_setup": {
-      "title": {
-        "text": "Auditor Setup Guide",
-        "source_sha256": "66eed74ada8a3d046c4bf3c5fa21eee29a19ef442ba7b9970ed1f8ad77cdfa5b"
-      },
-      "summary": {
-        "text": "Staff auditors on the shared Sign in page: jobs, groups, starter accounts, and configuration links.",
-        "source_sha256": "88718f1b1b0501d8413cac4b5e462a9821ca1b58c199fd7487c6621409e105f5"
-      }
-    },
-    "docs__auditor_working": {
-      "title": {
-        "text": "Using AIC Server as an assessor",
-        "source_sha256": "eed9c29530edb36366f4668df1f229a6b28fc20d86ab833ffff82df0937e7a42"
-      },
-      "summary": {
-        "text": "Binder, reports, Current State, auditing, Enhanced Controls, and export hygiene for read-oriented assessor work.",
-        "source_sha256": "3e05de24305555056acd3a2c72740e634228fb1c8a7127076a25bf3bdeffcacb"
+        "text": "CMMC Level 2 overview (NIST SP 800-171 / CUI) and how AIC Server can support each family.",
+        "source_sha256": "28f7a9984a1a04dc32ddd84a6ddba5195e15bcbcd5f413dc85a78ed7b6027a33"
       }
     },
     "docs__auditor_cmmc_level_1": {
@@ -14030,16 +14159,6 @@
         "source_sha256": "38ae7e01dd0da958f91663010e93861b8c10f9239cae575b2bcb2ee00c578a7f"
       }
     },
-    "docs__auditor_cmmc_level_2": {
-      "title": {
-        "text": "Auditing CMMC Level 2",
-        "source_sha256": "0f2b3fcbf9c61a8491528a004a2547c89976f1dd13b2ad1821f925bd6f13b062"
-      },
-      "summary": {
-        "text": "CMMC Level 2 overview (NIST SP 800-171 / CUI) and how AIC Server can support each family.",
-        "source_sha256": "28f7a9984a1a04dc32ddd84a6ddba5195e15bcbcd5f413dc85a78ed7b6027a33"
-      }
-    },
     "docs__auditor_cmmc_level_3": {
       "title": {
         "text": "Auditing CMMC Level 3",
@@ -14048,6 +14167,26 @@
       "summary": {
         "text": "CMMC Level 3 overview (selected NIST SP 800-172). Not Level 2 plus a toggle. Enhanced Controls honesty notes.",
         "source_sha256": "c757afc8bca515cfb367ffb82c308071bead2b5e46a9efd888b5ff99fe0b422e"
+      }
+    },
+    "docs__auditor_working": {
+      "title": {
+        "text": "Using AIC Server as an assessor",
+        "source_sha256": "eed9c29530edb36366f4668df1f229a6b28fc20d86ab833ffff82df0937e7a42"
+      },
+      "summary": {
+        "text": "Binder, reports, Current State, auditing, Enhanced Controls, and export hygiene for read-oriented assessor work.",
+        "source_sha256": "3e05de24305555056acd3a2c72740e634228fb1c8a7127076a25bf3bdeffcacb"
+      }
+    },
+    "docs__auditor_setup": {
+      "title": {
+        "text": "Auditor Setup Guide",
+        "source_sha256": "66eed74ada8a3d046c4bf3c5fa21eee29a19ef442ba7b9970ed1f8ad77cdfa5b"
+      },
+      "summary": {
+        "text": "Staff auditors on the shared Sign in page: jobs, groups, starter accounts, and configuration links.",
+        "source_sha256": "88718f1b1b0501d8413cac4b5e462a9821ca1b58c199fd7487c6621409e105f5"
       }
     },
     "docs__manuals": {
