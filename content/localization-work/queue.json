@@ -1835,6 +1835,63 @@
       ],
       "draft_tags": [],
       "notes": "US English and German authored. Other tags are English drafts. Close only after reviewed catalogs. Data add, not a code rewrite."
+    },
+    {
+      "id": "spa.cmmc-linux-probe-platform",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "spa-chrome",
+      "title": "Linux CMMC probe platform",
+      "added": "2026-08-23",
+      "updated": "2026-08-23",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/i18n/locales/en/compliance.json",
+      "source_sha256": "8d926ac0fbf84c362db7882a0119a46e6e8a6992d1d98bd6416a2a10f5bdfe71",
+      "product_route": "/enclave/compliance",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [],
+      "notes": "New Current State Linux CMMC probe platform chrome. Agent drafts do not close. Not Met."
+    },
+    {
+      "id": "spa.login-panel",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "help-manual",
+      "title": "Login panel idle/expired chrome and help keys",
+      "added": "2026-08-23",
+      "updated": "2026-08-23",
+      "source_repo": "pim-offline-server",
+      "source_path": "pim-offline-server/ui/src/i18n/locales/en/login.json",
+      "source_sha256": "56db71e11975dafeb401840d8ffef735698079bda523afb046810cebef69acb2",
+      "product_route": "/login",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW",
+        "ar",
+        "fi",
+        "sv",
+        "tr",
+        "nl",
+        "ja",
+        "he",
+        "it",
+        "ko",
+        "pl",
+        "pt-BR"
+      ],
+      "draft_tags": [],
+      "notes": "Agent draft: reasonIdle/reasonExpired plus login helpKeys (loginUsername, loginPassword, actionLogin, loginForgotPassword, loginDemoFill). Reviewer must close; agent draft does not close."
     }
   ]
 }
