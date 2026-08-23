@@ -1796,7 +1796,7 @@
       "updated": "2026-08-22",
       "source_repo": "pim-offline-server",
       "source_path": "ui/src/pages/SecureProgramLaunchPage.tsx",
-      "source_sha256": "070fcd491182e56d012b362e88081c039acef12ea79b4111df9d5c17f346853f",
+      "source_sha256": "ad8276a1a60b0e9d8f6d7cde998e759c21b5f664c681c1ad2e032137512958b6",
       "product_route": "/pam/secure-launch",
       "required_tags": [
         "de",
@@ -1811,7 +1811,30 @@
         "fr",
         "es"
       ],
-      "notes": "Agent draft catalogs landed for current SPA tags. Close only after reviewed catalogs. Remaining work is a data add, not a code rewrite."
+      "notes": "Agent draft catalogs landed for current SPA tags. Close only after reviewed catalogs. Remaining work is a data add, not a code rewrite. Source changed 2026-08-22 (hash 070fcd491182 → ad8276a1a60b)."
+    },
+    {
+      "id": "app.aic-secure-launch",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "gui-app",
+      "title": "AIC Secure Launch helper",
+      "added": "2026-08-22",
+      "updated": "2026-08-22",
+      "source_repo": "pim-secure-launch",
+      "source_path": "i18n/en.json",
+      "source_sha256": "eeb00a2549e7c05780b4e61f8fd33cf6bf099823ca385440e0c23790e204d899",
+      "product_route": "",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [],
+      "notes": "US English and German authored. Other tags are English drafts. Close only after reviewed catalogs. Data add, not a code rewrite."
     }
   ]
 }
