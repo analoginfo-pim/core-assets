@@ -1013,13 +1013,26 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         action="store_true",
         help="Exit 2 when any third-party package is BLOCKED (fail-closed for deploy/MSI).",
     )
+    p.add_argument(
+        "--server-root",
+        default=None,
+        help=(
+            "pim-offline-server checkout whose Cargo.lock and package-lock.json "
+            "are hashed (default: workspace sibling). Use a worktree so inventory "
+            "SHAs match that checkout, not a dirty shared tree."
+        ),
+    )
     return p.parse_args(argv)
 
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
+    global SERVER, UI
+    if args.server_root:
+        SERVER = Path(args.server_root).expanduser().resolve()
+        UI = SERVER / "ui"
     if not SERVER.is_dir():
-        print(f"ERROR: expected sibling pim-offline-server at {SERVER}", file=sys.stderr)
+        print(f"ERROR: expected pim-offline-server at {SERVER}", file=sys.stderr)
         return 1
 
     OUT.mkdir(parents=True, exist_ok=True)
