@@ -1785,6 +1785,33 @@
       ],
       "draft_tags": [],
       "notes": "Restored US English technical.downloadOpenApi to Download OpenAPI JSON. de keeps herunterladen. fr/es/nl no longer leak herunterladen (draft verbs). Agent drafts do not close."
+    },
+    {
+      "id": "spa.secure-program-launch",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "spa-chrome",
+      "title": "Secure Program Launch",
+      "added": "2026-08-22",
+      "updated": "2026-08-22",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/pages/SecureProgramLaunchPage.tsx",
+      "source_sha256": "070fcd491182e56d012b362e88081c039acef12ea79b4111df9d5c17f346853f",
+      "product_route": "/pam/secure-launch",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [
+        "de",
+        "fr",
+        "es"
+      ],
+      "notes": "Agent draft catalogs landed for current SPA tags. Close only after reviewed catalogs. Remaining work is a data add, not a code rewrite."
     }
   ]
 }
