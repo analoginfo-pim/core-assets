@@ -1,0 +1,58 @@
+---
+description: Hard rule — pre-GA demo/dev may discard an incompatible database; GA must not
+alwaysApply: true
+---
+
+# Pre-GA fresh database (hard rule)
+
+Operator directive (Phil, 2026-08-23): **Robert is building demo
+instances from this code.** In **demo mode and initial development** we
+**do not have to do database migrations**. If the database is **not
+compatible**, **start fresh with new seeding** — **as long as we have
+not gone GA**.
+
+## The rule
+
+> **Pre-GA (`COMPLIANCE_PROFILE=lab-dev` / `demo` / `dev`): on sqlx
+> checksum mismatch, missing schema, or incompatible revision, recreate
+> an empty database, apply current migration files (init), and seed.
+> Production / GA / `commercial` / `cmmc-l2` customer: fail closed.
+> Never auto-drop. Migrations remain required after GA.**
+
+This is **not** a backup strategy and not a Met claim
+([`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc)).
+
+## Key
+
+| Item | Value |
+| --- | --- |
+| Manifest | `PRE_GA_DISCARD_INCOMPATIBLE_DATABASE` |
+| `default_dev` | `true` |
+| `default_prod` | `false` |
+| Hard deny | `cmmc-l2` and `commercial` never drop, even if the key is true |
+| Lab-dev unset | Discard **allowed** (demo binaries may use production AppMode) |
+| Config surface | `pim-app-config` / configurator — **never** an environment variable |
+
+## Required behavior
+
+1. Do **not** invent a second schema engine. Fresh create = current
+   `sqlx::migrate!` files on an **empty** catalog.
+2. After recreate, run lab/demo seed
+   ([`db-init-must-seed-lab.mdc`](db-init-must-seed-lab.mdc)).
+3. Loud `tracing` + `runtime-status` warning:
+   `pre-GA: incompatible database discarded; seeded fresh.`
+4. Product language in operator-visible text — no lab hostnames.
+5. Implementation: `pim-offline-server/src/pre_ga_fresh_database.rs`
+   and `docs/dev/pre-ga-fresh-database.md`.
+
+## Forbidden
+
+- Auto-drop a GA / `cmmc-l2` / `commercial` database
+- Inventing `$env:` / `std::env` gates for this switch
+- Treating checksum rewrite (`force_migrate`) as the pre-GA delivery path
+- Claiming Met / certified / assessment-ready from this posture
+
+## Origin
+
+2026-08-23 — operator: demo builders must not be blocked on migrations
+before GA; incompatible catalogs seed fresh; GA must not auto-wipe.

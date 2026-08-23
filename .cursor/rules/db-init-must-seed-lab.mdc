@@ -12,6 +12,11 @@ reset) **must not** leave demo logon broken. Lab fixtures live in
 1. `db-init` after migrations (default when `COMPLIANCE_PROFILE=lab-dev`)
 2. Daemon startup `ensure_on_startup` on the same profile
 
+Pre-GA `lab-dev` / `demo` boot may **discard an incompatible catalog**
+and seed fresh (`PRE_GA_DISCARD_INCOMPATIBLE_DATABASE`). See
+[`pre-ga-fresh-database.mdc`](pre-ga-fresh-database.mdc). Production
+profiles never auto-drop.
+
 Do **not** invent a new PowerShell-only seed step. Document switches in
 `pim-offline-server/docs/dev/db-init-and-lab-seed.md`. Production
 profiles (`cmmc-l2` / `commercial`) never auto-seed demo passwords.
