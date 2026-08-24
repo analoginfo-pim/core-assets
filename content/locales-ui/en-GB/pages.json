@@ -15895,5 +15895,331 @@
   "openapi": {
     "text": "OpenAPI",
     "source_sha256": "cf2c9e2180334830f7e995b1084be3ac857f6733464548f77ab952d45773203a"
+  },
+  "secureLaunch": {
+    "appKind": {
+      "source_sha256": "0bfbad34167bd1e9a5636f4209e8e850a8e2cae25b7bdd4b4f4fdf10b040b6b1",
+      "text": "Application kind"
+    },
+    "application": {
+      "source_sha256": "e7ad522ea327e5ba95534ef8355038ef7f7b86328c7cf9175886f60464c40d28",
+      "text": "Application"
+    },
+    "applicationName": {
+      "source_sha256": "09526e9d005a58828a312642eb61505a075408cfd2141ccfe4f0196ba59e1dcf",
+      "text": "Application name"
+    },
+    "binary": {
+      "source_sha256": "06b600a53f8005e9bc248b292824cef6dd69995685abb30268dfb9fcf391892c",
+      "text": "Programme path"
+    },
+    "browserChannel": {
+      "source_sha256": "d31de1a5c5c8ba2a210a167cf0d0dc2425c57ea7525f4b73a4b7ab934af79dfc",
+      "text": "Browser"
+    },
+    "catalogTitle": {
+      "source_sha256": "d1bcd422857c650b0c64d2966d634136876f9b674f0667c5aa22ea0c4f9a7508",
+      "text": "Application catalogue"
+    },
+    "commandTemplate": {
+      "source_sha256": "289540022decef5a2cb04264ecb277249e0052e0871ee609996af7146b55b9ce",
+      "text": "Command template"
+    },
+    "competitorCatalogNote": {
+      "source_sha256": "69b613d95cc93fbc98f719d97a8e493f800700cd0f007674f03b45dbf29b556f",
+      "text": "These match CyberArk, Delinea, and BeyondTrust application launchers. Catalogue-only rows store start settings. They do not open a governed session."
+    },
+    "competitorCatalogTitle": {
+      "source_sha256": "469d67fec559352677f423a7da2f38cfd5a644f7db249eec594852d9331763ad",
+      "text": "Common launch configurations"
+    },
+    "configTitle": {
+      "source_sha256": "ab51fa6b54abc0b89d58291eee0ee5e20e4a24b64da067b2da6ba24899147be6",
+      "text": "Start settings"
+    },
+    "credential": {
+      "source_sha256": "b1c42b3ce118093bc656bf16e7b87e069403a18246d2ea36d3c667850cb5bda1",
+      "text": "Credential"
+    },
+    "credentialStored": {
+      "source_sha256": "a6a7994886bb26d82c0d4f5c71113c248d5893173206ad817cab9131d26171ef",
+      "text": "Credential stored. The secret is not shown again."
+    },
+    "credentialsTitle": {
+      "source_sha256": "6d0ff0c741a5a345223717dac0524a02afb379049591d4d9a3b91c5afe104c98",
+      "text": "Application credentials"
+    },
+    "database": {
+      "source_sha256": "fa7fe67124e94375d97e50896e0c32f44b03bb7ed5e9fb026341b55da724126b",
+      "text": "Database"
+    },
+    "definitionStored": {
+      "source_sha256": "b7098973c8e38fd6ebd2777d64a6fe13403b1137e5d16f60f3877f90dc3f2464",
+      "text": "Application stored. Start settings are not a secret."
+    },
+    "displayName": {
+      "source_sha256": "2b7f6a84de917e387539dbe441ca22056e793d738e6c50db30c3f569e4448df3",
+      "text": "Display name"
+    },
+    "emptyCredentials": {
+      "source_sha256": "4cc3c579ce806e85ffa59d8860866d37baac911c571e642adf3c373a133d32af",
+      "text": "No application credentials yet."
+    },
+    "emptyDefinitions": {
+      "source_sha256": "ce4fda79ef58dc369c58450cfc2df18229bebfd52641ede7a5f19b0bae3d17de",
+      "text": "No applications yet."
+    },
+    "entitlementStored": {
+      "source_sha256": "c207e77925071fb8281ec917165877b20a46749b4343ddf2a0a59522705dda41",
+      "text": "Launch entitlement stored."
+    },
+    "entitlementsTitle": {
+      "source_sha256": "5a29bf6d791ad70a45bb1f863133610f0507f2d18733362b8704474286d85b68",
+      "text": "Who may launch"
+    },
+    "extraArgs": {
+      "source_sha256": "478cf13d2ed7b164ef29a9f8743a51ecc4a8b3000b13fe0f896371291552b26e",
+      "text": "Extra arguments"
+    },
+    "helpAppKind": {
+      "source_sha256": "b80deab64a79210e7ca42ca34251b28b320807f3abb009a9597830b2d8766e62",
+      "text": "Kind of application, such as postgresql or website."
+    },
+    "helpApplicationName": {
+      "source_sha256": "551638a4903b31e8a354dedac6d5d266d238cc1ee9f2f5adee26e8e628a084ef",
+      "text": "Name the database sees for this session. Optional."
+    },
+    "helpBinary": {
+      "source_sha256": "54990099a97f64902a3644c2b0a487037ef883fbcea29416716e1a343538321a",
+      "text": "Programme file on the computer that starts it. Empty uses the usual name."
+    },
+    "helpBrowserChannel": {
+      "source_sha256": "297b3a99fc559d3b6928125168b1c89031bb215d5fcaa4dc5377fed1e4e91385",
+      "text": "Installed Edge or Chrome. Chromium is the fallback."
+    },
+    "helpCommandTemplate": {
+      "source_sha256": "92be4f4932393a813b301952deba3dbb29fe7c83bae692f3bbd40672654848fb",
+      "text": "Start command without a password. {host}, {port}, and {username} are allowed."
+    },
+    "helpDatabase": {
+      "source_sha256": "9498788ab7efd78ce8fa9b4e8bfd635ef6b243df8b3a082b7791f23f335ec29f",
+      "text": "Database name the programme opens. Not a password."
+    },
+    "helpDisplayName": {
+      "source_sha256": "05abffbdeaeab1980c560037173e20051f0dfc386bf8549757f19c65c67fe28d",
+      "text": "Operator label for this stored credential. The secret is not the name."
+    },
+    "helpExtraArgs": {
+      "source_sha256": "06f43a2d9ed8c66b29981c9809808845a22d3d34edeeb5f06388d1a584271b82",
+      "text": "One argument per line. Do not put a password here."
+    },
+    "helpInjectStyle": {
+      "source_sha256": "9607436644840ce40e1d4ef2880f04943ade505d124aec304536bad4945c1473",
+      "text": "How the helper gives the secret. Never on the command line."
+    },
+    "helpKind": {
+      "source_sha256": "cad79e8cf5d79edf3ec3f91e72c39d20333651f327dabcf6600f65808bcdac8d",
+      "text": "Password, SSH key, certificate, or an agent-derived binding."
+    },
+    "helpLoginUrl": {
+      "source_sha256": "998229ed94b4270127578c527eac16237c891e0435814fb74bff5831b6f5e0a1",
+      "text": "Sign-in page for a website launch. Leave empty for desktop programs."
+    },
+    "helpOsFamily": {
+      "source_sha256": "8e4ac18d7afba5d1650e2d94fb62f3615c1b4cb6cd5ee9af10ffc29bc532f2ae",
+      "text": "Windows, Linux, macOS, or any."
+    },
+    "helpPassCss": {
+      "source_sha256": "20da05f99a10a77cff865e50c73796bea48c1fc1c95fec7df8ee5ddd98e07e38",
+      "text": "CSS selector for the secret box. Do not name this field password."
+    },
+    "helpRecordedSession": {
+      "source_sha256": "23b1e57a5b672f501ca4efcb28f91062db594451fe4d268432960a12fea62d37",
+      "text": "Bind this launch to a live recorded session so several programs can run in one recording without showing the password. Leave empty to launch without a session."
+    },
+    "helpSecretOnce": {
+      "source_sha256": "d557c56ac11775bce53f5935e086f1e989656c7d06c91a6656533a8c9f0e38c5",
+      "text": "Accepted once and stored encrypted. Never listed and never shown again."
+    },
+    "helpSlug": {
+      "source_sha256": "4bc40718a37e336adc37ffacdaceac96c4c54f19a82674e5cf249964ec37a6ea",
+      "text": "Lowercase name for this application. Not a secret."
+    },
+    "helpSslmode": {
+      "source_sha256": "9e4ab1273292adb08ed7d9b85c55eae7c6cbe8472b00412c0b14aefa67698ffc",
+      "text": "PostgreSQL SSL mode. Leave empty to use the application default."
+    },
+    "helpSubjectKind": {
+      "source_sha256": "54dffdefce56f490add152c8e8ae9d71e52d2c484313715996c6537e4e84a1d8",
+      "text": "Grant launch to a role or to one principal. No match means deny."
+    },
+    "helpSubjectPrincipal": {
+      "source_sha256": "cef8f03b0237164dc7c2541e25188dfc5b6d9231b50e660d8999d661c9d3ea55",
+      "text": "Exact principal identifier. Empty or unknown id cannot launch."
+    },
+    "helpSubjectRole": {
+      "source_sha256": "301daa4b12b293d097a7f240a9fecd8503099ddc11cf2b6a1fa3dd99df3c27bb",
+      "text": "Role label that may launch this application with the chosen credential."
+    },
+    "helpSubmitCss": {
+      "source_sha256": "8fe739ea5c6c018b2c8670f6f0a99e6498c8c66ac40c65d9122941827cee2e17",
+      "text": "CSS selector for the sign-in button on a Playwright website launch."
+    },
+    "helpTargetHost": {
+      "source_sha256": "4cd72e76eab87dfaf01a84842d655b2b227f20347adfa075208550e383223a98",
+      "text": "Host or site the application connects to. Optional rotation match."
+    },
+    "helpTargetPort": {
+      "source_sha256": "67f79c70a0fd6cb758668c593ea38ca4760a22f3c3a84c0993d5f1aca910c1f3",
+      "text": "Service port. Use 5432 for PostgreSQL, 22 for SSH, 0 when unused."
+    },
+    "helpUserCss": {
+      "source_sha256": "782cd4a9dbb5efe9c7aa87c70f29f8e5d9fe0d72b198ef7da5ae1223d7e1fd4a",
+      "text": "CSS selector for the username box on a Playwright website launch."
+    },
+    "helpUsername": {
+      "source_sha256": "50586fe0735adf48f560788d4c06cc57418e2d8ba090c5ccae72ea8b1d4c36e8",
+      "text": "Account name injected at launch. Used to match later password rotation."
+    },
+    "helperGrantFailed": {
+      "source_sha256": "3684c7e4335d4c3fbbd87697ffa4ae9f97898bf83a3a6bef467cb6dd362ce43e",
+      "text": "Could not open AIC Secure Launch. Install the helper, then launch again. The ticket is ready; the secret is not shown."
+    },
+    "helperStarted": {
+      "source_sha256": "219623792597f372bf2085036fdb76a94585b607e863685144db12bbe0f3fcbf",
+      "text": "AIC Secure Launch opened. It starts the programme and keeps the password hidden."
+    },
+    "honesty": {
+      "source_sha256": "a8c1d33a72912f486576d400c87ee88fe2667bba5ad28e7a1a85393c8a060f24",
+      "text": "Launch injects the current password, key, or certificate without showing it. Host, port, database, SSL mode, programme path, and web field selectors are stored as start settings and can be changed. A simple website form opens in this browser. A JavaScript sign-in page opens AIC Secure Launch with Playwright. Desktop programs open AIC Secure Launch on this computer. The secret is never listed."
+    },
+    "honestySession": {
+      "source_sha256": "28e991381e012d00462b0d5a71a101875d96a702854c9f3bce5e309b60a687b5",
+      "text": "A ticket can bind to one live recorded session. Several programs can share that session. The password stays in the vault."
+    },
+    "injectStyle": {
+      "source_sha256": "60cb00028e96c1bde534d846b4559a7c43537aa12012a55769a020e25196c2d2",
+      "text": "How the secret is given"
+    },
+    "kind": {
+      "source_sha256": "f5387f9bb6ed70315a77fdcb9335facc27a9bf241f35955bd2755c55e0c016c7",
+      "text": "Kind"
+    },
+    "launch": {
+      "source_sha256": "ccf56ef5db0b82a58fa49a20d4d10c70294b29aab981005fc4e0e49edca9d06f",
+      "text": "Launch"
+    },
+    "launchTitle": {
+      "source_sha256": "ccf56ef5db0b82a58fa49a20d4d10c70294b29aab981005fc4e0e49edca9d06f",
+      "text": "Launch"
+    },
+    "loadFailed": {
+      "source_sha256": "6681a9420c9198b408b4047e8aec9dc8be04b6259416690401d2a8764edac4eb",
+      "text": "Could not load Secure Programme Launch records."
+    },
+    "loginUrl": {
+      "source_sha256": "104575e9463efd59c88d42183d10a0d1ff31b1c6c165483b8f1f948106cac53a",
+      "text": "Login URL"
+    },
+    "osFamily": {
+      "source_sha256": "0fcabfe6e097cd4064a08313b4b7da807f5ea3c59d056acc46289467bd2216e4",
+      "text": "Operating system"
+    },
+    "passCss": {
+      "source_sha256": "5008bd1cb7401397094d93edd4b45da44ebb5a50f1393069bb787bfed8d74624",
+      "text": "Secret field selector"
+    },
+    "recordedSession": {
+      "source_sha256": "bab01aadf24a70ee281a2be55dd44e8e6e419bc229cbbcc888b4a2cd92962c22",
+      "text": "Recorded session (optional)"
+    },
+    "retry": {
+      "source_sha256": "942087cc2d41e01304b7195558d093d10c72af8e838c7556d6a02d471ee71852",
+      "text": "Retry"
+    },
+    "revoke": {
+      "source_sha256": "87e6d00bbf53ec5ae251de23ace84d5cf01c69deae04cfff08a5fe353a9853bb",
+      "text": "Revoke"
+    },
+    "saveCredential": {
+      "source_sha256": "d750bb69c4476bfdf6a5db0def8495ba923be30d0c0774f9dcae1b784c644df3",
+      "text": "Store credential"
+    },
+    "saveDefinition": {
+      "source_sha256": "83eb2759402985c36bd10b2a6f2f689022568323d567a8396919858ce122daf3",
+      "text": "Store application"
+    },
+    "saveEntitlement": {
+      "source_sha256": "99638905df2e1a4532cbef9b5a223f14218a4430ebea85168d0955a7cb0183c5",
+      "text": "Grant launch"
+    },
+    "secretOnce": {
+      "source_sha256": "6770ced7052738d0cf3fe5128c0a0eb606ce9e870956e0231c7e86efc46c42a8",
+      "text": "Secret (accepted once, never shown)"
+    },
+    "sessionBound": {
+      "source_sha256": "a531314d87d4b8c1e86d129ed370015b0e4faf65aebe39d741cfad1bf5b9e1c1",
+      "text": "This launch is bound to recorded session {id}. The secret is not shown."
+    },
+    "slug": {
+      "source_sha256": "4ff8035c245ab1c2b473cd705b3996c14f1e543363aa4535752525d524ce5f98",
+      "text": "Short name"
+    },
+    "sslInherit": {
+      "source_sha256": "1350e58a9223b27fd92a2524506ba227d9f631413f4306f60ba5b8838ee9715a",
+      "text": "Use application default"
+    },
+    "sslmode": {
+      "source_sha256": "ae0ab8a512e78df8167ce4c635ba783c7c4fb3a5a629a159100528ebf90d743f",
+      "text": "SSL mode"
+    },
+    "subjectKind": {
+      "source_sha256": "183aac24235663960d92ca1528a624e6a3f6ae3abc7264046f4c4fd5e5bfcf67",
+      "text": "Subject kind"
+    },
+    "subjectPrincipal": {
+      "source_sha256": "726cef37451a494aaa2e091e510356b803c35b0edfbc5229c18f30288eb27853",
+      "text": "Principal id"
+    },
+    "subjectRole": {
+      "source_sha256": "14736a2eb9f4159f4b6b86f192c3c222243fd9659aadf2ecc0139e3d72bed85c",
+      "text": "Role"
+    },
+    "submitCss": {
+      "source_sha256": "0ce4e71a7d177522f4fe2904c2008c5635391c99ebc73fb167d6c2924f8bdb1e",
+      "text": "Submit button selector"
+    },
+    "targetHost": {
+      "source_sha256": "4a823118b9ba8baa2f47489c0716f52755368e3e3c2c26d60736ccfa1bb21b5e",
+      "text": "Host"
+    },
+    "targetPort": {
+      "source_sha256": "72e9a59f5a1d6289dbacb35df897d6c007c55a27e77018455c37e7b372668475",
+      "text": "Port"
+    },
+    "ticketIssued": {
+      "source_sha256": "4ccef805667a75a936cb59a48ab7b6a9f2a6340a8f8e561aaf59128ad922721d",
+      "text": "Launch ticket issued. Command: {{command}}. The secret is not shown. A desktop helper consumes it once."
+    },
+    "userCss": {
+      "source_sha256": "e64e97d05dc7e6ec8041039499782b3ccf7a1543ded5264b41f3b92351aababd",
+      "text": "Username field selector"
+    },
+    "username": {
+      "source_sha256": "e3b89e9d33f88e523083d8b4436adcc3726c89e97fd3179a2e102d765d1b16ed",
+      "text": "Username"
+    },
+    "webMissingUrl": {
+      "source_sha256": "4869ca61b95d9c81c5a0b391dfeb29bf0aaa9712e6c467a4fbcf07311576fba4",
+      "text": "This application has no login URL."
+    },
+    "webNotWebsite": {
+      "source_sha256": "1f90aba2c68627a6253b23a8e042ddb42baa8f151b6abdb32923f8675274ecc2",
+      "text": "This ticket is not a website form launch."
+    },
+    "webSubmitting": {
+      "source_sha256": "422ee743e1aeb403b2aa5433770d7543dc9430e8554a42fe53615e00b5c1b394",
+      "text": "Connecting without showing the password…"
+    }
   }
 }
