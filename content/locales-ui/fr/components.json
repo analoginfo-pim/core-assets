@@ -928,6 +928,74 @@
       "dashboard": {
         "text": "Tableau de bord",
         "source_sha256": ""
+      },
+      "secure_program_launch": {
+        "text": "Lancez des applications avec des mots de passe, des clés SSH ou des certificats du coffre sans afficher le secret. Les habilitations déterminent quelle application peut utiliser quelles informations d’identification.",
+        "source_sha256": "229085ea3058880f113bb09836dfe30e193cabf4b344a6e261cc2f841d49708a"
+      },
+      "evidence_intake": {
+        "text": "Enregistrez un acte hors bande ou téléversez un fichier. Le serveur stocke un SHA-256. C’est une déclaration attestée par quelqu’un — pas Met.",
+        "source_sha256": "a844e6f90fcf32275c0301718737e7666e429d6472eecd58d2d6c7608cdc234c"
+      },
+      "evidence_intake_pe": {
+        "text": "Enregistrements des procédures de registre des visiteurs et d’escorte. Une attestation n’est pas Met et n’est pas certifiée.",
+        "source_sha256": "f321e8d0b1abc193f8c708f68d10dba6d4e22ab971e359f5c4759fc8d3fea6c5"
+      },
+      "evidence_intake_sr": {
+        "text": "Enregistrements des questionnaires fournisseurs et des clauses de répercussion signées. Une attestation n’est pas Met et n’est pas certifiée.",
+        "source_sha256": "098d38a46babbb0483d52874f8e0dbe956494ce7ab8cb76ef027cb5c60bb7904"
+      },
+      "evidence_intake_mp": {
+        "text": "Enregistrements de la procédure de destruction sous témoin. Une attestation n’est pas Met et n’est pas certifiée.",
+        "source_sha256": "8dd1c1b6cc7e3dc3748b5aa4f57f60ccf22497845f7a6853d9a3d8b9cde2878a"
+      },
+      "supplier_register": {
+        "text": "Fournisseurs nommés avec périmètre enregistré et cycle d’évaluation. Une ligne de registre n’est pas Met et n’est pas certifiée.",
+        "source_sha256": "8ffa3145c081b36e7b6477564bdfa6c860f8acacc331d39742fa9bb57a86c076"
+      },
+      "personnel_screening": {
+        "text": "Calendriers d’intégration, de départ et de contrôle périodique avec enregistrements d’achèvement. Pas Met et pas certifié.",
+        "source_sha256": "315814595a2f487f7a21aa08f249fa4f34b7c2871499617841f5366acc666b9e"
+      },
+      "tabletop_exercises": {
+        "text": "Exercices sur table ou pratiques planifiés avec enregistrements de participation. Pas Met et pas certifié.",
+        "source_sha256": "e5c7a6c396807a4e10b263a15ee02f32fd6118caece55f3375761e9cc5333ab5"
+      },
+      "scheduled_maintenance": {
+        "text": "Événements de maintenance locale et non locale avec approbation et attestation d’escorte. Pas Met et pas certifié.",
+        "source_sha256": "72e2e23954b4638171947ff40ff08c3996aa9d14a06c3ac1773fbc73f59cb8b1"
+      },
+      "contingency_drills": {
+        "text": "Exercices de site ou de contingence planifiés avec hachages des comptes rendus. Pas Met et pas certifié.",
+        "source_sha256": "c8ed834bb05676b4e2f42af66ab68faed67471109e1449037fc775e806f8d71c"
+      },
+      "assessment_engagements": {
+        "text": "Enregistrements des missions de test d’intrusion et suivi de remédiation. Le produit n’effectue pas le test. Pas Met.",
+        "source_sha256": "39049fcf2cf34c2dc3265ffadc3ad5ed736caa61b48b13353659ea47d24ef035"
+      },
+      "facility_access_reviews": {
+        "text": "Calendriers des revues d’accès aux locaux et des cycles visiteurs. L’installation des portes reste à l’organisation. Pas Met.",
+        "source_sha256": "413f75d23239ad490d336c6dc1483d5be3fd35d1fb3805b3e807ea0882ab444d"
+      },
+      "media_destruction": {
+        "text": "Enregistrements de destruction sous témoin et de certificats de démagnétisation. Le produit n’actionne pas le broyeur. Pas Met.",
+        "source_sha256": "e6a1159399c82c9692ee2862d75e3cf9e89cc433a4f95a68e81eb7cbd19085ec"
+      },
+      "retention_records": {
+        "text": "Attestations de conservation et hachages de livraison d’export. L’exploitation du stockage WORM reste à l’organisation. Pas Met.",
+        "source_sha256": "442cc3036875ae85631033ed29f6444d1c4dc9b29a95dc59d662441deedcdd19"
+      },
+      "posture_exceptions": {
+        "text": "Exceptions de couverture des postes et revues de posture. Le produit n’exécute pas d’EDR d’entreprise. Pas Met.",
+        "source_sha256": "dd7a9133178d0984d4df0fcfd16615751269e37fc9078171d3e53c0f9641aacc"
+      },
+      "catalog_changes": {
+        "text": "Journal local des modifications d’octets du catalogue de contrôles et des correspondances. Preuve de diligence, pas Met.",
+        "source_sha256": "57992bd1331356eba55042b5ad95034bc478eba9a1e040b140098bccd2db976f"
+      },
+      "agents_download": {
+        "text": "Téléchargez les Agents et les fichiers de paramètres pour cette instance. Inventaire et validation de l’état requis pour le paquet d’exploitation en vigueur — pas Met.",
+        "source_sha256": "cc473a1e8c200b7e86e64af01be1b4a3de2663dc739a65c014a3778fb61dc6ef"
       }
     },
     "group": {
