@@ -2094,6 +2094,33 @@
       ],
       "draft_tags": [],
       "notes": "Roughly 155 leaves were redrafted by agent on 2026-08-25 to clear provable corruption: 82 in the risks namespace (phonetic German -- Japanese リシコ and Korean 리시코레지스터 are the German Risiko and Register sounded out, not the English risk), 35 in zh-TW where privilege elevation had been read as physical altitude and mint as the herb, 14 for docs auditor.chapters.enhanced-controls.body[0], and 16 where the compliance token Met had been read as the social verb to meet. Each replacement matches the pack's own majority wording where one existed, and 26 of the risks leaves are not drafts at all -- they reuse the same pack's already-correct server-side leaf for the identical key. The rest are agent drafts and do not close this item. Landed before review because phonetic German in a nav title and a compliance status that reads as Metropolitan Museum of Art are worse than an unreviewed translation. Per-batch justification is in the _comment field of each file under content/language-packs/batches."
+    },
+    {
+      "id": "pages.german-pivot-cascade-20260825",
+      "status": "open",
+      "priority": "P0",
+      "kind": "ui",
+      "title": "Page bullets translated from German instead of English (10 packs)",
+      "added": "2026-08-25",
+      "updated": "2026-08-25",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/help/pageIntros.ts",
+      "source_sha256": "2b52987bcbe8ac686447227adedc63db6b6026ff00bea3859341125ec3317771",
+      "product_route": "/settings/agent/management",
+      "required_tags": [
+        "es",
+        "fr",
+        "he",
+        "it",
+        "ja",
+        "ko",
+        "pl",
+        "pt-BR",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [],
+      "notes": "Two page bullets (headers.settings__agent__management.bullets.text[0] and headers.elevation.bullets.text[1]) were authored in German; en was produced by swapping a few function words and re-hashed as self, so provenance checks passed it. en and en-GB are now restored from pageIntros.ts. The 10 packs listed were translated from that pidgin English and are wrong in ways a spellcheck will not find: zh-Hans/zh-TW render nutzen as nutty flavor, pl and es render widerruft as wider, fr inverts the negation and states the feature does not use WinRM, ja never translated the elevation bullet at all. Needs native re-translation from the restored English, not a draft."
     }
   ]
 }
