@@ -1,0 +1,83 @@
+---
+description: Work on primary main; merge extra worktrees/branches on commit+push; never create them unless asked
+alwaysApply: true
+---
+
+# Merge worktrees and branches into main (hard rule)
+
+Operator directive (Phil, 2026-08-24): **always merge the worktree/branch
+into main as part of commit and push. Do not create spurious worktrees
+and branches unless specifically requested.**
+
+This rule complements
+[`shared-working-tree-is-not-yours.mdc`](shared-working-tree-is-not-yours.mdc)
+(path-only staging on the shared primary tree) and
+[`auto-commit-push.mdc`](auto-commit-push.mdc) (commit + push to
+`origin/main`). Isolation is **commit early by path on `main`**, not a
+new checkout.
+
+## The rule
+
+> **Default work lives on the primary checkout of `main`. Commit and
+> push land on `origin/main`. If work exists on any other worktree or
+> branch, merging it into `main`, pushing `main`, and dropping that
+> extra tree/branch is part of the same commit-and-push step — not a
+> later cleanup. Do not create a worktree or a feature branch unless
+> the operator asked for one in the same message.**
+
+## Required agent behavior
+
+1. **Primary is `main`.** Before editing, `git status -sb` / `git worktree
+   list`. If the primary checkout is not `main`, switch it (without
+   discarding sibling dirt — see shared-tree). Do not park the primary
+   on `local/reporting-integration` or a slice branch.
+2. **Commit + push includes the merge.** After the slice commits:
+   - merge the unique branch/worktree into `main` (dry-run `git merge-tree`
+     first when history diverged; resolve, do not `--no-verify`);
+   - `git push origin main`;
+   - `git worktree remove` the extra tree;
+   - delete the local and remote branch when it has no remaining unique
+     work.
+3. **No new isolation trees.** Do not `git worktree add`,
+   `git checkout -b`, `git switch -c`, or Task `best-of-n-runner` unless
+   the operator named that isolation in the same message. Cursor
+   `move_agent_to_root` into a worktree is the same defect.
+4. **If a platform/subagent created a worktree anyway**, merge it into
+   `main` and remove it before reporting the slice done.
+
+## Forbidden
+
+- Creating `_worktrees/`, `.worktrees/`, sibling `*-wt-*`, or
+  `_merge-*` directories as a default way to avoid a dirty primary
+- Leaving unique commits only on a side branch after "commit and push"
+- Treating `shared-working-tree-is-not-yours` as permission to add a
+  worktree (the fix is path-only commit on the primary `main` tree)
+- Force-dropping an extra tree that still has **someone else's**
+  uncommitted unique work
+
+## Exceptions (narrow)
+
+- The operator **explicitly** asked for a worktree or named branch in
+  this message. Still merge into `main` when finishing unless they
+  asked to keep the branch.
+- Existing **release / hotfix** lines (`release/*`) the product already
+  ships. Do not invent them. Do not merge a release line into `main`
+  just because you committed on it.
+
+## Worked violation → fix
+
+**Violation.** Primary `pim-offline-server` sat on
+`local/reporting-integration`. Agents added isolated worktrees under
+`_worktrees/` and sibling dirs until **51** checkouts existed. Unique
+work never reached `origin/main`. Debug `UI_ASSET_DIR` pointed at a
+deleted extra tree and the admin SPA 503'd.
+
+**Fix.** Work on primary `main`. Merge leftover unique branches into
+`main` as part of commit+push, drop the extra trees, and leave one
+checkout.
+
+## Origin
+
+2026-08-24 — operator hard rule after a worktree pile-up (server 51
+trees, then a multi-repo merge/drop pass). Isolation belongs on `main`
+via path-only commits, not extra checkouts.

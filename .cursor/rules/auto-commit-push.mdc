@@ -39,6 +39,10 @@ When you finish a coherent piece of work in a repo under `c:\analog-pim\*`:
    ```
 
 5. `git push` (plain push to the tracking branch, normally `origin/main`).
+   If this slice is not already on `main`, merge that worktree/branch
+   into `main`, push `main`, and drop the extra tree/branch in the same
+   step — [`merge-worktrees-into-main.mdc`](merge-worktrees-into-main.mdc).
+   Do not leave unique commits parked on a side branch.
 6. Verify with `git status` and a one-line summary of what was pushed.
 
 When delegating to subagents, instruct them to also commit + push their
@@ -66,6 +70,9 @@ the auto-push default:
 - **NEVER** push from a branch that isn't tracking an upstream — set up
   the upstream first (`git push -u origin <branch>`) and surface that in
   your response.
+- **NEVER** create a git worktree or a feature branch unless the
+  operator asked for one in the same message
+  ([`merge-worktrees-into-main.mdc`](merge-worktrees-into-main.mdc)).
 
 ## Workspace `.cursor` rules — mirror to `core-assets`
 

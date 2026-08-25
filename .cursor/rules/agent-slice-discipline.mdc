@@ -73,6 +73,9 @@ edit, ask if the user wants to continue that slice only.
 - One implementation subagent per slice; optional **second** only for
   a clearly independent repo (e.g. server HTTP vs client IPC) named in
   the slice.
+- Do not spawn `best-of-n-runner` or `git worktree add` to isolate a
+  slice unless the operator asked. Work on primary `main`
+  ([`merge-worktrees-into-main.mdc`](merge-worktrees-into-main.mdc)).
 
 ## Worked violation → fix
 
@@ -94,4 +97,7 @@ section grep only). Start from f44ea09."
 
 - [`agent-bounded-ops.mdc`](agent-bounded-ops.mdc) — tool scope and retries
 - [`stop-before-retry.mdc`](stop-before-retry.mdc) — structural failures
+- [`merge-worktrees-into-main.mdc`](merge-worktrees-into-main.mdc) —
+  no extra worktrees/branches unless requested; merge into `main` on
+  commit+push
 - Origin: 2026-06-04 elevation rate-limit session (token burn / abort)

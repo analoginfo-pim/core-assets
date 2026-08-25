@@ -60,6 +60,10 @@ These destroy sibling work with no recovery, or poison the audit trail:
   body of finished work uncommitted — in this tree, uncommitted work is
   at risk, and observed silent loss is the reason. Prefer several small
   commits over one long-lived dirty tree.
+- **Do not isolate by creating a worktree or a feature branch.** The
+  isolation mechanism is path-only commits on the primary `main`
+  checkout. Extra trees are forbidden unless the operator asked — see
+  [`merge-worktrees-into-main.mdc`](merge-worktrees-into-main.mdc).
 - **Keep genuinely unfinished work unstaged** so a sibling's
   explicit-path commit cannot pick it up.
 - **If you find a file staged that is not yours**, unstage that path
@@ -109,6 +113,8 @@ security-relevant rotation and elevation code to a docs subject line.
 
 - [`auto-commit-push.mdc`](auto-commit-push.mdc) — commit/push workflow,
   never force-push, never `--no-verify`, never blind `git add -A`
+- [`merge-worktrees-into-main.mdc`](merge-worktrees-into-main.mdc) —
+  primary `main` only; merge extras on commit+push; no spurious trees
 - [`agent-slice-discipline.mdc`](agent-slice-discipline.mdc) — one
   slice per agent; file-path ownership
 - [`stuck-agent-supervisor.mdc`](stuck-agent-supervisor.mdc) — parent
