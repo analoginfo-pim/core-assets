@@ -682,7 +682,21 @@ Full published text: https://www.mozilla.org/MPL/2.0/
 Full published text: https://creativecommons.org/publicdomain/zero/1.0/legalcode
 (Package-local LICENSE files are preferred when present in the harvest.)
 """,
-        "BlueOak-1.0.0": """Blue Oak Model License 1.0.0
+        "BlueOak-1.0.0": (
+            Path(__file__).resolve().parent.parent
+            / "legal"
+            / "open-source-credits"
+            / "license-texts"
+            / "BlueOak-1.0.0.txt"
+        ).read_text(encoding="utf-8")
+        if (
+            Path(__file__).resolve().parent.parent
+            / "legal"
+            / "open-source-credits"
+            / "license-texts"
+            / "BlueOak-1.0.0.txt"
+        ).is_file()
+        else """Blue Oak Model License 1.0.0
 
 Full published text: https://blueoakcouncil.org/license/1.0.0
 (Package-local LICENSE files are preferred when present in the harvest.)

@@ -3,11 +3,11 @@
   "schema_version": 2,
   "status": "Live",
   "honesty": "This inventory lists every third-party open-source component incorporated into AIC Server from the production Cargo graph (registry, git, and vendored path crates under vendor/), the npm production graph (package-lock.json, non-dev; lockfile package name preferred over directory leaf), and incorporated on-disk assets (including lipis/flag-icons). First-party workspace path crates, AIC-named / proprietary crates, and @analoginfo-pim/* npm packages are excluded as AIC-owned code, not third-party open source. Commercial / proprietary dependencies (for example MUI X Pro/Premium) are excluded from this open-source inventory and listed separately under commercial_packages; they do not set Partial/BLOCKED on the OSS disclosure. License bodies were harvested from local Cargo registry / git / vendor checkouts, node_modules LICENSE files, and in-tree LICENSE copies; common SPDX identifiers use the stored published license text when a package-local file was a pointer or absent. No package or license was invented. Every listed open-source package has a license identity and license text (Live). 5 commercial / proprietary package(s) are noted separately (not part of the OSS Live status).",
-  "generated_utc": "2026-08-24T22:41:32Z",
+  "generated_utc": "2026-08-25T02:14:54Z",
   "generation": {
     "tool": "core-assets/scripts/generate-open-source-credits.py",
     "cargo_lock_path": "pim-offline-server/Cargo.lock",
-    "cargo_lock_sha256": "216cd3572bf35db9b3ddb5cd649db8b6d8122b4906d20a4e0225162c59aded5b",
+    "cargo_lock_sha256": "8bc306ef6982937e07514285e029cf88d63066ed18b1d90759960b01a0cab270",
     "npm_lock_path": "pim-offline-server/ui/package-lock.json",
     "npm_lock_sha256": "fedaded112e5e7635df94a0f65eff28240e40046cbfa9fd2da78dfd7c5107882",
     "sbom_path": "pim-offline-server/sbom/pim-offline-server.cdx.json",
@@ -15,9 +15,9 @@
     "cargo_third_party_count": 995,
     "cargo_third_party_with_license_text": 995,
     "cargo_third_party_blocked": 0,
-    "cargo_path_packages_excluded_first_party": 49,
-    "cargo_git_or_named_first_party_excluded": 32,
-    "cargo_lock_package_count": 1076,
+    "cargo_path_packages_excluded_first_party": 50,
+    "cargo_git_or_named_first_party_excluded": 30,
+    "cargo_lock_package_count": 1075,
     "cargo_registry_roots_used": 2,
     "npm_production_count": 321,
     "npm_production_with_license_text": 316,
@@ -20301,10 +20301,10 @@
       "license_name": "BlueOak-1.0.0",
       "copyright": null,
       "homepage": "https://registry.npmjs.org/jackspeak/-/jackspeak-3.4.3.tgz",
-      "license_text_path": "license-texts/by-sha256/c230b4cf13ff3afd86c0070dd1c6c7802ed311198f15de04761794d0a0d18906.txt",
-      "license_text_sha256": "c230b4cf13ff3afd86c0070dd1c6c7802ed311198f15de04761794d0a0d18906",
+      "license_text_path": "license-texts/by-sha256/959c506ffb0865e436aa90350fc212567c0acf7bbaad2881495107e4a8ef3659.txt",
+      "license_text_sha256": "959c506ffb0865e436aa90350fc212567c0acf7bbaad2881495107e4a8ef3659",
       "source": "pim-offline-server/ui/package-lock.json (production) + node_modules",
-      "notes": null,
+      "notes": "Package-local LICENSE was a pointer or missing; stored published SPDX license text(s) for the declared expression.",
       "direct": false,
       "disclosure_status": "ok"
     },
@@ -20845,10 +20845,10 @@
       "license_name": "BlueOak-1.0.0",
       "copyright": null,
       "homepage": "https://registry.npmjs.org/package-json-from-dist/-/package-json-from-dist-1.0.1.tgz",
-      "license_text_path": "license-texts/by-sha256/ccafb740f82964ac7bc0263dc2e7dfd4ba0dde5bd8f5d39719a3ece9a1d3566c.txt",
-      "license_text_sha256": "ccafb740f82964ac7bc0263dc2e7dfd4ba0dde5bd8f5d39719a3ece9a1d3566c",
+      "license_text_path": "license-texts/by-sha256/959c506ffb0865e436aa90350fc212567c0acf7bbaad2881495107e4a8ef3659.txt",
+      "license_text_sha256": "959c506ffb0865e436aa90350fc212567c0acf7bbaad2881495107e4a8ef3659",
       "source": "pim-offline-server/ui/package-lock.json (production) + node_modules",
-      "notes": null,
+      "notes": "Package-local LICENSE was a pointer or missing; stored published SPDX license text(s) for the declared expression.",
       "direct": false,
       "disclosure_status": "ok"
     },
@@ -20941,10 +20941,10 @@
       "license_name": "BlueOak-1.0.0",
       "copyright": null,
       "homepage": "https://registry.npmjs.org/path-scurry/-/path-scurry-1.11.1.tgz",
-      "license_text_path": "license-texts/by-sha256/1c2e177e1506316950fc56c770292beed886f7f50d896f4c9b0369f8833925dc.txt",
-      "license_text_sha256": "1c2e177e1506316950fc56c770292beed886f7f50d896f4c9b0369f8833925dc",
+      "license_text_path": "license-texts/by-sha256/959c506ffb0865e436aa90350fc212567c0acf7bbaad2881495107e4a8ef3659.txt",
+      "license_text_sha256": "959c506ffb0865e436aa90350fc212567c0acf7bbaad2881495107e4a8ef3659",
       "source": "pim-offline-server/ui/package-lock.json (production) + node_modules",
-      "notes": null,
+      "notes": "Package-local LICENSE was a pointer or missing; stored published SPDX license text(s) for the declared expression.",
       "direct": false,
       "disclosure_status": "ok"
     },
@@ -22102,6 +22102,6 @@
     }
   ],
   "appendix": {
-    "notes": "Complete third-party disclosure is in entries[]. First-party Cargo path packages excluded: 49. Vendored third-party path crates under vendor/ are included. CycloneDX SBOM remains a companion artifact for hashes/purls."
+    "notes": "Complete third-party disclosure is in entries[]. First-party Cargo path packages excluded: 50. Vendored third-party path crates under vendor/ are included. CycloneDX SBOM remains a companion artifact for hashes/purls."
   }
 }
