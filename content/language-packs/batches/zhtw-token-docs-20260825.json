@@ -1,0 +1,17 @@
+{
+  "_comment": "祖岡 is the German word Zugang sounded out in Chinese characters rather than translated, so the chapter title read 'Zugang-data and sea-level-altitude' instead of 'Credentials and elevation' -- proof this pack was machine-translated through German rather than from the English source. The agents chapter body is worse than mistranslated: it is written in Simplified glyphs (预热/访问/请确认/签名) inside a Traditional pack, and it translated two literal identifiers -- Elevation-Named-Pipe and elevation_configured -- into 高程命名管道 and 高程配置, so an operator following the instruction would look for a runtime-status field that does not exist under that name. Identifiers stay Latin and exact. Credentials uses 認證資料 (this pack's own rendering of 'Credentials'), elevation uses 提升權限, token uses 令牌 (this pack's 81-use majority, against the 9-use 代幣 coin sense). AGENT DRAFTS -- native review still required.",
+  "area": "locales-ui",
+  "namespace": "docs",
+  "source": {
+    "admin.chapters.credentials-elevation.title": "Credentials and elevation",
+    "admin.chapters.credentials-elevation.productLabel": "Open Token Elevation",
+    "admin.chapters.agents.body[1]": "AGENT_HMAC_ENFORCE_MODE=dual_mode accepts signed and unsigned agent traffic during the warm-up period. Switch to required if agents sign reliably. Confirm the Elevation-Named-Pipe and elevation_configured before generating elevation codes under Access & Identity → Elevation."
+  },
+  "translations": {
+    "zh-TW": {
+      "admin.chapters.credentials-elevation.title": "認證資料與提升權限",
+      "admin.chapters.credentials-elevation.productLabel": "開啟「令牌提升權限」",
+      "admin.chapters.agents.body[1]": "AGENT_HMAC_ENFORCE_MODE=dual_mode 在暖機期間會同時接受已簽署與未簽署的代理程式流量。若代理程式能穩定簽署，請切換為 required。在「訪問和身份 → 提升權限」下產生提升權限代碼之前，請先確認 Elevation-Named-Pipe 與 elevation_configured。"
+    }
+  }
+}

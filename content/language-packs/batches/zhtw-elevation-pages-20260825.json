@@ -1,0 +1,37 @@
+{
+  "_comment": "Two unrelated defects that happen to share the pages namespace. zh-TW: privilege elevation rendered as physical height (海拔 sea-level altitude, 高程 survey elevation, 埃斯泰倫 phonetic noise); 薄荷海拔程式碼 is the worst of them, because 'Mint elevation code' was read as the herb -- the button said 'Peppermint Altitude Code'. Corrected to 提升權限, the term this pack already uses in 取得提升代碼. The lab summary was additionally in Simplified glyphs (只读/高级/测试/模拟) inside a Traditional pack, so it is restored to Traditional. he: HR-Systemverweis is raw German in the Hebrew pack; replaced using the pack's own established הפניית X pattern (compare הפניית סיכון, הפניית הדרישה שלך). AGENT DRAFTS -- native review still required.",
+  "area": "locales-ui",
+  "namespace": "pages",
+  "source": {
+    "chrome.elevation.directElevation": "Direct Elevation",
+    "chrome.elevation.elevationNotConfigured": "Elevation not configured",
+    "chrome.elevation.mintCode": "Mint elevation code",
+    "chrome.elevation.mintPlatformAria": "Open elevation platform to mint Mode 1–3 codes",
+    "chrome.elevation.selectAria": "Select endpoint for elevation code",
+    "chrome.elevationApps.mintAria": "Mint elevation code",
+    "chrome.elevationApps.platformTabsAria": "Elevation platform sections",
+    "chrome.training.workforceHrRef": "HR system reference",
+    "headers.mocks__elevation.title": "Elevation platform mocks",
+    "headers.privilege-jobs.helpAriaLabel": "Open help for Direct Elevation",
+    "headers.privilege-jobs.title": "Direct Elevation",
+    "headers.settings__lab.summary": "Read-only manifest, advanced diagnostics, RBAC test mode, elevation UI mocks, and demo data utilities. Not for production deployments."
+  },
+  "translations": {
+    "zh-TW": {
+      "chrome.elevation.directElevation": "直接提升權限",
+      "chrome.elevation.elevationNotConfigured": "未設定提升權限",
+      "chrome.elevation.mintCode": "鑄造提升權限代碼",
+      "chrome.elevation.mintPlatformAria": "開啟提升權限平台以鑄造模式 1–3 代碼",
+      "chrome.elevation.selectAria": "選擇提升權限代碼的端點",
+      "chrome.elevationApps.mintAria": "鑄造提升權限代碼",
+      "chrome.elevationApps.platformTabsAria": "提升權限平台區段",
+      "headers.mocks__elevation.title": "提升權限平台模擬",
+      "headers.privilege-jobs.helpAriaLabel": "開啟「直接提升權限」說明",
+      "headers.privilege-jobs.title": "直接提升權限",
+      "headers.settings__lab.summary": "唯讀資訊清單、進階診斷、RBAC 測試模式、提升權限 UI 模擬與示範資料公用程式。不適用於生產部署。"
+    },
+    "he": {
+      "chrome.training.workforceHrRef": "הפניית מערכת HR"
+    }
+  }
+}

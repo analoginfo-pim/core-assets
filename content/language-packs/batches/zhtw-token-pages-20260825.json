@@ -1,0 +1,43 @@
+{
+  "_comment": "Three wrong senses of one word each, all shipped. 'Mint' was read as the herb: 薄荷碼 is 'peppermint code' and 薄荷糖 is mint candy, so Connection Points offered 'self-approve mint-candy access'. 'Token' was read as a coin: 代幣 is an arcade or crypto token, so the page announced 'Arcade-Token Elevation'. Worst is chrome.hsm.tabSlotsTokens -- 老虎機 is a casino slot machine, so the PKCS#11 hardware-security-module tab was labelled 'Slot Machines and Coins'. And cancelCredential lost its verb entirely: 祖岡日期 is German Zugang sounded out plus Daten misread as Datum, so a Cancel button was labelled 'Zugang Date'. Two further wrong senses ride along: the OT Credentials and OT Rotation page titles said 證書, which is a certificate or diploma rather than a stored account secret, and the HSM Advanced tab said 先進的, the adjective for technologically cutting-edge, where a tab label needs the ordinal sense. One 'token' here is deliberately not 令牌: chrome.training.packsUnresolved counts unfilled template placeholders, not security tokens -- the German pivot rendered it Platzhalter and this pack's own packsNoTokens says 填入標記, so the counter follows that rather than the security term. Fixes otherwise use this pack's own established wording -- 鑄造 for mint (already in 鑄造提升權限代碼), 令牌 for security token (81-use majority), 插槽 for slot (already in 插槽號), 認證資料 for credentials (already in sectionLanding.group.credentials), 進階 for Advanced (already in liveSession.advanced). AGENT DRAFTS -- native review still required.",
+  "area": "locales-ui",
+  "namespace": "pages",
+  "source": {
+    "headers.elevation.title": "Token Elevation",
+    "chrome.elevation.tokenTitle": "Token Elevation (Agent Redeem)",
+    "chrome.elevation.path1BannerStrong": "Path 1 — Token Elevation (Agent Redeem):",
+    "chrome.elevation.mintPlatform": "Mint platform codes",
+    "chrome.elevationApps.mintCode": "Mint code",
+    "chrome.connectionPoints.cancelCredential": "Cancel credential",
+    "chrome.connectionPoints.openSelfApprove": "Open starts a new live session; self-approve mints access if needed",
+    "chrome.hsm.tabSlotsTokens": "Slots & Tokens",
+    "chrome.connectionPoints.waAdmitBanner": "When Workstation Assurance mode is mandatory, Open also requires a fresh assurance token from the Workstation Assurance Agent on the connecting PC.",
+    "chrome.pamPlatform.chipVncNeedsWaToken": "SPA Open needs WA token",
+    "chrome.tenants.enrollmentHint": "Enrollment tokens for the selected multi-tenant appear below the grid. Use Mint Enrollment Token to create one; plaintext is shown once. Click another row to switch tenants.",
+    "chrome.training.packsUnresolved": "{{count}} tokens would remain unresolved.",
+    "headers.elevation.summary": "Mint one-time elevation codes the endpoint agent redeems. Also hosts Remote Non-Agent Local Elevation (WinRM add/revoke with start delay and elapsed duration until revoke).",
+    "headers.pam__ot-credentials.title": "Credentials",
+    "headers.pam__ot-rotation.title": "Credentials",
+    "chrome.hsm.tabAdvanced": "Advanced"
+  },
+  "translations": {
+    "zh-TW": {
+      "headers.elevation.title": "令牌提升權限",
+      "chrome.elevation.tokenTitle": "令牌提升權限（代理程式兌換）",
+      "chrome.elevation.path1BannerStrong": "路徑 1 — 令牌提升權限（代理程式兌換）：",
+      "chrome.elevation.mintPlatform": "鑄造平台代碼",
+      "chrome.elevationApps.mintCode": "鑄造代碼",
+      "chrome.connectionPoints.cancelCredential": "取消認證資料",
+      "chrome.connectionPoints.openSelfApprove": "「開啟」會啟動新的即時工作階段；必要時可自行核准以鑄造存取權",
+      "chrome.hsm.tabSlotsTokens": "插槽與令牌",
+      "chrome.connectionPoints.waAdmitBanner": "當工作站保證模式為強制時，「開啟」還需要連線 PC 上的工作站保證代理程式提供新的保證令牌。",
+      "chrome.pamPlatform.chipVncNeedsWaToken": "SPA 開啟需要 WA 令牌",
+      "chrome.tenants.enrollmentHint": "所選多租戶的註冊令牌顯示在網格下方。使用「鑄造註冊令牌」建立一個；明文只顯示一次。按一下其他資料列即可切換租戶。",
+      "chrome.training.packsUnresolved": "將有 {{count}} 個填入標記仍未解析。",
+      "headers.elevation.summary": "鑄造端點代理程式兌換的一次性提升權限代碼。也託管遠端非代理程式本機提升權限（WinRM 新增/撤銷，具有啟動延遲以及撤銷前的經過時間）。",
+      "headers.pam__ot-credentials.title": "認證資料",
+      "headers.pam__ot-rotation.title": "認證資料",
+      "chrome.hsm.tabAdvanced": "進階"
+    }
+  }
+}

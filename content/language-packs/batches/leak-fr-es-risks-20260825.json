@@ -1,0 +1,25 @@
+{
+  "_comment": "The fr and es UI packs carried German text for these keys after a machine-translation pass that pivoted through German. English source is copied from en/<namespace>.json so the stamped source_sha256 hashes the real source. Translations are agent drafts pending native review (localization-work-queue.mdc): German text shown to a French or Spanish operator is a shipped defect; a reviewed-pending French or Spanish string is not. Array-indexed bullet leaves under pages headers are omitted — the batch applier cannot replace list elements.",
+  "area": "locales-ui",
+  "namespace": "risks",
+  "source": {
+    "acceptance_expired": "Expired {{date}}",
+    "acceptance_until": "Accepted until {{date}}",
+    "allSeverities": "All severities",
+    "loadingRegister": "Loading register…"
+  },
+  "translations": {
+    "fr": {
+      "allSeverities": "Toutes les sévérités",
+      "loadingRegister": "Chargement du registre…",
+      "acceptance_expired": "Expiré {{date}}",
+      "acceptance_until": "Accepté jusqu'au {{date}}"
+    },
+    "es": {
+      "allSeverities": "Todas las severidades",
+      "loadingRegister": "Cargando el registro…",
+      "acceptance_expired": "Vencido {{date}}",
+      "acceptance_until": "Aceptado hasta {{date}}"
+    }
+  }
+}

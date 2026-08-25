@@ -180,7 +180,7 @@
     "source_sha256": "b2d0a4871b8c07682158e3a96236ed4a740b1563e9c7b4fdd70589f4f3a8f732"
   },
   "elevationTemplateEnabled": {
-    "text": "啟用後，為此群組發布的 settings.json 包含levation_secret，以便操作員可以建立海拔代碼。",
+    "text": "啟用後，為此群組發布的 settings.json 會包含 elevation_secret，以便操作員可以鑄造提升權限代碼。",
     "source_sha256": "2e7e73c0f28897c38caa51fb96ee1c3d57373f17d6dc087193192501c1cd5c83"
   },
   "templatePolicyInherit": {
@@ -196,7 +196,7 @@
     "source_sha256": "e9371a9f0472b8eeccd421c0751ef464611e08a571cbc6fd13fe3a173d002f31"
   },
   "elevationDuration": {
-    "text": "啟動後海拔保持活動狀態的分鐘數 (1–480)。",
+    "text": "啟動後提升權限保持作用中的分鐘數 (1–480)。",
     "source_sha256": "9a111f0d9e050b381a89c095a650cd9c158718ec61b2c9bfcea4c39cf85a0c29"
   },
   "elevationScheduled": {
@@ -924,7 +924,7 @@
     "source_sha256": "4c0781f2b6f37469f739db850d23d44c6045c48a3990df8595f9619b3b266fe6"
   },
   "elevationResponse": {
-    "text": "計算出的質詢回應貼上回高程客戶端。",
+    "text": "計算出的質詢回應，貼回提升權限用戶端。",
     "source_sha256": "bd1995fc266c0d87a07415dcb783200223e6ea39c39adb3a6fc39a6d7e0ca094"
   },
   "auditEngagementName": {
@@ -1832,7 +1832,7 @@
     "source_sha256": "88ede33b9e0d4fde1ee796a249672b59445ea0a5d995b3027669b4dfec4c5c30"
   },
   "elevationActivateImmediately": {
-    "text": "啟用後，一旦客服人員接受代碼，就會套用海拔。",
+    "text": "啟用後，一旦代理程式接受代碼，就會套用提升權限。",
     "source_sha256": "5f593e1cc071669654aab17beddddc2097569a017bc5b26fe34a807cfe0f4b38"
   },
   "elevationTargetGroupSelect": {
@@ -2732,7 +2732,7 @@
     "source_sha256": "406df7c47739ae624eccb39550db0a3db3de22cdfbf2b98540086c04facc0dd1"
   },
   "elevationMockEndpoint": {
-    "text": "此高程模擬面板中顯示的示範端點名稱。",
+    "text": "此提升權限模擬面板中顯示的示範端點名稱。",
     "source_sha256": "180284e07ecff18abbce0ccda328fb2f6f5ab1d9d9102e097cc003deb41970de"
   },
   "elevationMockCode": {
@@ -2740,11 +2740,11 @@
     "source_sha256": "5d7afebc2b06b1e35dab1425270f4450f694abdde218d9076d48d5c21dccd43e"
   },
   "elevationMintScope": {
-    "text": "鑄造海拔激活代碼（模擬）時提供的範圍。",
+    "text": "鑄造提升權限啟用代碼（模擬）時提供的範圍。",
     "source_sha256": "01b74c1d81db4e653560e5945f19721584f1b8e86c083a75001fe10a9641bf81"
   },
   "elevationPolicyMock": {
-    "text": "此模擬面板的演示高程策略欄位。",
+    "text": "此模擬面板的示範提升權限政策欄位。",
     "source_sha256": "e6e23298a11552e6a52292a0a3c6b7796bbaa54d326468876e7d939e9c5f748b"
   },
   "elevationQueueAction": {
@@ -3500,7 +3500,7 @@
     "source_sha256": "fbd972413e21a590125bd5ac3139e5c419e0d5d19a9d67ac6d7e85a69468bae3"
   },
   "defenseHeatMap": {
-    "text": "按國家/地區列出的受阻和失敗嘗試的世界地圖。排名表是可访问的来源。",
+    "text": "依國家/地區顯示封鎖與失敗嘗試的世界地圖。排名表格是無障礙來源。",
     "source_sha256": "23766f8e4111351f0cdbb8820eea08bae39802f0a6cb8d4a8d74b44245ff3e5c"
   },
   "defenseOpenFamily": {
@@ -3788,12 +3788,12 @@
     "source_sha256": "634aa1550f61ea77c5456b4a233b0307387e6254d28e968b7364d1e7929211ba"
   },
   "elevation_mocks": {
-    "text": "海拔模擬",
-    "source_sha256": "5ef035e6bf40366c02b6ea02336800d4cc00f2733cc75f3fcae5891d31efcb4a"
+    "text": "提升權限模擬",
+    "source_sha256": "db0c9ca2e09f44a8e5271d3d16e4f42108d4654a310344e966336af313dfb20e"
   },
   "elevation_policy": {
-    "text": "海拔政策",
-    "source_sha256": "1815abd2f0c9a5d15d18dd8077a244ecfe3f0f58cb6b2af142eaf96b06381367"
+    "text": "提升權限政策",
+    "source_sha256": "ab2fd552f699a87e970576c5627a92109d3b763c86f395bf6a710a6bfab0248d"
   },
   "events": {
     "text": "事件",
@@ -3808,8 +3808,8 @@
     "source_sha256": "c069f3235161221bc3816bce8cc3f82d2f65790c0d658a73c9fada1e975fa057"
   },
   "get_an_elevation_code": {
-    "text": "取得海拔代碼",
-    "source_sha256": "475eba9bcaf58ca62238383b4dc3ff7d845a0506c8ab784b1dc231700a86a539"
+    "text": "取得提升權限代碼",
+    "source_sha256": "080febc1dc62cb22aff73ef6741c1c4d1b6e9540deaba58678b7ef63dbc9dce9"
   },
   "group_defaults": {
     "text": "群組預設值",

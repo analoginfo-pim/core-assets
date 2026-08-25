@@ -1323,8 +1323,8 @@
           "source_sha256": "33b680f75fc9a4a4729d26dadd30453c9fe8a3a82eb57d09ac3ae6880367c796"
         },
         "body[0]": {
-          "text": "聽聽 NIST SP 800-172 的產品說明，了解 NIST-SP-800-53-High-Erweiterungen，以取得 Enklave beitraegt。 Jede Zeile traegt Status Live、Teilweise、Fehlt 或 Blockiert 和 kurze Ehrlichkeitshinweis 是 Produkt tatsaechlich tut。",
-          "source_sha256": "6ff706303af7538a672ab6c8b5cf8c033ffacebdf27f03cd33e4a63b34e8bfcd"
+          "text": "增強控制項列出本產品已知的 NIST SP 800-172 以及指定的 NIST SP 800-53 High 增強需求中的每一項增強需求。狀態標籤維持誠實（已實作 / 部分 / 已規劃）。本清單並非 Met 或認證主張。",
+          "source_sha256": "83de4f391692c4777d4b4160ca82e0f57857e32ac8a7222a16d66a5354ebb183"
         },
         "body[1]": {
           "text": "該產品從未報告這些系列的 Met，也從未聲稱獲得 CMMC 3 級認證。該產品無法執行的組織計劃——意識培訓、勞動力篩選、滲透測試、供應鏈風險管理和網路彈性技術（如多樣性或欺騙）——仍然因特定原因而被封鎖。將帶電線路視為您仍需要評估的產品輔助工具，而不是評估結論。",
@@ -1623,7 +1623,7 @@
           "source_sha256": "adcb38115aaa6d932a7114fcc1c17940c64bb6104dad4dfc4ea34aa372d6354b"
         },
         "body[1]": {
-          "text": "AGENT_HMAC_ENFORCE_MODE=dual_mode 在预热期间接受签名和未签名的代理流量。如果代理可靠簽名，則切換為必要。在访问和身份 → 高程下生成高程代码之前，请确认高程命名管道和高程配置。",
+          "text": "AGENT_HMAC_ENFORCE_MODE=dual_mode 在暖機期間會同時接受已簽署與未簽署的代理程式流量。若代理程式能穩定簽署，請切換為 required。在「訪問和身份 → 提升權限」下產生提升權限代碼之前，請先確認 Elevation-Named-Pipe 與 elevation_configured。",
           "source_sha256": "cff9f9beb4cbc6d1fd34d41d2ad56f4921e1bcd734d58e32fe8da7384c4a2303"
         },
         "steps[0]": {
@@ -1751,8 +1751,8 @@
       },
       "credentials-elevation": {
         "title": {
-          "text": "祖岡數據和海拔",
-          "source_sha256": "7f057416430f1fe036484cb5f5e6d61c6b6dd2aef42400e0689f759369a8a302"
+          "text": "認證資料與提升權限",
+          "source_sha256": "691f46a524cab55737633c735997d26dbc41ab728a7bd7a6c6de7af727afaf65"
         },
         "summary": {
           "text": "在「存取和身分」下查看密碼、託管身分、憑證庫和提升。",
@@ -1787,8 +1787,8 @@
           "source_sha256": "81c1566560fdcdb82af60e975f20086d49752bb8ef56e94aa117472f4a7880d7"
         },
         "productLabel": {
-          "text": "代幣提升",
-          "source_sha256": "dc209db9977920112525811a3c9c201ce867827cd86ed8bf8ec259ebe2e95113"
+          "text": "開啟「令牌提升權限」",
+          "source_sha256": "3d91aea38d13a231604a6b833e85f2f5819949ae41c2d77b0e1f19cf812d15d3"
         },
         "body": [
           {
@@ -1919,7 +1919,7 @@
           "source_sha256": "57ba4a87ee0e4513b5c5f346762bffd00a64ea10893d39a15f82dea7b3042134"
         },
         "body[1]": {
-          "text": "報告中心運行目錄報告和包。目前合規狀態顯示每台機器的狀況和結果。重新掃描和修復是刷新產品憑證（而不是合規性證書）的操作員操作。評估活頁夾組織敘述並連結飛地已經產生的證據。寫下誠實的狀態已實施/部分/計劃（或同等）。不要發明人工製品來強迫大都會博物館聲稱。",
+          "text": "報告中心運行目錄報告和包。目前合規狀態顯示每台機器的狀況和結果。重新掃描和修復是刷新產品憑證（而不是合規性證書）的操作員操作。評估活頁夾組織敘述並連結飛地已經產生的證據。寫下誠實的狀態已實施/部分/計劃（或同等）。不要為了強行主張 Met 而編造證據。",
           "source_sha256": "b01d8d40be9d95ba9340ecfe317648de5c123960d90647a17d70662b46c0a6d5"
         },
         "body[2]": {

@@ -3608,7 +3608,7 @@
         "source_sha256": "ce3c4ff922fee35bc57af0754f15e838f6220a32e14d74e9e68eeeac4c791562"
       },
       "detailSweepToast": {
-        "text": "Reminder sweep: {{sent}} sent, {{فشل}} فشل, {{suppressed}} suppressed",
+        "text": "Reminder sweep: {{sent}} sent, {{failed}} فشل, {{suppressed}} suppressed",
         "source_sha256": "8d3eef54a7e3c2bd1f482321d52c074da0a5574b693a4230f84cebbf6d7a7c53"
       },
       "detailSweeping": {
@@ -3668,7 +3668,7 @@
         "source_sha256": "9ff3677991c05d632baa82c923d189e4a9389941ffdbf5f75e8b942b04e2185e"
       },
       "detailWaiverGap": {
-        "text": "الإعفاء فجوة مسجَّلة, ليس completion: {{السبب}}",
+        "text": "الإعفاء فجوة مسجَّلة, ليس completion: {{reason}}",
         "source_sha256": "1902e95a817a35b79667e62b13a58876f6d2477795341598d05507879789e8b5"
       },
       "detailWaiverHelp": {
@@ -4892,7 +4892,7 @@
         "source_sha256": "e2d0a54968ead24efc0dffa6ac78fc606dceec34a0f586177a74a54cc2272cf8"
       },
       "templatesDeleteBody": {
-        "text": "Permanently delete “{{الاسم}}”? هذا cannot be undone. Future events fall back to the built-in افتراضي.",
+        "text": "Permanently delete “{{name}}”? هذا cannot be undone. Future events fall back to the built-in افتراضي.",
         "source_sha256": "8c316882a1ef35d45647d489c2c52a96209c2f9ce5cb4a5ca83f9fb7f7b712a5"
       },
       "templatesDeleteTitle": {
@@ -7228,7 +7228,7 @@
         "source_sha256": "c81da7e67a9d6ddbd62551ee5194d30eac129c20d20ec5e1219448f65297689e"
       },
       "attestAria": {
-        "text": "Record lab attestation لـ target-local recording على {{الاسم}}",
+        "text": "Record lab attestation لـ target-local recording على {{name}}",
         "source_sha256": "164233cc1c2f3bbf5f56ba425b2c2e83bef5dd6753bec20b5d9a3f1668d789eb"
       },
       "attestFailed": {
@@ -7472,7 +7472,7 @@
         "source_sha256": "8a7525b1492fb84833f5c4a69b30f4bfbb134f9b666b61a2c1872d63d234c085"
       },
       "openAria": {
-        "text": "افتح interactive {{protocol}} الجلسة to {{الاسم}}",
+        "text": "افتح interactive {{protocol}} الجلسة to {{name}}",
         "source_sha256": "2681d4482cb31b29b672131c407c1a95601ccc4d1e58bde691cd7951695f6e3b"
       },
       "openDisabled": {
@@ -10482,7 +10482,7 @@
         "source_sha256": "455daa76f2529c68c98b32638177a41951c57b0fcbec58b97f82d4302f4d109e"
       },
       "autoSleepIn": {
-        "text": "Auto-sleep في {{الوقت}} — Keep awake pauses; Sleep now sleeps now.",
+        "text": "Auto-sleep في {{time}} — Keep awake pauses; Sleep now sleeps now.",
         "source_sha256": "ca7f64b1c9675de846940af4283398fe0df82d084c351ef54ae83b6715b24a31"
       },
       "autoSleepOverride": {
@@ -10506,11 +10506,11 @@
         "source_sha256": "0b98122378447780dd8018ecf63b4aa2d7f22c7a76490846413811d4adbc9912"
       },
       "cannotConnectAria": {
-        "text": "Cannot connect to {{الاسم}}: {{label}}. {{detail}}",
+        "text": "Cannot connect to {{name}}: {{label}}. {{detail}}",
         "source_sha256": "5bff3c27884627063223e8c869d67b22513721382b32b557a5237add54bf427b"
       },
       "cannotConnectCheckingAria": {
-        "text": "Cannot connect to {{الاسم}}: ما زال checking readiness",
+        "text": "Cannot connect to {{name}}: ما زال checking readiness",
         "source_sha256": "5c3d2a8904f49e86fff027e2511771550afcbbef0f5e3dbede0da0d91058aa30"
       },
       "cannotConnectHelp": {
@@ -10518,7 +10518,7 @@
         "source_sha256": "7bc19bd5036fea9877cccb18833bcc6cb9fd1970981dc043d0bc658f70b366c1"
       },
       "cannotConnectUnreachableAria": {
-        "text": "Cannot connect to {{الاسم}}: الجلسة المضيف ليس reachable",
+        "text": "Cannot connect to {{name}}: الجلسة المضيف ليس reachable",
         "source_sha256": "3527e81363d516eb13ce5a49cf739a995824b40185166d8e9eeba95694d0fcf6"
       },
       "cannotConnectWakeFirstAria": {
@@ -10682,7 +10682,7 @@
         "source_sha256": "4eb39d36fd72a55a4169bc0a72c5f0553c4da57d98912cf28ff60e2a5577db1b"
       },
       "keepAwakeAria": {
-        "text": "Keep {{الاسم}} awake لـ a long task",
+        "text": "Keep {{name}} awake لـ a long task",
         "source_sha256": "a54c671eb71809f77127b054c6bdff920043b58132b9639a2765d732b1081b0d"
       },
       "keepAwakeDialogBody": {
@@ -10694,11 +10694,11 @@
         "source_sha256": "ede4867473d70f01ab9171ae84ba67b71e546ef20104da114221877387b1724a"
       },
       "keepAwakeEnding": {
-        "text": "Keep-awake ending — {{السبب}}. Auto-sleep resumes next.",
+        "text": "Keep-awake ending — {{reason}}. Auto-sleep resumes next.",
         "source_sha256": "c3b048e83e582b0d8764b40dc78382a49da55492e532894b4005326d34437d35"
       },
       "keepAwakeOn": {
-        "text": "Keep-awake على — {{السبب}}. Ends في {{الوقت}}.",
+        "text": "Keep-awake على — {{reason}}. Ends في {{time}}.",
         "source_sha256": "3d77696a44d5af0ff0b6f4acad808dd1289fd13e5e958fd1b6da50c242a26f86"
       },
       "keepAwakeReasonHelper": {
@@ -11448,7 +11448,7 @@
         "source_sha256": "c926c2c50e65d5a5799f548604472ee8554b53c376e45be580b3a06a484d8fc0"
       },
       "openingStatus": {
-        "text": "Opening interactive {{label}} الجلسة to {{المضيف}}…",
+        "text": "Opening interactive {{label}} الجلسة to {{host}}…",
         "source_sha256": "cd819e9ca391acb19349e7e25e5b14f36b153500dee9a98420476bc3c628754d"
       },
       "points": {

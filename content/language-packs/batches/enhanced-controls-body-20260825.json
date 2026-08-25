@@ -1,0 +1,52 @@
+{
+  "_comment": "This one leaf is the single widest defect in the packs: thirteen languages render it as German, and it drops the honesty clause in every one of them. The cause is legible in the German itself, which is a translation of a superseded English source -- it still names the old status vocabulary (Live / Teilweise / Fehlt / Blockiert instead of Implemented / Partial / Planned) and ends with a garbled fragment where 'This inventory is not a Met or certification claim' used to be. German then became the pivot for everyone else, so the verb 'list' arrived as 'listen' and stayed that way: luister (nl), sluchac (pl), ascolta (it), dinleyin (tr), listen-hear (ja/ko/pt-BR/es/fr/he), and a literal 'listen to' in both Chinese packs. Thirteen packs therefore instruct an auditor to LISTEN to a control inventory that makes a compliance claim it is required to disclaim. The drift hash was right about all of it -- every broken pack carries 6ff70630 (the old English) and every correct pack carries 83de4f39 -- so this was detectable and simply unread. Translations follow the two packs that got it right (ar, fi) rather than inventing a convention: Met stays a literal Latin status token per compliance-claims-honesty.mdc, the NIST SP identifiers stay Latin, and the status labels are translated. sv is included because it is worse than stale -- it carries the CURRENT hash while shipping untranslated English, so nothing downstream can tell it was never translated. Agent drafts pending native review per localization-work-queue.mdc; a paragraph that inverts a disclaimer in thirteen languages is a shipped defect, a reviewed-pending one is not.",
+  "area": "locales-ui",
+  "namespace": "docs",
+  "source": {
+    "auditor.chapters.enhanced-controls.body[0]": "Enhanced controls list every enhanced requirement the product knows from NIST SP 800-172 and the named NIST SP 800-53 High enhancements. Status labels stay honest (Implemented / Partial / Planned). This inventory is not a Met or certification claim."
+  },
+  "translations": {
+    "de": {
+      "auditor.chapters.enhanced-controls.body[0]": "Erweiterte Kontrollen listen jede erweiterte Anforderung auf, die das Produkt aus NIST SP 800-172 und den benannten NIST SP 800-53 High-Erweiterungen kennt. Statusbezeichnungen bleiben ehrlich (Umgesetzt / Teilweise / Geplant). Dieses Inventar ist keine Met- oder Zertifizierungsaussage."
+    },
+    "es": {
+      "auditor.chapters.enhanced-controls.body[0]": "Los controles mejorados enumeran todos los requisitos mejorados que el producto conoce de NIST SP 800-172 y de las mejoras NIST SP 800-53 High designadas. Las etiquetas de estado se mantienen honestas (Implementado / Parcial / Planificado). Este inventario no es una declaración de Met ni de certificación."
+    },
+    "fr": {
+      "auditor.chapters.enhanced-controls.body[0]": "Les contrôles renforcés répertorient chaque exigence renforcée que le produit connaît d'après NIST SP 800-172 et les améliorations NIST SP 800-53 High désignées. Les libellés de statut restent honnêtes (Implémenté / Partiel / Planifié). Cet inventaire n'est pas une déclaration Met ni de certification."
+    },
+    "he": {
+      "auditor.chapters.enhanced-controls.body[0]": "הבקרות המורחבות מפרטות כל דרישה מורחבת שהמוצר מכיר מתוך NIST SP 800-172 ואת הרחבות NIST SP 800-53 High הנקובות. תוויות הסטטוס נשארות כנות (מיושם / חלקי / מתוכנן). מלאי זה אינו טענת Met או הסמכה."
+    },
+    "it": {
+      "auditor.chapters.enhanced-controls.body[0]": "I controlli avanzati elencano ogni requisito avanzato che il prodotto conosce da NIST SP 800-172 e dai miglioramenti NIST SP 800-53 High indicati. Le etichette di stato restano oneste (Implementato / Parziale / Pianificato). Questo inventario non è una dichiarazione di Met né di certificazione."
+    },
+    "ja": {
+      "auditor.chapters.enhanced-controls.body[0]": "拡張管理策では、NIST SP 800-172 および指定された NIST SP 800-53 High の拡張要件のうち、本製品が把握しているすべての拡張要件を一覧表示します。ステータス表示は正確さを保ちます (実装済み / 部分的 / 計画中)。この一覧は Met または認証の主張ではありません。"
+    },
+    "ko": {
+      "auditor.chapters.enhanced-controls.body[0]": "향상된 통제 항목은 NIST SP 800-172 및 지정된 NIST SP 800-53 High 향상 사항 중 제품이 인식하는 모든 향상 요구 사항을 나열합니다. 상태 레이블은 정확하게 유지됩니다(구현됨 / 부분 / 계획됨). 이 목록은 Met 또는 인증 주장이 아닙니다."
+    },
+    "nl": {
+      "auditor.chapters.enhanced-controls.body[0]": "Uitgebreide beheersmaatregelen tonen elke uitgebreide vereiste die het product kent uit NIST SP 800-172 en de genoemde NIST SP 800-53 High-uitbreidingen. Statuslabels blijven eerlijk (Geïmplementeerd / Gedeeltelijk / Gepland). Deze inventaris is geen Met- of certificeringsclaim."
+    },
+    "pl": {
+      "auditor.chapters.enhanced-controls.body[0]": "Rozszerzone zabezpieczenia wymieniają każde rozszerzone wymaganie, które produkt zna z NIST SP 800-172 oraz ze wskazanych rozszerzeń NIST SP 800-53 High. Etykiety statusu pozostają rzetelne (Wdrożone / Częściowe / Zaplanowane). Ten wykaz nie jest twierdzeniem Met ani o certyfikacji."
+    },
+    "pt-BR": {
+      "auditor.chapters.enhanced-controls.body[0]": "Os controles avançados listam todos os requisitos avançados que o produto conhece do NIST SP 800-172 e das melhorias NIST SP 800-53 High indicadas. Os rótulos de status permanecem honestos (Implementado / Parcial / Planejado). Este inventário não é uma alegação de Met nem de certificação."
+    },
+    "sv": {
+      "auditor.chapters.enhanced-controls.body[0]": "Utökade säkerhetsåtgärder listar varje utökat krav som produkten känner till från NIST SP 800-172 och de angivna NIST SP 800-53 High-utökningarna. Statusetiketter förblir sanningsenliga (Implementerad / Partiell / Planerad). Denna förteckning är inte ett Met- eller certifieringspåstående."
+    },
+    "tr": {
+      "auditor.chapters.enhanced-controls.body[0]": "Gelişmiş denetimler, ürünün NIST SP 800-172 ve adı geçen NIST SP 800-53 High geliştirmelerinden bildiği her gelişmiş gereksinimi listeler. Durum etiketleri dürüst kalır (Uygulandı / Kısmi / Planlandı). Bu envanter bir Met veya sertifikasyon iddiası değildir."
+    },
+    "zh-Hans": {
+      "auditor.chapters.enhanced-controls.body[0]": "增强控制项列出本产品已知的 NIST SP 800-172 以及指定的 NIST SP 800-53 High 增强要求中的每一项增强要求。状态标签保持真实（已实施 / 部分 / 已计划）。本清单不构成 Met 或认证声明。"
+    },
+    "zh-TW": {
+      "auditor.chapters.enhanced-controls.body[0]": "增強控制項列出本產品已知的 NIST SP 800-172 以及指定的 NIST SP 800-53 High 增強需求中的每一項增強需求。狀態標籤維持誠實（已實作 / 部分 / 已規劃）。本清單並非 Met 或認證主張。"
+    }
+  }
+}

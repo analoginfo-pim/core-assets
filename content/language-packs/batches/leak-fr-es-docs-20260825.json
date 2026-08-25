@@ -1,0 +1,25 @@
+{
+  "_comment": "The fr and es UI packs carried German text for these keys after a machine-translation pass that pivoted through German. English source is copied from en/<namespace>.json so the stamped source_sha256 hashes the real source. Translations are agent drafts pending native review (localization-work-queue.mdc): German text shown to a French or Spanish operator is a shipped defect; a reviewed-pending French or Spanish string is not. Array-indexed bullet leaves under pages headers are omitted — the batch applier cannot replace list elements.",
+  "area": "locales-ui",
+  "namespace": "docs",
+  "source": {
+    "openapi.capped": " (Seitenliste auf 500 begrenzt)",
+    "openapi.hideRaw": "Hide raw JSON",
+    "openapi.showRaw": "Show raw JSON",
+    "openapi.totalPart": " ({{total}} total)"
+  },
+  "translations": {
+    "fr": {
+      "openapi.showRaw": "Afficher le JSON brut",
+      "openapi.hideRaw": "Masquer le JSON brut",
+      "openapi.totalPart": " ({{total}} au total)",
+      "openapi.capped": " (liste de pages limitée à 500)"
+    },
+    "es": {
+      "openapi.showRaw": "Mostrar JSON sin formato",
+      "openapi.hideRaw": "Ocultar JSON sin formato",
+      "openapi.totalPart": " ({{total}} en total)",
+      "openapi.capped": " (lista de páginas limitada a 500)"
+    }
+  }
+}

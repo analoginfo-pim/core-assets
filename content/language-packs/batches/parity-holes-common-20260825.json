@@ -1,0 +1,37 @@
+{
+  "_comment": "Three appBar labels shipped in en and de but were never propagated to en-GB, fr, es, zh-Hans, or zh-TW, so those locales rendered a Missing string banner in the top bar. en-GB uses the UK noun 'Licence models'; Marketplace is a product name and is not translated. fr/es/zh translations are agent drafts pending native review per localization-work-queue.mdc -- a reviewed-pending French string is not a defect, a Missing string banner is.",
+  "area": "locales-ui",
+  "namespace": "common",
+  "source": {
+    "appBar.cloudConsumptionAndPricing": "Cloud consumption and pricing",
+    "appBar.remittanceSupervisor": "Marketplace billing",
+    "appBar.supportedCommercialShapes": "License models"
+  },
+  "translations": {
+    "en-GB": {
+      "appBar.supportedCommercialShapes": "Licence models",
+      "appBar.remittanceSupervisor": "Marketplace billing",
+      "appBar.cloudConsumptionAndPricing": "Cloud consumption and pricing"
+    },
+    "fr": {
+      "appBar.supportedCommercialShapes": "Modèles de licence",
+      "appBar.remittanceSupervisor": "Facturation Marketplace",
+      "appBar.cloudConsumptionAndPricing": "Consommation et tarification cloud"
+    },
+    "es": {
+      "appBar.supportedCommercialShapes": "Modelos de licencia",
+      "appBar.remittanceSupervisor": "Facturación de Marketplace",
+      "appBar.cloudConsumptionAndPricing": "Consumo y precios en la nube"
+    },
+    "zh-Hans": {
+      "appBar.supportedCommercialShapes": "许可模式",
+      "appBar.remittanceSupervisor": "市场计费",
+      "appBar.cloudConsumptionAndPricing": "云用量与定价"
+    },
+    "zh-TW": {
+      "appBar.supportedCommercialShapes": "授權模式",
+      "appBar.remittanceSupervisor": "市集計費",
+      "appBar.cloudConsumptionAndPricing": "雲端使用量與定價"
+    }
+  }
+}

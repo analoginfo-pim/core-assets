@@ -1,0 +1,13 @@
+{
+  "_comment": "Two leaves the terminology sweep surfaced. sectionLanding.desc.credentials had collapsed from a full sentence into the two characters 證書 -- which is wrong twice over: the description vanished, and 證書 means a certificate or diploma rather than a stored account secret, so the Credentials tile's subtitle read 'Diploma' under a heading that already said 認證資料. Restored as a real translation, using 認證資料 to agree with sectionLanding.group.credentials. help:defenseHeatMap shipped 可访问 -- Simplified glyphs inside a Traditional pack -- and this same sentence is already translated correctly in dashboard:defense.heatMapAria as 無障礙來源, so the help text is aligned to the pack's own existing wording rather than a new draft. AGENT DRAFT on the credentials description; the heat-map fix is reuse of reviewed text from a sibling key.",
+  "area": "locales-ui",
+  "namespace": "components",
+  "source": {
+    "sectionLanding.desc.credentials": "Rotate passwords on demand, request break-glass reveal, and open per-target schedules."
+  },
+  "translations": {
+    "zh-TW": {
+      "sectionLanding.desc.credentials": "隨需輪替密碼、要求緊急破窗顯示，以及開啟每個目標的排程。"
+    }
+  }
+}

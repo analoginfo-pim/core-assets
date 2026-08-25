@@ -1,0 +1,122 @@
+{
+  "_comment": "German-pivot repair for the risk-register glossary. These are AGENT DRAFTS, not reviewed translations: they do not close a localization-work item and each pack needs a native pass before the pack is called Tier-1 complete. They are landed anyway because the alternative is shipping raw German -- Wahrscheinlichkeit, Auswirkung, Akzeptanz, Risikoregister -- to operators who do not read German, which is the worse of the two states. Terminology decisions: 'Record' is the submit verb (German 'Erfassen' confirms the verb reading, not the noun), 'Likelihood' uses each language's risk-assessment term rather than a general 'possibility', and 'Risk Register' reuses each pack's own existing risks:title wording where that key is itself clean. nl/sv treatment of 'Titel' is excluded as a genuine shared cognate rather than a leak.",
+  "area": "locales-ui",
+  "namespace": "risks",
+  "source": {
+    "acceptance_expired": "Expired {{date}}",
+    "acceptance_until": "Accepted until {{date}}",
+    "allSeverities": "All severities",
+    "colAcceptance": "Acceptance",
+    "createImpact": "Impact",
+    "createLikelihood": "Likelihood",
+    "createRecord": "Record",
+    "createRef": "Risk reference",
+    "loadingRegister": "Loading register…",
+    "toolbarTitle": "Risk Register"
+  },
+  "translations": {
+    "ar": {
+      "createLikelihood": "الاحتمالية"
+    },
+    "es": {
+      "colAcceptance": "Aceptación",
+      "createImpact": "Impacto",
+      "createLikelihood": "Probabilidad",
+      "createRecord": "Registrar",
+      "createRef": "Referencia del riesgo",
+      "toolbarTitle": "Registro de Riesgos"
+    },
+    "fi": {
+      "acceptance_expired": "Vanhentunut {{date}}",
+      "acceptance_until": "Hyväksytty {{date}} asti",
+      "allSeverities": "Kaikki vakavuusasteet",
+      "colAcceptance": "Hyväksyntä",
+      "createImpact": "Vaikutus",
+      "createLikelihood": "Todennäköisyys",
+      "createRecord": "Kirjaa",
+      "createRef": "Riskiviite",
+      "loadingRegister": "Ladataan rekisteriä…"
+    },
+    "fr": {
+      "colAcceptance": "Acceptation",
+      "createImpact": "Impact",
+      "createLikelihood": "Probabilité",
+      "createRecord": "Enregistrer",
+      "createRef": "Référence du risque",
+      "toolbarTitle": "Registre des risques"
+    },
+    "he": {
+      "acceptance_until": "מאושר עד {{date}}",
+      "createImpact": "השפעה",
+      "createRef": "הפניית סיכון"
+    },
+    "it": {
+      "acceptance_expired": "Scaduto {{date}}",
+      "allSeverities": "Tutte le gravità",
+      "colAcceptance": "Accettazione",
+      "createImpact": "Impatto",
+      "createLikelihood": "Probabilità",
+      "createRecord": "Registra"
+    },
+    "ja": {
+      "createLikelihood": "発生可能性"
+    },
+    "ko": {
+      "acceptance_until": "{{date}}까지 수락됨",
+      "createLikelihood": "발생 가능성",
+      "createRecord": "기록"
+    },
+    "nl": {
+      "acceptance_expired": "Verlopen {{date}}",
+      "acceptance_until": "Geaccepteerd tot {{date}}",
+      "allSeverities": "Alle ernstniveaus",
+      "colAcceptance": "Acceptatie",
+      "createImpact": "Impact",
+      "createLikelihood": "Waarschijnlijkheid",
+      "createRecord": "Vastleggen",
+      "toolbarTitle": "Risico Register"
+    },
+    "pl": {
+      "acceptance_expired": "Wygasło {{date}}",
+      "acceptance_until": "Zaakceptowano do {{date}}",
+      "colAcceptance": "Akceptacja",
+      "createLikelihood": "Prawdopodobieństwo",
+      "createRef": "Odniesienie do ryzyka"
+    },
+    "pt-BR": {
+      "acceptance_expired": "Expirado {{date}}",
+      "allSeverities": "Todas as severidades",
+      "colAcceptance": "Aceitação",
+      "createImpact": "Impacto",
+      "createLikelihood": "Probabilidade",
+      "createRecord": "Registrar"
+    },
+    "sv": {
+      "acceptance_expired": "Utgången {{date}}",
+      "acceptance_until": "Accepterad till {{date}}",
+      "allSeverities": "Alla allvarlighetsgrader",
+      "colAcceptance": "Godkännande",
+      "createImpact": "Påverkan",
+      "createLikelihood": "Sannolikhet",
+      "createRecord": "Registrera",
+      "createRef": "Riskreferens",
+      "loadingRegister": "Laddar register…"
+    },
+    "tr": {
+      "acceptance_expired": "Süresi doldu {{date}}",
+      "acceptance_until": "{{date}} tarihine kadar kabul edildi",
+      "allSeverities": "Tüm önem dereceleri",
+      "colAcceptance": "Kabul",
+      "createImpact": "Etki",
+      "createLikelihood": "Olasılık",
+      "createRecord": "Kaydet"
+    },
+    "zh-Hans": {
+      "acceptance_until": "已接受至 {{date}}",
+      "colAcceptance": "接受",
+      "createImpact": "影响",
+      "createRecord": "记录",
+      "toolbarTitle": "风险登记册"
+    }
+  }
+}

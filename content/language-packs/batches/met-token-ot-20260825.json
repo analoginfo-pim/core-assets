@@ -1,0 +1,37 @@
+{
+  "_comment": "`Met` is assessment vocabulary -- a requirement is Met, Not Met, or Partial -- and this string exists to say the delivery status is never that determination. A machine translator with no glossary read it as the past tense of the ordinary verb, so nine packs tell the operator the status was 'never encountered' (pl and pt-BR in the first person: 'I never met'). That inverts a disclaimer compliance-claims-honesty.mdc makes load-bearing. The packs that got it right -- de, es, fr, zh-Hans, zh-TW, en-GB -- unanimously keep `Met` as a literal Latin status token, so this follows that majority precedent instead of inventing a per-language equivalent. Each entry changes only the final clause and preserves that pack's own existing rendering of the status words, so the repair adds no translator preference beyond the substantive fix. ja and tr are untouched: both already use a correct domain sense ('not fulfilled'). Agent drafts pending native review per localization-work-queue.mdc -- a wrong-sense disclaimer is a shipped defect, a reviewed-pending one is not.",
+  "area": "locales-ui",
+  "namespace": "ot",
+  "source": {
+    "gridStatusHelp": "Delivery status from inventory/discovery (Live, Partial, or BLOCKED). Never Met or certified."
+  },
+  "translations": {
+    "ar": {
+      "gridStatusHelp": "حالة التسليم من المخزون/الاكتشاف (مباشر، جزئي، أو محظور). ليس Met ولا معتمدًا على الإطلاق."
+    },
+    "fi": {
+      "gridStatusHelp": "Toimituksen tila varastosta/löydöstä (Live, Osittainen tai ESTETTY). Ei koskaan Met eikä sertifioitu."
+    },
+    "he": {
+      "gridStatusHelp": "סטטוס משלוח ממלאי/גילוי (חי, חלקי או חסום). מעולם לא Met ולא מוסמך."
+    },
+    "it": {
+      "gridStatusHelp": "Stato di consegna dall'inventario/rilevamento (Attivo, Parziale o BLOCCATO). Mai Met né certificato."
+    },
+    "ko": {
+      "gridStatusHelp": "인벤토리/검색의 전달 상태(라이브, 부분 또는 차단됨)입니다. Met 또는 인증된 상태가 아닙니다."
+    },
+    "nl": {
+      "gridStatusHelp": "Leveringsstatus uit voorraad/ontdekking (Live, Gedeeltelijk of GEBLOKKEERD). Nooit Met of gecertificeerd."
+    },
+    "pl": {
+      "gridStatusHelp": "Status dostawy z magazynu/odkrycia (aktywna, częściowa lub ZABLOKOWANA). Nigdy Met ani certyfikowane."
+    },
+    "pt-BR": {
+      "gridStatusHelp": "Status de entrega do inventário/descoberta (Ativo, Parcial ou BLOQUEADO). Nunca Met nem certificado."
+    },
+    "sv": {
+      "gridStatusHelp": "Leveransstatus från inventering/upptäckt (Live, Partial eller BLOCKED). Aldrig Met eller certifierad."
+    }
+  }
+}

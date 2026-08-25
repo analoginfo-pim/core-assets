@@ -1,0 +1,22 @@
+{
+  "_comment": "The fr and es UI packs carried German text for these keys after a machine-translation pass that pivoted through German. English source is copied from en/<namespace>.json so the stamped source_sha256 hashes the real source. Translations are agent drafts pending native review (localization-work-queue.mdc): German text shown to a French or Spanish operator is a shipped defect; a reviewed-pending French or Spanish string is not. Array-indexed bullet leaves under pages headers are omitted — the batch applier cannot replace list elements.",
+  "area": "locales-ui",
+  "namespace": "dashboard",
+  "source": {
+    "defense.colUnique": "Unique Addresses",
+    "defense.geoAbsentBefore": "Country lookup is Absent. The map frame stays visible. Install the GeoIP database from",
+    "defense.heatMapAria": "World heat map of blocked and failed attempts by country. The ranked table is the accessible source."
+  },
+  "translations": {
+    "fr": {
+      "defense.colUnique": "Adresses uniques",
+      "defense.geoAbsentBefore": "La correspondance de pays est Absent. Le cadre de la carte reste visible. Installez la base GeoIP depuis",
+      "defense.heatMapAria": "Carte thermique mondiale des tentatives bloquées et échouées par pays. Le tableau classé est la source accessible."
+    },
+    "es": {
+      "defense.colUnique": "Direcciones únicas",
+      "defense.geoAbsentBefore": "La búsqueda de país está Absent. El marco del mapa permanece visible. Instale la base de datos GeoIP desde",
+      "defense.heatMapAria": "Mapa de calor mundial de intentos bloqueados y fallidos por país. La tabla clasificada es la fuente accesible."
+    }
+  }
+}

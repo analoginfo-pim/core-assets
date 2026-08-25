@@ -1,0 +1,23 @@
+{
+  "_comment": "Two defect classes on the section-landing tiles. First, content loss: the disconnected-tokens description collapsed from a full sentence explaining what the page does into the two-word noun phrase 離線權杖 ('offline tokens'), so the tile restated its own heading and told the operator nothing -- and it used 權杖 where the rest of this pack says 令牌. Second, English residue: five leaves ship raw untranslated English inside a Traditional Chinese pack, which passes the key-parity gate because the key exists and is non-empty. A Taiwanese operator opening these section landings reads English group titles and English descriptions with translated headings above them. Translated using this pack's own wording -- 認證資料 for credentials, 提升權限 for elevation, 令牌 for token. AGENT DRAFTS -- native review still required.",
+  "area": "locales-ui",
+  "namespace": "components",
+  "source": {
+    "sectionLanding.desc.disconnected_tokens": "Mint or exchange tokens so an agent can elevate while disconnected.",
+    "sectionLanding.group.configuration_scope": "Configuration scope",
+    "sectionLanding.groupDesc.credentials": "Reveal and manage managed local identities.",
+    "sectionLanding.groupDesc.privilege_elevation": "One-time token elevation and direct privileged membership activations.",
+    "sectionLanding.groupDesc.configuration_scope": "Agent settings are what endpoints receive; server settings apply to this host only.",
+    "sectionLanding.groupDesc.lab_advanced": "Advanced lab surfaces for discovery and drills."
+  },
+  "translations": {
+    "zh-TW": {
+      "sectionLanding.desc.disconnected_tokens": "鑄造或交換令牌，讓代理程式在離線時也能提升權限。",
+      "sectionLanding.group.configuration_scope": "設定範圍",
+      "sectionLanding.groupDesc.credentials": "顯示並管理受管理的本機身分。",
+      "sectionLanding.groupDesc.privilege_elevation": "一次性令牌提升權限，以及直接的特權成員資格啟用。",
+      "sectionLanding.groupDesc.configuration_scope": "代理程式設定是端點所接收的內容；伺服器設定僅套用於此主機。",
+      "sectionLanding.groupDesc.lab_advanced": "用於探索與演練的進階實驗室介面。"
+    }
+  }
+}

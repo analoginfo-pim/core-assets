@@ -1,0 +1,26 @@
+{
+  "_comment": "German-pivot repair for the Risk Register page title, which the >=2-pack agreement detector cannot see. These four packs do not ship byte-identical German -- they ship German run through their own script. Japanese リシコ and Korean 리시코 are phonetic transliterations of the German 'Risiko', not of the English 'risk' (which would be リスク / 리스크); Korean 레지스터 is likewise 'Register' sounded out rather than translated. Polish 'Zarejestruj sie' is the wrong sense entirely -- it is the sign-up verb, so the page announced itself as an account-creation form. Turkish 'Riskorekayit' is not a word. AGENT DRAFTS: each needs a native pass, landed now because a nav title in phonetic German is worse. Korean reuses the pack's own already-correct risks:title wording so the two keys stop disagreeing.",
+  "area": "locales-ui",
+  "namespace": "risks",
+  "source": {
+    "title": "Risk Register",
+    "toolbarTitle": "Risk Register"
+  },
+  "translations": {
+    "ja": {
+      "title": "リスク登録簿",
+      "toolbarTitle": "リスク登録簿"
+    },
+    "ko": {
+      "toolbarTitle": "위험 등록부"
+    },
+    "pl": {
+      "title": "Rejestr ryzyka",
+      "toolbarTitle": "Rejestr ryzyka"
+    },
+    "tr": {
+      "title": "Risk Kayıt Defteri",
+      "toolbarTitle": "Risk Kayıt Defteri"
+    }
+  }
+}

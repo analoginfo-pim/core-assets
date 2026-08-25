@@ -1,0 +1,31 @@
+{
+  "_comment": "Field-help text for the elevation surfaces, same physical-height defect as the nav and pages batches: 海拔 (sea-level altitude) and 高程 (survey elevation) standing in for privilege elevation. elevationTemplateEnabled additionally shipped a truncated identifier -- levation_secret, missing its leading e -- which is worse than a mistranslation because an operator copying that string into settings.json gets a key the server does not read. Identifiers stay Latin and exact. Corrected to 提升權限 to match 取得提升代碼 elsewhere in this pack. AGENT DRAFTS -- native review still required.",
+  "area": "locales-ui",
+  "namespace": "help",
+  "source": {
+    "elevationTemplateEnabled": "When enabled, settings.json issued for this group includes elevation_secret so operators can mint elevation codes.",
+    "elevationDuration": "Minutes the elevation stays active after activation (1–480).",
+    "elevationResponse": "Computed challenge response to paste back into the elevation client.",
+    "elevationActivateImmediately": "When on, the elevation applies as soon as the agent accepts the code.",
+    "elevationMockEndpoint": "Demo endpoint name shown in this elevation mock panel.",
+    "elevationMintScope": "Scope offered when minting an elevation activation code (mock).",
+    "elevationPolicyMock": "Demo elevation policy field for this mock panel.",
+    "elevation_mocks": "elevation mocks",
+    "elevation_policy": "elevation policy",
+    "get_an_elevation_code": "get an elevation code"
+  },
+  "translations": {
+    "zh-TW": {
+      "elevationTemplateEnabled": "啟用後，為此群組發布的 settings.json 會包含 elevation_secret，以便操作員可以鑄造提升權限代碼。",
+      "elevationDuration": "啟動後提升權限保持作用中的分鐘數 (1–480)。",
+      "elevationResponse": "計算出的質詢回應，貼回提升權限用戶端。",
+      "elevationActivateImmediately": "啟用後，一旦代理程式接受代碼，就會套用提升權限。",
+      "elevationMockEndpoint": "此提升權限模擬面板中顯示的示範端點名稱。",
+      "elevationMintScope": "鑄造提升權限啟用代碼（模擬）時提供的範圍。",
+      "elevationPolicyMock": "此模擬面板的示範提升權限政策欄位。",
+      "elevation_mocks": "提升權限模擬",
+      "elevation_policy": "提升權限政策",
+      "get_an_elevation_code": "取得提升權限代碼"
+    }
+  }
+}

@@ -3368,7 +3368,7 @@
         "source_sha256": "7e571f22a2879f131920709117dae4eb1eef5c47f53f255d40c6bbe18eee3cdd"
       },
       "detailDueWhen": {
-        "text": "Due {{kun}}. Muistutusyritykset ovat in the send log on tämä sivu.",
+        "text": "Due {{when}}. Muistutusyritykset ovat in the send log on tämä sivu.",
         "source_sha256": "831735f7edcec6b44b8e11cc8843f4ed9b6e4b231c8ff9732eee9765e0a79fae"
       },
       "detailEnroll": {
@@ -3608,7 +3608,7 @@
         "source_sha256": "ce3c4ff922fee35bc57af0754f15e838f6220a32e14d74e9e68eeeac4c791562"
       },
       "detailSweepToast": {
-        "text": "Reminder sweep: {{sent}} sent, {{epäonnistui}} epäonnistui, {{suppressed}} suppressed",
+        "text": "Reminder sweep: {{sent}} sent, {{failed}} epäonnistui, {{suppressed}} suppressed",
         "source_sha256": "8d3eef54a7e3c2bd1f482321d52c074da0a5574b693a4230f84cebbf6d7a7c53"
       },
       "detailSweeping": {
@@ -3668,7 +3668,7 @@
         "source_sha256": "9ff3677991c05d632baa82c923d189e4a9389941ffdbf5f75e8b942b04e2185e"
       },
       "detailWaiverGap": {
-        "text": "Luopuminen on kirjattu aukko, ei completion: {{syy}}",
+        "text": "Luopuminen on kirjattu aukko, ei completion: {{reason}}",
         "source_sha256": "1902e95a817a35b79667e62b13a58876f6d2477795341598d05507879789e8b5"
       },
       "detailWaiverHelp": {
@@ -4892,7 +4892,7 @@
         "source_sha256": "e2d0a54968ead24efc0dffa6ac78fc606dceec34a0f586177a74a54cc2272cf8"
       },
       "templatesDeleteBody": {
-        "text": "Permanently delete “{{nimi}}”? tämä cannot be undone. Future events fall back to the built-in oletus.",
+        "text": "Permanently delete “{{name}}”? tämä cannot be undone. Future events fall back to the built-in oletus.",
         "source_sha256": "8c316882a1ef35d45647d489c2c52a96209c2f9ce5cb4a5ca83f9fb7f7b712a5"
       },
       "templatesDeleteTitle": {
@@ -6268,7 +6268,7 @@
         "source_sha256": "3f1925a4c8859d54c55c3b7e1c07ef3c4851641d3265845e97b5d4932bfa518b"
       },
       "creditsShowing": {
-        "text": "Showing {{shown}} of {{total}} (sivu {{sivu}} of {{pages}})",
+        "text": "Showing {{shown}} of {{total}} (sivu {{page}} of {{pages}})",
         "source_sha256": "74159e5b199134f1a88b0e5ad432b3be404d0f16d5fc3caa86317c56bbc65cdd"
       },
       "creditsSource": {
@@ -7228,7 +7228,7 @@
         "source_sha256": "c81da7e67a9d6ddbd62551ee5194d30eac129c20d20ec5e1219448f65297689e"
       },
       "attestAria": {
-        "text": "Record lab attestation for target-local recording on {{nimi}}",
+        "text": "Record lab attestation for target-local recording on {{name}}",
         "source_sha256": "164233cc1c2f3bbf5f56ba425b2c2e83bef5dd6753bec20b5d9a3f1668d789eb"
       },
       "attestFailed": {
@@ -7336,7 +7336,7 @@
         "source_sha256": "f31852a4d7f347209a794e8cafee499d07a81de9bee784ec21a4f7905b66412d"
       },
       "emptyHostFilter": {
-        "text": "ei yhteyspisteet match isäntä \"{{isäntä}}\". Lisää one yllä tai clear the filter.",
+        "text": "ei yhteyspisteet match isäntä \"{{host}}\". Lisää one yllä tai clear the filter.",
         "source_sha256": "3bfb5e324bd674b8faa451d3afb1e534be81556e3d4bbfd21ccf34fb28789b82"
       },
       "emptyNone": {
@@ -7356,7 +7356,7 @@
         "source_sha256": "8dfc7a66ba5359fbc461efcc21cdfd69bcfd3e2a03ceb75320e084cb096ab372"
       },
       "hostFilter": {
-        "text": "Showing yhteyspisteet matching isäntä \"{{isäntä}}\" ({{shown}} of {{total}}).",
+        "text": "Showing yhteyspisteet matching isäntä \"{{host}}\" ({{shown}} of {{total}}).",
         "source_sha256": "ea628fdb0a1ea015ac9dbc1d6bf4dbbaf70e11a2f24ccfcc8a061532d4039c7a"
       },
       "inputBlocked": {
@@ -7420,7 +7420,7 @@
         "source_sha256": "8b7319c8d03ac6782379ebef0e0e70a956341dcf13dc41e164352e58d1b5bd30"
       },
       "launchAria": {
-        "text": "Launch recorded {{protocol}} istunto to {{nimi}}",
+        "text": "Launch recorded {{protocol}} istunto to {{name}}",
         "source_sha256": "011c0503890c7ed8db5e46a6f3a330f8d25a67a10a50d0fedff07c2e9a0d9345"
       },
       "launchingRdp": {
@@ -7472,7 +7472,7 @@
         "source_sha256": "8a7525b1492fb84833f5c4a69b30f4bfbb134f9b666b61a2c1872d63d234c085"
       },
       "openAria": {
-        "text": "Avaa interactive {{protocol}} istunto to {{nimi}}",
+        "text": "Avaa interactive {{protocol}} istunto to {{name}}",
         "source_sha256": "2681d4482cb31b29b672131c407c1a95601ccc4d1e58bde691cd7951695f6e3b"
       },
       "openDisabled": {
@@ -7508,7 +7508,7 @@
         "source_sha256": "c926c2c50e65d5a5799f548604472ee8554b53c376e45be580b3a06a484d8fc0"
       },
       "operatorLine": {
-        "text": "operaattori: {{operaattori}} · Participants: {{count}} · Recording: {{mode}}",
+        "text": "operaattori: {{operator}} · Participants: {{count}} · Recording: {{mode}}",
         "source_sha256": "8e4bdb3ce9693602e121fd20c157a68454c7eebbb8f3ceb6bc8984a4a7590ece"
       },
       "password": {
@@ -9084,7 +9084,7 @@
         "source_sha256": "472590ae974d4c1f44b3780df0b152d9119f076c61bfb3e8cb6affd7889ac0a8"
       },
       "providerLine": {
-        "text": "Provider {{provider}} · isäntä {{isäntä}} · id {{id}}",
+        "text": "Provider {{provider}} · isäntä {{host}} · id {{id}}",
         "source_sha256": "ee6f45ae45ec36d4848105f91e1c9672af2ff8db31e6e7c40e550ea73e11d228"
       },
       "secretStored": {
@@ -9774,7 +9774,7 @@
         "source_sha256": "b24d6d33736ecd5604a4b17bc9c6481039fac362bb7df044ef1c10a2bfd21db6"
       },
       "ocrStatusLine": {
-        "text": "Text search engine {{ready}} ({{backend}}) · queued {{queued}} · completed {{completed}} · epäonnistui {{epäonnistui}}",
+        "text": "Text search engine {{ready}} ({{backend}}) · queued {{queued}} · completed {{completed}} · epäonnistui {{failed}}",
         "source_sha256": "e69f4677d39769b6c7ddf5b35cca9e93616397c0d1a09b019fb226a4162f0f44"
       },
       "ocrUnavailable": {
@@ -9802,7 +9802,7 @@
         "source_sha256": "905bbef13a41511b8b0f92adad3a05f00e2102986b1b69e74482222e2088e114"
       },
       "planeEnabledNotAccepting": {
-        "text": "Jump plane on käytössä; active isäntä on {{nimi}} ({{id}}). Accept listener on ei reachable on {{url}}.",
+        "text": "Jump plane on käytössä; active isäntä on {{name}} ({{id}}). Accept listener on ei reachable on {{url}}.",
         "source_sha256": "e921da223bf7cfe9f3700d08459fb5010918c9bc73bf4020ee3c2c9510ac4b5b"
       },
       "planeOff": {
@@ -10478,11 +10478,11 @@
         "source_sha256": "16cb4baa32af5cc7fed02f78f7ac21b2fc00d0a2cd71617a0c1b3588f1a308ab"
       },
       "authorizingSession": {
-        "text": "Authorizing a tallennettu istunto on {{nimi}}.",
+        "text": "Authorizing a tallennettu istunto on {{name}}.",
         "source_sha256": "455daa76f2529c68c98b32638177a41951c57b0fcbec58b97f82d4302f4d109e"
       },
       "autoSleepIn": {
-        "text": "Auto-sleep in {{aika}} — Keep awake pauses; Sleep now sleeps now.",
+        "text": "Auto-sleep in {{time}} — Keep awake pauses; Sleep now sleeps now.",
         "source_sha256": "ca7f64b1c9675de846940af4283398fe0df82d084c351ef54ae83b6715b24a31"
       },
       "autoSleepOverride": {
@@ -10506,11 +10506,11 @@
         "source_sha256": "0b98122378447780dd8018ecf63b4aa2d7f22c7a76490846413811d4adbc9912"
       },
       "cannotConnectAria": {
-        "text": "Cannot connect to {{nimi}}: {{label}}. {{detail}}",
+        "text": "Cannot connect to {{name}}: {{label}}. {{detail}}",
         "source_sha256": "5bff3c27884627063223e8c869d67b22513721382b32b557a5237add54bf427b"
       },
       "cannotConnectCheckingAria": {
-        "text": "Cannot connect to {{nimi}}: edelleen checking readiness",
+        "text": "Cannot connect to {{name}}: edelleen checking readiness",
         "source_sha256": "5c3d2a8904f49e86fff027e2511771550afcbbef0f5e3dbede0da0d91058aa30"
       },
       "cannotConnectHelp": {
@@ -10518,15 +10518,15 @@
         "source_sha256": "7bc19bd5036fea9877cccb18833bcc6cb9fd1970981dc043d0bc658f70b366c1"
       },
       "cannotConnectUnreachableAria": {
-        "text": "Cannot connect to {{nimi}}: istunto isäntä ei reachable",
+        "text": "Cannot connect to {{name}}: istunto isäntä ei reachable",
         "source_sha256": "3527e81363d516eb13ce5a49cf739a995824b40185166d8e9eeba95694d0fcf6"
       },
       "cannotConnectWakeFirstAria": {
-        "text": "Cannot connect to {{nimi}}: wake the workstation first",
+        "text": "Cannot connect to {{name}}: wake the workstation first",
         "source_sha256": "75963f3724b77fb5a2502b218501c47241ee818a12370bfd0d98ca3b4df8e8bb"
       },
       "cannotConnectWakingAria": {
-        "text": "Cannot connect to {{nimi}}: workstation on edelleen waking",
+        "text": "Cannot connect to {{name}}: workstation on edelleen waking",
         "source_sha256": "65d035a4240af373f7678fd8c71dd3ebedde03279329ac702d11bc7190447968"
       },
       "checkingReachability": {
@@ -10550,7 +10550,7 @@
         "source_sha256": "54463f70b1703b6cf3f14207de20cb551c5e46c6e3dfce0651ccd5826bbb8e6b"
       },
       "connectFinished": {
-        "text": "Connect finished — istunto authorized on {{nimi}}",
+        "text": "Connect finished — istunto authorized on {{name}}",
         "source_sha256": "aaf4d2a5a84d4d3800aa95fa805863d041d7b720b2ec5fe39de1ac067a3c6eed"
       },
       "connectOpenFailed": {
@@ -10682,7 +10682,7 @@
         "source_sha256": "4eb39d36fd72a55a4169bc0a72c5f0553c4da57d98912cf28ff60e2a5577db1b"
       },
       "keepAwakeAria": {
-        "text": "Keep {{nimi}} awake for a long task",
+        "text": "Keep {{name}} awake for a long task",
         "source_sha256": "a54c671eb71809f77127b054c6bdff920043b58132b9639a2765d732b1081b0d"
       },
       "keepAwakeDialogBody": {
@@ -10694,11 +10694,11 @@
         "source_sha256": "ede4867473d70f01ab9171ae84ba67b71e546ef20104da114221877387b1724a"
       },
       "keepAwakeEnding": {
-        "text": "Keep-awake ending — {{syy}}. Auto-sleep resumes next.",
+        "text": "Keep-awake ending — {{reason}}. Auto-sleep resumes next.",
         "source_sha256": "c3b048e83e582b0d8764b40dc78382a49da55492e532894b4005326d34437d35"
       },
       "keepAwakeOn": {
-        "text": "Keep-awake on — {{syy}}. Ends in {{aika}}.",
+        "text": "Keep-awake on — {{reason}}. Ends in {{time}}.",
         "source_sha256": "3d77696a44d5af0ff0b6f4acad808dd1289fd13e5e958fd1b6da50c242a26f86"
       },
       "keepAwakeReasonHelper": {
@@ -10834,7 +10834,7 @@
         "source_sha256": "3fa383e5079554477473474946c3090cfe128476540d292790452b10160d7575"
       },
       "refusalStatus": {
-        "text": "{{nimi}} could ei be connected. {{detail}}",
+        "text": "{{name}} could ei be connected. {{detail}}",
         "source_sha256": "b4e24d0e211417a2a5b82d3434f81c16eca3a11b56a165a6af3e1d247db8db1d"
       },
       "refusalTitle": {
@@ -11348,7 +11348,7 @@
         "source_sha256": "87065c4feedf43e667322ee2cf01960a6dd768d434a238ec77e2e4a7a27fd955"
       },
       "chooseIntro": {
-        "text": "Several PAM yhteyspisteet share isäntä {{isäntä}}. Pick the protocol ja tili to open now.",
+        "text": "Several PAM yhteyspisteet share isäntä {{host}}. Pick the protocol ja tili to open now.",
         "source_sha256": "78c0d5091786eefaa9ade640cd757dac64f65aa6f77e9c1883cd7c5a0c0f2273"
       },
       "chooseTitle": {
@@ -11436,7 +11436,7 @@
         "source_sha256": "9fba34e3b8700ee7d66f0ab3598f46a65b5e1dca4b00c24431ab3c36078c29a0"
       },
       "openChoiceAria": {
-        "text": "Avaa {{protocol}} as {{tili}} on {{isäntä}}:{{port}}",
+        "text": "Avaa {{protocol}} as {{account}} on {{host}}:{{port}}",
         "source_sha256": "691f5bc0b3895bdfbe66b5ef6a5bd924a1fce04e72c90ab55d7eabca56b4be7e"
       },
       "openFailed": {
@@ -11448,7 +11448,7 @@
         "source_sha256": "c926c2c50e65d5a5799f548604472ee8554b53c376e45be580b3a06a484d8fc0"
       },
       "openingStatus": {
-        "text": "Opening interactive {{label}} istunto to {{isäntä}}…",
+        "text": "Opening interactive {{label}} istunto to {{host}}…",
         "source_sha256": "cd819e9ca391acb19349e7e25e5b14f36b153500dee9a98420476bc3c628754d"
       },
       "points": {
@@ -13626,7 +13626,7 @@
         "source_sha256": "87e6d00bbf53ec5ae251de23ace84d5cf01c69deae04cfff08a5fe353a9853bb"
       },
       "revokeConfirm": {
-        "text": "Revoke multi-tenant \"{{nimi}}\"? Agents using tämä multi-tenant's käynnistyssalaisuus will ei longer authenticate.",
+        "text": "Revoke multi-tenant \"{{name}}\"? Agents using tämä multi-tenant's käynnistyssalaisuus will ei longer authenticate.",
         "source_sha256": "178880c338286669daa8273b1fdbf917c1f35e4ff9e467f3cc03fa8bdfebdeb4"
       },
       "revokeTenant": {
@@ -13935,7 +13935,7 @@
       "source_sha256": "72c6ee7cf001f8f1bf8730f34a81af3f68874e96af48d2a09f6741c86ed3a2f2"
     },
     "enrollAria": {
-      "text": "Enroll isäntä {{isäntä}} in Systems luettelo",
+      "text": "Enroll isäntä {{host}} in Systems luettelo",
       "source_sha256": "f025d7288749e03aae2dd0a156520263aeb32e7402a577a3bf5556a39d0c70e5"
     },
     "estimating": {
