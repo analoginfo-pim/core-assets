@@ -21,9 +21,9 @@ import sys
 # 准 is deliberately absent: 准 and 準 are distinct Traditional characters, and
 # 核准 ("to approve") is standard Taiwan administrative usage. Listing it as
 # Simplified-only would flag correct text.
-SIMPLIFIED_ONLY = "证认据应员网络组数设备问题类别报记录处说请转输检测从会内单双变换择权险户门关开启结构态级计算软硬储载执档纪审监标围凭复杂离续"
+SIMPLIFIED_ONLY = "证认据应员网络组数设备问题类别报记录处说请转输检测从会内单双变换择权险户门关开启结构态级计软储载执档纪审监标围凭复杂离续"
 # Traditional-only forms whose Simplified counterparts appear in these strings.
-TRADITIONAL_ONLY = "證認據應員網絡組數設備問題類別報記錄處說請轉輸檢測從會內單雙變換擇權險戶門關開啟結構態級計算軟硬儲載執檔紀審監標準圍憑複雜離續"
+TRADITIONAL_ONLY = "證認據應員網絡組數設備問題類別報記錄處說請轉輸檢測從會內單雙變換擇權險戶門關開啟結構態級計軟儲載執檔紀審監標準圍憑複雜離續"
 
 RULES = {"zh-TW": SIMPLIFIED_ONLY, "zh-Hans": TRADITIONAL_ONLY}
 

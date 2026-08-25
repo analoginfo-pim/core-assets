@@ -15939,7 +15939,7 @@
   },
   "secureLaunch": {
     "honesty": {
-      "text": "Launch injects the current password, key, or certificate without showing it. Host, port, database, SSL mode, program path, and web field selectors are stored as start settings and can be changed. A simple website form opens in this browser. A JavaScript sign-in page opens AIC Secure Launch with Playwright. Desktop programs open AIC Secure Launch on this computer. The secret is never listed.",
+      "text": "啟動會填入目前的密碼、金鑰或憑證而不顯示它。主機、連接埠、資料庫、SSL 模式、程式路徑和網頁欄位選擇器都會儲存為啟動設定，並且可以變更。簡單的網頁表單會在此瀏覽器中開啟。使用 JavaScript 的登入頁面會透過 Playwright 開啟 AIC Secure Launch。桌面程式會在此電腦上開啟 AIC Secure Launch。密鑰絕不會被列出。",
       "source_sha256": "a8c1d33a72912f486576d400c87ee88fe2667bba5ad28e7a1a85393c8a060f24"
     },
     "retry": {
@@ -15971,11 +15971,11 @@
       "source_sha256": "4ccef805667a75a936cb59a48ab7b6a9f2a6340a8f8e561aaf59128ad922721d"
     },
     "helperStarted": {
-      "text": "AIC Secure Launch opened. It starts the program and keeps the password hidden.",
+      "text": "AIC Secure Launch 已開啟。它會啟動程式並讓密碼保持隱藏。",
       "source_sha256": "219623792597f372bf2085036fdb76a94585b607e863685144db12bbe0f3fcbf"
     },
     "helperGrantFailed": {
-      "text": "Could not open AIC Secure Launch. Install the helper, then launch again. The ticket is ready; the secret is not shown.",
+      "text": "無法開啟 AIC Secure Launch。請安裝協助程式，然後再次啟動。票證已就緒；不會顯示密鑰。",
       "source_sha256": "3684c7e4335d4c3fbbd87697ffa4ae9f97898bf83a3a6bef467cb6dd362ce43e"
     },
     "credentialsTitle": {
@@ -16063,187 +16063,187 @@
       "source_sha256": "422ee743e1aeb403b2aa5433770d7543dc9430e8554a42fe53615e00b5c1b394"
     },
     "helpDisplayName": {
-      "text": "Operator label for this stored credential. The secret is not the name.",
+      "text": "此已儲存認證的操作人員標籤。密鑰不是名稱。",
       "source_sha256": "05abffbdeaeab1980c560037173e20051f0dfc386bf8549757f19c65c67fe28d"
     },
     "helpUsername": {
-      "text": "Account name injected at launch. Used to match later password rotation.",
+      "text": "啟動時填入的帳戶名稱。用於比對後續的密碼輪替。",
       "source_sha256": "50586fe0735adf48f560788d4c06cc57418e2d8ba090c5ccae72ea8b1d4c36e8"
     },
     "helpTargetHost": {
-      "text": "Host or site the application connects to. Optional rotation match.",
+      "text": "應用程式連線的主機或網站。選用的輪替比對。",
       "source_sha256": "4cd72e76eab87dfaf01a84842d655b2b227f20347adfa075208550e383223a98"
     },
     "helpTargetPort": {
-      "text": "Service port. Use 5432 for PostgreSQL, 22 for SSH, 0 when unused.",
+      "text": "服務連接埠。PostgreSQL 用 5432，SSH 用 22，未使用時填 0。",
       "source_sha256": "67f79c70a0fd6cb758668c593ea38ca4760a22f3c3a84c0993d5f1aca910c1f3"
     },
     "helpKind": {
-      "text": "Password, SSH key, certificate, or an agent-derived binding.",
+      "text": "密碼、SSH 金鑰、憑證或由代理程式衍生的繫結。",
       "source_sha256": "cad79e8cf5d79edf3ec3f91e72c39d20333651f327dabcf6600f65808bcdac8d"
     },
     "helpSecretOnce": {
-      "text": "Accepted once and stored encrypted. Never listed and never shown again.",
+      "text": "只接受一次並加密儲存。絕不列出，也不再顯示。",
       "source_sha256": "d557c56ac11775bce53f5935e086f1e989656c7d06c91a6656533a8c9f0e38c5"
     },
     "helpSubjectKind": {
-      "text": "Grant launch to a role or to one principal. No match means deny.",
+      "text": "將啟動權限授予某個角色或單一主體。不相符即拒絕。",
       "source_sha256": "54dffdefce56f490add152c8e8ae9d71e52d2c484313715996c6537e4e84a1d8"
     },
     "helpSubjectRole": {
-      "text": "Role label that may launch this application with the chosen credential.",
+      "text": "可使用所選認證啟動此應用程式的角色標籤。",
       "source_sha256": "301daa4b12b293d097a7f240a9fecd8503099ddc11cf2b6a1fa3dd99df3c27bb"
     },
     "helpSubjectPrincipal": {
-      "text": "Exact principal identifier. Empty or unknown id cannot launch.",
+      "text": "精確的主體識別碼。識別碼為空或未知時無法啟動。",
       "source_sha256": "cef8f03b0237164dc7c2541e25188dfc5b6d9231b50e660d8999d661c9d3ea55"
     },
     "slug": {
-      "text": "Short name",
+      "text": "簡短名稱",
       "source_sha256": "4ff8035c245ab1c2b473cd705b3996c14f1e543363aa4535752525d524ce5f98"
     },
     "appKind": {
-      "text": "Application kind",
+      "text": "應用程式類型",
       "source_sha256": "0bfbad34167bd1e9a5636f4209e8e850a8e2cae25b7bdd4b4f4fdf10b040b6b1"
     },
     "injectStyle": {
-      "text": "How the secret is given",
+      "text": "密鑰的傳遞方式",
       "source_sha256": "60cb00028e96c1bde534d846b4559a7c43537aa12012a55769a020e25196c2d2"
     },
     "osFamily": {
-      "text": "Operating system",
+      "text": "作業系統",
       "source_sha256": "0fcabfe6e097cd4064a08313b4b7da807f5ea3c59d056acc46289467bd2216e4"
     },
     "commandTemplate": {
-      "text": "Command template",
+      "text": "命令範本",
       "source_sha256": "289540022decef5a2cb04264ecb277249e0052e0871ee609996af7146b55b9ce"
     },
     "loginUrl": {
-      "text": "Login URL",
+      "text": "登入 URL",
       "source_sha256": "104575e9463efd59c88d42183d10a0d1ff31b1c6c165483b8f1f948106cac53a"
     },
     "database": {
-      "text": "Database",
+      "text": "資料庫",
       "source_sha256": "fa7fe67124e94375d97e50896e0c32f44b03bb7ed5e9fb026341b55da724126b"
     },
     "sslmode": {
-      "text": "SSL mode",
+      "text": "SSL 模式",
       "source_sha256": "ae0ab8a512e78df8167ce4c635ba783c7c4fb3a5a629a159100528ebf90d743f"
     },
     "sslInherit": {
-      "text": "Use application default",
+      "text": "使用應用程式的預設值",
       "source_sha256": "1350e58a9223b27fd92a2524506ba227d9f631413f4306f60ba5b8838ee9715a"
     },
     "binary": {
-      "text": "Program path",
+      "text": "程式路徑",
       "source_sha256": "232a4a0f585e2aa1437f2896c1c8bc7d6c10c229beb46c8a40af437277d77746"
     },
     "extraArgs": {
-      "text": "Extra arguments",
+      "text": "額外引數",
       "source_sha256": "478cf13d2ed7b164ef29a9f8743a51ecc4a8b3000b13fe0f896371291552b26e"
     },
     "applicationName": {
-      "text": "Application name",
+      "text": "應用程式名稱",
       "source_sha256": "09526e9d005a58828a312642eb61505a075408cfd2141ccfe4f0196ba59e1dcf"
     },
     "configTitle": {
-      "text": "Start settings",
+      "text": "啟動設定",
       "source_sha256": "ab51fa6b54abc0b89d58291eee0ee5e20e4a24b64da067b2da6ba24899147be6"
     },
     "saveDefinition": {
-      "text": "Store application",
+      "text": "儲存應用程式",
       "source_sha256": "83eb2759402985c36bd10b2a6f2f689022568323d567a8396919858ce122daf3"
     },
     "definitionStored": {
-      "text": "Application stored. Start settings are not a secret.",
+      "text": "應用程式已儲存。啟動設定不是密鑰。",
       "source_sha256": "b7098973c8e38fd6ebd2777d64a6fe13403b1137e5d16f60f3877f90dc3f2464"
     },
     "emptyDefinitions": {
-      "text": "No applications yet.",
+      "text": "尚無應用程式。",
       "source_sha256": "ce4fda79ef58dc369c58450cfc2df18229bebfd52641ede7a5f19b0bae3d17de"
     },
     "helpSlug": {
-      "text": "Lowercase name for this application. Not a secret.",
+      "text": "此應用程式的小寫名稱。不是密鑰。",
       "source_sha256": "4bc40718a37e336adc37ffacdaceac96c4c54f19a82674e5cf249964ec37a6ea"
     },
     "helpAppKind": {
-      "text": "Kind of application, such as postgresql or website.",
+      "text": "應用程式類型，例如 postgresql 或 website。",
       "source_sha256": "b80deab64a79210e7ca42ca34251b28b320807f3abb009a9597830b2d8766e62"
     },
     "helpInjectStyle": {
-      "text": "How the helper gives the secret. Never on the command line.",
+      "text": "協助程式傳遞密鑰的方式。絕不透過命令列傳遞。",
       "source_sha256": "9607436644840ce40e1d4ef2880f04943ade505d124aec304536bad4945c1473"
     },
     "helpOsFamily": {
-      "text": "Windows, Linux, macOS, or any.",
+      "text": "Windows、Linux、macOS 或任一種。",
       "source_sha256": "8e4ac18d7afba5d1650e2d94fb62f3615c1b4cb6cd5ee9af10ffc29bc532f2ae"
     },
     "helpCommandTemplate": {
-      "text": "Start command without a password. {host}, {port}, and {username} are allowed.",
+      "text": "不含密碼的啟動命令。可使用 {host}、{port} 和 {username}。",
       "source_sha256": "92be4f4932393a813b301952deba3dbb29fe7c83bae692f3bbd40672654848fb"
     },
     "helpLoginUrl": {
-      "text": "Sign-in page for a website launch. Leave empty for desktop programs.",
+      "text": "網站啟動的登入頁面。桌面程式請留空。",
       "source_sha256": "998229ed94b4270127578c527eac16237c891e0435814fb74bff5831b6f5e0a1"
     },
     "helpDatabase": {
-      "text": "Database name the program opens. Not a password.",
+      "text": "程式開啟的資料庫名稱。不是密碼。",
       "source_sha256": "9498788ab7efd78ce8fa9b4e8bfd635ef6b243df8b3a082b7791f23f335ec29f"
     },
     "helpSslmode": {
-      "text": "PostgreSQL SSL mode. Leave empty to use the application default.",
+      "text": "PostgreSQL SSL 模式。留空則使用應用程式的預設值。",
       "source_sha256": "9e4ab1273292adb08ed7d9b85c55eae7c6cbe8472b00412c0b14aefa67698ffc"
     },
     "helpBinary": {
-      "text": "Program file on the computer that starts it. Empty uses the usual name.",
+      "text": "啟動它的電腦上的程式檔案。留空則使用慣用名稱。",
       "source_sha256": "67c8e914b23db946d5cab9811a537cff43ee2dbd7532f93d6ef69f9e93aea87a"
     },
     "helpExtraArgs": {
-      "text": "One argument per line. Do not put a password here.",
+      "text": "每行一個引數。請勿在此填入密碼。",
       "source_sha256": "06f43a2d9ed8c66b29981c9809808845a22d3d34edeeb5f06388d1a584271b82"
     },
     "helpApplicationName": {
-      "text": "Name the database sees for this session. Optional.",
+      "text": "本次工作階段中資料庫看到的名稱。選用。",
       "source_sha256": "551638a4903b31e8a354dedac6d5d266d238cc1ee9f2f5adee26e8e628a084ef"
     },
     "competitorCatalogTitle": {
-      "text": "Common launch configurations",
+      "text": "常見的啟動組態",
       "source_sha256": "469d67fec559352677f423a7da2f38cfd5a644f7db249eec594852d9331763ad"
     },
     "competitorCatalogNote": {
-      "text": "These match CyberArk, Delinea, and BeyondTrust application launchers. Catalog-only rows store start settings. They do not open a governed session.",
+      "text": "這些與 CyberArk、Delinea 和 BeyondTrust 的應用程式啟動器相對應。僅存在於目錄中的項目會儲存啟動設定，不會開啟受管的工作階段。",
       "source_sha256": "69b613d95cc93fbc98f719d97a8e493f800700cd0f007674f03b45dbf29b556f"
     },
     "userCss": {
-      "text": "Username field selector",
+      "text": "使用者名稱欄位選擇器",
       "source_sha256": "e64e97d05dc7e6ec8041039499782b3ccf7a1543ded5264b41f3b92351aababd"
     },
     "passCss": {
-      "text": "Secret field selector",
+      "text": "密鑰欄位選擇器",
       "source_sha256": "5008bd1cb7401397094d93edd4b45da44ebb5a50f1393069bb787bfed8d74624"
     },
     "submitCss": {
-      "text": "Submit button selector",
+      "text": "送出按鈕選擇器",
       "source_sha256": "0ce4e71a7d177522f4fe2904c2008c5635391c99ebc73fb167d6c2924f8bdb1e"
     },
     "browserChannel": {
-      "text": "Browser",
+      "text": "瀏覽器",
       "source_sha256": "d31de1a5c5c8ba2a210a167cf0d0dc2425c57ea7525f4b73a4b7ab934af79dfc"
     },
     "helpUserCss": {
-      "text": "CSS selector for the username box on a Playwright website launch.",
+      "text": "Playwright 網站啟動中使用者名稱欄位的 CSS 選擇器。",
       "source_sha256": "782cd4a9dbb5efe9c7aa87c70f29f8e5d9fe0d72b198ef7da5ae1223d7e1fd4a"
     },
     "helpPassCss": {
-      "text": "CSS selector for the secret box. Do not name this field password.",
+      "text": "密鑰欄位的 CSS 選擇器。請勿將此欄位命名為 password。",
       "source_sha256": "20da05f99a10a77cff865e50c73796bea48c1fc1c95fec7df8ee5ddd98e07e38"
     },
     "helpSubmitCss": {
-      "text": "CSS selector for the sign-in button on a Playwright website launch.",
+      "text": "Playwright 網站啟動中登入按鈕的 CSS 選擇器。",
       "source_sha256": "8fe739ea5c6c018b2c8670f6f0a99e6498c8c66ac40c65d9122941827cee2e17"
     },
     "helpBrowserChannel": {
-      "text": "Installed Edge or Chrome. Chromium is the fallback.",
+      "text": "已安裝的 Edge 或 Chrome。Chromium 為備援。",
       "source_sha256": "297b3a99fc559d3b6928125168b1c89031bb215d5fcaa4dc5377fed1e4e91385"
     },
     "recordedSession": {
