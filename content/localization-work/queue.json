@@ -2121,6 +2121,40 @@
       ],
       "draft_tags": [],
       "notes": "Two page bullets (headers.settings__agent__management.bullets.text[0] and headers.elevation.bullets.text[1]) were authored in German; en was produced by swapping a few function words and re-hashed as self, so provenance checks passed it. en and en-GB are now restored from pageIntros.ts. The 10 packs listed were translated from that pidgin English and are wrong in ways a spellcheck will not find: zh-Hans/zh-TW render nutzen as nutty flavor, pl and es render widerruft as wider, fr inverts the negation and states the feature does not use WinRM, ja never translated the elevation bullet at all. Needs native re-translation from the restored English, not a draft."
+    },
+    {
+      "id": "packs.synced-away-feature-areas-20260825",
+      "status": "open",
+      "priority": "p1",
+      "kind": "ui",
+      "title": "SPA feature areas authored only in the consumer tree, deleted by forward sync",
+      "added": "2026-08-25",
+      "updated": "2026-08-25",
+      "source_repo": "pim-offline-server",
+      "source_path": "content/locales-ui/en/pages.json",
+      "source_sha256": "affca99c43c5da440f6005bd06e01f71210e09dcad38293d950a172721406df9",
+      "product_route": "/enclave/regular-users",
+      "required_tags": [
+        "en-GB",
+        "de",
+        "fr",
+        "es",
+        "zh-Hans",
+        "zh-TW",
+        "nl",
+        "sv",
+        "fi",
+        "pl",
+        "tr",
+        "it",
+        "he",
+        "ja",
+        "ko",
+        "pt-BR",
+        "ar"
+      ],
+      "draft_tags": [],
+      "notes": "Three feature areas shipped their English only in pim-offline-server/ui/src/i18n/locales and were never back-synced to core-assets: enclaveRegularUsers.* (51 leaves, EnclaveRegularUsersPage), chrome.accessControl.classificationGov.* (18, ClassificationPanel), chrome.operatingLevel.* (11, SettingsPage). core-assets is the source of truth and the forward sync overwrites consumers wholesale, so the next sync deleted all 80 keys from all seven shipped SPA tags at once. Nothing broke visibly - i18next falls back to defaultValue so en still rendered English, and the parity gate stayed green because Check 2 only asserts en is a subset of each tag, which still holds when the key leaves en too. What was lost is the translation. Recovered from the pre-sync commit and back-ported into core-assets so the next sync stops deleting them. Two gaps remain. First, the recovered de pack carried genuine translation for 77 of 80 leaves but fr, es, zh-Hans and zh-TW carried English placeholders for 66 of 80 each - a German operator sees German on those three pages, a French one still sees English. Second, the 80 keys were never present in the 11 non-SPA packs at all, so nl sv fi pl tr it he ja ko pt-BR ar need them from scratch. Native translation required for both; the English source is authoritative in the page components."
     }
   ]
 }

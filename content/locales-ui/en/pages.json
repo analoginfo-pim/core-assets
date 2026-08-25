@@ -11450,6 +11450,80 @@
           "text": "Classification",
           "source_sha256": "72f049954fdd06c875fef2a15bf89e95c7a28db5c4910643dbd7ac38a3e0db13"
         }
+      },
+      "classificationGov": {
+        "addCustom": {
+          "text": "Add a custom marking",
+          "source_sha256": "67d45d3560189ea5ad9ebe903d0056fb58c599a301cca6ee9ee2ea234cd74e68"
+        },
+        "catalogTitle": {
+          "text": "Markings by sensitivity",
+          "source_sha256": "8693fcb8889ec1fba084557317c762e770c9406faf3d915dbaadbd5e119356d8"
+        },
+        "clearanceHelp": {
+          "text": "Set the highest marking this person is authorized to read. Write-up is allowed; write-down needs a formal release.",
+          "source_sha256": "bd70e7b3dce01d75d9e7485a5b84f67c747da9ad16db401a316e6917a363c068"
+        },
+        "clearanceTitle": {
+          "text": "Person authorization",
+          "source_sha256": "f0dd1809dcc323e591317d18ddd9f522ddae805c488c6f937f1b5a21ae67cbaa"
+        },
+        "corporate": {
+          "text": "Enable corporate markings (Company Confidential and custom)",
+          "source_sha256": "8bf041449df52228fe6192e72754eee9f5cd0c2632dee8a4a8914657f6a2666f"
+        },
+        "defaultMarking": {
+          "text": "Default marking",
+          "source_sha256": "7d85fb8a4c1d11d2309b2f57bf8a508bb6e6d39d2967acf5cf0c0eb33e2a8c5a"
+        },
+        "familiesHelp": {
+          "text": "Turn on marking families for this enclave. Simple CMMC chrome hides Secret and foreign markings from everyday tagging.",
+          "source_sha256": "f9bbefaed78579535c66035007d0b0ec78c688d515998e2c929468c41de46f63"
+        },
+        "instanceTitle": {
+          "text": "Instance catalog",
+          "source_sha256": "30c42ca98fde1bdf2b60c3a58b376edaa796d7a48774c8a5cfc142a6d4f58ed7"
+        },
+        "intro": {
+          "text": "Configure markings for this instance, assign each person a top authorization, and enforce read-down / write-up. CMMC uses Unclassified, Federal Contract Information, and Controlled Unclassified Information. This page records product settings — it is not a Met stamp and not a certification.",
+          "source_sha256": "ac4f56b42b9097bfe98a57dae8aa70eeb1d220ee685eedabdca0c39e515d6dec"
+        },
+        "maclHelp": {
+          "text": "off records only. warn allows and logs. enforce blocks read-up and write-down. Assign clearances before enforce.",
+          "source_sha256": "87931aaa134e50ba6c52aebbf55bb6ea3858c416a2106f63e0b70a4b4e1f3e98"
+        },
+        "maclLabel": {
+          "text": "Mandatory access (MACL)",
+          "source_sha256": "af2f8d51b73fbddb6b20bff64819c1625e7835bf1d542f14f5b898bd41616b8a"
+        },
+        "modeHelp": {
+          "text": "Writes CLASSIFICATION_MODE. commercial keeps markings blank. cmmc is the simple CMMC set. nist80053 enables government families you turn on below.",
+          "source_sha256": "0518dd74f6e2d699e6937115df6ec3030d5c40086b72acf8a0b89c71d5f033f9"
+        },
+        "modeLabel": {
+          "text": "Classification mode",
+          "source_sha256": "c45b28da356802877889ac54f525351f6895c3853a1e87b25e35c21b608b0dd2"
+        },
+        "releaseHelp": {
+          "text": "Lowering a marking is not an ordinary edit. Record a justification. Every release is append-only and audited.",
+          "source_sha256": "34bbf935808a478c7afbfde2086838353722d280be802f237c5e1568a1b9c79c"
+        },
+        "releaseTitle": {
+          "text": "Formal release (downgrade)",
+          "source_sha256": "ff9331e6c356345d2fecaa767356d48cc8cbe230063ee70d2d11fcfd98c21a9a"
+        },
+        "saveInstance": {
+          "text": "Save instance settings",
+          "source_sha256": "1de6b10b93251ab9f31ee0dcdab04a2a0f19269c4c097d5aa64d8c40e7c52f95"
+        },
+        "saveMode": {
+          "text": "Save classification mode",
+          "source_sha256": "08650da7f3b8af554089c71c1ee8a79d71489fcbc39e7538981107595297f019"
+        },
+        "simpleCmmc": {
+          "text": "Simple CMMC tagging (Unclassified, FCI, CUI)",
+          "source_sha256": "27d56050e059a062be354f82555671078732f07822b67a8bc53f2f43e68acc77"
+        }
       }
     },
     "notFound": {
@@ -11562,6 +11636,50 @@
       "inABoxBody": {
         "text": "CMMC in a Box is this integrated kit: workforce training and attestation, the infrastructure you operate, and the tools for secure access. It does not mean the organization is certified. Cybersecurity Maturity Model Certification assesses the organization. The assessor decides Met.",
         "source_sha256": "3df053f2889aee6c86d226d3b21a79ceb0512ed698e90f75d83aeeef4c18fbf2"
+      },
+      "applied": {
+        "text": "Operating package applied. Current State and the Assessment Binder now follow this package. This is not Met and not a certification.",
+        "source_sha256": "18e1f53a4872663cb469f1e971d998ecdb7ba52b7fc615c9243cc55c4c533b81"
+      },
+      "apply": {
+        "text": "Apply operating package",
+        "source_sha256": "e9a4fce54ff7e3cda38251f4e8807965922f1c9b1308d58b4438d0b18efd46ce"
+      },
+      "applyError": {
+        "text": "Could not apply the operating package.",
+        "source_sha256": "ab5fb41f0e48bfbb4ba51a6fc7aa2c98936cd395c3ed25978746a11d13e3da67"
+      },
+      "applyHelper": {
+        "text": "Apply archives prior DemoCorp package rows, seeds this level, binds sensors, and creates a Current State report and Assessment Binder. This is not Met and not a certification.",
+        "source_sha256": "075809dcc9d6abfe5b158a976bbd0633169d744a8a0c5fb8f4db55ddbb59c06d"
+      },
+      "inABoxProblemSolution": {
+        "text": "The problem is running those pieces as separate spreadsheets, shared drives, and disconnected tools. The solution is this integrated kit. It does not certify the organization.",
+        "source_sha256": "9b432a9aa797e6187fcb8650f930eba3fe2b091aaa519895eaf686bc2838e346"
+      },
+      "inABoxStdEnv": {
+        "text": "This kit is a standardized environment: the same training, infrastructure, and secure-access tools in one product so a demonstration does not require a custom build for every site.",
+        "source_sha256": "f69007b492fb13d165d889288249d5c4086f5eeb8c59076660cd74aca11fd63b"
+      },
+      "openBinder": {
+        "text": "Open Assessment Binder",
+        "source_sha256": "323df1f14fe0b611f3a66750fbae4298236196df27eec87acf3ce0e9ba3d55af"
+      },
+      "openCurrentState": {
+        "text": "Open Current State",
+        "source_sha256": "09ff1cf1b683e6915d13b2d70328daabdf3f1ee5694052e3991787f47567b944"
+      },
+      "punchDetail": {
+        "text": "Detail",
+        "source_sha256": "fb5f27d5457c464102286366ef3827b11923e7f3aa1faa7eea95249e36a39abf"
+      },
+      "punchItem": {
+        "text": "Item",
+        "source_sha256": "652bcc3a478428893cc505ae19f847b49be52f861bedc64bb192ceed409fa733"
+      },
+      "punchTitle": {
+        "text": "To-do / punch-list",
+        "source_sha256": "1dfbdc7bc9d89759b95d2fcf908139271a1a835b9a210077bf599da38317b4a8"
       }
     },
     "controlNextSteps": {
@@ -16220,6 +16338,212 @@
     "honestySession": {
       "text": "A ticket can bind to one live recorded session. Several programs can share that session. The password stays in the vault.",
       "source_sha256": "28e991381e012d00462b0d5a71a101875d96a702854c9f3bce5e309b60a687b5"
+    }
+  },
+  "enclaveRegularUsers": {
+    "assign": {
+      "text": "Assign",
+      "source_sha256": "8ece895c9b32c6436d34b0384ae9f8555c8abccd31541f722f27e45e72a85bff"
+    },
+    "assignTitle": {
+      "text": "Assign workstation",
+      "source_sha256": "d5307e85c66307fa201dde0c5d66b1946a63314ffa11ef4381c64ca0cb15a0cb"
+    },
+    "assignUnassigned": {
+      "text": "Assign unassigned workstations",
+      "source_sha256": "b48b94379bebff9a72162a038d808ac374647837c7d17bb54a05127fd87d15a2"
+    },
+    "assignedCount": {
+      "text": "Assigned {{count}} workstation(s).",
+      "source_sha256": "c5267b528ff41b56b54d77335fbfeca6605f49ac638e4d23233751664986911c"
+    },
+    "cancel": {
+      "text": "Cancel",
+      "source_sha256": "19766ed6ccb2f4a32778eed80d1928d2c87a18d7c275ccb163ec6709d3eb2e27"
+    },
+    "colActions": {
+      "text": "Actions",
+      "source_sha256": "ff8059dc6752afdd30d275932b1d5031a2ec854b387a8c57ecc6689915293a43"
+    },
+    "colAssigned": {
+      "text": "Assigned user",
+      "source_sha256": "4230e695235ef81349ad6f0c6cee57ac54075fdbbbadaf4d5c22e8cb5cfabc3a"
+    },
+    "colCurrent": {
+      "text": "Current login",
+      "source_sha256": "d03f7b37b94c8c4f5bc2bf48fbbf017c3e29d9dea2d218fbdc79ee1527126563"
+    },
+    "colGeneric": {
+      "text": "Generic login",
+      "source_sha256": "64ca555d61612c7e6c857039c4d8f117095517bde4f11deb9e928592c85322af"
+    },
+    "colJustification": {
+      "text": "Justification",
+      "source_sha256": "c24c06c3f7fd49d74eda48d43093d4347e42c0fce89bfe0056499b4f267b39dc"
+    },
+    "colOs": {
+      "text": "OS account",
+      "source_sha256": "9f16aac4fd7b227dba6657136c68877b2ea0b10e02f14e93819a9c47e369002e"
+    },
+    "colPerson": {
+      "text": "Person",
+      "source_sha256": "6007db63e18e532c7399975ed77d2e3900810aa75cad165b8d2e5d8b08085c3d"
+    },
+    "colResetUser": {
+      "text": "Logon name",
+      "source_sha256": "70e03fb0f29203c94bedd2c5c0cc7dd4d842a8d00a24eebb9c8fd3919d210bd5"
+    },
+    "colSeat": {
+      "text": "Workstation",
+      "source_sha256": "b9d0a58e17a62bec80b495a416d0e9fdcb25086e37aa4e3f31ceb0dedf6fdb31"
+    },
+    "colSeatName": {
+      "text": "Seat",
+      "source_sha256": "ae4e74c66116dc8cb41c687224b047677715a0f1186274ef253d287cb326e161"
+    },
+    "colStatus": {
+      "text": "Status",
+      "source_sha256": "920e413c7d411b61ef3e8c63b1cb6ad058d5f95f8b481dbafe60248387d8c355"
+    },
+    "colSystemKey": {
+      "text": "System key",
+      "source_sha256": "f68efc337a8cca2d7eda8dc8df440f69b46150b43e6c6b2a90f171903dbc212f"
+    },
+    "commonShare": {
+      "text": "Common share",
+      "source_sha256": "f0ce88e7bac6b741950c4e0660cb63c70e5b5b2e2f90360af8c970f547541444"
+    },
+    "deny": {
+      "text": "Deny",
+      "source_sha256": "05a2d7332eb9d8bf164487c743a2e93c21b16bb2061a93e3ee2ceb508eadb753"
+    },
+    "issueNext": {
+      "text": "Add next sequential user",
+      "source_sha256": "f20a0d4268880abab91e8c071335a2cb83e50101590cf33e16ee8f86cc3122ee"
+    },
+    "issued": {
+      "text": "Issued {{login}}.",
+      "source_sha256": "6c7912b6f6ccd3e2bc80c41b36dcd7ea165286fa5a709cb85affd8a72a7f9d90"
+    },
+    "legalName": {
+      "text": "Legal name",
+      "source_sha256": "07f883c3b610740f954cda30d5d4680227bbedcab810a727460c116b27449004"
+    },
+    "localFs": {
+      "text": "Local encrypted filesystem",
+      "source_sha256": "b186c32e504e5b6778c0786e27b87a4ed8d7b8da8330e223db40d60b5c9d742c"
+    },
+    "map": {
+      "text": "Map",
+      "source_sha256": "be176b0015c424b78e9f343f8bc3014a7a701cc2eb9000b6acbc04d67dbecb8f"
+    },
+    "mapTitle": {
+      "text": "Map to a person",
+      "source_sha256": "d45704210b16963182d7d5f154639dea723acad26287f2be3a8c8fae6a1237f6"
+    },
+    "mapped": {
+      "text": "Person mapped. Seat follows.",
+      "source_sha256": "2aabd7a367ca291ee4af5ba161a3c18f69770a2281e8a4c6294dfa179a3d1402"
+    },
+    "noAccess": {
+      "text": "You do not have permission to view sequential enclave users.",
+      "source_sha256": "1e7fb7ce6f71da35c430eedaddfe5584a00abf3f167c989b4503a161378115cc"
+    },
+    "notes": {
+      "text": "Notes",
+      "source_sha256": "8a7525b1492fb84833f5c4a69b30f4bfbb134f9b666b61a2c1872d63d234c085"
+    },
+    "organization": {
+      "text": "Organization",
+      "source_sha256": "d764d42592fc968709b4c6c25c6e6b77919295dfce2c57ead02bedac5ddb3218"
+    },
+    "placeCui": {
+      "text": "Place files",
+      "source_sha256": "e93e4ba69a1c985727634082432a48798ea24b42ec5f1091170fcedb5a348037"
+    },
+    "placeTitle": {
+      "text": "Record file placement",
+      "source_sha256": "eb8c1c4d5d1bd329d7d388957065e6b5542e95f4579c75d24c5671e9db255de2"
+    },
+    "placementSaved": {
+      "text": "Placement recorded.",
+      "source_sha256": "b50d2611ba3ee264039dd99057e09cb8e446db424cb41021908b7bf81e58c5af"
+    },
+    "renameHint": {
+      "text": "Renames the login in place. The workstation assignment follows this person.",
+      "source_sha256": "4d779a6de8ade40a16e8b42946195b4d8a12da8eed4f3745dece06e58c7b00e9"
+    },
+    "renameLogin": {
+      "text": "Human account name (optional)",
+      "source_sha256": "8a7e09d30e8108349c7a0efcc07cd995b9fa54438309282f2748370158c41ed5"
+    },
+    "reset": {
+      "text": "Reset",
+      "source_sha256": "daee7606b339f3c339076fe2c9f372a3ff40c8ee896005d829c7481b64ca5303"
+    },
+    "resetDenied": {
+      "text": "Request denied.",
+      "source_sha256": "8b558b834d9b48b7634c6304be8fb024adc229a960ca9033454d88102fa5fcad"
+    },
+    "resetFulfilled": {
+      "text": "Password reset recorded.",
+      "source_sha256": "1c2327fc0f5f3ba78a3a55a848f904a8da7600b53654bc189f33a0bc9e613554"
+    },
+    "resetFulfilledSecret": {
+      "text": "Password reset. Give the new password to the person out of band.",
+      "source_sha256": "7df5607d82749b7d2b37eb4197ab9fd7e90c1e5c05247c61275194cbb072d8e8"
+    },
+    "resetTitle": {
+      "text": "Administrator reset requests",
+      "source_sha256": "2e120d559be606b9dad1ea16ae3dd8e7d5cf5ced6471bf82c9f4284ab16d0e51"
+    },
+    "runbook": {
+      "text": "Enrollment steps",
+      "source_sha256": "4482adfc115cb4a765059202a86cc7e7fc9460f67dfa152c0a08ef7cf936d910"
+    },
+    "saveAssign": {
+      "text": "Assign",
+      "source_sha256": "8ece895c9b32c6436d34b0384ae9f8555c8abccd31541f722f27e45e72a85bff"
+    },
+    "saveMap": {
+      "text": "Save mapping",
+      "source_sha256": "bb40e390513c848dd6138f8f5ae4b09c381a62424a4152104d8b941339edc17c"
+    },
+    "savePlacement": {
+      "text": "Record",
+      "source_sha256": "bfdd510698ef3ccbf17f2c67fc47790e1ba72894fb74fe284bbc136b47ef73e6"
+    },
+    "scopeBases": {
+      "text": "Scope basis",
+      "source_sha256": "ba19bbdd707f52732e5b7e8a34343b6afc703e4a12ff039e4ec30c8f1136cbe2"
+    },
+    "scopeHint": {
+      "text": "Comma-separated. Example: handles_cui, handles_fci",
+      "source_sha256": "d5c5375d80e1bb5717933fadac531a43acf00ae73c6589e7a38513ddaea79f96"
+    },
+    "seatBound": {
+      "text": "Workstation assigned.",
+      "source_sha256": "6de67e33920314ec2450c1417f340529efda357a61c79c8d4cedb0b75dd591e8"
+    },
+    "seatPick": {
+      "text": "Workstation",
+      "source_sha256": "b9d0a58e17a62bec80b495a416d0e9fdcb25086e37aa4e3f31ceb0dedf6fdb31"
+    },
+    "seatsHint": {
+      "text": "Each workstation shows the assigned sequential user. After mapping, the human name is shown. The durable id is the person record.",
+      "source_sha256": "7922122617d573584c98021e0ac8bee9f325e4cf70d42c22529aca9c0b55e5f1"
+    },
+    "seatsTitle": {
+      "text": "Workstations",
+      "source_sha256": "a09fac8bb9cca6b0f347b35db9961df5f592036236072a9e2a6eac665780ef1b"
+    },
+    "title": {
+      "text": "Enclave Regular Users",
+      "source_sha256": "2d62d6352e44483e0ad25bb161ab4e1ea1f796ae3cb5695632b5fe8d63f218f6"
+    },
+    "unassigned": {
+      "text": "Unassigned",
+      "source_sha256": "14d33bd014e6b4e7c3590a8a12e1ec4951d777593d6d6aef9ebe5faac9c8dac0"
     }
   }
 }

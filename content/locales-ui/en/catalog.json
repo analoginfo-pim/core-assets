@@ -4,12 +4,12 @@
     "source_sha256": "31d80b8f41778b7abb0e92b2c2fb0cccb93a78625f60fd78c8fb94e102dfc9b6"
   },
   "loadingLabel": {
-    "text": "Control Catalog",
-    "source_sha256": "31d80b8f41778b7abb0e92b2c2fb0cccb93a78625f60fd78c8fb94e102dfc9b6"
+    "text": "control catalog",
+    "source_sha256": "f86e8dbbf201654085a5678aa2273d14ac0c0a6a5050a330bfdfb1090c78e728"
   },
   "permissionRequired": {
-    "text": "Permission to view the catalog is required.",
-    "source_sha256": "50d3bf9d5643c2596a275a0485008b5169de174ffe3e23cb6a256f71d667a228"
+    "text": "Report catalog view permission is required to open the control catalog.",
+    "source_sha256": "f47b93524c40513c7235387cde40046936cee54d0cc8cf81637e60c3ac035e8a"
   },
   "activeStandard": {
     "text": "Active standard",
@@ -40,12 +40,12 @@
     "source_sha256": "a52ace420f2175d08b1577a1bea5445e36801229c074ef9ed6c55a73401fd9c2"
   },
   "switchFailed": {
-    "text": "Active standard could not be switched.",
-    "source_sha256": "405c76458da98d3c8efdf3258b389c893c3bb8311550687eb1e1bf3a0aaee292"
+    "text": "Failed to switch active standard.",
+    "source_sha256": "aad9464c7d0049d193978c2a806a9a29cd67954f757ec46c6dbc21be16443354"
   },
   "loadFailed": {
-    "text": "Control catalog could not be loaded.",
-    "source_sha256": "fed2a7b6dbf0f8fca35e2f6dfd42ec87cad3cda2c7c5f4c2ad1e2f09b6ff18ff"
+    "text": "Failed to load the control catalog.",
+    "source_sha256": "1ad813e14a144ba2e71889e0d968db0d1d30f1c0738ee9741709d3b933dc0a46"
   },
   "crosswalkSource": {
     "text": "Crosswalk source: {{note}}",
@@ -109,8 +109,8 @@
       "source_sha256": "52bfe584a5fc450539e2aa651b990fa2415060492a243816ab2994292089c6fd"
     },
     "crosswalk": {
-      "text": "Crosswalk 800-53",
-      "source_sha256": "24829231717336dd1e188d9cefb5c3d31b7b2144eba1de9803c8c095f05b49af"
+      "text": "800-53 Crosswalk",
+      "source_sha256": "38f4c9a0e6cced03ab37d44a66d4c3e4e170b60a50c22e4145d42728ae34b816"
     },
     "aicCapability": {
       "text": "AIC capability statement",
@@ -123,16 +123,16 @@
   },
   "mappings": {
     "honestyDefault": {
-      "text": "Enter requirement references from your licensed specification. AIC stores only your mapping — not specification text.",
-      "source_sha256": "56c8cec4d6a612c8d62ef8df4867126db0d034ab4b11c0a41772db4f6618d594"
+      "text": "Enter requirement references from your licensed specification. AIC stores your mapping only — not specification text.",
+      "source_sha256": "72c466b0e7c57fc09f82f6163b667508f17f56ee3c1816028e060984c19a9ad0"
     },
     "loadFailed": {
-      "text": "Customer mappings could not be loaded.",
-      "source_sha256": "bf49a03cd5b99fa5a1381fb43201370511c6e21ce9d1adf3d310eff6713f26a5"
+      "text": "Failed to load customer mappings.",
+      "source_sha256": "01282e4422c61f5a2edf66c69729f74c2aa35785c9fb0775223dac1429d267a5"
     },
     "saveFailed": {
-      "text": "Mapping could not be saved.",
-      "source_sha256": "5ca810c2040b52ff8c57fc2a115aef52117b671a4efa1a30d7c8134f3d5129a6"
+      "text": "Failed to save mapping.",
+      "source_sha256": "1a389f8ad16f63872b0199980b0308f4d2012a72e3c5356ffcc2e84a18235f30"
     },
     "yourRequirementRef": {
       "text": "Your requirement reference",
@@ -143,8 +143,8 @@
       "source_sha256": "f278778d0d4d80a467b25b473aad2ab36da542e132ac6b5ca226dbdea200011f"
     },
     "controlsOptional": {
-      "text": "800-53 (optional)",
-      "source_sha256": "fc65501385b9ac463f2ca0f536fa90c7dfefd00acd139ee6e1da2f8e653964cb"
+      "text": "800-53 controls (optional)",
+      "source_sha256": "e313f88f4fe544278ec930845b2a137c8bf6b87831fdbab7b41934c1342de41e"
     },
     "notesOptional": {
       "text": "Notes (optional)",
@@ -155,21 +155,21 @@
       "source_sha256": "160cc87a108cd97fe8aaaeb8a5516693af239dfe8ec9d615a411449f9b276e02"
     },
     "deleteAria": {
-      "text": "Delete assignment {{ref}}",
-      "source_sha256": "6d0d9045afa1f5646483c99744d9d28bd7f9ea6ad0f086b1027c71498c8f99b7"
+      "text": "Delete mapping {{ref}}",
+      "source_sha256": "83aa3f9e686af59d2fe52bca4a57e6924389ebcb790c02300a127bdeecad3a19"
     },
     "columns": {
       "yourRequirementRef": {
-        "text": "Your reference",
-        "source_sha256": "d37f59746fc94955bdf0603f5621edf6f0ba077872a717874cfc8fa2b79b9ea7"
+        "text": "Your requirement reference",
+        "source_sha256": "cd13ddb5b37790d75832ae9f3488e1a5810b16f0a4d6e7d1715786956f033763"
       },
       "aicCapability": {
         "text": "AIC capability",
         "source_sha256": "4cfe019e95d6417e68c85e02a44f273ddc29d68a4c6f19b5edbdc8a2b434ec3d"
       },
       "controlsOptional": {
-        "text": "800-53 (opt.)",
-        "source_sha256": "4f9b003210422ffe2cac11db8cc009f1a2bd41866db4fe1e8686868b8725e707"
+        "text": "800-53 (optional)",
+        "source_sha256": "fc65501385b9ac463f2ca0f536fa90c7dfefd00acd139ee6e1da2f8e653964cb"
       },
       "notes": {
         "text": "Notes",

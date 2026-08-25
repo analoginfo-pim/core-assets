@@ -64,32 +64,32 @@
     "source_sha256": "946f1570503ea779a81b7b96df07bf94f027ca09e663f1349e59624e60e155a1"
   },
   "runDiscovery": {
-    "text": "Run discovery",
-    "source_sha256": "23e7f7cbb14fb0f37d996c1634562c95f0f243cadebe1a40a3ed8c97be530ad2"
+    "text": "Run Discovery",
+    "source_sha256": "5a70981da7b81125d43c3b803d698ae8851e79536f410c45ad3e2051aaf4b9c8"
   },
   "running": {
     "text": "Running…",
     "source_sha256": "46c541363b0253b1b7d736ca2ff004b6c8eb816f253c16bf2f154472152fb66d"
   },
   "statusHelpLive": {
-    "text": "Live means this target recently answered a discovery probe. This is not an assessment verdict.",
-    "source_sha256": "1e5705a04b271357ea4394b6f4a6578e3947d78d1da569e7ed0697d899596094"
+    "text": "Live means this target recently answered a discovery probe. Not a compliance verdict.",
+    "source_sha256": "580fccfefc3683db8388214f44ae436b433d3e4c9194c4e6350c09862e1f9259"
   },
   "statusHelpBlocked": {
-    "text": "BLOCKED means the last probe could not reach this target. Check reachability, then run discovery again.",
-    "source_sha256": "0f468c61bd9f57749f91d567ba7eb8fd24abc4b04fa465ea7cf7c0882df581cf"
+    "text": "BLOCKED means the last probe could not reach this target. Fix reachability, then run Discover again.",
+    "source_sha256": "0f0c6ec39fbc46858ffd1d5d1d1f7ec9a160689a256f16c9b2f2f64f9b1d12d9"
   },
   "statusHelpPartial": {
-    "text": "Partial means the target is listed but is not Live yet. Run discovery to update status.",
-    "source_sha256": "d92ef9372324ec8049396c5178d5cb057d11b6137f761e43517299c65f27645a"
+    "text": "Partial means the target is listed but has not fully proved Live yet. Run Discover to update status.",
+    "source_sha256": "2cd1db1ca8e3ac4a796509f55a3b70b62c6aaecbade38b6b4bd0579ffd474914"
   },
   "inventoryRows": {
     "text": "Inventory rows: {{count}}",
     "source_sha256": "053d87c1af6e0319a08ef69da5fd22bc75f0b3cfe6a244949932f778eeb44401"
   },
   "saveSchedule": {
-    "text": "Save schedule",
-    "source_sha256": "387f355f83e2679c18a587ad4a913919e525160286023f5b0f05c6ef3840d807"
+    "text": "Save Schedule",
+    "source_sha256": "ce5706dd94d379afcc642a0b13cf3942640cac81d656390e7bfc0e13e25e9fd8"
   },
   "checkConnectivity": {
     "text": "Check connectivity",
@@ -116,8 +116,8 @@
     "source_sha256": "b205bb47f81a30968789eac28cefb848c4b849245d4d12f9311557c5f56ce770"
   },
   "tryDefaults": {
-    "text": "Try default credentials",
-    "source_sha256": "11d0e658c685f8bff562b1bdee99b7c1bd416adf133e2ba277b19654688208e0"
+    "text": "Try defaults",
+    "source_sha256": "a113d3ba70c62684ae3b7b029c12b55619a48be966ba76d8d73740252d08aed5"
   },
   "statusPartial": {
     "text": "Partial",
@@ -148,8 +148,8 @@
     "source_sha256": "b6a030ffc00ac3c9ce3adc8c5101d8f51f5dddeae4b38191ae4655f49ad8ae50"
   },
   "scanNetworks": {
-    "text": "Scan networks (CIDR)",
-    "source_sha256": "9080238f38bde8077ec49d71acda404627fa08475848f928d6b1b168b3bc045e"
+    "text": "Scan Networks",
+    "source_sha256": "6abbe217d4d278653d6a5a8a070451a756a61fa6dfcba0a7052a56fe1725ebf6"
   },
   "scheduleEnabled": {
     "text": "Schedule enabled",
@@ -180,8 +180,8 @@
     "source_sha256": "eea1759c662eac78dc98346e5b745627bd6cb9c616853b12c0990c16677ae7e4"
   },
   "checking": {
-    "text": "Checking…",
-    "source_sha256": "ec963ffc911b840134fc738b41a8bb0493489c402a4a761efd36c16dea7d984b"
+    "text": "Checking",
+    "source_sha256": "0dfe1d63c9d868967e5de8777847eeb8e53b08533f1736ddf596d37e9df1737c"
   },
   "checkConnectivityEnablesConnect": {
     "text": "Check connectivity (enables Connect)",
@@ -224,16 +224,16 @@
     "source_sha256": "774a027ecc6479ffe9ca2bb9f844f89e4bd98a65026a6f9249bcc85cc99734f2"
   },
   "discoveryJobsLive": {
-    "text": "Discovery jobs (Live)",
-    "source_sha256": "590e5fa9296bcdb98515687c8b79da5b9ac9428dd82c0c97963e447f60974418"
+    "text": "Discovery Jobs (Live)",
+    "source_sha256": "e007e44f67b69855b0b28a04ded17e6491feb4a94d218715b0d8e210a3f8c7de"
   },
   "discoveryJobsIntro": {
-    "text": "Enter networks to scan, then run discovery. Results update inventory status. An optional schedule repeats the scan.",
-    "source_sha256": "241ffca00cca9389b1221316ae088d71e489ae2f9f11cf4fddbbff63510ba831"
+    "text": "Enter the networks to scan, then run discovery. Results update inventory status. Optional schedules repeat the scan on an interval.",
+    "source_sha256": "28a2686eb116432568bb14e5feea1085b3f51ed298878dda6e3228c28c540c18"
   },
   "scanNetworksHelper": {
-    "text": "One IPv4 network per line in CIDR form (for example 192.168.10.0/24). This run uses the first network. Leave empty for the configured default.",
-    "source_sha256": "9168bacc150026356779e5098684717649d1e8df2bc01fae1b89e8168f929362"
+    "text": "One IPv4 network per line in CIDR form (for example 192.168.10.0/24). This run uses the first network. Leave blank to use the configured default.",
+    "source_sha256": "23a47c7edf23474a286b471d2f5c5a9e14262d1edd08f33eb1e2799902a5d7f6"
   },
   "startDiscoveryAria": {
     "text": "Start OT discovery job",
@@ -244,16 +244,16 @@
     "source_sha256": "1807f8d18ae899adb66386339c95100e4e87bc65e278be33473ef1046b4e2b4e"
   },
   "intervalAria": {
-    "text": "OT discovery interval in minutes",
-    "source_sha256": "f871eca3ba4ba3d65c263144cc1662ed0371b52d66b1dbbd119fb9ff87698942"
+    "text": "OT discovery schedule interval minutes",
+    "source_sha256": "d69d62692b7a32699f6df1faaf2c65ce8a50707c95212af24aa9dcb455a19c0e"
   },
   "scanNetworksAria": {
     "text": "OT discovery scan networks",
     "source_sha256": "5ffa298a64699bd81c240f5ae66d0e7d8c594f36f32f4ecc5191a52ed58abcf2"
   },
   "sharedNetworkScan": {
-    "text": "Shared network scan",
-    "source_sha256": "c59fd1d82db9ed7ea487bb38bea0fbc932efa29b46e9da57b9176f74888340ae"
+    "text": "Shared Network Scan",
+    "source_sha256": "3cb2ae11afcb241713f79ef64962a5d7b1c8e3cd4f5c318beb7e1a4576211433"
   },
   "tryDefaultsAria": {
     "text": "Try published default credentials on {{ip}}",
@@ -408,12 +408,12 @@
     "source_sha256": "b764cdc0eab7137467211272fa539f1260d1bf2e71bcf6ff3bdc960f5c16aa14"
   },
   "wizardTitle": {
-    "text": "Startup wizard",
-    "source_sha256": "8f6f7902dad68c15069e69c37d098560bdbb138d9a7a7b6f0400200bafab2538"
+    "text": "Startup Wizard",
+    "source_sha256": "f0324c059c45638ca445decb1d6ff29699ae874adc031002ea85efde2f3f0398"
   },
   "wizardIntro": {
-    "text": "Set up your OT environment: find targets, review them, and enroll them in inventory. Status values are delivery evidence (Live, Partial, or BLOCKED) — not an assessment verdict.",
-    "source_sha256": "52432ec2223583b33927e7a0e5d0624795fc43467647189e343bf6f1e38bda5e"
+    "text": "Set up your OT environment: discover targets, review them, and enroll them into managed inventory. Status values are delivery evidence (Live, Partial, or BLOCKED) — not a compliance verdict.",
+    "source_sha256": "899b9c45f65a58c154139386e9ef1fb05b29cc81bfd01e5ea0e64b0fe3f6eef6"
   },
   "wizardStepWelcome": {
     "text": "Welcome",

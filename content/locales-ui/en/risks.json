@@ -8,16 +8,16 @@
     "source_sha256": "1ce6332ee4dc6c3234fd6fcdf603bea5e195372a00cb52a300d1aa405dd9f51e"
   },
   "needPermission": {
-    "text": "You need permission to view the Risk Register.",
-    "source_sha256": "a582ce78b9a6e1306d4af6c03ff6339b521c30b9ff407eb66803d8338e6ff832"
+    "text": "You need permission to view the risk register.",
+    "source_sha256": "222f96e5bab452802c0257c5306035f4f50bb6ac220eabb89ad4d0bfcf0c088c"
   },
   "loadFailed": {
-    "text": "This risk could not be loaded.",
-    "source_sha256": "de8962c97b1107b59ed2e138be903115115b63264abd1e3b58614c4b76dff868"
+    "text": "Could not load this risk.",
+    "source_sha256": "f1bcfecf92f82767d04d59b7c589933cfd0f0ef439b547b8a7599320c5e7b1c4"
   },
   "loadingLabel": {
-    "text": "Risk Register",
-    "source_sha256": "1ce6332ee4dc6c3234fd6fcdf603bea5e195372a00cb52a300d1aa405dd9f51e"
+    "text": "risk register",
+    "source_sha256": "71eb8fcd95c623b9e712d9c7624178cbebb7352b317ac5d9401e693c5d25901f"
   },
   "honesty": {
     "text": "The register records risk decisions: what was identified, how it is treated, who accepted it, and when acceptance ends. It does not say that a control has passed.",
@@ -28,12 +28,12 @@
     "source_sha256": "6d7cf5ce3cbd16c8d61d9a948fd87d5b15ffdb948a4ddd95d3554ca88beed178"
   },
   "loadRegisterFailed": {
-    "text": "The Risk Register could not be loaded. Check view permission and register storage.",
-    "source_sha256": "ba6f6c84358290be524df44625430a2cd66ba6ce32958f9144136b69489dab0e"
+    "text": "Could not load the risk register. Confirm you have risk view permission and that the register storage is available.",
+    "source_sha256": "15d43bb1decd96b00a163ac2784eec8e0746f5f57d637508f5c9a3e293805d38"
   },
   "newRisk": {
-    "text": "New risk",
-    "source_sha256": "417bdcf8a3d25d99dd18b506b1f4c1ee0c8a2c9c42d8575bafedc8aa3d23758f"
+    "text": "New Risk",
+    "source_sha256": "4e2a98cbdf85d2ac4271a9aa04fc109d185471f4e80328518f3e41fcf7454902"
   },
   "recorded": {
     "text": "Recorded: {{count}}",
@@ -88,24 +88,24 @@
     "source_sha256": "222b823b4b06fbaee8182e65844c15a278fe21f952490451c025e85fed20945f"
   },
   "reviewsOverdueOnly": {
-    "text": "Overdue reviews only",
-    "source_sha256": "87cb94fcd87aff49a87ae4deb6957a81513bd8ff3f16da9f6ca5d9e0976842d4"
+    "text": "Reviews overdue only",
+    "source_sha256": "e5c50cadefc408c1d1b3947a2c5d406752c8b540711c0357554f9547b2daeed1"
   },
   "expiredAcceptancesOnly": {
     "text": "Expired acceptances only",
     "source_sha256": "ebccb46a3b17d458d29ab0c377a1cb9f196ef73148764610dc7ea62a4eabd5d8"
   },
   "loadingRegister": {
-    "text": "Loading register…",
-    "source_sha256": "4579bd94e1293bcef34855b0eaa5fada053b564d99bd35664d4c47d07b9ce30f"
+    "text": "Loading the register…",
+    "source_sha256": "28b634bcd490318d0f9068849a9b6da95e82dcab7713f26f1983586348a9dce9"
   },
   "showingCount": {
-    "text": "{{shown}} of {{total}} recorded risks shown.",
-    "source_sha256": "700146ccf70bdfa70f8638728bdaba3fbdc81cafcd5fbaed08f45c024ffb8d59"
+    "text": "Showing {{shown}} of {{total}} recorded risks.",
+    "source_sha256": "025158186817dc5c2d41779ecd73585e760ae69a99cf6c6db2ca40afbbe28931"
   },
   "emptyRegister": {
-    "text": "No risks fit these filters. An empty register means that nothing was recorded here — not that there is no exposure.",
-    "source_sha256": "13fac553039bf4062453a66736d37a77e36788132bf04446010237e6f94d80c3"
+    "text": "No risks match these filters. An empty register means nothing has been recorded here — it does not mean there is no exposure.",
+    "source_sha256": "3712e4e44348c0af51f465820ddcf1d72d4af85f5eb83b405de53d651f7fd963"
   },
   "colRisk": {
     "text": "Risk",
@@ -140,48 +140,48 @@
     "source_sha256": "b86192a3071dbb7c19f236c0d3d1b9f5ada27301857e9e8b0c944e04d218ba67"
   },
   "severityAria": {
-    "text": "Severity {{severity}}, from likelihood {{likelihood}} and impact {{impact}}",
-    "source_sha256": "4f1f6a2d09a72aec1cb6258f770cd81ca9d29a0d61a9b24bb1c93e139b710c48"
+    "text": "Severity {{severity}}, ranked from likelihood {{likelihood}} and impact {{impact}}",
+    "source_sha256": "0f726e32d598c7d13e528c3982529cbb46d4507ff7aa80e49f64be7e7dfc11eb"
   },
   "severityColHelp": {
-    "text": "From the stored likelihood and impact under the assessment matrix in effect now. A row whose reading changed since capture says so under the chip.",
-    "source_sha256": "5f16f82fd18cc61ac1cb18e858df983729254a6fce712589e791986feef3a4bc"
+    "text": "Ranked from the stored likelihood and impact under the scoring matrix in force now. A row whose reading has moved since the pair was recorded says so beneath the chip.",
+    "source_sha256": "510d7e36a3a7712a26c3a6bf5b52f45652d5aad8f0d6162b1c963b8afb40a19a"
   },
   "statusColHelp": {
-    "text": "What was recently decided about this risk. Status values ​​are recorded decisions, not an evaluation result.",
-    "source_sha256": "d9fbc7430001dc38492f31c3b9413f2a2da795d7d817408341f42cc29877e965"
+    "text": "What was last decided about this risk. Statuses are decisions people recorded, not an assessment result.",
+    "source_sha256": "acb02fd0bc1136bc77ea5274bf505213d5ca6f91563ce4bebac490bf70e551d1"
   },
   "reviewColHelp": {
-    "text": "When should this risk be examined next? Overdue is calculated when reading this list; nothing announces it.",
-    "source_sha256": "f01b9b6b031250ffd5a2282486dc6867f332736b872581be4b9d0f822ddc3d59"
+    "text": "When this risk is next due to be looked at. Overdue is computed when this list is read; nothing announces it.",
+    "source_sha256": "b7ffdd0b03074a2c3f380caf7498ed32921a9628ce91a0d9e09d7d68169177ca"
   },
   "acceptanceColHelp": {
-    "text": "Whether someone has accepted this risk and until when. An expired acceptance has expired and no one has been notified.",
-    "source_sha256": "61ef7eab6b7bec77a16590dce6d5e04927d405a278eb8122c3adffecd1f95e4c"
+    "text": "Whether somebody accepted this risk and until when. An expired acceptance has lapsed and nobody was told.",
+    "source_sha256": "8b0171ca00fa13fbceaad5f75cb78cc120e19ba81ea98d3a510daa3b5fea98a3"
   },
   "toolbarTitle": {
     "text": "Risk Register",
     "source_sha256": "1ce6332ee4dc6c3234fd6fcdf603bea5e195372a00cb52a300d1aa405dd9f51e"
   },
   "toolbarSubtitle": {
-    "text": "Captured risk decisions — no statement that control existed",
-    "source_sha256": "d05bf223147845f6ecede4e3d70d25052dd825003c18290429cd506ce4e825d8"
+    "text": "Recorded risk decisions — not a statement that any control passed",
+    "source_sha256": "c7492f4cba78e8003397ef8ddde88025a04fbd105880e6c3671fb0fb612096a8"
   },
   "createTitle": {
-    "text": "Capture a risk",
-    "source_sha256": "c362bb511892bcf41ea54cac3837dbbe798e5556252581c937da47e8e90a52ca"
+    "text": "Record a Risk",
+    "source_sha256": "04bf5762532b0de5fe49e4cd2803a65b021b94c930c30e4b3a27fc725bfb2267"
   },
   "createScoringNote": {
-    "text": "The severity is calculated from the selected probability and impact and is never saved. The version of the assessment matrix at the time of recording is saved so that the risk can later be read as it was decided.",
-    "source_sha256": "7dd559e1208fdfc4e9ae441efe8a6933fdbfad1ea7e1c391a896c5e401424280"
+    "text": "Severity is ranked from the likelihood and impact you choose and is never stored. What is stored is the version of the scoring matrix in force when you record the pair, so if the matrix is ever retuned this risk can still be read as it was decided.",
+    "source_sha256": "5fd0b67f0edef07f0a7f3d97f68164a246d5bbd6810d7006b6574da55614d9fe"
   },
   "createRef": {
-    "text": "Risk reference",
-    "source_sha256": "f37e90aca7b1494bf94816378b9cbce889691c377fe3f1f49b78f9f829772314"
+    "text": "Risk Reference",
+    "source_sha256": "1bceb9708602b78f641452f0b12e834bd07965cbcf62be6a8b2bce0a14722dc3"
   },
   "createRefHelp": {
-    "text": "Your identifier for this risk, clearly in the register.",
-    "source_sha256": "e441a6f1801b5af9329a37693a12839319dc0109fec609e7ceacb66012762bf7"
+    "text": "Your identifier for this risk, unique in the register.",
+    "source_sha256": "b9377dcabeced713fd809232ce4dc004abf7e431c20281e5330fd778a11958c6"
   },
   "createTitleField": {
     "text": "Title",
@@ -200,8 +200,8 @@
     "source_sha256": "4b1b8aa3608a26da451ae0630d75b60ab1bc2dd229c41a80838fc7993e835c46"
   },
   "createOwnerHelp": {
-    "text": "The person responsible for this risk.",
-    "source_sha256": "d5e27c7797192b80b800f821ac3cac90b92a5dde8af95fd030f2310c47db8af9"
+    "text": "The person accountable for carrying this risk.",
+    "source_sha256": "16d99e769adc70405e759e27cfd4c25045c22f371b478a08ebf3f3233d2fe1e2"
   },
   "createLikelihood": {
     "text": "Likelihood",
@@ -212,12 +212,12 @@
     "source_sha256": "d1f23f0d13613e27a88662a70ea79ccf4554ff8ee1d7d66b08c1c5d7cd60d718"
   },
   "createReviewDue": {
-    "text": "Next review due",
-    "source_sha256": "a2639a95145b32215db5272d41e1e81edabdd5523e9f0ac2975f1823f4a4dc38"
+    "text": "Next Review Due",
+    "source_sha256": "a6907cd076ac178942b06ef5b4f1f70ba3dd257a0a3860520489cc6ae57578b3"
   },
   "createReviewDueHelp": {
-    "text": "Optional. A risk without an audit date is never reported as overdue.",
-    "source_sha256": "dc3a7a22c56ca90462753e6a6042dbb2d62a19fa7a450562d09e1707b4084df8"
+    "text": "Optional. A risk with no review date is never reported overdue.",
+    "source_sha256": "ae42f8ca015275ce7f78b02d5b0a52ccd7a3e1644e655b4445b5e67b77f94aa6"
   },
   "createCancel": {
     "text": "Cancel",
@@ -232,8 +232,8 @@
     "source_sha256": "eb6d9e024e62902bf31463a989bfcce1a38de98b343f945f0b654e18d2ea67a9"
   },
   "toastRecordFailed": {
-    "text": "This risk could not be recorded",
-    "source_sha256": "7172a624a24746f8e2c1a0872146af21e73dbbf5ecc6e1628c632a36ccd45578"
+    "text": "Could not record this risk",
+    "source_sha256": "3134709fb74dbf146994b67a853b5c43c08c9801c7fd9d988de39523b1b17746"
   },
   "review_none": {
     "text": "No review scheduled",

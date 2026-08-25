@@ -49,7 +49,7 @@
       "source_sha256": "479e1c6f124fb2f7eabcce532843eee7536448c0ab54d0c5120213f5cabfc5e4"
     },
     "confirmDisconnectTitle": {
-      "text": "Disconnect this session?",
+      "text": "Disconnect This Session?",
       "source_sha256": "af978fd6d8662292581c27d9a759cbdb9f0cb421180080c27f3f49daf9475b6e"
     },
     "confirmLeaveOtTitle": {
@@ -223,16 +223,16 @@
       "source_sha256": "f102986b39effb31080ae442f61febe7ed58df1515c0711ccfadfe0311ccec81"
     },
     "fullScreen": {
-      "text": "Full screen",
-      "source_sha256": "674fe2acd0d5f47b46180dd66e26e349cd9c9db215046f5e86ea2f5728d18117"
+      "text": "Enter full screen",
+      "source_sha256": "5a74219758ed8139a07e32719e609162d4cd8e3404aa7a342db8f74897f03aec"
     },
     "exitFullScreen": {
       "text": "Exit full screen",
       "source_sha256": "897e0cf78b808eddc424bd97c46c1730f6dd19c8c11e7bd6ed6b6e559dc41981"
     },
     "statusEnded": {
-      "text": "ended",
-      "source_sha256": "e87ba7a0b779d8b797f86d19604504496f23b4d1e31ed4721d9dc8634172b723"
+      "text": "Ended",
+      "source_sha256": "7cdc804e6996997d599232fbf8ce066a4f6c0696e7b586fc7b3ee499f35d4559"
     },
     "fileTransferHint": {
       "text": "Send copies the file to the remote computer. SSH uses SFTP into aic-transfer in the account home. Windows Remote Desktop uses the user profile aic-transfer folder. Duplicate names are renamed by default (report-1.pdf). Operating-system and sensitive files cannot be overwritten.",
@@ -361,7 +361,7 @@
   },
   "landingPage": {
     "clearTooltip": {
-      "text": "{{label}} is your default page after sign-in. Click to use the Dashboard instead.",
+      "text": "{{label}} is your default page after sign-in. Click to use Dashboard instead.",
       "source_sha256": "7e46fab7a6926b94f5a470f50ec69b4a5d63a70bcc33d8e96009de48946a2356"
     },
     "setTooltip": {
@@ -375,11 +375,11 @@
       "source_sha256": "ea43f5147b63d762baa0554a0a5bcfd71c6e176f55529011c713a5f0662e0118"
     },
     "dismissLoginNotice": {
-      "text": "Dismiss sign-in notice",
+      "text": "Dismiss login notice",
       "source_sha256": "6b3535e709396bcb36a403d2a03a4b2feb9e1799fb726f16d047cbb57c028b94"
     },
     "loginNotice": {
-      "text": "Sign-in notice",
+      "text": "Login notice",
       "source_sha256": "c84b1951815867f066c170e63b4ecab9b76ef4737ca2d356a523fed76c987c6b"
     },
     "sessionNotice": {
@@ -393,7 +393,7 @@
       "source_sha256": "788011833a5a0f22db90c91e8eb7bd8e9f5cd423354ff5ef8c338e7895f44ba9"
     },
     "clearAll": {
-      "text": "Clear all",
+      "text": "Clear All",
       "source_sha256": "ddceb7adfdb8816e4747bc48a2221702e830340e5596a701dc0993766eba5e60"
     },
     "empty": {
@@ -441,8 +441,8 @@
       "source_sha256": "2080b094bffdeaaa98c2e81ca3225dc161ac0e557956a29eaaefefd8f0aef9ae"
     },
     "unavailableDetailed": {
-      "text": "Access to {{resource}} could not be verified. The server did not respond successfully. Refresh the page or try again.",
-      "source_sha256": "111fc8236203cb86bdfec327df1a26dd1d3160d0ac304af18e89ba28c3d4731f"
+      "text": "The server could not be reached or returned an error while loading {{resource}}.",
+      "source_sha256": "0534eac259c0ac80dc35ae045f50752aceaaac3f2357b8a5a62db69d9d82d220"
     },
     "denied": {
       "text": "You do not have permission to view {{resource}}. Contact an administrator if you need access.",
@@ -487,15 +487,15 @@
       },
       "agent_event_forwarding": {
         "text": "Default event-log and syslog keys in minted agent settings.",
-        "source_sha256": "709e739eb285c512d1c4765c1027840cbd2f9976b8bc1344e1e7bab3fc521d1b"
+        "source_sha256": "e5e83c7e4e52bd5e01c729efca850b169c1e3aa4fcd1ee910df590a35918a6ad"
       },
       "agent_management": {
         "text": "Connected-agent overview, allowlisted settings, Push diagnostics, and capability map.",
-        "source_sha256": "0009255debe5f5bee316682edb06c9337cfd997b13e349f525ae15847c57b023"
+        "source_sha256": "e83240305b70c9ddf6d0d47c1156728e7ae3bb4cf0869cc14ec25641f742aa23"
       },
       "agent_overview": {
         "text": "Settings files, provisioning, and the defaults endpoints receive.",
-        "source_sha256": "ff3b76a911c74e44c3b87b66aa0d915705b580924e4fb278be158568f64cf73a"
+        "source_sha256": "2ee00140318aef2bf647986447acf1d71de9c98c7e8b71e513775867c6d99b9e"
       },
       "app_manifest": {
         "text": "Read-only view of app-config keys the daemon reads at runtime.",
@@ -506,40 +506,40 @@
         "source_sha256": "570b022f4e09bf2cc4e95738f8966575f0a5a16bfe26681c43a65209bd4c4d70"
       },
       "approvals": {
-        "text": "Approve or deny access requests assigned to you.",
-        "source_sha256": ""
+        "text": "Approve or deny pending access requests assigned to you.",
+        "source_sha256": "0a51d96fc956b6d6ed1dea7947f1b83b365adf0aca05175a4a0e06a9fe1ab653"
       },
       "approver_profile": {
         "text": "Contact channels used when you are asked to approve access.",
-        "source_sha256": "0ad3b19135194e3cdf30c52d9246d5644bbbac2501182a8b27630b3f8396de77"
+        "source_sha256": "67441e8b53a97ff5f820f1d4efe3c483281527da611696a243d3b964782695c1"
       },
       "audit_log": {
         "text": "Durable compliance trail stored in PostgreSQL.",
-        "source_sha256": "c8d178843e7c9e64491511fa5ad805d2dbc495e4790d1167f0a12e6a69a96614"
+        "source_sha256": "2d11bf2042cd180790c07e6d455bdd8f23f62d5cc0355edf68eaa4e1ebc8523c"
       },
       "branding_style": {
         "text": "Upload a custom logo for the sign-in page and application header.",
         "source_sha256": "346e502f09bb2a3317c22fa2905a05204b5e2d3708c50b89d9eea60ea7ff9cf7"
       },
       "localization": {
-        "text": "Switch on shipped language packs for the operator picker. Switching on a language does not certify translation quality.",
+        "text": "Enable shipped language packs for the operator picker. Enabling a language does not certify translation quality.",
         "source_sha256": "34c38b916392defbcd350353e71624aadab8b6ef6c9d63e54b18ea5ec6da2d34"
       },
       "bulk_provision": {
         "text": "Provision many endpoints from a CSV or spreadsheet upload.",
-        "source_sha256": "ecee0a12e4a7f0c098bde129b5d3cf7062fb30eb7438b75df2e666992362858c"
+        "source_sha256": "f50b2e3a7183752fb6817320c3f93f15eb7eef394146c54d16ee4e81c42abcbb"
       },
       "company_profile": {
         "text": "Organisation names and support contacts used in notices and disclosures.",
         "source_sha256": "f899521721ae6056677384bfeba01a0cb1477a34461b539d12557410a457b170"
       },
       "connect": {
-        "text": "Open OT log sessions from the asset list (not SSH, RDP or VNC).",
-        "source_sha256": "76e3e7d7749ce0ae3594d9ad6c6fc0c7ace95b6aed030a72592d6b03924166d5"
+        "text": "Open OT protocol sessions from the Asset list (not SSH, RDP, or VNC).",
+        "source_sha256": "403fe40ac478526d373ce6908f144f53165d3d93772f20c7429b5df6aff8c791"
       },
       "connection_points": {
-        "text": "Define SSH and RDP targets, start brokered sessions, and manage credentials.",
-        "source_sha256": ""
+        "text": "Define SSH and RDP targets, launch proxied sessions, and manage credentials.",
+        "source_sha256": "dd347e3f6e315957614e6c449247c0d3dc6827352d7110a8c78c562219d81497"
       },
       "create_settings_file": {
         "text": "Issue agent settings JSON with an enrolment token.",
@@ -547,35 +547,35 @@
       },
       "credentials": {
         "text": "Rotate passwords on demand, request break-glass reveal, and open per-target schedules.",
-        "source_sha256": "d22ea987512a982a416785716218a08231ea3aa88f6fb9afb03c97ea0ad70c52"
+        "source_sha256": "2acf4e700163584d85e51066320b8eb4bfbffb031cffc3efc74152ca789e2eb3"
       },
       "demo_data": {
         "text": "Development utilities to seed or reset sample data.",
-        "source_sha256": "c5fd61dcebf7f4af81b41e9934c75ead83b4adb87906ae579824cf32545dbc53"
+        "source_sha256": "82f18737ae8110fe59ef90f56f673b06bf9bd3788919c3461e67fa40e7212aaf"
       },
       "deploy_recording_agent": {
-        "text": "Generate enrollment token and follow installation steps for recording.",
-        "source_sha256": "b2042e7535eade50c6c0a0593e53464eb2e6d628a0eaae3673cb1010ed5cd577"
+        "text": "Mint an enrolment token and follow install steps for recording on a target.",
+        "source_sha256": "a2667bb3db57fb6e8ef543f586e0e27a4620a1d46f861adc74a3c63e1513be9c"
       },
       "direct_elevation": {
-        "text": "Limited-time privileged memberships on connected endpoints.",
-        "source_sha256": "abb4e95fb218dbed44164e35b2206dfa7df784441b662dccc5985a9daeb79545"
+        "text": "Time-bound privileged membership activations on connected endpoints.",
+        "source_sha256": "45f4f0866c488abedc0f3287b240a698d8bb16f8e8e1495331872e6420d4e559"
       },
       "discovery_jobs": {
         "text": "Run discovery jobs, manage scan schedules, and review the Asset list.",
-        "source_sha256": "459ed2a3f0a434cc53aa597b196e05c1855aa915d8c5375a604d2dbac680f7e2"
+        "source_sha256": "44554ec552cc2b67fd945625a943d2c8a70914159261dda2cce2efb0ffcd0f62"
       },
       "elevation_mocks": {
-        "text": "Static prototypes for multi-channel elevation.",
-        "source_sha256": "10213cf4b7329fc350b9fc45bc615f23e07a15e67d4274fe4ba17c94b440a026"
+        "text": "Static prototypes for multi-channel elevation (agentserver admin).",
+        "source_sha256": "2bebc8a3c8a8f88ccc641cd6d4795b3093eb5347b58e2439eb6b1bc356175d47"
       },
       "elevation_policy": {
-        "text": "OS group offers, duration levels and channel switches for modes 1-3.",
-        "source_sha256": "8311ad861fa8e0dc70ea6f0295cdb6db254f0d77e76a040b2785f1afeb080ab9"
+        "text": "OS-group offers, duration tiers, and Modes 1–3 channel toggles.",
+        "source_sha256": "ab25d96e4f44c4ef8cdbae8ed602b647dde09b9e405ff48497fa0c09395296e9"
       },
       "email_settings": {
-        "text": "SMTP relay and sender identity for outgoing mail.",
-        "source_sha256": "92cd110e953df4e04995b04b5721bb5de1c548e1b4a33aa60257f404e5d6df82"
+        "text": "SMTP relay and sender identity for outbound mail.",
+        "source_sha256": "5da59380cb69129e14d89ae577a5d3fa2fd3621f46b3b96b9fe76a2b9002ee67"
       },
       "encryption_key_sets": {
         "text": "Server default and named keys; rotate and re-encrypt group data after key changes.",
@@ -591,87 +591,87 @@
       },
       "entitlements": {
         "text": "Who may request or launch which connection targets.",
-        "source_sha256": "441339f7259f7a6fc7ca69696c62c4ab6c03b64f07c21038eb03ae62443fd59a"
+        "source_sha256": "943d3a69d2c742f5890ab37b40dbe7eab5b4d6ae49c502900662a92cadbeaeed"
       },
       "event_sharing": {
         "text": "SIEM, ServiceNow, Jira, and generic HTTPS webhook forward plus built-in sinks.",
-        "source_sha256": "8f32feb2445a148fc74d2344abc8a2fdbe0e622feb9cfab82d7dbba52f2b1120"
+        "source_sha256": "8913dfe6ff1aa12bed9e3bc3eee74d585d39db319737b8719aa91dd17e488d72"
       },
       "fleet_agent_versions": {
         "text": "Read-only agent versions, check-in age, Push reachability, and runtime warnings from Systems List.",
-        "source_sha256": "98dfbf2a827d4d3985eca668304d1f1704a7762d6d71ded527ec064d6fdcea97"
+        "source_sha256": "0aa47529159a7db311642a79c16ea5e0651177767c1cb88d51983d71b0e20453"
       },
       "general_settings": {
         "text": "Advertised URL, default multi-tenant, drift thresholds, and admin token.",
         "source_sha256": "8b2b089765c675e8121b0f5b530508ab4e2d6d98ee5617aef00b8913af88c251"
       },
       "group_defaults": {
-        "text": "Default password policy for new system groups.",
-        "source_sha256": "55d3563615bb847b2fa0e83c2f6958f3f08406d049b575608442fd71a2ad1c5a"
+        "text": "Default password policy applied to new system groups.",
+        "source_sha256": "13cc103f9c62f940c59e371d713029da764b1d623b2a47d539ba110b577efa8f"
       },
       "hsm_connections": {
         "text": "Register PKCS#11 vendors and connection profiles.",
         "source_sha256": "e522fc85b3c509e61674ad0429ffce8df2ddc9ee8cb6323b5d490035ab9b1c4e"
       },
       "identity_defaults": {
-        "text": "Identity template and seed options for managed accounts.",
-        "source_sha256": "c443d93a8ee44757208a8c70b87cd8dd05aba1ca87718ab370f30c12c155ac16"
+        "text": "Identity-template and seeding options for managed accounts.",
+        "source_sha256": "144616e316f6b393f54a76bd3c2c45e9115f6d5b5e3c327c14c0b68a9aafc5e7"
       },
       "identity_template": {
         "text": "Edit which managed accounts are seeded on new group members.",
-        "source_sha256": "48929b454bf8e42007060fdd58292bc5cadf216aef9a6f4a94d3619963ef087f"
+        "source_sha256": "840dc45eab9350b936620345ded58273c72a472c19dc1366445ec3cb38c764f8"
       },
       "import_settings_files": {
         "text": "Validate legacy settings JSON for migration review.",
-        "source_sha256": "b4d46990b83c8c1f8aec63ae0afb6410642c515cb9c55ac44ba3d17278535b28"
+        "source_sha256": "57556bba1ab4ccf781472806e9f8124c87b6b4625bf3994a5783fe42ae2f67c4"
       },
       "incidents": {
-        "text": "Incident Detection and Response Cases — Severity, Stage, Schedule.",
-        "source_sha256": "d883a82af1cd783e0b58c80dc4c8373ce2d62682e06d64b21f2efd80f3c9885d"
+        "text": "Incident Detection & Response cases (Phase 0 Partial) — severity, stage, timeline.",
+        "source_sha256": "03b5cf793adfcca411ca0aa3f8b02596701d5ffb05eb5f127198584508b2e552"
       },
       "initial_setup_wizard": {
         "text": "Guided runbook for a new enclave: company, compliance, encryption, email.",
         "source_sha256": "0f006f002c3f489fab87efcb719e1732dd381e5b314558ea22f7461688c7e45a"
       },
       "inventory": {
-        "text": "OT targets, status, and Connect or Configure per row.",
-        "source_sha256": ""
+        "text": "Browse OT targets, status, and Connect or Configure per row.",
+        "source_sha256": "9a107c9a088465a2119422f41e7105429e3f761f188c42f8e5ddbdc56e1cf723"
       },
       "jump_fleet_load_balancing": {
         "text": "Configure external Jump hosts and aic-server-local capacity, drain/weight, Probe placement, and push.",
-        "source_sha256": "5bbe0b96d49d9b90333b623caccc0a215331084bdf3f36c70732c8cb7483caa5"
+        "source_sha256": "0968ba511a21832d4a9735a581bd56865de9f7ada48ecb0164b790cf7caee3ef"
       },
       "lab_advanced": {
         "text": "Manifest readout, MITM lab tools, and demo data utilities.",
-        "source_sha256": "47d6924571d3b83a661a307d5a85a598868291eea84872d15b1290cdd18c2b8e"
+        "source_sha256": "b8ec8b6ea4ae447b5e64a7c146d1201f36c90f01732bd557c95b182497c13ddf"
       },
       "live_events": {
         "text": "Near-real-time operational feed from agents and this server.",
-        "source_sha256": "0bf83daae121beafbebe9f088844412d8abbce1885afc384bc629a96b2a70bb4"
+        "source_sha256": "6cfe41bea28c4edca595035af4c1a0136570a531b2ba2e69095dc2ab3639a308"
       },
       "local_iam_administration": {
-        "text": "Users, groups, role capabilities, secure share decisions and workplace assets.",
-        "source_sha256": "5b89040e62b91e66e22e895becd636737c08f328d91b433668f25c768698d2ed"
+        "text": "Users, groups, role capabilities, Secure Share decisions, and workstation assets in one console.",
+        "source_sha256": "431202562bc3235d469f293107ba921895730985578a76e14b3674c661b0f4cb"
       },
       "local_user_groups": {
-        "text": "Name-based groups for permissions and access control (Groups tab).",
-        "source_sha256": "4b6dcbfd6788a8f67930ac3adefb8ccb199700ff5f20743328605b0ce2c34043"
+        "text": "Name-based groups for entitlements and access governance (Groups tab).",
+        "source_sha256": "bc7a7f78b6a39509f3e711944a2421175961954e1c7c6e8b331693db23d0e402"
       },
       "manage_issuances": {
         "text": "Rotate, revoke, and re-download issued settings packages.",
-        "source_sha256": "5458756f92328e1a08f37f1277e08093ef4f21785ac6e635a2d975d5f7fa34e2"
+        "source_sha256": "daea005b8fe47e6e5c9c80dd025d3040c06bcac7baa067f9396ccedb6226e516"
       },
       "message_snippets": {
-        "text": "Common text fragments for multiple templates.",
-        "source_sha256": "31cf9d9063f994f82ea95e2e9fc2026ea1a10a976c5c4a2b6a075cf64fe206ff"
+        "text": "Shared text fragments included in multiple templates.",
+        "source_sha256": "4ca9819621456aab13598577529d2a0967798d70baf9d12da2a5a5177daa96db"
       },
       "message_templates": {
-        "text": "Reusable notification texts for operator emails.",
-        "source_sha256": "e149c6c4e4afbfb9a44be63f9ffd5c3a5a3c0b77c536ad0c8391cf493ceb4c64"
+        "text": "Reusable notification bodies for operator-facing email.",
+        "source_sha256": "52fad2871fd7cffa3614e1b44d943ec5b7f95a82fe2c4c63e4fc2cfb20d70778"
       },
       "messaging": {
-        "text": "Email templates, SMTP and SMS provider for notifications.",
-        "source_sha256": "1de2d49b90fcdc3f949ab05b0d3f12a3dc6763a567dff5d84853c2d26b1ff74f"
+        "text": "Email templates, SMTP, and SMS provider credentials for notify.",
+        "source_sha256": "2057920db27f23e21669d00484e4f2a6bb991542d49dbd87ca0967fa7ad96492"
       },
       "mitm_dev_only": {
         "text": "Optional mitmproxy integration for development debugging.",
@@ -682,72 +682,72 @@
         "source_sha256": "a849d76dc8a867ea7ff31394849b26acba3dd50c7ef0d0a2ee77e5d9d48e8852"
       },
       "my_workstations": {
-        "text": "Seats assigned to you. Connect starts a recorded session.",
-        "source_sha256": "8647602a9f094e16d0f9625c4e3aa1bbb470515f0f1c63fa782024e6dac0a684"
+        "text": "Seats assigned to you. Connect starts a recorded session; no workstation password needed.",
+        "source_sha256": "b91b13699ea900d3fcd1f4d9e744e3961a6e63928ecc4dab7dbce470accf26df"
       },
       "operator_disclosures": {
         "text": "Standard disclosure text before sensitive operator actions.",
-        "source_sha256": "e3d1ad96fa179905d684339e186e2be83d41f1b87ffecb283eb44eb94bd9850a"
+        "source_sha256": "d5f9f7e80ba9c7a94547851054af6e5aae9d31ad877c40b21db26b312072bec0"
       },
       "password_defaults": {
         "text": "Program-level password policy at the bottom of the inheritance chain.",
-        "source_sha256": "da80b4fc8dc54e34fc18b6d7de2ede6fce5a6ab4d46e0cb56c88f08cb0e5b12c"
+        "source_sha256": "44ae1e5803c460002a29f69ee42f2d34c130c18e330690d0ae942afa5ec326cc"
       },
       "password_policy_presets": {
-        "text": "Named policy packages for standards or group dialogues.",
-        "source_sha256": "409333633cdd1e53ecb413a5e4b0fef4b41c2440a4a198a008ad22f9b74d6cf6"
+        "text": "Named policy bundles operators apply from defaults or group dialogs.",
+        "source_sha256": "7857d28e81de0c4d258857e12e44813f356b213b489ae1f5cfd75317e39cbe29"
       },
       "privileged_user_management": {
         "text": "WDAC / AppLocker pack assignment, effective hash monitoring, and exception approvals.",
-        "source_sha256": "4d80391ddec81cb5d9aa7cc02c2d61943da3a9e3cc737dd21c615eb102445ed4"
+        "source_sha256": "d736d991c0fc72232cca0c81bbaf19c984ea15229a67089db660283a77f4b433"
       },
       "propagation_templates": {
         "text": "Propagation script catalogue, connected push, and air-gap export.",
         "source_sha256": "016d3f143877e192f32db0d16bd13196a29e8299ce06710c2a07ec69952ed014"
       },
       "proxied_access": {
-        "text": "Live and scheduled status for session delivery and privileged command controls.",
-        "source_sha256": "e59bef479e5ed006f42b71e4a6a38bd8482f0b63644e797c14ba7a8bc654c8d6"
+        "text": "Live vs planned status for session brokering and privileged command controls.",
+        "source_sha256": "4724bfc58f551c60e82ea67a4ed7cdb34f1f0f50b637af56c6e8e3306c3e2226"
       },
       "rbac_lab": {
         "text": "RBAC test mode and stub profiles — owner access by default.",
-        "source_sha256": "2909fe3ddaff8b0c6f24c7827e6499c30671e02b2f5e0b7a57cf9e51cd6cc918"
+        "source_sha256": "e2f48c47eb64ede3584e953796ce3537b3bb48f73fdae0650d6828220dedf540"
       },
       "rdp_ocr_metadata": {
         "text": "Lab Tesseract job queue, search hits, and per-machine metadata (Live for lab). Production OCR engines beyond Tesseract remain Planned (P2-7). SSH terminal indexing remains out of scope.",
-        "source_sha256": "303ea3e69de6ee1c52081409ce910adade9ab756030a6961eee60e2673f371e9"
+        "source_sha256": "aef97f5f47d2c1d08ff4793ca3a094fb326f2794ce8dc770c434c5ce5c55d4ea"
       },
       "recording_agents_health": {
-        "text": "Registered agents with check-in status and proxy or local recording mode.",
-        "source_sha256": ""
+        "text": "Enrolled agents with check-in health and proxy vs target-local recording support.",
+        "source_sha256": "2e5cf76e7cc5719c4e78c0f82e3f5446e96dec2cca1762eee62da29eed746160"
       },
       "recording_storage": {
-        "text": "Effective paths for encrypted recordings and OCR metadata.",
-        "source_sha256": "92bf498f8cc6bc2eafc6390e1b8e8f4e218126e52209b34fb723a2fd3cb79050"
+        "text": "Effective paths for encrypted recordings and OCR metadata (AppConfig-backed).",
+        "source_sha256": "48901944e6f80e38d4dc6bf4dff9c8d99251ecd4c41a6dd7061667ff5f0c1b6b"
       },
       "remote_access": {
-        "text": "Operator connection for systems with a session channel.",
-        "source_sha256": "b204a450733bdd7b3e1d6c521ab7a6e050c9fc3dca61b91a378ce034cb02aab4"
+        "text": "Operator connect for systems with a session channel (requires connection-target rights). End users use My Workstations.",
+        "source_sha256": "f0a79e1216a9496f8d16f37e7441a71c80a17b6830511dcfdbe03f42ec145526"
       },
       "server_configuration": {
         "text": "How this offline server runs: TLS, identity, crypto, and control.",
-        "source_sha256": "4837831815548e9cebf510aeebee855492633c020dc25a02418fe4c63071a836"
+        "source_sha256": "e57e4c230cb43fd193da244063eedb784756ad4d3d62c332affbb7052ee40514"
       },
       "server_control": {
         "text": "Display name, machine GUID, and public URL identity.",
         "source_sha256": "a17e13e710df53065c2a83b404a994a84e5f0f95f35b03eda7c4a659c06960e6"
       },
       "server_disclosures": {
-        "text": "Classification banner and footer for this web administration.",
-        "source_sha256": "f6ee4f14f8688d58cf9e8efcf04911556078d7c9ce38281cfd15f87843175ae5"
+        "text": "Classification banner and footer prose for this web admin only.",
+        "source_sha256": "e944ad46ee4228d6c42c5cebb6b42426757fff138897a1cbb02ca104bcf5482a"
       },
       "session_control": {
-        "text": "Monitor and end active privileged sessions.",
-        "source_sha256": ""
+        "text": "Monitor and terminate active privileged sessions.",
+        "source_sha256": "5d29a050f7dca58b6143955935a1b1e05e1419727b4bf63b66e346327e8a0523"
       },
       "session_recordings": {
-        "text": "Browse and play back recorded brokered sessions.",
-        "source_sha256": ""
+        "text": "Browse and replay recorded proxied sessions.",
+        "source_sha256": "10ab3ca886bfaf4e49ce625fb41106f8725580b0102543293e40c252b80685f3"
       },
       "session_timeout_and_logoff": {
         "text": "Idle and absolute session limits, refresh rotation, and forced logoff hardening (AC-12 / SC-23).",
@@ -755,19 +755,19 @@
       },
       "sessions_evidence": {
         "text": "Review open OT sessions and session evidence.",
-        "source_sha256": ""
+        "source_sha256": "a48b11497240464d54dee92d43944d9b723acb1807c1d6d87d3114f1dc6d387e"
       },
       "sms_settings": {
-        "text": "Twilio or HTTP SMS webhook for credential notification.",
-        "source_sha256": "5949487e36516b541ffaf084192fd7c216cdce691f47fe559a270b4770433854"
+        "text": "Twilio or HTTP SMS webhook credentials for credential notify.",
+        "source_sha256": "c195ebb6e8bef0dd128952e124cffa4bd617d7fad8f297ae985db7d40e744179"
       },
       "ssh_command_filtering": {
-        "text": "Instruction sets, assignments and normalization for session filters.",
-        "source_sha256": "2379e385693156d8742318b75c90b6cf691eeb127f8fd2436483102ac621419b"
+        "text": "Command sets, assignments, and normalisation for session filtering.",
+        "source_sha256": "348a9cc723dba17bebcfd57c33350a459788cf909a70b8a5b22367b0b2d626ae"
       },
       "startup_wizard": {
         "text": "Guided path from empty OT environment to discovered and enrolled assets.",
-        "source_sha256": "8f9134198a680d96c1b9ba5a003fff4093c133dacfe297d3866d1b5d82d60632"
+        "source_sha256": "42ce330934f71a8f998f1ec3886da7e4561fdd84fc3f03ddde65eb80f8cdf0f8"
       },
       "syslog_forwarding": {
         "text": "Forward EPIM events from this server to a remote syslog collector.",
@@ -775,31 +775,31 @@
       },
       "system_groups": {
         "text": "Shared password policy, identity templates, and wizard defaults.",
-        "source_sha256": "f357f8f2497bb7511cfb11a20edc5e05cf1d853e5e157fc714295c2160fe9fda"
+        "source_sha256": "46ca542e60ebf97be99ea5660af2dca831f57ba2802f1df05840474b8be09291"
       },
       "systems_list": {
         "text": "Every known system, agent or not, with reachability, collection state, and agent health.",
-        "source_sha256": "e1f856e9bc5dfd4f398439be8decb52efc1abe44a43bc457e3bc94a34ada9746"
+        "source_sha256": "c319ec756f4e30813ca99d72bb30157d38ae202d9316aab292049e263b8b2199"
       },
       "tls_security": {
         "text": "HTTPS listener certificates and client authentication.",
         "source_sha256": "f71c639e88b1734a5bdaccbce070ff6c86c14e910dd9f0b8a8a778cc3ebedbf8"
       },
       "vm_management": {
-        "text": "Hypervisor connections and VM pools for power scheduling (Admin only).",
-        "source_sha256": "1b6a261221abb9d27c3f81c8110f11062b41ccc845327e1b350eff473e55cb55"
+        "text": "Hypervisor connections and VM pools for power scheduling (admin only — not My Workstations).",
+        "source_sha256": "506912dafe97e4e16e3a3dbba308bec4889c745c9cae24be9d4bc2475688ff67"
       },
       "who_may_elevate": {
-        "text": "Bind IAM users to application rules, optionally with expiration. OS group offers remain under guidelines.",
-        "source_sha256": "56e119765206827a894fbb5a32347955a787cc4f31b5a4f36689ec332f047201"
+        "text": "Bind IAM users, groups, or systems to apps. Set Default allow or Approval required.",
+        "source_sha256": "60c69bb1c0e2360c6fed6f0e92bcbb68af1787875eabc383e0acd6da1756446c"
       },
       "workstation_assignments": {
-        "text": "Assign IAM users to workstations that appear under My Workstations.",
-        "source_sha256": "96d465a9f6cdd84a9111ca070d236c19efad9629d689d87de8533cbef6b8f0bf"
+        "text": "Assign IAM users to inventory workstations that appear on My Workstations (Assets tab).",
+        "source_sha256": "adcd6e16ab15cd8b797642834c3b25b7d027c57d586e139c79e01f0632573068"
       },
       "blocked_attacks": {
-        "text": "Blocked Attacks",
-        "source_sha256": "158d3c3ef5abfd9cf13b3894307ed3778a4d5eed818545635579dc7785c1e124"
+        "text": "Blocked attempts and attack-origin heat map for this server.",
+        "source_sha256": "ef4984b25cd6ba4200d9d6cd3c1c265f86337d293ae71e87b847ce02a0bd27e9"
       },
       "reveal_password": {
         "text": "Recover managed identity passwords on a selected endpoint.",
@@ -915,19 +915,19 @@
       },
       "compliance": {
         "text": "Compliance",
-        "source_sha256": ""
+        "source_sha256": "4a109cc49467be33772416ac924cc5729dcea700b8b4a0ba12f10bc595e2fa2c"
       },
       "events": {
         "text": "Events",
-        "source_sha256": ""
+        "source_sha256": "8d14f6e72de8f18ab1ee5c5330f00653c0c3ce099e63024454f80af97e72d333"
       },
       "settings": {
         "text": "Settings",
-        "source_sha256": ""
+        "source_sha256": "74a883a037bc227f91891ab654a753d3a99f31ab06ae5b5d2b6e594a692b41f8"
       },
       "dashboard": {
         "text": "Dashboard",
-        "source_sha256": ""
+        "source_sha256": "67b696468610b879ed7f224dbf6b0861f27e39d20454cb9d7af1ec52d3e5eeaa"
       },
       "secure_program_launch": {
         "text": "Launch applications with vaulted passwords, SSH keys, or certificates without showing the secret. Entitlements control which app may use which credential.",
@@ -1001,38 +1001,38 @@
     "group": {
       "approvals": {
         "text": "Approvals",
-        "source_sha256": "6190cd1a0e88ff24f55662189d61153316cb0c9ca2a840ce2310b4ef598e4ca9"
+        "source_sha256": "2bfc3471571e5c008cb26bd839b0d4cbcb1132fc9d6c8206bb595fa26e83a45b"
       },
       "directory": {
         "text": "Directory",
-        "source_sha256": "49d7690f3cac715ad890f249868083f586c2a27e9b85e7fefbb045fdff471f4f"
+        "source_sha256": "c8f84c3c5378b920b0ec2702cd9963a470098638b0c8aae249f74ec1a857633a"
       },
       "jump_capacity": {
-        "text": "Jump & capacity",
+        "text": "Jump & Capacity",
         "source_sha256": "15916f05652111450d893aa415b1ae45968776cd180806a34041cae4ade499ca"
       },
       "ot_surfaces": {
-        "text": "OT surfaces",
+        "text": "OT Surfaces",
         "source_sha256": "4720c6d96abce245edcfaa00e28dc5dd8ddae3d57d1bd6f1e7be3f4d5911b75c"
       },
       "policy": {
         "text": "Policy",
-        "source_sha256": "4a166d079dad7def05b8dcf7aabea6d0ee35fca1133be664d621b31ede5082f1"
+        "source_sha256": "c611981fab983bc648368eb81240f5a5a1eff07f40aa4c9fd155600a98eeb6af"
       },
       "recording_ops": {
-        "text": "Recording operations",
-        "source_sha256": ""
+        "text": "Recording Ops",
+        "source_sha256": "35f5d18ad403950802c3fe44ad7abfeae14d22154df4988e668dc84c1a9ceb6a"
       },
       "sessions": {
         "text": "Sessions",
-        "source_sha256": ""
+        "source_sha256": "6fa3cbf451b2a1d54159d42c3ea5ab8725b0c8620d831f8c1602676b38ab00e6"
       },
       "credentials": {
         "text": "Credentials",
         "source_sha256": "d48a617c7da5163c44f117b9b23d8c920e69b4aa83d7b6570d71a66f3a857183"
       },
       "privilege_elevation": {
-        "text": "Privilege elevation",
+        "text": "Privilege Elevation",
         "source_sha256": "f867cc041a57522981913cc9ffe2c2a2aa00237e6d95cac3b3110d8f1d659579"
       },
       "configuration_scope": {
@@ -1041,11 +1041,11 @@
       },
       "lab_advanced": {
         "text": "Lab advanced",
-        "source_sha256": ""
+        "source_sha256": "3344b36dc1f34d2253c56ea36d5143808f57bcf9d4172565fd9aeef64f779caa"
       },
       "operator_communications": {
         "text": "Operator communications",
-        "source_sha256": ""
+        "source_sha256": "b9e9fffec12e97e671d249601cd2d6ed9eaf4bf35248026657c9792855044010"
       }
     },
     "intro": {
@@ -1129,11 +1129,11 @@
       },
       "lab_advanced": {
         "text": "Advanced lab surfaces for discovery and drills.",
-        "source_sha256": ""
+        "source_sha256": "f7108d6e82d6f95e1daf6e717065a0a3e044c5f7deffaa1f40ef16c3946ae5b2"
       },
       "operator_communications": {
         "text": "Email and SMS messaging configuration.",
-        "source_sha256": ""
+        "source_sha256": "a6223f5e01e38c80f720c7df4691bf5cd1b49662eae9ebc2ff1e733ec0fbd2c9"
       }
     }
   },
@@ -1151,7 +1151,7 @@
       "source_sha256": "2e2a132d4fda6e73708e4849accb82fa17f0233235430f1a88183a60889a7c3d"
     },
     "loadFailed": {
-      "text": "The list of options could not be loaded. Try again shortly.",
+      "text": "The list of options could not be loaded. Try again in a moment.",
       "source_sha256": "79a99f7fb578eefa132bb3d8e5a6b55f3692156af5542cf095a707950d5886ba"
     },
     "selected": {
