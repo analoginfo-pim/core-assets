@@ -243,7 +243,14 @@ def main() -> int:
         total = sum(len(h) for _, _, h in hard)
         print(f"HARD: {total} hit(s) in {len(hard)} file(s)")
         for path, bom, hits in hard:
-            flag = "" if bom else "   [no BOM: PowerShell 5.1 misparses this]"
+            # The CP1252 misparse is a PowerShell 5.1 behavior. Claiming it for a
+            # .py or .rs file would send the reader chasing the wrong cause.
+            powershell = path.suffix.lower() in (".ps1", ".psm1")
+            flag = (
+                "   [no BOM: PowerShell 5.1 misparses this]"
+                if powershell and not bom
+                else ""
+            )
             print(f"\n  {path}{flag}")
             for line, col, label, ascii_out in hits:
                 print(f"    {path.name}:{line}:{col}  {label} -> {ascii_out!r}")

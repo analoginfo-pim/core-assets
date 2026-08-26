@@ -133,10 +133,20 @@ translation defect, not a fix. The boundary:
 | Path, key name, JSON key, file name, URL | ASCII only, always |
 | US English source prose | ASCII only (house style; keeps grep and diffs honest) |
 | Translated prose body in a locale catalog | Target-language orthography wins; do not rewrite |
+| A dash that is the tool's own **data**, not its syntax | Do not rewrite; the character is the thing being matched |
 
 An agent that "fixes" 7000 dashes inside translated prose has broken the
 localization, so the detector separates the two cases and only ever rewrites
 the first.
+
+The dash-as-data case is real and easy to break. `pim-offline-server/scripts/repair-ui-locale-contamination.py`
+holds `"\u2014"` in a literal list of tokens to protect from translation, so
+rewriting that one character to a hyphen silently changes which strings the
+repair pass shields. Read the hit before rewriting it: a dash inside a pattern,
+a token list, or a test fixture that asserts on the character itself is data.
+Run the detector with an explicit `--ext .ps1 .psm1` when the intent is to
+repair scripts, rather than letting the default extension set sweep helper
+Python that may hold dashes deliberately.
 
 ## 4. PowerShell authoring practices
 
