@@ -1,81 +1,87 @@
 #!/usr/bin/env python3
-"""Print one leaf across every pack, in both catalog trees, with hashes.
+"""Print one catalog subtree from core-assets, the consumer working tree, and a
+consumer git ref, side by side.
 
-There are two catalog trees -- the core-assets source of truth and the copy
-synced into the server UI -- and a defect can live in one but not the other.
-Comparing them side by side, with the stored source_sha256 next to the hash of
-the leaf's own text, shows at a glance whether a leaf is self-consistent
-(authored) or carries someone else's hash (translated, and from what).
+PowerShell redirection writes UTF-16, so `git show > file` then reading it as
+UTF-8 fails. Reading git's stdout directly avoids that entirely, and having the
+three views in one place is what makes a shape mismatch obvious -- a bare list
+of strings on one side and {text, source_sha256} objects on the other is not a
+missing key, it is two incompatible schemas for the same key.
 
 Usage:
-    python _probe_leaf.py <namespace> <dotted.path>
+    python _probe_leaf.py <tag> <namespace> <dotted.path> [--ref HEAD]
 """
 
 from __future__ import annotations
 
-import hashlib
 import json
+import subprocess
 import sys
-import unicodedata
 from pathlib import Path
 
-CORE = Path(__file__).resolve().parents[2] / "content" / "locales-ui"
-UI = Path(__file__).resolve().parents[3] / "pim-offline-server" / "ui" / "src" / "i18n" / "locales"
+CORE = Path(__file__).resolve().parents[2]
+SERVER = CORE.parent / "pim-offline-server"
+CATALOG = CORE / "content" / "locales-ui"
+SERVER_LOCALES = "ui/src/i18n/locales"
 
 
-def digest(text: str) -> str:
-    return hashlib.sha256(unicodedata.normalize("NFC", text).encode("utf-8")).hexdigest()
-
-
-def get(node, dotted: str):
-    """Resolve a dotted path, tolerating [n] array indices."""
-    for part in dotted.replace("[", ".").replace("]", "").split("."):
-        if part == "":
+def decode(raw: bytes):
+    for encoding in ("utf-8-sig", "utf-8", "utf-16"):
+        try:
+            return json.loads(raw.decode(encoding))
+        except (UnicodeDecodeError, json.JSONDecodeError):
             continue
+    return None
+
+
+def descend(node, dotted: str):
+    for step in dotted.split("."):
+        if node is None:
+            return None
         if isinstance(node, list):
             try:
-                node = node[int(part)]
+                node = node[int(step)]
+                continue
             except (ValueError, IndexError):
                 return None
-        elif isinstance(node, dict) and part in node:
-            node = node[part]
-        else:
+        if not isinstance(node, dict) or step not in node:
             return None
+        node = node[step]
     return node
 
 
+def show(label: str, node) -> None:
+    print(f"--- {label}")
+    if node is None:
+        print("    ABSENT")
+        return
+    text = json.dumps(node, ensure_ascii=False, indent=2)
+    for line in text.splitlines()[:24]:
+        print(f"    {line}")
+    if len(text.splitlines()) > 24:
+        print("    ...")
+
+
 def main() -> int:
-    if len(sys.argv) < 3:
+    argv = sys.argv[1:]
+    if len(argv) < 3:
         print(__doc__)
         return 2
-    namespace, dotted = sys.argv[1], sys.argv[2]
+    tag, namespace, dotted = argv[0], argv[1], argv[2]
+    ref = argv[argv.index("--ref") + 1] if "--ref" in argv else "HEAD"
 
-    for label, root in (("core-assets", CORE), ("ui/src/i18n", UI)):
-        print(f"=== {label}  {namespace} :: {dotted}")
-        if not root.is_dir():
-            print("   (tree absent)")
-            continue
-        for pack in sorted(p for p in root.iterdir() if p.is_dir()):
-            path = pack / f"{namespace}.json"
-            if not path.is_file():
-                continue
-            try:
-                data = json.loads(path.read_text(encoding="utf-8"))
-            except json.JSONDecodeError:
-                print(f"  {pack.name:8s} ! invalid json")
-                continue
-            leaf = get(data, dotted)
-            if leaf is None:
-                continue
-            if isinstance(leaf, dict) and isinstance(leaf.get("text"), str):
-                text = leaf["text"]
-                stored = leaf.get("source_sha256") or ""
-                own = digest(text)
-                mark = "self" if stored == own else (stored[:8] if stored else "(no hash)")
-                print(f"  {pack.name:8s} [{mark}] {text[:120]}")
-            else:
-                print(f"  {pack.name:8s} (not a leaf: {type(leaf).__name__})")
-        print()
+    core_path = CATALOG / tag / f"{namespace}.json"
+    core = decode(core_path.read_bytes()) if core_path.is_file() else None
+    show(f"core-assets {tag}/{namespace}", descend(core, dotted))
+
+    work_path = SERVER / SERVER_LOCALES / tag / f"{namespace}.json"
+    work = decode(work_path.read_bytes()) if work_path.is_file() else None
+    show(f"consumer working tree {tag}/{namespace}", descend(work, dotted))
+
+    rel = f"{SERVER_LOCALES}/{tag}/{namespace}.json"
+    proc = subprocess.run(["git", "show", f"{ref}:{rel}"], cwd=SERVER, capture_output=True)
+    old = decode(proc.stdout) if proc.returncode == 0 else None
+    show(f"consumer {ref} {tag}/{namespace}", descend(old, dotted))
     return 0
 
 

@@ -1,33 +1,40 @@
 #!/usr/bin/env python3
-"""Recover catalog leaves a forward sync deleted, and back-port them to source.
+"""Make core-assets a true superset of the consumer catalog, then heal the consumer.
 
-core-assets is the source of truth and the sync overwrites the consumer tree
-wholesale, so a key that lives only in the consumer is a key waiting to be
-deleted. Three feature areas were authored straight into
-pim-offline-server/ui/src/i18n/locales and never back-synced:
+core-assets is the declared source of truth and scripts/sync-to-projects.ps1
+overwrites the consumer tree wholesale. That contract only holds if core-assets
+actually contains everything the consumer has. It does not. A single forward
+sync removed 5947 leaves from pim-offline-server/ui/src/i18n/locales -- 831
+distinct keys, 573 of which the UI code still calls.
 
-    enclaveRegularUsers.*                      51 leaves  EnclaveRegularUsersPage
-    chrome.accessControl.classificationGov.*   18 leaves  ClassificationPanel
-    chrome.operatingLevel.* (partial)          11 leaves  SettingsPage
+Nothing caught it, twice, for the same two reasons:
 
-All seven shipped SPA tags carried reviewed translations for them. The next sync
-removed all seven at once. Nothing broke visibly: i18next falls back to the
-defaultValue in the code, so en still rendered correct English and the parity
-gate stayed green because Check 2 only asserts en is a subset of each tag -- when
-the key leaves en as well, the subset still holds.
+  - i18next falls back to the defaultValue in the code, so en kept rendering
+    correct English and no missing-string banner appeared.
+  - The parity gate's Check 2 asserts en is a subset of each tag. When a key
+    leaves en as well, the subset still holds and the gate stays green.
 
-What was lost is the translation. A German operator now reads English on those
-three pages, which is the residue class this work has been chasing.
+So the failure is silent by construction, and what it destroys is the
+translation. A German operator reads English on the affected pages while every
+automated check reports success.
 
 Recovery reads the pre-sync commit rather than the code, because git holds the
-real reviewed de / fr / es / zh-Hans / zh-TW text. Re-deriving from defaultValue
-would replace six packs of reviewed translation with English and call it a fix.
+reviewed de / fr / es / zh / ja / ko / ar text. Re-deriving from defaultValue
+would replace seventeen packs of reviewed translation with English and report it
+as a fix.
 
-Existing leaves are never overwritten -- the same sync that deleted these also
-delivered a genuine German-leak fix, and that must survive.
+Direction of authority on conflict: core-assets wins. A leaf present in both is
+left alone, because the same sync that deleted these also delivered genuine
+fixes -- the restored English catalog, the re-derived en-GB, the German-leak
+repairs -- and those must survive. The consumer only supplies keys core-assets
+does not have.
+
+Both sides are written, and that is the point. Healing the consumer alone leaves
+the same keys missing upstream, so the next sync deletes them again. Back-porting
+is what ends the cycle.
 
 Usage:
-    python _recover_synced_away_leaves.py [--ref HEAD~1] [--fix]
+    python _recover_synced_away_leaves.py [--ref HEAD] [--namespace NS] [--fix]
 """
 
 from __future__ import annotations
@@ -36,6 +43,8 @@ import copy
 import json
 import subprocess
 import sys
+import time
+from collections import Counter
 from pathlib import Path
 
 CORE = Path(__file__).resolve().parents[2]
@@ -43,18 +52,10 @@ SERVER = CORE.parent / "pim-offline-server"
 CATALOG = CORE / "content" / "locales-ui"
 SERVER_LOCALES = Path("ui/src/i18n/locales")
 
-# The SPA gate's shipped set. Other core-assets packs never held these keys, so
-# they are a queue item, not a recovery target.
-SPA_TAGS = ["en", "en-GB", "de", "fr", "es", "zh-Hans", "zh-TW"]
 
-NAMESPACE = "pages"
-
-
-def git_show(ref: str, path: str) -> dict | None:
+def git_show(ref: str, rel: str) -> dict | None:
     proc = subprocess.run(
-        ["git", "show", f"{ref}:{path}"],
-        cwd=SERVER,
-        capture_output=True,
+        ["git", "show", f"{ref}:{rel}"], cwd=SERVER, capture_output=True
     )
     if proc.returncode != 0:
         return None
@@ -78,14 +79,35 @@ def read_json(path: Path) -> dict | None:
     return None
 
 
+def write_json(path: Path, data) -> None:
+    """Write with a short retry.
+
+    This run rewrites a couple of hundred JSON files back to back, and Windows
+    Defender scanning one of them mid-write surfaces as OSError EINVAL rather
+    than a sharing violation. Failing the whole run on that leaves the tree
+    half-recovered, which is worse than either outcome. The merge only adds
+    absent keys, so retrying -- or re-running the script -- is idempotent.
+    """
+    path.parent.mkdir(parents=True, exist_ok=True)
+    body = json.dumps(data, ensure_ascii=False, indent=2) + "\n"
+    for attempt in range(5):
+        try:
+            path.write_text(body, encoding="utf-8")
+            return
+        except OSError as err:
+            if attempt == 4:
+                raise
+            print(f"  retry {path.name} after {err.__class__.__name__}: {err}")
+            time.sleep(0.4 * (attempt + 1))
+
+
 def leaf_paths(node, prefix=()):
     """Yield tuple paths to leaves. A leaf is a string, or {text, source_sha256}."""
     if isinstance(node, str):
         yield prefix
         return
     if isinstance(node, dict):
-        keys = set(node)
-        if "text" in keys and keys <= {"text", "source_sha256"}:
+        if isinstance(node.get("text"), str) and set(node) <= {"text", "source_sha256"}:
             yield prefix
             return
         for name, child in node.items():
@@ -96,111 +118,127 @@ def leaf_paths(node, prefix=()):
             yield from leaf_paths(child, prefix + (index,))
 
 
-def get_at(root, path: tuple):
-    node = root
-    for step in path:
-        node = node[step]
-    return node
+def is_leaf(node) -> bool:
+    if isinstance(node, str):
+        return True
+    return (
+        isinstance(node, dict)
+        and isinstance(node.get("text"), str)
+        and set(node) <= {"text", "source_sha256"}
+    )
 
 
-def put_at(root, path: tuple, value) -> str | None:
-    """Insert value at path, creating dicts. Returns a reason string on refusal."""
-    node = root
-    for depth, step in enumerate(path[:-1]):
-        if isinstance(step, int):
-            # Restoring into a list position the current tree does not have is
-            # not a merge, it is a guess about ordering. Refuse.
-            if not isinstance(node, list) or step >= len(node):
-                return f"list index {step} absent at {'.'.join(map(str, path[:depth]))}"
-            node = node[step]
-            continue
-        if not isinstance(node, dict):
-            return f"non-dict at {'.'.join(map(str, path[:depth]))}"
-        child = node.get(step)
-        if child is None:
-            child = {}
-            node[step] = child
-        elif isinstance(child, dict) and "text" in child and set(child) <= {
-            "text",
-            "source_sha256",
-        }:
-            return f"leaf blocks ancestor {'.'.join(map(str, path[: depth + 1]))}"
-        node = child
-    last = path[-1]
-    if isinstance(last, int):
-        return f"list tail index {last}"
-    if not isinstance(node, dict):
-        return "non-dict parent"
-    if last in node:
-        return "already present"
-    node[last] = copy.deepcopy(value)
-    return None
+def merge(dst, src, added: list[tuple], conflicts: list[str], trail=()) -> None:
+    """Copy anything src has that dst lacks. dst always wins where both hold a value.
+
+    Merging structurally rather than leaf by leaf is what makes list-valued
+    bullets recoverable. Those keys are absent from the destination *entirely* --
+    node, list, and elements -- so there is no list to index into and a
+    leaf-path insert can only refuse. Copying the whole missing subtree brings
+    the list with it.
+    """
+    if isinstance(dst, dict) and isinstance(src, dict):
+        for name, child in src.items():
+            if name not in dst:
+                dst[name] = copy.deepcopy(child)
+                for path in leaf_paths(child, trail + (name,)):
+                    added.append(path)
+            elif not is_leaf(dst[name]):
+                merge(dst[name], child, added, conflicts, trail + (name,))
+        return
+
+    if isinstance(dst, list) and isinstance(src, list):
+        # Positional merge is only meaningful when the two lists describe the
+        # same sequence. Different lengths means the arrays were authored
+        # independently, and guessing an alignment would silently mistranslate.
+        if len(dst) != len(src):
+            conflicts.append(
+                f"{'.'.join(map(str, trail))}: list length {len(dst)} vs {len(src)}"
+            )
+            return
+        for index, (left, right) in enumerate(zip(dst, src)):
+            if not is_leaf(left):
+                merge(left, right, added, conflicts, trail + (index,))
+        return
+
+    conflicts.append(f"{'.'.join(map(str, trail))}: shape mismatch")
 
 
 def main() -> int:
     argv = sys.argv[1:]
     write = "--fix" in argv
-    ref = argv[argv.index("--ref") + 1] if "--ref" in argv else "HEAD~1"
+    ref = argv[argv.index("--ref") + 1] if "--ref" in argv else "HEAD"
+    only_ns = argv[argv.index("--namespace") + 1] if "--namespace" in argv else None
 
-    total_restored = 0
+    server_root = SERVER / SERVER_LOCALES
+    if not server_root.is_dir():
+        print(f"no consumer locales at {server_root}", file=sys.stderr)
+        return 2
+
+    healed = 0
+    ported = 0
     refusals: list[str] = []
-    recovered_keys: set[tuple] = set()
+    per_tag: Counter[str] = Counter()
+    distinct: set[tuple[str, tuple]] = set()
 
-    for tag in SPA_TAGS:
-        rel = (SERVER_LOCALES / tag / f"{NAMESPACE}.json").as_posix()
-        old = git_show(ref, rel)
-        if old is None:
-            print(f"{tag:8} skip -- no {rel} at {ref}")
-            continue
-        server_path = SERVER / rel
-        current = read_json(server_path)
-        if current is None:
-            print(f"{tag:8} skip -- cannot read working tree {rel}")
-            continue
+    for tag_dir in sorted(p for p in server_root.iterdir() if p.is_dir()):
+        tag = tag_dir.name
+        for path in sorted(tag_dir.glob("*.json")):
+            namespace = path.stem
+            if only_ns and namespace != only_ns:
+                continue
 
-        old_paths = set(leaf_paths(old))
-        new_paths = set(leaf_paths(current))
-        lost = sorted(old_paths - new_paths, key=lambda p: tuple(map(str, p)))
-        if not lost:
-            print(f"{tag:8} nothing lost")
-            continue
+            rel = (SERVER_LOCALES / tag / path.name).as_posix()
+            old = git_show(ref, rel)
+            if old is None:
+                continue
+            current = read_json(path)
+            if current is None:
+                refusals.append(f"{tag}/{namespace}: cannot read working tree")
+                continue
 
-        placed = 0
-        for path in lost:
-            reason = put_at(current, path, get_at(old, path))
-            if reason:
-                refusals.append(f"{tag} {'.'.join(map(str, path))}: {reason}")
-            else:
-                placed += 1
-                recovered_keys.add(path)
+            if not set(leaf_paths(old)) - set(leaf_paths(current)):
+                continue
 
-        print(f"{tag:8} {len(lost):3} lost, {placed:3} restorable")
-        total_restored += placed
+            # Heal the consumer so the running product regains the translation.
+            added: list[tuple] = []
+            conflicts: list[str] = []
+            merge(current, old, added, conflicts)
+            for line in conflicts:
+                refusals.append(f"{tag}/{namespace} {line}")
+            for leaf in added:
+                distinct.add((namespace, leaf))
+            per_tag[tag] += len(added)
+            healed += len(added)
+            if write and added:
+                write_json(path, current)
 
-        if write and placed:
-            server_path.write_text(
-                json.dumps(current, ensure_ascii=False, indent=2) + "\n",
-                encoding="utf-8",
-            )
-            # Back-port to core-assets so the next forward sync stops deleting
-            # them. This is the half that was missing all along.
-            core_path = CATALOG / tag / f"{NAMESPACE}.json"
+            # Back-port so the next sync stops deleting them. Without this half
+            # the recovery is undone the next time the sync runs.
+            core_path = CATALOG / tag / f"{namespace}.json"
             core = read_json(core_path)
             if core is None:
-                refusals.append(f"{tag}: no core-assets {NAMESPACE}.json to back-port into")
+                refusals.append(f"{tag}/{namespace}: no core-assets file to back-port into")
                 continue
-            back = 0
-            for path in lost:
-                if put_at(core, path, get_at(old, path)) is None:
-                    back += 1
-            if back:
-                core_path.write_text(
-                    json.dumps(core, ensure_ascii=False, indent=2) + "\n",
-                    encoding="utf-8",
-                )
-                print(f"{'':8} back-ported {back} into core-assets/{tag}")
+            back: list[tuple] = []
+            merge(core, old, back, [])
+            ported += len(back)
+            if write and back:
+                write_json(core_path, core)
 
-    print(f"\n{total_restored} leaf/leaves {'restored' if write else 'would be restored'}")
+    verb = "restored" if write else "would be restored"
+    print(f"{healed} consumer leaf/leaves {verb}; {ported} back-ported to core-assets\n")
+    for tag, count in per_tag.most_common():
+        print(f"  {count:5d}  {tag}")
+
+    if distinct:
+        groups: Counter[str] = Counter()
+        for namespace, leaf in distinct:
+            groups[f"{namespace}:{'.'.join(map(str, leaf[:2]))}"] += 1
+        print(f"\n{len(distinct)} distinct key(s), top groups:")
+        for head, count in groups.most_common(15):
+            print(f"  {count:5d}  {head}")
+
     if refusals:
         print(f"\n{len(refusals)} refusal(s):")
         for line in refusals[:40]:
@@ -208,21 +246,8 @@ def main() -> int:
         if len(refusals) > 40:
             print(f"  ... +{len(refusals) - 40} more")
 
-    if recovered_keys:
-        groups: dict[str, int] = {}
-        for path in recovered_keys:
-            head = ".".join(map(str, path[:2]))
-            groups[head] = groups.get(head, 0) + 1
-        print("\nrecovered key groups (per tag):")
-        for head, count in sorted(groups.items(), key=lambda kv: -kv[1]):
-            print(f"  {count:4}  {head}")
-        print(
-            f"\n{len(recovered_keys)} distinct keys are absent from the 11 non-SPA "
-            f"core-assets packs and need a localization-work row."
-        )
-
     if not write:
-        print("\n(report only; pass --fix to restore and back-port)")
+        print("\n(report only; pass --fix to heal the consumer and back-port)")
     return 0
 
 
