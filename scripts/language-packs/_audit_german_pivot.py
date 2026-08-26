@@ -1,128 +1,159 @@
 #!/usr/bin/env python3
-"""Find keys the MT pipeline pivoted through German, using pack agreement as proof.
+"""Find pack leaves that were translated from the German pack instead of English.
 
-The earlier wrong-language detector compared each pack against German and then
-discarded single-token matches as possible cognates, on the theory that two
-languages can legitimately share one word. That filter was wrong, and it hid the
-worst leaf in the catalog: `catalog:rowCount` is "rows" in English and "Zeilen"
-in German, and seven Latin packs ship the bare German word while every non-Latin
-pack ships a phonetic transliteration of it -- Arabic `زيلين`, Hebrew `זיילן`,
-katakana `ザイレン`, Hangul `자일렌`, Han `泽伦` / `澤倫`. Stripping `{{count}}`
-leaves one token, so the cognate filter dropped all of it.
+A leaf records `source_sha256`: the hash of the source text it was translated
+from. When that hash equals the hash of the *German* text rather than the
+English text, the leaf was built by pivoting through German. The evidence is
+exact -- no heuristic, no word list.
 
-Agreement across unrelated packs is what makes this provable without a native
-speaker. One pack matching German for a single word is arguable -- "Status" and
-"Token" really are shared. Two packs from different families producing the *same*
-German word for the same key is not a coincidence of translation; it is one
-pivot, copied. So the threshold is on how many packs agree, not on how many words
-they agree about, which is the inversion of the filter that hid this.
+Pivoting through German is not a cosmetic problem. Packs that pivoted did one
+of three things, all of which a native reader spots immediately:
 
-A flagged key is also a triage signal for the packs this test cannot see. The
-non-Latin packs are never byte-identical to German, so they never appear in the
-counts below, but a key that reached two Latin packs as raw German reached the
-non-Latin packs through the same pivot -- and `rowCount` shows what that produced.
-Latin-pack agreement is therefore reported as proof, and the same key in
-non-Latin packs as suspect, rather than pretending the second group is clean.
+  copied     the German verbatim   (it/nl/pl/pt-BR/tr "Nur Herunterladen")
+  transliterated it phonetically   (zh-Hans "努尔赫伦特拉登", ko "누르 헤룬터라덴")
+  mistranslated a German homograph (compliance "Met" read as the verb "meet")
+
+Leaves where German and English are identical are skipped: matching a shared
+identifier such as "Server" or "Token" proves nothing about provenance.
+
+Pivoting is provable; damage is not uniformly provable. A competent translator
+working from German can still land correct target text (es "Solo descarga" is
+right despite pivoting). So --classify splits the finding into what is provably
+broken and what needs a native reader:
+
+  verbatim    the pack ships the German string unchanged -- provably wrong
+  review      pivoted, target text differs from the German -- needs a native
+
+Transliteration hides inside "review": it cannot be proven mechanically, which
+is exactly why those packs need a native reader rather than another script.
+
+Usage:
+  _audit_german_pivot.py [--namespace pages] [--verbose] [--classify]
 """
 
 from __future__ import annotations
 
+import hashlib
 import json
 import sys
-from collections import defaultdict
+import unicodedata
+from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-ROOTS = (ROOT / "content" / "locales-ui", ROOT / "content" / "locales")
-
-# Packs written in Latin script can be byte-identical to German; the rest cannot,
-# so they are counted separately as suspect rather than silently reported clean.
-NON_LATIN = {"ar", "he", "ja", "ko", "zh-Hans", "zh-TW"}
+CATALOG = ROOT / "content" / "locales-ui"
+PIVOT = "de"
+SOURCE = "en"
 
 
-def flatten(obj: dict, prefix: str = "", out: dict | None = None) -> dict:
-    if out is None:
-        out = {}
-    for k, v in (obj or {}).items():
-        key = f"{prefix}.{k}" if prefix else k
-        if isinstance(v, dict) and isinstance(v.get("text"), str):
-            out[key] = v["text"]
-        elif isinstance(v, dict):
-            flatten(v, key, out)
-    return out
+def sha(text: str) -> str:
+    return hashlib.sha256(unicodedata.normalize("NFC", text).encode("utf-8")).hexdigest()
 
 
-def load(path: Path) -> dict:
-    return flatten(json.loads(path.read_text(encoding="utf-8"))) if path.is_file() else {}
+def leaves(node, prefix=""):
+    """Yield (dotted.key, leaf_dict) for every {"text": ...} leaf."""
+    if isinstance(node, dict):
+        if "text" in node and isinstance(node["text"], str):
+            yield prefix, node
+            return
+        for name, child in node.items():
+            yield from leaves(child, f"{prefix}.{name}" if prefix else name)
+    elif isinstance(node, list):
+        for index, child in enumerate(node):
+            yield from leaves(child, f"{prefix}[{index}]")
+
+
+def load(tag: str, namespace: str):
+    path = CATALOG / tag / f"{namespace}.json"
+    if not path.is_file():
+        return None
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 def main() -> int:
-    show = "--list" in sys.argv
-    # A key needs at least this many agreeing packs before it is called proof.
-    threshold = 2
+    argv = sys.argv[1:]
+    verbose = "--verbose" in argv
+    only = None
+    if "--namespace" in argv:
+        only = argv[argv.index("--namespace") + 1]
 
-    proven_leaves = 0
-    suspect_leaves = 0
-    per_pack: defaultdict[str, int] = defaultdict(int)
-    flagged: list[tuple[int, str, str, str, list[str]]] = []
+    namespaces = sorted(p.stem for p in (CATALOG / SOURCE).glob("*.json"))
+    if only:
+        namespaces = [n for n in namespaces if n == only]
 
-    for root in ROOTS:
-        if not root.is_dir():
+    tags = sorted(
+        p.name
+        for p in CATALOG.iterdir()
+        if p.is_dir() and p.name not in {SOURCE, PIVOT}
+    )
+
+    per_tag: Counter[str] = Counter()
+    per_key: Counter[str] = Counter()
+    findings: list[tuple[str, str, str, str, str]] = []
+
+    for namespace in namespaces:
+        en_data = load(SOURCE, namespace)
+        de_data = load(PIVOT, namespace)
+        if en_data is None or de_data is None:
             continue
-        for namespace in sorted(p.stem for p in (root / "en").glob("*.json")):
-            english = load(root / "en" / f"{namespace}.json")
-            german = load(root / "de" / f"{namespace}.json")
-            if not german:
+
+        en_text = {key: leaf["text"] for key, leaf in leaves(en_data)}
+        de_text = {key: leaf["text"] for key, leaf in leaves(de_data)}
+
+        # Only keys where German actually diverges from English can prove a pivot.
+        de_hash = {
+            key: sha(text)
+            for key, text in de_text.items()
+            if en_text.get(key) is not None and text != en_text[key]
+        }
+        if not de_hash:
+            continue
+
+        for tag in tags:
+            data = load(tag, namespace)
+            if data is None:
                 continue
-
-            packs = {
-                d.name: load(d / f"{namespace}.json")
-                for d in sorted(p for p in root.iterdir() if p.is_dir())
-                if d.name not in {"en", "en-GB", "de"}
-            }
-
-            for key, de_text in german.items():
-                de_stripped = de_text.strip()
-                en_stripped = (english.get(key) or "").strip()
-                # Identity with English means German never translated it either;
-                # that is untranslated-English, a different defect.
-                if not de_stripped or de_stripped == en_stripped:
+            for key, leaf in leaves(data):
+                want = de_hash.get(key)
+                if want is None:
                     continue
-
-                agreeing = [
-                    tag
-                    for tag, pack in packs.items()
-                    if (pack.get(key) or "").strip() == de_stripped
-                ]
-                if len(agreeing) < threshold:
+                if leaf.get("source_sha256") != want:
                     continue
+                per_tag[tag] += 1
+                per_key[f"{namespace} :: {key}"] += 1
+                findings.append((tag, namespace, key, de_text[key], leaf["text"]))
 
-                proven_leaves += len(agreeing)
-                for tag in agreeing:
-                    per_pack[tag] += 1
-                # Same key, same pivot, in the packs byte-identity cannot reach.
-                suspect_leaves += sum(
-                    1 for tag in NON_LATIN if (packs.get(tag) or {}).get(key)
-                )
-                flagged.append((len(agreeing), namespace, key, de_stripped, sorted(agreeing)))
+    if verbose:
+        for tag, namespace, key, german, shipped in sorted(findings):
+            print(f"  [{tag}] {namespace} :: {key}")
+            print(f"      german   {german!r}")
+            print(f"      shipped  {shipped!r}")
 
-    flagged.sort(key=lambda row: -row[0])
+    if "--classify" in argv:
+        verbatim: Counter[str] = Counter()
+        review: Counter[str] = Counter()
+        for tag, _ns, _key, german, shipped in findings:
+            if shipped.casefold() == german.casefold():
+                verbatim[tag] += 1
+            else:
+                review[tag] += 1
+        print("\n  pack   verbatim-German   needs-native-review")
+        for tag, _ in per_tag.most_common():
+            print(f"  {tag:8s} {verbatim[tag]:>10d} {review[tag]:>20d}")
+        print(f"\n{sum(verbatim.values())} leaf/leaves ship untranslated German (provably wrong)")
+        print(f"{sum(review.values())} leaf/leaves pivoted but differ -- native review required")
 
-    print("keys where >=2 non-German packs ship byte-identical German:")
-    for count, namespace, key, text, tags in flagged[: 40 if show else 15]:
-        print(f"  {count:2d} packs  {namespace}:{key}")
-        print(f"            {text[:110]}")
-        if show:
-            print(f"            {' '.join(tags)}")
+    print("\nleaves translated from German, by pack:")
+    for tag, count in per_tag.most_common():
+        print(f"  {tag:8s} {count}")
 
-    print()
-    print(f"{len(flagged)} German-pivot key(s)")
-    print(f"{proven_leaves} leaf/leaves provably shipping raw German (Latin-script packs)")
-    print(f"{suspect_leaves} leaf/leaves on the same keys in non-Latin packs -- suspect, not counted as proof")
-    print()
-    print("raw-German leaves per pack:")
-    for tag, n in sorted(per_pack.items(), key=lambda kv: -kv[1]):
-        print(f"  {n:5d}  {tag}")
+    print("\nmost-pivoted keys:")
+    for key, count in per_key.most_common(20):
+        print(f"  {count:3d} packs  {key}")
+
+    total = sum(per_tag.values())
+    print(f"\n{total} leaf/leaves across {len(per_tag)} packs were built from German")
+    print(f"{len(per_key)} distinct key(s) affected")
     return 0
 
 
