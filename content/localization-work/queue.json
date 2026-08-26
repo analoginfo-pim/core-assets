@@ -2189,6 +2189,34 @@
         "zh-TW"
       ],
       "notes": "Machine translation renamed interpolation identifiers ({{name}} -> {{engine}}), so i18next could not bind the variable and the operator saw literal braces. Renames were restored mechanically from a learned glossary (55 leaves, 11 tags) and the prose is unchanged - those need only a read-through. Eight leaves DROPPED the placeholder instead of renaming it (ipScanner.progressLog lost {{count}}; ipScanner.analysisSummary collapsed four separate counts into one invented {{count}}). Restoring a dropped token means rewriting the sentence to give it a grammatical home, which is translation work, so those 40 leaves (8 keys x de/fr/es/zh-Hans/zh-TW) now carry the ENGLISH source verbatim. That is a visible gap on purpose: reading English is honest, whereas a sentence that silently omits a count is not. The same eight keys are still broken in ar/fi/ja/nl/sv/tr, which the SPA parity gate does not cover. Also queued here: French and Spanish German-leak repairs applied from drafted batches (leak-fr-es-*-20260825, 7 leaves differed) are agent drafts, not native review."
+    },
+    {
+      "id": "locales-ui.german-leak-remain-20260826",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "ui-catalog",
+      "title": "Non-German UI packs leftover German (Lizenz and salad)",
+      "added": "2026-08-26",
+      "updated": "2026-08-26",
+      "source_repo": "core-assets",
+      "source_path": "content/locales-ui/en/common.json",
+      "source_sha256": "d0a61073f26d22761fca98311fade8f239ebb1ed827bd9c50d9493fa929ab3b9",
+      "product_route": "/licensing",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [
+        "fr",
+        "es",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "notes": "Visible French top bar Lizenz and remaining German salad leaves restored from English. CJK English fallbacks are agent drafts. Do not close. ipScanner English that still matches de is not German."
     }
   ]
 }
