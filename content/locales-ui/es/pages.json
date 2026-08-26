@@ -15703,24 +15703,24 @@
       "source_sha256": "a34b00dcc2300b0fa097b75c9e266c6971287b9648eae3b4b7d3ef835b6df5a4"
     },
     "analysisComplete": {
-      "text": "Análisis completo.",
-      "source_sha256": "0f902e2a577bff2e3f80e3df10e1c2cfd4816a9f17e9e79f4fb9d1565e5b3f17"
+      "text": "Analysis complete: {{findings}} finding(s), {{unknown}} unknown host(s).",
+      "source_sha256": "adb6dce513ec48dd1b59db75c59960de753d85446557125f568ba56ee5bb44b5"
     },
     "analysisFailed": {
       "text": "Error en el análisis.",
       "source_sha256": "08d239c39f0507d044c92ceb03656d0954a065f6f6a957a5a34f1bd0e3500e9f"
     },
     "analysisSummary": {
-      "text": "{{count}} hallazgos",
-      "source_sha256": "dc4f9dee5a36d2c399d04a7ae29496afec37e4bc3de7c12d7de44d634bdbb00b"
+      "text": "{{findings}} finding(s) · {{unknown}} unknown host(s) · {{known}} known · {{analyzed}} host(s) analyzed",
+      "source_sha256": "a48980025ced5342a33c36d87ee2ad5f2e7865716a2da38f374d531e715b095f"
     },
     "analyzingInventory": {
       "text": "Comparando resultados del análisis con el inventario…",
       "source_sha256": "3f57c81ae5e780e14423364df63fdcbcdb188552dd069e4a10c564b092db0e95"
     },
     "checkDefaultsAria": {
-      "text": "Comprobar credenciales de fábrica publicadas en los hosts seleccionados",
-      "source_sha256": "ad99fd1139c6e41277554b0d38bdb102347c5d5da03fb484383eac0fecdfc486"
+      "text": "Check published default credentials on {{ip}}",
+      "source_sha256": "0a6850ceb6be75b097e106d95b15df8bf8034f23710748a2f36c67aef14334c8"
     },
     "checkDefaultsFailed": {
       "text": "Error al comprobar valores predeterminados.",
@@ -15751,8 +15751,8 @@
       "source_sha256": "e02058752ac4618003253d485924522ff6158f78f7ae7c893a2e8023a8049170"
     },
     "elapsed": {
-      "text": "Transcurrido {{seconds}} s",
-      "source_sha256": "65486be687f3cf6609fd19df5bd3b43231dd6bacd16e1a0ded53cc6908d266cd"
+      "text": "Transcurrido {{time}} s",
+      "source_sha256": "51f79759dca814ff88fc428eeaa1af485b414a773bfc72494878d3a4ed6c65ce"
     },
     "emptyBlocked": {
       "text": "Analizador bloqueado hasta restaurar la conectividad.",
@@ -15767,20 +15767,20 @@
       "source_sha256": "9d350c6b1d5c2544062d2ebeaa42fc93033a44ae6f7ac267bfa3e1993d044c3b"
     },
     "engine": {
-      "text": "Motor: {{name}}",
-      "source_sha256": "96357821f0ee0554cc909d322839290e9ac5281c3bdc00a9e67c0f385cb2f133"
+      "text": "Motor: {{engine}}",
+      "source_sha256": "02ae32691f2270232d28b1e2ca152bc8a508817b1247c6259b7da4792ea713c3"
     },
     "engineReady": {
-      "text": "Motor listo",
-      "source_sha256": "2f67a2486a27569ac3e14cf1fc1d3119e6b831fa28020cf6fcbe4ad6ce2123a5"
+      "text": "Ready · {{engine}}",
+      "source_sha256": "0488ab7cbb3fdd2c63ce55ed9a0cc002bba2c2fea439e45fdd60fed3c6dcf83f"
     },
     "enroll": {
       "text": "Registrar en la lista de sistemas",
       "source_sha256": "7264761282fcb2ee1bf36247222e2bbc6857e943bfae5abc450ad93d64af74dc"
     },
     "enrollAria": {
-      "text": "Registrar el host {{host}} en la lista de sistemas",
-      "source_sha256": "2de81f75d20b7293eb576a027da864110178152331b413705368b0686544a213"
+      "text": "Registrar el host {{ip}} en la lista de sistemas",
+      "source_sha256": "6d4c048a0d1bdc852e16602e4e27dc0f785471342d70f6559916fb5595f77ede"
     },
     "estimating": {
       "text": "Estimando…",
@@ -15839,8 +15839,8 @@
       "source_sha256": "3dcf57d12a1aa033ffc718da00024633ca49f76bd5d21ddd3cfba269959201b3"
     },
     "networksPicker": {
-      "text": "Redes locales",
-      "source_sha256": "1864cac30cf4a992151ca24f89b259297afe8acdb8fdd0d15f87570f687da3bf"
+      "text": "Local networks ({{selected}} of {{total}})",
+      "source_sha256": "6c1c9744bfa050addf5ff2c3c03cb2f2422791269c53d7ffb97bbce737f49939"
     },
     "networksPickerAria": {
       "text": "Elegir redes locales para el análisis",
@@ -15903,8 +15903,8 @@
       "source_sha256": "0a3a2ca11f192651658a24379d5828082599c30fd67daaa26b4eb970d414de58"
     },
     "probesHostsWorkers": {
-      "text": "{{probes}} sondas · {{hosts}} hosts · {{workers}} workers",
-      "source_sha256": "611e6a71330d6ec5f2d0832a6bbe6696d18c4bc39cdbbf998eced6a4be7d35ec"
+      "text": "{{done}} / {{total}} probes · {{hosts}} host(s) · {{workers}} worker(s)",
+      "source_sha256": "7e42bcc7c323c4f7f841d4a12fb3ab9fd725dbbd2aec41958d0a830dc204e0f4"
     },
     "probing": {
       "text": "Sondeando {{probe}}",
@@ -15931,8 +15931,8 @@
       "source_sha256": "ad0b2b13631c4dbe250dc1d600f9bb1cd5bac57efc180da47d5e2cc4ce2e2c46"
     },
     "rowActionsAria": {
-      "text": "Acciones para {{host}}",
-      "source_sha256": "b196848667e1a0ec01d0ca4904f3f494b55b533ee4675673fe345e9b6b2363e4"
+      "text": "Acciones para {{ip}}",
+      "source_sha256": "6f78ff35131d3de83d2e1d58c83d33940cc7658415454c38913598ae63f38444"
     },
     "rowActionsTooltip": {
       "text": "Acciones para este host",
@@ -15963,16 +15963,16 @@
       "source_sha256": "2cd244e03570353821de1cfd2ecdb501b3b1c95e366bc8d712b7ac63be6fcdff"
     },
     "trackPoamAria": {
-      "text": "Seguir en POA&M",
-      "source_sha256": "d3e8f2acc935fd265d54d3c1a2b55adba2a5028bfdc625bf27250fb07c62f2ef"
+      "text": "Track POA and M for {{host}} {{kind}}",
+      "source_sha256": "c35231f827138ce572964083f813a571be453e14e6f716e2a4af21c9090e608f"
     },
     "unavailable": {
       "text": "No disponible",
       "source_sha256": "b781f6bd9b98e43d557bc80c4c6838cc1130b1db4f687d2e39f4396f482a642b"
     },
     "useNetworkAria": {
-      "text": "Usar red {{network}}",
-      "source_sha256": "476a5752072ab58249ffb71cb227ecccf527f4a9a11d43687946f89e331211d5"
+      "text": "Usar red {{label}}",
+      "source_sha256": "88eabc3777694e759a75512115b22252706818db18cd1271594c44956497d0e2"
     },
     "virtNetworksAria": {
       "text": "Redes de virtualización",
@@ -15987,8 +15987,8 @@
       "source_sha256": "de5648dd8c8ea01b58958a7767c3c176367c36890141739abf69d7c741ed70ab"
     },
     "progressLog": {
-      "text": "Registro de progreso",
-      "source_sha256": "9eb5ad467bc2ab2bc0d62517250d20165cdb3ed536e30b8e8ad60106a4ff0142"
+      "text": "Scan log ({{count}})",
+      "source_sha256": "0168aed5b0417314af54cc349481eb9e429776405ab3f12c8d90e4f4cf49c3e9"
     },
     "ready": {
       "text": "Escáner listo",

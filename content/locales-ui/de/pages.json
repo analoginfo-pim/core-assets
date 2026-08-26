@@ -15985,8 +15985,8 @@
       "source_sha256": "4198d1114db9e98383cca8d97ec93a3979252ea21203bb6e4f3f0cfb3ee52ea2"
     },
     "analysisComplete": {
-      "text": "Analysis complete.",
-      "source_sha256": "43b55e6e61633113de9630d8ac537dad50793a99319502a59af0f8081deba7bf"
+      "text": "Analysis complete: {{findings}} finding(s), {{unknown}} unknown host(s).",
+      "source_sha256": "adb6dce513ec48dd1b59db75c59960de753d85446557125f568ba56ee5bb44b5"
     },
     "analysisFailed": {
       "text": "Analysis failed.",
@@ -15997,8 +15997,8 @@
       "source_sha256": "ebc99d9bb6bf093eb43238ece9461928a61dcd6d2f86c3ee9f0b7c7654f225ba"
     },
     "analysisSummary": {
-      "text": "{{count}} findings",
-      "source_sha256": "d7826b9bafb05d95a724a070e7c9e7382b42c3139bd1a09498c72c13b22a2521"
+      "text": "{{findings}} finding(s) · {{unknown}} unknown host(s) · {{known}} known · {{analyzed}} host(s) analyzed",
+      "source_sha256": "a48980025ced5342a33c36d87ee2ad5f2e7865716a2da38f374d531e715b095f"
     },
     "analysisTitle": {
       "text": "IP Scanner analysis",
@@ -16017,8 +16017,8 @@
       "source_sha256": "3877d14889a9909b9c6ec38d2390599cdc741b73e37505864863ef8e57fb3594"
     },
     "checkDefaultsAria": {
-      "text": "Check published factory credentials against selected hosts",
-      "source_sha256": "2bb83ddbb1801b44db64e93c83798d22d358c06869e865144e32c1a411a79f78"
+      "text": "Check published default credentials on {{ip}}",
+      "source_sha256": "0a6850ceb6be75b097e106d95b15df8bf8034f23710748a2f36c67aef14334c8"
     },
     "checkDefaultsFailed": {
       "text": "Check Defaults failed.",
@@ -16033,8 +16033,8 @@
       "source_sha256": "ca40703b89004d2e1eeea32c1646c884666cf2fdd39bac12e4f461cb6358e008"
     },
     "elapsed": {
-      "text": "Elapsed {{seconds}}s",
-      "source_sha256": "b9b869f2b6dc7550aceded419fcaaffb8217f448249bea779544ab2833158d6d"
+      "text": "Elapsed {{time}}s",
+      "source_sha256": "51f79759dca814ff88fc428eeaa1af485b414a773bfc72494878d3a4ed6c65ce"
     },
     "emptyBlocked": {
       "text": "Scanner blocked until connectivity is restored.",
@@ -16049,20 +16049,20 @@
       "source_sha256": "c19b8ea94d1d20590e8f1e4a1f486865cdc0d6db3fca68c91da1331005d26ebe"
     },
     "engine": {
-      "text": "Engine: {{name}}",
-      "source_sha256": "c6b187dfb82b6f176a2feb8b3f0437b1af79607ccb2cc9c993e647dc8c3d01b8"
+      "text": "Engine: {{engine}}",
+      "source_sha256": "02ae32691f2270232d28b1e2ca152bc8a508817b1247c6259b7da4792ea713c3"
     },
     "engineReady": {
-      "text": "Engine ready",
-      "source_sha256": "08a55a9ae3b1d9b1c868036f928a7420b6144a0ab7c87b3d84c1f692e9791fa1"
+      "text": "Ready · {{engine}}",
+      "source_sha256": "0488ab7cbb3fdd2c63ce55ed9a0cc002bba2c2fea439e45fdd60fed3c6dcf83f"
     },
     "enroll": {
       "text": "Enroll in Systems List",
       "source_sha256": "72c6ee7cf001f8f1bf8730f34a81af3f68874e96af48d2a09f6741c86ed3a2f2"
     },
     "enrollAria": {
-      "text": "Enroll host {{host}} in Systems List",
-      "source_sha256": "f025d7288749e03aae2dd0a156520263aeb32e7402a577a3bf5556a39d0c70e5"
+      "text": "Enroll host {{ip}} in Systems List",
+      "source_sha256": "6d4c048a0d1bdc852e16602e4e27dc0f785471342d70f6559916fb5595f77ede"
     },
     "estimating": {
       "text": "Estimating…",
@@ -16121,8 +16121,8 @@
       "source_sha256": "427e6413b2617069083e596552a3c1bb4608623b7305db91b02178cb97438058"
     },
     "networksPicker": {
-      "text": "Local networks",
-      "source_sha256": "38eeb1f1c8db56c62ccdc639500512cb31bd0056e0237523de5d09ce1bc33494"
+      "text": "Local networks ({{selected}} of {{total}})",
+      "source_sha256": "6c1c9744bfa050addf5ff2c3c03cb2f2422791269c53d7ffb97bbce737f49939"
     },
     "networksPickerAria": {
       "text": "Choose local networks for the scan",
@@ -16189,16 +16189,16 @@
       "source_sha256": "9249ffcc4d99d8f98244208950e845fed4ac4a1829e54705c7c27e041ad9b098"
     },
     "probesHostsWorkers": {
-      "text": "{{probes}} probes · {{hosts}} hosts · {{workers}} workers",
-      "source_sha256": "74194daf383a263dadbd1c763a9894371c5ad91e32d9a14b9aff3200e85a3378"
+      "text": "{{done}} / {{total}} probes · {{hosts}} host(s) · {{workers}} worker(s)",
+      "source_sha256": "7e42bcc7c323c4f7f841d4a12fb3ab9fd725dbbd2aec41958d0a830dc204e0f4"
     },
     "probing": {
       "text": "Prüfe {{probe}}",
       "source_sha256": "b0a96f5923c00ebe1836e956c975269275b7edd1a24e2fccce7d0c272b79c5ee"
     },
     "progressLog": {
-      "text": "Fortschrittsprotokoll",
-      "source_sha256": "9eb5ad467bc2ab2bc0d62517250d20165cdb3ed536e30b8e8ad60106a4ff0142"
+      "text": "Scan log ({{count}})",
+      "source_sha256": "0168aed5b0417314af54cc349481eb9e429776405ab3f12c8d90e4f4cf49c3e9"
     },
     "progressLogAria": {
       "text": "Scan progress log",
@@ -16225,8 +16225,8 @@
       "source_sha256": "8630f079d8f5e6c6498cfe5d5b4f2567ab09dc555bd5d4da45f7836ad41432af"
     },
     "rowActionsAria": {
-      "text": "Row actions for {{host}}",
-      "source_sha256": "f8a1b7bd390129bff9138638b74283dda13c9f3723320130131f2e5cfecc5df6"
+      "text": "Row actions for {{ip}}",
+      "source_sha256": "6f78ff35131d3de83d2e1d58c83d33940cc7658415454c38913598ae63f38444"
     },
     "rowActionsTooltip": {
       "text": "Actions for this host",
@@ -16293,8 +16293,8 @@
       "source_sha256": "2b4f1d847634f7fa2173bb0992ca222c3c3eb98a79c5f940ab1d6ac66963b1e2"
     },
     "trackPoamAria": {
-      "text": "Track this finding on POA&M",
-      "source_sha256": "62623d880ba30ec86a75ae814dd3de536a1bae3422fb0a90a65e5897e11ac45e"
+      "text": "Track POA and M for {{host}} {{kind}}",
+      "source_sha256": "c35231f827138ce572964083f813a571be453e14e6f716e2a4af21c9090e608f"
     },
     "unavailable": {
       "text": "Nicht verfügbar",
@@ -16309,8 +16309,8 @@
       "source_sha256": "dbe54965461ef644bbc11005c90e49fb2fefc0cecd67599659bbcdec23aba31a"
     },
     "useNetworkAria": {
-      "text": "Include network {{network}}",
-      "source_sha256": "138102b482878ba7a6349b076a0d0aecefc8512d39ea9795885e6059ef861601"
+      "text": "Include network {{label}}",
+      "source_sha256": "88eabc3777694e759a75512115b22252706818db18cd1271594c44956497d0e2"
     },
     "useVirt": {
       "text": "Use Virtualization Networks",

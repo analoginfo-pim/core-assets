@@ -650,6 +650,30 @@
       "visitor_cycle": {
         "text": "방문자 주기",
         "source_sha256": "7d1da768addd8f98aeb4b913b5ab3c0c48b4ab1da0bd6119e98e7eef2984f4d5"
+      },
+      "witnessed_destruction": {
+        "text": "입회 파기",
+        "source_sha256": "1a53993941583a861d3b3b9dd05df91e202d98ac82da4b1ae22b781c303328f7"
+      },
+      "degauss_certificate": {
+        "text": "소자 증명서",
+        "source_sha256": "1003209f0b1cf7d2bf2ad2bf541cfe922a3f0c1389ecdb6e5421f3f101579521"
+      },
+      "retention_attestation": {
+        "text": "보존 증명",
+        "source_sha256": "484436c22bc7a0e7ab8e9d5046fae7372405125cdb86b75627087220262e1d96"
+      },
+      "export_delivery": {
+        "text": "내보내기 인도",
+        "source_sha256": "eae6fc1976bcaa8891377e0494a7f59b0a6d5f26a905e5439919bcb6b7a08e6f"
+      },
+      "exception_record": {
+        "text": "예외 기록",
+        "source_sha256": "619af19cac4369acc8d562b7e94482c18ff98bec2ab1ddfbd5138923511721eb"
+      },
+      "posture_review": {
+        "text": "태세 검토",
+        "source_sha256": "b374ab0e3de0b23c230391674ac8404a250d380892f27680c433d003c3c04179"
       }
     },
     "eventKinds": {
@@ -692,6 +716,18 @@
       "attested": {
         "text": "진술됨",
         "source_sha256": "0409fc0c87b1751ffe1a9a4239d18b271f1f7ad5b5ffe795e86bc844766c982a"
+      },
+      "certificate_attached": {
+        "text": "증명서 첨부됨",
+        "source_sha256": "107e042f376ea5b81835dbf5c86d4478b508413a5b61bce8c03d29cfaacb6f5b"
+      },
+      "delivered": {
+        "text": "인도됨",
+        "source_sha256": "74d7f24bdda8c23414014164035ea1f738ccb5840dab16b433557fe5ebaac20c"
+      },
+      "exception_recorded": {
+        "text": "예외 기록됨",
+        "source_sha256": "0f9c7c9640fcd1eb7023da1dc88f5b1e6f28ee4a1417c988e3b5213a409b577b"
       }
     },
     "cp": {
@@ -735,6 +771,334 @@
         "text": "검토 예약",
         "source_sha256": "affe0dfd121b1bf26901dc664cb07da82d913af456a6390902aeb6f9ea145be6"
       }
+    },
+    "mp": {
+      "title": {
+        "text": "매체 파기",
+        "source_sha256": "2348a27bce7ce1ffecfb5f1ad7a4458962346eee81ac3b5cb9a05913ad61c880"
+      },
+      "summary": {
+        "text": "입회 파기 또는 소자 증명서를 일정에 넣고 완료와 증명서 해시를 기록합니다. 이 제품은 파쇄기를 운용하지 않습니다. 이것은 Met가 아닙니다.",
+        "source_sha256": "aff8e4a7a7f3e6e46a9fe1e190d39f736bd451ef96f15e6486009b3c1381e60c"
+      },
+      "add": {
+        "text": "파기 일정",
+        "source_sha256": "8e720dd211795ea10f433b10373b25a344a5ab57c0ce465838255405f79cd0de"
+      }
+    },
+    "au": {
+      "title": {
+        "text": "보존 기록",
+        "source_sha256": "026530cb059fd6f97d2addeb108e95cb0eb0162e998d094dc3d87abdd6e821a9"
+      },
+      "summary": {
+        "text": "보존 증명 또는 해시가 있는 내보내기 인도를 기록합니다. WORM 저장소 운영은 조직에 남습니다. 이것은 Met가 아닙니다.",
+        "source_sha256": "6906ee482462235e9bc15f85e36c11bb87fc806d63e569e1a90b56f4b55ac995"
+      },
+      "add": {
+        "text": "보존 기록",
+        "source_sha256": "026530cb059fd6f97d2addeb108e95cb0eb0162e998d094dc3d87abdd6e821a9"
+      }
+    },
+    "si": {
+      "title": {
+        "text": "태세 예외",
+        "source_sha256": "5ec84fe5153a09cf58fc5e139fd1d278865e846855720c9d8e2febb5024bf8e2"
+      },
+      "summary": {
+        "text": "엔드포인트 적용 범위 예외 또는 태세 검토를 기록합니다. 이 제품은 기업 EDR이나 패치 도구를 실행하지 않습니다. 이것은 Met가 아닙니다.",
+        "source_sha256": "df49a10bebf1e4bc0ef543643e98bbbc174f4f6e8edd48691f8a03e3c4903ec2"
+      },
+      "add": {
+        "text": "예외 기록",
+        "source_sha256": "619af19cac4369acc8d562b7e94482c18ff98bec2ab1ddfbd5138923511721eb"
+      }
+    }
+  },
+  "coverageIntake": {
+    "title": {
+      "text": "증거 접수",
+      "source_sha256": "3c9f82f12af195e85fc062e610f1e6207e1fa6f87f90cbc68ff8a9b3b67e214f"
+    },
+    "summary": {
+      "text": "시스템 밖 행위를 기록하거나 파일을 올립니다. 서버가 SHA-256을 저장합니다. 진술이며 Met가 아니고 인증도 아닙니다.",
+      "source_sha256": "9468316cc614c9af132787f3598e50f644a583142e700292d18e2e4168b28e0d"
+    },
+    "honesty": {
+      "text": "시스템 밖 행위가 있었다는 진술은 지정된 사람이 서버 시각과 함께 그렇게 말했다는 증거입니다. Met가 아니며 인증도 아닙니다.",
+      "source_sha256": "4d050aaf65e26109667f534f1843e269895e02f9ef3f9bb39b821295c0a31868"
+    },
+    "family": {
+      "text": "패밀리",
+      "source_sha256": "bd2d677b2ed4381b48bb1d0841052c6d076e7d634d5052e85dcbe0b8a0dedd80"
+    },
+    "titleField": {
+      "text": "제목",
+      "source_sha256": "7e8cd2056da73a7fefb6cd91f4e5d199d08d9058c517b9a2476b1b520324d674"
+    },
+    "reason": {
+      "text": "사유",
+      "source_sha256": "f81ab834de5f84918dc040b884267c2b61cb1a52d46442de10e97f35a94d0500"
+    },
+    "reasonHelp": {
+      "text": "8자 이상. 이 기록이 필요한 이유를 적으십시오.",
+      "source_sha256": "a286822a102fc9dc9d86a9a8e715a3ec4f078efc2aff1eb31f6be20f40f84596"
+    },
+    "statement": {
+      "text": "무슨 일이 있었는지",
+      "source_sha256": "483bd49023ae2bfb08da43eea2757a0e5490f7b0fe2964f49273cc25215d61f4"
+    },
+    "controlRef": {
+      "text": "통제",
+      "source_sha256": "32d7e82082479b8cb546187ff0af11e4915e4d17bc28e02dca7425288b79badd"
+    },
+    "binderSection": {
+      "text": "바인더 절 식별자",
+      "source_sha256": "882019cbc07aa128972d35797113d4994243e2b6d2f0361d38e9d21546471d04"
+    },
+    "expires": {
+      "text": "만료 (RFC 3339)",
+      "source_sha256": "ac669fd06c95c3b61fdefb1a8fdf0b334f516b99f95c2113f61c2e83a3ec58db"
+    },
+    "artifact": {
+      "text": "파일 선택",
+      "source_sha256": "da7da3667ae8114a4f7032d121ea8a1fb21ab5a4d8cbdc843e16045bbac1ff09"
+    },
+    "record": {
+      "text": "기록",
+      "source_sha256": "bfdd510698ef3ccbf17f2c67fc47790e1ba72894fb74fe284bbc136b47ef73e6"
+    },
+    "sweep": {
+      "text": "만료 알림 기록",
+      "source_sha256": "342bac73c4d9eee60ef9b9723bbf0e72828700bca2a03b83b1e3b6f12065fc99"
+    },
+    "sweepDone": {
+      "text": "만료 {{scanned}}건에서 알림 {{logged}}건을 기록했습니다. 로그이며 이메일이 아닙니다.",
+      "source_sha256": "fd5fd92a868723472eb8bef9380f598a29d343af54dfdecf52ca634b722b0719"
+    },
+    "empty": {
+      "text": "접수 기록이 아직 없습니다.",
+      "source_sha256": "5d9ae0627ee22c6513ada52ffda97f5b1822550172f90ca902d04d96d5e0f047"
+    },
+    "loadFailed": {
+      "text": "증거 접수를 불러오지 못했습니다.",
+      "source_sha256": "a29dcfb2295d239664f73148600498f5ef8ace856acf8595998d2a56eb234607"
+    },
+    "retry": {
+      "text": "다시 시도",
+      "source_sha256": "942087cc2d41e01304b7195558d093d10c72af8e838c7556d6a02d471ee71852"
+    },
+    "sha256": {
+      "text": "SHA-256",
+      "source_sha256": "bbd07c4fc02c99b97124febf42c7b63b5011c0df28d409fbb486b5a9d2e615ea"
+    },
+    "actor": {
+      "text": "행위자",
+      "source_sha256": "449995c4fe8fab389053dac72d77798c094dd4a3b7b3cfe69c4d78d119308dce"
+    },
+    "renewal": {
+      "text": "갱신",
+      "source_sha256": "f4a9133d791782c1d6c1729e52e2738cd03a6467fe1e01bf574a970edda1e13c"
+    },
+    "recorded": {
+      "text": "기록됨",
+      "source_sha256": "c97ac679c9da5f7b34c6f673a3963c5c728a006ee1c7faf653f888ae42c9e987"
+    },
+    "state": {
+      "current": {
+        "text": "유효",
+        "source_sha256": "e0d1b68224bf0b31ef16b206c65b5f8f6b89d18161f4a7cdcb8d0ac8d952549a"
+      },
+      "due": {
+        "text": "만기",
+        "source_sha256": "9071738f145962a67ca1f1db834560031606ced93aa9161f48c493afe31d0a7c"
+      },
+      "overdue": {
+        "text": "기한 초과",
+        "source_sha256": "d660945bc299132062a8e487e69bba66ca9088298103b8a63daa71b910305627"
+      },
+      "no_expiry": {
+        "text": "만료 없음",
+        "source_sha256": "fe06351db8da70412dd4d5a51545d68503554eb9d1bf074aff5009a027e8f2b4"
+      }
+    },
+    "procedure": {
+      "text": "절차",
+      "source_sha256": "9c280284ef2669a2be7280a58557e553942fb2e0d2154e3f5949dc153c029bcf"
+    },
+    "procedureRequired": {
+      "text": "Choose a procedure for this family page.",
+      "source_sha256": "7c0ed8b8a4cb8b6da91e54f163b53edd9c543a16c62524dcc7f64d1c63d9ad1f"
+    },
+    "procedures": {
+      "visitor_log": {
+        "text": "방문자 로그",
+        "source_sha256": "42cf93b0de06849183e3f91294e96c3f101315fef7d616fc2ee87e3cd27f2b59"
+      },
+      "escort": {
+        "text": "동행",
+        "source_sha256": "4cc2da8a6ad3b75b9604b5f987108e5313bde95155e849647cd95656ae36639f"
+      },
+      "supplier_questionnaire": {
+        "text": "공급업체 설문",
+        "source_sha256": "a810baeae4b76d1a97b413bb457d3c6961e3fd365556eedb62d22b75710bfceb"
+      },
+      "signed_flowdown": {
+        "text": "서명된 하향 전달",
+        "source_sha256": "01a3af0828cbd50cc84c149208bb25c58c1feb240f139153a0c43d4f6f2504fe"
+      },
+      "witnessed_destruction": {
+        "text": "입회 폐기",
+        "source_sha256": "993a3f91bdbd7eed89e907b1c8a91ea7442b0b6986fa62ff334a8a5c8c968f5d"
+      }
+    },
+    "familyPages": {
+      "pe": {
+        "text": "증거 접수 PE",
+        "source_sha256": "0cdf154526d6f32a3e6818195d4aa2da7c46e20cf44f4723695bd547cda78e5e"
+      },
+      "sr": {
+        "text": "증거 접수 SR",
+        "source_sha256": "1184bb272d0b053f8858d441374a72ef2c5020adf7a67c465d3b00b2a58bfb23"
+      },
+      "mp": {
+        "text": "증거 접수 MP",
+        "source_sha256": "5449ef9e5a7951454c3ed9c6d61e28cc0503fb6c4667d669f667fc72690e727a"
+      }
+    },
+    "visitorName": {
+      "text": "방문자 이름",
+      "source_sha256": "8d9178364056d91c6af5efa2894dc3e6529f4be6b37ac42a40c311ac21c9a20f"
+    },
+    "escortName": {
+      "text": "호위자 이름",
+      "source_sha256": "4fc59a5226f6959fa59645ff9ab99316e676c6509c551ea7639a9bc4e0cbbfde"
+    },
+    "supplierName": {
+      "text": "공급업체 이름",
+      "source_sha256": "5b386986996ea3c99b50a643aad127e65929c37ec7d9942137e86aa8deeeb7e5"
+    },
+    "mediaDesc": {
+      "text": "매체 설명",
+      "source_sha256": "2e22cefe8cb83e7cd9a34c403addd81e25a268eb9aaba77a7faff45338ddfeb9"
+    },
+    "method": {
+      "text": "폐기 방법",
+      "source_sha256": "d86b869ac0dc888817d61b4b97b846ec50220d20f60105ce6640c5c9b197eec7"
+    },
+    "witnessName": {
+      "text": "증인 이름",
+      "source_sha256": "f8c969e164b4d205abeb9b6967f3945ccd8450d77b9492682bea10a414c784e8"
+    }
+  },
+  "supplierRegister": {
+    "title": {
+      "text": "공급자 등록부",
+      "source_sha256": "511c66ac61fe6a2e42a26878b7abebe5f9fcd1a415055b975c34460a4f4aaa23"
+    },
+    "summary": {
+      "text": "각 공급자와 범위에 포함된 이유를 기입하십시오. 여기에서 평가 주기를 기록합니다. 설문과 서명된 플로다운 파일은 Evidence Intake SR에 남습니다.",
+      "source_sha256": "673c1bfb05d6f03925bdc38e9ca066a03e133f76977007231a25183122ae0ddd"
+    },
+    "honesty": {
+      "text": "등록부 행은 공급자와 기록된 범위를 나타냅니다. 평가 결과는 서버 시각이 찍힌 운영자 진술입니다. Met가 아니며 인증도 아닙니다.",
+      "source_sha256": "63937e3041276b1fb87ca863769018707e6a58674acd73ab3ad62fa0f2004ebe"
+    },
+    "addSupplier": {
+      "text": "공급자 추가",
+      "source_sha256": "19b13d88683517ed990db4076e4a4ae862c0b59e884ba8892b87786cf8e6de97"
+    },
+    "name": {
+      "text": "이름",
+      "source_sha256": "253d1510caf5362045ce50b1bdc33758fc4b3fd6ddc552d8dc0619784bd9c7d1"
+    },
+    "organization": {
+      "text": "조직",
+      "source_sha256": "65e425a15b2d066d0b07ff6a0c5f2ee1f0e7809e2c0226291d0c421024c01497"
+    },
+    "scopeBasis": {
+      "text": "범위 근거",
+      "source_sha256": "eaafac34074ae0f8af835078c1631e0d72e60d85b6567b064f8967597dca8e39"
+    },
+    "scopeHelp": {
+      "text": "8자 이상. 이 공급자가 접근할 수 있는 규제 업무를 적으십시오.",
+      "source_sha256": "712808c5f17ba3741df1baf8e12153d99b73a0eeae2bd70da5f2fa3b89fcab8d"
+    },
+    "contactEmail": {
+      "text": "연락 전자 메일",
+      "source_sha256": "275ae150662f990e52af9bec2b50261a25d950047a91146f04e143d41b95ea07"
+    },
+    "record": {
+      "text": "기록",
+      "source_sha256": "6e8b375a38c1e33c5a5425051e00432aa4db51edbe6300eb8d5610e1214a12fb"
+    },
+    "recorded": {
+      "text": "공급자를 기록했습니다.",
+      "source_sha256": "4d26a34526fa2c7ab888b135baf8b7913954e5e7ec92d770b9e8b3f9ba7aa04c"
+    },
+    "archive": {
+      "text": "보관",
+      "source_sha256": "2e4099bad3f859dc9dd6e690e2f8c379f5b1bb35bdfb91b962adc52ee8886233"
+    },
+    "archived": {
+      "text": "공급자를 보관했습니다.",
+      "source_sha256": "3763d0d1f80e42b89443e72575dc063d9f1cbaae78e73a99ad059b5dfad7b0ce"
+    },
+    "status": {
+      "text": "상태",
+      "source_sha256": "e10195a1239fb321327bafbe0397ebfcf7f0985a6e3bc28661a65132025b6808"
+    },
+    "lastAssessed": {
+      "text": "최근 평가",
+      "source_sha256": "4c544b4517bc334fdead96681ac179a11c27cf80cbbcaa94023e078e591fd7ef"
+    },
+    "actions": {
+      "text": "동작",
+      "source_sha256": "e0d6a8db23079de3e62e04771bb11ddb1d8f6a8a5bba48c5a7e06ba2153c6992"
+    },
+    "assessments": {
+      "text": "평가",
+      "source_sha256": "24974ab634200ecf396fa9e846afa45e72a55151e9cc79ca9def46d480dcc5a4"
+    },
+    "outcome": {
+      "text": "결과",
+      "source_sha256": "109383e344db8ae54a47c140e43b12fd1809e15469e42b9aba848f2f0fd758ca"
+    },
+    "outcomePass": {
+      "text": "합격",
+      "source_sha256": "6c1136cf74d35b667520ca75e1d05bb1e0705be0ecc12a4113d58f4470d2b486"
+    },
+    "outcomeFail": {
+      "text": "불합격",
+      "source_sha256": "79549f8a7e67724eba0e235907cda1edca7a7f3c4d68d69f07e374e2338a6761"
+    },
+    "outcomeConditional": {
+      "text": "조건부",
+      "source_sha256": "100ada7e52df9d34b6f79d8dbdb39eaa1bc335137d1beb8ac1b449e64182caf8"
+    },
+    "notes": {
+      "text": "메모",
+      "source_sha256": "c8a14bcd7060e8b8f06d41be1a29fbbd9d7d8e5c728e5aab91ffa535d2e294e7"
+    },
+    "recordAssessment": {
+      "text": "평가 기록",
+      "source_sha256": "e12413166cf0191f59d06e271ac8cd691d8fb9306808c5ffa9793cc1ec1e057b"
+    },
+    "assessmentRecorded": {
+      "text": "평가를 기록했습니다.",
+      "source_sha256": "2e3aadc2ebd617c717a38a5d971ca5416f83d0fbcb780ed440bda65045649b15"
+    },
+    "noAssessments": {
+      "text": "이 공급자에 대한 평가가 아직 없습니다.",
+      "source_sha256": "921c40685d2ac7210ab883b5ff7a504bc8f5fd096f8af41201e1958ec12fb75a"
+    },
+    "loadFailed": {
+      "text": "공급자 등록부를 불러올 수 없습니다.",
+      "source_sha256": "a6e343b6f2102d88448b321080ca53324ac839de4818da1a36c821e14c0abf65"
+    },
+    "noPermission": {
+      "text": "공급자 등록부를 볼 권한이 없습니다.",
+      "source_sha256": "a7878be7251131779d1a4b152f0a296e2c1e88b947f6a9ed85a57b268fccf85a"
     }
   }
 }

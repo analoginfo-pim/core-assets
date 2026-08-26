@@ -357,6 +357,98 @@
     "deliveredPath": {
       "text": "on host {{path}}",
       "source_sha256": "c7c146d796e5e15fa227a254fc7dbe2a13469c354da867e93b695ab03f493711"
+    },
+    "alternateHostFolder": {
+      "source_sha256": "365b29ff17fcadbf111f30e07442add4dccba6a13f5e9d5f9d0ed03b314819c6",
+      "text": "Alternate: when allowed, copy into the machine folder aic-transfer (SFTP or SMB). Not a VNC file channel."
+    },
+    "files": {
+      "source_sha256": "abc7e9892806b047b4d4786b3685285543f76ca314c4c76246d5f6544c7856c9",
+      "text": "Files"
+    },
+    "filesAria": {
+      "source_sha256": "690f58cc9fb25361bf0452d9422d7b222676a7a466455b55bcbb9ab76f2b2c2a",
+      "text": "Move files through Secure Share or the machine folder"
+    },
+    "helperHomeOnly": {
+      "source_sha256": "a8d2c4563edecd593c81bed818bda9b0e7d08602a66e7438474c37bb7c0d9a4d",
+      "text": "The on-demand helper lands only in this account home folder."
+    },
+    "hostUploadNotGranted": {
+      "source_sha256": "b9523ea764ef1ead8aa40b2d5a727f6f6b7926862d814a570e831f8b624756cd",
+      "text": "Direct copy to the machine is off unless an administrator grants it."
+    },
+    "launchConsumed": {
+      "source_sha256": "ae7d8dfac9ff5e0fc9aee0d70b174a16d556f7759ed94b7a9f7b88c3dd3230a9",
+      "text": "Used"
+    },
+    "launchOpen": {
+      "source_sha256": "5fa7aac5375c5815787fba3f49559f9b45b14023147ce0652803387974144e5f",
+      "text": "Ready"
+    },
+    "launchProgram": {
+      "source_sha256": "a49b21754e24f9fc2a42e6d30698e48a469532bd315678afb353d59d0b8d1af4",
+      "text": "Launch program"
+    },
+    "launchProgramAria": {
+      "source_sha256": "4df3f4d9dd65fd1a6d6fefca11dc8ca9da786f763b2b369a45ed4656d73a7767",
+      "text": "Launch a catalog program in this recorded session without showing the password"
+    },
+    "launchProgramClose": {
+      "source_sha256": "7d9eb7acb13e24625c404401d8e88b2350e32162455885f18276cf802f7701ed",
+      "text": "Close"
+    },
+    "launchProgramEmpty": {
+      "source_sha256": "12774bdf119a33b98d0203f9f12b557bcbb82a4e6f11151cfcf4fdf1a11d9bcd",
+      "text": "No catalog programs have been launched in this session yet."
+    },
+    "launchProgramGo": {
+      "source_sha256": "e4bb9f1ece9af9264a3b9e3913bbdb2cf497457167b14ced5f85688bfde74644",
+      "text": "Start"
+    },
+    "launchProgramHelp": {
+      "source_sha256": "f784d74888636267c735bde818d003e72f348a4d39d7456ac7fd94c566641ac2",
+      "text": "Pick a catalog program and a stored credential. The password is not shown. Several programs can share this recorded session."
+    },
+    "launchProgramList": {
+      "source_sha256": "a134d86baa0af4c5a87ee1629a4955b00f999e33c6cb1cdb00e22e1ef399789f",
+      "text": "Programs launched in this session"
+    },
+    "launchProgramRecording": {
+      "source_sha256": "45ae8e38fc3401627c993e6c127caf2dff333250835e86db291668de663e7a04",
+      "text": "This launch is part of the recorded session. The password is not shown."
+    },
+    "launchProgramTitle": {
+      "source_sha256": "ec37cb7433801fecd73ff688798791b31d8a4fdd623d0f2d53b0c4d724c20d29",
+      "text": "Launch a program in this session"
+    },
+    "preferredMoveStore": {
+      "source_sha256": "2e0b62b31e22f32de0e3732590ad014a64552d0ae032a4ae0111de179130c0a0",
+      "text": "Preferred: send through Secure Share. The other person opens it inside the enclave."
+    },
+    "refreshFolder": {
+      "source_sha256": "0e91610117029a62a478b7fa7df0b8598bebe3ab1e192d4b1882e310719c9671",
+      "text": "Refresh"
+    },
+    "remoteFolder": {
+      "source_sha256": "b482c1801e13b3a92c0f25be34201902e6e0813df7e356a388c9508db79eb8c3",
+      "text": "Remote folder ({{path}})"
+    },
+    "sendThroughSecureShare": {
+      "source_sha256": "7ec5a88e2ac7bc3dd536d590e10bf842cee03ba3e4a55b0e35248987f4ae01cb",
+      "text": "Send through Secure Share"
+    },
+    "uploadChunkFailed": {
+      "source_sha256": "afb698bf426660cdd7c8f90f5261816d7b4e10582660fcb04170922eefc597d6",
+      "text": "A part of the file did not upload. Try again."
+    },
+    "uploadTooLarge": {
+      "source_sha256": "9057d4cd03b0f7d688234421a33584f9d2059831a961061a40dd03504f587a11",
+      "text": "This file is larger than the {{maxMb}} MB limit."
+    },
+    "vncNoNativeChannel": {
+      "source_sha256": "707fa5f1e7dc153e1726cf014e942daff3c63eca2e6c102edb22236a6b38c8de",
+      "text": "This display session cannot receive files by itself."
     }
   },
   "landingPage": {
@@ -1416,5 +1508,95 @@
   "tls_security": {
     "text": "TLS security",
     "source_sha256": "58767c0d1e3cd75b57e0e08e6683c5334ead66019099a2fb58be84541b0a7a54"
+  },
+  "connectionPointField": {
+    "helper": {
+      "source_sha256": "4d59581efcd8babd3e457bf6e65af8cad28cf357faf2a6d75ea76f4f990c125d",
+      "text": "The SSH, RDP, or VNC connection target this right applies to."
+    },
+    "manualHint": {
+      "source_sha256": "28b7167c3cefd481ba9f0f1d2920d39a425b78d9b131e1dd3c53bb1bd9ca6d45",
+      "text": "Pick a connection point, or type its identifier if it is not listed."
+    }
+  },
+  "controlRefField": {
+    "helper": {
+      "source_sha256": "ed4ea7ca37a36664401d0f91c78553dbb459e963b9a525351c70bdb6c466d180",
+      "text": "The catalog control this finding tracks. The identifier is an association, not a verdict."
+    },
+    "manualHint": {
+      "source_sha256": "f02f35aea36509654696e2a5017209ad21f0447efeb4ec1e51573097cde53c9d",
+      "text": "Pick a control from the catalog, or type a reference the catalog does not carry, for example AC-6."
+    }
+  },
+  "endpointField": {
+    "helper": {
+      "source_sha256": "3b447258c4232bccdab6f66651e5c31cac230036e705065c084244487def0030",
+      "text": "The enrolled endpoint this assignment applies to."
+    },
+    "manualHint": {
+      "source_sha256": "14cd3016f7592db0997e25ac88e4e87d7351b442b49f75258767dabd175ecb6b",
+      "text": "Pick an endpoint, or type its machine identifier if it is not listed."
+    }
+  },
+  "endpointIdentityField": {
+    "helper": {
+      "source_sha256": "9e2915b217d6e5e927535d0cd55c3667f17a5a262c7fe87d1ce8d8622c9a2973",
+      "text": "A local account on the selected machine."
+    },
+    "manualHint": {
+      "source_sha256": "27baf0130f433b3f48e0991200e5fa60a185b852af4a302aea6b533995b77f4d",
+      "text": "Pick a managed account, or type a local or domain account name if it is not listed."
+    }
+  },
+  "iamUserGroupField": {
+    "helper": {
+      "source_sha256": "eb9d139813fc6fb3c9910aba5f53ecdeb388e5c8deb6d6aa1d674dca49d0bc52",
+      "text": "The IAM user group this policy applies to."
+    },
+    "manualHint": {
+      "source_sha256": "bfa451a90905d55505bbeb529e31936085fe863f1b8f7b1cb284b9a5ab667090",
+      "text": "Pick a user group, or type its identifier if it is not listed."
+    }
+  },
+  "machineScopeField": {
+    "helper": {
+      "source_sha256": "df027359637d7fb4bd105c1fd9ba3b0cdcc050a903f9a9880883b06b3dfd3865",
+      "text": "When set, uses that machine's effective session-control policy. Leave empty for the global policy."
+    },
+    "manualHint": {
+      "source_sha256": "3e944c1672f9d3ad4ddfed69b4382d515cf34f6e67d86d8d13eb25c03201c379",
+      "text": "Pick a machine, or type its identifier if it is not listed."
+    }
+  },
+  "systemGroupField": {
+    "helper": {
+      "source_sha256": "db3603c3cc89b0c0f0a096e22faf4dfe3c9d35e4ce22bad0942e187f99b6de2b",
+      "text": "The system group this marking applies to."
+    },
+    "manualHint": {
+      "source_sha256": "745669330be4e07e1ee2a43061c6d2b8db4cd3e13fbab567390d1a98d62d07d9",
+      "text": "Pick a system group, or type its identifier if it is not listed."
+    }
+  },
+  "tenantField": {
+    "helper": {
+      "source_sha256": "5f7405545172f5fce4898ba8e47b342c3bede3dad693c80612b1ad6e7bb68922",
+      "text": "The multi-tenant record this marking applies to."
+    },
+    "manualHint": {
+      "source_sha256": "f9f88f4d19a811093719dadf3ff4b6c23e2ea6f1439d99c31d03c53e13ec3374",
+      "text": "Pick a tenant, or type its identifier if it is not listed."
+    }
+  },
+  "workstationField": {
+    "helper": {
+      "source_sha256": "674fc16a633f6da22bdccd86853e3f40a4e31c09ce4d6ba022a2a5016e76a7f0",
+      "text": "Assignable end-user workstation (PAM target)."
+    },
+    "manualHint": {
+      "source_sha256": "7fba7e21b7591fc04f493beaf03165426d60fefb6c05744410beb61fc67d6a2b",
+      "text": "Pick a workstation, or type its system key if it is not listed."
+    }
   }
 }

@@ -650,6 +650,30 @@
       "visitor_cycle": {
         "text": "Ciclo de visitantes",
         "source_sha256": "c09df1edb6c0be2cf5c1e7585affb127766aaddaa626f0989cfc5a203d41f8a9"
+      },
+      "witnessed_destruction": {
+        "text": "Destrucción presenciada",
+        "source_sha256": "fae26135125701ce1311fdce52995f9880c87576b1a73e647cf8fcaf412f558a"
+      },
+      "degauss_certificate": {
+        "text": "Certificado de desmagnetización",
+        "source_sha256": "ce3c952663f6d6b970fd6ef98e8c4f2e78159b40bfed61995404e04625e34a1b"
+      },
+      "retention_attestation": {
+        "text": "Atestación de retención",
+        "source_sha256": "b1d0cc24b6b4e784ba438922460c41326f0ad299de1970de0c35110f72f33124"
+      },
+      "export_delivery": {
+        "text": "Entrega de exportación",
+        "source_sha256": "759b2441d615a90f0d3069edad535ed71b69b91bce35a135f93774e0a2e1d1ce"
+      },
+      "exception_record": {
+        "text": "Registro de excepción",
+        "source_sha256": "6cdc239c67af02a303d0ae4c467e857fe7a2d2ada5c1aad4d6468dcde245c491"
+      },
+      "posture_review": {
+        "text": "Revisión de postura",
+        "source_sha256": "c04524545131173e1f376664f24c48aec32a32aed516cc98a37b3f2630febb6f"
       }
     },
     "eventKinds": {
@@ -692,6 +716,18 @@
       "attested": {
         "text": "Atestiguado",
         "source_sha256": "9d8e8a7e7736a73369f1b997105d5669edfdd0040d7a785add724be43b2d1d74"
+      },
+      "certificate_attached": {
+        "text": "Certificado adjunto",
+        "source_sha256": "61ad847a7c45a8392ee0d009df0486a19f4f2f708bc5639223da548a94b31267"
+      },
+      "delivered": {
+        "text": "Entregado",
+        "source_sha256": "d15f39d60e24e2f4814b7321c30851f8a81a5d939374f9f0c8757838bd994879"
+      },
+      "exception_recorded": {
+        "text": "Excepción registrada",
+        "source_sha256": "54434d7fe48757caa23f2215057d333ecc4b07c5a7dff8bc1363638e055bb363"
       }
     },
     "cp": {
@@ -735,6 +771,334 @@
         "text": "Programar revisión",
         "source_sha256": "9426518a54d5f63c7727e31178ed0a2861469dabeb666dbfbc358de64eb0f11f"
       }
+    },
+    "mp": {
+      "title": {
+        "text": "Destrucción de medios",
+        "source_sha256": "5ac584101ae076484b1d6c59f089ce7549063a0e2b08334a204c1d75c9359ffe"
+      },
+      "summary": {
+        "text": "Programe una destrucción presenciada o un certificado de desmagnetización y registre la finalización más un hash de certificado. El producto no opera la trituradora. Esto no es Met.",
+        "source_sha256": "8e40a1c7822b4d624da4cebf0b3840fb3737a87d8907fdc3e5d1ff7fe50c0fd5"
+      },
+      "add": {
+        "text": "Programar destrucción",
+        "source_sha256": "19b25e174e9dcacd463b1c0b7d39d62918aa7ead4d34d04cac931b81c50a070d"
+      }
+    },
+    "au": {
+      "title": {
+        "text": "Registros de retención",
+        "source_sha256": "9b9afb7f3fdd9315b76e49253701380bf90c2d5d98c6bc25a0f723137b73c6ca"
+      },
+      "summary": {
+        "text": "Registre una atestación de retención o una entrega de exportación con un hash. Operar el almacenamiento WORM permanece en la organización. Esto no es Met.",
+        "source_sha256": "c47a6a8330a601ce8e9b4921f5343ea26a2b3b14b95eee8dbc042263e6f5be3e"
+      },
+      "add": {
+        "text": "Registrar retención",
+        "source_sha256": "6c3214774446a6fd259fe0b2282c0452643599efb1f51df4b6c08632f1af91e6"
+      }
+    },
+    "si": {
+      "title": {
+        "text": "Excepciones de postura",
+        "source_sha256": "ffab9f7c3a4baaba3bcc39a00fe2d7e21f692e4ce51a8c7f511700171300c16f"
+      },
+      "summary": {
+        "text": "Registre una excepción de cobertura de punto final o una revisión de postura. El producto no ejecuta el EDR empresarial ni la herramienta de parches. Esto no es Met.",
+        "source_sha256": "e6f70876e3351a42ebd9d4dee1f89000e8d29506b7ad73acf1bede87f735134f"
+      },
+      "add": {
+        "text": "Registrar excepción",
+        "source_sha256": "aa7ef756e946c0acf788ea98a46eec05cdeca2087c74621f79caf22f2f629400"
+      }
+    }
+  },
+  "coverageIntake": {
+    "title": {
+      "text": "Ingreso de evidencias",
+      "source_sha256": "3c9f82f12af195e85fc062e610f1e6207e1fa6f87f90cbc68ff8a9b3b67e214f"
+    },
+    "summary": {
+      "text": "Registre un acto fuera de línea o cargue un archivo. El servidor guarda SHA-256. Es una declaración, no Met, y no está certificado.",
+      "source_sha256": "9468316cc614c9af132787f3598e50f644a583142e700292d18e2e4168b28e0d"
+    },
+    "honesty": {
+      "text": "Una atestación de que ocurrió un acto fuera de línea solo prueba que una persona nombrada lo declaró, con marca de tiempo del servidor. Nunca es Met y no está certificado.",
+      "source_sha256": "4d050aaf65e26109667f534f1843e269895e02f9ef3f9bb39b821295c0a31868"
+    },
+    "family": {
+      "text": "Familia",
+      "source_sha256": "bd2d677b2ed4381b48bb1d0841052c6d076e7d634d5052e85dcbe0b8a0dedd80"
+    },
+    "titleField": {
+      "text": "Título",
+      "source_sha256": "7e8cd2056da73a7fefb6cd91f4e5d199d08d9058c517b9a2476b1b520324d674"
+    },
+    "reason": {
+      "text": "Motivo",
+      "source_sha256": "f81ab834de5f84918dc040b884267c2b61cb1a52d46442de10e97f35a94d0500"
+    },
+    "reasonHelp": {
+      "text": "Al menos 8 caracteres. Indique por qué existe este registro.",
+      "source_sha256": "a286822a102fc9dc9d86a9a8e715a3ec4f078efc2aff1eb31f6be20f40f84596"
+    },
+    "statement": {
+      "text": "Qué ocurrió",
+      "source_sha256": "483bd49023ae2bfb08da43eea2757a0e5490f7b0fe2964f49273cc25215d61f4"
+    },
+    "controlRef": {
+      "text": "Control",
+      "source_sha256": "32d7e82082479b8cb546187ff0af11e4915e4d17bc28e02dca7425288b79badd"
+    },
+    "binderSection": {
+      "text": "Id. de sección del expediente",
+      "source_sha256": "882019cbc07aa128972d35797113d4994243e2b6d2f0361d38e9d21546471d04"
+    },
+    "expires": {
+      "text": "Vence (RFC 3339)",
+      "source_sha256": "ac669fd06c95c3b61fdefb1a8fdf0b334f516b99f95c2113f61c2e83a3ec58db"
+    },
+    "artifact": {
+      "text": "Elegir archivo",
+      "source_sha256": "da7da3667ae8114a4f7032d121ea8a1fb21ab5a4d8cbdc843e16045bbac1ff09"
+    },
+    "record": {
+      "text": "Registrar",
+      "source_sha256": "bfdd510698ef3ccbf17f2c67fc47790e1ba72894fb74fe284bbc136b47ef73e6"
+    },
+    "sweep": {
+      "text": "Registrar recordatorios vencidos",
+      "source_sha256": "342bac73c4d9eee60ef9b9723bbf0e72828700bca2a03b83b1e3b6f12065fc99"
+    },
+    "sweepDone": {
+      "text": "Se registraron {{logged}} recordatorio(s) de {{scanned}} fila(s) vencida(s). Es un registro, no correo.",
+      "source_sha256": "fd5fd92a868723472eb8bef9380f598a29d343af54dfdecf52ca634b722b0719"
+    },
+    "empty": {
+      "text": "Aún no hay registros.",
+      "source_sha256": "5d9ae0627ee22c6513ada52ffda97f5b1822550172f90ca902d04d96d5e0f047"
+    },
+    "loadFailed": {
+      "text": "No se pudo cargar el ingreso de evidencias.",
+      "source_sha256": "a29dcfb2295d239664f73148600498f5ef8ace856acf8595998d2a56eb234607"
+    },
+    "retry": {
+      "text": "Reintentar",
+      "source_sha256": "942087cc2d41e01304b7195558d093d10c72af8e838c7556d6a02d471ee71852"
+    },
+    "sha256": {
+      "text": "SHA-256",
+      "source_sha256": "bbd07c4fc02c99b97124febf42c7b63b5011c0df28d409fbb486b5a9d2e615ea"
+    },
+    "actor": {
+      "text": "Actor",
+      "source_sha256": "449995c4fe8fab389053dac72d77798c094dd4a3b7b3cfe69c4d78d119308dce"
+    },
+    "renewal": {
+      "text": "Renovación",
+      "source_sha256": "f4a9133d791782c1d6c1729e52e2738cd03a6467fe1e01bf574a970edda1e13c"
+    },
+    "recorded": {
+      "text": "Registro creado",
+      "source_sha256": "c97ac679c9da5f7b34c6f673a3963c5c728a006ee1c7faf653f888ae42c9e987"
+    },
+    "state": {
+      "current": {
+        "text": "Vigente",
+        "source_sha256": "e0d1b68224bf0b31ef16b206c65b5f8f6b89d18161f4a7cdcb8d0ac8d952549a"
+      },
+      "due": {
+        "text": "Por vencer",
+        "source_sha256": "9071738f145962a67ca1f1db834560031606ced93aa9161f48c493afe31d0a7c"
+      },
+      "overdue": {
+        "text": "Vencido",
+        "source_sha256": "d660945bc299132062a8e487e69bba66ca9088298103b8a63daa71b910305627"
+      },
+      "no_expiry": {
+        "text": "Sin vencimiento",
+        "source_sha256": "fe06351db8da70412dd4d5a51545d68503554eb9d1bf074aff5009a027e8f2b4"
+      }
+    },
+    "procedure": {
+      "text": "Procedimiento",
+      "source_sha256": "9c280284ef2669a2be7280a58557e553942fb2e0d2154e3f5949dc153c029bcf"
+    },
+    "procedureRequired": {
+      "text": "Elija un procedimiento para esta página de familia.",
+      "source_sha256": "7c0ed8b8a4cb8b6da91e54f163b53edd9c543a16c62524dcc7f64d1c63d9ad1f"
+    },
+    "procedures": {
+      "visitor_log": {
+        "text": "Registro de visitantes",
+        "source_sha256": "42cf93b0de06849183e3f91294e96c3f101315fef7d616fc2ee87e3cd27f2b59"
+      },
+      "escort": {
+        "text": "Escolta",
+        "source_sha256": "4cc2da8a6ad3b75b9604b5f987108e5313bde95155e849647cd95656ae36639f"
+      },
+      "supplier_questionnaire": {
+        "text": "Cuestionario del proveedor",
+        "source_sha256": "a810baeae4b76d1a97b413bb457d3c6961e3fd365556eedb62d22b75710bfceb"
+      },
+      "signed_flowdown": {
+        "text": "Cláusula descendente firmada",
+        "source_sha256": "01a3af0828cbd50cc84c149208bb25c58c1feb240f139153a0c43d4f6f2504fe"
+      },
+      "witnessed_destruction": {
+        "text": "Destrucción presenciada",
+        "source_sha256": "993a3f91bdbd7eed89e907b1c8a91ea7442b0b6986fa62ff334a8a5c8c968f5d"
+      }
+    },
+    "familyPages": {
+      "pe": {
+        "text": "Ingreso de evidencia PE",
+        "source_sha256": "0cdf154526d6f32a3e6818195d4aa2da7c46e20cf44f4723695bd547cda78e5e"
+      },
+      "sr": {
+        "text": "Ingreso de evidencia SR",
+        "source_sha256": "1184bb272d0b053f8858d441374a72ef2c5020adf7a67c465d3b00b2a58bfb23"
+      },
+      "mp": {
+        "text": "Ingreso de evidencia MP",
+        "source_sha256": "5449ef9e5a7951454c3ed9c6d61e28cc0503fb6c4667d669f667fc72690e727a"
+      }
+    },
+    "visitorName": {
+      "text": "Nombre del visitante",
+      "source_sha256": "8d9178364056d91c6af5efa2894dc3e6529f4be6b37ac42a40c311ac21c9a20f"
+    },
+    "escortName": {
+      "text": "Nombre de la escolta",
+      "source_sha256": "4fc59a5226f6959fa59645ff9ab99316e676c6509c551ea7639a9bc4e0cbbfde"
+    },
+    "supplierName": {
+      "text": "Nombre del proveedor",
+      "source_sha256": "5b386986996ea3c99b50a643aad127e65929c37ec7d9942137e86aa8deeeb7e5"
+    },
+    "mediaDesc": {
+      "text": "Descripción del medio",
+      "source_sha256": "2e22cefe8cb83e7cd9a34c403addd81e25a268eb9aaba77a7faff45338ddfeb9"
+    },
+    "method": {
+      "text": "Método de destrucción",
+      "source_sha256": "d86b869ac0dc888817d61b4b97b846ec50220d20f60105ce6640c5c9b197eec7"
+    },
+    "witnessName": {
+      "text": "Nombre del testigo",
+      "source_sha256": "f8c969e164b4d205abeb9b6967f3945ccd8450d77b9492682bea10a414c784e8"
+    }
+  },
+  "supplierRegister": {
+    "title": {
+      "text": "Registro de proveedores",
+      "source_sha256": "9d7b773373ae7b449a8eca593990e3e9019728958cdb767cf6c6857296c8690a"
+    },
+    "summary": {
+      "text": "Nombre a cada proveedor y por qué está en el alcance. Registre aquí un ciclo de evaluación. Los cuestionarios y los archivos de flow-down firmados permanecen en Evidence Intake SR.",
+      "source_sha256": "83af954c21e7e69bd1eb931174949f6e75319166a96c4298efba16db8e117ea7"
+    },
+    "honesty": {
+      "text": "Una fila del registro nombra a un proveedor y un alcance registrado. Un resultado de evaluación es una declaración del operador con marca de tiempo del servidor. No es Met y no está certificado.",
+      "source_sha256": "f69a35c3ab38aa513f771224d75fb21a3449b867895818d8ae4a1327229752a5"
+    },
+    "addSupplier": {
+      "text": "Agregar proveedor",
+      "source_sha256": "e01bb09c6a2c68d223fbd781ff4c6b1477fc3d7733ec3c72428454937e3235e3"
+    },
+    "name": {
+      "text": "Nombre",
+      "source_sha256": "562bb15757a8b593d6fdc812b0767c0e198bf7d8e19157933110de09c9db9012"
+    },
+    "organization": {
+      "text": "Organización",
+      "source_sha256": "e3dbe4d872a577c331d2688bf9f075b0203aa092c66bed85c08f20927c23d173"
+    },
+    "scopeBasis": {
+      "text": "Base del alcance",
+      "source_sha256": "b8cf13d106357b9d4a9e3ccb0c8920ef697e18c5b8e05dacbbe275d9c9d48d95"
+    },
+    "scopeHelp": {
+      "text": "Al menos 8 caracteres. Indique el trabajo regulado que este proveedor puede alcanzar.",
+      "source_sha256": "162de6f275412275ef6f0bbbdcac4f3a76880c8b4d23c2ca4d6097232c4e870e"
+    },
+    "contactEmail": {
+      "text": "Correo de contacto",
+      "source_sha256": "2fadae289e12979369e6bc899b1eb60b15d41768bd2b7e949aa78c3426eb6c41"
+    },
+    "record": {
+      "text": "Registrar",
+      "source_sha256": "a50cc21ffd572fea908a5ad0bb9227c2943c53d040b70c4bff241cc8276d930a"
+    },
+    "recorded": {
+      "text": "Proveedor registrado.",
+      "source_sha256": "484393379883d7b97fbb284c5abe02988650cddef44b09c303f1ace6faed545b"
+    },
+    "archive": {
+      "text": "Archivar",
+      "source_sha256": "f35f9141f4427c3465d8a24a5290de01a2b850833b5c01b1dcccb94dca32d93c"
+    },
+    "archived": {
+      "text": "Proveedor archivado.",
+      "source_sha256": "2714684d05924338b97931f974cf3bb5ce59e5a123f70d5c3c1e145fa0bbe2e7"
+    },
+    "status": {
+      "text": "Estado",
+      "source_sha256": "98e5acddb6c46a248f96e8a549b4103a91f47299e1dbf508e436d738912c5cbd"
+    },
+    "lastAssessed": {
+      "text": "Última evaluación",
+      "source_sha256": "c3fce67040aba7dcf6c10283899088c14cd10bf2b241911d79f5b1d33d6cf580"
+    },
+    "actions": {
+      "text": "Acciones",
+      "source_sha256": "fb89a30ba7f64d186e0db2ce65025a75b18ad0699df00935487e19558c56abff"
+    },
+    "assessments": {
+      "text": "Evaluaciones",
+      "source_sha256": "2fc213896adf0b0ea17e5505fce69b649092a237adc64d07c2e583d04f5af73c"
+    },
+    "outcome": {
+      "text": "Resultado",
+      "source_sha256": "a71bc39fe3f33e42d1164472c83a9a340c52da9718ce3b8114c488647338fdf5"
+    },
+    "outcomePass": {
+      "text": "Aprobado",
+      "source_sha256": "be113ca8d997bbc828707ea6962f758cba5ea2ac39aabbd0aad93d091bf0691b"
+    },
+    "outcomeFail": {
+      "text": "No aprobado",
+      "source_sha256": "54f12c987161ee71b40d062a59b26178bba71d5491f0bb37315eb9e0868b03db"
+    },
+    "outcomeConditional": {
+      "text": "Condicional",
+      "source_sha256": "fe2673068ae7d01c687d28b565763c040ecec2e95e72d8cec18232211ea4fadf"
+    },
+    "notes": {
+      "text": "Notas",
+      "source_sha256": "8a6172e21a8758f7768bc353ffdbdb0b4daa4180ee5c82077de9ead26980ee61"
+    },
+    "recordAssessment": {
+      "text": "Registrar evaluación",
+      "source_sha256": "57f94533196906b384ec3191ba714b44839b4dd5f2b91dafe5210ed8df5d1ec4"
+    },
+    "assessmentRecorded": {
+      "text": "Evaluación registrada.",
+      "source_sha256": "0893439916c5749d5960b3952a60ac93053ce749ab089034bb1625c9f910788a"
+    },
+    "noAssessments": {
+      "text": "Aún no hay evaluaciones para este proveedor.",
+      "source_sha256": "0f78981769395efb70691ce0e2e0e500f71ac527a9ea7f83ca2bfa96b3bc4df7"
+    },
+    "loadFailed": {
+      "text": "No se pudo cargar el registro de proveedores.",
+      "source_sha256": "3e7798e100d357538acd2fe0ecf019da1a744ed714f6732f6bd33e96e6bf66b8"
+    },
+    "noPermission": {
+      "text": "No tiene permiso para ver el registro de proveedores.",
+      "source_sha256": "b75ebf6479fc7e328900cf22f4bbdfed85c1c5faf852aeb8b404d136fce44744"
     }
   }
 }

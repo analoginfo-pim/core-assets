@@ -650,6 +650,30 @@
       "visitor_cycle": {
         "text": "Besökscykel",
         "source_sha256": "202fdbf8299ebe6815b653650595df02b636f53c0f1391e43bb5cffae08e485f"
+      },
+      "witnessed_destruction": {
+        "text": "Bevittnad förstörelse",
+        "source_sha256": "11e3ce8c47d1ec26355d5de6399372c61f3972fe47a86fb84398e19daae90c42"
+      },
+      "degauss_certificate": {
+        "text": "Avmagnetiseringsintyg",
+        "source_sha256": "88eb176ea0e02ebe14581dc699f1988f18d8776250fade69d5288cf67975a73d"
+      },
+      "retention_attestation": {
+        "text": "Bevarandeintyg",
+        "source_sha256": "cd24e8cb2c473fa975779c707dc4631934255c1d7c87d050782c7e8998116ba0"
+      },
+      "export_delivery": {
+        "text": "Exportöverlämning",
+        "source_sha256": "da74cad367262423d2574f6ce33fecab32746b3716026dd1501a8b9b128f1f6a"
+      },
+      "exception_record": {
+        "text": "Undantagspost",
+        "source_sha256": "ebc7127a2bb5815810331e20834f891ca7bd8ae252d035c2d761c9a00595f71e"
+      },
+      "posture_review": {
+        "text": "Lägesgranskning",
+        "source_sha256": "960157668ee81cc89438a00e460ffd2c5e67f0e394df29f0475a78874ef96620"
       }
     },
     "eventKinds": {
@@ -692,6 +716,18 @@
       "attested": {
         "text": "Intygad",
         "source_sha256": "9a2bc9b56d2212a0105e00f373e07ddd80521919a9f20fe1e8274df4864dde12"
+      },
+      "certificate_attached": {
+        "text": "Intyg bifogat",
+        "source_sha256": "bcef11728dd3614fb4efec38c03d9d8a4f4c17ff5d5744fa16b3e27ac921fe06"
+      },
+      "delivered": {
+        "text": "Överlämnat",
+        "source_sha256": "8d7f78c64d10b34b8a13d62ddefcb66223a4238d2dc76e93fc887b9370c90a9d"
+      },
+      "exception_recorded": {
+        "text": "Undantag registrerat",
+        "source_sha256": "db7db2c338565b987e592c177ae95700e3ecb5f16b64d6177674e4567d33310f"
       }
     },
     "cp": {
@@ -735,6 +771,334 @@
         "text": "Schemalägg granskning",
         "source_sha256": "414820cea295aa73329d4f31a527d3185ffcec93c322cd76333fdcd7a33b3931"
       }
+    },
+    "mp": {
+      "title": {
+        "text": "Medieförstörelse",
+        "source_sha256": "395c4aa4a83ac14ccf7d05200eb840b15c992e0cbfd3673320265be608cba021"
+      },
+      "summary": {
+        "text": "Schemalägg bevittnad förstörelse eller ett avmagnetiseringsintyg och registrera slutförande plus ett intygshash. Produkten kör inte dokumentförstöraren. Detta är inte Met.",
+        "source_sha256": "59970cb53e5d4ba1a9df2d718ccd6ade1d8302fea5e8bc56421f581145a5c9d3"
+      },
+      "add": {
+        "text": "Schemalägg förstörelse",
+        "source_sha256": "cd0756d853327966251dc1eab8617c6fc8689370f0e95975bc48cde2ed108212"
+      }
+    },
+    "au": {
+      "title": {
+        "text": "Bevarandeposter",
+        "source_sha256": "e3adc403834d1f0053e9abcd8154a9ec2bba13f6c1955e8c4d6cf7a7f8b454f1"
+      },
+      "summary": {
+        "text": "Registrera ett bevarandeintyg eller en exportöverlämning med hash. Drift av WORM-lagring stannar hos organisationen. Detta är inte Met.",
+        "source_sha256": "65af89f57afa385f4147417571a89fd570f853147acaa5c43a7ed1e73467e1a1"
+      },
+      "add": {
+        "text": "Registrera bevarande",
+        "source_sha256": "37ce6d4d64406d2563b0193036fd28767f2a84b86f38724f1d174c17d5950316"
+      }
+    },
+    "si": {
+      "title": {
+        "text": "Lägesundantag",
+        "source_sha256": "c0352b86293772bd84dbbc75ba48ee781971437ddac953e0c4321a798449f441"
+      },
+      "summary": {
+        "text": "Registrera ett täckningsundantag för slutpunkt eller en lägesgranskning. Produkten kör inte företagets EDR eller patchverktyg. Detta är inte Met.",
+        "source_sha256": "ab6319611e6cd3afae0f55759a99f6308389d5ebc39c367daaea522aa17b1c19"
+      },
+      "add": {
+        "text": "Registrera undantag",
+        "source_sha256": "8efd0586bc9a421cb3e3aee478ad2f0f2a65092df82fa4d782bc187d50027cfd"
+      }
+    }
+  },
+  "coverageIntake": {
+    "title": {
+      "text": "Bevisintag",
+      "source_sha256": "3c9f82f12af195e85fc062e610f1e6207e1fa6f87f90cbc68ff8a9b3b67e214f"
+    },
+    "summary": {
+      "text": "Registrera en handling utanför systemet eller ladda upp en fil. Servern lagrar SHA-256. Det är ett uttalande, inte Met, och inte certifierat.",
+      "source_sha256": "9468316cc614c9af132787f3598e50f644a583142e700292d18e2e4168b28e0d"
+    },
+    "honesty": {
+      "text": "Ett intyg om att en handling utanför systemet skedde bevisar bara att en namngiven person sade det, med servertid. Det är aldrig Met och inte certifierat.",
+      "source_sha256": "4d050aaf65e26109667f534f1843e269895e02f9ef3f9bb39b821295c0a31868"
+    },
+    "family": {
+      "text": "Familj",
+      "source_sha256": "bd2d677b2ed4381b48bb1d0841052c6d076e7d634d5052e85dcbe0b8a0dedd80"
+    },
+    "titleField": {
+      "text": "Titel",
+      "source_sha256": "7e8cd2056da73a7fefb6cd91f4e5d199d08d9058c517b9a2476b1b520324d674"
+    },
+    "reason": {
+      "text": "Skäl",
+      "source_sha256": "f81ab834de5f84918dc040b884267c2b61cb1a52d46442de10e97f35a94d0500"
+    },
+    "reasonHelp": {
+      "text": "Minst 8 tecken. Säg varför denna post finns.",
+      "source_sha256": "a286822a102fc9dc9d86a9a8e715a3ec4f078efc2aff1eb31f6be20f40f84596"
+    },
+    "statement": {
+      "text": "Vad som hände",
+      "source_sha256": "483bd49023ae2bfb08da43eea2757a0e5490f7b0fe2964f49273cc25215d61f4"
+    },
+    "controlRef": {
+      "text": "Kontroll",
+      "source_sha256": "32d7e82082479b8cb546187ff0af11e4915e4d17bc28e02dca7425288b79badd"
+    },
+    "binderSection": {
+      "text": "Avsnitts-id i pärmen",
+      "source_sha256": "882019cbc07aa128972d35797113d4994243e2b6d2f0361d38e9d21546471d04"
+    },
+    "expires": {
+      "text": "Löper ut (RFC 3339)",
+      "source_sha256": "ac669fd06c95c3b61fdefb1a8fdf0b334f516b99f95c2113f61c2e83a3ec58db"
+    },
+    "artifact": {
+      "text": "Välj fil",
+      "source_sha256": "da7da3667ae8114a4f7032d121ea8a1fb21ab5a4d8cbdc843e16045bbac1ff09"
+    },
+    "record": {
+      "text": "Registrera",
+      "source_sha256": "bfdd510698ef3ccbf17f2c67fc47790e1ba72894fb74fe284bbc136b47ef73e6"
+    },
+    "sweep": {
+      "text": "Logga förfallna påminnelser",
+      "source_sha256": "342bac73c4d9eee60ef9b9723bbf0e72828700bca2a03b83b1e3b6f12065fc99"
+    },
+    "sweepDone": {
+      "text": "Loggade {{logged}} påminnelse(r) från {{scanned}} förfallen(a) rad(er). Detta är en logg, inte e-post.",
+      "source_sha256": "fd5fd92a868723472eb8bef9380f598a29d343af54dfdecf52ca634b722b0719"
+    },
+    "empty": {
+      "text": "Inga poster ännu.",
+      "source_sha256": "5d9ae0627ee22c6513ada52ffda97f5b1822550172f90ca902d04d96d5e0f047"
+    },
+    "loadFailed": {
+      "text": "Kunde inte läsa in bevisintag.",
+      "source_sha256": "a29dcfb2295d239664f73148600498f5ef8ace856acf8595998d2a56eb234607"
+    },
+    "retry": {
+      "text": "Försök igen",
+      "source_sha256": "942087cc2d41e01304b7195558d093d10c72af8e838c7556d6a02d471ee71852"
+    },
+    "sha256": {
+      "text": "SHA-256",
+      "source_sha256": "bbd07c4fc02c99b97124febf42c7b63b5011c0df28d409fbb486b5a9d2e615ea"
+    },
+    "actor": {
+      "text": "Aktör",
+      "source_sha256": "449995c4fe8fab389053dac72d77798c094dd4a3b7b3cfe69c4d78d119308dce"
+    },
+    "renewal": {
+      "text": "Förnyelse",
+      "source_sha256": "f4a9133d791782c1d6c1729e52e2738cd03a6467fe1e01bf574a970edda1e13c"
+    },
+    "recorded": {
+      "text": "Registrerad",
+      "source_sha256": "c97ac679c9da5f7b34c6f673a3963c5c728a006ee1c7faf653f888ae42c9e987"
+    },
+    "state": {
+      "current": {
+        "text": "Aktuell",
+        "source_sha256": "e0d1b68224bf0b31ef16b206c65b5f8f6b89d18161f4a7cdcb8d0ac8d952549a"
+      },
+      "due": {
+        "text": "Förfaller",
+        "source_sha256": "9071738f145962a67ca1f1db834560031606ced93aa9161f48c493afe31d0a7c"
+      },
+      "overdue": {
+        "text": "Förfallen",
+        "source_sha256": "d660945bc299132062a8e487e69bba66ca9088298103b8a63daa71b910305627"
+      },
+      "no_expiry": {
+        "text": "Ingen utgång",
+        "source_sha256": "fe06351db8da70412dd4d5a51545d68503554eb9d1bf074aff5009a027e8f2b4"
+      }
+    },
+    "procedure": {
+      "text": "Procedur",
+      "source_sha256": "9c280284ef2669a2be7280a58557e553942fb2e0d2154e3f5949dc153c029bcf"
+    },
+    "procedureRequired": {
+      "text": "Choose a procedure för denna family sida.",
+      "source_sha256": "7c0ed8b8a4cb8b6da91e54f163b53edd9c543a16c62524dcc7f64d1c63d9ad1f"
+    },
+    "procedures": {
+      "visitor_log": {
+        "text": "Besökarlogg",
+        "source_sha256": "42cf93b0de06849183e3f91294e96c3f101315fef7d616fc2ee87e3cd27f2b59"
+      },
+      "escort": {
+        "text": "Eskort",
+        "source_sha256": "4cc2da8a6ad3b75b9604b5f987108e5313bde95155e849647cd95656ae36639f"
+      },
+      "supplier_questionnaire": {
+        "text": "Leverantörsenkät",
+        "source_sha256": "a810baeae4b76d1a97b413bb457d3c6961e3fd365556eedb62d22b75710bfceb"
+      },
+      "signed_flowdown": {
+        "text": "Undertecknad vidareföring",
+        "source_sha256": "01a3af0828cbd50cc84c149208bb25c58c1feb240f139153a0c43d4f6f2504fe"
+      },
+      "witnessed_destruction": {
+        "text": "Bevittnad förstöring",
+        "source_sha256": "993a3f91bdbd7eed89e907b1c8a91ea7442b0b6986fa62ff334a8a5c8c968f5d"
+      }
+    },
+    "familyPages": {
+      "pe": {
+        "text": "Bevisintag PE",
+        "source_sha256": "0cdf154526d6f32a3e6818195d4aa2da7c46e20cf44f4723695bd547cda78e5e"
+      },
+      "sr": {
+        "text": "Bevisintag SR",
+        "source_sha256": "1184bb272d0b053f8858d441374a72ef2c5020adf7a67c465d3b00b2a58bfb23"
+      },
+      "mp": {
+        "text": "Bevisintag MP",
+        "source_sha256": "5449ef9e5a7951454c3ed9c6d61e28cc0503fb6c4667d669f667fc72690e727a"
+      }
+    },
+    "visitorName": {
+      "text": "Besökarens namn",
+      "source_sha256": "8d9178364056d91c6af5efa2894dc3e6529f4be6b37ac42a40c311ac21c9a20f"
+    },
+    "escortName": {
+      "text": "Följeslagarens namn",
+      "source_sha256": "4fc59a5226f6959fa59645ff9ab99316e676c6509c551ea7639a9bc4e0cbbfde"
+    },
+    "supplierName": {
+      "text": "Leverantörens namn",
+      "source_sha256": "5b386986996ea3c99b50a643aad127e65929c37ec7d9942137e86aa8deeeb7e5"
+    },
+    "mediaDesc": {
+      "text": "Mediabeskrivning",
+      "source_sha256": "2e22cefe8cb83e7cd9a34c403addd81e25a268eb9aaba77a7faff45338ddfeb9"
+    },
+    "method": {
+      "text": "Förstöringsmetod",
+      "source_sha256": "d86b869ac0dc888817d61b4b97b846ec50220d20f60105ce6640c5c9b197eec7"
+    },
+    "witnessName": {
+      "text": "Vittnets namn",
+      "source_sha256": "f8c969e164b4d205abeb9b6967f3945ccd8450d77b9492682bea10a414c784e8"
+    }
+  },
+  "supplierRegister": {
+    "title": {
+      "text": "Leverantörsregister",
+      "source_sha256": "c1b9fdc0eec1ee7e6af42cdc149bd5fd3f0f9f6616195703e13d4853799ec5e9"
+    },
+    "summary": {
+      "text": "Namnge varje leverantör och varför den är i omfattning. Registrera en bedömningscykel här. Enkäter och signerade flow-down-filer stannar på Evidence Intake SR.",
+      "source_sha256": "8b4aaef368479c4884fa755c88b17f0b333a80a9330bb45e0230ac334499e009"
+    },
+    "honesty": {
+      "text": "En registerrad namnger en leverantör och en registrerad omfattning. Ett bedömningsutfall är ett operatoruttalande med servertidsstämpel. Det är inte Met och inte certifierat.",
+      "source_sha256": "e5f967e5e597f757b7bd6efd611cd95c61776b6a18c3ff88e8fbab5e3f65d2af"
+    },
+    "addSupplier": {
+      "text": "Lägg till leverantör",
+      "source_sha256": "ced238f60787570a43524a4f659b7bcaa6a45f5fcc4aca2656e60b195a07c60f"
+    },
+    "name": {
+      "text": "Namn",
+      "source_sha256": "41d84bce68d12562e6a72132e8ce43b6bc7177ad8334f9d6dda4fdbedd16052d"
+    },
+    "organization": {
+      "text": "Organisation",
+      "source_sha256": "350be3643ce78043f7c268bdcee1df0bd01bc04f4eb83a62beb66e76c6e776a7"
+    },
+    "scopeBasis": {
+      "text": "Omfattningsgrund",
+      "source_sha256": "39db03032b98afec2223ff32de58119c8c16a0e1a94f03974fc46430e3d575bb"
+    },
+    "scopeHelp": {
+      "text": "Minst 8 tecken. Ange vilket reglerat arbete den här leverantören kan nå.",
+      "source_sha256": "d35587f49f52165e9e84054dbb66074558f8a2fad6a21c5a709563401c8effcf"
+    },
+    "contactEmail": {
+      "text": "Kontakt-e-post",
+      "source_sha256": "ad67c6b45e7d7960de3b62ba49a2a40b4c4582d9688001db2ff0ea1f30fe097b"
+    },
+    "record": {
+      "text": "Registrera",
+      "source_sha256": "180ad5eea950aad9e96a640d075591b21e883bb229ac4497df729a7cc56662b4"
+    },
+    "recorded": {
+      "text": "Leverantör registrerad.",
+      "source_sha256": "76427b45d6ef9b7cafad83b14bed2fb9839ec0bbd5998c06bf7be88b397bd73e"
+    },
+    "archive": {
+      "text": "Arkivera",
+      "source_sha256": "905e3dc7e55a6ec58f9158a41b7df6363368dcb9dfdc56eb4df467e39d94fa94"
+    },
+    "archived": {
+      "text": "Leverantör arkiverad.",
+      "source_sha256": "4855ec854836e220712af1869fb64da7a56cfaadad9a68faac37c3cde7561a0c"
+    },
+    "status": {
+      "text": "Tillstånd",
+      "source_sha256": "920e413c7d411b61ef3e8c63b1cb6ad058d5f95f8b481dbafe60248387d8c355"
+    },
+    "lastAssessed": {
+      "text": "Senast bedömd",
+      "source_sha256": "8e027cdf61e75ac0ee8e6e779c4a062b38b5818001dfd5a96c94fc1af9f29714"
+    },
+    "actions": {
+      "text": "Åtgärder",
+      "source_sha256": "ea606e353115f5e2dab134f59e988836a48daeb26beb13376fa45f5329939ea6"
+    },
+    "assessments": {
+      "text": "Bedömningar",
+      "source_sha256": "6dc44386dbc8a15e3fabeda7f2f915f0786429bdb65ebcf1dcf16e9e8c31c8ea"
+    },
+    "outcome": {
+      "text": "Utfall",
+      "source_sha256": "f82abf6ebd17deaddbada27097e6fcd83fd471f7263cd5dbdb052c4b506beb8c"
+    },
+    "outcomePass": {
+      "text": "Godkänd",
+      "source_sha256": "a4e633f81eab02b3ae41e6f19b22859474be05d8c3c59cdaf30b7f63fd66ab58"
+    },
+    "outcomeFail": {
+      "text": "Inte godkänd",
+      "source_sha256": "52c718216a6d4267571bff89b4aa85460f66f48d03c84d649774da31f4ea02af"
+    },
+    "outcomeConditional": {
+      "text": "Villkorlig",
+      "source_sha256": "4daa9efa48ad9f7fc7999a91c6f516abd08d1fd2c7c79428c4cba0370095eb3a"
+    },
+    "notes": {
+      "text": "Anteckningar",
+      "source_sha256": "bfca9db2e6f41b17933f0944f9978fe3a1c58f6d63ffcfed4c3cf4c16f33757f"
+    },
+    "recordAssessment": {
+      "text": "Registrera bedömning",
+      "source_sha256": "b90b2991a600d65783b6593d26c40cfc89d99b3248c36d17d665dc0f1c01d94b"
+    },
+    "assessmentRecorded": {
+      "text": "Bedömning registrerad.",
+      "source_sha256": "692b6589d82c11cfeda63977b9baed23475752c3a3091e15a370bd877227e582"
+    },
+    "noAssessments": {
+      "text": "Inga bedömningar för den här leverantören ännu.",
+      "source_sha256": "51291ad9625e59d0f68c885d320f5356b671949899a0e7b1f06c8bf4014283b4"
+    },
+    "loadFailed": {
+      "text": "Kunde inte läsa in leverantörsregistret.",
+      "source_sha256": "0005e4ed2c19539236336985b3cd468a38e577625b029097161fb689317949ac"
+    },
+    "noPermission": {
+      "text": "Du har inte behörighet att visa leverantörsregistret.",
+      "source_sha256": "fce11d3ecd84d63d84b2873ea602f2135732e6585ae31ca1792a65cea7e858d7"
     }
   }
 }

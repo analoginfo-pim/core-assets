@@ -650,6 +650,30 @@
       "visitor_cycle": {
         "text": "来訪者サイクル",
         "source_sha256": "bd2618f73c317be47ef4e18a751e62d408b60bd14385c1d78f4d8783995a6147"
+      },
+      "witnessed_destruction": {
+        "text": "立会い破棄",
+        "source_sha256": "ab933859912fe3ca98d3751d0021a08c735fd1ea4b175f1c4698dbc52069c850"
+      },
+      "degauss_certificate": {
+        "text": "消磁証明書",
+        "source_sha256": "4474ba1ef72c54c59562566295bed64c794713bd46d49117ad6ab55c28dada4f"
+      },
+      "retention_attestation": {
+        "text": "保管証明",
+        "source_sha256": "c1cc2ae109d0c6f94015cc31a7628e9fcee4530d7f7b311541e88ce94ef417d8"
+      },
+      "export_delivery": {
+        "text": "エクスポート引き渡し",
+        "source_sha256": "00cfbaa063c4f82d898216af0c729d45d1e68206b100c3e735f9c79739f406b2"
+      },
+      "exception_record": {
+        "text": "例外記録",
+        "source_sha256": "c6866e97b4d6f65aedd1c4a75ca55f363bf7bdd4e98115460f4e6c66b31070f2"
+      },
+      "posture_review": {
+        "text": "態勢レビュー",
+        "source_sha256": "7b091449f21509b495819906095dd7163ce0331ec43f4f2cc1a1e705cf75738a"
       }
     },
     "eventKinds": {
@@ -692,6 +716,18 @@
       "attested": {
         "text": "宣誓済み",
         "source_sha256": "8112bcc2e7f4827b29bc811990dc2b9c018de0bc8e2fb1e46fc47c9e556fb180"
+      },
+      "certificate_attached": {
+        "text": "証明書を添付済み",
+        "source_sha256": "bce9ec36d32daefe8acef0391399488b04edef247b47ebe6dcaaee225b6aa25a"
+      },
+      "delivered": {
+        "text": "引き渡し済み",
+        "source_sha256": "e091d60f5022948062fff4bb10b88a4d4543e29db12c1babfa62f94488e8c345"
+      },
+      "exception_recorded": {
+        "text": "例外を記録済み",
+        "source_sha256": "ec917fe8b0a5267e530540ea1bfc095178b8357d88f66ea4c4421e83c6119e4c"
       }
     },
     "cp": {
@@ -735,6 +771,334 @@
         "text": "レビューを予定",
         "source_sha256": "1ca64e528de6e4c992f7126975c819abab6fd1e9c4e39765d7fc5217ddfe496f"
       }
+    },
+    "mp": {
+      "title": {
+        "text": "媒体破棄",
+        "source_sha256": "3455cded149e21cca7174afe55856c0833f9b9baba6b1dcdaf0ac747ea6a16ec"
+      },
+      "summary": {
+        "text": "立会い破棄または消磁証明書を予定し、完了と証明書ハッシュを記録します。本製品はシュレッダーを操作しません。これは Met ではありません。",
+        "source_sha256": "3565204d702229856dd0fbf2e1777f705d773a2b76f9da7c612ca57e09fdc0e5"
+      },
+      "add": {
+        "text": "破棄を予定",
+        "source_sha256": "a5ba004099fbc2e76a63a40cb0d732cdf2b97a883e1f34c1a44a1ead41293e99"
+      }
+    },
+    "au": {
+      "title": {
+        "text": "保管記録",
+        "source_sha256": "29c4bcded480ca54b95465e64306c0e02041264d38faf30f3d8cda773277df28"
+      },
+      "summary": {
+        "text": "保管証明またはハッシュ付きのエクスポート引き渡しを記録します。WORM ストレージの運用は組織に残ります。これは Met ではありません。",
+        "source_sha256": "cf57051d8140d6f27c193cb9c1af53e5a91152994a9e38fa684dae488bfd1b96"
+      },
+      "add": {
+        "text": "保管を記録",
+        "source_sha256": "ad912a400bdf13c482b59099becc6c7e1b12add04d5b3daefdedce9eef66547d"
+      }
+    },
+    "si": {
+      "title": {
+        "text": "態勢例外",
+        "source_sha256": "24f8c63d2cad2ab5ae2d9bd12f9a204df85f3e2de134217437cb9f001f748e4e"
+      },
+      "summary": {
+        "text": "エンドポイント適用範囲の例外または態勢レビューを記録します。本製品は企業 EDR やパッチツールを実行しません。これは Met ではありません。",
+        "source_sha256": "f9792a16e5a6d572b1be8c33a7da62964597e5cb89f4d0a84c6aa192dbcfe5db"
+      },
+      "add": {
+        "text": "例外を記録",
+        "source_sha256": "09f57801ccad4c4c8e24a63459eb17c303d48eedb9623fe3821af2bcc56ba803"
+      }
+    }
+  },
+  "coverageIntake": {
+    "title": {
+      "text": "証拠の受付",
+      "source_sha256": "3c9f82f12af195e85fc062e610f1e6207e1fa6f87f90cbc68ff8a9b3b67e214f"
+    },
+    "summary": {
+      "text": "システム外の行為を記録するか、ファイルをアップロードします。サーバは SHA-256 を保存します。これは陳述であり、Met ではなく、認定でもありません。",
+      "source_sha256": "9468316cc614c9af132787f3598e50f644a583142e700292d18e2e4168b28e0d"
+    },
+    "honesty": {
+      "text": "システム外の行為があったという陳述は、指名された人がサーバ時刻付きでそう述べた証拠です。Met ではなく、認定でもありません。",
+      "source_sha256": "4d050aaf65e26109667f534f1843e269895e02f9ef3f9bb39b821295c0a31868"
+    },
+    "family": {
+      "text": "ファミリ",
+      "source_sha256": "bd2d677b2ed4381b48bb1d0841052c6d076e7d634d5052e85dcbe0b8a0dedd80"
+    },
+    "titleField": {
+      "text": "タイトル",
+      "source_sha256": "7e8cd2056da73a7fefb6cd91f4e5d199d08d9058c517b9a2476b1b520324d674"
+    },
+    "reason": {
+      "text": "理由",
+      "source_sha256": "f81ab834de5f84918dc040b884267c2b61cb1a52d46442de10e97f35a94d0500"
+    },
+    "reasonHelp": {
+      "text": "8 文字以上。この記録が必要な理由を書いてください。",
+      "source_sha256": "a286822a102fc9dc9d86a9a8e715a3ec4f078efc2aff1eb31f6be20f40f84596"
+    },
+    "statement": {
+      "text": "何が起きたか",
+      "source_sha256": "483bd49023ae2bfb08da43eea2757a0e5490f7b0fe2964f49273cc25215d61f4"
+    },
+    "controlRef": {
+      "text": "管理策",
+      "source_sha256": "32d7e82082479b8cb546187ff0af11e4915e4d17bc28e02dca7425288b79badd"
+    },
+    "binderSection": {
+      "text": "バインダ節の ID",
+      "source_sha256": "882019cbc07aa128972d35797113d4994243e2b6d2f0361d38e9d21546471d04"
+    },
+    "expires": {
+      "text": "期限 (RFC 3339)",
+      "source_sha256": "ac669fd06c95c3b61fdefb1a8fdf0b334f516b99f95c2113f61c2e83a3ec58db"
+    },
+    "artifact": {
+      "text": "ファイルを選択",
+      "source_sha256": "da7da3667ae8114a4f7032d121ea8a1fb21ab5a4d8cbdc843e16045bbac1ff09"
+    },
+    "record": {
+      "text": "記録",
+      "source_sha256": "bfdd510698ef3ccbf17f2c67fc47790e1ba72894fb74fe284bbc136b47ef73e6"
+    },
+    "sweep": {
+      "text": "期限リマインダを記録",
+      "source_sha256": "342bac73c4d9eee60ef9b9723bbf0e72828700bca2a03b83b1e3b6f12065fc99"
+    },
+    "sweepDone": {
+      "text": "期限 {{scanned}} 件からリマインダ {{logged}} 件を記録しました。これはログであり、電子メールではありません。",
+      "source_sha256": "fd5fd92a868723472eb8bef9380f598a29d343af54dfdecf52ca634b722b0719"
+    },
+    "empty": {
+      "text": "受付記録はまだありません。",
+      "source_sha256": "5d9ae0627ee22c6513ada52ffda97f5b1822550172f90ca902d04d96d5e0f047"
+    },
+    "loadFailed": {
+      "text": "証拠の受付を読み込めませんでした。",
+      "source_sha256": "a29dcfb2295d239664f73148600498f5ef8ace856acf8595998d2a56eb234607"
+    },
+    "retry": {
+      "text": "再試行",
+      "source_sha256": "942087cc2d41e01304b7195558d093d10c72af8e838c7556d6a02d471ee71852"
+    },
+    "sha256": {
+      "text": "SHA-256",
+      "source_sha256": "bbd07c4fc02c99b97124febf42c7b63b5011c0df28d409fbb486b5a9d2e615ea"
+    },
+    "actor": {
+      "text": "行為者",
+      "source_sha256": "449995c4fe8fab389053dac72d77798c094dd4a3b7b3cfe69c4d78d119308dce"
+    },
+    "renewal": {
+      "text": "更新",
+      "source_sha256": "f4a9133d791782c1d6c1729e52e2738cd03a6467fe1e01bf574a970edda1e13c"
+    },
+    "recorded": {
+      "text": "記録しました",
+      "source_sha256": "c97ac679c9da5f7b34c6f673a3963c5c728a006ee1c7faf653f888ae42c9e987"
+    },
+    "state": {
+      "current": {
+        "text": "有効",
+        "source_sha256": "e0d1b68224bf0b31ef16b206c65b5f8f6b89d18161f4a7cdcb8d0ac8d952549a"
+      },
+      "due": {
+        "text": "期限",
+        "source_sha256": "9071738f145962a67ca1f1db834560031606ced93aa9161f48c493afe31d0a7c"
+      },
+      "overdue": {
+        "text": "期限超過",
+        "source_sha256": "d660945bc299132062a8e487e69bba66ca9088298103b8a63daa71b910305627"
+      },
+      "no_expiry": {
+        "text": "期限なし",
+        "source_sha256": "fe06351db8da70412dd4d5a51545d68503554eb9d1bf074aff5009a027e8f2b4"
+      }
+    },
+    "procedure": {
+      "text": "手順",
+      "source_sha256": "9c280284ef2669a2be7280a58557e553942fb2e0d2154e3f5949dc153c029bcf"
+    },
+    "procedureRequired": {
+      "text": "Choose a procedure for this family page.",
+      "source_sha256": "7c0ed8b8a4cb8b6da91e54f163b53edd9c543a16c62524dcc7f64d1c63d9ad1f"
+    },
+    "procedures": {
+      "visitor_log": {
+        "text": "訪問者ログ",
+        "source_sha256": "42cf93b0de06849183e3f91294e96c3f101315fef7d616fc2ee87e3cd27f2b59"
+      },
+      "escort": {
+        "text": "付き添い",
+        "source_sha256": "4cc2da8a6ad3b75b9604b5f987108e5313bde95155e849647cd95656ae36639f"
+      },
+      "supplier_questionnaire": {
+        "text": "供給者質問票",
+        "source_sha256": "a810baeae4b76d1a97b413bb457d3c6961e3fd365556eedb62d22b75710bfceb"
+      },
+      "signed_flowdown": {
+        "text": "署名済みのフローダウン",
+        "source_sha256": "01a3af0828cbd50cc84c149208bb25c58c1feb240f139153a0c43d4f6f2504fe"
+      },
+      "witnessed_destruction": {
+        "text": "立ち会いによる破棄",
+        "source_sha256": "993a3f91bdbd7eed89e907b1c8a91ea7442b0b6986fa62ff334a8a5c8c968f5d"
+      }
+    },
+    "familyPages": {
+      "pe": {
+        "text": "証拠受付 PE",
+        "source_sha256": "0cdf154526d6f32a3e6818195d4aa2da7c46e20cf44f4723695bd547cda78e5e"
+      },
+      "sr": {
+        "text": "証拠受付 SR",
+        "source_sha256": "1184bb272d0b053f8858d441374a72ef2c5020adf7a67c465d3b00b2a58bfb23"
+      },
+      "mp": {
+        "text": "証拠受付 MP",
+        "source_sha256": "5449ef9e5a7951454c3ed9c6d61e28cc0503fb6c4667d669f667fc72690e727a"
+      }
+    },
+    "visitorName": {
+      "text": "訪問者名",
+      "source_sha256": "8d9178364056d91c6af5efa2894dc3e6529f4be6b37ac42a40c311ac21c9a20f"
+    },
+    "escortName": {
+      "text": "同行者名",
+      "source_sha256": "4fc59a5226f6959fa59645ff9ab99316e676c6509c551ea7639a9bc4e0cbbfde"
+    },
+    "supplierName": {
+      "text": "供給者名",
+      "source_sha256": "5b386986996ea3c99b50a643aad127e65929c37ec7d9942137e86aa8deeeb7e5"
+    },
+    "mediaDesc": {
+      "text": "媒体の説明",
+      "source_sha256": "2e22cefe8cb83e7cd9a34c403addd81e25a268eb9aaba77a7faff45338ddfeb9"
+    },
+    "method": {
+      "text": "破棄方法",
+      "source_sha256": "d86b869ac0dc888817d61b4b97b846ec50220d20f60105ce6640c5c9b197eec7"
+    },
+    "witnessName": {
+      "text": "証人名",
+      "source_sha256": "f8c969e164b4d205abeb9b6967f3945ccd8450d77b9492682bea10a414c784e8"
+    }
+  },
+  "supplierRegister": {
+    "title": {
+      "text": "供給者登録簿",
+      "source_sha256": "c6e0a33f3a5d6a96585b572a29edc5c611d12f037f4ff7c0e25668bd75d6e651"
+    },
+    "summary": {
+      "text": "各供給者と範囲に入る理由を記入します。ここで評価周期を記録します。質問票と署名済みフローダウンは Evidence Intake SR に残します。",
+      "source_sha256": "c559b1a8b03a26f705294eb432ae7dfb757d75af2427075e8523d1ca1f0bed96"
+    },
+    "honesty": {
+      "text": "登録行は供給者と記録された範囲を示します。評価結果はサーバー時刻付きの操作者の声明です。Metではなく、認証でもありません。",
+      "source_sha256": "124e925a60d76a86e180f61b143f8fa8391bf424a3a0bf82e647547ca165f619"
+    },
+    "addSupplier": {
+      "text": "供給者を追加",
+      "source_sha256": "731cd72d7a67103fd3c243ec85eb8b358ceb0057cb3b57a9c2c874c1a2fea32c"
+    },
+    "name": {
+      "text": "名称",
+      "source_sha256": "d44e9b3d3b31d37b4f0cd94f7861383519f9ec0cf59b953596627a3e7706bfbc"
+    },
+    "organization": {
+      "text": "組織",
+      "source_sha256": "f3dfb97cc88bb17beaf3a4ec69afc4c5bd43519bb861510a03eaee727e34d256"
+    },
+    "scopeBasis": {
+      "text": "範囲の根拠",
+      "source_sha256": "ed797930580803ed45b518b3bb3c625c1bd793dceb6d57ad1cb131ca43a4398c"
+    },
+    "scopeHelp": {
+      "text": "8文字以上。この供給者が到達できる規制対象の作業を書いてください。",
+      "source_sha256": "7a410c6fc4e0fdda39d520e2d8b7836bbcd82332488a09b5975d7e749b69540f"
+    },
+    "contactEmail": {
+      "text": "連絡先メール",
+      "source_sha256": "7fa0891a7bb6257468f1c520773b2457d80474b3431f2228b6871d5869ecb2fe"
+    },
+    "record": {
+      "text": "記録",
+      "source_sha256": "bf94dc72b905a049e87240e55d01c911529e86e5f2d84af9d162bec24efad2bb"
+    },
+    "recorded": {
+      "text": "供給者を記録しました。",
+      "source_sha256": "0fbe9802d4de82fd8b9e8bd43935423b2fdc6b364ef18b88658bc2c55436ad5b"
+    },
+    "archive": {
+      "text": "アーカイブ",
+      "source_sha256": "f0cd2f173cb9288cad922c43a61f0d5dfe8978a7a4e1f82423864cac4de902b2"
+    },
+    "archived": {
+      "text": "供給者をアーカイブしました。",
+      "source_sha256": "f6d49c2163291ca3ef8b9f847ff18dff4c8bcf40a34e2c904cb5d5de84a931df"
+    },
+    "status": {
+      "text": "状態",
+      "source_sha256": "70e39859279e3de126cb608f04b555c98a7577bee1ef37b08c3293d0cbece907"
+    },
+    "lastAssessed": {
+      "text": "前回評価",
+      "source_sha256": "d738883b0dfa852763e329ad98915057ad83b6914e0d3e8a03b43a79bb3ebe38"
+    },
+    "actions": {
+      "text": "操作",
+      "source_sha256": "ed31fbb483ee1b0a40f8b15471b0b3c38191fda4034d5cfa18126b82da496c66"
+    },
+    "assessments": {
+      "text": "評価",
+      "source_sha256": "c85c4290c93a2648e1190576dd1ea2e369b13af76027bb35df60001933183864"
+    },
+    "outcome": {
+      "text": "結果",
+      "source_sha256": "e3bf3a629b893f44d7d35554d545a9c8b92fc294322bfdedbbfbe57c6592b8cb"
+    },
+    "outcomePass": {
+      "text": "合格",
+      "source_sha256": "c84ad61b176d11ef9a9e22fe00c8d8cf10cf7c6868d7654ce6f98b79f54ea419"
+    },
+    "outcomeFail": {
+      "text": "不合格",
+      "source_sha256": "08f69e042710817baeea2747005dac890c034697e1b8e559ce8007f3cc7d7232"
+    },
+    "outcomeConditional": {
+      "text": "条件付き",
+      "source_sha256": "eae43fc4fa344d260d7d01f5b9cc5ab512d1e2487fda4a26668a30591fbf80a9"
+    },
+    "notes": {
+      "text": "メモ",
+      "source_sha256": "99fa5c96e07ec49d52fb7da88d13cbe24a791fbc26775be2549708d75c4a3fa1"
+    },
+    "recordAssessment": {
+      "text": "評価を記録",
+      "source_sha256": "91f84884a59ff3daebd6b693f769ef71dc38d8046010207412a84ad7e36a2bf8"
+    },
+    "assessmentRecorded": {
+      "text": "評価を記録しました。",
+      "source_sha256": "70fc616e37c26bac4d546bb412b1fe87ffd42860abe3d95482b6696ae0b280e2"
+    },
+    "noAssessments": {
+      "text": "この供給者の評価はまだありません。",
+      "source_sha256": "79ec89b0c6dfb6a3f7f6d1327f2ea795cfde618ba16d55efcac5176307a8b1bc"
+    },
+    "loadFailed": {
+      "text": "供給者登録簿を読み込めませんでした。",
+      "source_sha256": "ce4affbdc255b43afe0a7aea8d597eb8c3f255b2f876c931ca74d805a7fe0fea"
+    },
+    "noPermission": {
+      "text": "供給者登録簿を表示する権限がありません。",
+      "source_sha256": "3b8f2069b1c8b5b98fbebca072ccb8e208098e37f92b4601603d78749cbd4729"
     }
   }
 }

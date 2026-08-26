@@ -1210,5 +1210,185 @@
         "source_sha256": "7e91b681457f14f1a5577efd979546b2be5be30ae463a5cd9df411553b2cf0a2"
       }
     }
+  },
+  "whatsNext": {
+    "title": {
+      "text": "What's Next",
+      "source_sha256": "22cf4040e2249bde237b49e6e3a1da37f9e1747e025192756c2ae70e83ddf309"
+    },
+    "subtitle": {
+      "text": "Prioritized gaps with links to pages that do the work. Mitigate, then document. Not Met and not a certification.",
+      "source_sha256": "665c20175b6ecce1cc901fe70587aad6db9c10505a437a0a2af7827b5c76da19"
+    },
+    "honestyChip": {
+      "text": "Evidence / work queue — not Met",
+      "source_sha256": "59011ec9bc35e66965ca26bb3b271e29025b3679a1d549b56810511693b04dd2"
+    },
+    "loading": {
+      "text": "Loading live gaps…",
+      "source_sha256": "d1af15f654a01db64502eae335596af2d4e55e68714a7ad4b6a62d8c39389aa8"
+    },
+    "loadPartial": {
+      "text": "Could not refresh live host findings. Showing standing high-priority work links so the queue is never empty.",
+      "source_sha256": "b7493a5734007b8a2ba3e2522a02af52143e8e0624b47a103cf7599d808f90d3"
+    },
+    "footer": {
+      "text": "Gap source: Current State Compliance environment dashboard (live findings) plus standing privileged-access and documentation work. Continuous improvement — collectors improve in parallel.",
+      "source_sha256": "4069a6a5fb7ade897fd318fee70e30d4c144e23e24b2de0e1c8de1d5e13bd89b"
+    },
+    "count": {
+      "text": "{{count}} open",
+      "source_sha256": "a69dade13b868a0a8ef1e722291294ac7ba2a4ff9007f7af1b653027c562b170"
+    },
+    "topCategory": {
+      "text": "Top finding class: {{category}}",
+      "source_sha256": "2c68a49e1f4ab7a3e1fc3e31861ec7d65d13b7eeccc96501e741897783c7e873"
+    },
+    "blast": {
+      "critical": {
+        "text": "Critical",
+        "source_sha256": "427dd2969bd140bec3c1bcc7983da982f4815938cd4510ad0b2bad48ac5b55f9"
+      },
+      "high": {
+        "text": "High",
+        "source_sha256": "c4ebc6d4a5832cd9415f906ad03661110c705a72381c8b8b145761d02e2dd23a"
+      },
+      "medium": {
+        "text": "Medium",
+        "source_sha256": "8e588cd187741f1cd76f5fab77b7208782a8c21d764ce7d7a4cf3ac4e0968873"
+      }
+    },
+    "persona": {
+      "auditor": {
+        "text": "Auditor",
+        "source_sha256": "465b5967e292896bee2bbe8a67298bf1eec40ae84cf2ea96990cedcf87630442"
+      },
+      "it": {
+        "text": "IT / MSP",
+        "source_sha256": "22d4350337b3b50a4aee83aca125aa37105e844109b599e580d39b38e3f3f3b1"
+      },
+      "workforce": {
+        "text": "Workforce",
+        "source_sha256": "aa3b88196a6407c3866c85acdcc8c98155057f0499c43e9754bb436d3d842fe4"
+      },
+      "all": {
+        "text": "All roles",
+        "source_sha256": "78f133afd3ec55cd2a707e2bb12c3fac1b78d34dc44375d002704e56484de04e"
+      }
+    },
+    "gaps": {
+      "cscFindings": {
+        "title": {
+          "text": "Close open host compliance findings",
+          "source_sha256": "f821989692b68bbccd85c8f3f182e57bd94618850caa231e00e74728998f2127"
+        },
+        "why": {
+          "text": "Open findings on enrolled hosts are the highest blast-area gaps an assessor will ask about first.",
+          "source_sha256": "496428008f21fa3d8b12aceaaa687fcd737b9ac95304f562f999c17526bfcfba"
+        }
+      },
+      "fixitReady": {
+        "title": {
+          "text": "Apply Fix-It on hosts with a live remediation",
+          "source_sha256": "e1a2b43937ba7c359f7db914b866f54cac3993f10f118551fa2195219b873387"
+        },
+        "why": {
+          "text": "A live Fix-It path exists for measured gaps — run it, then rescan. A Fix-It run is remediation evidence, not Met.",
+          "source_sha256": "2f7d321983bdcfca1da87b7ba648498de1ea5889bc82159b49d701d33570bc09"
+        }
+      },
+      "commandGov": {
+        "title": {
+          "text": "Review command governance for privileged sessions",
+          "source_sha256": "90976090fd97f2917a6f60ed9df09dc89097d9a143f93862a490a505b7deeb98"
+        },
+        "why": {
+          "text": "Command allow and deny rules are high blast-area for privileged access. Confirm policies and exercise allow plus deny.",
+          "source_sha256": "33b5d9cf4274489e8c8d8362719f1b2f05c65a18dc8f077dfc8fedd328455905"
+        }
+      },
+      "agentCoverage": {
+        "title": {
+          "text": "Raise agent coverage where remote admin is not available",
+          "source_sha256": "79e3d304d1c13b89134a584b38c32157af29d70b60af1ea0a29a13dc6fce567a"
+        },
+        "why": {
+          "text": "Without Entra device pull or vaulted admin credentials, the agent (push or config-file) is the posture path. Gaps stay visible until evidence arrives.",
+          "source_sha256": "4dcfd2c77c0a36fa18bbfa25f1231b69ca17cf72305ba092650d82c1e57caaab"
+        }
+      },
+      "binder": {
+        "title": {
+          "text": "Keep Assessment Binder sections current",
+          "source_sha256": "aa4488d60456397998dd56f429ae03be7114838d728ee22ee9b1c9ba60bde66e"
+        },
+        "why": {
+          "text": "Auditors need non-empty section content tied to live records. Empty binder chrome is not evidence.",
+          "source_sha256": "0dd709d93612c47bbf928cd78bb0a4b8b1dcfc4e780e0388fd9d6a51651b39d0"
+        }
+      },
+      "workforce": {
+        "title": {
+          "text": "Complete assigned workforce training and attestations",
+          "source_sha256": "217937a9f4f72b42539fb51af3c40fba6ab082f0efbad8fa13a9a5936f54ca53"
+        },
+        "why": {
+          "text": "People covered by regulated activity need welcome, read, and attest paths. Outstanding work stays on this list.",
+          "source_sha256": "b880a1425016c1dabb16812ec46f2c366947d8e3cd3bfc1f99d8572701d18307"
+        }
+      },
+      "cscReview": {
+        "title": {
+          "text": "Review Current State Compliance and rescan hosts",
+          "source_sha256": "45f9315d06daf510b41f4ca6d4f81a5ab5a0f7f2dd16c7a4531ea120bdb41d95"
+        },
+        "why": {
+          "text": "No open punch-list count right now — still verify host posture and rescan after changes. Absence of a count is not Met.",
+          "source_sha256": "df6f195ed86631148fbb4465593ec8731431165cc5e7cb9aac966f954137ea07"
+        }
+      }
+    },
+    "actions": {
+      "openCsc": {
+        "text": "Open Current State",
+        "source_sha256": "09ff1cf1b683e6915d13b2d70328daabdf3f1ee5694052e3991787f47567b944"
+      },
+      "documentBinder": {
+        "text": "Document in binder",
+        "source_sha256": "cdd4f41294306f19b655c0730a615919e5ae6466c6cc58bb2633998cf04f0d3f"
+      },
+      "openFixit": {
+        "text": "Open machine Fix-It",
+        "source_sha256": "a84fcd141c90f3b54751790ee2565331b26b2627bfa4b60c0194aa0c6d56850b"
+      },
+      "rescanCsc": {
+        "text": "Rescan after Fix-It",
+        "source_sha256": "193e42ccee19854726b2ed94181591221ef25da4389c3d0e36f233d10d6d8f77"
+      },
+      "openCommandGov": {
+        "text": "Open command governance",
+        "source_sha256": "3a5198aeec916ce35ce463fab38e31c54f78608246a0ca4be4a2eeb32ebc5d6f"
+      },
+      "openAgent": {
+        "text": "Open Agent settings",
+        "source_sha256": "3b7927f5fb47e6af67753e12cca6994dfbdb1d3a1885a42d546cac0e982fc578"
+      },
+      "openWizard": {
+        "text": "Open settings wizard",
+        "source_sha256": "2614904f8c2f091016adc85c832bae3fdc7297c351613970c580f38fc5e8ede7"
+      },
+      "openBinder": {
+        "text": "Open Assessment Binder",
+        "source_sha256": "323df1f14fe0b611f3a66750fbae4298236196df27eec87acf3ce0e9ba3d55af"
+      },
+      "openPoam": {
+        "text": "Open POA&M",
+        "source_sha256": "8609b74b88f3ff55c87eed725bb2c4979f5f908aac3f9a1101e449a93b599fed"
+      },
+      "openWorkforce": {
+        "text": "Open workforce",
+        "source_sha256": "52ca16a28575f0cbfa56a79ee4aaa9bf6af687db7cf6e521ecc3dcf195c71832"
+      }
+    }
   }
 }

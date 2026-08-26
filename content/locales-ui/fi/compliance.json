@@ -650,6 +650,30 @@
       "visitor_cycle": {
         "text": "Vierailijakierto",
         "source_sha256": "1874021e25a2046d37715804c2360c72c85b989a9fa8a929bb45b7be7347266f"
+      },
+      "witnessed_destruction": {
+        "text": "Todistettu tuhoaminen",
+        "source_sha256": "370300415d4d9a3c83b500bd7fc1994b4f26039967966629e57ead7f0c599208"
+      },
+      "degauss_certificate": {
+        "text": "Demagnetointitodistus",
+        "source_sha256": "8259783fd4afb083438a3dbdeeaf770b101ea9818df1d64632583e7250741f1e"
+      },
+      "retention_attestation": {
+        "text": "Säilytystodistus",
+        "source_sha256": "af2a28c9c843d903127f8da35733b1b20ec0fd0693cebea9feed8df3ab939cb2"
+      },
+      "export_delivery": {
+        "text": "Viennin luovutus",
+        "source_sha256": "87aa86d89dac385ad4f1557bfb9d2e10ef8b3ffb90194fe8c278159a7fcdf9f0"
+      },
+      "exception_record": {
+        "text": "Poikkeustietue",
+        "source_sha256": "dc66cd7b8bcfcc1b14b9c99410d2e38ffa73818f04bbe99efeb64939b88ff52d"
+      },
+      "posture_review": {
+        "text": "Asennon tarkastus",
+        "source_sha256": "c379431b6887cbd41df174b8a4e3258fb66b418356fdf019862728eabfb90bfe"
       }
     },
     "eventKinds": {
@@ -692,6 +716,18 @@
       "attested": {
         "text": "Vakuutettu",
         "source_sha256": "b0b042d542540b5604b938cf2a5e2fab97886f70bcdfbe0700a9d9a057e0cbab"
+      },
+      "certificate_attached": {
+        "text": "Todistus liitetty",
+        "source_sha256": "bdf3a1268306ceb11917730a92390dd76ce980a28da0229226d03e297727b579"
+      },
+      "delivered": {
+        "text": "Luovutettu",
+        "source_sha256": "56716d4deff1aea63605e3e55162e4452edd86305afe906605c31d271ec0980a"
+      },
+      "exception_recorded": {
+        "text": "Poikkeus kirjattu",
+        "source_sha256": "7808a65a2cf6ba15659e2de223f11dcd86a1b87e375597487828edd7581456b5"
       }
     },
     "cp": {
@@ -735,6 +771,334 @@
         "text": "Aikatauluta arviointi",
         "source_sha256": "edc619f0ea7afb5c690016c7e211d4855ab118412e8fb5ddd3b94bebf187a2fe"
       }
+    },
+    "mp": {
+      "title": {
+        "text": "Median tuhoaminen",
+        "source_sha256": "5f216d131e23490a12e21f32ee4df997de45dc3580b5b01dd8ddb34c82f536f7"
+      },
+      "summary": {
+        "text": "Aikatauluta todistettu tuhoaminen tai demagnetointitodistus ja kirjaa valmistuminen sekä todistuksen tiiviste. Tuote ei käytä silppuria. Tämä ei ole Met.",
+        "source_sha256": "5295f0ac6bb4b1f23deb99e78a5644c1e833f5d557fb22b5013f813087fb0fdf"
+      },
+      "add": {
+        "text": "Aikatauluta tuhoaminen",
+        "source_sha256": "8637ee102aed96145bd46be1426ea6c3e83ed1ed1070da5ed57b52d724afc877"
+      }
+    },
+    "au": {
+      "title": {
+        "text": "Säilytystietueet",
+        "source_sha256": "c6460eb6fb5ce07f9ab064e3ed4b4e39017d8cb8403967ad42ca20bf5396657f"
+      },
+      "summary": {
+        "text": "Kirjaa säilytystodistus tai viennin luovutus tiivisteellä. WORM-tallennuksen käyttö jää organisaatiolle. Tämä ei ole Met.",
+        "source_sha256": "f5230a950a288fa89e7727cb469826d1714fe6f5712c720581fd569354723404"
+      },
+      "add": {
+        "text": "Kirjaa säilytys",
+        "source_sha256": "6644590e61cdc492abfe4ee68011b64e0ffa8424498f8c3be66e4b7a77eb631b"
+      }
+    },
+    "si": {
+      "title": {
+        "text": "Asennon poikkeukset",
+        "source_sha256": "3596243e19d3aab22524c039e0fd287fc447f5e712f7580de54b7c50ca0e3841"
+      },
+      "summary": {
+        "text": "Kirjaa päätepisteen kattavuuspoikkeus tai asennon tarkastus. Tuote ei suorita yrityksen EDR:ää eikä korjaustyökalua. Tämä ei ole Met.",
+        "source_sha256": "04eaa420e51601b27330584227ca9b1c19fe5fe1995dc0cc28d8e12587811914"
+      },
+      "add": {
+        "text": "Kirjaa poikkeus",
+        "source_sha256": "9431c84af990303faee12807fa465d06ee51cb53daf1832b9ffed151215f2a2b"
+      }
+    }
+  },
+  "coverageIntake": {
+    "title": {
+      "text": "Todisteiden vastaanotto",
+      "source_sha256": "3c9f82f12af195e85fc062e610f1e6207e1fa6f87f90cbc68ff8a9b3b67e214f"
+    },
+    "summary": {
+      "text": "Kirjaa järjestelmän ulkopuolinen teko tai lataa tiedosto. Palvelin tallentaa SHA-256:n. Tämä on lausuma, ei Met, eikä sertifioitu.",
+      "source_sha256": "9468316cc614c9af132787f3598e50f644a583142e700292d18e2e4168b28e0d"
+    },
+    "honesty": {
+      "text": "Vakuutus järjestelmän ulkopuolisesta teosta todistaa vain, että nimetty henkilö sanoi niin palvelimen ajalla. Se ei ole Met eikä sertifioitu.",
+      "source_sha256": "4d050aaf65e26109667f534f1843e269895e02f9ef3f9bb39b821295c0a31868"
+    },
+    "family": {
+      "text": "Perhe",
+      "source_sha256": "bd2d677b2ed4381b48bb1d0841052c6d076e7d634d5052e85dcbe0b8a0dedd80"
+    },
+    "titleField": {
+      "text": "Otsikko",
+      "source_sha256": "7e8cd2056da73a7fefb6cd91f4e5d199d08d9058c517b9a2476b1b520324d674"
+    },
+    "reason": {
+      "text": "Syy",
+      "source_sha256": "f81ab834de5f84918dc040b884267c2b61cb1a52d46442de10e97f35a94d0500"
+    },
+    "reasonHelp": {
+      "text": "Vähintään 8 merkkiä. Kerro, miksi tämä tietue on olemassa.",
+      "source_sha256": "a286822a102fc9dc9d86a9a8e715a3ec4f078efc2aff1eb31f6be20f40f84596"
+    },
+    "statement": {
+      "text": "Mitä tapahtui",
+      "source_sha256": "483bd49023ae2bfb08da43eea2757a0e5490f7b0fe2964f49273cc25215d61f4"
+    },
+    "controlRef": {
+      "text": "Hallintakeino",
+      "source_sha256": "32d7e82082479b8cb546187ff0af11e4915e4d17bc28e02dca7425288b79badd"
+    },
+    "binderSection": {
+      "text": "Kansion osion tunnus",
+      "source_sha256": "882019cbc07aa128972d35797113d4994243e2b6d2f0361d38e9d21546471d04"
+    },
+    "expires": {
+      "text": "Vanhenee (RFC 3339)",
+      "source_sha256": "ac669fd06c95c3b61fdefb1a8fdf0b334f516b99f95c2113f61c2e83a3ec58db"
+    },
+    "artifact": {
+      "text": "Valitse tiedosto",
+      "source_sha256": "da7da3667ae8114a4f7032d121ea8a1fb21ab5a4d8cbdc843e16045bbac1ff09"
+    },
+    "record": {
+      "text": "Tallenna",
+      "source_sha256": "bfdd510698ef3ccbf17f2c67fc47790e1ba72894fb74fe284bbc136b47ef73e6"
+    },
+    "sweep": {
+      "text": "Kirjaa erääntyvät muistutukset",
+      "source_sha256": "342bac73c4d9eee60ef9b9723bbf0e72828700bca2a03b83b1e3b6f12065fc99"
+    },
+    "sweepDone": {
+      "text": "Kirjattiin {{logged}} muistutus / {{scanned}} erääntynyttä riviä. Tämä on loki, ei sähköposti.",
+      "source_sha256": "fd5fd92a868723472eb8bef9380f598a29d343af54dfdecf52ca634b722b0719"
+    },
+    "empty": {
+      "text": "Ei tietueita vielä.",
+      "source_sha256": "5d9ae0627ee22c6513ada52ffda97f5b1822550172f90ca902d04d96d5e0f047"
+    },
+    "loadFailed": {
+      "text": "Todisteiden vastaanottoa ei voitu ladata.",
+      "source_sha256": "a29dcfb2295d239664f73148600498f5ef8ace856acf8595998d2a56eb234607"
+    },
+    "retry": {
+      "text": "Yritä uudelleen",
+      "source_sha256": "942087cc2d41e01304b7195558d093d10c72af8e838c7556d6a02d471ee71852"
+    },
+    "sha256": {
+      "text": "SHA-256",
+      "source_sha256": "bbd07c4fc02c99b97124febf42c7b63b5011c0df28d409fbb486b5a9d2e615ea"
+    },
+    "actor": {
+      "text": "Toimija",
+      "source_sha256": "449995c4fe8fab389053dac72d77798c094dd4a3b7b3cfe69c4d78d119308dce"
+    },
+    "renewal": {
+      "text": "Uusinta",
+      "source_sha256": "f4a9133d791782c1d6c1729e52e2738cd03a6467fe1e01bf574a970edda1e13c"
+    },
+    "recorded": {
+      "text": "Tallennettu",
+      "source_sha256": "c97ac679c9da5f7b34c6f673a3963c5c728a006ee1c7faf653f888ae42c9e987"
+    },
+    "state": {
+      "current": {
+        "text": "Nykyinen",
+        "source_sha256": "e0d1b68224bf0b31ef16b206c65b5f8f6b89d18161f4a7cdcb8d0ac8d952549a"
+      },
+      "due": {
+        "text": "Erääntyy",
+        "source_sha256": "9071738f145962a67ca1f1db834560031606ced93aa9161f48c493afe31d0a7c"
+      },
+      "overdue": {
+        "text": "Myöhässä",
+        "source_sha256": "d660945bc299132062a8e487e69bba66ca9088298103b8a63daa71b910305627"
+      },
+      "no_expiry": {
+        "text": "Ei vanhene",
+        "source_sha256": "fe06351db8da70412dd4d5a51545d68503554eb9d1bf074aff5009a027e8f2b4"
+      }
+    },
+    "procedure": {
+      "text": "Menettely",
+      "source_sha256": "9c280284ef2669a2be7280a58557e553942fb2e0d2154e3f5949dc153c029bcf"
+    },
+    "procedureRequired": {
+      "text": "Choose a procedure for tämä family sivu.",
+      "source_sha256": "7c0ed8b8a4cb8b6da91e54f163b53edd9c543a16c62524dcc7f64d1c63d9ad1f"
+    },
+    "procedures": {
+      "visitor_log": {
+        "text": "Vierailijaloki",
+        "source_sha256": "42cf93b0de06849183e3f91294e96c3f101315fef7d616fc2ee87e3cd27f2b59"
+      },
+      "escort": {
+        "text": "Saattaja",
+        "source_sha256": "4cc2da8a6ad3b75b9604b5f987108e5313bde95155e849647cd95656ae36639f"
+      },
+      "supplier_questionnaire": {
+        "text": "Toimittajakysely",
+        "source_sha256": "a810baeae4b76d1a97b413bb457d3c6961e3fd365556eedb62d22b75710bfceb"
+      },
+      "signed_flowdown": {
+        "text": "Allekirjoitettu eteenpäinanto",
+        "source_sha256": "01a3af0828cbd50cc84c149208bb25c58c1feb240f139153a0c43d4f6f2504fe"
+      },
+      "witnessed_destruction": {
+        "text": "Todistettu tuhoaminen",
+        "source_sha256": "993a3f91bdbd7eed89e907b1c8a91ea7442b0b6986fa62ff334a8a5c8c968f5d"
+      }
+    },
+    "familyPages": {
+      "pe": {
+        "text": "Todisteiden vastaanotto PE",
+        "source_sha256": "0cdf154526d6f32a3e6818195d4aa2da7c46e20cf44f4723695bd547cda78e5e"
+      },
+      "sr": {
+        "text": "Todisteiden vastaanotto SR",
+        "source_sha256": "1184bb272d0b053f8858d441374a72ef2c5020adf7a67c465d3b00b2a58bfb23"
+      },
+      "mp": {
+        "text": "Todisteiden vastaanotto MP",
+        "source_sha256": "5449ef9e5a7951454c3ed9c6d61e28cc0503fb6c4667d669f667fc72690e727a"
+      }
+    },
+    "visitorName": {
+      "text": "Vierailijan nimi",
+      "source_sha256": "8d9178364056d91c6af5efa2894dc3e6529f4be6b37ac42a40c311ac21c9a20f"
+    },
+    "escortName": {
+      "text": "Saattajan nimi",
+      "source_sha256": "4fc59a5226f6959fa59645ff9ab99316e676c6509c551ea7639a9bc4e0cbbfde"
+    },
+    "supplierName": {
+      "text": "Toimittajan nimi",
+      "source_sha256": "5b386986996ea3c99b50a643aad127e65929c37ec7d9942137e86aa8deeeb7e5"
+    },
+    "mediaDesc": {
+      "text": "Median kuvaus",
+      "source_sha256": "2e22cefe8cb83e7cd9a34c403addd81e25a268eb9aaba77a7faff45338ddfeb9"
+    },
+    "method": {
+      "text": "Tuhoamismenetelmä",
+      "source_sha256": "d86b869ac0dc888817d61b4b97b846ec50220d20f60105ce6640c5c9b197eec7"
+    },
+    "witnessName": {
+      "text": "Todistajan nimi",
+      "source_sha256": "f8c969e164b4d205abeb9b6967f3945ccd8450d77b9492682bea10a414c784e8"
+    }
+  },
+  "supplierRegister": {
+    "title": {
+      "text": "Toimittajarekisteri",
+      "source_sha256": "ac6de0f72e0e6f31b340960879d4ffc68d301ef63cebcff7fbe1078cdc7f260d"
+    },
+    "summary": {
+      "text": "Nimeä kukin toimittaja ja miksi se kuuluu laajuuteen. Kirjaa arviointijakso tähän. Kyselyt ja allekirjoitetut flow-down-tiedostot jäävät Evidence Intake SR:ään.",
+      "source_sha256": "91742c01f856459dafc92bb94fab9b7f5b9a48fe353c557973443a7e0a110c0e"
+    },
+    "honesty": {
+      "text": "Rekisteririvi nimeää toimittajan ja kirjatun laajuuden. Arvioinnin tulos on operaattorin lausunto palvelimen aikaleimalla. Se ei ole Met eikä sertifioitu.",
+      "source_sha256": "5b46addec12e0176b9d1dd76864204639bf769fe27bba5e6681abd1a9bfd6be1"
+    },
+    "addSupplier": {
+      "text": "Lisää toimittaja",
+      "source_sha256": "119ffd9aefff5f9c9790b2bfe52c02de1e8d21e82fe8c7193225ae80dfb20bd1"
+    },
+    "name": {
+      "text": "Nimi",
+      "source_sha256": "810ac77acb0372411a89e098ee1551d8b117112eb4c3642f8785a8262ffacb67"
+    },
+    "organization": {
+      "text": "Organisaatio",
+      "source_sha256": "2d4798fbc61153db8fa3bdb908f50eda7a0f6262e040fd373702a92ae29870b6"
+    },
+    "scopeBasis": {
+      "text": "Laajuuden peruste",
+      "source_sha256": "f7ab5fb99fabc467ffabb715b89512cdfd238d0b8baed4201907f819b42acff5"
+    },
+    "scopeHelp": {
+      "text": "Vähintään 8 merkkiä. Kerro, mihin säänneltyyn työhön tämä toimittaja voi yltää.",
+      "source_sha256": "ffacbb4f850a00ef1927dd7b38a1213ceb6bde3d6587a973cbe8f848e0cdd097"
+    },
+    "contactEmail": {
+      "text": "Yhteyssähköposti",
+      "source_sha256": "18d997525cd7eba91c090e082704b31ae42c8966f78de4755e730a6253689755"
+    },
+    "record": {
+      "text": "Kirjaa",
+      "source_sha256": "24b6af70271661b6b486fd6f39fa1ed92d8bd021925a02d39a19073adfc44bce"
+    },
+    "recorded": {
+      "text": "Toimittaja kirjattu.",
+      "source_sha256": "d7f3de48f5994b58eb1d9ef999b2328d9997af01cc15d0c288f479e8150f81d8"
+    },
+    "archive": {
+      "text": "Arkistoi",
+      "source_sha256": "c6af45df9639eebd5644cddb31cf9563da270db97192f2e23e72ff8184fe1ff1"
+    },
+    "archived": {
+      "text": "Toimittaja arkistoitu.",
+      "source_sha256": "ebd1a924868bca53876b6810254205ae6ab695d82085d68a84af3b650f347a74"
+    },
+    "status": {
+      "text": "Tila",
+      "source_sha256": "f0f96145817844043bef450b11e681eb0de113b8f9f6dc84e8a8fa12ad3bb996"
+    },
+    "lastAssessed": {
+      "text": "Viimeksi arvioitu",
+      "source_sha256": "a00616bc4c2ecd8322b60823ff7d60be877457976dfc8726229b75e57081b0fb"
+    },
+    "actions": {
+      "text": "Toiminnot",
+      "source_sha256": "e9e7ccb95c42bda93ec2f6e363891497460dcb6831ae83d69668d5438e7c53d9"
+    },
+    "assessments": {
+      "text": "Arvioinnit",
+      "source_sha256": "618e855eb5da29f3105832fa4c6f527bab504bcb0c134304e45ac4f1da543e62"
+    },
+    "outcome": {
+      "text": "Tulos",
+      "source_sha256": "b46366c201ec3e5237f2e880111d0b02841f194fa7373a11c22047ce26753d5e"
+    },
+    "outcomePass": {
+      "text": "Hyväksytty",
+      "source_sha256": "89b797a2aae09a26ba162c31954dc5c1b19926a197da1e7be1066e9fe2e8d573"
+    },
+    "outcomeFail": {
+      "text": "Ei hyväksytty",
+      "source_sha256": "7e00bb1690271e10ee15cfa13730e46f05de04dbbfd8139f6f9941ef2b10c5c8"
+    },
+    "outcomeConditional": {
+      "text": "Ehdollinen",
+      "source_sha256": "6f8578b31993e95d91842e1e127fd569b3444050a4320e81583ff057fcd70d94"
+    },
+    "notes": {
+      "text": "Huomautukset",
+      "source_sha256": "da8f741b8766ef1f82122138f39fd7ce37ad1902f918dce9c768db9316c1ea4e"
+    },
+    "recordAssessment": {
+      "text": "Kirjaa arviointi",
+      "source_sha256": "59baf595adf5bb2b5342162c178ad86d35db69850369a46b112ea178ea5c9981"
+    },
+    "assessmentRecorded": {
+      "text": "Arviointi kirjattu.",
+      "source_sha256": "e192174c018241c3326eb8a1c8d8bbaec8ee38a630fbd4ba5782670a06c569eb"
+    },
+    "noAssessments": {
+      "text": "Tälle toimittajalle ei ole vielä arviointeja.",
+      "source_sha256": "73b63a4a21c8f4a32e01de53f8f985e785bca8175238f3eae2904ae42ff11ffc"
+    },
+    "loadFailed": {
+      "text": "Toimittajarekisteriä ei voitu ladata.",
+      "source_sha256": "aab3b0b5968263c3277e5fa4e59e25e7db3e81aeba0470fc82584b9f517fc846"
+    },
+    "noPermission": {
+      "text": "Sinulla ei ole oikeutta tarkastella toimittajarekisteriä.",
+      "source_sha256": "c4122e4e8cee425c619797fc4ad85b29b1609bf2aa15e42351ce17dd08b52ed8"
     }
   }
 }

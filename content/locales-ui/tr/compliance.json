@@ -650,6 +650,30 @@
       "visitor_cycle": {
         "text": "Ziyaretçi döngüsü",
         "source_sha256": "1cc6f8463c0bd9d78182eb9fe673c9c8925fff47b69e5448aa1b21014f596ff6"
+      },
+      "witnessed_destruction": {
+        "text": "Tanıklı imha",
+        "source_sha256": "f3d01ff0bb7240517865124c30a9512c4640e204565b236b18e2d3632e492cb9"
+      },
+      "degauss_certificate": {
+        "text": "Manyetik silme belgesi",
+        "source_sha256": "9cf5c29947167ba9d3dd5ea28dcf4e379827bd32a21715197cdabf5137994aae"
+      },
+      "retention_attestation": {
+        "text": "Saklama beyanı",
+        "source_sha256": "abdcba9b82b2810d41f4471dadf90f2f0e39fb6be895517c5c94fcf97dbb9168"
+      },
+      "export_delivery": {
+        "text": "Dışa aktarma teslimi",
+        "source_sha256": "7c0741c9a5cb16b42529a5c4118b13954f909c1285a29b1c67c225fb64cc26c4"
+      },
+      "exception_record": {
+        "text": "İstisna kaydı",
+        "source_sha256": "b26e6438f35e5bf8985ee3cd1fb9a104be6c4b5fb503f879261910988bc0bb2a"
+      },
+      "posture_review": {
+        "text": "Durum incelemesi",
+        "source_sha256": "63caf6cf8f822ab82153d861c8fff54f9661335b44dccde89b599bbc9abd6637"
       }
     },
     "eventKinds": {
@@ -692,6 +716,18 @@
       "attested": {
         "text": "Beyan edildi",
         "source_sha256": "17f82ae5109687b47b656295bbbfd59a188be6d0b402e5ab16a317a87bf8d407"
+      },
+      "certificate_attached": {
+        "text": "Belge eklendi",
+        "source_sha256": "370abfead6a0f60cf530e44b414eaa743fd227cec9b45086b51215ab637cc02d"
+      },
+      "delivered": {
+        "text": "Teslim edildi",
+        "source_sha256": "1edbe5d0d161e8269ce38467cae2bf137967ae9a5c808eea8d1755116108c5b0"
+      },
+      "exception_recorded": {
+        "text": "İstisna kaydedildi",
+        "source_sha256": "0ca19d0e88edc9a5fae28bb08cd5241df441f0b38e930ba8e0e89c4262d480f1"
       }
     },
     "cp": {
@@ -735,6 +771,334 @@
         "text": "İnceleme planla",
         "source_sha256": "674852bd873c4c06de2009e63a2ac9a72b4b3bed0132dcc8f4adf968945f6a1e"
       }
+    },
+    "mp": {
+      "title": {
+        "text": "Ortam imhası",
+        "source_sha256": "01e099bf6be048e29fa2ca50abb7fa983a3c101db0607c7531988433f6117250"
+      },
+      "summary": {
+        "text": "Tanıklı imha veya manyetik silme belgesi planlayın ve tamamlamayı artı belge karmasını kaydedin. Ürün öğütücüyü işletmez. Bu Met değildir.",
+        "source_sha256": "99ea7c6d45ca483c4f1fca05c32b55eb1064c6abb99db4da2dbf6460282ac6fd"
+      },
+      "add": {
+        "text": "İmha planla",
+        "source_sha256": "ead0de01d2dceb271793bdcb9878c86df0010fa44ce71500b5c4dd9f4e66cc84"
+      }
+    },
+    "au": {
+      "title": {
+        "text": "Saklama kayıtları",
+        "source_sha256": "1bce9a6cbdd9cd1bae4bfb1f86faa5e85c88b7494a851df6c2093e132685411b"
+      },
+      "summary": {
+        "text": "Bir saklama beyanı veya karma içeren dışa aktarma teslimi kaydedin. WORM depolamanın işletimi kuruluşta kalır. Bu Met değildir.",
+        "source_sha256": "12113ea479d91dd2141f5b26aa406bc4b0340c48daa362f5ba905d7cbfea033c"
+      },
+      "add": {
+        "text": "Saklamayı kaydet",
+        "source_sha256": "8c6499e777663155df43709e52c45610d6cd17cb4a25e7ea626300226b08aad9"
+      }
+    },
+    "si": {
+      "title": {
+        "text": "Durum istisnaları",
+        "source_sha256": "a44b7c9e179b76d7a0d3c266647be68656869a0c806277d590e8860916ca636c"
+      },
+      "summary": {
+        "text": "Uç nokta kapsam istisnası veya durum incelemesi kaydedin. Ürün kurumsal EDR veya yama aracını çalıştırmaz. Bu Met değildir.",
+        "source_sha256": "3a39f03e8f1aa8309942d5aec869fe0cf0e8a4648da73991e5c7d04961dd44f0"
+      },
+      "add": {
+        "text": "İstisna kaydet",
+        "source_sha256": "4fa8f15e3f04b3be487869209ea6bffdd4bf62cb1d28ee26bb297085e7020b05"
+      }
+    }
+  },
+  "coverageIntake": {
+    "title": {
+      "text": "Kanıt girişi",
+      "source_sha256": "3c9f82f12af195e85fc062e610f1e6207e1fa6f87f90cbc68ff8a9b3b67e214f"
+    },
+    "summary": {
+      "text": "Sistem dışı bir eylemi kaydedin veya dosya yükleyin. Sunucu SHA-256 saklar. Bu bir bildiridir; Met değildir ve belgelenmiş değildir.",
+      "source_sha256": "9468316cc614c9af132787f3598e50f644a583142e700292d18e2e4168b28e0d"
+    },
+    "honesty": {
+      "text": "Sistem dışı bir eylemin olduğu bildirimi, yalnızca adı geçen kişinin sunucu saatiyle bunu söylediğini kanıtlar. Asla Met değildir ve belgelenmiş değildir.",
+      "source_sha256": "4d050aaf65e26109667f534f1843e269895e02f9ef3f9bb39b821295c0a31868"
+    },
+    "family": {
+      "text": "Aile",
+      "source_sha256": "bd2d677b2ed4381b48bb1d0841052c6d076e7d634d5052e85dcbe0b8a0dedd80"
+    },
+    "titleField": {
+      "text": "Başlık",
+      "source_sha256": "7e8cd2056da73a7fefb6cd91f4e5d199d08d9058c517b9a2476b1b520324d674"
+    },
+    "reason": {
+      "text": "Gerekçe",
+      "source_sha256": "f81ab834de5f84918dc040b884267c2b61cb1a52d46442de10e97f35a94d0500"
+    },
+    "reasonHelp": {
+      "text": "En az 8 karakter. Bu kaydın nedenini yazın.",
+      "source_sha256": "a286822a102fc9dc9d86a9a8e715a3ec4f078efc2aff1eb31f6be20f40f84596"
+    },
+    "statement": {
+      "text": "Ne oldu",
+      "source_sha256": "483bd49023ae2bfb08da43eea2757a0e5490f7b0fe2964f49273cc25215d61f4"
+    },
+    "controlRef": {
+      "text": "Kontrol",
+      "source_sha256": "32d7e82082479b8cb546187ff0af11e4915e4d17bc28e02dca7425288b79badd"
+    },
+    "binderSection": {
+      "text": "Klasör bölüm kimliği",
+      "source_sha256": "882019cbc07aa128972d35797113d4994243e2b6d2f0361d38e9d21546471d04"
+    },
+    "expires": {
+      "text": "Bitiş (RFC 3339)",
+      "source_sha256": "ac669fd06c95c3b61fdefb1a8fdf0b334f516b99f95c2113f61c2e83a3ec58db"
+    },
+    "artifact": {
+      "text": "Dosya seç",
+      "source_sha256": "da7da3667ae8114a4f7032d121ea8a1fb21ab5a4d8cbdc843e16045bbac1ff09"
+    },
+    "record": {
+      "text": "Kaydet",
+      "source_sha256": "bfdd510698ef3ccbf17f2c67fc47790e1ba72894fb74fe284bbc136b47ef73e6"
+    },
+    "sweep": {
+      "text": "Vadesi gelen anımsatıcıları günlüğe yaz",
+      "source_sha256": "342bac73c4d9eee60ef9b9723bbf0e72828700bca2a03b83b1e3b6f12065fc99"
+    },
+    "sweepDone": {
+      "text": "{{scanned}} satırdan {{logged}} anımsatıcı yazıldı. Bu günlük, e-posta değil.",
+      "source_sha256": "fd5fd92a868723472eb8bef9380f598a29d343af54dfdecf52ca634b722b0719"
+    },
+    "empty": {
+      "text": "Henüz kayıt yok.",
+      "source_sha256": "5d9ae0627ee22c6513ada52ffda97f5b1822550172f90ca902d04d96d5e0f047"
+    },
+    "loadFailed": {
+      "text": "Kanıt girişi yüklenemedi.",
+      "source_sha256": "a29dcfb2295d239664f73148600498f5ef8ace856acf8595998d2a56eb234607"
+    },
+    "retry": {
+      "text": "Yeniden dene",
+      "source_sha256": "942087cc2d41e01304b7195558d093d10c72af8e838c7556d6a02d471ee71852"
+    },
+    "sha256": {
+      "text": "SHA-256",
+      "source_sha256": "bbd07c4fc02c99b97124febf42c7b63b5011c0df28d409fbb486b5a9d2e615ea"
+    },
+    "actor": {
+      "text": "Aktör",
+      "source_sha256": "449995c4fe8fab389053dac72d77798c094dd4a3b7b3cfe69c4d78d119308dce"
+    },
+    "renewal": {
+      "text": "Yenileme",
+      "source_sha256": "f4a9133d791782c1d6c1729e52e2738cd03a6467fe1e01bf574a970edda1e13c"
+    },
+    "recorded": {
+      "text": "Kaydedildi",
+      "source_sha256": "c97ac679c9da5f7b34c6f673a3963c5c728a006ee1c7faf653f888ae42c9e987"
+    },
+    "state": {
+      "current": {
+        "text": "Geçerli",
+        "source_sha256": "e0d1b68224bf0b31ef16b206c65b5f8f6b89d18161f4a7cdcb8d0ac8d952549a"
+      },
+      "due": {
+        "text": "Vadesi gelen",
+        "source_sha256": "9071738f145962a67ca1f1db834560031606ced93aa9161f48c493afe31d0a7c"
+      },
+      "overdue": {
+        "text": "Gecikmiş",
+        "source_sha256": "d660945bc299132062a8e487e69bba66ca9088298103b8a63daa71b910305627"
+      },
+      "no_expiry": {
+        "text": "Süre yok",
+        "source_sha256": "fe06351db8da70412dd4d5a51545d68503554eb9d1bf074aff5009a027e8f2b4"
+      }
+    },
+    "procedure": {
+      "text": "Yordam",
+      "source_sha256": "9c280284ef2669a2be7280a58557e553942fb2e0d2154e3f5949dc153c029bcf"
+    },
+    "procedureRequired": {
+      "text": "Choose a procedure for this family page.",
+      "source_sha256": "7c0ed8b8a4cb8b6da91e54f163b53edd9c543a16c62524dcc7f64d1c63d9ad1f"
+    },
+    "procedures": {
+      "visitor_log": {
+        "text": "Ziyaretçi günlüğü",
+        "source_sha256": "42cf93b0de06849183e3f91294e96c3f101315fef7d616fc2ee87e3cd27f2b59"
+      },
+      "escort": {
+        "text": "Refakat",
+        "source_sha256": "4cc2da8a6ad3b75b9604b5f987108e5313bde95155e849647cd95656ae36639f"
+      },
+      "supplier_questionnaire": {
+        "text": "Tedarikçi anketi",
+        "source_sha256": "a810baeae4b76d1a97b413bb457d3c6961e3fd365556eedb62d22b75710bfceb"
+      },
+      "signed_flowdown": {
+        "text": "İmzalı aktarım",
+        "source_sha256": "01a3af0828cbd50cc84c149208bb25c58c1feb240f139153a0c43d4f6f2504fe"
+      },
+      "witnessed_destruction": {
+        "text": "Tanıklı imha",
+        "source_sha256": "993a3f91bdbd7eed89e907b1c8a91ea7442b0b6986fa62ff334a8a5c8c968f5d"
+      }
+    },
+    "familyPages": {
+      "pe": {
+        "text": "Kanıt alımı PE",
+        "source_sha256": "0cdf154526d6f32a3e6818195d4aa2da7c46e20cf44f4723695bd547cda78e5e"
+      },
+      "sr": {
+        "text": "Kanıt alımı SR",
+        "source_sha256": "1184bb272d0b053f8858d441374a72ef2c5020adf7a67c465d3b00b2a58bfb23"
+      },
+      "mp": {
+        "text": "Kanıt alımı MP",
+        "source_sha256": "5449ef9e5a7951454c3ed9c6d61e28cc0503fb6c4667d669f667fc72690e727a"
+      }
+    },
+    "visitorName": {
+      "text": "Ziyaretçi adı",
+      "source_sha256": "8d9178364056d91c6af5efa2894dc3e6529f4be6b37ac42a40c311ac21c9a20f"
+    },
+    "escortName": {
+      "text": "Refakatçi adı",
+      "source_sha256": "4fc59a5226f6959fa59645ff9ab99316e676c6509c551ea7639a9bc4e0cbbfde"
+    },
+    "supplierName": {
+      "text": "Tedarikçi adı",
+      "source_sha256": "5b386986996ea3c99b50a643aad127e65929c37ec7d9942137e86aa8deeeb7e5"
+    },
+    "mediaDesc": {
+      "text": "Ortam açıklaması",
+      "source_sha256": "2e22cefe8cb83e7cd9a34c403addd81e25a268eb9aaba77a7faff45338ddfeb9"
+    },
+    "method": {
+      "text": "İmha yöntemi",
+      "source_sha256": "d86b869ac0dc888817d61b4b97b846ec50220d20f60105ce6640c5c9b197eec7"
+    },
+    "witnessName": {
+      "text": "Tanık adı",
+      "source_sha256": "f8c969e164b4d205abeb9b6967f3945ccd8450d77b9492682bea10a414c784e8"
+    }
+  },
+  "supplierRegister": {
+    "title": {
+      "text": "Tedarikçi sicili",
+      "source_sha256": "38fd7f5e6efbefa3bf5bbb30632af7730f2b41eedff1ebad33bad652e996f7d9"
+    },
+    "summary": {
+      "text": "Her tedarikçiyi ve kapsamda olma nedenini adlandırın. Değerlendirme döngüsünü burada kaydedin. Anketler ve imzalı flow-down dosyaları Evidence Intake SR’de kalır.",
+      "source_sha256": "80cee0303f7964db39655cb221e5970a185b3fc776d2c46330ab86dccba05537"
+    },
+    "honesty": {
+      "text": "Sicil satırı bir tedarikçiyi ve kaydedilmiş kapsamı adlandırır. Değerlendirme sonucu sunucu zaman damgalı bir işletmeci beyanıdır. Met değildir ve belgelenmiş değildir.",
+      "source_sha256": "7759eb3f5296067e5966104921a305a8d5857daa46fc7cc1e1388e3fa253c06e"
+    },
+    "addSupplier": {
+      "text": "Tedarikçi ekle",
+      "source_sha256": "ccda80ec1b17d614cc25af19d91dba7d8bccfc88f9e766007201cbd0b17ae3d4"
+    },
+    "name": {
+      "text": "Ad",
+      "source_sha256": "1d97c9fec35ad3ba402a8bb3548546924ce958f8f4b8a65b0f39c9c6171bdf34"
+    },
+    "organization": {
+      "text": "Kuruluş",
+      "source_sha256": "bf84a1e7ab7826e097598c44591f8370c5750f0ec9eaced633c803e76bd6dca3"
+    },
+    "scopeBasis": {
+      "text": "Kapsam dayanağı",
+      "source_sha256": "6dbd652733a3012c8227e3375ecc148fddeaab8ccc39db93fd8a2a24075bcfd7"
+    },
+    "scopeHelp": {
+      "text": "En az 8 karakter. Bu tedarikçinin erişebileceği düzenlemeye tabi işi yazın.",
+      "source_sha256": "8fa02afffed98230c368d87b94a28e453510add80eb82c0c427872bc0d016fe8"
+    },
+    "contactEmail": {
+      "text": "İletişim e-postası",
+      "source_sha256": "f96bef12be01e13a1209639fe4b7c7782fe7b7c491affa1998a8d76a569b9201"
+    },
+    "record": {
+      "text": "Kaydet",
+      "source_sha256": "c1fe2ecdff02ec1d91e53fbd137be03f8e833b142e69c5d63d15928aaf9bad62"
+    },
+    "recorded": {
+      "text": "Tedarikçi kaydedildi.",
+      "source_sha256": "df71069f71336af71567bceaab0e7597d7ff1bdb9ec4e7cd888ba44a5d590ca9"
+    },
+    "archive": {
+      "text": "Arşivle",
+      "source_sha256": "82c552e2d40253d673a016f54928dc83f54e34242b54cc11bcdea226a2be760e"
+    },
+    "archived": {
+      "text": "Tedarikçi arşivlendi.",
+      "source_sha256": "b4db57851e3259454573f9e4a4179a87cd2d204171dfc43a559c506c22cdc0c4"
+    },
+    "status": {
+      "text": "Durum",
+      "source_sha256": "8bd057388e28cfe927d5d3c2ae7ea46ceb0a46c9d4c9e9c1a922b724c3caeaff"
+    },
+    "lastAssessed": {
+      "text": "Son değerlendirme",
+      "source_sha256": "f1b0dc90bfec0860c062295626863fb5d7eae1f6f6996ff2fbbbd421931c086b"
+    },
+    "actions": {
+      "text": "Eylemler",
+      "source_sha256": "fbaf1a761f0b5205b11d91d74d5c47ba73f7365eaef3e90cb0cc5978f0ba2a92"
+    },
+    "assessments": {
+      "text": "Değerlendirmeler",
+      "source_sha256": "c49ce1d472320f1cb450b2394f127f9a2c40604500451831e685466618617ada"
+    },
+    "outcome": {
+      "text": "Sonuç",
+      "source_sha256": "8e7f4d257e003b368f386d05bfb58540f67eb8f0470f53e0c6172061445ddb45"
+    },
+    "outcomePass": {
+      "text": "Geçti",
+      "source_sha256": "06942e808a971e59235192cd6b213c77c5edac62d5017386ed32f11694980773"
+    },
+    "outcomeFail": {
+      "text": "Geçmedi",
+      "source_sha256": "0c0b401f2fabc48a84a7fbddc9b970a9e9e1431bb55810cfbe8dacc64e37e277"
+    },
+    "outcomeConditional": {
+      "text": "Koşullu",
+      "source_sha256": "098c2e10a718955f0a45b9692a95ee043385ce476e76f318188976f93d594bdb"
+    },
+    "notes": {
+      "text": "Notlar",
+      "source_sha256": "959f1d1df29ff860705a978b5c68b040f2ef7cc441f21d60365fa8232e49cffa"
+    },
+    "recordAssessment": {
+      "text": "Değerlendirmeyi kaydet",
+      "source_sha256": "41ad96dc42723536a07775ff1201b9a2258ab6a81139c660065eb013331906c7"
+    },
+    "assessmentRecorded": {
+      "text": "Değerlendirme kaydedildi.",
+      "source_sha256": "5658342b71be34ee74ff5bc5f17b27f48f0e37749e175424b3c2007c4d031600"
+    },
+    "noAssessments": {
+      "text": "Bu tedarikçi için henüz değerlendirme yok.",
+      "source_sha256": "054d0293b320eb941a4caff08c230ed73e01ae7db4d0e7ecaea418bd0bbb4fc2"
+    },
+    "loadFailed": {
+      "text": "Tedarikçi sicili yüklenemedi.",
+      "source_sha256": "b932c7738a8a116d576cc74f57ba2d478b3d95398ffab84475c440b72ca46cd7"
+    },
+    "noPermission": {
+      "text": "Tedarikçi sicilini görüntüleme izniniz yok.",
+      "source_sha256": "3b3649508ee66e321555a515936fdf2aef6b28437844357d193a8d7de7b28d8c"
     }
   }
 }

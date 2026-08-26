@@ -650,6 +650,30 @@
       "visitor_cycle": {
         "text": "訪客週期",
         "source_sha256": "44d223cc163c7bd3dc9d793e729fc3d33a2980f80274f3d4706842665dc3a184"
+      },
+      "witnessed_destruction": {
+        "text": "見證銷毀",
+        "source_sha256": "190a668f2d8564d08e28ecfb355eb0309bc13184001c9b52887059f34c0790c5"
+      },
+      "degauss_certificate": {
+        "text": "消磁憑證",
+        "source_sha256": "cc0155d5c41bc6a057a7cb903490a7cd3381b4fc994a6879f1af0dd63c3a65dd"
+      },
+      "retention_attestation": {
+        "text": "保留證明",
+        "source_sha256": "b5fa44a765b90bbc10e6e26716aca726266e71720a8a5f75b59dd94fae8d14e2"
+      },
+      "export_delivery": {
+        "text": "匯出交付",
+        "source_sha256": "38fa0d6a7fdec90a797f5ea10c4adca1907d190b4be26689c5bf73e986679754"
+      },
+      "exception_record": {
+        "text": "例外紀錄",
+        "source_sha256": "4da3f2bb17fa377c575a353659dff67970d7a4e4f2e9ed4de729befea1c1ec65"
+      },
+      "posture_review": {
+        "text": "態勢審查",
+        "source_sha256": "178090b1730e050aab01f7f04501f2721696be411a619066776b0da110949f6b"
       }
     },
     "eventKinds": {
@@ -692,6 +716,18 @@
       "attested": {
         "text": "已聲明",
         "source_sha256": "7fbfaee5897c6985982769dcf7c4669261ca401ff969b830a3210a8a5b08a039"
+      },
+      "certificate_attached": {
+        "text": "已附加憑證",
+        "source_sha256": "f4ccd4129be0796412a311e7d4ba2a095faa43ba763784d79c83fd74caee1568"
+      },
+      "delivered": {
+        "text": "已交付",
+        "source_sha256": "624ecd8431832fac2f1432f714aefbb03a568cd04a70de2555eabfc6c84166f1"
+      },
+      "exception_recorded": {
+        "text": "已記錄例外",
+        "source_sha256": "76055ced99a5d19a6c7fbc91256258576fedc427955b4ab040da4389864257e9"
       }
     },
     "cp": {
@@ -735,6 +771,334 @@
         "text": "排程審查",
         "source_sha256": "e177980c8fe2386ff85b2e459aea9078c5050b3e9d85ef65d985c9830c6c7ad2"
       }
+    },
+    "mp": {
+      "title": {
+        "text": "媒體銷毀",
+        "source_sha256": "94a2ed9764a69b4294cb23e16eb5e838efec28c49d0351ea5f04dd37d9ea7359"
+      },
+      "summary": {
+        "text": "排程見證銷毀或消磁憑證，並記錄完成及憑證雜湊。本產品不操作碎紙機。這不是 Met。",
+        "source_sha256": "8a75ca0a7298582c9541020f5966108098addb9af65fe98003c349044c6f9d88"
+      },
+      "add": {
+        "text": "排程銷毀",
+        "source_sha256": "b345637916a7771699932eedbf4fb6e5f16cb43b3933683b1dc051ff04eda62f"
+      }
+    },
+    "au": {
+      "title": {
+        "text": "保留紀錄",
+        "source_sha256": "0d0c8f88fefa8a7a8bb45343fc3a32b0604e2007465caa12b951793006be6a0a"
+      },
+      "summary": {
+        "text": "記錄保留證明或帶雜湊的匯出交付。WORM 儲存的營運仍由本組織負責。這不是 Met。",
+        "source_sha256": "a65b40bdbca8f79c36166d8c59e920162a52621d94d85142fc6aa43bac65510c"
+      },
+      "add": {
+        "text": "記錄保留",
+        "source_sha256": "68034320b1765630cc1c5fccb60b9af8429f80eeea93f93f271889796fb3bf87"
+      }
+    },
+    "si": {
+      "title": {
+        "text": "態勢例外",
+        "source_sha256": "24f8c63d2cad2ab5ae2d9bd12f9a204df85f3e2de134217437cb9f001f748e4e"
+      },
+      "summary": {
+        "text": "記錄端點涵蓋例外或態勢審查。本產品不執行企業 EDR 或修補工具。這不是 Met。",
+        "source_sha256": "46b3a66f5ded0461dca1265dc6e35c809dbdbf70f8d0c5a08a1db719b6868cf1"
+      },
+      "add": {
+        "text": "記錄例外",
+        "source_sha256": "0be3b66c8b4de3b24d6d1a79e6f2ae3b8a43071ddc6bd6554f2d75f9d583bc1c"
+      }
+    }
+  },
+  "coverageIntake": {
+    "title": {
+      "text": "證據收錄",
+      "source_sha256": "3c9f82f12af195e85fc062e610f1e6207e1fa6f87f90cbc68ff8a9b3b67e214f"
+    },
+    "summary": {
+      "text": "記錄系統外行為或上傳檔案。伺服器儲存 SHA-256。這是某人作出的陳述，不是 Met，也不是認證。",
+      "source_sha256": "9468316cc614c9af132787f3598e50f644a583142e700292d18e2e4168b28e0d"
+    },
+    "honesty": {
+      "text": "關於系統外行為的聲明只證明具名人員作了該陳述，並帶有伺服器時間。它絕不是 Met，也不是認證。",
+      "source_sha256": "4d050aaf65e26109667f534f1843e269895e02f9ef3f9bb39b821295c0a31868"
+    },
+    "family": {
+      "text": "族",
+      "source_sha256": "bd2d677b2ed4381b48bb1d0841052c6d076e7d634d5052e85dcbe0b8a0dedd80"
+    },
+    "titleField": {
+      "text": "標題",
+      "source_sha256": "7e8cd2056da73a7fefb6cd91f4e5d199d08d9058c517b9a2476b1b520324d674"
+    },
+    "reason": {
+      "text": "原因",
+      "source_sha256": "f81ab834de5f84918dc040b884267c2b61cb1a52d46442de10e97f35a94d0500"
+    },
+    "reasonHelp": {
+      "text": "至少 8 個字元。說明為何需要此紀錄。",
+      "source_sha256": "a286822a102fc9dc9d86a9a8e715a3ec4f078efc2aff1eb31f6be20f40f84596"
+    },
+    "statement": {
+      "text": "發生了什麼",
+      "source_sha256": "483bd49023ae2bfb08da43eea2757a0e5490f7b0fe2964f49273cc25215d61f4"
+    },
+    "controlRef": {
+      "text": "控制項",
+      "source_sha256": "32d7e82082479b8cb546187ff0af11e4915e4d17bc28e02dca7425288b79badd"
+    },
+    "binderSection": {
+      "text": "活頁夾章節識別碼",
+      "source_sha256": "882019cbc07aa128972d35797113d4994243e2b6d2f0361d38e9d21546471d04"
+    },
+    "expires": {
+      "text": "到期（RFC 3339）",
+      "source_sha256": "ac669fd06c95c3b61fdefb1a8fdf0b334f516b99f95c2113f61c2e83a3ec58db"
+    },
+    "artifact": {
+      "text": "選擇檔案",
+      "source_sha256": "da7da3667ae8114a4f7032d121ea8a1fb21ab5a4d8cbdc843e16045bbac1ff09"
+    },
+    "record": {
+      "text": "記錄",
+      "source_sha256": "bfdd510698ef3ccbf17f2c67fc47790e1ba72894fb74fe284bbc136b47ef73e6"
+    },
+    "sweep": {
+      "text": "記錄到期提醒",
+      "source_sha256": "342bac73c4d9eee60ef9b9723bbf0e72828700bca2a03b83b1e3b6f12065fc99"
+    },
+    "sweepDone": {
+      "text": "已從 {{scanned}} 筆到期紀錄寫入 {{logged}} 筆提醒。這是日誌，不是電子郵件。",
+      "source_sha256": "fd5fd92a868723472eb8bef9380f598a29d343af54dfdecf52ca634b722b0719"
+    },
+    "empty": {
+      "text": "尚無收錄紀錄。",
+      "source_sha256": "5d9ae0627ee22c6513ada52ffda97f5b1822550172f90ca902d04d96d5e0f047"
+    },
+    "loadFailed": {
+      "text": "無法載入證據收錄。",
+      "source_sha256": "a29dcfb2295d239664f73148600498f5ef8ace856acf8595998d2a56eb234607"
+    },
+    "retry": {
+      "text": "重試",
+      "source_sha256": "942087cc2d41e01304b7195558d093d10c72af8e838c7556d6a02d471ee71852"
+    },
+    "sha256": {
+      "text": "SHA-256",
+      "source_sha256": "bbd07c4fc02c99b97124febf42c7b63b5011c0df28d409fbb486b5a9d2e615ea"
+    },
+    "actor": {
+      "text": "陳述人",
+      "source_sha256": "449995c4fe8fab389053dac72d77798c094dd4a3b7b3cfe69c4d78d119308dce"
+    },
+    "renewal": {
+      "text": "續期",
+      "source_sha256": "f4a9133d791782c1d6c1729e52e2738cd03a6467fe1e01bf574a970edda1e13c"
+    },
+    "recorded": {
+      "text": "已記錄",
+      "source_sha256": "c97ac679c9da5f7b34c6f673a3963c5c728a006ee1c7faf653f888ae42c9e987"
+    },
+    "state": {
+      "current": {
+        "text": "有效",
+        "source_sha256": "e0d1b68224bf0b31ef16b206c65b5f8f6b89d18161f4a7cdcb8d0ac8d952549a"
+      },
+      "due": {
+        "text": "即將到期",
+        "source_sha256": "9071738f145962a67ca1f1db834560031606ced93aa9161f48c493afe31d0a7c"
+      },
+      "overdue": {
+        "text": "已過期",
+        "source_sha256": "d660945bc299132062a8e487e69bba66ca9088298103b8a63daa71b910305627"
+      },
+      "no_expiry": {
+        "text": "無到期",
+        "source_sha256": "fe06351db8da70412dd4d5a51545d68503554eb9d1bf074aff5009a027e8f2b4"
+      }
+    },
+    "procedure": {
+      "text": "程序",
+      "source_sha256": "9c280284ef2669a2be7280a58557e553942fb2e0d2154e3f5949dc153c029bcf"
+    },
+    "procedureRequired": {
+      "text": "請為此系列頁面選擇程序。",
+      "source_sha256": "7c0ed8b8a4cb8b6da91e54f163b53edd9c543a16c62524dcc7f64d1c63d9ad1f"
+    },
+    "procedures": {
+      "visitor_log": {
+        "text": "訪客登記",
+        "source_sha256": "42cf93b0de06849183e3f91294e96c3f101315fef7d616fc2ee87e3cd27f2b59"
+      },
+      "escort": {
+        "text": "陪同",
+        "source_sha256": "4cc2da8a6ad3b75b9604b5f987108e5313bde95155e849647cd95656ae36639f"
+      },
+      "supplier_questionnaire": {
+        "text": "供應商問卷",
+        "source_sha256": "a810baeae4b76d1a97b413bb457d3c6961e3fd365556eedb62d22b75710bfceb"
+      },
+      "signed_flowdown": {
+        "text": "已簽署的向下傳遞條款",
+        "source_sha256": "01a3af0828cbd50cc84c149208bb25c58c1feb240f139153a0c43d4f6f2504fe"
+      },
+      "witnessed_destruction": {
+        "text": "見證銷毀",
+        "source_sha256": "993a3f91bdbd7eed89e907b1c8a91ea7442b0b6986fa62ff334a8a5c8c968f5d"
+      }
+    },
+    "familyPages": {
+      "pe": {
+        "text": "證據收錄 PE",
+        "source_sha256": "0cdf154526d6f32a3e6818195d4aa2da7c46e20cf44f4723695bd547cda78e5e"
+      },
+      "sr": {
+        "text": "證據收錄 SR",
+        "source_sha256": "1184bb272d0b053f8858d441374a72ef2c5020adf7a67c465d3b00b2a58bfb23"
+      },
+      "mp": {
+        "text": "證據收錄 MP",
+        "source_sha256": "5449ef9e5a7951454c3ed9c6d61e28cc0503fb6c4667d669f667fc72690e727a"
+      }
+    },
+    "visitorName": {
+      "text": "訪客姓名",
+      "source_sha256": "8d9178364056d91c6af5efa2894dc3e6529f4be6b37ac42a40c311ac21c9a20f"
+    },
+    "escortName": {
+      "text": "陪同人姓名",
+      "source_sha256": "4fc59a5226f6959fa59645ff9ab99316e676c6509c551ea7639a9bc4e0cbbfde"
+    },
+    "supplierName": {
+      "text": "供應商名稱",
+      "source_sha256": "5b386986996ea3c99b50a643aad127e65929c37ec7d9942137e86aa8deeeb7e5"
+    },
+    "mediaDesc": {
+      "text": "媒體說明",
+      "source_sha256": "2e22cefe8cb83e7cd9a34c403addd81e25a268eb9aaba77a7faff45338ddfeb9"
+    },
+    "method": {
+      "text": "銷毀方法",
+      "source_sha256": "d86b869ac0dc888817d61b4b97b846ec50220d20f60105ce6640c5c9b197eec7"
+    },
+    "witnessName": {
+      "text": "見證人姓名",
+      "source_sha256": "f8c969e164b4d205abeb9b6967f3945ccd8450d77b9492682bea10a414c784e8"
+    }
+  },
+  "supplierRegister": {
+    "title": {
+      "text": "供應商登記冊",
+      "source_sha256": "d7960432b77ec053c16da73801ae79b2b4f41dc04fc80cbec6181a318f0d7aac"
+    },
+    "summary": {
+      "text": "列出每家供應商及其納入範圍的原因。在此記錄評估週期。問卷與已簽署的向下流動檔案仍在證據接收 SR。",
+      "source_sha256": "94b330298afbcbf97d6388d77c2c5be5ab8422ef5ca4471af6b3edcff6c215c5"
+    },
+    "honesty": {
+      "text": "登記冊列命名供應商與已記錄的範圍。評估結果是帶伺服器時間戳記的操作員聲明。這不是 Met，也未獲認證。",
+      "source_sha256": "769b73be97fe0cf03697ee8e366c6b40a3aaad1009dcece6554ebbb2ce4e6819"
+    },
+    "addSupplier": {
+      "text": "新增供應商",
+      "source_sha256": "d85e2fe279f3b5fac14c9e0174432feb2c5c223f57b3139f248d59d2eb4db231"
+    },
+    "name": {
+      "text": "名稱",
+      "source_sha256": "a5274f38130516bfdf9973d82fbf471ba3d80c722877242232a6d1b42da50222"
+    },
+    "organization": {
+      "text": "組織",
+      "source_sha256": "f3dfb97cc88bb17beaf3a4ec69afc4c5bd43519bb861510a03eaee727e34d256"
+    },
+    "scopeBasis": {
+      "text": "範圍依據",
+      "source_sha256": "9df10dd5607c18bb1abc1dde98873941a29430b4629de017a92762a111241d65"
+    },
+    "scopeHelp": {
+      "text": "至少 8 個字元。說明此供應商可接觸的受監管工作。",
+      "source_sha256": "fd3976e779b1cc8aae5d3c49aa6ea32a3101cd45704611447edb12e37cc6928b"
+    },
+    "contactEmail": {
+      "text": "聯絡電子郵件",
+      "source_sha256": "a9fa693329d75c96e751dc7504618c61194660ea59cd59f1be56522fb0d2e3a8"
+    },
+    "record": {
+      "text": "記錄",
+      "source_sha256": "ae628c54db83089666ea9fc98800201668f55faff4efb04a6e015dce0a6f366e"
+    },
+    "recorded": {
+      "text": "已記錄供應商。",
+      "source_sha256": "da25cdd749944a4f2743b6aafd7b80f1f809b5c484bf3dd425e12add9027c334"
+    },
+    "archive": {
+      "text": "封存",
+      "source_sha256": "d594d0ff9a4bf35948c347628f0eb0ad96f7a7001be8bd08665d91834600c74f"
+    },
+    "archived": {
+      "text": "已封存供應商。",
+      "source_sha256": "7d2c453c9a75afe09c84de557ca7985f2398b19e958870d53356c51e0e802f94"
+    },
+    "status": {
+      "text": "狀態",
+      "source_sha256": "e01b94ddd5d5b9ba337af8b47ae73df2f596ba5748876b60c2632dbad68f656e"
+    },
+    "lastAssessed": {
+      "text": "上次評估",
+      "source_sha256": "0391a3b36ae20507245aed645546238c25e1f68814bf96e1b2ecf47f47f6f03f"
+    },
+    "actions": {
+      "text": "動作",
+      "source_sha256": "ea3a27bc20be716a3f5fb8519abd153683cc7340be1b99804d906e9d87c0ffad"
+    },
+    "assessments": {
+      "text": "評估",
+      "source_sha256": "6199974df535d734495d1cf05933c3b7a99ff12ce079423c8ebd268d41c74577"
+    },
+    "outcome": {
+      "text": "結果",
+      "source_sha256": "e3bf3a629b893f44d7d35554d545a9c8b92fc294322bfdedbbfbe57c6592b8cb"
+    },
+    "outcomePass": {
+      "text": "通過",
+      "source_sha256": "dd55c6c25912cfbae96563cf0b560ecc08373a4db7e58840fd8a95b81b78c293"
+    },
+    "outcomeFail": {
+      "text": "未通過",
+      "source_sha256": "7562184459a80637e4f7a38bcb8879526296c364d9db1d1ff85c01b49cf02342"
+    },
+    "outcomeConditional": {
+      "text": "有條件",
+      "source_sha256": "cc0bdbd8c505df853ae67edd05376da7ba4ab2290748e0bc1bb657fac8ad1697"
+    },
+    "notes": {
+      "text": "備註",
+      "source_sha256": "85914d54439f4ddfb65152e4698f857ac0274fe6ef4eea5dd60559846a7cdd93"
+    },
+    "recordAssessment": {
+      "text": "記錄評估",
+      "source_sha256": "7cb9befb72c5013277c1282e5f744a2c07f928fc2a6637525982e44a2f273394"
+    },
+    "assessmentRecorded": {
+      "text": "已記錄評估。",
+      "source_sha256": "eda51be385b75d17f25c715b165d09bf2184ba0236fe5896565607ca2b9c58e8"
+    },
+    "noAssessments": {
+      "text": "此供應商尚無評估紀錄。",
+      "source_sha256": "7d1829e77d69fd9df93772a64aa42295401b584ad4ef85be4a1e83831c0ab54f"
+    },
+    "loadFailed": {
+      "text": "無法載入供應商登記冊。",
+      "source_sha256": "30c8f30a2765f61bb31bc89a2446e1b3c10ce1dddbdda0278a1d084af95c16a3"
+    },
+    "noPermission": {
+      "text": "您無權檢視供應商登記冊。",
+      "source_sha256": "feed5cd015a0560993cb88b9023fe662eafacf72a37e0a551158e05d09e20a54"
     }
   }
 }

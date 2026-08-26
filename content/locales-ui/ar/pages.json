@@ -3003,6 +3003,58 @@
         "text": "تعرّف على العرض. هذا ليس حيزًا معتمدًا.",
         "source_sha256": "d37e9f58daba632568c13e38523bf34bdcd13b31ba2044e05b68269984e1c40d"
       }
+    },
+    "compliance__catalog-changes": {
+      "helpAriaLabel": {
+        "text": "فتح تعليمات تغييرات الكتالوج",
+        "source_sha256": "b0878e464aa368b444f1939cd99b95abe626941355de00b65d0123a5b1d5dec3"
+      },
+      "summary": {
+        "text": "سجل محلي لتغيرات كتالوج الضوابط والربط. لا توجد تغذية سحابية. الصف دليل عناية وليس Met.",
+        "source_sha256": "7709ff0909c742a09f2c924f18cec7304bd435485a4e6b70a2a5e5e5a650b16e"
+      },
+      "title": {
+        "text": "تغييرات الكتالوج",
+        "source_sha256": "3e3f6110f339e9b2c0a5d8e81cd35d37ab16741618e1b473b8f7e453d3050e7c"
+      },
+      "bullets": [
+        {
+          "text": "افتح من الامتثال والأدلة ← التقييمات ← تغييرات الكتالوج.",
+          "source_sha256": "99c1e5ad139454fadcb80afbf50cc73fd164421703ae91d144571b93632e04bd"
+        },
+        {
+          "text": "عند الإقلاع يقارن الخادم الكتالوج المزروع بآخر لقطة ويضيف الصفوف المضافة أو المتغيرة.",
+          "source_sha256": "8ce2aceee6aea4288cead2629cf0e2df8c8cb7bc7c05392bdb430a7dfbff08e5"
+        },
+        {
+          "text": "قارن الكتالوج الآن يسجّل الفروق نفسها عند الطلب. ليس Met.",
+          "source_sha256": "12cbb75660a339ed01d1a72647fd6c9eb5f952831d265c1647f26ae0678ac03b"
+        }
+      ]
+    },
+    "pam__access-reviews": {
+      "helpAriaLabel": {
+        "text": "فتح تعليمات مراجعات الوصول",
+        "source_sha256": "7aea42aa9d6a96d405631984920b76f62be9d01d7996e438b7c4de5e60800148"
+      },
+      "summary": {
+        "text": "حملات مراجعة محلية على الهويات وصلاحيات PAM. القرار المسجّل ليس Met وليس حوكمة هويات.",
+        "source_sha256": "b3827cfc8a47461bbb3a8423f44077544712003ec6faca5aa5b7fddfbb6c92ca"
+      },
+      "title": {
+        "text": "مراجعات الوصول",
+        "source_sha256": "1d82265234595cf2b8e3abfd6a37d0fa1c26553215d461f3c853360435968317"
+      },
+      "bullets": [
+        {
+          "text": "افتح من الوصول المميز ← مراجعات الوصول.",
+          "source_sha256": "d5738b53620b006d7d3d3d667acf336ed8327afe43f5947b3513fd3fa6c331eb"
+        },
+        {
+          "text": "يؤكد المراجعون الإبقاء أو السحب أو الامتناع. تُحسب تجزئة للأدلة الاختيارية. ليس Met.",
+          "source_sha256": "ca838b1e883b228a8dbafbd581b81405f8970d6614a26990f976afd0e29f8ec7"
+        }
+      ]
     }
   },
   "chrome": {
@@ -4338,6 +4390,564 @@
       "programsCreating": {
         "text": "جارٍ الإنشاء…",
         "source_sha256": "c79ed9492e3c17199ab50694e07f5525cc6d598a02531528b0eb5ed933cd5466"
+      },
+      "workforceScopeRecord": {
+        "text": "تسجيل قرار النطاق",
+        "source_sha256": "30b00b0b0ac4157dff36894918f763c9d91c3c1761f7161e039292b586f5950c"
+      },
+      "workforceScopeNeedManage": {
+        "text": "يتطلب إذن إدارة القائمة",
+        "source_sha256": "f073e77003d1addb2768b4e688b48da1f59836721137a1b3f4fbd0bfe99ec2e0"
+      },
+      "workforceScopeTitle": {
+        "text": "تسجيل قرار النطاق",
+        "source_sha256": "30b00b0b0ac4157dff36894918f763c9d91c3c1761f7161e039292b586f5950c"
+      },
+      "workforceScopeHonesty": {
+        "text": "هذا هو a recorded scoping decision. It هو ليس Met و ليس certified.",
+        "source_sha256": "d8d0f4f31e3449877fb62a0d848d1af606496b61ac2521b9db9bea1c78f04b4b"
+      },
+      "workforceScopeDecision": {
+        "text": "القرار",
+        "source_sha256": "640ae4baf96061fee1798e9181e2b7a5145585233df2c27a501623afb0096ec1"
+      },
+      "workforceScopeIn": {
+        "text": "ضمن النطاق",
+        "source_sha256": "b741df4756bab12653ca1e2b7132ae19fa56712ef6c43e6ea2e8517c429be3c1"
+      },
+      "workforceScopeOut": {
+        "text": "خارج النطاق",
+        "source_sha256": "3e914d79843854262f2c85f4d00a512a7c0c3f30fa5d94ec3eb9aea47b9b4b5c"
+      },
+      "workforceScopeUnset": {
+        "text": "غير مسجّل",
+        "source_sha256": "b37c7879f6c359f633ed1c478dc9ffac47ad7aac648653bb4a4d509a25fdb3b0"
+      },
+      "workforceScopeBases": {
+        "text": "نشاط خاضع للتنظيم",
+        "source_sha256": "16e7d27d774de9c39e77badb8d137c3e56dcf2bb83a7070db1a2bede25ebd445"
+      },
+      "workforceScopeRationale": {
+        "text": "المبرر",
+        "source_sha256": "58f23be0ac904b65417cb027ed3ae6b3b8be2da74375e3bd15efd06c446a85f6"
+      },
+      "workforceScopeSave": {
+        "text": "تسجيل القرار",
+        "source_sha256": "0eb246db5087d0f8e5a5e6816d3eb296926899bf5dc4da40c69aa0cf43d17a41"
+      },
+      "workforceScopeSaved": {
+        "text": "تم تسجيل قرار النطاق.",
+        "source_sha256": "d1a785b009257497ba13937d554a45c58a2a12319eecf6a42960bf3912864d1a"
+      },
+      "workforceExclusion": {
+        "text": "تسجيل الاستبعاد",
+        "source_sha256": "819c6f1b9d6e777a112f0ba36a96c8a5677871cb46a2250799bf86dbd1244ba0"
+      },
+      "workforceExclusionTitle": {
+        "text": "تسجيل استبعاد مدروس",
+        "source_sha256": "00a31b06ef97f169ff39942e8c699155c601545fa8a218169ac8723fbe4803fd"
+      },
+      "workforceExclusionHonesty": {
+        "text": "يسجّل هذا أن شخصًا أو مجموعة مسمّاة لا يؤدون نشاطًا منظَّمًا. صف القائمة الغائب ليس نفس هذا القرار. لم يُستوفَ قط.",
+        "source_sha256": "f0a24990e890e972ee06553bb03ad4e1ec535617f09f4ff0da1f15943e4848de"
+      },
+      "workforceExclusionKind": {
+        "text": "نوع الموضوع",
+        "source_sha256": "183aac24235663960d92ca1528a624e6a3f6ae3abc7264046f4c4fd5e5bfcf67"
+      },
+      "workforceExclusionPopulation": {
+        "text": "المجموعة",
+        "source_sha256": "5b828861aec15d606e690189228b9b0f3af3d1a6048ea5f730935b02a746b699"
+      },
+      "workforceExclusionPerson": {
+        "text": "الشخص",
+        "source_sha256": "6007db63e18e532c7399975ed77d2e3900810aa75cad165b8d2e5d8b08085c3d"
+      },
+      "workforceExclusionLabel": {
+        "text": "من هو مستبعد",
+        "source_sha256": "47bee99010692dbc4a22123931cdd89376fc0bc8f881f813e26c400d66da7eb7"
+      },
+      "workforceExclusionSave": {
+        "text": "تسجيل الاستبعاد",
+        "source_sha256": "819c6f1b9d6e777a112f0ba36a96c8a5677871cb46a2250799bf86dbd1244ba0"
+      },
+      "workforceExclusionSaved": {
+        "text": "تم تسجيل الاستبعاد.",
+        "source_sha256": "af5e58203a4298260b1e364314a0745170ccf7dbf7573b13d22ba1e0518dd82a"
+      },
+      "workforceCancel": {
+        "text": "إلغاء",
+        "source_sha256": "19766ed6ccb2f4a32778eed80d1928d2c87a18d7c275ccb163ec6709d3eb2e27"
+      },
+      "scopeBasis": {
+        "handles_cui": {
+          "text": "يتعامل مع معلومات غير مصنفة خاضعة للرقابة",
+          "source_sha256": "ad82d16e9b4d14b120fd563f4d72cad0bd03d102726dc4b4412ed9427f602e62"
+        },
+        "handles_fci": {
+          "text": "يتعامل مع معلومات العقود الفيدرالية",
+          "source_sha256": "5eab77c2e4e71204c1436d1c6a8d00f8555a7342374e91210ecab544ed014a6e"
+        },
+        "handles_phi": {
+          "text": "يتعامل مع معلومات صحية محمية",
+          "source_sha256": "32a0965147dfa00472b3a0a6e2dfb08f85fcea8f60030290af93a5c12b9641dc"
+        },
+        "handles_cardholder_data": {
+          "text": "يتعامل مع بيانات حاملي البطاقات",
+          "source_sha256": "e05c60d186f2dec2d8d259cd252dbfca03872ddaaf4145b6a758c569d2f1a5c3"
+        },
+        "administers_in_scope_system": {
+          "text": "يدير نظامًا ضمن النطاق",
+          "source_sha256": "752b17af7009643d3352711010f77a3101d77b8822f52a24c6a04b14c744800e"
+        },
+        "develops_in_scope_software": {
+          "text": "يطوّر برمجيات ضمن النطاق",
+          "source_sha256": "20a4903b27152fd1ec2fdbb1567ed4e602dbfc43b0a991b11328d81d886c77e6"
+        },
+        "physical_access_in_scope_area": {
+          "text": "لديه وصول مادي إلى منطقة ضمن النطاق",
+          "source_sha256": "8dd0e05ea45aad2504375c87b199311415ef9fe66a7339650ac2c6e23a56169e"
+        },
+        "approves_access": {
+          "text": "يوافق على الوصول",
+          "source_sha256": "e7f2be5b6aa46f25b3c1eb7ae5788bf6b004e3874d04afe9de600bf1db99905c"
+        },
+        "reviews_audit_logs": {
+          "text": "يراجع سجلات التدقيق",
+          "source_sha256": "1dee9f75e2991f88c16ca95a76838bd4dd65f91e94c983f57a7575a1c187eb75"
+        },
+        "incident_response_role": {
+          "text": "لديه دور في الاستجابة للحوادث",
+          "source_sha256": "5b57875723b101a7f976291204d9fa54f8cb5bb746ffa6e9bd80df8c04711228"
+        },
+        "security_management_role": {
+          "text": "لديه دور في إدارة الأمن",
+          "source_sha256": "2275dd7ae3997cfa41949225798623651b02564bd8d700e68612440322c7e3f3"
+        },
+        "other": {
+          "text": "Other regulated activity (explain في rationale)",
+          "source_sha256": "282f96b5d7fca6823a50238fa999f4a8d7c02930232828c3bc43e9fd4afa480b"
+        }
+      },
+      "assessmentTitle": {
+        "text": "اختبار معرفة",
+        "source_sha256": "5f2bfa7c12fff48dcae4ac1c4807f746a17df73aec20300d2dea8fef69adb2a5"
+      },
+      "assessmentHonesty": {
+        "text": "الدرجة المسجَّلة دليل على محاولة واحدة مقابل العتبة السارية في تلك المحاولة. يُخزَّن قرار النجاح ولا يُعاد حسابه من سياسة لاحقة. الإقرار بلا درجة ليس تقديرًا. هذا ليس Met وليس معتمدًا.",
+        "source_sha256": "8c6a77784fc4f7e9c6835f3b48b72c547e9bc7d56e005c49194f0c1d78de7dec"
+      },
+      "assessmentEnabled": {
+        "text": "اشتراط اختبار معرفة (وليس إقرارًا)",
+        "source_sha256": "626086c1297d5210eac1955f13747321957d207e9eeeeb5ac3e7a6bc0731d484"
+      },
+      "passingThreshold": {
+        "text": "عتبة النجاح",
+        "source_sha256": "c41a9039e2a465065acfac79897b99e37b20ab1ad428c110b48a75f6392e49bb"
+      },
+      "maxAttempts": {
+        "text": "أقصى عدد محاولات",
+        "source_sha256": "985bd0a40af484d45d56ccb8954add65e5c662ca9c0f4fd42bf238444367210b"
+      },
+      "onExhaustion": {
+        "text": "عند نفاد المحاولات",
+        "source_sha256": "cd5e77178fa0cd1eb8e4464fae5e693137b2d024d79bb099043ba4f5870e5ac2"
+      },
+      "exhaustRemain": {
+        "text": "البقاء غير مكتمل",
+        "source_sha256": "b5b0d7ff0ad6146071895677ce98fc6f8d7cb6c5c40d0c969f1f877bed316966"
+      },
+      "exhaustReview": {
+        "text": "مراجعة المشغّل",
+        "source_sha256": "9076371ce808f2955b2f3e32bffbbb5a5054777a08780cfb4f15ff00cef8a316"
+      },
+      "exhaustBlock": {
+        "text": "منع إعادة المحاولة",
+        "source_sha256": "cb40415240b5321114d84b3f43a3f20db9ebd84d64dfaeb331cbbeb9677df199"
+      },
+      "questionSetId": {
+        "text": "معرّف مجموعة الأسئلة",
+        "source_sha256": "676a1ef429d2f148ac271364489194eb82089481e4ae682ca63d1f20eaabd0d9"
+      },
+      "questionSetVersion": {
+        "text": "إصدار مجموعة الأسئلة",
+        "source_sha256": "874043c8407f13031101b98652c3fcd92dcfbb885c0e60c57538d80a530b9dd2"
+      },
+      "questionSetVersionHelp": {
+        "text": "مطلوب عندما يكون الاختبار مفعّلًا. مربوط مثل تجزئة المستند.",
+        "source_sha256": "581c81e358feab0950b309cddc7084841d2eaca93663e267e83a33e349e1efc9"
+      },
+      "saveAssessment": {
+        "text": "حفظ سياسة الاختبار",
+        "source_sha256": "b68dc9f38e500f509f7d72b49e0422c9791ebabe62b1dd0c6971004e026a2bdd"
+      },
+      "assessmentSaved": {
+        "text": "تم حفظ سياسة الاختبار.",
+        "source_sha256": "48f11dd2a43ceff4a3df521ba9b77f50fde0fab885622f8d9b9a8a045ee534b3"
+      },
+      "attemptsTitle": {
+        "text": "تسجيل درجة",
+        "source_sha256": "effe72d186ab645b90bc02159a3e03724761a579b97542b6c86ec528ef844eed"
+      },
+      "assignment": {
+        "text": "التكليف",
+        "source_sha256": "94e1e87e60fd8fcfc58afcaec173bbbb180d599942df326409f4a157ae41e883"
+      },
+      "score": {
+        "text": "الدرجة (0–100)",
+        "source_sha256": "f85a16e1d88957f7c061e15fcc1b41d1152d9d02da9040b330d98c1ad9874a1c"
+      },
+      "attemptNotes": {
+        "text": "ملاحظات",
+        "source_sha256": "d446d2dc6b81b07a2da81ca1fc5c09151624ca9045d8804212d00d3e415b5ecb"
+      },
+      "recordScore": {
+        "text": "تسجيل الدرجة",
+        "source_sha256": "e05ef4dc7904d1a8a61fbdb60e8c6498e8d956b1577a344522dd868cf9f728d0"
+      },
+      "scorePassed": {
+        "text": "سُجِّلت الدرجة {{score}} — ناجح (العتبة {{threshold}}).",
+        "source_sha256": "0293f0c66d408297c93ba45df0a215f793f8e905c2c9c641ca565b76a7d2c90c"
+      },
+      "scoreFailed": {
+        "text": "سُجِّلت الدرجة {{score}} — غير ناجح (العتبة {{threshold}}).",
+        "source_sha256": "db786ef2ed4a118000fdf487ab292ebeea8fa45d6f88133dffcc0448e78919fb"
+      },
+      "passed": {
+        "text": "ناجح",
+        "source_sha256": "049e74f99b5ae41b559a2c9ad9a93a6c692ef7e8350f4f7162ff4c9177365c4a"
+      },
+      "failed": {
+        "text": "غير ناجح",
+        "source_sha256": "78ddfa61e8a3b2407635fbcedab88ad5298090bdbe381667c0bee24fbf135ead"
+      },
+      "addPublishedPolicy": {
+        "text": "إضافة سياسة منشورة",
+        "source_sha256": "4bbffaab934cf7327c3e2ae7d88096289e3f4dccc58e435548fbcec5431665ec"
+      },
+      "addPublishedPolicyHelper": {
+        "text": "يثبّت الإصدار الساري. الموافقات اللاحقة لا تغيّر هذا التثبيت. إقرار السياسة ليس Met.",
+        "source_sha256": "133f471ebab4a983fed120ac5d71cdac4948624c7df111368d4252eeacf1eaba"
+      },
+      "policyPinTitle": {
+        "text": "سياسة {{title}}",
+        "source_sha256": "ab5e10682b163ba61da2f2d08e0b612c0d1ac0dcfc4f7e912f9b4fcf4e8b2b7e"
+      },
+      "policyPinVersion": {
+        "text": "الإصدار {{label}}",
+        "source_sha256": "a65cc9d5089ccabe89cd07dd20cb0da9a1ba0a6b03b6a01b6fe999052eceda9d"
+      },
+      "policyPinSha": {
+        "text": "SHA-256 {{sha}}",
+        "source_sha256": "7ca9a697c47b4e13c2f33aa3f536ff468868bc5c753eaaec5b8bc4eac68060ba"
+      },
+      "gateTitle": {
+        "text": "بوابة الوصول",
+        "source_sha256": "fec7b2f7c80ba6ce916c4231be73f4ca52ff64d019df18c5859a7ea6c8873435"
+      },
+      "gateHonesty": {
+        "text": "عند تشغيل هذه البوابة، يمكن للتدريب الإلزامي غير المكتمل رفض الترقية أو الجلسة لحسابات المشغّل المرتبطة. الوضع الافتراضي متوقف. الرفض دليل على رفض. الاستثناء استثناء مسجّل. لا شيء من ذلك Met.",
+        "source_sha256": "f3d2a1bc0e7fd8feaebfe61d35c61c5432fcdd17faebbd426b51eabaea630217"
+      },
+      "gateEnabled": {
+        "text": "رفض الوصول عندما يكون التدريب الإلزامي غير مكتمل",
+        "source_sha256": "76ec1d116a4202412990f2f602c5903161a80cbac18a53fd689b6298fb9e0da9"
+      },
+      "gateScope": {
+        "text": "نطاق البوابة",
+        "source_sha256": "3a140d5bb1b9c80241eaadba8b1ca97de96be5793add6c689f778795c2ae5cc7"
+      },
+      "gateGraceDays": {
+        "text": "أيام السماح بعد الاستحقاق",
+        "source_sha256": "ba2e39d93f3abacbd69541f91991e3fa8c29c13ce42b8752d6e062920ba92b51"
+      },
+      "gateDenialMessage": {
+        "text": "رسالة الرفض",
+        "source_sha256": "76431615aa0dd88c9a4d54f1292bc4d7d1d698efd07177ac5c25d1a61a6996d8"
+      },
+      "saveGate": {
+        "text": "حفظ بوابة الوصول",
+        "source_sha256": "014f293472a4a944fa337c65a80b74c801aad295704538f51db7fca61f48f2bf"
+      },
+      "gateSaved": {
+        "text": "تم حفظ بوابة الوصول.",
+        "source_sha256": "db08283de68f3c9bd85f7a99dbfd2114855a82ab38cbf719cd197554752165aa"
+      },
+      "overrideTitle": {
+        "text": "استثناء مسجّل",
+        "source_sha256": "507ec7104d9b55dc38c0659d1318bd3210c28e5b66241c8bc70e322250dd290b"
+      },
+      "overrideMember": {
+        "text": "عضو السجل",
+        "source_sha256": "f485c4d41ab37ae2d09e23baa2fae37df94df25ce0dfb10d1ca0588819254147"
+      },
+      "overrideReason": {
+        "text": "السبب",
+        "source_sha256": "f81ab834de5f84918dc040b884267c2b61cb1a52d46442de10e97f35a94d0500"
+      },
+      "overrideExceptionKind": {
+        "text": "نوع الاستثناء",
+        "source_sha256": "c5a5bc6214ffcf0023e4ace910c1c910da657574b8c4309e2c61bb7cb09dbe67"
+      },
+      "overrideExpires": {
+        "text": "ينتهي",
+        "source_sha256": "f6725f3af08a06a2804bf70e4493e6c78dd37ef533eebf9b419fc48b520ec753"
+      },
+      "grantOverride": {
+        "text": "منح الاستثناء",
+        "source_sha256": "f9289f649581575ed65216217f0d82061f2c51f6ac84c052a8e8d7566aa0c00e"
+      },
+      "revokeOverride": {
+        "text": "إلغاء الاستثناء",
+        "source_sha256": "c8b7ad3803e8fd3d4444f1c167275aee22c0dbb9a1d1e955b19cddadf9b968d2"
+      },
+      "overrideGranted": {
+        "text": "سُجّل الاستثناء. هذا ليس Met.",
+        "source_sha256": "d482f1ab826780c8edfa8b302f040ef21930ffd98e14e9436dc8ba51121bf17a"
+      },
+      "overrideRevoked": {
+        "text": "أُلغي الاستثناء.",
+        "source_sha256": "a4ba5782143fdfa64e7100d2bd998e43d70a7b40d5cb0dc8fc57ed7d6c3d86fa"
+      },
+      "principalBinding": {
+        "text": "حساب المشغّل",
+        "source_sha256": "074f069505eb746961e8b46e52d169f03cefbf04d6cc764f944d53ce5209f9d9"
+      },
+      "bindPrincipal": {
+        "text": "يربط شخص السجل هذا بحساب مشغّل حتى تقيّم بوابة الوصول الترقية والجلسة. اتركه فارغًا إن لم يكن له مقعد وحدة تحكم.",
+        "source_sha256": "53c085d3cc16134922a9180790189a7dee432771d1b3f6d2b4490698bafa11c8"
+      },
+      "publishedPolicyKind": {
+        "text": "سياسة",
+        "source_sha256": "c611981fab983bc648368eb81240f5a5a1eff07f40aa4c9fd155600a98eeb6af"
+      },
+      "readKind": {
+        "text": "قراءة",
+        "source_sha256": "9b9a8d05a7ec353bda84f9c1bb3178c299de3001b5e970508ddc889c487f92ca"
+      },
+      "gateScopeElevation": {
+        "text": "ترقية",
+        "source_sha256": "8a7d4c8ec458555419e62277e17ab9af0cf457889b3157e1f81bd1acf1c0dae9"
+      },
+      "gateScopeSession": {
+        "text": "جلسة",
+        "source_sha256": "6959b4159575d8dd76d9f3bbe2c6437904f861e7860c35abd18deffb1c3425a0"
+      },
+      "gateScopeBoth": {
+        "text": "ترقية وجلسة",
+        "source_sha256": "28fb61dd66e32ed65e392d8419cb5c457b199b4247898ae011661523773e7b39"
+      },
+      "exceptionCip": {
+        "text": "ظرف استثنائي CIP",
+        "source_sha256": "32548d4df0603983592eb2faf3aafdeac8aca71f8e18875d67aa4454dc120cf9"
+      },
+      "exceptionEmergency": {
+        "text": "طوارئ تشغيلية",
+        "source_sha256": "b4b59c21850e3a8cf60c11c3936b578071063add52bc7cc21f730970986216ae"
+      },
+      "exceptionOnboarding": {
+        "text": "مهلة الالتحاق",
+        "source_sha256": "7988867f9cee3422e6705b6c145ba1686947b82cc84e93204ba8e5afb1756884"
+      },
+      "exceptionOther": {
+        "text": "أخرى",
+        "source_sha256": "f97e9da0e3b879f0a9df979ae260a5f7e1371edb127c1862d4f861981166cdc1"
+      },
+      "groupsTitle": {
+        "text": "مجموعات التسجيل",
+        "source_sha256": "05c2ec3e343997c0efce426253ec247a353e410ab3e41ea8a09d5d22da9f24f2"
+      },
+      "groupsHonesty": {
+        "text": "المجموعة قاعدة مطابقة أو قائمة مسماة. ربطها ببرنامج مع تشغيل التسجيل التلقائي يعيّن البرنامج. التعيين دليل تسليم وليس Met.",
+        "source_sha256": "aa7f93f7a9f0448eedd656e867f709b2e7f5cad8e72a626dee811a476024e690"
+      },
+      "groupName": {
+        "text": "اسم المجموعة",
+        "source_sha256": "762ebb70ef0ea2e80a41035e91a5f95ec35b0b03d2f2acc5c5b4f4c09213c8c5"
+      },
+      "groupKind": {
+        "text": "النوع",
+        "source_sha256": "f5387f9bb6ed70315a77fdcb9335facc27a9bf241f35955bd2755c55e0c016c7"
+      },
+      "groupKindStatic": {
+        "text": "قائمة مسماة",
+        "source_sha256": "cae6f2145fe20f8386d1d0a191c4d84da124ee9dee559aae91a16eb7b480331b"
+      },
+      "groupKindRule": {
+        "text": "قاعدة مطابقة",
+        "source_sha256": "a1348becb0f5a78b6b6441aac52ff219e8fb55526fedf6d7d09ad177b40926f9"
+      },
+      "groupCreate": {
+        "text": "إنشاء مجموعة",
+        "source_sha256": "35be9c541d68e6ea78dfce189aa504a97247ca6b1c59f125a75498b279796629"
+      },
+      "groupCreated": {
+        "text": "تم إنشاء مجموعة التسجيل.",
+        "source_sha256": "2930bb7f5abbe6038b0de9fead1da6f6a387e623967ad51925584b849aded894"
+      },
+      "groupMatchKind": {
+        "text": "نوع العضو",
+        "source_sha256": "ede519b3497c74a99fb1c0bf510ef1e6ab4673c19b02449130f1cacc5e07b271"
+      },
+      "groupMatchDept": {
+        "text": "القسم",
+        "source_sha256": "5304ab98e5815a35d33c39ddd9557ecf39e7902f29f1c132da4e69c265e9b9bf"
+      },
+      "groupMatchOrg": {
+        "text": "المنظمة",
+        "source_sha256": "d764d42592fc968709b4c6c25c6e6b77919295dfce2c57ead02bedac5ddb3218"
+      },
+      "groupAddMember": {
+        "text": "إضافة إلى المجموعة",
+        "source_sha256": "ea849eb70c2688999bc6a46d5a9e9ad7ab7bc18c3aeef9a3b4acb5b41500bd60"
+      },
+      "groupMemberAdded": {
+        "text": "تمت إضافة الشخص إلى المجموعة.",
+        "source_sha256": "e61dcdb61dfd1452c9a4a50a260b9b08c136d36a17e5ab1e3f3ecea5afa5364a"
+      },
+      "noGroups": {
+        "text": "لا توجد مجموعات تسجيل بعد.",
+        "source_sha256": "9b1af42cd43669862e11947d7017fb4f11a9c17e4adc7c5734e5afb07a5f23dd"
+      },
+      "pickGroup": {
+        "text": "مجموعة ثابتة",
+        "source_sha256": "c1516575cc39266789bf6a47c8cdcdedbd42897770aaa40770a70293b1ea0578"
+      },
+      "pickMember": {
+        "text": "شخص في السجل",
+        "source_sha256": "28f01d1a764dc7193b0d56329f90d3327965edecae5c74b9b8e369e633cad52e"
+      },
+      "autoEnrollTitle": {
+        "text": "التسجيل التلقائي",
+        "source_sha256": "e6a337c8cf5283001dc41817f123c9fb5204673a4b19a7c8bd3ca960f4cc3f7f"
+      },
+      "autoEnrollHonesty": {
+        "text": "عند التشغيل يُعيَّن هذا البرنامج لأعضاء المجموعة المطابقين ولصفوف السجل الجديدة التي تطابق مجموعة مرتبطة. الافتراضي إيقاف. التعيين دليل تسليم وليس Met.",
+        "source_sha256": "948b95a26869f4a1ddaa3570f3582e434f71f7e72494be389697e54568a5b8e2"
+      },
+      "autoEnrollEnabled": {
+        "text": "تسجيل أعضاء المجموعة المطابقين والتعيينات الجديدة تلقائياً",
+        "source_sha256": "1c6a020d89f609c59231c5955101a7ad5a9a729156969dc32bdd2b98bb4c08e4"
+      },
+      "autoEnrollSave": {
+        "text": "حفظ التسجيل التلقائي",
+        "source_sha256": "f3696069e20fb76f1d4292d68bd41f978a0a5e3c947bd59cae9c9d0bc882bd79"
+      },
+      "autoEnrollSaved": {
+        "text": "تم حفظ التسجيل التلقائي.",
+        "source_sha256": "8465260644473bfe32799564438f982851e04cce7b15c8648c96af00e81f1468"
+      },
+      "autoEnrollSweep": {
+        "text": "تشغيل مسح التسجيل",
+        "source_sha256": "d6ebb17e18f0d38db5a8fe1c0162f46fe161350072ccff9795bc7382ded8f1b4"
+      },
+      "autoEnrollSwept": {
+        "text": "مسح التسجيل: {{enrolled}} مسجلاً من {{considered}} جرى النظر فيهم.",
+        "source_sha256": "fd636bb7fb3ecfaf2edf4145eb4318da369f56c7cf8057e299e401f9a66d393d"
+      },
+      "boundGroups": {
+        "text": "المجموعات المرتبطة",
+        "source_sha256": "885ca060b9f3756e324cedcf9faecb200d95f5573ae2606fb88299cefa43fdbc"
+      },
+      "noBoundGroups": {
+        "text": "لا توجد مجموعات مرتبطة بهذا البرنامج.",
+        "source_sha256": "9ac65ccd5a47a3bea871e62f77f0132707c01bf557747d9f6c095340278a028e"
+      },
+      "unbindGroup": {
+        "text": "إلغاء الربط",
+        "source_sha256": "dca68375fa4fa5babcb0c1e75d5f1caf7b290b6a919ddf974afa56ae49fbdd71"
+      },
+      "bindGroup": {
+        "text": "ربط المجموعة",
+        "source_sha256": "e1d2dad2497ca26d9d700c65921b917bcf602dbf9d605cef372e1c79bb7df1be"
+      },
+      "groupBound": {
+        "text": "تم ربط المجموعة بهذا البرنامج.",
+        "source_sha256": "81f889d18379a759971f43189c8abce0939f13362d826cee55014585f27331f0"
+      },
+      "groupUnbound": {
+        "text": "تم إلغاء ربط المجموعة من هذا البرنامج.",
+        "source_sha256": "f1aa1319582568df772644343e592e6af7f06496bc968450095b1bbfe62bddbe"
+      },
+      "identitiesTitle": {
+        "text": "ارتباطات الهوية",
+        "source_sha256": "4706bfece7c262fe38c7815063af9c6e1056ea93be0f2fc69e0dc74e270f8e86"
+      },
+      "identitiesHonesty": {
+        "text": "يربط الارتباط طريقة تسجيل الدخول بهذا الشخص في السجل. تربط الاتحاد الشخص القائم. البريد عنوان تسليم وليس مفتاحًا. يُسجل فك الارتباط. ليس Met أبدًا.",
+        "source_sha256": "32605bd0986f61b96246ef8af3c3a10d50fee2bcee72532b7a28db0c25d28bfb"
+      },
+      "identitiesEmpty": {
+        "text": "لا ارتباطات لهذا الشخص بعد.",
+        "source_sha256": "e8958b3e5eb485fc7b8fff224550c7bf831222b3b51e3a6bfda502131959efb5"
+      },
+      "identitySource": {
+        "text": "المصدر",
+        "source_sha256": "0e570ca6fabe24f94e52c1833f3ffd25567022beb826fa16891f3322051bc221"
+      },
+      "sourceEmailLink": {
+        "text": "رابط بريد",
+        "source_sha256": "6f0d2f54ee125df8d3beba59ce1b39d03b5252be267cf8e9e678851cbeeee4ca"
+      },
+      "sourceLocalAccount": {
+        "text": "حساب محلي",
+        "source_sha256": "871e019bee76e74d8b5f397b2e0f84b94e001a5dbaeff8d304fd5669270c891b"
+      },
+      "sourceExternalIdp": {
+        "text": "موفر هوية خارجي",
+        "source_sha256": "a3442088b91037e267666a206afdc913fdd217d44cbbc58946a5ab32456228b6"
+      },
+      "identityIssuer": {
+        "text": "المُصدر",
+        "source_sha256": "39e02c46a08382b7b352b4f1a9d38698b8fe7c8eb74ead609c804b25eeb1db52"
+      },
+      "identitySubject": {
+        "text": "الموضوع",
+        "source_sha256": "68971283841aecdf1da48428849b3b33164ec5c41d0f3c4d6cea624db5aff8f2"
+      },
+      "identityEmail": {
+        "text": "بريد التسليم",
+        "source_sha256": "1efeceaedae041e8e15881f0d517dfe8c60d12e3923f09ae3b10352b49745ba1"
+      },
+      "identityPrincipal": {
+        "text": "أصل محلي",
+        "source_sha256": "a7ff7b7842998f07184cdbe16786e4b166d529bee611a2bac9438d331aee1d6f"
+      },
+      "identityHint": {
+        "text": "تلميح العرض",
+        "source_sha256": "7964c2d657ba6d1b8e6b4b22c7f82c84257a783602aa87836918a2b6c052ef17"
+      },
+      "identityLink": {
+        "text": "ربط",
+        "source_sha256": "554f266df996b3454532bc8207b69cc2ea25acf6a0e4a9c687e1555ecefc5915"
+      },
+      "identityLinked": {
+        "text": "تم ربط الارتباط بهذا الشخص.",
+        "source_sha256": "cc28fff1e931d9ee4c085a6fddd230b071b414eeef55115e69f891e6dc03f9d3"
+      },
+      "identityUnlinkPick": {
+        "text": "ارتباط نشط",
+        "source_sha256": "af6fb20e87319d832625f7e7076f6066fc420c7df4832127916624cfe91843e0"
+      },
+      "identityUnlinkReason": {
+        "text": "سبب فك الارتباط",
+        "source_sha256": "e31a05e1bc6eaf55e66a993dfa9be34e5497f9159555772ec1efe16778ced677"
+      },
+      "identityUnlinkAction": {
+        "text": "تسجيل فك الارتباط",
+        "source_sha256": "a7f7f70a2ce9bc859c75471fa2c7b75f7c6012151080c92bb3421405898784fb"
+      },
+      "identityUnlinked": {
+        "text": "سُجل فك الارتباط. يبقى الصف.",
+        "source_sha256": "02ef8e52c98f5391ff19b98d1f6cec863f4410ebca26a1ef7a634f5a2f2d960e"
+      },
+      "identityLive": {
+        "text": "نشط",
+        "source_sha256": "b64ac05f17e64d037db81a98f51e2688216e292ae9748f979f04dfbac49fd7fc"
+      },
+      "identityUnlinkedStatus": {
+        "text": "مفصول",
+        "source_sha256": "1e690b5815be5bf48d2eb8f1da6d951667e1f4003ed8c3a1015989004358bf11"
       }
     },
     "messaging": {
@@ -13716,6 +14326,80 @@
           "text": "التصنيف",
           "source_sha256": "72f049954fdd06c875fef2a15bf89e95c7a28db5c4910643dbd7ac38a3e0db13"
         }
+      },
+      "classificationGov": {
+        "intro": {
+          "text": "Configure markings for this instance, assign each person a top authorization, and enforce read-down / write-up. CMMC uses Unclassified, Federal Contract Information, and Controlled Unclassified Information. This page records product settings — it is not a Met stamp and not a certification.",
+          "source_sha256": "ac4f56b42b9097bfe98a57dae8aa70eeb1d220ee685eedabdca0c39e515d6dec"
+        },
+        "modeLabel": {
+          "text": "Classification mode",
+          "source_sha256": "c45b28da356802877889ac54f525351f6895c3853a1e87b25e35c21b608b0dd2"
+        },
+        "modeHelp": {
+          "text": "Writes CLASSIFICATION_MODE. commercial keeps markings blank. cmmc is the simple CMMC set. nist80053 enables government families you turn on below.",
+          "source_sha256": "0518dd74f6e2d699e6937115df6ec3030d5c40086b72acf8a0b89c71d5f033f9"
+        },
+        "saveMode": {
+          "text": "Save classification mode",
+          "source_sha256": "08650da7f3b8af554089c71c1ee8a79d71489fcbc39e7538981107595297f019"
+        },
+        "instanceTitle": {
+          "text": "Instance catalog",
+          "source_sha256": "30c42ca98fde1bdf2b60c3a58b376edaa796d7a48774c8a5cfc142a6d4f58ed7"
+        },
+        "familiesHelp": {
+          "text": "Turn on marking families for this enclave. Simple CMMC chrome hides Secret and foreign markings from everyday tagging.",
+          "source_sha256": "f9bbefaed78579535c66035007d0b0ec78c688d515998e2c929468c41de46f63"
+        },
+        "maclLabel": {
+          "text": "Mandatory access (MACL)",
+          "source_sha256": "af2f8d51b73fbddb6b20bff64819c1625e7835bf1d542f14f5b898bd41616b8a"
+        },
+        "maclHelp": {
+          "text": "off records only. warn allows and logs. enforce blocks read-up and write-down. Assign clearances before enforce.",
+          "source_sha256": "87931aaa134e50ba6c52aebbf55bb6ea3858c416a2106f63e0b70a4b4e1f3e98"
+        },
+        "defaultMarking": {
+          "text": "Default marking",
+          "source_sha256": "7d85fb8a4c1d11d2309b2f57bf8a508bb6e6d39d2967acf5cf0c0eb33e2a8c5a"
+        },
+        "simpleCmmc": {
+          "text": "Simple CMMC tagging (Unclassified, FCI, CUI)",
+          "source_sha256": "27d56050e059a062be354f82555671078732f07822b67a8bc53f2f43e68acc77"
+        },
+        "corporate": {
+          "text": "Enable corporate markings (Company Confidential and custom)",
+          "source_sha256": "8bf041449df52228fe6192e72754eee9f5cd0c2632dee8a4a8914657f6a2666f"
+        },
+        "saveInstance": {
+          "text": "Save instance settings",
+          "source_sha256": "1de6b10b93251ab9f31ee0dcdab04a2a0f19269c4c097d5aa64d8c40e7c52f95"
+        },
+        "catalogTitle": {
+          "text": "Markings by sensitivity",
+          "source_sha256": "8693fcb8889ec1fba084557317c762e770c9406faf3d915dbaadbd5e119356d8"
+        },
+        "addCustom": {
+          "text": "Add a custom marking",
+          "source_sha256": "67d45d3560189ea5ad9ebe903d0056fb58c599a301cca6ee9ee2ea234cd74e68"
+        },
+        "clearanceTitle": {
+          "text": "Person authorization",
+          "source_sha256": "f0dd1809dcc323e591317d18ddd9f522ddae805c488c6f937f1b5a21ae67cbaa"
+        },
+        "clearanceHelp": {
+          "text": "Set the highest marking this person is authorized to read. Write-up is allowed; write-down needs a formal release.",
+          "source_sha256": "bd70e7b3dce01d75d9e7485a5b84f67c747da9ad16db401a316e6917a363c068"
+        },
+        "releaseTitle": {
+          "text": "Formal release (downgrade)",
+          "source_sha256": "ff9331e6c356345d2fecaa767356d48cc8cbe230063ee70d2d11fcfd98c21a9a"
+        },
+        "releaseHelp": {
+          "text": "Lowering a marking is not an ordinary edit. Record a justification. Every release is append-only and audited.",
+          "source_sha256": "34bbf935808a478c7afbfde2086838353722d280be802f237c5e1568a1b9c79c"
+        }
       }
     },
     "notFound": {
@@ -13730,6 +14414,536 @@
       "home": {
         "text": "اذهب إلى المنزل",
         "source_sha256": "41c60d19e14cc53d9b1cf5bd23f057804d010d95cd9317964e19afe76d773a14"
+      }
+    },
+    "accessReviews": {
+      "title": {
+        "text": "مراجعات الوصول",
+        "source_sha256": "1d82265234595cf2b8e3abfd6a37d0fa1c26553215d461f3c853360435968317"
+      },
+      "honesty": {
+        "text": "قرار المراجع يسجّل ما صرّح به شخص مسمّى عن هوية أو صلاحية محلية. ليس Met وليس معتمداً وليس حملة حوكمة هويات.",
+        "source_sha256": "94ef589bf93ef2944116eb600fa6efc9a1df21d8f4bec0f37383606404811c38"
+      },
+      "created": {
+        "text": "تم إنشاء الحملة.",
+        "source_sha256": "10f83aa8abdbde5a4cadf325c26923b1455a25ac9063714a7af171f59a59292c"
+      },
+      "statusSaved": {
+        "text": "تم حفظ حالة الحملة.",
+        "source_sha256": "edb652dfb506f20279833358f64fb5ba417d073a53af8ce3c212a92cef27a2b1"
+      },
+      "itemAdded": {
+        "text": "تمت إضافة الموضوع.",
+        "source_sha256": "8c170c0a9290804b1e7d3e38ec29c7ce53d3e3f13096c029902a7f4c89171eb1"
+      },
+      "attested": {
+        "text": "تم تسجيل قرار المراجع.",
+        "source_sha256": "93c23f68f7de5e8cebadf9a62273f74294d6032162e3bde792508328886306b1"
+      },
+      "createTitle": {
+        "text": "حملة جديدة",
+        "source_sha256": "23448cb6d1eed62cd78fcd6c843896b4da0abe44c05301b4e19540b46371122a"
+      },
+      "name": {
+        "text": "الاسم",
+        "source_sha256": "dcd1d5223f73b3a965c07e3ff5dbee3eedcfedb806686a05b9b3868a2c3d6d50"
+      },
+      "description": {
+        "text": "الوصف",
+        "source_sha256": "526e0087cc3f254d9f86f6c7d8e23d954c4dfda2b312efc29194ae8a860106ba"
+      },
+      "create": {
+        "text": "إنشاء حملة",
+        "source_sha256": "08c38d6a37e578f6d048257691a87b37503547833e1323283c4c84857cf13868"
+      },
+      "select": {
+        "text": "الحملة",
+        "source_sha256": "268286d2ef7573e03e27c7a78d6c1b45f707646cfb20e9a8a2469c4e72aad4fb"
+      },
+      "noDescription": {
+        "text": "بدون وصف",
+        "source_sha256": "bcd8cc53f40e3d4eb34694e37dfb1e220f1f1d3bdbaa9c8e7d7f43639b95318e"
+      },
+      "status": {
+        "text": "الحالة",
+        "source_sha256": "920e413c7d411b61ef3e8c63b1cb6ad058d5f95f8b481dbafe60248387d8c355"
+      },
+      "statusDraft": {
+        "text": "مسودة",
+        "source_sha256": "ebf12ef47cf575b3ba9a3cc019c5310146fdac88f6d1be6618d6e91158c2f174"
+      },
+      "statusOpen": {
+        "text": "مفتوحة",
+        "source_sha256": "ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942"
+      },
+      "statusClosed": {
+        "text": "مغلقة",
+        "source_sha256": "c21ead0614e7e1b70edb3759e1d19ca1e12e6036980d10bfb73052fb1a018efa"
+      },
+      "saveStatus": {
+        "text": "حفظ الحالة",
+        "source_sha256": "a371cfda76ef7e8e1ee8c177ff71597c62cd30bf434d389ba66d092f5315fa72"
+      },
+      "subjectKind": {
+        "text": "نوع الموضوع",
+        "source_sha256": "183aac24235663960d92ca1528a624e6a3f6ae3abc7264046f4c4fd5e5bfcf67"
+      },
+      "kindPrincipal": {
+        "text": "الهوية",
+        "source_sha256": "afc19f1734c1d195bd8ba741b795a57120beb0a837ceddc2654ed7c486a6ea72"
+      },
+      "kindEntitlement": {
+        "text": "استحقاق PAM",
+        "source_sha256": "a296e6edaae5bf0b4100dbccf9a7a698dd592f5d78be7947d98f08d60edfd0e2"
+      },
+      "subjectId": {
+        "text": "معرّف الموضوع",
+        "source_sha256": "1052f3342864c2067113a2277e49750100eef28a7c65123b40eb74ee9a135439"
+      },
+      "subjectLabel": {
+        "text": "اسم اللقطة",
+        "source_sha256": "b6bd65b1d3b4dc58674c2e8a314ba1b1940f334efae4e82861c266ec66d01127"
+      },
+      "addItem": {
+        "text": "إضافة موضوع",
+        "source_sha256": "428012ea33bed51e7e4c61233aa7e8f6fee300a95d6648571d8b27ee2e94e560"
+      },
+      "attestTitle": {
+        "text": "تسجيل قرار",
+        "source_sha256": "1f4daa61379f2279bfae84cb5cfbde64f353b8b6043bc95a7899cdf57f9381b5"
+      },
+      "decision": {
+        "text": "القرار",
+        "source_sha256": "640ae4baf96061fee1798e9181e2b7a5145585233df2c27a501623afb0096ec1"
+      },
+      "keep": {
+        "text": "إبقاء",
+        "source_sha256": "183f00f483d3844e875d26eac74c676054383aef38ed5a8e4d1505ef21008585"
+      },
+      "revoke": {
+        "text": "سحب",
+        "source_sha256": "87e6d00bbf53ec5ae251de23ace84d5cf01c69deae04cfff08a5fe353a9853bb"
+      },
+      "abstain": {
+        "text": "امتناع",
+        "source_sha256": "bf92ab42d052ce917d87cccce310e4351900347095f57947b3d08c1b1ff8bcf3"
+      },
+      "justification": {
+        "text": "التبرير",
+        "source_sha256": "c24c06c3f7fd49d74eda48d43093d4347e42c0fce89bfe0056499b4f267b39dc"
+      },
+      "attest": {
+        "text": "تسجيل القرار",
+        "source_sha256": "0eb246db5087d0f8e5a5e6816d3eb296926899bf5dc4da40c69aa0cf43d17a41"
+      }
+    },
+    "catalogChanges": {
+      "title": {
+        "text": "تغييرات الكتالوج",
+        "source_sha256": "3e3f6110f339e9b2c0a5d8e81cd35d37ab16741618e1b473b8f7e453d3050e7c"
+      },
+      "honesty": {
+        "text": "يسجّل هذا السجل أن كتالوج الضوابط المحلي أو بايتات الربط تغيرت. ليس تغذية سحابية وليس نتيجة مقيّم وليس Met.",
+        "source_sha256": "03c2e12ad36b81ecdd4a7eefbbd6bfa667d8d13a301f0dd6c08c8dc41cef0962"
+      },
+      "synced": {
+        "text": "تمت مقارنة الكتالوج. أُضيف {{added}} وتغيّر {{changed}}.",
+        "source_sha256": "23233488ef96309fc3098ea2a0da4b10add7df32b6b99a4fa4a8abc7aa94d3e9"
+      },
+      "when": {
+        "text": "متى",
+        "source_sha256": "cf9c7aa24a26aac4f0ec4b6395cbfdcc055677c3dac87bd6af898bccd66d4e17"
+      },
+      "control": {
+        "text": "الضبط",
+        "source_sha256": "32d7e82082479b8cb546187ff0af11e4915e4d17bc28e02dca7425288b79badd"
+      },
+      "kind": {
+        "text": "النوع",
+        "source_sha256": "f5387f9bb6ed70315a77fdcb9335facc27a9bf241f35955bd2755c55e0c016c7"
+      },
+      "revision": {
+        "text": "المراجعة",
+        "source_sha256": "2e516d68f42f3e351f273a6127f89f4d323a606a3656e34e52b14b746ed27404"
+      },
+      "summary": {
+        "text": "الملخص",
+        "source_sha256": "8e76a94ac8320d515375e625bef1829238b097ecbd33611b59eeefd4ffefebfb"
+      },
+      "by": {
+        "text": "سجّله",
+        "source_sha256": "cebc8d0d5452af1b9473c2979a719a335ae05dd1ef1cd0ed5e5e809d1c6b2e9a"
+      },
+      "sync": {
+        "text": "قارن الكتالوج الآن",
+        "source_sha256": "3afc7cceec3ff34fdf1cf751afcf80acaff1e2b59740a30f731c54ad7a4b76e3"
+      },
+      "empty": {
+        "text": "لم تُسجل تغييرات للكتالوج بعد.",
+        "source_sha256": "3c05b35ccbcbd917418beac148cfc2c11f80d5f421227bbeed7fee75d7f0fd21"
+      }
+    },
+    "operatingLevel": {
+      "title": {
+        "text": "مستوى التشغيل",
+        "source_sha256": "7554fa1dcf31917962c9aecb3f24df1777d7a087a72b2a21462ebf4f62a1fc3e"
+      },
+      "helper": {
+        "text": "This setting tells operators and assessors which package this tenant is building and operating. Cybersecurity Maturity Model Certification Level 1 Fast, Level 2, and Level 3 hide unused menu items only. NIST SP 800-53 and empty show the full product menu. This is not a Met stamp and not a certification. Level 3 is not Level 2 plus a toggle.",
+        "source_sha256": "b69903df04b3b7c8772ecd7a8ec0ef475115f1ea8672b93c30f5c8ad1ff577a6"
+      },
+      "pawHelp": {
+        "text": "محطة عمل الوصول المميز هي جهاز منفصل يُستخدم فقط لأعمال الإدارة القوية: تغيير الخوادم وتدوير كلمات المرور وفتح الجلسات البعيدة المسجّلة. ليست خادم AIC. وليست جهاز البريد أو المكتب اليومي. لماذا هي لازمة: يمكن للبرامج الضارة على جهاز يومي أن تسرق وصول المسؤول. ابدأ عمل الإدارة على هذا الجهاز المقيّد ثم اتصل عبر خادم AIC مع التسجيل.",
+        "source_sha256": "3f5116d8f34ab11ffb2c9140c527c56e1a7b350ab0e43243422650cae096f708"
+      },
+      "chipHelpL1": {
+        "text": "This tenant is configured for Cybersecurity Maturity Model Certification Level 1 Fast: Agents on computers the organization already uses. Open Settings to change the package.",
+        "source_sha256": "6bb017fb3e58ea96b05b8a7b5a7bbeb2bff89d5b26a284ceb80e852d71fadc46"
+      },
+      "chipHelpNist": {
+        "text": "This tenant is configured for NIST SP 800-53 enterprise: the full product menu is visible. Moderate is the floor. This is not High Met and not a certification. Open Settings to change the package.",
+        "source_sha256": "a28361800113725a5ad2f1d1b134ed48aa8306da1c0a65a0dd5cb73285e41940"
+      },
+      "chipHelpUnset": {
+        "text": "Choose the operating package this tenant is building: Cybersecurity Maturity Model Certification Level 1 Fast, Level 2, Level 3, or NIST SP 800-53 (full menu). Open Settings to pick a package.",
+        "source_sha256": "754bef07990834014841e1b9e80f1b011ec4a6896b6fada9952bce88c451ea86"
+      },
+      "loadError": {
+        "text": "Could not load the operating level. Confirm you are signed in.",
+        "source_sha256": "6173fe43afe1edbdee364f5791eb610d76faf4ba136c06fed3d3aae35aea0e8b"
+      },
+      "label": {
+        "text": "Configured operating level",
+        "source_sha256": "1b6538e3fdf8efe8b9bde84ac6f8d0e24f51ed1c0922b395f36ec80846a58e28"
+      },
+      "chooser": {
+        "text": "Not set — chooser, full menu",
+        "source_sha256": "69fe036202558d7ec2bbfe1f90b89d35806425883a3b229cc0ba1a8f1711b450"
+      },
+      "label_l1_fast": {
+        "text": "CMMC Level 1 Fast — Agents on existing computers",
+        "source_sha256": "6a556b5ee9ee928e53920cdc24e81ef6748e96f8996007f10ca052227e6099ac"
+      },
+      "label_l2_isolated": {
+        "text": "CMMC المستوى 2 المعزول — محطة عمل الوصول المميز مطلوبة",
+        "source_sha256": "6c0beaf849a9b7308da0625877a21098cc72e31c9ba43abf17d94b71f82991aa"
+      },
+      "label_l3_overlay": {
+        "text": "CMMC Level 3 — overlay, not Level 2 plus a toggle",
+        "source_sha256": "6f8ab08a50fa7775471da505eea96dfe4c26230ca081c8ce2a8b07afead8f853"
+      },
+      "label_nist_800_53": {
+        "text": "NIST SP 800-53 — full product menu",
+        "source_sha256": "107797555c0b19c755af6b3e4c5f5b261cbf5696297e50fc5f27c99a47b74f81"
+      },
+      "labelUnset": {
+        "text": "Not set",
+        "source_sha256": "4895f73177ab5d67c30c183a49d2477e014a2ef69b65150762d17e877f4f5b95"
+      },
+      "l1Help": {
+        "text": "Install the Agent on computers the organization already uses for Federal Contract Information. A dedicated privileged access workstation is recommended for first install. Isolated seats and session jump-host pages are not the primary path at this level.",
+        "source_sha256": "b221166e8cabbd8d369e8cde2335742ab79437eb6e49c0325d6c537c2255f184"
+      },
+      "l2Help": {
+        "text": "Isolated seats and My Workstations are in the primary menu. Privileged work must start from a privileged access workstation, then connect through AIC Server with recording.",
+        "source_sha256": "76f9f6270464ea4c9a8229ce8e76d9bd2b04729dbba1616a5568355935dc8c1b"
+      },
+      "l3Help": {
+        "text": "Adds extra isolated privileged seats and an enhanced-control honesty register. Level 3 is not Level 2 plus a toggle. Extra seats that do not exist yet stay blocked.",
+        "source_sha256": "54bc8d42f68f24c09cdffaa40c2ae1d4c8558adada903b729a116581d0428936"
+      },
+      "nistHelp": {
+        "text": "NIST SP 800-53 enterprise: every menu item stays visible. Moderate is the floor. This is not High Met and not a certification.",
+        "source_sha256": "e9a8fb123bd3be2de445c6f3319cafcf621b571aa742add69af29d27dba94441"
+      },
+      "chooserHelp": {
+        "text": "No package is stored. The header shows a chooser and the full enterprise menu. Pick a Cybersecurity Maturity Model Certification level to hide unused demo items, or NIST SP 800-53 to keep everything visible.",
+        "source_sha256": "d6ae612627019bfccaa453257aaa29fdb5568993f671ecda362ecb4e9ac0d784"
+      },
+      "save": {
+        "text": "Save operating level",
+        "source_sha256": "7a6ccffe56f183f722ee8f34ea9309e9d22c44faaea13bd8c0e13c5eb474a725"
+      },
+      "saveError": {
+        "text": "Could not save the operating level.",
+        "source_sha256": "9638a8c96d37ccc8b1020ddc7dc69fe5e2baeb8565c5c5add48a67adc29dd2eb"
+      },
+      "saved": {
+        "text": "Operating level saved. The header chip and menus now follow this setting.",
+        "source_sha256": "651c8665c99ded611c8b7bb4acbf9a001c92c630f54ecc7441ac816894946c7b"
+      },
+      "inABoxTitle": {
+        "text": "CMMC in a Box",
+        "source_sha256": "be975e838b97bbd8d5ba206ac465739132fdf65d96179b5fbab076aeccb5b3c3"
+      },
+      "inABoxBody": {
+        "text": "CMMC in a Box is this integrated kit: workforce training and attestation, the infrastructure you operate, and the tools for secure access. It does not mean the organization is certified. Cybersecurity Maturity Model Certification assesses the organization. The assessor decides Met.",
+        "source_sha256": "3df053f2889aee6c86d226d3b21a79ceb0512ed698e90f75d83aeeef4c18fbf2"
+      },
+      "inABoxStdEnv": {
+        "text": "هذه الحزمة بيئة موحّدة: التدريب والبنية التحتية وأدوات الوصول الآمن نفسها في منتج واحد حتى لا تتطلب العرض بناءً مخصصًا لكل موقع.",
+        "source_sha256": "f69007b492fb13d165d889288249d5c4086f5eeb8c59076660cd74aca11fd63b"
+      },
+      "inABoxProblemSolution": {
+        "text": "المشكلة هي تشغيل تلك الأجزاء كجداول منفصلة ومحركات مشتركة وأدوات غير متصلة. الحل هو هذه الحزمة المتكاملة. وهي لا تصادق على المنظمة.",
+        "source_sha256": "9b432a9aa797e6187fcb8650f930eba3fe2b091aaa519895eaf686bc2838e346"
+      },
+      "apply": {
+        "text": "Apply operating package",
+        "source_sha256": "e9a4fce54ff7e3cda38251f4e8807965922f1c9b1308d58b4438d0b18efd46ce"
+      },
+      "applyHelper": {
+        "text": "Apply archives prior DemoCorp package rows, seeds this level, binds sensors, and creates a Current State report and Assessment Binder. This is not Met and not a certification.",
+        "source_sha256": "075809dcc9d6abfe5b158a976bbd0633169d744a8a0c5fb8f4db55ddbb59c06d"
+      },
+      "applyError": {
+        "text": "Could not apply the operating package.",
+        "source_sha256": "ab5fb41f0e48bfbb4ba51a6fc7aa2c98936cd395c3ed25978746a11d13e3da67"
+      },
+      "applied": {
+        "text": "Operating package applied. Current State and the Assessment Binder now follow this package. This is not Met and not a certification.",
+        "source_sha256": "18e1f53a4872663cb469f1e971d998ecdb7ba52b7fc615c9243cc55c4c533b81"
+      },
+      "openCurrentState": {
+        "text": "Open Current State",
+        "source_sha256": "09ff1cf1b683e6915d13b2d70328daabdf3f1ee5694052e3991787f47567b944"
+      },
+      "openBinder": {
+        "text": "Open Assessment Binder",
+        "source_sha256": "323df1f14fe0b611f3a66750fbae4298236196df27eec87acf3ce0e9ba3d55af"
+      },
+      "punchTitle": {
+        "text": "To-do / punch-list",
+        "source_sha256": "1dfbdc7bc9d89759b95d2fcf908139271a1a835b9a210077bf599da38317b4a8"
+      },
+      "punchItem": {
+        "text": "Item",
+        "source_sha256": "652bcc3a478428893cc505ae19f847b49be52f861bedc64bb192ceed409fa733"
+      },
+      "punchDetail": {
+        "text": "Detail",
+        "source_sha256": "fb5f27d5457c464102286366ef3827b11923e7f3aa1faa7eea95249e36a39abf"
+      }
+    },
+    "controlNextSteps": {
+      "title": {
+        "text": "Controls for this operating package",
+        "source_sha256": "2b4bd1ac66a58d5bcd5e0dc8ff0f2bc684f50dbfc7bba233cf7b03da96f82ef3"
+      },
+      "subtitle": {
+        "text": "Each row is a product page you can open. Live means the page and a record path exist. Partial, Absent, and Blocked need the next steps below. This is not Met and not a certification.",
+        "source_sha256": "b24790d3e15dc26ff5be5201a8b5eac879ce48258af3c65d400d6653b3866237"
+      },
+      "postureTitle": {
+        "text": "Get Agents in — packaged workstation",
+        "source_sha256": "4055005b1b58b6f50ab511d6a95f5944915487dd2418a64f905038fa6696d342"
+      },
+      "postureBody": {
+        "text": "Always connected. Sleep is allowed. Offline mode is not the Cybersecurity Maturity Model Certification package default. Elevation is included on the packaged workstation — it is not a separate product. Open the settings wizard first, then systems and elevation.",
+        "source_sha256": "07f2968b084d2a2f6a7f989fc832c89ed8dfae52a4a012c72b05ad138cb8808e"
+      },
+      "counts": {
+        "text": "{{live}} controls have a working page. {{next}} need next steps or an exception record.",
+        "source_sha256": "fcd4d99fdae98af9f7ed42ded216a444bcfbe8f9e1b07b119d902bb18a9f2a2f"
+      },
+      "colStatus": {
+        "text": "Product status",
+        "source_sha256": "33bdb50317a71a40d937873028a9232808a2f75b61eb74fba25ebd421653e744"
+      },
+      "colAction": {
+        "text": "Next step",
+        "source_sha256": "298a9207a732a11d42bba41239147e22ace14e6cbddb5bb022abd814e3e47472"
+      },
+      "openPage": {
+        "text": "Open page",
+        "source_sha256": "af0303342a01d272704e7bc58f4c85a162a8befc6a2baf575e4d34d9852c8cd9"
+      },
+      "exception": {
+        "text": "Document an exception",
+        "source_sha256": "60cda8f996a245bb1109c798268a0c662d61d92f1f832deb2f062ae2fae001d9"
+      },
+      "hookLive": {
+        "text": "Live",
+        "source_sha256": "b64ac05f17e64d037db81a98f51e2688216e292ae9748f979f04dfbac49fd7fc"
+      },
+      "hookPartial": {
+        "text": "Partial",
+        "source_sha256": "a4d50fb85403654840e078e3ffe72dffe37df3ae280c6d98f39a41d346c88a14"
+      },
+      "hookAbsent": {
+        "text": "Absent",
+        "source_sha256": "84fd36f7cbff12b9a0482c8f3ee782fbc60a87e2f08913509f71d71726f81cc1"
+      },
+      "hookBlocked": {
+        "text": "Blocked",
+        "source_sha256": "18f2a0947f9d6523991b29b450307f22773f57d65f7efb98d48a167df04d6b1d"
+      },
+      "step1": {
+        "text": "Open the managing page and finish the setup or record that is missing.",
+        "source_sha256": "df6f6e912db67c5047554fff936f8f352278b36c1d1c4930b89b6530dcda638f"
+      },
+      "step2": {
+        "text": "If the work cannot be done here, document an exception on the plan of action and milestones page.",
+        "source_sha256": "b87ca1db4e9da54d7eb5a68dc9ba5adcb693888177e0f116b0e2fa51f3dd790a"
+      },
+      "step3": {
+        "text": "Keep the Assessment Binder section in sync. Empty sections stay blocked — do not invent Met.",
+        "source_sha256": "e6a91b85bc5f973d26eeea338fef57d3be51f6c44d17fe0c4c0b9f34fd2d0a54"
+      },
+      "pageIam": {
+        "text": "Open identity administration",
+        "source_sha256": "cf54d1705c68599572fd4389ecf9d042126415bc50ebf175c89740e7e2909e59"
+      },
+      "pageSettings": {
+        "text": "Open Settings",
+        "source_sha256": "3f940108cb1ecd9c0090da0b51b45f9fe673f00b22c7ffe3d013319b97456674"
+      },
+      "pageDocuments": {
+        "text": "Open document lifecycle",
+        "source_sha256": "59f60b255c8817177648f220667e55c6a67a887e4d243c7ab37fa9f14e7c6071"
+      },
+      "pageWorkstations": {
+        "text": "Open My Workstations",
+        "source_sha256": "6f66350b625fd314d5314665d2b3bc132efe66e7c596e10c2aa5136e49372ca4"
+      },
+      "pageEvents": {
+        "text": "Open the event log",
+        "source_sha256": "5bdb79b5d97ae61ce9019eae4bc8f79e0e7a0bca249e4f850c890fbcde179b72"
+      },
+      "pageCsc": {
+        "text": "فتح حالة الضوابط الحالية",
+        "source_sha256": "8d55a268171db377a6ef807d296e2d577d3eefc5d2ef969192e99e12df0b6617"
+      },
+      "pageSystems": {
+        "text": "Open systems inventory",
+        "source_sha256": "b1c9c82ada414e822347c3385cbfde33499595bebacd193ba3b0592a86298066"
+      },
+      "pageIncidents": {
+        "text": "Open incidents",
+        "source_sha256": "0021b3e95793e696574a5d329c0f909a0bf857d1bde289f044e2fda60630552c"
+      },
+      "pageTraining": {
+        "text": "Open training packs",
+        "source_sha256": "1eedd9109c9d2a859a53d680a407e542cb6ec62a53f3fcf3d3535de2fbe4d341"
+      },
+      "pageRisks": {
+        "text": "Open the risk register",
+        "source_sha256": "4aba90a202c0c8cda012f9c69db79cdc5b641e140242f1f39cb902e3b7ed69f4"
+      },
+      "pageWa": {
+        "text": "Open workstation assurance probes",
+        "source_sha256": "2c11f757ef0250f0d8ca5f23b0212616fa422c0162af577e6ad55a864ce95b4d"
+      },
+      "pageWorkforce": {
+        "text": "Open the workforce roster",
+        "source_sha256": "11deb12fcf271a6035ce6ada2439c14a4729f11fd8e9088b4e72771660b969c1"
+      },
+      "pageEnhanced": {
+        "text": "Open enhanced controls",
+        "source_sha256": "5dccf9fb58238337d064dbde1ada2365603781909d57601624b3d54710a17dfa"
+      },
+      "pageWizard": {
+        "text": "Open the settings wizard",
+        "source_sha256": "4dd012e3d2644cf06a75c84b4b9ad69e2e0bcece743ef8882166addeae30cde0"
+      },
+      "pageTenants": {
+        "text": "Open tenants and enrollment",
+        "source_sha256": "7f1be2c4f25b0b9841dec5ee22cc0b66eddc01b892762c08f51928517fa25586"
+      },
+      "pageAgent": {
+        "text": "Open Agent configuration",
+        "source_sha256": "ffab06b6f90b8278f6e3e59c2f11f2a8d671375515a7fabebc49949a142771f1"
+      },
+      "pageElevation": {
+        "text": "Open elevation",
+        "source_sha256": "9f435abb1f5f11a78e1a00bdd5e130a34c930444f5367980dd394a2cc6f6e4d1"
+      },
+      "missing": {
+        "ac2": {
+          "text": "Account management lives in identity administration. Create and review local accounts there. This is not Met.",
+          "source_sha256": "11ef36d81ead098624fe374f9636f26956b4a6e63f815dd1824abe028f4966dc"
+        },
+        "ac7": {
+          "text": "Lockout after failed sign-in is a Settings control. Confirm the lockout policy is stored. This is not Met.",
+          "source_sha256": "bc0190c823d41ce85cdf8800a74be9f76f3467f8c43742682b5f5065badc3324"
+        },
+        "ac12": {
+          "text": "Session idle and absolute timeouts live in Settings. Confirm both are on. This is not Met.",
+          "source_sha256": "193d175a7c490a75b61cbeadb8273bbb4dcacf9273d88bf589ed745884866a79"
+        },
+        "ac16": {
+          "text": "Classification markings live on document lifecycle. Mark files that carry Controlled Unclassified Information. This is not Met.",
+          "source_sha256": "1f4e4a2f84faf552a346bab74d48f5bbf5d500ba4162ea0ce58b86ae94d180a2"
+        },
+        "ac17": {
+          "text": "Remote admin access starts on a privileged access workstation, then connects through AIC Server with recording. Open My Workstations. This is not Met.",
+          "source_sha256": "b83326615f12c15a4561ba1a2d17f2dfed49af4996db8fa0c8c3803e1e7e0a86"
+        },
+        "au2": {
+          "text": "Auditable events are listed in the event log. Confirm security-relevant actions write a row. This is not Met.",
+          "source_sha256": "18dfac4590e2613f726fed675d50dcc0496c7764f5ce82fcf12f469ee460ee61"
+        },
+        "au9": {
+          "text": "Audit protection and sharing settings live under Events. Confirm append-only delivery. This is not Met.",
+          "source_sha256": "1e5336945e1927195b42294e7f3ab1e41c903c35cdfd5ec7c946c94528bb18ae"
+        },
+        "ca2": {
+          "text": "Current control status and the Assessment Binder are the assessment views. Open them and keep section bodies filled. This is not Met.",
+          "source_sha256": "9474a8b67364e13fa2c4a6460fc978a278f16ba7e80455b388374297d5e92b8b"
+        },
+        "cm6": {
+          "text": "Configuration baselines live in systems inventory. Review the authorized setup for each system. This is not Met.",
+          "source_sha256": "a95e367b511b74fae86c3e2bf46c09a56c52d0b9aaf0e143a5394e6678e210ad"
+        },
+        "ia2": {
+          "text": "Identification and authentication live in identity administration. Confirm each operator proves who they are. This is not Met.",
+          "source_sha256": "b375acdcf01dcd6e221a926bd9d8f793cfd2c4c77217078c90d41d23001ea278"
+        },
+        "ia5": {
+          "text": "Authenticator management lives in identity administration. Review password and extra-step settings. This is not Met.",
+          "source_sha256": "3ef16a0c81606b2ff2853605dde557301bbf054f047f9b3727254e79ed0439e0"
+        },
+        "ir4": {
+          "text": "Incident handling lives on the incidents page. Open or record the incident. This is not Met.",
+          "source_sha256": "a482a2b0b6caaf6f346da809b80a19a9787b258c1577f74326df156f4ac0f051"
+        },
+        "at2": {
+          "text": "Awareness training packs are assigned from Training. Completion records are Partial until grading and reminders are live. This is not Met.",
+          "source_sha256": "ea12514c3bdabbb5a2d62e195db20a04d0ffcc910c78b900b5f07f05fb6080ff"
+        },
+        "ra5": {
+          "text": "Vulnerability and risk rows live on the risk register. Add a finding or document an exception. This is not Met.",
+          "source_sha256": "833c421e75c3f145b2b3f3026d0103df43f20c119995f7516ac477c9e61b46da"
+        },
+        "sc8": {
+          "text": "In-transit protection is the server TLS posture in Settings. Confirm the listener is using the approved module. This is not Met.",
+          "source_sha256": "ada5292b93778849632778555a2b2aeed441dcf316ff72c445fb254e68df69b0"
+        },
+        "si4": {
+          "text": "Host monitoring uses workstation assurance probes. Run a probe pack or record why it cannot run. This is not Met.",
+          "source_sha256": "015a0224e2d2de0e1d542577517d1ead4f12b7468528cb4fb61405fd05282935"
+        },
+        "pe2": {
+          "text": "Physical access cannot be Met in software. Record visitor and facility evidence on document lifecycle or the plan of action page.",
+          "source_sha256": "6f14487e1ebf244a3d963db8bf054b985b525551ea1b0c3c916e8b6e493e0a46"
+        },
+        "ps3": {
+          "text": "Personnel screening cannot be Met in software. Record the screening letter on the workforce roster or the plan of action page.",
+          "source_sha256": "17a2c6ee5952755f5f6e5b11bdce61e368b7a954ac867c711f7144839a670c37"
+        },
+        "ir4e1": {
+          "text": "This enhanced control is an overlay, not Level 2 plus a toggle. Extra privileged seats that do not exist stay blocked.",
+          "source_sha256": "f73ef12d9e90234d63a0b88d70c79053507db942c4cb94f3f6953eed44e586c4"
+        },
+        "cm2": {
+          "text": "The authorized setup lives in the settings wizard. Open the wizard and record the baseline. This is not Met.",
+          "source_sha256": "1d424ca1318428a15ff1ee3a5e6d1a222816159e70aba55b09ba989d28bdf37a"
+        },
+        "ac6": {
+          "text": "Least privilege for admin work lives in elevation. Open elevation and confirm the request path. This is not Met.",
+          "source_sha256": "69847c46b6a06799266e9e0c9eb7b2f582d942c7a061eaa1d97cfc7375d9f09a"
+        }
       }
     }
   },
@@ -13903,8 +15117,8 @@
       "source_sha256": "ca40703b89004d2e1eeea32c1646c884666cf2fdd39bac12e4f461cb6358e008"
     },
     "elapsed": {
-      "text": "انقضى {{seconds}} ث",
-      "source_sha256": "b9b869f2b6dc7550aceded419fcaaffb8217f448249bea779544ab2833158d6d"
+      "text": "انقضى {{time}} ث",
+      "source_sha256": "51f79759dca814ff88fc428eeaa1af485b414a773bfc72494878d3a4ed6c65ce"
     },
     "emptyBlocked": {
       "text": "Scanner blocked until connectivity هو restored.",
@@ -13923,8 +15137,8 @@
       "source_sha256": "c19b8ea94d1d20590e8f1e4a1f486865cdc0d6db3fca68c91da1331005d26ebe"
     },
     "engine": {
-      "text": "المحرك: {{name}}",
-      "source_sha256": "c6b187dfb82b6f176a2feb8b3f0437b1af79607ccb2cc9c993e647dc8c3d01b8"
+      "text": "المحرك: {{engine}}",
+      "source_sha256": "02ae32691f2270232d28b1e2ca152bc8a508817b1247c6259b7da4792ea713c3"
     },
     "engineReady": {
       "text": "المحرك جاهز",
@@ -13935,8 +15149,8 @@
       "source_sha256": "72c6ee7cf001f8f1bf8730f34a81af3f68874e96af48d2a09f6741c86ed3a2f2"
     },
     "enrollAria": {
-      "text": "قم بتسجيل المضيف {{host}} في قائمة الأنظمة",
-      "source_sha256": "f025d7288749e03aae2dd0a156520263aeb32e7402a577a3bf5556a39d0c70e5"
+      "text": "قم بتسجيل المضيف {{ip}} في قائمة الأنظمة",
+      "source_sha256": "6d4c048a0d1bdc852e16602e4e27dc0f785471342d70f6559916fb5595f77ede"
     },
     "estimating": {
       "text": "جارٍ التقدير…",
@@ -14171,8 +15385,8 @@
       "source_sha256": "b5e09d8b7d1e4139f26f2d9fc36fd1ef19bbe1ff63558a4e1df058210f4c7674"
     },
     "rowActionsAria": {
-      "text": "إجراءات الصف لـ {{host}}",
-      "source_sha256": "f8a1b7bd390129bff9138638b74283dda13c9f3723320130131f2e5cfecc5df6"
+      "text": "إجراءات الصف لـ {{ip}}",
+      "source_sha256": "6f78ff35131d3de83d2e1d58c83d33940cc7658415454c38913598ae63f38444"
     },
     "rowActionsTooltip": {
       "text": "الإجراءات لهذا المضيف",
@@ -14271,8 +15485,8 @@
       "source_sha256": "dbe54965461ef644bbc11005c90e49fb2fefc0cecd67599659bbcdec23aba31a"
     },
     "useNetworkAria": {
-      "text": "ضمّن الشبكة {{network}}",
-      "source_sha256": "138102b482878ba7a6349b076a0d0aecefc8512d39ea9795885e6059ef861601"
+      "text": "ضمّن الشبكة {{label}}",
+      "source_sha256": "88eabc3777694e759a75512115b22252706818db18cd1271594c44956497d0e2"
     },
     "useVirt": {
       "text": "استخدام الشبكات الافتراضية",
@@ -14713,6 +15927,212 @@
     "honestySession": {
       "text": "يمكن ربط تذكرة بجلسة مسجلة قائمة واحدة. يمكن لعدة برامج مشاركة تلك الجلسة. تبقى كلمة المرور في الخزنة.",
       "source_sha256": "28e991381e012d00462b0d5a71a101875d96a702854c9f3bce5e309b60a687b5"
+    }
+  },
+  "enclaveRegularUsers": {
+    "title": {
+      "text": "Enclave Regular Users",
+      "source_sha256": "2d62d6352e44483e0ad25bb161ab4e1ea1f796ae3cb5695632b5fe8d63f218f6"
+    },
+    "issued": {
+      "text": "Issued {{login}}.",
+      "source_sha256": "6c7912b6f6ccd3e2bc80c41b36dcd7ea165286fa5a709cb85affd8a72a7f9d90"
+    },
+    "assignedCount": {
+      "text": "Assigned {{count}} workstation(s).",
+      "source_sha256": "c5267b528ff41b56b54d77335fbfeca6605f49ac638e4d23233751664986911c"
+    },
+    "mapped": {
+      "text": "Person mapped. Seat follows.",
+      "source_sha256": "2aabd7a367ca291ee4af5ba161a3c18f69770a2281e8a4c6294dfa179a3d1402"
+    },
+    "seatBound": {
+      "text": "Workstation assigned.",
+      "source_sha256": "6de67e33920314ec2450c1417f340529efda357a61c79c8d4cedb0b75dd591e8"
+    },
+    "placementSaved": {
+      "text": "Placement recorded.",
+      "source_sha256": "b50d2611ba3ee264039dd99057e09cb8e446db424cb41021908b7bf81e58c5af"
+    },
+    "resetFulfilled": {
+      "text": "Password reset recorded.",
+      "source_sha256": "1c2327fc0f5f3ba78a3a55a848f904a8da7600b53654bc189f33a0bc9e613554"
+    },
+    "resetFulfilledSecret": {
+      "text": "Password reset. Give the new password to the person out of band.",
+      "source_sha256": "7df5607d82749b7d2b37eb4197ab9fd7e90c1e5c05247c61275194cbb072d8e8"
+    },
+    "resetDenied": {
+      "text": "Request denied.",
+      "source_sha256": "8b558b834d9b48b7634c6304be8fb024adc229a960ca9033454d88102fa5fcad"
+    },
+    "colGeneric": {
+      "text": "Generic login",
+      "source_sha256": "64ca555d61612c7e6c857039c4d8f117095517bde4f11deb9e928592c85322af"
+    },
+    "colCurrent": {
+      "text": "Current login",
+      "source_sha256": "d03f7b37b94c8c4f5bc2bf48fbbf017c3e29d9dea2d218fbdc79ee1527126563"
+    },
+    "colPerson": {
+      "text": "Person",
+      "source_sha256": "6007db63e18e532c7399975ed77d2e3900810aa75cad165b8d2e5d8b08085c3d"
+    },
+    "colSeat": {
+      "text": "Workstation",
+      "source_sha256": "b9d0a58e17a62bec80b495a416d0e9fdcb25086e37aa4e3f31ceb0dedf6fdb31"
+    },
+    "unassigned": {
+      "text": "Unassigned",
+      "source_sha256": "14d33bd014e6b4e7c3590a8a12e1ec4951d777593d6d6aef9ebe5faac9c8dac0"
+    },
+    "colOs": {
+      "text": "OS account",
+      "source_sha256": "9f16aac4fd7b227dba6657136c68877b2ea0b10e02f14e93819a9c47e369002e"
+    },
+    "colActions": {
+      "text": "Actions",
+      "source_sha256": "ff8059dc6752afdd30d275932b1d5031a2ec854b387a8c57ecc6689915293a43"
+    },
+    "map": {
+      "text": "Map",
+      "source_sha256": "be176b0015c424b78e9f343f8bc3014a7a701cc2eb9000b6acbc04d67dbecb8f"
+    },
+    "assign": {
+      "text": "Assign",
+      "source_sha256": "8ece895c9b32c6436d34b0384ae9f8555c8abccd31541f722f27e45e72a85bff"
+    },
+    "placeCui": {
+      "text": "Place files",
+      "source_sha256": "e93e4ba69a1c985727634082432a48798ea24b42ec5f1091170fcedb5a348037"
+    },
+    "colResetUser": {
+      "text": "Logon name",
+      "source_sha256": "70e03fb0f29203c94bedd2c5c0cc7dd4d842a8d00a24eebb9c8fd3919d210bd5"
+    },
+    "colJustification": {
+      "text": "Justification",
+      "source_sha256": "c24c06c3f7fd49d74eda48d43093d4347e42c0fce89bfe0056499b4f267b39dc"
+    },
+    "colStatus": {
+      "text": "Status",
+      "source_sha256": "920e413c7d411b61ef3e8c63b1cb6ad058d5f95f8b481dbafe60248387d8c355"
+    },
+    "reset": {
+      "text": "Reset",
+      "source_sha256": "daee7606b339f3c339076fe2c9f372a3ff40c8ee896005d829c7481b64ca5303"
+    },
+    "deny": {
+      "text": "Deny",
+      "source_sha256": "05a2d7332eb9d8bf164487c743a2e93c21b16bb2061a93e3ee2ceb508eadb753"
+    },
+    "noAccess": {
+      "text": "You do not have permission to view sequential enclave users.",
+      "source_sha256": "1e7fb7ce6f71da35c430eedaddfe5584a00abf3f167c989b4503a161378115cc"
+    },
+    "issueNext": {
+      "text": "Add next sequential user",
+      "source_sha256": "f20a0d4268880abab91e8c071335a2cb83e50101590cf33e16ee8f86cc3122ee"
+    },
+    "assignUnassigned": {
+      "text": "Assign unassigned workstations",
+      "source_sha256": "b48b94379bebff9a72162a038d808ac374647837c7d17bb54a05127fd87d15a2"
+    },
+    "seatsTitle": {
+      "text": "Workstations",
+      "source_sha256": "a09fac8bb9cca6b0f347b35db9961df5f592036236072a9e2a6eac665780ef1b"
+    },
+    "seatsHint": {
+      "text": "Each workstation shows the assigned sequential user. After mapping, the human name is shown. The durable id is the person record.",
+      "source_sha256": "7922122617d573584c98021e0ac8bee9f325e4cf70d42c22529aca9c0b55e5f1"
+    },
+    "colSeatName": {
+      "text": "Seat",
+      "source_sha256": "ae4e74c66116dc8cb41c687224b047677715a0f1186274ef253d287cb326e161"
+    },
+    "colSystemKey": {
+      "text": "System key",
+      "source_sha256": "f68efc337a8cca2d7eda8dc8df440f69b46150b43e6c6b2a90f171903dbc212f"
+    },
+    "colAssigned": {
+      "text": "Assigned user",
+      "source_sha256": "4230e695235ef81349ad6f0c6cee57ac54075fdbbbadaf4d5c22e8cb5cfabc3a"
+    },
+    "resetTitle": {
+      "text": "Administrator reset requests",
+      "source_sha256": "2e120d559be606b9dad1ea16ae3dd8e7d5cf5ced6471bf82c9f4284ab16d0e51"
+    },
+    "runbook": {
+      "text": "Enrollment steps",
+      "source_sha256": "4482adfc115cb4a765059202a86cc7e7fc9460f67dfa152c0a08ef7cf936d910"
+    },
+    "mapTitle": {
+      "text": "Map to a person",
+      "source_sha256": "d45704210b16963182d7d5f154639dea723acad26287f2be3a8c8fae6a1237f6"
+    },
+    "legalName": {
+      "text": "Legal name",
+      "source_sha256": "07f883c3b610740f954cda30d5d4680227bbedcab810a727460c116b27449004"
+    },
+    "organization": {
+      "text": "Organization",
+      "source_sha256": "d764d42592fc968709b4c6c25c6e6b77919295dfce2c57ead02bedac5ddb3218"
+    },
+    "renameLogin": {
+      "text": "Human account name (optional)",
+      "source_sha256": "8a7e09d30e8108349c7a0efcc07cd995b9fa54438309282f2748370158c41ed5"
+    },
+    "renameHint": {
+      "text": "Renames the login in place. The workstation assignment follows this person.",
+      "source_sha256": "4d779a6de8ade40a16e8b42946195b4d8a12da8eed4f3745dece06e58c7b00e9"
+    },
+    "scopeBases": {
+      "text": "Scope basis",
+      "source_sha256": "ba19bbdd707f52732e5b7e8a34343b6afc703e4a12ff039e4ec30c8f1136cbe2"
+    },
+    "scopeHint": {
+      "text": "Comma-separated. Example: handles_cui, handles_fci",
+      "source_sha256": "d5c5375d80e1bb5717933fadac531a43acf00ae73c6589e7a38513ddaea79f96"
+    },
+    "cancel": {
+      "text": "Cancel",
+      "source_sha256": "19766ed6ccb2f4a32778eed80d1928d2c87a18d7c275ccb163ec6709d3eb2e27"
+    },
+    "saveMap": {
+      "text": "Save mapping",
+      "source_sha256": "bb40e390513c848dd6138f8f5ae4b09c381a62424a4152104d8b941339edc17c"
+    },
+    "assignTitle": {
+      "text": "Assign workstation",
+      "source_sha256": "d5307e85c66307fa201dde0c5d66b1946a63314ffa11ef4381c64ca0cb15a0cb"
+    },
+    "seatPick": {
+      "text": "Workstation",
+      "source_sha256": "b9d0a58e17a62bec80b495a416d0e9fdcb25086e37aa4e3f31ceb0dedf6fdb31"
+    },
+    "saveAssign": {
+      "text": "Assign",
+      "source_sha256": "8ece895c9b32c6436d34b0384ae9f8555c8abccd31541f722f27e45e72a85bff"
+    },
+    "placeTitle": {
+      "text": "Record file placement",
+      "source_sha256": "eb8c1c4d5d1bd329d7d388957065e6b5542e95f4579c75d24c5671e9db255de2"
+    },
+    "commonShare": {
+      "text": "Common share",
+      "source_sha256": "f0ce88e7bac6b741950c4e0660cb63c70e5b5b2e2f90360af8c970f547541444"
+    },
+    "localFs": {
+      "text": "Local encrypted filesystem",
+      "source_sha256": "b186c32e504e5b6778c0786e27b87a4ed8d7b8da8330e223db40d60b5c9d742c"
+    },
+    "notes": {
+      "text": "Notes",
+      "source_sha256": "8a7525b1492fb84833f5c4a69b30f4bfbb134f9b666b61a2c1872d63d234c085"
+    },
+    "savePlacement": {
+      "text": "Record",
+      "source_sha256": "bfdd510698ef3ccbf17f2c67fc47790e1ba72894fb74fe284bbc136b47ef73e6"
     }
   }
 }

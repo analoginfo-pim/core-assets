@@ -650,6 +650,30 @@
       "visitor_cycle": {
         "text": "מחזור מבקרים",
         "source_sha256": "218ba44ad8448e3c806a653a99682a20331878495ffb1c17e234501aa1c0ea23"
+      },
+      "witnessed_destruction": {
+        "text": "השמדה בנוכחות עד",
+        "source_sha256": "941b710f6cc491b96f256d1620abff56528fe8e9fa4133b69e499541d490f3ff"
+      },
+      "degauss_certificate": {
+        "text": "תעודת מחיקה מגנטית",
+        "source_sha256": "5031c711588469f88ab270c4b0f9fb569d2311d306e8fdf92c3884cda805769b"
+      },
+      "retention_attestation": {
+        "text": "אישור שמירה",
+        "source_sha256": "3153e7d2d369a8a1d1ee4b9059537c60ff883731e4fa15ac47ed3606846b724d"
+      },
+      "export_delivery": {
+        "text": "מסירת ייצוא",
+        "source_sha256": "85d7042325f15c56e9a49b05892521dc83b53564cecfba63a8cc424ba2d085a5"
+      },
+      "exception_record": {
+        "text": "רשומת חריגה",
+        "source_sha256": "175acd2615ea7fc6cf44d3ea6d7a68607578c2fffd3007cb606a6ff0144e0ebd"
+      },
+      "posture_review": {
+        "text": "סקירת מצב",
+        "source_sha256": "3ab2b2ca7606f1bc6992fcb633e4ca4783674b2e73adcce4fda81987503f0be2"
       }
     },
     "eventKinds": {
@@ -692,6 +716,18 @@
       "attested": {
         "text": "הוצהר",
         "source_sha256": "9ac7a8917dbb0e5b72d609ce8ab077802569954a2a4d68bb950b5b4e694e148f"
+      },
+      "certificate_attached": {
+        "text": "תעודה צורפה",
+        "source_sha256": "87ca74748149bf52725d69a940a6350bc25b7fd578e1edb097b137fe54264be1"
+      },
+      "delivered": {
+        "text": "נמסר",
+        "source_sha256": "3b6a695101255285c82d2495db3f260e9956f445480d55a2cf64210cb555ca8e"
+      },
+      "exception_recorded": {
+        "text": "חריגה נרשמה",
+        "source_sha256": "9c71103a4e9fe1427afd811e4c6fb8c9cc4404e9f75073b6302aea40fe923189"
       }
     },
     "cp": {
@@ -735,6 +771,334 @@
         "text": "תזמון סקירה",
         "source_sha256": "f1ff0f75dae7498b9313c535e33f14e234df3105815e96dd472e54198d2d9df5"
       }
+    },
+    "mp": {
+      "title": {
+        "text": "השמדת מדיה",
+        "source_sha256": "1adb3cf5622dbddf46963a647e8d2f365415c36c87cadf4920832822c7c754f8"
+      },
+      "summary": {
+        "text": "תזמן השמדה בנוכחות עד או תעודת מחיקה מגנטית ורשום השלמה בתוספת גיבוב התעודה. המוצר אינו מפעיל את המגרסה. זה אינו Met.",
+        "source_sha256": "5347bcdbaf1d6bb37673d1d9cd09b49bdac1379b228d8afd8a5abed400105bb0"
+      },
+      "add": {
+        "text": "תזמן השמדה",
+        "source_sha256": "0d256740454c716e30b15e8400b39c43720a6c295d518f0ed5e0efe8dafd72e1"
+      }
+    },
+    "au": {
+      "title": {
+        "text": "רשומות שמירה",
+        "source_sha256": "69923a7b65458f468ce05686994c2cabd470b26abd9f57650986a382b438ae34"
+      },
+      "summary": {
+        "text": "רשום אישור שמירה או מסירת ייצוא עם גיבוב. הפעלת אחסון WORM נשארת בידי הארגון. זה אינו Met.",
+        "source_sha256": "4a0bb733142703f9abea97e16740baaf9beae99cc64649ae62054c2d06212e37"
+      },
+      "add": {
+        "text": "רשום שמירה",
+        "source_sha256": "9630c889862e6ae1e4a5cfa26986815f8b1d35303bf4db23c153fb9bca5750c0"
+      }
+    },
+    "si": {
+      "title": {
+        "text": "חריגות מצב",
+        "source_sha256": "2c1a0f94e1b05447e7d829cc9e83bc918b182806e07dc20a5b6104656c36fea7"
+      },
+      "summary": {
+        "text": "רשום חריגת כיסוי נקודת קצה או סקירת מצב. המוצר אינו מריץ EDR ארגוני או כלי תיקונים. זה אינו Met.",
+        "source_sha256": "f47d41e7a7e76acf82ab3c94e4c690b8ce135a11c0cb7a1b33efd1993ad97168"
+      },
+      "add": {
+        "text": "רשום חריגה",
+        "source_sha256": "831ee3476599ff1b20508addee61d2d12f430b0475dc5435c6885df410062996"
+      }
+    }
+  },
+  "coverageIntake": {
+    "title": {
+      "text": "קליטת ראיות",
+      "source_sha256": "3c9f82f12af195e85fc062e610f1e6207e1fa6f87f90cbc68ff8a9b3b67e214f"
+    },
+    "summary": {
+      "text": "רשמו פעולה מחוץ למערכת או העלו קובץ. השרת שומר SHA-256. זו הצהרה, לא Met, ואינה הסמכה.",
+      "source_sha256": "9468316cc614c9af132787f3598e50f644a583142e700292d18e2e4168b28e0d"
+    },
+    "honesty": {
+      "text": "אישור שפעולה מחוץ למערכת התרחשה מוכיח רק שאדם בשם הצהיר על כך, עם חותמת זמן של השרת. זה לעולם לא Met ואינו הסמכה.",
+      "source_sha256": "4d050aaf65e26109667f534f1843e269895e02f9ef3f9bb39b821295c0a31868"
+    },
+    "family": {
+      "text": "משפחה",
+      "source_sha256": "bd2d677b2ed4381b48bb1d0841052c6d076e7d634d5052e85dcbe0b8a0dedd80"
+    },
+    "titleField": {
+      "text": "כותרת",
+      "source_sha256": "7e8cd2056da73a7fefb6cd91f4e5d199d08d9058c517b9a2476b1b520324d674"
+    },
+    "reason": {
+      "text": "סיבה",
+      "source_sha256": "f81ab834de5f84918dc040b884267c2b61cb1a52d46442de10e97f35a94d0500"
+    },
+    "reasonHelp": {
+      "text": "לפחות 8 תווים. ציינו מדוע הרשומה קיימת.",
+      "source_sha256": "a286822a102fc9dc9d86a9a8e715a3ec4f078efc2aff1eb31f6be20f40f84596"
+    },
+    "statement": {
+      "text": "מה קרה",
+      "source_sha256": "483bd49023ae2bfb08da43eea2757a0e5490f7b0fe2964f49273cc25215d61f4"
+    },
+    "controlRef": {
+      "text": "בקרה",
+      "source_sha256": "32d7e82082479b8cb546187ff0af11e4915e4d17bc28e02dca7425288b79badd"
+    },
+    "binderSection": {
+      "text": "מזהה סעיף בתיק",
+      "source_sha256": "882019cbc07aa128972d35797113d4994243e2b6d2f0361d38e9d21546471d04"
+    },
+    "expires": {
+      "text": "תפוגה (RFC 3339)",
+      "source_sha256": "ac669fd06c95c3b61fdefb1a8fdf0b334f516b99f95c2113f61c2e83a3ec58db"
+    },
+    "artifact": {
+      "text": "בחירת קובץ",
+      "source_sha256": "da7da3667ae8114a4f7032d121ea8a1fb21ab5a4d8cbdc843e16045bbac1ff09"
+    },
+    "record": {
+      "text": "רישום",
+      "source_sha256": "bfdd510698ef3ccbf17f2c67fc47790e1ba72894fb74fe284bbc136b47ef73e6"
+    },
+    "sweep": {
+      "text": "רישום תזכורות לפקיעה",
+      "source_sha256": "342bac73c4d9eee60ef9b9723bbf0e72828700bca2a03b83b1e3b6f12065fc99"
+    },
+    "sweepDone": {
+      "text": "נרשמו {{logged}} תזכורות מתוך {{scanned}} שורות שפג תוקפן. זה יומן, לא דוא\"ל.",
+      "source_sha256": "fd5fd92a868723472eb8bef9380f598a29d343af54dfdecf52ca634b722b0719"
+    },
+    "empty": {
+      "text": "אין עדיין רשומות.",
+      "source_sha256": "5d9ae0627ee22c6513ada52ffda97f5b1822550172f90ca902d04d96d5e0f047"
+    },
+    "loadFailed": {
+      "text": "לא ניתן לטעון את קליטת הראיות.",
+      "source_sha256": "a29dcfb2295d239664f73148600498f5ef8ace856acf8595998d2a56eb234607"
+    },
+    "retry": {
+      "text": "ניסיון חוזר",
+      "source_sha256": "942087cc2d41e01304b7195558d093d10c72af8e838c7556d6a02d471ee71852"
+    },
+    "sha256": {
+      "text": "SHA-256",
+      "source_sha256": "bbd07c4fc02c99b97124febf42c7b63b5011c0df28d409fbb486b5a9d2e615ea"
+    },
+    "actor": {
+      "text": "גורם",
+      "source_sha256": "449995c4fe8fab389053dac72d77798c094dd4a3b7b3cfe69c4d78d119308dce"
+    },
+    "renewal": {
+      "text": "חידוש",
+      "source_sha256": "f4a9133d791782c1d6c1729e52e2738cd03a6467fe1e01bf574a970edda1e13c"
+    },
+    "recorded": {
+      "text": "נרשם",
+      "source_sha256": "c97ac679c9da5f7b34c6f673a3963c5c728a006ee1c7faf653f888ae42c9e987"
+    },
+    "state": {
+      "current": {
+        "text": "בתוקף",
+        "source_sha256": "e0d1b68224bf0b31ef16b206c65b5f8f6b89d18161f4a7cdcb8d0ac8d952549a"
+      },
+      "due": {
+        "text": "לפקיעה",
+        "source_sha256": "9071738f145962a67ca1f1db834560031606ced93aa9161f48c493afe31d0a7c"
+      },
+      "overdue": {
+        "text": "באיחור",
+        "source_sha256": "d660945bc299132062a8e487e69bba66ca9088298103b8a63daa71b910305627"
+      },
+      "no_expiry": {
+        "text": "ללא תפוגה",
+        "source_sha256": "fe06351db8da70412dd4d5a51545d68503554eb9d1bf074aff5009a027e8f2b4"
+      }
+    },
+    "procedure": {
+      "text": "נוהל",
+      "source_sha256": "9c280284ef2669a2be7280a58557e553942fb2e0d2154e3f5949dc153c029bcf"
+    },
+    "procedureRequired": {
+      "text": "Choose a procedure for this family page.",
+      "source_sha256": "7c0ed8b8a4cb8b6da91e54f163b53edd9c543a16c62524dcc7f64d1c63d9ad1f"
+    },
+    "procedures": {
+      "visitor_log": {
+        "text": "יומן מבקרים",
+        "source_sha256": "42cf93b0de06849183e3f91294e96c3f101315fef7d616fc2ee87e3cd27f2b59"
+      },
+      "escort": {
+        "text": "ליווי",
+        "source_sha256": "4cc2da8a6ad3b75b9604b5f987108e5313bde95155e849647cd95656ae36639f"
+      },
+      "supplier_questionnaire": {
+        "text": "שאלון ספק",
+        "source_sha256": "a810baeae4b76d1a97b413bb457d3c6961e3fd365556eedb62d22b75710bfceb"
+      },
+      "signed_flowdown": {
+        "text": "העברה חתומה",
+        "source_sha256": "01a3af0828cbd50cc84c149208bb25c58c1feb240f139153a0c43d4f6f2504fe"
+      },
+      "witnessed_destruction": {
+        "text": "השמדה בנוכחות עד",
+        "source_sha256": "993a3f91bdbd7eed89e907b1c8a91ea7442b0b6986fa62ff334a8a5c8c968f5d"
+      }
+    },
+    "familyPages": {
+      "pe": {
+        "text": "קליטת ראיות PE",
+        "source_sha256": "0cdf154526d6f32a3e6818195d4aa2da7c46e20cf44f4723695bd547cda78e5e"
+      },
+      "sr": {
+        "text": "קליטת ראיות SR",
+        "source_sha256": "1184bb272d0b053f8858d441374a72ef2c5020adf7a67c465d3b00b2a58bfb23"
+      },
+      "mp": {
+        "text": "קליטת ראיות MP",
+        "source_sha256": "5449ef9e5a7951454c3ed9c6d61e28cc0503fb6c4667d669f667fc72690e727a"
+      }
+    },
+    "visitorName": {
+      "text": "שם המבקר",
+      "source_sha256": "8d9178364056d91c6af5efa2894dc3e6529f4be6b37ac42a40c311ac21c9a20f"
+    },
+    "escortName": {
+      "text": "שם המלווה",
+      "source_sha256": "4fc59a5226f6959fa59645ff9ab99316e676c6509c551ea7639a9bc4e0cbbfde"
+    },
+    "supplierName": {
+      "text": "שם הספק",
+      "source_sha256": "5b386986996ea3c99b50a643aad127e65929c37ec7d9942137e86aa8deeeb7e5"
+    },
+    "mediaDesc": {
+      "text": "תיאור מדיה",
+      "source_sha256": "2e22cefe8cb83e7cd9a34c403addd81e25a268eb9aaba77a7faff45338ddfeb9"
+    },
+    "method": {
+      "text": "שיטת השמדה",
+      "source_sha256": "d86b869ac0dc888817d61b4b97b846ec50220d20f60105ce6640c5c9b197eec7"
+    },
+    "witnessName": {
+      "text": "שם העד",
+      "source_sha256": "f8c969e164b4d205abeb9b6967f3945ccd8450d77b9492682bea10a414c784e8"
+    }
+  },
+  "supplierRegister": {
+    "title": {
+      "text": "מרשם ספקים",
+      "source_sha256": "68a76f841c45cbff87e9d66173e9848a04425d89ff269409c2d9ca5bfabca5be"
+    },
+    "summary": {
+      "text": "ציינו כל ספק ולמה הוא בטווח. רשמו כאן מחזור הערכה. שאלונים וקבצי flow-down חתומים נשארים ב-Evidence Intake SR.",
+      "source_sha256": "791ba0d4ae5a5e15f39e5f96b1abfa75fd059e418fb6a7a04030e62556cc1551"
+    },
+    "honesty": {
+      "text": "שורת מרשם מציינת ספק וטווח שנרשם. תוצאת הערכה היא הצהרת מפעיל עם חותמת זמן של השרת. זה אינו Met ואינו מאושר.",
+      "source_sha256": "e258d5f8b82567c00c60dcf3547b736438f486772ebf5364b8ec7887fdcfe140"
+    },
+    "addSupplier": {
+      "text": "הוסף ספק",
+      "source_sha256": "4529e59d2ad8ead8dcdcd48986b00e48901781b48bd08d9664792ccc92a22d64"
+    },
+    "name": {
+      "text": "שם",
+      "source_sha256": "346853434c2b6b835a60de35de0f2c068bf71119f341ee03a36f3c490767ced7"
+    },
+    "organization": {
+      "text": "ארגון",
+      "source_sha256": "e53ceab5a5753e852b23a5ace44f6a88f07f65fa9aa1a78d8f19dcb1f496b729"
+    },
+    "scopeBasis": {
+      "text": "בסיס הטווח",
+      "source_sha256": "dc27fa7890224aacbb731d34d28eb0a968ff12e924eb39a2106e175ce76200a3"
+    },
+    "scopeHelp": {
+      "text": "לפחות 8 תווים. ציינו איזו עבודה מוסדרת הספק יכול להגיע אליה.",
+      "source_sha256": "f179fafb396a1efe4f27d5cb0c2447224892e031cf0d1944ccd70348f08f6991"
+    },
+    "contactEmail": {
+      "text": "דוא״ל ליצירת קשר",
+      "source_sha256": "259db1448369151955212b7a2e2538ec2ff634106be4bd11bb2de95da1faa291"
+    },
+    "record": {
+      "text": "רשום",
+      "source_sha256": "fb245dc7e5a823323a778d66469946ee9e417153532e0f6d96170e93fb0ba6e0"
+    },
+    "recorded": {
+      "text": "הספק נרשם.",
+      "source_sha256": "6fb1ef3078522e9c5c8b478ba0af10f56908f013ad31e5b2283ee181f68f568c"
+    },
+    "archive": {
+      "text": "ארכב",
+      "source_sha256": "e26f963e77c5f6627792fd50b81fb01957b72215736937a8c66c2737cf7f8390"
+    },
+    "archived": {
+      "text": "הספק אורכב.",
+      "source_sha256": "4b2c7ade8e084159f86bff25cbc724c547f7c17aa1edcd99affed2c9a8b78190"
+    },
+    "status": {
+      "text": "סטטוס",
+      "source_sha256": "8c697cc21f8e0660d067ab7ecd39b137c5e72ed2209d6cd014588cf2f93b48d3"
+    },
+    "lastAssessed": {
+      "text": "הערכה אחרונה",
+      "source_sha256": "daf17890c85dca602ae93755e2eb839700e8338774bfebabadbff17952a48d26"
+    },
+    "actions": {
+      "text": "פעולות",
+      "source_sha256": "1c807e1234442db6bced1e643c6b2ea70d37a8f25dd3720c0bfed3847f387914"
+    },
+    "assessments": {
+      "text": "הערכות",
+      "source_sha256": "44fe509deaf7e8601765b6fd07ee00a0af79f53504640f1f23e2b3d696f41d6d"
+    },
+    "outcome": {
+      "text": "תוצאה",
+      "source_sha256": "bc7f361c13dcb8ee384a7310b3857ffec41cfd2f0f5d71d7242d1c066760f1ed"
+    },
+    "outcomePass": {
+      "text": "עבר",
+      "source_sha256": "2cfd55526838fc469ee9b1665a9f7a09d47002aa0146e1fe2dbe6f5a140a1e55"
+    },
+    "outcomeFail": {
+      "text": "לא עבר",
+      "source_sha256": "a65ba6b757904acdf184bd8de948f88ab98f37665510d2904a01c45171105763"
+    },
+    "outcomeConditional": {
+      "text": "מותנה",
+      "source_sha256": "6be4bb992907dce52979aa686fe0f47f3189b19d7e58f635346109a900e5cf7b"
+    },
+    "notes": {
+      "text": "הערות",
+      "source_sha256": "0ba44ecf113a2fc2fd9d5fa5f2a65fd0cbc0dd10b135a3c4f168e59132d2a282"
+    },
+    "recordAssessment": {
+      "text": "רשום הערכה",
+      "source_sha256": "b28bfb8b765cdb00e307a06399108f48e32288b2dc776d59eb30cbd7e148b871"
+    },
+    "assessmentRecorded": {
+      "text": "ההערכה נרשמה.",
+      "source_sha256": "95a0954ae83ab4c48375bf320b8b12828c687deb933a14c5138a79559248163f"
+    },
+    "noAssessments": {
+      "text": "אין עדיין הערכות לספק זה.",
+      "source_sha256": "bf09f3523c514a3be78a6d93c5d8ea35cb10a23f5a96c31909affe92dd5fd820"
+    },
+    "loadFailed": {
+      "text": "לא ניתן לטעון את מרשם הספקים.",
+      "source_sha256": "b051d3a6d3760e56c039146d48d343dfab1338fca7929856324234a7cd600493"
+    },
+    "noPermission": {
+      "text": "אין לך הרשאה לצפות במרשם הספקים.",
+      "source_sha256": "61e9707ca2482eb7a2e8fb6461b776c06fee766c46a9b771e0574db0e253a5ae"
     }
   }
 }
