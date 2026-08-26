@@ -113,6 +113,15 @@ and do not instruct operators to set env vars for AIC settings — use
 dedicated `tracing_stderr_ansi` (or equivalent) helper only; keep
 `forbid_env_var_reads` allowlists in sync.
 
+## Cross-references
+
+| Rule | Overlap |
+| --- | --- |
+| [`ascii-syntax-and-powershell-first-run.mdc`](ascii-syntax-and-powershell-first-run.mdc) | Sibling: the input half of Windows shell correctness. ASCII-only syntax (no en/em dashes, smart quotes) plus the PowerShell authoring practices that stop scripts failing on first run |
+| [`operator-ui-credibility.mdc`](operator-ui-credibility.mdc) | ANSI garbage in an operator console is a credibility defect |
+| [`no-environment-variables.mdc`](no-environment-variables.mdc) | Color is a `--color` flag or a manifest key, never an AIC env var |
+| [`enterprise-compliance.mdc`](enterprise-compliance.mdc) | Section 508 / WCAG 2.0 AA: status must not be color-only |
+
 ## Origin
 
 2026-08-03 — operator hard rule: do not emit ANSI/VT100 for Windows Command

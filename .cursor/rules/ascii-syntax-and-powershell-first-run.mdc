@@ -1,0 +1,412 @@
+---
+description: ASCII-only syntax (no en/em dashes, smart quotes, no-break spaces) in all authored content, hard-fail in PowerShell; plus the PowerShell authoring practices that stop agent-written scripts from failing on first run.
+alwaysApply: true
+---
+
+# ASCII syntax only, and PowerShell that runs the first time (hard rule)
+
+Two defects keep costing this workspace whole sessions, and they are the same
+defect wearing different clothes.
+
+The first is a typographic character standing in for an ASCII one. An EN DASH
+where a hyphen belongs turns `800-171A` into an identifier no auditor can find,
+and turns `-Force` into something `git` and `curl.exe` reject outright. In a
+BOM-less PowerShell script it is worse than wrong, it is unparseable: Windows
+PowerShell 5.1 decodes the file as Windows-1252, reads the three UTF-8 bytes of
+a dash as a smart quote, and reports a missing string terminator dozens of lines
+away from the character that caused it.
+
+The second is agent-written PowerShell that fails on its first run for reasons
+that were knowable in advance: bash loop syntax, `&&` chaining, `>` redirection
+that emits UTF-16LE, an inline `python -c` mangled by the PowerShell parser, a
+here-string piped into `git commit -m`, an unchecked external exit code. Every
+one of those is a real failure from this workspace's terminals and transcripts,
+several of them more than once in a single session.
+
+## The rule
+
+> **Every authored byte in this workspace uses ASCII for syntax. EN DASH,
+> EM DASH, the non-breaking hyphens, smart quotes, and the no-break space are
+> banned wherever they stand in for `-`, `"`, `'`, or a space. In PowerShell
+> this is a hard fail, because the file will not parse or the argument will not
+> reach the external command. Every PowerShell script an agent writes must also
+> target Windows PowerShell 5.1, use PowerShell syntax rather than bash, write
+> UTF-8 without a BOM for anything another tool reads, check `$LASTEXITCODE`
+> after every external command, fail loudly with a non-zero exit, and default to
+> report-only before any destructive switch. A script that fails on its first
+> run for one of the causes listed below is a defect in the authoring, not an
+> environment quirk.**
+
+## 1. The characters
+
+Write the left column. Never the right.
+
+| Write this | Codepoint | Never this | Codepoint |
+| --- | --- | --- | --- |
+| hyphen-minus `-` | U+002D | EN DASH | U+2013 |
+| hyphen-minus `-` | U+002D | EM DASH | U+2014 |
+| hyphen-minus `-` | U+002D | HYPHEN | U+2010 |
+| hyphen-minus `-` | U+002D | NON-BREAKING HYPHEN | U+2011 |
+| hyphen-minus `-` | U+002D | MINUS SIGN | U+2212 |
+| quotation mark `"` | U+0022 | LEFT DOUBLE QUOTATION MARK | U+201C |
+| quotation mark `"` | U+0022 | RIGHT DOUBLE QUOTATION MARK | U+201D |
+| apostrophe `'` | U+0027 | LEFT SINGLE QUOTATION MARK | U+2018 |
+| apostrophe `'` | U+0027 | RIGHT SINGLE QUOTATION MARK | U+2019 |
+| space | U+0020 | NO-BREAK SPACE | U+00A0 |
+| space | U+0020 | NARROW NO-BREAK SPACE | U+202F |
+| `->` or `to` | ASCII | RIGHTWARDS ARROW | U+2192 |
+
+There is a second-order form to watch for. When one of these characters
+survives a UTF-8 write and a Windows-1252 read and then gets written back as
+UTF-8, it becomes a **mojibake sequence**: `E2 80 94` (EM DASH) reappears as
+three separate characters. Once a file is in that state, replacing only the
+last visible character leaves the first two behind as garbage. The detector in
+the Enforcement section matches these sequences as whole units for exactly this
+reason, and it found live mojibake in
+`pim-offline-server/scripts/Prove-WinrmPrivilegeJob.ps1` on 2026-08-25.
+
+## 2. Why PowerShell fails, precisely
+
+Two distinct mechanisms, both measured on this host.
+
+**The file will not parse.** Windows PowerShell 5.1 has no default UTF-8
+assumption. A `.ps1` saved as UTF-8 **without a BOM** is decoded as
+Windows-1252, one byte per character. The three UTF-8 bytes of an EM DASH,
+`E2 80 94`, become `U+00E2 U+20AC U+201D`, and `U+201D` is RIGHT DOUBLE
+QUOTATION MARK, which PowerShell honors as a string delimiter. The dash silently
+**opens or closes a string**. EN DASH (`E2 80 93`) lands on `U+201C`, the left
+double quote, with the same effect.
+
+Reproduced against real files on 2026-08-25: `Build-PimOfflineServerMsi.ps1`
+(line 209) and `Safe-UpgradeWorkstationAssuranceAgentMsi.ps1` both failed
+`[System.Management.Automation.Language.Parser]::ParseFile` with
+`The string is missing the terminator` and `Unexpected token`, and the reported
+line was well past the em dash that caused it. The same class of error appears
+in the transcripts for `Stage-MaxMindGeoLiteDefaults.ps1`
+(`The string is missing the terminator`, `Missing closing '}'`). After the
+dashes were replaced with hyphens, all 194 scripts under the two script trees
+parsed with zero errors.
+
+**The argument does not reach the external command.** This one is nastier
+because it looks like it works. PowerShell's own parameter binder is lenient:
+`Get-Item -LiteralPath ...` accepts an EN DASH in place of the hyphen and
+resolves the parameter anyway. External executables do not. Measured:
+
+```text
+git <EN DASH><EN DASH>version   ->  unknown option, non-zero exit
+curl.exe <EN DASH>-version      ->  option rejected, non-zero exit
+```
+
+So a dash typo can pass every local cmdlet test and then fail in the one place
+it matters, against `git`, `cargo`, `npm`, `sc.exe`, or `curl.exe`. In the
+positional case there is no error at all: PowerShell treats the token as a
+positional argument, the switch is silently never set, and the script does the
+wrong thing successfully.
+
+## 3. Scope, and the one exception
+
+**Banned in all authored content**: `.ps1`, `.psm1`, `.rs`, `.ts`, `.tsx`,
+`.py`, `.json`, `.toml`, `.yml`, markdown docs, commit messages, OpenAPI text,
+CLI help, UI strings, locale catalogs, and the agent's own chat output.
+PowerShell is the hard-fail case. Everywhere else it is a correctness and
+searchability case, and that is not a lesser concern.
+
+The real incident: EN DASHes were found inside **NIST identifiers** in shipped
+locale catalogs. `800-171A` had become `800<EN DASH>171A` and `800-53` had
+become `800<EN DASH>53`. An auditor searching the binder for `800-53` does not
+find it, and a crosswalk keyed on that string does not match. Roughly 40 leaves
+were repaired. The identifier-specific detector is
+`core-assets/scripts/language-packs/_audit_endash_identifiers.py`; it now
+reports zero corruptions and must keep reporting zero.
+
+**The exception, stated precisely.** The ban is on typographic characters
+standing in for ASCII **syntax**: in code, identifiers, parameters, paths,
+command lines, and control references. It is **not** a ban on a target
+language's orthography. A shipped German or French prose string that uses an
+EM DASH as punctuation is correct in that language, and rewriting it is a
+translation defect, not a fix. The boundary:
+
+| Context | Verdict |
+| --- | --- |
+| `-Force`, `--version`, any parameter or switch | ASCII only, always |
+| `AC-2`, `800-53`, `CVE-2026-1234`, `ISO 27001`, any identifier | ASCII only, always, in every language pack |
+| Path, key name, JSON key, file name, URL | ASCII only, always |
+| US English source prose | ASCII only (house style; keeps grep and diffs honest) |
+| Translated prose body in a locale catalog | Target-language orthography wins; do not rewrite |
+
+An agent that "fixes" 7000 dashes inside translated prose has broken the
+localization, so the detector separates the two cases and only ever rewrites
+the first.
+
+## 4. PowerShell authoring practices
+
+Each item below is a real first-run failure from this workspace, followed by the
+shape that works. One pair each.
+
+**1. ASCII only for syntax.** Sections 1 and 2 above. This is the first thing
+to check when a parser error points at a line that looks fine.
+
+**2. PowerShell syntax, not bash.** `for t in a b; do ...; done` produced
+`Missing opening '(' after keyword 'for'` and `Missing statement body in do
+loop`. `&&` and `||` are not sequencing operators in Windows PowerShell 5.1.
+
+```powershell
+# Wrong
+for t in de fr; do echo $t; done && npm run build
+
+# Right
+foreach ($t in @('de','fr')) { Write-Output $t }
+npm run build
+```
+
+Use `;` to sequence, `-and` / `-or` for boolean logic, and `$env:NAME` rather
+than `export NAME=`.
+
+**3. Target Windows PowerShell 5.1.** `pwsh` on this host is an App Execution
+Alias stub, not an installed PowerShell 7, so `pwsh -File ...` raised
+`CommandNotFoundException`. Unless a script declares `#requires -Version 7`, do
+not use `??`, `?.`, the ternary operator, `-Parallel`, or `ConvertFrom-Json
+-AsHashtable`.
+
+```powershell
+# Wrong (5.1 parse error)
+$name = $arg ?? 'default'
+
+# Right
+$name = if ($arg) { $arg } else { 'default' }
+```
+
+**4. Encoding: UTF-8 without a BOM for anything a tool reads.** `git show
+HEAD:path > file.json` wrote UTF-16LE with a BOM, and reading it back in Python
+raised `UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0`.
+Never use `>` or bare `Out-File` for a machine-read file.
+
+```powershell
+# Wrong
+git show HEAD:ui/src/i18n/locales/de/common.json > de-common.json
+
+# Right
+$s = & git show HEAD:ui/src/i18n/locales/de/common.json | Out-String
+[System.IO.File]::WriteAllText($out, $s, [System.Text.UTF8Encoding]::new($false))
+```
+
+Better still, when the consumer is Python, skip the file: read the process
+stdout directly with `subprocess.run(..., capture_output=True)`.
+
+**5. Paths and enumeration.** Always `-LiteralPath` for a path that may contain
+brackets, spaces, or `$`; always quote an interpolated path. `Get-ChildItem`
+returned nothing in a directory that demonstrably held files (`cmd /c dir /b`
+listed them), so verify with a count instead of trusting empty output.
+
+```powershell
+# Wrong
+Get-ChildItem $dir\*.ps1 | ForEach-Object { ... }
+
+# Right
+$files = @(Get-ChildItem -LiteralPath $dir -Filter *.ps1 -File -Recurse)
+if ($files.Count -eq 0) { throw "no .ps1 files under $dir (expected at least one)" }
+```
+
+**6. Exit codes come from `$LASTEXITCODE`.** `$?` reflects the last PowerShell
+statement, not the exit status of a native executable. Check `$LASTEXITCODE`
+explicitly after `git`, `cargo`, `npm`, `sc.exe`, `curl.exe`, and `msiexec`.
+
+```powershell
+# Wrong
+& cargo build --bin pim-offline-server
+if (-not $?) { throw "build failed" }
+
+# Right
+& cargo build --bin pim-offline-server
+if ($LASTEXITCODE -ne 0) { throw "cargo build failed with exit code $LASTEXITCODE" }
+```
+
+**7. Fail loudly, with a non-zero exit.** `$ErrorActionPreference = 'Stop'` at
+the top, the body in `try`/`catch`, a US English message naming the operation,
+and `exit 1`. See [`silent-failure-is-a-bug.mdc`](silent-failure-is-a-bug.mdc)
+and [`no-panic.mdc`](no-panic.mdc) for the logging and recovery contract; do not
+restate it here.
+
+```powershell
+# Right
+$ErrorActionPreference = 'Stop'
+try {
+    Invoke-Stage
+} catch {
+    Write-Error "stage failed: $($_.Exception.Message)"
+    exit 1
+}
+```
+
+**8. Idempotence and bounded retry on file and service operations.** Rewriting
+hundreds of files back to back raced Defender's on-access scanner and surfaced
+as `OSError [Errno 22] Invalid argument` partway through the run. The writes
+were idempotent, so a bounded retry with short backoff is safe; abandoning the
+run halfway is not.
+
+```powershell
+# Right
+foreach ($attempt in 1..4) {
+    try { [System.IO.File]::WriteAllText($p, $s, [System.Text.UTF8Encoding]::new($false)); break }
+    catch { if ($attempt -eq 4) { throw }; Start-Sleep -Milliseconds (200 * $attempt) }
+}
+```
+
+**9. New console windows launch minimized.** `Start-Process ... -WindowStyle
+Minimized` (or `Hidden` for a true background helper). See
+[`launch-consoles-minimized.mdc`](launch-consoles-minimized.mdc).
+
+**10. No product configuration through environment variables.** Values come
+from `pim-app-config` / the configurator / explicit CLI flags. See
+[`no-environment-variables.mdc`](no-environment-variables.mdc).
+
+**11. Report-only by default; `--fix` is opt-in.** Any script that rewrites
+files, deletes registrations, or mutates a service must be runnable in a mode
+that only reports what it would do, and that mode must be the default.
+
+**12. Multi-line programs live in files, not in `-c` / `-Command` strings.**
+An inline `python -c` with embedded quotes and f-strings was mangled by the
+PowerShell parser into `SyntaxError: unterminated string literal`, three times
+in one session.
+
+```powershell
+# Wrong
+python -c "import json; print(f\"{json.load(open('x.json'))['a']}\")"
+
+# Right
+python .\scripts\lint\read-key.py x.json a
+```
+
+**13. Commit messages come from a temp file.** Here-strings piped into `git
+commit -m` misbehave with this workspace's hooks. Use the temp-file plus
+`git commit -F` pattern documented in
+[`auto-commit-push.mdc`](auto-commit-push.mdc). Do not duplicate the recipe.
+
+## Forbidden constructs
+
+- Any codepoint from the right-hand column of section 1 in a `.ps1`, `.psm1`,
+  or any file that is parsed, compiled, or keyed on.
+- Any typographic dash inside an identifier (`AC-2`, `800-53`, `CVE-...`,
+  `ISO 27001`), in **any** language pack, including translated ones.
+- "Fixing" typographic punctuation inside translated prose bodies.
+- `for x in ...; do ... done`, `&&`, `||`, `export NAME=`, or any other bash
+  construct in a `.ps1`.
+- `>`, `>>`, or bare `Out-File` producing a file another tool reads.
+- `??`, `?.`, ternary, `-Parallel`, or `-AsHashtable` without
+  `#requires -Version 7` in the same file.
+- `if (-not $?)` as the success test after a native executable.
+- A script with no `$ErrorActionPreference = 'Stop'` that exits `0` after a
+  failed step.
+- An inline `python -c` / `-Command` string longer than one simple statement.
+- A destructive switch with no report-only default.
+- Claiming a script works without having run it once end to end. A parse check
+  is the floor, not the proof:
+  `[System.Management.Automation.Language.Parser]::ParseFile($p, [ref]$null, [ref]$errs)`.
+
+## Worked violation to fix
+
+**Violation.** An agent writes a staging helper, saves it as UTF-8 with no BOM,
+and pastes a description containing an em dash into a comment:
+
+```powershell
+# Stage the GeoLite defaults <EM DASH> reads from the install tree
+$files = Get-ChildItem $Root\*.mmdb
+for f in $files; do
+  git show HEAD:$f > "$Staging\$f"
+done
+```
+
+Four failures in six lines. The em dash closes a string under Windows-1252, so
+the reported error is `The string is missing the terminator` pointing at a line
+far below. The bash `for ... do ... done` yields `Missing opening '(' after
+keyword 'for'` and `Missing statement body in do loop`. `Get-ChildItem
+$Root\*.mmdb` breaks on a bracketed or spaced path and returns nothing rather
+than failing. `git show ... >` writes UTF-16LE with a BOM, so the next consumer
+raises `UnicodeDecodeError` on byte `0xff`.
+
+**Fix.**
+
+```powershell
+# Stage the GeoLite defaults - reads from the install tree
+$ErrorActionPreference = 'Stop'
+$files = @(Get-ChildItem -LiteralPath $Root -Filter *.mmdb -File)
+if ($files.Count -eq 0) { throw "no .mmdb files under $Root" }
+
+foreach ($f in $files) {
+    $text = & git show "HEAD:$($f.Name)" | Out-String
+    if ($LASTEXITCODE -ne 0) { throw "git show failed for $($f.Name): $LASTEXITCODE" }
+    $dest = Join-Path $Staging $f.Name
+    [System.IO.File]::WriteAllText($dest, $text, [System.Text.UTF8Encoding]::new($false))
+}
+```
+
+ASCII hyphen in the comment, `foreach` over a counted collection, `-LiteralPath`,
+`$LASTEXITCODE` checked, UTF-8 without a BOM written explicitly.
+
+## Enforcement
+
+`core-assets/scripts/lint/assert-ascii-syntax.py` (Python 3, stdlib only)
+reports `file:line:col` with each offending character named, exits non-zero on
+any hard hit, and rewrites only with an explicit `--fix`. It defaults to
+`.ps1 .psm1 .rs .ts .tsx .py .json .toml .yml`, matches mojibake sequences as
+whole units, and classifies locale-catalog prose as report-only so the
+orthography boundary in section 3 is preserved. Identifier dashes are hard hits
+even inside a locale catalog.
+
+```powershell
+# Report only (default)
+python c:\analog-pim\core-assets\scripts\lint\assert-ascii-syntax.py c:\analog-pim\pim-offline-server\scripts
+
+# Rewrite, scripts only
+python c:\analog-pim\core-assets\scripts\lint\assert-ascii-syntax.py --fix --ext .ps1 .psm1 -- c:\analog-pim\pim-offline-server\scripts
+```
+
+Then prove the scripts still parse, because ASCII-clean is not the same as
+syntactically valid:
+
+```powershell
+$errs = $null
+[System.Management.Automation.Language.Parser]::ParseFile($p, [ref]$null, [ref]$errs) | Out-Null
+if ($errs.Count -gt 0) { throw "$p has $($errs.Count) parse error(s)" }
+```
+
+The identifier-only companion is
+`core-assets/scripts/language-packs/_audit_endash_identifiers.py`. Do not add
+push-triggered CI for either ([`ci-policy.mdc`](ci-policy.mdc)); the agent and
+these two scripts are the enforcement surface.
+
+## Cross-references
+
+| Rule | Overlap |
+| --- | --- |
+| [`no-ansi-vt100-windows-shells.mdc`](no-ansi-vt100-windows-shells.mdc) | Sibling: what a Windows shell can render and emit; ANSI escapes are the output half of this rule's input half |
+| [`silent-failure-is-a-bug.mdc`](silent-failure-is-a-bug.mdc) | Practice 7: an unchecked `$LASTEXITCODE` is a silently swallowed error |
+| [`no-panic.mdc`](no-panic.mdc) | Fail with a logged message and a recovery, never by aborting mid-run |
+| [`no-environment-variables.mdc`](no-environment-variables.mdc) | Practice 10: configuration comes from `pim-app-config`, not `$env:` |
+| [`launch-consoles-minimized.mdc`](launch-consoles-minimized.mdc) | Practice 9: new console windows do not steal focus |
+| [`auto-commit-push.mdc`](auto-commit-push.mdc) | Practice 13: commit messages via temp file plus `git commit -F`; also the mirror-to-`core-assets` duty for this file |
+| [`enterprise-compliance.mdc`](enterprise-compliance.mdc) | US English source strings; localization layers on top and keeps its own orthography |
+| [`compliance-artifacts-must-localize.mdc`](compliance-artifacts-must-localize.mdc) | Locale catalogs are must-localize; that is why prose dashes are out of scope and identifier dashes are not |
+| [`control-lists-short-title.mdc`](control-lists-short-title.mdc) | Control identifiers stay Latin ASCII while titles localize |
+| [`ci-policy.mdc`](ci-policy.mdc) | No push-triggered CI; run the detector locally |
+
+## Origin
+
+2026-08-25 - operator hard rule, verbatim:
+
+> Hard Rule: do no use en or em dashes especially in powershell scripts. Create
+> a set of rules when building or editing powershell so that they do not always
+> fail on first run (look at past errors).
+
+Evidence base, all from this workspace: em dashes making
+`Build-PimOfflineServerMsi.ps1` and
+`Safe-UpgradeWorkstationAssuranceAgentMsi.ps1` unparseable under Windows
+PowerShell 5.1; live mojibake in `Prove-WinrmPrivilegeJob.ps1`; EN DASHes inside
+`800-53` and `800-171A` in shipped locale catalogs (about 40 leaves repaired);
+`pwsh` resolving to an App Execution Alias stub and raising
+`CommandNotFoundException`; bash `for ... do ... done` and `&&` parse failures;
+`git show ... >` writing UTF-16LE and producing `UnicodeDecodeError` on byte
+`0xff`; inline `python -c` producing `SyntaxError: unterminated string literal`
+three times in one session; Defender racing bulk writes as
+`OSError [Errno 22] Invalid argument`; and `Get-ChildItem` returning nothing for
+a directory that `cmd /c dir /b` listed.
