@@ -1930,10 +1930,10 @@
       "kind": "help-manual",
       "title": "Login panel idle/expired chrome and help keys",
       "added": "2026-08-23",
-      "updated": "2026-08-23",
+      "updated": "2026-08-27",
       "source_repo": "pim-offline-server",
       "source_path": "pim-offline-server/ui/src/i18n/locales/en/login.json",
-      "source_sha256": "56db71e11975dafeb401840d8ffef735698079bda523afb046810cebef69acb2",
+      "source_sha256": "10402aded442726535f729118bc08617f92143cf343bb00c9e49cb9bdeffd5fa",
       "product_route": "/login",
       "required_tags": [
         "de",
@@ -1955,7 +1955,7 @@
         "pt-BR"
       ],
       "draft_tags": [],
-      "notes": "Agent draft: reasonIdle/reasonExpired plus login helpKeys (loginUsername, loginPassword, actionLogin, loginForgotPassword, loginDemoFill). Reviewer must close; agent draft does not close."
+      "notes": "Agent draft: reasonIdle/reasonExpired plus login helpKeys (loginUsername, loginPassword, actionLogin, loginForgotPassword, loginDemoFill). Reviewer must close; agent draft does not close. Source changed 2026-08-27 (hash 56db71e11975 → 10402aded442)."
     },
     {
       "id": "packs.mt-german-pivot-20260825",
@@ -2239,6 +2239,29 @@
       ],
       "draft_tags": [],
       "notes": "English source now interpolates {{productName}} from product-identity.json. Remaining Tier 1 tags need reviewed catalogs; token stays untranslated. Do not close on agent drafts."
+    },
+    {
+      "id": "spa.regulatory-macl-policy",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "gui-feature",
+      "title": "Regulatory MACL policy (Access Control)",
+      "added": "2026-08-27",
+      "updated": "2026-08-27",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/pages/access-control/RegulatoryPolicyPanel.tsx",
+      "source_sha256": "7ac7d3970472680556bc3cdacd66dddea55262a2ca3a7e2738e9ccb59f4bac24",
+      "product_route": "/settings/access-control/regulatory-policy",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [],
+      "notes": "Agent draft catalogs landed in all shipped tags. Review required. Login maclDeniedTitle/Continue also added. Do not close on drafts."
     }
   ]
 }
