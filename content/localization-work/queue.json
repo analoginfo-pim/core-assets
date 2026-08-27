@@ -2272,8 +2272,8 @@
       "added": "2026-08-27",
       "updated": "2026-08-27",
       "source_repo": "pim-offline-server",
-      "source_path": "ui/src/components/ObjectClassificationTag.tsx",
-      "source_sha256": "8cefd989d218b7ea894511ca92320594df261973c8a464c1f8ec4e868c8ccedf",
+      "source_path": "ui/src/components/ObjectClassificationEditor.tsx",
+      "source_sha256": "20f0dc54da6546dd4942943eedda73e782698f2fe95dc3f174070a108ac75e6e",
       "product_route": "/account/profile",
       "required_tags": [
         "de",
@@ -2284,7 +2284,7 @@
         "zh-TW"
       ],
       "draft_tags": [],
-      "notes": "Agent draft catalogs landed in all shipped tags. Review required. Self-service profile is read-only (AC-6). Do not close on drafts."
+      "notes": "Editor landed. SuperAdmin and sessions with classification.clearance.manage or classification.manage can change the tag on the object page. Self-service without that permission stays read-only (AC-6). Agent draft catalogs in all shipped tags. Review required. Do not close on drafts."
     }
   ]
 }

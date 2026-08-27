@@ -20,8 +20,8 @@
         "source_sha256": "effaf06f99a628b8a4f5b9c51eadf4c051b528d655034a29694abe2ed89d8b25"
       },
       "help":       {
-        "text": "This account's MACL tag. Administrators set it under Access Control, Classification, or by applying Regulatory policy. You cannot change your own tag here.",
-        "source_sha256": "080303c24b4dedebcbe47cba7e2e1a72e98e9433b4f24002888211ea321801a6"
+        "text": "This account's MACL tag. Super administrators and anyone granted the classification permission can change it here. Without that permission the tag is read-only.",
+        "source_sha256": "05ab3cf791a7890afb32e4cb0b35ddaceac231c90168410191516bcaa6d780c7"
       },
       "label":       {
         "text": "Classification",
@@ -42,6 +42,18 @@
       "notSetFull":       {
         "text": "Classification: Not set",
         "source_sha256": "225b39c1ca8aa0c5256c8e66a1d8f5fa873b71dcceefea357f56bfdd19a7df9b"
+      },
+      "ariaEdit":       {
+        "text": "Classification for this object",
+        "source_sha256": "ff0f981aeb2b30dfb387792ebf2f4af5c54b3dfbe8ed0b4fa96813f6a1f03dcc"
+      },
+      "saveFailed":       {
+        "text": "Could not save the classification tag.",
+        "source_sha256": "84d3e6eeb5913044ae89461499c82771c12b5aadb32ef654464758aaed7da18e"
+      },
+      "notAllowed":       {
+        "text": "You do not have permission to change this classification tag.",
+        "source_sha256": "f298ff12d96d4d22414984ff0c0ad5ad6abe2d2c69b6a4ebf2a761bb940c2404"
       }
     },
     "about": {
@@ -12037,8 +12049,8 @@
             "source_sha256": "8e4465a206d34932a071eac2198be933f48e2dbbd628ab8081f3050918d6ba49"
           },
           {
-            "text": "The Classification chip is this account MACL tag (NIST AC-16). Administrators set it on Classification or by applying Regulatory policy.",
-            "source_sha256": "d858f53ef0a44dd05b04d528d518d31d2ef99ee662b71d137acfd0074713cd86"
+            "text": "The Classification control is this account MACL tag (NIST AC-16). Super administrators and anyone granted the classification permission can change it here. Without that permission it is read-only.",
+            "source_sha256": "4a92c7da5b669ea4e52624d3952906bea19e7855047e1a0f05f2d1e3048153a9"
           },
           {
             "text": "Password and MFA changes apply only to this enclave identity.",
