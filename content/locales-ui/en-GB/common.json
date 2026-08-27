@@ -387,16 +387,16 @@
       "source_sha256": "3fed05482df855632c83a77fd9eb13630618e5036868dc12b1fbed30fc49eda4"
     },
     "operatingLevelUnset": {
-      "text": "Operating: choose a package",
+      "text": "Operating: choose a level",
       "source_sha256": "979dd9c6fe1568f179b76189424edb14398353d879be696e13fe7316829c06fa"
     },
     "operatingLevelAria": {
-      "text": "Configured operating package: {{label}}",
+      "text": "Configured operating level: {{label}}",
       "source_sha256": "6f99e5d0d3712a404f7c9906ae904fe621b2884b6c5288c2bf4ad08024b27fad"
     },
     "demoReportBanner": {
-      "text": "This is a demonstration report from CMMC in a Box. CMMC in a Box is the integrated toolkit. It does not certify the organisation.",
-      "source_sha256": "1381bf0ce69e6cb31cfe1d3ed7fc39deca386cc928c3217196137b7f49c001d5"
+      "text": "This is a demonstration report from {{productName}}. {{productName}} is the integrated toolkit. It does not certify the organisation.",
+      "source_sha256": "489f6ec73c1b4640300f7826ba70f46b57e7b4201a4529bfdec707c74c02f286"
     },
     "demoReportSystems": {
       "text": "Systems evidence",
@@ -411,8 +411,8 @@
       "source_sha256": "8bda029a2ed55173e28879d6374e21093965cda29410e63a6e979a38faa7591b"
     },
     "demoReportCustomer": {
-      "text": "This is a customer workbook. CMMC in a Box provides the tools. Figures come from this environment and do not certify the organisation.",
-      "source_sha256": "6bffaa1e57113e1c6452c8d9e9f8fef4a561b18e027db8a26ed32364e8154ebf"
+      "text": "This is a customer workbook. {{productName}} provides the tools. Figures come from this environment and do not certify the organisation.",
+      "source_sha256": "34ea046cd3c9ae36644ada140e3ed37bb009ee680d2715197079db9b21e132a5"
     },
     "approvalsAriaCount": {
       "text": "Pending approvals, {{count}} waiting",
@@ -1631,12 +1631,12 @@
   },
   "agentsDownload": {
     "title": {
-      "text": "Agents download",
+      "text": "Agents Download",
       "source_sha256": "3005ea18d31ce72c8c4d8dda850f357416f9127710289ceb62ed6bbb9a85daea"
     },
     "intro": {
-      "text": "Download Agents and settings files for this AIC Server instance. CMMC in a Box is the integrated toolkit. Installing an Agent does not certify the organisation.",
-      "source_sha256": "c5fd2edb9a21131fa70db1725d8ecb11f6118682f0bc2f7eac2ded429cbd2ada"
+      "text": "Download Agents and settings files for this AIC Server instance. {{productName}} is the integrated toolkit. Installing an Agent does not certify the organisation.",
+      "source_sha256": "8744cf787cfdb777d1c839ea406466a0e0341a801d54652eb84f7fcccd8998a7"
     },
     "inventoryPurpose": {
       "text": "These Agents inventory seats and validate the required state for the CMMC standard in effect. The standard in effect is the configured operating package ({{package}}). Inventory and required-state validation are product contribution. They are not Met, they do not certify a seat, and they do not replace the assessor.",
@@ -1655,7 +1655,7 @@
       "source_sha256": "86e17bb7088eebff5046fb73546c3b464fac04fff87bce6f257d9e2c83cbf53e"
     },
     "settingsBody": {
-      "text": "The settings file is not a generic configuration list. It carries unique cryptographic material that starts the initial secure connection. After the Agent enrols and checks in, the server updates that material and pushes the remaining settings. The user interface never shows private keys, PINs, or tokens.",
+      "text": "The settings file is not a generic configuration list. It carries unique cryptographic material that starts the initial secure connection. After the Agent enrolls and checks in, the server updates that material and pushes the remaining settings. The user interface never shows private keys, PINs, or tokens.",
       "source_sha256": "69975636ae30e0279cf912c9cf5c3f7ace1310c21c01c689acaf947213dbab4e"
     },
     "settingsWizard": {
@@ -1691,7 +1691,7 @@
       "source_sha256": "942087cc2d41e01304b7195558d093d10c72af8e838c7556d6a02d471ee71852"
     },
     "loadFailed": {
-      "text": "Could not load the Agents Download catalogue.",
+      "text": "Could not load the Agents Download catalog.",
       "source_sha256": "569f771e918f1b075a791ea64ca22939f0aeaf7bb16926fce5a47b64eb5a6408"
     },
     "whereTitle": {
@@ -1731,7 +1731,7 @@
       "source_sha256": "d9148b16c1107bd3b371165e897a11620fc58e6c9d274550488b73200616bdeb"
     },
     "linkFleet": {
-      "text": "Fleet agent versions",
+      "text": "Fleet Agent Versions",
       "source_sha256": "abc1d82b276555a7d67dd5cd188b17c515ae337cb9f6eeb97b5cb5c5de8f8b66"
     }
   }

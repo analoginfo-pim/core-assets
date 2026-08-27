@@ -2217,6 +2217,28 @@
         "zh-TW"
       ],
       "notes": "Visible French top bar Lizenz and remaining German salad leaves restored from English. CJK English fallbacks are agent drafts. Do not close. ipScanner English that still matches de is not German."
+    },
+    {
+      "id": "spa.product-identity-tokens",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "spa-chrome",
+      "title": "Toolkit product name interpolation ({{productName}})",
+      "added": "2026-08-26",
+      "updated": "2026-08-26",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/branding/productIdentity.ts",
+      "source_sha256": "536bf457bdc2377a86911a0e012c69711afa2fc75477f6be9762985b86eb57fa",
+      "product_route": "/settings",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans"
+      ],
+      "draft_tags": [],
+      "notes": "English source now interpolates {{productName}} from product-identity.json. Remaining Tier 1 tags need reviewed catalogs; token stays untranslated. Do not close on agent drafts."
     }
   ]
 }

@@ -154,6 +154,12 @@ $assetMap = [ordered]@{
 
     # ----- In-app branding bitmaps ---------------------------------------
 
+    # Toolkit product / company display names. Rename here, then sync.
+    # Runtime overlay (no rebuild): ProgramData\AIC\PimServer\branding\
+    "branding/product-identity.json" = @(
+        "pim-offline-server/assets/branding/product-identity.json"
+    )
+
     # About-dialog hero in the Win32 admin GUI / agent.
     "branding/aic-about.png" = @(
         "pim-offline-client/assets/aic-about.png"
