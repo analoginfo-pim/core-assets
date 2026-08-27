@@ -21,6 +21,10 @@ Usage (from core-assets repo root):
 
 `--require-live` exits non-zero when any third-party entry is BLOCKED so
 deploy / MSI / build.rs fail closed (never ship an incomplete disclosure).
+
+`generation.cargo_lock_sha256` is the canonical `[[package]]` identity
+digest (name, version, source, checksum), not raw Cargo.lock bytes.
+`[[patch.unused]]` is excluded. See `cargo_lock_canonical_digest.py`.
 """
 
 from __future__ import annotations
@@ -33,6 +37,11 @@ import sys
 from collections import OrderedDict
 from datetime import datetime, timezone
 from pathlib import Path
+
+_SCRIPTS = Path(__file__).resolve().parent
+if str(_SCRIPTS) not in sys.path:
+    sys.path.insert(0, str(_SCRIPTS))
+from cargo_lock_canonical_digest import cargo_lock_canonical_sha256_file
 
 try:
     import tomllib
@@ -1036,7 +1045,57 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
             "SHAs match that checkout, not a dirty shared tree."
         ),
     )
+    p.add_argument(
+        "--check-current",
+        action="store_true",
+        help=(
+            "Exit 0 when committed inventory already matches the canonical "
+            "Cargo.lock digest and npm lock SHA and status is Live or Partial. "
+            "Exit 1 when stale or missing. Exit 2 when --require-live and BLOCKED. "
+            "Does not harvest or rewrite files."
+        ),
+    )
+    p.add_argument(
+        "--print-cargo-digest",
+        action="store_true",
+        help="Print the canonical Cargo.lock digest (hex) and exit 0.",
+    )
+    p.add_argument(
+        "--force",
+        action="store_true",
+        help="Regenerate even when the canonical lock digest already matches.",
+    )
     return p.parse_args(argv)
+
+
+def inventory_lock_status(inv_path: Path, cargo_lock: Path, npm_lock: Path) -> str:
+    """Return current | stale | blocked | missing.
+
+    current: Live or Partial and canonical cargo digest + npm SHA match.
+    blocked: inventory is BLOCKED (digest may still match).
+    """
+    if not inv_path.is_file() or not cargo_lock.is_file():
+        return "missing"
+    try:
+        inv = json.loads(inv_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return "missing"
+    status = inv.get("status")
+    gen = inv.get("generation") if isinstance(inv.get("generation"), dict) else {}
+    inv_cargo = gen.get("cargo_lock_sha256")
+    cargo_digest = cargo_lock_canonical_sha256_file(cargo_lock)
+    if not inv_cargo or str(inv_cargo).lower() != cargo_digest.lower():
+        return "stale"
+    if npm_lock.is_file():
+        inv_npm = gen.get("npm_lock_sha256")
+        disk_npm = sha256_file(npm_lock)
+        if not inv_npm or str(inv_npm).lower() != disk_npm.lower():
+            return "stale"
+    if status == "BLOCKED":
+        return "blocked"
+    if status in ("Live", "Partial"):
+        return "current"
+    return "stale"
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -1049,10 +1108,51 @@ def main(argv: list[str] | None = None) -> int:
         print(f"ERROR: expected pim-offline-server at {SERVER}", file=sys.stderr)
         return 1
 
+    cargo_lock = SERVER / "Cargo.lock"
+    npm_lock = UI / "package-lock.json"
+    inv_path = OUT / "inventory.json"
+
+    if args.print_cargo_digest:
+        if not cargo_lock.is_file():
+            print(f"ERROR: missing Cargo.lock at {cargo_lock}", file=sys.stderr)
+            return 1
+        print(cargo_lock_canonical_sha256_file(cargo_lock))
+        return 0
+
+    lock_state = inventory_lock_status(inv_path, cargo_lock, npm_lock)
+    if args.check_current:
+        if lock_state == "current":
+            print(f"Open Source Credits: current (canonical digest matches, {inv_path})")
+            return 0
+        if lock_state == "blocked":
+            print(
+                "Open Source Credits: inventory is BLOCKED (fail-closed).",
+                file=sys.stderr,
+            )
+            return 2 if args.require_live else 1
+        print(
+            f"Open Source Credits: {lock_state} (need regen) {inv_path}",
+            file=sys.stderr,
+        )
+        return 1
+
+    if not args.force and lock_state == "current":
+        print(
+            "Open Source Credits: skip rewrite "
+            f"(canonical Cargo.lock digest and npm lock SHA already match, {inv_path})"
+        )
+        return 0
+    if not args.force and lock_state == "blocked" and args.require_live:
+        print(
+            "ERROR: --require-live refused status=BLOCKED "
+            "(inventory already current vs lock digest; harvest unchanged).",
+            file=sys.stderr,
+        )
+        return 2
+
     OUT.mkdir(parents=True, exist_ok=True)
     license_map = write_standard_license_texts_inline()
 
-    cargo_lock = SERVER / "Cargo.lock"
     lock_packages = parse_cargo_lock(cargo_lock) if cargo_lock.is_file() else []
     regs = registry_roots()
     reg_index = build_registry_index(regs)
@@ -1243,8 +1343,9 @@ def main(argv: list[str] | None = None) -> int:
         )
     )
 
-    cargo_lock_sha = sha256_file(cargo_lock) if cargo_lock.is_file() else None
-    npm_lock = UI / "package-lock.json"
+    cargo_lock_sha = (
+        cargo_lock_canonical_sha256_file(cargo_lock) if cargo_lock.is_file() else None
+    )
     npm_lock_sha = sha256_file(npm_lock) if npm_lock.is_file() else None
     sbom_server = SERVER / "sbom" / "pim-offline-server.cdx.json"
     sbom_sha = sha256_file(sbom_server) if sbom_server.is_file() else None
@@ -1261,6 +1362,7 @@ def main(argv: list[str] | None = None) -> int:
                 {
                     "tool": "core-assets/scripts/generate-open-source-credits.py",
                     "cargo_lock_path": "pim-offline-server/Cargo.lock",
+                    "cargo_lock_digest": "canonical_package_identity_v1",
                     "cargo_lock_sha256": cargo_lock_sha,
                     "npm_lock_path": "pim-offline-server/ui/package-lock.json",
                     "npm_lock_sha256": npm_lock_sha,
@@ -1325,7 +1427,6 @@ def main(argv: list[str] | None = None) -> int:
         ]
     )
 
-    inv_path = OUT / "inventory.json"
     inv_text = json.dumps(inventory, indent=2, ensure_ascii=False) + "\n"
     inv_path.write_text(inv_text, encoding="utf-8", newline="\n")
 
@@ -1394,6 +1495,7 @@ Then sync into `pim-offline-server` via this script (auto) or
 Inventory SHA-256: `{sha256_text(inv_text)}`
 """,
         encoding="utf-8",
+        newline="\n",
     )
 
     print(f"Wrote {inv_path} ({len(all_entries)} entries, status={status})")
