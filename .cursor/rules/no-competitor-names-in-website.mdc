@@ -1,0 +1,66 @@
+---
+description: >-
+  Never name competitors in website contents (use Competitors).
+  Marketed product name only on Help About.
+alwaysApply: true
+---
+
+# No competitor names; product name only on About (hard rule)
+
+Operator directive (Phil, 2026-08-27):
+
+> **NEVER mention the name of my competitors in the web site contents.
+> Refer to them as "Competitors". Minimize the use of the product name
+> to only the Help About screen only.**
+
+## The rule
+
+> **Operator-facing website copy never names a competitor brand.
+> Write "Competitors" (localized). The marketed product name appears
+> only on Help → About. Everywhere else, describe the function
+> (this server, the console, the integrated kit) without the mark.**
+
+## Website contents (in scope)
+
+Admin SPA chrome, i18n catalogs, in-product Help/manuals, login,
+banners, dialogs, and any other string that ships to the browser.
+Includes `defaultValue` in `ui/src` and comments that ship in the
+bundle.
+
+**Not website:** `docs/dev`, Cursor rules, commit bodies, e2e that
+is not imported by `ui/src`, Open Source Credits **copyright**
+lines that name an upstream licensor.
+
+## Competitors
+
+Do not print these (or product SKUs) in website copy. The list is
+for agents so they can find leaks. Website text says **Competitors**.
+
+Forbidden examples: CyberArk, Delinea, BeyondTrust, HashiCorp,
+1Password, Bitwarden, Thycotic, WALLIX, PowerBroker, Broadcom PAM,
+Avecto, Keeper, Secret Server, Privilege Cloud.
+
+Comparison copy: "application launchers used by Competitors."
+A connector that would have used a competitor brand: generic
+function name (external secrets vault), never the brand.
+
+## Product name (About only)
+
+The marketed name is `product_name` / `product_name_mark` /
+`{{productName}}` (currently CMMC Complete). Show it **only** on
+Help → About (`/about/version` and sibling About & Licensing
+pages). Do not put it on login, the drawer, Settings, banners,
+next-steps, downloads, or dashboards.
+
+Prefer "this server", "the console", "the integrated kit".
+Do not repeat the mark to "explain" honesty banners.
+
+## Forbidden
+
+- Competitor brands in SPA strings, Help, or manuals
+- `{{productName}}` / CMMC Complete outside About
+- Closing this as Met or certified
+
+## Origin
+
+2026-08-27 — operator hard rule.
