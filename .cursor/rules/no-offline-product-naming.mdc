@@ -1,32 +1,38 @@
 ---
-description: Hard rule — "offline" is only Agent offline mode; new product naming uses AIC Server, enclave, agent, etc.
+description: Hard rule — do not brand the product Offline; air-gapped is the machine-state word; Agent is described by function.
 alwaysApply: true
 ---
 
 # No “Offline” product naming (hard rule)
 
-“Offline” is a **deprecated product term**. It remains valid only when it
-literally means the Agent’s **offline mode** (disconnected / not talking to
-the control plane). It must not appear in new repository names, crate names
-intended as product surface, documentation titles, UI strings, partner copy,
-or forward-looking architecture as a product brand.
+“Offline” is a **deprecated product term**. It must not appear in new
+repository names, crate names intended as product surface, documentation
+titles, UI strings, partner copy, or forward-looking architecture as a
+product brand. It is also **not** the word for machine connectivity.
 
 ## The rule
 
 > **Do not create new repos, crates, docs titles, UI strings, or partner
 > language that brand the product as “Offline PIM”, “AIC Offline”, or
 > “Offline Server”. Use AIC Server, enclave, agent, recording proxy / jump
-> host capacity, and related plain US English. Reserve “offline” for Agent
-> offline mode only.**
+> host capacity, and related plain US English.**
+>
+> **Air-gapped is the machine-state word** — the system is isolated from
+> general network reach (never connected, or not generally connected).
+> The **Agent is described by function** (rotate credentials, propagate
+> changes, handle validated elevation) on **air-gapped and online**
+> systems alike. Do not call a machine “offline” or “offline-only.”
+> Do not define the Agent by whether it can reach the server.
 
 ## Allowed uses of “offline”
 
 | Allowed | Example |
 | --- | --- |
-| Agent offline **mode** | “Agent is offline; queued elevation retries when connectivity returns” |
 | Historical git / path names that already exist | `pim-offline-server` repo (do not rename); `pim-orm-offline` crate |
-| Legacy SQL table prefix | `offline_*` columns/tables in `pim-orm-offline` — **schema namespace only**, not product branding |
+| Legacy SQL table prefix | `offline_*` columns/tables in `pim-orm-offline` — **schema namespace only**, not product branding or machine state |
 | Existing binary / program ids already shipped | `pim-offline-agent`, `pim-offline-server` program ids until a deliberate rename program |
+| Powered-off host state in operator copy | “Sleeping or offline” meaning the seat is powered off — not air-gapped |
+| Viewing a file without a network | “Export to PDF for offline viewing” |
 
 ## Forbidden in new work
 
@@ -37,14 +43,20 @@ or forward-looking architecture as a product brand.
   `pim-vm-hypervisor`, `vm_scheduler`, etc.
 - Doc / UI titles: “AIC Offline”, “Offline PIM Server”, “Offline Workstations”.
 - Partner or assessor prose that calls the control plane “the Offline product”.
+- Operator chrome that calls a machine “offline-only” or “disconnected” when
+  the meaning is **air-gapped**.
+- Defining the Agent as “the offline agent” instead of naming rotate /
+  propagate / elevation.
 
 ## Preferred vocabulary
 
 | Concept | Prefer |
 | --- | --- |
-| Control plane binary / product | **AIC Server** |
+| Control plane binary / product | **AIC Server** (Help → About only for the marketed toolkit name) |
 | CMMC / MSP boundary | **enclave** |
-| Endpoint client | **Agent** (offline **mode** only when disconnected) |
+| Endpoint client | **Agent** — rotate, propagate, validated elevation; air-gapped **and** online |
+| Machine connectivity | **air-gapped** or **online** (never `offline` as a connectivity enum) |
+| Wire profile we own | `deployment_profile`: write `air_gapped`; dual-read legacy `disconnected` |
 | Heavy session capture host | **recording proxy** / **jump host capacity** |
 | Seat VM power control | **VM scheduler**, **My Workstations** power state |
 | Hypervisor adapter crate | `pim-vm-hypervisor` |
@@ -54,20 +66,25 @@ or forward-looking architecture as a product brand.
 Tables may keep the historical `offline_*` prefix when matching
 `pim-orm-offline` convention (for example `offline_vm_pool`). Document in the
 migration and feature doc that this prefix is a **legacy schema namespace**,
-not the product name. Prefer `enclave_*` for greenfield inventory-adjacent
-tables when that matches nearby tables; do not invent new *product* names
-containing Offline.
+not the product name and not machine connectivity. Prefer `enclave_*` for
+greenfield inventory-adjacent tables when that matches nearby tables; do not
+invent new *product* names containing Offline.
 
 ## Agent duty
 
-1. When writing new docs or UI copy for VM management, proxy/jump capacity, or
-   AIC Server features — strip “Offline” product branding before commit.
+1. When writing new docs or UI copy — strip “Offline” product branding and
+   use **air-gapped** for machine state. Describe the Agent by function.
 2. Mirror this rule to `core-assets/.cursor/rules/no-offline-product-naming.mdc`
    in the same change set (workspace `.cursor` is not a git root).
 3. Do not rename the historical `pim-offline-server` git repository in this
    rule’s scope; that is a separate migration program.
+4. Do not rename `aic-offline-agent-service`, the `offline_*` SQL prefix, or
+   `/api/offline/*` route paths in this rule’s scope.
 
 ## Origin
 
 2026-07-31 — operator hard rule: stop using “offline” in creation of repos and
-forward-looking work; Offline refers only to Agent offline mode.
+forward-looking work.
+
+2026-08-27 — group-architecture Phase 1: air-gapped replaces offline as the
+machine-state word; the Agent is described by function, not connectivity.
