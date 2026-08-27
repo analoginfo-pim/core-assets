@@ -262,8 +262,8 @@
         "source_sha256": ""
       },
       "summary": {
-        "text": "Ihr lokales IAM-Profil für diesen AIC Server — Anzeigename, Passwortänderung und MFA-Registrierung, wenn erforderlich.",
-        "source_sha256": ""
+        "text": "Ihr lokales IAM-Profil für diesen AIC Server: Anzeigename, Klassifizierungskennzeichen, Kennwortänderung und MFA-Registrierung wenn erforderlich.",
+        "source_sha256": "4173771ba2396fe2de5abafe5d5b4229dc15a5e56839dde2d1b53bd9d8505a40"
       },
       "helpAriaLabel": {
         "text": "Hilfe zu Mein lokales Konto öffnen",
@@ -272,19 +272,23 @@
       "bullets": {
         "text": [
           {
-            "text": "Verfügbar für jeden angemeldeten lokalen Benutzer, einschließlich Assessor- und Endbenutzer-Demo-Rollen.",
-            "source_sha256": ""
+            "text": "Verfügbar für jeden angemeldeten lokalen Benutzer, einschließlich Auditor- und Endbenutzer-Demo-Rollen.",
+            "source_sha256": "8e4465a206d34932a071eac2198be933f48e2dbbd628ab8081f3050918d6ba49"
           },
           {
-            "text": "Passwort- und MFA-Änderungen gelten nur für diese Enclave-Identität.",
-            "source_sha256": ""
+            "text": "Das Klassifizierungskennzeichen ist das MACL-Kennzeichen dieses Kontos (NIST AC-16). Administratoren setzen es unter Klassifizierung oder durch Anwenden der regulatorischen Richtlinie.",
+            "source_sha256": "d858f53ef0a44dd05b04d528d518d31d2ef99ee662b71d137acfd0074713cd86"
           },
           {
-            "text": "Administrative Benutzerverwaltung liegt unter Zugriff & Identität, wenn Ihre Rolle das erlaubt.",
-            "source_sha256": ""
+            "text": "Kennwort- und MFA-Änderungen gelten nur für diese Enklavenidentität.",
+            "source_sha256": "3e6de6c5922db42181f4efb57b695e422ccd16b4460ff9c389249fe5153b3fbc"
+          },
+          {
+            "text": "Die administrative Benutzerverwaltung liegt unter Zugriff und Identität, wenn Ihre Rolle das zulässt.",
+            "source_sha256": "7372521222bf01db6a283002556077166aadf97b1c20c18762d377b9ae6f4314"
           }
         ],
-        "source_sha256": "31febfa870b86f8cfe6331f6349f9457f1c2e62257ae5c062e5b54649e94667f"
+        "source_sha256": "7e559c49cd3ad90ea68a0706cba7d7761ad2005c8697292cdeffa314bbdca487"
       }
     },
     "secure-share": {
@@ -3462,6 +3466,36 @@
     }
   },
   "chrome": {
+    "objectClassification": {
+      "chip":       {
+        "text": "Klassifizierung: {{value}}",
+        "source_sha256": "effaf06f99a628b8a4f5b9c51eadf4c051b528d655034a29694abe2ed89d8b25"
+      },
+      "help":       {
+        "text": "Das MACL-Kennzeichen dieses Kontos. Administratoren setzen es unter Zugriffskontrolle, Klassifizierung oder durch Anwenden der regulatorischen Richtlinie. Sie können Ihr eigenes Kennzeichen hier nicht ändern.",
+        "source_sha256": "080303c24b4dedebcbe47cba7e2e1a72e98e9433b4f24002888211ea321801a6"
+      },
+      "label":       {
+        "text": "Klassifizierung",
+        "source_sha256": "72f049954fdd06c875fef2a15bf89e95c7a28db5c4910643dbd7ac38a3e0db13"
+      },
+      "manageLink":       {
+        "text": "Klassifizierung öffnen",
+        "source_sha256": "575c3e8cc84ba67dbbd7fd1a51bfee044ab330bf0e9b3e03acada6c997cca3e6"
+      },
+      "marked":       {
+        "text": "Klassifizierung: {{marking}}",
+        "source_sha256": "5978abb920079af1eac605d59a3695a98b16a9981f2646d71504060a95fd22be"
+      },
+      "notSet":       {
+        "text": "Nicht festgelegt",
+        "source_sha256": "4895f73177ab5d67c30c183a49d2477e014a2ef69b65150762d17e877f4f5b95"
+      },
+      "notSetFull":       {
+        "text": "Klassifizierung: Nicht festgelegt",
+        "source_sha256": "225b39c1ca8aa0c5256c8e66a1d8f5fa873b71dcceefea357f56bfdd19a7df9b"
+      }
+    },
     "licensing": {
       "activateTitle": {
         "text": "Lizenz aktivieren",

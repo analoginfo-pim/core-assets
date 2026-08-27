@@ -159,8 +159,8 @@
         "source_sha256": "1e40aad2960017cf0467c97cb2c2ff0f5662f02b44e66ae32ad32e73c06f0164"
       },
       "summary": {
-        "text": "Seu perfil IAM local para este servidor AIC — nome de exibição, alteração de senha e registro de MFA quando necessário.",
-        "source_sha256": "cba5c6b490ff04ca65a04a29b19faee94270a7b4381e9cf8d0d2d62e962648fa"
+        "text": "Your local IAM profile for this AIC Server - display name, classification tag, password change, and MFA enrollment when required.",
+        "source_sha256": "4173771ba2396fe2de5abafe5d5b4229dc15a5e56839dde2d1b53bd9d8505a40"
       },
       "title": {
         "text": "Minha conta local",
@@ -169,19 +169,23 @@
       "bullets": {
         "text": [
           {
-            "text": "Disponível para qualquer usuário local conectado, incluindo funções de avaliação de avaliador e usuário final.",
-            "source_sha256": "69259be1c6a0a987689fdde4862e36fa47b8674695bc7ecf6d6a3cde907cdba0"
+            "text": "Available to every signed-in local user, including assessor and end-user demo roles.",
+            "source_sha256": "8e4465a206d34932a071eac2198be933f48e2dbbd628ab8081f3050918d6ba49"
           },
           {
-            "text": "Senha e MFA-Aenderungen gelten nur para este Enclave-Identitaet.",
-            "source_sha256": "a4664420118d1574ab3f741ca917345b3ab7970e3e0fc4878f5ae30c6a5f0fdd"
+            "text": "The Classification chip is this account MACL tag (NIST AC-16). Administrators set it on Classification or by applying Regulatory policy.",
+            "source_sha256": "d858f53ef0a44dd05b04d528d518d31d2ef99ee662b71d137acfd0074713cd86"
           },
           {
-            "text": "O gerenciamento de usuários administrativos está em Acesso e Identidade quando sua função permite.",
-            "source_sha256": "39576912af4cbc8e9335357d5b0c8256518a0fef41a5830b9cfcf975bd6c24a1"
+            "text": "Password and MFA changes apply only to this enclave identity.",
+            "source_sha256": "3e6de6c5922db42181f4efb57b695e422ccd16b4460ff9c389249fe5153b3fbc"
+          },
+          {
+            "text": "Administrative user management lives under Access & Identity when your role allows it.",
+            "source_sha256": "7372521222bf01db6a283002556077166aadf97b1c20c18762d377b9ae6f4314"
           }
         ],
-        "source_sha256": "2031583d99b1bfd6f8c61ac7c36c27eed3d014cf37a5449f07992219742de1c1"
+        "source_sha256": "7e559c49cd3ad90ea68a0706cba7d7761ad2005c8697292cdeffa314bbdca487"
       }
     },
     "admin__vm": {
@@ -2910,6 +2914,36 @@
     }
   },
   "chrome": {
+    "objectClassification": {
+      "chip":       {
+        "text": "Classification: {{value}}",
+        "source_sha256": "effaf06f99a628b8a4f5b9c51eadf4c051b528d655034a29694abe2ed89d8b25"
+      },
+      "help":       {
+        "text": "This account's MACL tag. Administrators set it under Access Control, Classification, or by applying Regulatory policy. You cannot change your own tag here.",
+        "source_sha256": "080303c24b4dedebcbe47cba7e2e1a72e98e9433b4f24002888211ea321801a6"
+      },
+      "label":       {
+        "text": "Classification",
+        "source_sha256": "72f049954fdd06c875fef2a15bf89e95c7a28db5c4910643dbd7ac38a3e0db13"
+      },
+      "manageLink":       {
+        "text": "Open Classification",
+        "source_sha256": "575c3e8cc84ba67dbbd7fd1a51bfee044ab330bf0e9b3e03acada6c997cca3e6"
+      },
+      "marked":       {
+        "text": "Classification: {{marking}}",
+        "source_sha256": "5978abb920079af1eac605d59a3695a98b16a9981f2646d71504060a95fd22be"
+      },
+      "notSet":       {
+        "text": "Not set",
+        "source_sha256": "4895f73177ab5d67c30c183a49d2477e014a2ef69b65150762d17e877f4f5b95"
+      },
+      "notSetFull":       {
+        "text": "Classification: Not set",
+        "source_sha256": "225b39c1ca8aa0c5256c8e66a1d8f5fa873b71dcceefea357f56bfdd19a7df9b"
+      }
+    },
     "about": {
       "adminConsole": {
         "text": "Admin Console (este aplicativo de navegador)",
