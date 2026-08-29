@@ -1,0 +1,41 @@
+---
+description: >-
+  Findings exist so auditors and IT can see what needs action. Detect is
+  not remediate. Never add Fix-It for customer-supplied controls.
+alwaysApply: true
+---
+
+# Findings: see, do not swallow (hard rule)
+
+Operator goal (Phil, 2026-08-29): **reduce the burden on auditors and IT
+to see what needs to be fixed. We do not have to fix everything that we
+find.**
+
+## The rule
+
+> **Workstation Assurance (WA) and Current State Compliance (CSC) exist
+> so auditors and IT can see what needs action. Detect is not remediate.
+> Customer-supplied controls are flagged and retested. Never imply AIC
+> remediates every finding. Never add Fix-It for antivirus, host
+> firewall, or disk encryption.**
+
+## Required
+
+- Surface Needs IT / Product can repair / Observe only on existing CSC
+  and WA finding rows (`action_owner`). Do not invent a second queue.
+- Fix-It apply only where a Live repair path already exists.
+- Auditor words: Live / Partial / Absent / BLOCKED. Never Met /
+  certified for the Organization Seeking Assessment (OSA).
+- US English. No lab leaks. Expand WA / CSC on first use.
+
+## Forbidden
+
+- Fix-It apply on detect-only / `flag_for_it` / `customer_supplied_control`
+  rows
+- Claiming we fix everything we find
+- Met / certified / assessment-ready for the OSA
+
+## Origin
+
+2026-08-29 — operator product goal. Detail:
+`pim-offline-server/docs/dev/findings-see-dont-swallow.md`.
