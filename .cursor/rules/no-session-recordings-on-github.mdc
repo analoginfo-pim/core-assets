@@ -1,0 +1,63 @@
+---
+description: >-
+  Hard rule - never commit or push session recordings to GitHub. Remove
+  any capture streams that are already on a remote.
+alwaysApply: true
+---
+
+# No session recordings on GitHub (hard rule)
+
+Operator directive (Phil, 2026-08-29):
+
+> **Hard rule: do not push session recordings to github. If there any
+> on github, they should be removed.**
+
+## The rule
+
+> **Session recordings stay on the lab host or in product storage. They
+> never go to GitHub. Agents must not `git add`, commit, or push capture
+> streams. If a recording is already tracked, remove it from the tree
+> in the same change set and keep it gitignored.**
+
+A **session recording** is the captured session itself: keystroke /
+command / pixel / protocol streams and their sidecars. Examples:
+
+- `sess-*.jsonl` and `sess-*.status.json`
+- folders named `session-recordings/` or `ot-session-recordings/` that
+  hold those captures
+- asciinema / `.cast` files of a live SSH, RDP, VNC, or OT session
+- video of a live PAM / remote-access session (`*.mp4` / `*.webm` of
+  an operator or lab session)
+
+## Allowed (not a recording)
+
+These are product or QA artifacts, not the capture stream:
+
+- Operator UI for Session Recordings (pages, APIs, crates)
+- Playwright specs and **screenshots of the list / playback chrome**
+- Docs that describe the feature
+- Command-restriction **denial lists** (for example `denials.jsonl`)
+  that are not a session capture
+
+## Required agent behavior
+
+1. **Never stage** `sess-*.jsonl`, `sess-*.status.json`, session
+   `.cast` files, or session video for commit.
+2. **gitignore** those patterns in any repo that produces captures.
+3. **Remove** tracked captures from `HEAD` (`git rm`) and push the
+   deletion. Do not rewrite history unless the operator asks.
+4. Mirror this file to `core-assets/.cursor/rules/` in the same
+   change set ([`auto-commit-push.mdc`](auto-commit-push.mdc)).
+
+## Forbidden
+
+- Committing lab or customer session captures as "evidence"
+- Treating a Connect / OT / PAM proof as requiring the raw recording
+  on GitHub (screenshot or protocol-surface assert is enough)
+- Force-push / history rewrite to purge old blobs unless the operator
+  names that rewrite in the same message
+
+## Origin
+
+2026-08-29 — operator hard rule: session recordings do not go to
+GitHub; remove any that are already there.

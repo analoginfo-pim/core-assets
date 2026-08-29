@@ -405,6 +405,18 @@ out of scope unless packaged into a customer-facing EXE.
 
 ---
 
+## Session recordings on GitHub
+
+Rule: [`no-session-recordings-on-github.mdc`](../../.cursor/rules/no-session-recordings-on-github.mdc)
+
+Capture streams (`sess-*.jsonl`, status sidecars, session `.cast`, session
+video) must not be on GitHub. UI screenshots of the Session Recordings page
+remain allowed. Status as of 2026-08-29: removed from current `main` on
+`pim-offline-server`, `pim-ot`, and `mix-server-aic`. History still contains
+old blobs until an operator-requested rewrite.
+
+---
+
 ## Maintenance
 
 When a status row changes, update it here in the same change set that
