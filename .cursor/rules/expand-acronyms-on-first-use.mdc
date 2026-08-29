@@ -1,0 +1,155 @@
+---
+description: >-
+  Hard rule - expand every acronym on first use (full name, then acronym,
+  then a short usage clause). Never write bare WA, CSC, or similar.
+alwaysApply: true
+---
+
+# Always expand WA, CSC, and other acronyms (hard rule)
+
+Operator directive (Phil, 2026-08-28):
+
+> **When referring to WA, CSC, and other acronyms, ALWAYS spell out
+> what they mean and their usage.**
+
+## The rule
+
+> **Every acronym in operator-facing chat, commits, docs you author,
+> UI strings, OpenAPI, and evidence notes is expanded on first use in
+> that artifact: full name, then the acronym, then a short usage
+> clause.** Never write bare `WA`, `CSC`, or similar as if the reader
+> already knows them.
+
+**Usage clause** means not only "WA = Workstation Assurance" but
+"Workstation Assurance (WA) - the endpoint posture scan used on this
+workstation role."
+
+After that first expansion in the **same** artifact, later sentences
+may use the acronym alone.
+
+## Canonical expansions (US English)
+
+| Acronym | Spell out | Usage (one clause) |
+| --- | --- | --- |
+| WA | Workstation Assurance | endpoint posture / attest / agent (or agentless admin-channel) checks on a system |
+| CSC | Current State Compliance | admin page/ledger of control-oriented findings and rescan, not an Organization Seeking Assessment (OSA) Met stamp |
+| PIM | Privileged Identity Management | credential lifecycle / vaulted identities |
+| PAM | Privileged Access Management | session Connect/Open, Jump, recording |
+| PUM | Privileged User Management | product module; do not invent features |
+| IGA | Identity Governance and Administration | roadmap; only when the surface exists |
+| CUI | Controlled Unclassified Information | marking / handling scope |
+| FCI | Federal Contract Information | marking / handling scope |
+| HSM | Hardware Security Module | key custody |
+| AIC | Analog Information / product suite name as already used in chrome | do not expand into the marketed toolkit name except Help -> About ([`no-competitor-names-in-website.mdc`](no-competitor-names-in-website.mdc)) |
+| PAW | Privileged Access Workstation | hardened seat used for privileged Connect / Open |
+| OSA | Organization Seeking Assessment | the customer organization an assessor evaluates; never the product |
+| C3PAO | CMMC Third-Party Assessment Organization | assessor who reads binder and operator surfaces |
+| IdP | Identity Provider | authentication binding; roster row stays the durable person |
+| IAM | Identity and Access Management | local logon, sessions, and role bindings |
+| MFA | Multi-Factor Authentication | password plus a second step |
+| RBAC | Role-Based Access Control | permission checks on admin and enclave routes |
+| VDI | Virtual Desktop Infrastructure | interactive desktop session reached through Connect |
+| POA&M | Plan of Action and Milestones | tracked remediation item, not a Met stamp |
+| WEL | Windows Event Log | native Windows audit / operational channel |
+| MSP | Managed Service Provider | operator who runs the console for a customer |
+| OT | Operational Technology | industrial / control-system inventory and access |
+| IR | Incident Response | detections, notices, and evidence - not a Met claim |
+| DLP | Data Loss Prevention | future file-marking / exfil controls |
+| SBOM | Software Bill of Materials | component inventory for a build |
+| ATO | Authorization to Operate | agency authorization; not a product SKU claim |
+| FedRAMP | Federal Risk and Authorization Management Program | federal authorization program |
+| CMVP | Cryptographic Module Validation Program | FIPS module certificate boundary |
+| KEK | Key Encryption Key | wraps data keys; lives on HSM or software custody |
+| WCAG | Web Content Accessibility Guidelines | Section 508 floor (WCAG 2.0 AA) |
+| SIEM | Security Information and Event Management | collector for Windows Event Log and syslog |
+| mTLS | mutual Transport Layer Security | client-certificate authentication |
+| SPA | Single-Page Application | the admin console embedded in AIC Server |
+
+Cybersecurity Maturity Model Certification (CMMC), National Institute
+of Standards and Technology (NIST), and Federal Information Processing
+Standards (FIPS) may stay as known authority initialisms **after**
+first expansion in a long doc. Same for Access Control family labels
+such as AC-16 when already introduced (still pair the short title per
+[`control-lists-short-title.mdc`](control-lists-short-title.mdc)).
+
+If you introduce an acronym that is not in this table, expand it the
+same way: full name, acronym, usage clause. Do not invent product
+features while explaining Privileged User Management (PUM) or Identity
+Governance and Administration (IGA).
+
+## Where it applies
+
+Chat replies, commit subjects and bodies, docs you author, UI strings
+and locale catalogs, OpenAPI descriptions, evidence notes, and
+operator-visible API error text.
+
+**Not this rule:** historical path / crate / table / route identifiers
+(`pim-offline-server`, `offline_*`, `/api/offline/*`); code tokens
+(`wa_agent`, `csc_findings`); Cursor rule **filenames**. Comments,
+UI copy, and docs that sit next to those identifiers still expand.
+
+## Required shape
+
+```text
+Workstation Assurance (WA) - the endpoint posture and attest checks
+on this system
+```
+
+Authority long-doc first use:
+
+```text
+Cybersecurity Maturity Model Certification (CMMC)
+```
+
+## Forbidden constructs
+
+- Bare `WA`, `CSC`, or a similar product acronym in a user-facing
+  reply, commit, UI string, OpenAPI text, or evidence note with no
+  prior expansion in that artifact
+- Expansion without a usage clause ("WA = Workstation Assurance"
+  and nothing about what it does)
+- Expanding Analog Information / product suite (AIC) into the
+  marketed toolkit name except Help -> About
+- Treating Current State Compliance (CSC) copy as an Organization
+  Seeking Assessment (OSA) Met stamp
+  ([`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc))
+- Competitor brand names in examples
+  ([`no-competitor-names-in-website.mdc`](no-competitor-names-in-website.mdc))
+- Lab hostnames or agent thinking inside the usage clause
+  ([`no-lab-config-in-operator-ui.mdc`](no-lab-config-in-operator-ui.mdc))
+
+## Worked example
+
+**Violation** (chat, UI helper, or evidence note):
+
+```text
+WA is down. Open CSC and rescan.
+```
+
+**Fix** (first use in that artifact):
+
+```text
+Workstation Assurance (WA) - the endpoint posture and attest checks
+on this system - is down. Open Current State Compliance (CSC) - the
+admin ledger of control-oriented findings and rescan, not an
+Organization Seeking Assessment (OSA) Met stamp - and run Rescan.
+```
+
+Later sentences in the same artifact may say WA and CSC.
+
+## Agent duty
+
+1. Expand on first use in every artifact you write.
+2. Add a new row to this table when a product acronym becomes
+   common; keep US English and ASCII hyphens.
+3. Mirror this file to
+   `core-assets/.cursor/rules/expand-acronyms-on-first-use.mdc`
+   in the same change set
+   ([`auto-commit-push.mdc`](auto-commit-push.mdc)) - the workspace
+   `.cursor` directory is not a git root.
+
+## Origin
+
+2026-08-28 - operator hard rule: always spell out WA, CSC, and other
+acronyms and their usage; never write the bare letters as if the
+reader already knows them.
