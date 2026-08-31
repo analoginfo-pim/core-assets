@@ -2307,6 +2307,56 @@
       ],
       "draft_tags": [],
       "notes": ""
+    },
+    {
+      "id": "spa.ad-directory-panel",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "spa-chrome",
+      "title": "Active Directory LDAP panel chrome",
+      "added": "2026-08-31",
+      "updated": "2026-08-31",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/pages/access-control/AdDirectoryPanel.tsx",
+      "source_sha256": "0808b82eb7754764247e23eba68c95a9423f274a64b106200922f5e9e5b0bae0",
+      "product_route": "/access/providers",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [
+        "de"
+      ],
+      "notes": "EN source plus DE draft in pages.json chrome.adDirectory. Other tags carry EN until reviewed. Agent drafts do not close. LDAPS labels included."
+    },
+    {
+      "id": "wa.configurator-about-build-stamp",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "help-manual",
+      "title": "WA Agent Configurator Help About build date/time",
+      "added": "2026-08-31",
+      "updated": "2026-08-31",
+      "source_repo": "pim-workstation-assurance-agent",
+      "source_path": "configurator-tauri/src/locales/en/ui.json",
+      "source_sha256": "10e7f07e414c72d6bd11709344f5707fe6ea603ac76c46626225e632f1837cd5",
+      "product_route": "",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [
+        "de"
+      ],
+      "notes": "Help About now shows local build date and time with timezone. US English and German catalogs landed in the same change set. Remaining Tier 1 tags are a data add later, not a code rewrite. Agent DE drafts do not close. Not Met."
     }
   ]
 }
