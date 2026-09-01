@@ -2459,13 +2459,36 @@
       "status": "open",
       "priority": "tier-1",
       "kind": "spa-chrome",
-      "title": "Privileged User Management policy packs and measurement chrome",
-      "added": "2026-08-31",
+      "title": "Privileged User Management policy pack contents and Assign Pack",
+      "added": "2026-09-01",
       "updated": "2026-09-01",
       "source_repo": "pim-offline-server",
       "source_path": "ui/src/i18n/locales/en/pages.json",
-      "source_sha256": "5926dd0697b78442608eeaaf4501fe2729d6c17840ab2f75516a96cfb9dbff3c",
+      "source_sha256": "f73aaf3f8685389365ba6cec1696f79008d87bd76d91898f29eb18e41d9e5f30",
       "product_route": "/enclave/pum",
+      "required_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [],
+      "notes": "Open pack contents and Assign Pack compatible vs incompatible lists. Agent drafts do not close. Data add later for remaining reviewed tags. Source changed 2026-09-01 (hash 594c9f4fee04 → f73aaf3f8685)."
+    },
+    {
+      "id": "spa.control-coverage-open-page",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "spa-chrome",
+      "title": "Control Coverage Open page targets",
+      "added": "2026-09-01",
+      "updated": "2026-09-01",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/compliance/controlNextSteps.ts",
+      "source_sha256": "ee6df173c99167b60072b73ab35211d3a788e60ebd71b69df545ce7ad6c3e1f5",
+      "product_route": "/enclave/control-coverage",
       "required_tags": [
         "en-GB",
         "de",
@@ -2474,8 +2497,26 @@
         "zh-Hans",
         "zh-TW"
       ],
-      "draft_tags": [],
-      "notes": "New Privileged User Management chrome: STIG pack drawer, Windows Defender Application Control (WDAC) expansion, measurement copy, assign scopes. Agent DE drafts do not close. Data add later for remaining tags; not a code rewrite. Source changed 2026-09-01 (hash d00760bb70c2 → 5926dd0697b7)."
+      "draft_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW",
+        "ja",
+        "ko",
+        "pt-BR",
+        "it",
+        "he",
+        "pl",
+        "tr",
+        "nl",
+        "sv",
+        "fi",
+        "ar"
+      ],
+      "notes": "Agent draft catalogs for Open page labels and missing-step text (CM-2 no longer the settings wizard). Data add later for remaining review. Do not close on agent drafts."
     }
   ]
 }
