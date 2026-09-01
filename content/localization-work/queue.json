@@ -2542,6 +2542,41 @@
         "de"
       ],
       "notes": "View/Edit plus add-from-STIG inventory. Agent DE drafts do not close. Missing reviewed catalogs for remaining tags are a data add later. Not Met."
+    },
+    {
+      "id": "spa.nav-assessment-subheads-20260901",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "spa-chrome",
+      "title": "Sidebar assessment and inventory subheads",
+      "added": "2026-09-01",
+      "updated": "2026-09-01",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/config/menuItems.tsx",
+      "source_sha256": "0df8663c072a78e5169efd4505edf40f4a96396f575384277889d8da26fecc6b",
+      "product_route": "/enclave/compliance",
+      "required_tags": [
+        "en-GB",
+        "de",
+        "fr",
+        "es",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [
+        "ar",
+        "fi",
+        "he",
+        "it",
+        "ja",
+        "ko",
+        "nl",
+        "pl",
+        "pt-BR",
+        "sv",
+        "tr"
+      ],
+      "notes": "New sidebar group labels for Assessments, Systems Inventory, Agent, Privileged Access approvals, and Documentation shortcuts. Agent drafts landed in every shipped nav.json. Do not close until required tags are reviewed. English source labels live in menuItems.tsx."
     }
   ]
 }
