@@ -15,43 +15,43 @@
   },
   "chrome": {
     "objectClassification": {
-      "chip":       {
+      "chip": {
         "text": "Classification: {{value}}",
         "source_sha256": "effaf06f99a628b8a4f5b9c51eadf4c051b528d655034a29694abe2ed89d8b25"
       },
-      "help":       {
+      "help": {
         "text": "此帐户的强制访问控制标签。超级管理员以及获得分类权限的人员可在此更改。无该权限时标签为只读。",
         "source_sha256": "05ab3cf791a7890afb32e4cb0b35ddaceac231c90168410191516bcaa6d780c7"
       },
-      "label":       {
+      "label": {
         "text": "Classification",
         "source_sha256": "72f049954fdd06c875fef2a15bf89e95c7a28db5c4910643dbd7ac38a3e0db13"
       },
-      "manageLink":       {
+      "manageLink": {
         "text": "Open Classification",
         "source_sha256": "575c3e8cc84ba67dbbd7fd1a51bfee044ab330bf0e9b3e03acada6c997cca3e6"
       },
-      "marked":       {
+      "marked": {
         "text": "Classification: {{marking}}",
         "source_sha256": "5978abb920079af1eac605d59a3695a98b16a9981f2646d71504060a95fd22be"
       },
-      "notSet":       {
+      "notSet": {
         "text": "Not set",
         "source_sha256": "4895f73177ab5d67c30c183a49d2477e014a2ef69b65150762d17e877f4f5b95"
       },
-      "notSetFull":       {
+      "notSetFull": {
         "text": "Classification: Not set",
         "source_sha256": "225b39c1ca8aa0c5256c8e66a1d8f5fa873b71dcceefea357f56bfdd19a7df9b"
       },
-      "ariaEdit":       {
+      "ariaEdit": {
         "text": "此对象的分类",
         "source_sha256": "ff0f981aeb2b30dfb387792ebf2f4af5c54b3dfbe8ed0b4fa96813f6a1f03dcc"
       },
-      "saveFailed":       {
+      "saveFailed": {
         "text": "无法保存分类标签。",
         "source_sha256": "84d3e6eeb5913044ae89461499c82771c12b5aadb32ef654464758aaed7da18e"
       },
-      "notAllowed":       {
+      "notAllowed": {
         "text": "您没有权限更改此分类标签。",
         "source_sha256": "f298ff12d96d4d22414984ff0c0ad5ad6abe2d2c69b6a4ebf2a761bb940c2404"
       }
@@ -11946,6 +11946,22 @@
           "text": "Least privilege for admin work lives in elevation. Open elevation and confirm the request path. This is not Met.",
           "source_sha256": "69847c46b6a06799266e9e0c9eb7b2f582d942c7a061eaa1d97cfc7375d9f09a"
         }
+      },
+      "hookLiveHelp": {
+        "text": "Live 表示页面和记录路径已存在。这不是 Met，也不是认证。",
+        "source_sha256": "2f8aa1b287b9a7f4709ddfd0001b57239137e7a728643afefb60ef6290a1f2b6"
+      },
+      "hookPartialHelp": {
+        "text": "Partial 表示页面或记录路径尚不完整。请完成后续步骤或记录例外。这不是 Met。",
+        "source_sha256": "2e0da4719ace849fd1c533b7e20339eec32c01bf09e0a5d57ab52673b033f40f"
+      },
+      "hookAbsentHelp": {
+        "text": "Absent 表示页面或记录路径不存在。请完成后续步骤或记录例外。这不是 Met。",
+        "source_sha256": "f1721799850634ab4410bfb43f2cc66a6e9ffd6c21963777d987ab7dfdf59836"
+      },
+      "hookBlockedHelp": {
+        "text": "Blocked 表示此服务器无法在此处完成该行。请记录例外。这不是 Met。",
+        "source_sha256": "0aca532ddab5e1dadaf084da9fe93c005374d20c1364dbd3da48e4f29134419a"
       }
     }
   },

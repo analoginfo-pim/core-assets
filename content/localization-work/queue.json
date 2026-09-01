@@ -2378,8 +2378,51 @@
         "zh-Hans",
         "zh-TW"
       ],
-      "draft_tags": ["de"],
+      "draft_tags": [
+        "de"
+      ],
       "notes": "New Connect owner/next-step keys and live-viewer Viewer controls accordion. Agent DE drafts do not close. Remaining Tier 1 tags need reviewed catalogs, not a code rewrite."
+    },
+    {
+      "id": "spa.csc-control-status-honesty",
+      "status": "open",
+      "priority": "tier-1",
+      "kind": "spa-chrome",
+      "title": "CSC product-status honesty tooltips (Live / Partial / Absent / Blocked)",
+      "added": "2026-08-31",
+      "updated": "2026-08-31",
+      "source_repo": "pim-offline-server",
+      "source_path": "ui/src/i18n/locales/en/pages.json",
+      "source_sha256": "6487687e11471009b54a7c8e3be7af8d79b13993c0a87f9fc228362c27666b7a",
+      "product_route": "/enclave/compliance",
+      "required_tags": [
+        "en-GB",
+        "de",
+        "fr",
+        "es",
+        "zh-Hans",
+        "zh-TW"
+      ],
+      "draft_tags": [
+        "de",
+        "fr",
+        "es",
+        "en-GB",
+        "zh-Hans",
+        "zh-TW",
+        "ja",
+        "ko",
+        "pt-BR",
+        "it",
+        "he",
+        "pl",
+        "tr",
+        "nl",
+        "sv",
+        "fi",
+        "ar"
+      ],
+      "notes": "Agent draft catalogs for new chrome.controlNextSteps.hook*Help keys. Data add later for remaining review — not a code rewrite. Do not close on agent drafts."
     }
   ]
 }
