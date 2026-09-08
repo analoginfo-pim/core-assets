@@ -1,0 +1,56 @@
+---
+description: >-
+  Positioning, marketing, website design, pricing, CMMC and
+  competitive analysis live in pam-platform-docs/docs/go-to-market.
+alwaysApply: true
+---
+
+# Go-to-market docs home (hard rule)
+
+Operator directive (Phil, 2026-09-08):
+
+> **Move and centralize positioning, marketing, website design, pricing,
+> CMMC and competitive analysis into
+> `https://github.com/analoginfo-pim/pam-platform-docs/tree/main/docs`.
+> Going forward use the centralized repo of competitive analysis.**
+
+## The rule
+
+> **New and revised positioning, marketing, website / operator-UI design
+> doctrine, pricing, Cybersecurity Maturity Model Certification (CMMC)
+> competitive notes, and competitor analysis are authored in
+> `pam-platform-docs/docs/go-to-market/`. Product repos keep pointers
+> only. Implementation gap inventories and closeable coding plans stay
+> in the owning product repo.**
+
+## Home
+
+[https://github.com/analoginfo-pim/pam-platform-docs/tree/main/docs/go-to-market](https://github.com/analoginfo-pim/pam-platform-docs/tree/main/docs/go-to-market)
+
+Index: `pam-platform-docs/docs/go-to-market/README.md`
+
+| Work | Where |
+| --- | --- |
+| Competitive analysis, CMMC market map, pricing briefs, GTM, website/UI doctrine | `pam-platform-docs/docs/go-to-market/` |
+| Anonymized buyer RFP playbook | `pam-platform-docs/docs/commercial/rfp-competitive-roadmap/` |
+| Control-by-control gap / closeable plan | Owning product `docs/dev/` (for example `cmmc-800-53-full-gap-analysis.md`) |
+
+## Forbidden
+
+- Adding a new competitor matrix, CMMC enclave market note, price briefing,
+  or GTM/strategy paper under `pim-offline-server/docs/dev/` or
+  `docs/business/`
+- Treating a product-repo stub as the living document
+- Claiming Met / certified from a competitive note
+
+## Required agent behavior
+
+1. Edit the file under `go-to-market/` (or add a new one there and index it
+   in `README.md`).
+2. Keep any product-repo path as a short pointer to GitHub `pam-platform-docs`.
+3. Mirror this rule to `core-assets/.cursor/rules/` in the same change set.
+
+## Origin
+
+2026-09-08 — operator: centralize positioning, marketing, website design,
+pricing, CMMC and competitive analysis in `pam-platform-docs/docs`.
