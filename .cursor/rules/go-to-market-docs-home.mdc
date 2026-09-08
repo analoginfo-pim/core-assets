@@ -18,10 +18,13 @@ Operator directive (Phil, 2026-09-08):
 
 > **New and revised positioning, marketing, website / operator-UI design
 > doctrine, pricing, Cybersecurity Maturity Model Certification (CMMC)
-> competitive notes, and competitor analysis are authored in
+> competitive notes, competitor analysis, and pricing / competitive-
+> selling Cursor canvases are authored in
 > `pam-platform-docs/docs/go-to-market/`. Product repos keep pointers
 > only. Implementation gap inventories and closeable coding plans stay
-> in the owning product repo.**
+> in the owning product repo. Do not leave unique list-price or
+> competitive-selling canvases only in the local IDE `canvases/`
+> folder.**
 
 ## Home
 
@@ -32,25 +35,35 @@ Index: `pam-platform-docs/docs/go-to-market/README.md`
 | Work | Where |
 | --- | --- |
 | Competitive analysis, CMMC market map, pricing briefs, GTM, website/UI doctrine | `pam-platform-docs/docs/go-to-market/` |
+| Pricing / competitive-selling Cursor canvases | `pam-platform-docs/docs/go-to-market/canvases/` (index: `canvases/README.md`; GitHub-readable CMMC rate card: `pricing/azure-cmmc-hosted-price-list.md`) |
 | Anonymized buyer RFP playbook | `pam-platform-docs/docs/commercial/rfp-competitive-roadmap/` |
 | Control-by-control gap / closeable plan | Owning product `docs/dev/` (for example `cmmc-800-53-full-gap-analysis.md`) |
 
 ## Forbidden
 
 - Adding a new competitor matrix, CMMC enclave market note, price briefing,
-  or GTM/strategy paper under `pim-offline-server/docs/dev/` or
-  `docs/business/`
+  GTM/strategy paper, or pricing / competitive-selling canvas under
+  `pim-offline-server/docs/dev/` or `docs/business/`
+- Leaving unique list-price or competitive-selling canvas edits only in
+  `~/.cursor/projects/*/canvases/`
 - Treating a product-repo stub as the living document
 - Claiming Met / certified from a competitive note
 
 ## Required agent behavior
 
 1. Edit the file under `go-to-market/` (or add a new one there and index it
-   in `README.md`).
+   in `README.md`). Pricing / competitive canvases go in
+   `go-to-market/canvases/` plus a GitHub-readable markdown twin when the
+   canvas is a rate card.
 2. Keep any product-repo path as a short pointer to GitHub `pam-platform-docs`.
 3. Mirror this rule to `core-assets/.cursor/rules/` in the same change set.
+4. After a canvas change, copy the same `.canvas.tsx` into the local IDE
+   `canvases/` folder if an interactive view is needed. The repo copy is
+   the source of truth.
 
 ## Origin
 
 2026-09-08 — operator: centralize positioning, marketing, website design,
 pricing, CMMC and competitive analysis in `pam-platform-docs/docs`.
+Same day: pricing / competitive-selling Cursor canvases commit in
+`docs/go-to-market/canvases/`, not only the local IDE folder.
