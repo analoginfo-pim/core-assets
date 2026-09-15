@@ -1,8 +1,10 @@
 ---
 description: >-
-  Never park a product decision on the operator. Default to competitor
-  vault/PAM parity, else the most responsible USG/enterprise option.
-  Record the basis. Close open-q-* in the same change set.
+  Never park a product decision on the operator. Default to
+  privileged-access vendor parity for product decisions and to Microsoft
+  for channel, licensing-structure, and partner decisions, else the most
+  responsible United States Government / enterprise option. Record the
+  basis. Close open-q-* in the same change set.
 alwaysApply: true
 ---
 
@@ -12,10 +14,18 @@ Operator directive (Phil, 2026-08-16): **when a product decision would
 have been asked of Phil, do not ask.** Default to what CyberArk,
 Delinea, BeyondTrust, HashiCorp Vault, 1Password Business, and
 Bitwarden Enterprise do for that scenario. If no competitor signal,
-choose the most responsible, assessor-defensible option for a
-USG/enterprise privileged-identity product (NIST SP 800-53 AC/AU,
-attribution, least surprise for auditors). Record the decision and
-the basis in the commit body. Do not leave `open-q-*` hanging.
+choose the most responsible, assessor-defensible option for a United
+States Government (USG) / enterprise privileged-identity product
+(NIST SP 800-53 AC/AU, attribution, least surprise for auditors).
+Record the decision and the basis in the commit body. Do not leave
+`open-q-*` hanging.
+
+Operator directive (Philip Lieberman, 2026-09-15), verbatim:
+
+> **Our relationships are identical to those of Microsoft and its
+> resellers and MSPs.**
+>
+> **When making a decision, default to Microsoft's position.**
 
 ## The rule
 
@@ -25,14 +35,89 @@ the basis in the commit body. Do not leave `open-q-*` hanging.
 > basis into the commit. Close the `open-q-*` in the same change
 > set. US English. No lab leaks in UI.
 
+## Which list governs which decision
+
+Two reference lists, two decision classes. They do not compete.
+
+| Decision class | Reference |
+| --- | --- |
+| Product, feature, operator experience: defaults, column visibility, who owns a secret, what an operator sees | The named privileged-access vendors above (CyberArk, Delinea, BeyondTrust, HashiCorp Vault, 1Password Business, Bitwarden Enterprise) |
+| Channel, partner program, licensing structure, reseller and Managed Service Provider (MSP) relationship, seller of record, billing, collection, partner incentive, contract architecture | **Microsoft** and its reseller and MSP relationships |
+
+When a decision spans both, split it: the operator-facing behavior
+follows the privileged-access vendors, the commercial and licensing
+structure follows Microsoft.
+
+## The invariant Microsoft's model preserves
+
+Microsoft is the channel reference because its model already carries
+the shape this product requires.
+
+1. **The licensing relationship runs Provider to Customer, directly
+   and always.** The product is United States-controlled
+   cryptographic software, so the license cannot be brokered.
+2. **A partner may be the commercial seller of record.** A reseller or
+   MSP may quote, sell, invoice, and collect funds, and an MSP may
+   deliver services in concert with the product.
+3. **There is no sublicense arrangement anywhere in the pack.** No
+   partner ever holds a license to convey. No partner is ever in the
+   licensing chain.
+
+Item 3 is deliberately **contrary to the common software-channel
+convention**, in which a reseller takes a license and sublicenses
+onward. That is exactly why every resale lane must say so expressly
+rather than leave it to inference. A silent agreement will be read
+against us by the convention a counterparty's counsel already expects.
+
+## Delegated administration, not a license grant
+
+Where a partner operates, deploys, configures, or administers the
+software inside the Customer's environment, its authority comes from
+the **Customer's delegation of scoped, revocable administrative
+rights** - never from a grant by Provider to the partner. Provider
+licenses the Customer; the Customer delegates administration. That
+separation is what keeps partner operation from becoming a sublicense.
+
+## Borrowed mechanics stand on their own
+
+Naming Microsoft picks the reference; it does not supply the
+justification.
+
+1. **Justify each borrowed mechanic on its own merits** for this
+   product's export-control posture and its Cybersecurity Maturity
+   Model Certification (CMMC) posture. A counterparty's counsel tests
+   the clause, not the comparison.
+2. **Never cite the analogy as the authority.** "Microsoft does it
+   this way" is a starting point in the commit body, not a defense in
+   the clause.
+3. **Verify, do not assume.** Microsoft program terms change over
+   time. A borrowed mechanic is checked against the current published
+   terms before it is relied on.
+4. Borrowing a mechanic never claims the product or the Organization
+   Seeking Assessment (OSA) is CMMC certified, or that any control is
+   Met ([`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc)).
+
+## Vendor names stay out of the product
+
+Microsoft is a vendor name and obeys the same naming ban as the
+privileged-access vendors. Vendor names belong in Cursor rules,
+`docs/dev`, and commit bodies only. Never in an operator-facing
+website or product surface: no Single-Page Application (SPA) string,
+no locale catalog, no Help or manual page, no partner-facing product
+copy. See
+[`no-competitor-names-in-website.mdc`](no-competitor-names-in-website.mdc).
+
+This rule file is a Cursor rule, not website content, so naming
+Microsoft here is correct.
+
 ## Required agent behavior
 
-1. **Do not ask** when the alternative is “should we show X?” /
-   “what should the default be?” / leaving `open-q-*` for Phil.
-2. **Competitor first** — match the named vault/PAM vendors for
-   that scenario (who owns a secret, who approved access, what
-   is visible in a list by default).
-3. **Else responsible default** — attribution (AU-2/AU-3), least
+1. **Do not ask** when the alternative is "should we show X?" /
+   "what should the default be?" / leaving `open-q-*` for Phil.
+2. **Competitor first** - match the named vault / Privileged Access
+   Management (PAM) vendors for that scenario (who owns a secret, who
+   approved access, what is visible in a list by default).
+3. **Else responsible default** - attribution (AU-2/AU-3), least
    privilege, fail closed, auditor-least-surprise. Density or
    chrome compactness is not a reason to hide the accountable
    party.
@@ -41,24 +126,40 @@ the basis in the commit body. Do not leave `open-q-*` hanging.
 5. **Close `open-q-*`** in the same change set. Do not add a new
    parked question.
 6. Source identifiers and UI copy stay US English
-   ([`enterprise-compliance.mdc`](enterprise-compliance.mdc) §1).
+   ([`enterprise-compliance.mdc`](enterprise-compliance.mdc) section 1).
    Never put lab configuration or agent thinking in operator UI
    ([`no-lab-config-in-operator-ui.mdc`](no-lab-config-in-operator-ui.mdc)).
 7. **Website copy never names those vendors.** Write "Competitors".
    Record vendor names in the commit body or `docs/dev` only.
    See [`no-competitor-names-in-website.mdc`](no-competitor-names-in-website.mdc).
+8. **Channel decisions record Microsoft as the reference** in the
+   commit body, naming the specific mechanic relied on, plus the
+   export-control or CMMC reason the mechanic holds here on its own.
 
 ## Forbidden
 
 - Asking the operator to pick a default the named competitors
   already settled.
+- Asking the operator to pick a channel, licensing-structure, or
+  partner-relationship default that Microsoft's model already settles.
 - Leaving `open-q-*` in a queue, spec comment, or evidence note
   after the slice that found it.
 - Hiding an accountable party (owner, approver, actor) to save
   column width.
 - Inventing a fake owner / email-as-identity when the person
-  record is missing — bind to the durable principal, or say
+  record is missing - bind to the durable principal, or say
   unresolved honestly.
+- Any sublicense, license-to-resell, or pass-through license grant to
+  a reseller or MSP, in any lane of the contract pack.
+- Placing a partner in the licensing chain between Provider and
+  Customer, or leaving a resale lane silent so the ordinary
+  sublicense convention is read into it.
+- Deriving partner administrative authority from a Provider grant
+  rather than from the Customer's scoped, revocable delegation.
+- Citing "Microsoft does this" as the clause's justification, or
+  relying on remembered program terms instead of current ones.
+- Naming Microsoft (or any vendor) in a website, SPA, locale catalog,
+  Help page, manual, or partner-facing product string.
 
 ## Worked example
 
@@ -70,8 +171,34 @@ whether to show it.
 Business show who owns a shared secret. Show Owner by default;
 Columns may hide it. Commit body records competitor + AU-2/AU-3.
 
+**Wrong (channel):** A reseller lane is drafted with a license to the
+reseller plus a right to sublicense to end customers, because that is
+the usual software-channel shape, and the agent asks the operator to
+confirm.
+
+**Right (channel):** The reseller is the seller of record and may
+invoice and collect. The license is granted by Provider directly to
+the Customer, and the lane says expressly that no sublicense is
+granted and that the reseller holds no license to convey. Where the
+partner administers the deployment, the Customer delegates scoped,
+revocable administrative rights. Commit body records Microsoft as the
+channel reference, the seller-of-record and delegated-administration
+mechanics relied on, and the export-control reason the direct license
+is required here.
+
 ## Origin
 
-2026-08-16 — operator: do not ask; competitor parity first; else
+2026-08-16 - operator: do not ask; competitor parity first; else
 the most responsible cybersecurity default; record the basis;
 close `open-q-*`.
+
+2026-09-15 - operator (Philip Lieberman), reviewing the go-to-market
+channel contract pack: our relationships are identical to those of
+Microsoft and its resellers and MSPs; when making a decision, default
+to Microsoft's position. Scoped to channel, licensing-structure, and
+partner decisions. Preceding statements in the same conversation set
+the invariant: the licensing relationship is between Provider and
+Customer because this is United States-controlled cryptographic
+software; the MSP provides services to the Customer in concert with
+the product; the MSP and reseller may handle the sale and the
+collection of funds; and there is no sublicense arrangement.
