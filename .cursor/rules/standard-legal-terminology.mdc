@@ -1,0 +1,115 @@
+---
+description: >-
+  Hard rule - use only standard legal contract terminology
+  in partner and customer agreements. Do not invent product slang.
+alwaysApply: true
+---
+
+# Standard legal terminology (hard rule)
+
+Operator directive (Phil, 2026-09-17), verbatim:
+
+> **Hard Rule: Do not ever make up your own terminology - you must
+> always use standard legal contract terminology.**
+
+## The rule
+
+> **Draft partner and customer agreements only in standard legal
+> terms, or in phrases taken from Microsoft Software License
+> agreements (and Microsoft reseller / Managed Service Provider
+> (MSP) channel papers when the instrument is a channel agreement).
+> Do not invent product slang or coined classification labels.**
+
+Microsoft is the channel reference
+([`competitor-default-decisions.mdc`](competitor-default-decisions.mdc)).
+This Cursor rule file may name Microsoft. Website, operator-facing,
+and signed contract bodies must not
+([`no-competitor-names-in-website.mdc`](no-competitor-names-in-website.mdc)).
+Use the terms. Do not name the vendor in the paper.
+
+## Scope
+
+Operative surface: `pam-platform-docs/docs/go-to-market/contracts/`
+and any future End User License Agreement (EULA), MSP Agreement,
+Reseller, Alliance, Original Equipment Manufacturer (OEM) schedule,
+Non-Disclosure Agreement (NDA), or related schedule. Cursor rules
+and `docs/dev` may discuss the terms. They must not introduce slang
+that later lands in a signed instrument.
+
+## Forbidden
+
+Do not write coined labels that are not ordinary license or channel
+English, including:
+
+- "lane," "Software Compensation Lane," "Marketplace Influence
+  lane," "resale lane," "fee lane," or "No lane is a sublicense."
+- Any new umbrella invented to classify compensation
+- Product or go-to-market slang treated as if it were a defined
+  legal term
+
+Prefer: License, sublicense, end user, Licensed Software, Product,
+Reseller, distributor, OEM, Managed Service Provider (as a party
+role already used), purchase order, invoice, fees, remittance,
+seller of record (commercial sale). "Partner of Record" only when
+that phrase is actual partner-program language and is already
+defined in the paper.
+
+Name the actual transaction: marketplace sale, Provider-invoiced
+sale, resale of a Provider-Customer license, or no software
+compensation. If a defined term is still required, use ordinary
+English ("Transaction Type" or "sale") and define it once without
+"lane." Write "No sublicense is granted." or "This transaction is
+not a sublicense." Do not write "No lane is a sublicense."
+
+## Worked violation to fix
+
+**Violation** (coined word used as if it were a contract term):
+
+```text
+No lane is a sublicense.
+```
+
+"Lane" is not a legal term commonly found in contracts.
+
+**Fix** (standard license English):
+
+```text
+No sublicense is granted.
+```
+
+Or, where the sentence is about one sale:
+
+```text
+This transaction is not a sublicense.
+```
+
+## Required agent behavior
+
+1. Before adding a label, ask whether a Microsoft Software License
+   or Microsoft channel paper would use it. If not, use the
+   ordinary license or commercial word.
+2. Keep the pack architecture: two-party papers; Provider-Customer
+   license in the EULA; no sublicense; MSP purchase order is
+   MSP-to-Provider. Do not add Customer-requirement catalogs to
+   partner papers. Do not insert LLM sidenotes
+   ([`no-llm-sidenotes-in-contracts.mdc`](no-llm-sidenotes-in-contracts.mdc)).
+3. Mirror this file to `core-assets/.cursor/rules/` in the same
+   change set ([`auto-commit-push.mdc`](auto-commit-push.mdc)). The
+   workspace `.cursor` directory is not a git root.
+
+## Cross-references
+
+| Rule | Relationship |
+| --- | --- |
+| [`no-llm-sidenotes-in-contracts.mdc`](no-llm-sidenotes-in-contracts.mdc) | Counsel voice in the signed paper; no prompt commentary. This rule is the terminology twin. |
+| [`competitor-default-decisions.mdc`](competitor-default-decisions.mdc) | Microsoft is the channel, licensing-structure, and partner-relationship reference. Vendor names stay out of website copy. This file may name Microsoft. |
+| [`no-competitor-names-in-website.mdc`](no-competitor-names-in-website.mdc) | Do not name Microsoft (or other vendors) in a contract body or partner-facing product string. |
+| [`go-to-market-docs-home.mdc`](go-to-market-docs-home.mdc) | Go-to-market contract pack home. |
+
+## Origin
+
+2026-09-17 - operator hard rule: do not invent terminology; use
+standard legal contract terms, or Microsoft Software License and
+Microsoft channel phrasing. Worked example: "No lane is a
+sublicense." is forbidden because "lane" is not a legal term
+commonly found in contracts.

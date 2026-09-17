@@ -1,0 +1,131 @@
+---
+description: >-
+  Hard rule - never insert prompt information, agent-thinking, or
+  LLM guardrail commentary into partner-facing or customer-facing
+  legal / contract text.
+alwaysApply: true
+---
+
+# No LLM sidenotes in contracts (hard rule)
+
+Operator directive (Phil, 2026-09-17), verbatim intent:
+
+> **Please stop the behavior of inserting prompt information into the
+> contract such as with: "Designation of IGA is not a claim that IGA is
+> shipping or live. PUM and IGA designations do not invent features."
+> Never comment in the contract text about our bad behavior as you just
+> did. Review the text for such unacceptable LLM comments and sidenotes
+> that are now prohibited.**
+
+Then: add a hard rule against inserting LLM spurious comments.
+
+## The rule
+
+> **Never insert prompt information, agent-thinking, self-policing
+> asides, or large-language-model (LLM) guardrail commentary into
+> partner-facing or customer-facing legal or contract text. Write real
+> legal allocation in counsel voice. Do not narrate internal drafting
+> rules or "our bad behavior" in the paper the counterparty signs.**
+
+## Scope
+
+Operative surface: partner and customer agreements under
+`pam-platform-docs/docs/go-to-market/contracts/` and any future
+customer or partner agreement (End User License Agreement (EULA),
+Managed Service Provider (MSP) Agreement, Reseller, Alliance,
+Original Equipment Manufacturer (OEM) schedule, Non-Disclosure
+Agreement (NDA), and related schedules).
+
+| Surface | LLM sidenotes / prompt commentary? |
+| --- | --- |
+| Partner or customer legal text (EULA, MSP, Reseller, Alliance, OEM, NDA, schedules) | **No** |
+| Word / Portable Document Format (PDF) fills generated from those templates | **No** |
+| Cursor rules, `docs/dev`, commit bodies, agent prompts | **Yes** - drafting guidance stays here |
+| Admin Single-Page Application (SPA) / operator UI | Out of scope here. AI thinking in UI is already banned by [`no-lab-config-in-operator-ui.mdc`](no-lab-config-in-operator-ui.mdc). This file is the legal-pack twin; do not duplicate that UI rule. |
+
+## Forbidden
+
+Do not paste any of the following into contract bodies, recitals,
+definitions, schedules, or exhibits:
+
+- Prompt restatements and self-policing asides, including
+  "Designation of Identity Governance and Administration (IGA) is not
+  a claim that IGA is shipping or live. Privileged User Management
+  (PUM) and IGA designations do not invent features."
+- "This Section does not claim Met / certified / assessment-ready"
+  when that sentence exists only to remind the model
+- "do not invent features," "roadmap only," "schema-only,"
+  "we must not say X," `open-q-*`, "TODO for agents"
+- Narration of Cursor rules, honesty vocabulary, or delivery status
+  (Live / Partial / Absent / BLOCKED) as if it were a contract term
+- Comments about prior agent mistakes or "our bad behavior"
+
+Legal allocation is still required. Write it as counsel would:
+
+- Customer may need frameworks or assessments.
+- Provider licenses software. Provider does not warrant that
+  Customer's use will result in any certification, Met finding, or
+  assessment outcome.
+
+That is a warranty and risk allocation. It is not a note to the model.
+
+## Required agent behavior
+
+1. Draft and edit contract prose in counsel voice only. Product-family
+   designations (Privileged Identity Management (PIM), Privileged
+   Access Management (PAM), PUM, IGA, and others) may appear as labels.
+   Do not append a meta sentence that explains an internal drafting
+   rule.
+2. Before finishing a contract edit, search the touched paper for
+   prompt leakage (invent features, shipping or live, schema-only,
+   open-q, TODO for agents, Met / certified as a model reminder).
+   Delete any hit. Do not replace it with a softer sidenote.
+3. Keep drafting guidance in this rule, `docs/dev`, or the commit
+   body. Never copy it into the signed instrument.
+4. Mirror this file to `core-assets/.cursor/rules/` in the same
+   change set ([`auto-commit-push.mdc`](auto-commit-push.mdc)). The
+   workspace `.cursor` directory is not a git root.
+
+## Worked violation to fix
+
+**Violation** (prompt leakage left in the Go-to-Market (GTM) contract
+pack):
+
+```text
+The designated product families include Privileged User Management
+(PUM) and Identity Governance and Administration (IGA).
+Designation of IGA is not a claim that IGA is shipping or live.
+PUM and IGA designations do not invent features.
+```
+
+A counterparty reads the last two sentences as the Provider arguing
+with itself. They are agent guardrails, not legal terms.
+
+**Fix** (product designations only; warranty allocation in counsel
+voice, no meta):
+
+```text
+The designated product families include Privileged User Management
+(PUM) and Identity Governance and Administration (IGA). Listing a
+family does not require every Customer to license every module. A
+designation is a product-family label. It is not a statement that
+every listed capability is included in every Order. Provider does
+not warrant that Customer's use of the Software will result in any
+certification or assessment outcome.
+```
+
+## Cross-references
+
+| Rule | Relationship |
+| --- | --- |
+| [`no-lab-config-in-operator-ui.mdc`](no-lab-config-in-operator-ui.mdc) | Twin ban on AI thinking in operator UI / SPA source. This rule covers legal paper only. |
+| [`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc) | Honesty binds agents in chat, docs, and product chrome. Do not paste that vocabulary into a contract as a sidenote. |
+| [`expand-acronyms-on-first-use.mdc`](expand-acronyms-on-first-use.mdc) | Expand IGA, PUM, and sibling product acronyms on first use in the paper. |
+| [`go-to-market-docs-home.mdc`](go-to-market-docs-home.mdc) | GTM contract pack home. |
+
+## Origin
+
+2026-09-17 - operator hard rule after IGA / PUM prompt leakage in the
+GTM contract pack. Never insert LLM comments or sidenotes into
+partner or customer legal text; never narrate internal drafting
+rules or "our bad behavior" in the signed paper.
