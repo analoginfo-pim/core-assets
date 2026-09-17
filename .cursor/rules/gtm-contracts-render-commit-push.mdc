@@ -1,0 +1,73 @@
+---
+description: >-
+  Hard rule - Go-to-Market (GTM) contract markdown edits must
+  render Word and PDF, then commit and push in the same command.
+alwaysApply: true
+---
+
+# GTM contracts: render, then commit and push (hard rule)
+
+Operator directive (Phil, 2026-09-17):
+
+> **Always render DOCX and PDF, then commit and push as part of
+> every command.**
+
+## The rule
+
+> **When editing `pam-platform-docs/docs/go-to-market/contracts/`
+> or the contract renderer, the same command that changes markdown
+> MUST (1) render every affected variant to Word (`.docx`) and
+> Portable Document Format (PDF) via `render-contract.py` /
+> `Render-Contract.ps1`, (2) refresh family-folder copies next to
+> the markdown, (3) commit explicit paths only, and (4) push
+> `origin/main`. Do not leave contract markdown without matching
+> Word and PDF. Do not stop at markdown.**
+
+## When it applies
+
+Any edit to templates, YAML defaults, family-folder Word/PDF,
+`generating-docx-and-pdf.md`, or
+`operator-workflows/scripts/contracts/render-contract.py` /
+`Render-Contract.ps1`.
+
+## Required sequence
+
+1. **Render** every affected variant (`msp`, `eula`, `reseller`,
+   `psp`, `alliance`, `oem`, `nda`, `reseller-nda`, `alliance-nda`
+   when the pack or renderer changed). `$LASTEXITCODE` must be 0.
+   Do not pass `--docx-only` unless the operator named it.
+2. **Copy** `generated/<stem>-filled.docx` and `.pdf` over the
+   family-folder files next to the `.md` (and the NDA copies under
+   `nda/` plus any sibling family-folder NDA copies). `generated/`
+   stays gitignored.
+3. **Commit** explicit paths only. Never `git add -A` /
+   `git add .` ([`shared-working-tree-is-not-yours.mdc`](shared-working-tree-is-not-yours.mdc)).
+   Temp-file `git commit -F` per
+   [`auto-commit-push.mdc`](auto-commit-push.mdc).
+4. **Push** `origin/main`. Primary `main` only. No worktree. No
+   force-push. No `--no-verify`.
+
+Repos: `pam-platform-docs` for papers and family copies;
+`operator-workflows` if the renderer changed; `core-assets` if
+this rule changed. How-to:
+[`pam-platform-docs/docs/go-to-market/contracts/generating-docx-and-pdf.md`](../../pam-platform-docs/docs/go-to-market/contracts/generating-docx-and-pdf.md).
+
+## Forbidden
+
+- Reporting a contract edit done with markdown only
+- Leaving family-folder Word/PDF stale versus the markdown
+- Committing `generated/*-filled.*` (gitignored)
+- `git add -A`, force-push, `--no-verify`, extra worktrees
+
+## Required agent behavior
+
+1. Render and refresh copies before the commit of that command.
+2. Mirror this file to `core-assets/.cursor/rules/` in the same
+   change set ([`auto-commit-push.mdc`](auto-commit-push.mdc)).
+3. Return hashes, file counts, page table, and a Founding grep
+   count of 0 in `contracts/` when that cleanup is in scope.
+
+## Origin
+
+2026-09-17 - operator standing command: always render Word and
+PDF, then commit and push, as part of every GTM contract command.
