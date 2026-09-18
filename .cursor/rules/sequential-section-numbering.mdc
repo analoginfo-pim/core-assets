@@ -1,0 +1,90 @@
+---
+description: >-
+  Hard rule - sequential section completeness. After extract,
+  delete, insert, or move, renumber so no gaps remain.
+alwaysApply: true
+---
+
+# Sequential section numbering (hard rule)
+
+Operator directive (Phil, 2026-09-17), verbatim:
+
+> **Hard rule: Always check all documents for sequential section
+> completeness (no gaps in number/lettering) system. This is a
+> mistake you made from extracting sections, but not renumbering
+> them.**
+
+## The rule
+
+> **After any insert, extract, delete, or move of a numbered or
+> lettered section, renumber the entire remaining outline so
+> Article, Section, and Schedule identifiers are consecutive.
+> Do not leave a hole because a section was removed.**
+
+Consecutive means 1, 2, 3 ...; 1.1, 1.2, 1.3 ...; A, B, C ...;
+and 4.15.1, 4.15.2 ... at the same level. A retired letter is
+not a reserved hole. Close the sequence.
+
+## Scope
+
+Applies to Go-to-Market (GTM) contracts under
+`pam-platform-docs/docs/go-to-market/contracts/` and to any other
+structured document the agent authors or edits (agreements,
+schedules, Non-Disclosure Agreements (NDAs), End User License
+Agreement (EULA), READMEs with numbered articles). Always check
+before render or commit.
+
+## Forbidden
+
+- Leaving a hole (4.14 then 4.16; Schedule D then Schedule F;
+  3.2 then 3.4) because a section was extracted or deleted
+- Inventing a new section only to fill a hole
+- Updating headings but leaving "as stated in Section 4.9" pointing
+  at the wrong clause
+- Coined labels such as lane or band in examples or new headings
+
+## Required agent behavior
+
+1. After an outline edit, renumber remaining sections at every
+   affected level.
+2. Update every internal cross-reference, fee-table pointer,
+   survival list, and renderer `pdf_inspect` marker in the same
+   change set.
+3. Before render or commit of a contract, scan for skipped
+   integers and skipped schedule letters.
+4. Do not invent legal terms
+   ([`standard-legal-terminology.mdc`](standard-legal-terminology.mdc)).
+   Do not insert LLM sidenotes
+   ([`no-llm-sidenotes-in-contracts.mdc`](no-llm-sidenotes-in-contracts.mdc)).
+
+## Worked violation to fix
+
+**Violation** (extract without closing the sequence):
+
+```text
+### 4.14 Services Revenue Split
+### 4.16 MSP Resale
+## SCHEDULE D - DEAL REGISTRATION
+## SCHEDULE F - COMPENSATION
+```
+
+Section 4.15 and Schedule E were removed. The leftover numbers
+and letters kept the holes.
+
+**Fix** (renumber what remains; update cites):
+
+```text
+### 4.14 Services Revenue Split
+### 4.15 MSP Resale
+## SCHEDULE D - DEAL REGISTRATION
+## SCHEDULE E - COMPENSATION
+```
+
+Every "Section 4.16" and "Schedule F" cite follows the new
+identifier. Legal meaning is unchanged.
+
+## Origin
+
+2026-09-17 - operator hard rule after section extraction without
+renumbering. Always check sequential completeness; close gaps;
+update cross-references in the same change set.
