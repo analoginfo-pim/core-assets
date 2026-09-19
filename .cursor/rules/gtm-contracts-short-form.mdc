@@ -1,0 +1,79 @@
+---
+description: >-
+  Hard rule - Go-to-Market (GTM) contracts stay no longer or more
+  complex than the usual Microsoft / competitor short form. No
+  Cybersecurity Maturity Model Certification (CMMC) or customer
+  use-case catalogs in signed papers.
+alwaysApply: true
+---
+
+# GTM contracts: short form (hard rule)
+
+Operator directive (Phil, 2026-09-18), verbatim intent:
+
+> **In no case should our agreements be longer or more complex than
+> Microsoft's or our competitors. Remove CMMC and specific use cases
+> from our contracts. These are customer-specific issues we are not
+> affecting directly.**
+
+## The rule
+
+> **Signed partner and customer papers stay at usual Microsoft /
+> competitor short-form length and complexity. Put product, program,
+> and delivery detail in Product Terms, the Data Protection Addendum
+> (DPA), the Price List, and web policies - not a stuffed Software
+> License Terms. Do not put CMMC or customer-specific use-case
+> catalogs in a signed paper.**
+
+Microsoft Software License Terms stay short. Channel, CMMC, delivery
+scenarios, and use-case catalogs in the papers are a defect.
+
+## Length targets
+
+| Paper | Target |
+| --- | --- |
+| Software License Terms (clickwrap) | Well under 12 pages; aim 6-8 or less |
+| Customer Agreement | About 2-3 pages |
+| Mutual Non-Disclosure Agreement (NDA) | About 3-4 pages |
+| Partner bodies | Short, with one fee table |
+
+## Forbidden in signed text
+
+- CMMC, or named-framework mandates used as use cases
+- Delivery-scenario dumps (marketplace / on-premises / colocation recipes)
+- Product-module catalogs written as use-case lists
+- An invented Service Level Agreement (SLA)
+- Competitor names, including Microsoft, in the signed paper
+- Header text other than `Analog Informatics Corporation - <Document Title>`
+- Clickwrap, `/ Customer`, or `/ MSP` in the running header
+- Coined labels such as lane or band
+
+Keep generic export law, one short United States Government commercial-item
+sentence (Federal Acquisition Regulation (FAR) / Defense Federal
+Acquisition Regulation Supplement (DFARS) 227.7202), customer-only
+encryption-key custody without naming CMMC, and "software does not make
+Customer compliant" without listing frameworks.
+
+## Worked violation to fix
+
+**Violation:** A grant paragraph names CMMC and Federal Information
+Processing Standards (FIPS), then lists marketplace, on-premises, and
+colocation recipes.
+
+**Fix:** Grant the license. Keep one export sentence. Move SKU and
+delivery mechanics to Product Terms as labels, not use cases.
+
+## Required agent behavior
+
+1. After an insert or delete, renumber remaining sections
+   ([`sequential-section-numbering.mdc`](sequential-section-numbering.mdc)).
+2. Render Word and PDF, then commit and push
+   ([`gtm-contracts-render-commit-push.mdc`](gtm-contracts-render-commit-push.mdc)).
+3. Mirror this file to `core-assets/.cursor/rules/` in the same
+   change set ([`auto-commit-push.mdc`](auto-commit-push.mdc)).
+
+## Origin
+
+2026-09-18 - operator hard rule: agreements must not be longer or more
+complex than Microsoft or competitors; remove CMMC and specific use
+cases from signed contracts.
