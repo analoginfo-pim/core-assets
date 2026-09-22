@@ -1,0 +1,69 @@
+---
+description: >-
+  Hard rule - every Go-to-Market (GTM) price-list content change
+  bumps the publication / header revision date in the same change
+  set, then re-renders Word and PDF.
+alwaysApply: true
+---
+
+# GTM price lists: bump revision date on every content change
+
+Operator directive (Phil, 2026-09-22):
+
+> **yes, always on any change** — bump the price-list header
+> revision date, and make it standing practice that **every**
+> price-list content change updates that date.
+
+## The rule
+
+> **When any customer-facing price list markdown, canvas, or kit
+> content changes, bump `PRICE_LIST_PUBLICATION_DATE` in
+> `operator-workflows/scripts/contracts/render-contract.py` (and
+> every matching canvas / inline date line) to the change date
+> (YYYY-MM-DD) in the **same** change set, then re-render Word and
+> Portable Document Format (PDF). Never leave Word or PDF on a
+> stale header date while body content changed.**
+
+## Surfaces that must match
+
+| Surface | What to bump |
+| --- | --- |
+| Renderer | `PRICE_LIST_PUBLICATION_DATE` (keeps the `\| Prices are subject to change without notice.` suffix via `PRICE_LIST_NOTICE`) |
+| Enterprise markdown / canvas | Header-style date line; `source: Rebuilt …` when present |
+| Cybersecurity Maturity Model Certification (CMMC) solutions canvas | Parallel date line when present |
+| Secure Enclave | Renderer header (no separate inline date unless one is added) |
+| Azure CMMC hosted card | Paper "last edited" / canvas source date when that line is the card's stamp |
+
+## Required sequence
+
+1. Set the date to the session / change date (not yesterday's stamp).
+2. Sync every parallel customer-facing date line in the same edit.
+3. Re-render Enterprise, CMMC Solutions, and Secure Enclave (and
+   Azure Word/PDF if those exist). Refresh family-folder and kit
+   copies per
+   [`gtm-contracts-render-commit-push.mdc`](gtm-contracts-render-commit-push.mdc).
+4. Commit and push explicit paths in `pam-platform-docs` and
+   `operator-workflows` (and `core-assets` when this rule changes).
+
+## Forbidden
+
+- Changing price-list body / SKU / note content without bumping the
+  date in the same change set
+- Shipping Word or PDF whose second header line still shows an older
+  date than the markdown or canvas just edited
+- Inventing prices or Met / certified claims while touching dates
+- Leaving only one of renderer / canvas / markdown on the new date
+
+## Cross-references
+
+| Rule / doc | Role |
+| --- | --- |
+| [`gtm-contracts-render-commit-push.mdc`](gtm-contracts-render-commit-push.mdc) | Render, refresh kits, commit, push |
+| [`go-to-market-docs-home.mdc`](go-to-market-docs-home.mdc) | GTM home for pricing papers and canvases |
+| `pam-platform-docs/docs/go-to-market/contracts/generating-docx-and-pdf.md` | How-to; documents the header line |
+
+## Origin
+
+2026-09-22 - operator: always bump the price-list header revision
+date on any price-list content change; stamp that day was
+2026-09-22.
