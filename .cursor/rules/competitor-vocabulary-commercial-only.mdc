@@ -1,0 +1,119 @@
+---
+description: >-
+  Hard rule - use Competitors' commercial vocabulary only; never invent
+  industry terms; research before coining; strip honesty/value-judgement
+  musings from commercial documents.
+alwaysApply: true
+---
+
+# Competitor vocabulary and commercial-only papers (hard rule)
+
+Operator directive (Phil, 2026-09-24), verbatim intent:
+
+> **Hard rule: always use competitor's vocabulary. Never make your own
+> words up for well known industry terms. If you don't know the word or
+> measure, you must research what competitors use. Only use commercial
+> language. Remove musings everywhere about honesty and other value
+> judgements in documents. The demand to remove musings was made
+> multiple times and is getting ignored. Do not ignore the musings
+> rule ever again.**
+
+## The rule
+
+> **On every go-to-market, price list, kit, canvas, contract, and other
+> customer- or partner-facing commercial document: use only commercial
+> vocabulary that Competitors already use for that meter, package, or
+> discount. Never invent labels for well-known industry concepts. If
+> the term or measure is unknown, research CyberArk, Delinea,
+> BeyondTrust, and peer PAM / identity vendors (and Microsoft for
+> channel language) before writing. Commercial documents contain
+> commercial terms only - no honesty banners, no Met / certified /
+> assessment-ready self-policing, no agent value judgements, no LLM
+> sidenotes. Agents still obey honesty in chat and internal rules;
+> they must not paste that policing into the paper.**
+
+This rule does **not** weaken
+[`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc) for
+agents in chat, commits, or product chrome. It forbids putting those
+guardrails **into** commercial documents.
+
+Vendor names stay out of website and customer price-list **bodies**
+([`no-competitor-names-in-website.mdc`](no-competitor-names-in-website.mdc)).
+Research and commit bodies may name vendors. Customer papers say
+**Competitors** when a generic reference is required.
+
+## Vocabulary - research first
+
+| Forbidden (AIC-invented or non-commercial) | Prefer (Competitors' commercial shape) |
+| --- | --- |
+| Estate / Campus as package or SKU names | Edition packages: Basic / Standard / Enterprise; Professional / Premium / Platinum (or AIC edition names that match that shape) |
+| Estate as a sold meter | Named user, privileged user, asset, endpoint, system, target |
+| Size band / volume band as coined product language | Volume discount, quantity discount, list price, prepaid term discount |
+| Freemium / "no freemium SKU" asides | Omit; sell paid SKUs only |
+| Hard-cap musings, "not in Year 1 totals" LLM asides | State included quantities and list add-ons in plain commercial lines |
+| Honesty / Met / OSA certify / assessment-ready banners on price papers | Omit from the paper. Warranty allocation in counsel voice belongs in License / Product Terms only |
+
+If a measure is not on a published competitor price sheet (Texas DIR,
+GSA / Carahsoft, buyer-guide unit rates), **do not invent a new meter
+name**. Use the closest Competitors meter or "quote."
+
+Canonical research notes (internal):
+`pam-platform-docs/docs/go-to-market/competitive/enterprise-pam-competitor-packaging.md`,
+`pam-platform-docs/docs/go-to-market/pricing/pim-pam-pum-competitor-guide.md`.
+
+## Musings - never again on commercial documents
+
+Operative surfaces include (non-exhaustive):
+
+- `pam-platform-docs/docs/go-to-market/pricing/**`
+- `pam-platform-docs/docs/go-to-market/contracts/**` (including kits)
+- `pam-platform-docs/docs/go-to-market/canvases/**` when they are
+  customer- or partner-facing price / offer surfaces
+- Any future End User License Agreement (EULA), price list, rate card,
+  or marketplace offer text
+
+**Delete on sight** from those surfaces:
+
+- "This does not certify / does not stamp Met / not assessment-ready"
+- "Honesty." sections and assessor-judges-OSA banners on price lists
+- Prompt restatements, open-q, TODO for agents, "do not invent features"
+- Value judgements ("compelling," "bizarre," self-policing hard-cap essays)
+- LLM commentary about prior agent mistakes
+
+Legal warranty and risk allocation in counsel voice (License / Product
+Terms) remains allowed - that is commercial contract language, not an
+agent musing. See
+[`no-llm-sidenotes-in-contracts.mdc`](no-llm-sidenotes-in-contracts.mdc).
+
+Coverage matrices may state **kit provides**, **customer**, **manual**,
+or **other product** as factual commercial columns. They must not wrap
+every row in Met / OSA honesty sermons.
+
+## Required agent behavior
+
+1. Before adding a meter, package name, or discount label: check what
+   Competitors publish. If unsure, research; do not coin.
+2. Before finishing any GTM / price / kit edit: grep for honesty,
+   Met, assessment-ready, freemium, estate (as SKU), size-band,
+   hard cap musings, "does not certify." Delete hits on commercial
+   surfaces.
+3. Keep agent honesty in chat and Cursor rules. Never copy it into
+   the signed or sold paper.
+4. Mirror this file to `core-assets/.cursor/rules/` in the same
+   change set ([`auto-commit-push.mdc`](auto-commit-push.mdc)).
+
+## Worked violation to fix
+
+**Violation:** Price list says "Custom estate" and "Volume bands,"
+plus "The cloud kit does not certify the Organization Seeking
+Assessment (OSA)."
+
+**Fix:** Edition or package name Competitors would recognize;
+"Volume discount" / quantity tiers or quote; delete the OSA
+certify sentence from the price list.
+
+## Origin
+
+2026-09-24 - operator hard rule after repeated invented vocabulary
+(estate, bands) and repeated honesty musings on commercial papers
+despite prior remove-musings orders.
