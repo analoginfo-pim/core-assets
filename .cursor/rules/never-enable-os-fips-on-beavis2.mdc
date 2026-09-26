@@ -1,0 +1,50 @@
+---
+description: Never enable Windows FipsAlgorithmPolicy on BEAVIS2; product FIPS is in-process AWS-LC
+alwaysApply: true
+---
+
+# Never enable Windows FIPS policy on BEAVIS2
+
+Operator hard rule (Phil, 2026-09-25): **do not switch BEAVIS2 to
+Windows FIPS mode.** That OS bit breaks required programs on the
+operator console. Product cryptography still uses in-process Amazon
+Web Services LibCrypto (AWS-LC) Federal Information Processing
+Standards (FIPS) (`aws-lc-rs`). That is not the same as the Windows
+`FipsAlgorithmPolicy` registry value.
+
+## The rule
+
+> **Leave `HKLM\SYSTEM\CurrentControlSet\Control\Lsa\FipsAlgorithmPolicy`
+> `Enabled=0` on BEAVIS2 / the operator console. Never set `Enabled=1`
+> as a "fix" for rustls, AWS-LC, or a configurator crash. Do not run
+> Workstation Assurance (WA) / Current State Compliance (CSC) Fix-It
+> `win.fips-algorithm-policy` with confirm on this host. Analog
+> Informatics Corporation (AIC) programs must launch whether that OS
+> bit is 0 or 1 -- do not gate launch on the OS policy.**
+
+## Two different FIPS surfaces
+
+| Surface | Where | On BEAVIS2 |
+| --- | --- | --- |
+| Windows `FipsAlgorithmPolicy` | `HKLM\...\Lsa\FipsAlgorithmPolicy` | **Enabled=0**. Never turn on. |
+| Product AWS-LC FIPS | in-process `aws-lc-rs` / rustls | Required. Not the OS policy. |
+
+## Forbidden
+
+- `Set-ItemProperty` / Fix-It apply that writes `Enabled=1` on Beavis2
+- Treating OS FIPS off as the root cause of a configurator crash
+- Gating `main()` or a desktop shortcut on the OS policy bit
+- Enabling OS FIPS to "match" CMVP #4759
+
+## Required
+
+- Prove crashes from logs / Windows Error Reporting (WER), then fix
+  the binary (stale EXE, Dynamic Link Library (DLL) sidecar, Event
+  Log, rustls provider).
+- Customer endpoints may still apply `win.fips-algorithm-policy`. The
+  agent refuses that class when the machine name contains `Beavis2`.
+
+## Origin
+
+2026-09-25 -- operator: do not switch BEAVIS2 to Windows FIPS mode;
+allow local launch with the OS bit 0 or 1; product FIPS is AWS-LC.
