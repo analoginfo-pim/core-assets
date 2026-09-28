@@ -51,6 +51,19 @@ then exports the PDF through Microsoft Word so the page-count field
 resolves. A batch shares one Word session, so rendering a directory does
 not pay Word startup per file.
 
+**Host toolchain, measured 2026-09-27 - do not re-probe this every
+session** ([`ascii-syntax-and-powershell-first-run.mdc`](ascii-syntax-and-powershell-first-run.mdc)
+section 5):
+
+| Tool | State | Consequence |
+| --- | --- | --- |
+| `python-docx` | Present (1.2.0) | Word output works |
+| `pywin32` and Microsoft Word | Present (Word 16.0) | PDF export works through COM |
+| `pdfplumber`, `pypdf` | Present | Use them to read a rendered PDF back and verify header, timestamp, and page count |
+| `pandoc` | **Absent** | Do not write a pipeline that assumes it |
+| LibreOffice / `soffice` | **Absent** | No headless-conversion fallback |
+| `reportlab`, `weasyprint` | **Absent** | There is no direct PDF writer; Word COM is the only PDF path |
+
 Legal instruments are **not** covered here. Contracts keep
 `operator-workflows/scripts/contracts/render-contract.py` and the header,
 revision-date, and render rules in

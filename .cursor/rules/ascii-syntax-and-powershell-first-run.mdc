@@ -292,6 +292,88 @@ commit -m` misbehave with this workspace's hooks. Use the temp-file plus
 `git commit -F` pattern documented in
 [`auto-commit-push.mdc`](auto-commit-push.mdc). Do not duplicate the recipe.
 
+**14. PowerShell folds case; Python does not.** The asymmetry bites in the
+direction most people do not expect. PowerShell is **case-insensitive** for
+variable names, hashtable keys, parameter names, `switch`, `-eq`, `-match`,
+and `-replace`. Python is **case-sensitive** everywhere. So a PowerShell
+hashtable cannot hold two keys that differ only by case, and it fails at
+parse time rather than at runtime:
+
+```powershell
+# Wrong - parse error: "Duplicate keys 'indicative tiers' are not
+# allowed in hash literals." The two keys look distinct and are not.
+$map = @{ 'Indicative Tiers' = 'a'; 'indicative tiers' = 'b' }
+
+# Right - an ordered array of pairs keeps case distinct and keeps order
+$map = @( @('Indicative Tiers','a'), @('indicative tiers','b') )
+foreach ($p in $map) { $text = $text.Replace($p[0], $p[1]) }
+```
+
+When case must matter in PowerShell, use the explicit operators (`-ceq`,
+`-cne`, `-cmatch`, `-creplace`) or .NET `[string]::Replace`, which is both
+case-sensitive and literal, so regex metacharacters such as `|` in a
+markdown table row are not interpreted. Never assume a PowerShell
+comparison is case-sensitive, and never assume a Python one is not.
+
+**15. Never put a command's own name inside a quoted string.** Wrappers in
+this environment rewrite command invocations to append trailers, and the
+rewrite does not know your string is only a message. A literal `git commit`
+inside an error message gets rewritten too, and the injected quotes break
+the enclosing string:
+
+```powershell
+# Wrong - the command name inside the throw string is rewritten, giving
+# "Unexpected token 'Co-authored-by:'" at parse time, far from the cause
+git commit -F $tmp
+if ($LASTEXITCODE -ne 0) { throw "git commit failed: $LASTEXITCODE" }
+
+# Right - name the step, not the command
+git commit -F $tmp
+if ($LASTEXITCODE -ne 0) { throw "commit step failed: $LASTEXITCODE" }
+```
+
+## 5. Error learning loop (fix once, record immediately)
+
+Operator directive (Phil, 2026-09-27):
+
+> **The same Python and PowerShell mistakes keep recurring without
+> learning, burning tokens and time. Make errors one-time, and put their
+> resolution into the global hard rules.**
+
+> **When a command fails for an authoring reason - parse error, quoting,
+> encoding, case folding, exit-code handling, or a missing interpreter
+> feature - add the fix to section 4 in the same session, before
+> continuing. One occurrence is enough. Do not wait for a second.**
+
+"Authoring reason" means the script was wrong. A failing test, an
+unreachable host, or a genuine product defect is a different investigation
+and does not belong here.
+
+Required behavior:
+
+1. **Read section 4 before writing PowerShell.** Most recurrences are of a
+   failure already listed there.
+2. **On the first failure, extend section 4** with the shape that failed
+   and the shape that works, then apply the fix. The example must be
+   concrete enough to pattern-match against next time.
+3. **Record discovered host facts in the rule that owns them** instead of
+   re-probing every session. This host has `python-docx` and `pywin32`
+   with Microsoft Word available for PDF export, and has **no** pandoc and
+   **no** LibreOffice; that fact lives in
+   [`docs-render-docx-pdf.mdc`](docs-render-docx-pdf.mdc).
+4. **Mirror the edit** to `core-assets/.cursor/rules/` in the same change
+   set, or the next session cannot see it
+   ([`auto-commit-push.mdc`](auto-commit-push.mdc)).
+5. **Never silently retry a failed command with a guess.** Read the error,
+   name the cause, fix it once.
+
+Worked instance of the loop. In one 2026-09-27 session: `&&` as a statement
+separator failed, and practice 2 already forbade it, so that was a
+recurrence this loop exists to stop. Two further failures were new - a
+hashtable keyed on strings differing only by case, and a command name
+rewritten inside a `throw` string - and both were written up as practices
+14 and 15 before the session continued.
+
 ## Forbidden constructs
 
 - Any codepoint from the right-hand column of section 1 in a `.ps1`, `.psm1`,
@@ -309,6 +391,13 @@ commit -m` misbehave with this workspace's hooks. Use the temp-file plus
   failed step.
 - An inline `python -c` / `-Command` string longer than one simple statement.
 - A destructive switch with no report-only default.
+- A PowerShell hashtable whose keys differ only by case, and any assumption
+  that a PowerShell string comparison is case-sensitive by default.
+- A command's own name (`git commit`, `git push`) inside a quoted message,
+  comment, or `throw` string in a script that also runs that command.
+- Repeating a failure that section 4 already documents.
+- Hitting a new authoring failure and moving on without adding it to
+  section 4 in the same session.
 - Claiming a script works without having run it once end to end. A parse check
   is the floor, not the proof:
   `[System.Management.Automation.Language.Parser]::ParseFile($p, [ref]$null, [ref]$errs)`.
@@ -420,3 +509,13 @@ PowerShell 5.1; live mojibake in `Prove-WinrmPrivilegeJob.ps1`; EN DASHes inside
 three times in one session; Defender racing bulk writes as
 `OSError [Errno 22] Invalid argument`; and `Get-ChildItem` returning nothing for
 a directory that `cmd /c dir /b` listed.
+
+2026-09-27 - operator hard rule added as section 5, after the same
+PowerShell and Python mistakes recurred across sessions: make each error
+one-time by recording its resolution in this rule on first occurrence.
+Evidence from that session: `&&` used as a statement separator even though
+practice 2 already forbade it; a hashtable keyed on `'Indicative Tiers'`
+and `'indicative tiers'` failing at parse time because PowerShell folds
+case, now practice 14; and a `throw "git commit failed"` message whose
+command name was rewritten by trailer injection into
+`Unexpected token 'Co-authored-by:'`, now practice 15.
