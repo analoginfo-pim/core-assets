@@ -1,0 +1,129 @@
+---
+description: >-
+  Hard rule - work only in Analog Informatics repositories; never modify
+  Robert's repositories (mix-server, mix-orm and siblings) without an
+  explicit instruction in the same message.
+alwaysApply: true
+---
+
+# Work only on AIC repositories (hard rule)
+
+Operator directive (Phil, 2026-09-27), verbatim:
+
+> **ALWAYS: Work only on my repos. unless told otherwise. Do not modify
+> Robert's repos.**
+
+## The rule
+
+> **Every edit, stage, commit, and push goes to an Analog Informatics
+> Corporation (AIC) repository. Robert Jones's repositories are read-only
+> from AIC work. Do not edit, stage, commit, push, or force-push them, on
+> any branch, even when a change there would be convenient. The only
+> exception is an explicit operator instruction naming that repository in
+> the same message.**
+
+## Robert-owned: read-only
+
+| Repository | Posture |
+| --- | --- |
+| `mix-server` | **Read-only.** No commits, no pushes, no branches, on any branch |
+| `mix-orm` | **Read-only.** Same |
+| Any other repository the operator identifies as Robert's | **Read-only** |
+
+Reading them is encouraged. [`reuse-robert-core-first.mdc`](reuse-robert-core-first.mdc)
+requires searching that code before writing new domain logic, and reading
+costs nothing. What is forbidden is writing.
+
+When AIC needs a change in locked upstream code, the path is a fork under
+an AIC-owned name, per
+[`fork-locked-robert-repos.mdc`](fork-locked-robert-repos.mdc). Never a
+direct edit, and never an uncommitted local change sitting in his tree.
+
+When AIC work should eventually reach Mix, it is **offered** through a
+merge-back note and Robert merges on his own process. The Operational
+Technology program is the worked example:
+[`pam-platform-docs/docs/ot/ot-mix-server-merge-back.md`](../../pam-platform-docs/docs/ot/ot-mix-server-merge-back.md).
+
+## AIC-owned: normal work
+
+The repositories under `github.com/analoginfo-pim` that AIC develops in,
+including `aic-server`, `aic-orm`, `pam-platform-docs`, `core-assets`,
+`operator-workflows`, the `pim-*` family, the `pam-*` family, and
+`pim-installers`. The repository map is
+[`pam-platform-docs/docs/REPO_INDEX.md`](../../pam-platform-docs/docs/REPO_INDEX.md).
+
+Normal commit and push rules apply there
+([`auto-commit-push.mdc`](auto-commit-push.mdc)), including explicit-path
+staging ([`shared-working-tree-is-not-yours.mdc`](shared-working-tree-is-not-yours.mdc)).
+
+## Beyond git: the same boundary applies outward
+
+"Work only on my repos" also rules out editing anything the operator does
+not own:
+
+- Do not modify installed packages, virtual environments, or site-packages
+  to work around a bug. Fix our code, or pin a version.
+- Do not edit another vendor's configuration or files on the host outside
+  our own trees ([`host-session-safety.mdc`](host-session-safety.mdc)).
+- Do not attempt changes to public or third-party repositories. Harvest
+  ideas from public sources and implement them in our own trees instead.
+
+Installing a normal developer tool, such as a linter, is not a repository
+change and stays allowed.
+
+## Forbidden constructs
+
+- Any `git add`, `git commit`, `git push`, `git checkout -b`, or branch
+  creation inside `mix-server` or `mix-orm`.
+- Leaving uncommitted edits in a Robert-owned working tree, which is worse
+  than a commit because it is invisible and unattributed.
+- Editing a Robert-owned file "temporarily" to unblock a local build. Report
+  the exact path and error to the operator and continue on what you can.
+- Committing a file in an AIC repository that a concurrent agent is still
+  editing. Check `git status` and stage only your own paths.
+- Modifying installed third-party packages in place.
+- Opening a change against a public repository.
+
+## Required agent behavior
+
+1. Before the first edit in a session, know which repository each target
+   path belongs to. If a path sits under `mix-server` or `mix-orm`, stop.
+2. If a build or test fails because of code in a Robert-owned repository,
+   report the path and the error. Do not fix it there.
+3. If the work genuinely requires an upstream change, follow
+   [`fork-locked-robert-repos.mdc`](fork-locked-robert-repos.mdc) and push
+   the fork to an AIC-owned remote.
+4. Mirror this file to `core-assets/.cursor/rules/` in the same change set.
+   The workspace `.cursor` directory is not a git root.
+
+## Worked violation to fix
+
+**Violation.** An AIC feature needs a field added to a Mix ORM model. The
+agent edits `mix-orm/src/model.rs`, builds locally, and moves on. The change
+is never committed, so it is invisible to Robert and to every other agent,
+and the next person to pull his repository silently loses it or hits a
+conflict they cannot explain.
+
+**Fix.** Leave `mix-orm` untouched. Fork to an AIC-owned repository, make
+the change there, push it, pin the consumer at that git revision, and record
+what Robert may merge later in a merge-back note.
+
+## Cross-references
+
+| Rule | Relationship |
+| --- | --- |
+| [`reuse-robert-core-first.mdc`](reuse-robert-core-first.mdc) | Read his code first; this rule says never write to it |
+| [`fork-locked-robert-repos.mdc`](fork-locked-robert-repos.mdc) | The sanctioned path when upstream must change |
+| [`shared-working-tree-is-not-yours.mdc`](shared-working-tree-is-not-yours.mdc) | Even inside AIC repositories, stage only your own paths |
+| [`auto-commit-push.mdc`](auto-commit-push.mdc) | Commit and push workflow for AIC repositories; also the mirror duty here |
+| [`merge-worktrees-into-main.mdc`](merge-worktrees-into-main.mdc) | Primary `main` checkout; no spurious worktrees |
+| [`host-session-safety.mdc`](host-session-safety.mdc) | The same boundary for host state outside our trees |
+
+## Origin
+
+2026-09-27 - operator standing instruction, given as an ALWAYS rule while
+scoping a documentation-rendering task: work only on AIC repositories
+unless told otherwise, and do not modify Robert's repositories. The
+boundary already existed in `REPO_INDEX.md` prose and in the fork and
+reuse rules; this file makes it a standing always-apply rule rather than a
+fact an agent has to infer.

@@ -332,6 +332,74 @@ git commit -F $tmp
 if ($LASTEXITCODE -ne 0) { throw "commit step failed: $LASTEXITCODE" }
 ```
 
+**16. Run PSScriptAnalyzer before claiming a script works.** It is the
+well-known tool for this language, it is installed on operator hosts, and
+it catches most of what the practices above describe. Always pass the
+shared settings file so the gate does not drift between machines:
+
+```powershell
+Import-Module PSScriptAnalyzer
+Invoke-ScriptAnalyzer -Path .\Your-Script.ps1 `
+    -Settings c:\analog-pim\core-assets\scripts\lint\PSScriptAnalyzerSettings.psd1
+```
+
+The settings file gates on Error and Warning, enables
+`PSUseCompatibleSyntax` against 5.1 and 7.4 so PowerShell 7 syntax is
+flagged, and excludes exactly one rule with its reason recorded:
+`PSAvoidUsingWriteHost`, because
+[`no-ansi-vt100-windows-shells.mdc`](no-ansi-vt100-windows-shells.mdc)
+requires the native console API for operator-facing color in classic
+Windows shells. Do not add an exclusion without a written reason.
+
+A finding is fixed or explained, never ignored. Per
+[`ci-policy.mdc`](ci-policy.mdc) this workspace has no push-triggered CI
+and no pre-commit hooks, so the agent running the analyzer **is** the gate.
+
+**17. Approved verbs and `[CmdletBinding()]` on every function.** Generated
+PowerShell reaches for names like `delete-old-files` or `run-backup`, and
+neither verb is approved. `Get-Verb` lists the approved set. Use `Verb-Noun`
+with a singular noun, PascalCase, and declare `[CmdletBinding()]` so common
+parameters work.
+
+**18. Use the object pipeline, never text parsing.** Filter and select on
+objects with `Where-Object` and `Select-Object`. Do not regex-scrape the
+text rendering of a command's output; the rendering is for humans and it
+changes.
+
+```powershell
+# Wrong - parses display text
+Get-Service | Out-String | Select-String 'Running'
+
+# Right - filters objects
+Get-Service | Where-Object Status -eq 'Running'
+```
+
+**19. Pick the right output stream.** `Write-Output` for data a caller may
+consume, `Write-Host` only for operator-facing display (see practice 16),
+`Write-Verbose` for diagnostics behind `-Verbose`, `Write-Warning` and
+`Write-Error` for problems. Writing data with `Write-Host` makes it
+uncapturable.
+
+**20. Destructive functions support `ShouldProcess`.** Practice 11 requires
+a report-only default; this is the PowerShell-native mechanism for it.
+Declare `[CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'High')]`
+and guard the mutation with `if ($PSCmdlet.ShouldProcess($target, 'action'))`
+so `-WhatIf` and `-Confirm` work without a hand-rolled switch.
+
+**21. `-Filter` takes one pattern, not a list.** Passing an array raises
+`Cannot convert 'System.Object[]' to the type 'System.String' required by
+parameter 'Filter'`. Use `-Include` with `-Recurse`, or test each name.
+
+```powershell
+# Wrong - runtime parameter-binding error
+Get-ChildItem -Filter 'pyproject.toml','ruff.toml'
+
+# Right
+Get-ChildItem -Recurse -Include 'pyproject.toml','ruff.toml' -File
+# or, for a fixed set of names in one directory
+foreach ($n in @('pyproject.toml','ruff.toml')) { if (Test-Path -LiteralPath $n) { $n } }
+```
+
 ## 5. Error learning loop (fix once, record immediately)
 
 Operator directive (Phil, 2026-09-27):
@@ -351,6 +419,11 @@ and does not belong here.
 
 Required behavior:
 
+0. **Run the language's well-known linter before claiming the script
+   works.** PowerShell uses PSScriptAnalyzer with the shared settings file
+   (practice 16). Python uses Ruff with the project's configuration
+   (section 6). The linter is the judge, so a rule the linter can enforce
+   does not depend on anyone remembering it.
 1. **Read section 4 before writing PowerShell.** Most recurrences are of a
    failure already listed there.
 2. **On the first failure, extend section 4** with the shape that failed
@@ -374,6 +447,53 @@ hashtable keyed on strings differing only by case, and a command name
 rewritten inside a `throw` string - and both were written up as practices
 14 and 15 before the session continued.
 
+## 6. Python authoring practices
+
+**1. Run Ruff before claiming the script works.** Ruff is the well-known
+tool here, it replaces the pycodestyle, pyflakes, bugbear, and Bandit
+stack, and it is fast enough to run on every file.
+
+```powershell
+python -m ruff check --no-cache path\to\script.py
+```
+
+Use the project's configuration, never an ad-hoc `--select` on the command
+line, or two agents will lint the same file to different standards.
+`operator-workflows/pyproject.toml` pins the families under `[tool.ruff]`.
+The families that matter for generated Python:
+
+| Family | Catches |
+| --- | --- |
+| `F` | Unused imports and undefined names. The most common artifact in generated Python |
+| `I` | Import ordering |
+| `UP` | Patterns deprecated since the project's minimum Python, learned from older answers |
+| `B` | Bugbear correctness traps such as mutable default arguments |
+| `S` | Bandit security: hardcoded credentials, `subprocess` with `shell=True`, weak hashing |
+| `SIM`, `RET`, `FURB` | Needless complexity, return-path mistakes, outdated idiom |
+
+**2. Scope the gate to what you touched.** A file you author or edit is
+clean before the change set is claimed done. A repository with pre-existing
+findings is an acknowledged backlog, not a silent allowlist. Clean those
+opportunistically when you touch them, and never add a blanket ignore to
+make the whole tree green.
+
+**3. Python is case-sensitive; PowerShell is not.** See practice 14. Do not
+carry a case assumption across the boundary between a script and the shell
+that invokes it.
+
+**4. Read text with an explicit encoding.** `open(p)` uses the platform
+default, which on Windows is not UTF-8. Pass `encoding="utf-8"` on every
+read and write, and write without a byte order mark. This is the Python
+half of the encoding failures in section 2.
+
+**5. Prefer `subprocess.run(list)` over shell strings.** A list argument
+needs no quoting and cannot be reinterpreted by a shell. `shell=True` is an
+`S603` and `S607` finding for a reason.
+
+**6. Keep multi-line Python in a file.** Practice 12 of section 4 already
+forbids inline `python -c` for anything beyond one simple statement,
+because the PowerShell parser mangles the quoting.
+
 ## Forbidden constructs
 
 - Any codepoint from the right-hand column of section 1 in a `.ps1`, `.psm1`,
@@ -393,6 +513,19 @@ rewritten inside a `throw` string - and both were written up as practices
 - A destructive switch with no report-only default.
 - A PowerShell hashtable whose keys differ only by case, and any assumption
   that a PowerShell string comparison is case-sensitive by default.
+- Claiming a `.ps1` works without running PSScriptAnalyzer against the
+  shared settings file, or a `.py` without running Ruff against the
+  project configuration.
+- A PSScriptAnalyzer exclusion or a Ruff `noqa` with no written reason.
+- An ad-hoc `--select` on the Ruff command line in place of the project
+  configuration.
+- An unapproved verb in a function name, or a function with no
+  `[CmdletBinding()]`.
+- Regex-scraping the display text of a command instead of filtering objects.
+- `Write-Host` used to emit data rather than operator-facing display.
+- A destructive function with no `SupportsShouldProcess`.
+- `-Filter` passed an array of patterns.
+- `open(path)` in Python with no explicit `encoding`.
 - A command's own name (`git commit`, `git push`) inside a quoted message,
   comment, or `throw` string in a script that also runs that command.
 - Repeating a failure that section 4 already documents.
@@ -509,6 +642,18 @@ PowerShell 5.1; live mojibake in `Prove-WinrmPrivilegeJob.ps1`; EN DASHes inside
 three times in one session; Defender racing bulk writes as
 `OSError [Errno 22] Invalid argument`; and `Get-ChildItem` returning nothing for
 a directory that `cmd /c dir /b` listed.
+
+2026-09-27 - operator follow-up: "Add well known tools and use them
+consistently." Practices 16 through 21 and section 6 were added, gating
+PowerShell on PSScriptAnalyzer with the shared settings file at
+`core-assets/scripts/lint/PSScriptAnalyzerSettings.psd1` and Python on Ruff
+with the project configuration. Measured while writing them: PSScriptAnalyzer
+defaults reported 44 findings across `operator-workflows` PowerShell, of
+which 39 were `PSAvoidUsingWriteHost` that the house ANSI rule specifically
+requires, so the settings file excludes that one rule with its reason and the
+remaining 5 findings are real signal. Practices 17 through 20 were harvested
+from published PowerShell guidance on the failures generated code makes.
+Practice 21 came from a parameter-binding failure in the same session.
 
 2026-09-27 - operator hard rule added as section 5, after the same
 PowerShell and Python mistakes recurred across sessions: make each error
