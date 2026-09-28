@@ -1,0 +1,149 @@
+---
+description: >-
+  Hard rule - every documentation markdown file ships a Word and PDF twin
+  in the same commit, with a timestamped header and page numbering;
+  canvases too; never gitignore documentation.
+alwaysApply: true
+---
+
+# Documentation ships markdown, Word, and PDF (hard rule)
+
+Operator directive (Phil, 2026-09-27), verbatim:
+
+> **Generate DOCX and PDFs when you generate .MD files. Make sure that the
+> MD, PDFs and DOCX are pushed to the docs repo consistently. You can
+> create additional subdirectories in the docs repo that will be part of
+> the repo. Do not .gitignore documentation. Make sure that all canvases
+> are also implemented as DOCX and PDF. Timestamp all PDF and DOCX in
+> headers and use page numbering.**
+
+## The rule
+
+> **A documentation markdown file is delivered when its Word (`.docx`) and
+> Portable Document Format (`.pdf`) twins exist beside it and all three are
+> committed and pushed together. Every rendered header carries the provider
+> name, the document title, and the generation timestamp. Every rendered
+> footer carries Page X of Y. Canvases ship the same two renders.
+> Documentation is never added to `.gitignore`.**
+
+## 1. The renderer
+
+Use `operator-workflows/scripts/docs/render-doc.py`. Do not write a second
+renderer, and do not hand-build Word files.
+
+```powershell
+# One or more files
+python c:\analog-pim\operator-workflows\scripts\docs\render-doc.py path\to\doc.md
+
+# A whole directory
+python ...\render-doc.py --dir c:\analog-pim\pam-platform-docs\docs\go-to-market --glob "*.md"
+
+# Word only, when Word COM is unavailable
+python ...\render-doc.py path\to\doc.md --docx-only
+
+# Parser self-test
+python ...\render-doc.py --self-test
+```
+
+It writes United States Letter pages with one-inch margins, renders
+headings, tables, lists, block quotes, code blocks, and inline emphasis,
+then exports the PDF through Microsoft Word so the page-count field
+resolves. A batch shares one Word session, so rendering a directory does
+not pay Word startup per file.
+
+Legal instruments are **not** covered here. Contracts keep
+`operator-workflows/scripts/contracts/render-contract.py` and the header,
+revision-date, and render rules in
+[`gtm-contracts-render-commit-push.mdc`](gtm-contracts-render-commit-push.mdc)
+and [`gtm-price-list-revision-date.mdc`](gtm-price-list-revision-date.mdc).
+
+## 2. Header and footer contract
+
+| Position | Content |
+| --- | --- |
+| Header line 1 | `Analog Informatics Corporation - <document title>`, taken from the first level-one heading |
+| Header line 2 | `Generated YYYY-MM-DD HH:MM UTC` |
+| Footer | `Page X of Y`, centered, built from Word `PAGE` and `NUMPAGES` fields |
+
+The timestamp records when the file was rendered. It is a record of an
+event, not a prediction, so it does not conflict with the ban on duration
+estimates in
+[`us-terminology-word-choice.mdc`](us-terminology-word-choice.mdc).
+
+Page numbering must come from Word fields. A hardcoded page number is
+wrong the moment pagination changes.
+
+## 3. Canvases
+
+A canvas (`*.canvas.tsx`) is source for an interactive view and cannot be
+rendered directly. Each canvas therefore has a **markdown twin** in the
+repo, which is already the convention for rate-card canvases, and that
+twin renders to Word and PDF like any other document. A canvas with no
+markdown twin is incomplete: author the twin, then render it.
+
+## 4. Never gitignore documentation
+
+Documentation and its renders are repository content. Do not add
+markdown, Word, or PDF paths to `.gitignore`, and remove any existing
+entry that excludes documentation. Binary renders are committed even
+though they are binaries.
+
+New subdirectories are allowed and expected. Create them under the docs
+tree and index them in the nearest `README.md`.
+
+**Open item, not an approval:** `pam-platform-docs/.gitignore` currently
+excludes `docs/go-to-market/contracts/generated/*`, which holds `-filled`
+contract render output whose counterpart copies are tracked in the family
+folders. That entry predates this rule and is under review. Do not cite it
+as precedent for ignoring anything else.
+
+## 5. Commit together
+
+Markdown, Word, and PDF land in the **same commit**. A commit carrying
+only the markdown leaves the repository inconsistent, which is the specific
+failure this rule prevents. Stage by explicit path
+([`shared-working-tree-is-not-yours.mdc`](shared-working-tree-is-not-yours.mdc)),
+then push ([`auto-commit-push.mdc`](auto-commit-push.mdc)).
+
+When markdown changes later, re-render both twins in that change set. A
+stale Word or PDF beside updated markdown is a defect.
+
+## Forbidden constructs
+
+- Committing documentation markdown without its Word and PDF twins.
+- A Word or PDF whose content is older than the markdown beside it.
+- Adding any documentation path to `.gitignore`.
+- A rendered file with no timestamp in the header, or with no page
+  numbering in the footer.
+- A hardcoded page number or page count.
+- A canvas with no markdown twin, or a twin that is never rendered.
+- A second markdown-to-Word renderer, or hand-assembled Word output.
+- Rendering contracts with this script instead of the contracts renderer.
+
+## Required agent behavior
+
+1. After writing or editing any documentation markdown, run the renderer
+   on it before committing.
+2. Stage the `.md`, `.docx`, and `.pdf` together by explicit path.
+3. State in the report which files were rendered.
+4. If Word COM is unavailable, render with `--docx-only`, say that the PDF
+   is missing and why, and do not describe the document set as complete.
+5. Mirror this file to `core-assets/.cursor/rules/` in the same change set.
+   The workspace `.cursor` directory is not a git root.
+
+## Cross-references
+
+| Rule | Relationship |
+| --- | --- |
+| [`gtm-contracts-render-commit-push.mdc`](gtm-contracts-render-commit-push.mdc) | Contracts have their own renderer, header contract, and kit refresh. This rule covers documentation only |
+| [`gtm-price-list-revision-date.mdc`](gtm-price-list-revision-date.mdc) | Price papers additionally bump a publication date |
+| [`go-to-market-docs-home.mdc`](go-to-market-docs-home.mdc) | Where go-to-market documentation lives |
+| [`auto-commit-push.mdc`](auto-commit-push.mdc) | Commit and push workflow; also the mirror duty for this file |
+| [`shared-working-tree-is-not-yours.mdc`](shared-working-tree-is-not-yours.mdc) | Explicit-path staging, never `git add -A` |
+| [`us-terminology-word-choice.mdc`](us-terminology-word-choice.mdc) | Word choice inside the documents being rendered |
+
+## Origin
+
+2026-09-27 - operator hard rule, recorded with the renderer that
+implements it. Documentation had been shipping as markdown only, with no
+Word or PDF twin, no timestamp, and no page numbering.

@@ -1,0 +1,169 @@
+---
+description: >-
+  Hard rule - United States English only; tier not band; environment or
+  site not estate; never write the word honesty; never estimate project
+  completion times.
+alwaysApply: true
+---
+
+# US terminology and word choice (hard rule)
+
+Operator directive (Phil, 2026-09-27), verbatim:
+
+> **Use "tier" rather than "band". Use environment or site(s) rather than
+> estate. Do not use the word honesty. Do not estimate completion times of
+> projects. Stop using UK and EU terminology and linguistics. Use only USA
+> linguistics.**
+
+## The rule
+
+> **Write United States English only. Use tier, never band. Use
+> environment or site, never estate. Never write the word honesty or its
+> forms. Never state how long a project will take. This binds every
+> authored surface: documents, operator user interface strings, commit
+> bodies, plans, contracts, and chat replies.**
+
+## 1. Required substitutions
+
+| Never write | Always write |
+| --- | --- |
+| band, bands, banding, volume band, size band, price band | **tier**, tiers, tiering, volume tier, price tier |
+| estate, estates | **environment**, environments, or **site**, sites |
+| honesty, honest, honestly, dishonest | Delete the sentence, or state the fact. See section 2 |
+| "about 6 months to deliver", "3 to 6 month rollout", "ready by Q3" | Nothing. See section 3 |
+
+"Tier" already matches how the market prices, so this also satisfies
+[`competitor-vocabulary-commercial-only.mdc`](competitor-vocabulary-commercial-only.mdc),
+which independently forbids band and estate as coined product labels.
+
+## 2. The word honesty is banned outright
+
+Do not write honesty, honest, honestly, or dishonest anywhere. The word
+signals a document arguing with itself, and it is the musing pattern
+[`competitor-vocabulary-commercial-only.mdc`](competitor-vocabulary-commercial-only.mdc)
+already bans from commercial papers. This rule extends the ban to every
+surface, including internal notes and chat.
+
+| Instead of | Write |
+| --- | --- |
+| "with an honest status per row" | "with the current status per row" |
+| "Honesty caveat: these are estimates" | "Caveat: these are estimates" |
+| "Where we do not win, stated honestly" | "Where we do not win" |
+| "an honest assessment of the gap" | "the measured gap" |
+| "to be honest, this is unverified" | "this is unverified" |
+
+**What does not change.** The underlying discipline is unaffected. Keep
+reporting Live, Partial, Absent, or BLOCKED; keep labeling estimates as
+estimates; keep saying what was not verified. State the fact and drop the
+adjective. Accuracy obligations continue under
+[`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc), whose
+filename is a path and not prose.
+
+## 3. No project completion-time estimates
+
+Do not predict how long work will take. This covers our own work and any
+third party's.
+
+| Forbidden | Allowed |
+| --- | --- |
+| "about 3 months to implement" | The ordered list of slices, with no durations |
+| "Phase 2 lands in Q4" | "Phase 2 follows Phase 1" |
+| "a 2 to 4 month rollout" for a competitor | The competitor's meter, packaging, and price |
+| "12 to 18 months to reach maturity" | The capability that is missing |
+| "this should take a week" | What remains, and what gates it |
+
+**Not a duration estimate, and still allowed:** a billing or subscription
+period such as Year 1, a contract term, a certificate validity period such
+as 47 days, a renewal window, a review cycle, a retention period, a
+regulatory effective date already published by an authority, and a
+timestamp recording when something actually happened.
+
+Sequencing is allowed. Dating the sequence is not.
+
+## 4. United States linguistics only
+
+No United Kingdom or European Union spelling, vocabulary, or idiom. The
+spelling list in
+[`enterprise-compliance.mdc`](enterprise-compliance.mdc) section 1 still
+applies in full. This rule adds vocabulary:
+
+| Never | Always |
+| --- | --- |
+| estate | environment, site |
+| whilst, amongst | while, among |
+| bespoke | custom |
+| turnover (revenue sense) | revenue |
+| licence (noun) | license |
+| organisation, recognise, analyse, minimise, prioritise, utilise | organization, recognize, analyze, minimize, prioritize, use |
+| centre, programme, catalogue, defence, favour, behaviour, colour, grey | center, program, catalog, defense, favor, behavior, color, gray |
+| enquiry | inquiry |
+| post code | ZIP code |
+| mobile (phone sense) | cell phone |
+| different to | different from |
+| learnt | learned |
+
+**Quoting a source that uses non-US spelling.** Paraphrase into United
+States English instead of quoting. If the exact wording matters, quote it
+and leave the source spelling inside the quotation marks only.
+
+## Forbidden constructs
+
+- The words band, estate, honesty, or any form of honest, in authored
+  content.
+- Any sentence predicting how long a project, phase, migration, rollout,
+  or implementation will take, including a competitor's.
+- United Kingdom or European Union spelling or vocabulary outside a
+  marked direct quotation.
+- Renaming a shipped identifier to satisfy this rule. Code tokens, table
+  names, route paths, and existing rule filenames keep their spelling;
+  this rule governs prose, user interface strings, and new identifiers.
+
+## Worked violation to fix
+
+**Violation:**
+
+```text
+## Large estate: 6,400 managed names
+
+Indicative bands for the estate below. Reported implementation timelines
+are 3 to 6 months for the incumbent. Honesty caveat: these are estimates.
+```
+
+**Fix:**
+
+```text
+## Large environment: 6,400 managed names
+
+Indicative tiers for the environment below. Caveat: these are estimates.
+```
+
+Three changes: estate to environment, bands to tiers, the timeline
+sentence deleted, and the honesty word removed while the estimate label
+stays.
+
+## Required agent behavior
+
+1. Before finishing any authored file, search it for band, estate,
+   honest, honesty, and duration phrases such as "months to", "weeks to",
+   "by Q". Fix every hit.
+2. Apply the same check to commit bodies and chat replies.
+3. Mirror this file to `core-assets/.cursor/rules/` in the same change set
+   ([`auto-commit-push.mdc`](auto-commit-push.mdc)). The workspace
+   `.cursor` directory is not a git root.
+
+## Cross-references
+
+| Rule | Relationship |
+| --- | --- |
+| [`competitor-vocabulary-commercial-only.mdc`](competitor-vocabulary-commercial-only.mdc) | Independently bans band and estate as coined labels and bans musings on commercial papers. This rule generalizes both and adds the required replacements |
+| [`enterprise-compliance.mdc`](enterprise-compliance.mdc) | Section 1 carries the US English spelling list this rule extends with vocabulary |
+| [`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc) | Accuracy obligations are unchanged. Use Live / Partial / Absent / BLOCKED and drop the adjective |
+| [`standard-legal-terminology.mdc`](standard-legal-terminology.mdc) | Contract papers additionally use standard legal terms |
+| [`ascii-syntax-and-powershell-first-run.mdc`](ascii-syntax-and-powershell-first-run.mdc) | ASCII hyphens and straight quotes in the same authored files |
+
+## Origin
+
+2026-09-27 - operator hard rule. Recorded after certificate lifecycle
+management and identity governance research shipped with volume bands,
+estate headings, honesty caveats, and competitor implementation timelines,
+all of which were corrected in the same session.
