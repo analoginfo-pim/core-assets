@@ -1,0 +1,185 @@
+---
+description: >-
+  Hard rule - retire Workstation Assurance and WA as a product brand; name
+  the function configuration compliance using CMMC and NIST vocabulary;
+  never rename shipped identifiers to match.
+alwaysApply: true
+---
+
+# Configuration compliance, not Workstation Assurance (hard rule)
+
+Operator directive (Phil, 2026-09-27):
+
+> **Fix terminology on WA through documents. Use industry standard
+> terminology seen in CMMC and other regulatory frameworks to
+> describe/name what WA does. WA is not an industry term.**
+
+Earlier the same day, on the same subject:
+
+> **Agree on removing WA branding universally as a hard rule.**
+
+## The rule
+
+> **The capability historically branded Workstation Assurance is named
+> configuration compliance. Describe it in the vocabulary the frameworks
+> use: baseline configuration, security configuration settings,
+> configuration drift, system component inventory. Do not use "Workstation
+> Assurance" or "WA" as a product brand in new work. Do not use "endpoint
+> posture" either; it is a vendor phrase that appears in no framework.
+> Shipped identifiers keep their names.**
+
+## 1. What the capability is, in framework words
+
+It checks systems against an approved configuration baseline and reports
+deviations. The frameworks name that precisely:
+
+| Framework | Identifier | Wording |
+| --- | --- | --- |
+| CMMC Level 2 | **CM.L2-3.4.1** | System Baselining. Establish and maintain baseline configurations and inventories of organizational systems, including hardware, software, firmware, and documentation |
+| CMMC Level 2 | **CM.L2-3.4.2** | Security Configuration Enforcement. Establish and enforce security configuration settings; monitor, detect, and remediate configuration deviations |
+| NIST SP 800-53 | **CM-2** | Baseline Configuration |
+| NIST SP 800-53 | **CM-6** | Configuration Settings |
+| NIST SP 800-53 | **CM-8** | System Component Inventory |
+| NIST SP 800-53 | **CA-7** | Continuous Monitoring |
+| Supporting | SP 800-128, SP 800-70 | Security-focused configuration management; configuration checklists |
+
+Ecosystem sources a reader will recognize: Center for Internet Security
+(CIS) Benchmarks, and Defense Information Systems Agency (DISA) Security
+Technical Implementation Guides (STIGs).
+
+## 2. Required vocabulary
+
+| Use | For |
+| --- | --- |
+| **configuration compliance** | The capability and the operator-facing function |
+| **security configuration assessment** | The act of checking a system |
+| **configuration drift** | What a failed check found |
+| **baseline configuration** | The approved reference state |
+| **security configuration settings** | The individual parameters |
+| **system component inventory** | The asset side, and the right phrase at CMMC Level 1 |
+| **host**, **endpoint**, **system component** | The thing being assessed |
+
+"Configuration compliance" is both regulatory and a recognized commercial
+category, so it satisfies
+[`competitor-vocabulary-commercial-only.mdc`](competitor-vocabulary-commercial-only.mdc)
+at the same time. That is why it wins over the alternatives.
+
+**CMMC Level 1 nuance.** Level 1 comes from Federal Acquisition Regulation
+clause 52.204-21 and contains **no** configuration-baseline practice. Do
+not imply CM.L2-3.4.1 or CM.L2-3.4.2 coverage in Level 1 copy. At Level 1
+speak about **system component inventory** and basic safeguarding instead.
+
+## 3. Rejected alternatives, with reasons
+
+| Rejected | Why |
+| --- | --- |
+| **Workstation Assurance / WA** | Not an industry term, and it understates the scope: the capability covers servers, workstations, appliances, and network endpoints |
+| **endpoint posture** | A vendor phrase. It appears in no CMMC practice, no NIST SP 800-171 requirement, and no NIST SP 800-53 control title. It fails the operator instruction to use framework vocabulary |
+| **System Assurance / SA** | **SA is the NIST SP 800-53 System and Services Acquisition control family.** This product speaks 800-53 family names, so the acronym collides in exactly the vocabulary we use |
+
+## 4. Shipped identifiers keep their names
+
+This is a branding retirement, not an identifier migration. Renaming a
+registered service is the specific failure
+[`service-registration-hygiene.mdc`](service-registration-hygiene.mdc)
+exists to prevent, and it caused a real multi-day shutdown hang on the lab
+host.
+
+**Never rename:**
+
+- `aic-workstation-assurance-agent-service` (canonical service name)
+- `wa_internal` and `wa_external` license entitlements
+- `wa_seat` provisioning action, `provision_wa.rs`
+- `AIC-WA-INT` and `AIC-WA-EXT` Stock Keeping Unit codes on price papers.
+  A SKU code is a billing identifier; changing it is a commercial change,
+  not a terminology fix
+- `Build-PimWorkstationAssuranceAgentMsi.ps1` and sibling script names
+- Existing database columns, table prefixes, and route paths
+- The WA token path
+
+**Product display names** (for example the installer name shown in Add or
+Remove Programs) are customer-visible branding, so they may change, but
+only as a deliberate packaging change made with the installer work, never
+as a side effect of editing documentation. If changed, the name is title
+case: **AIC Configuration Compliance Agent**.
+
+## 5. Do not sweep with a blind find-replace
+
+A mechanical substitution breaks prose and identifiers. Read each hit and
+rewrite the sentence.
+
+| Hazard | What goes wrong |
+| --- | --- |
+| Product display names | `**AIC Workstation Assurance**` becomes `**AIC endpoint posture**`, which is broken English and renames a shipped product |
+| Headings next to identifiers | A heading changes while the adjacent script and service names correctly do not, leaving the document contradicting itself |
+| WA used as a noun | "plus WA, binder, and attest" becomes "plus endpoint posture, binder, and attest", which does not read |
+| SKU tables | A SKU description changes while the SKU code does not, so the row no longer matches the code |
+| Renders | Editing markdown makes its Word and PDF twins stale; re-render them in the same change set ([`docs-render-docx-pdf.mdc`](docs-render-docx-pdf.mdc)) |
+| Price papers | Changing customer-facing price copy additionally requires a revision-date bump and a re-render ([`gtm-price-list-revision-date.mdc`](gtm-price-list-revision-date.mdc)) |
+
+## Worked violation to fix
+
+**Violation**, observed in the working tree on 2026-09-27 during a
+find-replace sweep:
+
+```text
+| 4 | **Endpoint posture** + CLI + Tauri | Build-PimWorkstationAssuranceAgentMsi.ps1 |
+    aic-workstation-assurance-agent-service | **AIC endpoint posture** |
+```
+
+Three defects in one row: a vendor term instead of framework vocabulary, a
+renamed product display name, and a display name that is not even
+grammatical English beside a script and service that kept their names.
+
+**Fix:**
+
+```text
+| 4 | **Configuration compliance** + CLI + Tauri | Build-PimWorkstationAssuranceAgentMsi.ps1 |
+    aic-workstation-assurance-agent-service | **AIC Configuration Compliance Agent** |
+```
+
+The function is named in framework vocabulary, the script and service keep
+their identifiers, and the display name is title case and reads correctly.
+The display-name change lands with the installer work, not with the
+documentation edit.
+
+## Required agent behavior
+
+1. In new prose, write configuration compliance and the section 2
+   vocabulary. Anchor claims to CM.L2-3.4.1, CM.L2-3.4.2, CM-2, CM-6,
+   CM-8, or CA-7 where a control reference helps.
+2. Never introduce "Workstation Assurance", "WA", "endpoint posture", or
+   "System Assurance" as a product brand in new work.
+3. When correcting existing documents, read each occurrence. Rewrite the
+   sentence rather than substituting a token, and leave every identifier in
+   section 4 alone.
+4. Re-render Word and PDF twins for any markdown changed, and bump the
+   revision date on customer-facing price papers.
+5. Cursor rules, `docs/dev`, and commit bodies may reference the historical
+   name for traceability.
+6. Mirror this file to `core-assets/.cursor/rules/` in the same change set.
+   The workspace `.cursor` directory is not a git root.
+
+## Cross-references
+
+| Rule | Relationship |
+| --- | --- |
+| [`us-terminology-word-choice.mdc`](us-terminology-word-choice.mdc) | Sibling word-choice rule: tier not band, environment not estate, no honesty word, no duration estimates |
+| [`competitor-vocabulary-commercial-only.mdc`](competitor-vocabulary-commercial-only.mdc) | Commercial vocabulary; configuration compliance satisfies both this and the frameworks |
+| [`service-registration-hygiene.mdc`](service-registration-hygiene.mdc) | Why the service name must not be renamed |
+| [`no-offline-product-naming.mdc`](no-offline-product-naming.mdc) | The precedent: retire a brand in new work, keep historical identifiers |
+| [`expand-acronyms-on-first-use.mdc`](expand-acronyms-on-first-use.mdc) | Carries the WA glossary row; update it to the new function name |
+| [`findings-see-dont-swallow.mdc`](findings-see-dont-swallow.mdc) | Findings ownership, and Current State Compliance, which is unaffected |
+| [`docs-render-docx-pdf.mdc`](docs-render-docx-pdf.mdc) | Re-render twins after editing markdown |
+| [`gtm-price-list-revision-date.mdc`](gtm-price-list-revision-date.mdc) | Price-paper edits need a date bump and a re-render |
+
+## Origin
+
+2026-09-27 - operator hard rule in two steps. First, agreement to remove WA
+branding universally. Then, on seeing a sweep in progress, the instruction
+to use terminology found in CMMC and other regulatory frameworks because WA
+is not an industry term. The term was verified against the published CMMC
+Level 2 practices CM.L2-3.4.1 and CM.L2-3.4.2 and the NIST SP 800-53
+configuration-management family rather than chosen from market usage;
+"endpoint posture", picked earlier in the same session as market
+vocabulary, was rejected for appearing in no framework.
