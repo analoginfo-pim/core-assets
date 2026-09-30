@@ -400,6 +400,20 @@ Get-ChildItem -Recurse -Include 'pyproject.toml','ruff.toml' -File
 foreach ($n in @('pyproject.toml','ruff.toml')) { if (Test-Path -LiteralPath $n) { $n } }
 ```
 
+**22. A colon after a variable inside a string is a drive qualifier.**
+`"$x:$line"` fails at parse time with `Variable reference is not valid.
+':' was not followed by a valid variable name character`, because
+PowerShell reads `$x:` as a scope or drive prefix such as `$env:`. Delimit
+the name with braces.
+
+```powershell
+# Wrong - parse error, the whole script fails to run
+"$file:$($_.LineNumber): $($_.Line)"
+
+# Right
+"${file}:$($_.LineNumber): $($_.Line)"
+```
+
 ## 5. Error learning loop (fix once, record immediately)
 
 Operator directive (Phil, 2026-09-27):
