@@ -1,0 +1,102 @@
+---
+description: Every feature a major Competitor covers appears on our capability surfaces with a status - Available now, Available now with wider scope planned (the IGA pattern), or Planned (the Certificate lifecycle management pattern)
+alwaysApply: true
+---
+
+# Competitor feature coverage parity (hard rule)
+
+Operator directive (Phil, 2026-10-01), verbatim:
+
+> **Hard rule: make sure that every feature our competitors cover, we must
+> cover the same. If we don't have the feature, marked it as "Planned" or
+> the way we show IGA and Certificate Management.**
+
+## The rule
+
+> **Every feature a major Competitor publicly covers appears on our
+> capability surfaces: the capabilities page, the industry terms page,
+> requirements checklists, comparison grids, and the matching solution
+> page. Each row carries exactly one status. A feature we ship is
+> "Available now". A feature we ship in part is "Available now, wider
+> scope planned" with one plain sentence on the current scope. A feature
+> we do not ship is "Planned". A Competitor feature is never left off the
+> list because we lack it.**
+
+Buyers score against a requirements list built from Competitors'
+features. A missing row reads as "not supported". A row marked Planned
+reads as a roadmap commitment, and the rows marked Available now show
+everything we do.
+
+## The two reference patterns
+
+Copy these shapes exactly.
+
+**Partial coverage - the Identity Governance and Administration (IGA)
+pattern** (`capabilities.md`):
+
+```text
+| Identity Governance and Administration (IGA) | Account lifecycle and periodic access review for kit accounts. Governance across other applications is planned. | Available now, wider scope planned |
+```
+
+State what ships today, then name the planned extension in one sentence.
+
+**No coverage yet - the Certificate lifecycle management pattern**
+(`capabilities.md`, `industry-terms.md`):
+
+```text
+| Certificate lifecycle management | Discovery, renewal, and governance of certificates across certificate authorities. | Planned |
+```
+
+Use the industry name for the feature and a plain one-line description.
+Do not add an apology or an explanation of why the feature is missing.
+
+## Required agent behavior
+
+1. When building or revising a capability surface, list the features the
+ major Competitors publish for that category, using the vendor set in
+ [`competitor-presentation-parity.mdc`](competitor-presentation-parity.mdc).
+ Use their datasheets, feature pages, and published requirements lists.
+2. For each feature, look up AIC evidence in the source pages and product
+ docs. Assign Available now, Available now with wider scope planned, or
+ Planned. A row with no evidence is Planned, never Available now.
+3. Name each feature with the term Competitors use
+ ([`competitor-vocabulary-commercial-only.mdc`](competitor-vocabulary-commercial-only.mdc)).
+ Expand acronyms on first use.
+4. Add a feature in every place it belongs. A row on a checklist also
+ belongs on the capabilities page and the industry terms page.
+5. Keep the rows current. When a Planned feature ships, change its status
+ in the same change set as the product change, on every surface.
+6. Never name a Competitor in website copy
+ ([`no-competitor-names-in-website.mdc`](no-competitor-names-in-website.mdc)).
+ Record which vendor publishes each feature in `docs/dev`, the
+ competitive notes, or the commit body.
+7. Mirror this file to `core-assets/.cursor/rules/` in the same change
+ set ([`auto-commit-push.mdc`](auto-commit-push.mdc)).
+
+## Forbidden
+
+- Omitting a Competitor feature from a capability surface because AIC
+ does not ship it.
+- Marking a feature Available now without source evidence.
+- Status words other than Available now, Available now with wider scope
+ planned, Planned, and Organization.
+- Dates, release quarters, or durations on Planned rows
+ ([`us-terminology-word-choice.mdc`](us-terminology-word-choice.mdc)).
+- Explanations, apologies, or caveats attached to a Planned row.
+- Inventing a feature name instead of using the Competitors' term.
+
+## Cross-references
+
+| Rule | Relationship |
+| --- | --- |
+| [`competitor-presentation-parity.mdc`](competitor-presentation-parity.mdc) | Match Competitors' format and interactions; this rule matches their feature list |
+| [`competitor-vocabulary-commercial-only.mdc`](competitor-vocabulary-commercial-only.mdc) | Feature and meter names come from Competitors |
+| [`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc) | Status follows evidence; no Met or certified claims |
+| [`no-competitor-names-in-website.mdc`](no-competitor-names-in-website.mdc) | List the feature, never the vendor |
+
+## Origin
+
+2026-10-01 - operator hard rule, given while a privileged access
+requirements checklist was being built from a buyer's competitive
+requirements list. IGA and Certificate lifecycle management on
+`capabilities.md` are the reference patterns.
