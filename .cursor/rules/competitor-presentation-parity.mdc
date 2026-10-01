@@ -1,0 +1,94 @@
+---
+description: Look at how major competitors present, organize, and interact before designing any public or customer-facing surface; match their processes and interactions as closely as possible
+alwaysApply: true
+---
+
+# Competitor presentation parity (hard rule)
+
+Operator directive (Phil, 2026-10-01), verbatim:
+
+> **Hard Rule: Always look at how our major competitors do things
+> graphically, organizationally, interactively with customers, feature
+> sharing, public presentation, etc. We need to look as close as possible
+> to their processes and interactions.**
+
+## The rule
+
+> **Before designing or revising any website page, product page, partner
+> program page, pricing page, trial or demo flow, documentation layout,
+> customer communication, or operator workflow, study how the major
+> Competitors do the same thing. Match their structure, navigation, page
+> types, graphic conventions, feature-presentation format, and customer
+> interaction steps as closely as possible. Differ only where AIC has a
+> capability they lack, and present that difference inside their format.**
+
+Buyers, partners, and assessors already know the Competitors' patterns.
+A site or workflow that follows those patterns reads as an established
+vendor. One that invents its own reads as unfamiliar.
+
+## Who to study
+
+Privileged access and identity: CyberArk, Delinea, BeyondTrust, Keeper,
+HashiCorp, 1Password Business, Bitwarden Enterprise, Saviynt, SailPoint.
+CMMC and compliance: PreVeil, Microsoft (GCC High and Azure Government),
+Exostar, Vanta, Drata, Thoropass, and CMMC-focused MSPs. Channel and
+partner programs: Microsoft, then the privileged access vendors above.
+
+## What to compare
+
+| Area | Look at |
+| --- | --- |
+| Graphics | Hero layout, product screenshots versus illustrations, diagram style, logo strips, icon style, color use, page density |
+| Organization | Top navigation, mega-menu groupings, Platform / Solutions / Industries / Resources / Partners / Company split, solution-by-use-case and solution-by-industry pages, URL and slug shapes |
+| Customer interaction | Free trial, demo request, guided tour, contact form fields, chat, pricing visibility, "talk to sales" placement, onboarding steps |
+| Feature sharing | Capability matrices, product comparison grids, datasheets, solution briefs, integration directories, technical documentation, API references, release notes, product status labels |
+| Public presentation | Proof points: customer counts, analyst placements, certifications held by the vendor, platform and partner logos, trust and security center pages, compliance mappings |
+| Partner programs | Tiers, margins and incentives, deal registration, not-for-resale licenses, enablement, partner portal, marketplace listings |
+
+## Required agent behavior
+
+1. Before drafting a public or customer-facing surface, look at how at
+ least three Competitors present the same thing. Use their live public
+ pages. Record the pattern found in the commit body or `docs/dev`.
+2. Adopt the shared pattern. Where Competitors disagree, follow the
+ majority or the market leader.
+3. Follow the Competitors' process steps for customer interactions:
+ trial, demo, quote, onboarding, support, partner enrollment.
+4. Do not copy their text, images, screenshots, or trademarks. Match the
+ format, then write original content and use original images.
+5. Website and product copy still never names a Competitor
+ ([`no-competitor-names-in-website.mdc`](no-competitor-names-in-website.mdc)).
+ Write "Competitors" where a reference is needed. Vendor names stay in
+ this rule, `docs/dev`, and commit bodies.
+6. Parity of format never licenses a claim. Status words, the no-Met
+ rule, and the single assessment disclaimer still apply
+ ([`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc)).
+ A Competitor publishing a claim AIC cannot support is not a reason to
+ publish it.
+7. Mirror this file to `core-assets/.cursor/rules/` in the same change
+ set ([`auto-commit-push.mdc`](auto-commit-push.mdc)).
+
+## Forbidden
+
+- Designing a page layout, navigation, partner program page, or
+ customer flow without first looking at how Competitors do it.
+- Inventing a page type, interaction step, or feature-presentation format
+ when Competitors share a common one.
+- Copying Competitor text, graphics, screenshots, or trademarks.
+- Naming a Competitor in website, product, or customer copy.
+- Adopting a Competitor's claim that AIC cannot support with evidence.
+
+## Cross-references
+
+| Rule | Relationship |
+| --- | --- |
+| [`competitor-default-decisions.mdc`](competitor-default-decisions.mdc) | Competitor parity for product defaults; Microsoft for channel structure |
+| [`competitor-vocabulary-commercial-only.mdc`](competitor-vocabulary-commercial-only.mdc) | Competitor parity for words and meters; this rule covers format, structure, and interaction |
+| [`no-competitor-names-in-website.mdc`](no-competitor-names-in-website.mdc) | Look like them; never name them |
+| [`go-to-market-docs-home.mdc`](go-to-market-docs-home.mdc) | Competitive research notes live in `pam-platform-docs/docs/go-to-market/competitive/` |
+
+## Origin
+
+2026-10-01 - operator hard rule, given while the public website was being
+extended with a requirements checklist, partner program facts, and CMMC
+solution grids.
