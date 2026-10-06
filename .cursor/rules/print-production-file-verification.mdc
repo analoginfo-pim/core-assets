@@ -1,0 +1,160 @@
+---
+description: Print production files - lossless CMYK PDF, verify the delivered bytes with two readers and polarity checks before any production-ready claim
+alwaysApply: true
+---
+
+# Print production files: verify the delivered bytes (hard rule)
+
+Operator directive (Phil, 2026-10-06), verbatim:
+
+> **The printer reported back that the files you provided did not match.
+> The files you sent to print were gold and black not blue and white.
+> Analyze why this happened and put in a rule to fix it. This is a very
+> serious production error that can never repeat.**
+
+## The rule
+
+> **Any file sent to a printer, sign shop, or fabric graphics vendor is
+> written as lossless CMYK with no color-inversion setting, and is
+> verified from the exact bytes on disk that will be sent - never from
+> the image in memory, never only through a forgiving viewer. Two
+> independent readers must decode the delivered file and agree with the
+> approved artwork, and polarity checks must prove dark areas carry heavy
+> ink and white areas carry almost none. No file is called ready,
+> production-ready, or safe to print until that verification report
+> exists and is included in the package.**
+
+## 1. What went wrong (root cause, 2026-10-06)
+
+Booth graphics for an XYZ Displays order (WS54370) printed as a color
+negative: navy became gold and yellow, white became rich black.
+
+| Layer | Cause |
+| --- | --- |
+| **Technical** | Pillow's PDF writer saved the CMYK image as a JPEG (`/DCTDecode`) carrying an Adobe APP14 marker that says the data is stored inverted, **and** added `/Decode [1 0 1 0 1 0 1 0]`, a second inversion. Readers disagree on whether to apply one, both, or neither. A print system that applied both inversions (or neither) printed every ink value flipped: navy C100 M99 Y51 K57 became about C0 M1 Y49 K43 - gold and black |
+| **Verification** | Checks used tolerant readers (Pillow and pdfium) that happen to cancel the double inversion, and soft proofs built from the in-memory image, not from the delivered PDF. Nothing decoded the file the way a strict print system does |
+| **Process** | The package was called ready for production on the strength of those checks. When asked "Are you sure," the answer repeated the claim instead of running a stricter test |
+
+The written verifier, run against the shipped files, fails them on six
+checks (front) and five checks (endcap), including JPEG compression,
+the `/Decode` array, and inverted polarity.
+
+## 2. Required file format
+
+| Requirement | Detail |
+| --- | --- |
+| Image data | `/DeviceCMYK`, 8 bits per channel, `/FlateDecode` (lossless). A layered CMYK TIFF is also acceptable when the vendor asks for TIFF |
+| Forbidden encodings | `/DCTDecode` (JPEG) and `/JPXDecode` (JPEG 2000) for CMYK print images |
+| Forbidden settings | Any `/Decode` array on a print image. Adobe APP14 inverted CMYK data |
+| Forbidden writer | Pillow `Image.save(..., "PDF")` for CMYK, in any form |
+| Page boxes | `MediaBox` equals full size with bleed. `BleedBox` equals `MediaBox`. `TrimBox` equals finished size, inset by the bleed |
+| Pixel limit | Each image at most 2^28 pixels (268,435,456). Larger images draw only partly in common readers; lower the resolution and state it |
+| Ink limit | Total ink at most 340% unless the vendor names another limit |
+| Color conversion | ICC conversion to the vendor's named profile (for example Coated GRACoL 2006), with intent recorded in the README |
+
+Canonical writer and verifier (agent store, from the 2026-10-06 fix):
+`mxd_print_package.py` (`save_pdf` writes a single Flate CMYK image by
+hand) and `mxd_verify_print.py`. Reuse them. Do not write a new writer
+that skips the checks below.
+
+## 3. Required verification of the delivered bytes
+
+Run on the file **as it sits in the folder or zip being sent**, after
+the zip is built and extracted again. Every row must pass.
+
+| # | Check | Pass condition |
+| --- | --- | --- |
+| 1 | Structure | One page; boxes match the order within 0.01 in; one image; DeviceCMYK, 8 bits, FlateDecode; no `/Decode`; no DCT or JPX |
+| 2 | Strict decode | Image stream decoded with plain zlib per the PDF specification; byte length equals width x height x 4 |
+| 3 | Second reader | The same file rendered by a separate PDF engine (pdfium) |
+| 4 | Match the artwork | Brightness correlation of each reader against the approved RGB artwork (no guide overlays) above 0.90; the two readers agree above 0.95 |
+| 5 | Polarity | Darkest 5% of the design carries more than 200% total ink; dark minus light ink margin above 150 points |
+| 6 | White stays white | Areas that are white or near white in the artwork carry under 30% total ink |
+| 7 | Hue sentinel | The brand's dominant dark color reads correctly in ink terms (for navy: cyan-led, C greater than Y + 20) |
+| 8 | Ink and size | Total ink within the limit; file under the vendor's size limit |
+| 9 | Proof source | The preview images in the package are decoded **from the delivered PDF**, and an agent has looked at them |
+| 10 | Report and hashes | `VERIFICATION-REPORT.txt` and `SHA256SUMS.txt` in the package; checksums re-verified after extracting the zip |
+
+A check that cannot run (missing tool, missing reference) is reported as
+BLOCKED and the package is not described as ready.
+
+## 4. What may be said, and when
+
+| Evidence | Allowed statement |
+| --- | --- |
+| Files written, not yet verified | "Files are built. Verification has not run." |
+| Viewer or soft proof from memory only | Nothing about print readiness |
+| All section 3 checks pass on the extracted zip | "Verified: lossless CMYK, both readers match the artwork, polarity checks pass. Ask the vendor for a digital proof before production." |
+
+Always recommend the vendor's digital proof. Our checks reduce risk;
+the vendor's proof from their own print system is the last gate.
+
+When the operator asks "Are you sure?", treat it as a request to run a
+stricter check, not to restate the earlier answer.
+
+## Forbidden constructs
+
+- Pillow's PDF writer for any CMYK print file.
+- JPEG or JPEG 2000 compression for a CMYK print image.
+- A `/Decode` array, or inverted Adobe CMYK data, in a print file.
+- A print image over 2^28 pixels.
+- Soft proofs, previews, or checks built from the in-memory image instead
+ of the delivered file.
+- Verification through a single reader, or only through a forgiving
+ viewer.
+- Calling a file ready, production-ready, safe to print, or not inverted
+ without the section 3 report.
+- Sending a package with no `VERIFICATION-REPORT.txt` or `SHA256SUMS.txt`.
+- Leaving a superseded print package with a name that can be mistaken for
+ the current one. Rename it to include `DEFECTIVE-DO-NOT-PRINT`.
+
+## Worked violation to fix
+
+**Violation** (the 2026-10-06 incident):
+
+```python
+cmyk = ImageCms.applyTransform(rgb, to_gracol)
+cmyk.save("front-CMYK.pdf", resolution=150)   # JPEG + APP14 + /Decode
+Image.open("front-CMYK.pdf")  # cannot open PDFs; checked memory instead
+soft_proof(cmyk).save("proof.jpg")            # proof never saw the file
+# Reply: "Ready for production. Colors are not inverted."
+```
+
+**Fix:**
+
+```python
+save_pdf(cmyk, "front-CMYK.pdf", trim_in=(0.5, 0.5))   # Flate, no /Decode
+# build the zip, extract it again, then for each PDF:
+#   python mxd_verify_print.py <pdf> intent-front-rgb.png 117.5 117.5 118.5 118.5 proof.jpg
+# exit 0 on every file -> report + SHA256SUMS in the package
+# Reply: "Verified on the extracted zip; ask XYZ for a digital proof."
+```
+
+## Required agent behavior
+
+1. Write print files only through the section 2 format.
+2. Run every section 3 check on the extracted package before any
+ readiness statement, and name the report in the reply.
+3. Keep the approved RGB artwork (no guides) beside the print files so
+ the comparison can be repeated.
+4. Mirror this file to `core-assets/.cursor/rules/` in the same change
+ set ([`auto-commit-push.mdc`](auto-commit-push.mdc)). The workspace
+ `.cursor` directory is not a git root.
+
+## Cross-references
+
+| Rule | Relationship |
+| --- | --- |
+| [`shipped-means-served.mdc`](shipped-means-served.mdc) | Same principle for software: verify what the recipient actually gets, not what was built |
+| [`compliance-claims-honesty.mdc`](compliance-claims-honesty.mdc) | Claims follow evidence; Live, Partial, Absent, BLOCKED |
+| [`public-share-signed-hashed.mdc`](public-share-signed-hashed.mdc) | Shared deliverables carry a SHA-256 manifest |
+| [`silent-failure-is-a-bug.mdc`](silent-failure-is-a-bug.mdc) | A check that silently passes a broken file is a defect |
+| [`ascii-syntax-and-powershell-first-run.mdc`](ascii-syntax-and-powershell-first-run.mdc) | Error learning loop: record the fix the first time |
+
+## Origin
+
+2026-10-06 - operator hard rule after XYZ Displays reported that the
+MxD Summit 2026 booth graphics printed gold and black instead of navy
+and white. Root cause: Pillow wrote CMYK as JPEG with two conflicting
+inversion markers, and verification used forgiving readers and
+in-memory proofs instead of a strict decode of the delivered file.
