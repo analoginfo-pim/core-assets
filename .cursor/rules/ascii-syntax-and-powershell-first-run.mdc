@@ -430,6 +430,19 @@ if ($LASTEXITCODE -ne 0) { throw "commit step failed: $LASTEXITCODE" }
 $out | Select-Object -First 2
 ```
 
+**24. `$(` inside a double-quoted regex is a subexpression.** A pattern
+such as `"\$(2,500|33,900)"` passed to `rg` or `-match` is parsed by
+PowerShell first, and fails with `Expressions are only allowed as the
+first element of a pipeline.` Single-quote every regex pattern.
+
+```powershell
+# Wrong - parse error before rg ever runs
+rg -n "\$(2,500|33,900)" .
+
+# Right
+$pat = '\$(2,500|33,900)'; rg -n $pat .
+```
+
 ## 5. Error learning loop (fix once, record immediately)
 
 Operator directive (Phil, 2026-09-27):
