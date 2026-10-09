@@ -1,0 +1,41 @@
+---
+description: >-
+  Hard rule - rendered documents use Arial. Do not use Calibri.
+alwaysApply: true
+---
+
+# Document face is Arial (hard rule)
+
+Operator directive (Phil, 2026-10-08), verbatim:
+
+> **Hard rule: do not use Calibri. Use Arial for your default.**
+
+## The rule
+
+> **Every rendered Word and PDF document uses Arial for body, headings,
+> the cover company name, the header, and the footer. Do not use
+> Calibri. Consolas is allowed only for code. Pin the document theme
+> to Arial so Word cannot substitute Calibri or Cambria.**
+
+## Required
+
+| Surface | Face |
+| --- | --- |
+| Body, headings, quotes, tables, header, footer, cover name | **Arial** |
+| Code blocks | Consolas |
+| Theme (`ascii`, `hAnsi`, east Asia, complex script) | **Arial** |
+
+`operator-workflows/scripts/docs/render-doc.py` and
+`operator-workflows/scripts/contracts/render-contract.py` both name
+Arial. `apply_brand_type` defaults to Arial.
+
+## Forbidden
+
+- Calibri on any run, style, or theme slot
+- Inter, Urbanist, Aptos, or Segoe as a substitute default
+- Calling a PDF done while its embedded faces still include Calibri
+
+## Origin
+
+2026-10-08 - operator hard rule after a Calibri render. Arial is the
+default. Re-render every document that was set in Calibri.
