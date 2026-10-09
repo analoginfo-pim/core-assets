@@ -75,18 +75,19 @@ and [`gtm-price-list-revision-date.mdc`](gtm-price-list-revision-date.mdc).
 Every rendered document uses the AIC house style described in
 `pam-platform-docs/docs/DOCUMENT-STYLE.md`: a cover page (navy band with
 the unmodified `core-assets/branding/aic-logo-white.png`, the company name
-in Urbanist, the title in large navy Inter, title case), Inter 12 point
-body, navy title-case headings, and navy-header zebra tables. The cover
+in Calibri, the title in large navy Calibri, title case), Calibri 12 point
+body, navy title-case headings, and navy-header zebra tables. Calibri is
+the face Microsoft uses for agreements and Word documents. The cover
 page is mandatory; there is no opt-out. The `<!-- briefing -->` mark only
 moves the subtitle and byline lines onto the cover. Never add a name or
 email address to a document that did not already carry one.
 
 | Position | Content |
 | --- | --- |
-| Cover page | No running header; footer page number only |
+| Cover page | No running header. Footer is the copyright line, then the page number. The cover also prints the copyright statement under the rule |
 | Header line 1 | `Analog Informatics Corporation - <document title>`, taken from the first level-one heading |
 | Header line 2 | `Generated YYYY-MM-DD HH:MM UTC` |
-| Footer | `Page X of Y`, centered, built from Word `PAGE` and `NUMPAGES` fields |
+| Footer | `Copyright © <year> Analog Informatics Corporation. All rights reserved.` then `Page X of Y`, centered. Page numbers are Word `PAGE` and `NUMPAGES` fields |
 
 The timestamp records when the file was rendered. It is a record of an
 event, not a prediction, so it does not conflict with the ban on duration
