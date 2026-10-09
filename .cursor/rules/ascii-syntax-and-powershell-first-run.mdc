@@ -414,6 +414,22 @@ the name with braces.
 "${file}:$($_.LineNumber): $($_.Line)"
 ```
 
+**23. `Select-Object -First` after a native command sets `$LASTEXITCODE`
+to -1.** Truncating the pipeline stops the native process early, so a
+following exit-code check fails even though the command succeeded. A
+commit that landed was reported as failed this way.
+
+```powershell
+# Wrong - the commit succeeds, then the check throws "failed: -1"
+git commit -F $tmp | Select-Object -First 2
+if ($LASTEXITCODE -ne 0) { throw "commit step failed: $LASTEXITCODE" }
+
+# Right - capture everything, check the code, then trim for display
+$out = & git commit -F $tmp 2>&1
+if ($LASTEXITCODE -ne 0) { throw "commit step failed: $LASTEXITCODE" }
+$out | Select-Object -First 2
+```
+
 ## 5. Error learning loop (fix once, record immediately)
 
 Operator directive (Phil, 2026-09-27):
