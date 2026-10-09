@@ -14,20 +14,22 @@ Operator directive (Phil, 2026-10-08), verbatim:
 
 > **Every rendered Word and PDF document uses Arial for body, headings,
 > the cover company name, the header, and the footer. Do not use
-> Calibri. Consolas is allowed only for code. Pin the document theme
-> to Arial so Word cannot substitute Calibri or Cambria.**
+> Calibri. If Arial is not installed, use the closest Helvetica
+> equivalent that is installed. Consolas is allowed only for code.
+> Pin the document theme to the chosen face so Word cannot substitute
+> Calibri or Cambria.**
 
 ## Required
 
 | Surface | Face |
 | --- | --- |
-| Body, headings, quotes, tables, header, footer, cover name | **Arial** |
+| Body, headings, quotes, tables, header, footer, cover name | **Arial** when installed |
+| Same surfaces when Arial is missing | The first installed face from: Helvetica, Helvetica Neue, Nimbus Sans, TeX Gyre Heros, Liberation Sans. If none is installed, the document asks for **Helvetica** |
 | Code blocks | Consolas |
-| Theme (`ascii`, `hAnsi`, east Asia, complex script) | **Arial** |
+| Theme (`ascii`, `hAnsi`, east Asia, complex script) | The same face as the body |
 
-`operator-workflows/scripts/docs/render-doc.py` and
-`operator-workflows/scripts/contracts/render-contract.py` both name
-Arial. `apply_brand_type` defaults to Arial.
+`document_font()` in `operator-workflows/scripts/brand_fonts.py` is the
+only probe. Both renderers call it. `apply_brand_type` pins that face.
 
 ## Forbidden
 
@@ -38,4 +40,5 @@ Arial. `apply_brand_type` defaults to Arial.
 ## Origin
 
 2026-10-08 - operator hard rule after a Calibri render. Arial is the
-default. Re-render every document that was set in Calibri.
+default. The same day: if Arial is not available, use the closest
+equivalent to Helvetica.
