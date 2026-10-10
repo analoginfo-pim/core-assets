@@ -443,6 +443,25 @@ rg -n "\$(2,500|33,900)" .
 $pat = '\$(2,500|33,900)'; rg -n $pat .
 ```
 
+**25. `2>&1` under `$ErrorActionPreference = 'Stop'` turns native stderr
+into a terminating error.** In Windows PowerShell 5.1, `git push` writes
+normal progress ("To https://...") to stderr. With `Stop` set and stderr
+merged, the first stderr line throws `NativeCommandError` and the script
+aborts even though the push succeeded. Lower the preference around the
+native call and judge by `$LASTEXITCODE`.
+
+```powershell
+# Wrong - throws on git's progress line; the push actually succeeded
+$ErrorActionPreference = 'Stop'
+$p = & git push 2>&1
+
+# Right
+$prev = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
+$p = & git push 2>&1
+$code = $LASTEXITCODE; $ErrorActionPreference = $prev
+if ($code -ne 0) { throw "push step failed: $code" }
+```
+
 ## 5. Error learning loop (fix once, record immediately)
 
 Operator directive (Phil, 2026-09-27):
