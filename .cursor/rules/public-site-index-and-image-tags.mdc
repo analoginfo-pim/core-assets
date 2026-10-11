@@ -1,0 +1,39 @@
+---
+description: Hard requirement for analoginfo.com indexing and image tags so Google and Bing do not report canonical, robots, or image-metadata errors
+alwaysApply: true
+---
+
+# Public site index and image tags (hard rule)
+
+> **Every page and image published to https://analoginfo.com has one apex
+> canonical, indexable HTML except /search, a non-empty alt on every img,
+> and a complete ImageObject. Prove it on the live URL after publish.
+> GPT 6 desktop follows the same steps in
+> `pam-platform-docs/docs/go-to-market/website-and-ui/GPT6-INDEX-AND-IMAGE-TAGS-2026-10-10.md`.
+> That file wins over the 2026-10-02 Astra note that said to leave
+> production on noindex.**
+
+## Required on every content page
+
+| Item | Rule |
+| --- | --- |
+| Host | Canonical is `https://analoginfo.com` plus the path. `www` only redirects. |
+| Canonical tag | Exactly one `<link rel="canonical">`. A script that reads `link[rel="canonical"]` is not a second tag. |
+| Robots | No `noindex` except `/search`, which stays `noindex, follow`. |
+| img alt | Never `alt=""`. The footer zoom dialog uses `alt="Enlarged product screenshot"`. |
+| ImageObject | `license` = `https://analoginfo.com/terms`, `acquireLicensePage` = `https://analoginfo.com/contact`, `creator` = `{"@id":"https://analoginfo.com/#organization"}`, `copyrightNotice` and `creditText` name Analog Informatics Corporation. |
+| Sitemap | `robots.txt` points at `https://analoginfo.com/sitemap.xml`. |
+
+## Webflow
+
+Head code and footer code each stay at or under 50,000 characters. If Save
+stays disabled on "over character limit," shorten the new text. Do not drop
+license, acquireLicensePage, or creator. Do not delete Google Tag Manager
+or JSON-LD. Do not Prettify. Do not click Advanced settings Save. Publish
+production `analoginfo.com` only.
+
+## Proof before any "indexed" or "fixed" claim
+
+Fetch the live URL. One canonical, zero empty alts, content pages without
+`noindex`, logo ImageObject fields present. Then use the Google live URL
+test and the Bing live URL test. A stored console snapshot is not the page.
