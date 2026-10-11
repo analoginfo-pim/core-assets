@@ -1,0 +1,74 @@
+---
+description: Hard requirement that analoginfo.com JSON-LD and Open Graph state the company and the two products customers and partners look for
+alwaysApply: true
+---
+
+# Public site core metadata (hard rule)
+
+> **JSON-LD, Open Graph, Twitter cards, and the page meta description
+> state the company and the products customers and partners look for.
+> Image license fields stay, because Google requires them. They do not
+> replace the product facts, and they do not point a picture at the
+> wrong product. Do not add markup that does not name a product, a
+> partner role, a contact, or a required image-license field.**
+
+GPT 6 desktop follows the same steps in
+`pam-platform-docs/docs/go-to-market/website-and-ui/GPT6-INDEX-AND-IMAGE-TAGS-2026-10-10.md`
+section 6. Indexing and image-license fields stay under
+`public-site-index-and-image-tags.mdc`.
+
+## What customers and partners look for
+
+| Who | Fact the markup must carry |
+| --- | --- |
+| Every buyer | Analog Informatics Corporation (AIC). Support is support@analoginfo.com. Contact is https://analoginfo.com/contact. |
+| Commercial and government buyers | AIC Enterprise Privilege Suite. It discovers, rotates, and propagates privileged credentials and controls privileged sessions, with temporary elevation and audit evidence. Page: https://analoginfo.com/capabilities. Quote: https://analoginfo.com/pricing. |
+| Defense suppliers | AIC CMMC Complete. A packaged secure enclave for suppliers preparing for CMMC Level 1, Level 2, and Level 3, with workforce training and assessment records. Page: https://analoginfo.com/cmmc. Pricing: https://analoginfo.com/cmmc/pricing. |
+| Partners | Managed Service Providers, resellers, ISVs and technology partners, and implementation service providers sell and deliver both products. Say that on partner pages. |
+
+Use these ids when a node needs a reference:
+
+- `https://analoginfo.com/#organization`
+- `https://analoginfo.com/#enterprise-privilege-suite`
+- `https://analoginfo.com/#cmmc-complete`
+
+## Required shape
+
+1. The homepage graph leads with a WebPage whose description names both
+   products, then a SoftwareApplication for each product (name, url,
+   one-sentence description, provider organization id, offer URL,
+   audience). ImageObjects follow, and they stay short.
+2. Open Graph and the meta description on the homepage name both
+   products. `og:url` is that page's `https://analoginfo.com/...` URL.
+   `og:site_name` is Analog Informatics.
+3. A product page's SoftwareApplication includes the url and the
+   one-sentence description. A name alone is not a product node.
+4. An image `about` points at the product the picture shows. Assessment
+   evidence points at AIC CMMC Complete. Console, elevation, and session
+   pictures point at AIC Enterprise Privilege Suite.
+5. Keep `license`, `acquireLicensePage`, and `creator` on every
+   ImageObject. Point `creator` at the organization id.
+
+## Do not add
+
+- `SearchAction`, or any action, aimed at `/search`. That page is `noindex`.
+- A second copy of a screenshot caption, width, height, or a nested
+  organization inside every image.
+- A SoftwareApplication that only has a name.
+- A price in JSON-LD. Point `offers` at the pricing page.
+- Schema from a "Generate schema markup" button.
+- Markup that does not name a product, a partner role, a contact, or a
+  required image-license field.
+
+The site head and the site footer each stay at or under 50,000
+characters. Put the two product nodes in the homepage page-head graph.
+Do not push the site-wide head over the cap, and do not delete layout
+CSS to make room. Do not Prettify. Do not click Advanced settings Save.
+Publish production `analoginfo.com` only.
+
+## Proof
+
+Fetch the live homepage. Both product names and both product ids are in
+the JSON-LD. The WebSite node has no `SearchAction`. The meta
+description and `og:description` name both products. `og:url` is
+`https://analoginfo.com/`. Image `about` values match the picture.
