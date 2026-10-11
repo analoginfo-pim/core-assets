@@ -43,3 +43,18 @@ customers and partners look for. That bar is
 `public-site-core-metadata.mdc`. Image license fields stay. Do not add
 markup that does not name a product, a partner role, a contact, or a
 required image-license field.
+
+## IndexNow after publish
+
+After a production publish of analoginfo.com, run
+`docs/go-to-market/website-and-ui/scripts/submit-indexnow.py` from
+pam-platform-docs. The script checks that
+`https://analoginfo.com/{key}.txt` stays on that host and returns the
+UTF-8 key as `text/plain`, then POSTs sitemap URLs except `/search` to
+`https://api.indexnow.org/indexnow`. That root URL is the key location
+for the whole host. It is a same-host redirect to the text file in
+`/.well-known/`. Do not set the key location to the `/.well-known/`
+address. That folder only covers URLs under it (HTTP 422 on the
+homepage, measured 2026-10-10). Do not put the key in page copy. Do not
+remove the key file or the root redirect. Google does not use IndexNow;
+the sitemap and the Search Console live test cover Google.
