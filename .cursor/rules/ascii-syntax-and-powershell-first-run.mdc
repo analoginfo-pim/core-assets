@@ -462,6 +462,20 @@ $code = $LASTEXITCODE; $ErrorActionPreference = $prev
 if ($code -ne 0) { throw "push step failed: $code" }
 ```
 
+**26. A `foreach` statement cannot be piped directly.** `foreach ($x in $y) { ... } | Select-Object -First 5`
+fails with `An empty pipe element is not allowed.` because `foreach` is a
+statement, not a pipeline command. Assign the loop to a variable first, or
+use `ForEach-Object`.
+
+```powershell
+# Wrong - parse error
+foreach ($u in $urls) { $u.Length } | Select-Object -First 5
+
+# Right
+$lens = foreach ($u in $urls) { $u.Length }
+$lens | Select-Object -First 5
+```
+
 ## 5. Error learning loop (fix once, record immediately)
 
 Operator directive (Phil, 2026-09-27):
