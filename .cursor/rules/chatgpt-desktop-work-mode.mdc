@@ -1,0 +1,46 @@
+---
+description: Always use Work mode when controlling the ChatGPT desktop app
+alwaysApply: true
+---
+
+# ChatGPT desktop uses Work mode
+
+Operator directive (Phil, 2026-10-10):
+
+> **Always use work mode when controlling ChatGPT 6 desktop.**
+
+## The rule
+
+> **Any control of the ChatGPT desktop app uses Work mode. When the app
+> shows a Work handoff, accept it. The button is named "Continue in Work".
+> Do not decline that handoff. Do not tell the chat to stay out of Work
+> mode.**
+
+## Required
+
+1. Before sending a task that must change analoginfo.com or read local
+   files, the ChatGPT desktop session must be in Work mode.
+2. The moment a button named `Continue in Work` appears, click it.
+   Waiting out the prompt declines the handoff.
+3. After an accepted handoff, leave Work mode in control of the browser
+   and the local files. Do not click the desktop while that computer-use
+   session is active.
+
+## Bandwidth
+
+Work mode is not a license to crawl analoginfo.com or Webflow staging.
+Local copy first. Named User-Agent. Explicit changed URLs only. See
+`public-site-bandwidth-budget.mdc`,
+`public-site-no-speculative-crawls.mdc`, and
+`public-site-image-weight.mdc`. Do not replay
+`bandwidth-20261030-r1`.
+
+## Forbidden
+
+- Declining, dismissing, or timing out the Work handoff.
+- Sending "do not use Work mode" or any instruction to stay in ordinary chat.
+- Treating the ChatGPT / Codex mode switcher as a substitute. That menu
+  does not contain Work. Work is the in-chat handoff.
+- Using Work mode to run a full-site audit, WordPress-path probe, or
+  sitemap IndexNow dump against analoginfo.com or
+  analoginfo-b2base-site.webflow.io.

@@ -1,0 +1,175 @@
+---
+description: analoginfo.com Webflow bandwidth budget; offline first; named User-Agent; staging bills; never raise limits
+alwaysApply: true
+---
+
+# Public site bandwidth budget (hard rule)
+
+Operator directive (Phil, 2026-10-30), after Webflow Technical Support
+(Marcel) reconciled analoginfo.com usage:
+
+> **We have used an excessive amount of bandwidth creating and testing
+> analoginfo.com. Change strategy as a set of new hard rules.**
+
+Support estimates for the reviewed period (not exact byte counts; they
+reconciled to about 94% of reported usage; 1 GB = 1,000,000,000 bytes;
+timestamps UTC): 43.99 GB total versus 18.27 GB of named assets. The
+gap is page delivery. Roughly 10 GB was 404 responses. Staging
+`analoginfo-b2base-site.webflow.io` was about 4.3 GB (about 10%).
+98% of page traffic and 95% of asset traffic scored as automated.
+Likely-human traffic was under 1 GB. Cached Content Delivery Network
+(CDN) delivery still counted. Nothing was charged; the site stayed
+inside the 50 GB allowance. That is not permission to keep the old
+pattern.
+
+A large share carried Analog Informatics User-Agents
+(`AnalogInformatics-SiteAudit/1.0`, `AIC-indexnow`,
+`AnalogInformatics-Subscriptions/1.0`) plus Python scripting and
+Cursor / ChatGPT editor sessions. Support asked AIC to confirm those
+are ours and to point tooling at a copy or throttle it.
+
+ChatGPT already shipped production remediation
+`bandwidth-20261030-r1` (lean 404, IndexNow explicit URLs, blog
+delivery images). Do not replay that release. Do not re-upload those
+images. These Cursor rules bind every later chat.
+
+## The rule
+
+> **analoginfo.com and its Webflow staging hostname are production
+> bandwidth. They are not a lab. Work from a local copy first. Every
+> live request is named, bounded, serialized, and required by the
+> current change. Staging counts toward the same Webflow allowance.
+> A cached CDN hit still bills. Do not raise limits or split a job
+> to evade them. Do not weaken required search, layout, comparison,
+> or IndexNow gates to save bytes.**
+
+"A copy of the site" means local HTML, artwork, PDFs, screenshots, and
+verified caches on disk. It does **not** mean Webflow staging.
+
+## Hosts that bill
+
+| Host | Role |
+| --- | --- |
+| `https://analoginfo.com` | Production. Publish here only. |
+| `https://analoginfo-b2base-site.webflow.io` | Staging. Same allowance. Do not publish or test here to "save" production. |
+| `www.analoginfo.com` | Redirect only. Do not fetch it as a second copy of a page. |
+
+## Offline first
+
+Before any network call:
+
+1. Search existing local HTML, original artwork, uploaded derivatives,
+   PDFs, screenshots, release receipts, and hash-verified caches.
+2. Reuse a prior receipt when the page, shared layout, and assets did
+   not change.
+3. Do not recrawl to rediscover facts already saved.
+
+Canonical workflow:
+`pam-platform-docs/docs/go-to-market/website-and-ui/TESTING-BANDWIDTH-WORKFLOW-2026-10-28.md`.
+Canonical validator (do not invent a second crawler):
+`C:/Users/phil/Documents/Codex/2026-10-28/use-work-mode-stay-in-work/work/propagation/validate_search_release.py`
+with adjacent `bandwidth_http.py` and `bandwidth_assets.py`. Preserve
+`http-cache/`, `asset-cache/`, and `http-transfer-ledger.json`. Do not
+copy those clients into a fresh workspace to reset the ledger.
+
+## Live request budget (scripted HTML)
+
+All scripted production HTML requests use `bandwidth_http.py`:
+
+| Limit | Value |
+| --- | --- |
+| Encoded response-body bytes per run | 12,000,000 |
+| Requests per run | 120 |
+| Shared UTC-day encoded bytes | 50,000,000 |
+| Shared UTC-day requests | 300 |
+| Concurrency | One request at a time |
+| Spacing | At least one second between requests |
+
+When the budget is exhausted: stop, investigate, and use local
+evidence. Never raise the numbers. Never split one job into parallel
+processes to reset the counters. Browser traffic and Application
+Programming Interface (API) traffic are additional and must be
+minimized separately. These client counts are not Webflow's bill.
+
+## Named User-Agent
+
+Never send an empty User-Agent. Every AIC request identifies the
+program and a contact:
+
+| Purpose | User-Agent |
+| --- | --- |
+| Validation | `AnalogInformatics-Validation/3.0 (+https://analoginfo.com/contact)` |
+| IndexNow | `AnalogInformatics-IndexNow/2.0 (+https://analoginfo.com/contact)` |
+
+Retired. Do not emit, revive, or "improve":
+
+- `AnalogInformatics-SiteAudit/1.0` (discovery crawler; concurrent;
+  guessed paths)
+- `AIC-indexnow` (whole-sitemap default)
+
+`AnalogInformatics-Subscriptions/1.0` was seen in Webflow data and
+was **not** found in examined AIC code. Ownership and its share of
+traffic are unconfirmed. Do not claim all automated traffic is
+controlled. Do not invent a Subscriptions crawler to match the name.
+
+Cursor, ChatGPT desktop, Playwright, and Python `urllib` / `requests`
+sessions that hit analoginfo.com count. Headless Chrome referred from
+our own site counts. A missing User-Agent is forbidden.
+
+## Browser sessions
+
+Visual and functional checks remain mandatory
+([`essential-ui-actions-must-be-visible.mdc`](essential-ui-actions-must-be-visible.mdc),
+approved comparison layout at 1440 / 390 / 320). Resize the same
+loaded tab. Do not open a fresh session per viewport. Do not repeat
+screenshots after an unchanged check. Keep graphics, Cascading Style
+Sheets (CSS), fonts, and scripts on for visual QA. Do not disable
+them to obtain a low transfer count.
+
+ChatGPT 6 desktop Work mode still applies
+([`chatgpt-desktop-work-mode.mdc`](chatgpt-desktop-work-mode.mdc)).
+Work mode is not a license to crawl production.
+
+## What must stay
+
+Do not drop these to save bandwidth:
+
+- One apex canonical and indexable HTML except `/search`
+- Non-empty image alt text and complete ImageObject fields
+- JSON-LD / Open Graph that name Analog Informatics Corporation and
+  both products
+- IndexNow of **explicit changed** production URLs after a real publish
+- All-blog pre/post release gate when a blog release is in scope
+- 61-question comparison coverage when a comparison page is in scope
+- Privacy-preferences launcher on the 404 page
+
+## Forbidden
+
+- Treating analoginfo.com or Webflow staging as a free test target
+- Publishing staging, or testing against staging, to avoid production
+- Raising run/day limits or splitting jobs to evade them
+- Empty User-Agent, or a generic `python-requests` / `curl` default
+- Cache-bypass headers, random query strings, or hidden GET fallbacks
+- Automatic retry loops
+- Replaying `bandwidth-20261030-r1` or re-uploading its images
+- Claiming exact monthly savings or a guaranteed billing drop
+- Paid plans, Domain Name System (DNS) / proxy changes, or blanket
+  search-bot blocks as a bandwidth workaround without a separate
+  operator instruction
+- Weakening required validation to report a low transfer count
+
+## Required agent behavior
+
+1. Local copy first. Live second. Staging never.
+2. Name the User-Agent. Bound the run. Record bytes actually read.
+3. After a real production publish, compare the Webflow usage view
+   once when available. Do not poll it.
+4. Mirror this file to `core-assets/.cursor/rules/` in the same
+   change set ([`auto-commit-push.mdc`](auto-commit-push.mdc)).
+
+## Origin
+
+2026-10-30 - operator: change analoginfo.com create-and-test strategy
+after Webflow Support showed most billed traffic was AIC automation,
+404 probes, staging, and large images. ChatGPT remediates the live
+site; these Cursor rules bind every later agent.

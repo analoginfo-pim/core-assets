@@ -1,0 +1,114 @@
+---
+description: analoginfo.com image and document weight; srcset required; no bulk PNG or PDF GET
+alwaysApply: true
+---
+
+# Public site image weight (hard rule)
+
+Operator directive (Phil, 2026-10-30): compress and stop re-downloading
+large analoginfo.com files. Webflow Technical Support (Marcel) reported
+that `cmmc-chaos-to-order.png` was about 1 GB across about 590 requests
+in the reviewed period. Every request was served from cache and still
+counted. All of it was automated: missing User-Agent plus headless
+Chrome referred from our own site. The file was 1.72 MB with no
+responsive variants, so each request downloaded the whole thing.
+Several other blog PNGs were between 1.8 MB and 3.4 MB. The October 19
+peak included Python pulling those PNGs and competitor PDFs.
+
+ChatGPT already uploaded optimized blog covers for the twenty published
+articles in `bandwidth-20261030-r1` and bound heroes / cards to the
+CMS **Optimized cover image** field (500 KB maximum). Do not replay
+that release. Do not re-upload those covers. Fifteen draft items still
+need an approved optimized cover before any future authorized publish.
+
+## The rule
+
+> **Every analoginfo.com delivery image is sized for the slot it
+> fills, has server-rendered `srcset` and `sizes` in the initial
+> HTML, and has a reasonably sized fallback. Routine checks are HEAD.
+> A full body download is allowed only for an explicitly changed
+> asset that has no verified local copy, once, then retained. No bulk
+> PNG, font, video, PDF, or competitor-document pulls.**
+
+## Delivery ceilings (authoring)
+
+| Slot | Target encoded size | Notes |
+| --- | --- | --- |
+| Thumbnail / card | 150 KB | Document a readability or lossless exception before release |
+| Article hero / cover | 500 KB | Matches the CMS Optimized cover image maximum |
+| Single integrity download | 4 MB | Hard stop; investigate instead of raising |
+| Changed images per run | 10 explicit URLs | Share the HTML run/day budget |
+
+Never silently crush legibility to hit a number. If the artwork cannot
+meet the target without becoming unreadable, record the exception and
+keep the approved art.
+
+## Responsive variants
+
+Initial HTML must include `srcset` and `sizes`. JavaScript-only swaps
+do not count. Webflow CSV image imports do **not** create native
+responsive variants; upload delivery images directly in the Designer
+or provide explicit server-rendered sources.
+
+Prefer WebP / AVIF for on-page delivery where the template supports
+them. Social sharing and Open Graph images stay a supported PNG or
+JPEG. Do not substitute WebP / AVIF for Open Graph. Verify the actual
+file format; do not trust the filename (a JPEG served as `.png` has
+already occurred).
+
+Preserve approved artwork and alt text
+([`public-site-index-and-image-tags.mdc`](public-site-index-and-image-tags.mdc)).
+
+## What to request on the wire
+
+| Check | Method |
+| --- | --- |
+| Availability / size of an unchanged image | HEAD, once per unique URL per run |
+| Metadata, canonical, JSON-LD | HTML only; no image body |
+| New or changed artwork integrity | Local file hash and decode first; GET the remote body only if no verified local copy exists |
+| Unchanged PDF / Word | Reuse the verified local file |
+| Competitor or comparison PDF already on disk | Do not GET it again from analoginfo.com |
+
+`python bandwidth_assets.py <changed-image-URL> ...` is the integrity
+path. It shares the run/day budget in
+[`public-site-bandwidth-budget.mdc`](public-site-bandwidth-budget.mdc).
+Unsupported HEAD, a bad status, or a bad content type is a failure to
+investigate. Never fall back to downloading the image.
+
+## Worked violation (do not repeat)
+
+**Violation.** A validator or ChatGPT / Cursor session GETs
+`cmmc-chaos-to-order.png` (1.72 MB, no `srcset`) hundreds of times.
+CDN cache hits. Webflow still bills. About 1 GB for one file.
+
+**Fix.** Author a 1080-pixel delivery derivative under 500 KB with
+native responsive variants. HEAD for routine checks. Keep the local
+file. Do not bulk-GET the original PNG or the comparison PDFs.
+
+## Forbidden
+
+- Shipping a blog cover or hero above 500 KB without a recorded
+  exception
+- Serving one 1.7 MB-class PNG to every card and every viewport
+- Webflow CSV as the path to "add responsive images"
+- Bulk GET of blog PNGs, fonts, video, or competitor PDFs
+- A `--full-images` whole-blog body audit
+- Re-uploading the October 30 optimized covers
+- Publishing any of the fifteen draft blog items without an approved
+  optimized cover
+- Disabling images in the browser to fake a low transfer count
+
+## Required agent behavior
+
+1. Author and cache the delivery file locally before any live GET.
+2. Confirm `srcset` / `sizes` in the initial production HTML for
+   changed templates, using one bounded page GET or a cached copy.
+3. Mirror this file to `core-assets/.cursor/rules/` in the same
+   change set ([`auto-commit-push.mdc`](auto-commit-push.mdc)).
+
+## Origin
+
+2026-10-30 - Webflow Support: one 1.72 MB blog PNG cost about 1 GB
+across about 590 automated cached requests; other blog PNGs 1.8-3.4 MB;
+October 19 Python pulled those PNGs and competitor PDFs. Strategy
+change: weight the file, require `srcset`, and stop bulk downloads.

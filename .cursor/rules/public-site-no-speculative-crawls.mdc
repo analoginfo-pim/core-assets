@@ -1,0 +1,125 @@
+---
+description: No speculative analoginfo.com crawls, WordPress probes, 404-body reads, or sitemap IndexNow dumps
+alwaysApply: true
+---
+
+# Public site: no speculative crawls (hard rule)
+
+Operator directive (Phil, 2026-10-30): stop burning analoginfo.com
+bandwidth on automated discovery. Webflow Technical Support (Marcel)
+reported roughly 10 GB of 404 delivery in the reviewed period. The
+site was probed for WordPress paths that do not exist
+(`/wp-admin/`, `/wlwmanifest.xml`, assorted PHP filenames). Each
+miss returned the full 404 page (about 236 KB uncompressed at that
+time). 98% of page traffic scored as automated. The October 19 peak
+was automated Python pulls plus scanner traffic, not a visitor event.
+
+ChatGPT already retired `AnalogInformatics-SiteAudit/1.0` and changed
+`submit-indexnow.py` so a no-argument run refuses the network. These
+Cursor rules keep that posture.
+
+## The rule
+
+> **Request only exact known analoginfo.com URLs required by the
+> current change and, when a blog release is in scope, the mandatory
+> all-blog gate. No path guessing. No recursive crawl. No WordPress
+> or PHP discovery. No scheduled full-site audit. Stop before an
+> error body. IndexNow takes an explicit list of changed indexable
+> production URLs. A no-argument or whole-sitemap IndexNow submit is
+> forbidden.**
+
+## Allowed live URLs
+
+A live GET or HEAD is allowed only when all of these hold:
+
+1. The URL is already known (handoff, sitemap row already on disk,
+   CMS slug, or the page just published).
+2. The current change requires that URL (or the all-blog gate does).
+3. No verified local copy or receipt covers the check.
+4. The request uses a named User-Agent from
+   [`public-site-bandwidth-budget.mdc`](public-site-bandwidth-budget.mdc)
+   and stays inside that budget.
+
+Routine asset checks are HEAD. HTML metadata, link, sitemap, robots,
+and JSON-LD checks are HTML-only. Do not launch a full browser for
+those.
+
+## Stop before error bodies
+
+A 403, 404, 429, 5xx, unexpected content type, or redirect stops
+dependent downloads. Do not fetch the error page to "see what it
+looks like."
+
+One bounded 404-size sample is allowed only when the 404 page or
+shared global code that affects it changed. That sample uses the
+budgeted client and stops after the documented cap. Inspect a
+redirect destination before deliberately requesting it. No automatic
+retry loops.
+
+## IndexNow
+
+After a **production** publish of analoginfo.com, run
+`docs/go-to-market/website-and-ui/scripts/submit-indexnow.py` from
+pam-platform-docs with the changed indexable URLs as arguments.
+
+| Required | Forbidden |
+| --- | --- |
+| Explicit changed production URLs | No-argument run (script must refuse the network) |
+| Cap 100 URLs per release | Whole-sitemap default |
+| Skip `/search` | Submitting `/404`, `/wp-admin`, or probe paths |
+| User-Agent `AnalogInformatics-IndexNow/2.0 (+https://analoginfo.com/contact)` | `AIC-indexnow` |
+| Key location `https://analoginfo.com/{key}.txt` | `/.well-known/` as keyLocation |
+| Deduplicate | Repeating an accepted Google live-test URL to check status |
+
+Google does not use IndexNow. Keep `sitemap.xml` for Google. Do not
+GET the live sitemap solely to feed IndexNow.
+
+## Retired crawlers
+
+Do not run, port, or "just once" revive:
+
+- `AnalogInformatics-SiteAudit/1.0` and `audit_discovery.py`
+- Any script that guesses `/wp-admin/`, `/wlwmanifest.xml`,
+  `wp-login.php`, `xmlrpc.php`, or other PHP / WordPress paths
+- Link-checker browser fleets
+- Scheduled full-site audits
+- Recursive feed or asset enumeration
+- Python that bulk-GETs blog PNGs or competitor PDFs (the October 19
+  pattern)
+
+Historical validators stay retired until they use `bandwidth_http.py`
+and these controls.
+
+## Lean 404 (do not grow it)
+
+The October 30 production 404 (page ID `6a92916292f4435c8aa7390c`)
+removed Navbar, Footer, and Global Styles component instances. Measured
+baseline: 105,694 raw HTML bytes and 30,304 encoded body bytes. Keep
+raw HTML below 110,000 bytes. Do not add full navigation, footer, large
+graphics, videos, forms, or marketing components. Keep the approved
+title, explanation, compact recovery links, and the privacy-preferences
+launcher. Recheck one bounded 404 sample only when that page or shared
+global code changes.
+
+## Forbidden
+
+- Guessing paths to see whether they exist
+- Reading 404 / 429 / 5xx bodies as a matter of course
+- Sitemap-wide IndexNow or a no-argument submit
+- Empty User-Agent discovery
+- Concurrent crawlers
+- Claiming scanner / WordPress-probe traffic is "not ours" and then
+  adding our own probe to measure it
+
+## Required agent behavior
+
+1. Write the exact URL list before the first live request.
+2. On any unexpected status, stop. Do not follow a guessed next path.
+3. Mirror this file to `core-assets/.cursor/rules/` in the same
+   change set ([`auto-commit-push.mdc`](auto-commit-push.mdc)).
+
+## Origin
+
+2026-10-30 - Webflow Support: about 10 GB of 404s from WordPress / PHP
+probes at about 236 KB each, plus AIC-named User-Agents and Python
+pulls. Strategy change: no speculative crawls; IndexNow explicit only.

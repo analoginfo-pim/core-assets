@@ -7,11 +7,15 @@ alwaysApply: true
 
 > **Every page and image published to https://analoginfo.com has one apex
 > canonical, indexable HTML except /search, a non-empty alt on every img,
-> and a complete ImageObject. Prove it on the live URL after publish.
-> GPT 6 desktop follows the same steps in
+> and a complete ImageObject. Prove changed pages from a local copy
+> first; one bounded live read of each changed production URL is the
+> cap, not a full-site fetch. GPT 6 desktop follows the same steps in
 > `pam-platform-docs/docs/go-to-market/website-and-ui/GPT6-INDEX-AND-IMAGE-TAGS-2026-10-10.md`.
 > That file wins over the 2026-10-02 Astra note that said to leave
-> production on noindex.**
+> production on noindex. Bandwidth, crawl, and image-weight rules in
+> `public-site-bandwidth-budget.mdc`,
+> `public-site-no-speculative-crawls.mdc`, and
+> `public-site-image-weight.mdc` bind the same work.**
 
 ## Required on every content page
 
@@ -34,9 +38,16 @@ production `analoginfo.com` only.
 
 ## Proof before any "indexed" or "fixed" claim
 
-Fetch the live URL. One canonical, zero empty alts, content pages without
-`noindex`, logo ImageObject fields present. Then use the Google live URL
-test and the Bing live URL test. A stored console snapshot is not the page.
+Check the saved local HTML or a verified cache first. Then one bounded
+GET of each **changed** production URL (named User-Agent, budgeted
+client). One canonical, zero empty alts, content pages without
+`noindex`, logo ImageObject fields present. Reuse the same browser tab
+for layout. Do not recrawl the site. Do not fetch staging.
+
+Use the Google live URL test and the Bing live URL test only for URLs
+that actually changed and were not already accepted in this release.
+A stored console snapshot is not the page. Do not repeat an accepted
+live test to check status.
 
 JSON-LD and Open Graph must also name the company and the two products
 customers and partners look for. That bar is
@@ -48,10 +59,13 @@ required image-license field.
 
 After a production publish of analoginfo.com, run
 `docs/go-to-market/website-and-ui/scripts/submit-indexnow.py` from
-pam-platform-docs. The script checks that
-`https://analoginfo.com/{key}.txt` stays on that host and returns the
-UTF-8 key as `text/plain`, then POSTs sitemap URLs except `/search` to
-`https://api.indexnow.org/indexnow`. That root URL is the key location
+pam-platform-docs with the **explicit changed indexable production
+URLs** as arguments (at most 100). A no-argument run must refuse the
+network. Do not submit the sitemap, `/search`, `/404`, or probe paths.
+The script checks that `https://analoginfo.com/{key}.txt` stays on
+that host and returns the UTF-8 key as `text/plain`, then POSTs only
+those URLs to `https://api.indexnow.org/indexnow` as
+`AnalogInformatics-IndexNow/2.0`. That root URL is the key location
 for the whole host. It is a same-host redirect to the text file in
 `/.well-known/`. Do not set the key location to the `/.well-known/`
 address. That folder only covers URLs under it (HTTP 422 on the

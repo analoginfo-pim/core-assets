@@ -68,7 +68,11 @@ Publish production `analoginfo.com` only.
 
 ## Proof
 
-Fetch the live homepage. Both product names and both product ids are in
+Check saved homepage HTML or a verified cache first. One bounded GET
+of `https://analoginfo.com/` is enough when that cache is stale or the
+homepage changed. Both product names and both product ids are in
 the JSON-LD. The WebSite node has no `SearchAction`. The meta
 description and `og:description` name both products. `og:url` is
 `https://analoginfo.com/`. Image `about` values match the picture.
+Do not recrawl. Do not fetch staging. Named User-Agent and budget:
+`public-site-bandwidth-budget.mdc`.
