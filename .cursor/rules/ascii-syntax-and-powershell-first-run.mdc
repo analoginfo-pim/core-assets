@@ -476,6 +476,25 @@ $lens = foreach ($u in $urls) { $u.Length }
 $lens | Select-Object -First 5
 ```
 
+**27. `cargo test` takes one name filter before `--`.** Passing several
+module paths fails with `error: unexpected argument 'checks::screen_lock'
+found`. Put the extra filters after `--`, where the test harness accepts a
+list, or use one shorter substring that matches them all.
+
+```powershell
+# Wrong - cargo rejects the second filter
+cargo test -p my-core --lib platform::macos checks::screen_lock
+
+# Right
+cargo test -p my-core --lib -- platform::macos checks::screen_lock
+```
+
+**28. A PowerShell here-string passed to `python -c` loses its quotes.**
+PowerShell strips the embedded double quotes when it builds the native
+command line, so `os.environ["TEMP"]` arrives as `os.environ[TEMP]` and
+Python reports `SyntaxError`. This is practice 12 again: write the program
+to a `.py` file with `Set-Content -Encoding ascii`, then run that file.
+
 ## 5. Error learning loop (fix once, record immediately)
 
 Operator directive (Phil, 2026-09-27):
