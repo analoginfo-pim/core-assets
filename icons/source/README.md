@@ -1,56 +1,46 @@
 # Source Icon Files
 
-Original SVG source files for all AIC branding assets.
+Master artwork for every AIC Enterprise desktop icon.
 
 ## Files
 
-- `aic-icon.svg` - Primary application icon (gradient background, white text)
+| File | What it is |
+|---|---|
+| `aic-mark-512.png` | The approved production icon: navy (`#0F2135`) "AIC" with the line under "AI", on white. Copied from `pam-platform-docs/docs/go-to-market/website-and-ui/images/aic-logo-black-512.png`. This is the only source the generator reads. |
+| `aic-icon-1024.png` | 1024 px master, no stripe (services, agents, the default product icon). Generated. |
+| `aic-icon-admin-1024.png` | 1024 px master with the admin stripe. Source for `../tauri/`. Generated. |
+| `aic-icon-user-1024.png` | 1024 px master with the user stripe. Source for `../tauri-user/`. Generated. |
+| `aic-icon.svg` | Retired teal-gradient artwork, kept for the agent build's SVG fallback. Do not use for new icons. |
 
-## Editing Guidelines
+The old teal / aqua-bar icons are retired. The website brand guide says:
+use the plain AIC mark with the underline; do not restore the old aqua-bar
+icon.
 
-1. **Use Vector Graphics Software**:
-   - Adobe Illustrator
-   - Inkscape (free)
-   - Figma
-   - Sketch
+## Who gets which stripe
 
-2. **Maintain Consistency**:
-   - Font: Arial Bold
-   - Text: "AIC"
-   - Colors: 
-     - Background gradient: #2d3e50 → #1a2332
-     - Text: #ffffff
+Every icon is the mark on a white rounded tile. A bottom stripe says who the
+program is for:
 
-3. **Export Settings**:
-   - Format: SVG 1.1
-   - Decimal places: 2
-   - Embed fonts or convert to paths
-   - Optimize for web
+| Stripe | Color | Programs |
+|---|---|---|
+| Admin | amber `#B45309` (`--aic-amber`) | Elevated operator tools: the server configurators, the agent configurators, DB Mgmt, Jump, Recording and WA configurators |
+| User | blue `#2359D1` (`--aic-blue`) | Programs an end user runs: the elevation request dialogs |
+| None | | Services, agents, CLIs and the default product icon |
 
-4. **After Editing**:
-   - Save source SVG
-   - Regenerate all production formats using scripts
-   - Test in target applications
-   - Commit both source and generated files
+The Win32 and Tauri builds of one program use the same icon.
 
-## Creating New Variants
+## Regenerating
 
-When creating logo variations:
+From the `core-assets` root (Pillow required):
 
-1. **Copy base file**: `cp aic-icon.svg aic-icon-variant.svg`
-2. **Make changes** preserving brand guidelines
-3. **Save with descriptive name**: e.g., `aic-icon-monochrome.svg`
-4. **Update generation scripts** to include new variant
-5. **Document** the new variant in this README
+```powershell
+python scripts/generate_installer_shortcut_icons.py
+# Tauri platform trees, from any Tauri project with @tauri-apps/cli:
+npx tauri icon <core-assets>\icons\source\aic-icon-admin-1024.png --output <core-assets>\icons\tauri
+npx tauri icon <core-assets>\icons\source\aic-icon-user-1024.png --output <core-assets>\icons\tauri-user
+# Replace the generated icon.ico with the per-size ICOs (sharper small frames):
+copy icons\desktop\installer-shortcuts\aic-server-admin-tauri.ico icons\tauri\icon.ico
+copy icons\desktop\installer-shortcuts\aic-client-elevate-tauri.ico icons\tauri-user\icon.ico
+```
 
-## Quality Checklist
-
-Before committing source changes:
-
-- [ ] SVG validates (use https://validator.w3.org/)
-- [ ] Text is legible at 16×16 pixels
-- [ ] Colors match brand guidelines
-- [ ] File size is reasonable (<50KB)
-- [ ] No proprietary metadata (Adobe/Sketch IDs)
-- [ ] Regenerated production formats successfully
-- [ ] Tested in at least one target application
+Then push them with `scripts/sync-to-projects.ps1`.
