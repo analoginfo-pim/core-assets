@@ -14,8 +14,8 @@ This directory contains the branding and icon assets for all Analog Information 
 
 ## Asset Locations
 
-### Desktop Application (pim-offline-client)
-- **Location**: `pim-offline-client/assets/`
+### Desktop Application (aic-endpoint-privilege-agent)
+- **Location**: `aic-endpoint-privilege-agent/assets/`
 - **Files**:
   - `icon.svg` - Source SVG (256x256, editable)
   - `icon.ico` - Windows application icon (generated)
@@ -56,7 +56,7 @@ This PowerShell script automatically generates all required PNG and ICO files fr
 #### Using ImageMagick:
 ```bash
 # Generate Windows ICO for desktop app
-cd pim-offline-client/assets
+cd aic-endpoint-privilege-agent/assets
 magick convert -background none icon.svg -define icon:auto-resize=256,128,96,64,48,32,16 icon.ico
 
 # Generate web icons
@@ -70,7 +70,7 @@ magick convert -background none -resize 180x180 apple-touch-icon.svg apple-touch
 #### Using Inkscape:
 ```bash
 # Desktop app
-inkscape pim-offline-client/assets/icon.svg --export-filename=icon-256.png -w 256 -h 256
+inkscape aic-endpoint-privilege-agent/assets/icon.svg --export-filename=icon-256.png -w 256 -h 256
 # ... repeat for other sizes (128, 64, 48, 32, 16)
 # Then combine with ImageMagick: magick convert icon-*.png icon.ico
 

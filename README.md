@@ -21,7 +21,7 @@ Corporation (AIC) PIM applications.
 This repository contains the official branding assets, logos, icons, legal
 text, and generation/sync scripts used across all AIC PIM projects:
 
-- **pim-offline-client** - Desktop application icons
+- **aic-endpoint-privilege-agent** - Desktop application icons
 - **pim-offline-server** - Web application favicons and PWA assets
 - **pim-offline-legacy-client** - Legacy Python client icons
 - **pim-ui-kit** - React component library branding

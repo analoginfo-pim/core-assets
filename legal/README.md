@@ -21,7 +21,7 @@ Canonical legal-text assets shipped with AIC products.
 - **No project may ship a modified copy.** If a product needs a variant
   (e.g. a different language), add it here as a sibling file (`EULA_AIC_Commercial_de-DE.rtf`)
   and reference the variant from the consuming installer's WiX source.
-- Old in-tree duplicates (e.g. `pim-offline-client/deployment/windows/License.rtf`,
+- Old in-tree duplicates (e.g. `aic-endpoint-privilege-agent/deployment/windows/License.rtf`,
   `pim-installers/staging/.../assets/EULA.rtf`) are now **build outputs**,
   not source. They are restaged from this directory by the build scripts.
 

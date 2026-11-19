@@ -28,18 +28,18 @@ Rule: [`shutdown-compliance.mdc`](../../.cursor/rules/shutdown-compliance.mdc)
 | --- | --- | --- |
 | `pim-offline-server` (Windows SCM) | service | partial; SCM state-machine fix in flight |
 | `pim-offline-server` (Linux/macOS daemon) | service | audit ongoing |
-| `pim-offline-client` (Windows SCM) | service | partial; same fix |
-| `pim-offline-client` (Linux/macOS daemon) | service | audit ongoing |
-| `pim-offline-server-configurator-tauri` | GUI | audit ongoing |
-| `pim-offline-client-configurator-tauri` | GUI | audit ongoing |
-| `pim-offline-client-elevate-tauri` | GUI (modal) | audit ongoing |
-| `pim-offline-server-configurator-win32` | GUI | audit ongoing |
-| `pim-offline-client-configurator-win32` | GUI | audit ongoing |
-| `pim-offline-client-elevate-win32` | GUI (modal) | audit ongoing |
+| `aic-endpoint-privilege-agent` (Windows SCM) | service | partial; same fix |
+| `aic-endpoint-privilege-agent` (Linux/macOS daemon) | service | audit ongoing |
+| `aic-enterprise-server-configurator-tauri` | GUI | audit ongoing |
+| `aic-endpoint-privilege-configurator-tauri` | GUI | audit ongoing |
+| `aic-elevation-request-tauri` | GUI (modal) | audit ongoing |
+| `aic-enterprise-server-configurator-win32` | GUI | audit ongoing |
+| `aic-endpoint-privilege-configurator-win32` | GUI | audit ongoing |
+| `aic-elevation-request-win32` | GUI (modal) | audit ongoing |
 | `pim-product-launcher-slint` | GUI | audit ongoing |
 | `pim-product-launcher-win32` | GUI | audit ongoing |
 | `pim-app-config-cli` | CLI | audit ongoing |
-| `pim-offline-agent-configurator-cli` | CLI | audit ongoing |
+| `aic-endpoint-privilege-agent-configurator` | CLI | audit ongoing |
 | `pim-offline-server-configurator` (CLI) | CLI | audit ongoing |
 | `db-init` (in `pim-offline-server`) | CLI (destructive) | audit ongoing — highest priority for Ctrl+C handling |
 
@@ -58,7 +58,7 @@ Rule: [`service-lifecycle-logs.mdc`](../../.cursor/rules/service-lifecycle-logs.
 | `pim-offline-server` (Windows SCM + systemd) | partial — emits PROCESS_STARTED / PROCESS_STOPPED; service-lifecycle triplet pending |
 | `pim-offline-agent` (Windows SCM + systemd + launchd) | partial — same |
 | `pim-offline-{client,server}-configurator-{win32,tauri}` | n/a — not services; they emit per-action audit events |
-| `pim-offline-client-elevate-{win32,tauri}` | n/a — modal helpers |
+| `aic-elevation-request-{win32,tauri}` | n/a — modal helpers |
 | `pim-product-launcher-{slint,win32}` | n/a — not services |
 | `pim-windows-oplog::ids::SERVICE_{STARTED,STOPPING,STOPPED}` | new — Wave 1 ID allocation; message catalog entry pending |
 
@@ -70,12 +70,12 @@ Rule: [`runtime-status.mdc`](../../.cursor/rules/runtime-status.mdc)
 
 | Surface | Status |
 | --- | --- |
-| `pim-offline-client/src/runtime_status.rs` (writer) | enacted; schema 2; tests at three layers |
+| `aic-endpoint-privilege-agent/src/runtime_status.rs` (writer) | enacted; schema 2; tests at three layers |
 | `pim-offline-server/src/runtime_status.rs` (writer) | enacted in Wave 4 Track I; schema 2; tests at three layers; R7 violation closed |
-| `pim-offline-client/tests/runtime_status.rs` | 9/9 passing |
+| `aic-endpoint-privilege-agent/tests/runtime_status.rs` | 9/9 passing |
 | `pim-offline-server/tests/runtime_status.rs` | 12/12 passing |
 | `pim-installers/test/soak.Tests.ps1` | 7/7 SelfCheck passing; live-soak asserts schema-2 fields |
-| `pim-offline-client/src/win_scm_dispatch.rs` | publishes `record_signal_received` / `record_drain_outcome` |
+| `aic-endpoint-privilege-agent/src/win_scm_dispatch.rs` | publishes `record_signal_received` / `record_drain_outcome` |
 | `pim-offline-server/src/bin/server/win_scm_dispatch.rs` | same, via process-singleton |
 | Per-product docs | `pim-offline-{client,server}/docs/dev/runtime-status.md` — schema 2 field reference |
 
@@ -87,9 +87,9 @@ Rule: [`runtime-status-flags-test-fixtures.mdc`](../../.cursor/rules/runtime-sta
 
 | Surface | Status |
 | --- | --- |
-| `pim-offline-client/src/runtime_status.rs` (`RuntimeStatusSnapshot`, writer) | exists — Wave 1 Track C adds `fingerprint_warnings` |
+| `aic-endpoint-privilege-agent/src/runtime_status.rs` (`RuntimeStatusSnapshot`, writer) | exists — Wave 1 Track C adds `fingerprint_warnings` |
 | `pim-offline-server` analogue | audit ongoing — Wave 1 Track C |
-| `pim-offline-client-configurator-{win32,tauri}` warnings badge | audit ongoing — Wave 2 Track E |
+| `aic-endpoint-privilege-configurator-{win32,tauri}` warnings badge | audit ongoing — Wave 2 Track E |
 | `pim-offline-server-configurator-{win32,tauri}` warnings badge | audit ongoing — Wave 2 Track E |
 
 ---
@@ -100,11 +100,11 @@ Rule: [`bounded-network-io-in-drains.mdc`](../../.cursor/rules/bounded-network-i
 
 | Binary | Has bounded helper? | All call sites use it? |
 | --- | --- | --- |
-| `pim-offline-client` (`HttpClient::execute_with_budget`) | yes (Wave 1 Track D in flight) | partial |
+| `aic-endpoint-privilege-agent` (`HttpClient::execute_with_budget`) | yes (Wave 1 Track D in flight) | partial |
 | `pim-offline-server` (update checks, OTLP) | partial — OTLP exporter wraps in its own timeout; update-feed client audit ongoing | partial |
-| `pim-offline-client-configurator-{win32,tauri}` connectivity test | yes, via `run_offline_server_probe` | yes |
+| `aic-endpoint-privilege-configurator-{win32,tauri}` connectivity test | yes, via `run_offline_server_probe` | yes |
 | `pim-offline-server-configurator-{win32,tauri}` connectivity test | yes, via `run_postgres_probe` | yes |
-| `pim-offline-client-elevate-{win32,tauri}` | n/a — IPC only, no HTTP |
+| `aic-elevation-request-{win32,tauri}` | n/a — IPC only, no HTTP |
 
 ---
 
@@ -118,7 +118,7 @@ Rule: [`manifest-gates-storage-writes.mdc`](../../.cursor/rules/manifest-gates-s
 | `AppConfig::set_value` refuses unknown keys | enacted, `crates/pim-app-config/src/app_config.rs:192` |
 | `AppConfig::unset_value` refuses unknown keys | audit ongoing — Wave 1 Track F |
 | `pim-app-config-cli` `set` / `unset` exit codes | audit ongoing — Wave 1 Track F |
-| `pim-offline-agent-configurator-cli`, `pim-offline-server-configurator` | inherit Track F |
+| `aic-endpoint-privilege-agent-configurator`, `pim-offline-server-configurator` | inherit Track F |
 | All four configurator GUI Save flows | audit ongoing |
 | `orphans` subcommand | not yet implemented — required before the next MSI version bump |
 
@@ -132,9 +132,9 @@ Rule: [`single-source-of-truth-for-settings.mdc`](../../.cursor/rules/single-sou
 | --- | --- |
 | `pim-offline-server` | compliant — greenfield, single store |
 | `pim-offline-agent` | partial — runtime resolver still consults `settings.json` on some paths; Wave 1 Track C owns the fix |
-| `pim-offline-client-configurator-{win32,tauri}` | inherits the agent's compliance |
+| `aic-endpoint-privilege-configurator-{win32,tauri}` | inherits the agent's compliance |
 | `pim-offline-server-configurator-{win32,tauri}` | compliant — writes only via `AppConfig::set_value` |
-| `pim-offline-client-elevate-{win32,tauri}` | n/a — no settings store |
+| `aic-elevation-request-{win32,tauri}` | n/a — no settings store |
 
 ---
 
@@ -144,7 +144,7 @@ Rule: [`manifest-defaults-must-be-realistic.mdc`](../../.cursor/rules/manifest-d
 
 | Manifest | Status |
 | --- | --- |
-| `pim-offline-client/app-config.toml` | partial — Wave 1 Track C audits each `default_dev` against the smoke loop |
+| `aic-endpoint-privilege-agent/app-config.toml` | partial — Wave 1 Track C audits each `default_dev` against the smoke loop |
 | `pim-offline-server/app-config.toml` | partial — same review pass |
 | `pim-app-config` sample manifest | exempt (sample, not a shipping product) |
 
@@ -174,8 +174,8 @@ Rule: [`no-json-in-platform-storage.mdc`](../../.cursor/rules/no-json-in-platfor
 | `pim-app-config` (`scalar_value.rs`, `AppConfig::set`, `set_secret_extra`) | enacted |
 | `pim-app-config` (`settings_import::import_settings_file`) | enacted — scalar keys via `json_value_to_scalar_string` |
 | `pim-app-config-cli` `set` / embedded configurators | enacted — inherits the `AppConfig::set` gate |
-| `pim-offline-client` `app_config_bridge::persist_from_settings` | enacted |
-| `pim-offline-client` enrollment token import (scalar id/shape extras) | enacted — legacy JSON meta migration |
+| `aic-endpoint-privilege-agent` `app_config_bridge::persist_from_settings` | enacted |
+| `aic-endpoint-privilege-agent` enrollment token import (scalar id/shape extras) | enacted — legacy JSON meta migration |
 | `pim-config-storage` backends | compliant by API shape (`put` takes scalar strings) |
 | `pim-offline-server` app-config bridge / import | audit ongoing — must mirror the agent pattern |
 | `pim-offline-*-configurator-{win32,tauri}` Save flows | enacted via in-process `AppConfig::set` |
@@ -192,13 +192,13 @@ Binary crates that link `aws-lc-rs/fips` and therefore need the
 | Repo | Binaries |
 | --- | --- |
 | `pim-offline-server` | `pim-offline-server.exe`, `pim-offline-server-configurator.exe`, `db-init.exe`, … |
-| `pim-offline-client` | `pim-offline-agent.exe`, `pim-offline-agent-configurator-cli.exe` |
-| `pim-offline-server-configurator-win32` | `pim-offline-server-configurator-win32.exe` |
-| `pim-offline-server-configurator-tauri` | `pim-offline-server-configurator-tauri.exe` |
-| `pim-offline-client-configurator-win32` | `pim-offline-client-configurator-win32.exe` |
-| `pim-offline-client-configurator-tauri` | `pim-offline-client-configurator-tauri.exe` |
-| `pim-offline-client-elevate-win32` | `pim-offline-client-elevate-win32.exe` |
-| `pim-offline-client-elevate-tauri` | `pim-offline-client-elevate-tauri.exe` |
+| `aic-endpoint-privilege-agent` | `pim-offline-agent.exe`, `aic-endpoint-privilege-agent-configurator.exe` |
+| `aic-enterprise-server-configurator-win32` | `aic-enterprise-server-configurator-win32.exe` |
+| `aic-enterprise-server-configurator-tauri` | `aic-enterprise-server-configurator-tauri.exe` |
+| `aic-endpoint-privilege-configurator-win32` | `aic-endpoint-privilege-configurator-win32.exe` |
+| `aic-endpoint-privilege-configurator-tauri` | `aic-endpoint-privilege-configurator-tauri.exe` |
+| `aic-elevation-request-win32` | `aic-elevation-request-win32.exe` |
+| `aic-elevation-request-tauri` | `aic-elevation-request-tauri.exe` |
 
 ---
 
@@ -208,7 +208,7 @@ Rule: [`no-panic.mdc`](../../.cursor/rules/no-panic.mdc)
 
 | Repo | Per-crate clippy lint table present? |
 | --- | --- |
-| `pim-offline-client` | yes |
+| `aic-endpoint-privilege-agent` | yes |
 | `pim-offline-server` | yes |
 | `pim-app-config` | workspace-wide |
 | `pim-orm-offline` | partial (per its AGENTS.md no-panic line) |
@@ -230,8 +230,8 @@ Rule: [`silent-failure-is-a-bug.mdc`](../../.cursor/rules/silent-failure-is-a-bu
 
 | Surface | Status |
 | --- | --- |
-| `pim-offline-client` service scheduler | Wave 1 Track D adds the structured error-log shape |
-| `pim-offline-client` HTTP client error handling | Wave 1 Track D |
+| `aic-endpoint-privilege-agent` service scheduler | Wave 1 Track D adds the structured error-log shape |
+| `aic-endpoint-privilege-agent` HTTP client error handling | Wave 1 Track D |
 | `pim-offline-server` admin API handlers | partial — structured at the route-handler level; inner-helper audit ongoing |
 | `pim-offline-server` background jobs (audit log writer, OTLP exporter) | audit ongoing |
 | All four configurator GUIs | inherits library logging shape via `pim_app_config_cli::dialog_helpers` |
@@ -245,7 +245,7 @@ Rule: [`tests-must-not-touch-machine-state.mdc`](../../.cursor/rules/tests-must-
 
 | Repo | Status |
 | --- | --- |
-| `pim-offline-client` (`Settings`, `RuntimeStatus`, IPC paths) | partial — fixture APIs in flight under Wave 1 Track C |
+| `aic-endpoint-privilege-agent` (`Settings`, `RuntimeStatus`, IPC paths) | partial — fixture APIs in flight under Wave 1 Track C |
 | `pim-offline-server` (`AdminAuth`, legacy compat, seed-dev) | partial — `AdminAuth::with_token` exists; `ENABLE_LEGACY_COMPAT` tests still mutate env |
 | `pim-app-config` / `pim-app-config-i18n` | audit ongoing — `Locale::override_for_tests` planned |
 | `pim-config-storage` | compliant — in-memory backend exists; tests must select it explicitly |
@@ -258,10 +258,10 @@ Refresh with:
 
 | Env var | Read by | Fixture replacement |
 | --- | --- | --- |
-| `OFFLINE_DEBUG_LOG_DIR` | `pim-offline-client/src/config/settings.rs:326` | `Settings::log_dir_for_tests(&Path)` |
-| `OFFLINE_DEBUG_CONFIG_DIR` | `pim-offline-client/src/config/settings.rs:401` | `Settings::save_to_file_at(&Path)` / `load_from_dir(&Path)` |
-| `OFFLINE_DEBUG_RUNTIME_STATUS_DIR` | `pim-offline-client/src/runtime_status.rs:197` | `RuntimeStatus::write_to_dir(&Path)` |
-| `PIM_OFFLINE_IPC_ELEVATION_PATH` | `pim-offline-client/src/ipc/paths.rs:38,45` | `IpcServer::bind_at(&str)` + `IpcClient::connect_at(&str)` |
+| `OFFLINE_DEBUG_LOG_DIR` | `aic-endpoint-privilege-agent/src/config/settings.rs:326` | `Settings::log_dir_for_tests(&Path)` |
+| `OFFLINE_DEBUG_CONFIG_DIR` | `aic-endpoint-privilege-agent/src/config/settings.rs:401` | `Settings::save_to_file_at(&Path)` / `load_from_dir(&Path)` |
+| `OFFLINE_DEBUG_RUNTIME_STATUS_DIR` | `aic-endpoint-privilege-agent/src/runtime_status.rs:197` | `RuntimeStatus::write_to_dir(&Path)` |
+| `PIM_OFFLINE_IPC_ELEVATION_PATH` | `aic-endpoint-privilege-agent/src/ipc/paths.rs:38,45` | `IpcServer::bind_at(&str)` + `IpcClient::connect_at(&str)` |
 | `OFFLINE_DEV_FIXTURES` | `pim-offline-server/src/bin/seed_dev/main.rs:106` | seed-dev is a binary; tests must not import it |
 | `OFFLINE_ADMIN_TOKEN` | `pim-offline-server/src/auth/admin.rs` | `AdminAuth::with_token(&str)` |
 | `ENABLE_LEGACY_COMPAT` | `pim-offline-server/src/api/legacy/…` | `LegacyTranslator::enabled(bool)` |
@@ -281,13 +281,13 @@ Measured 2026-08-05 (G-FIPS-RING tree-clean), `cargo tree -i ring --target all`:
 | Binary | TLS provider (track) | aws-lc-rs linked | ring linked |
 | --- | --- | --- | --- |
 | `pim-offline-server` | rustls + aws-lc-rs (A) | yes | **NO — clean** |
-| `pim-offline-client` (agent) | native-tls (B) | no | **NO — clean** |
-| `pim-offline-client-configurator-win32` | rustls + aws-lc-rs (A) | yes | **NO — clean** |
-| `pim-offline-client-configurator-tauri` | rustls + aws-lc-rs (A) | yes | **NO — clean** |
-| `pim-offline-client-elevate-win32` | none (IPC only) | no | **NO — clean** |
-| `pim-offline-client-elevate-tauri` | none (IPC only) | no | **NO — clean** |
-| `pim-offline-server-configurator-win32` | rustls + aws-lc-rs (A) | yes | **NO — clean** |
-| `pim-offline-server-configurator-tauri` | rustls + aws-lc-rs (A) | yes | **NO — clean** |
+| `aic-endpoint-privilege-agent` (agent) | native-tls (B) | no | **NO — clean** |
+| `aic-endpoint-privilege-configurator-win32` | rustls + aws-lc-rs (A) | yes | **NO — clean** |
+| `aic-endpoint-privilege-configurator-tauri` | rustls + aws-lc-rs (A) | yes | **NO — clean** |
+| `aic-elevation-request-win32` | none (IPC only) | no | **NO — clean** |
+| `aic-elevation-request-tauri` | none (IPC only) | no | **NO — clean** |
+| `aic-enterprise-server-configurator-win32` | rustls + aws-lc-rs (A) | yes | **NO — clean** |
+| `aic-enterprise-server-configurator-tauri` | rustls + aws-lc-rs (A) | yes | **NO — clean** |
 
 Server tree-clean path: russh → `aws-lc-rs` (not `ring`);
 `pim-events-destinations` / reqwest → `rustls-tls-*-no-provider`;

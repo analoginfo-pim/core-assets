@@ -25,8 +25,8 @@ he/ar). Shared `locale-browser.js` uses `canonicalizePackTag` aligned with
 Rust. Jump/DB gained a minimal Appearance panel when none existed.
 
 **Live Beavis2 restage (Tauri, debug):** Program Files copies —
-`PimServer\pim-offline-server-configurator-tauri.exe`,
-`PimAgent\pim-offline-client-configurator-tauri.exe` (+ agent-named twin),
+`PimServer\aic-enterprise-server-configurator-tauri.exe`,
+`PimAgent\aic-endpoint-privilege-configurator-tauri.exe` (+ agent-named twin),
 `PimJumpServer\pim-jump-server-configurator-tauri.exe`,
 `DbMgmtAgent\pim-db-mgmt-agent-configurator-tauri.exe`.
 `aic-server-service` left **Running**.

@@ -229,7 +229,7 @@ Optional later: headless UI automation (FlaUI / WinAppDriver / Tauri WebDriver).
 | | |
 | --- | --- |
 | **Goal** | Elevate Win32 + Tauri: all Tier 1 tags selectable and rendered from catalogs offline |
-| **Touches** | `pim-offline-client-elevate-tauri/src/i18n.js`, `locale-browser.js` (remove supported cap → Tier 1 or `PACK_TAGS`); elevate Win32 only if picker/settings path gaps; optional Tier 1 `include_str!` expand in `offline_client` messages; plain-language pass on `content/i18n-native/apps/pim-offline-agent/*/messages.json` `elevate.*` keys; localization-work queue rows for rewritten EN |
+| **Touches** | `aic-elevation-request-tauri/src/i18n.js`, `locale-browser.js` (remove supported cap → Tier 1 or `PACK_TAGS`); elevate Win32 only if picker/settings path gaps; optional Tier 1 `include_str!` expand in `offline_client` messages; plain-language pass on `content/i18n-native/apps/pim-offline-agent/*/messages.json` `elevate.*` keys; localization-work queue rows for rewritten EN |
 | **Does not** | Full RTL; CLI help; server configurator |
 | **Acceptance** | Parity script green for Tier 1; screenshots × 7 tags; Tauri picker lists Tier 1; offline (agent settings only, no server) shows non-English when `UI_LOCALE`/`OS` set; Agent MSI still stages packs (smoke list `locales\zh-TW\messages.json`) |
 

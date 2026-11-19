@@ -49,7 +49,7 @@ $assetMap = [ordered]@{
     # Source SVG (editable) -- the offline-client keeps a copy because its
     # `build.rs` rasterizes from SVG when the .ico is missing.
     "icons/source/aic-icon.svg" = @(
-        "pim-offline-client/assets/icon.svg"
+        "aic-endpoint-privilege-agent/assets/icon.svg"
     )
 
     # 1024x1024 source PNG used by `tauri icon` to generate the platform-icon
@@ -59,12 +59,12 @@ $assetMap = [ordered]@{
     # under icons/tauri/ -- see ../icons/tauri/README.md -- and synced from
     # there by the per-tree entry below.
     "icons/source/aic-icon-1024.png" = @(
-        "pim-offline-client-configurator-tauri/src-tauri/icons/icon.png",
-        "pim-offline-client-elevate-tauri/src-tauri/icons/icon.png",
-        "pim-offline-server-configurator-tauri/src-tauri/icons/icon.png",
+        "aic-endpoint-privilege-configurator-tauri/src-tauri/icons/icon.png",
+        "aic-elevation-request-tauri/src-tauri/icons/icon.png",
+        "aic-enterprise-server-configurator-tauri/src-tauri/icons/icon.png",
         "pim-db-mgmt-agent/configurator-tauri/src-tauri/icons/icon.png",
         "pim-workstation-assurance-agent/configurator-tauri/src-tauri/icons/icon.png",
-        "pim-offline-client/recording-agent-configurator-tauri/src-tauri/icons/icon.png",
+        "aic-endpoint-privilege-agent/recording-agent-configurator-tauri/src-tauri/icons/icon.png",
         "pim-jump-server/configurator-tauri/src-tauri/icons/icon.png"
     )
 
@@ -73,20 +73,20 @@ $assetMap = [ordered]@{
     # Canonical Windows ICO -- every Win32 / Tauri / web project pulls from
     # here. Adding a project? Put its destination here.
     "icons/desktop/aic-icon.ico" = @(
-        "pim-offline-client/assets/icon.ico",
-        "pim-offline-client-configurator-win32/assets/aic-icon.ico",
-        "pim-offline-client-elevate-win32/assets/aic-icon.ico",
-        "pim-offline-server-configurator-win32/assets/aic-icon.ico",
+        "aic-endpoint-privilege-agent/assets/icon.ico",
+        "aic-endpoint-privilege-configurator-win32/assets/aic-icon.ico",
+        "aic-elevation-request-win32/assets/aic-icon.ico",
+        "aic-enterprise-server-configurator-win32/assets/aic-icon.ico",
         "pim-offline-server/ui/public/favicon.ico",
         "pim-product-launcher-win32/assets/aic-icon.ico",
         "pim-app-config/crates/pim-app-config-cli/assets/aic-icon.ico",
         "pim-app-config/crates/pim-app-config-demo/assets/aic-icon.ico",
-        "pim-offline-client-configurator-tauri/src/assets/aic-favicon.ico",
-        "pim-offline-client-elevate-tauri/src/assets/aic-favicon.ico",
-        "pim-offline-server-configurator-tauri/src/assets/aic-favicon.ico",
+        "aic-endpoint-privilege-configurator-tauri/src/assets/aic-favicon.ico",
+        "aic-elevation-request-tauri/src/assets/aic-favicon.ico",
+        "aic-enterprise-server-configurator-tauri/src/assets/aic-favicon.ico",
         "pim-db-mgmt-agent/configurator-tauri/src/assets/aic-favicon.ico",
         "pim-workstation-assurance-agent/configurator-tauri/src/assets/aic-favicon.ico",
-        "pim-offline-client/recording-agent-configurator-tauri/src/assets/aic-favicon.ico",
+        "aic-endpoint-privilege-agent/recording-agent-configurator-tauri/src/assets/aic-favicon.ico",
         "pim-jump-server/configurator-tauri/src/assets/aic-favicon.ico",
         "pim-ui-kit/packages/demo/public/favicon.ico",
         "pim-ui-kit/templates/app-template/public/favicon.ico",
@@ -103,38 +103,38 @@ $assetMap = [ordered]@{
 
     # Agent MSI shortcut artwork (also staged at MSI build time from core-assets).
     "icons/desktop/installer-shortcuts/aic-client-product.ico" = @(
-        "pim-offline-client/assets/icon.ico",
+        "aic-endpoint-privilege-agent/assets/icon.ico",
         "pim-installers/assets/installer-shortcuts/aic-client-product.ico"
     )
     "icons/desktop/installer-shortcuts/aic-client-admin-win32.ico" = @(
-        "pim-offline-client-configurator-win32/assets/aic-icon.ico",
+        "aic-endpoint-privilege-configurator-win32/assets/aic-icon.ico",
         "pim-installers/assets/installer-shortcuts/aic-client-admin-win32.ico"
     )
     "icons/desktop/installer-shortcuts/aic-client-admin-tauri.ico" = @(
-        "pim-offline-client-configurator-tauri/src/assets/aic-favicon.ico",
+        "aic-endpoint-privilege-configurator-tauri/src/assets/aic-favicon.ico",
         "pim-installers/assets/installer-shortcuts/aic-client-admin-tauri.ico"
     )
     "icons/desktop/installer-shortcuts/aic-client-elevate-win32.ico" = @(
-        "pim-offline-client-elevate-win32/assets/aic-icon.ico",
+        "aic-elevation-request-win32/assets/aic-icon.ico",
         "pim-installers/assets/installer-shortcuts/aic-client-elevate-win32.ico"
     )
     "icons/desktop/installer-shortcuts/aic-client-elevate-tauri.ico" = @(
-        "pim-offline-client-elevate-tauri/src/assets/aic-favicon.ico",
+        "aic-elevation-request-tauri/src/assets/aic-favicon.ico",
         "pim-installers/assets/installer-shortcuts/aic-client-elevate-tauri.ico"
     )
     "icons/desktop/installer-shortcuts/aic-server-admin-win32.ico" = @(
-        "pim-offline-server-configurator-win32/assets/aic-icon.ico",
+        "aic-enterprise-server-configurator-win32/assets/aic-icon.ico",
         "pim-installers/assets/installer-shortcuts/aic-server-admin-win32.ico",
         "mix-server/wix/assets/aic-server-admin-win32.ico"
     )
     "icons/desktop/installer-shortcuts/aic-server-admin-tauri.ico" = @(
-        "pim-offline-server-configurator-tauri/src/assets/aic-favicon.ico",
+        "aic-enterprise-server-configurator-tauri/src/assets/aic-favicon.ico",
         "pim-installers/assets/installer-shortcuts/aic-server-admin-tauri.ico"
     )
 
     # Static preview render of the icon (used in About/help screens).
     "icons/desktop/aic-icon-preview.png" = @(
-        "pim-offline-client/assets/icon-preview.png"
+        "aic-endpoint-privilege-agent/assets/icon-preview.png"
     )
 
     # ----- Web ------------------------------------------------------------
@@ -162,18 +162,18 @@ $assetMap = [ordered]@{
 
     # About-dialog hero in the Win32 admin GUI / agent.
     "branding/aic-about.png" = @(
-        "pim-offline-client/assets/aic-about.png"
+        "aic-endpoint-privilege-agent/assets/aic-about.png"
     )
 
     # Top-of-window header banner used by every Tauri configurator and
     # elevation UI, plus the offline-server web UI (login + chrome).
     "branding/aic-header.png" = @(
-        "pim-offline-client-configurator-tauri/src/assets/aic-header.png",
-        "pim-offline-client-elevate-tauri/src/assets/aic-header.png",
-        "pim-offline-server-configurator-tauri/src/assets/aic-header.png",
+        "aic-endpoint-privilege-configurator-tauri/src/assets/aic-header.png",
+        "aic-elevation-request-tauri/src/assets/aic-header.png",
+        "aic-enterprise-server-configurator-tauri/src/assets/aic-header.png",
         "pim-db-mgmt-agent/configurator-tauri/src/assets/aic-header.png",
         "pim-workstation-assurance-agent/configurator-tauri/src/assets/aic-header.png",
-        "pim-offline-client/recording-agent-configurator-tauri/src/assets/aic-header.png",
+        "aic-endpoint-privilege-agent/recording-agent-configurator-tauri/src/assets/aic-header.png",
         "pim-jump-server/configurator-tauri/src/assets/aic-header.png",
         "pim-offline-server/ui/public/aic-header.png"
     )
@@ -317,12 +317,12 @@ $assetMap = [ordered]@{
 # no-op (the script tolerates an empty source).
 $treeMap = [ordered]@{
     "icons/tauri" = @(
-        "pim-offline-client-configurator-tauri/src-tauri/icons",
-        "pim-offline-client-elevate-tauri/src-tauri/icons",
-        "pim-offline-server-configurator-tauri/src-tauri/icons",
+        "aic-endpoint-privilege-configurator-tauri/src-tauri/icons",
+        "aic-elevation-request-tauri/src-tauri/icons",
+        "aic-enterprise-server-configurator-tauri/src-tauri/icons",
         "pim-db-mgmt-agent/configurator-tauri/src-tauri/icons",
         "pim-workstation-assurance-agent/configurator-tauri/src-tauri/icons",
-        "pim-offline-client/recording-agent-configurator-tauri/src-tauri/icons",
+        "aic-endpoint-privilege-agent/recording-agent-configurator-tauri/src-tauri/icons",
         "pim-jump-server/configurator-tauri/src-tauri/icons"
     )
     # Spec playbooks + multilingual catalogs (tier 1). README files are

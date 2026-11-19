@@ -17,12 +17,12 @@ After installation, run:
 
 ## Option 2: Online Conversion Tools
 
-### For Desktop Application (pim-offline-client):
-1. Open `pim-offline-client/assets/icon.svg` in a browser
+### For Desktop Application (aic-endpoint-privilege-agent):
+1. Open `aic-endpoint-privilege-agent/assets/icon.svg` in a browser
 2. Go to https://cloudconvert.com/svg-to-ico
 3. Upload icon.svg
 4. Set output to ICO with sizes: 16, 32, 48, 64, 128, 256
-5. Download and save as `pim-offline-client/assets/icon.ico`
+5. Download and save as `aic-endpoint-privilege-agent/assets/icon.ico`
 
 ### For Web Application (pim-offline-server):
 1. Open `pim-offline-server/ui/public/favicon.svg`

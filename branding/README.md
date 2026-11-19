@@ -9,8 +9,8 @@ here.
 
 | File | Used by | Purpose |
 | ---- | ------- | ------- |
-| `aic-about.png` | `pim-offline-client/assets/aic-about.png` | "About" dialog hero image (Win32 admin GUI / agent). |
-| `aic-header.png` | All Tauri configurators / elevation UIs (`pim-offline-client-configurator-tauri`, `pim-offline-client-elevate-tauri`, `pim-offline-server-configurator-tauri`); also `pim-offline-server/ui/public/aic-header.png` for the web login page and app chrome. | Top-of-window / login header banner. |
+| `aic-about.png` | `aic-endpoint-privilege-agent/assets/aic-about.png` | "About" dialog hero image (Win32 admin GUI / agent). |
+| `aic-header.png` | All Tauri configurators / elevation UIs (`aic-endpoint-privilege-configurator-tauri`, `aic-elevation-request-tauri`, `aic-enterprise-server-configurator-tauri`); also `pim-offline-server/ui/public/aic-header.png` for the web login page and app chrome. | Top-of-window / login header banner. |
 | `enterprise-atmosphere.svg` | `pim-offline-server/ui/public/enterprise-atmosphere.svg` | Subtle navy / steel-teal geometric wash for admin SPA login and shell canvas (decorative; not a logo). |
 | `installer/aic-installer-banner.bmp` | `mix-server/wix/assets/` (WiX `WixUIBannerBmp`) | 493x58 24-bit top banner on interior MSI wizard pages. |
 | `installer/aic-installer-dialog.bmp` | `mix-server/wix/assets/` (WiX `WixUIDialogBmp`) | 493x312 24-bit Welcome/Exit dialog background. |
